@@ -6,7 +6,7 @@ title: |
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
-    Enhance Set-OultookSignatures with more features
+    Add enterprise-grade features
   </p>
 description: |
   Get fee-based support. We have got you covered.

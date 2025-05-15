@@ -6,7 +6,7 @@ title: |
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
-    Signatures for Outlook on Android and iOS. Advanced features for all platforms.
+    Signatures for Outlook on Android and iOS, advanced features for all platforms
   </p>
 description: |
   Signatures for Outlook on Android and iOS. Advanced features for all platforms.
