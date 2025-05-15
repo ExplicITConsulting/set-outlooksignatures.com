@@ -1,0 +1,72 @@
+theme                    : bulma-clean-theme
+
+# Site Settings
+fixed_navbar             : top
+permalink                : pretty
+footer_menu              : footer_menu
+locale                   : "en-US"
+lang                     : en
+direction                : ltr # left to right
+google_analytics         : # UA-xxxxxxx
+title                    : "Set-OutlookSignatures and the Benefactor Circle add-on"
+description              : "Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy."
+url                      : "https://set-outlooksignatures.com" # the base hostname & protocol for your site
+site.url                 : "https://set-outlooksignatures.com" # the base hostname & protocol for your site
+baseurl                  : # the subpath of your site, e.g. "/blog"
+repository               : "ExplicITConsulting/set-outlooksignatures.com" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+favicon                  : "/assets/images/set-outlooksignatures icon.ico"
+force_theme              : #light
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+naver_site_verification  :
+yandex_site_verification :
+baidu_site_verification  :
+
+
+
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-redirect-from
+
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+sass:
+  style: compressed
+  source_dir: _sass
+
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+      image: "/assets/images/explicit consulting, color on black.png"
+      hero_image: "/assets/images/background, vietnam golden bridge.jpg"
+      hero_height: is-small
+      hero_darken: true
+
+include:
+  - ".well-known"

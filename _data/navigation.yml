@@ -1,0 +1,20 @@
+- name: "Set-OutlookSignatures"
+  link: /index
+- name: The Benefactor Circle add-on
+  link: /benefactorcircle
+- name: "More information"
+  dropdown:
+  - name: Technical details, requirements and usage
+    link: /details
+  - name: Parameters
+    link: /parameters
+  - name: The Outlook add-in
+    link: /outlookaddin
+  - name: Frequently asked questions (FAQ)
+    link: /faq
+- name: Download
+  link: /download
+- name: "Contact"
+  link: /contact
+- name: "Legal"
+  link: /legal/

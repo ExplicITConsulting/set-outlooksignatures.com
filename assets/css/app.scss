@@ -1,0 +1,19 @@
+---
+---
+$family-primary: "Arial", sans-serif;
+$primary: black;
+$text: black;
+
+
+// Import Main CSS file from theme
+@import "main";
+
+.html {
+    scroll-padding-top: $navbar-height;
+}
+
+.section {
+    h1, h2, h3, h4, h5, h6 {
+        scroll-margin-top: $navbar-height;
+    }
+}
