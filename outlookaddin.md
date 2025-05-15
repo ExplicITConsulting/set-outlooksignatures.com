@@ -2,14 +2,14 @@
 layout: page
 title: |
   <p class="has-text-white">
-    Set-OutlookSignatures and the Benefactor Circle add-on
+    The Outlook add-in
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
-    Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
+    Signatures for Outlook on Android and iOS. Advanced features for all platforms.
   </p>
 description: |
-  Set-OutlookSignatures Benefactor Circle. Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
+  Signatures for Outlook on Android and iOS. Advanced features for all platforms.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

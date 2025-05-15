@@ -1,5 +1,3 @@
-- name: "Set-OutlookSignatures"
-  link: /index
 - name: The Benefactor Circle add-on
   link: /benefactorcircle
 - name: "More information"
@@ -14,6 +12,8 @@
     link: /faq
 - name: Download
   link: /download
+- name: Support
+  link: /support
 - name: "Contact"
   link: /contact
 - name: "Legal"
