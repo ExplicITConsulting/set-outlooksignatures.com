@@ -31,7 +31,6 @@ redirect_from:
     <h2><img src="/assets/images/set-outlooksignatures logo.png" alt="Set-OutlookSignatures Benefactor Circle"></h2>
   </div>
   <div class="column">
-    <h2>Welcome!</h2>
     <p>Email signatures and out-of-office replies are an integral part of corporate identity and corporate design, of successful concepts for media and internet presence, and of marketing campaigns. Similar to web presences, business emails are usually subject to an imprint obligation, and non-compliance can result in severe penalties.</p>
   </div>
 </div>
