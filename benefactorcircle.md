@@ -18,6 +18,20 @@ image:
 redirect_from:
 ---
 
+<div class="columns">
+  <div class="column is-one-quarter">
+    <h2><img src="/assets/images/set-outlooksignatures benefactor circle.png" alt="Set-OutlookSignatures Benefactor Circle"></h2>
+  </div>
+  <div class="column">
+    <p>Set-OutlookSignatures is the open-source gold standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.</p>
+    <p>ExplicIT's Benefactor Circle add-on enhances the open-source version with a great set of additional enterprise features.</p>
+  </div>
+</div>
+
+<a href="#-demo"><button class="button is-link is-normal is-hover">Book your free interactive product demo</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#trial-version"><button class="button is-link is-normal is-hover">Request a trial version or a license quote</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/support"><button class="button is-link is-normal is-hover">Order fee-based support</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+
 ## Benefactor Circle exclusive features
 <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
   <div class="content">

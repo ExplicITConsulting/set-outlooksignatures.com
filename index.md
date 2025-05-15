@@ -28,7 +28,7 @@ redirect_from:
 
 <div class="columns">
   <div class="column is-one-quarter">
-    <h2><img src="/assets/images/set-outlooksignatures benefactor circle.png" alt="Set-OutlookSignatures Benefactor Circle"></h2>
+    <h2><img src="/assets/images/set-outlooksignatures logo.png" alt="Set-OutlookSignatures Benefactor Circle"></h2>
   </div>
   <div class="column">
     <h2>Welcome!</h2>
