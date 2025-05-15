@@ -6,7 +6,7 @@ title: |
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
-    We have got you covered.
+    Passing on our experience to you
   </p>
 description: |
   Get fee-based support. We have got you covered.

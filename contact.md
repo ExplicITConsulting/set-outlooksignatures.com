@@ -19,7 +19,7 @@ ExplicIT Consulting GmbH<br>Kaiser-Ebersdorfer Straße 206b/3/2<br>1110 Wien<br>
 
 
 ## LinkedIn
-Explicit Consulting mbH: https://www.linkedin.com/company/explicit-consulting-gmbh
+Explicit Consulting GmbH: https://www.linkedin.com/company/explicit-consulting-gmbh
 
 
 ## GitHub

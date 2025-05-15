@@ -28,7 +28,7 @@ redirect_from:
   </div>
 </div>
 
-<a href="#-demo"><button class="button is-link is-normal is-hover">Book your free interactive product demo</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#demo"><button class="button is-link is-normal is-hover">Book your free interactive product demo</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="#trial-version"><button class="button is-link is-normal is-hover">Request a trial version or a license quote</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="/support"><button class="button is-link is-normal is-hover">Order fee-based support</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 
