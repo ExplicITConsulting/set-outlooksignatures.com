@@ -39,7 +39,7 @@ redirect_from:
 **Set-OutlookSignatures and the Benefactor Circle add-on can do all this, and much more. Full-featured, cost-effective, unsurpassed data privacy:**
 <div class="grid is-col-min-20" style="margin-left: 2em;">
   <div class="cell">
-    <details open name="USPs">
+    <details open>
       <summary>Made in Austria, proven worldwide</summary>
       <ul>
         <li>From practice, for practice.</li>
@@ -50,7 +50,7 @@ redirect_from:
   </div>
 
   <div class="cell">
-    <details name="USPs">
+    <details>
       <summary>Most secure solution on the market</summary>
       <ul>
         <li>Does not introduce any new dependencies into your system.</li>
@@ -63,7 +63,7 @@ redirect_from:
   </div>
 
   <div class="cell">
-    <details name="USPs">
+    <details>
       <summary>One solution for all architectures</summary>
       <ul>
         <li>On premises, hybrid and cloud only with just one license and one product.</li>
@@ -76,7 +76,7 @@ redirect_from:
   </div>
 
   <div class="cell">
-    <details name="USPs">
+    <details>
       <summary>Simple and intuitive</summary>
       <ul>
         <li>Templates in Word or HTML format.</li>
@@ -87,7 +87,7 @@ redirect_from:
   </div>
 
   <div class="cell">
-    <details name="USPs">
+    <details>
       <summary>Innovative features</summary>
       <ul>
         <li>Signatures for personal mailboxes, shared mailboxes, boss-secretary constellations, delegation scenarios, Send As, Send On Behalf and more.</li>
@@ -100,7 +100,7 @@ redirect_from:
   </div>
 
   <div class="cell">
-    <details name="USPs">
+    <details>
       <summary>Delegate tasks as needed</summary>
       <ul>
         <li>IT can keep full control or only support the setup.</li>
@@ -112,7 +112,7 @@ redirect_from:
   </div>
 
   <div class="cell">
-    <details name="USPs">
+    <details>
       <summary>More cost-effective than other products</summary>
       <ul>
         <li>Purchase directly from the manufacturer, no rebate-driven prices.</li>
