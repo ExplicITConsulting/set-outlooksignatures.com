@@ -141,7 +141,7 @@ You want to know more?
 - An [organizational implementation approach](Implementation%20approach.md)
 - Features available exclusively to [Benefactor Circle](Benefactor%20Circle.md) members
 
-The '`sample code`' folder contains additional scripts mentioned in this README, as well as advanced usage examples, such as deploying signatures without user or client interaction.
+The '`sample code`' folder contains additional scripts and advanced usage examples, such as deploying signatures without user or client interaction.
 
 When facing a problem: Before creating a new issue, check the documentation, previous [issues](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=) and [discussions](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=). You can also switch to the fast lane: [ExplicIT Consulting](https://explicitconsulting.at) offers first-class fee-based support.
 
@@ -289,8 +289,8 @@ Next, check the script output for errors, displayed in red in the PowerShell con
 
 When everything runs fine with default settings, it is time to start customizing the software behavior to your needs:
 - Create a folder with your own template files and signature configuration file.
-  - Start with DOCX templates. See '`Should I use .docx or .htm as file format for templates?`' in this document for details.
-  - See the following chapters in this document for instructions:
+  - Start with DOCX templates. See the FAQ '`Should I use .docx or .htm as file format for templates?`' for details.
+  - See the following chapters for instructions:
     - Signature and OOF file format
     - Signature template file naming
     - Template tags and INI files
