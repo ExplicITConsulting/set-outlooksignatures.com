@@ -150,7 +150,7 @@ You are welcome to share your experiences with Set-OutlookSignatures, exchange i
 
 ## Feature comparison&nbsp;&nbsp;&nbsp;&nbsp;<a href="#quick-start-guide"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
 
-| Feature | Set&#8209;OutlookSignatures<br>with&nbsp;Benefactor&nbsp;Circle | Market Companion&nbsp;A | Market Companion&nbsp;B | Market Companion&nbsp;C |
+| Feature | Set&#8209;OutlookSignatures<br>with&nbsp;Benefactor&nbsp;Circle&nbsp;add-on | Market Companion&nbsp;A | Market Companion&nbsp;B | Market Companion&nbsp;C |
 | :--- | :--- | :--- | :--- | :--- |
 | Free and Open-Source core | 🟢 | 🔴 | 🔴 | 🔴 |
 | Emails stay in your environment (no re-routing to 3rd party datacenters) | 🟢 | 🟡 <sub>Optional, causes reduced feature set</sub> | 🔴 | 🔴 |
