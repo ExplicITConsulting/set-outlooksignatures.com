@@ -6,10 +6,10 @@ title: |
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
-    Add enterprise-grade features
+    Add more enterprise-grade features
   </p>
 description: |
-  Get fee-based support. We have got you covered.
+  The Benefactor Circle add-on. Add more enterprise-grade features.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

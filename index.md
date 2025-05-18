@@ -28,7 +28,7 @@ redirect_from:
 
 <div class="columns">
   <div class="column is-one-quarter">
-    <h2><img src="/assets/images/set-outlooksignatures benefactor circle.png" alt="Set-OutlookSignatures Benefactor Circle"></h2>
+    <h2><img src="/assets/images/set-outlooksignatures logo.png" alt="Set-OutlookSignatures Benefactor Circle"></h2>
   </div>
   <div class="column">
     <p>Email signatures and out-of-office replies are an integral part of corporate identity and corporate design, of successful concepts for media and internet presence, and of marketing campaigns. Similar to web presences, business emails are usually subject to an imprint obligation, and non-compliance can result in severe penalties.</p>
@@ -190,12 +190,10 @@ You are welcome to share your experiences with Set-OutlookSignatures, exchange i
 
 
 ## Features&nbsp;&nbsp;&nbsp;&nbsp;<a href="#quick-start-guide"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
-
 With Set-OutlookSignatures, signatures and out-of-office replies can be:
 - Generated from **templates in DOCX or HTML** file format  
-- Customized with a **broad range of variables**, including **photos**, from Active Directory and other sources
-  - Variables are available for the **currently logged-on user, this user's manager, each mailbox and each mailbox's manager**
-  - Images in signatures can be **bound to the existence of certain variables** (useful for optional social network icons, for example)
+- Customized with a **broad range of variables**, including **photos and images**, from Active Directory and other sources
+  - Variables are available for the **currently logged-on user, the current mailbox, and their managers**
 - Designed for **barrier-free accessibility** with custom link and image descriptions for screen readers and comparable tools
 - Applied to all **mailboxes (including shared mailboxes¹)**, specific **mailbox groups**, specific **email addresses** (including alias and secondary addresses), or specific **user or mailbox properties**, for **every mailbox across all Outlook profiles (Outlook, New Outlook¹, Outlook Web¹)**, including **automapped and additional mailboxes¹**  
 - Created with different names from the same template, **one template can be used for many mailboxes**
@@ -210,30 +208,28 @@ With Set-OutlookSignatures, signatures and out-of-office replies can be:
 - **Write protected** (Outlook for Windows signatures only)
 
 Set-OutlookSignatures can be **run by users on Windows, Linux and macOS clients, including shared devices and terminal servers - or on a central system with a service account¹**.  
-On clients, it can run as part of the logon script, as scheduled task, or on user demand via a desktop icon, start menu entry, shortcut or any other way of starting a program - **whatever your operating system and software deployment mechanism allows**.  
-Signatures and OOF messages can also be created and pushed into mailboxes centrally, **without end user or client involvement¹**.
+On clients, it can run as part of the logon script, as scheduled task, or on user demand via a desktop icon, start menu entry, shortcut or any other way of starting a program - **whatever your software deployment mechanism allows**.  
 
 **Sample templates** for signatures and OOF messages demonstrate many features and are provided as .docx and .htm files.
 
 **Simulation mode** allows content creators and admins to simulate the behavior of the software for a specific user at a specific point in time, and to inspect the resulting signature files before going live.
 
-**SimulateAndDeploy¹** allows to deploy signatures to Outlook Web¹/New Outlook¹ (when based on Outlook Web) without any client deployment or end user interaction, making it ideal for users that only log on to web services but never to a client (users with a Microsoft 365 F-license, for example).
+**SimulateAndDeploy¹** allows to deploy signatures and out-of-office replies to Outlook Web¹/New Outlook¹ (when based on Outlook Web) **without any client deployment or end user interaction**, making it ideal for users that only log on to web services but never to a client (users with a Microsoft 365 F-license, for example).
 
-The software is **designed to work in big and complex environments** (Exchange resource forest scenarios, across AD trusts, multi-level AD subdomains, many objects). It works **on premises, in hybrid and in cloud-only environments**.  
+It works **on premises, in hybrid and in cloud-only environments**. The software is **designed to work in big and complex environments**: Exchange resource forest scenarios, AD trusts, multi-level AD subdomains, cross-tenant and multitenant scenarios.  
 All **national clouds are supported**: Public (AzurePublic), US Government L4 (AzureUSGovernment), US Government L5 (AzureUSGovernment DoD), China (AzureChinaCloud operated by 21Vianet).
 
-It is **multi-client capable** by using different template paths, configuration files and script parameters.
+It is **multi-instance capable** by using different template paths, configuration files and script parameters.
 
 Set-OutlookSignatures requires **no installation on servers or clients**. You only need a standard SMB file share on a central system, and optionally Office on your clients.  
-There is also **no telemetry** or "calling home", emails are **not routed through a 3rd party data center or cloud service**, and there is **no need to change DNS records (MX, SPF) or email flow**.
+There is also **no telemetry** or "calling home", emails and directory data are **not routed through a 3rd party data center or cloud service**, and there is **no need to change DNS records (MX, SPF) or email flow**.
 
 A **documented implementation approach**, based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes, contains proven procedures and recommendations for product managers, architects, operations managers, account managers and email and client administrators.  
-The implementation approach is **suited for service providers as well as for clients**, and covers several general overview topics, administration, support, training across the whole lifecycle from counselling to tests, pilot operation and rollout up to daily business.
 
-The software core is **Free and Open-Source Software (FOSS)**. It is published under a license which is approved, among others, by the Free Software Foundation (FSF) and the Open Source Initiative (OSI), and is compatible with the General Public License (GPL) and other popular licenses. Please see `.\LICENSE.txt` for copyright and license details.
+The software core is **Free and Open-Source Software (FOSS)**. It is published under the European Union Public License, which is approved, among others, by the Free Software Foundation (FSF) and the Open Source Initiative (OSI), and is compatible with the General Public License (GPL) and other popular licenses. Please see `.\LICENSE.txt` for copyright and license details.
 
 Footnote 1 (¹): **Some features are exclusive to the Benefactor Circle add-on.**
-ExplicIT Consulting's commercial Benefactor Circle add-on enhances Set-OutlookSignatures with additional features and fee-based support, ensuring that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve. See <a href="./Benefactor%20Circle.md" target="_blank">'.\docs\Benefactor Circle'</a> for details.
+ExplicIT Consulting's commercial Benefactor Circle add-on enhances Set-OutlookSignatures with additional enterprise-grade features. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve. See <a href="Benefactor%20Circle.md" target="_blank">'.\docs\Benefactor Circle'</a> for details.
 
 
 ## Demo video
