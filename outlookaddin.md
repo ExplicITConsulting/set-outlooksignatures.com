@@ -39,7 +39,7 @@ redirect_from:
 
 
 # Overview
-With a [Benefactor Circle](Benefactor%20Circle.md) license, you also have access to the Set-OutlookSignatures add-in for Outlook.
+With a [Benefactor Circle](/benefactorcircle) license, you also have access to the Set-OutlookSignatures add-in for Outlook.
 
 It makes signatures, which have been created by Set-OutlookSignatures in client or SimulateAndDeploy mode before, available on platforms where Set-OutlookSignatures itself can not be run: Outlook for iOS and Outlook for Android.
 
@@ -129,7 +129,7 @@ If you want to create the Entra ID app manually, the required minimum settings f
 
 
 # Configuration and deployment to the web server
-With every new release of Set-OutlookSignatures, [Benefactor Circle](Benefactor%20Circle.md) members not only receive an updated Benefactor Circle license file, but also an updated Outlook add-in.
+With every new release of Set-OutlookSignatures, [Benefactor Circle](/benefactorcircle) members not only receive an updated Benefactor Circle license file, but also an updated Outlook add-in.
 
 With every new release of the Outlook add-in, you need to update your add-in deployment (sideloading M365 Centralized Deployment, M365 Integrated Apps) so that Outlook can download and use the newest code.
 

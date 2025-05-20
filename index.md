@@ -133,13 +133,13 @@ To get to know Set-OutlookSignatures, we recommend the following sequence:
 4. Get practical: Deploy your first signatures in less than an hour with the [Quick Start Guide](#quick-start-guide)!
 
 You want to know more?
-- [Requirements and usage](README%20Requirements%20and%20usage.md)
-- [Parameters](README%20Parameters.md)
-- [Frequently Asked Questions (FAQ)](README%20FAQ.md)
-- [The Outlook add-in](README%20Outlook%20add-in.md)
-- The [Changelog](CHANGELOG.md)
-- An [organizational implementation approach](Implementation%20approach.md)
-- Features available exclusively to [Benefactor Circle](Benefactor%20Circle.md) members
+- [Requirements and usage](/details)
+- [Parameters](/parameters)
+- [Frequently Asked Questions (FAQ)](/faq)
+- [The Outlook add-in](/outlookaddin)
+- The [Changelog](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md)
+- An [organizational implementation approach](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/Implementation%20approach.md)
+- Features available exclusively to [Benefactor Circle](/benefactorcircle) members
 
 The '`sample code`' folder contains additional scripts and advanced usage examples, such as deploying signatures without user or client interaction.
 
@@ -229,7 +229,7 @@ A **documented implementation approach**, based on real life experiences impleme
 The software core is **Free and Open-Source Software (FOSS)**. It is published under the European Union Public License, which is approved, among others, by the Free Software Foundation (FSF) and the Open Source Initiative (OSI), and is compatible with the General Public License (GPL) and other popular licenses. Please see `.\LICENSE.txt` for copyright and license details.
 
 Footnote 1 (¹): **Some features are exclusive to the Benefactor Circle add-on.**
-ExplicIT Consulting's commercial Benefactor Circle add-on enhances Set-OutlookSignatures with additional enterprise-grade features. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve. See <a href="Benefactor%20Circle.md" target="_blank">'.\docs\Benefactor Circle'</a> for details.
+ExplicIT Consulting's commercial Benefactor Circle add-on enhances Set-OutlookSignatures with additional enterprise-grade features. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve. See <a href="/benefactorcircle" target="_blank">'.\docs\Benefactor Circle'</a> for details.
 
 
 ## Demo video
@@ -240,7 +240,7 @@ ExplicIT Consulting's commercial Benefactor Circle add-on enhances Set-OutlookSi
 Deploy your first signatures in less than an hour!
 
 1. For a first test run, it is recommended to log on with a test user on a Windows system with Word and Outlook installed, and Outlook being configured with at least the test user's mailbox. This way, you get results fast and can experience the biggest set of features.
-   - For full Linux and macOS support, the Benefactor Circle add-on (see <a href="./Benefactor%20Circle.md" target="_blank">'.\docs\Benefactor Circle'</a> and is required and the mailboxes need to be hosted in Exchange Online.
+   - For full Linux and macOS support, the Benefactor Circle add-on (see <a href="/benefactorcircle" target="_blank">'.\docs\Benefactor Circle'</a> and is required and the mailboxes need to be hosted in Exchange Online.
 2. Download Set-OutlookSignatures and extract the archive to a local folder
    - On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'. This removes the "mark of the web", which can prevent script execution when the PowerShell execution policy is set to RemoteSigned.
 3. If you use AppLocker or a comparable solution (Defender, CrowdStrike, Ivanti, and others), you may need to add the existing digital file signature to your allow list, or define additional settings in your security software.

@@ -895,9 +895,9 @@ Alternative options for storing files:
 
 
 # How to disable the tagline in signatures?
-Set-OutlookSignatures adds a tagline to each signature deployed for mailboxes without a [Benefactor Circle](Benefactor%20Circle.md) license.
+Set-OutlookSignatures adds a tagline to each signature deployed for mailboxes without a [Benefactor Circle](/benefactorcircle) license.
 
-Signatures for mailboxes with a [Benefactor Circle](Benefactor%20Circle.md) license do not get this tagline appended.
+Signatures for mailboxes with a [Benefactor Circle](/benefactorcircle) license do not get this tagline appended.
 
 Dear companies, please do not forget:
 - Invest in the free and open-source software you depend on. Contributors are working behind the scenes to make open-source better for everyone. Give them the help and recognition they deserve.
@@ -905,7 +905,7 @@ Dear companies, please do not forget:
 
 Being free and open-source software, Set-OutlookSignatures saves your company a remarkable amount of money compared to commercial software.
 
-Buy a Benefactor Circle license to add additional enterprise-grade features: See [`Benefactor Circle`](benefactorcircle.md) or [`https://explicitonsulting.at`](https://explicitconsulting.at/open-source/set-outlooksignatures) for details about these features and their benefits for your business.
+Buy a Benefactor Circle license to add additional enterprise-grade features: See [`Benefactor Circle`](/benefactorcircle) or [`https://explicitonsulting.at`](https://explicitconsulting.at/open-source/set-outlooksignatures) for details about these features and their benefits for your business.
 
 ## Why the tagline?
 I initially created Set-OutlookSignatures to give back to the community by showing how to correctly script stuff that I have seen being done in wrong and incomplete ways over and over again:
@@ -927,11 +927,11 @@ I draw the line where companies, rather than individuals, benefit one-sidedly. T
 By the way: Companies often make wrong assumptions about free and open source software. Open source software absolutely can contain closed source code. The term "open source" does not automatically imply free usage or even free access to the code. The permission to use software for free does not imply free support.
 
 ## Not sure if Set-OutlookSignatures is the right solution for your company?
-The core of Set-OutlookSignatures is available free of charge as open-source software and can be used for as long and for as many mailboxes as your company wants.<br>All documentation is publicly available, and you can get free community support at GitHub or get first-class fee-based support, training, workshops and more from [ExplicIT Consulting](support.md).
+The core of Set-OutlookSignatures is available free of charge as open-source software and can be used for as long and for as many mailboxes as your company wants.<br>All documentation is publicly available, and you can get free community support at GitHub or get first-class fee-based support, training, workshops and more from [ExplicIT Consulting](/support).
 
-For a small annual fee per mailbox, the [Benefactor Circle add-on](benefactorcircle.md) offers additional enterprise-grade features.<br>All documentation is publicly available, and the free 14-day trial version allows companies to test all additional features at no cost.
+For a small annual fee per mailbox, the [Benefactor Circle add-on](/benefactorcircle) offers additional enterprise-grade features.<br>All documentation is publicly available, and the free 14-day trial version allows companies to test all additional features at no cost.
 
-Your company is not sure whether the add-on will pay off?<br>The chapter '[`Financial benefits of using the Benefactor Circle add-on`](benefactorcircle.md)' shows how you can do the calculation tailored to the needs of your company.<br>Should your company come to the conclusion that the add-on does not pay off, it can still use the free and open source version of Set-OutlookSignatures.
+Your company is not sure whether the add-on will pay off?<br>The chapter '[`Financial benefits of using the Benefactor Circle add-on`](/benefactorcircle)' shows how you can do the calculation tailored to the needs of your company.<br>Should your company come to the conclusion that the add-on does not pay off, it can still use the free and open source version of Set-OutlookSignatures.
 
 
 # Why is the out-of-office assistant not activated automatically?
