@@ -21,7 +21,29 @@ redirect_from:
 ## Set-OutlookSignatures
 Set-OutlookSignatures is the open-source gold standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 
-Download the free and open-source core version from <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures" target="_blank">GitHub</a>.
+The latest release of the free and open-source core version of Set-OutlookSignatures is <span class="version-text">Loading...</span>.
+
+Read the <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md" target="_blank">changelog</a>, or directly <a id="download-link" href="#" target="_blank">download <span class="version-text">Loading...</span> as ZIP file</a>.
+
+<script>
+  fetch('https://api.github.com/repos/Set-OutlookSignatures/Set-OutlookSignatures/releases/latest')
+    .then(response => response.json())
+    .then(data => {
+      const version = data.tag_name; // e.g., "v4.19.0"
+      const fileName = `Set-OutlookSignatures_${version}.zip`;
+      const downloadUrl = `https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases/download/${version}/${fileName}`;
+      
+      
+      document.querySelectorAll('.version-text').forEach(span => {
+        span.textContent = version;
+      });
+
+      document.getElementById('download-link').link.href = `https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases/download/${version}/${fileName}`;
+    })
+    .catch(error => {
+      console.error('Error fetching release info:', error);
+    });
+</script>
 
 
 ## The Benefactor Circle add-on
