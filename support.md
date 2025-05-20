@@ -17,31 +17,41 @@ image:
   alt: "Set-OutlookSignatures Benefactor Circle"
 redirect_from:
 ---
-## Free support
-Before creating a new issue on GitHub, check the documentation, previous [issues](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=) and [discussions](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=).
+<div style="min-height: 100vh;">
 
-You are welcome to share your experiences with Set-OutlookSignatures, exchange ideas with other users or suggest new features in our [discussions board](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=).
+  <h2>Free support</h2>
+  <p>
+    Before creating a new issue on GitHub, check the documentation, previous 
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" target="_blank">issues</a> 
+    and 
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=" target="_blank">discussions</a>.
+  </p>
+  <p>
+    You are welcome to share your experiences with Set-OutlookSignatures, exchange ideas with other users, or suggest new features in our 
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=" target="_blank">discussions board</a>.
+  </p>
 
+  <h2>Fee-based support</h2>
+  <p>
+    Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on as a trial or annual license: ExplicIT always provides first-class fee-based support.
+  </p>
+  <p>
+    You prefer to be guided through the setup and customization process instead of working through the documentation yourself? You are looking for customized workshops, hands-on implementation support, training, template creation assistance and other services related to centralized email signature and out-of-office reply management? Then our offer is just right for you.
+  </p>
+  <p>
+    You are not buying just any support, but our comprehensive expertise as manufacturer, consultant and implementer. For us, support means not only providing a solution to your problem, but also passing on our experience to you so that you know how and why. Our support is therefore an investment in your own knowledge and that of your employees, which pays off immediately.
+  </p>
+  <p>
+    <strong>Our all-inclusive support promise:</strong> If your support request stems from a bug in the latest version of Set-OutlookSignatures, the Benefactor Circle add-on, its documentation, or the provided components, support is free — no exceptions. For all other issues, you will receive the same top-notch support at a fair price.
+  </p>
 
-## Fee-based support
-Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on as a trial or annual license: ExplicIT always provides first-class fee-based support.
+  <p>
+    <a href="https://forms.office.com/r/CnwjH98vSs" target="_blank">
+      <button class="button is-link is-normal is-hover">
+        Order fee-based support
+      </button>
+    </a>
+  </p>
 
-You prefer to be guided through the setup and customization process instead of working through the documentation yourself? You are looking for customized workshops, hands-on implementation support, training, template creation assistance and other services related to centralized email signature and out-of-office reply management? Then our offer is just right for you.
+</div>
 
-You are not buying just any support, but our comprehensive expertise as manufacturer, consultant and implementer. For us, support means not only providing a solution to your problem, but also passing on our experience to you so that you know how and why. Our support is therefore an investment in your own knowledge and that of your employees, which pays off immediately.
-
-**Our all-inclusive support promise: If your support request stems from a bug in the latest version of Set-OutlookSignatures, the Benefactor Circle add-on, its documentation, or the provided components, support is free — no exceptions. For all other issues, you will receive the same top-notch support at a fair price.**
-
-<a href="https://forms.office.com/r/CnwjH98vSs"><button class="button is-link is-normal is-hover">Order fee-based support</button></a>
-
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
