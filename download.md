@@ -36,11 +36,11 @@ Read the <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures
 
 <h2>The Benefactor Circle add-on</h2>
 <p>
-ExplicIT's <a href="benefactorcircle.md">Benefactor Circle add-on</a> enhances the open-source version with a great set of additional enterprise-grade features.
+ExplicIT's <a href="/benefactorcircle">Benefactor Circle add-on</a> enhances the open-source version with a great set of additional enterprise-grade features.
 </p>
 
 <p>
-See the <a href="benefactorcircle.md">Benefactor Circle add-on</a> site for details on how to purchase and buy the add-on.
+See the <a href="/benefactorcircle">Benefactor Circle add-on</a> site for details on how to purchase and buy the add-on.
 </p>
 
 <p>
