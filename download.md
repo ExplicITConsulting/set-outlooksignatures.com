@@ -29,16 +29,11 @@ Read the <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures
   fetch('https://api.github.com/repos/Set-OutlookSignatures/Set-OutlookSignatures/releases/latest')
     .then(response => response.json())
     .then(data => {
-      const version = data.tag_name; // e.g., "v4.19.0"
-      const fileName = `Set-OutlookSignatures_${version}.zip`;
-      const downloadUrl = `https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases/download/${version}/${fileName}`;
-      
-      
       document.querySelectorAll('.version-text').forEach(span => {
-        span.textContent = version;
+        span.textContent = data.tag_name;
       });
 
-      document.getElementById('download-link').link.href = `https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases/download/${version}/${fileName}`;
+      document.getElementById('download-link').href = `https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases/download/${data.tag_name}/Set-OutlookSignatures_${data.tag_name}.zip`;
     })
     .catch(error => {
       console.error('Error fetching release info:', error);
