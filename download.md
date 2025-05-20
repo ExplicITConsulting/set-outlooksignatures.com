@@ -17,7 +17,7 @@ image:
   alt: "Set-OutlookSignatures Benefactor Circle"
 redirect_from:
 ---
-
+<div style="min-height: 100vh;">
 ## Set-OutlookSignatures
 Set-OutlookSignatures is the open-source gold standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 
@@ -42,18 +42,9 @@ Read the <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures
 
 
 ## The Benefactor Circle add-on
-ExplicIT's [Benefactor Circle add-on](benefactorcircle.md) enhances the open-source version with a great set of additional features.
+ExplicIT's [Benefactor Circle add-on](benefactorcircle.md) enhances the open-source version with a great set of additional enterprise-grade features.
 
 See the [Benefactor Circle add-on](benefactorcircle.md) site for details on how to purchase and buy the add-on.
 
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+After purchase, you will receive a download link for your personalized copy of the Benefactor Circle add-on.
+</div>
