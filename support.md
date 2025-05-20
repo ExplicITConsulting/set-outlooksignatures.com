@@ -46,7 +46,7 @@ redirect_from:
   </p>
 
   <p>
-    <a href="https://forms.office.com/r/CnwjH98vSs" target="_blank">
+    <a href="https://forms.cloud.microsoft/r/CnwjH98vSs" target="_blank">
       <button class="button is-link is-normal is-hover">
         Order fee-based support
       </button>
