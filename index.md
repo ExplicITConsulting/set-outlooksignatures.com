@@ -126,7 +126,7 @@ redirect_from:
 <br>
 
 
-## Feature list&nbsp;&nbsp;&nbsp;&nbsp;<a href="#feature-comparison"><img src="https://img.shields.io/badge/go%20to-Feature%20comparison-lawngreen?labelColor=black" alt="Go to Feature comparison"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
+## Features&nbsp;&nbsp;&nbsp;&nbsp;<a href="#feature-comparison"><img src="https://img.shields.io/badge/go%20to-Feature%20comparison-lawngreen?labelColor=black" alt="Go to Feature comparison"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
 With Set-OutlookSignatures, signatures and out-of-office replies can be:
 - Generated from **templates in DOCX or HTML** file format  
 - Customized with a **broad range of variables**, including **photos and images**, from Active Directory and other sources
@@ -169,7 +169,7 @@ Footnote 1 (¹): **Some features are exclusive to the Benefactor Circle add-on.*
 ExplicIT Consulting's commercial Benefactor Circle add-on enhances Set-OutlookSignatures with additional enterprise-grade features. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve. See <a href="/benefactorcircle" target="_blank">'.\docs\Benefactor Circle'</a> for details.
 
 
-## Feature comparison&nbsp;&nbsp;&nbsp;&nbsp;<a href="#feature-list"><img src="https://img.shields.io/badge/go%20to-Feature%20list-lawngreen?labelColor=black" alt="Go to Feature list"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
+## Feature comparison&nbsp;&nbsp;&nbsp;&nbsp;<a href="#features"><img src="https://img.shields.io/badge/go%20to-Features-lawngreen?labelColor=black" alt="Go to Features"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
 
 | Feature | Set&#8209;OutlookSignatures<br>with&nbsp;Benefactor&nbsp;Circle&nbsp;add-on | Market Companion&nbsp;A | Market Companion&nbsp;B | Market Companion&nbsp;C |
 | :--- | :--- | :--- | :--- | :--- |
