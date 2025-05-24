@@ -1,13 +1,13 @@
 - name: Features
   link: /
-- name: Quick Start Guide
+- name: Quick Start
   link: /#quick-start-guide
-- name: The Benefactor Circle add-on
+- name: Benefactor Circle add-on
   link: /benefactorcircle
+- name: "Demo"
+  link: /benefactorcircle/#demo
 - name: "Help"
   dropdown:
-  - name: Quick Start Guide
-    link: /#quick-start-guide
   - name: Technical details, requirements and usage
     link: /details
   - name: Parameters
@@ -18,8 +18,5 @@
     link: /faq
   - name: Support
     link: /support
-- name: "Interactive demo"
-  link: /benefactorcircle/#demo
 - name: Download
   link: /download
-
