@@ -34,13 +34,13 @@ redirect_from:
     On GitHub, only questions directly releated to Set-OutlookSignatures can be answered.
   </p>
   <p>
-    You can switch to the fast lane using [ExplicIT Consulting](https://explicitconsulting.at)'s <a href="#fee-based-support">fee-based support</a>.
+    You can switch to the fast lane using ExplicIT Consulting's <a href="#fee-based-support">fee-based support</a>.
   </p>
 
 
   <h2 id="fee-based-support">Fee-based support</h2>
   <p>
-    Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: ExplicIT always provides first-class fee-based support.
+    Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> provides first-class fee-based support.
   </p>
   <p>
     You prefer to be guided through the setup and customization process instead of working through the documentation yourself? You are looking for customized workshops, hands-on implementation support, training, template creation assistance and other services related to centralized email signature and out-of-office reply management? Then our offer is just right for you.
