@@ -1,35 +1,5 @@
-# ▼▼▼ Copy content of navigation.yml below ▼▼▼
-- name: Features
-  link: /
-- name: Quick Start
-  link: /quickstart
-- name: |
-    <span style="color: #d4af37; font-style: italic; margin-right: 0 !important; padding-right: 0 !important; right: 0 !important;">Benefactor Circle add-on</span> add-on
-  link: /benefactorcircle
-- name: "Demo"
-  link: /benefactorcircle/#demo
-- name: "Help"
-  dropdown:
-  - name: Technical details, requirements and usage
-    link: /details
-  - name: Parameters
-    link: /parameters
-  - name: The Outlook add-in
-    link: /outlookaddin
-  - name: Frequently asked questions (FAQ)
-    link: /faq
-  - name: Support
-    link: /support
-- name: Download
-  link: /download
-
-
-
-# ▲▲▲ Copy content of navigation.yml above ▲▲▲
-
-
 # Individual footer menu items
 - name: "Contact"
   link: /contact
-- name: "Legal"
+- name: "Legal information"
   link: /legal/

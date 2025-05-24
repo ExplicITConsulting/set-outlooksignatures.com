@@ -2,8 +2,7 @@
   link: /
 - name: Quick Start
   link: /quickstart
-- name: |
-    <span style="color: #d4af37; font-style: italic; margin-right: 0 !important; padding-right: 0 !important; right: 0 !important;">Benefactor Circle add-on</span> add-on
+- name: The Benefactor Circle add-on
   link: /benefactorcircle
 - name: "Demo"
   link: /benefactorcircle/#demo
