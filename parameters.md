@@ -18,48 +18,48 @@ image:
 redirect_from:
 ---
 
-# Parameters<!-- omit in toc -->
-- [SignatureTemplatePath](#signaturetemplatepath)
-- [SignatureIniFile](#signatureinifile)
-- [ReplacementVariableConfigFile](#replacementvariableconfigfile)
-- [GraphClientID](#graphclientid)
-- [GraphConfigFile](#graphconfigfile)
-- [TrustsToCheckForGroups](#truststocheckforgroups)
-- [IncludeMailboxForestDomainLocalGroups](#includemailboxforestdomainlocalgroups)
-- [DeleteUserCreatedSignatures](#deleteusercreatedsignatures)
-- [DeleteScriptCreatedSignaturesWithoutTemplate](#deletescriptcreatedsignatureswithouttemplate)
-- [SetCurrentUserOutlookWebSignature](#setcurrentuseroutlookwebsignature)
-- [SetCurrentUserOOFMessage](#setcurrentuseroofmessage)
-- [OOFTemplatePath](#ooftemplatepath)
-- [OOFIniFile](#oofinifile)
-- [AdditionalSignaturePath](#additionalsignaturepath)
-- [UseHtmTemplates](#usehtmtemplates)
-- [SimulateUser](#simulateuser)
-- [SimulateMailboxes](#simulatemailboxes)
-- [SimulateTime](#simulatetime)
-- [SimulateAndDeploy](#simulateanddeploy)
-- [SimulateAndDeployGraphCredentialFile](#simulateanddeploygraphcredentialfile)
-- [GraphOnly](#graphonly)
-- [CloudEnvironment](#cloudenvironment)
-- [CreateRtfSignatures](#creatertfsignatures)
-- [CreateTxtSignatures](#createtxtsignatures)
-- [MoveCSSInline](#movecssinline)
-- [EmbedImagesInHtml](#embedimagesinhtml)
-- [EmbedImagesInHtmlAdditionalSignaturePath](#embedimagesinhtmladditionalsignaturepath)
-- [DocxHighResImageConversion](#docxhighresimageconversion)
-- [SignaturesForAutomappedAndAdditionalMailboxes](#signaturesforautomappedandadditionalmailboxes)
-- [DisableRoamingSignatures](#disableroamingsignatures)
-- [MirrorCloudSignatures](#mirrorcloudsignatures)
-- [MailboxSpecificSignatureNames](#mailboxspecificsignaturenames)
-- [WordProcessPriority](#wordprocesspriority)
-- [ScriptProcessPriority](#scriptprocesspriority)
-- [SignatureCollectionInDrafts](#signaturecollectionindrafts)
-- [BenefactorCircleID](#benefactorcircleid)
-- [BenefactorCircleLicenseFile](#benefactorcirclelicensefile)
-- [VirtualMailboxConfigFile](#virtualmailboxconfigfile)
+## Parameters<!-- omit in toc -->
+- [1. SignatureTemplatePath](#1-signaturetemplatepath)
+- [2. SignatureIniFile](#2-signatureinifile)
+- [3. ReplacementVariableConfigFile](#3-replacementvariableconfigfile)
+- [4. GraphClientID](#4-graphclientid)
+- [5. GraphConfigFile](#5-graphconfigfile)
+- [6. TrustsToCheckForGroups](#6-truststocheckforgroups)
+- [7. IncludeMailboxForestDomainLocalGroups](#7-includemailboxforestdomainlocalgroups)
+- [8. DeleteUserCreatedSignatures](#8-deleteusercreatedsignatures)
+- [9. DeleteScriptCreatedSignaturesWithoutTemplate](#9-deletescriptcreatedsignatureswithouttemplate)
+- [10. SetCurrentUserOutlookWebSignature](#10-setcurrentuseroutlookwebsignature)
+- [11. SetCurrentUserOOFMessage](#11-setcurrentuseroofmessage)
+- [12. OOFTemplatePath](#12-ooftemplatepath)
+- [13. OOFIniFile](#13-oofinifile)
+- [14. AdditionalSignaturePath](#14-additionalsignaturepath)
+- [15. UseHtmTemplates](#15-usehtmtemplates)
+- [16. SimulateUser](#16-simulateuser)
+- [17. SimulateMailboxes](#17-simulatemailboxes)
+- [18. SimulateTime](#18-simulatetime)
+- [19. SimulateAndDeploy](#19-simulateanddeploy)
+- [20. SimulateAndDeployGraphCredentialFile](#20-simulateanddeploygraphcredentialfile)
+- [21. GraphOnly](#21-graphonly)
+- [22. CloudEnvironment](#22-cloudenvironment)
+- [23. CreateRtfSignatures](#23-creatertfsignatures)
+- [24. CreateTxtSignatures](#24-createtxtsignatures)
+- [25. MoveCSSInline](#25-movecssinline)
+- [26. EmbedImagesInHtml](#26-embedimagesinhtml)
+- [27. EmbedImagesInHtmlAdditionalSignaturePath](#27-embedimagesinhtmladditionalsignaturepath)
+- [28. DocxHighResImageConversion](#28-docxhighresimageconversion)
+- [29. SignaturesForAutomappedAndAdditionalMailboxes](#29-signaturesforautomappedandadditionalmailboxes)
+- [30. DisableRoamingSignatures](#30-disableroamingsignatures)
+- [31. MirrorCloudSignatures](#31-mirrorcloudsignatures)
+- [32. MailboxSpecificSignatureNames](#32-mailboxspecificsignaturenames)
+- [33. WordProcessPriority](#33-wordprocesspriority)
+- [34. ScriptProcessPriority](#34-scriptprocesspriority)
+- [35. SignatureCollectionInDrafts](#35-signaturecollectionindrafts)
+- [36. BenefactorCircleID](#36-benefactorcircleid)
+- [37. BenefactorCircleLicenseFile](#37-benefactorcirclelicensefile)
+- [38. VirtualMailboxConfigFile](#38-virtualmailboxconfigfile)
 
 
-# SignatureTemplatePath
+## 1. SignatureTemplatePath
 The parameter SignatureTemplatePath tells the software where signature template files are stored.
 
 Local and remote paths are supported. Local paths can be absolute (`C:\Signature templates`) or relative to the software path (`.\templates\Signatures`).
@@ -78,7 +78,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignatureTemplatePath 
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SignatureTemplatePath '.\sample templates\Signatures DOCX'"`
 
 
-# SignatureIniFile
+## 2. SignatureIniFile
 Template tags are placed in an INI file.
 
 The file must be UTF-8 encoded (without BOM).
@@ -101,7 +101,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignatureIniFile '.\te
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SignatureIniFile '.\templates\Signatures DOCX\_Signatures.ini'"`
 
 
-# ReplacementVariableConfigFile
+## 3. ReplacementVariableConfigFile
 The parameter ReplacementVariableConfigFile tells the software where the file defining replacement variables is located.
 
 The file must be UTF-8 encoded (without BOM).
@@ -122,7 +122,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -ReplacementVariableCon
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -ReplacementVariableConfigFile '.\config\default replacement variables.ps1'"`
 
 
-# GraphClientID
+## 4. GraphClientID
 ID of the Entra ID app to use for Graph authentication.
 
 GraphClientID can be defined in two places: As parameter or in a custom '`GraphConfigFile`'.
@@ -154,7 +154,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 GraphClientID '3dc5f201
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 GraphClientID '3dc5f201-6c36-4b94-98ca-c66156a686a8'"`
 
 
-# GraphConfigFile
+## 5. GraphConfigFile
 The parameter GraphConfigFile tells the software where the file defining Graph connection and configuration options is located.
 
 The file must be UTF-8 encoded (without BOM).
@@ -177,7 +177,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -GraphConfigFile '.\con
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 GraphConfigFile '.\config\default graph config.ps1'"`
 
 
-# TrustsToCheckForGroups
+## 6. TrustsToCheckForGroups
 List of domains to check for group membership.
 
 If the first entry in the list is '*', all outgoing and bidirectional trusts in the current user's forest are considered.
@@ -196,7 +196,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -TrustsToCheckForGroups
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -TrustsToCheckForGroups 'corp.example.com', 'corp.example.net'"`
 
 
-# IncludeMailboxForestDomainLocalGroups
+## 7. IncludeMailboxForestDomainLocalGroups
 Shall the software consider group membership in domain local groups in the mailbox's AD forest?
 
 Per default, membership in domain local groups in the mailbox's forest is not considered as the required LDAP queries are slow and domain local groups are usually not used in Exchange.
@@ -215,7 +215,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -IncludeMailboxForestDomainLocalGroups false"`
 
 
-# DeleteUserCreatedSignatures 
+## 8. DeleteUserCreatedSignatures 
 Shall the software delete signatures which were created by the user itself?
 
 This feature requires a Benefactor Circle license.
@@ -230,7 +230,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -DeleteUserCreatedSignatures false"`
 
 
-# DeleteScriptCreatedSignaturesWithoutTemplate
+## 9. DeleteScriptCreatedSignaturesWithoutTemplate
 Shall the software delete signatures which were created by the software before but are no longer available as template?
 
 This feature requires a Benefactor Circle license.
@@ -245,7 +245,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -DeleteScriptCreatedSignaturesWithoutTemplate false"`
 
 
-# SetCurrentUserOutlookWebSignature
+## 10. SetCurrentUserOutlookWebSignature
 Shall the software set the Outlook Web signature of the currently logged-in user?
 
 If the parameter is set to `$true` and the current user's mailbox is not configured in any Outlook profile, the current user's mailbox is considered nevertheless. If no Outlook mailboxes are configured at all, additional mailbox configured in Outlook Web are used. This way, the software can be used in environments where only Outlook Web is used. 
@@ -262,7 +262,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SetCurrentUserOutlookWebSignature true"`
 
 
-# SetCurrentUserOOFMessage
+## 11. SetCurrentUserOOFMessage
 Shall the software set the out-of-office (OOF) message of the currently logged-in user?
 
 If the parameter is set to `$true` and the current user's mailbox is not configured in any Outlook profile, the current user's mailbox is considered nevertheless. If no Outlook mailboxes are configured at all, additional mailbox configured in Outlook Web are used. This way, the software can be used in environments where only Outlook Web is used. 
@@ -279,7 +279,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SetCurrentUserOOFMessage true"`
 
 
-# OOFTemplatePath
+## 12. OOFTemplatePath
 Path to centrally managed out-of-office templates.
 
 Local and remote paths are supported.
@@ -302,7 +302,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -OOFTemplatePath '.\tem
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -OOFTemplatePath '.\templates\Out-of-Office DOCX'"`
 
 
-# OOFIniFile
+## 13. OOFIniFile
 Template tags are placed in an INI file.
 
 The file must be UTF-8 encoded (without BOM).
@@ -325,7 +325,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -OOFIniFile '.\template
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -OOFIniFile '.\templates\Out-of-Office DOCX\_OOF.ini'"`
 
 
-# AdditionalSignaturePath
+## 14. AdditionalSignaturePath
 An additional path that the signatures shall be copied to.  
 Ideally, this path is available on all devices of the user, for example via Microsoft OneDrive or Nextcloud.
 
@@ -357,7 +357,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -AdditionalSignaturePat
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -AdditionalSignaturePath ""$(try { $([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures')) } catch {})"""`
 
 
-# UseHtmTemplates
+## 15. UseHtmTemplates
 With this parameter, the software searches for templates with the extension .htm instead of .docx.
 
 Templates in .htm format must be UTF-8 encoded (without BOM) and the charset must be set to UTF-8 (`<META content="text/html; charset=utf-8">`).
@@ -378,7 +378,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -UseHtmTemplates false"`
 
 
-# SimulateUser
+## 16. SimulateUser
 SimulateUser is a mandatory parameter for simulation mode. This value replaces the currently logged-in user.
 
 Use a logon name in the format 'Domain\User' or a Universal Principal Name (UPN, looks like an email address, but is not necessarily one).
@@ -391,7 +391,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateUser ""user.a@example.com"""`
 
 
-# SimulateMailboxes
+## 17. SimulateMailboxes
 SimulateMailboxes is optional for simulation mode, although highly recommended.
 
 It is a comma separated list of email addresses replacing the list of mailboxes otherwise gathered from the simulated user's Outlook Web.
@@ -402,7 +402,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SimulateMailboxes 'use
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateMailboxes 'user.a@example.com', 'user.b@example.net'"`
 
 
-# SimulateTime
+## 18. SimulateTime
 SimulateTime is optional for simulation mode.
 
 Use a certain timestamp for simulation mode. This allows you to simulate time-based templates.
@@ -417,7 +417,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateUser ""202312311859"""`
 
 
-# SimulateAndDeploy
+## 19. SimulateAndDeploy
 Not only simulate, but also deploy signatures to Outlook Web/New Outlook (when based on New Outlook).
 
 Makes only sense in combination with '.\sample code\SimulateAndDeploy.ps1', do not use this parameter for other scenarios
@@ -434,7 +434,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateAndDeploy false"`
 
 
-# SimulateAndDeployGraphCredentialFile
+## 20. SimulateAndDeployGraphCredentialFile
 Path to file containing Graph credential which should be used as alternative to other token acquisition methods.
 
 Makes only sense in combination with `.\sample code\SimulateAndDeploy.ps1`, do not use this parameter for other scenarios.
@@ -444,7 +444,7 @@ See `.\sample code\SimulateAndDeploy.ps1` for an example how to create and use t
 Default value: $null
 
 
-# GraphOnly
+## 21. GraphOnly
 Try to connect to Microsoft Graph only, ignoring any local Active Directory.
 
 The default behavior is to try Active Directory first and fall back to Graph. On Linux and macOS, only Graph is supported.
@@ -459,7 +459,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -GraphOnly false"`
 
 
-# CloudEnvironment
+## 22. CloudEnvironment
 The cloud environment to connect to.
 
 Allowed values:
@@ -474,7 +474,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -CloudEnvironment "Publ
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -CloudEnvironment ""Public"""`  
 
 
-# CreateRtfSignatures
+## 23. CreateRtfSignatures
 Should signatures be created in RTF format?
 
 Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
@@ -487,7 +487,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -CreateRtfSignatures false"`
 
 
-# CreateTxtSignatures
+## 24. CreateTxtSignatures
 Should signatures be created in TXT format?
 
 Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
@@ -500,7 +500,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -CreateTxtSignatures true"`
 
 
-# MoveCSSInline
+## 25. MoveCSSInline
 Move CSS to inline style attributes, for maximum email client compatibility.
 
 This parameter is enabled per default, as a workaround to Microsoft's problem with formatting in Outlook Web (M365 roaming signatures and font sizes, especially).
@@ -515,7 +515,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -MoveCSSInline true"`
 
 
-# EmbedImagesInHtml
+## 26. EmbedImagesInHtml
 Should images be embedded into HTML files?
 
 When using HTML templates: Only images in the first subfolder below the template file matching the Windows Connected Files naming convention (https://docs.microsoft.com/en-us/windows/win32/shell/manage#connected-files) are supported. Only use relative paths for the src attribute in img tags. All other paths are considered external and are not embedded.
@@ -536,7 +536,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtml false"`
 
 
-# EmbedImagesInHtmlAdditionalSignaturePath
+## 27. EmbedImagesInHtmlAdditionalSignaturePath
 Some feature as 'EmbedImagesInHtml' parameter, but only valid for the path defined in AdditionalSignaturesPath when not in simulation mode.
 
 Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
@@ -549,7 +549,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtmlAdditionalSignaturePath true"`
 
 
-# DocxHighResImageConversion
+## 28. DocxHighResImageConversion
 Enables or disables high resolution images in HTML signatures.
 
 When enabled, this parameter uses a workaround to overcome a Word limitation that results in low resolution images when converting to HTML. The price for high resolution images in HTML signatures are more time needed for document conversion and signature files requiring more storage space.
@@ -570,7 +570,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -DocxHighResImageConversion true"`
 
 
-# SignaturesForAutomappedAndAdditionalMailboxes
+## 29. SignaturesForAutomappedAndAdditionalMailboxes
 Deploy signatures for automapped mailboxes and additional mailboxes.
 
 Signatures can be deployed for these mailboxes, but not set as default signature due to technical restrictions in Outlook.
@@ -587,7 +587,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SignaturesForAutomappedAndAdditionalMailboxes true"`
 
 
-# DisableRoamingSignatures
+## 30. DisableRoamingSignatures
 Disable signature roaming in Classic Outlook for Windows. Has no effect on signature roaming via the MirrorCloudSignatures parameter.
 
 A value representing true disables roaming signatures, a value representing false enables roaming signatures, any other value leaves the setting as-is.
@@ -608,7 +608,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -DisableRoamingSignatures true"`
 
 
-# MirrorCloudSignatures
+## 31. MirrorCloudSignatures
 Should local signatures be mirrored with signatures in Exchange Online?
 
 Possible for Exchange Online mailboxes:
@@ -666,7 +666,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -MirrorCloudSignatures false"`
 
 
-# MailboxSpecificSignatureNames
+## 32. MailboxSpecificSignatureNames
 Should signature names be mailbox specific by adding the email address?
 
 For compatibility with Outlook storing signatures in the file system, Set-OutlookSignatures converts templates to signatures according to the following logic:
@@ -691,7 +691,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -MailboxSpecificSignatureNames false"`
 
 
-# WordProcessPriority
+## 33. WordProcessPriority
 Define the Word process priority. With lower values, Set-OutlookSignatures runs longer but minimizes possible performance impact
 
 Allowed values (ascending priority): Idle, 64, BelowNormal, 16384, Normal, 32, AboveNormal, 32768, High, 128, RealTime, 256
@@ -704,7 +704,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -WordProcessPriority 32"`
 
 
-# ScriptProcessPriority
+## 34. ScriptProcessPriority
 Define the script process priority. With lower values, Set-OutlookSignatures runs longer but minimizes possible performance impact
 
 Allowed values (ascending priority): Idle, 64, BelowNormal, 16384, Normal, 32, AboveNormal, 32768, High, 128, RealTime, 256
@@ -717,7 +717,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -ScriptProcessPriority 32"`
 
 
-# SignatureCollectionInDrafts
+## 35. SignatureCollectionInDrafts
 When enabled, this creates and updates an email message with the subject 'My signatures, powered by Set-OutlookSignatures Benefactor Circle' in the drafts folder of the current user, containing all available signatures in HTML and plain text for easy access in mail clients that do not have a signatures API.
 
 This feature requires a Benefactor Circle license.
@@ -732,7 +732,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SignatureCollectionInDrafts false"`
 
 
-# BenefactorCircleID
+## 36. BenefactorCircleID
 The Benefactor Circle member ID matching your license file, which unlocks exclusive features.
 
 Default value: ''
@@ -741,7 +741,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -BenefactorCircleID "00
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -BenefactorCircleID ""00000000-0000-0000-0000-000000000000"""`  
 
 
-# BenefactorCircleLicenseFile
+## 37. BenefactorCircleLicenseFile
 The Benefactor Circle license file matching your Benefactor Circle ID, which unlocks exclusive features.
 
 Default value: ''
@@ -760,7 +760,7 @@ Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -BenefactorCircleLicens
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -BenefactorCircleLicenseFile "".\license.dll"""`  
 
 
-# VirtualMailboxConfigFile
+## 38. VirtualMailboxConfigFile
 Path a PowerShell file containing the logic to define virtual mailboxes. You can also use the VirtualMailboxConfigFile to dynamically define signature INI file and out-of-office INI entries.
 
 Virtual mailboxes are mailboxes that are not available in Outlook but are treated by Set-OutlookSignatures as if they were.
