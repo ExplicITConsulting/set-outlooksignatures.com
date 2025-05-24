@@ -4,7 +4,7 @@
 - name: Quick Start
   link: /quickstart
 - name: |
-    The <i>Benefactor Circle</i> add-on
+    <span style="color: #d4af37; font-style: italic; margin-right: 0 !important; padding-right: 0 !important; right: 0 !important;">Benefactor Circle add-on</span> add-on
   link: /benefactorcircle
 - name: "Demo"
   link: /benefactorcircle/#demo
@@ -22,6 +22,7 @@
     link: /support
 - name: Download
   link: /download
+
 
 
 # ▲▲▲ Copy content of navigation.yml above ▲▲▲
