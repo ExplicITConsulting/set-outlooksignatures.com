@@ -19,7 +19,7 @@ redirect_from:
 ---
 <div style="min-height: 100vh;">
 
-  <h2>Free support</h2>
+  <h2 id="free-support">Free support</h2>
   <p>
     Before creating a new issue on GitHub, check the documentation, previous 
     <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" target="_blank">issues</a> 
@@ -30,10 +30,17 @@ redirect_from:
     You are welcome to share your experiences with Set-OutlookSignatures, exchange ideas with other users, or suggest new features in our 
     <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=" target="_blank">discussions board</a>.
   </p>
-
-  <h2>Fee-based support</h2>
   <p>
-    Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on as a trial or annual license: ExplicIT always provides first-class fee-based support.
+    On GitHub, only questions directly releated to Set-OutlookSignatures can be answered.
+  </p>
+  <p>
+    You can switch to the fast lane using [ExplicIT Consulting](https://explicitconsulting.at)'s <a href="#fee-based-support">fee-based support</a>.
+  </p>
+
+
+  <h2 id="fee-based-support">Fee-based support</h2>
+  <p>
+    Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: ExplicIT always provides first-class fee-based support.
   </p>
   <p>
     You prefer to be guided through the setup and customization process instead of working through the documentation yourself? You are looking for customized workshops, hands-on implementation support, training, template creation assistance and other services related to centralized email signature and out-of-office reply management? Then our offer is just right for you.
