@@ -1,7 +1,14 @@
+# ▼▼▼ Copy content of navigation.yml below ▼▼▼
+- name: Features
+  link: /
+- name: Quick Start Guide
+  link: /#quick-start-guide
 - name: The Benefactor Circle add-on
   link: /benefactorcircle
-- name: "More information"
+- name: "Help"
   dropdown:
+  - name: Quick Start Guide
+    link: /#quick-start-guide
   - name: Technical details, requirements and usage
     link: /details
   - name: Parameters
@@ -10,10 +17,16 @@
     link: /outlookaddin
   - name: Frequently asked questions (FAQ)
     link: /faq
+  - name: Support
+    link: /support
+- name: "Interactive demo"
+  link: /benefactorcircle/#demo
 - name: Download
   link: /download
-- name: Support
-  link: /support
+# ▲▲▲ Copy content of navigation.yml above ▲▲▲
+
+
+# Individual footer menu items
 - name: "Contact"
   link: /contact
 - name: "Legal"
