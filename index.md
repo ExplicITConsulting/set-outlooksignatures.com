@@ -128,24 +128,23 @@ redirect_from:
 
 ## Features&nbsp;&nbsp;&nbsp;&nbsp;<a href="#feature-comparison"><img src="https://img.shields.io/badge/go%20to-Feature%20comparison-lawngreen?labelColor=black" alt="Go to Feature comparison"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
 With Set-OutlookSignatures, signatures and out-of-office replies can be:
-- Generated from **templates in DOCX or HTML** file format  
-- Customized with a **broad range of variables**, including **photos and images**, from Active Directory and other sources
-  - Variables are available for the **currently logged-on user, the current mailbox, and their managers**
-- Designed for **barrier-free accessibility** with custom link and image descriptions for screen readers and comparable tools
-- Applied to all **mailboxes (including shared mailboxes¹)**, specific **mailbox groups**, specific **email addresses** (including alias and secondary addresses), or specific **user or mailbox properties**, for **every mailbox across all Outlook profiles (Outlook, New Outlook¹, Outlook Web¹)**, including **automapped and additional mailboxes¹**  
-- Created with different names from the same template, **one template can be used for many mailboxes**
-- Assigned **time ranges** within which they are valid¹  
-- Set as **default signature** for new emails, or for replies and forwards (signatures only)  
-- Set as **default OOF message** for internal or external recipients (OOF messages only)  
-- Set in **Outlook Web¹** for the currently logged-in user, including mirroring signatures to the cloud as **roaming signatures¹** (Linux/macOS/Windows, Classic and New Outlook¹)  
-- Centrally managed only¹, or **exist along user-created signatures** (signatures only)  
-- Automatically added to new emails, reply emails and appointments with the **Outlook add-in**¹  
+- Generated from **templates in DOCX or HTML** file format.
+- Customized with a **broad range of variables**, including **photos and images**, from Entra ID, Active Directory and other sources.
+- Variables are available for the **currently logged-on user, the current mailbox, and their managers**.
+- Designed for **barrier-free accessibility** with custom link and image descriptions for screen readers and comparable tools.
+- Applied to all **mailboxes (including shared mailboxes¹)**, specific **mailbox groups**, specific **email addresses** (including alias and secondary addresses), or specific **user or mailbox properties**, for **every mailbox across all Outlook profiles (Outlook, New Outlook¹, Outlook Web¹)**, including **automapped and additional mailboxes¹**.
+- Created with different names from the same template, **one template can be used for many mailboxes**.
+- Assigned **time ranges** within which they are valid¹.
+- Set as **default signature** for new emails, or for replies and forwards (signatures only).
+- Set as **default OOF message** for internal or external recipients (OOF messages only).
+- Set in **Outlook Web¹** for the currently logged-in user, including mirroring signatures to the cloud as **roaming signatures¹** (Linux/macOS/Windows, Classic and New Outlook¹).
+- Signature can be centrally managed only¹, or **exist along user-created signatures**.
+- Automatically added to new emails, reply emails and appointments with the **Outlook add-in**¹.
 - Copied to an **additional path¹** for easy access to signatures on mobile devices or for use with email clients and apps besides Outlook: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others.
-- Create an **email draft containing all available signatures** in HTML and plain text for easy access in mail clients that do not have a signatures API
-- **Write protected** (Outlook for Windows signatures only)
+- Create an **email draft containing all available signatures** in HTML and plain text for easy access in mail clients that do not have a signatures API.
+- **Write protected** (Outlook for Windows signatures only).
 
-Set-OutlookSignatures can be **run by users on Windows, Linux and macOS clients, including shared devices and terminal servers - or on a central system with a service account¹**.  
-On clients, it can run as part of the logon script, as scheduled task, or on user demand via a desktop icon, start menu entry, shortcut or any other way of starting a program - **whatever your software deployment mechanism allows**.  
+Set-OutlookSignatures can be **run by users on Windows, Linux and macOS clients, including shared devices and terminal servers - or on a central system with a service account¹**.<br>On clients, it can run as part of the logon script, as scheduled task, or on user demand via a desktop icon, start menu entry, shortcut or any other way of starting a program - **whatever your software deployment mechanism allows**.
 
 **Sample templates** for signatures and OOF messages demonstrate many features and are provided as .docx and .htm files.
 
@@ -158,15 +157,15 @@ All **national clouds are supported**: Public (AzurePublic), US Government L4 (A
 
 It is **multi-instance capable** by using different template paths, configuration files and script parameters.
 
-Set-OutlookSignatures requires **no installation on servers or clients**. You only need a standard SMB file share on a central system, and optionally Office on your clients.  
-There is also **no telemetry** or "calling home", emails and directory data are **not routed through a 3rd party data center or cloud service**, and there is **no need to change DNS records (MX, SPF) or email flow**.
+Set-OutlookSignatures requires **no installation on servers or clients**. You only need a standard SMB file share on a central system, and optionally Office on your clients.
 
-A **documented implementation approach**, based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes, contains proven procedures and recommendations for product managers, architects, operations managers, account managers and email and client administrators.  
+There is also **no telemetry** and no "calling home". Emails and directory data are **not routed through a 3rd party data center or cloud service**, and there is **no need to change DNS records (MX, SPF) or email flow**.
+
+A **documented implementation approach**, based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes, contains proven procedures and recommendations for product managers, architects, operations managers, account managers and email and client administrators.
 
 The software core is **Free and Open-Source Software (FOSS)**. It is published under the European Union Public License, which is approved, among others, by the Free Software Foundation (FSF) and the Open Source Initiative (OSI), and is compatible with the General Public License (GPL) and other popular licenses. Please see `.\LICENSE.txt` for copyright and license details.
 
-Footnote 1 (¹): **Some features are exclusive to the Benefactor Circle add-on.**
-ExplicIT Consulting's commercial Benefactor Circle add-on enhances Set-OutlookSignatures with additional enterprise-grade features. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve. See <a href="/benefactorcircle" target="_blank">'.\docs\Benefactor Circle'</a> for details.
+Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle">Benefactor Circle add-on</a>.** ExplicIT Consulting's commercial Benefactor Circle add-on enhances Set-OutlookSignatures with additional enterprise-grade features. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve.
 
 
 ## Feature comparison&nbsp;&nbsp;&nbsp;&nbsp;<a href="#features"><img src="https://img.shields.io/badge/go%20to-Features-lawngreen?labelColor=black" alt="Go to Features"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
