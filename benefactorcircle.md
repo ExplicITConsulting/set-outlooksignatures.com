@@ -101,7 +101,7 @@ There are three relevant questions to calculate the financial benefits:
 - What is the added value of using email as an additional marketing channel?
 - Does the new software cost less than the effort we want to save users?
  
-While the first two are difficult to calculate and very individual, the last question is easier to answer. Let's assume that an average employee costs 50,000 € per year from the employer's point of view (including all taxes, social security, etc.) for 1,800 hours of work. This gives costs of 0.47 € for each minute of employee work.
+While the first two are difficult to calculate and very individual, the last question is easier to answer. Let's assume that an average employee costs 60,000&nbsp;€ per year from the employer's point of view (including all taxes, social security, etc.) for 1,800 hours of work. This gives costs of 0.55&nbsp;€ for each minute of employee work.
 
 Other parameters we need are:
 - How many times a year do parameters relevant to signatures change (corporate design, job title, logos, marketing banners, etc.)?
@@ -111,23 +111,23 @@ Other parameters we need are:
  
 Formula: `CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year`
 
-Let's assume 2 changes per year, 3 minutes for making the change (including reading the instructions) per signature, 2 signatures, 1 client. This results in 5.64 € per user and year (`0.47 * 2 * 3 * 2 * 1`).
+Let's assume 2 changes per year, 3 minutes for making the change (including reading the instructions) per signature, 2 signatures, 1 client: `0.55 * 2 * 3 * 2 * 1`
  
-Per user and year, the costs are now 5.64 € in manual effort compared to 2.50 € for a centrally managed solution with Set-OutlookSignatures.
+Per user and year, the costs are now 6.60&nbsp;€ in manual effort compared to 3.00&nbsp;€ for a centrally managed solution with Set-OutlookSignatures.
 
-This calculation does not even take into account
-- the manual effort for shared mailboxes,
-- the manual effort for out-of-office replies,
-- the loss in reputation because of incorrect data entered manually,
-- the damage to the external image of the brand due to non-compliance with CI/CD guidelines,
-- the cost of non-compliance with regulations,
-- and the added value of an additional marketing channel.
+This calculation does not even take into account the following:
+- Manual effort required for signature management in shared mailboxes
+- Manual effort required for management of out-of-office replies
+- Loss in reputation because of outdated or incorrect data entered manually
+- Damage to the image of the brand due to non-compliance with CI/CD guidelines
+- Cost of non-compliance with regulations
+- Added value of an additional marketing channel
 
 Set-OutlookSignatures pays for itself immediately and actually helps you earn more money.
 
 ## Buying, extending and changing licenses
 ### Price and general information
-The price currently is **2.50 € net per mailbox and year**, which is **less than 0.21 € net per mailbox and month**.
+The price currently is **3.00 € net per mailbox and year**, which is **0.25 € net per mailbox and month**.
 
 We keep license costs as fair as possible. Fair means:
 - Small companies always just pay the same low price as big enterprises.  
@@ -199,20 +199,10 @@ Shifting licenses between license groups is possible once per license period.
 If more license shifts are required, additional licenses have to be acquired temporarily, the total number of licenses can then be reduced when the new license period begins.
 
 ### Increasing the number of licensed mailboxes
-When adding licenses during a license period, you only pay for the new mailboxes and only for the remaining months in the running license period. The license price for the new mailboxes is the list price at the time ordering the additional mailboxes.
+When adding licenses mid-term, only additional licenses are billed, for the remaining period rounded up to full months.
 
-The new payment does not extend the existing license period, but it increases the number of licensed mailboxes in it.
+The price for new licenses is the list price at the time of ordering. The payment does not extend the license period but increases the number of licensed mailboxes within it.
 
-An example:
-- After a trial with 20 mailboxes, you start a pilot with 75 mailboxes in mid of April 2023. The license is valid until mid of April 2024, with the following cost:
-    max(210; (75 * 2.50)) = 210.00 € net
-- As the pilot is a success, the number of licensed mailboxes is raised to 7,500 in July 2023.
-  - The license period does not change, the license is still valid from mid of April 2023 to mid of April 2024, of course with the higher number of mailboxes.
-- The added licenses result in the following costs:
-  - Year 1 total cost of 15,678.75 €, consisting of
-    - Year 1 cost for 75 mailboxes for 12 months: max(210; (75 * 2.50)) = 210.00 € net
-    - Year 1 additional mailboxes for 10 months (July 2023 to mid of April 2024): max(210; ((7,500 - 75) * 2.50 / 12 * 10) = 15,468.75 € net
-  - As long as the price is not changing, the consecutive years will cost: max(210; (7,500 * 2.50)) = 18,750.00 € net
 
 ## How license groups work
 Each Benefactor Circle license is bound to one or more Active Directory or Entra ID groups, called a license group. For maximum data protection and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.
