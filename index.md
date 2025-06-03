@@ -202,7 +202,7 @@ Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle
 | Outlook add-in | 🟡 No on-prem mailboxes on mobile devices | 🟡 Not for appointments | 🟡 Not for appointments | 🟢 |
 | Support pricing model | 🟢 Charged per support hour | 🔴 Charged if used or not | 🔴 Charged if used or not | 🔴 Charged if used or not |
 | Software escrow | 🟢 To the free and open-source Set&#8209;OutlookSignatures project | 🔴 | 🔴 | 🔴 |
-| License cost for 100 mailboxes, 1 year    | 🟢 300€ | 🔴 ca. 1,600&nbsp;€ | 🟡 ca. 1,300&nbsp;€ | 🔴 ca. 1,600&nbsp;€ |
+| License cost for 100 mailboxes, 1 year    | 🟢 300&nbsp;€ | 🔴 ca. 1,600&nbsp;€ | 🟡 ca. 1,300&nbsp;€ | 🔴 ca. 1,600&nbsp;€ |
 | License cost for 250 mailboxes, 1 year    | 🟢 750&nbsp;€ | 🔴 ca. 4,000&nbsp;€ | 🟡 ca. 2,700&nbsp;€ | 🔴 ca. 3,600&nbsp;€ |
 | License cost for 500 mailboxes, 1 year    | 🟢 1,500&nbsp;€ | 🔴 ca. 8,000&nbsp;€ | 🟡 ca. 4,400&nbsp;€ | 🟡 ca. 6,200&nbsp;€ |
 | License cost for 1,000 mailboxes, 1 year  | 🟢 3,000&nbsp;€ | 🔴 ca. 15,700&nbsp;€ | 🟡 ca. 8,700&nbsp;€ | 🟡 ca. 10,500&nbsp;€ |
