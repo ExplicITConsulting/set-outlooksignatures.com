@@ -24,18 +24,18 @@ redirect_from:
   </div>
   <div class="column">
     <p>Set-OutlookSignatures is the open-source gold standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.</p>
-    <p>ExplicIT's Benefactor Circle add-on enhances the open-source version with a great set of additional enterprise features.</p>
+    <p><b>ExplicIT's Benefactor Circle add-on enhances the open-source version with a great set of additional enterprise features.</b></p>
   </div>
 </div>
 
-<a href="#demo"><button class="button is-link is-normal is-hover">Book your free interactive product demo</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#demo"><button class="button is-link is-normal is-hover">Schedule your personal demo</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="#trial-version"><button class="button is-link is-normal is-hover">Request a trial version or a license quote</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="/support"><button class="button is-link is-normal is-hover">Order fee-based support</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 
-## Benefactor Circle exclusive features
+## Benefactor Circle features
 <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
   <div class="content">
-    <h3>Software features</h3>
+    <h3>Software</h3>
     <ul>
       <li>Time-based campaigns by assigning time range constraints to templates</li>
       <li>Signatures for automapped and additional mailboxes</li>
@@ -59,10 +59,10 @@ redirect_from:
   <div class="column">
     <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
       <div class="content">
-        <h3>Prioritized support and feature requests</h3>
+        <h3>Priority support</h3>
         <ul>
           <li>Support requests are handled with priority 24/5 (Austrian business days) via email and a callback option.</li>
-          <li>Secure web storage for protected data exchange.</li>
+          <li>Upload log files via a secure portal. No need to send them via email or share them publicly on GitHub.</li>
           <li>Requests for new features are checked for feasability with priority.</li>
         </ul>
       </div>
