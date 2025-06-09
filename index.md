@@ -28,9 +28,10 @@ redirect_from:
 
 <div class="columns">
   <div class="column is-one-quarter">
-    <h2><img src="/assets/images/set-outlooksignatures logo.png" alt="Set-OutlookSignatures"></h2>
+    <img src="/assets/images/set-outlooksignatures logo.png" alt="Set-OutlookSignatures">
   </div>
   <div class="column">
+    <h2>Manage your Outlook signatures centrally and fully automated</h2>
     <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
     <p>Thanks to centrally managed templates that automatically populate with your company data, every email gets the professional appearance your business deserves: Up-to-date, consistent, and on-brand.</p>
   </div>
@@ -41,51 +42,47 @@ redirect_from:
 Manually maintaining signatures ties up valuable personnel and financial resources. This quickly leads to outdated information that does not comply with internal or regulatory requirements.
 
 With Set-OutlookSignatures, you fully automate this process.
-<div class="container">
-  <div class="columns is-multiline">
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell">• Always up-to-date contact data and company information</div>
-    </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell">• Consistent and compelling appearance in every email</div>
-    </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-     <div class="cell">• No manual updating by your employees</div>
-    </div>
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell">• Always up-to-date contact data and company information</div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell">• Consistent and compelling appearance in every email</div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell">• No manual updating by your employees</div>
   </div>
 </div>
 
 
 ## The strengths of Set-OutlookSignatures
-<div class="container">
-  <div class="columns is-multiline">
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Simply for everyone</b><br>Intuitive for IT and marketing, invisible to your employees.</div>
-    </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Dynamic content</b><br>Predefined and custom attributes at user, mailbox, and manager level.</div>
-    </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Out-of-office replies</b><br>Manage out-of-office messages centrally, for internal and external recipients.</div>
-    </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Cross-platform</b><br>Signatures anytime, anywhere: Windows, macOS, Android, iOS, Linux, Web. Classic and New Outlook. On-prem, hybrid and cloud-only.</div>
-    </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Innovative features</b><br>Supports personal and shared mailboxes, "Send As", "Send on Behalf", simulation mode, roaming signatures, and many more features for maximum flexibility.</div>
-    </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Flexible assignment</b><br>Control signatures by department, location, language, role, time, and many other properties from various data sources.</div>
-    </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>No new infrastructure required</b><br>Set-OutlookSignatures runs on your existing systems and creates no new dependencies.</div>
-    </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Unsurpassed data privacy</b><br>All data remains in your trusted environment, within your existing security and management structures.</div>
-    </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Additional marketing channel</b><br>Design templates freely in Word or HTML. Use signatures for campaigns and brand messaging, free and effectively.</div>
-    </div>
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell"><b>Simply for everyone</b><br>Intuitive for IT and marketing, invisible to your employees.</div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell"><b>Dynamic content</b><br>Predefined and custom attributes at user, mailbox, and manager level.</div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell"><b>Out-of-office replies</b><br>Manage out-of-office messages centrally, for internal and external recipients.</div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell"><b>Cross-platform</b><br>Signatures anytime, anywhere: Windows, macOS, Android, iOS, Linux, Web. Classic and New Outlook. On-prem, hybrid and cloud-only.</div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell"><b>Innovative features</b><br>Supports personal and shared mailboxes, "Send As", "Send on Behalf", simulation mode, roaming signatures, and many more features for maximum flexibility.</div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell"><b>Flexible assignment</b><br>Control signatures by department, location, language, role, time, and many other properties from various data sources.</div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell"><b>No new infrastructure required</b><br>Set-OutlookSignatures runs on your existing systems and creates no new dependencies.</div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell"><b>Unsurpassed data privacy</b><br>All data remains in your trusted environment, within your existing security and management structures.</div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell"><b>Additional marketing channel</b><br>Design templates freely in Word or HTML. Use signatures for campaigns and brand messaging, free and effectively.</div>
   </div>
 </div>
 
@@ -95,17 +92,15 @@ The optional Benefactor Circle Add-On extends the free and open-source Set-Outlo
 
 If desired, we’ll set up our solution together with you: Simple, tailored to your needs, and with sustainable knowledge transfer.
 
-<div class="container">
-  <div class="columns is-multiline">
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Cost-efficient and transparent</b><br>Fair prices. No subscriptions. No maintenance contracts.</div>
-    </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Support with handshake quality</b><br>Solution-driven. At eye level. Accountable.</div>
-    </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Tangible added value</b><br>Your investment pays off. From day one.</div>
-    </div>
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell"><b>Cost-efficient and transparent</b><br>Fair prices. No subscriptions. No maintenance contracts.</div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell"><b>Support with handshake quality</b><br>Solution-driven. At eye level. Accountable.</div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell"><b>Tangible added value</b><br>Your investment pays off. From day one.</div>
   </div>
 </div>
 
