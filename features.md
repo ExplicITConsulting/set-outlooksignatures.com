@@ -6,10 +6,10 @@ title: |
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
-    What Set-OutlookSignatures and the Benefactor Circle add-on can do for you and how they compare with others.
+    Our solution at a glance and in comparison.
   </p>
 description: |
-  Features and feature comparison. What Set-OutlookSignatures and the Benefactor Circle add-on can do for you and how they compare with others.
+  What Set-OutlookSignatures and the Benefactor Circle add-on can do for you and how they compare with others.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
