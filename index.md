@@ -2,7 +2,7 @@
 layout: page
 title: |
   <p class="has-text-white">
-    Set-OutlookSignatures
+    Set-OutlookSignatures and the Benefactor Circle add-on
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
