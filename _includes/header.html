@@ -20,12 +20,12 @@
                             <a href="{{ item.link | relative_url }}" class="navbar-link has-text-white {% if page.url contains item.link %}is-active{% endif %}">{{ item.name }}</a>
                             <div class="navbar-dropdown">
                                 {% for subitem in item.dropdown %}
-                                <a href="{{ subitem.link | relative_url }}" class="navbar-item {% if subitem.link == page.url %}is-active{% endif %}">{{ subitem.name }}</a>
+                                <a href="{{ subitem.link | relative_url }}" class="navbar-item {% if page.url contains subitem.link %}is-active{% endif %}">{{ subitem.name }}</a>
                                 {% endfor %}
                             </div>
                         </div>
                         {% else %}
-                        <a href="{{ item.link | relative_url }}" class="navbar-item has-text-white {% if item.link == page.url %}is-active{% endif %}">{{ item.name }}</a>
+                        <a href="{{ item.link | relative_url }}" class="navbar-item has-text-white {% if page.url contains item.link %}is-active{% endif %}">{{ item.name }}</a>
                         {% endif %}
                     {% endfor %}
                 {% endif %}
