@@ -49,22 +49,36 @@ With Set-OutlookSignatures, you fully automate this process.
 
 
 ## The strengths of Set-OutlookSignatures
-<div class="grid">
-  <div class="cell"><b>Simply for everyone</b><br>Intuitive for IT and marketing, invisible to your employees.</div>
-  <div class="cell"><b>Dynamic content</b><br>Predefined and custom attributes at user, mailbox, and manager level.</div>
-  <div class="cell"><b>Out-of-office replies</b><br>Manage out-of-office messages centrally, for internal and external recipients.</div>
-</div>
-
-<div class="grid">
-  <div class="cell"><b>Cross-platform</b><br>Signatures anytime, anywhere: Windows, macOS, Android, iOS, Linux, Web. Classic and New Outlook. On-prem, hybrid and cloud-only.</div>
-  <div class="cell"><b>Innovative features</b><br>Supports personal and shared mailboxes, "Send As", "Send on Behalf", simulation mode, roaming signatures, and many more features for maximum flexibility.</div>
-  <div class="cell"><b>Flexible assignment</b><br>Control signatures by department, location, language, role, time, and many other properties from various data sources.</div>
-</div>
-
-<div class="grid">
-  <div class="cell"><b>No new infrastructure required</b><br>Set-OutlookSignatures runs on your existing systems and creates no new dependencies.</div>
-  <div class="cell"><b>Unsurpassed data privacy</b><br>All data remains in your trusted environment, within your existing security and management structures.</div>
-  <div class="cell"><b>Additional marketing channel</b><br>Design templates freely in Word or HTML. Use signatures for campaigns and brand messaging, free and effectively.</div>
+<div class="container">
+  <div class="columns is-multiline">
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Simply for everyone</b><br>Intuitive for IT and marketing, invisible to your employees.</div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Dynamic content</b><br>Predefined and custom attributes at user, mailbox, and manager level.</div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Out-of-office replies</b><br>Manage out-of-office messages centrally, for internal and external recipients.</div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Cross-platform</b><br>Signatures anytime, anywhere: Windows, macOS, Android, iOS, Linux, Web. Classic and New Outlook. On-prem, hybrid and cloud-only.</div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Innovative features</b><br>Supports personal and shared mailboxes, "Send As", "Send on Behalf", simulation mode, roaming signatures, and many more features for maximum flexibility.</div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Flexible assignment</b><br>Control signatures by department, location, language, role, time, and many other properties from various data sources.</div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>No new infrastructure required</b><br>Set-OutlookSignatures runs on your existing systems and creates no new dependencies.</div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Unsurpassed data privacy</b><br>All data remains in your trusted environment, within your existing security and management structures.</div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Additional marketing channel</b><br>Design templates freely in Word or HTML. Use signatures for campaigns and brand messaging, free and effectively.</div>
+    </div>
+  </div>
 </div>
 
 
