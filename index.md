@@ -90,6 +90,32 @@ With Set-OutlookSignatures, you fully automate this process.
 </div>
 
 
+## Functionality meets expertise
+The optional Benefactor Circle Add-On extends the free and open-source Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.
+
+If desired, we’ll set up our solution together with you: Simple, tailored to your needs, and with sustainable knowledge transfer.
+
+<div class="container">
+  <div class="columns is-multiline">
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Cost-efficient and transparent</b><br>Fair prices. No subscriptions. No maintenance contracts.</div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Support with handshake quality</b><br>Solution-driven. At eye level. Accountable.</div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Tangible added value</b><br>Your investment pays off. From day one.</div>
+    </div>
+  </div>
+</div>
+
+
+## Manage your Outlook signatures centrally. We’ll show you how!
+Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.
+
+Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.
+
+<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover">→ Schedule your personal demo now</button></a>
 
 
 ## Features&nbsp;&nbsp;&nbsp;&nbsp;<a href="#feature-comparison"><img src="https://img.shields.io/badge/go%20to-Feature%20comparison-lawngreen?labelColor=black" alt="Go to Feature comparison"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
