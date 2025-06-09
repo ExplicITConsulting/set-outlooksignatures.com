@@ -239,9 +239,18 @@ redirect_from:
 
 
 <script>
-  const lang = navigator.language || navigator.userLanguage;
-  if (lang.startsWith('de')) {
-    document.getElementById('content-en').style.display = 'none';
-    document.getElementById('content-de').style.display = 'block';
-  }
+  document.addEventListener('DOMContentLoaded', function () {
+    const lang = navigator.language || navigator.userLanguage || 'en';
+    const contentEn = document.getElementById('content-en');
+    const contentDe = document.getElementById('content-de');
+
+    if (lang.startsWith('de')) {
+      if (contentEn) contentEn.style.display = 'none';
+      if (contentDe) contentDe.style.display = 'block';
+    } else {
+      if (contentEn) contentEn.style.display = 'block';
+      if (contentDe) contentDe.style.display = 'none';
+    }
+  });
 </script>
+
