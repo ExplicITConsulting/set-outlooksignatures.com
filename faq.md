@@ -346,11 +346,11 @@ Please see `.\sample code\Set-OutlookSignatures.cmd` for an example. Don't forge
 Even when the `hidden` parameter is passed to PowerShell, a window is created and minimized. Although this only takes some tenths of a second, it is not only optically disturbing, but the new window may also steal the keyboard focus.
 
 The only workaround is to start PowerShell from another program, which does not need an own console window. Some examples for such programs are:
-- Rob van der Woude's [RunNHide](https://www.robvanderwoude.com/csharpexamples.php#RunNHide)
-- NTWind Software's [HStart](https://www.ntwind.com/software/hstart.html)
-- wenshui2008's [RunHiddenConsole](https://github.com/wenshui2008/RunHiddenConsole)
-- stax76's [run-hidden](https://github.com/stax76/run-hidden)
-- Nir Sofer's [NirCmd](https://www.nirsoft.net/utils/nircmd.html)
+- Rob van der Woude's <a href="https://www.robvanderwoude.com/csharpexamples.php#RunNHide" target="_blank">RunNHide</a>
+- NTWind Software's <a href="https://www.ntwind.com/software/hstart.html" target="_blank">HStart</a>
+- wenshui2008's <a href="https://github.com/wenshui2008/RunHiddenConsole" target="_blank">RunHiddenConsole</a>
+- stax76's <a href="https://github.com/stax76/run-hidden" target="_blank">run-hidden</a>
+- Nir Sofer's <a href="https://www.nirsoft.net/utils/nircmd.html" target="_blank">NirCmd</a>
 - As Microsoft has marked Visual Basic Script (VBS) as deprecated and will remove it completely from future Windows releases, the use of Windows Script Host (WSH) is not recommended. If you want to try it anyway, here is a working example:
   - Create a .vbs (Visual Basic Script) file, paste and adapt the following code into it:
 

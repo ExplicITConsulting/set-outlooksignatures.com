@@ -125,7 +125,7 @@ Not all features are yet available on Linux and macOS. Every parameter contains 
 
 #### 2.1.2. Linux specific restrictions and notes
 - Users need to access their mailboxes via Outlook Web, as no other form of Outlook is available on Linux (use emulation tools such as Wine, CrossOver, PlayOnLinux, Proton, etc. at your own risk).
-  - Support for Outlook Web requires the Benefactor Circle add-on. See <a href="/benefactorcircle" target="_blank">'.\docs\Benefactor Circle'</a> for details.
+  - Support for Outlook Web requires the Benefactor Circle add-on. See <a href="/benefactorcircle">'.\docs\Benefactor Circle'</a> for details.
 - When using email clients such as Mozilla Thunderbird, GNOME Evolution, KDE KMail or others, you can still use signatures created by Set-OutlookSignatures with the Benefactor Circle add-on, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
 
 
@@ -136,7 +136,7 @@ Not all features are yet available on Linux and macOS. Every parameter contains 
   - Until New Outlook supports roaming signatures (not yet announced by Microsoft), it is treated like Outlook for Windows configured not to use roaming signatures. Consider using the '-MailboxSpecificSignatureNames' parameter.
   - If New Outlook is enabled, an alternate method of account detection is used, as scripting is not yet supported by Microsoft, but already announced on the M365 roadmap. This alternate method may detect accounts that are no longer used in Outlook (see software output for details).  
   - If the alternate method does not find accounts, Outlook Web is used and existing signatures are synchronized with New Outlook for Mac.
-    - Support for Outlook Web requires the Benefactor Circle add-on. See <a href="/benefactorcircle" target="_blank">'.\docs\Benefactor Circle'</a> for details.
+    - Support for Outlook Web requires the Benefactor Circle add-on. See <a href="/benefactorcircle">'.\docs\Benefactor Circle'</a> for details.
 - Classic Outlook for Mac and New Outlook for Mac do not allow external software to set default signatures.
 - When using email clients such as Apple Mail or others, you can still use signatures created by Set-OutlookSignatures with the Benefactor Circle add-on, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
 
