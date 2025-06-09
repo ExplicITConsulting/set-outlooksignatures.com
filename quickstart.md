@@ -93,11 +93,11 @@ Regarding configuration files: Besides the template configuration files for sign
 It is rarely needed to change the configuration within these files.  
 The configuration files themselves contain specific information on how to use them. They are referenced in the documentation whenever there is a need or option to change them.
 
-You also have access to '.\docs\Implementation approach', a document covering the organizational aspects of introducing Set-OutlookSignatures.  
+You also have access to the [implementation approach](/implementationapproach) document, covering the organizational aspects of introducing Set-OutlookSignatures.  
 The content is based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes.
 
 **Set-OutlookSignatures is very well documented, which inevitably brings with it a lot of content.**  
-If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner [ExplicIT Consulting](https://explicitconsulting.at) offers first-class fee-based support, and their [Benefactor Circle add-on](https://set-outlooksignatures.com/benefactorcircle) adds more enterprise-grade features.
+If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner [ExplicIT Consulting](https://explicitconsulting.at) offers first-class [fee-based support](/support), and their [Benefactor Circle add-on](/benefactorcircle) adds more enterprise-grade features.
 
 
 <script>
