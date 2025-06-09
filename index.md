@@ -171,7 +171,7 @@ Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle
 ## Feature comparison&nbsp;&nbsp;&nbsp;&nbsp;<a href="#features"><img src="https://img.shields.io/badge/go%20to-Features-lawngreen?labelColor=black" alt="Go to Features"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
 
 <div class="table-container">
-    <table class="table is-bordered is-striped is-narrow is-hoverable">
+    <table class="table is-bordered is-striped is-hoverable is-fullwidth">
         <thead>
             <tr>
                 <th style="text-align:left">Feature</th>
