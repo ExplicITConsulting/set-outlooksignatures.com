@@ -34,6 +34,9 @@ redirect_from:
   <h2><a href="/faq">Frequently Asked Questions (FAQ)</a></h2>
   <p>Topics that are addressed regularly</p>
 
+  <h2><a href="/implementationapproach">Implementation approach</a></h2>
+  <p>Real-life experience implementing the software in multi-client environments with a five-digit number of mailboxes</p>
+
   <h2><a href="/support">Support</a></h2>
   <p>Passing on our experience to you</p>
 </div>
