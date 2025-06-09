@@ -31,10 +31,38 @@ redirect_from:
     <h2><img src="/assets/images/set-outlooksignatures logo.png" alt="Set-OutlookSignatures"></h2>
   </div>
   <div class="column">
-    <p>Email signatures and out-of-office replies are an integral part of corporate identity and corporate design, of successful concepts for media and internet presence, and of marketing campaigns. Similar to web presences, business emails are usually subject to an imprint obligation, and non-compliance can result in severe penalties.</p>
-    <p>Central management and deployment ensures that design guidelines are met, guarantees correct and up-to-date content, helps comply with legal requirements, relieves staff and creates an additional marketing and sales channel for free.</p>
+    <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
+    <p>Thanks to centrally managed templates that automatically populate with your company data, every email gets the professional appearance your business deserves: Up-to-date, consistent, and on-brand.</p>
   </div>
 </div>
+
+
+## Less effort, more professionalism
+Manually maintaining signatures ties up valuable personnel and financial resources. This quickly leads to outdated information that does not comply with internal or regulatory requirements.
+
+With Set-OutlookSignatures, you fully automate this process.
+<div class="grid">
+  <div class="cell">• Always up-to-date contact data and company information</div>
+  <div class="cell">• Consistent and compelling appearance in every email</div>
+  <div class="cell">• No manual updating by your employees</div>
+</div>
+
+
+## The strengths of Set-OutlookSignatures
+<div class="grid">
+  <div class="cell">• Simply for everyone<br>Intuitive for IT and marketing, invisible to your employees.</div>
+  <div class="cell">• Dynamic content<br>Predefined and custom attributes at user, mailbox, and manager level.</div>
+  <div class="cell">• Out-of-office replies<br>Manage out-of-office messages centrally, for internal and external recipients.</div>
+  <div class="cell">• Cross-platform<br>Signatures anytime, anywhere: Windows, macOS, Android, iOS, Linux, Web. Classic and New Outlook. On-prem, hybrid and cloud-only.</div>
+  <div class="cell">• Innovative features<br>Supports personal and shared mailboxes, "Send As", "Send on Behalf", simulation mode, roaming signatures, and many more features for maximum flexibility.</div>
+  <div class="cell">• Flexible assignment<br>Control signatures by department, location, language, role, time, and many other properties from various data sources.</div>
+  <div class="cell">• No new infrastructure required<br>Set-OutlookSignatures runs on your existing systems and creates no new dependencies.</div>
+  <div class="cell">• Unsurpassed data privacy<br>All data remains in your trusted environment, within your existing security and management structures.</div>
+  <div class="cell">• Additional marketing channel<br>Design templates freely in Word or HTML. Use signatures for campaigns and brand messaging, free and effectively.</div>
+</div>
+
+
+
 
 **Set-OutlookSignatures and the Benefactor Circle add-on can do all this, and much more. Full-featured, cost-effective, unsurpassed data privacy:**
 <div class="grid">
