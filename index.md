@@ -42,116 +42,30 @@ Manually maintaining signatures ties up valuable personnel and financial resourc
 
 With Set-OutlookSignatures, you fully automate this process.
 <div class="grid">
-  <div class="cell">• Always up-to-date contact data and company information</div>
-  <div class="cell">• Consistent and compelling appearance in every email</div>
-  <div class="cell">• No manual updating by your employees</div>
+  <div class="cell">Always up-to-date contact data and company information</div>
+  <div class="cell">Consistent and compelling appearance in every email</div>
+  <div class="cell">No manual updating by your employees</div>
 </div>
 
 
 ## The strengths of Set-OutlookSignatures
 <div class="grid">
-  <div class="cell">• Simply for everyone<br>Intuitive for IT and marketing, invisible to your employees.</div>
-  <div class="cell">• Dynamic content<br>Predefined and custom attributes at user, mailbox, and manager level.</div>
-  <div class="cell">• Out-of-office replies<br>Manage out-of-office messages centrally, for internal and external recipients.</div>
-  <div class="cell">• Cross-platform<br>Signatures anytime, anywhere: Windows, macOS, Android, iOS, Linux, Web. Classic and New Outlook. On-prem, hybrid and cloud-only.</div>
-  <div class="cell">• Innovative features<br>Supports personal and shared mailboxes, "Send As", "Send on Behalf", simulation mode, roaming signatures, and many more features for maximum flexibility.</div>
-  <div class="cell">• Flexible assignment<br>Control signatures by department, location, language, role, time, and many other properties from various data sources.</div>
-  <div class="cell">• No new infrastructure required<br>Set-OutlookSignatures runs on your existing systems and creates no new dependencies.</div>
-  <div class="cell">• Unsurpassed data privacy<br>All data remains in your trusted environment, within your existing security and management structures.</div>
-  <div class="cell">• Additional marketing channel<br>Design templates freely in Word or HTML. Use signatures for campaigns and brand messaging, free and effectively.</div>
+  <div class="cell"><b>Simply for everyone</b><br>Intuitive for IT and marketing, invisible to your employees.</div>
+  <div class="cell"><b>Dynamic content</b><br>Predefined and custom attributes at user, mailbox, and manager level.</div>
+  <div class="cell"><b>Out-of-office replies</b><br>Manage out-of-office messages centrally, for internal and external recipients.</div>
 </div>
-
-
-
-
-**Set-OutlookSignatures and the Benefactor Circle add-on can do all this, and much more. Full-featured, cost-effective, unsurpassed data privacy:**
 <div class="grid">
-  <div class="cell">
-    <details open>
-      <summary>Made in Austria, proven worldwide</summary>
-      <ul>
-        <li>From practice, for practice.</li>
-        <li>Developed specifically so that SMEs can gain the same benefits as as large companies.</li>
-        <li>Trusted and valued by companies and authorities across the globe.</li>
-      </ul>  
-    </details>
-  </div>
-
-  <div class="cell">
-    <details>
-      <summary>Most secure solution on the market</summary>
-      <ul>
-        <li>Does not introduce any new dependencies into your system.</li>
-        <li>The source code of the basic software is freely available.</li>
-        <li>No transfer of directory data or e-mails outside your own systems.</li>
-        <li>Data is only processed on systems that you already trust.</li>
-        <li>Processing takes place in the security context of your users, with only a subset of existing permissions.</li>
-      </ul>
-    </details>
-  </div>
-
-  <div class="cell">
-    <details>
-      <summary>One solution for all architectures</summary>
-      <ul>
-        <li>On premises, hybrid and cloud only with just one license and one product.</li>
-        <li>For all Outlook versions: Classic and New, Web, Windows, macOS, Android and iOS.</li>
-        <li>First solution supporting cross-tenant and multitenant organization scenarios.</li>
-        <li>Works in all Microsoft 365 clouds (Public, US Government, US Government DoD, China)</li>
-        <li>Many additional data sources can be accessed to enrich Entra ID and Active Directory data.</li>
-      </ul>  
-    </details>
-  </div>
-
-  <div class="cell">
-    <details>
-      <summary>Simple and intuitive</summary>
-      <ul>
-        <li>Templates in Word or HTML format.</li>
-        <li>No installation and no management app required.</li>
-        <li>Invisible to users: Signatures are simply there and always up-to-date.</li>
-      </ul>
-    </details>
-  </div>
-
-  <div class="cell">
-    <details>
-      <summary>Innovative features</summary>
-      <ul>
-        <li>Signatures for personal mailboxes, shared mailboxes, boss-secretary constellations, delegation scenarios, Send As, Send On Behalf and more.</li>
-        <li>Use attributes of the current user, the current mailbox, and the managers of both.</li>
-        <li>First solution supporting roaming signatures - in the cloud and on-prem.</li>
-        <li>Simulate signatures for any user in your environment.</li>
-        <li>Seting out-of-office replies.</li>
-      </ul>
-    </details>
-  </div>
-
-  <div class="cell">
-    <details>
-      <summary>Delegate tasks as needed</summary>
-      <ul>
-        <li>IT can keep full control or only support the setup.</li>
-        <li>Marketing can manage the templates themselves. Nothing more than Word is required.</li>
-        <li>Delegated permissions can be assigned down to individual templates.</li>
-        <li>Any number of independent instances can be created.</li>
-      </ul>  
-    </details>
-  </div>
-
-  <div class="cell">
-    <details>
-      <summary>More cost-effective than other products</summary>
-      <ul>
-        <li>Purchase directly from the manufacturer, no rebate-driven prices.</li>
-        <li>Support on demand instead of expensive maintenance contracts.</li>
-        <li>Runs on your own existing (client) infrastructure.</li>
-        <li>Cheaper than having your employees manage signatures manually.</li>
-      </ul>
-    </details>
-  </div>
+  <div class="cell"><b>Cross-platform</b><br>Signatures anytime, anywhere: Windows, macOS, Android, iOS, Linux, Web. Classic and New Outlook. On-prem, hybrid and cloud-only.</div>
+  <div class="cell"><b>Innovative features</b><br>Supports personal and shared mailboxes, "Send As", "Send on Behalf", simulation mode, roaming signatures, and many more features for maximum flexibility.</div>
+  <div class="cell"><b>Flexible assignment</b><br>Control signatures by department, location, language, role, time, and many other properties from various data sources.</div>
 </div>
-<br>
+<div class="grid">
+  <div class="cell"><b>No new infrastructure required</b><br>Set-OutlookSignatures runs on your existing systems and creates no new dependencies.</div>
+  <div class="cell"><b>Unsurpassed data privacy</b><br>All data remains in your trusted environment, within your existing security and management structures.</div>
+  <div class="cell"><b>Additional marketing channel</b><br>Design templates freely in Word or HTML. Use signatures for campaigns and brand messaging, free and effectively.</div>
+</div>
+
+
 
 
 ## Features&nbsp;&nbsp;&nbsp;&nbsp;<a href="#feature-comparison"><img src="https://img.shields.io/badge/go%20to-Feature%20comparison-lawngreen?labelColor=black" alt="Go to Feature comparison"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
