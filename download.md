@@ -25,13 +25,11 @@ redirect_from:
 Set-OutlookSignatures is the open-source gold standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 </p>
 
-<p>
-The latest release of the free and open-source core version of Set-OutlookSignatures is <span class="version-text">Loading...</span>.
-</p>
+<p>The latest release of the free and open-source core version of Set-OutlookSignatures is <span class="version-text">Loading...</span>.</p>
 
 <p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md" target="_blank"><button class="button is-link is-normal is-hover">Read the changelog</button></a></p>
 
-<p><a id="download-link" href="#" target="_blank"><button class="button is-link is-normal is-hover">Download&nbsp;<span class="version-text">Loading...</span>&nbsp;as ZIP file</button></a></p>
+<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover">Download&nbsp;<span class="version-text">the latest release</span>&nbsp;as ZIP file</button></a></p>
 
 
 <h2>The Benefactor Circle add-on</h2>
