@@ -15,6 +15,15 @@ image:
   height: 1200
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
+redirect_from:
+  - /de/set-outlooksignatures
+  - /de/set-outlooksignature
+  - /de/setoutlooksignatures
+  - /de/setoutlooksignature
+  - /de/outlook-signatures
+  - /de/outlook-signature
+  - /de/outlooksignatures
+  - /de/outlooksignature
 ---
 
 
@@ -120,3 +129,36 @@ image:
   <li>Best practices und FAQ</li>
   <li>Wie Sie erstklassigen Support erhalten</li>
 </ul>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const lang = navigator.language || navigator.userLanguage || 'en';
+    const path = window.location.pathname;
+    const search = window.location.search;
+    const hash = window.location.hash;
+
+    const isGerman = lang.toLowerCase().startsWith('de');
+    const isAlreadyInDe = path.startsWith('/de');
+
+    if (isGerman && !isAlreadyInDe) {
+      const targetUrl = '/de' + path + search;
+
+      fetch(targetUrl, { method: 'HEAD' })
+        .then(response => {
+          if (response.ok) {
+            window.location.href = targetUrl + hash;
+          } else {
+            window.location.href = '' + path + search + hash;
+          }
+        })
+        .catch(() => {
+          window.location.href = '' + path + search + hash;
+        });
+    } else if (!isGerman && isAlreadyInDe) {
+      // Optional: redirect non-German users away from /de
+      const newPath = path.replace(/^\/de/, '') || '/';
+      window.location.href = newPath + search + hash;
+    }
+  });
+</script>

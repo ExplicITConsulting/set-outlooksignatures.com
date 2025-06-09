@@ -131,11 +131,35 @@ redirect_from:
 </ul>
 
 
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const lang = navigator.language || navigator.userLanguage || 'en';
-    if (lang.startsWith('de')) {
-      window.location.href = '/index-de';
+    const path = window.location.pathname;
+    const search = window.location.search;
+    const hash = window.location.hash;
+
+    const isGerman = lang.toLowerCase().startsWith('de');
+    const isAlreadyInDe = path.startsWith('/de');
+
+    if (isGerman && !isAlreadyInDe) {
+      const targetUrl = '/de' + path + search;
+
+      fetch(targetUrl, { method: 'HEAD' })
+        .then(response => {
+          if (response.ok) {
+            window.location.href = targetUrl + hash;
+          } else {
+            window.location.href = '' + path + search + hash;
+          }
+        })
+        .catch(() => {
+          window.location.href = '' + path + search + hash;
+        });
+    } else if (!isGerman && isAlreadyInDe) {
+      // Optional: redirect non-German users away from /de
+      const newPath = path.replace(/^\/de/, '') || '/';
+      window.location.href = newPath + search + hash;
     }
   });
 </script>
