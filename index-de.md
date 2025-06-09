@@ -15,16 +15,19 @@ image:
   height: 1200
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
-redirect_from:
-  - /set-outlooksignatures
-  - /set-outlooksignature
-  - /setoutlooksignatures
-  - /setoutlooksignature
-  - /outlook-signatures
-  - /outlook-signature
-  - /outlooksignatures
-  - /outlooksignature
 ---
+
+
+<div class="columns">
+  <div class="column is-one-quarter">
+    <img src="/assets/images/set-outlooksignatures logo.png" alt="Set-OutlookSignatures">
+  </div>
+  <div class="column">
+    <h2>Verwalten Sie Ihre Outlook-Signaturen zentral und vollautomatisch</h2>
+    <p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
+    <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
+  </div>
+</div>
 
 
 <h2>Weniger Aufwand, mehr Professionalität</h2>
