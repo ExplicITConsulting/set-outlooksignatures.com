@@ -107,7 +107,7 @@ redirect_from:
 </div>
 
 
-<h2>Manage your Outlook signatures centrally. We’ll show you how!</h2>
+<h2>We’ll show you how!</h2>
 <p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.<p>
 
 <p>Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.<p>

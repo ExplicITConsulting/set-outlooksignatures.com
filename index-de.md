@@ -98,7 +98,7 @@ image:
 </div>
 
 
-<h2>Verwalten Sie Ihre Outlook-Signaturen zentral. Wir zeigen Ihnen, wie!</h2>
+<h2>Wir zeigen Ihnen, wie!</h2>
 <p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p>
 
 <p>Erleben Sie live, wie schnell und intuitiv Sie Ihre Outlook-Signaturen und Abwesenheitsnotizen zentral verwalten und optimieren können.<p>
