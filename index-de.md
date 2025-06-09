@@ -2,14 +2,14 @@
 layout: page
 title: |
   <p class="has-text-white">
-    Set-Outlook<wbr>Signatures and the Benefactor Circle add-on
+    Set-Outlook<wbr>Signatures und das Benefactor Circle add-on
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
-    Email signatures and out-of-office replies for Exchange and all of Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
+    E-Mail-Signaturen und Abwensenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
   </p>
 description: |
-  Set-OutlookSignatures Benefactor Circle. Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
+  Set-OutlookSignatures Benefactor Circle. E-Mail-Signaturen und Abwensenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
