@@ -31,7 +31,7 @@ The latest release of the free and open-source core version of Set-OutlookSignat
 
 <p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md" target="_blank"><button class="button is-link is-normal is-hover">Read the changelog</button></a></p>
 
-<p><a id="download-link" href="#" target="_blank"><button class="button is-link is-normal is-hover">Download <span class="version-text">Loading...</span> as ZIP file</button></a></p>
+<p><a id="download-link" href="#" target="_blank"><button class="button is-link is-normal is-hover">Download&nbsp;<span class="version-text">Loading...</span>&nbsp;as ZIP file</button></a></p>
 
 
 <h2>The Benefactor Circle add-on</h2>
