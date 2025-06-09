@@ -4,9 +4,11 @@
   link: /benefactorcircle
 - name: "Demo"
   link: /benefactorcircle/#demo
-- name: "Help"
+- name: "Help and support"
   link: /help
   dropdown:
+  - name: Features and feature comparison
+    link: /features
   - name: Technical details, requirements and usage
     link: /details
   - name: Parameters
