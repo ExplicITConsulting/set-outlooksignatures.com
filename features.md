@@ -6,7 +6,7 @@ title: |
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
-    Our solution at a glance and in comparison.
+    Our solution at a glance and in benchmark
   </p>
 description: |
   What Set-OutlookSignatures and the Benefactor Circle add-on can do for you and how they compare with others.
