@@ -17,15 +17,15 @@
                     {% for item in site.data.navigation %}
                         {% if item.dropdown %}
                         <div class="navbar-item has-dropdown is-hoverable {% if site.fixed_navbar == 'bottom' %} has-dropdown-up {% endif %}">
-                            <a href="{{ item.link | relative_url }}" class="navbar-link has-text-white {% if page.url contains item.link %}is-active{% endif %}">{{ item.name }}</a>
+                            <a href="{{ item.link | relative_url }}" class="navbar-link has-text-white {% if page.url contains item.link %}is-selected{% endif %}">{{ item.name }}</a>
                             <div class="navbar-dropdown">
                                 {% for subitem in item.dropdown %}
-                                <a href="{{ subitem.link | relative_url }}" class="navbar-item {% if page.url contains subitem.link %}is-active{% endif %}">{{ subitem.name }}</a>
+                                <a href="{{ subitem.link | relative_url }}" class="navbar-item {% if page.url contains subitem.link %}is-selected{% endif %}">{{ subitem.name }}</a>
                                 {% endfor %}
                             </div>
                         </div>
                         {% else %}
-                        <a href="{{ item.link | relative_url }}" class="navbar-item has-text-white {% if page.url contains item.link %}is-active{% endif %}">{{ item.name }}</a>
+                        <a href="{{ item.link | relative_url }}" class="navbar-item has-text-white {% if page.url contains item.link %}is-selected{% endif %}">{{ item.name }}</a>
                         {% endif %}
                     {% endfor %}
                 {% endif %}
@@ -34,7 +34,7 @@
             <div class="navbar-end">
                 <a class="navbar-item has-text-white" href="/search">
                     <span class="icon"><i class="fas fa-search"></i></span>
-                    <span>Search</span>
+                    <span></span>
                 </a>
                 {% if site.gh_sponsor %}
                     <a class="navbar-item has-text-white" href="https://github.com/sponsors/{{ site.gh_sponsor }}">
