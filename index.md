@@ -118,11 +118,11 @@ redirect_from:
 <h2>Ready, set, go!</h2>
 <p>Deploy your first signatures in less than an hour!<p>
 
-<a href="/quickstart" target="_blank"><button class="button is-link is-normal is-hover">→ Quick Start Guide</button></a>
+<a href="/quickstart"><button class="button is-link is-normal is-hover">→ Quick Start Guide</button></a>
 
 
 <h2>Dive deeper</h2>
-<p>Visit our <a href="/help" target="_blank">help and support center</a> to learn about:<p>
+<p>Visit our <a href="/help">help and support center</a> to learn about:<p>
 <ul>
   <li>The detailed feature set and a comparison with market companions</li>
   <li>Requirements and configuration options</li>

@@ -19,6 +19,9 @@ redirect_from:
 ---
 
 <div style="min-height: 100vh;">
+  <h2><a href="/features">Features and feature comparison</a></h2>
+  <p>Our solution at a glance and in benchmark</p>
+
   <h2><a href="/details">Technical details, requirements and usage</a></h2>
   <p>What it needs, how it works and how to use it</p>
 

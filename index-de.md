@@ -109,11 +109,11 @@ image:
 <h2>Auf die Plätze, fertig, los!</h2>
 <p>Deploy your first signatures in less than an hour!<p>
 
-<a href="/quickstart" target="_blank"><button class="button is-link is-normal is-hover">→ Quick Start Guide</button></a>
+<a href="/quickstart"><button class="button is-link is-normal is-hover">→ Quick Start Guide</button></a>
 
 
 <h2>Tiefer eintauchen</h2>
-<p>Besuchen Sie unser <a href="/help" target="_blank">Hilfe- und Supportcenter</a> um mehr zu erfahren:<p>
+<p>Besuchen Sie unser <a href="/help">Hilfe- und Supportcenter</a> um mehr zu erfahren:<p>
 <ul>
   <li>Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern</li>
   <li>Anforderungen und Konfigurationsmöglichkeiten</li>
