@@ -85,15 +85,6 @@ redirect_from:
 ## Demo
 In your free interactive product demo, we show you the main features of the Benefactor Circle add-on and the Outlook add-in - interactively and with a focus on your actual needs.<br><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover">→ Schedule your personal demo now</button></a>
 
-For a quick overview, the basic features are shown in our demo video:
-<div class="columns">
-  <div class="column is-half">
-    <figure class="image is-16by9">
-      <iframe class="has-ratio" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI" title="Set-OutlookSignatures Benefactor Circle demo video" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </figure>
-  </div>
-</div>
-
 
 ## Financial benefits of using the Benefactor Circle add-on
 There are three relevant questions to calculate the financial benefits:
