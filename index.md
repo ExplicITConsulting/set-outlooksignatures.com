@@ -239,7 +239,7 @@ redirect_from:
   document.addEventListener('DOMContentLoaded', function () {
     const lang = navigator.language || navigator.userLanguage || 'en';
     if (lang.startsWith('de')) {
-      window.location.href = '/index-de.html';
+      window.location.href = '/index-de';
     }
   });
 </script>
