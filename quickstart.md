@@ -48,39 +48,43 @@ If you use AppLocker or a comparable solution (Defender, CrowdStrike, Ivanti, an
 ## Step 3: Prepare Entra ID
 When some or all of your mailboxes are in Exchange Online, you need to register an Entra ID app first, because Set-OutlookSignatures needs permissions to access the Graph API.
 
-To create the Entra ID app, ask a 'Global Admin' or 'Application Administrator' to run '`.\sample code\Create-EntraApp.ps1 -AppType 'Set-OutlookSignatures' -AppName 'Set-OutlookSignatures'`' and follow the instructions.
+To create the Entra ID app, ask a 'Global Admin' or 'Application Administrator' to run
+```
+.\sample code\Create-EntraApp.ps1 -AppType 'Set-OutlookSignatures' -AppName 'Set-OutlookSignatures'
+```
+and follow the instructions.
 
 The code in the script file is well documented, containing all details about the required Entra ID app settings, permissions, and why they are needed.
 
 
 ## Step 4: Run Set-Outlook Signatures
 - **If all mailboxes are in Exchange on-prem**
-  ```batch
+  ```
   powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"
   ```
 
 - **If some or all mailboxes are in Exchange Online**
-  ```batch
+  ```
   powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from step 3>"
   ```
-  The '`-GraphOnly true`' parameter makes sure that on-prem Active Directory is ignored and only Graph/Entra ID is used to find mailboxes and their attributes.
+  The '-GraphOnly true' parameter makes sure that on-prem Active Directory is ignored and only Graph/Entra ID is used to find mailboxes and their attributes.
 
-If you are not using the public Microsoft Cloud, add the parameter '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`'.
+If you are not using the public Microsoft Cloud, add the parameter '-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]'.
 
-Congratulations! Set-OutlookSignatures now deploys your first signatures using default settings and sample templates.
+Set-OutlookSignatures now deploys your first signatures using default settings and sample templates.
 
-Open Outlook and have a look at the newly created signatures, especially to the showcase signature named '`Test all default replacement variables`'.
+Open Outlook and have a look at the newly created signatures, especially to the showcase signature named 'Test all default replacement variables'.
 
 
 ## Start customization
 When everything runs fine with default settings, it is time for you to start customizing the software behavior to your needs:
 - Create a folder with your own template files and signature configuration file.
-  - Your may want to start with DOCX templates, as this is often the easiest way.<br>See the FAQ '`Should I use .docx or .htm as file format for templates?`' for details.
+  - Your may want to start with DOCX templates, as this is often the easiest way.<br>See the FAQ 'Should I use .docx or .htm as file format for templates?' for details.
   - See the following chapters for instructions:
     - Signature and OOF file format
     - Signature template file naming
     - Template tags and INI files
-  - Make sure to pass the parameters '`SignatureTemplatePath`', '`SignatureIniFile`', '`OOFTemplatePath`' and '`OOFIniFile`' to Set-OutlookSignatures.
+  - Make sure to pass the parameters 'SignatureTemplatePath', 'SignatureIniFile', 'OOFTemplatePath' and 'OOFIniFile' to Set-OutlookSignatures.
 - Adapt other parameters you may find useful, or start experimenting with simulation mode. The feature list and the parameter documentation show what's possible.
 
 It is strongly recommended to not change any Set-OutlookSignatures files and keep them as they are. If you consequently work with script parameters and keep customized configuration files in a separate folder, upgrading to a new version is basically just a file copy operation (drop-in replacement).
@@ -89,12 +93,11 @@ Regarding configuration files: Besides the template configuration files for sign
 It is rarely needed to change the configuration within these files.  
 The configuration files themselves contain specific information on how to use them. They are referenced in the documentation whenever there is a need or option to change them.
 
-You also have access to '`.\docs\Implementation approach`', a document covering the organizational aspects of introducing Set-OutlookSignatures.  
+You also have access to '.\docs\Implementation approach', a document covering the organizational aspects of introducing Set-OutlookSignatures.  
 The content is based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes.
 
 **Set-OutlookSignatures is very well documented, which inevitably brings with it a lot of content.**  
 If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner [ExplicIT Consulting](https://explicitconsulting.at) offers first-class fee-based support, and their [Benefactor Circle add-on](https://set-outlooksignatures.com/benefactorcircle) adds more enterprise-grade features.
-
 
 
 <script>
