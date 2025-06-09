@@ -42,9 +42,9 @@ Manually maintaining signatures ties up valuable personnel and financial resourc
 
 With Set-OutlookSignatures, you fully automate this process.
 <div class="grid">
-  <div class="cell">• Always up-to-date contact data and company information</div>
-  <div class="cell">• Consistent and compelling appearance in every email</div>
-  <div class="cell">• No manual updating by your employees</div>
+  <div class="cell">Always up-to-date contact data and company information</div>
+  <div class="cell">Consistent and compelling appearance in every email</div>
+  <div class="cell">No manual updating by your employees</div>
 </div>
 
 
@@ -53,9 +53,15 @@ With Set-OutlookSignatures, you fully automate this process.
   <div class="cell"><b>Simply for everyone</b><br>Intuitive for IT and marketing, invisible to your employees.</div>
   <div class="cell"><b>Dynamic content</b><br>Predefined and custom attributes at user, mailbox, and manager level.</div>
   <div class="cell"><b>Out-of-office replies</b><br>Manage out-of-office messages centrally, for internal and external recipients.</div>
+</div>
+
+<div class="grid">
   <div class="cell"><b>Cross-platform</b><br>Signatures anytime, anywhere: Windows, macOS, Android, iOS, Linux, Web. Classic and New Outlook. On-prem, hybrid and cloud-only.</div>
   <div class="cell"><b>Innovative features</b><br>Supports personal and shared mailboxes, "Send As", "Send on Behalf", simulation mode, roaming signatures, and many more features for maximum flexibility.</div>
   <div class="cell"><b>Flexible assignment</b><br>Control signatures by department, location, language, role, time, and many other properties from various data sources.</div>
+</div>
+
+<div class="grid">
   <div class="cell"><b>No new infrastructure required</b><br>Set-OutlookSignatures runs on your existing systems and creates no new dependencies.</div>
   <div class="cell"><b>Unsurpassed data privacy</b><br>All data remains in your trusted environment, within your existing security and management structures.</div>
   <div class="cell"><b>Additional marketing channel</b><br>Design templates freely in Word or HTML. Use signatures for campaigns and brand messaging, free and effectively.</div>
