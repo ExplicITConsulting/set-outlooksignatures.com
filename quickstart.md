@@ -50,22 +50,22 @@ When some or all of your mailboxes are in Exchange Online, you need to register 
 
 To create the Entra ID app, ask a 'Global Admin' or 'Application Administrator' to run '`.\sample code\Create-EntraApp.ps1 -AppType 'Set-OutlookSignatures' -AppName 'Set-OutlookSignatures'`' and follow the instructions.
 
-See '`.\config\default graph config.ps1`' for details about the required application settings, permissions, and why they are needed.
+The code in the script file is well documented, containing all details about the required Entra ID app settings, permissions, and why they are needed.
 
 
 ## Step 4: Run Set-Outlook Signatures
-- **If _all mailboxes_ are in Exchange _on-prem only_**
+- **If all mailboxes are in Exchange on-prem**
   ```batch
   powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"
   ```
 
-- **If _some or all mailboxes_ are in Exchange _Online_**
+- **If some or all mailboxes are in Exchange Online**
   ```batch
   powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from step 3>"
   ```
   The '`-GraphOnly true`' parameter makes sure that on-prem Active Directory is ignored and only Graph/Entra ID is used to find mailboxes and their attributes.
 
-If you are not using the public Microsoft Cloud, add the parameter '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`' parameter.
+If you are not using the public Microsoft Cloud, add the parameter '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`'.
 
 Congratulations! Set-OutlookSignatures now deploys your first signatures using default settings and sample templates.
 
