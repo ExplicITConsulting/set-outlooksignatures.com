@@ -98,7 +98,7 @@ image:
 </div>
 
 
-<h2>Wir zeigen Ihnen, wie!</h2>
+<h2>Verwalten Sie Ihre Outlook-Signaturen zentral. Wir zeigen Ihnen, wie!</h2>
 <p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p>
 
 <p>Erleben Sie live, wie schnell und intuitiv Sie Ihre Outlook-Signaturen und Abwesenheitsnotizen zentral verwalten und optimieren können.<p>
@@ -106,8 +106,8 @@ image:
 <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover">→ Jetzt persönliche Demo vereinbaren</button></a>
 
 
-<h2>Auf die Plätze, fertig, los!</h2>
-<p>Deploy your first signatures in less than an hour!<p>
+<h2>Verteilen Sie Ihre ersten Signaturen in weniger als einer Stunde</h2>
+<p>Folgen Sie dem einfachen 4-Schritte-Prozess, um Ihre ersten Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
 <a href="/quickstart"><button class="button is-link is-normal is-hover">→ Quick Start Guide</button></a>
 

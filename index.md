@@ -107,7 +107,7 @@ redirect_from:
 </div>
 
 
-<h2>We’ll show you how!</h2>
+<h2>Manage your Outlook signatures centrally. We’ll show you how!</h2>
 <p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.<p>
 
 <p>Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.<p>
@@ -115,8 +115,8 @@ redirect_from:
 <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover">→ Schedule your personal demo now</button></a>
 
 
-<h2>Ready, set, go!</h2>
-<p>Deploy your first signatures in less than an hour!<p>
+<h2>Deploy your first signatures in less than an hour</h2>
+<p>Follow the easy 4-step-process to deploy your first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 
 <a href="/quickstart"><button class="button is-link is-normal is-hover">→ Quick Start Guide</button></a>
 
