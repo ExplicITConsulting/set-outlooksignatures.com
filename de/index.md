@@ -1,5 +1,6 @@
 ---
 layout: page
+lang: de
 title: |
   <p class="has-text-white">
     Set-Outlook<wbr>Signatures und das Benefactor Circle add-on

@@ -1,5 +1,6 @@
 ---
 layout: page
+lang: de
 title: |
   <p class="has-text-white">
     Das Benefactor Circle Add-On
