@@ -41,10 +41,18 @@ redirect_from:
 Manually maintaining signatures ties up valuable personnel and financial resources. This quickly leads to outdated information that does not comply with internal or regulatory requirements.
 
 With Set-OutlookSignatures, you fully automate this process.
-<div class="grid">
-  <div class="cell">• Always up-to-date contact data and company information</div>
-  <div class="cell">• Consistent and compelling appearance in every email</div>
-  <div class="cell">• No manual updating by your employees</div>
+<div class="container">
+  <div class="columns is-multiline">
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Always up-to-date contact data and company information</b></div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+      <div class="cell"><b>Consistent and compelling appearance in every email</b></div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+     <div class="cell"><b>No manual updating by your employees</b></div>
+    </div>
+  </div>
 </div>
 
 
