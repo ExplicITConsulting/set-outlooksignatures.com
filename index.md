@@ -37,7 +37,7 @@ redirect_from:
 </div>
 
 **Set-OutlookSignatures and the Benefactor Circle add-on can do all this, and much more. Full-featured, cost-effective, unsurpassed data privacy:**
-<div class="grid" style="margin-left: 2em;">
+<div class="grid">
   <div class="cell">
     <details open>
       <summary>Made in Austria, proven worldwide</summary>
