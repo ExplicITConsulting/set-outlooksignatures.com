@@ -233,3 +233,13 @@ redirect_from:
   <li>Best practices und FAQ</li>
   <li>Wie Sie erstklassigen Support erhalten</li>
 </ul>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const lang = navigator.language || navigator.userLanguage || 'en';
+    if (lang.startsWith('de')) {
+      window.location.href = '/index-de.html';
+    }
+  });
+</script>
