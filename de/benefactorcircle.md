@@ -30,7 +30,7 @@ redirect_from:
 </div>
 
 <a href="#demo"><button class="button is-link is-normal is-hover">Persönliche Demo vereinbaren</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="#trial-version"><button class="button is-link is-normal is-hover">Testversion oder Lizenzangebot anfordern</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#testversion"><button class="button is-link is-normal is-hover">Testversion oder Lizenzangebot anfordern</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="/support"><button class="button is-link is-normal is-hover">Kostenpflichtigen Support bestellen</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Funktionen des Benefactor Circle Add-Ons
