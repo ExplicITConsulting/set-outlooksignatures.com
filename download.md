@@ -29,10 +29,10 @@ Set-OutlookSignatures is the open-source gold standard for email signatures and 
 The latest release of the free and open-source core version of Set-OutlookSignatures is <span class="version-text">Loading...</span>.
 </p>
 
-<p>
-Read the <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md" target="_blank">changelog</a>, or directly 
-<a id="download-link" href="#" target="_blank">download <span class="version-text">Loading...</span> as ZIP file</a>.
-</p>
+<p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md" target="_blank"><button class="button is-link is-normal is-hover">Read the changelog</button></a></p>
+
+<p><a id="download-link" href="#" target="_blank"><button class="button is-link is-normal is-hover">Download <span class="version-text">Loading...</span> as ZIP file</button></a></p>
+
 
 <h2>The Benefactor Circle add-on</h2>
 <p>
@@ -40,7 +40,7 @@ ExplicIT's <a href="/benefactorcircle">Benefactor Circle add-on</a> enhances the
 </p>
 
 <p>
-See the <a href="/benefactorcircle">Benefactor Circle add-on</a> site for details on how to purchase and buy the add-on.
+See the <a href="/benefactorcircle">Benefactor Circle add-on</a> site for details on how to purchase the add-on.
 </p>
 
 <p>
