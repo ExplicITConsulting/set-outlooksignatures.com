@@ -2,7 +2,7 @@
 layout: page
 title: |
   <p class="has-text-white">
-    Set-OutlookSignatures and the Benefactor Circle add-on
+    Set-OutlookSignatures
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
@@ -44,13 +44,13 @@ Manually maintaining signatures ties up valuable personnel and financial resourc
 With Set-OutlookSignatures, you fully automate this process.
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell">• Always up-to-date contact data and company information</div>
+    <div class="cell"><b>Always up-to-date contact data and company information</b></div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell">• Consistent and compelling appearance in every email</div>
+    <div class="cell"><b>Consistent and compelling appearance in every email</b></div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell">• No manual updating by your employees</div>
+    <div class="cell"><b>No manual updating by your employees</b></div>
   </div>
 </div>
 
