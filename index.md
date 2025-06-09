@@ -114,7 +114,7 @@ Experience live how quickly and intuitively you can centrally manage and optimiz
 
 
 ## Ready, set, go!
-Deploy your first signatures in less than an hour with our!
+Deploy your first signatures in less than an hour!
 
 <a href="/quickstart" target="_blank"><button class="button is-link is-normal is-hover">→ Quick Start Guide</button></a>
 
