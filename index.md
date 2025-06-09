@@ -44,13 +44,13 @@ With Set-OutlookSignatures, you fully automate this process.
 <div class="container">
   <div class="columns is-multiline">
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Always up-to-date contact data and company information</b></div>
+      <div class="cell">• Always up-to-date contact data and company information</div>
     </div>
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-      <div class="cell"><b>Consistent and compelling appearance in every email</b></div>
+      <div class="cell">• Consistent and compelling appearance in every email</div>
     </div>
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-     <div class="cell"><b>No manual updating by your employees</b></div>
+     <div class="cell">• No manual updating by your employees</div>
     </div>
   </div>
 </div>
