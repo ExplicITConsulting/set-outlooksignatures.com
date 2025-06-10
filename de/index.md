@@ -3,7 +3,7 @@ layout: page
 lang: de
 title: |
   <p class="has-text-white">
-    Set-OutlookSignatures und das Benefactor Circle Add-On
+    Set-Outlook&shy;Signatures und das Benefactor Circle Add-On
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
