@@ -1,13 +1,7 @@
 ---
 layout: page
-title: |
-  <p class="has-text-white">
-    Get support
-  </p>
-subtitle: |
-  <p class="subtitle is-3 has-text-white">
-    Passing on our experience to you
-  </p>
+title: Get support
+subtitle: Passing on our experience to you
 description: |
   Get fee-based support. We have got you covered.
 image:
