@@ -3,11 +3,11 @@ layout: page
 lang: de
 title: |
   <p class="has-text-white">
-    Set-Outlook<wbr>Signatures und das Benefactor Circle Add-On
+    Set-Outlook&shy;Signatures und das Benefactor Circle Add-On
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
-    E-Mail-Signaturen und Abwensenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
+    E-Mail-Signaturen und Ab&shy;wesen&shy;heits&shy;no&shy;tizen für Exchange und alle Varianten von Outlook.<br>Voller Funktions&shy;umfang, kosten&shy;effizient, un&shy;über&shy;troffener Daten&shy;schutz.
   </p>
 description: |
   Set-OutlookSignatures Benefactor Circle. E-Mail-Signaturen und Abwensenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
