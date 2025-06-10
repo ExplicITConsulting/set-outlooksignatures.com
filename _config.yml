@@ -35,6 +35,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-redirect-from
+  - jekyll-analytics
 
 
 # mimic GitHub Pages with --safe
@@ -70,3 +71,8 @@ defaults:
 
 include:
   - ".well-known"
+
+jekyll_analytics:
+  Matomo:
+    url: test143.set-outlooksignatures.com
+    siteId: "1"
