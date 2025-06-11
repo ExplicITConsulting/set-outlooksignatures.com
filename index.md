@@ -186,7 +186,7 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #7CFC00 0%, #7CFC0050 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Cost-efficient and transparent</b><br>
         Fair prices. No subscriptions. No maintenance contracts.
@@ -196,7 +196,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #7CFC00 0%, #7CFC0050 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Support with handshake quality</b><br>
         Solution-driven. At eye level. Accountable.
@@ -206,7 +206,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #7CFC00 0%, #7CFC0050 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Tangible added value</b><br>
         Your investment pays off. From day one.
