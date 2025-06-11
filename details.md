@@ -244,13 +244,13 @@ For the user, the selection process may look complicated at first sight, but is 
 Don't forget: You can use one and the same template for different signature names. In the example above, the template might not be named `CompA ext EN frml office@.docx`, but `CompA ext EN frml shared@.docx` and be used multiple times in the INI file:
 
 ```
-## office@example.com
+# office@example.com
 [CompA ext EN frml shared@.docx]
 office@example.com
 OutlookSignatureName = CompA ext EN frml office@
 DefaultNew
 
-## marketing@example.com
+# marketing@example.com
 [CompA ext EN frml shared@.docx]
 marketing@example.com
 OutlookSignatureName = CompA ext EN frml marketing@
@@ -361,17 +361,17 @@ Tags are case insensitive.
 
         ```
         @(
-                @('CurrentUser', '$CurrentUser-IsMemberOf-MarketingAndSales$', 'EXAMPLEDOMAIN Marketing', 'EXAMPLEDOMAIN Sales'),
-                @()
+          @('CurrentUser', '$CurrentUser-IsMemberOf-MarketingAndSales$', 'EXAMPLEDOMAIN Marketing', 'EXAMPLEDOMAIN Sales'),
+          @()
         ) | Where-Object { $_ } | ForEach-Object {
-                if (
-                        $((Get-Variable -Name "ADProps$($_[0])" -ValueOnly).GroupsSids -icontains $(ResolveToSid($_[2]))) -and 
-                        $((Get-Variable -Name "ADProps$($_[0])" -ValueOnly).GroupsSids -icontains $(ResolveToSid($_[3]))) 
-                ) { 
-                        $ReplaceHash[$_[1]] = 'yes'
-                } else {
-                        $ReplaceHash[$_[1]] = $null 
-                } 
+          if (
+            $((Get-Variable -Name "ADProps$($_[0])" -ValueOnly).GroupsSids -icontains $(ResolveToSid($_[2]))) -and 
+            $((Get-Variable -Name "ADProps$($_[0])" -ValueOnly).GroupsSids -icontains $(ResolveToSid($_[3]))) 
+          ) { 
+            $ReplaceHash[$_[1]] = 'yes'
+          } else {
+            $ReplaceHash[$_[1]] = $null 
+          } 
         }
         ```
 
@@ -669,14 +669,14 @@ Examples:
       #   It contains the mailboxes' SID and SIDHistory, the SID and SIDHistory of all groups the mailbox belongs to (nested), and also considers group membership (nested) across trusts.
       #   Attention on-prem users: If Active Directory groups of the Domain Local type are queried, you need to set the `IncludeMailboxForestDomainLocalGroups` parameter to `true` when running Set-OutlookSignatures, so that the SIDs of these groups are considered in GroupsSIDs, too.
       @(
-              @('CurrentMailbox', '$CurrentMailbox-IsMemberOf-Marketing$', 'EXAMPLEDOMAIN Marketing'), 
-              @()
+        @('CurrentMailbox', '$CurrentMailbox-IsMemberOf-Marketing$', 'EXAMPLEDOMAIN Marketing'), 
+        @()
       ) | Where-Object { $_ } | ForEach-Object {
-              if ((Get-Variable -Name "ADProps$($_[0])" -ValueOnly).GroupsSids -icontains ResolveToSid($_[2])) {
-                      $ReplaceHash[$_[1]] = 'yes'
-              } else { 
-                      $ReplaceHash[$_[1]] = $null 
-              } 
+        if ((Get-Variable -Name "ADProps$($_[0])" -ValueOnly).GroupsSids -icontains ResolveToSid($_[2])) {
+          $ReplaceHash[$_[1]] = 'yes'
+        } else { 
+          $ReplaceHash[$_[1]] = $null 
+        } 
       }
       ```
 

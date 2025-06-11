@@ -190,12 +190,12 @@ There is no direct way to disable the use of Entra ID, which can result in users
 With the following code, you can make sure that Set-OutlookSignatures is only run when a connection to Active Directory is available:
 
 ```
-## Only run Set-OutlookSignatures when there is a connection to a Domain Controller.
-## Covers the following cases:
-##   - At least one DC from the user's domain is pingable
-##   - At least one Global Catalog server from the user's domain is reachable via a GC query
-##   - The querying user exists and is not locked
-##   - All domains in the user's forest are reachable via LDAP and GC queries
+# Only run Set-OutlookSignatures when there is a connection to a Domain Controller.
+# Covers the following cases:
+#   - At least one DC from the user's domain is pingable
+#   - At least one Global Catalog server from the user's domain is reachable via a GC query
+#   - The querying user exists and is not locked
+#   - All domains in the user's forest are reachable via LDAP and GC queries
 
 
 $testIntervalSeconds = 5 # Interval between retries
@@ -208,107 +208,107 @@ Add-Type -AssemblyName System.DirectoryServices.AccountManagement
 $testCurrentUserDN = ([System.DirectoryServices.AccountManagement.UserPrincipal]::Current).DistinguishedName
 
 if (
-    $($null -eq $testCurrentUserDN) -or
-    $(($testCurrentUserDN -split ',DC=').Count -lt 3)
+  $($null -eq $testCurrentUserDN) -or
+  $(($testCurrentUserDN -split ',DC=').Count -lt 3)
 ) {
-    Write-Host '  User is not a member of a domain, do not go on with further tests.'
+  Write-Host '  User is not a member of a domain, do not go on with further tests.'
 } else {
-    $testStartTime = Get-Date
-    $testSuccess = $false
+  $testStartTime = Get-Date
+  $testSuccess = $false
 
-    do {
-        if (Test-Connection $(($testCurrentUserDN -split ',DC=')[1..999] -join '.') -Count 1 -Quiet) {
-            Write-Host '  User on-prem AD can be reached, perform test query against AD.'
+  do {
+    if (Test-Connection $(($testCurrentUserDN -split ',DC=')[1..999] -join '.') -Count 1 -Quiet) {
+      Write-Host '  User on-prem AD can be reached, perform test query against AD.'
 
-            $testCurrentUserADProps = $null
+      $testCurrentUserADProps = $null
+
+      try {
+        $testSearch = New-Object DirectoryServices.DirectorySearcher
+        $testSearch.PageSize = 1000
+        $testSearch.SearchRoot = "GC://$(($testCurrentUserDN -split ',DC=')[1..999] -join '.')"
+        $testSearch.Filter = "((distinguishedname=$($testCurrentUserDN)))"
+
+        $testCurrentUserADProps = $testSearch.FindOne().Properties
+      } catch {
+        $testCurrentUserADProps = $null
+      }
+
+      if ($null -ne $testCurrentUserADProps) {
+        Write-Host '  AD query was successful, user is not locked, DC is reachable via GC query: Start Set-OutlookSignatures.'
+
+        # Get all domains of the current user forest, as they must be reachable, too
+        Write-Host '  Testing child domains'
+
+        $testCurrentUserForest = (([ADSI]"LDAP://$(($testCurrentUserDN -split ',DC=')[1..999] -join '.')/RootDSE").rootDomainNamingContext -ireplace [Regex]::Escape('DC='), '' -ireplace [Regex]::Escape(','), '.').tolower()
+
+        $testSearch.SearchRoot = "GC://$($testCurrentUserForest)"
+        $testSearch.Filter = '(ObjectClass=trustedDomain)'
+        $testTrustedDomains = @($testSearch.FindAll())
+
+        $testTrustedDomains = @(
+          @() +
+          $testCurrentUserForest +
+          @(
+            @($testTrustedDomains) | Where-Object { (($_.properties.trustattributes -eq 32) -and ($_.properties.name -ine $testCurrentUserForest)) }
+          ).properties.name
+        ) | Select-Object -Unique
+
+        $testTrustedDomainFailCount = 0
+
+        foreach ($testTrustedDomain in $testTrustedDomains) {
+          if ($testTrustedDomainFailCount -gt 0) {
+            break
+          }
+
+          Write-Host "    $($testTrustedDomain)"
+
+          foreach ($CheckProtocolText in @('LDAP', 'GC')) {
+            if ($testTrustedDomainFailCount -gt 0) {
+              break
+            }
+
+            $testSearch.searchroot = New-Object System.DirectoryServices.DirectoryEntry("$($CheckProtocolText)://$testTrustedDomain")
+            $testSearch.filter = '(objectclass=user)'
 
             try {
-                $testSearch = New-Object DirectoryServices.DirectorySearcher
-                $testSearch.PageSize = 1000
-                $testSearch.SearchRoot = "GC://$(($testCurrentUserDN -split ',DC=')[1..999] -join '.')"
-                $testSearch.Filter = "((distinguishedname=$($testCurrentUserDN)))"
+              $null = ([ADSI]"$(($testSearch.FindOne()).path)")
 
-                $testCurrentUserADProps = $testSearch.FindOne().Properties
+              Write-Host "      $($CheckProtocolText): Passed"
             } catch {
-                $testCurrentUserADProps = $null
+              $testTrustedDomainFailCount++
+
+              Write-Host "      $($CheckProtocolText): Failed"
             }
-
-            if ($null -ne $testCurrentUserADProps) {
-                Write-Host '  AD query was successful, user is not locked, DC is reachable via GC query: Start Set-OutlookSignatures.'
-
-                # Get all domains of the current user forest, as they must be reachable, too
-                Write-Host '  Testing child domains'
-
-                $testCurrentUserForest = (([ADSI]"LDAP://$(($testCurrentUserDN -split ',DC=')[1..999] -join '.')/RootDSE").rootDomainNamingContext -ireplace [Regex]::Escape('DC='), '' -ireplace [Regex]::Escape(','), '.').tolower()
-
-                $testSearch.SearchRoot = "GC://$($testCurrentUserForest)"
-                $testSearch.Filter = '(ObjectClass=trustedDomain)'
-                $testTrustedDomains = @($testSearch.FindAll())
-
-                $testTrustedDomains = @(
-                    @() +
-                    $testCurrentUserForest +
-                    @(
-                        @($testTrustedDomains) | Where-Object { (($_.properties.trustattributes -eq 32) -and ($_.properties.name -ine $testCurrentUserForest)) }
-                    ).properties.name
-                ) | Select-Object -Unique
-
-                $testTrustedDomainFailCount = 0
-
-                foreach ($testTrustedDomain in $testTrustedDomains) {
-                    if ($testTrustedDomainFailCount -gt 0) {
-                        break
-                    }
-
-                    Write-Host "    $($testTrustedDomain)"
-
-                    foreach ($CheckProtocolText in @('LDAP', 'GC')) {
-                        if ($testTrustedDomainFailCount -gt 0) {
-                            break
-                        }
-
-                        $testSearch.searchroot = New-Object System.DirectoryServices.DirectoryEntry("$($CheckProtocolText)://$testTrustedDomain")
-                        $testSearch.filter = '(objectclass=user)'
-
-                        try {
-                            $null = ([ADSI]"$(($testSearch.FindOne()).path)")
-
-                            Write-Host "      $($CheckProtocolText): Passed"
-                        } catch {
-                            $testTrustedDomainFailCount++
-
-                            Write-Host "      $($CheckProtocolText): Failed"
-                        }
-                    }
-                }
-
-                if ($testTrustedDomainFailCount -eq 0) {
-                    $testSuccess = $true
-                }
-
-                #
-                # Start Set-OutlookSignatures here
-                #
-            } else {
-                Write-Host '  AD query failed, user might be locked or DCs can not be reached via GC query: Do not start Set-OutlookSignatures.'
-            }
-
-        } else {
-            Write-Host '  User on-prem AD can not be reached, do not go on with further tests.'
+          }
         }
 
-        if ($testSuccess -ne $true) {
-            $testElapsedSeconds = [math]::Ceiling((New-TimeSpan -Start $testStartTime).TotalSeconds)
-
-            if ($testElapsedSeconds -ge $testTimeoutSeconds) {
-                Write-Host "  Timeout reached ($($testTimeoutSeconds) seconds). Tests stopped."
-                break
-            } else {
-                Write-Host "  Retrying in $($testIntervalSeconds) seconds. $($testTimeoutSeconds - $testElapsedSeconds) seconds left until timeout."
-                Start-Sleep -Seconds $testIntervalSeconds
-            }
+        if ($testTrustedDomainFailCount -eq 0) {
+          $testSuccess = $true
         }
-    } while ($testSuccess -ne $true)
+
+        #
+        # Start Set-OutlookSignatures here
+        #
+      } else {
+        Write-Host '  AD query failed, user might be locked or DCs can not be reached via GC query: Do not start Set-OutlookSignatures.'
+      }
+
+    } else {
+      Write-Host '  User on-prem AD can not be reached, do not go on with further tests.'
+    }
+
+    if ($testSuccess -ne $true) {
+      $testElapsedSeconds = [math]::Ceiling((New-TimeSpan -Start $testStartTime).TotalSeconds)
+
+      if ($testElapsedSeconds -ge $testTimeoutSeconds) {
+        Write-Host "  Timeout reached ($($testTimeoutSeconds) seconds). Tests stopped."
+        break
+      } else {
+        Write-Host "  Retrying in $($testIntervalSeconds) seconds. $($testTimeoutSeconds - $testElapsedSeconds) seconds left until timeout."
+        Start-Sleep -Seconds $testIntervalSeconds
+      }
+    }
+  } while ($testSuccess -ne $true)
 }
 ```
 
@@ -745,7 +745,7 @@ You can automate this with Set-OutlookSignatures in two simple steps:
     $tempBannerIdentifiers = @(1, 2, 3)
 
     $tempBannerIdentifiers | Foreach-Object {
-        $ReplaceHash["CurrentMailbox_Banner$($_)"] = $null
+      $ReplaceHash["CurrentMailbox_Banner$($_)"] = $null
     }
 
     $ReplaceHash["CurrentMailbox_Banner$($tempBannerIdentifiers | Get-Random)"] = $true
