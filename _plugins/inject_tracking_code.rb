@@ -6,13 +6,14 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
 
         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
         _paq.push(["setRequestMethod", "POST"]);
+        _paq.push(["requireCookieConsent"]);
+        _paq.push(["disableCookies"]);
+        _paq.push(["deleteCookies"]);
         _paq.push(["enableHeartBeatTimer"]);
-        _paq.push(["disableAlwaysUseSendBeacon"]);
+        //_paq.push(["disableAlwaysUseSendBeacon"]);
         _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
         _paq.push(["setCookieDomain", "*.set-outlooksignatures.com"]);
         _paq.push(["setDomains", ["*.set-outlooksignatures.com"]]);
-        _paq.push(["disableCookies"]);
-        _paq.push(["setConsentGiven"]);
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
 
