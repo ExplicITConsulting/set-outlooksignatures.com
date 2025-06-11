@@ -49,31 +49,30 @@ redirect_from:
 <p>With Set-OutlookSignatures, you fully automate this process.</p>
 
 <div class="columns is-multiline">
-
-</div>
-<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-  <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-    <span style="font-weight: 900; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
-    <div>
-      <b>Always up-to-date contact data and company information</b>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Always up-to-date contact data and company information</b>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-  <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-    <span style="font-weight: 900; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
-    <div>
-      <b>Consistent and compelling appearance in every email</b>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Consistent and compelling appearance in every email</b>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-  <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-    <span style="font-weight: 900; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
-    <div>
-      <b>No manual updating by your employees</b>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>No manual updating by your employees</b>
+      </div>
     </div>
   </div>
 </div>
@@ -223,7 +222,7 @@ redirect_from:
 
 <p>Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.<p>
 
-<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Schedule your personal demo now</button></a>
+<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: MediumAquamarine">Schedule your personal demo now</button></a>
 
 
 <h2>Deploy your first signatures in less than an hour</h2>
