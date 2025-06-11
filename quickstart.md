@@ -6,10 +6,10 @@ title: |
   </p>
 subtitle: |
   <p class="subtitle is-3 has-text-white">
-    Deploy your first signatures in less than an hour!
+    Deploy your first signatures in less than an hour
   </p>
 description: |
-  Quick Start Guide. Implementation help. Deploy your first signatures in less than an hour!
+  Quick Start Guide. Implementation help. Deploy your first signatures in less than an hour.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -23,7 +23,7 @@ redirect_from:
   - /quick-start-guide
 ---
 
-## Deploy your first signatures in less than an hour!
+## Deploy your first signatures in less than an hour
 Follow the easy 4-step-process to deploy your first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.
 
 

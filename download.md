@@ -28,7 +28,7 @@ redirect_from:
 
   <p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: springgreen">Download&nbsp;<span class="version-text">the latest release</span>&nbsp;as ZIP file</button></a></p>
 
-  <p>You can deploy your first signatures in less than an hour! Just follow the easy 4-step-process to get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations:</p>
+  <p>You can deploy your first signatures in less than an hour. Just follow the easy 4-step-process to get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations:</p>
   
   <p><a href="/quickstart"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: springgreen">Quick Start Guide</button></a></p>
 
