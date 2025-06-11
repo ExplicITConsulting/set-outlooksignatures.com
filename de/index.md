@@ -226,7 +226,7 @@ redirect_from:
 <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: MediumAquamarine">Jetzt persönliche Demo vereinbaren</button></a>
 
 
-<h2>Verteilen Sie Ihre ersten Signaturen in weniger als einer Stunde</h2>
+<h2>Verteilen Sie Ihre ersten Signaturen in <span style="color: lawngreen">weniger als einer Stunde</span></h2>
 <p>Folgen Sie dem einfachen 4-Schritte-Prozess, um Ihre ersten Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
 <a href="/quickstart"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Quick Start Guide</button></a>
