@@ -26,7 +26,7 @@ redirect_from:
   - /outlooksignature
 ---
 
-## Features&nbsp;&nbsp;&nbsp;&nbsp;<a href="#feature-comparison"><img src="https://img.shields.io/badge/go%20to-Feature%20comparison-lawngreen?labelColor=black" alt="Go to Feature comparison"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
+## Features&nbsp;&nbsp;&nbsp;&nbsp;<a href="#feature-comparison"><img src="https://img.shields.io/badge/go%20to-Feature%20comparison-limegreen?labelColor=black" alt="Go to Feature comparison"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-limegreen?labelColor=black" alt="Go to Quick Start Guide"></a>
 With Set-OutlookSignatures, signatures and out-of-office replies can be:
 - Generated from **templates in DOCX or HTML** file format.
 - Customized with a **broad range of variables**, including **photos and images**, from Entra ID, Active Directory and other sources.
@@ -68,7 +68,7 @@ The software core is **Free and Open-Source Software (FOSS)**. It is published u
 Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle">Benefactor Circle add-on</a>.** ExplicIT Consulting's commercial Benefactor Circle add-on enhances Set-OutlookSignatures with additional enterprise-grade features. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve.
 
 
-## Feature comparison&nbsp;&nbsp;&nbsp;&nbsp;<a href="#features"><img src="https://img.shields.io/badge/go%20to-Features-lawngreen?labelColor=black" alt="Go to Features"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-lawngreen?labelColor=black" alt="Go to Quick Start Guide"></a>
+## Feature comparison&nbsp;&nbsp;&nbsp;&nbsp;<a href="#features"><img src="https://img.shields.io/badge/go%20to-Features-limegreen?labelColor=black" alt="Go to Features"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-limegreen?labelColor=black" alt="Go to Quick Start Guide"></a>
 
 <div class="table-container">
     <table class="table is-bordered is-striped is-hoverable is-fullwidth">
