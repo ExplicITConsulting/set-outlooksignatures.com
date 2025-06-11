@@ -33,14 +33,18 @@ redirect_from:
     <img src="/assets/images/set-outlooksignatures logo.png" alt="Set-OutlookSignatures">
   </div>
   <div class="column">
-    <h2>Verwalten Sie Ihre Outlook-Signaturen zentral und vollautomatisch</h2>
+    <h2>
+      <span style="font-weight: normal;">Verwalten Sie Ihre </span>
+      <span style="font-weight: bold;">Outlook-Signaturen</span>
+      <span style="font-weight: normal;"> zentral und vollautomatisch</span>
+    </h2>
     <p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
     <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
   </div>
 </div>
 
 
-<h2>Weniger Aufwand, mehr Professionalität</h2>
+<h2><span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>, mehr Professionalität</h2>
 <p>Die manuelle Pflege von Signaturen bindet wertvolle personelle und finanzielle Kapazitäten. Das führt schnell zu veralteten Angaben, die weder internen noch regulatorischen Vorgaben entsprechen.</p>
 
 <p>Mit Set-OutlookSignatures automatisieren Sie diesen Prozess vollständig.</p>
@@ -58,7 +62,12 @@ redirect_from:
 </div>
 
 
-<h2>Die Stärken von Set-OutlookSignatures</h2>
+<h2>
+  <span style="font-weight: normal;">Die </span>
+  <span style="font-weight: bold;">Stärken</span>
+  <span style="font-weight: normal;"> von </span>
+  <span style="font-weight: bold; font-style: italic;">Set-OutlookSignatures</span>
+</h2>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell"><b>Einfach für alle</b><br>Intuitiv für IT und Marketing, unsichtbar für Ihre Mitarbeiter.</div>
@@ -90,7 +99,7 @@ redirect_from:
 </div>
 
 
-<h2>Funktionalität trifft Expertise</h2>
+<h2>Funktionalität trifft <span style="color: lawngreen;">Expertise</span></h2>
 <p>Das optionale Benefactor Circle Add-On erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
 
 <p>Auf Wunsch richten wir unsere Lösung gemeinsam mit Ihnen ein: Einfach, auf Ihre Bedürfnisse zugeschnitten und mit nachhaltigem Wissenstransfer.<p>
@@ -108,7 +117,7 @@ redirect_from:
 </div>
 
 
-<h2>Verwalten Sie Ihre Outlook-Signaturen zentral. Wir zeigen Ihnen, wie!</h2>
+<h2>Verwalten Sie Ihre <span style="color: MediumAquamarine;">Outlook-Signature.</span> zentral. Wir zeigen Ihnen, wie!</h2>
 <p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p>
 
 <p>Erleben Sie live, wie schnell und intuitiv Sie Ihre Outlook-Signaturen und Abwesenheitsnotizen zentral verwalten und optimieren können.<p>
