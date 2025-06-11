@@ -33,9 +33,9 @@ redirect_from:
   </div>
   <div class="column">
     <h2>
-      <span style="font-weight: normal;">Manage your </span>
-      <span style="font-weight: bold;">Outlook signatures</span>
-      <span style="font-weight: normal;"> centrally and fully automated</span>
+      <span style="font-weight: bold;">Manage your </span>
+      <span style="font-weight: 900;">Outlook signatures</span>
+      <span style="font-weight: bold;"> centrally and fully automated</span>
     </h2>
     <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
     <p>Thanks to centrally managed templates that automatically populate with your company data, every email gets the professional appearance your business deserves: Up-to-date, consistent, and on-brand.</p>
@@ -43,7 +43,7 @@ redirect_from:
 </div>
 
 
-<h2><span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span>, more professionalism</h2>
+<h2><span style="font-weight: 900; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span>, more professionalism</h2>
 <p>Manually maintaining signatures ties up valuable personnel and financial resources. This quickly leads to outdated information that does not comply with internal or regulatory requirements.</p>
 
 <p>With Set-OutlookSignatures, you fully automate this process.</p>
@@ -62,10 +62,10 @@ redirect_from:
 
 
 <h2>
-  <span style="font-weight: normal;">The </span>
-  <span style="font-weight: bold;">strengths</span>
-  <span style="font-weight: normal;"> of </span>
-  <span style="font-weight: bold; font-style: italic;">Set-OutlookSignatures</span>
+  <span style="font-weight: bold;">The </span>
+  <span style="font-weight: 900;">strengths</span>
+  <span style="font-weight: bold;"> of </span>
+  <span style="font-weight: 900; font-style: italic;">Set-OutlookSignatures</span>
 </h2>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">

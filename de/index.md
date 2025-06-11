@@ -34,9 +34,9 @@ redirect_from:
   </div>
   <div class="column">
     <h2>
-      <span style="font-weight: lighter;">Verwalten Sie Ihre </span>
-      <span style="font-weight: inherit;">Outlook-Signaturen</span>
-      <span style="font-weight: lighter;"> zentral und vollautomatisch</span>
+      <span style="font-weight: bold;">Verwalten Sie Ihre </span>
+      <span style="font-weight: 900;">Outlook-Signaturen</span>
+      <span style="font-weight: bold;"> zentral und vollautomatisch</span>
     </h2>
     <p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
     <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
@@ -44,7 +44,7 @@ redirect_from:
 </div>
 
 
-<h2><span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>, mehr Professionalität</h2>
+<h2><span style="font-weight: 900; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>, mehr Professionalität</h2>
 <p>Die manuelle Pflege von Signaturen bindet wertvolle personelle und finanzielle Kapazitäten. Das führt schnell zu veralteten Angaben, die weder internen noch regulatorischen Vorgaben entsprechen.</p>
 
 <p>Mit Set-OutlookSignatures automatisieren Sie diesen Prozess vollständig.</p>
@@ -63,10 +63,10 @@ redirect_from:
 
 
 <h2>
-  <span style="font-weight: normal;">Die </span>
-  <span style="font-weight: bold;">Stärken</span>
-  <span style="font-weight: normal;"> von </span>
-  <span style="font-weight: bold; font-style: italic;">Set-OutlookSignatures</span>
+  <span style="font-weight: bold;">Die </span>
+  <span style="font-weight: 900;">Stärken</span>
+  <span style="font-weight: bold;"> von </span>
+  <span style="font-weight: 900; font-style: italic;">Set-OutlookSignatures</span>
 </h2>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
