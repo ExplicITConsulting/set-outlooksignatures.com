@@ -34,9 +34,9 @@ redirect_from:
   </div>
   <div class="column">
     <h2>
-      <span style="font-family: inherit !important; font-weight: normal;">Verwalten Sie Ihre </span>
-      <span style="font-weight: bold;">Outlook-Signaturen</span>
-      <span style="font-weight: normal;"> zentral und vollautomatisch</span>
+      <span style="font-weight: bold;">Verwalten Sie Ihre </span>
+      <span style="font-weight: 900;">Outlook-Signaturen</span>
+      <span style="font-weight: bold;"> zentral und vollautomatisch</span>
     </h2>
     <p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
     <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
