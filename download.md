@@ -19,32 +19,21 @@ redirect_from:
 ---
 
 <div style="min-height: 100vh;">
+  <h2>Set-OutlookSignatures</h2>
+  <p>
+  Set-OutlookSignatures is the open-source gold standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
+  </p>
 
-<h2>Set-OutlookSignatures</h2>
-<p>
-Set-OutlookSignatures is the open-source gold standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
-</p>
+  <p>The latest release of the free and open-source core version of Set-OutlookSignatures is <span class="version-text">Loading...</span>.</p>
 
-<p>The latest release of the free and open-source core version of Set-OutlookSignatures is <span class="version-text">Loading...</span>.</p>
+  <p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Read the changelog</button></a> <a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Download&nbsp;<span class="version-text">the latest release</span>&nbsp;as ZIP file</button></a></p>
 
-<p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Read the changelog</button></a></p>
+  <p>You can deploy your first signatures in less than an hour! Just follow the easy 4-step-process to get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations:<br><a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Quick Start Guide</button></a></p>
 
-<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Download&nbsp;<span class="version-text">the latest release</span>&nbsp;as ZIP file</button></a></p>
+  <h2>The Benefactor Circle add-on</h2>
+  <p>ExplicIT's Benefactor Circle add-on enhances the open-source version with a great set of additional enterprise-grade features.</p>
 
-
-<h2>The Benefactor Circle add-on</h2>
-<p>
-ExplicIT's <a href="/benefactorcircle">Benefactor Circle add-on</a> enhances the open-source version with a great set of additional enterprise-grade features.
-</p>
-
-<p>
-See the <a href="/benefactorcircle">Benefactor Circle add-on</a> site for details on how to purchase the add-on.
-</p>
-
-<p>
-After purchase, you will receive a download link for your personalized copy of the Benefactor Circle add-on.
-</p>
-
+  <p>See the <a href="/benefactorcircle">Benefactor Circle add-on</a> site to learn what these features do for your, and how you can get them.<br><a href="/benefactorcircle"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">The Benefactor Circle add-on</button></a></p>
 </div>
 
 <script>
