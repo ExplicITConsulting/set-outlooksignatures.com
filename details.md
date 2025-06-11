@@ -192,7 +192,7 @@ Example: The template "Test signature.docx" will create a signature named "Test 
 This can be overridden in the INI file with the 'OutlookSignatureName' parameter.
 Example: The template "Test signature.htm" with the following INI file configuration will create a signature named "Test signature, do not use".
 
-```ini
+```
 [Test signature.htm]
 OutlookSignatureName = Test signature, do not use
 ```
@@ -243,7 +243,7 @@ For the user, the selection process may look complicated at first sight, but is 
 
 Don't forget: You can use one and the same template for different signature names. In the example above, the template might not be named `CompA ext EN frml office@.docx`, but `CompA ext EN frml shared@.docx` and be used multiple times in the INI file:
 
-```ini
+```
 ## office@example.com
 [CompA ext EN frml shared@.docx]
 office@example.com
@@ -305,7 +305,7 @@ Tags are case insensitive.
   - Make this template specific for the logged on user if his _personal_ mailbox (which does not need to be in Outlook) is a direct or indirect member of this group or distribution list
   - Example: Assign template to every mailbox, but not if the mailbox of the current user is member of the group EXAMPLE\Group
 
-    ```ini
+    ```
     [template.docx]
     -CURRENTUSER:EXAMPLE Group
     ```
@@ -318,7 +318,7 @@ Tags are case insensitive.
   Example: Assign template to every mailbox, but not if the personal mailbox of the current user has the email address userX@example.com
   - Useful for delegate or boss-secretary scenarios: "Assign a template to everyone having the boss mailbox userA@example.com in Outlook, but not for UserA itself" is realized like that in the INI file:
 
-    ```ini
+    ```
     [delegate template name.docx]
     # Assign the template to everyone having userA@example.com in Outlook
     userA@example.com
@@ -328,7 +328,7 @@ Tags are case insensitive.
 
     You can even only use only one delegate template for your whole company to cover all delegate scenarios. Make sure the template correctly uses `$CurrentUser[…]$` and `$CurrentMailbox[…]$` replacement variables, and then use the template multiple times in the INI file, with different signature names:
 
-    ```ini
+    ```
     [Company EN external formal delegate.docx]
     # Assign the template to everyone having userA@example.com in Outlook
     userA@example.com
@@ -359,7 +359,7 @@ Tags are case insensitive.
     - A template should only be applied to users which are member of the Marketing group and the Sales group at the same time:
       - Use a custom replacement variable config file, define the custom replacement variable `$CurrentMailbox-IsMemberOf-MarketingAndSales$` and set it to yes if the current user's mailbox is member of the Marketing and the Sales groups at the same time:  
 
-        ```powershell
+        ```
         @(
                 @('CurrentUser', '$CurrentUser-IsMemberOf-MarketingAndSales$', 'EXAMPLEDOMAIN Marketing', 'EXAMPLEDOMAIN Sales'),
                 @()
@@ -377,21 +377,21 @@ Tags are case insensitive.
 
       - The template INI configuration then looks like this:
 
-        ```ini
+        ```
         [template.docx]
         $CurrentUser-IsMemberOf-MarketingAndSales$
         ```
 
       - If you want a template only to not be applied to users whose primary mailbox is a of the Marketing group and the Sales group at the same time:
 
-        ```ini
+        ```
         [template.docx]
         -:$CurrentUser-IsMemberOf-MarketingAndSales$
         ```
 
       - Combinations are possible: Only in January 2024, for all members of EXAMPLEDOMAIN\Examplegroup but not for the mailbox example@example.com and not for users whose primary mailbox is a of the Marketing group and the Sales group at the same time:
 
-        ```ini
+        ```
         [template.docx]
         202401010000-202401312359
         EXAMPLEDOMAIN Examplegroup
@@ -440,7 +440,7 @@ Tags are case insensitive.
           - `template shared mailbox C.docx`
         - INI file
 
-          ```ini
+          ```
           [template shared mailbox A.docx]
           SharedMailboxA@example.com
 
@@ -460,7 +460,7 @@ Tags are case insensitive.
           - `template shared mailboxes.docx`
         - INI file
 
-          ```ini
+          ```
           [template shared mailboxes.docx]
           SharedMailboxA@example.com
           OutlookSignatureName = template SharedMailboxA
@@ -476,7 +476,7 @@ Tags are case insensitive.
 
     You can even only use only one delegate template for your whole company to cover all delegate scenarios. Make sure the template correctly uses `$CurrentUser[…]$` and `$CurrentMailbox[…]$` replacement variables, and then use the template multiple times in the INI file, with different signature names:
 
-    ```ini
+    ```
     [Company EN external formal delegate.docx]
     # Assign the template to everyone having userA@example.com in Outlook
     userA@example.com
@@ -658,7 +658,7 @@ Examples:
     - If the current mailbox is a member, give '$CurrentMailbox-ismemberof-marketing$' any value. If not, give '$CurrentMailbox-ismemberof-marketing$' no value (NULL or an empty string).
     - You only have to modify three strings right at the beginning:
 
-      ```powershell
+      ```
       # Check if current mailbox is member of group 'EXAMPLEDOMAIN\Marketing' and set $ReplaceHash['$CurrentMailbox-ismemberof-marketing$'] accordingly
       #
       # Replace 'EXAMPLEDOMAIN Marketing' with the domain and group you are searching for. Use 'EntraID' or 'AzureAD' instead of 'EXAMPLEDOMAIN' to only search Entra ID/Graph

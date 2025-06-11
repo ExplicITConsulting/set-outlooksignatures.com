@@ -57,7 +57,7 @@ and follow the instructions.
 The code in the script file is well documented, containing all details about the required Entra ID app settings, permissions, and why they are needed.
 
 
-## Step 4: Run Set-Outlook Signatures
+## Step 4: Run Set-OutlookSignatures
 - **If all mailboxes are in Exchange on-prem**
   <blockquote class="is-family-monospace">
   powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"

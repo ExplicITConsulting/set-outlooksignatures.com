@@ -268,7 +268,7 @@ The software can be executed via any mechanism, for example
 
 Since Set-OutlookSignatures is mainly a pure PowerShell script, it is called like any other script of this file type:
 
-```batch
+```
 powershell.exe <PowerShell parameter> -file "<path to Set-OutlookSignatures.ps1>" <Script parameter>  
 ```
 
@@ -277,7 +277,7 @@ The behaviour of the software can be controlled via parameters. Particularly rel
 
 The following is an example where the signature templates are on an SMB file share and the out-of-office provider templates are in a SharePoint document library:  
 
-```batch
+```
 powershell.exe -file "\netlogon\set-outlooksignatures\set-outlooksignatures.ps1" -SignatureTemplatePath "\DFS-Share\Common\Templates\Signatures Outlook" -OOFTemplatePath "https://sharepoint.example.com/CorporateCommunications/Templates/Out-of-office templates"  
 ```
 

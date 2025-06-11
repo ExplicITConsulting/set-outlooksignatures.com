@@ -113,7 +113,7 @@ Creating a separate Entra ID app for the Outlook add-in is strongly recommended 
 
 You can run the following command to automatically create the Entra ID app. You need an Entra ID account with 'Application Administrator' or 'Global Admin' permissions.
 
-```powershell
+```
 & '.\sample code\Create-EntraApp.ps1' -AppType 'OutlookAddIn' -AppName 'Set-OutlookSignatures Outlook Add-In' -OutlookAddInUrl '<https address to your web server>'
 ```
 
