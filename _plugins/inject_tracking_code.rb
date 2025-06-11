@@ -14,7 +14,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
         _paq.push(['enableLinkTracking']);
 
         (function () {
-          var u = "//test143.set-outlooksignatures.com/";
+          var u = "//mtrcs.explicitconsulting.at/";
           _paq.push(["setTrackerUrl", u + "poop.php"]);
           _paq.push(["setSiteId", "1"]);
           var d = document, g = d.createElement("script"), s = d.getElementsByTagName("script")[0];
@@ -23,7 +23,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       </script>
 
       <noscript>
-        <p><img referrerpolicy="no-referrer-when-downgrade" src="//test143.set-outlooksignatures.com/poop.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p>
+        <p><img referrerpolicy="no-referrer-when-downgrade" src="//mtrcs.explicitconsulting.at/poop.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p>
       </noscript>
     HTML
 
