@@ -29,9 +29,9 @@ redirect_from:
   </div>
 </div>
 
-<a href="#demo"><button class="button is-link is-normal is-hover">Persönliche Demo vereinbaren</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="#testversion"><button class="button is-link is-normal is-hover">Testversion oder Lizenzangebot anfordern</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="/support"><button class="button is-link is-normal is-hover">Kostenpflichtigen Support bestellen</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#demo"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Persönliche Demo vereinbaren</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#testversion"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Testversion oder Lizenzangebot anfordern</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/support"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Kostenpflichtigen Support bestellen</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Funktionen des Benefactor Circle Add-Ons
 <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
@@ -86,7 +86,7 @@ redirect_from:
 ## Demo
 In unserer kostenlosen interaktiven Produktdemo zeigen wir Ihnen die Hauptfunktionen des Benefactor Circle Add-ons und des Outlook-Add-Ins – interaktiv und mit Fokus auf Ihre konkreten Anforderungen.
 
-<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover">Persönliche Demo vereinbaren</button></a>
+<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Persönliche Demo vereinbaren</button></a>
 
 
 ## Finanzielle Vorteile durch die Nutzung des Benefactor Circle Add-ons
@@ -160,7 +160,7 @@ Das Benefactor Circle Add-on erweitert den Funktionsumfang der kostenlosen und q
 Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion benötigen, lesen Sie die Kurzanleitung in der Readme-Datei, öffnen Sie ein Issue auf GitHub oder kontaktieren Sie uns direkt – wir helfen Ihnen im Rahmen unseres kostenpflichtigen Supports gerne bei der Einführung von Set-OutlookSignatures in Ihrer Umgebung.
 
 
-Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover">14-Tage-Testlizenz anfordern</button></a>
+Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">14-Tage-Testlizenz anfordern</button></a>
 
 Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:
 - `BenefactorCircleLicenseFile` mit dem Pfad zu Ihrer individuellen Lizenzdatei
@@ -173,7 +173,7 @@ Wir empfehlen dringend, die Testphase erst zu starten, wenn die kostenlose Kernv
 
 
 ### Bestellprozess für Lizenzen
-<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover">Lizenzangebot für das Benefactor Circle Add-On anfordern</button></a>
+<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Lizenzangebot für das Benefactor Circle Add-On anfordern</button></a>
 
 Sie erhalten in Kürze ein Angebot. Sobald alle Details geklärt sind, erhalten Sie eine Rechnung und können den Zahlungsprozess starten.
 

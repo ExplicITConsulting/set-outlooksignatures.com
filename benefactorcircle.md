@@ -28,9 +28,9 @@ redirect_from:
   </div>
 </div>
 
-<a href="#demo"><button class="button is-link is-normal is-hover">Schedule your personal demo</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="#trial-version"><button class="button is-link is-normal is-hover">Request a trial version or a license quote</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="/support"><button class="button is-link is-normal is-hover">Order fee-based support</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#demo"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Schedule your personal demo</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#trial-version"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Request a trial version or a license quote</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/support"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Order fee-based support</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Benefactor Circle features
 <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
@@ -85,7 +85,7 @@ redirect_from:
 ## Demo
 In your free interactive product demo, we show you the main features of the Benefactor Circle add-on and the Outlook add-in - interactively and with a focus on your actual needs.
 
-<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover">Schedule your personal demo now</button></a>
+<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Schedule your personal demo now</button></a>
 
 
 ## Financial benefits of using the Benefactor Circle add-on
@@ -155,7 +155,7 @@ You may want to start with a 14-day trial license.
 The Benefactor Circle add-on extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.  
 If you look for help implementing the free and open-source core version of Set-OutlookSignatures, go through the Quick Start Guide in the readme file, open an issue at GitHub, or contact us: We are happy to help you implement Set-OutlookSignatures in your own environment as part of our fee-based support.
 
-As soon as the open-source core version is running, it is time to take the next step:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover">Request a full-featured 14-day trial license</button></a>
+As soon as the open-source core version is running, it is time to take the next step:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Request a full-featured 14-day trial license</button></a>
 
 To use the license file, just add two parameters to your call of Set-OutlookSignatures.ps1:
 - `BenefactorCircleLicenseFile` with the path to your individualized license file
@@ -164,7 +164,7 @@ To use the license file, just add two parameters to your call of Set-OutlookSign
 Trial licenses can not be extended or re-issued. They are limited to 14 days runtime and a maximum of 20 mailboxes.<br>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible, as our software does not phone home).<br>It is strongly recommended to start your trial only when the free and open-source version of Set-OutlookSignatures has already been implemented successfully. Also make sure you have a test plan and reserved time to execute it.
 
 ### Order process for non-trial versions
-<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover">Request a license quote for Set-OutlookSignatures Benefactor Circle</button></a>
+<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">Request a license quote for Set-OutlookSignatures Benefactor Circle</button></a>
 
 You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.
 
