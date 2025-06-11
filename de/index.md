@@ -179,7 +179,7 @@ redirect_from:
 </div>
 
 
-<h2>Funktionalität trifft <span style="color: limegreen;">Expertise</span></h2>
+<h2>Funktionalität trifft <span style="color: springgreen;">Expertise</span></h2>
 <p>Das optionale Benefactor Circle Add-On erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
 
 <p>Auf Wunsch richten wir unsere Lösung gemeinsam mit Ihnen ein: Einfach, auf Ihre Bedürfnisse zugeschnitten und mit nachhaltigem Wissenstransfer.<p>
@@ -187,7 +187,7 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #00FF7F 0%, #00FF7F50 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Kosteneffizient und transparent</b><br>
         Faire Preise. Keine Abos. Keine Wartungsverträge.
@@ -197,7 +197,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #00FF7F 0%, #00FF7F50 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Support mit Handschlagqualität</b><br>
         Lösungsstark. Auf Augenhöhe. Verantwortungsbewusst.
@@ -207,7 +207,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #00FF7F 0%, #00FF7F50 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Spürbarer Mehrwert</b><br>
         Ihre Investition entlastet. Vom ersten Tag an.
@@ -226,10 +226,10 @@ redirect_from:
 <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: MediumAquamarine">➔ Jetzt persönliche Demo vereinbaren</button></a>
 
 
-<h2>Verteilen Sie <span style="color: limegreen">Ihre ersten Signaturen in weniger als einer Stunde</span></h2>
+<h2>Verteilen Sie <span style="color: springgreen">Ihre ersten Signaturen in weniger als einer Stunde</span></h2>
 <p>Folgen Sie dem einfachen 4-Schritte-Prozess, um Ihre ersten Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
-<a href="/quickstart"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">Quick Start Guide</button></a>
+<a href="/quickstart"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: springgreen">Quick Start Guide</button></a>
 
 
 <h2>Tiefer eintauchen</h2>

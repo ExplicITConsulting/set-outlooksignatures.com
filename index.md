@@ -177,7 +177,7 @@ redirect_from:
 </div>
 
 
-<h2>Functionality meets <span style="color: limegreen;">expertise</span></h2>
+<h2>Functionality meets <span style="color: springgreen;">expertise</span></h2>
 
 <p>The optional Benefactor Circle Add-On extends the free and open-source Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.<p>
 
@@ -186,7 +186,7 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #00FF7F 0%, #00FF7F50 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Cost-efficient and transparent</b><br>
         Fair prices. No subscriptions. No maintenance contracts.
@@ -196,7 +196,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #00FF7F 0%, #00FF7F50 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Support with handshake quality</b><br>
         Solution-driven. At eye level. Accountable.
@@ -206,7 +206,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #00FF7F 0%, #00FF7F50 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Tangible added value</b><br>
         Your investment pays off. From day one.
