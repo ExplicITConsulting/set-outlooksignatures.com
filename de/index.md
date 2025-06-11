@@ -34,7 +34,7 @@ redirect_from:
   </div>
   <div class="column">
     <h2>
-      <span style="font-family: inherit; font-weight: normal;">Verwalten Sie Ihre </span>
+      <span style="font-family: inherit !important; font-weight: normal;">Verwalten Sie Ihre </span>
       <span style="font-weight: bold;">Outlook-Signaturen</span>
       <span style="font-weight: normal;"> zentral und vollautomatisch</span>
     </h2>
