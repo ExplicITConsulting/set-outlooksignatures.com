@@ -49,9 +49,9 @@ If you use AppLocker or a comparable solution (Defender, CrowdStrike, Ivanti, an
 When some or all of your mailboxes are in Exchange Online, you need to register an Entra ID app first, because Set-OutlookSignatures needs permissions to access the Graph API.
 
 To create the Entra ID app, ask a 'Global Admin' or 'Application Administrator' to run
-```
+<blockquote class="is-family-monospace">
 .\sample code\Create-EntraApp.ps1 -AppType 'Set-OutlookSignatures' -AppName 'Set-OutlookSignatures'
-```
+</blockquote>
 and follow the instructions.
 
 The code in the script file is well documented, containing all details about the required Entra ID app settings, permissions, and why they are needed.
@@ -59,14 +59,14 @@ The code in the script file is well documented, containing all details about the
 
 ## Step 4: Run Set-Outlook Signatures
 - **If all mailboxes are in Exchange on-prem**
-  ```
+  <blockquote class="is-family-monospace">
   powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"
-  ```
+  </blockquote>
 
 - **If some or all mailboxes are in Exchange Online**
-  ```
-  powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from step 3>"
-  ```
+  <blockquote class="is-family-monospace">
+  powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "&lt;GraphClientId from step 3&gt;"
+  </blockquote>
   The '-GraphOnly true' parameter makes sure that on-prem Active Directory is ignored and only Graph/Entra ID is used to find mailboxes and their attributes.
 
 If you are not using the public Microsoft Cloud, add the parameter '-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]'.
