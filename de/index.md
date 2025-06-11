@@ -51,13 +51,30 @@ redirect_from:
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Immer aktuelle Kontaktdaten und Unternehmensinformationen</b></div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #ff7f50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Immer aktuelle Kontaktdaten und Unternehmensinformationen</b>
+      </div>
+    </div>
   </div>
+
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Einheitlicher und überzeugender Auftritt in jeder E-Mail</b></div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Einheitlicher und überzeugender Auftritt in jeder E-Mail</b>
+      </div>
+    </div>
   </div>
+
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Kein Nachpflegen durch Ihre Mitarbeiter</b></div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Kein Nachpflegen durch Ihre Mitarbeiter</b>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -70,32 +87,95 @@ redirect_from:
 </h2>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Einfach für alle</b><br>Intuitiv für IT und Marketing, unsichtbar für Ihre Mitarbeiter.</div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Einfach für alle</b><br>
+        Intuitiv für IT und Marketing, unsichtbar für Ihre Mitarbeiter.
+      </div>
+    </div>
   </div>
+
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Dynamische Inhalte</b><br>Vordefinierte und eigene Attribute auf Benutzer-, Postfach- und Manager-Ebene.</div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Dynamische Inhalte</b><br>
+        Vordefinierte und eigene Attribute auf Benutzer-, Postfach- und Manager-Ebene.
+      </div>
+    </div>
   </div>
+
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Abwesenheitsnotizen</b><br>Verwalten Sie Abwesenheitsmeldungen zentral, für interne und externe Empfänger.</div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Abwesenheitsnotizen</b><br>
+        Verwalten Sie Abwesenheitsmeldungen zentral, für interne und externe Empfänger.
+      </div>
+    </div>
   </div>
+
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Plattformübergreifend</b><br>Signaturen immer und überall: Windows, macOS, Android, iOS, Linux, Web. Klassisches und neues Outlook. On-prem, hybrid und cloud-only.</div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Plattformübergreifend</b><br>
+        Signaturen immer und überall: Windows, macOS, Android, iOS, Linux, Web. Klassisches und neues Outlook. On-prem, hybrid und cloud-only.
+      </div>
+    </div>
   </div>
+
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Innovative Funktionen</b><br>Unterstützt persönliche und gemeinsame Postfächer, "Senden Als", "Senden im Auftrag von", Simulationsmodus, Roaming Signatures, sowie zahlreiche weitere Funktionen für maximale Flexibilität.</div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Innovative Funktionen</b><br>
+        Unterstützt persönliche und gemeinsame Postfächer, "Senden Als", "Senden im Auftrag von", Simulationsmodus, Roaming Signatures, sowie zahlreiche weitere Funktionen für maximale Flexibilität.
+      </div>
+    </div>
   </div>
+
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Flexible Zuweisung</b><br>Steuern Sie Signaturen nach Abteilung, Standort, Sprache, Rolle, Zeit und vielen weiteren Eigenschaften aus unterschiedlichen Datenquellen.</div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Flexible Zuweisung</b><br>
+        Steuern Sie Signaturen nach Abteilung, Standort, Sprache, Rolle, Zeit und vielen weiteren Eigenschaften aus unterschiedlichen Datenquellen.
+      </div>
+    </div>
   </div>
+
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Keine neue Infrastruktur nötig</b><br>Set-OutlookSignatures läuft auf Ihren bestehenden Systemen und erzeugt keine neuen Abhängigkeiten.</div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Keine neue Infrastruktur nötig</b><br>
+        Set-OutlookSignatures läuft auf Ihren bestehenden Systemen und erzeugt keine neuen Abhängigkeiten.
+      </div>
+    </div>
   </div>
+
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Unübertroffener Datenschutz</b><br>Alle Daten bleiben in Ihrer vertrauten Umgebung, innerhalb Ihrer bestehenden Sicherheits- und Verwaltungsstrukturen.</div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Unübertroffener Datenschutz</b><br>
+        Alle Daten bleiben in Ihrer vertrauten Umgebung, innerhalb Ihrer bestehenden Sicherheits- und Verwaltungsstrukturen.
+      </div>
+    </div>
   </div>
+
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Zusätzlicher Marketingkanal</b><br>Gestalten Sie Vorlagen frei in Word oder HTML. Nutzen Sie Signaturen für Kampagnen und Markenbotschaften, kostenlos und effektiv.</div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Zusätzlicher Marketingkanal</b><br>
+        Gestalten Sie Vorlagen frei in Word oder HTML. Nutzen Sie Signaturen für Kampagnen und Markenbotschaften, kostenlos und effektiv.
+      </div>
+    </div>
   </div>
+
 </div>
 
 
@@ -106,14 +186,35 @@ redirect_from:
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Kosteneffizient und transparent</b><br>Faire Preise. Keine Abos. Keine Wartungsverträge.</div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, 7CFC00 0%, #7CFC0050 100%); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Kosteneffizient und transparent</b><br>
+        Faire Preise. Keine Abos. Keine Wartungsverträge.
+      </div>
+    </div>
   </div>
+
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Support mit Handschlagqualität</b><br>Lösungsstark. Auf Augenhöhe. Verantwortungsbewusst.</div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #7CFC00 0%, #7CFC0050 100%); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Support mit Handschlagqualität</b><br>
+        Lösungsstark. Auf Augenhöhe. Verantwortungsbewusst.
+      </div>
+    </div>
   </div>
+
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell"><b>Spürbarer Mehrwert</b><br>Ihre Investition entlastet. Vom ersten Tag an.</div>
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: 900; background-image: linear-gradient(to left, #7CFC00 0%, #7CFC0050 100%); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Spürbarer Mehrwert</b><br>
+        Ihre Investition entlastet. Vom ersten Tag an.
+      </div>
+    </div>
   </div>
+
 </div>
 
 
