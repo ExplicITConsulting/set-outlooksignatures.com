@@ -1,7 +1,7 @@
 ---
 layout: page
 title: |
-  <span class="title is-2 has-text-white">
+  <span class="title is-2 has-text-white" hyphens="none">
     Set-Outlook&shy;Signatures
   </span>
 subtitle: |
