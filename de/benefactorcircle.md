@@ -29,7 +29,7 @@ redirect_from:
 
 <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
   <div class="content">
-    <h3>Ihre Mehrwerte</h3>
+    <h2>Ihre Mehrwerte</h2>
     <ul>
       <li>Zeitbasierte Kampagnen durch Zuweisung von Beschränkungen zu Vorlagen</li>
       <li>Signaturen für automatisch zugeordnete und zusätzliche Postfächer</li>
@@ -53,7 +53,7 @@ redirect_from:
   <div class="column">
     <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
       <div class="content">
-        <h3>Priorisierter Support</h3>
+        <h2>Priorisierter Support</h2>
         <ul>
           <li>Supportanfragen werden mit Priorität 24/5 (an österreichischen Werktagen) per E-Mail und mit Rückrufoption bearbeitet.</li>
           <li>Protokolldateien können über ein sicheres Portal hochgeladen werden. Es ist nicht erforderlich, sie per E-Mail zu senden oder öffentlich auf GitHub zu teilen.</li>
@@ -65,7 +65,7 @@ redirect_from:
   <div class="column">
     <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
       <div class="content">
-        <h3>Kostenlose Versions-Upgrades und Archiv</h3>
+        <h2>Kostenlose Versions-Upgrades und Archiv</h2>
         <ul>
           <li>Alle während der Lizenzlaufzeit veröffentlichten neuen Versionen sind enthalten – unabhängig davon, ob es sich um einen Patch, ein neues Feature oder ein Major Release handelt.</li>
           <li>Alle Veröffentlichungen, einschließlich Lizenzdateien, die während der Lizenzlaufzeit bereitgestellt wurden, sind in einem gesicherten, individuellen Release-Archiv verfügbar.</li>

@@ -30,7 +30,7 @@ redirect_from:
 
 <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
   <div class="content">
-    <h3>Your added value</h3>
+    <h2>Your added value</h2>
     <ul>
       <li>Time-based campaigns by assigning time range constraints to templates</li>
       <li>Signatures for automapped and additional mailboxes</li>
@@ -54,7 +54,7 @@ redirect_from:
   <div class="column">
     <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
       <div class="content">
-        <h3>Priority support</h3>
+        <h2>Priority support</h2>
         <ul>
           <li>Support requests are handled with priority 24/5 (Austrian business days) via email and a callback option.</li>
           <li>Upload log files via a secure portal. No need to send them via email or share them publicly on GitHub.</li>
@@ -66,7 +66,7 @@ redirect_from:
   <div class="column">
     <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
       <div class="content">
-        <h3>Free release upgrades and archive</h3>
+        <h2>Free release upgrades and archive</h2>
         <ul>
           <li>All new versions released during the license period are included, regardless of whether it is a patch, a feature or a major release.</li>
           <li>All releases, including license files, published during the license period are available in a secured individual release archive.</li>
