@@ -173,7 +173,7 @@ redirect_from:
 
 
 <h2>Funktionalität trifft <span style="color: limegreen;">Expertise</span></h2>
-<p>Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span></a> Add-On erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
+<p>Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
 
 <p>Auf Wunsch richten wir unsere Lösung gemeinsam mit Ihnen ein: Einfach, auf Ihre Bedürfnisse zugeschnitten und mit nachhaltigem Wissenstransfer.<p>
 

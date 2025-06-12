@@ -21,7 +21,7 @@ redirect_from:
 
 
 <h2>Nachhaltiger Mehrwert für Ihr Unternehmen</h2>
-<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> Add-On von <a href="https://explicitconsulting.at">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Funktionen für Ihr Unternehmen:</p>
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> vvon <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Funktionen für Ihr Unternehmen:</p>
 
 <h3>Zusätzliche Funktionen</h3>
 <div class="columns is-multiline">
@@ -29,7 +29,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Zeitbasierte Kampagnen</b><br>Durch Zuweisung von Beschränkungen zu Vorlagen.
+        <b>Steuern Sie Signaturen zeitbasiert</b><br>Durch Zuweisung von Beschränkungen zu Vorlagen.
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Festlegen der Outlook Web-Signatur des aktuellen Benutzers</b><br>Klassische Outlook Web-Signatur und Roaming-Signaturen.
+        <b>Festlegen der Outlook Web-Signatur</b><br>On-prem und Roaming Signatures.
       </div>
     </div>
   </div>
@@ -56,7 +56,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Festlegen der Abwesenheitsnotizen des aktuellen Benutzers</b><br>Für interne und externe Empfänger.
+        <b>Verwalten und Verteilen von Abwesenheitsnotizen</b><br>Für interne und externe Empfänger.
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Herunterladen und Hochladen von Roaming-Signaturen</b><br>Linux, macOS, Windows, klassisches und neues Outlook.
+        <b>Synchronisieren der Roaming Signatures</b><br>Linux, macOS, Windows, klassisches und neues Outlook.
       </div>
     </div>
   </div>
@@ -74,7 +74,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Löschen von veralteten automatisch erzeugten Signaturen</b><br>für die keine zentralen Vorlagen mehr existieren oder gelten.
+        <b>Löschen von veralteten automatischen Signaturen</b><br>Für die keine zentralen Vorlagen mehr existieren oder gelten.
       </div>
     </div>
   </div>
@@ -92,7 +92,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Automatisches Hinzufügen von Signaturen zu neuen E-Mails und Antwort-E-Mails</b><br>Einschließlich Outlook für Android und iOS mit dem Outlook-Add-In.</b>
+        <b>Automatisches Hinzufügen von Signaturen zu neuen E-Mails und Antwort-E-Mails</b><br>Einschließlich Outlook für Android und iOS mit dem Outlook-Add-In.
       </div>
     </div>
   </div>
@@ -110,7 +110,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Kopieren von Signaturen in zusätzliche Ordner</b><br>Zur Nutzung mit anderen E-Mail-Clients und Apps wie Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und anderen
+        <b>Kopieren von Signaturen in zusätzliche Ordner</b><br>Zur Nutzung mit anderen E-Mail-Clients und Apps wie Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und anderen.
       </div>
     </div>
   </div>
@@ -119,7 +119,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Erstellen eines E-Mail-Entwurfs mit allen verfügbaren Signaturen</b><br>Für einfachen Zugriff mit Mail-Clients ohne Signatur-API.</b>
+        <b>E-Mail-Entwurf mit allen verfügbaren Signaturen</b><br>Für einfachen Zugriff mit Mail-Clients ohne Signatur-API.
       </div>
     </div>
   </div>
@@ -137,7 +137,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Hinzufügen virtueller Postfächer</b><br>Und dynamisches Erstellen von Signatur- und Abwesenheits-INI-Zeilen per Code.
+        <b>Hinzufügen virtueller Postfächer</b><br>Samt dynamischem Erstellen von Signatur- und Abwesenheits-INI-Zeilen durch Code.
       </div>
     </div>
   </div>
@@ -155,7 +155,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Alle Komponenten sind mit einem Extended Validation (EV) Zertifikat digital signiert</b><br>Für eine einfache Integration in absesicherte Umgebungen.
+        <b>Alle Komponenten sind digital signiert</b><br>Extended Validation (EV) Zertifikat für eine einfache Integration in absesicherte Umgebungen.
       </div>
     </div>
   </div>
@@ -216,7 +216,7 @@ redirect_from:
 
 
 ## Demo
-In unserer kostenlosen interaktiven Produktdemo zeigen wir Ihnen die Hauptfunktionen des <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> Add-Ons und des Outlook-Add-Ins – interaktiv und mit Fokus auf Ihre konkreten Anforderungen.
+In unserer kostenlosen interaktiven Produktdemo zeigen wir Ihnen die Hauptfunktionen des <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-Ons</span> und des inkludierten Outlook-Add-Ins – interaktiv und mit Fokus auf Ihre konkreten Anforderungen.
 
 <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Persönliche Demo vereinbaren</button></a>
 
@@ -240,7 +240,7 @@ Formel: `CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures 
 Beispielrechnung: 2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client = `0.55 * 2 * 3 * 2 * 1`
  
 Kosten pro Nutzer:in und Jahr: 6,60 €
-Im Vergleich dazu: 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> Add-On.
+Im Vergleich dazu: 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>.
 
 Diese Rechnung berücksichtigt noch nicht:
 - Den manuellen Aufwand für Signaturen in gemeinsam genutzten Postfächern
@@ -288,7 +288,7 @@ Wenn Sie während einer laufenden Lizenzperiode weitere Postfächer hinzufügen 
 ### Testversion
 Sie möchten vielleicht mit einer 14-tägigen Testlizenz starten.
 
-Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> Add-On erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.  
+Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>  erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.  
 Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion benötigen, lesen Sie die Kurzanleitung in der Readme-Datei, öffnen Sie ein Issue auf GitHub oder kontaktieren Sie uns direkt – wir helfen Ihnen im Rahmen unseres kostenpflichtigen Supports gerne bei der Einführung von Set-OutlookSignatures in Ihrer Umgebung.
 
 
