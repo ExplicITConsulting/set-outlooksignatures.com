@@ -27,7 +27,7 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Steuern Sie Signaturen zeitbasiert</b><br>Durch Zuweisung von Beschränkungen zu Vorlagen.
       </div>
@@ -36,7 +36,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Signaturen für automatisch zugeordnete und zusätzliche Postfächer</b>
       </div>
@@ -45,7 +45,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Festlegen der Outlook Web-Signatur</b><br>On-prem und Roaming Signatures.
       </div>
@@ -54,7 +54,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Verwalten und Verteilen von Abwesenheitsnotizen</b><br>Für interne und externe Empfänger.
       </div>
@@ -63,7 +63,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Synchronisieren der Roaming Signatures</b><br>Linux, macOS, Windows, klassisches und neues Outlook.
       </div>
@@ -72,7 +72,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Löschen von veralteten automatischen Signaturen</b><br>Für die keine zentralen Vorlagen mehr existieren oder gelten.
       </div>
@@ -81,7 +81,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Löschen von benutzererstellten Signaturen</b>
       </div>
@@ -90,7 +90,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Automatisches Hinzufügen von Signaturen zu neuen E-Mails und Antwort-E-Mails</b><br>Einschließlich Outlook für Android und iOS mit dem Outlook-Add-In.
       </div>
@@ -99,7 +99,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Automatisches Hinzufügen von Signaturen zu neuen Terminen</b><br>Mit dem Outlook-Add-In.
       </div>
@@ -108,7 +108,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Kopieren von Signaturen in zusätzliche Ordner</b><br>Zur Nutzung in Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und anderen.
       </div>
@@ -117,7 +117,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>E-Mail-Entwurf mit allen verfügbaren Signaturen</b><br>Für einfachen Zugriff mit Mail-Clients ohne Signatur-API.
       </div>
@@ -126,7 +126,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Hochauflösende Bilder aus DOCX-Vorlagen</b>
       </div>
@@ -135,7 +135,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Hinzufügen virtueller Postfächer</b><br>Und dynamisch durch Code erstellte Signatur- und Abwesenheits-INI-Zeilen.
       </div>
@@ -144,7 +144,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Entfernen des Hinweistextes,</b><br>der von der freien und quelloffenen Version am Ende der Signaturen hinzugefügt wird.
       </div>
@@ -153,7 +153,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Alle Komponenten sind digital signiert</b><br>Extended Validation (EV) Zertifikat für eine einfache Integration in absesicherte Umgebungen.
       </div>
@@ -165,7 +165,7 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Priorisierte Bearbeitung von Supportanfragen</b><br>24/5 an österreichischen Werktagen, per E-Mail und mit Rückrufoption.
       </div>
@@ -174,7 +174,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Sicherer Datenaustausch</b><br>Logdateien über ein sicheres Portal hochladen statt Versand per E-Mail oder Veröffentlichung auf GitHub.
       </div>
@@ -183,7 +183,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Vorschläge für neue Funktionen werden vorrangig auf Umsetzbarkeit geprüft</b><br>Ihr direkter Draht zu unseren Entwicklern.
       </div>
@@ -195,7 +195,7 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Während der Lizenzlaufzeit sind alle neuen Versionen inklusive</b><br>Unabhängig, ob Patch, neues Feature oder neue Hauptversion.
       </div>
@@ -204,7 +204,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, white, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52080, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Release-Archiv mit all Ihren Versionen</b><br>Mit einer aktiven Lizenz haben Sie Zugriff auf alle für Sie erfolgten Veröffentlichungen, einschließlich Lizenzdateien.
       </div>
