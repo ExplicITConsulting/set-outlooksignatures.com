@@ -212,13 +212,13 @@ redirect_from:
   </div>
 </div>
 
-<a href="#testversion"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Testversion oder Lizenzangebot anfordern</button></a>
+<a href="#testversion"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Testversion oder Lizenzangebot anfordern</button></a>
 
 
 ## Demo
 In unserer kostenlosen interaktiven Produktdemo zeigen wir Ihnen die Hauptfunktionen des <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-Ons</span> und des inkludierten Outlook-Add-Ins – interaktiv und mit Fokus auf Ihre konkreten Anforderungen.
 
-<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Persönliche Demo vereinbaren</button></a>
+<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Persönliche Demo vereinbaren</button></a>
 
 
 ## Finanzielle Vorteile
@@ -292,7 +292,7 @@ Das <span style="font-weight: bold; background-image: linear-gradient(to right, 
 Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion benötigen, lesen Sie die Kurzanleitung in der Readme-Datei, öffnen Sie ein Issue auf GitHub oder kontaktieren Sie uns direkt – wir helfen Ihnen im Rahmen unseres kostenpflichtigen Supports gerne bei der Einführung von Set-OutlookSignatures in Ihrer Umgebung.
 
 
-Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ 14-Tage-Testlizenz anfordern</button></a>
+Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ 14-Tage-Testlizenz anfordern</button></a>
 
 Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:
 - `BenefactorCircleLicenseFile` mit dem Pfad zu Ihrer individuellen Lizenzdatei
@@ -305,7 +305,7 @@ Wir empfehlen dringend, die Testphase erst zu starten, wenn die kostenlose Kernv
 
 
 ### Bestellprozess für Lizenzen
-<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Lizenzangebot für das Benefactor Circle Add-On anfordern</button></a>
+<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Lizenzangebot für das Benefactor Circle Add-On anfordern</button></a>
 
 Sie erhalten in Kürze ein Angebot. Sobald alle Details geklärt sind, erhalten Sie eine Rechnung und können den Zahlungsprozess starten.
 
