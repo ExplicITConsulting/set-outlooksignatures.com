@@ -5,8 +5,8 @@ title: |
     Set-OutlookSignatures
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white">
-    Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
+  <span class="subtitle is-4 has-text-white" style="line-height: normal;">
+    Email signatures and out-of-office replies for Exchange and all of Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
   </span>
 description: |
   Set-OutlookSignatures Benefactor Circle. Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.

@@ -6,8 +6,8 @@ title: |
     Set-Outlook&shy;Signatures
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white">
-    E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
+  <span class="subtitle is-4 has-text-white" style="line-height: normal;">
+    E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
   </span>
 description: |
   Set-OutlookSignatures Benefactor Circle. E-Mail-Signaturen und Abwensenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
