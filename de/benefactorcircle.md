@@ -21,7 +21,7 @@ redirect_from:
 
 
 <h2>Nachhaltiger Mehrwert für Ihr Unternehmen</h2>
-<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> vvon <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Funktionen für Ihr Unternehmen:</p>
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> von <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Funktionen für Ihr Unternehmen:</p>
 
 <h3>Zusätzliche Funktionen</h3>
 <div class="columns is-multiline">
