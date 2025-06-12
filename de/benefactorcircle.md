@@ -38,7 +38,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Signaturen für automatisch zugeordnete und zusätzliche Postfächer</b>
+        <b>Signaturen für automatisch zugeordnete</b><br>und zusätzliche Postfächer.
       </div>
     </div>
   </div>
