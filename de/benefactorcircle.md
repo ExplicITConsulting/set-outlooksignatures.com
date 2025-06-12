@@ -29,7 +29,7 @@ redirect_from:
 
 <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
   <div class="content">
-    <h3>Software</h3>
+    <h3>Ihre Mehrwerte</h3>
     <ul>
       <li>Zeitbasierte Kampagnen durch Zuweisung von Beschränkungen zu Vorlagen</li>
       <li>Signaturen für automatisch zugeordnete und zusätzliche Postfächer</li>

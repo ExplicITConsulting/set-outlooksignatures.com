@@ -30,7 +30,7 @@ redirect_from:
 
 <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
   <div class="content">
-    <h3>Software</h3>
+    <h3>Your added value</h3>
     <ul>
       <li>Time-based campaigns by assigning time range constraints to templates</li>
       <li>Signatures for automapped and additional mailboxes</li>
