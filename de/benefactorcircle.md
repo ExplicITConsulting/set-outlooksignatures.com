@@ -27,7 +27,6 @@ redirect_from:
 <a href="#testversion"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Testversion oder Lizenzangebot anfordern</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="/support"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Kostenpflichtigen Support bestellen</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 
-## Funktionen des Benefactor Circle Add-Ons
 <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
   <div class="content">
     <h3>Software</h3>

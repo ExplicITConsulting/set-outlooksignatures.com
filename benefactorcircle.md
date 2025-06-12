@@ -28,7 +28,6 @@ redirect_from:
 <a href="#trial-version"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Request a trial version or a license quote</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="/support"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Order fee-based support</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 
-## Benefactor Circle features
 <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
   <div class="content">
     <h3>Software</h3>
