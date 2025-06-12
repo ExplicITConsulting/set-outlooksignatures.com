@@ -19,61 +19,199 @@ image:
 redirect_from:
 ---
 
-<h2>Mehr Funktionen für Ihr Unternehmen</h2>
-<p>Set-OutlookSignatures ist der Open-Source Goldstandard zur Verwaltung und Verteilung von E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.</p>
-<p><b>Das Benefactor Circle Add-On von ExplicIT erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Funktionen für Ihr Unternehmen.</b></p>
+<h2>Nachhaltiger Mehrwert für Ihr Unternehmen</h2>
+<p>Das Benefactor Circle Add-On von ExplicIT erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Funktionen für Ihr Unternehmen:</p>
 
-<a href="#demo"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Persönliche Demo vereinbaren</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="#testversion"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Testversion oder Lizenzangebot anfordern</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="/support"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Kostenpflichtigen Support bestellen</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-
-<div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
-  <div class="content">
-    <h2>Ihre Mehrwerte</h2>
-    <ul>
-      <li>Zeitbasierte Kampagnen durch Zuweisung von Beschränkungen zu Vorlagen</li>
-      <li>Signaturen für automatisch zugeordnete und zusätzliche Postfächer</li>
-      <li>Festlegen der Outlook Web-Signatur des aktuellen Benutzers (klassische Outlook Web-Signatur und Roaming-Signaturen)</li>
-      <li>Festlegen der Abwesenheitsnotizen des aktuellen Benutzers</li>
-      <li>Herunterladen und Hochladen von Roaming-Signaturen (Linux, macOS, Windows, Klassisches und Neues Outlook)</li>
-      <li>Löschen von Signaturen, die von der Software erstellt wurden und für die keine Vorlagen mehr existieren oder gelten</li>
-      <li>Löschen von benutzererstellten Signaturen</li>
-      <li>Automatisches Hinzufügen von Signaturen zu neuen E-Mails und Antwort-E-Mails (einschließlich Outlook für Android und iOS) mit dem Outlook-Add-In</li>
-      <li>Automatisches Hinzufügen von Signaturen zu neuen Terminen mit dem Outlook-Add-In</li>
-      <li>Kopieren von Signaturen in zusätzliche Signaturpfade zur Nutzung mit anderen E-Mail-Clients und Apps wie Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und anderen</li>
-      <li>Erstellen eines E-Mail-Entwurfs mit allen verfügbaren Signaturen in HTML und Nur-Text für einfachen Zugriff in Mail-Clients ohne Signatur-API</li>
-      <li>Hochauflösende Bilder aus DOCX-Vorlagen</li>
-      <li>Hinzufügen virtueller Postfächer und dynamisches Erstellen von Signatur- und Abwesenheits-INI-Zeilen per Code</li>
-      <li>Entfernen des Hinweistextes, der von der freien und quelloffenen Version am Ende der Signaturen hinzugefügt wird</li>
-      <li>Alle Komponenten sind mit einem Extended Validation (EV) Zertifikat digital signiert, um Manipulationen zu verhindern und eine einfache Integration in abgesicherte Umgebungen zu ermöglichen</li>
-    </ul>
-  </div>
-</div>
-<div class="columns">
-  <div class="column">
-    <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
-      <div class="content">
-        <h2>Priorisierter Support</h2>
-        <ul>
-          <li>Supportanfragen werden mit Priorität 24/5 (an österreichischen Werktagen) per E-Mail und mit Rückrufoption bearbeitet.</li>
-          <li>Protokolldateien können über ein sicheres Portal hochgeladen werden. Es ist nicht erforderlich, sie per E-Mail zu senden oder öffentlich auf GitHub zu teilen.</li>
-          <li>Anfragen für neue Funktionen werden vorrangig auf Umsetzbarkeit geprüft.</li>
-        </ul>
+<h3>Zusätzliche Funktionen</h3>
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Zeitbasierte Kampagnen</b><br>Durch Zuweisung von Beschränkungen zu Vorlagen.
       </div>
     </div>
   </div>
-  <div class="column">
-    <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
-      <div class="content">
-        <h2>Kostenlose Versions-Upgrades und Archiv</h2>
-        <ul>
-          <li>Alle während der Lizenzlaufzeit veröffentlichten neuen Versionen sind enthalten – unabhängig davon, ob es sich um einen Patch, ein neues Feature oder ein Major Release handelt.</li>
-          <li>Alle Veröffentlichungen, einschließlich Lizenzdateien, die während der Lizenzlaufzeit bereitgestellt wurden, sind in einem gesicherten, individuellen Release-Archiv verfügbar.</li>
-        </ul>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Signaturen für automatisch zugeordnete und zusätzliche Postfächer</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Festlegen der Outlook Web-Signatur des aktuellen Benutzers</b><br>Klassische Outlook Web-Signatur und Roaming-Signaturen.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Festlegen der Abwesenheitsnotizen des aktuellen Benutzers</b><br>Für interne und externe Empfänger.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Herunterladen und Hochladen von Roaming-Signaturen</b><br>Linux, macOS, Windows, klassisches und neues Outlook.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Löschen von veralteten automatisch erzeugten Signaturen</b><br>für die keine zentralen Vorlagen mehr existieren oder gelten.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Löschen von benutzererstellten Signaturen</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Automatisches Hinzufügen von Signaturen zu neuen E-Mails und Antwort-E-Mails</b><br>Einschließlich Outlook für Android und iOS mit dem Outlook-Add-In.</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Automatisches Hinzufügen von Signaturen zu neuen Terminen</b><br>Mit dem Outlook-Add-In.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Kopieren von Signaturen in zusätzliche Ordner</b><br>Zur Nutzung mit anderen E-Mail-Clients und Apps wie Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und anderen
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Erstellen eines E-Mail-Entwurfs mit allen verfügbaren Signaturen</b><br>Für einfachen Zugriff mit Mail-Clients ohne Signatur-API.</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Hochauflösende Bilder aus DOCX-Vorlagen</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Hinzufügen virtueller Postfächer</b><br>Und dynamisches Erstellen von Signatur- und Abwesenheits-INI-Zeilen per Code.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Entfernen des Hinweistextes,</b><br>der von der freien und quelloffenen Version am Ende der Signaturen hinzugefügt wird.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Alle Komponenten sind mit einem Extended Validation (EV) Zertifikat digital signiert</b><br>Für eine einfache Integration in absesicherte Umgebungen.
       </div>
     </div>
   </div>
 </div>
+
+<h3>Priorisierter Support</h3>
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Priorisierte Bearbeitung von Supportanfragen</b><br>24/5 an österreichischen Werktagen, per E-Mail und mit Rückrufoption.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Sicherer Datenaustausch</b><br>Protokolldateien können über ein sicheres Portal hochgeladen werden. Kein Versand per E-Mail oder Veröffentlichung auf GitHub.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Vorschläge für neue Funktionen werden vorrangig auf Umsetzbarkeit geprüft.</b><br>Ihr direkter Draht zu unseren Entwicklern.
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Kostenlose Versions-Upgrades und Archiv</h3>
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Während der Lizenzlaufzeit sind alle neuen Versionen inklusive</b><br>Unabhängig, ob Patch, neues Feature oder neue Hauptversion.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Release-Archiv mit all Ihren Versionen</b><br>Mit einer aktiven Lizenz haben Sie Zugriff auf alle für Sie erfolgten Veröffentlichungen, einschließlich Lizenzdateien.
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="#testversion"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Testversion oder Lizenzangebot anfordern</button></a>
 
 
 ## Demo
