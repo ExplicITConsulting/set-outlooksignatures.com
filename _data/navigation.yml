@@ -1,6 +1,7 @@
 - name: Quick Start
   link: /quickstart
-- name: The Benefactor Circle add-on
+- name: |
+    <span style="font-weight: bold; background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>
   link: /benefactorcircle
 - name: "Demo"
   link: /benefactorcircle/#demo
