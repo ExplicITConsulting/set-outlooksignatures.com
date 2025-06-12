@@ -222,7 +222,7 @@ In unserer kostenlosen interaktiven Produktdemo zeigen wir Ihnen die Hauptfunkti
 
 
 ## Finanzielle Vorteile
-Für die Berechnung der finanziellen Vorteile stellen sich drei zentrale Fragen:
+Für die Berechnung des Business Case stellen sich drei zentrale Fragen:
 - Wie hoch sind die Kosten durch nicht konforme Signaturen und Abwesenheitsnotizen – sei es durch Reputationsverlust oder Bußgelder wegen Nichteinhaltung von Vorschriften?
 - Welchen Mehrwert bietet die Nutzung von E-Mails als zusätzlicher Marketingkanal?
 - Kostet die neue Software weniger als der Aufwand, den wir den Nutzern ersparen?

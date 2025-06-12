@@ -221,7 +221,7 @@ In your free interactive product demo, we show you the main features of the span
 
 
 ## Financial benefits
-There are three relevant questions to calculate the financial benefits:
+There are three relevant questions to calculate the business case:
 - How much do non-compliant signatures and out-of-office replies cost in terms of loss of reputation or in terms of fines for non-compliance?
 - What is the added value of using email as an additional marketing channel?
 - Does the new software cost less than the effort we want to save users?
