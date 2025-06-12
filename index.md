@@ -1,13 +1,13 @@
 ---
 layout: page
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     Set-OutlookSignatures and the Benefactor Circle add-on
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     Email signatures and out-of-office replies for Exchange and all of Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
-  </p>
+  </span>
 description: |
   Set-OutlookSignatures Benefactor Circle. Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 image:
@@ -33,9 +33,9 @@ redirect_from:
   </div>
   <div class="column">
     <h2>
-      <span style="font-weight: bold;">Manage your </span>
-      <span style="font-weight: 900;">Outlook signatures</span>
-      <span style="font-weight: bold;"> centrally and fully automated</span>
+      <span style="font-weight: normal;">Manage your </span>
+      <span style="font-weight: bold;">Outlook signatures</span>
+      <span style="font-weight: normal;"> centrally and fully automated</span>
     </h2>
     <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
     <p>Thanks to centrally managed templates that automatically populate with your company data, every email gets the professional appearance your business deserves: Up-to-date, consistent, and on-brand.</p>
@@ -43,7 +43,7 @@ redirect_from:
 </div>
 
 
-<h2><span style="font-weight: 900; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span>, more professionalism</h2>
+<h2><span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span>, more professionalism</h2>
 <p>Manually maintaining signatures ties up valuable personnel and financial resources. This quickly leads to outdated information that does not comply with internal or regulatory requirements.</p>
 
 <p>With Set-OutlookSignatures, you fully automate this process.</p>
@@ -51,7 +51,7 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Always up-to-date contact data and company information</b>
       </div>
@@ -60,7 +60,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Consistent and compelling appearance in every email</b>
       </div>
@@ -69,7 +69,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>No manual updating by your employees</b>
       </div>
@@ -79,15 +79,15 @@ redirect_from:
 
 
 <h2>
-  <span style="font-weight: bold;">The </span>
-  <span style="font-weight: 900;">strengths</span>
-  <span style="font-weight: bold;"> of </span>
-  <span style="font-weight: 900; font-style: italic;">Set-OutlookSignatures</span>
+  <span style="font-weight: normal;">The </span>
+  <span style="font-weight: bold;">strengths</span>
+  <span style="font-weight: normal;"> of </span>
+  <span style="font-weight: bold; font-style: italic;">Set-OutlookSignatures</span>
 </h2>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Simply for everyone</b><br>
         Intuitive for IT and marketing, invisible to your employees.
@@ -97,7 +97,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Dynamic content</b><br>
         Predefined and custom attributes at user, mailbox, and manager level.
@@ -107,7 +107,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Out-of-office replies</b><br>
         Manage out-of-office messages centrally, for internal and external recipients.
@@ -117,7 +117,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Cross-platform</b><br>
         Signatures anytime, anywhere: Windows, macOS, Android, iOS, Linux, Web. Classic and New Outlook. On-prem, hybrid and cloud-only.
@@ -127,7 +127,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Innovative features</b><br>
         Supports personal and shared mailboxes, "Send As", "Send on Behalf", simulation mode, roaming signatures, and many more features for maximum flexibility.
@@ -137,7 +137,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Flexible assignment</b><br>
         Control signatures by department, location, language, role, time, and many other properties from various data sources.
@@ -147,7 +147,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>No new infrastructure required</b><br>
         Set-OutlookSignatures runs on your existing systems and creates no new dependencies.
@@ -157,7 +157,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Unsurpassed data privacy</b><br>
         All data remains in your trusted environment, within your existing security and management structures.
@@ -167,7 +167,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, black, white); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Additional marketing channel</b><br>
         Design templates freely in Word or HTML. Use signatures for campaigns and brand messaging, free and effectively.
@@ -186,7 +186,7 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Cost-efficient and transparent</b><br>
         Fair prices. No subscriptions. No maintenance contracts.
@@ -196,7 +196,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Support with handshake quality</b><br>
         Solution-driven. At eye level. Accountable.
@@ -206,7 +206,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: 900; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to left, #32CD32 0%, #32CD3250 100%); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Tangible added value</b><br>
         Your investment pays off. From day one.
