@@ -212,7 +212,7 @@ redirect_from:
   </div>
 </div>
 
-<a href="#testversion"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Testversion oder Lizenzangebot anfordern</button></a>
+<a href="#testversion"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Testlizenz oder Angebot anfordern</button></a>
 
 
 ## Demo
@@ -305,7 +305,7 @@ Wir empfehlen dringend, die Testphase erst zu starten, wenn die kostenlose Kernv
 
 
 ### Bestellprozess für Lizenzen
-<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Lizenzangebot für das Benefactor Circle Add-On anfordern</button></a>
+<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Lizenzangebot anfordern</button></a>
 
 Sie erhalten in Kürze ein Angebot. Sobald alle Details geklärt sind, erhalten Sie eine Rechnung und können den Zahlungsprozess starten.
 
