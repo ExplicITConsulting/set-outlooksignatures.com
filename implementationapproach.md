@@ -2,13 +2,13 @@
 layout: page
 lang: en
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     Implementation approach
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     Real-life experience implementing the software in multi-client environments with a five-digit number of mailboxes
-  </p>
+  </span>
 description: |
   Implementation approach. Real-life experience implementing the software in multi-client environments with a five-digit number of mailboxes.
 image:

@@ -1,13 +1,13 @@
 ---
 layout: page
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     The Benefactor Circle add-on
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     Add more enterprise-grade features
-  </p>
+  </span>
 description: |
   The Benefactor Circle add-on. Add more enterprise-grade features.
 image:

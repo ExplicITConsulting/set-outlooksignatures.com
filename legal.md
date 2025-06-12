@@ -1,13 +1,13 @@
 ---
 layout: page
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     Legal information
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     Impress, Privacy Notice, Terms and Conditions, etc.
-  </p>
+  </span>
 description: Legal information. Impress. Liability notice. Copyright. Brands and trademarks. Terms and conditions. AGB. Privacy policy.
 ---
 

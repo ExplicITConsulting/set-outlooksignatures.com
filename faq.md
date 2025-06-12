@@ -1,13 +1,13 @@
 ---
 layout: page
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     Frequently Asked Questions (FAQ)
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     Topics that are addressed regularly
-  </p>
+  </span>
 description: |
   Frequently Asked Questions (FAQ). Topics that are addressed regularly.
 image:

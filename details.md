@@ -1,13 +1,13 @@
 ---
 layout: page
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     Technical details, requirements and usage
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     What it needs, how it works and how to use it
-  </p>
+  </span>
 description: |
   Technical details, requirements and usage. What it needs, how it works and how to use it.
 image:

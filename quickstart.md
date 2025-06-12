@@ -1,13 +1,13 @@
 ---
 layout: page
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     Quick Start Guide
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     Deploy your first signatures in less than an hour
-  </p>
+  </span>
 description: |
   Quick Start Guide. Implementation help. Deploy your first signatures in less than an hour.
 image:

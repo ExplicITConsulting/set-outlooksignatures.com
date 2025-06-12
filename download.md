@@ -1,13 +1,13 @@
 ---
 layout: page
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     Download Set-OutlookSignatures
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     Get the Free and Open-Source core version
-  </p>
+  </span>
 description: |
   Download Set-OutlookSignatures. Get the Free and Open-Source core version. GitHub. FOSS.
 image:

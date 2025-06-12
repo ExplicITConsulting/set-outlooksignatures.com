@@ -1,13 +1,13 @@
 ---
 layout: page
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     The Outlook add-in
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     Signatures for Outlook on Android and iOS, advanced features for all platforms
-  </p>
+  </span>
 description: |
   Signatures for Outlook on Android and iOS. Advanced features for all platforms.
 image:

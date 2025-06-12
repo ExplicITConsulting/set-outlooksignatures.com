@@ -5,7 +5,7 @@ title: |
     Set-Outlook&shy;Signatures
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white" style="line-height: normal;">
+  <span class="subtitle is-4 has-text-white">
     Email signatures and out-of-office replies for Exchange and all of Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
   </span>
 description: |
@@ -27,20 +27,13 @@ redirect_from:
 ---
 
 
-<div class="columns">
-  <div class="column is-one-quarter">
-    <img src="/assets/images/set-outlooksignatures logo.png" alt="Set-OutlookSignatures">
-  </div>
-  <div class="column">
-    <h2>
-      <span style="font-weight: normal;">Manage your </span>
-      <span style="font-weight: bold;">Outlook signatures</span>
-      <span style="font-weight: normal;"> centrally and fully automated</span>
-    </h2>
-    <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
-    <p>Thanks to centrally managed templates that automatically populate with your company data, every email gets the professional appearance your business deserves: Up-to-date, consistent, and on-brand.</p>
-  </div>
-</div>
+<h2>
+  <span style="font-weight: normal;">Manage your </span>
+  <span style="font-weight: bold;">Outlook signatures</span>
+  <span style="font-weight: normal;"> centrally and fully automated</span>
+</h2>
+<p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
+<p>Thanks to centrally managed templates that automatically populate with your company data, every email gets the professional appearance your business deserves: Up-to-date, consistent, and on-brand.</p>
 
 
 <h2><span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span>, more professionalism</h2>

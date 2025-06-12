@@ -2,13 +2,13 @@
 layout: page
 lang: de
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     Das Benefactor Circle Add-On
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     Mehr Funktionen für Ihr Unternehmen
-  </p>
+  </span>
 description: |
     Das Benefactor Circle Add-On. Mehr Funktionen für Unternehmen.
 image:

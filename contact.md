@@ -1,13 +1,13 @@
 ---
 layout: page
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     Let's get and stay in contact
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     Email, request a call-back, postal address
-  </p>
+  </span>
 description: Let's get and stay in contact. Contact us. Write us.
 ---
 <div style="min-height: 100vh;">

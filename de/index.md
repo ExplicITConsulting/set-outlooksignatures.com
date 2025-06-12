@@ -6,7 +6,7 @@ title: |
     Set-Outlook&shy;Signatures
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white" style="line-height: normal;">
+  <span class="subtitle is-4 has-text-white">
     E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
   </span>
 description: |
@@ -28,20 +28,13 @@ redirect_from:
 ---
 
 
-<div class="columns">
-  <div class="column is-one-quarter">
-    <img src="/assets/images/set-outlooksignatures logo.png" alt="Set-OutlookSignatures">
-  </div>
-  <div class="column">
-    <h2>
-      <span style="font-weight: normal;">Verwalten Sie Ihre </span>
-      <span style="font-weight: bold;">Outlook-Signaturen</span>
-      <span style="font-weight: normal;"> zentral und vollautomatisch</span>
-    </h2>
-    <p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
-    <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
-  </div>
-</div>
+<h2>
+  <span style="font-weight: normal;">Verwalten Sie Ihre </span>
+  <span style="font-weight: bold;">Outlook-Signaturen</span>
+  <span style="font-weight: normal;"> zentral und vollautomatisch</span>
+</h2>
+<p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
+<p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
 
 
 <h2><span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>, mehr Professionalität</h2>

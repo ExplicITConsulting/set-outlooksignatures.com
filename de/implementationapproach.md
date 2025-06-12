@@ -2,13 +2,13 @@
 layout: page
 lang: de
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     Implementierungs-Ansatz
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     Erfahrungen aus der Praxis bei der Implementierung der Software in Multi-Client-Umgebungen mit einer fünfstelligen Anzahl von Postfächern
-  </p>
+  </span>
 description: |
   Implementierungs-Ansatz. Erfahrungen aus der Praxis bei der Implementierung der Software in Multi-Client-Umgebungen mit einer fünfstelligen Anzahl von Postfächern.
 image:

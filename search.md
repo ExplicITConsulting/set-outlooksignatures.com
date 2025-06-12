@@ -1,13 +1,13 @@
 ---
 layout: page
 title: |
-  <p class="has-text-white">
+  <span class="title is-2 has-text-white">
     Search and find
-  </p>
+  </span>
 subtitle: |
-  <p class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     What are you looking for?
-  </p>
+  </span>
 description: Search and find. What are you looking for?
 ---
 <div style="min-height: 100vh;">
