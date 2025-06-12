@@ -26,7 +26,7 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, goldenrod, darkgoldenrod, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Automatic addition of signatures to emails</b><br>Including Outlook for Android and iOS with the Outlook add-in.
       </div>
@@ -35,7 +35,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right,darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Set the Outlook web signature</b><br>On-prem and roaming signatures.
       </div>
