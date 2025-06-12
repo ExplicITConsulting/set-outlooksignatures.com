@@ -205,7 +205,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Release archive with all your versions</b><br>With an active license, you have access to all releases made for you, including license files.
+        <b>Release archive</b><br>With an active license, you have access to all releases made for you, including license files.
       </div>
     </div>
   </div>
