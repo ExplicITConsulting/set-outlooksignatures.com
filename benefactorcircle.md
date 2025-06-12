@@ -6,7 +6,7 @@ title: |
   </span>
 subtitle: |
   <span class="subtitle is-4 has-text-white">
-    Add more enterprise-grade features
+    More features for your business
   </span>
 description: |
   The Benefactor Circle add-on. Add more enterprise-grade features.
@@ -18,15 +18,11 @@ image:
 redirect_from:
 ---
 
-<div class="columns">
-  <div class="column is-one-quarter">
-    <h2><img src="/assets/images/set-outlooksignatures benefactor circle.png" alt="Set-OutlookSignatures Benefactor Circle"></h2>
-  </div>
-  <div class="column">
-    <p>Set-OutlookSignatures is the open-source gold standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.</p>
-    <p><b>ExplicIT's Benefactor Circle add-on enhances the open-source version with a great set of additional enterprise features.</b></p>
-  </div>
-</div>
+
+<h2>More features for your business</h2>
+<p>Set-OutlookSignatures is the open-source gold standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.</p>
+<p><b>ExplicIT's Benefactor Circle add-on enhances the open-source version with a great set of additional enterprise features.</b></p>
+
 
 <a href="#demo"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Schedule your personal demo</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="#trial-version"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Request a trial version or a license quote</button></a>&nbsp;&nbsp;&nbsp;&nbsp;

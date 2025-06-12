@@ -19,15 +19,9 @@ image:
 redirect_from:
 ---
 
-<div class="columns">
-  <div class="column is-one-quarter">
-    <h2><img src="/assets/images/set-outlooksignatures benefactor circle.png" alt="Set-OutlookSignatures Benefactor Circle"></h2>
-  </div>
-  <div class="column">
-    <p>Set-OutlookSignatures ist der Open-Source Goldstandard zur Verwaltung und Verteilung von E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.</p>
-    <p><b>Das Benefactor Circle Add-On von ExplicIT erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Funktionen für Ihr Unternehmen.</b></p>
-  </div>
-</div>
+<h2>Mehr Funktionen für Ihr Unternehmen</h2>
+<p>Set-OutlookSignatures ist der Open-Source Goldstandard zur Verwaltung und Verteilung von E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.</p>
+<p><b>Das Benefactor Circle Add-On von ExplicIT erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Funktionen für Ihr Unternehmen.</b></p>
 
 <a href="#demo"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Persönliche Demo vereinbaren</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="#testversion"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Testversion oder Lizenzangebot anfordern</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
