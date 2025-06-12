@@ -19,8 +19,9 @@ image:
 redirect_from:
 ---
 
+
 <h2>Nachhaltiger Mehrwert für Ihr Unternehmen</h2>
-<p>Das Benefactor Circle Add-On von ExplicIT erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Funktionen für Ihr Unternehmen:</p>
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> Add-On von <a href="https://explicitconsulting.at">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Funktionen für Ihr Unternehmen:</p>
 
 <h3>Zusätzliche Funktionen</h3>
 <div class="columns is-multiline">
@@ -215,12 +216,12 @@ redirect_from:
 
 
 ## Demo
-In unserer kostenlosen interaktiven Produktdemo zeigen wir Ihnen die Hauptfunktionen des Benefactor Circle Add-ons und des Outlook-Add-Ins – interaktiv und mit Fokus auf Ihre konkreten Anforderungen.
+In unserer kostenlosen interaktiven Produktdemo zeigen wir Ihnen die Hauptfunktionen des <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> Add-Ons und des Outlook-Add-Ins – interaktiv und mit Fokus auf Ihre konkreten Anforderungen.
 
 <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Persönliche Demo vereinbaren</button></a>
 
 
-## Finanzielle Vorteile durch die Nutzung des Benefactor Circle Add-ons
+## Finanzielle Vorteile
 Für die Berechnung der finanziellen Vorteile stellen sich drei zentrale Fragen:
 - Wie hoch sind die Kosten durch nicht konforme Signaturen und Abwesenheitsnotizen – sei es durch Reputationsverlust oder Bußgelder wegen Nichteinhaltung von Vorschriften?
 - Welchen Mehrwert bietet die Nutzung von E-Mails als zusätzlicher Marketingkanal?
@@ -239,7 +240,7 @@ Formel: `CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures 
 Beispielrechnung: 2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client = `0.55 * 2 * 3 * 2 * 1`
  
 Kosten pro Nutzer:in und Jahr: 6,60 €
-Im Vergleich dazu: 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem Benefactor Circle Add-On.
+Im Vergleich dazu: 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> Add-On.
 
 Diese Rechnung berücksichtigt noch nicht:
 - Den manuellen Aufwand für Signaturen in gemeinsam genutzten Postfächern
@@ -287,7 +288,7 @@ Wenn Sie während einer laufenden Lizenzperiode weitere Postfächer hinzufügen 
 ### Testversion
 Sie möchten vielleicht mit einer 14-tägigen Testlizenz starten.
 
-Das Benefactor Circle Add-on erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.  
+Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> Add-On erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.  
 Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion benötigen, lesen Sie die Kurzanleitung in der Readme-Datei, öffnen Sie ein Issue auf GitHub oder kontaktieren Sie uns direkt – wir helfen Ihnen im Rahmen unseres kostenpflichtigen Supports gerne bei der Einführung von Set-OutlookSignatures in Ihrer Umgebung.
 
 
