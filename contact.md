@@ -21,8 +21,8 @@ description: Let's get and stay in contact. Contact us. Write us.
   </p>
   <p>
     <a href="mailto:set-outlooksignatures@explicitconsulting.at">
-      <button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: springgreen">
-        Contact ExplicIT Consulting
+      <button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">
+        ➔ Contact ExplicIT Consulting
       </button>
     </a>
   </p>
