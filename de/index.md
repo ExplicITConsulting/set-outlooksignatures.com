@@ -2,11 +2,11 @@
 layout: page
 lang: de
 title: |
-  <span class="has-text-white">
+  <span class="title is-2 has-text-white">
     Set-Outlook&shy;Signatures und das Benefactor Circle Add-On
   </span>
 subtitle: |
-  <span class="subtitle is-3 has-text-white">
+  <span class="subtitle is-4 has-text-white">
     E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
   </span>
 description: |
