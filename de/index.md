@@ -179,7 +179,7 @@ redirect_from:
 </div>
 
 
-<h2>Funktionalität trifft <span style="color: lawngreen;">Expertise</span></h2>
+<h2>Funktionalität trifft <span style="color: lawngreen; background-color: black;">Expertise</span></h2>
 <p>Das optionale Benefactor Circle Add-On erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
 
 <p>Auf Wunsch richten wir unsere Lösung gemeinsam mit Ihnen ein: Einfach, auf Ihre Bedürfnisse zugeschnitten und mit nachhaltigem Wissenstransfer.<p>
