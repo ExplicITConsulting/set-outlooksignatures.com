@@ -215,7 +215,7 @@ redirect_from:
 
 
 ## Demo
-In your free interactive product demo, we show you the main features of the span style="font-weight: bold; background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> and the included Outlook add-in - interactively and with a focus on your actual needs.
+In your free interactive product demo, we show you the main features of the <span style="font-weight: bold; background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> and the included Outlook add-in - interactively and with a focus on your actual needs.
 
 <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Schedule your personal demo</button></a>
 
