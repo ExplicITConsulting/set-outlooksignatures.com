@@ -2,7 +2,7 @@
 layout: page
 title: |
   <span class="title is-2 has-text-white">
-    Set-OutlookSignatures
+    Set-Outlook&shy;Signatures
   </span>
 subtitle: |
   <span class="subtitle is-4 has-text-white" style="line-height: normal;">
