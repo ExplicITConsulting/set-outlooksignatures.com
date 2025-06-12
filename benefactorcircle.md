@@ -28,16 +28,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Control signatures based on time</b><br>By assigning restrictions to templates.
-      </div>
-    </div>
-  </div>
-
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div>
-        <b>Signatures for automapped and additional mailboxes</b>
+        <b>Automatic addition of signatures to emails</b><br>Including Outlook for Android and iOS with the Outlook add-in.
       </div>
     </div>
   </div>
@@ -55,7 +46,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Manage and deploy out-of-office replies</b><br>For internal and external recipients.
+        <b>Signatures for automapped and additional mailboxes</b>
       </div>
     </div>
   </div>
@@ -65,6 +56,51 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Synchronize roaming signatures</b><br>Linux, macOS, Windows, classic and new Outlook.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Signatures in additional folder</b><br>For use in Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail and others.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Email draft with all signatures</b><br>For easy access with mail clients without signature API.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Control signatures based on time</b><br>By assigning restrictions to templates.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Automatic signatures for appointments</b><br>With the Outlook add-in.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Manage out-of-office replies</b><br>For internal and external recipients.
       </div>
     </div>
   </div>
@@ -91,34 +127,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Automatic addition of signatures to new emails and reply emails</b><br>Including Outlook for Android and iOS with the Outlook add-in.
-      </div>
-    </div>
-  </div>
-
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div>
-        <b>Automatically add signatures to new appointments</b><br>With the Outlook add-in.
-      </div>
-    </div>
-  </div>
-
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div>
-        <b>Copy signatures to additional folders</b><br>For use in Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail and others.
-      </div>
-    </div>
-  </div>
-
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div>
-        <b>Email draft with all available signatures</b><br>For easy access with mail clients without signature API.
+        <b>Add virtual mailboxes</b><br>And dynamically code-generate signature and out-of-office INI lines.
       </div>
     </div>
   </div>
@@ -136,16 +145,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Add virtual mailboxes</b><br>And dynamically code-generate signature and out-of-office INI lines.
-      </div>
-    </div>
-  </div>
-
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div>
-        <b>Removing the tagline,</b><br>added by the free and open source version at the end of signatures.
+        <b>Removing the tagline</b><br>added by the free and open source version at the end of signatures.
       </div>
     </div>
   </div>
@@ -225,7 +225,7 @@ There are three relevant questions to calculate the financial benefits:
 - How much do non-compliant signatures and out-of-office replies cost in terms of loss of reputation or in terms of fines for non-compliance?
 - What is the added value of using email as an additional marketing channel?
 - Does the new software cost less than the effort we want to save users?
- 
+
 While the first two are difficult to calculate and very individual, the last question is easier to answer. Let's assume that an average employee costs 60,000&nbsp;€ per year from the employer's point of view (including all taxes, social security, etc.) for 1,800 hours of work. This gives costs of 0.55&nbsp;€ for each minute of employee work.
 
 Other parameters we need are:
@@ -233,11 +233,11 @@ Other parameters we need are:
 - How many minutes does it take a user to correctly update a single signature (including reading the instructions)?
 - How many signatures does a user typically need to keep up to date (internal and external, language, tone, signatures for shared mailboxes)?
 - On how many clients does a user need to update the signatures?
- 
+
 Formula: `CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year`
 
 Let's assume 2 changes per year, 3 minutes for making the change (including reading the instructions) per signature, 2 signatures, 1 client: `0.55 * 2 * 3 * 2 * 1`
- 
+
 Per user and year, the costs are now 6.60&nbsp;€ in manual effort compared to 3.00&nbsp;€ for a centrally managed solution with Set-OutlookSignatures.
 
 This calculation does not even take into account the following:
@@ -255,11 +255,11 @@ Set-OutlookSignatures pays for itself immediately and actually helps you earn mo
 The price currently is **3.00 € net per mailbox and year**, which is **0.25 € net per mailbox and month**.
 
 We keep license costs as fair as possible. Fair means:
-- Small companies always just pay the same low price as big enterprises.  
-- No maintenance contracts or support contracts that are advertised as "free" but really are hidden in the annual price and are never used to the extent that you pay for over the years.  
+- Small companies always just pay the same low price as big enterprises.
+- No maintenance contracts or support contracts that are advertised as "free" but really are hidden in the annual price and are never used to the extent that you pay for over the years.
   With us, you only pay for the support you actually need - due to the extensive documentation, this is usually not even necessary. **Our all-inclusive support promise: If your support request stems from a bug in the latest version of Set-OutlookSignatures, the Benefactor Circle add-on, its documentation, or the provided components, support is free — no exceptions. For all other issues, you will receive the same top-notch support at a fair price.**
-- No additional infrastructure that someone else runs for you and for which costs are incurred regardless of usage.  
-  No interfaces that regularly transfer your data to external data centers for the preparation of signatures and to which you have to redirect every email for the application of signatures.  
+- No additional infrastructure that someone else runs for you and for which costs are incurred regardless of usage.
+  No interfaces that regularly transfer your data to external data centers for the preparation of signatures and to which you have to redirect every email for the application of signatures.
   Everything runs on your existing systems, which you already trust and govern, and within your own security boundaries.
 - No deliberately inflated prices that are then "discounted" through negotiations.<br><br>
 
@@ -267,7 +267,7 @@ There is no minimum number of mailboxes, only a minimum amount of 210.00 € net
 
 Each mailbox in your environment for which you want to use an exclusive Benefactor Circle feature requires a license. This also applies to shared mailboxes.
 
-It does not matter how many users access a mailbox. If you only want to provide signatures for a single mailbox that is used by 50 people, you only need to purchase 1 license.  
+It does not matter how many users access a mailbox. If you only want to provide signatures for a single mailbox that is used by 50 people, you only need to purchase 1 license.
 
 The mailboxes do not need to be named, you just need to define at least one Active Directory or Entra ID group containing the mailboxes and the maximum number of recursive members for each group.
 
@@ -284,7 +284,7 @@ If you wish to add additional mailboxes during an active license period, you wil
 ### Trial version
 You may want to start with a 14-day trial license.
 
-The Benefactor Circle add-on extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.  
+The Benefactor Circle add-on extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.
 If you look for help implementing the free and open-source core version of Set-OutlookSignatures, go through the Quick Start Guide in the readme file, open an issue at GitHub, or contact us: We are happy to help you implement Set-OutlookSignatures in your own environment as part of our fee-based support.
 
 As soon as the open-source core version is running, it is time to take the next step:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a 14-day trial license</button></a>
@@ -361,9 +361,9 @@ You need to make sure that the user running Set-OutlookSignatures is able to res
 
 Only one pure Entra ID group is supported, and it must be the default license group.
 
-The default license group is the first group in the list of license groups. The default group is used for mailboxes not being covered by more specific license groups.  
+The default license group is the first group in the list of license groups. The default group is used for mailboxes not being covered by more specific license groups.
 
-When a connection to Microsoft Graph is available, Graph is used to check license group membership. A connection to Graph is enforced when the default license group is an Entra ID group.  
+When a connection to Microsoft Graph is available, Graph is used to check license group membership. A connection to Graph is enforced when the default license group is an Entra ID group.
 
 ## License and software version
 License and software versions go hand in hand, so every new release of Set-OutlookSignatures also means a new license release, and vice-versa.

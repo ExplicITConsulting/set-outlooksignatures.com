@@ -29,16 +29,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Steuern Sie Signaturen zeitbasiert</b><br>Durch Zuweisung von Beschränkungen zu Vorlagen.
-      </div>
-    </div>
-  </div>
-
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div>
-        <b>Signaturen für automatisch zugeordnete und zusätzliche Postfächer</b>
+        <b>Automatisches Hinzufügen von Signaturen zu E-Mails</b><br>Einschließlich Outlook für Android und iOS mit dem Outlook Add-In.
       </div>
     </div>
   </div>
@@ -56,7 +47,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Verwalten und Verteilen von Abwesenheitsnotizen</b><br>Für interne und externe Empfänger.
+        <b>Signaturen für automatisch zugeordnete und zusätzliche Postfächer</b>
       </div>
     </div>
   </div>
@@ -74,7 +65,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Löschen von veralteten automatischen Signaturen</b><br>Für die keine zentralen Vorlagen mehr existieren oder gelten.
+        <b>Signaturen in zusätzlichem Ordner</b><br>Zur Nutzung in Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und anderen.
       </div>
     </div>
   </div>
@@ -83,7 +74,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Löschen von benutzererstellten Signaturen</b>
+        <b>E-Mail-Entwurf mit allen Signaturen</b><br>Für einfachen Zugriff mit Mail-Clients ohne Signatur-API.
       </div>
     </div>
   </div>
@@ -92,7 +83,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Automatisches Hinzufügen von Signaturen zu neuen E-Mails und Antwort-E-Mails</b><br>Einschließlich Outlook für Android und iOS mit dem Outlook Add-In.
+        <b>Steuern Sie Signaturen zeitbasiert</b><br>Durch Zuweisung von Beschränkungen zu Vorlagen.
       </div>
     </div>
   </div>
@@ -101,7 +92,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Automatisches Hinzufügen von Signaturen zu neuen Terminen</b><br>Mit dem Outlook Add-In.
+        <b>Automatische Signaturen für Termine</b><br>Mit dem Outlook Add-In.
       </div>
     </div>
   </div>
@@ -110,7 +101,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Kopieren von Signaturen in zusätzliche Ordner</b><br>Zur Nutzung in Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und anderen.
+        <b>Verwalten von Abwesenheitsnotizen</b><br>Für interne und externe Empfänger.
       </div>
     </div>
   </div>
@@ -119,7 +110,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>E-Mail-Entwurf mit allen verfügbaren Signaturen</b><br>Für einfachen Zugriff mit Mail-Clients ohne Signatur-API.
+        <b>Löschen veralteter automatischer Signaturen</b><br>Für die keine zentralen Vorlagen mehr existieren oder gelten.
       </div>
     </div>
   </div>
@@ -128,7 +119,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Hochauflösende Bilder aus DOCX-Vorlagen</b>
+        <b>Löschen benutzererstellter Signaturen</b>
       </div>
     </div>
   </div>
@@ -138,6 +129,15 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
         <b>Hinzufügen virtueller Postfächer</b><br>Und dynamisch durch Code erstellte Signatur- und Abwesenheits-INI-Zeilen.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Hochauflösende Bilder aus DOCX-Vorlagen</b>
       </div>
     </div>
   </div>
@@ -234,11 +234,11 @@ Weitere relevante Parameter:
 - Wie viele Minuten benötigt ein Nutzer, um eine Signatur korrekt zu aktualisieren (inkl. Lesen der Anleitung)?
 - Wie viele Signaturen muss ein Nutzer typischerweise aktuell halten (intern/extern, Sprache, Tonalität, Signaturen für gemeinsame Postfächer)?
 - Auf wie vielen Clients muss ein Nutzer die Signatur aktualisieren?
- 
+
 Formel: `CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year`
 
 Beispielrechnung: 2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client = `0.55 * 2 * 3 * 2 * 1`
- 
+
 Kosten pro Nutzer:in und Jahr: 6,60 €
 Im Vergleich dazu: 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>.
 
@@ -258,11 +258,11 @@ Der Preis beträgt derzeit **3,00 € netto pro Postfach und Jahr**, was **0,2
 
 Wir gestalten die Lizenzkosten so fair wie möglich. Fair bedeutet:
 - Kleine Unternehmen zahlen denselben niedrigen Preis wie große Konzerne.
-- Keine Wartungs- oder Supportverträge, die als „kostenlos“ beworben werden, aber tatsächlich im Jahrespreis versteckt sind und selten im vollen Umfang genutzt werden.  
-  Bei uns zahlen Sie nur für den Support, den Sie tatsächlich benötigen – dank der umfangreichen Dokumentation ist dieser meist gar nicht erforderlich.  
+- Keine Wartungs- oder Supportverträge, die als „kostenlos“ beworben werden, aber tatsächlich im Jahrespreis versteckt sind und selten im vollen Umfang genutzt werden.
+  Bei uns zahlen Sie nur für den Support, den Sie tatsächlich benötigen – dank der umfangreichen Dokumentation ist dieser meist gar nicht erforderlich.
   **Unser All-Inclusive-Support-Versprechen: Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem Benefactor Circle Add-on, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme. Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.**
-- Keine zusätzliche Infrastruktur, die von Dritten betrieben wird und unabhängig von der Nutzung Kosten verursacht.  
-  Keine Schnittstellen, die Ihre Daten regelmäßig an externe Rechenzentren übertragen, um Signaturen aufzubereiten, und an die jede E-Mail zur Signaturanwendung weitergeleitet werden muss.  
+- Keine zusätzliche Infrastruktur, die von Dritten betrieben wird und unabhängig von der Nutzung Kosten verursacht.
+  Keine Schnittstellen, die Ihre Daten regelmäßig an externe Rechenzentren übertragen, um Signaturen aufzubereiten, und an die jede E-Mail zur Signaturanwendung weitergeleitet werden muss.
   Alles läuft auf Ihren bestehenden Systemen, denen Sie bereits vertrauen und die Sie selbst verwalten – innerhalb Ihrer eigenen Sicherheitsgrenzen.
 - Keine künstlich überhöhten Preise, die dann durch Verhandlungen "reduziert" werden.<br><br>
 
@@ -288,7 +288,7 @@ Wenn Sie während einer laufenden Lizenzperiode weitere Postfächer hinzufügen 
 ### Testversion
 Sie möchten vielleicht mit einer 14-tägigen Testlizenz starten.
 
-Das <span style="font-weight: bold; background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>  erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.  
+Das <span style="font-weight: bold; background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>  erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.
 Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion benötigen, lesen Sie die Kurzanleitung in der Readme-Datei, öffnen Sie ein Issue auf GitHub oder kontaktieren Sie uns direkt – wir helfen Ihnen im Rahmen unseres kostenpflichtigen Supports gerne bei der Einführung von Set-OutlookSignatures in Ihrer Umgebung.
 
 
@@ -357,11 +357,11 @@ Eine Lizenzgruppe besteht aus drei Komponenten:
 - Der maximalen Anzahl an Postfächern, die für diese Gruppe lizenziert sind.
 
 Wo sollte die Lizenzgruppe erstellt werden?
-- Bei Verwendung von '-GraphOnly true' erstellen Sie die Gruppe in Entra ID. Die Lizenzgruppe lautet dann 'EntraID \<Object ID Ihrer Lizenzgruppe>'  
+- Bei Verwendung von '-GraphOnly true' erstellen Sie die Gruppe in Entra ID. Die Lizenzgruppe lautet dann 'EntraID \<Object ID Ihrer Lizenzgruppe>'
   Alternativ kann auch eine lokale AD-Gruppe verwendet werden, sofern sie mit Entra ID synchronisiert ist: '\<AD-DNS-Domäne>, \<SID der Lizenzgruppe>'
-- In hybriden Umgebungen ohne '-GraphOnly true' erstellen Sie die Gruppe in Ihrer lokalen AD und synchronisieren Sie sie mit Entra ID. Die Lizenzgruppe lautet dann '\<AD-DNS-Domäne>, \<SID der Lizenzgruppe>'  
+- In hybriden Umgebungen ohne '-GraphOnly true' erstellen Sie die Gruppe in Ihrer lokalen AD und synchronisieren Sie sie mit Entra ID. Die Lizenzgruppe lautet dann '\<AD-DNS-Domäne>, \<SID der Lizenzgruppe>'
   Alternativ kann auch eine Entra ID-Gruppe verwendet werden ('EntraID, \<Object ID>'), was funktional '-GraphOnly true' entspricht.
-- In reinen On-Premises-Umgebungen sind nur lokale AD-Gruppen zulässig: '\<AD-DNS-Domäne>, \<SID>'  
+- In reinen On-Premises-Umgebungen sind nur lokale AD-Gruppen zulässig: '\<AD-DNS-Domäne>, \<SID>'
   Bei späterem Wechsel in eine hybride Umgebung ist keine Anpassung nötig, solange die Gruppen synchronisiert werden.
 
 Lizenzprüfung bei Nutzung eines exklusiven Benefactor Circle-Features:
