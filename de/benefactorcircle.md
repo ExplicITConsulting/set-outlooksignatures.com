@@ -38,7 +38,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Signaturen für automatisch zugeordnete</b><br>und zusätzliche Postfächer.
+        <b>Signaturen für automatisch zugeordnete und zusätzliche Postfächer</b>
       </div>
     </div>
   </div>
@@ -137,7 +137,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Hinzufügen virtueller Postfächer</b><br>Samt dynamischem Erstellen von Signatur- und Abwesenheits-INI-Zeilen durch Code.
+        <b>Hinzufügen virtueller Postfächer</b><br>Und dynamisch durch Code erstellte Signatur- und Abwesenheits-INI-Zeilen.
       </div>
     </div>
   </div>
@@ -176,7 +176,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Sicherer Datenaustausch</b><br>Protokolldateien können über ein sicheres Portal hochgeladen werden. Kein Versand per E-Mail oder Veröffentlichung auf GitHub.
+        <b>Sicherer Datenaustausch</b><br>Logdateien über ein sicheres Portal hochladen statt Versand per E-Mail oder Veröffentlichung auf GitHub.
       </div>
     </div>
   </div>
