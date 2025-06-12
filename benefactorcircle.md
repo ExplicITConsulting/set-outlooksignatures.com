@@ -19,71 +19,208 @@ redirect_from:
 ---
 
 
-<h2>More features for your business</h2>
-<p>Set-OutlookSignatures is the open-source gold standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.</p>
-<p><b>ExplicIT's Benefactor Circle add-on enhances the open-source version with a great set of additional enterprise features.</b></p>
+<h2>Sustainable added value for your business</h2>
+<p>The <span style="font-weight: bold; background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> from <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> enhances the free Set-OutlookSignatures with great additional functions for your company:</p>
 
-
-<a href="#demo"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Schedule your personal demo</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="#trial-version"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Request a trial version or a license quote</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="/support"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Order fee-based support</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-
-<div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
-  <div class="content">
-    <h2>Your added value</h2>
-    <ul>
-      <li>Time-based campaigns by assigning time range constraints to templates</li>
-      <li>Signatures for automapped and additional mailboxes</li>
-      <li>Set current user Outlook Web signature (classic Outlook Web signature and roaming signatures)</li>
-      <li>Set current user out-of-office replies</li>
-      <li>Download and upload roaming signatures (Linux, macOS, Windows, Classic and New Outlook)</li>
-      <li>Delete signatures created by the software, for which the templates no longer exist or apply</li>
-      <li>Delete user-created signatures</li>
-      <li>Automatically add signatures to new emails and reply emails (including Outlook on Android and Outlook on iOS) with the Outlook add-in</li>
-      <li>Automatically add signatures to new appointments with the Outlook add-in</li>
-      <li>Copy signatures to additional signature path for use with email clients and apps besides Outlook: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others</li>
-      <li>Create an email draft containing all available signatures in HTML and plain text for easy access in mail clients that do not have a signatures API</li>
-      <li>High resolution images from DOCX templates</li>
-      <li>Add virtual mailboxes and dynamically create signature and out-of-office INI lines through code</li>
-      <li>Remove the tagline added by the free and open source version at the end of signatures</li>
-      <li>All components are digitally signed with an Extended Validation (EV) certificate for tamper protection and easy integration into locked-down environments.</li>
-    </ul>
-  </div>
-</div>
-<div class="columns">
-  <div class="column">
-    <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
-      <div class="content">
-        <h2>Priority support</h2>
-        <ul>
-          <li>Support requests are handled with priority 24/5 (Austrian business days) via email and a callback option.</li>
-          <li>Upload log files via a secure portal. No need to send them via email or share them publicly on GitHub.</li>
-          <li>Requests for new features are checked for feasability with priority.</li>
-        </ul>
+<h3>Additional features</h3>
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Control signatures based on time</b><br>By assigning restrictions to templates.
       </div>
     </div>
   </div>
-  <div class="column">
-    <div class="box" style="margin: 1.5rem; border-radius: 0; border-style: solid; border-width:thin; border-color:transparent deepskyblue lawngreen transparent;">
-      <div class="content">
-        <h2>Free release upgrades and archive</h2>
-        <ul>
-          <li>All new versions released during the license period are included, regardless of whether it is a patch, a feature or a major release.</li>
-          <li>All releases, including license files, published during the license period are available in a secured individual release archive.</li>
-        </ul>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Signatures for automapped and additional mailboxes</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Set the Outlook web signature</b><br>On-prem and roaming signatures.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Manage and deploy out-of-office replies</b><br>For internal and external recipients.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Synchronize roaming signatures</b><br>Linux, macOS, Windows, classic and new Outlook.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Deletion of obsolete automatic signatures</b><br>For which central templates no longer exist or apply.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Deletion of user-created signatures</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Automatic addition of signatures to new emails and reply emails</b><br>Including Outlook for Android and iOS with the Outlook add-in.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Automatically add signatures to new appointments</b><br>With the Outlook add-in.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Copy signatures to additional folders</b><br>For use in Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail and others.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Email draft with all available signatures</b><br>For easy access with mail clients without signature API.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>High-resolution images from DOCX templates</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Add virtual mailboxes</b><br>And dynamically code-generate signature and out-of-office INI lines.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Removing the tagline,</b><br>added by the free and open source version at the end of signatures.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>All components are digitally signed</b><br>Extended Validation (EV) certificate for easy integration into secured environments.
       </div>
     </div>
   </div>
 </div>
+
+<h3>Prioritized support</h3>
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Prioritized processing of support requests</b><br>24/5 on Austrian working days, by email and with callback option.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Secure data exchange</b><br>Upload log files via a secure portal instead of sending them by email or publishing them on GitHub.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Suggestions for new functions are prioritized for feasibility</b><br>Your direct line to our developers.
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Free version upgrades and archive</h3>
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>All new versions are included during the license term</b><br>Regardless of whether it is a patch, new feature or new major version.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div>
+        <b>Release archive with all your versions</b><br>With an active license, you have access to all releases made for you, including license files.
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="#testversion"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a trial license or quote</button></a>
 
 
 ## Demo
-In your free interactive product demo, we show you the main features of the Benefactor Circle add-on and the Outlook add-in - interactively and with a focus on your actual needs.
+In your free interactive product demo, we show you the main features of the span style="font-weight: bold; background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> and the included Outlook add-in - interactively and with a focus on your actual needs.
 
-<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Schedule your personal demo now</button></a>
+<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Schedule your personal demo</button></a>
 
 
-## Financial benefits of using the Benefactor Circle add-on
+## Financial benefits
 There are three relevant questions to calculate the financial benefits:
 - How much do non-compliant signatures and out-of-office replies cost in terms of loss of reputation or in terms of fines for non-compliance?
 - What is the added value of using email as an additional marketing channel?
@@ -150,7 +287,7 @@ You may want to start with a 14-day trial license.
 The Benefactor Circle add-on extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.  
 If you look for help implementing the free and open-source core version of Set-OutlookSignatures, go through the Quick Start Guide in the readme file, open an issue at GitHub, or contact us: We are happy to help you implement Set-OutlookSignatures in your own environment as part of our fee-based support.
 
-As soon as the open-source core version is running, it is time to take the next step:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Request a full-featured 14-day trial license</button></a>
+As soon as the open-source core version is running, it is time to take the next step:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Request a 14-day trial license</button></a>
 
 To use the license file, just add two parameters to your call of Set-OutlookSignatures.ps1:
 - `BenefactorCircleLicenseFile` with the path to your individualized license file
@@ -159,7 +296,7 @@ To use the license file, just add two parameters to your call of Set-OutlookSign
 Trial licenses can not be extended or re-issued. They are limited to 14 days runtime and a maximum of 20 mailboxes.<br>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible, as our software does not phone home).<br>It is strongly recommended to start your trial only when the free and open-source version of Set-OutlookSignatures has already been implemented successfully. Also make sure you have a test plan and reserved time to execute it.
 
 ### Order process for non-trial versions
-<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Request a license quote for Set-OutlookSignatures Benefactor Circle</button></a>
+<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Request a license quote</button></a>
 
 You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.
 

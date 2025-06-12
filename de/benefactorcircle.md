@@ -92,7 +92,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Automatisches Hinzufügen von Signaturen zu neuen E-Mails und Antwort-E-Mails</b><br>Einschließlich Outlook für Android und iOS mit dem Outlook-Add-In.
+        <b>Automatisches Hinzufügen von Signaturen zu neuen E-Mails und Antwort-E-Mails</b><br>Einschließlich Outlook für Android und iOS mit dem Outlook Add-In.
       </div>
     </div>
   </div>
@@ -101,7 +101,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod); background-clip: text; color: transparent;">⚫</span>
       <div>
-        <b>Automatisches Hinzufügen von Signaturen zu neuen Terminen</b><br>Mit dem Outlook-Add-In.
+        <b>Automatisches Hinzufügen von Signaturen zu neuen Terminen</b><br>Mit dem Outlook Add-In.
       </div>
     </div>
   </div>
@@ -216,7 +216,7 @@ redirect_from:
 
 
 ## Demo
-In unserer kostenlosen interaktiven Produktdemo zeigen wir Ihnen die Hauptfunktionen des <span style="font-weight: bold; background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-Ons</span> und des inkludierten Outlook-Add-Ins – interaktiv und mit Fokus auf Ihre konkreten Anforderungen.
+In unserer kostenlosen interaktiven Produktdemo zeigen wir Ihnen die Hauptfunktionen des <span style="font-weight: bold; background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-Ons</span> und des inkludierten Outlook Add-Ins – interaktiv und mit Fokus auf Ihre konkreten Anforderungen.
 
 <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(-30deg, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Persönliche Demo vereinbaren</button></a>
 
