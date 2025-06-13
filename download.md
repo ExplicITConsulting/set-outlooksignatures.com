@@ -32,12 +32,12 @@ redirect_from:
   
   <p><a href="/quickstart"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Quick Start Guide</button></a></p>
 
-  <h2>The Benefactor Circle add-on</h2>
+  <h2>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></h2>
   <p>ExplicIT's Benefactor Circle add-on enhances the open-source version with a great set of additional enterprise-grade features.</p>
 
-  <p>See the <a href="/benefactorcircle">Benefactor Circle add-on</a> site to learn what these features can do for you.</p>
+  <p>See the <a href="/benefactorcircle" style="text-decoration: underline;"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> site to learn what these features can do for you.</p>
   
-  <p><a href="/benefactorcircle"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ The Benefactor Circle add-on</button></a></p>
+  <p><a href="/benefactorcircle"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></button></a></p>
 </div>
 
 <script>
