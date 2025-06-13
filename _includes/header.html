@@ -39,11 +39,12 @@
 
                 <div class="navbar-item">
                     <select id="language-select">
+                        <option value="" selected disabled>Automatic</option>
                         <option value="en">English</option>
                         <option value="de">Deutsch</option>
                     </select>
                 </div>
-                
+
                 {% if site.gh_sponsor %}
                     <a class="navbar-item has-text-white" href="https://github.com/sponsors/{{ site.gh_sponsor }}">
                         <span class="icon gh-sponsor"><i class="fas fa-heart"></i></span>
