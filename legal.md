@@ -29,7 +29,7 @@ Kaiser-Ebersdorfer Straße 206b/3/2
 Austria  
 
 [welcome@explicitconsulting.at](mailto:welcome@explicitconsulting.at)  
-[https://explicitconsulting.at](https://explicitconsulting.at)
+<a href="https://explicitconsulting.at" target="_blank">https://explicitconsulting.at</a>
 
 Registered at company court / Firmengericht: Handelsgericht Wien, Austria  
 <a href="https://justizonline.gv.at/jop/web/firmenbuchabfrage"  target="_blank">Registration number / Firmenbuchnummer</a>: FN 607013t  

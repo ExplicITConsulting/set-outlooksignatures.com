@@ -908,7 +908,7 @@ Dear companies, please do not forget:
 
 Being free and open-source software, Set-OutlookSignatures saves your company a remarkable amount of money compared to commercial software.
 
-Buy a Benefactor Circle license to add additional enterprise-grade features: See [`Benefactor Circle`](/benefactorcircle) or [`https://explicitonsulting.at`](https://explicitconsulting.at/open-source/set-outlooksignatures) for details about these features and their benefits for your business.
+Buy a Benefactor Circle license to add additional enterprise-grade features: See [`Benefactor Circle`](/benefactorcircle) for details about these features and their benefits for your business.
 
 ### 35.1. Why the tagline?
 I initially created Set-OutlookSignatures to give back to the community by showing how to correctly script stuff that I have seen being done in wrong and incomplete ways over and over again:

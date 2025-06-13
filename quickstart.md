@@ -95,7 +95,7 @@ The [FAQ section](/faq) helps you find answer to the most popular questions we g
 ## Looking for help or more features?
 Set-OutlookSignatures is very well documented, which inevitably brings with it a lot of content.
 
-If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner [ExplicIT Consulting](https://explicitconsulting.at) offers first-class [fee-based support](/support), and their <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent; text-decoration: underline;">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
+If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> offers first-class [fee-based support](/support), and their <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent; text-decoration: underline;">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
 
 
 <script>
