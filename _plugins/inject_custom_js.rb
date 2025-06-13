@@ -2,138 +2,168 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
   if doc.output =~ /<\/head>/
     code_to_add = <<~'HTMLHereDocString'
       <!-- Open pages in the correct language -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const path = window.location.pathname;
-        const search = window.location.search;
-        const hash = window.location.hash;
+      <script>
+          document.addEventListener('DOMContentLoaded', () => {
+              const path = window.location.pathname;
+              const search = window.location.search;
+              const hash = window.location.hash;
 
-        const browserLang = (navigator.language || navigator.userLanguage || "en").toLowerCase().split("-")[0];
-        const currentPathLangMatch = path.match(/^\/([a-z]{2})(?:\/|$)/i);
-        const currentPathLang = currentPathLangMatch ? currentPathLangMatch[1].toLowerCase() : null;
+              const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
+              const currentPathLangMatch = path.match(/^\/([a-z]{2})(?:\/|$)/i);
+              // currentPathLang will be 'en', 'de', or null if no explicit language prefix
+              const currentPathLang = currentPathLangMatch ? currentPathLangMatch[1].toLowerCase() : null;
 
-        const languageSelect = document.getElementById("language-select");
+              const languageSelect = document.getElementById('language-select');
 
-        // --- Language Logic ---
-        let effectiveLang;
-        const manualLang = sessionStorage.getItem("manualLang");
-        const initialVisitHandled = sessionStorage.getItem("initialVisitHandled");
+              // --- Determine the actual language to use for this page load ---
+              let effectiveLang;
+              const manualLang = sessionStorage.getItem('manualLang');
+              const initialVisitHandled = sessionStorage.getItem('initialVisitHandled');
 
-        if (manualLang) {
-          // Priority 1: If a manual selection exists, respect it
-          effectiveLang = manualLang;
-        } else if (currentPathLang === "de" && !initialVisitHandled) {
-          // Priority 2: If this is the very first visit to /de/ in this session, use de.
-          // This ensures /de/ is the default if explicitly visited first.
-          effectiveLang = "de";
-          sessionStorage.setItem("initialVisitHandled", "true"); // Mark as handled for this session
-        } else if (currentPathLang) {
-          // Priority 3: If there's a language in the path, use it
-          effectiveLang = currentPathLang;
-        } else if (browserLang === "de") {
-          // Priority 4: If no path language and browser is 'de', use 'de' (only applies if not already handled by path or manual)
-          effectiveLang = "de";
-        } else {
-          // Fallback: Default to 'en'
-          effectiveLang = "en";
-        }
-
-        // Set the dropdown to the determined effective language immediately
-        if (languageSelect) {
-          // Check if element exists
-          languageSelect.value = effectiveLang;
-        }
-
-        // --- Redirection Logic ---
-        let shouldRedirect = false;
-        let targetPath = path;
-
-        // Only redirect if the effective language does not match the current path's language,
-        // or if the effective language is 'en' and we are on a '/de/' path.
-        if (effectiveLang === "en") {
-          if (currentPathLang === "de") {
-            shouldRedirect = true;
-            targetPath = path.replace(/^\/de/i, "");
-          }
-        } else if (effectiveLang === "de") {
-          if (currentPathLang !== "de") {
-            shouldRedirect = true;
-            targetPath = "/de" + (path === "/" ? "" : path);
-          }
-        }
-
-        if (shouldRedirect) {
-          const targetUrl = targetPath + search;
-          fetch(targetUrl, { method: "HEAD" })
-            .then((response) => {
-              if (response.ok) {
-                window.location.replace(targetUrl + hash);
+              if (manualLang) {
+                  // RULE: Manual selection (from dropdown) ALWAYS wins if present.
+                  effectiveLang = manualLang;
+              } else if (currentPathLang === 'de' && !initialVisitHandled) {
+                  // RULE: If it's the very first visit to a /de/ path in this session, default to de.
+                  effectiveLang = 'de';
+                  sessionStorage.setItem('initialVisitHandled', 'true'); // Mark as handled for this session
+              } else if (currentPathLang) {
+                  // RULE: If there's an explicit language in the path (e.g., /en/page or /de/page) and no manual override, use it.
+                  effectiveLang = currentPathLang;
+              } else if (browserLang === 'de') {
+                  // RULE: If no manual selection, no explicit path language, and browser is German, suggest German.
+                  effectiveLang = 'de';
               } else {
-                const langRootTargetUrl = "/" + effectiveLang + "/";
-                fetch(langRootTargetUrl, { method: "HEAD" })
-                  .then((rootResponse) => {
-                    if (rootResponse.ok) {
-                      window.location.replace(langRootTargetUrl + hash);
-                    } else {
-                      console.warn(`Could not find a valid page for language '${effectiveLang}' at '${targetUrl}' or '${langRootTargetUrl}'`);
-                    }
-                  })
-                  .catch((rootError) => {
-                    console.error("Error checking language root:", rootError);
+                  // FALLBACK: Default to English.
+                  effectiveLang = 'en';
+              }
+
+              // Set the dropdown to reflect the determined effective language immediately on load
+              if (languageSelect) {
+                  languageSelect.value = effectiveLang;
+              }
+
+              // --- Redirection Logic (only if necessary) ---
+              let shouldRedirect = false;
+              let targetPath = path; // Start with the current path
+
+              // Determine what the current path's language *looks* like for comparison
+              // If currentPathLang is null, treat it as 'en' for comparison purposes, as /path is implicitly English
+              const currentActualPathLang = currentPathLang || 'en';
+
+              if (effectiveLang !== currentActualPathLang) {
+                  // A redirect is needed if the effective language determined above
+                  // does not match what the current URL's structure implies.
+
+                  if (effectiveLang === 'en') {
+                      // If effectiveLang is 'en', we want a path without /de/
+                      targetPath = path.replace(/^\/de/i, '');
+                      if (!targetPath.startsWith('/')) { // Ensure it always starts with /
+                          targetPath = '/' + targetPath;
+                      }
+                  } else if (effectiveLang === 'de') {
+                      // If effectiveLang is 'de', we want a path with /de/
+                      if (!currentPathLang || currentPathLang !== 'de') {
+                          targetPath = '/de' + (path === '/' ? '' : path);
+                      }
+                  }
+                  shouldRedirect = true;
+              }
+
+
+              if (shouldRedirect) {
+                  const targetUrl = targetPath + search;
+                  // Add an additional check: only redirect if the targetUrl is actually different
+                  // from the current window.location. This is a common infinite loop breaker.
+                  if (window.location.pathname + window.location.search !== targetUrl) {
+                      fetch(targetUrl, { method: 'HEAD' })
+                          .then(response => {
+                              if (response.ok) {
+                                  window.location.replace(targetUrl + hash); // Use replace() for cleaner history
+                              } else {
+                                  // Fallback to language root if specific page doesn't exist
+                                  const langRootTargetUrl = '/' + effectiveLang + '/';
+                                  fetch(langRootTargetUrl, { method: 'HEAD' })
+                                      .then(rootResponse => {
+                                          if (rootResponse.ok) {
+                                              window.location.replace(langRootTargetUrl + hash);
+                                          } else {
+                                              console.warn(`Could not find a valid page for language '${effectiveLang}' at '${targetUrl}' or '${langRootTargetUrl}'. Staying on current page.`);
+                                          }
+                                      })
+                                      .catch(rootError => {
+                                          console.error("Error checking language root:", rootError);
+                                      });
+                              }
+                          })
+                          .catch(error => {
+                              console.error("Error checking target URL:", error);
+                          });
+                  }
+              }
+
+              // --- Language Switcher Event Listener ---
+              if (languageSelect) {
+                  languageSelect.addEventListener('change', (event) => {
+                      const selectedLang = event.target.value;
+                      sessionStorage.setItem('manualLang', selectedLang); // Store manual selection
+                      // A manual switch means initial visit logic is now superseded for this session.
+                      sessionStorage.setItem('initialVisitHandled', 'true');
+
+                      let newPath;
+                      // Start with the current path relative to its language prefix
+                      let basePagePath = path;
+                      if (currentPathLang) {
+                          // If current path has a language prefix, remove it to get the base page
+                          basePagePath = path.replace(/^\/[a-z]{2}/i, '');
+                      }
+                      if (basePagePath === '') basePagePath = '/'; // Ensure root is '/'
+
+                      if (selectedLang === 'en') {
+                          // For English, ensure no /de/ prefix
+                          newPath = basePagePath;
+                      } else if (selectedLang === 'de') {
+                          // For German, ensure /de/ prefix
+                          newPath = '/de' + (basePagePath === '/' ? '' : basePagePath);
+                      }
+
+                      // Ensure newPath always starts with a /
+                      if (!newPath.startsWith('/')) {
+                          newPath = '/' + newPath;
+                      }
+
+                      const newUrl = newPath + search + hash;
+
+                      // Only navigate if the target URL is actually different to prevent unnecessary reloads
+                      if (window.location.href !== newUrl) {
+                          fetch(newUrl, { method: 'HEAD' })
+                              .then(response => {
+                                  if (response.ok) {
+                                      window.location.href = newUrl; // Use href for manual navigation
+                                  } else {
+                                      // Fallback to language root if specific page doesn't exist
+                                      const newLangRoot = '/' + selectedLang + '/';
+                                      fetch(newLangRoot, { method: 'HEAD' })
+                                          .then(rootResponse => {
+                                              if (rootResponse.ok) {
+                                                  window.location.href = newLangRoot;
+                                              } else {
+                                                  console.warn(`Could not find valid page for '${selectedLang}' at '${newUrl}' or '${newLangRoot}'. Staying on current page.`);
+                                              }
+                                          })
+                                          .catch(rootError => {
+                                              console.error("Error checking new language root:", rootError);
+                                          });
+                                  }
+                              })
+                              .catch(error => {
+                                  console.error("Error checking new URL:", error);
+                              });
+                      }
                   });
               }
-            })
-            .catch((error) => {
-              console.error("Error checking target URL:", error);
-            });
-        }
-
-        // --- Language Switcher Event Listener ---
-        if (languageSelect) {
-          languageSelect.addEventListener("change", (event) => {
-            const selectedLang = event.target.value;
-            sessionStorage.setItem("manualLang", selectedLang); // Store manual selection
-            sessionStorage.setItem("initialVisitHandled", "true"); // A manual switch means initial visit logic is overridden
-
-            let newPath;
-            if (selectedLang === "en") {
-              newPath = currentPathLang === "de" ? path.replace(/^\/de/i, "") : path;
-            } else if (selectedLang === "de") {
-              newPath = currentPathLang !== "de" ? "/de" + (path === "/" ? "" : path) : path;
-            }
-
-            if (!newPath.startsWith("/")) {
-              newPath = "/" + newPath;
-            }
-
-            const newUrl = newPath + search + hash;
-
-            fetch(newUrl, { method: "HEAD" })
-              .then((response) => {
-                if (response.ok) {
-                  window.location.href = newUrl;
-                } else {
-                  const newLangRoot = "/" + selectedLang + "/";
-                  fetch(newLangRoot, { method: "HEAD" })
-                    .then((rootResponse) => {
-                      if (rootResponse.ok) {
-                        window.location.href = newLangRoot;
-                      } else {
-                        console.warn(`Could not find a valid page for language '${selectedLang}' at '${newUrl}' or '${newLangRoot}'. Staying on current page.`);
-                      }
-                    })
-                    .catch((rootError) => {
-                      console.error("Error checking new language root:", rootError);
-                    });
-                }
-              })
-              .catch((error) => {
-                console.error("Error checking new URL:", error);
-              });
           });
-        }
-      });
-    </script>
+      </script>
 
 
       <!-- Metrics via JS -->
