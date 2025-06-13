@@ -29,7 +29,7 @@ redirect_from:
   <p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Download&nbsp;<span class="version-text">(loading…)</span>&nbsp;as ZIP file</button></a></p>
 
   <p>You can deploy your first signatures in less than an hour. Just follow the easy 4-step-process to get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.</p>
-  
+
   <p><a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Quick Start Guide</button></a></p>
 
   <h2>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></h2>
@@ -37,6 +37,7 @@ redirect_from:
 
   <p><a href="/benefactorcircle"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ The Benefactor Circle add-on</button></a></p>
 </div>
+
 
 <script>
   fetch('https://api.github.com/repos/Set-OutlookSignatures/Set-OutlookSignatures/releases/latest')
@@ -46,7 +47,7 @@ redirect_from:
         span.textContent = data.tag_name;
       });
 
-      document.getElementById('download-link').href = 
+      document.getElementById('download-link').href =
         `https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases/download/${data.tag_name}/Set-OutlookSignatures_${data.tag_name}.zip`;
     })
     .catch(error => {

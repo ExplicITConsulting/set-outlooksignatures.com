@@ -106,7 +106,7 @@ If you are looking for someone with experience who can quickly train you and ass
         span.textContent = data.tag_name;
       });
 
-      document.getElementById('download-link').href = 
+      document.getElementById('download-link').href =
         `https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases/download/${data.tag_name}/Set-OutlookSignatures_${data.tag_name}.zip`;
     })
     .catch(error => {
