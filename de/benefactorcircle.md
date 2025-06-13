@@ -2,7 +2,7 @@
 layout: page
 lang: de
 title: |
-  <span class="title is-2 has-text-white">
+  <span class="title is-2 has-text-white" style="hyphens: manual;">
     Das Benefactor Circle Add-On
   </span>
 subtitle: |
