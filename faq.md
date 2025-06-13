@@ -917,9 +917,9 @@ I initially created Set-OutlookSignatures to give back to the community by showi
 - working with AD queries in the most complex environments and across trusts,
 - parallel code execution in PowerShell,
 - working with Graph,
-- and - of course - a fresh approach on how to manage and deploy signatures for Outlook.
+- and, of course, a fresh approach on how to manage and deploy signatures for Outlook.
 
-Since the free version of Set-OutlookSignatures has first been published in 2021, dozens of features have been added - quickly scroll through the CHANGELOG to get an idea of what I am talking about.<br>I invested more than a thousand hours of my spare time developing them, and I spent a whole lot of money setting up and maintaining different test environments. And I plan to continue doing so and keeping the core of Set-OutlookSignatures free and open source software.
+Since the free version of Set-OutlookSignatures has first been published in 2021, dozens of features have been added. Quickly scroll through the CHANGELOG to get an idea of what I am talking about.<br>I invested more than a thousand hours of my spare time developing them, and I spent a whole lot of money setting up and maintaining different test environments. And I plan to continue doing so and keep the core of Set-OutlookSignatures free and open source software.
 
 You are probably an Exchange or client administrator, and as such you are part of the community I want to give something back to.
 
@@ -927,14 +927,14 @@ I do not expect or request thank yous from fellow admins, as our community lives
 
 I draw the line where companies, rather than individuals, benefit one-sidedly. The tagline reminds companies that they benefit from open source software and that there is a way to ensure that Set-OutlookSignatures remains open source and is developed further by supporting it financially and at the same time gaining access to even more useful features.
 
-By the way: Companies often make wrong assumptions about free and open source software. Open source software absolutely can contain closed source code. The term "open source" does not automatically imply free usage or even free access to the code. The permission to use software for free does not imply free support.
+By the way: Companies often make wrong assumptions about free and open source software. Open source software absolutely can contain closed source code. Also, the term "open source" does not automatically imply free usage or even free access to the code. And the permission to use software for free does not imply free support.
 
 ### 35.2. Not sure if Set-OutlookSignatures is the right solution for your company?
 The core of Set-OutlookSignatures is available free of charge as open-source software and can be used for as long and for as many mailboxes as your company wants.<br>All documentation is publicly available, and you can get free community support at GitHub or get first-class fee-based support, training, workshops and more from [ExplicIT Consulting](/support).
 
 For a small annual fee per mailbox, the [Benefactor Circle add-on](/benefactorcircle) offers additional enterprise-grade features.<br>All documentation is publicly available, and the free 14-day trial version allows companies to test all additional features at no cost.
 
-Your company is not sure whether the add-on will pay off?<br>The chapter '[`Financial benefits of using the Benefactor Circle add-on`](/benefactorcircle)' shows how you can do the calculation tailored to the needs of your company.<br>Should your company come to the conclusion that the add-on does not pay off, it can still use the free and open source version of Set-OutlookSignatures.
+Your company is not sure whether the add-on will pay off?<br>The chapter 'Financial benefits' shows how you can do the calculation tailored to the needs of your company.<br>Should your company come to the conclusion that the add-on does not pay off, it can still use the free and open source version of Set-OutlookSignatures.
 
 
 ## 36. Why is the out-of-office assistant not activated automatically?
