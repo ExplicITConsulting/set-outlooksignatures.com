@@ -56,7 +56,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           const search = window.location.search;
           const hash = window.location.hash;
 
-          const currentLangMatch = path.match(/^\/([a-z]{2})(\/|$)/);
+          const currentLangMatch = path.match(/^\\/[a-z]{2}(\\/|$)/);
           const currentLang = currentLangMatch ? currentLangMatch[1] : null;
 
           if (currentLang !== lang && currentLang !== null) {
