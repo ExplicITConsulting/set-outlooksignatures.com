@@ -30,7 +30,7 @@ Follow the easy 4-step-process to deploy your first signatures, get a glimpse of
 ## Step 1: Check Prerequisites
 For a first test run, it is recommended to log on with a test user on a Windows system with Word and Outlook installed, and Outlook being configured with at least the test user's mailbox. This way, you get results fast and can experience the biggest set of features.
 
-For full Linux and macOS support, the <a href="/benefactorcircle">&gt;&nbsp;<span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
+For full Linux and macOS support, the <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
 
 When some or all of your mailboxes are in Exchange Online, you need a 'Global Admin' or 'Application Administrator' user for one-time preparations.
 
@@ -95,7 +95,7 @@ The [FAQ section](/faq) helps you find answer to the most popular questions we g
 ## Looking for help or more features?
 Set-OutlookSignatures is very well documented, which inevitably brings with it a lot of content.
 
-If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> offers first-class [fee-based support](/support), and their <a href="/benefactorcircle">&gt;&nbsp;<span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
+If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> offers first-class [fee-based support](/support), and their <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
 
 
 <script>
