@@ -26,7 +26,7 @@ redirect_from:
 
   <p>The latest release of the free and open-source core version of Set-OutlookSignatures is <span class="version-text">(loading…)</span>.</p>
 
-  <p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Download&nbsp;<span class="version-text">the latest release</span>&nbsp;as ZIP file</button></a></p>
+  <p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Download&nbsp;<span class="version-text">(loading…)</span>&nbsp;as ZIP file</button></a></p>
 
   <p>You can deploy your first signatures in less than an hour. Just follow the easy 4-step-process to get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.</p>
   

@@ -46,32 +46,73 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       <!-- Open pages in the correct language -->
       <script>
         document.addEventListener('DOMContentLoaded', function () {
-          const lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
+          const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
           const path = window.location.pathname;
           const search = window.location.search;
           const hash = window.location.hash;
 
-          const currentLangMatch = path.match(/^\/([a-z]{2})(\/|$)/);
-          const currentLang = currentLangMatch ? currentLangMatch[1] : null;
+          // Regex to capture the language prefix from the path (e.g., /en/, /fr/)
+          // The 'i' flag makes it case-insensitive for the language code
+          const currentLangMatch = path.match(/^\/([a-z]{2})(?:\/|$)/i); // Non-capturing group for the trailing slash or end
 
-          if (currentLang !== lang && currentLang !== null && !sessionStorage.getItem('langRedirected')) {
-            const targetUrl = '/' + lang + path.replace(/^\/[a-z]{2}/, '') + search;
+          // Extract the current language from the path, or null if no language prefix is found
+          const pathLang = currentLangMatch ? currentLangMatch[1].toLowerCase() : null; // Ensure consistency with browserLang
+
+          // --- Debugging logs (keep these in while testing) ---
+          console.log('Browser Language:', browserLang);
+          console.log('Current Path:', path);
+          console.log('Language from Path (pathLang):', pathLang);
+          // --- End Debugging logs ---
+
+          let shouldRedirect = false;
+          let targetPath = '';
+
+          // Scenario 1: Path has a language prefix (e.g., /en/about, /fr/contact)
+          if (pathLang) {
+            // If the path's language is different from the browser's preferred language
+            if (pathLang !== browserLang) {
+              console.log('Scenario 1: Path language (' + pathLang + ') differs from browser language (' + browserLang + ').');
+              shouldRedirect = true;
+              // Replace the existing language prefix with the browser's language
+              targetPath = '/' + browserLang + path.replace(/^\/[a-z]{2}/i, ''); // Use 'i' flag here for consistency
+            } else {
+              console.log('Scenario 1: Path language matches browser language. No redirect needed.');
+            }
+          }
+          // Scenario 2: Path does NOT have a language prefix (e.g., /about, /)
+          else {
+            // If the browser's preferred language is NOT 'en' (our assumed default)
+            if (browserLang !== 'en') {
+              console.log('Scenario 2: No path language prefix, and browser language (' + browserLang + ') is not "en".');
+              shouldRedirect = true;
+              // Prepend the browser's language to the path
+              targetPath = '/' + browserLang + path;
+            } else {
+              console.log('Scenario 2: No path language prefix, and browser language is "en". No redirect needed.');
+            }
+          }
+
+          if (shouldRedirect) {
+            const targetUrl = targetPath + search; // Reconstruct with search params
+            console.log('Attempting redirect to Target URL:', targetUrl);
+
+            // Perform a HEAD request to check if the target URL exists and is accessible
             fetch(targetUrl, { method: 'HEAD' })
               .then(response => {
                 if (response.ok) {
-                  sessionStorage.setItem('langRedirected', 'true');
-                  window.location.href = targetUrl + hash;
+                  console.log('HEAD request successful. Redirecting browser...');
+                  window.location.href = targetUrl + hash; // Redirect the browser
+                } else {
+                  // If the target URL doesn't exist (e.g., 404), do nothing.
+                  // This prevents redirecting to a broken link.
+                  console.warn('Target URL (' + targetUrl + ') did not return 200 OK. Status:', response.status);
                 }
+              })
+              .catch(error => {
+                console.error('Fetch error:', error);
               });
-          } else if (!currentLang && lang !== 'en' && !sessionStorage.getItem('langRedirected')) {
-            const targetUrl = '/' + lang + path + search;
-            fetch(targetUrl, { method: 'HEAD' })
-              .then(response => {
-                if (response.ok) {
-                  sessionStorage.setItem('langRedirected', 'true');
-                  window.location.href = targetUrl + hash;
-                }
-              });
+          } else {
+            console.log('No redirect conditions met. Staying on current page.');
           }
         });
       </script>
