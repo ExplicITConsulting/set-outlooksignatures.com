@@ -13,7 +13,8 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
         _paq.push(["disableAlwaysUseSendBeacon"]);
         _paq.push(['setLinkClasses', "mtrcs-external-link"]);
         _paq.push(['trackPageView']);
-       enableLinkTracking']);
+        _paq.push(['enableLinkTracking']);
+
         (function () {
           var u = "//mtrcs.explicitconsulting.at/";
           _paq.push(["setTrackerUrl", u + "poop.php"]);
