@@ -1,10 +1,9 @@
 Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
   if doc.output =~ /<\/head>/
-    code_to_add = <<~HTML
+    code_to_add = <<~'HTML'
       <!-- Metrics via JS -->
       <script>
         var _paq = window._paq = window._paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
         _paq.push(["setRequestMethod", "POST"]);
         _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
         _paq.push(["setCookieDomain", "*.set-outlooksignatures.com"]);
@@ -14,8 +13,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
         _paq.push(["disableAlwaysUseSendBeacon"]);
         _paq.push(['setLinkClasses', "mtrcs-external-link"]);
         _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-
+       enableLinkTracking']);
         (function () {
           var u = "//mtrcs.explicitconsulting.at/";
           _paq.push(["setTrackerUrl", u + "poop.php"]);
@@ -25,12 +23,9 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
         })();
       </script>
 
-
-      <!-- Metrics for noscript environments -->
-      <noscript>
+           <noscript>
         <p><img referrerpolicy="no-referrer-when-downgrade" src="//mtrcs.explicitconsulting.at/poop.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p>
       </noscript>
-
 
       <!-- Add class to all links, and open all external links in a new tab -->
       <script>
@@ -38,7 +33,6 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           const links = document.querySelectorAll("a[href]");
           links.forEach(link => {
             link.classList.add("mtrcs-external-link");
-
             const url = new URL(link.href, window.location.href);
             if (url.hostname !== window.location.hostname) {
               link.setAttribute("target", "_blank");
@@ -46,7 +40,6 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           });
         });
       </script>
-
 
       <!-- Open pages in the correct language -->
       <script>
@@ -56,34 +49,26 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           const search = window.location.search;
           const hash = window.location.hash;
 
-          const currentLangMatch = path.match(/^\\/[a-z]{2}(\\/|$)/);
+          const currentLangMatch = path.match(/^\/([a-z]{2})(\/|$)/);
           const currentLang = currentLangMatch ? currentLangMatch[1] : null;
 
-          if (currentLang !== lang && currentLang !== null) {
-            // User is in a different language path than their browser language
-            const targetUrl = '/' + lang + path.replace(/^\\/[a-z]{2}/, '') + search;
-
+          if (currentLang !== lang && currentLang !== null && !sessionStorage.getItem('langRedirected')) {
+            const targetUrl = '/' + lang + path.replace(/^\/[a-z]{2}/, '') + search;
             fetch(targetUrl, { method: 'HEAD' })
               .then(response => {
                 if (response.ok) {
+                  sessionStorage.setItem('langRedirected', 'true');
                   window.location.href = targetUrl + hash;
                 }
-              })
-              .catch(() => {
-                // Do nothing on error
               });
-          } else if (!currentLang && lang !== 'en') {
-            // User is on root (English), but prefers another language
+          } else if (!currentLang && lang !== 'en' && !sessionStorage.getItem('langRedirected')) {
             const targetUrl = '/' + lang + path + search;
-
             fetch(targetUrl, { method: 'HEAD' })
               .then(response => {
                 if (response.ok) {
+                  sessionStorage.setItem('langRedirected', 'true');
                   window.location.href = targetUrl + hash;
                 }
-              })
-              .catch(() => {
-                // Stay on English root if localized version doesn't exist
               });
           }
         });
