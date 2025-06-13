@@ -3,114 +3,127 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
     code_to_add = <<~'HTMLHereDocString'
       <!-- Open pages in the correct language -->
       <script>
-        const browserLang = (navigator.language || navigator.userLanguage || "en").toLowerCase().split("-")[0];
-        const path = window.location.pathname;
-        const search = window.location.search;
-        const hash = window.location.hash;
+        (function () {
+          const languageSelect = document.getElementById("language-select");
 
-        const languageSelect = document.getElementById("language-select");
+          let userPreferredLang = localStorage.getItem("userSelectedLanguage");
+          const detectedBrowserLang = (navigator.language || navigator.userLanguage || "en").toLowerCase().split("-")[0];
+          let effectiveSessionLang;
 
-        // Function to set the language-select dropdown
-        const setLanguageSelect = (lang) => {
-          const optionExists = Array.from(languageSelect.options).some((option) => option.value === lang);
-          if (optionExists) {
-            languageSelect.value = lang;
+          if (userPreferredLang !== null) {
+            effectiveSessionLang = userPreferredLang === "" ? detectedBrowserLang : userPreferredLang;
           } else {
-            languageSelect.value = ""; // Set to "Automatic" if the language is not in the options
+            effectiveSessionLang = detectedBrowserLang;
           }
-        };
 
-        const currentLangMatch = path.match(/^\/([a-z]{2})(?:\/|$)/i);
-        const pathLang = currentLangMatch ? currentLangMatch[1].toLowerCase() : null;
+          const path = window.location.pathname;
+          const search = window.location.search;
+          const hash = window.location.hash;
 
-        let shouldRedirect = false;
-        let targetPath = "";
-
-        // Check if a language is explicitly set in the URL path
-        if (pathLang) {
-          // If the path has a language, set the dropdown to that language
-          setLanguageSelect(pathLang);
-
-          // If the path language doesn't match the browser language, redirect
-          if (pathLang !== browserLang) {
-            shouldRedirect = true;
-            targetPath = "/" + browserLang + path.replace(/^\/[a-z]{2}/i, "");
-          }
-        } else {
-          // If no language in the path, it means "Automatic" has preference
-          // Set the dropdown to "Automatic" initially
-          setLanguageSelect("");
-
-          // If browser language is not 'en' (default root language), redirect
-          if (browserLang !== "en") {
-            shouldRedirect = true;
-            targetPath = "/" + browserLang + path;
-          }
-        }
-
-        if (shouldRedirect) {
-          const targetUrl = targetPath + search;
-          // Use fetch HEAD to check existence
-          fetch(targetUrl, { method: "HEAD" })
-            .then((response) => {
-              if (response.ok) {
-                window.location.replace(targetUrl + hash); // Use replace() for cleaner history
-              }
-            })
-            .catch((error) => {
-              console.error("Error checking URL existence:", error);
-            });
-        }
-
-        // Add event listener for when the language selection changes manually
-        languageSelect.addEventListener("change", (event) => {
-          const selectedLang = event.target.value;
-          let newPath = "";
-
-          if (selectedLang === "") {
-            // "Automatic" selected
-            if (browserLang === "en") {
-              // If browser is English, go to root (no language prefix)
-              newPath = path.replace(/^\/[a-z]{2}/i, "");
-              if (newPath === "") newPath = "/"; // Ensure it's at least "/"
+          const setLanguageSelect = (lang) => {
+            const optionExists = Array.from(languageSelect.options).some((option) => option.value === lang);
+            if (optionExists) {
+              languageSelect.value = lang;
             } else {
-              // If browser is not English, go to browser's language
-              newPath = "/" + browserLang + path.replace(/^\/[a-z]{2}/i, "");
+              languageSelect.value = "";
+            }
+          };
+
+          const currentLangMatch = path.match(/^\/([a-z]{2})(?:\/|$)/i);
+          const pathLang = currentLangMatch ? currentLangMatch[1].toLowerCase() : null;
+
+          if (pathLang) {
+            setLanguageSelect(pathLang);
+          } else if (userPreferredLang !== null) {
+            setLanguageSelect(userPreferredLang);
+          } else {
+            setLanguageSelect("");
+          }
+
+          let shouldRedirect = false;
+          let targetPath = "";
+
+          if (pathLang) {
+            if (pathLang !== effectiveSessionLang) {
+              shouldRedirect = true;
+              targetPath = "/" + effectiveSessionLang + path.replace(/^\/[a-z]{2}/i, "");
             }
           } else {
-            // A specific language is selected
-            newPath = "/" + selectedLang + path.replace(/^\/[a-z]{2}/i, "");
-            if (!newPath.startsWith("/" + selectedLang + "/")) {
-              // Handle root path
-              newPath = "/" + selectedLang + (newPath === "/" ? "" : newPath);
+            if (effectiveSessionLang !== "en") {
+              shouldRedirect = true;
+              targetPath = "/" + effectiveSessionLang + path;
             }
           }
 
-          // Ensure path starts with a slash and avoid double slashes for root
-          if (!newPath.startsWith("/")) {
-            newPath = "/" + newPath;
-          }
-          newPath = newPath.replace(/\/{2,}/g, "/"); // Replace multiple slashes with a single one
+          if (shouldRedirect) {
+            if (!targetPath.startsWith("/")) {
+              targetPath = "/" + targetPath;
+            }
+            targetPath = targetPath.replace(/\/{2,}/g, "/");
 
-          const newUrl = newPath + search + hash;
-          if (window.location.pathname + window.location.search + window.location.hash !== newUrl) {
-            fetch(newUrl, { method: "HEAD" })
+            const targetUrl = targetPath + search;
+            fetch(targetUrl, { method: "HEAD" })
               .then((response) => {
                 if (response.ok) {
-                  window.location.href = newUrl; // Use href for manual navigation
+                  window.location.replace(targetUrl + hash);
                 } else {
-                  // If the target URL for the selected language doesn't exist, revert or show error
-                  alert("The selected language version is not available for this page.");
-                  setLanguageSelect(pathLang || ""); // Revert to previous path language or automatic
+                  console.warn(`Target URL for initial redirect (${targetUrl}) not found. Staying on current page.`);
+                  setLanguageSelect(pathLang || "");
                 }
               })
               .catch((error) => {
-                console.error("Error checking URL existence on manual language change:", error);
-                alert("An error occurred while changing language.");
-                setLanguageSelect(pathLang || ""); // Revert on error
+                console.error("Error checking URL existence for initial redirect:", error);
+                setLanguageSelect(pathLang || "");
               });
           }
-        });
+
+          languageSelect.addEventListener("change", (event) => {
+            const selectedLang = event.target.value;
+            localStorage.setItem("userSelectedLanguage", selectedLang);
+
+            effectiveSessionLang = selectedLang === "" ? detectedBrowserLang : selectedLang;
+
+            let newPath = "";
+
+            if (selectedLang === "") {
+              if (detectedBrowserLang === "en") {
+                newPath = path.replace(/^\/[a-z]{2}/i, "");
+                if (newPath === "") newPath = "/";
+              } else {
+                newPath = "/" + detectedBrowserLang + path.replace(/^\/[a-z]{2}/i, "");
+              }
+            } else {
+              newPath = "/" + selectedLang + path.replace(/^\/[a-z]{2}/i, "");
+              if (!newPath.startsWith("/" + selectedLang + "/")) {
+                newPath = "/" + selectedLang + (newPath === "/" ? "" : newPath);
+              }
+            }
+
+            if (!newPath.startsWith("/")) {
+              newPath = "/" + newPath;
+            }
+            newPath = newPath.replace(/\/{2,}/g, "/");
+
+            const newUrl = newPath + search + hash;
+
+            if (window.location.pathname + window.location.search + window.location.hash !== newUrl) {
+              fetch(newUrl, { method: "HEAD" })
+                .then((response) => {
+                  if (response.ok) {
+                    window.location.href = newUrl;
+                  } else {
+                    alert("The selected language version is not available for this page.");
+                    setLanguageSelect(pathLang || userPreferredLang || "");
+                  }
+                })
+                .catch((error) => {
+                  console.error("Error checking URL existence on manual language change:", error);
+                  alert("An error occurred while changing language.");
+                  setLanguageSelect(pathLang || userPreferredLang || "");
+                });
+            }
+          });
+        })();
       </script>
 
 
