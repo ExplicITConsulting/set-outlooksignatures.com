@@ -3,7 +3,7 @@ layout: page
 lang: de
 title: |
   <span class="title is-2 has-text-white" style="hyphens: manual;">
-    Set-Outlook$shy;Signatures herunterladen
+    Set-Outlook&shy;Signatures herunterladen
   </span>
 subtitle: |
   <span class="subtitle is-4 has-text-white">
