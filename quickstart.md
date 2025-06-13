@@ -81,12 +81,9 @@ Open Outlook and have a look at the newly created signatures, especially to the 
 
 ## Start customizing
 When everything runs fine with default settings, it is time for you to start customizing the software behavior to your needs. For example:
-- Create a folder with your own template and signature configuration files.
-  <blockquote>
-  <p>It is a good idea to begin by copying the folder '.\sample templates' and modifying it's contents.</p>
-
-  <p>Make sure to tell Set-OutlookSignatures where to find your custom configuration by adding the parameters 'SignatureTemplatePath', 'SignatureIniFile', 'OOFTemplatePath' and 'OOFIniFile'.</p>
-  </blockquote>
+- Create a folder with your own template and signature configuration files.  
+  It is a good idea to begin by copying the folder '.\sample templates' and modifying it's contents.  
+  Make sure to tell Set-OutlookSignatures where to find your custom configuration by adding the parameters 'SignatureTemplatePath', 'SignatureIniFile', 'OOFTemplatePath' and 'OOFIniFile'.
 - Adapt other [parameters](/parameters) you may find useful.
 - Start using [simulation mode](/parameters/#16-simulateuser).
 
