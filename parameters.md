@@ -765,7 +765,7 @@ Path a PowerShell file containing the logic to define virtual mailboxes. You can
 
 Virtual mailboxes are mailboxes that are not available in Outlook but are treated by Set-OutlookSignatures as if they were.
 
-This is an option for scenarios where you want to deploy signatures or out-of-office replies with not only the '`$CurrentUser...$`' but also '`$CurrentMailbox...$`' replacement variables for mailboxes that have not been added to Outlook, such as in Send As or Send On Behalf scenarios, where users often only change the from address but do not add the mailbox to Outlook.
+This is an option for scenarios where you want to deploy signatures or out-of-office replies with not only the '`$CurrentUser…$`' but also '`$CurrentMailbox…$`' replacement variables for mailboxes that have not been added to Outlook, such as in Send As or Send On Behalf scenarios, where users often only change the from address but do not add the mailbox to Outlook.
 
 See '`.\sample code\VirtualMailboxConfigFile.ps1`' for sample code showing the most relevant use cases.
 

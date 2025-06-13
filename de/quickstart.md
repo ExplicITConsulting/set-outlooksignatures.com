@@ -38,7 +38,7 @@ Wenn sich einige oder alle Postfächer in Exchange Online befinden, benötigen S
 ## Schritt 2: Set-OutlookSignatures herunterladen
 Laden Sie Set-OutlookSignatures herunter und entpacken Sie das Archiv in einen lokalen Ordner.
 
-<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔&nbsp;<span class="version-text">Die aktuelle Version</span>&nbsp;als ZIP-Datei herunterladen</button></a></p>
+<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔&nbsp;<span class="version-text">Die aktuelle Version</span>&nbsp;als ZIP-Datei herunterladen</button></a></p>
 
 Heben Sie unter Windows und macOS die Blockierung der Datei 'Set-OutlookSignatures.ps1' auf. Sie können dazu das PowerShell-Cmdlet 'Unblock-File' verwenden oder im Datei-Explorer mit der rechten Maustaste auf die Datei klicken, Eigenschaften auswählen und 'Unblock' anklicken. Dadurch wird das 'Mark of the Web' entfernt, das die Skriptausführung verhindern kann, wenn die PowerShell-Ausführungsrichtlinie auf RemoteSigned eingestellt ist.
 
@@ -112,37 +112,4 @@ Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Eval
     .catch(error => {
       console.error('Error fetching release info:', error);
     });
-</script>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const lang = navigator.language || navigator.userLanguage || 'en';
-    const path = window.location.pathname;
-    const search = window.location.search;
-    const hash = window.location.hash;
-
-    const isGerman = lang.toLowerCase().startsWith('de');
-    const isAlreadyInDe = path.startsWith('/de');
-
-    if (isGerman && !isAlreadyInDe) {
-      const targetUrl = '/de' + path + search;
-
-      fetch(targetUrl, { method: 'HEAD' })
-        .then(response => {
-          if (response.ok) {
-            window.location.href = targetUrl + hash;
-          } else {
-            window.location.href = '' + path + search + hash;
-          }
-        })
-        .catch(() => {
-          window.location.href = '' + path + search + hash;
-        });
-    } else if (!isGerman && isAlreadyInDe) {
-      // Optional: redirect non-German users away from /de
-      const newPath = path.replace(/^\/de/, '') || '/';
-      window.location.href = newPath + search + hash;
-    }
-  });
 </script>

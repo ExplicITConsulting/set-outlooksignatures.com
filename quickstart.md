@@ -38,7 +38,7 @@ When some or all of your mailboxes are in Exchange Online, you need a 'Global Ad
 ## Step 2: Download Set-OutlookSignatures
 Download Set-OutlookSignatures and extract the archive to a local folder.
 
-<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Download&nbsp;<span class="version-text">the latest release</span>&nbsp;as ZIP file</button></a></p>
+<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Download&nbsp;<span class="version-text">the latest release</span>&nbsp;as ZIP file</button></a></p>
 
 On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'. This removes the "mark of the web", which can prevent script execution when the PowerShell execution policy is set to RemoteSigned.
 
@@ -112,36 +112,4 @@ If you are looking for someone with experience who can quickly train you and ass
     .catch(error => {
       console.error('Error fetching release info:', error);
     });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const lang = navigator.language || navigator.userLanguage || 'en';
-    const path = window.location.pathname;
-    const search = window.location.search;
-    const hash = window.location.hash;
-
-    const isGerman = lang.toLowerCase().startsWith('de');
-    const isAlreadyInDe = path.startsWith('/de');
-
-    if (isGerman && !isAlreadyInDe) {
-      const targetUrl = '/de' + path + search;
-
-      fetch(targetUrl, { method: 'HEAD' })
-        .then(response => {
-          if (response.ok) {
-            window.location.href = targetUrl + hash;
-          } else {
-            window.location.href = '' + path + search + hash;
-          }
-        })
-        .catch(() => {
-          window.location.href = '' + path + search + hash;
-        });
-    } else if (!isGerman && isAlreadyInDe) {
-      // Optional: redirect non-German users away from /de
-      const newPath = path.replace(/^\/de/, '') || '/';
-      window.location.href = newPath + search + hash;
-    }
-  });
 </script>

@@ -211,13 +211,13 @@ redirect_from:
   </div>
 </div>
 
-<a href="#testversion"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a trial license or quote</button></a>
+<a href="#testversion"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a trial license or quote</button></a>
 
 
 ## Demo
 In your free interactive product demo, we show you the main features of the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> and the included Outlook add-in - interactively and with a focus on your actual needs.
 
-<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Schedule your personal demo</button></a>
+<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Schedule your personal demo</button></a>
 
 
 ## Financial benefits
@@ -287,7 +287,7 @@ You may want to start with a 14-day trial license.
 The Benefactor Circle add-on extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.
 If you look for help implementing the free and open-source core version of Set-OutlookSignatures, go through the Quick Start Guide in the readme file, open an issue at GitHub, or contact us: We are happy to help you implement Set-OutlookSignatures in your own environment as part of our fee-based support.
 
-As soon as the open-source core version is running, it is time to take the next step:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a 14-day trial license</button></a>
+As soon as the open-source core version is running, it is time to take the next step:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a 14-day trial license</button></a>
 
 To use the license file, just add two parameters to your call of Set-OutlookSignatures.ps1:
 - `BenefactorCircleLicenseFile` with the path to your individualized license file
@@ -296,7 +296,7 @@ To use the license file, just add two parameters to your call of Set-OutlookSign
 Trial licenses can not be extended or re-issued. They are limited to 14 days runtime and a maximum of 20 mailboxes.<br>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible, as our software does not phone home).<br>It is strongly recommended to start your trial only when the free and open-source version of Set-OutlookSignatures has already been implemented successfully. Also make sure you have a test plan and reserved time to execute it.
 
 ### Order process for non-trial versions
-<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a license quote</button></a>
+<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a license quote</button></a>
 
 You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.
 
@@ -371,36 +371,3 @@ License and software versions go hand in hand, so every new release of Set-Outlo
 Using different versions of software and license file is not supported, as this leads to unexpected results.
 
 A warning message is logged when a version mismatch is detected.
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const lang = navigator.language || navigator.userLanguage || 'en';
-    const path = window.location.pathname;
-    const search = window.location.search;
-    const hash = window.location.hash;
-
-    const isGerman = lang.toLowerCase().startsWith('de');
-    const isAlreadyInDe = path.startsWith('/de');
-
-    if (isGerman && !isAlreadyInDe) {
-      const targetUrl = '/de' + path + search;
-
-      fetch(targetUrl, { method: 'HEAD' })
-        .then(response => {
-          if (response.ok) {
-            window.location.href = targetUrl + hash;
-          } else {
-            window.location.href = '' + path + search + hash;
-          }
-        })
-        .catch(() => {
-          window.location.href = '' + path + search + hash;
-        });
-    } else if (!isGerman && isAlreadyInDe) {
-      // Optional: redirect non-German users away from /de
-      const newPath = path.replace(/^\/de/, '') || '/';
-      window.location.href = newPath + search + hash;
-    }
-  });
-</script>

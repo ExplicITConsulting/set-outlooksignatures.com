@@ -216,13 +216,13 @@ redirect_from:
 
 <p>Erleben Sie live, wie schnell und intuitiv Sie Ihre Outlook-Signaturen und Abwesenheitsnotizen zentral verwalten und optimieren können.<p>
 
-<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: MediumAquamarine">➔ Jetzt persönliche Demo vereinbaren</button></a>
+<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: MediumAquamarine">➔ Jetzt persönliche Demo vereinbaren</button></a>
 
 
 <h2>Verteilen Sie <span style="color: limegreen">Ihre ersten Signaturen in weniger als einer Stunde</span></h2>
 <p>Folgen Sie dem einfachen 4-Schritte-Prozess, um Ihre ersten Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
-<a href="/quickstart"><button class="button mtrcs-external-link is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Quick Start Guide</button></a>
+<a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Quick Start Guide</button></a>
 
 
 <h2>Tiefer eintauchen</h2>
@@ -233,36 +233,3 @@ redirect_from:
   <li>Best practices und FAQ</li>
   <li>Wie Sie erstklassigen Support erhalten</li>
 </ul>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const lang = navigator.language || navigator.userLanguage || 'en';
-    const path = window.location.pathname;
-    const search = window.location.search;
-    const hash = window.location.hash;
-
-    const isGerman = lang.toLowerCase().startsWith('de');
-    const isAlreadyInDe = path.startsWith('/de');
-
-    if (isGerman && !isAlreadyInDe) {
-      const targetUrl = '/de' + path + search;
-
-      fetch(targetUrl, { method: 'HEAD' })
-        .then(response => {
-          if (response.ok) {
-            window.location.href = targetUrl + hash;
-          } else {
-            window.location.href = '' + path + search + hash;
-          }
-        })
-        .catch(() => {
-          window.location.href = '' + path + search + hash;
-        });
-    } else if (!isGerman && isAlreadyInDe) {
-      // Optional: redirect non-German users away from /de
-      const newPath = path.replace(/^\/de/, '') || '/';
-      window.location.href = newPath + search + hash;
-    }
-  });
-</script>

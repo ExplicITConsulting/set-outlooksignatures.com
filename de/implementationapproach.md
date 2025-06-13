@@ -465,36 +465,3 @@ Falls Anpassungen am Code des Produkts gewünscht werden, werden die damit verbu
 Entsprechend dem Open-Source-Gedanken des Produkts werden die Code-Anpassungen als Verbesserungsvorschlag an die Entwickler des Produkts übermittelt.
 
 Um die Wartbarkeit des Produkts sicherzustellen, kann der Service-Provider nur Code unterstützen, der auch offiziell in das Produkt übernommen wird. Jedem Kunden steht es frei, den Code des Produkts selbst anzupassen, in diesem Fall kann der Service-Provider allerdings keine Unterstützung mehr anbieten. Für Details, siehe „Unterstützte Versionen“.
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const lang = navigator.language || navigator.userLanguage || 'en';
-    const path = window.location.pathname;
-    const search = window.location.search;
-    const hash = window.location.hash;
-
-    const isGerman = lang.toLowerCase().startsWith('de');
-    const isAlreadyInDe = path.startsWith('/de');
-
-    if (isGerman && !isAlreadyInDe) {
-      const targetUrl = '/de' + path + search;
-
-      fetch(targetUrl, { method: 'HEAD' })
-        .then(response => {
-          if (response.ok) {
-            window.location.href = targetUrl + hash;
-          } else {
-            window.location.href = '' + path + search + hash;
-          }
-        })
-        .catch(() => {
-          window.location.href = '' + path + search + hash;
-        });
-    } else if (!isGerman && isAlreadyInDe) {
-      // Optional: redirect non-German users away from /de
-      const newPath = path.replace(/^\/de/, '') || '/';
-      window.location.href = newPath + search + hash;
-    }
-  });
-</script>
