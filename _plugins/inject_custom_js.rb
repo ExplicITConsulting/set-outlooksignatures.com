@@ -23,7 +23,8 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
         })();
       </script>
 
-           <noscript>
+      <!-- Metrics for non-JS environments -->
+      <noscript>
         <p><img referrerpolicy="no-referrer-when-downgrade" src="//mtrcs.explicitconsulting.at/poop.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p>
       </noscript>
 
