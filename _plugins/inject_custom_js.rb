@@ -3,7 +3,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
     code_to_add = <<~'HTMLHereDocString'
       <!-- Open pages in the correct language -->
       <script>
-        const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
+        const browserLang = (document.getElementById('language-select').value || navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
         const path = window.location.pathname;
         const search = window.location.search;
         const hash = window.location.hash;
@@ -15,6 +15,8 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
         let targetPath = '';
 
         if (pathLang) {
+          document.getElementById('language-select').querySelector(`option[value="${pathLang}"]`) && (document.getElementById('language-select').value = pathLang);
+
           if (pathLang !== browserLang) {
             shouldRedirect = true;
             targetPath = '/' + browserLang + path.replace(/^\/[a-z]{2}/i, '');
