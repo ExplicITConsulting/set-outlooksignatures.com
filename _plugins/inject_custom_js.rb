@@ -61,7 +61,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
 
           if (currentLang !== lang && currentLang !== null) {
             // User is in a different language path than their browser language
-            const targetUrl = '/' + lang + path.replace(/^/[a-z]{2}/, '') + search;
+            const targetUrl = '/' + lang + path.replace(/^\\/[a-z]{2}/, '') + search;
 
             fetch(targetUrl, { method: 'HEAD' })
               .then(response => {
