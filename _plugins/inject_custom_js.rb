@@ -3,66 +3,114 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
     code_to_add = <<~'HTMLHereDocString'
       <!-- Open pages in the correct language -->
       <script>
-        const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
+        const browserLang = (navigator.language || navigator.userLanguage || "en").toLowerCase().split("-")[0];
         const path = window.location.pathname;
         const search = window.location.search;
         const hash = window.location.hash;
+
+        const languageSelect = document.getElementById("language-select");
+
+        // Function to set the language-select dropdown
+        const setLanguageSelect = (lang) => {
+          const optionExists = Array.from(languageSelect.options).some((option) => option.value === lang);
+          if (optionExists) {
+            languageSelect.value = lang;
+          } else {
+            languageSelect.value = ""; // Set to "Automatic" if the language is not in the options
+          }
+        };
 
         const currentLangMatch = path.match(/^\/([a-z]{2})(?:\/|$)/i);
         const pathLang = currentLangMatch ? currentLangMatch[1].toLowerCase() : null;
 
         let shouldRedirect = false;
-        let targetPath = '';
+        let targetPath = "";
 
+        // Check if a language is explicitly set in the URL path
         if (pathLang) {
+          // If the path has a language, set the dropdown to that language
+          setLanguageSelect(pathLang);
+
+          // If the path language doesn't match the browser language, redirect
           if (pathLang !== browserLang) {
             shouldRedirect = true;
-            targetPath = '/' + browserLang + path.replace(/^\/[a-z]{2}/i, '');
+            targetPath = "/" + browserLang + path.replace(/^\/[a-z]{2}/i, "");
           }
         } else {
-          if (browserLang !== 'en') { // Assuming 'en' is your default root language
+          // If no language in the path, it means "Automatic" has preference
+          // Set the dropdown to "Automatic" initially
+          setLanguageSelect("");
+
+          // If browser language is not 'en' (default root language), redirect
+          if (browserLang !== "en") {
             shouldRedirect = true;
-            targetPath = '/' + browserLang + path;
+            targetPath = "/" + browserLang + path;
           }
         }
 
         if (shouldRedirect) {
           const targetUrl = targetPath + search;
-          // Use fetch HEAD to check existence (as you are doing)
-          fetch(targetUrl, { method: 'HEAD' })
-            .then(response => {
+          // Use fetch HEAD to check existence
+          fetch(targetUrl, { method: "HEAD" })
+            .then((response) => {
               if (response.ok) {
                 window.location.replace(targetUrl + hash); // Use replace() for cleaner history
               }
             })
-            .catch(error => {
-              // Handle error, e.g., console.error
+            .catch((error) => {
+              console.error("Error checking URL existence:", error);
             });
         }
-      </script>
 
+        // Add event listener for when the language selection changes manually
+        languageSelect.addEventListener("change", (event) => {
+          const selectedLang = event.target.value;
+          let newPath = "";
 
-      <!-- Metrics via JS -->
-      <script>
-        var _paq = window._paq = window._paq || [];
-        _paq.push(["setRequestMethod", "POST"]);
-        _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-        _paq.push(["setCookieDomain", "*.set-outlooksignatures.com"]);
-        _paq.push(["setDomains", ["*.set-outlooksignatures.com"]]);
-        _paq.push(["disableCookies"]);
-        _paq.push(['enableHeartBeatTimer']);
-        _paq.push(["disableAlwaysUseSendBeacon"]);
-        _paq.push(['setLinkClasses', "mtrcs-external-link"]);
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
+          if (selectedLang === "") {
+            // "Automatic" selected
+            if (browserLang === "en") {
+              // If browser is English, go to root (no language prefix)
+              newPath = path.replace(/^\/[a-z]{2}/i, "");
+              if (newPath === "") newPath = "/"; // Ensure it's at least "/"
+            } else {
+              // If browser is not English, go to browser's language
+              newPath = "/" + browserLang + path.replace(/^\/[a-z]{2}/i, "");
+            }
+          } else {
+            // A specific language is selected
+            newPath = "/" + selectedLang + path.replace(/^\/[a-z]{2}/i, "");
+            if (!newPath.startsWith("/" + selectedLang + "/")) {
+              // Handle root path
+              newPath = "/" + selectedLang + (newPath === "/" ? "" : newPath);
+            }
+          }
 
-        (function () {
-          var u = "//mtrcs.explicitconsulting.at/";
-          _paq.push(["setTrackerUrl", u + "poop.php"]);
-          _paq.push(["setSiteId", "1"]);
-          var d = document, g = d.createElement("script"), s = d.getElementsByTagName("script")[0];
-          g.type = "text/javascript"; g.async = true; g.defer = true; g.src = u + "poop.js"; s.parentNode.insertBefore(g, s);
-        })();
+          // Ensure path starts with a slash and avoid double slashes for root
+          if (!newPath.startsWith("/")) {
+            newPath = "/" + newPath;
+          }
+          newPath = newPath.replace(/\/{2,}/g, "/"); // Replace multiple slashes with a single one
+
+          const newUrl = newPath + search + hash;
+          if (window.location.pathname + window.location.search + window.location.hash !== newUrl) {
+            fetch(newUrl, { method: "HEAD" })
+              .then((response) => {
+                if (response.ok) {
+                  window.location.href = newUrl; // Use href for manual navigation
+                } else {
+                  // If the target URL for the selected language doesn't exist, revert or show error
+                  alert("The selected language version is not available for this page.");
+                  setLanguageSelect(pathLang || ""); // Revert to previous path language or automatic
+                }
+              })
+              .catch((error) => {
+                console.error("Error checking URL existence on manual language change:", error);
+                alert("An error occurred while changing language.");
+                setLanguageSelect(pathLang || ""); // Revert on error
+              });
+          }
+        });
       </script>
 
 
