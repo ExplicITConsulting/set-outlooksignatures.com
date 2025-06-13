@@ -1,6 +1,6 @@
 Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
   if doc.output =~ /<\/head>/
-    code_to_add = <<~'HTML'
+    code_to_add = <<~'HTMLHereDocString'
       <!-- Metrics via JS -->
       <script>
         var _paq = window._paq = window._paq || [];
@@ -74,7 +74,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           }
         });
       </script>
-    HTML
+    HTMLHereDocString
 
     doc.output.gsub!('</head>', "#{code_to_add}\n</head>")
   end
