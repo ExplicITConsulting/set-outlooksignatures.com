@@ -236,9 +236,8 @@ Other parameters we need are:
 
 Formula and example calculation:
 <blockquote>
-CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year
-
-2 changes per year, 3 minutes per change, 2 signatures, 1 client: 0.55 * 2 * 3 * 2 * 1 = 6.60
+<p>CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year</p>
+<p>2 changes per year, 3 minutes per change, 2 signatures, 1 client: 0.55 * 2 * 3 * 2 * 1 = 6.60</p>
 </blockquote>
 
 Per user and year, the costs are now 6.60&nbsp;€ in manual effort compared to 3.00&nbsp;€ for a centrally managed solution with Set-OutlookSignatures.

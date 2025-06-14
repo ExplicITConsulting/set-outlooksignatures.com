@@ -237,9 +237,8 @@ Weitere relevante Parameter:
 
 Formel und Beispielrechnung:
 <blockquote>
-KostenProMinute * AnzahlÄnderungen * MinutenProÄnderung * AnzahlSignaturen * AnzahlGeräte = Kosten pro Benutzer und Jahr
-
-2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client: 0.55 * 2 * 3 * 2 * 1 = 6,60
+<p>KostenProMinute * AnzahlÄnderungen * MinutenProÄnderung * AnzahlSignaturen * AnzahlGeräte = Kosten pro Benutzer und Jahr</p>
+<p>2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client: 0.55 * 2 * 3 * 2 * 1 = 6,60</p>
 </blockquote>
 
 Kosten pro Nutzer:in und Jahr: 6,60 €
