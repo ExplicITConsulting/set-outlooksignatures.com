@@ -4,26 +4,30 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       <!-- Open pages in the correct language -->
       <script>
         document.addEventListener('DOMContentLoaded', function() {
+          const languageDropdown = document.getElementById('languageDropdown');
           const availableLanguages = Array.from(languageDropdown.options).map((option) => option.value);
 
           let preferredLanguage = localStorage.getItem("languageDropdownValue");
 
           if (!preferredLanguage || !availableLanguages.includes(preferredLanguage)) {
-            preferredLanguage = (navigator.language || navigator.userLanguage || "en").toLowerCase().split("-")[0];
+              preferredLanguage = (navigator.language || navigator.userLanguage || "en").toLowerCase().split("-")[0];
 
-            if (!availableLanguages.includes(preferredLanguage)) {
-              preferredLanguage = "en"; // Fallback to English if navigator language isn't available
-            }
+              if (!availableLanguages.includes(preferredLanguage)) {
+                  preferredLanguage = "en"; // Fallback to English if navigator language isn't available or unsupported
+              }
           }
 
-          languageDropdown.value = preferredLanguage;
+          // Update the dropdown value and localStorage if you have a dropdown
+          if (languageDropdown) {
+              languageDropdown.value = preferredLanguage;
+          }
           localStorage.setItem("languageDropdownValue", preferredLanguage);
 
           const currentPathname = window.location.pathname;
           const currentHostname = window.location.hostname;
           const currentProtocol = window.location.protocol;
           const currentSearch = window.location.search; // Get URL parameters
-          const currentHash = window.location.hash;     // Get URL anchor
+          const currentHash = window.location.hash;    // Get URL anchor
 
           /**
           * Normalizes a path by removing a trailing slash, unless it's the root path '/'.
@@ -32,10 +36,9 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           * @returns {string} The normalized path.
           */
           function normalizePathForComparison(path) {
-              if (!path) return '/'; // Handle empty or null paths
-              
+              if (!path) return '/';
               let normalized = path.replace(/\/\/+/g, '/'); // Remove any double slashes
-              
+
               // Remove trailing slash unless it's the root '/'
               if (normalized.length > 1 && normalized.endsWith('/')) {
                   normalized = normalized.slice(0, -1);
@@ -45,120 +48,86 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
               if (!normalized.startsWith('/')) {
                   normalized = '/' + normalized;
               }
-              
+
               return normalized;
           }
 
+          let baseContentPath = '/'; // This will store the path without ANY leading 2-letter segments (e.g., /download from /fr/download)
+          let detectedUrlPrefix = null; // Stores the 2-letter prefix found in the URL (e.g., 'fr')
+
+          // Regex to identify if the current path starts with any 2-letter folder (potential language)
+          const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
+          const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
+
+          if (pathSegmentMatch) {
+              detectedUrlPrefix = pathSegmentMatch[1]; // e.g., 'fr' from /fr/download
+              baseContentPath = pathSegmentMatch[2] || '/'; // e.g., '/download' from /fr/download
+          } else {
+              baseContentPath = currentPathname; // No 2-letter prefix found (e.g., /download, /about)
+          }
+
+          // Normalize the baseContentPath (e.g., makes sure /download/ becomes /download)
+          baseContentPath = normalizePathForComparison(baseContentPath);
+
           let targetPathname;
 
-          // Dynamically create the regex part for 2-letter language codes from availableLanguages
-          const langRegexPart = availableLanguages
-            .map(lang => lang.toLowerCase())
-            .filter(lang => lang.length === 2) // Ensure only 2-letter codes are considered for language folders
-            .join('|');
-
-          // Regex to identify if the current path starts with a valid 2-letter language folder
-          const languageFolderRegex = new RegExp(`^\\/(${langRegexPart})(\\/.*)?$`);
-
-          let contentPath = '/'; // This will store the path WITHOUT any language prefix
-          let currentDetectedLanguage = 'en'; // Default to 'en' if no language prefix is found
-
-          const match = currentPathname.match(languageFolderRegex);
-
-          if (match) {
-              currentDetectedLanguage = match[1];
-              contentPath = match[2] || '/';
-          } else {
-              currentDetectedLanguage = 'en';
-              contentPath = currentPathname;
-          }
-
-          // Normalize the contentPath for consistent handling
-          contentPath = normalizePathForComparison(contentPath);
-
-
-          // Determine the desired target pathname based on preferredLanguage and contentPath
+          // Determine the desired target pathname based on preferredLanguage and baseContentPath
           if (preferredLanguage === "en") {
-              targetPathname = contentPath; // English uses the raw content path
+              // If preferred language is English, the target is simply the baseContentPath (no prefix)
+              targetPathname = baseContentPath;
           } else {
-              // For other languages, prepend the preferred language folder
-              // If contentPath is '/', result is /lang/
-              // If contentPath is something else, result is /lang/content/path
-              targetPathname = `/${preferredLanguage}${contentPath === '/' ? '/' : contentPath}`;
+              // For other *available* languages (e.g., 'de'), prepend the preferred language folder
+              // This assumes preferredLanguage has been validated to be in availableLanguages
+              targetPathname = `/${preferredLanguage}${baseContentPath === '/' ? '/' : baseContentPath}`;
           }
 
-          // Final cleanup for targetPathname for the URL construction (not just comparison)
-          // Ensure it follows the expected pattern for actual URL setting
-          if (targetPathname.length > 1 && targetPathname.endsWith('/') && preferredLanguage !== "en") {
-              // For language specific paths, typically we want to preserve the trailing slash if it was there
-              // but the normalizePathForComparison removes it. Re-add if it's not root and not English.
-              // This part depends on your desired final URL structure for localized content.
-              // If you prefer /de/help instead of /de/help/, then keep it as is.
-              // If you prefer /de/help/ then uncomment the next line:
-              // targetPathname = targetPathname + '/';
-          }
-          // For consistency, let's make the final URL setting also use the normalized version,
-          // unless there's a strong reason to maintain the trailing slash for actual navigation.
-          // Given the original issue, let's make the actual redirect target also use the normalized path.
+          // Ensure targetPathname is normalized before comparison/use
           targetPathname = normalizePathForComparison(targetPathname);
-
 
           // --- Redirection Logic ---
 
-          // Get the *current* path normalized for comparison
           const normalizedCurrentPathForComparison = normalizePathForComparison(currentPathname);
-
-          // Get the *target* path normalized for comparison
           const normalizedTargetPathForComparison = normalizePathForComparison(targetPathname);
 
-          // Get the *English fallback* path normalized for comparison
-          const normalizedEnglishFallbackPathForComparison = normalizePathForComparison(contentPath);
-
-
-          // Construct full URLs for actual navigation (these might or might not have trailing slashes
-          // based on your desired final URL structure, but the comparison uses the normalized version)
-          const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
-          const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
-          const englishFallbackFullUrl = `${currentProtocol}//${currentHostname}${contentPath}${currentSearch}${currentHash}`; // contentPath is already normalized
-
-          // Only proceed with the primary redirect attempt if current URL (normalized) isn't already the target (normalized)
+          // Only proceed with redirect if current URL (normalized) isn't already the target (normalized)
           if (normalizedCurrentPathForComparison !== normalizedTargetPathForComparison) {
+              const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
+              const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
+              // The fallback URL in case the preferred language version doesn't exist on the server
+              const fallbackToEnglishFullUrl = `${currentProtocol}//${currentHostname}${baseContentPath}${currentSearch}${currentHash}`;
 
               console.log(`Attempting redirect from ${currentFullUrl} to preferred language target: ${targetFullUrl}`);
-              
-              // Before redirecting, check if the target URL (with new language prefix) is valid.
-              // For the HEAD request, use the targetFullUrl (which might have a trailing slash if intended).
-              // The server will respond based on how it actually serves /path vs /path/.
-              fetch(targetFullUrl, { method: 'HEAD' }) 
+
+              fetch(targetFullUrl, { method: 'HEAD' })
                   .then(response => {
                       if (response.ok) {
                           // The target URL exists, proceed with redirection
                           console.log(`Preferred language path exists. Redirecting to: ${targetFullUrl}`);
                           window.location.replace(targetFullUrl);
                       } else {
-                          // The target URL does NOT exist (e.g., /de/help doesn't exist)
-                          console.warn(`Preferred language path (${targetFullUrl}) not found (status: ${response.status}). Falling back to English.`);
-                          
-                          // NEW SIMPLE LOOP PREVENTION: Only redirect to fallback if we're not already there (normalized comparison)
-                          if (normalizedCurrentPathForComparison !== normalizedEnglishFallbackPathForComparison) {
-                              console.log(`Redirecting to English fallback: ${englishFallbackFullUrl}`);
-                              window.location.replace(englishFallbackFullUrl);
+                          // The target URL does NOT exist (e.g., /de/help doesn't exist, but /help does)
+                          console.warn(`Target path (${targetFullUrl}) not found (status: ${response.status}). Falling back to base English path.`);
+
+                          // Only redirect to fallback if we're not already on the fallback path
+                          if (normalizedCurrentPathForComparison !== normalizePathForComparison(baseContentPath)) {
+                              console.log(`Redirecting to English fallback: ${fallbackToEnglishFullUrl}`);
+                              window.location.replace(fallbackToEnglishFullUrl);
                           } else {
-                              console.log(`Already on the English fallback URL: ${englishFallbackFullUrl}. No further redirect needed.`);
+                              console.log(`Already on the English fallback URL: ${fallbackToEnglishFullUrl}. No further redirect needed.`);
                           }
                       }
                   })
                   .catch(error => {
                       // Network error or inability to perform HEAD request (e.g., CORS, offline)
                       console.error("Error checking preferred language path existence:", error);
-                      console.log("Network error or uncheckability. Falling back to English version.");
+                      console.log("Network error or uncheckability. Falling back to base English path.");
 
-                      // NEW SIMPLE LOOP PREVENTION: Only redirect to fallback if we're not already there (normalized comparison)
-                      if (normalizedCurrentPathForComparison !== normalizedEnglishFallbackPathForComparison) {
-                          console.log(`Redirecting to English fallback: ${englishFallbackFullUrl}`);
-                          window.location.replace(englishFallbackFullUrl);
+                      // Only redirect to fallback if we're not already on the fallback path
+                      if (normalizedCurrentPathForComparison !== normalizePathForComparison(baseContentPath)) {
+                          console.log(`Redirecting to English fallback: ${fallbackToEnglishFullUrl}`);
+                          window.location.replace(fallbackToEnglishFullUrl);
                       } else {
-                          console.log(`Already on the English fallback URL: ${englishFallbackFullUrl}. No further redirect needed.`);
+                          console.log(`Already on the English fallback URL: ${fallbackToEnglishFullUrl}. No further redirect needed.`);
                       }
                   });
           } else {
