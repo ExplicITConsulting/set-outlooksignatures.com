@@ -69,10 +69,7 @@ The code in the script file is well documented, containing all details about the
   ```
   The '-GraphOnly true' parameter makes sure that on-prem Active Directory is ignored and only Graph/Entra ID is used to find mailboxes and their attributes.
 
-If you are not using the public Microsoft cloud but a national cloud, add the following parameter:
-```
--CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]
-```
+If you are not using the public Microsoft cloud but a national cloud, add the following parameter: '-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]'
 
 Set-OutlookSignatures now deploys your first signatures using default settings and sample templates.
 
