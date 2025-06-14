@@ -19,20 +19,20 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           const pathLang = currentLangMatch ? currentLangMatch[1].toLowerCase() : null;
 
           const languageSelectValidValues = Array.from(languageSelect.options).map(opt => opt.value);
-          languageSelect.value = languageSelectValidValues.includes(browserLang) ? browserLang : "";
-
+          languageSelect.value = languageSelectValidValues.includes(browserLang) ? browserLang : "en";
+          
           let shouldRedirect = false;
           let targetPath = '';
 
           if (pathLang) {
-            if (pathLang !== browserLang) {
+            if (pathLang !== languageSelect.value) {
               shouldRedirect = true;
-              targetPath = '/' + browserLang + path.replace(/^\/[a-z]{2}/i, '');
+              targetPath = '/' + languageSelect.value + path.replace(/^\/[a-z]{2}/i, '');
             }
           } else {
-            if (browserLang !== 'en') { // Assuming 'en' is your default root language
+            if (languageSelect.value !== 'en') { // Assuming 'en' is your default root language
               shouldRedirect = true;
-              targetPath = '/' + browserLang + path;
+              targetPath = '/' + languageSelect.value + path;
             }
           }
 
