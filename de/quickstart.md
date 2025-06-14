@@ -69,7 +69,7 @@ Der Code in der Skriptdatei ist gut dokumentiert und enthält alle Details zu de
   ```
   Der Parameter '-GraphOnly true' stellt sicher, dass das on-prem Active Directory ignoriert wird und stattdessen nur Graph/Entra ID zum Finden von Postfächern und deren Attributen verwendet wird.
 
-Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie folgenden Parameter hinzu: '-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]'
+Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie folgenden Parameter hinzu: '-CloudEnvironment \[AzureUSGovernment\|AzureUSGovernmentDoD\|AzureChina\]'
 
 Set-OutlookSignatures verteilt jetzt ihr ersten Signaturen, basierend auf Standardeinstellungen und Beispielvorlagen.
 
