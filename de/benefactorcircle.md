@@ -241,8 +241,7 @@ Formel und Beispielrechnung:
 <p>2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client: 0.55 * 2 * 3 * 2 * 1 = 6,60</p>
 </blockquote>
 
-Kosten pro Nutzer:in und Jahr: 6,60 €
-Im Vergleich dazu: 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>.
+Pro Benutzer und Jahr betragen die Kosten 6,60 € für manuellen Aufwand gegenüber 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>.
 
 Diese Rechnung berücksichtigt noch nicht:
 - Den manuellen Aufwand für Signaturen in gemeinsam genutzten Postfächern
