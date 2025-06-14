@@ -43,7 +43,7 @@ redirect_from:
     Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> provides first-class fee-based support.
   </p>
   <p>
-    You prefer to be guided through the setup and customization process instead of working through the documentation yourself? You are looking for customized workshops, hands-on implementation support, training, template creation assistance and other services related to centralized email signature and out-of-office reply management? Then our offer is just right for you.
+    You prefer to be guided through the setup and customization process instead of working through the documentation yourself?<br>You are looking for customized workshops, hands-on implementation support, training, template creation assistance and other services related to centralized email signature and out-of-office reply management?<br>Then our offer is just right for you.
   </p>
   <p>
     You are not buying just any support, but our comprehensive expertise as manufacturer, consultant and implementer. For us, support means not only providing a solution to your problem, but also passing on our experience to you so that you know how and why. Our support is therefore an investment in your own knowledge and that of your employees, which pays off immediately.
@@ -55,7 +55,7 @@ redirect_from:
   <p>
     <a href="https://forms.cloud.microsoft/r/CnwjH98vSs" target="_blank">
       <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">
-        ➔ Order fee-based support
+        ➔ Request fee-based support
       </button>
     </a>
   </p>
