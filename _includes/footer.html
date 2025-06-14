@@ -4,7 +4,7 @@
             <div class="columns is-multiline">
                 {% for item in site.data[site.footer_menu] %}
                 <div class="column has-text-centered">
-                    <div>
+                    <div style="hyphens: manual;">
                         <a href="{{ item.link | relative_url }}">{{ item.name }}</a>
                     </div>
                 </div>

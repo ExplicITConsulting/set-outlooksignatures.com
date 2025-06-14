@@ -45,8 +45,8 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #FF7F5000, coral, coral); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F5000, coral, coral); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Immer aktuelle Kontaktdaten und Unternehmensinformationen</b>
       </div>
     </div>
@@ -54,8 +54,8 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #FF7F5000, coral, coral); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F5000, coral, coral); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Einheitlicher und überzeugender Auftritt in jeder E-Mail</b>
       </div>
     </div>
@@ -63,8 +63,8 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #FF7F5000, coral, coral); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F5000, coral, coral); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Kein Nachpflegen durch Ihre Mitarbeiter</b>
       </div>
     </div>
@@ -81,8 +81,8 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Einfach für alle</b><br>
         Intuitiv für IT und Marketing, unsichtbar für Ihre Mitarbeiter.
       </div>
@@ -91,8 +91,8 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Dynamische Inhalte</b><br>
         Vordefinierte und eigene Attribute auf Benutzer-, Postfach- und Manager-Ebene.
       </div>
@@ -101,8 +101,8 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Abwesenheitsnotizen</b><br>
         Verwalten Sie Abwesenheitsmeldungen zentral, für interne und externe Empfänger.
       </div>
@@ -111,8 +111,8 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Plattformübergreifend</b><br>
         Signaturen immer und überall: Windows, macOS, Android, iOS, Linux, Web. Klassisches und neues Outlook. On-prem, hybrid und cloud-only.
       </div>
@@ -121,8 +121,8 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Innovative Funktionen</b><br>
         Unterstützt persönliche und gemeinsame Postfächer, "Senden Als", "Senden im Auftrag von", Simulationsmodus, Roaming Signatures, sowie zahlreiche weitere Funktionen für maximale Flexibilität.
       </div>
@@ -131,8 +131,8 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Flexible Zuweisung</b><br>
         Steuern Sie Signaturen nach Abteilung, Standort, Sprache, Rolle, Zeit und vielen weiteren Eigenschaften aus unterschiedlichen Datenquellen.
       </div>
@@ -141,8 +141,8 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Keine neue Infrastruktur nötig</b><br>
         Set-OutlookSignatures läuft auf Ihren bestehenden Systemen und erzeugt keine neuen Abhängigkeiten.
       </div>
@@ -151,8 +151,8 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Unübertroffener Datenschutz</b><br>
         Alle Daten bleiben in Ihrer vertrauten Umgebung, innerhalb Ihrer bestehenden Sicherheits- und Verwaltungsstrukturen.
       </div>
@@ -161,8 +161,8 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Zusätzlicher Marketingkanal</b><br>
         Gestalten Sie Vorlagen frei in Word oder HTML. Nutzen Sie Signaturen für Kampagnen und Markenbotschaften, kostenlos und effektiv.
       </div>
@@ -180,8 +180,8 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #32CD3200, limegreen, limegreen); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #32CD3200, limegreen, limegreen); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Kosteneffizient und transparent</b><br>
         Faire Preise. Keine Abos. Keine Wartungsverträge.
       </div>
@@ -190,8 +190,8 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #32CD3200, limegreen, limegreen); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #32CD3200, limegreen, limegreen); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Support mit Handschlagqualität</b><br>
         Lösungsstark. Auf Augenhöhe. Verantwortungsbewusst.
       </div>
@@ -200,8 +200,8 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="hyphens: manual; font-weight: bold; background-image: linear-gradient(to right, #32CD3200, limegreen, limegreen); background-clip: text; color: transparent;">⚫</span>
-      <div>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #32CD3200, limegreen, limegreen); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
         <b>Spürbarer Mehrwert</b><br>
         Ihre Investition entlastet. Vom ersten Tag an.
       </div>
