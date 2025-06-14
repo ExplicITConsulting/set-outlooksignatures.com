@@ -23,16 +23,14 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           let shouldRedirect = false;
           let targetPath = '';
 
-          if (pathLang) {
-            if (pathLang !== languageSelect.value) {
-              shouldRedirect = true;
-              targetPath = '/' + languageSelect.value + path.replace(/^\/[a-z]{2}/i, '');
-            }
+          if (languageSelect.value !== 'en') { // Assuming 'en' is your default root language
+            targetPath = '/' + languageSelect.value + path;
           } else {
-            if (languageSelect.value !== 'en') { // Assuming 'en' is your default root language
-              shouldRedirect = true;
-              targetPath = '/' + languageSelect.value + path;
-            }
+            targetPath = '/' + path;
+          }
+
+          if (path.toLowerCase() !== targetPath.toLowerCase()) {
+            shouldRedirect = true;
           }
 
           if (shouldRedirect) {
