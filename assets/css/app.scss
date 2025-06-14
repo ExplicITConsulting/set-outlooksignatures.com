@@ -23,9 +23,12 @@ $text: black;
   }
 }
 
+.title {
+  font-weight: bold;
+}
+
 .title,
 .subtitle {
-  font-weight: bold;
   hyphens: manual;
 
   h1,
