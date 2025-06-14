@@ -4,137 +4,68 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       <!-- Open pages in the correct language -->
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const languageDropdown = document.getElementById('languageDropdown');
+          const availableLanguages = Array.from(languageDropdown.options).map((option) => option.value);
 
-            // Refined Function to get the current page's base name or path segment
-            function getCurrentPageBaseName() {
-                const path = window.location.pathname; // e.g., "/", "/download", "/de/about.html"
-                let baseName = '';
+          let preferredLanguage = localStorage.getItem("languageDropdownValue");
 
-                // Remove trailing slash if present, unless it's just "/"
-                let cleanPath = path.endsWith('/') && path.length > 1 ? path.slice(0, -1) : path;
+          if (!preferredLanguage || !availableLanguages.includes(preferredLanguage)) {
+            preferredLanguage = (navigator.language || navigator.userLanguage || "en").toLowerCase().split("-")[0];
 
-                const parts = cleanPath.split('/');
-                // The actual file/resource name is the last part
-                baseName = parts[parts.length - 1];
+            if (!availableLanguages.includes(preferredLanguage)) {
+              preferredLanguage = "en"; // Fallback to English if navigator language isn't available
+            }
+          }
 
-                // Handle root path (e.g., "/") or language root paths (e.g., "/de/")
-                // If the path is just "/" or if the last segment is empty after splitting
-                if (!baseName && path === '/') {
-                    return 'index.html'; // Default for the very root of the site
+          languageDropdown.value = preferredLanguage;
+          localStorage.setItem("languageDropdownValue", preferredLanguage);
+
+          const currentPathname = window.location.pathname;
+          const currentHostname = window.location.hostname;
+          const currentProtocol = window.location.protocol;
+          const currentSearch = window.location.search; // Get URL parameters
+          const currentHash = window.location.hash;     // Get URL anchor
+
+          let targetPath;
+
+          if (preferredLanguage === "en") {
+            // If preferred language is "en", the path should be the root
+            targetPath = "/";
+          } else {
+            // For other languages, the path should start with /<language_code>
+            targetPath = `/${preferredLanguage}/`;
+          }
+
+          // Check if the current path already matches the preferred language directory
+          // This check is simplified and assumes a structure like /en/, /fr/, or just / for root.
+          // It might need refinement based on your exact URL structure.
+          const isAlreadyPreferredLanguage = (preferredLanguage === "en" && currentPathname === "/") ||
+            (preferredLanguage !== "en" && currentPathname.startsWith(`/${preferredLanguage}/`));
+
+          if (!isAlreadyPreferredLanguage) {
+            // Construct the full target URL, including search parameters and hash
+            const targetUrl = `${currentProtocol}//${currentHostname}${targetPath}${currentSearch}${currentHash}`;
+
+            // Attempt to redirect to the preferred language version
+            fetch(targetUrl, { method: 'HEAD' }) // HEAD request is lighter, just gets headers
+              .then(response => {
+                if (response.ok) {
+                  console.log(`Preferred language path exists. Redirecting to: ${targetUrl}`);
+                  window.location.href = targetUrl;
+                } else {
+                  console.warn(`Preferred language path (${targetUrl}) not found (status: ${response.status}). Redirecting to English version.`);
+                  // Redirect to root (English), preserving parameters and hash
+                  window.location.href = `${currentProtocol}//${currentHostname}/${currentSearch}${currentHash}`;
                 }
-
-                // If the path is like "/xx/" (a language root) and doesn't specify a file, assume index.html
-                // This checks if the current path has only two segments (like /en/ or /de/) after splitting
-                // and the second segment is a known language code.
-                // It must check against available languages to distinguish /de/ from /something-else/.
-                const currentPathSegments = path.split('/').filter(s => s); // Remove empty strings
-                if (currentPathSegments.length === 1 && availableLanguages.includes(currentPathSegments[0])) {
-                    return 'index.html'; // e.g., for /de/, this returns index.html
-                }
-
-
-                // For paths like /download or /about.html or /de/about.html
-                return baseName || 'index.html'; // Fallback for safety if baseName is somehow still empty
-            }
-
-            // Function to get the current URL's query string (including '?')
-            function getCurrentQueryString() {
-                return window.location.search; // Returns '?key=value&another=foo' or ''
-            }
-
-            // Function to get the current URL's hash (including '#')
-            function getCurrentHash() {
-                return window.location.hash; // Returns '#section-id' or ''
-            }
-
-            // --- Start: Get Available Languages from Dropdown ---
-            // This needs to be available early for getLanguageFromUrl
-            // It is defined here to ensure it's always accessible when needed.
-            const availableLanguages = Array.from(languageDropdown.options).map(option => option.value);
-
-            // Function to determine the current language *from the URL*
-            function getLanguageFromUrl() {
-                const path = window.location.pathname;
-                const pathSegments = path.split('/').filter(s => s); // Split and remove empty strings
-
-                // Check if the first segment of the path is a two-letter language code (excluding 'en')
-                if (pathSegments.length > 0 && pathSegments[0].length === 2 && availableLanguages.includes(pathSegments[0]) && pathSegments[0] !== 'en') {
-                    return pathSegments[0]; // Returns 'de', 'fr', 'es', 'jp', etc.
-                }
-                return 'en'; // Default to English if no specific language directory is found
-            }
-            // --- End: Get Available Languages from Dropdown ---
-
-
-            // Get the preferred language from localStorage (which was set by the HTML onchange)
-            let preferredLanguage = localStorage.getItem("languageDropdownValue");
-
-
-            // If preferredLanguage is not set or is invalid, try to infer from navigator, then default to 'en'
-            if (!preferredLanguage || !availableLanguages.includes(preferredLanguage)) {
-                preferredLanguage = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
-                if (!availableLanguages.includes(preferredLanguage)) {
-                    preferredLanguage = 'en'; // Fallback to English if navigator language isn't available
-                }
-                // Update localStorage with this newly determined preferred language
-                localStorage.setItem("languageDropdownValue", preferredLanguage);
-            }
-
-            // Set the dropdown to the determined preferred language
-            languageDropdown.value = preferredLanguage;
-
-            // --- Core Fallback Logic (executed on every page load) ---
-            const currentPageBaseName = getCurrentPageBaseName(); // This will now be "download" for /download
-            const currentQuery = getCurrentQueryString();
-            const currentHash = getCurrentHash();
-
-            let targetUrlLanguage = preferredLanguage;
-            let newUrlPath;
-
-            // Construct the path based on the selected language and the extracted base name/segment
-            if (targetUrlLanguage === 'en') {
-                newUrlPath = `/${currentPageBaseName}`; // Will be "/download" for English, "/about.html" etc.
-            } else {
-                // For language-specific paths
-                newUrlPath = `/${targetUrlLanguage}/${currentPageBaseName}`;
-            }
-
-            // Construct the full new URL including query parameters and hash
-            const newFullUrl = `${newUrlPath}${currentQuery}${currentHash}`;
-
-            // If the current URL already matches what we expect from localStorage, no need to check/redirect
-            if (newFullUrl === window.location.pathname + window.location.search + window.location.hash) {
-                return;
-            }
-
-            // Perform a HEAD request to check if the target language URL exists
-            fetch(newUrlPath, { method: 'HEAD' })
-                .then(response => {
-                    if (response.ok) {
-                        // The target language document exists, redirect if not already on it
-                        if (window.location.href !== newFullUrl) {
-                            window.location.href = newFullUrl;
-                        }
-                    } else {
-                        // The target language document does NOT exist (e.g., 404)
-                        console.warn(`Document not found for ${newUrlPath}. Falling back to English: /${currentPageBaseName}`);
-                        // Redirect to the English version, preserving query parameters and hash
-                        const englishFallbackFullUrl = `/${currentPageBaseName}${currentQuery}${currentHash}`;
-                        if (window.location.href !== englishFallbackFullUrl) {
-                            window.location.href = englishFallbackFullUrl;
-                        }
-                    }
-                })
-                .catch(error => {
-                    // Handle network errors or other issues during the fetch
-                    console.error('Error checking URL:', error);
-                    // In case of an error, fall back to English, preserving query parameters and hash
-                    const englishFallbackFullUrl = `/${currentPageBaseName}${currentQuery}${currentHash}`;
-                    if (window.location.href !== englishFallbackFullUrl) {
-                        window.location.href = englishFallbackFullUrl;
-                    }
-                });
+              })
+              .catch(error => {
+                console.error("Error checking preferred language path existence:", error);
+                console.log("Redirecting to English version due to network error or uncheckability.");
+                // Redirect to root (English), preserving parameters and hash
+                window.location.href = `${currentProtocol}//${currentHostname}/${currentSearch}${currentHash}`;
+              });
+          } else {
+            console.log(`Already in the preferred language directory: ${preferredLanguage}`);
+          }
         });
       </script>
 
