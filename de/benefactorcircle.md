@@ -243,7 +243,7 @@ CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberO
 Beispielrechnung:  
 <blockquote>
 2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client: 0.55 * 2 * 3 * 2 * 1 = 6,60
-<blockquote>
+</blockquote>
 
 Kosten pro Nutzer:in und Jahr: 6,60 €
 Im Vergleich dazu: 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>.
