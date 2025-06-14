@@ -99,7 +99,7 @@ Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Eval
 
 <p><a href="/support"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Support-Optionen ansehen</button></a></p>
 
-<p><a href="/benefactorcircle"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ The Benefactor Circle add-on</button></a></p>
+<p><a href="/benefactorcircle"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Das Benefactor Circle Add-On</button></a></p>
 
 
 <script>
