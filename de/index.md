@@ -222,7 +222,7 @@ redirect_from:
 <h2>Verteilen Sie <span style="color: limegreen">Ihre ersten Signaturen in weniger als einer Stunde</span></h2>
 <p>Folgen Sie dem einfachen 4-Schritte-Prozess, um Ihre ersten Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
-<a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Quick Start Guide</button></a>
+<a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Schnellstart-Anleitung</button></a>
 
 
 <h2>Tiefer eintauchen</h2>
