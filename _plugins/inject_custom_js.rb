@@ -45,7 +45,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
                 // Handle error, e.g., console.error
               });
           }
-        }
+        });
       </script>
 
 
