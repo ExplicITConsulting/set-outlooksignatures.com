@@ -4,7 +4,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       <!-- Open pages in the correct language -->
       <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const savedLang = localStorage.getItem("languageDropdown");
+          const savedLang = localStorage.getItem("languageDropdownValue");
           const dropdown = document.getElementById("languageDropdown");
           if (dropdown && [...dropdown.options].some(o => o.value === savedLang)) {
             dropdown.value = savedLang;
@@ -90,6 +90,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           links.forEach(link => {
             link.classList.add("mtrcs-external-link");
             const url = new URL(link.href, window.location.href);
+
             if (url.hostname !== window.location.hostname) {
               link.setAttribute("target", "_blank");
             }
