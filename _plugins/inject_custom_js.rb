@@ -9,11 +9,34 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
 
           let preferredLanguage = localStorage.getItem("languageDropdownValue");
 
-          if (!preferredLanguage || !availableLanguages.includes(preferredLanguage)) {
-              preferredLanguage = (navigator.language || navigator.userLanguage || "en").toLowerCase().split("-")[0];
+          // 1. Check if preferredLanguage is already set and valid (from a cookie, local storage, etc.)
+          //    This part assumes preferredLanguage might be pre-populated from an earlier session.
+          if (preferredLanguage && availableLanguages.includes(preferredLanguage)) {
+              // If preferredLanguage is already valid and available, use it directly.
+              // No need to proceed further.
+          } else {
+              // 2. Try to get preferred language from navigator.languages (most modern browsers)
+              if (navigator.languages && navigator.languages.length > 0) {
+                  for (let i = 0; i < navigator.languages.length; i++) {
+                      const browserLang = navigator.languages[i].toLowerCase().split("-")[0];
+                      if (availableLanguages.includes(browserLang)) {
+                          preferredLanguage = browserLang;
+                          break; // Found a match, no need to check further
+                      }
+                  }
+              }
 
-              if (!availableLanguages.includes(preferredLanguage)) {
-                  preferredLanguage = "en"; // Fallback to English if navigator language isn't available or unsupported
+              // 3. Fallback to navigator.language or navigator.userLanguage (older browsers or single preference)
+              if (!preferredLanguage) { // Only if a language hasn't been found yet
+                  const fallbackLang = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
+                  if (availableLanguages.includes(fallbackLang)) {
+                      preferredLanguage = fallbackLang;
+                  }
+              }
+
+              // 4. Final fallback to "en" if no suitable language was found
+              if (!preferredLanguage) {
+                  preferredLanguage = "en"; // Default fallback
               }
           }
 
@@ -21,6 +44,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           if (languageDropdown) {
               languageDropdown.value = preferredLanguage;
           }
+
           localStorage.setItem("languageDropdownValue", preferredLanguage);
 
           const currentPathname = window.location.pathname;
