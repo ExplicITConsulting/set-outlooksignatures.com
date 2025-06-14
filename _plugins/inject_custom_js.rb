@@ -4,6 +4,13 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       <!-- Open pages in the correct language -->
       <script>
         document.addEventListener("DOMContentLoaded", function () {
+        <script>
+          const savedLang = localStorage.getItem("languageDropdown");
+          const dropdown = document.getElementById("languageDropdown");
+          if (dropdown && [...dropdown.options].some(o => o.value === savedLang)) {
+            dropdown.value = savedLang;
+          }
+
           const languageSelect = document.getElementById("languageDropdown");
           const path = window.location.pathname;
           const search = window.location.search;
