@@ -38,7 +38,7 @@ redirect_from:
   </p>
 
 
-  <h2 id="fee-based-support">Fee-based support</h2>
+  <h2 id="fee-based-support">Kostenpflichtiger Support</h2>
   <p>
     Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> bietet erstklassigen kostenpflichtigen Support.
   </p>
