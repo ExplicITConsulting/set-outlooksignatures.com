@@ -29,15 +29,15 @@ redirect_from:
 
 
 <h2>
-  <span style="font-weight: normal;">Verwalten Sie Ihre </span>
-  <span style="font-weight: bold;">Outlook-Signaturen</span>
+  <span style="font-weight: normal;">Verwalten Sie Ihre </span><br>
+  <span style="font-weight: bold;">Outlook-Signaturen</span><br>
   <span style="font-weight: normal;"> zentral und vollautomatisch</span>
 </h2>
 <p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
 <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
 
 
-<h2><span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>, mehr Professionalität</h2>
+<h2><span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>,<br>mehr Professionalität</h2>
 <p>Die manuelle Pflege von Signaturen bindet wertvolle personelle und finanzielle Kapazitäten. Das führt schnell zu veralteten Angaben, die weder internen noch regulatorischen Vorgaben entsprechen.</p>
 
 <p>Mit Set-OutlookSignatures automatisieren Sie diesen Prozess vollständig.</p>
@@ -75,7 +75,7 @@ redirect_from:
 <h2>
   <span style="font-weight: normal;">Die </span>
   <span style="font-weight: bold;">Stärken</span>
-  <span style="font-weight: normal;"> von </span>
+  <span style="font-weight: normal;"> von </span><br>
   <span style="font-weight: bold; font-style: italic;">Set-OutlookSignatures</span>
 </h2>
 <div class="columns is-multiline">
@@ -172,7 +172,7 @@ redirect_from:
 </div>
 
 
-<h2>Funktionalität trifft <span style="color: limegreen;">Expertise</span></h2>
+<h2>Funktionalität<br>trifft <span style="color: limegreen;">Expertise</span></h2>
 <p>Das optionale ➔&nbsp;<a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
 
 <p>Auf Wunsch richten wir unsere Lösung gemeinsam mit Ihnen ein: Einfach, auf Ihre Bedürfnisse zugeschnitten und mit nachhaltigem Wissenstransfer.<p>
@@ -211,7 +211,7 @@ redirect_from:
 </div>
 
 
-<h2>Verwalten Sie Ihre <span style="color: MediumAquamarine;">Outlook-Signaturen</span> zentral. Wir zeigen Ihnen, wie!</h2>
+<h2>Verwalten Sie Ihre<br><span style="color: MediumAquamarine;">Outlook-Signaturen</span> zentral.<br>Wir zeigen Ihnen, wie!</h2>
 <p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p>
 
 <p>Erleben Sie live, wie schnell und intuitiv Sie Ihre Outlook-Signaturen und Abwesenheitsnotizen zentral verwalten und optimieren können.<p>
@@ -219,7 +219,7 @@ redirect_from:
 <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: MediumAquamarine">➔ Jetzt persönliche Demo vereinbaren</button></a>
 
 
-<h2>Verteilen Sie <span style="color: limegreen">Ihre ersten Signaturen in weniger als einer Stunde</span></h2>
+<h2>Verteilen Sie<br><span style="color: limegreen">Ihre ersten Signaturen<br>in weniger als einer Stunde</span></h2>
 <p>Folgen Sie dem einfachen 4-Schritte-Prozess, um Ihre ersten Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
 <a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Schnellstart-Anleitung</button></a>
