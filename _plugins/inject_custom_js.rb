@@ -27,88 +27,90 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
 
           let targetPathname;
 
-          // Dynamically create the regex part for language codes
-          // Ensure the language codes are treated as literal strings in the regex
+          // Dynamically create the regex part for 2-letter language codes from availableLanguages
           const langRegexPart = availableLanguages
             .map(lang => lang.toLowerCase())
-            .filter(lang => lang.length === 2) // Only consider 2-letter codes for this regex
+            .filter(lang => lang.length === 2) // Ensure only 2-letter codes are considered for language folders
             .join('|');
 
-          // Regex to capture the current language prefix (if any) and the rest of the path
-          // It looks for /XX/ where XX is a 2-letter language code from availableLanguages
-          const languagePathRegex = new RegExp(`^\\/(${langRegexPart})\\/?(.*)$`);
+          // Regex to identify if the current path starts with a valid 2-letter language folder
+          const languageFolderRegex = new RegExp(`^\\/(${langRegexPart})(\\/.*)?$`);
 
-          let currentLanguagePrefix = '';
-          let actualPathAfterLanguage = currentPathname; // Stores the path without any leading language prefix
+          let contentPath = '/'; // This will store the path WITHOUT any language prefix
+          let currentDetectedLanguage = 'en'; // Default to 'en' if no language prefix is found
 
-          const match = currentPathname.match(languagePathRegex);
+          const match = currentPathname.match(languageFolderRegex);
 
           if (match) {
-            // If the pathname starts with a recognized 2-letter language code
-            currentLanguagePrefix = match[1]; // e.g., 'de'
-            actualPathAfterLanguage = `/${match[2] || ''}`; // e.g., '/help' or '/' if match[2] is empty
-          } else if (currentPathname === '/') {
-              // If it's the root path and no language prefix, it's implicitly 'en'
-              currentLanguagePrefix = 'en';
-              actualPathAfterLanguage = '/';
+              currentDetectedLanguage = match[1];
+              contentPath = match[2] || '/';
           } else {
-              // If it's not a language path (e.g., /some-other-folder)
-              // Assume it's an English path or a non-localized path, treat as if no language prefix
-              currentLanguagePrefix = 'en'; // Default assumption for non-language-prefixed paths
-              actualPathAfterLanguage = currentPathname;
+              currentDetectedLanguage = 'en';
+              contentPath = currentPathname;
           }
 
-          // Clean up actualPathAfterLanguage to ensure it always starts with a single slash
-          // unless it's genuinely empty (which shouldn't happen here due to the above logic)
-          if (actualPathAfterLanguage !== '/') {
-              actualPathAfterLanguage = `/${actualPathAfterLanguage.replace(/^\/+/, '')}`;
+          // Clean up contentPath to ensure it always starts with a single slash
+          contentPath = contentPath.replace(/\/\/+/g, '/');
+          if (!contentPath.startsWith('/')) {
+              contentPath = '/' + contentPath;
           }
 
 
-          // Construct the target pathname based on preferred language and actual path
+          // Determine the desired target pathname based on preferredLanguage and contentPath
           if (preferredLanguage === "en") {
-            // If preferred language is "en", remove any language prefix from the path
-            targetPathname = actualPathAfterLanguage;
+              targetPathname = contentPath;
           } else {
-            // For other languages, prepend the preferred language prefix
-            // Ensure we don't get // if actualPathAfterLanguage is "/"
-            targetPathname = `/${preferredLanguage}${actualPathAfterLanguage === '/' ? '' : actualPathAfterLanguage}`;
+              targetPathname = `/${preferredLanguage}${contentPath === '/' ? '' : contentPath}`;
           }
 
-          // Clean up potential double slashes that might result from concatenation
+          // Final cleanup for targetPathname
           targetPathname = targetPathname.replace(/\/\/+/g, '/');
 
-          // Check if the current full path is already the target full path
-          const isAlreadyTargetLanguageAndPath = currentPathname === targetPathname;
+
+          // --- Redirection Logic ---
+
+          const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
+          const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
+          const englishFallbackFullUrl = `${currentProtocol}//${currentHostname}${contentPath}${currentSearch}${currentHash}`;
 
 
-          if (!isAlreadyTargetLanguageAndPath) {
-            // Construct the full target URL, including search parameters and hash
-            const targetUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
+          // Only proceed with the primary redirect attempt if current URL isn't already the target
+          if (currentFullUrl !== targetFullUrl) {
 
-            // Attempt to redirect to the preferred language version
-            fetch(targetUrl, { method: 'HEAD' }) // HEAD request is lighter, just gets headers
-              .then(response => {
-                if (response.ok) {
-                  console.log(`Preferred language path exists. Redirecting to: ${targetUrl}`);
-                  window.location.href = targetUrl;
-                } else {
-                  console.warn(`Preferred language path (${targetUrl}) not found (status: ${response.status}). Redirecting to English version while preserving original path.`);
-                  // Fallback to English, preserving the non-language-prefixed path
-                  const englishFallbackPathname = actualPathAfterLanguage;
-                  const englishFallbackUrl = `${currentProtocol}//${currentHostname}${englishFallbackPathname}${currentSearch}${currentHash}`;
-                  window.location.href = englishFallbackUrl;
-                }
-              })
-              .catch(error => {
-                console.error("Error checking preferred language path existence:", error);
-                console.log("Redirecting to English version due to network error or uncheckability, preserving original path.");
-                const englishFallbackPathname = actualPathAfterLanguage;
-                const englishFallbackUrl = `${currentProtocol}//${currentHostname}${englishFallbackPathname}${currentSearch}${currentHash}`;
-                window.location.href = englishFallbackUrl;
-              });
+              console.log(`Attempting redirect from ${currentFullUrl} to preferred language target: ${targetFullUrl}`);
+              // Before redirecting, check if the target URL (with new language prefix) is valid.
+              fetch(targetFullUrl, { method: 'HEAD' })
+                  .then(response => {
+                      if (response.ok) {
+                          // The target URL exists, proceed with redirection
+                          console.log(`Preferred language path exists. Redirecting to: ${targetFullUrl}`);
+                          window.location.replace(targetFullUrl);
+                      } else {
+                          // The target URL does NOT exist (e.g., /de/help doesn't exist)
+                          console.warn(`Preferred language path (${targetFullUrl}) not found (status: ${response.status}). Falling back to English.`);
+                          
+                          // NEW SIMPLE LOOP PREVENTION: Only redirect to fallback if we're not already there
+                          if (currentFullUrl !== englishFallbackFullUrl) {
+                              window.location.replace(englishFallbackFullUrl);
+                          } else {
+                              console.log(`Already on the English fallback URL: ${englishFallbackFullUrl}. No further redirect needed.`);
+                          }
+                      }
+                  })
+                  .catch(error => {
+                      // Network error or inability to perform HEAD request (e.g., CORS, offline)
+                      console.error("Error checking preferred language path existence:", error);
+                      console.log("Network error or uncheckability. Falling back to English version.");
+
+                      // NEW SIMPLE LOOP PREVENTION: Only redirect to fallback if we're not already there
+                      if (currentFullUrl !== englishFallbackFullUrl) {
+                          window.location.replace(englishFallbackFullUrl);
+                      } else {
+                          console.log(`Already on the English fallback URL: ${englishFallbackFullUrl}. No further redirect needed.`);
+                      }
+                  });
           } else {
-            console.log(`Already in the preferred language directory and path: ${preferredLanguage}`);
+              console.log(`Already on the correct language version for: ${preferredLanguage} at ${currentPathname}`);
           }
         });
       </script>
