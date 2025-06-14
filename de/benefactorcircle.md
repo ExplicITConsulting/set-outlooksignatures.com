@@ -235,9 +235,15 @@ Weitere relevante Parameter:
 - Wie viele Signaturen muss ein Nutzer typischerweise aktuell halten (intern/extern, Sprache, Tonalität, Signaturen für gemeinsame Postfächer)?
 - Auf wie vielen Clients muss ein Nutzer die Signatur aktualisieren?
 
-Formel: `CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year`
+Formel:  
+<blockquote>
+CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year
+</blockquote>
 
-Beispielrechnung: 2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client = `0.55 * 2 * 3 * 2 * 1`
+Beispielrechnung:  
+<blockquote>
+2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client: 0.55 * 2 * 3 * 2 * 1 = 6,60
+<blockquote>
 
 Kosten pro Nutzer:in und Jahr: 6,60 €
 Im Vergleich dazu: 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>.
@@ -295,8 +301,8 @@ Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion ben�
 Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ 14-Tage-Testlizenz anfordern</button></a>
 
 Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:
-- `BenefactorCircleLicenseFile` mit dem Pfad zu Ihrer individuellen Lizenzdatei
-- `BenefactorCircleId` mit Ihrer Benefactor Circle-ID
+- '-BenefactorCircleLicenseFile' mit dem Pfad zu Ihrer individuellen Lizenzdatei
+- '-BenefactorCircleId' mit Ihrer Benefactor Circle-ID
 
 Testlizenzen können nicht verlängert oder erneut ausgestellt werden.
 Sie sind auf 14 Tage Laufzeit und maximal 20 Postfächer beschränkt.<br>Die Testphase beginnt mit der Erstellung und Übermittlung der Lizenzdatei, nicht mit Ihrer ersten Nutzung (das ist technisch nicht möglich, da unsere Software keine Telemetriedaten überträgt).
@@ -312,8 +318,8 @@ Sie erhalten in Kürze ein Angebot. Sobald alle Details geklärt sind, erhalten 
 Nach Eingang des vollständigen Rechnungsbetrags erhalten Sie eine E-Mail mit Anweisungen zum sicheren Herunterladen Ihrer individuellen Lizenzdatei.
 
 Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:
-- `BenefactorCircleLicenseFile` mit dem Pfad zu Ihrer individuellen Lizenzdatei
-- `BenefactorCircleId` mit Ihrer Benefactor Circle-ID
+- '-BenefactorCircleLicenseFile' mit dem Pfad zu Ihrer individuellen Lizenzdatei
+- '-BenefactorCircleId' mit Ihrer Benefactor Circle-ID
 
 ### Verlängerung oder Verkürzung einer Lizenzlaufzeit
 Eine Lizenzlaufzeit kann nicht verlängert werden.

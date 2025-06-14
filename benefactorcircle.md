@@ -234,9 +234,15 @@ Other parameters we need are:
 - How many signatures does a user typically need to keep up to date (internal and external, language, tone, signatures for shared mailboxes)?
 - On how many clients does a user need to update the signatures?
 
-Formula: `CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year`
+Formula:  
+<blockquote>
+CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year
+</blockquote>
 
-Let's assume 2 changes per year, 3 minutes for making the change (including reading the instructions) per signature, 2 signatures, 1 client: `0.55 * 2 * 3 * 2 * 1`
+Example calculation:  
+<blockquote>
+2 changes per year, 3 minutes per change, 2 signatures, 1 client: 0.55 * 2 * 3 * 2 * 1 = 6.60
+</blockquote>
 
 Per user and year, the costs are now 6.60&nbsp;€ in manual effort compared to 3.00&nbsp;€ for a centrally managed solution with Set-OutlookSignatures.
 
@@ -291,8 +297,8 @@ If you look for help implementing the free and open-source core version of Set-O
 As soon as the open-source core version is running, it is time to take the next step:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a 14-day trial license</button></a>
 
 To use the license file, just add two parameters to your call of Set-OutlookSignatures.ps1:
-- `BenefactorCircleLicenseFile` with the path to your individualized license file
-- `BenefactorCircleId` with your Benefactor Circle ID
+- '-BenefactorCircleLicenseFile' with the path to your individualized license file
+- '-BenefactorCircleId' with your Benefactor Circle ID
 
 Trial licenses can not be extended or re-issued. They are limited to 14 days runtime and a maximum of 20 mailboxes.<br>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible, as our software does not phone home).<br>It is strongly recommended to start your trial only when the free and open-source version of Set-OutlookSignatures has already been implemented successfully. Also make sure you have a test plan and reserved time to execute it.
 
@@ -304,8 +310,8 @@ You will receive a quote shortly. As soon as all details are ironed out, you wil
 As soon as the full invoice amount is received, you will be sent an email with instructions on how to securely download your individualized license file.
 
 To use the license file, just add two parameters to your call of Set-OutlookSignatures.ps1:
-- `BenefactorCircleFile` with the path to your individualized license file
-- `BenefactorCircleId` with your Benefactor Circle ID
+- '-BenefactorCircleFile' with the path to your individualized license file
+- '-BenefactorCircleId' with your Benefactor Circle ID
 
 ### Extending or reducing a license period
 A license period cannot be extended. Licenses are valid for one year, starting with the date the full payment is received, and do not auto-renew.
