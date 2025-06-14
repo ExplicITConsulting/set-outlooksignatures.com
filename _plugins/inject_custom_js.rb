@@ -3,41 +3,47 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
     code_to_add = <<~'HTMLHereDocString'
       <!-- Open pages in the correct language -->
       <script>
-        const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
-        const path = window.location.pathname;
-        const search = window.location.search;
-        const hash = window.location.hash;
+        document.addEventListener("DOMContentLoaded", function () {
+          const languageSelect = document.getElementById("language");
+          const path = window.location.pathname;
+          const search = window.location.search;
+          const hash = window.location.hash;
+          const browserLang = (languageSelect.value || navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
 
-        const currentLangMatch = path.match(/^\/([a-z]{2})(?:\/|$)/i);
-        const pathLang = currentLangMatch ? currentLangMatch[1].toLowerCase() : null;
+          const currentLangMatch = path.match(/^\/([a-z]{2})(?:\/|$)/i);
+          const pathLang = currentLangMatch ? currentLangMatch[1].toLowerCase() : null;
 
-        let shouldRedirect = false;
-        let targetPath = '';
+          const languageSelectValidValues = Array.from(languageSelect.options).map(opt => opt.value);
+          languageSelect.value = languageSelectValidValues.includes(browserLang) ? browserLang : "";
 
-        if (pathLang) {
-          if (pathLang !== browserLang) {
-            shouldRedirect = true;
-            targetPath = '/' + browserLang + path.replace(/^\/[a-z]{2}/i, '');
+          let shouldRedirect = false;
+          let targetPath = '';
+
+          if (pathLang) {
+            if (pathLang !== browserLang) {
+              shouldRedirect = true;
+              targetPath = '/' + browserLang + path.replace(/^\/[a-z]{2}/i, '');
+            }
+          } else {
+            if (browserLang !== 'en') { // Assuming 'en' is your default root language
+              shouldRedirect = true;
+              targetPath = '/' + browserLang + path;
+            }
           }
-        } else {
-          if (browserLang !== 'en') { // Assuming 'en' is your default root language
-            shouldRedirect = true;
-            targetPath = '/' + browserLang + path;
-          }
-        }
 
-        if (shouldRedirect) {
-          const targetUrl = targetPath + search;
-          // Use fetch HEAD to check existence (as you are doing)
-          fetch(targetUrl, { method: 'HEAD' })
-            .then(response => {
-              if (response.ok) {
-                window.location.replace(targetUrl + hash); // Use replace() for cleaner history
-              }
-            })
-            .catch(error => {
-              // Handle error, e.g., console.error
-            });
+          if (shouldRedirect) {
+            const targetUrl = targetPath + search;
+            // Use fetch HEAD to check existence (as you are doing)
+            fetch(targetUrl, { method: 'HEAD' })
+              .then(response => {
+                if (response.ok) {
+                  window.location.replace(targetUrl + hash); // Use replace() for cleaner history
+                }
+              })
+              .catch(error => {
+                // Handle error, e.g., console.error
+              });
+          }
         }
       </script>
 
@@ -71,7 +77,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
         <p><img referrerpolicy="no-referrer-when-downgrade" src="//mtrcs.explicitconsulting.at/poop.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p>
       </noscript>
 
-      
+
       <!-- Add class to all links, and open all external links in a new tab -->
       <script>
         document.addEventListener("DOMContentLoaded", function () {
