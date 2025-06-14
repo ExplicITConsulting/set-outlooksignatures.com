@@ -5,7 +5,7 @@ title: |
     Parameters
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white" style="hyphens: manual;">
+  <span class="subtitle is-4 has-text-white">
     How to customize Set-Outlook&shy;Signatures
   </span>
 description: |
