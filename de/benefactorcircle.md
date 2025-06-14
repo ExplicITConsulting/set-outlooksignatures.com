@@ -259,7 +259,7 @@ Der Preis beträgt derzeit **3,00 € netto pro Postfach und Jahr**, was **0,2
 Wir gestalten die Lizenzkosten so fair wie möglich. Fair bedeutet:
 - Kleine Unternehmen zahlen denselben niedrigen Preis wie große Konzerne.
 - Keine Wartungs- oder Supportverträge, die als „kostenlos“ beworben werden, aber tatsächlich im Jahrespreis versteckt sind und selten im vollen Umfang genutzt werden.
-  Bei uns zahlen Sie nur für den Support, den Sie tatsächlich benötigen – dank der umfangreichen Dokumentation ist dieser meist gar nicht erforderlich.
+  Bei uns zahlen Sie nur für den Support, den Sie tatsächlich benötigen – dank der umfangreichen Dokumentation ist dieser meist gar nicht erforderlich.  
   **Unser All-Inclusive-Support-Versprechen: Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem Benefactor Circle Add-on, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme. Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.**
 - Keine zusätzliche Infrastruktur, die von Dritten betrieben wird und unabhängig von der Nutzung Kosten verursacht.
   Keine Schnittstellen, die Ihre Daten regelmäßig an externe Rechenzentren übertragen, um Signaturen aufzubereiten, und an die jede E-Mail zur Signaturanwendung weitergeleitet werden muss.

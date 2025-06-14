@@ -257,7 +257,8 @@ The price currently is **3.00 € net per mailbox and year**, which is **0.25 �
 We keep license costs as fair as possible. Fair means:
 - Small companies always just pay the same low price as big enterprises.
 - No maintenance contracts or support contracts that are advertised as "free" but really are hidden in the annual price and are never used to the extent that you pay for over the years.
-  With us, you only pay for the support you actually need - due to the extensive documentation, this is usually not even necessary. **Our all-inclusive support promise: If your support request stems from a bug in the latest version of Set-OutlookSignatures, the Benefactor Circle add-on, its documentation, or the provided components, support is free — no exceptions. For all other issues, you will receive the same top-notch support at a fair price.**
+  With us, you only pay for the support you actually need - due to the extensive documentation, this is usually not even necessary.  
+  **Our all-inclusive support promise: If your support request stems from a bug in the latest version of Set-OutlookSignatures, the Benefactor Circle add-on, its documentation, or the provided components, support is free — no exceptions. For all other issues, you will receive the same top-notch support at a fair price.**
 - No additional infrastructure that someone else runs for you and for which costs are incurred regardless of usage.
   No interfaces that regularly transfer your data to external data centers for the preparation of signatures and to which you have to redirect every email for the application of signatures.
   Everything runs on your existing systems, which you already trust and govern, and within your own security boundaries.
