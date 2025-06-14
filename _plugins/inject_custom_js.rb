@@ -4,23 +4,22 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       <!-- Open pages in the correct language -->
       <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const savedLang = localStorage.getItem("languageDropdownValue");
-          const dropdown = document.getElementById("languageDropdown");
-          if (dropdown && [...dropdown.options].some(o => o.value === savedLang)) {
-            dropdown.value = savedLang;
-          }
-
           const languageSelect = document.getElementById("languageDropdown");
+          const savedLang = localStorage.getItem("languageDropdownValue");
           const path = window.location.pathname;
           const search = window.location.search;
           const hash = window.location.hash;
-          const browserLang = (languageSelect.value || navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
+          const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
           const currentLangMatch = path.match(/^\/([a-z]{2})(?:\/|$)/i);
           const pathLang = currentLangMatch ? currentLangMatch[1].toLowerCase() : null;
-
           const languageSelectValidValues = Array.from(languageSelect.options).map(opt => opt.value);
-          languageSelect.value = languageSelectValidValues.includes(browserLang) ? browserLang : "en";
-          
+
+          if ([...languageSelect.options].some(o => o.value === savedLang)) {
+            languageSelect.value = savedLang;
+          } else {
+            languageSelect.value = languageSelectValidValues.includes(browserLang) ? browserLang : "en";
+          }
+
           let shouldRedirect = false;
           let targetPath = '';
 
