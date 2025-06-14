@@ -234,13 +234,10 @@ Other parameters we need are:
 - How many signatures does a user typically need to keep up to date (internal and external, language, tone, signatures for shared mailboxes)?
 - On how many clients does a user need to update the signatures?
 
-Formula:  
+Formula and example calculation:
 <blockquote>
 CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year
-</blockquote>
 
-Example calculation:  
-<blockquote>
 2 changes per year, 3 minutes per change, 2 signatures, 1 client: 0.55 * 2 * 3 * 2 * 1 = 6.60
 </blockquote>
 

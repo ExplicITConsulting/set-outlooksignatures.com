@@ -235,13 +235,10 @@ Weitere relevante Parameter:
 - Wie viele Signaturen muss ein Nutzer typischerweise aktuell halten (intern/extern, Sprache, Tonalität, Signaturen für gemeinsame Postfächer)?
 - Auf wie vielen Clients muss ein Nutzer die Signatur aktualisieren?
 
-Formel:  
+Formel und Beispielrechnung:
 <blockquote>
-CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year
-</blockquote>
+KostenProMinute * AnzahlÄnderungen * MinutenProÄnderung * AnzahlSignaturen * AnzahlGeräte = Kosten pro Benutzer und Jahr
 
-Beispielrechnung:  
-<blockquote>
 2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client: 0.55 * 2 * 3 * 2 * 1 = 6,60
 </blockquote>
 
