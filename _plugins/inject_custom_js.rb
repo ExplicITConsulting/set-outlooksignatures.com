@@ -25,25 +25,45 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           const currentSearch = window.location.search; // Get URL parameters
           const currentHash = window.location.hash;     // Get URL anchor
 
-          let targetPath;
+          let targetPathname; // Use a new variable for the modified pathname
 
-          if (preferredLanguage === "en") {
-            // If preferred language is "en", the path should be the root
-            targetPath = "/";
-          } else {
-            // For other languages, the path should start with /<language_code>
-            targetPath = `/${preferredLanguage}/`;
+          // Determine the base path without the language prefix (if any)
+          let basePath = currentPathname;
+          const languagePrefixMatch = currentPathname.match(/^\/(en|de|fr|es|it|etc)\//); // Add all your language codes here
+
+          if (languagePrefixMatch) {
+            // If a language prefix exists, remove it to get the base path
+            basePath = currentPathname.substring(languagePrefixMatch[0].length - 1); // -1 to keep the leading slash
           }
 
+          // Ensure basePath starts with a slash
+          if (!basePath.startsWith('/')) {
+            basePath = '/' + basePath;
+          }
+
+          if (preferredLanguage === "en") {
+            // If preferred language is "en", the path should be the base path (without /en/)
+            targetPathname = basePath;
+          } else {
+            // For other languages, insert the language code after the root slash
+            if (basePath === '/') {
+              targetPathname = `/${preferredLanguage}/`;
+            } else {
+              targetPathname = `/${preferredLanguage}${basePath}`;
+            }
+          }
+
+
           // Check if the current path already matches the preferred language directory
-          // This check is simplified and assumes a structure like /en/, /fr/, or just / for root.
-          // It might need refinement based on your exact URL structure.
-          const isAlreadyPreferredLanguage = (preferredLanguage === "en" && currentPathname === "/") ||
+          // This check now considers the full path with or without a language prefix.
+          const isAlreadyPreferredLanguage =
+            (preferredLanguage === "en" && (currentPathname === "/" || currentPathname.startsWith("/en/"))) ||
             (preferredLanguage !== "en" && currentPathname.startsWith(`/${preferredLanguage}/`));
+
 
           if (!isAlreadyPreferredLanguage) {
             // Construct the full target URL, including search parameters and hash
-            const targetUrl = `${currentProtocol}//${currentHostname}${targetPath}${currentSearch}${currentHash}`;
+            const targetUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
 
             // Attempt to redirect to the preferred language version
             fetch(targetUrl, { method: 'HEAD' }) // HEAD request is lighter, just gets headers
@@ -52,15 +72,20 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
                   console.log(`Preferred language path exists. Redirecting to: ${targetUrl}`);
                   window.location.href = targetUrl;
                 } else {
-                  console.warn(`Preferred language path (${targetUrl}) not found (status: ${response.status}). Redirecting to English version.`);
-                  // Redirect to root (English), preserving parameters and hash
-                  window.location.href = `${currentProtocol}//${currentHostname}/${currentSearch}${currentHash}`;
+                  console.warn(`Preferred language path (${targetUrl}) not found (status: ${response.status}). Attempting redirect to localized root or original path.`);
+                  // Fallback: If the specific localized path doesn't exist, you might
+                  // want to redirect to the localized root or the original path without localization.
+                  // For this scenario, let's redirect to the localized root for "de" or "en" root.
+                  if (preferredLanguage === "en") {
+                      window.location.href = `${currentProtocol}//${currentHostname}/${currentSearch}${currentHash}`;
+                  } else {
+                      window.location.href = `${currentProtocol}//${currentHostname}/${preferredLanguage}/${currentSearch}${currentHash}`;
+                  }
                 }
               })
               .catch(error => {
                 console.error("Error checking preferred language path existence:", error);
                 console.log("Redirecting to English version due to network error or uncheckability.");
-                // Redirect to root (English), preserving parameters and hash
                 window.location.href = `${currentProtocol}//${currentHostname}/${currentSearch}${currentHash}`;
               });
           } else {
