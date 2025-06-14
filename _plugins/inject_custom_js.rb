@@ -4,130 +4,111 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       <!-- Open pages in the correct language -->
       <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const languageSelect = document.getElementById("languageDropdown");
-            let savedLang = localStorage.getItem("languageDropdownValue"); // Use 'let' as it might be set for the first time
-            const currentPathname = window.location.pathname;
-            const search = window.location.search;
-            const hash = window.location.hash;
-            const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
-            
-            // Regex to capture the language prefix (e.g., 'de' from /de/page.html)
-            const currentLangMatch = currentPathname.match(/^\/([a-z]{2})(?=\/|$)/i);
-            const langInPath = currentLangMatch ? currentLangMatch[1].toLowerCase() : null; // Language actually present in the URL path
-            
-            const languageSelectValidValues = Array.from(languageSelect.options).map(opt => opt.value);
+          const languageDropdown = document.getElementById("languageDropdown");
 
-            // --- Step 1: Initialize localStorage ONLY if it's not already set ---
-            if (!savedLang) { // localStorage item 'languageDropdownValue' has not been set before
-                if (languageSelectValidValues.includes(browserLang)) {
-                    savedLang = browserLang; // Set based on browser language if it's a valid option
-                } else {
-                    savedLang = "en"; // Default to English if browser language isn't valid
+          // Function to get the current page's base name (e.g., "index.html", "about.html")
+          function getCurrentPageBaseName() {
+            const path = window.location.pathname;
+            const parts = path.split("/");
+            const baseName = parts[parts.length - 1];
+            if (!baseName && path.endsWith("/")) {
+              return "index.html"; // Common default for directory URLs
+            }
+            return baseName || "index.html"; // Default to index.html if baseName is empty (e.g., for "/")
+          }
+
+          // NEW: Function to get the current URL's query string (including '?')
+          function getCurrentQueryString() {
+            return window.location.search; // Returns '?key=value&another=foo' or ''
+          }
+
+          // NEW: Function to get the current URL's hash (including '#')
+          function getCurrentHash() {
+            return window.location.hash; // Returns '#section-id' or ''
+          }
+
+          // Function to determine the current language *from the URL*
+          function getLanguageFromUrl() {
+            const path = window.location.pathname;
+            if (path.startsWith("/de/")) {
+              return "de";
+            } else if (path.startsWith("/fr/")) {
+              return "fr";
+            } else if (path.startsWith("/es/")) {
+              return "es";
+            }
+            return "en"; // Default to English if no specific language directory is found
+          }
+
+          // Get the preferred language from localStorage (which was set by the HTML onchange)
+          let preferredLanguage = localStorage.getItem("languageDropdownValue");
+          const availableLanguages = Array.from(languageDropdown.options).map((option) => option.value);
+
+          // If preferredLanguage is not set or is invalid, try to infer from navigator, then default to 'en'
+          if (!preferredLanguage || !availableLanguages.includes(preferredLanguage)) {
+            preferredLanguage = (navigator.language || navigator.userLanguage || "en").toLowerCase().split("-")[0];
+            if (!availableLanguages.includes(preferredLanguage)) {
+              preferredLanguage = "en"; // Fallback to English if navigator language isn't available
+            }
+            // Update localStorage with this newly determined preferred language
+            localStorage.setItem("languageDropdownValue", preferredLanguage);
+          }
+
+          // Set the dropdown to the determined preferred language
+          languageDropdown.value = preferredLanguage;
+
+          // --- Core Fallback Logic (executed on every page load) ---
+          const currentPageBaseName = getCurrentPageBaseName();
+          const currentQuery = getCurrentQueryString(); // Get current query string
+          const currentHash = getCurrentHash(); // Get current hash
+
+          let targetUrlLanguage = preferredLanguage;
+          let newUrlPath; // This will be the path part, without query or hash
+
+          if (targetUrlLanguage === "en") {
+            newUrlPath = `/${currentPageBaseName}`;
+          } else {
+            newUrlPath = `/${targetUrlLanguage}/${currentPageBaseName}`;
+          }
+
+          // Construct the full new URL including query parameters and hash
+          const newFullUrl = `${newUrlPath}${currentQuery}${currentHash}`;
+
+          // If the current URL already matches what we expect from localStorage, no need to check/redirect
+          if (newFullUrl === window.location.pathname + window.location.search + window.location.hash) {
+            // If the URL already perfectly matches the target, we don't need to do another fetch.
+            return;
+          }
+
+          // Perform a HEAD request to check if the target language URL exists
+          // NOTE: The HEAD request should be made to the path *without* query parameters or hash
+          // because the server typically maps files based on path, not parameters/anchors.
+          fetch(newUrlPath, { method: "HEAD" }) // Use newUrlPath here, not newFullUrl
+            .then((response) => {
+              if (response.ok) {
+                // The target language document exists, redirect if not already on it
+                if (window.location.href !== newFullUrl) {
+                  window.location.href = newFullUrl;
                 }
-                localStorage.setItem("languageDropdownValue", savedLang); // Set localStorage for the very first time
-                console.log(`localStorage initialized to: "${savedLang}" based on browser detection.`);
-            } else {
-                console.log(`localStorage already set: "${savedLang}".`);
-            }
-
-            // --- Step 2: Determine the effective target language for THIS page load ---
-            // This primarily comes from `savedLang` (either from localStorage or initial browser detection).
-            let effectiveTargetLanguage = savedLang;
-
-            // However, if the current URL explicitly states a different valid language,
-            // we prioritize the URL's language for *this specific load's redirection logic*.
-            // This handles scenarios where a user manually typed a URL like /de/page.html
-            // but their saved preference is 'en'. This avoids an immediate redirect back.
-            if (langInPath && languageSelectValidValues.includes(langInPath) && langInPath !== effectiveTargetLanguage) {
-                effectiveTargetLanguage = langInPath;
-                console.log(`URL path language "${langInPath}" overrides localStorage "${savedLang}" for current effective target.`);
-            }
-
-            // --- Step 3: Set the dropdown value to reflect the effective target language ---
-            // This updates the UI without touching localStorage if it's not the initial set.
-            if (languageSelect.value !== effectiveTargetLanguage) {
-                languageSelect.value = effectiveTargetLanguage;
-                console.log(`Dropdown set to: "${effectiveTargetLanguage}".`);
-            }
-
-
-            // --- Helper function to construct a URL path for a given language ---
-            function getUrlForLanguage(targetLanguage, basePagePath) {
-                let desiredPath;
-                if (targetLanguage === 'en') { // English documents are in the root
-                    desiredPath = basePagePath;
-                } else { // Other languages get a prefix
-                    desiredPath = `/${targetLanguage}${basePagePath === '/' ? '' : basePagePath}`;
+              } else {
+                // The target language document does NOT exist (e.g., 404)
+                console.warn(`Document not found for ${newUrlPath}. Falling back to English: /${currentPageBaseName}`);
+                // Redirect to the English version, preserving query parameters and hash
+                const englishFallbackFullUrl = `/${currentPageBaseName}${currentQuery}${currentHash}`;
+                if (window.location.href !== englishFallbackFullUrl) {
+                  window.location.href = englishFallbackFullUrl;
                 }
-                return desiredPath.replace(/\/\/+/g, '/'); // Clean up potential double slashes
-            }
-
-            // --- Step 4: Calculate the base page path (the URL without any language prefix) ---
-            let basePagePath = currentPathname;
-            if (langInPath) { // If there's a language prefix in the current URL, remove it
-                basePagePath = basePagePath.replace(new RegExp(`^/${langInPath}(?=/|$)`, 'i'), '');
-            }
-            if (basePagePath === '') { // Ensure it's at least '/' if it became empty
-                basePagePath = '/';
-            }
-            basePagePath = basePagePath.replace(/\/\/+/g, '/'); // Final cleanup for base path
-
-            // --- Step 5: Determine the full desired URLs ---
-            const desiredUrlForEffectiveLang = getUrlForLanguage(effectiveTargetLanguage, basePagePath) + search + hash;
-            const englishFallbackUrl = getUrlForLanguage('en', basePagePath) + search + hash; // Always consider English as a fallback
-            const currentFullUrl = window.location.pathname + window.location.search + window.location.hash;
-
-            // --- Step 6: Perform Redirection Logic ---
-            // Use an async IIFE (Immediately Invoked Function Expression) for cleaner await usage
-            (async () => {
-                // Only attempt a redirect if the current URL doesn't match the desired URL for the effective language
-                // This prevents an immediate reload if the user is already on the correct page.
-                if (desiredUrlForEffectiveLang.toLowerCase() === currentFullUrl.toLowerCase()) {
-                    console.log(`Already on the correct URL for effective language: ${currentFullUrl}. No redirect needed.`);
-                    return; // No action needed if already on the target URL
-                }
-
-                console.log(`Attempting to load: "${desiredUrlForEffectiveLang}" for effective language "${effectiveTargetLanguage}".`);
-                try {
-                    const response = await fetch(desiredUrlForEffectiveLang, { method: 'HEAD' });
-
-                    if (response.ok) {
-                        // If the page for the effective target language exists, redirect to it
-                        console.log(`Page "${desiredUrlForEffectiveLang}" found. Redirecting.`);
-                        window.location.replace(desiredUrlForEffectiveLang);
-                    } else {
-                        console.warn(`Specific page "${desiredUrlForEffectiveLang}" for effective language "${effectiveTargetLanguage}" not found (404).`);
-
-                        // If the target language page doesn't exist, attempt to load the English version of the same content
-                        console.log(`Attempting fallback to English version: ${englishFallbackUrl}`);
-                        const englishResponse = await fetch(englishFallbackUrl, { method: 'HEAD' });
-
-                        if (englishResponse.ok) {
-                            // If the English version exists, redirect to it.
-                            // IMPORTANT: Per requirement, localStorage is *NOT* updated here to 'en'.
-                            console.log(`English version found at "${englishFallbackUrl}". Redirecting.`);
-                            window.location.replace(englishFallbackUrl);
-                        } else {
-                            console.error(`Neither "${desiredUrlForEffectiveLang}" nor "${englishFallbackUrl}" exist.`);
-                            
-                            // As a last resort, try redirecting to the English homepage
-                            const englishHomepageUrl = getUrlForLanguage('en', '/') + search + hash;
-                            console.log(`Attempting fallback to English homepage: ${englishHomepageUrl}`);
-                            const homeResponse = await fetch(englishHomepageUrl, { method: 'HEAD' });
-                            if (homeResponse.ok) {
-                                console.log(`English homepage found. Redirecting to: ${englishHomepageUrl}`);
-                                window.location.replace(englishHomepageUrl);
-                            } else {
-                                console.error(`English homepage "${englishHomepageUrl}" also not found. Staying on current (possibly 404) page.`);
-                                // At this point, no valid alternative found. The browser will display its 404
-                                // or the current page if it's already a 404.
-                            }
-                        }
-                    }
-                } catch (error) {
-                    console.error("Network or fetch error during language detection/redirect:", error);
-                }
-            })(); // End of async IIFE
+              }
+            })
+            .catch((error) => {
+              // Handle network errors or other issues during the fetch
+              console.error("Error checking URL:", error);
+              // In case of an error, fall back to English, preserving query parameters and hash
+              const englishFallbackFullUrl = `/${currentPageBaseName}${currentQuery}${currentHash}`;
+              if (window.location.href !== englishFallbackFullUrl) {
+                window.location.href = englishFallbackFullUrl;
+              }
+            });
         });
       </script>
 
