@@ -4,48 +4,118 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       <!-- Open pages in the correct language -->
       <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const languageSelect = document.getElementById("languageDropdown");
-          const savedLang = localStorage.getItem("languageDropdownValue");
-          const path = window.location.pathname;
-          const search = window.location.search;
-          const hash = window.location.hash;
-          const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
-          const currentLangMatch = path.match(/^\/([a-z]{2})(?:\/|$)/i);
-          const pathLang = currentLangMatch ? currentLangMatch[1].toLowerCase() : null;
-          const languageSelectValidValues = Array.from(languageSelect.options).map(opt => opt.value);
+            const languageSelect = document.getElementById("languageDropdown");
+            const savedLang = localStorage.getItem("languageDropdownValue");
+            const currentPathname = window.location.pathname; // Get the current path without search/hash
+            const search = window.location.search;
+            const hash = window.location.hash;
+            const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
+            
+            // Regex to match and capture a two-letter language code at the start of the path
+            // e.g., /de/some-page.html -> 'de'
+            //       /en/some-page.html -> 'en' (though 'en' is root)
+            //       /some-page.html    -> null
+            const currentLangMatch = currentPathname.match(/^\/([a-z]{2})(?=\/|$)/i);
+            const langInPath = currentLangMatch ? currentLangMatch[1].toLowerCase() : null;
+            
+            const languageSelectValidValues = Array.from(languageSelect.options).map(opt => opt.value);
 
-          if ([...languageSelect.options].some(o => o.value === savedLang)) {
-            languageSelect.value = savedLang;
-          } else {
-            languageSelect.value = languageSelectValidValues.includes(browserLang) ? browserLang : "en";
-          }
+            let effectiveTargetLanguage = "en"; // Default to English
 
-          let shouldRedirect = false;
-          let targetPath = '';
+            // 1. Prioritize saved language from localStorage
+            if (savedLang && languageSelectValidValues.includes(savedLang)) {
+                effectiveTargetLanguage = savedLang;
+                languageSelect.value = savedLang; // Ensure dropdown reflects this
+            } 
+            // 2. If no saved language, check if the URL path itself indicates a language
+            else if (langInPath && languageSelectValidValues.includes(langInPath)) {
+                effectiveTargetLanguage = langInPath;
+                languageSelect.value = langInPath; // Ensure dropdown reflects this
+            }
+            // 3. Fallback to browser language if valid and no other language determined
+            else if (browserLang && languageSelectValidValues.includes(browserLang)) {
+                effectiveTargetLanguage = browserLang;
+                languageSelect.value = browserLang; // Ensure dropdown reflects this
+            }
+            // (If none of the above, effectiveTargetLanguage remains "en", and dropdown remains "en" by default)
 
-          if (languageSelect.value !== 'en') { // Assuming 'en' is your default root language
-            targetPath = '/' + languageSelect.value + path;
-          } else {
-            targetPath = '/' + path;
-          }
+            // --- Determine the desired target URL ---
 
-          if (path.toLowerCase() !== targetPath.toLowerCase()) {
-            shouldRedirect = true;
-          }
+            let basePath = currentPathname;
 
-          if (shouldRedirect) {
-            const targetUrl = targetPath + search;
-            // Use fetch HEAD to check existence (as you are doing)
-            fetch(targetUrl, { method: 'HEAD' })
-              .then(response => {
-                if (response.ok) {
-                  window.location.replace(targetUrl + hash); // Use replace() for cleaner history
-                }
-              })
-              .catch(error => {
-                // Handle error, e.g., console.error
-              });
-          }
+            // Remove any existing language prefix from the current pathname
+            if (langInPath) {
+                // This regex ensures we only remove the prefix if it's a full segment
+                // e.g., /de/page.html -> /page.html
+                //       /depth/page.html -> /depth/page.html (not removing 'de' from 'depth')
+                basePath = basePath.replace(new RegExp(`^/${langInPath}(?=/|$)`, 'i'), '');
+            }
+
+            // Ensure basePath is at least '/' if it becomes empty after removing prefix
+            if (basePath === '') {
+                basePath = '/';
+            }
+
+            let desiredTargetPath;
+            if (effectiveTargetLanguage === 'en') {
+                // English documents are in the root, so no language prefix
+                desiredTargetPath = basePath;
+            } else {
+                // Other languages get a prefix
+                // Handle cases where basePath is just '/' to avoid double slashes like /de//
+                desiredTargetPath = `/${effectiveTargetLanguage}${basePath === '/' ? '' : basePath}`;
+            }
+
+            // Clean up any potential double slashes (e.g., from /de//page.html becoming /de/page.html)
+            desiredTargetPath = desiredTargetPath.replace(/\/\/+/g, '/');
+
+            // Construct the full desired URL
+            const fullDesiredUrl = desiredTargetPath + search + hash;
+
+            // --- Redirect Logic ---
+
+            // Get the current URL as it appears in the browser's address bar
+            const currentFullUrl = window.location.pathname + window.location.search + window.location.hash;
+
+            // Only redirect if the current URL does not match the desired URL
+            if (fullDesiredUrl.toLowerCase() !== currentFullUrl.toLowerCase()) {
+                console.log(`Redirecting from ${currentFullUrl} to ${fullDesiredUrl}`);
+                fetch(fullDesiredUrl, { method: 'HEAD' })
+                    .then(response => {
+                        if (response.ok) {
+                            // Use replace to avoid adding the intermediate redirect to browser history
+                            window.location.replace(fullDesiredUrl); 
+                        } else {
+                            console.warn(`Target URL not found: ${fullDesiredUrl}. Attempting fallback.`);
+                            // Fallback if the specific page doesn't exist for the target language.
+                            // Try to redirect to the language's root (e.g., /de/ or /).
+                            let fallbackUrl = '/';
+                            if (effectiveTargetLanguage !== 'en') {
+                                fallbackUrl = `/${effectiveTargetLanguage}/`;
+                            }
+
+                            fetch(fallbackUrl, { method: 'HEAD' })
+                                .then(fallbackResponse => {
+                                    if (fallbackResponse.ok) {
+                                        console.log(`Falling back to ${fallbackUrl}`);
+                                        window.location.replace(fallbackUrl);
+                                    } else {
+                                        console.error(`Neither "${fullDesiredUrl}" nor "${fallbackUrl}" exist. Staying on current page.`);
+                                        // If even the fallback doesn't exist, you might want to show an error message
+                                        // or redirect to a generic 404 page if you have one.
+                                    }
+                                })
+                                .catch(fallbackError => {
+                                    console.error("Error checking fallback URL existence:", fallbackError);
+                                });
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error checking URL existence:", error);
+                    });
+            } else {
+                console.log(`Already on the correct language version: ${currentFullUrl}`);
+            }
         });
       </script>
 
