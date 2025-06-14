@@ -43,7 +43,13 @@ redirect_from:
     Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> bietet erstklassigen kostenpflichtigen Support.
   </p>
   <p>
-    Sie ziehen es vor, durch den Einrichtungs- und Anpassungsprozess geführt zu werden, anstatt sich selbst durch die Dokumentation zu arbeiten?<br>Sie sind auf der Suche nach maßgeschneiderten Workshops, praktischer Unterstützung bei der Implementierung, Schulungen, Unterstützung bei der Erstellung von Vorlagen und anderen Dienstleistungen im Zusammenhang mit der zentralen Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen?<br>Dann ist unser Angebot genau das Richtige für Sie.
+    Sie ziehen es vor, durch den Einrichtungs- und Anpassungsprozess geführt zu werden, anstatt sich selbst durch die Dokumentation zu arbeiten?
+  </p>
+  <p>
+    Sie sind auf der Suche nach maßgeschneiderten Workshops, praktischer Unterstützung bei der Implementierung, Schulungen, Unterstützung bei der Erstellung von Vorlagen und anderen Dienstleistungen im Zusammenhang mit der zentralen Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen?
+  </p>
+  <p>
+    Dann ist unser Angebot genau das Richtige für Sie.
   </p>
   <p>
     Sie kaufen nicht irgendeinen Support, sondern unser umfassendes Know-how als Hersteller, Implementierer, und Berater. Support heißt für uns nicht nur, eine Lösung für Ihr Problem zu liefern, sondern auch unsere Erfahrung an Sie weiterzugeben, damit Sie wissen, wie und warum. Unsere Unterstützung ist also eine Investition in Ihr eigenes Wissen und das Ihrer Mitarbeiter, die sich sofort auszahlt.
