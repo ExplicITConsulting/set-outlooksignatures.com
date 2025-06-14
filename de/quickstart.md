@@ -30,7 +30,7 @@ Folgen Sie der einfachen 4-Schritte-Anleitung, um Ihre ersten Signaturen zu vert
 ## Schritt 1: Voraussetzungen prüfen
 Für einen ersten Testlauf ist es empfehlenswert, sich mit einem Testbenutzer auf einem Windows-System anzumelden, auf dem Word und Outlook installiert sind und Outlook zumindest mit dem Postfach des Testbenutzers konfiguriert ist. Auf diese Weise erhalten Sie schnell Ergebnisse und können den größten Funktionsumfang nutzen.
 
-Für die vollständige Unterstützung von Linux und macOS ist das ➔ <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erforderlich und die Postfächer müssen in Exchange Online gehostet werden.
+Für die vollständige Unterstützung von Linux und macOS ist das ➔&nbsp;<a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erforderlich und die Postfächer müssen in Exchange Online gehostet werden.
 
 Wenn sich einige oder alle Postfächer in Exchange Online befinden, benötigen Sie einen Benutzer mit 'Global Admin'- oder 'Application Administrator'-Rechten für einmalige Vorbereitungen.
 
@@ -95,7 +95,7 @@ Die [FAQ-Seite](/faq) hilft Ihnen, Antworten auf die am häufigsten an uns geste
 ## Benötigen Sie Hilfe oder weitere Funktionen?
 Set-OutlookSignatures ist sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.
 
-Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Evaluierung, Planung, Implementierung und dem laufenden Betrieb unterstützen kann: Unser Partner <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> bietet erstklassigen [kostenpflichtigen Support](/support), und das ➔ <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> bietet zusätzliche Funktionen für Ihr Unternehmen.
+Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Evaluierung, Planung, Implementierung und dem laufenden Betrieb unterstützen kann: Unser Partner <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> bietet erstklassigen [kostenpflichtigen Support](/support), und das ➔&nbsp;<a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> bietet zusätzliche Funktionen für Ihr Unternehmen.
 
 <p><a href="/support"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Support-Optionen ansehen</button></a></p>
 
