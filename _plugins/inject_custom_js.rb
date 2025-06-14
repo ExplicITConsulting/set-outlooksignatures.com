@@ -9,7 +9,8 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           const search = window.location.search;
           const hash = window.location.hash;
           const browserLang = (languageSelect.value || navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
-
+          console.log("browserLang " + browserLang)
+          console.log("languageSelect.value " + languageSelect.value)
           const currentLangMatch = path.match(/^\/([a-z]{2})(?:\/|$)/i);
           const pathLang = currentLangMatch ? currentLangMatch[1].toLowerCase() : null;
 
