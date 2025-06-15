@@ -1,0 +1,26 @@
+- name: Schnellstart
+  link: /quickstart
+- name: |
+    <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>
+  link: /benefactorcircle
+- name: "Demo"
+  link: /benefactorcircle/#demo
+- name: "Hilfe und Support"
+  link: /help
+  dropdown:
+  - name: Funktionen und Funktions-Vergleich
+    link: /features
+  - name: Technische Details, Voraussetzungen und Verwendung
+    link: /details
+  - name: Parameter
+    link: /parameters
+  - name: Das Outlook Add-In
+    link: /outlookaddin
+  - name: Häufig gestellte Fragen (FAQ)
+    link: /faq
+  - name: Implementierungs-Ansatz
+    link: /implementationapproach
+  - name: Support
+    link: /support
+- name: Download
+  link: /download
