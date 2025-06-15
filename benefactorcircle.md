@@ -214,163 +214,196 @@ redirect_from:
 <a href="#testversion"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a trial license or quote</button></a>
 
 
-## Demo
+<h2>Demo</h2>
 In your free interactive product demo, we show you the main features of the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> and the included Outlook add-in - interactively and with a focus on your actual needs.
 
 <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Schedule your personal demo</button></a>
 
 
-## Financial benefits
-There are three relevant questions to calculate the business case:
-- How much do non-compliant signatures and out-of-office replies cost in terms of loss of reputation or in terms of fines for non-compliance?
-- What is the added value of using email as an additional marketing channel?
-- Does the new software cost less than the effort we want to save users?
+<h2>Financial benefits</h2>
+<p>There are three relevant questions to calculate the business case:</p>
+<ul>
+  <li>How much do non-compliant signatures and out-of-office replies cost in terms of loss of reputation or in terms of fines for non-compliance?</li>
+  <li>What is the added value of using email as an additional marketing channel?</li>
+  <li>Does the new software cost less than the effort we want to save users?</li>
+</ul>
 
-While the first two are difficult to calculate and very individual, the last question is easier to answer. Let's assume that an average employee costs 60,000&nbsp;€ per year from the employer's point of view (including all taxes, social security, etc.) for 1,800 hours of work. This gives costs of 0.55&nbsp;€ for each minute of employee work.
+<p>While the first two are difficult to calculate and very individual, the last question is easier to answer. Let's assume that an average employee costs 60,000&nbsp;€ per year from the employer's point of view (including all taxes, social security, etc.) for 1,800 hours of work. This gives costs of 0.55&nbsp;€ for each minute of employee work.</p>
 
-Other parameters we need are:
-- How many times a year do parameters relevant to signatures change (corporate design, job title, logos, marketing banners, etc.)?
-- How many minutes does it take a user to correctly update a single signature (including reading the instructions)?
-- How many signatures does a user typically need to keep up to date (internal and external, language, tone, signatures for shared mailboxes)?
-- On how many clients does a user need to update the signatures?
+<p>Other parameters we need are:</p>
+<ul>
+  <li>How many times a year do parameters relevant to signatures change (corporate design, job title, logos, marketing banners, etc.)?</li>
+  <li>How many minutes does it take a user to correctly update a single signature (including reading the instructions)?</li>
+  <li>How many signatures does a user typically need to keep up to date (internal and external, language, tone, signatures for shared mailboxes)?</li>
+  <li>On how many clients does a user need to update the signatures?</li>
+</ul>
 
-Formula and example calculation:
+<p><strong>Formula and example calculation:</strong></p>
 <blockquote>
-<p>CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year</p>
-<p>2 changes per year, 3 minutes per change, 2 signatures, 1 client: 0.55 * 2 * 3 * 2 * 1 = 6.60</p>
+  <p>CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year</p>
+  <p>2 changes per year, 3 minutes per change, 2 signatures, 1 client: 0.55 * 2 * 3 * 2 * 1 = 6.60</p>
 </blockquote>
 
-Per user and year, the costs are now 6.60&nbsp;€ in manual effort compared to 3.00&nbsp;€ for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>.
+<p>Per user and year, the costs are now 6.60&nbsp;€ in manual effort compared to 3.00&nbsp;€ for a centrally managed solution with Set-OutlookSignatures and the 
+<span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">
+Benefactor Circle add-on</span>.</p>
 
-This calculation does not even take into account the following:
-- Manual effort required for signature management in shared mailboxes
-- Manual effort required for management of out-of-office replies
-- Loss in reputation because of outdated or incorrect data entered manually
-- Damage to the image of the brand due to non-compliance with CI/CD guidelines
-- Cost of non-compliance with regulations
-- Added value of an additional marketing channel
+<p>This calculation does not even take into account the following:</p>
+<ul>
+  <li>Manual effort required for signature management in shared mailboxes</li>
+  <li>Manual effort required for management of out-of-office replies</li>
+  <li>Loss in reputation because of outdated or incorrect data entered manually</li>
+  <li>Damage to the image of the brand due to non-compliance with CI/CD guidelines</li>
+  <li>Cost of non-compliance with regulations</li>
+  <li>Added value of an additional marketing channel</li>
+</ul>
 
-Set-OutlookSignatures pays for itself immediately and actually helps you earn more money.
-
-## Buying, extending and changing licenses
-### Price and general information
-The price currently is **3.00 € net per mailbox and year**, which is **0.25 € net per mailbox and month**.
-
-We keep license costs as fair as possible. Fair means:
-- Small companies always just pay the same low price as big enterprises.
-- No maintenance contracts or support contracts that are advertised as "free" but really are hidden in the annual price and are never used to the extent that you pay for over the years.
-  With us, you only pay for the support you actually need - due to the extensive documentation, this is usually not even necessary.  
-  **Our all-inclusive support promise: If your support request stems from a bug in the latest version of Set-OutlookSignatures, the Benefactor Circle add-on, its documentation, or the provided components, support is free — no exceptions. For all other issues, you will receive the same top-notch support at a fair price.**
-- No additional infrastructure that someone else runs for you and for which costs are incurred regardless of usage.
-  No interfaces that regularly transfer your data to external data centers for the preparation of signatures and to which you have to redirect every email for the application of signatures.
-  Everything runs on your existing systems, which you already trust and govern, and within your own security boundaries.
-- No deliberately inflated prices that are then "discounted" through negotiations.<br><br>
-
-There is no minimum number of mailboxes, only a minimum amount of 210.00 € net per invoice.
-
-Each mailbox in your environment for which you want to use an exclusive Benefactor Circle feature requires a license. This also applies to shared mailboxes.
-
-It does not matter how many users access a mailbox. If you only want to provide signatures for a single mailbox that is used by 50 people, you only need to purchase 1 license.
-
-The mailboxes do not need to be named, you just need to define at least one Active Directory or Entra ID group containing the mailboxes and the maximum number of recursive members for each group.
-
-It doesn't matter how many signatures you have or how often you change them.
-
-Licenses are payable in advance and are valid for one year from the date of receipt of full payment. There is no automatic renewal or subscription.
-
-As long as a license is valid, it includes free version upgrades and prioritization of support requests.
-
-We work hard to keep our prices as low and stable as possible, with the aim of only adjusting them for inflation. So prices are subject to change. Since you pay upfront, you can and will never be charged after the fact.
-
-If you wish to add additional mailboxes during an active license period, you will only be charged the current price for these additional mailboxes for the remaining months of your license period.
-
-### Trial version
-You may want to start with a 14-day trial license.
-
-The Benefactor Circle add-on extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.
-If you look for help implementing the free and open-source core version of Set-OutlookSignatures, go through the Quick Start Guide in the readme file, open an issue at GitHub, or contact us: We are happy to help you implement Set-OutlookSignatures in your own environment as part of our fee-based support.
-
-As soon as the open-source core version is running, it is time to take the next step:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a 14-day trial license</button></a>
-
-To use the license file, just add two parameters to your call of Set-OutlookSignatures.ps1:
-- '-BenefactorCircleLicenseFile' with the path to your individualized license file
-- '-BenefactorCircleId' with your Benefactor Circle ID
-
-Trial licenses can not be extended or re-issued. They are limited to 14 days runtime and a maximum of 20 mailboxes.<br>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible, as our software does not phone home).<br>It is strongly recommended to start your trial only when the free and open-source version of Set-OutlookSignatures has already been implemented successfully. Also make sure you have a test plan and reserved time to execute it.
-
-### Order process for non-trial versions
-<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a license quote</button></a>
-
-You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.
-
-As soon as the full invoice amount is received, you will be sent an email with instructions on how to securely download your individualized license file.
-
-To use the license file, just add two parameters to your call of Set-OutlookSignatures.ps1:
-- '-BenefactorCircleFile' with the path to your individualized license file
-- '-BenefactorCircleId' with your Benefactor Circle ID
-
-### Extending or reducing a license period
-A license period cannot be extended. Licenses are valid for one year, starting with the date the full payment is received, and do not auto-renew.
-
-To continue using Set-OutlookSignatures with Benefactor Circle benefits, just place a new order to receive a new license file.
-
-You will be informed in advance that your license is about to expire.
-
-### Reducing the number of licensed mailboxes
-The total number of licensed mailboxes can not be reduced during a license period (one year starting from the date of payment reception), as the license fees are paid in advance.
-
-### Moving licensed mailboxes between license groups
-Moving licenses means that the total number of licensed mailboxes does not change, but their distribution across license groups. This can, for example, be necessary due to Active Directory consolidations.
-
-Shifting licenses between license groups is possible once per license period.
-
-If more license shifts are required, additional licenses have to be acquired temporarily, the total number of licenses can then be reduced when the new license period begins.
-
-### Increasing the number of licensed mailboxes
-When adding licenses mid-term, only additional licenses are billed, for the remaining period rounded up to full months.
-
-The price for new licenses is the list price at the time of ordering. The payment does not extend the license period but increases the number of licensed mailboxes within it.
+<p><strong>Set-OutlookSignatures pays for itself immediately and actually helps you earn more money.</strong></p>
 
 
-## How license groups work
-Each Benefactor Circle license is bound to one or more Active Directory or Entra ID groups, called a license group. For maximum data protection and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.
+<h2>Buying, extending and changing licenses</h2>
+<h3>Price and general information<h3>
+<p>The price currently is <strong>3.00 € net per mailbox and year</strong>, which is <strong>0.25 € net per mailbox and month</strong>.</p>
 
-For most environments, only one license group is needed.<br>In on-prem and hybrid environments with multiple Active Directory domains, you may define a separate license group for each AD DNS domain, each license group with a separate maximum member count. When a license group for the home Active Directory domain of a mailbox is defined, this license group is used. If not, the license group defined as default will be used.
+<p>We keep license costs as fair as possible. Fair means:</p>
+<ul>
+  <li>Small companies always just pay the same low price as big enterprises.</li>
+  <li>No maintenance or support contracts hidden in the annual price. You only pay for the support you actually need — and often, thanks to the documentation, you won’t need any.</li>
+  <li><strong>All-inclusive support promise:</strong> If your support request stems from a bug in the latest version of Set-OutlookSignatures, the Benefactor Circle add-on, its documentation, or the provided components, support is free — no exceptions. For all other issues, you will receive the same top-notch support at a fair price.</li>
+  <li>No additional infrastructure or external data transfers. Everything runs on your existing systems, within your own security boundaries.</li>
+  <li>No inflated prices that are later “discounted” through negotiations.</li>
+</ul>
 
-A license group definition consists of three components:
-- The DNS domain name of the on-premises Active Directory domain the license group is located in. Use 'EntraID' for cloud-only groups.
-- The SID (security identifier) or the Entra ID Object ID of the license group.
-- The maximum number of mailboxes licensed for the group.
+<p>There is no minimum number of mailboxes, only a minimum amount of <strong>210.00 € net per invoice</strong>.</p>
 
-Where should I create the license group?
-- When using the '-GraphOnly true' parameter, create the group in Entra ID. The license group is then 'EntraID \<Object ID of your license group>'.
-  You may also a group created in on-prem Active Directory, as long as it is synchronized to Entra ID. The license group is then '\<On-prem Active Directory DNS domain name>, \<SID of the license group>'.
-- In hybrid environments without using the '-GraphOnly true' parameter, create a group in your on-prem Active Directory and make sure it is synchronized with Entra ID. The license group is then '\<On-prem Active Directory DNS domain name>, \<SID of the license group>'.
-  You can also use a group created in Entra ID ('EntraID, \<Object ID of the license group>'), which would basically be equal to using the '-GraphOnly true' parameter.
-- In pure on-prem environments, you can only use on-prem groups. The license group is then '\<On-prem Active Directory DNS domain name>, \<SID of the license group>'.
-  When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.
+<p>Each mailbox in your environment for which you want to use an exclusive Benefactor Circle feature requires a license. This also applies to shared mailboxes.</p>
 
-When a Benefactor Circle exclusive feature is about to be used, the license is checked as follows:
-1. Determine which license group to use.
-   1. Extract the AD DNS domain name from the mailbox' distinguishedName or dnsDomainName property.
-   2. When the step above returns an AD DNS domain name and if a license group is defined for it, use this group. Else, use the first group in the list.
-2. Find the license group via a Graph or Active Directory query.
-3. Check if the number of direct and indirect (a.k.a nested, recursive, transitive) members is less or equal than the number of mailboxes licensed for this group.
-4. Check if the current mailbox is a member of the license group.
+<p>It does not matter how many users access a mailbox. If you only want to provide signatures for a single mailbox that is used by 50 people, you only need to purchase 1 license.</p>
 
-As soon as one of these steps fails, the mailbox is not licensed and Benefactor Circle features can not be used for it.
+<p>The mailboxes do not need to be named. You just need to define at least one Active Directory or Entra ID group containing the mailboxes and the maximum number of recursive members for each group.</p>
 
-You need to make sure that the user running Set-OutlookSignatures is able to resolve all direct and indirect members of all license groups, especially across on-prem AD trusts.<br>Primary group membership (such as in 'Domain Users') is not considered due to Active Directory and Entra ID query restrictions.<br>Dynamic groups are supported when Entra ID is queried, but not when Active Directory is queried.
+<p>It doesn't matter how many signatures you have or how often you change them.</p>
 
-Only one pure Entra ID group is supported, and it must be the default license group.
+<p>Licenses are payable in advance and are valid for one year from the date of receipt of full payment. There is no automatic renewal or subscription.</p>
 
-The default license group is the first group in the list of license groups. The default group is used for mailboxes not being covered by more specific license groups.
+<p>As long as a license is valid, it includes free version upgrades and prioritization of support requests.</p>
 
-When a connection to Microsoft Graph is available, Graph is used to check license group membership. A connection to Graph is enforced when the default license group is an Entra ID group.
+<p>We work hard to keep our prices as low and stable as possible, with the aim of only adjusting them for inflation. So prices are subject to change. Since you pay upfront, you can and will never be charged after the fact.</p>
 
-## License and software version
-License and software versions go hand in hand, so every new release of Set-OutlookSignatures also means a new license release, and vice-versa.
+<p>If you wish to add additional mailboxes during an active license period, you will only be charged the current price for these additional mailboxes for the remaining months of your license period.</p>
 
-Using different versions of software and license file is not supported, as this leads to unexpected results.
 
-A warning message is logged when a version mismatch is detected.
+<h3>Trial version</h3>
+<p>You may want to start with a 14-day trial license.</p>
+
+<p>The Benefactor Circle add-on extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.<br>
+If you look for help implementing the free and open-source core version of Set-OutlookSignatures, go through the Quick Start Guide in the readme file, open an issue at GitHub, or contact us: We are happy to help you implement Set-OutlookSignatures in your own environment as part of our fee-based support.</p>
+
+<p>As soon as the open-source core version is running, it is time to take the next step:<br>
+<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank">
+  <button style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); color: black; font-weight: bold;">
+    ➔ Request a 14-day trial license
+  </button>
+</a></p>
+
+<p>To use the license file, just add two parameters to your call of &apos;Set-OutlookSignatures.ps1&apos;:</p>
+<ul>
+  <li>&apos;-BenefactorCircleLicenseFile&apos; with the path to your individualized license file</li>
+  <li>&apos;-BenefactorCircleId&apos; with your Benefactor Circle ID</li>
+</ul>
+
+<p>Trial licenses can not be extended or re-issued. They are limited to 14 days runtime and a maximum of 20 mailboxes.</p>
+
+<p>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible, as our software does not phone home).</p>
+
+<p>It is strongly recommended to start your trial only when the free and open-source version of Set-OutlookSignatures has already been implemented successfully. Also make sure you have a test plan and reserved time to execute it.</p>
+
+
+<h3>Order process for non-trial versions</h3>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a license quote</button></a></p>
+
+<p>You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.</p>
+
+<p>As soon as the full invoice amount is received, you will be sent an email with instructions on how to securely download your individualized license file.</p>
+
+<p>To use the license file, just add two parameters to your call of &apos;Set-OutlookSignatures.ps1&apos;:</p>
+<ul>
+  <li>&apos;-BenefactorCircleFile&apos; with the path to your individualized license file</li>
+  <li>&apos;-BenefactorCircleId&apos; with your Benefactor Circle ID</li>
+</ul>
+
+
+<h3>Extending or reducing a license period</h3>
+<p>A license period cannot be extended. Licenses are valid for one year, starting with the date the full payment is received, and do not auto-renew.</p>
+
+<p>To continue using Set-OutlookSignatures with Benefactor Circle benefits, just place a new order to receive a new license file.</p>
+
+<p>You will be informed in advance that your license is about to expire.</p>
+
+
+<h3>Reducing the number of licensed mailboxes</h3>
+<p>The total number of licensed mailboxes can not be reduced during a license period (one year starting from the date of payment reception), as the license fees are paid in advance.</p>
+
+
+<h3>Moving licensed mailboxes between license groups</h3>
+<p>Moving licenses means that the total number of licensed mailboxes does not change, but their distribution across license groups. This can, for example, be necessary due to Active Directory consolidations.</p>
+
+<p>Shifting licenses between license groups is possible once per license period.</p>
+
+<p>If more license shifts are required, additional licenses have to be acquired temporarily, the total number of licenses can then be reduced when the new license period begins.</p>
+
+
+<h3>Increasing the number of licensed mailboxes</h3>
+<p>When adding licenses mid-term, only additional licenses are billed, for the remaining period rounded up to full months.</p>
+
+<p>The price for new licenses is the list price at the time of ordering. The payment does not extend the license period but increases the number of licensed mailboxes within it.</p>
+
+
+<h3>How license groups work</h3>
+<p>Each Benefactor Circle license is bound to one or more Active Directory or Entra ID groups, called a license group. For maximum data protection and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
+
+<p>For most environments, only one license group is needed.<br>In on-prem and hybrid environments with multiple Active Directory domains, you may define a separate license group for each AD DNS domain, each license group with a separate maximum member count. When a license group for the home Active Directory domain of a mailbox is defined, this license group is used. If not, the license group defined as default will be used.</p>
+
+<p>A license group definition consists of three components:</p>
+<ul>
+  <li>The DNS domain name of the on-premises Active Directory domain the license group is located in. Use 'EntraID' for cloud-only groups.</li>
+  <li>The SID (security identifier) or the Entra ID Object ID of the license group.</li>
+  <li>The maximum number of mailboxes licensed for the group.</li>
+</ul>
+
+<p>Where should I create the license group?</p>
+<ul>
+  <li>When using the '-GraphOnly true' parameter, create the group in Entra ID. The license group is then 'EntraID &lt;Object ID of your license group&gt>'. You may also use a group created in on-prem Active Directory, as long as it is synchronized to Entra ID. The license group is then '&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;'.</li>
+  <li>In hybrid environments without using the '-GraphOnly true' parameter, create a group in your on-prem Active Directory and make sure it is synchronized with Entra ID. The license group is then '&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;'. You can also use a group created in Entra ID ('EntraID, &lt;Object ID of the license group&gt;'), which would basically be equal to using the '-GraphOnly true' parameter.</li>
+  <li>In pure on-prem environments, you can only use on-prem groups. The license group is then '&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;'. When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.</li>
+</ul>
+
+<p>When a Benefactor Circle exclusive feature is about to be used, the license is checked as follows:</p>
+<ol>
+  <li>Determine which license group to use.
+    <ol>
+      <li>Extract the AD DNS domain name from the mailbox' distinguishedName or dnsDomainName property.</li>
+      <li>When the step above returns an AD DNS domain name and if a license group is defined for it, use this group. Else, use the first group in the list.</li>
+    </ol>
+  </li>
+  <li>Find the license group via a Graph or Active Directory query.</li>
+  <li>Check if the number of direct and indirect (a.k.a nested, recursive, transitive) members is less or equal than the number of mailboxes licensed for this group.</li>
+  <li>Check if the current mailbox is a member of the license group.</li>
+</ol>
+
+<p>As soon as one of these steps fails, the mailbox is not licensed and Benefactor Circle features can not be used for it.</p>
+
+<p>You need to make sure that the user running Set-OutlookSignatures is able to resolve all direct and indirect members of all license groups, especially across on-prem AD trusts.<br>Primary group membership (such as in 'Domain Users') is not considered due to Active Directory and Entra ID query restrictions.<br>Dynamic groups are supported when Entra ID is queried, but not when Active Directory is queried.</p>
+
+<p>Only one pure Entra ID group is supported, and it must be the default license group.</p>
+
+<p>The default license group is the first group in the list of license groups. The default group is used for mailboxes not being covered by more specific license groups.</p>
+
+<p>When a connection to Microsoft Graph is available, Graph is used to check license group membership. A connection to Graph is enforced when the default license group is an Entra ID group.</p>
+
+<h2>License and software version</h2>
+<p>License and software versions go hand in hand, so every new release of Set-OutlookSignatures also means a new license release, and vice-versa.</p>
+
+<p>Using different versions of software and license file is not supported, as this leads to unexpected results.</p>
+
+<p>A warning message is logged when a version mismatch is detected.</p>
