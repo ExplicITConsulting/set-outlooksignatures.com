@@ -2,7 +2,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
   if doc.output =~ /<\/head>/
     code_to_add = <<~'HTMLHereDocString'
       <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        (function() {
           const languageDropdown = document.getElementById('languageDropdown');
           // Important: If languageDropdown might not exist on all pages,
           // consider a robust fallback or ensure it's always present.
@@ -138,7 +138,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
               console.log(`Already on the correct language version for: ${preferredLanguage} at ${currentPathname}`);
               document.body.classList.add('language-ready'); // Unhide the content
           }
-        });
+        })();
       </script>
 
       <script>
