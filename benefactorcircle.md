@@ -309,8 +309,8 @@ Benefactor Circle add-on</span>.</p>
 <p>The Benefactor Circle add-on extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.<br>
 If you look for help implementing the free and open-source core version of Set-OutlookSignatures, go through the Quick Start Guide in the readme file, open an issue at GitHub, or contact us: We are happy to help you implement Set-OutlookSignatures in your own environment as part of our fee-based support.</p>
 
-<p>As soon as the open-source core version is running, it is time to take the next step:<br>
-<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank">
+<p>As soon as the open-source core version is running, it is time to take the next step:</p>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank">
   <button style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); color: black; font-weight: bold;">
     ➔ Request a 14-day trial license
   </button>
