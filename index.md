@@ -225,10 +225,12 @@ redirect_from:
 
 
 <h2>Dive <span style="color: DeepSkyBlue;">deeper</span></h2>
-<p>Visit our <a href="/help">help and support center</a> to learn about:<p>
+<p>Visit our help and support center to learn more about:<p>
 <ul>
   <li>The detailed feature set and a comparison with market companions</li>
   <li>Requirements and configuration options</li>
   <li>Best practices and FAQ</li>
   <li>How to get first-class support</li>
 </ul>
+
+<a href="/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Help and Support-Center</button></a>
