@@ -274,7 +274,7 @@ Benefactor Circle add-on</span>.</p>
   <li>No inflated prices that are later “discounted” through negotiations.</li>
 </ul>
 
-<p>There is no minimum number of mailboxes, only a minimum amount of <strong>210.00 € net per invoice</strong>.</p>
+<p>There is no minimum number of mailboxes, only a minimum amount of 210.00 € net per invoice.</p>
 
 <p>Each mailbox in your environment for which you want to use an exclusive Benefactor Circle feature requires a license. This also applies to shared mailboxes.</p>
 

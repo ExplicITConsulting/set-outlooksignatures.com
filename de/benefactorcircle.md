@@ -23,6 +23,7 @@ redirect_from:
 <h2>Nachhaltiger Mehrwert für Ihr Unternehmen</h2>
 <p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> von <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Möglichkeiten für Ihr Unternehmen.</p>
 
+
 <h3>Zusätzliche Funktionen</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -161,6 +162,7 @@ redirect_from:
   </div>
 </div>
 
+
 <h3>Priorisierter Support</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -191,6 +193,7 @@ redirect_from:
   </div>
 </div>
 
+
 <h3>Kostenlose Versions-Upgrades und Archiv</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -215,181 +218,205 @@ redirect_from:
 <a href="#testversion"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Testlizenz oder Angebot anfordern</button></a>
 
 
-## Demo
-In unserer kostenlosen interaktiven Produktdemo zeigen wir Ihnen die Hauptfunktionen des <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-Ons</span> und des inkludierten Outlook Add-Ins – interaktiv und mit Fokus auf Ihre konkreten Anforderungen.
+<h2>Demo</h2>
+<p>In unserer kostenlosen interaktiven Produktdemo zeigen wir Ihnen die Hauptfunktionen des <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-Ons</span> und des inkludierten Outlook Add-Ins – interaktiv und mit Fokus auf Ihre konkreten Anforderungen.</p>
 
-<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Persönliche Demo vereinbaren</button></a>
+<p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Persönliche Demo vereinbaren</button></a></p>
 
+<h2>Finanzielle Vorteile</h2>
+<p>Für die Berechnung des Business Case stellen sich drei zentrale Fragen:</p>
+<ul>
+  <li>Wie hoch sind die Kosten durch nicht konforme Signaturen und Abwesenheitsnotizen – sei es durch Reputationsverlust oder Bußgelder wegen Nichteinhaltung von Vorschriften?</li>
+  <li>Welchen Mehrwert bietet die Nutzung von E-Mails als zusätzlicher Marketingkanal?</li>
+  <li>Kostet die neue Software weniger als der Aufwand, den wir den Nutzern ersparen?</li>
+</ul>
 
-## Finanzielle Vorteile
-Für die Berechnung des Business Case stellen sich drei zentrale Fragen:
-- Wie hoch sind die Kosten durch nicht konforme Signaturen und Abwesenheitsnotizen – sei es durch Reputationsverlust oder Bußgelder wegen Nichteinhaltung von Vorschriften?
-- Welchen Mehrwert bietet die Nutzung von E-Mails als zusätzlicher Marketingkanal?
-- Kostet die neue Software weniger als der Aufwand, den wir den Nutzern ersparen?
+<p>Während sich die ersten beiden Fragen nur schwer und sehr individuell beziffern lassen, ist die dritte einfacher zu beantworten. Nehmen wir an, dass eine durchschnittliche Arbeitskraft aus Sicht des Arbeitgebers 60.000 € pro Jahr kostet (inkl. Steuern, Sozialabgaben etc.) bei 1.800 Arbeitsstunden. Das ergibt 0,55 € pro Arbeitsminute.</p>
 
-Während sich die ersten beiden Fragen nur schwer und sehr individuell beziffern lassen, ist die dritte einfacher zu beantworten. Nehmen wir an, dass eine durchschnittliche Arbeitskraft aus Sicht des Arbeitgebers 60.000 € pro Jahr kostet (inkl. Steuern, Sozialabgaben etc.) bei 1.800 Arbeitsstunden. Das ergibt 0,55 € pro Arbeitsminute.
+<p>Weitere relevante Parameter:</p>
+<ul>
+  <li>Wie oft im Jahr ändern sich signaturrelevante Parameter (Corporate Design, Jobtitel, Logos, Marketing-Banner etc.)?</li>
+  <li>Wie viele Minuten benötigt ein Nutzer, um eine Signatur korrekt zu aktualisieren (inkl. Lesen der Anleitung)?</li>
+  <li>Wie viele Signaturen muss ein Nutzer typischerweise aktuell halten (intern/extern, Sprache, Tonalität, Signaturen für gemeinsame Postfächer)?</li>
+  <li>Auf wie vielen Clients muss ein Nutzer die Signatur aktualisieren?</li>
+</ul>
 
-Weitere relevante Parameter:
-- Wie oft im Jahr ändern sich signaturrelevante Parameter (Corporate Design, Jobtitel, Logos, Marketing-Banner etc.)?
-- Wie viele Minuten benötigt ein Nutzer, um eine Signatur korrekt zu aktualisieren (inkl. Lesen der Anleitung)?
-- Wie viele Signaturen muss ein Nutzer typischerweise aktuell halten (intern/extern, Sprache, Tonalität, Signaturen für gemeinsame Postfächer)?
-- Auf wie vielen Clients muss ein Nutzer die Signatur aktualisieren?
-
-Formel und Beispielrechnung:
+<p>Formel und Beispielrechnung:</p>
 <blockquote>
 <p>KostenProMinute * AnzahlÄnderungen * MinutenProÄnderung * AnzahlSignaturen * AnzahlGeräte = Kosten pro Benutzer und Jahr</p>
 <p>2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client: 0.55 * 2 * 3 * 2 * 1 = 6,60</p>
 </blockquote>
 
-Pro Benutzer und Jahr betragen die Kosten 6,60 € für manuellen Aufwand gegenüber 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>.
+<p>Pro Benutzer und Jahr betragen die Kosten 6,60 € für manuellen Aufwand gegenüber 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>.</p>
 
-Diese Rechnung berücksichtigt noch nicht:
-- Den manuellen Aufwand für Signaturen in gemeinsam genutzten Postfächern
-- Den Aufwand für die Verwaltung von Abwesenheitsnotizen
-- Reputationsverluste durch veraltete oder fehlerhafte manuelle Einträge
-- Imageschäden durch Nichteinhaltung von CI/CD-Richtlinien
-- Bußgelder wegen Nichteinhaltung gesetzlicher Vorgaben
-- Den Mehrwert eines zusätzlichen Marketingkanals
+<p>Diese Rechnung berücksichtigt noch nicht:</p>
+<ul>
+  <li>Den manuellen Aufwand für Signaturen in gemeinsam genutzten Postfächern</li>
+  <li>Den Aufwand für die Verwaltung von Abwesenheitsnotizen</li>
+  <li>Reputationsverluste durch veraltete oder fehlerhafte manuelle Einträge</li>
+  <li>Imageschäden durch Nichteinhaltung von CI/CD-Richtlinien</li>
+  <li>Bußgelder wegen Nichteinhaltung gesetzlicher Vorgaben</li>
+  <li>Den Mehrwert eines zusätzlichen Marketingkanals</li>
+</ul>
 
-Set-OutlookSignatures amortisiert sich sofort – und hilft Ihnen sogar, mehr Umsatz zu generieren.
+<p><strong>Set-OutlookSignatures amortisiert sich sofort und hilft Ihnen sogar, mehr Umsatz zu generieren.</strong></p>
 
-## Kauf, Verlängerung und Änderung von Lizenzen
-### Preis und allgemeine Informationen
-Der Preis beträgt derzeit **3,00 € netto pro Postfach und Jahr**, was **0,25 € netto pro Postfach und Monat** entspricht.
+<h2>Kauf, Verlängerung und Änderung von Lizenzen</h2>
+<h3>Preis und allgemeine Informationen</h3>
+<p>Der Preis beträgt derzeit <strong>3,00 € netto pro Postfach und Jahr</strong>, was <strong>0,25 € netto pro Postfach und Monat</strong> entspricht.</p>
 
-Wir gestalten die Lizenzkosten so fair wie möglich. Fair bedeutet:
-- Kleine Unternehmen zahlen denselben niedrigen Preis wie große Konzerne.
-- Keine Wartungs- oder Supportverträge, die als „kostenlos“ beworben werden, aber tatsächlich im Jahrespreis versteckt sind und selten im vollen Umfang genutzt werden.
-  Bei uns zahlen Sie nur für den Support, den Sie tatsächlich benötigen – dank der umfangreichen Dokumentation ist dieser meist gar nicht erforderlich.  
-  **Unser All-Inclusive-Support-Versprechen: Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem Benefactor Circle Add-on, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme. Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.**
-- Keine zusätzliche Infrastruktur, die von Dritten betrieben wird und unabhängig von der Nutzung Kosten verursacht.
-  Keine Schnittstellen, die Ihre Daten regelmäßig an externe Rechenzentren übertragen, um Signaturen aufzubereiten, und an die jede E-Mail zur Signaturanwendung weitergeleitet werden muss.
-  Alles läuft auf Ihren bestehenden Systemen, denen Sie bereits vertrauen und die Sie selbst verwalten – innerhalb Ihrer eigenen Sicherheitsgrenzen.
-- Keine künstlich überhöhten Preise, die dann durch Verhandlungen "reduziert" werden.<br><br>
+<p>Wir gestalten die Lizenzkosten so fair wie möglich. Fair bedeutet:</p>
+<ul>
+  <li>Kleine Unternehmen zahlen denselben niedrigen Preis wie große Konzerne.</li>
+  <li>Keine Wartungs- oder Supportverträge, die als „kostenlos“ beworben werden, aber tatsächlich im Jahrespreis versteckt sind und selten im vollen Umfang genutzt werden.<br>
+  Bei uns zahlen Sie nur für den Support, den Sie tatsächlich benötigen – dank der umfangreichen Dokumentation ist dieser meist gar nicht erforderlich.<br>
+  <strong>Unser All-Inclusive-Support-Versprechen: Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem Benefactor Circle Add-on, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme. Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.</strong></li>
+  <li>Keine zusätzliche Infrastruktur, die von Dritten betrieben wird und unabhängig von der Nutzung Kosten verursacht.<br>
+  Keine Schnittstellen, die Ihre Daten regelmäßig an externe Rechenzentren übertragen, um Signaturen aufzubereiten, und an die jede E-Mail zur Signaturanwendung weitergeleitet werden muss.<br>
+  Alles läuft auf Ihren bestehenden Systemen, denen Sie bereits vertrauen und die Sie selbst verwalten – innerhalb Ihrer eigenen Sicherheitsgrenzen.</li>
+  <li>Keine künstlich überhöhten Preise, die dann durch Verhandlungen "reduziert" werden.</li>
+</ul>
 
-Es gibt keine Mindestanzahl an Postfächern, nur einen Mindestbetrag von 210,00 € netto pro Rechnung.
+<p>Es gibt keine Mindestanzahl an Postfächern, nur einen Mindestbetrag von 210,00 € netto pro Rechnung.</p>
 
-Jedes Postfach in Ihrer Umgebung, für das Sie ein exklusives Benefactor Circle-Feature nutzen möchten, benötigt eine Lizenz - auch shared mailboxes.
+<p>Jedes Postfach in Ihrer Umgebung, für das Sie ein exklusives Benefactor Circle-Feature nutzen möchten, benötigt eine Lizenz - auch shared mailboxes.</p>
 
-Es spielt keine Rolle, wie viele Benutzer auf ein Postfach zugreifen. Wenn Sie nur für ein einzelnes Postfach Signaturen bereitstellen möchten, das von 50 Personen genutzt wird, benötigen Sie nur eine Lizenz.
+<p>Es spielt keine Rolle, wie viele Benutzer auf ein Postfach zugreifen. Wenn Sie nur für ein einzelnes Postfach Signaturen bereitstellen möchten, das von 50 Personen genutzt wird, benötigen Sie nur eine Lizenz.</p>
 
-Die Postfächer müssen nicht namentlich benannt werden. Es reicht, wenn Sie mindestens eine Active Directory- oder Entra ID-Gruppe definieren, die die Postfächer enthält, sowie die maximale Anzahl rekursiver Mitglieder pro Gruppe.
+<p>Die Postfächer müssen nicht namentlich benannt werden. Es reicht, wenn Sie mindestens eine Active Directory- oder Entra ID-Gruppe definieren, die die Postfächer enthält, sowie die maximale Anzahl rekursiver Mitglieder pro Gruppe.</p>
 
-Es ist unerheblich, wie viele Signaturen Sie haben oder wie oft Sie diese ändern.
+<p>Es ist unerheblich, wie viele Signaturen Sie haben oder wie oft Sie diese ändern.</p>
 
-Lizenzen sind im Voraus zahlbar und gelten ein Jahr ab Zahlungseingang. Es gibt keine automatische Verlängerung oder Abo-Verpflichtung.
+<p>Lizenzen sind im Voraus zahlbar und gelten ein Jahr ab Zahlungseingang. Es gibt keine automatische Verlängerung oder Abo-Verpflichtung.</p>
 
-Solange eine Lizenz gültig ist, sind kostenlose Versions-Upgrades und priorisierte Supportanfragen enthalten.
+<p>Solange eine Lizenz gültig ist, sind kostenlose Versions-Upgrades und priorisierte Supportanfragen enthalten.</p>
 
-Wir arbeiten kontinuierlich daran, unsere Preise so niedrig und stabil wie möglich zu halten – mit dem Ziel, sie nur an die Inflation anzupassen. Preise können sich daher ändern. Da Sie im Voraus zahlen, entstehen keine nachträglichen Kosten.
+<p>Wir arbeiten kontinuierlich daran, unsere Preise so niedrig und stabil wie möglich zu halten – mit dem Ziel, sie nur an die Inflation anzupassen. Preise können sich daher ändern. Da Sie im Voraus zahlen, entstehen keine nachträglichen Kosten.</p>
 
-Wenn Sie während einer laufenden Lizenzperiode weitere Postfächer hinzufügen möchten, zahlen Sie nur den aktuellen Preis anteilig für die verbleibenden Monate der Lizenzlaufzeit.
-
-
-### Testversion
-Sie möchten vielleicht mit einer 14-tägigen Testlizenz starten.
-
-Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>  erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.
-Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion benötigen, lesen Sie die Kurzanleitung in der Readme-Datei, öffnen Sie ein Issue auf GitHub oder kontaktieren Sie uns direkt – wir helfen Ihnen im Rahmen unseres kostenpflichtigen Supports gerne bei der Einführung von Set-OutlookSignatures in Ihrer Umgebung.
+<p>Wenn Sie während einer laufenden Lizenzperiode weitere Postfächer hinzufügen möchten, zahlen Sie nur den aktuellen Preis anteilig für die verbleibenden Monate der Lizenzlaufzeit.</p>
 
 
-Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:<br><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ 14-Tage-Testlizenz anfordern</button></a>
+<h3>Testversion</h3>
+<p>Sie möchten vielleicht mit einer 14-tägigen Testlizenz starten.</p>
 
-Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:
-- '-BenefactorCircleLicenseFile' mit dem Pfad zu Ihrer individuellen Lizenzdatei
-- '-BenefactorCircleId' mit Ihrer Benefactor Circle-ID
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>  erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.<br>
+Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion benötigen, lesen Sie die Kurzanleitung in der Readme-Datei, öffnen Sie ein Issue auf GitHub oder kontaktieren Sie uns direkt – wir helfen Ihnen im Rahmen unseres kostenpflichtigen Supports gerne bei der Einführung von Set-OutlookSignatures in Ihrer Umgebung.</p>
 
-Testlizenzen können nicht verlängert oder erneut ausgestellt werden.
-Sie sind auf 14 Tage Laufzeit und maximal 20 Postfächer beschränkt.<br>Die Testphase beginnt mit der Erstellung und Übermittlung der Lizenzdatei, nicht mit Ihrer ersten Nutzung (das ist technisch nicht möglich, da unsere Software keine Telemetriedaten überträgt).
+<p>Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:<br>
+<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank">
+  <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ 14-Tage-Testlizenz anfordern</button>
+</a></p>
 
-Wir empfehlen dringend, die Testphase erst zu starten, wenn die kostenlose Kernversion erfolgreich implementiert wurde. Stellen Sie außerdem sicher, dass Sie einen Testplan haben und Zeit für die Durchführung reserviert ist.
+<p>Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:</p>
+<ul>
+  <li>'-BenefactorCircleLicenseFile' mit dem Pfad zu Ihrer individuellen Lizenzdatei</li>
+  <li>'-BenefactorCircleId' mit Ihrer Benefactor Circle-ID</li>
+</ul>
+
+<p>Testlizenzen können nicht verlängert oder erneut ausgestellt werden.<br>
+Sie sind auf 14 Tage Laufzeit und maximal 20 Postfächer beschränkt.<br>
+Die Testphase beginnt mit der Erstellung und Übermittlung der Lizenzdatei, nicht mit Ihrer ersten Nutzung (das ist technisch nicht möglich, da unsere Software keine Telemetriedaten überträgt).</p>
+
+<p>Wir empfehlen dringend, die Testphase erst zu starten, wenn die kostenlose Kernversion erfolgreich implementiert wurde. Stellen Sie außerdem sicher, dass Sie einen Testplan haben und Zeit für die Durchführung reserviert ist.</p>
+
+<h3>Bestellprozess für Lizenzen</h3>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank">
+  <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Lizenzangebot anfordern</button>
+</a></p>
+
+<p>Sie erhalten in Kürze ein Angebot. Sobald alle Details geklärt sind, erhalten Sie eine Rechnung und können den Zahlungsprozess starten.</p>
+
+<p>Nach Eingang des vollständigen Rechnungsbetrags erhalten Sie eine E-Mail mit Anweisungen zum sicheren Herunterladen Ihrer individuellen Lizenzdatei.</p>
+
+<p>Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:</p>
+<ul>
+  <li>'-BenefactorCircleLicenseFile' mit dem Pfad zu Ihrer individuellen Lizenzdatei</li>
+  <li>'-BenefactorCircleId' mit Ihrer Benefactor Circle-ID</li>
+</ul>
+
+<h3>Verlängerung oder Verkürzung einer Lizenzlaufzeit</h3>
+<p>Eine Lizenzlaufzeit kann nicht verlängert werden.<br>
+Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen Zahlungseingangs, und verlängern sich nicht automatisch.</p>
+
+<p>Wenn Sie Set-OutlookSignatures weiterhin mit den Vorteilen des Benefactor Circle nutzen möchten, geben Sie einfach eine neue Bestellung auf, um eine neue Lizenzdatei zu erhalten.</p>
+
+<p>Sie werden rechtzeitig im Voraus darüber informiert, dass Ihre Lizenz demnächst abläuft.</p>
+
+<h3>Reduzierung der lizenzierten Postfächer</h3>
+<p>Die Gesamtanzahl der lizenzierten Postfächer kann während einer laufenden Lizenzperiode nicht reduziert werden, da die Lizenzgebühren im Voraus für ein Jahr ab dem Datum des Zahlungseingangs entrichtet werden.</p>
+
+<h3>Verschieben lizenzierter Postfächer zwischen Lizenzgruppen</h3>
+<p>Das Verschieben von Lizenzen bedeutet, dass sich die Gesamtanzahl der lizenzierten Postfächer nicht ändert, sondern lediglich deren Verteilung auf verschiedene Lizenzgruppen. Dies kann beispielsweise im Rahmen von Konsolidierungen in Active Directory erforderlich sein.</p>
+
+<p>Ein einmaliger Wechsel von Postfächern zwischen Lizenzgruppen ist pro Lizenzperiode möglich.</p>
+
+<p>Wenn weitere Verschiebungen notwendig sind, müssen zusätzliche Lizenzen vorübergehend erworben werden. Die Gesamtanzahl der Lizenzen kann dann zu Beginn der nächsten Lizenzperiode wieder reduziert werden.</p>
+
+<h3>Erhöhung der Anzahl lizenzierter Postfächer</h3>
+<p>Wenn während einer laufenden Lizenzperiode zusätzliche Postfächer lizenziert werden, werden nur die zusätzlichen Lizenzen berechnet: Anteilig für die verbleibende Laufzeit, aufgerundet auf volle Monate.</p>
+
+<p>Der Preis für neue Lizenzen entspricht dem Listenpreis zum Zeitpunkt der Bestellung.</p>
+
+<p>Die Zahlung verlängert nicht die Lizenzlaufzeit, sondern erhöht lediglich die Anzahl der lizenzierten Postfächer innerhalb der bestehenden Laufzeit.</p>
 
 
-### Bestellprozess für Lizenzen
-<a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Lizenzangebot anfordern</button></a>
+<h2>Funktionsweise von Lizenzgruppen</h2>
+<p>Jede Benefactor Circle-Lizenz ist an eine oder mehrere Active Directory- oder Entra ID-Gruppen gebunden, sogenannte Lizenzgruppen.</p>
 
-Sie erhalten in Kürze ein Angebot. Sobald alle Details geklärt sind, erhalten Sie eine Rechnung und können den Zahlungsprozess starten.
+<p>Zur maximalen Datensicherheit und einfachen Verwaltung ist die Lizenz nicht an bestimmte Postfächer („Named Users“) gebunden, sondern nur an eine Gruppe mit einer definierten maximalen Mitgliederanzahl.</p>
 
-Nach Eingang des vollständigen Rechnungsbetrags erhalten Sie eine E-Mail mit Anweisungen zum sicheren Herunterladen Ihrer individuellen Lizenzdatei.
+<p>Für die meisten Umgebungen reicht eine einzige Lizenzgruppe aus.<br>
+In On-Premises- oder hybriden Umgebungen mit mehreren Active Directory-Domänen kann für jede AD-DNS-Domäne eine eigene Lizenzgruppe definiert werden, jeweils mit einer separaten maximalen Mitgliederanzahl.</p>
 
-Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:
-- '-BenefactorCircleLicenseFile' mit dem Pfad zu Ihrer individuellen Lizenzdatei
-- '-BenefactorCircleId' mit Ihrer Benefactor Circle-ID
+<p>Wenn eine Lizenzgruppe für die Heimatdomäne eines Postfachs definiert ist, wird diese verwendet. Andernfalls wird die Standardlizenzgruppe verwendet.</p>
 
-### Verlängerung oder Verkürzung einer Lizenzlaufzeit
-Eine Lizenzlaufzeit kann nicht verlängert werden.
-Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen Zahlungseingangs, und verlängern sich nicht automatisch.
+<p>Eine Lizenzgruppe besteht aus drei Komponenten:</p>
+<ul>
+  <li>Dem DNS-Domänennamen der lokalen Active Directory-Domäne (bei Cloud-only: EntraID oder Tenant-Domain)</li>
+  <li>Der SID (Security Identifier) oder der Entra ID Object ID der Lizenzgruppe.</li>
+  <li>Der maximalen Anzahl an Postfächern, die für diese Gruppe lizenziert sind.</li>
+</ul>
 
-Wenn Sie Set-OutlookSignatures weiterhin mit den Vorteilen des Benefactor Circle nutzen möchten, geben Sie einfach eine neue Bestellung auf, um eine neue Lizenzdatei zu erhalten.
+<p><strong>Wo sollte die Lizenzgruppe erstellt werden?</strong></p>
+<ul>
+  <li>Bei Verwendung von '-GraphOnly true' erstellen Sie die Gruppe in Entra ID. Die Lizenzgruppe lautet dann 'EntraID &lt;Object ID Ihrer Lizenzgruppe&gt;'<br>
+  Alternativ kann auch eine lokale AD-Gruppe verwendet werden, sofern sie mit Entra ID synchronisiert ist: '&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;'</li>
+  <li>In hybriden Umgebungen ohne '-GraphOnly true' erstellen Sie die Gruppe in Ihrer lokalen AD und synchronisieren Sie sie mit Entra ID. Die Lizenzgruppe lautet dann '&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;'<br>
+  Alternativ kann auch eine Entra ID-Gruppe verwendet werden ('EntraID, &lt;Object ID&gt;'), was funktional '-GraphOnly true' entspricht.</li>
+  <li>In reinen On-Premises-Umgebungen sind nur lokale AD-Gruppen zulässig: '&lt;AD-DNS-Domäne&gt;, &lt;SID&gt;'<br>
+  Bei späterem Wechsel in eine hybride Umgebung ist keine Anpassung nötig, solange die Gruppen synchronisiert werden.</li>
+</ul>
 
-Sie werden rechtzeitig im Voraus darüber informiert, dass Ihre Lizenz demnächst abläuft.
+<p><strong>Lizenzprüfung bei Nutzung eines exklusiven Benefactor Circle-Features:</strong></p>
+<ol>
+  <li>Bestimmen der passenden Lizenzgruppe
+    <ol>
+      <li>AD-DNS-Domäne aus distinguishedName oder dnsDomainName des Postfachs extrahieren.</li>
+      <li>Wenn eine Lizenzgruppe für diese Domäne definiert ist, diese verwenden; sonst die erste Gruppe in der Liste (Standardgruppe).</li>
+    </ol>
+  </li>
+  <li>Lizenzgruppe über Graph- oder AD-Abfrage finden.</li>
+  <li>Prüfen, ob die Anzahl direkter und indirekter (rekursiver) Mitglieder ≤ der lizenzierten Anzahl ist.</li>
+  <li>Prüfen, ob das aktuelle Postfach Mitglied der Lizenzgruppe ist.</li>
+</ol>
 
-### Reduzierung der lizenzierten Postfächer
-Die Gesamtanzahl der lizenzierten Postfächer kann während einer laufenden Lizenzperiode nicht reduziert werden, da die Lizenzgebühren im Voraus für ein Jahr ab dem Datum des Zahlungseingangs entrichtet werden.
+<p>Wenn einer dieser Schritte fehlschlägt, gilt das Postfach als nicht lizenziert und Benefactor Circle-Funktionen können nicht verwendet werden.</p>
 
-### Verschieben lizenzierter Postfächer zwischen Lizenzgruppen
-Das Verschieben von Lizenzen bedeutet, dass sich die Gesamtanzahl der lizenzierten Postfächer nicht ändert, sondern lediglich deren Verteilung auf verschiedene Lizenzgruppen. Dies kann beispielsweise im Rahmen von Konsolidierungen in Active Directory erforderlich sein.
+<p>Der Benutzer, der Set-OutlookSignatures ausführt, muss in der Lage sein, alle direkten und indirekten Mitglieder aller Lizenzgruppen aufzulösen, insbesondere über AD-Vertrauensstellungen hinweg.</p>
 
-Ein einmaliger Wechsel von Postfächern zwischen Lizenzgruppen ist pro Lizenzperiode möglich.
+<p>Primäre Gruppenmitgliedschaften (z. B. „Domain Users“) werden nicht berücksichtigt, da sie über AD/Entra ID nicht zuverlässig abgefragt werden können.</p>
 
-Wenn weitere Verschiebungen notwendig sind, müssen zusätzliche Lizenzen vorübergehend erworben werden. Die Gesamtanzahl der Lizenzen kann dann zu Beginn der nächsten Lizenzperiode wieder reduziert werden.
+<p>Dynamische Gruppen werden nur bei Entra ID-Abfragen unterstützt, nicht bei AD-Abfragen.</p>
 
-### Erhöhung der Anzahl lizenzierter Postfächer
-Wenn während einer laufenden Lizenzperiode zusätzliche Postfächer lizenziert werden, werden nur die zusätzlichen Lizenzen berechnet: Anteilig für die verbleibende Laufzeit, aufgerundet auf volle Monate.
+<p>Es kann nur eine reine Entra ID-Gruppe pro Tenant verwendet werden, und diese muss die Standardlizenzgruppe sein.</p>
 
-Der Preis für neue Lizenzen entspricht dem Listenpreis zum Zeitpunkt der Bestellung.
+<p>Die Standardlizenzgruppe ist die erste Gruppe in der Liste. Sie wird verwendet, wenn kein spezifischerer Eintrag für ein Postfach existiert.</p>
 
-Die Zahlung verlängert nicht die Lizenzlaufzeit, sondern erhöht lediglich die Anzahl der lizenzierten Postfächer innerhalb der bestehenden Laufzeit.
+<p>Wenn eine Verbindung zu Microsoft Graph verfügbar ist, wird diese zur Prüfung der Gruppenmitgliedschaft verwendet. Eine Graph-Verbindung ist verpflichtend, wenn die Standardlizenzgruppe eine Entra ID-Gruppe ist.</p>
 
+<h2>Lizenz- und Softwareversion</h2>
+<p>Lizenz- und Softwareversionen sind untrennbar miteinander verbunden. Jede neue Version von Set-OutlookSignatures bringt auch eine neue Lizenzversion mit sich, und umgekehrt.</p>
 
-## Funktionsweise von Lizenzgruppen
-Jede Benefactor Circle-Lizenz ist an eine oder mehrere Active Directory- oder Entra ID-Gruppen gebunden, sogenannte Lizenzgruppen.
+<p>Die Verwendung unterschiedlicher Versionen von Software und Lizenzdatei wird nicht unterstützt, da dies zu unerwartetem Verhalten führen kann.</p>
 
-Zur maximalen Datensicherheit und einfachen Verwaltung ist die Lizenz nicht an bestimmte Postfächer („Named Users“) gebunden, sondern nur an eine Gruppe mit einer definierten maximalen Mitgliederanzahl.
-
-Für die meisten Umgebungen reicht eine einzige Lizenzgruppe aus.
-In On-Premises- oder hybriden Umgebungen mit mehreren Active Directory-Domänen kann für jede AD-DNS-Domäne eine eigene Lizenzgruppe definiert werden, jeweils mit einer separaten maximalen Mitgliederanzahl.
-
-Wenn eine Lizenzgruppe für die Heimatdomäne eines Postfachs definiert ist, wird diese verwendet. Andernfalls wird die Standardlizenzgruppe verwendet.
-
-Eine Lizenzgruppe besteht aus drei Komponenten:
-- Dem DNS-Domänennamen der lokalen Active Directory-Domäne (bei Cloud-only: EntraID oder Tenant-Domain)
-- Der SID (Security Identifier) oder der Entra ID Object ID der Lizenzgruppe.
-- Der maximalen Anzahl an Postfächern, die für diese Gruppe lizenziert sind.
-
-Wo sollte die Lizenzgruppe erstellt werden?
-- Bei Verwendung von '-GraphOnly true' erstellen Sie die Gruppe in Entra ID. Die Lizenzgruppe lautet dann 'EntraID \<Object ID Ihrer Lizenzgruppe>'
-  Alternativ kann auch eine lokale AD-Gruppe verwendet werden, sofern sie mit Entra ID synchronisiert ist: '\<AD-DNS-Domäne>, \<SID der Lizenzgruppe>'
-- In hybriden Umgebungen ohne '-GraphOnly true' erstellen Sie die Gruppe in Ihrer lokalen AD und synchronisieren Sie sie mit Entra ID. Die Lizenzgruppe lautet dann '\<AD-DNS-Domäne>, \<SID der Lizenzgruppe>'
-  Alternativ kann auch eine Entra ID-Gruppe verwendet werden ('EntraID, \<Object ID>'), was funktional '-GraphOnly true' entspricht.
-- In reinen On-Premises-Umgebungen sind nur lokale AD-Gruppen zulässig: '\<AD-DNS-Domäne>, \<SID>'
-  Bei späterem Wechsel in eine hybride Umgebung ist keine Anpassung nötig, solange die Gruppen synchronisiert werden.
-
-Lizenzprüfung bei Nutzung eines exklusiven Benefactor Circle-Features:
-1. Bestimmen der passenden Lizenzgruppe
-   1. AD-DNS-Domäne aus distinguishedName oder dnsDomainName des Postfachs extrahieren.
-   2. Wenn eine Lizenzgruppe für diese Domäne definiert ist, diese verwenden; sonst die erste Gruppe in der Liste (Standardgruppe).
-2. Lizenzgruppe über Graph- oder AD-Abfrage finden.
-3. Prüfen, ob die Anzahl direkter und indirekter (rekursiver) Mitglieder ≤ der lizenzierten Anzahl ist.
-4. Prüfen, ob das aktuelle Postfach Mitglied der Lizenzgruppe ist.
-
-Wenn einer dieser Schritte fehlschlägt, gilt das Postfach als nicht lizenziert und Benefactor Circle-Funktionen können nicht verwendet werden.
-
-Der Benutzer, der Set-OutlookSignatures ausführt, muss in der Lage sein, alle direkten und indirekten Mitglieder aller Lizenzgruppen aufzulösen, insbesondere über AD-Vertrauensstellungen hinweg.
-
-Primäre Gruppenmitgliedschaften (z. B. „Domain Users“) werden nicht berücksichtigt, da sie über AD/Entra ID nicht zuverlässig abgefragt werden können.
-
-Dynamische Gruppen werden nur bei Entra ID-Abfragen unterstützt, nicht bei AD-Abfragen.
-
-Es kann nur eine reine Entra ID-Gruppe pro Tenant verwendet werden, und diese muss die Standardlizenzgruppe sein.
-
-Die Standardlizenzgruppe ist die erste Gruppe in der Liste. Sie wird verwendet, wenn kein spezifischerer Eintrag für ein Postfach existiert.
-
-Wenn eine Verbindung zu Microsoft Graph verfügbar ist, wird diese zur Prüfung der Gruppenmitgliedschaft verwendet. Eine Graph-Verbindung ist verpflichtend, wenn die Standardlizenzgruppe eine Entra ID-Gruppe ist.
-
-## Lizenz- und Softwareversion
-Lizenz- und Softwareversionen sind untrennbar miteinander verbunden. Jede neue Version von Set-OutlookSignatures bringt auch eine neue Lizenzversion mit sich, und umgekehrt.
-
-Die Verwendung unterschiedlicher Versionen von Software und Lizenzdatei wird nicht unterstützt, da dies zu unerwartetem Verhalten führen kann.
-
-Wenn ein Versionskonflikt erkannt wird, wird eine Warnmeldung im Log protokolliert.
+<p>Wenn ein Versionskonflikt erkannt wird, wird eine Warnmeldung im Log protokolliert.</p>
