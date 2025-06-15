@@ -106,7 +106,7 @@ Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle
             </tr>
             <tr>
                 <td style="text-align:left">Entra ID and Active Directory permissions</td>
-                <td style="text-align:left">🟢 User (a.k.a. delegated) permissions, least privilege principle</td>
+                <td style="text-align:left">🟢 User (delegated) permissions, least privilege principle</td>
                 <td style="text-align:left">🔴 Application permissions, read all directory data (and transfer all emails)
                 </td>
                 <td style="text-align:left">🔴 Application permissions, read all directory data (and transfer all emails)

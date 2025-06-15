@@ -109,11 +109,11 @@ Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on 
             <tr>
                 <td style="text-align:left">Rechte für Entra ID und Active Directory</td>
                 <td style="text-align:left">🟢 Benutzerrechte (delegated permissions), Least-Privilege-Prinzip</td>
-                <td style="text-align:left">🔴 Applikationsrechte, alle Verzeichnisdaten lesen (und alle E-Mails umleiten)
+                <td style="text-align:left">🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten lesen (und alle E-Mails umleiten)
                 </td>
-                <td style="text-align:left">🔴 Applikationsrechte, alle Verzeichnisdaten lesen (und alle E-Mails umleiten)
+                <td style="text-align:left">🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten lesen (und alle E-Mails umleiten)
                 </td>
-                <td style="text-align:left">🔴 Applikationsrechte, alle Verzeichnisdaten lesen (und alle E-Mails umleiten)</td>
+                <td style="text-align:left">🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten lesen (und alle E-Mails umleiten)</td>
             </tr>
             <tr>
                 <td style="text-align:left">Daten aus Entra ID Und Active Directory bleiben in Ihrer Umgebung (kein Transfer zu Drittsystemen)</td>
