@@ -38,7 +38,7 @@ Wenn sich einige oder alle Postfächer in Exchange Online befinden, benötigen S
 ## Schritt 2: Set-OutlookSignatures herunterladen
 Laden Sie Set-OutlookSignatures herunter und entpacken Sie das Archiv in einen lokalen Ordner.
 
-<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔&nbsp;<span class="version-text">Die aktuelle Version</span>&nbsp;als ZIP-Datei herunterladen</button></a></p>
+<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔&nbsp;<span class="version-text">Die aktuelle Version</span>&nbsp;als ZIP-Datei herunterladen</button></a></p>
 
 Heben Sie unter Windows und macOS die Blockierung der Datei 'Set-OutlookSignatures.ps1' auf. Sie können dazu das PowerShell-Cmdlet 'Unblock-File' verwenden oder im Datei-Explorer mit der rechten Maustaste auf die Datei klicken, Eigenschaften auswählen und 'Unblock' anklicken. Dadurch wird das 'Mark of the Web' entfernt, das die Skriptausführung verhindern kann, wenn die PowerShell-Ausführungsrichtlinie auf RemoteSigned eingestellt ist.
 
@@ -94,7 +94,7 @@ Set-OutlookSignatures ist sehr gut dokumentiert, was unweigerlich eine Menge Inh
 
 Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Evaluierung, Planung, Implementierung und dem laufenden Betrieb unterstützen kann: Unser Partner <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> bietet erstklassigen [kostenpflichtigen Support](/support), und das ➔&nbsp;<a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> bietet zusätzliche Funktionen für Ihr Unternehmen.
 
-<p><a href="/support"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: lawngreen">➔ Support-Optionen ansehen</button></a></p>
+<p><a href="/support"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Support-Optionen ansehen</button></a></p>
 
 <p><a href="/benefactorcircle"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Das Benefactor Circle Add-On</button></a></p>
 
