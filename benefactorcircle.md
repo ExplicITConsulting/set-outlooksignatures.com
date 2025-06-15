@@ -262,7 +262,7 @@ Benefactor Circle add-on</span>.</p>
 
 
 <h2>Buying, extending and changing licenses</h2>
-<h3>Price and general information<h3>
+<h3>Price and general information</h3>
 <p>The price currently is <strong>3.00 € net per mailbox and year</strong>, which is <strong>0.25 € net per mailbox and month</strong>.</p>
 
 <p>We keep license costs as fair as possible. Fair means:</p>
