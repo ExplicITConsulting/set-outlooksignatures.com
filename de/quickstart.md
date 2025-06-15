@@ -7,10 +7,10 @@ title: |
   </span>
 subtitle: |
   <span class="subtitle is-4 has-text-white">
-    Verteilen Sie Ihre ersten Signaturen in weniger als einer Stunde
+    Ihre ersten Signaturen in unter einer Stunde
   </span>
 description: |
-  Schnellstart-Anleitung. Verteilen Sie Ihre ersten Signaturen in weniger als einer Stunde. Implementierung. Hilfe.
+  Schnellstart-Anleitung. Verteilen Sie Ihre ersten Signaturen in unter einer Stunde. Implementierung. Hilfe.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -24,7 +24,7 @@ redirect_from:
   - /de/quick-start-guide
 ---
 
-## Verteilen Sie Ihre ersten Signaturen in weniger als einer Stunde
+## Ihre ersten Signaturen in unter einer Stunde
 Folgen Sie der einfachen 4-Schritte-Anleitung, um Ihre ersten Signaturen zu verteilen, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu erhalten und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.
 
 ## Schritt 1: Voraussetzungen prüfen

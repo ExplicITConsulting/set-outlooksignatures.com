@@ -27,7 +27,7 @@ redirect_from:
 
   <p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔&nbsp;<span class="version-text">(lade…)</span>&nbsp;als ZIP-Datei herunterladen</button></a></p>
 
-  <p>Sie können Ihre ersten Signaturen in weniger als einer Stunde verteilen. Folgen Sie der einfachen 4-Schritte-Anleitung, um Ihre ersten Signaturen zu verteilen, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu erhalten und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
+  <p>Sie können Ihre ersten Signaturen in unter einer Stunde verteilen. Folgen Sie der einfachen 4-Schritte-Anleitung, um Ihre ersten Signaturen zu verteilen, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu erhalten und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
   
   <p><a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Schnellstart-Anleitung</button></a></p>
 

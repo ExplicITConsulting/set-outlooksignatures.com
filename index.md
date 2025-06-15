@@ -218,13 +218,13 @@ redirect_from:
 <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: MediumAquamarine">➔ Schedule your personal demo now</button></a>
 
 
-<h2>Deploy <span style="color: limegreen">your first signatures in less than an hour</span></h2>
+<h2>Your first signatures <span style="color: SpringGreen">in less than an hour</span></h2>
 <p>Follow the easy 4-step-process to deploy your first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 
-<a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Quick Start Guide</button></a>
+<a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: SpringGreen">➔ Quick Start Guide</button></a>
 
 
-<h2>Dive deeper</h2>
+<h2>Dive <span style="color: DeepSkyBlue;">deeper</span></h2>
 <p>Visit our <a href="/help">help and support center</a> to learn about:<p>
 <ul>
   <li>The detailed feature set and a comparison with market companions</li>
