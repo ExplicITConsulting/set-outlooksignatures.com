@@ -214,7 +214,7 @@ redirect_from:
 <a href="#testversion"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a trial license or quote</button></a>
 
 
-<h2>Demo</h2>
+<h2 id="Demo">Demo</h2>
 <p>Our demo video gives you an overview of the most important features:<br>
 <div class="columns">
   <div class="column is-half">
