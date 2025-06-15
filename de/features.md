@@ -6,7 +6,7 @@ title: |
   </span>
 subtitle: |
   <span class="subtitle is-4 has-text-white">
-    Unsere Lösung auf einen Blick und im Benchmark
+    Unsere Lösung auf einen Blick und im Vergleich
   </span>
 description: |
   Was Set-OutlookSignatures und das Benefactor Circle add-on für Sie tun können und wie sie im Vergleich mit anderen Lösungen abschneiden.
