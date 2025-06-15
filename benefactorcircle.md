@@ -145,7 +145,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Removing the tagline</b><br>added by the free and open source version at the end of signatures.
+        <b>Remove the tagline</b><br>added by the free and open source version at the end of signatures.
       </div>
     </div>
   </div>
