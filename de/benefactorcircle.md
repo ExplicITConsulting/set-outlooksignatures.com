@@ -218,7 +218,7 @@ redirect_from:
 <a href="#testversion"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Testlizenz oder Angebot anfordern</button></a>
 
 
-<h2 id="Demo">Demo</h2>
+<h2 id="demo">Demo</h2>
 <p>Unser Demo-Video gibt Ihnen einen Überblick über wichtigsten Funktionen:<br>
 <div class="columns">
   <div class="column is-half">
