@@ -102,41 +102,25 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
               const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
               const fallbackToEnglishFullUrl = `${currentProtocol}//${currentHostname}${baseContentPath}${currentSearch}${currentHash}`;
 
-              console.log(`Attempting redirect from ${currentFullUrl} to preferred language target: ${targetFullUrl}`);
-
               fetch(targetFullUrl, { method: 'HEAD' })
                   .then(response => {
                       if (response.ok) {
                           // The target URL exists, proceed with redirection
-                          console.log(`Preferred language path exists. Redirecting to: ${targetFullUrl}`);
                           window.location.replace(targetFullUrl);
                       } else {
                           // The target URL does NOT exist, fall back to English
-                          console.warn(`Target path (${targetFullUrl}) not found (status: ${response.status}). Falling back to base English path.`);
                           if (normalizedCurrentPathForComparison !== normalizePathForComparison(baseContentPath)) {
-                              console.log(`Redirecting to English fallback: ${fallbackToEnglishFullUrl}`);
                               window.location.replace(fallbackToEnglishFullUrl);
-                          } else {
-                              console.log(`Already on the English fallback URL: ${fallbackToEnglishFullUrl}. No further redirect needed.`);
-                              document.body.classList.add('language-ready'); // Unhide if already on fallback and no redirect
                           }
                       }
                   })
                   .catch(error => {
-                      console.error("Error checking preferred language path existence:", error);
-                      console.log("Network error or uncheckability. Falling back to base English path.");
                       if (normalizedCurrentPathForComparison !== normalizePathForComparison(baseContentPath)) {
-                          console.log(`Redirecting to English fallback: ${fallbackToEnglishFullUrl}`);
                           window.location.replace(fallbackToEnglishFullUrl);
-                      } else {
-                          console.log(`Already on the English fallback URL: ${fallbackToEnglishFullUrl}. No further redirect needed.`);
-                          document.body.classList.add('language-ready'); // Unhide if already on fallback and no redirect
                       }
                   });
           } else {
               // No redirect needed, the current page is already the correct preferred language
-              console.log(`Already on the correct language version for: ${preferredLanguage} at ${currentPathname}`);
-              document.body.classList.add('language-ready'); // Unhide the content
           }
         });
       </script>
