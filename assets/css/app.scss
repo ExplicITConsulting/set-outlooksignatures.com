@@ -57,8 +57,6 @@ $text: black;
 body {
   hyphens: auto;
   visibility: hidden; /* This hides the content */
-  opacity: 0; /* For a smoother fade-in if you choose */
-  transition: visibility 0s, opacity 0.3s ease-in; /* Optional: adds a fade-in effect */
 }
 
 /* This class will be added by JavaScript when the language specific content is ready to be shown */
