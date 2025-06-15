@@ -225,7 +225,7 @@ redirect_from:
 
 
 <h2>Dive <span style="color: DeepSkyBlue;">deeper</span></h2>
-<p>Visit our help and support center to learn more about:<p>
+<p>Visit our help and support center to find out more:<p>
 <ul>
   <li>The detailed feature set and a comparison with market companions</li>
   <li>Requirements and configuration options</li>
