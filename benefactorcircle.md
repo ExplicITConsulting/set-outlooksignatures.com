@@ -215,19 +215,19 @@ redirect_from:
 
 
 <h2 id="demo">Demo</h2>
+<p>In our personal product demonstration, we show you what Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> and the included Outlook add-in can do for you - interactively and focus on your actual needs.</p>
+
+<p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Schedule your personal demo</button></a></p>
+
 <p>Our demo video gives you an overview of the most important features:<br>
-<div class="columns">
-  <div class="column is-half">
-    <figure class="image is-16by9">
-      <iframe class="has-ratio" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI" title="Set-OutlookSignatures Benefactor Circle demo video" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </figure>
+  <div class="columns">
+    <div class="column is-half">
+      <figure class="image is-16by9">
+        <iframe class="has-ratio" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI" title="Set-OutlookSignatures Benefactor Circle demo video" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </figure>
+    </div>
   </div>
-</div>
 </p>
-
-In your free interactive product demo, we show you the main features of the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> and the included Outlook add-in - interactively and with a focus on your actual needs.
-
-<a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Schedule your personal demo</button></a>
 
 
 <h2>Financial benefits</h2>
