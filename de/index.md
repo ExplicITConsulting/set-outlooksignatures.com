@@ -220,7 +220,7 @@ redirect_from:
 
 
 <h2>Ihre ersten Signaturen <span style="color: SpringGreen ;">in unter einer Stunde</span></h2>
-<p>Folgen Sie dem einfachen 4-Schritte-Prozess, um Ihre ersten Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
+<p>Folgen Sie der einfachen 3-Schritte-Anleitung, um Ihre ersten Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
 <a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: SpringGreen">➔ Schnellstart-Anleitung</button></a>
 

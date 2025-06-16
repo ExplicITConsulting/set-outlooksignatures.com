@@ -23,16 +23,32 @@ redirect_from:
   - /quick-start-guide
 ---
 
+
 ## Your first signatures in less than an hour
-Follow the easy 4-step-process to deploy your first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.
+Follow the easy 3-step-process to deploy your first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.
 
 
-## Step 1: Check Prerequisites
+## Step 1: One-time preparations
+### Client and user
 For a first test run, it is recommended to log on with a test user on a Windows system with Word and Outlook installed, and Outlook being configured with at least the test user's mailbox. This way, you get results fast and can experience the biggest set of features.
 
 For full Linux and macOS support, the ➔&nbsp;<a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
 
-When some or all of your mailboxes are in Exchange Online, you need a 'Global Admin' or 'Application Administrator' user for one-time preparations.
+### Entra ID
+When some or all of your mailboxes are in Exchange Online, you need to register an Entra ID app first. This is because Set-OutlookSignatures needs permissions to access the Graph API.
+
+To create the Entra ID app, ask your Entra ID 'Global Admin' or 'Application Administrator' to run
+```
+.\sample code\Create-EntraApp.ps1 -AppType 'Set-OutlookSignatures' -AppName 'Set-OutlookSignatures'
+```
+and follow the instructions.
+
+The code in the script file is well documented, containing all details about the required Entra ID app settings, permissions, and why they are needed.
+
+### Endpoint security
+If you use AppLocker or a comparable solution such as Defender, CrowdStrike, Ivanti, and others, you may need to specifically allow Set-OutlookSignatures to be run and to load libraries from the TEMP folder (which is used to not lock files in their original location).
+
+Ask your endpoint security administrator to trust software signed with ExplicIT Consulting's certificate. All PS1 and DLL files that come with the Set-OutlookSignatures download in step 2 are signed with this certificate.
 
 
 ## Step 2: Download Set-OutlookSignatures
@@ -42,22 +58,8 @@ Download Set-OutlookSignatures and extract the archive to a local folder.
 
 On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'. This removes the "mark of the web", which can prevent script execution when the PowerShell execution policy is set to RemoteSigned.
 
-If you use AppLocker or a comparable solution (Defender, CrowdStrike, Ivanti, and others), you may need to add the existing digital file signature to your allow list, or define additional settings in your security software.
 
-
-## Step 3: Prepare Entra ID
-When some or all of your mailboxes are in Exchange Online, you need to register an Entra ID app first, because Set-OutlookSignatures needs permissions to access the Graph API.
-
-To create the Entra ID app, ask a 'Global Admin' or 'Application Administrator' to run
-```
-.\sample code\Create-EntraApp.ps1 -AppType 'Set-OutlookSignatures' -AppName 'Set-OutlookSignatures'
-```
-and follow the instructions.
-
-The code in the script file is well documented, containing all details about the required Entra ID app settings, permissions, and why they are needed.
-
-
-## Step 4: Run Set-OutlookSignatures
+## Step 3: Run Set-OutlookSignatures
 - **If all mailboxes are in Exchange on-prem**
   ```
   powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"

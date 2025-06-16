@@ -25,14 +25,29 @@ redirect_from:
 ---
 
 ## Ihre ersten Signaturen in unter einer Stunde
-Folgen Sie der einfachen 4-Schritte-Anleitung, um Ihre ersten Signaturen zu verteilen, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu erhalten und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.
+Folgen Sie der einfachen 3-Schritte-Anleitung, um Ihre ersten Signaturen zu verteilen, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu erhalten und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.
 
-## Schritt 1: Voraussetzungen prüfen
+## Schritt 1: Einmalige Vorbereitungen
+### CLient und Benutzer
 Für einen ersten Testlauf ist es empfehlenswert, sich mit einem Testbenutzer auf einem Windows-System anzumelden, auf dem Word und Outlook installiert sind und Outlook zumindest mit dem Postfach des Testbenutzers konfiguriert ist. Auf diese Weise erhalten Sie schnell Ergebnisse und können den größten Funktionsumfang nutzen.
 
 Für die vollständige Unterstützung von Linux und macOS ist das ➔&nbsp;<a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erforderlich und die Postfächer müssen in Exchange Online gehostet werden.
 
-Wenn sich einige oder alle Postfächer in Exchange Online befinden, benötigen Sie einen Benutzer mit 'Global Admin'- oder 'Application Administrator'-Rechten für einmalige Vorbereitungen.
+### Entra ID
+Wenn sich einige oder alle Postfächer in Exchange Online befinden, müssen Sie zunächst eine Entra ID App registrieren, da Set-OutlookSignatures Berechtigungen für den Zugriff auf die Graph API benötigt.
+
+Um die Entra ID App zu erstellen, bitten Sie Ihren Entra ID 'Global Admin' oder 'Application Administrator', folgendes auszuführen
+```
+.\sample code\Create-EntraApp.ps1 -AppType 'Set-OutlookSignatures' -AppName 'Set-OutlookSignatures'
+```
+und den Anweisungen zu folgen.
+
+Der Code in der Skriptdatei ist gut dokumentiert und enthält alle Details zu den erforderlichen Einstellungen der Entra ID App, den Berechtigungen und warum sie benötigt werden.
+
+### Endpoint Security
+Wenn Sie AppLocker oder eine vergleichbare Lösung wie Defender, CrowdStrike, Ivanti, und andere verwenden, müssen Sie eventuell spezifisch die Ausführung von Set-OutlookSignatures erlauben und dass es DLL-Dateien aus dem TEMP-Ordner lädt (was die Sperrung von Dateien an ihrem originalen Speicherort verhindert).
+
+Bitten Sie Ihren Endpoint Security Administrator Software zu vertrauen, die mit dem Zertifikat von ExplicIT Consulting signiert ist. Alle PS1- und DLL-Dateien, die im Download von Set-OutlookSignatures in Schritt 2 enhalten sind, sind mit diesem Zertifikate signiert.
 
 
 ## Schritt 2: Set-OutlookSignatures herunterladen
@@ -45,19 +60,7 @@ Heben Sie unter Windows und macOS die Blockierung der Datei 'Set-OutlookSignatur
 Wenn Sie AppLocker oder eine vergleichbare Lösung (Defender, CrowdStrike, Ivanti und andere) verwenden, müssen Sie möglicherweise die vorhandene digitale Signatur zu Ihrer Zulassungsliste hinzufügen oder zusätzliche Einstellungen in Ihrer Sicherheitssoftware festlegen.
 
 
-## Schritt 3: Entra ID vorbereiten
-Wenn sich einige oder alle Postfächer in Exchange Online befinden, müssen Sie zunächst eine Entra ID App registrieren, da Set-OutlookSignatures Berechtigungen für den Zugriff auf die Graph API benötigt.
-
-Um die Entra ID App zu erstellen, bitten Sie einen 'Global Admin' oder 'Application Administrator', folgendes auszuführen
-```
-.\sample code\Create-EntraApp.ps1 -AppType 'Set-OutlookSignatures' -AppName 'Set-OutlookSignatures'
-```
-und den Anweisungen zu folgen.
-
-Der Code in der Skriptdatei ist gut dokumentiert und enthält alle Details zu den erforderlichen Einstellungen der Entra ID App, den Berechtigungen und warum sie benötigt werden.
-
-
-## Schritt 4: Set-OutlookSignatures ausführen
+## Schritt 3: Set-OutlookSignatures ausführen
 - **Wenn alle Postfächer on-prem gehalten werden**
   ```
   powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"
