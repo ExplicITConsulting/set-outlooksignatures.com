@@ -29,23 +29,22 @@ Follow the easy 3-step-process to deploy your first signatures, get a glimpse of
 
 
 ## Step 1: One-time preparations
-### Client and user
+**Client and user**  
 For a first test run, it is recommended to log on with a test user on a Windows system with Word and Outlook installed, and Outlook being configured with at least the test user's mailbox. This way, you get results fast and can experience the biggest set of features.
 
 For full Linux and macOS support, the ➔&nbsp;<a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
 
-### Entra ID
+**Entra ID**  
 When some or all of your mailboxes are in Exchange Online, you need to register an Entra ID app first. This is because Set-OutlookSignatures needs permissions to access the Graph API.
 
-To create the Entra ID app, ask your Entra ID 'Global Admin' or 'Application Administrator' to run
+To create the Entra ID app, ask your Entra ID 'Global Admin' or 'Application Administrator' to run the following and follow the instructions:
 ```
 .\sample code\Create-EntraApp.ps1 -AppType 'Set-OutlookSignatures' -AppName 'Set-OutlookSignatures'
 ```
-and follow the instructions.
 
 The code in the script file is well documented, containing all details about the required Entra ID app settings, permissions, and why they are needed.
 
-### Endpoint security
+**Endpoint security**  
 If you use AppLocker or a comparable solution such as Defender, CrowdStrike, Ivanti, and others, you may need to specifically allow Set-OutlookSignatures to be run and to load libraries from the TEMP folder (which is used to not lock files in their original location).
 
 Ask your endpoint security administrator to trust software signed with ExplicIT Consulting's certificate. All PS1 and DLL files that come with the Set-OutlookSignatures download in step 2 are signed with this certificate.
