@@ -215,7 +215,7 @@ redirect_from:
   </div>
 </div>
 
-<a href="#testversion"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Testlizenz oder Angebot anfordern</button></a>
+<a href="#trialversion"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Testlizenz oder Angebot anfordern</button></a>
 
 
 <h2 id="demo">Demo</h2>
@@ -307,7 +307,7 @@ redirect_from:
 <p>Wenn Sie während einer laufenden Lizenzperiode weitere Postfächer hinzufügen möchten, zahlen Sie nur den aktuellen Preis anteilig für die verbleibenden Monate der Lizenzlaufzeit.</p>
 
 
-<h3>Testversion</h3>
+<h3 id="trialversion">Testversion</h3>
 <p>Sie möchten vielleicht mit einer 14-tägigen Testlizenz starten.</p>
 
 <p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>  erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.<br>

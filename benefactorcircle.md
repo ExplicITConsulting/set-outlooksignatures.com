@@ -211,7 +211,7 @@ redirect_from:
   </div>
 </div>
 
-<a href="#testversion"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a trial license or quote</button></a>
+<a href="#trialversion"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a trial license or quote</button></a>
 
 
 <h2 id="demo">Demo</h2>
@@ -303,7 +303,7 @@ Benefactor Circle add-on</span>.</p>
 <p>If you wish to add additional mailboxes during an active license period, you will only be charged the current price for these additional mailboxes for the remaining months of your license period.</p>
 
 
-<h3>Trial version</h3>
+<h3 id="trialversion">Trial version</h3>
 <p>You may want to start with a 14-day trial license.</p>
 
 <p>The Benefactor Circle add-on extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.<br>
