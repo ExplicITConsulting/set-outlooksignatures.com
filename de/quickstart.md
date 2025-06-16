@@ -42,9 +42,9 @@ Um die Entra ID App zu erstellen, bitten Sie Ihren Entra ID 'Global Admin' oder 
 Der Code in der Skriptdatei ist gut dokumentiert und enthält alle Details zu den erforderlichen Einstellungen der Entra ID App, den Berechtigungen und warum sie benötigt werden.
 
 **Endpoint Security**  
-Wenn Sie AppLocker oder eine vergleichbare Lösung wie Defender, CrowdStrike, Ivanti, und andere verwenden, müssen Sie eventuell spezifisch die Ausführung von Set-OutlookSignatures erlauben und dass es DLL-Dateien aus dem TEMP-Ordner lädt (was die Sperrung von Dateien an ihrem originalen Speicherort verhindert).
+Wenn Sie verlangen, dass PowerShell-Skripte mit ausgewählten Zertifikaten signiert werden, AppLocker oder eine vergleichbare Lösung wie Defender, CrowdStrike, Ivanti und andere verwenden, müssen Sie möglicherweise die Ausführung von Set-OutlookSignatures und das Laden von Bibliotheken aus dem TEMP-Ordner (der verwendet wird, um Dateien nicht an ihrem ursprünglichen Speicherort zu sperren) ausdrücklich erlauben.
 
-Bitten Sie Ihren Endpoint Security Administrator Software zu vertrauen, die mit dem Zertifikat von ExplicIT Consulting signiert ist. Alle PS1- und DLL-Dateien, die im Download von Set-OutlookSignatures in Schritt 2 enhalten sind, sind mit diesem Zertifikate signiert.
+Bitten Sie Ihren Endpoint Security Administrator Software zu vertrauen, die mit dem Zertifikat von ExplicIT Consulting signiert ist. Alle PS1- und DLL-Dateien, die im Download von Set-OutlookSignatures in Schritt 2 enhalten sind, sind mit diesem Zertifikat signiert.
 
 
 ## Schritt 2: Set-OutlookSignatures herunterladen
@@ -52,7 +52,7 @@ Laden Sie Set-OutlookSignatures herunter und entpacken Sie das Archiv in einen l
 
 <p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔&nbsp;<span class="version-text">Die aktuelle Version</span>&nbsp;als ZIP-Datei herunterladen</button></a></p>
 
-Heben Sie unter Windows und macOS die Blockierung der Datei 'Set-OutlookSignatures.ps1' auf. Sie können dazu das PowerShell-Cmdlet 'Unblock-File' verwenden oder im Datei-Explorer mit der rechten Maustaste auf die Datei klicken, Eigenschaften auswählen und 'Unblock' anklicken. Dadurch wird das 'Mark of the Web' entfernt, das die Skriptausführung verhindern kann, wenn die PowerShell-Ausführungsrichtlinie auf RemoteSigned eingestellt ist.
+Heben Sie unter Windows und macOS die Blockierung der Datei 'Set-OutlookSignatures.ps1' auf. Sie können dazu das PowerShell-Cmdlet 'Unblock-File' verwenden oder im Datei-Explorer mit der rechten Maustaste auf die Datei klicken, Eigenschaften auswählen und 'Unblock' anklicken. Dadurch wird das 'Mark of the Web' entfernt, das die Ausführung in PowerShell verhindern kann.
 
 Wenn Sie AppLocker oder eine vergleichbare Lösung (Defender, CrowdStrike, Ivanti und andere) verwenden, müssen Sie möglicherweise die vorhandene digitale Signatur zu Ihrer Zulassungsliste hinzufügen oder zusätzliche Einstellungen in Ihrer Sicherheitssoftware festlegen.
 

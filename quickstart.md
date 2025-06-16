@@ -41,7 +41,7 @@ To create the Entra ID app, ask your Entra ID 'Global Admin' or 'Application Adm
 The code in the script file is well documented, containing all details about the required Entra ID app settings, permissions, and why they are needed.
 
 **Endpoint security**  
-If you use AppLocker or a comparable solution such as Defender, CrowdStrike, Ivanti, and others, you may need to specifically allow Set-OutlookSignatures to be run and to load libraries from the TEMP folder (which is used to not lock files in their original location).
+If you require PowerShell script to be signed with select certificates, use AppLocker or a comparable solution such as Defender, CrowdStrike, Ivanti, and others, you may need to specifically allow Set-OutlookSignatures to be run and to load libraries from the TEMP folder (which is used to not lock files in their original location).
 
 Ask your endpoint security administrator to trust software signed with ExplicIT Consulting's certificate. All PS1 and DLL files that come with the Set-OutlookSignatures download in step 2 are signed with this certificate.
 
@@ -51,7 +51,7 @@ Download Set-OutlookSignatures and extract the archive to a local folder.
 
 <p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Download&nbsp;<span class="version-text">the latest release</span>&nbsp;as ZIP file</button></a></p>
 
-On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'. This removes the "mark of the web", which can prevent script execution when the PowerShell execution policy is set to RemoteSigned.
+On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'. This removes the 'mark of the web', which can prevent script execution in PowerShell.
 
 
 ## Step 3: Run Set-OutlookSignatures
