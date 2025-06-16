@@ -7,10 +7,10 @@ title: |
   </span>
 subtitle: |
   <span class="subtitle is-4 has-text-white">
-    Ihre ersten Signaturen in unter einer Stunde
+    Erste Signaturen in unter einer Stunde
   </span>
 description: |
-  Schnellstart-Anleitung. Verteilen Sie Ihre ersten Signaturen in unter einer Stunde. Implementierung. Hilfe.
+  Schnellstart-Anleitung. Verteilen Sie erste Signaturen in unter einer Stunde. Implementierung. Hilfe.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -71,7 +71,7 @@ Wenn Sie AppLocker oder eine vergleichbare Lösung (Defender, CrowdStrike, Ivant
 
 Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie folgenden Parameter hinzu: '-CloudEnvironment \[AzureUSGovernment\|AzureUSGovernmentDoD\|AzureChina\]'
 
-Set-OutlookSignatures verteilt jetzt ihr ersten Signaturen, basierend auf Standardeinstellungen und Beispielvorlagen.
+Set-OutlookSignatures verteilt jetzt erste Signaturen, basierend auf Standardeinstellungen und Beispielvorlagen.
 
 Öffnen Sie Outlook und werfen Sie einen Blick auf die neu erzeugten Signaturen, besonders auf die Vorzeigesignatur 'Test all default replacement variables'.
 

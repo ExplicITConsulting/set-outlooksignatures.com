@@ -6,10 +6,10 @@ title: |
   </span>
 subtitle: |
   <span class="subtitle is-4 has-text-white">
-    Your first signatures in less than an hour
+    First signatures in less than an hour
   </span>
 description: |
-  Quick Start Guide. Implementation help. Your first signatures in less than an hour.
+  Quick Start Guide. Implementation help. First signatures in less than an hour.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -68,7 +68,7 @@ On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use 
 
 If you are not using the public Microsoft cloud but a national cloud, add the following parameter: '-CloudEnvironment \[AzureUSGovernment\|AzureUSGovernmentDoD\|AzureChina\]'
 
-Set-OutlookSignatures now deploys your first signatures using default settings and sample templates.
+Set-OutlookSignatures now deploys signatures using default settings and sample templates.
 
 Open Outlook and have a look at the newly created signatures, especially to the showcase signature named 'Test all default replacement variables'.
 
