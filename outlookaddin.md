@@ -176,6 +176,8 @@ Installation of add-ins may have been disabled by your administrators.
 Do not use the URLs mentioned above to remove custom add-ins, as this fails most times. Instead, use one of the following options:
 - Open Outlook for the web, draft a new mail, click on the 'Apps' button, right-click the Set-OutlookSignatures add-in and select 'Uninstall'.
 - Remove the custom add-in in Outlook for Android or Outlook for iOS.
+
+
 ### 5.2. Microsoft 365 Centralized Deployment or Integrated Apps
 Centralized Deployment and deployment via Integrated Apps both provide the following benefits:
 - An admin can deploy and assign an add-in directly to a user, to multiple users via a group, or to everyone in the organization.
@@ -185,6 +187,7 @@ Centralized Deployment and deployment via Integrated Apps both provide the follo
 The Integrated Apps feature is the recommended way to deploy Outlook add-ins. It is not yet available for tenants in sovereign and government clouds, so in these environments you have to use Centralized Deployment instead.
 - Details about Integrated Apps: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide
 - Details about Centralized Deployment: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide
+
 
 ## 6. Remarks
 ### 6.1. General
