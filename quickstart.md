@@ -24,10 +24,6 @@ redirect_from:
 ---
 
 
-## Your first signatures in less than an hour
-Follow the easy 3-step-process to deploy your first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.
-
-
 ## Step 1: One-time preparations
 **Client and user**  
 For a first test run, it is recommended to log on with a test user on a Windows system with Word and Outlook installed, and Outlook being configured with at least the test user's mailbox. This way, you get results fast and can experience the biggest set of features.
@@ -78,7 +74,9 @@ Open Outlook and have a look at the newly created signatures, especially to the 
 
 
 ## Start customizing
-When everything runs fine with default settings, it is time for you to start customizing the software behavior to your needs. For example:
+When everything runs fine with default settings, you have a robust starting point for your own customizations.
+
+You can now configure Set-OutlookSignatures to your own needs. For example:
 - Create a folder with your own template and signature configuration files.  
   It is a good idea to begin by copying the folder '.\sample templates' and modifying it's contents.  
   Make sure to tell Set-OutlookSignatures where to find your custom configuration by adding the parameters 'SignatureTemplatePath', 'SignatureIniFile', 'OOFTemplatePath' and 'OOFIniFile'.

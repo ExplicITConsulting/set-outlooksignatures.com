@@ -24,8 +24,6 @@ redirect_from:
   - /de/quick-start-guide
 ---
 
-## Ihre ersten Signaturen in unter einer Stunde
-Folgen Sie der einfachen 3-Schritte-Anleitung, um Ihre ersten Signaturen zu verteilen, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu erhalten und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.
 
 ## Schritt 1: Einmalige Vorbereitungen
 **Client und Benutzer**  
@@ -79,7 +77,9 @@ Set-OutlookSignatures verteilt jetzt ihr ersten Signaturen, basierend auf Standa
 
 
 ## Anpassungen vornehmen
-Wenn mit den Standardeinstellung alles gut funktioniert, ist es an der Zeit damit zu beginnen, das Verhalten der Software Ihren Bedürfnissen anzupassen. Zum Beispiel:
+Wenn mit den Standardeinstellung alles gut funktioniert, haben Sie einen soliden Ausgangspunkt für Ihre eigenen Anpassungen.
+
+Sie können Set-OutlookSignatures jetzt für Ihre konkreten Anforderungen konfigurieren. Zum Beispiel:
 - Erstellen Sie einen Ordner mit Ihren eigenen Vorlagen und Konfigurationen.  
   Es ist eine gute Idee, den Ordner '.\sample templates' zu kopieren und dessen Inhalte zu bearbeiten.  
   Vergessen sie nicht, Set-OutlookSignatures mit den Parametern 'SignatureTemplatePath', 'SignatureIniFile', 'OOFTemplatePath' and 'OOFIniFile' mitzuteilen, wo Ihre Vorlagen und Konfiguration zu finden sind.
