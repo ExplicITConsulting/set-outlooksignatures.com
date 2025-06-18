@@ -441,7 +441,7 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
   <li>Wie Sie erstklassigen Support erhalten</li>
 </ul>
 
-<a href="/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: LimeGreen">➔ Hilfe- und Support-Center</button></a>
+<p><a href="/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: LimeGreen">➔ Hilfe- und Support-Center</button></a></p>
 
 <p>
   Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> bietet erstklassigen kostenpflichtigen Support.
