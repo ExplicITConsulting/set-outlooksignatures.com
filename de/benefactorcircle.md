@@ -442,29 +442,3 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
 </ul>
 
 <p><a href="/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: LimeGreen">➔ Hilfe- und Support-Center</button></a></p>
-
-<p>
-  Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> bietet erstklassigen kostenpflichtigen Support.
-</p>
-<p>
-  Sie ziehen es vor, durch den Einrichtungs- und Anpassungsprozess geführt zu werden, anstatt sich selbst durch die Dokumentation zu arbeiten?
-</p>
-<p>
-  Sie sind auf der Suche nach maßgeschneiderten Workshops, praktischer Unterstützung bei der Implementierung, Schulungen, Unterstützung bei der Erstellung von Vorlagen und anderen Dienstleistungen im Zusammenhang mit der zentralen Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen?
-</p>
-<p>
-  Dann ist unser Angebot genau das Richtige für Sie.
-</p>
-<p>
-  Sie kaufen nicht irgendeinen Support, sondern unser umfassendes Know-how als Hersteller, Implementierer, und Berater. Support heißt für uns nicht nur, eine Lösung für Ihr Problem zu liefern, sondern auch unsere Erfahrung an Sie weiterzugeben, damit Sie wissen, wie und warum. Unsere Unterstützung ist also eine Investition in Ihr eigenes Wissen und das Ihrer Mitarbeiter, die sich sofort auszahlt.
-</p>
-<p>
-  <strong>Unser All-Inclusive-Support-Versprechen: </strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem Benefactor Circle Add-on, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme. Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.
-</p>
-
-<p><a href="https://forms.cloud.microsoft/r/CnwjH98vSs" target="_blank">
-    <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">
-      ➔ Kostenpflichtigen Support anfordern
-    </button>
-  </a>
-</p>
