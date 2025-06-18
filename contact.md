@@ -37,14 +37,14 @@ description: Let's get and stay in contact. Contact us. Write us.
 
   <h2>LinkedIn</h2>
   <p>
-    <a href="https://www.linkedin.com/company/explicit-consulting-gmbh" target="_blank">
+    <a href="https://www.linkedin.com/company/explicit-consulting-gmbh">
       Explicit Consulting GmbH on LinkedIn
     </a>
   </p>
 
   <h2>GitHub</h2>
   <p>
-    <a href="https://github.com/Set-OutlookSignatures" target="_blank">
+    <a href="https://github.com/Set-OutlookSignatures">
       Set-OutlookSignatures on GitHub
     </a>
   </p>

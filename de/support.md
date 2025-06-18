@@ -23,12 +23,12 @@ redirect_from:
   <h2 id="free-support">Kostenlose Unterstützung</h2>
   <p>
     Bevor Sie auf GitHub ein neues Problem melden, prüfen Sie die Dokumentation, früher gemeldete 
-    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" target="_blank">Probleme</a> 
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=">Probleme</a> 
     und 
-    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=" target="_blank">Diskussionen</a>.
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">Diskussionen</a>.
   </p>
   <p>
-    Sie sind herzlich eingeladen, Ihre Erfahrungen mit Set-OutlookSignatures zu teilen, Ideen mit anderen Benutzern auszutauschen oder neue Funktionen in unserem <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=" target="_blank">Diskusionsforum</a> vorzuschlagen.
+    Sie sind herzlich eingeladen, Ihre Erfahrungen mit Set-OutlookSignatures zu teilen, Ideen mit anderen Benutzern auszutauschen oder neue Funktionen in unserem <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">Diskusionsforum</a> vorzuschlagen.
   </p>
   <p>
     Auf GitHub können nur Fragen beantwortet werden, die sich direkt auf Set-OutlookSignatures beziehen.
@@ -40,7 +40,7 @@ redirect_from:
 
   <h2 id="fee-based-support">Kostenpflichtiger Support</h2>
   <p>
-    Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> bietet erstklassigen kostenpflichtigen Support.
+    Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen kostenpflichtigen Support.
   </p>
   <p>
     Sie ziehen es vor, durch den Einrichtungs- und Anpassungsprozess geführt zu werden, anstatt sich selbst durch die Dokumentation zu arbeiten?
@@ -59,7 +59,7 @@ redirect_from:
   </p>
 
   <p>
-    <a href="https://forms.cloud.microsoft/r/CnwjH98vSs" target="_blank">
+    <a href="https://forms.cloud.microsoft/r/CnwjH98vSs">
       <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">
         ➔ Kostenpflichtigen Support anfordern
       </button>

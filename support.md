@@ -22,13 +22,13 @@ redirect_from:
   <h2 id="free-support">Free support</h2>
   <p>
     Before creating a new issue on GitHub, check the documentation, previous 
-    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" target="_blank">issues</a> 
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=">issues</a> 
     and 
-    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=" target="_blank">discussions</a>.
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">discussions</a>.
   </p>
   <p>
     You are welcome to share your experiences with Set-OutlookSignatures, exchange ideas with other users, or suggest new features in our 
-    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=" target="_blank">discussions board</a>.
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">discussions board</a>.
   </p>
   <p>
     On GitHub, only questions directly releated to Set-OutlookSignatures can be answered.
@@ -40,7 +40,7 @@ redirect_from:
 
   <h2 id="fee-based-support">Fee-based support</h2>
   <p>
-    Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> provides first-class fee-based support.
+    Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> provides first-class fee-based support.
   </p>
   <p>
     You prefer to be guided through the setup and customization process instead of working through the documentation yourself?
@@ -59,7 +59,7 @@ redirect_from:
   </p>
 
   <p>
-    <a href="https://forms.cloud.microsoft/r/CnwjH98vSs" target="_blank">
+    <a href="https://forms.cloud.microsoft/r/CnwjH98vSs">
       <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">
         ➔ Request fee-based support
       </button>

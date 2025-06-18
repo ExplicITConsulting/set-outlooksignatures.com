@@ -21,7 +21,7 @@ redirect_from:
 
 
 <h2>Nachhaltiger Mehrwert für Ihr Unternehmen</h2>
-<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> von <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Möglichkeiten für Ihr Unternehmen.</p>
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> von <a href="https://explicitconsulting.at">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Möglichkeiten für Ihr Unternehmen.</p>
 
 
 <h3>Zusätzliche Funktionen</h3>
@@ -221,7 +221,7 @@ redirect_from:
 <h2 id="demo">Demo</h2>
 <p>In unserer persönlichen Produktdemonstration zeigen wir Ihnen, was Set-OutlookSignatures, das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> und das inkludierte Outlook Add-In für Sie tun können - interaktiv und Fokus auf Ihre konkreten Anforderungen.</p>
 
-<p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Jetzt persönliche Demo vereinbaren</button></a></p>
+<p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Jetzt persönliche Demo vereinbaren</button></a></p>
 
 <p>Unser Demo-Video gibt Ihnen einen Überblick über die wichtigsten Funktionen:<br>
   <div class="columns">
@@ -315,7 +315,7 @@ Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion ben�
 
 <p>Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:</p>
 
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank">
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb">
   <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ 14-Tage-Testlizenz anfordern</button>
 </a></p>
 
@@ -332,7 +332,7 @@ Die Testphase beginnt mit der Erstellung und Übermittlung der Lizenzdatei, nich
 <p>Wir empfehlen dringend, die Testphase erst zu starten, wenn die kostenlose Kernversion erfolgreich implementiert wurde. Stellen Sie außerdem sicher, dass Sie einen Testplan haben und Zeit für die Durchführung reserviert ist.</p>
 
 <h3>Bestellprozess für Lizenzen</h3>
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" target="_blank">
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb">
   <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Lizenzangebot anfordern</button>
 </a></p>
 

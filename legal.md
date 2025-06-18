@@ -29,19 +29,19 @@ Kaiser-Ebersdorfer Straße 206b/3/2
 Austria  
 
 [welcome@explicitconsulting.at](mailto:welcome@explicitconsulting.at)  
-<a href="https://explicitconsulting.at" target="_blank">https://explicitconsulting.at</a>
+<a href="https://explicitconsulting.at">https://explicitconsulting.at</a>
 
 Registered at company court / Firmengericht: Handelsgericht Wien, Austria  
-<a href="https://justizonline.gv.at/jop/web/firmenbuchabfrage"  target="_blank">Registration number / Firmenbuchnummer</a>: FN 607013t  
-<a href="https://www.gisa.gv.at/abfrage" target="_blank">Business Licence Information System / Gewerbe­informations­system Austria (GISA)</a>: 36123599  
-<a href="https://ec.europa.eu/taxation_customs/vies/#/vat-validation" target="_blank">VAT ID / UID</a>: ATU79529869  
+<a href="https://justizonline.gv.at/jop/web/firmenbuchabfrage" >Registration number / Firmenbuchnummer</a>: FN 607013t  
+<a href="https://www.gisa.gv.at/abfrage">Business Licence Information System / Gewerbe­informations­system Austria (GISA)</a>: 36123599  
+<a href="https://ec.europa.eu/taxation_customs/vies/#/vat-validation">VAT ID / UID</a>: ATU79529869  
 
-<a href="https://www.dnb.com/duns-number/lookup.html" target="_blank">DUNS</a>: 300886290  
-<a href="https://www.gs1.org/services/verified-by-gs1" target="_blank">GLN</a>: 9110033592241  
+<a href="https://www.dnb.com/duns-number/lookup.html">DUNS</a>: 300886290  
+<a href="https://www.gs1.org/services/verified-by-gs1">GLN</a>: 9110033592241  
 
-<a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register-search" target="_blank">EU Funding & Tenders Participant Identification Code (PIC)</a>: 873316415  
-<a href="https://eportal.nspa.nato.int/Codification/CageTool/home" target="_blank">NATO Commercial and Government Entity (NCAGE) code</a>: 8336N  
-<a href="https://sam.gov/search" target="_blank">US Unique Entity ID</a> (SAM.gov, CPARS, eSRS, FPDS, FSRS, and others): JBT3VZ82GKY7  
+<a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register-search">EU Funding & Tenders Participant Identification Code (PIC)</a>: 873316415  
+<a href="https://eportal.nspa.nato.int/Codification/CageTool/home">NATO Commercial and Government Entity (NCAGE) code</a>: 8336N  
+<a href="https://sam.gov/search">US Unique Entity ID</a> (SAM.gov, CPARS, eSRS, FPDS, FSRS, and others): JBT3VZ82GKY7  
 
 Member of the Austrian Economic Chamber and the Vienna Economic Chamber, UBIT section (management consulting, accounting and information technology).  
 Mitglied der Wirtschaftskammer Österreich und der Wirtschaftskammer Wien, Sparte UBIT (Unternehmensberatung, Buchhaltung und Informationstechnologie)  

@@ -99,7 +99,7 @@ In Outlook können pro Postfach praktisch beliebig viele Signaturen erstellt wer
 Pro Postfach kann darüber hinaus eine Standard-Signatur für neue emails und eine für Antworten festgelegt werden.   
 ### 2.2. Signatur in Outlook im Web  
 Falls Sie auch mit Outlook im Web arbeiten, müssen Sie sich unabhängig von Ihrer Signatur am Client Ihre Signatur in Outlook im Web einrichten:  
-1. Melden Sie sich in einem Webbrowser auf <a href="https://mail.example.com" target="_blank">https<area>://mail.example.com</a> an. Geben Sie Ihren Benutzernamen und Ihr Kennwort ein, und klicken Sie dann auf Anmelden.  
+1. Melden Sie sich in einem Webbrowser auf <a href="https://mail.example.com">https<area>://mail.example.com</a> an. Geben Sie Ihren Benutzernamen und Ihr Kennwort ein, und klicken Sie dann auf Anmelden.  
 2. Wählen Sie auf der Navigationsleiste Einstellungen > Optionen aus.  
 3. Wählen Sie unter Optionen den Befehl Einstellungen > email aus.  
 4. Geben Sie im Textfeld unter email-Signatur die Signatur ein, die Sie verwenden möchten. Verwenden Sie die Minisymbolleiste "Formatieren", um das Aussehen der Signatur zu ändern.  
@@ -162,7 +162,7 @@ Der Service-Provider empfiehlt nach einer Erhebung der Kundenanforderungen und T
 
 Dieses Dokument bietet einen Überblick über Funktionsumfang und Administration der empfohlenen Lösung, Unterstützung des Service-Providers bei Einführung und Betrieb, sowie damit verbundene Aufwände.  
 ### 6.1. Allgemeine Beschreibung, Lizenzmodell  
-<a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures" target="_blank">Set-OutlookSignatures</a> ist ein kostenloses Open-Source-Produkt mit einer kostenpflichtigen Erweiterung für unternehmensrelevante Funktionen.
+<a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures">Set-OutlookSignatures</a> ist ein kostenloses Open-Source-Produkt mit einer kostenpflichtigen Erweiterung für unternehmensrelevante Funktionen.
 
 Das Produkt dient der zentralen Verwaltung und lokalen Verteilung textueller Signaturen und Abwesenheits-Nachrichten auf Clients. Als Zielplattform werden dabei Outlook auf Windows, New Outlook und Outlook Web unterstützt.
 
@@ -207,7 +207,7 @@ Set-OutlookSignatures erfordert **keine Installation auf Servern oder Clients**.
 - Falls AppLocker oder vergleichbare Lösungen zum Einsatz kommen, ist die Software bereits digital signiert.  
 - Netzwerkfreischaltungen:  
 	- Die Ports 389 (LDAP) and 3268 (Global Catalog), jeweils TCP and UDP, müssen zwischen Client und allen Domain Controllern freigeschaltet sein. Falls dies nicht der Fall ist, können signaturrelevante Informationen und Variablen nicht abgerufen werden. Die Software prüft bei jedem Lauf, ob der Zugriff möglich ist.  
-	- Für den Zugriff auf den SMB-File-Share mit den Software-Komponenten werden folgende Ports benötigt: 137 UDP, 138 UDP, 139 TCP, 445 TCP (Details <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)" target="_blank">in diesem Microsoft-Artikel</a>).  
+	- Für den Zugriff auf den SMB-File-Share mit den Software-Komponenten werden folgende Ports benötigt: 137 UDP, 138 UDP, 139 TCP, 445 TCP (Details <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)">in diesem Microsoft-Artikel</a>).  
 	- Für den Zugriff auf SharePoint Dokumentbibliotheken wird Port 443 TCP benötigt. Firewalls und Proxies dürfen WebDAV HTTP Extensions nicht blockieren.  
 ### 7.2. Server  
 Benötigt werden:

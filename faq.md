@@ -70,7 +70,7 @@ The changelog is located in the `.\docs` folder, along with other documents rela
 
 
 ## 2. How can I contribute, propose a new feature or file a bug?
-If you have an idea for a new feature or have found a problem, please <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues" target="_blank">create an issue on GitHub</a>.
+If you have an idea for a new feature or have found a problem, please <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues">create an issue on GitHub</a>.
 
 If you want to contribute code, please have a look at `.\docs\CONTRIBUTING` for a rough overview of the proposed process.
 
@@ -109,7 +109,7 @@ For communication with the user's own Active Directory forest, trusted domains, 
 - 3269 TCP (Global Catalog TLS)
 - 49152-65535 TCP (high ports)
 
-The client needs the following ports to access a SMB file share on a Windows server (see <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)" target="_blank">this Microsoft article</a> for details):
+The client needs the following ports to access a SMB file share on a Windows server (see <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)">this Microsoft article</a> for details):
 - 137 UDP
 - 138 UDP
 - 139 TCP
@@ -119,7 +119,7 @@ The client needs port 443 TCP to access a SharePoint document library. When not 
 
 
 ## 6. Why is out-of-office abbreviated OOF and not OOO?
-Back in the 1980s, Microsoft had a UNIX OS named Xenix … but read yourself <a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/why-is-oof-an-oof-and-not-an-ooo/ba-p/610191" target="_blank">here</a>.  
+Back in the 1980s, Microsoft had a UNIX OS named Xenix … but read yourself <a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/why-is-oof-an-oof-and-not-an-ooo/ba-p/610191">here</a>.  
 
 
 ## 7. Should I use .docx or .htm as file format for templates? Signatures in Outlook sometimes look different than my templates.
@@ -332,9 +332,9 @@ PowerShell.exe -Command "& '\\server\share\directory\Set-OutlookSignatures.ps1' 
 ```
 
 You will find lots of information about this topic on the internet. The following links provide a first starting point:  
-- <a href="https://stackoverflow.com/questions/45760457/how-can-i-run-a-powershell-script-with-white-spaces-in-the-path-from-the-command" target="_blank">https://stackoverflow.com/questions/45760457/how-can-i-run-a-powershell-script-with-white-spaces-in-the-path-from-the-command</a>
-- <a href="https://stackoverflow.com/questions/28311191/how-do-i-pass-in-a-string-with-spaces-into-powershell" target="_blank">https://stackoverflow.com/questions/28311191/how-do-i-pass-in-a-string-with-spaces-into-powershell</a>
-- <a href="https://stackoverflow.com/questions/10542313/powershell-and-schtask-with-task-that-has-a-space" target="_blank">https://stackoverflow.com/questions/10542313/powershell-and-schtask-with-task-that-has-a-space</a>
+- <a href="https://stackoverflow.com/questions/45760457/how-can-i-run-a-powershell-script-with-white-spaces-in-the-path-from-the-command">https://stackoverflow.com/questions/45760457/how-can-i-run-a-powershell-script-with-white-spaces-in-the-path-from-the-command</a>
+- <a href="https://stackoverflow.com/questions/28311191/how-do-i-pass-in-a-string-with-spaces-into-powershell">https://stackoverflow.com/questions/28311191/how-do-i-pass-in-a-string-with-spaces-into-powershell</a>
+- <a href="https://stackoverflow.com/questions/10542313/powershell-and-schtask-with-task-that-has-a-space">https://stackoverflow.com/questions/10542313/powershell-and-schtask-with-task-that-has-a-space</a>
   
 If you have to use the PowerShell.exe `-Command` or `-File` parameter depends on details of your configuration, for example AppLocker in combination with PowerShell. You may also want to consider the `-EncodedCommand` parameter to start Set-OutlookSignatures.ps1 and pass parameters to it.
   
@@ -346,11 +346,11 @@ Please see `.\sample code\Set-OutlookSignatures.cmd` for an example. Don't forge
 Even when the `hidden` parameter is passed to PowerShell, a window is created and minimized. Although this only takes some tenths of a second, it is not only optically disturbing, but the new window may also steal the keyboard focus.
 
 The only workaround is to start PowerShell from another program, which does not need an own console window. Some examples for such programs are:
-- Rob van der Woude's <a href="https://www.robvanderwoude.com/csharpexamples.php#RunNHide" target="_blank">RunNHide</a>
-- NTWind Software's <a href="https://www.ntwind.com/software/hstart.html" target="_blank">HStart</a>
-- wenshui2008's <a href="https://github.com/wenshui2008/RunHiddenConsole" target="_blank">RunHiddenConsole</a>
-- stax76's <a href="https://github.com/stax76/run-hidden" target="_blank">run-hidden</a>
-- Nir Sofer's <a href="https://www.nirsoft.net/utils/nircmd.html" target="_blank">NirCmd</a>
+- Rob van der Woude's <a href="https://www.robvanderwoude.com/csharpexamples.php#RunNHide">RunNHide</a>
+- NTWind Software's <a href="https://www.ntwind.com/software/hstart.html">HStart</a>
+- wenshui2008's <a href="https://github.com/wenshui2008/RunHiddenConsole">RunHiddenConsole</a>
+- stax76's <a href="https://github.com/stax76/run-hidden">run-hidden</a>
+- Nir Sofer's <a href="https://www.nirsoft.net/utils/nircmd.html">NirCmd</a>
 - As Microsoft has marked Visual Basic Script (VBS) as deprecated and will remove it completely from future Windows releases, the use of Windows Script Host (WSH) is not recommended. If you want to try it anyway, here is a working example:
   - Create a .vbs (Visual Basic Script) file, paste and adapt the following code into it:
 
@@ -639,7 +639,7 @@ As soon as Microsoft makes available a public API, more email clients will get s
 
 Roaming signatures will very likely never be available for mailboxes on-prem, and it seems that it also will not be available for shared mailboxes in the cloud.
 
-Until an API is available, you can disable the feature with a registry key - you can still use the feature via Set-OutlookSignatures. This key forces Outlook for Windows to use the well-known file based approach and ensure full compatibility with Set-OutlookSignatures, until a public API is released and incorporated into the software. For details, please see <a href="https://support.microsoft.com/en-us/office/outlook-roaming-signatures-420c2995-1f57-4291-9004-8f6f97c54d15?ui=en-us&rs=en-us&ad=us" target="_blank">this Microsoft article</a>.
+Until an API is available, you can disable the feature with a registry key - you can still use the feature via Set-OutlookSignatures. This key forces Outlook for Windows to use the well-known file based approach and ensure full compatibility with Set-OutlookSignatures, until a public API is released and incorporated into the software. For details, please see <a href="https://support.microsoft.com/en-us/office/outlook-roaming-signatures-420c2995-1f57-4291-9004-8f6f97c54d15?ui=en-us&rs=en-us&ad=us">this Microsoft article</a>.
 
 Microsoft is already supporting the feature in Outlook Web for more and more Exchange Online tenants. Currently, this breaks PowerShell commands such as Set-MailboxMessageConfiguration. If you want to temporarily disable the feature for Outlook Web in your Exchange Online, you can do this with the command `Set-OrganizationConfig -PostponeRoamingSignaturesUntilLater $false`.
 
@@ -717,7 +717,7 @@ To find the root cause:
 
 Two workarounds are available when you do not want to or can't find and solve the root cause of the problem:
 - Do not scale images in templates (by resizing them in Word, or using HTML width and height attributes), but use the original size of the image. It may be neccessary to resize the images with tools like GIMP before using them in templates.
-- The problem may only appear when templates are converted to signatures on computers configured with a display scaling higher than 100 %. In this case, the problem is in the Word conversion module or the HTML rendering engine of Word (which is used by Outlook). The registry key described in <a href="https://learn.microsoft.com/en-US/outlook/troubleshoot/user-interface/graphics-file-attachment-grows-larger-in-recipient-email" target="_blank">this Microsoft article</a> may help here. After setting the registry key according to the article, Outlook and Word need to be restarted and Set-OutlookSignatures needs to run again.  
+- The problem may only appear when templates are converted to signatures on computers configured with a display scaling higher than 100 %. In this case, the problem is in the Word conversion module or the HTML rendering engine of Word (which is used by Outlook). The registry key described in <a href="https://learn.microsoft.com/en-US/outlook/troubleshoot/user-interface/graphics-file-attachment-grows-larger-in-recipient-email">this Microsoft article</a> may help here. After setting the registry key according to the article, Outlook and Word need to be restarted and Set-OutlookSignatures needs to run again.  
 Starting with v4.0.0, Set-OutlookSignatures sets the `DontUseScreenDpiOnOpen` registry key to the recommended value. 
 
 Nonetheless, some scaling and display problems simply cannot be solved in the HTML code of the signature, because the problem is in the Word HRML rendering engine used by Outlook: For example, some Word builds ignore embedded image width and height attributes and always scale these images at 100% size, or sometimes display them with inverted colors or a black background.  

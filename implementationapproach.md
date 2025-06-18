@@ -156,7 +156,7 @@ The service provider recommends the free open source software Set-OutlookSignatu
 
 This document provides an overview of the functional scope and administration of the recommended solution, support of the service provider during introduction and operation, as well as associated expenses.
 ### 6.1. Common description, license model  
-<a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures" target="_blank">Set-OutlookSignatures</a> is a free open-source product with a chargeable extension for company-relevant functions.
+<a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures">Set-OutlookSignatures</a> is a free open-source product with a chargeable extension for company-relevant functions.
 
 The product is used for the central administration and local distribution of textual signatures and out-of-office replies to clients. Outlook on Windows, Outlook Web and New Outlook are supported as targets.
 
@@ -200,7 +200,7 @@ The implementation approach is **suited for service providers as well as for cli
 
 The software core is **Free and Open-Source Software (FOSS)**. It is published under a license which is approved, among others, by the Free Software Foundation (FSF) and the Open Source Initiative (OSI), and is compatible with the General Public License (GPL) and other popular licenses. Please see `.\LICENSE.txt` for copyright and license details.
 
-**Some features are exclusive to Benefactor Circle members.** Benefactor Circle members have access to an extension file enabling exclusive features. This extension file is chargeable, and it is distributed under a proprietary, non-free and non-open-source license. See <a href="/benefactorcircle" target="_blank">Benefactor Circle</a> for details.  
+**Some features are exclusive to Benefactor Circle members.** Benefactor Circle members have access to an extension file enabling exclusive features. This extension file is chargeable, and it is distributed under a proprietary, non-free and non-open-source license. See <a href="/benefactorcircle">Benefactor Circle</a> for details.  
 
 
 ## 7. Administration  
@@ -211,7 +211,7 @@ The software core is **Free and Open-Source Software (FOSS)**. It is published u
 - If AppLocker or comparable solutions are used, the software is already digitally signed.  
 - Network unlocks:  
   - Ports 389 (LDAP) and 3268 (Global Catalog), TCP and UDP respectively, must be enabled between the client and all domain controllers. If this is not the case, signature-relevant information and variables cannot be retrieved. the software checks with each run whether access is possible.
-- To access the SMB share with the software components, the following ports are needed: 137 UDP, 138 UDP, 139 TCP, 445 TCP (details <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)" target="_blank">in this Microsoft article</a>).  
+- To access the SMB share with the software components, the following ports are needed: 137 UDP, 138 UDP, 139 TCP, 445 TCP (details <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)">in this Microsoft article</a>).  
   - For access to SharePoint document libraries, port 443 TCP is needed. When not using SharePoint Online with Graph, firewalls and proxies must not block WebDAV HTTP extensions.  
 ### 7.2. Server  
 Required are:
