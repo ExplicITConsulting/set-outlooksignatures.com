@@ -372,20 +372,20 @@ If you look for help implementing the free and open-source core version of Set-O
 <h3>How license groups work</h3>
 <p>Each Benefactor Circle license is bound to one or more Active Directory or Entra ID groups, called a license group. For maximum data protection and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
 
-<p>For most environments, only one license group is needed.<br>In on-prem and hybrid environments with multiple Active Directory domains, you may define a separate license group for each AD DNS domain, each license group with a separate maximum member count. When a license group for the home Active Directory domain of a mailbox is defined, this license group is used. If not, the license group defined as default will be used.</p>
+<p>For most environments, only one license group is needed.<br>In on-prem and hybrid environments with multiple Active Directory domains, you may define a separate license group for each AD DNS domain, each license group with a separate maximum member count.<br>If you have multiple entra ID tenants, you may define one Entra ID group per tenant.</p>
 
 <p>A license group definition consists of three components:</p>
 <ul>
-  <li>The DNS domain name of the on-premises Active Directory domain the license group is located in. Use 'EntraID' for cloud-only groups.</li>
+  <li>The DNS domain name of the on-premises Active Directory domain the license group is located in. For cloud-only groups, use 'EntraID_&lt;TenantID&gt;' or 'EntraID_&lt;TenantDNSDomain&gt;'.</li>
   <li>The SID (security identifier) or the Entra ID Object ID of the license group.</li>
   <li>The maximum number of mailboxes licensed for the group.</li>
 </ul>
 
 <p>Where should I create the license group?</p>
 <ul>
-  <li>When using the '-GraphOnly true' parameter, create the group in Entra ID. The license group is then 'EntraID &lt;Object ID of your license group&gt>'. You may also use a group created in on-prem Active Directory, as long as it is synchronized to Entra ID. The license group is then '&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;'.</li>
-  <li>In hybrid environments without using the '-GraphOnly true' parameter, create a group in your on-prem Active Directory and make sure it is synchronized with Entra ID. The license group is then '&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;'. You can also use a group created in Entra ID ('EntraID, &lt;Object ID of the license group&gt;'), which would basically be equal to using the '-GraphOnly true' parameter.</li>
-  <li>In pure on-prem environments, you can only use on-prem groups. The license group is then '&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;'. When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.</li>
+  <li>When using the '-GraphOnly true' parameter, create the group in Entra ID. The license group is then 'EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID of your license group&gt;, &lt;NumberOfLicenses&gt;'.<br>You may also use a group created in on-prem Active Directory, as long as it is synchronized to Entra ID. The license group is then '&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;'.</li>
+  <li>In hybrid environments without using the '-GraphOnly true' parameter, create a group in your on-prem Active Directory and make sure it is synchronized with Entra ID. The license group is then '&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;'.<br>You can also use a group created in Entra ID ('EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID of the license group&gt;, &lt;NumberOfLicenses&gt;'), which would basically be equal to using the '-GraphOnly true' parameter.</li>
+  <li>In pure on-prem environments, you can only use on-prem groups. The license group is then '&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;'.<br>When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.</li>
 </ul>
 
 <p>When a Benefactor Circle exclusive feature is about to be used, the license is checked as follows:</p>
@@ -393,7 +393,7 @@ If you look for help implementing the free and open-source core version of Set-O
   <li>Determine which license group to use.
     <ol>
       <li>Extract the AD DNS domain name from the mailbox' distinguishedName or dnsDomainName property.</li>
-      <li>When the step above returns an AD DNS domain name and if a license group is defined for it, use this group. Else, use the first group in the list.</li>
+      <li>Use the first license group associated with this AD DNS domain name.<br>If no license group for this AD DNS domain is defined and the Mailbox is in Exchange Online, use the first Entra ID license group associated with the tenant of the mailbox.<br>Finally, if no matching license group is defined, use the first license group in the list.</li>
     </ol>
   </li>
   <li>Find the license group via a Graph or Active Directory query.</li>

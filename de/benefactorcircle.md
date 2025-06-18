@@ -376,25 +376,21 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
 
 <p>Zur maximalen Datensicherheit und einfachen Verwaltung ist die Lizenz nicht an bestimmte Postfächer („Named Users“) gebunden, sondern nur an eine Gruppe mit einer definierten maximalen Mitgliederanzahl.</p>
 
-<p>Für die meisten Umgebungen reicht eine einzige Lizenzgruppe aus.<br>
-In On-Premises- oder hybriden Umgebungen mit mehreren Active Directory-Domänen kann für jede AD-DNS-Domäne eine eigene Lizenzgruppe definiert werden, jeweils mit einer separaten maximalen Mitgliederanzahl.</p>
-
-<p>Wenn eine Lizenzgruppe für die Heimatdomäne eines Postfachs definiert ist, wird diese verwendet. Andernfalls wird die Standardlizenzgruppe verwendet.</p>
+<p>Für die meisten Umgebungen reicht eine einzige Lizenzgruppe aus.<br>In On-Premises- oder hybriden Umgebungen mit mehreren Active Directory-Domänen kann für jede AD-DNS-Domäne eine eigene Lizenzgruppe definiert werden, jeweils mit einer separaten maximalen Mitgliederanzahl.<br>Wenn Sie mehrere Entra-ID-Tenants haben, können Sie pro Tenant eine Entra-ID-Gruppe definieren.</p>
 
 <p>Eine Lizenzgruppe besteht aus drei Komponenten:</p>
 <ul>
-  <li>Dem DNS-Domänennamen der lokalen Active Directory-Domäne (bei Cloud-only: EntraID oder Tenant-Domain)</li>
+  <li>Dem DNS-Domänennamen der lokalen Active Directory-Domäne. Für cloud-only-Gruppen verwenden Sie 'EntraID_&lt;TenantID&gt;' oder 'EntraID_&lt;TenantDNSDomain&gt;'.</li>
   <li>Der SID (Security Identifier) oder der Entra ID Object ID der Lizenzgruppe.</li>
   <li>Der maximalen Anzahl an Postfächern, die für diese Gruppe lizenziert sind.</li>
 </ul>
 
 <p><strong>Wo sollte die Lizenzgruppe erstellt werden?</strong></p>
 <ul>
-  <li>Bei Verwendung von '-GraphOnly true' erstellen Sie die Gruppe in Entra ID. Die Lizenzgruppe lautet dann 'EntraID &lt;Object ID Ihrer Lizenzgruppe&gt;'<br>
+  <li>Bei Verwendung von '-GraphOnly true' erstellen Sie die Gruppe in Entra ID. Die Lizenzgruppe lautet dann 'EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID Ihrer Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>
   Alternativ kann auch eine lokale AD-Gruppe verwendet werden, sofern sie mit Entra ID synchronisiert ist: '&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;'</li>
-  <li>In hybriden Umgebungen ohne '-GraphOnly true' erstellen Sie die Gruppe in Ihrer lokalen AD und synchronisieren Sie sie mit Entra ID. Die Lizenzgruppe lautet dann '&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;'<br>
-  Alternativ kann auch eine Entra ID-Gruppe verwendet werden ('EntraID, &lt;Object ID&gt;'), was funktional '-GraphOnly true' entspricht.</li>
-  <li>In reinen On-Premises-Umgebungen sind nur lokale AD-Gruppen zulässig: '&lt;AD-DNS-Domäne&gt;, &lt;SID&gt;'<br>
+  <li>In hybriden Umgebungen ohne '-GraphOnly true' erstellen Sie die Gruppe in Ihrem lokalen AD und synchronisieren Sie sie mit Entra ID. Die Lizenzgruppe lautet dann '&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>Alternativ kann auch eine Entra ID-Gruppe verwendet werden ('EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID&gt;'), was funktional '-GraphOnly true' entspricht.</li>
+  <li>In reinen On-Premises-Umgebungen sind nur lokale AD-Gruppen zulässig: '&lt;AD-DNS-Domäne&gt;, &lt;SID&gt;, &lt;AnzahlLizenzen&gt;'<br>
   Bei späterem Wechsel in eine hybride Umgebung ist keine Anpassung nötig, solange die Gruppen synchronisiert werden.</li>
 </ul>
 
@@ -403,7 +399,7 @@ In On-Premises- oder hybriden Umgebungen mit mehreren Active Directory-Domänen 
   <li>Bestimmen der passenden Lizenzgruppe
     <ol>
       <li>AD-DNS-Domäne aus distinguishedName oder dnsDomainName des Postfachs extrahieren.</li>
-      <li>Wenn eine Lizenzgruppe für diese Domäne definiert ist, diese verwenden; sonst die erste Gruppe in der Liste (Standardgruppe).</li>
+      <li>Es wird die erste Lizenzgruppe verwendet, die mit diesem AD DNS-Domänennamen verbunden ist.<br>Wenn keine Lizenzgruppe für diese AD DNS-Domäne definiert ist und das Postfach in Exchange Online ist, wird die erste Entra ID-Lizenzgruppe verwendet, die mit dem Tenant des Postfachs verbunden ist.<br>Wenn schließlich keine passende Lizenzgruppe definiert ist, wird die erste Lizenzgruppe in der Liste verwendet.</li>
     </ol>
   </li>
   <li>Lizenzgruppe über Graph- oder AD-Abfrage finden.</li>
