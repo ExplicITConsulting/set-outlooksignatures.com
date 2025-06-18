@@ -281,7 +281,7 @@ redirect_from:
   <li>Kleine Unternehmen zahlen denselben niedrigen Preis wie große Konzerne.</li>
   <li>Keine Wartungs- oder Supportverträge, die als „kostenlos“ beworben werden, aber tatsächlich im Jahrespreis versteckt sind und selten im vollen Umfang genutzt werden.<br>
   Bei uns zahlen Sie nur für den Support, den Sie tatsächlich benötigen – dank der umfangreichen Dokumentation ist dieser meist gar nicht erforderlich.<br>
-  <strong>Unser All-Inclusive-Support-Versprechen: Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem Benefactor Circle Add-on, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme. Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.</strong></li>
+  <strong>Unser All-Inclusive-Support-Versprechen: Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme. Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.</strong></li>
   <li>Keine zusätzliche Infrastruktur, die von Dritten betrieben wird und unabhängig von der Nutzung Kosten verursacht.<br>
   Keine Schnittstellen, die Ihre Daten regelmäßig an externe Rechenzentren übertragen, um Signaturen aufzubereiten, und an die jede E-Mail zur Signaturanwendung weitergeleitet werden muss.<br>
   Alles läuft auf Ihren bestehenden Systemen, denen Sie bereits vertrauen und die Sie selbst verwalten – innerhalb Ihrer eigenen Sicherheitsgrenzen.</li>
@@ -310,7 +310,7 @@ redirect_from:
 <h3 id="trialversion">Testversion</h3>
 <p>Sie möchten vielleicht mit einer 14-tägigen Testlizenz starten.</p>
 
-<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>  erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.<br>
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.<br>
 Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion benötigen, lesen Sie die Kurzanleitung in der Readme-Datei, öffnen Sie ein Issue auf GitHub oder kontaktieren Sie uns direkt – wir helfen Ihnen im Rahmen unseres kostenpflichtigen Supports gerne bei der Einführung von Set-OutlookSignatures in Ihrer Umgebung.</p>
 
 <p>Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:</p>
@@ -389,8 +389,8 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
 <p><strong>Wo sollte die Lizenzgruppe erstellt werden?</strong></p>
 <ul>
   <li>Bei Verwendung von '-GraphOnly true' erstellen Sie die Gruppe in Entra ID. Die Lizenzgruppe lautet dann 'EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID Ihrer Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>
-  Alternativ kann auch eine lokale AD-Gruppe verwendet werden, sofern sie mit Entra ID synchronisiert ist: '&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;'</li>
-  <li>In hybriden Umgebungen ohne '-GraphOnly true' erstellen Sie die Gruppe in Ihrem lokalen AD und synchronisieren Sie sie mit Entra ID. Die Lizenzgruppe lautet dann '&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>Alternativ kann auch eine Entra ID-Gruppe verwendet werden ('EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID&gt;'), was funktional '-GraphOnly true' entspricht.</li>
+  Alternativ kann auch eine lokale AD-Gruppe verwendet werden, sofern sie mit Entra ID synchronisiert ist: '&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;SID der Lizenzgruppe&gt;'</li>
+  <li>In hybriden Umgebungen ohne '-GraphOnly true' erstellen Sie die Gruppe in Ihrem lokalen AD und synchronisieren Sie sie mit Entra ID. Die Lizenzgruppe lautet dann '&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>Alternativ kann auch eine Entra ID-Gruppe verwendet werden ('EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID&gt;, &lt;SID der Lizenzgruppe&gt;'), was funktional '-GraphOnly true' entspricht.</li>
   <li>In reinen On-Premises-Umgebungen sind nur lokale AD-Gruppen zulässig: '&lt;AD-DNS-Domäne&gt;, &lt;SID&gt;, &lt;AnzahlLizenzen&gt;'<br>
   Bei späterem Wechsel in eine hybride Umgebung ist keine Anpassung nötig, solange die Gruppen synchronisiert werden.</li>
 </ul>
