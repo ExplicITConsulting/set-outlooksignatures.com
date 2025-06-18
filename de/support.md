@@ -60,7 +60,7 @@ redirect_from:
 
   <p>
     <a href="https://forms.cloud.microsoft/r/CnwjH98vSs" target="_blank">
-      <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">
+      <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">
         ➔ Kostenpflichtigen Support anfordern
       </button>
     </a>

@@ -409,9 +409,51 @@ Benefactor Circle add-on</span>.</p>
 
 <p>When a connection to Microsoft Graph is available, Graph is used to check license group membership. A connection to Graph is enforced when the default license group is an Entra ID group.</p>
 
+
 <h2>License and software version</h2>
 <p>License and software versions go hand in hand, so every new release of Set-OutlookSignatures also means a new license release, and vice-versa.</p>
 
 <p>Using different versions of software and license file is not supported, as this leads to unexpected results.</p>
 
 <p>A warning message is logged when a version mismatch is detected.</p>
+
+
+<h2>Help and support</h2>
+<p>Set-OutlookSignatures and the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> are very well documented, which inevitably brings with it a lot of content.</p>
+
+<p>Visit our help and support center to find out more:<p>
+<ul>
+  <li>The detailed feature set and a comparison with market companions</li>
+  <li>Requirements and configuration options</li>
+  <li>Best practices and FAQ</li>
+  <li>How to get first-class support</li>
+</ul>
+
+<p><a href="/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: LimeGreen">➔ Help and Support-Center</button></a></p>
+
+<p>
+  Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: <a href="https://explicitconsulting.at" target="_blank">ExplicIT Consulting</a> provides first-class fee-based support.
+</p>
+<p>
+  You prefer to be guided through the setup and customization process instead of working through the documentation yourself?
+</p>
+<p>
+  You are looking for customized workshops, hands-on implementation support, training, template creation assistance and other services related to centralized email signature and out-of-office reply management?
+</p>
+<p>
+  Then our offer is just right for you.
+</p>
+<p>
+  You are not buying just any support, but our comprehensive expertise as manufacturer, consultant and implementer. For us, support means not only providing a solution to your problem, but also passing on our experience to you so that you know how and why. Our support is therefore an investment in your own knowledge and that of your employees, which pays off immediately.
+</p>
+<p>
+  <strong>Our all-inclusive support promise:</strong> If your support request stems from a bug in the latest version of Set-OutlookSignatures, the Benefactor Circle add-on, its documentation, or the provided components, support is free — no exceptions. For all other issues, you will receive the same top-notch support at a fair price.
+</p>
+
+<p>
+  <a href="https://forms.cloud.microsoft/r/CnwjH98vSs" target="_blank">
+    <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">
+      ➔ Request fee-based support
+    </button>
+  </a>
+</p>
