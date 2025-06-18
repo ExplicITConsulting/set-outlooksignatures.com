@@ -413,9 +413,7 @@ Benefactor Circle add-on</span>.</p>
 <h2>License and software version</h2>
 <p>License and software versions go hand in hand, so every new release of Set-OutlookSignatures also means a new license release, and vice-versa.</p>
 
-<p>Using different versions of software and license file is not supported, as this leads to unexpected results.</p>
-
-<p>A warning message is logged when a version mismatch is detected.</p>
+<p>Using different versions of software and license file is not supported, as this leads to unexpected results. A warning message is logged when a version mismatch is detected.</p>
 
 
 <h2>Help and support</h2>

@@ -425,9 +425,7 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
 <h2>Lizenz- und Softwareversion</h2>
 <p>Lizenz- und Softwareversionen sind untrennbar miteinander verbunden. Jede neue Version von Set-OutlookSignatures bringt auch eine neue Lizenzversion mit sich, und umgekehrt.</p>
 
-<p>Die Verwendung unterschiedlicher Versionen von Software und Lizenzdatei wird nicht unterstützt, da dies zu unerwartetem Verhalten führen kann.</p>
-
-<p>Wenn ein Versionskonflikt erkannt wird, wird eine Warnmeldung im Log protokolliert.</p>
+<p>Die Verwendung unterschiedlicher Versionen von Software und Lizenzdatei wird nicht unterstützt, da dies zu unerwartetem Verhalten führen kann. Wenn ein Versionskonflikt erkannt wird, wird eine Warnmeldung im Log protokolliert.</p>
 
 
 <h2>Hilfe und Support</h2>
