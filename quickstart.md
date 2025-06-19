@@ -62,7 +62,7 @@ On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use 
 
 - **If some or all mailboxes are in Exchange Online**
   ```
-  powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from step 3>"
+  powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from step 1 Entra ID>"
   ```
   The '-GraphOnly true' parameter makes sure that on-prem Active Directory is ignored and only Graph/Entra ID is used to find mailboxes and their attributes.
 
