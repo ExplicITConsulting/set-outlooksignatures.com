@@ -65,7 +65,7 @@ Wenn Sie AppLocker oder eine vergleichbare Lösung (Defender, CrowdStrike, Ivant
 
 - **Wenn einige oder alle Postfächer in Exchange Online gehalten werden**
   ```
-  powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from step 3>"
+  powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId aus Schritt 1 Entra ID>"
   ```
   Der Parameter '-GraphOnly true' stellt sicher, dass das on-prem Active Directory ignoriert wird und stattdessen nur Graph/Entra ID zum Finden von Postfächern und deren Attributen verwendet wird.
 
@@ -77,12 +77,12 @@ Set-OutlookSignatures verteilt jetzt erste Signaturen, basierend auf Standardein
 
 
 ## Anpassungen vornehmen
-Wenn mit den Standardeinstellung alles gut funktioniert, haben Sie einen soliden Ausgangspunkt für Ihre eigenen Anpassungen.
+Wenn mit den Standardeinstellungen alles gut funktioniert, haben Sie einen soliden Ausgangspunkt für Ihre eigenen Anpassungen.
 
 Sie können Set-OutlookSignatures jetzt für Ihre konkreten Anforderungen konfigurieren. Zum Beispiel:
 - Erstellen Sie einen Ordner mit Ihren eigenen Vorlagen und Konfigurationen.  
   Es ist eine gute Idee, den Ordner '.\sample templates' zu kopieren und dessen Inhalte zu bearbeiten.  
-  Vergessen sie nicht, Set-OutlookSignatures mit den Parametern 'SignatureTemplatePath', 'SignatureIniFile', 'OOFTemplatePath' and 'OOFIniFile' mitzuteilen, wo Ihre Vorlagen und Konfiguration zu finden sind.
+  Vergessen Sie nicht, Set-OutlookSignatures mit den Parametern 'SignatureTemplatePath', 'SignatureIniFile', 'OOFTemplatePath' and 'OOFIniFile' mitzuteilen, wo Ihre Vorlagen und Konfiguration zu finden sind.
 - Passen Sie andere [Parameter](/parameters) an, die Sie nützlich finden.
 - Beginnen Sie, den [Simulations-Modus](/parameters/#16-simulateuser) zu nutzen.
 
