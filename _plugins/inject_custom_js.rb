@@ -49,7 +49,9 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           if (languageDropdown) {
               languageDropdown.value = preferredLanguage;
           }
-          localStorage.setItem("languageDropdownValue", preferredLanguage);
+
+          // Do not set localStorage here, but only when the user explicitly changes the dropdown
+          // localStorage.setItem("languageDropdownValue", preferredLanguage);
 
           const currentPathname = window.location.pathname;
           const currentHostname = window.location.hostname;
