@@ -157,13 +157,20 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
         document.addEventListener("DOMContentLoaded", function () {
           const links = document.querySelectorAll("a[href]");
           links.forEach(link => {
-            link.classList.add("mtrcs-external-link");
-            const url = new URL(link.href, window.location.href);
+          link.classList.add("mtrcs-external-link");
+          const url = new URL(link.href, window.location.href);
 
-            if (url.hostname !== window.location.hostname) {
-              link.setAttribute("target", "_blank");
-            }
-          });
+          const iconSpan = document.createElement("span");
+          iconSpan.classList.add("icon");
+
+          if (url.hostname !== window.location.hostname) {
+            link.setAttribute("target", "_blank");
+            iconSpan.innerHTML = '<i class="fas fa-arrow-up-right-from-square"></i>';
+          } else {
+            iconSpan.innerHTML = '<i class="fas fa-link"></i>';
+          }
+
+          link.appendChild(iconSpan);
         });
       </script>
     HTMLHereDocString
