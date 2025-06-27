@@ -9,7 +9,7 @@ subtitle: |
     More features for your business
   </span>
 description: |
-  The Benefactor Circle add-on. Add more enterprise-grade features.
+  More features for your business
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

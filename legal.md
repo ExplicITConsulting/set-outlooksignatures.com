@@ -8,7 +8,7 @@ subtitle: |
   <span class="subtitle is-4 has-text-white">
     Impress, Privacy Notice, Terms and Conditions, etc.
   </span>
-description: Legal information. Impress. Liability notice. Copyright. Brands and trademarks. Terms and conditions. AGB. Privacy policy.
+description: Impress, Privacy Notice, Terms and Conditions, etc.
 ---
 
 <!-- omit in toc -->

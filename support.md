@@ -9,7 +9,7 @@ subtitle: |
     Passing on our experience to you
   </span>
 description: |
-  Get fee-based support. We have got you covered.
+  Passing on our experience to you
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

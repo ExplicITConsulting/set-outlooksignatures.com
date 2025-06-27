@@ -10,7 +10,8 @@ subtitle: |
     E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
   </span>
 description: |
-  Set-OutlookSignatures Benefactor Circle. E-Mail-Signaturen und Abwensenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
+  E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.
+  Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

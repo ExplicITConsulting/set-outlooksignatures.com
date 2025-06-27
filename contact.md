@@ -8,7 +8,8 @@ subtitle: |
   <span class="subtitle is-4 has-text-white">
     Email, request a call-back, postal address
   </span>
-description: Let's get and stay in contact. Contact us. Write us.
+description: |
+  Email, request a call-back, postal address
 ---
 <div style="min-height: 100vh;">
 

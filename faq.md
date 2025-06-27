@@ -9,7 +9,7 @@ subtitle: |
     Topics that are addressed regularly
   </span>
 description: |
-  Frequently Asked Questions (FAQ). Topics that are addressed regularly.
+  Topics that are addressed regularly
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

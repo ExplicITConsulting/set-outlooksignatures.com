@@ -9,7 +9,7 @@ subtitle: |
     Get the Free and Open-Source core version
   </span>
 description: |
-  Download Set-OutlookSignatures. Get the Free and Open-Source core version. GitHub. FOSS.
+  Get the Free and Open-Source core version
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

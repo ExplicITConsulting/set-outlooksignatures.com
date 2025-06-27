@@ -10,7 +10,7 @@ subtitle: |
     Erste Signaturen in unter einer Stunde
   </span>
 description: |
-  Schnellstart-Anleitung. Verteilen Sie erste Signaturen in unter einer Stunde. Implementierung. Hilfe.
+  Erste Signaturen in unter einer Stunde
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

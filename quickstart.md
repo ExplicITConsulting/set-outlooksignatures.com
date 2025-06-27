@@ -9,7 +9,7 @@ subtitle: |
     First signatures in less than an hour
   </span>
 description: |
-  Quick Start Guide. Implementation help. First signatures in less than an hour.
+  First signatures in less than an hour
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

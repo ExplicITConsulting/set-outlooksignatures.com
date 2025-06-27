@@ -9,7 +9,7 @@ subtitle: |
     What it needs, how it works and how to use it
   </span>
 description: |
-  Technical details, requirements and usage. What it needs, how it works and how to use it.
+  What it needs, how it works and how to use it
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

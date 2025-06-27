@@ -9,7 +9,7 @@ subtitle: |
     Signatures for Outlook on Android and iOS, advanced features for all platforms
   </span>
 description: |
-  Signatures for Outlook on Android and iOS. Advanced features for all platforms.
+  Signatures for Outlook on Android and iOS, advanced features for all platforms
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

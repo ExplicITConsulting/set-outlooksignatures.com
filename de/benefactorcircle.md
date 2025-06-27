@@ -10,7 +10,7 @@ subtitle: |
     Mehr Funktionen für Ihr Unternehmen
   </span>
 description: |
-    Das Benefactor Circle Add-On. Mehr Funktionen für Unternehmen.
+    Mehr Funktionen für Ihr Unternehmen
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

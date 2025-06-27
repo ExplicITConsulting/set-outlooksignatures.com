@@ -10,7 +10,7 @@ subtitle: |
     Wir geben unsere Erfahrung an Sie weiter
   </span>
 description: |
-  Unterstützung erhalten. Wir geben unsere Erfahrung an Sie weiter.
+  Wir geben unsere Erfahrung an Sie weiter
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

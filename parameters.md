@@ -9,7 +9,7 @@ subtitle: |
     How to customize Set-Outlook&shy;Signatures
   </span>
 description: |
-  Parameters. How to customize Set-OutlookSignatures.
+  How to customize Set-OutlookSignatures
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

@@ -7,10 +7,10 @@ title: |
   </span>
 subtitle: |
   <span class="subtitle is-4 has-text-white">
-    Holen Sie sich die kostenlose und quelloffene Kernversion.
+    Holen Sie sich die kostenlose und quelloffene Kernversion
   </span>
 description: |
-  Set-OutlookSignatures herunterladen. Holen Sie sich die kostenlose und quelloffene Kernversion. GitHub. FOSS.
+  Holen Sie sich die kostenlose und quelloffene Kernversion
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

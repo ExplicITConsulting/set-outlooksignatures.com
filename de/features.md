@@ -9,7 +9,7 @@ subtitle: |
     Unsere Lösung auf einen Blick und im Vergleich
   </span>
 description: |
-  Was Set-OutlookSignatures und das Benefactor Circle add-on für Sie tun können und wie sie im Vergleich mit anderen Lösungen abschneiden.
+  Unsere Lösung auf einen Blick und im Vergleich
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

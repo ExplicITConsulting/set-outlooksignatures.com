@@ -9,7 +9,7 @@ subtitle: |
     Documentation and support ressources
   </span>
 description: |
-  Help. Documentation and support ressources.
+  Documentation and support ressources
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

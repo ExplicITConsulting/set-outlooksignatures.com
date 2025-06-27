@@ -8,7 +8,7 @@ subtitle: |
   <span class="subtitle is-4 has-text-white">
     What are you looking for?
   </span>
-description: Search and find. What are you looking for?
+description: What are you looking for?
 ---
 <div style="min-height: 100vh;">
   <h2>What are you looking for?</h2>
