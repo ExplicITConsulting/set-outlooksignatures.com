@@ -129,19 +129,18 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
 
       <script>
         var _paq = window._paq = window._paq || [];
-        _paq.push(["disableAlwaysUseSendBeacon"]);
         _paq.push(["setRequestMethod", "POST"]);
         _paq.push(["disableCookies"]);
         _paq.push(["deleteCookies"]);
+        _paq.push(["disableAlwaysUseSendBeacon"]);
         _paq.push(["disableQueueRequest"]);
         _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
         _paq.push(["setCookieDomain", "*.set-outlooksignatures.com"]);
         _paq.push(["setDomains", ["*.set-outlooksignatures.com"]]);
-        _paq.push(["enableHeartBeatTimer", 5]);
-        _paq.push(["setHeartBeatTimer", 5, 0]);
-        _paq.push(["setLinkClasses", "mtrcs-external-link"]);
-        _paq.push(["trackPageView"]);
-        _paq.push(["enableLinkTracking", true]);
+        _paq.push(['enableHeartBeatTimer']);
+        _paq.push(['setLinkClasses', "mtrcs-external-link"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
 
         (function () {
           var u = "//mtrcs.explicitconsulting.at/";
