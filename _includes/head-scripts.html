@@ -38,6 +38,28 @@
 
 
 <script>
+  // --- Helper Function (GLOBAL SCOPE) ---
+  // This function needs to be accessible to both the initial load logic
+  // and the dropdown change handler.
+  /**
+   * Normalizes a path by removing a trailing slash, unless it's the root path '/'.
+   * Also ensures a single leading slash and removes internal double slashes.
+   * @param {string} path The path to normalize.
+   * @returns {string} The normalized path.
+   */
+  function normalizePathForComparison(path) {
+      if (!path) return '/';
+      let normalized = path.replace(/\/\/+/g, '/');
+      if (normalized.length > 1 && normalized.endsWith('/')) {
+          normalized = normalized.slice(0, -1);
+      }
+      if (!normalized.startsWith('/')) {
+          normalized = '/' + normalized;
+      }
+      return normalized;
+  }
+
+
   document.addEventListener('DOMContentLoaded', function () {
       const languageDropdown = document.getElementById('languageDropdown');
       const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
@@ -96,14 +118,12 @@
                   browserPreferredLanguage = fallbackLang;
               }
           }
-          // If browserPreferredLanguage is still null, it means no match was found among available languages.
       }
 
       // Condition 3: The current page is NOT shown in the preferred browser language
       const currentIsDifferentFromBrowserPref = (browserPreferredLanguage && currentPageLangFromUrl !== browserPreferredLanguage);
 
       // Condition 4: The current page IS available in the preferred browser language
-      // (We need to check if the alternative URL exists)
       let alternatePageExistsInBrowserPref = false;
       if (browserPreferredLanguage && currentIsDifferentFromBrowserPref) {
           // Construct the potential alternate URL for the browser's preferred language
@@ -114,7 +134,7 @@
           } else {
               baseContentPathForAlt = currentPathname;
           }
-          baseContentPathForAlt = normalizePathForComparison(baseContentPathForAlt);
+          baseContentPathForAlt = normalizePathForComparison(baseContentPathForAlt); // <--- Uses the global function
 
           let potentialAltPathname;
           if (browserPreferredLanguage === "en") {
@@ -122,19 +142,11 @@
           } else {
               potentialAltPathname = `/${browserPreferredLanguage}${baseContentPathForAlt === '/' ? '/' : baseContentPathForAlt}`;
           }
-          potentialAltPathname = normalizePathForComparison(potentialAltPathname);
+          potentialAltPathname = normalizePathForComparison(potentialAltPathname); // <--- Uses the global function
 
-          // Fetching just to check existence is resource intensive.
-          // A better way is to rely on your Jekyll setup's known pages or a small JS manifest of pages.
-          // For now, we'll assume if it's a valid language and the current path has a counterpart, it exists.
-          // THIS IS A WEAK POINT: Ideally, you'd have a list of all existing page URLs per language.
-          // For a Jekyll site, this could be generated into a JS array.
-          // For simplicity, we'll assume existence if the language is valid and URL structure allows.
+          // Assume existence for now based on valid language if no explicit page list is available.
           if (availableLanguages.includes(browserPreferredLanguage)) {
-              alternatePageExistsInBrowserPref = true; // Assume it exists if language is valid.
-                                                      // In a real app, you might `fetch(potentialAltPathname, { method: 'HEAD' })`
-                                                      // but this is what we wanted to avoid for bots/first-time visitors.
-                                                      // Alternatively, you could have a small JSON file of available URLs.
+              alternatePageExistsInBrowserPref = true;
           }
       }
 
@@ -143,13 +155,10 @@
       if (localStorageNotSet && browserPreferredLanguage && currentIsDifferentFromBrowserPref && alternatePageExistsInBrowserPref) {
           console.log(`Conditions met: localStorage not set, browser prefers ${browserPreferredLanguage}, current page is ${currentPageLangFromUrl}. Attempting to flash language dropdown.`);
           if (languageDropdown) {
-              // Apply a class that defines the flashing animation
               languageDropdown.classList.add('flash-language-dropdown');
-
-              // Optionally, remove the class after a few seconds to stop flashing
               setTimeout(() => {
                   languageDropdown.classList.remove('flash-language-dropdown');
-              }, 5000); // Flash for 5 seconds
+              }, 5000);
           }
       }
 
@@ -163,18 +172,6 @@
           const currentSearch = window.location.search;
           const currentHash = window.location.hash;
 
-          function normalizePathForComparison(path) {
-              if (!path) return '/';
-              let normalized = path.replace(/\/\/+/g, '/');
-              if (normalized.length > 1 && normalized.endsWith('/')) {
-                  normalized = normalized.slice(0, -1);
-              }
-              if (!normalized.startsWith('/')) {
-                  normalized = '/' + normalized;
-              }
-              return normalized;
-          }
-
           let baseContentPath = '/';
           const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
           const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
@@ -184,19 +181,18 @@
           } else {
               baseContentPath = currentPathname;
           }
-          baseContentPath = normalizePathForComparison(baseContentPath);
+          baseContentPath = normalizePathForComparison(baseContentPath); // <--- Uses the global function
 
           let targetPathname;
-          // The preferred language for redirection is from localStorage
           if (preferredLanguageFromLocalStorage === "en") {
               targetPathname = baseContentPath;
           } else {
               targetPathname = `/${preferredLanguageFromLocalStorage}${baseContentPath === '/' ? '/' : baseContentPath}`;
           }
-          targetPathname = normalizePathForComparison(targetPathname);
+          targetPathname = normalizePathForComparison(targetPathname); // <--- Uses the global function
 
-          const normalizedCurrentPathForComparison = normalizePathForComparison(currentPathname);
-          const normalizedTargetPathForComparison = normalizePathPathForComparison(targetPathname); // Fix: Typo was here
+          const normalizedCurrentPathForComparison = normalizePathForComparison(currentPathname); // <--- Uses the global function
+          const normalizedTargetPathForComparison = normalizePathForComparison(targetPathname); // <--- Uses the global function (Fixed typo)
 
           if (normalizedCurrentPathForComparison !== normalizedTargetPathForComparison) {
               const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
@@ -208,15 +204,13 @@
                       if (response.ok) {
                           window.location.replace(targetFullUrl);
                       } else {
-                          // If target URL doesn't exist, and we're not already on the default English
-                          if (currentPageLangFromUrl !== 'en') { // Check against current page's actual language
+                          if (currentPageLangFromUrl !== 'en') {
                               window.location.replace(fallbackToEnglishFullUrl);
                           }
                       }
                   })
                   .catch(error => {
-                      // If fetch fails, and we're not already on the default English
-                      if (currentPageLangFromUrl !== 'en') { // Check against current page's actual language
+                      if (currentPageLangFromUrl !== 'en') {
                           window.location.replace(fallbackToEnglishFullUrl);
                       }
                   });
@@ -227,13 +221,13 @@
   });
 
 
-  // --- Your separate Event Listener for User Interaction with the Dropdown (unchanged) ---
+  // --- Your separate Event Listener for User Interaction with the Dropdown (unchanged apart from using global normalizePathForComparison) ---
   document.addEventListener('DOMContentLoaded', function () {
       const languageDropdown = document.getElementById('languageDropdown');
       if (languageDropdown) {
           languageDropdown.addEventListener('change', function () {
               const selectedLanguage = this.value;
-              localStorage.setItem("languageDropdownValue", selectedLanguage); // Save user's explicit choice
+              localStorage.setItem("languageDropdownValue", selectedLanguage);
 
               const currentPathname = window.location.pathname;
               const currentSearch = window.location.search;
@@ -249,7 +243,7 @@
               } else {
                   baseContentPath = currentPathname;
               }
-              baseContentPath = baseContentPath.length > 1 && baseContentPath.endsWith('/') ? baseContentPath.slice(0, -1) : baseContentPath;
+              baseContentPath = normalizePathForComparison(baseContentPath); // <--- Uses the global function
 
               if (selectedLanguage === "en") {
                   newPathname = baseContentPath;
