@@ -1,0 +1,43 @@
+---
+layout: none
+permalink: /sitemap.xml
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+{% assign all_pages = site.pages %}
+{% for collection in site.collections %}
+  {% assign all_pages = all_pages | concat: collection.docs %}
+{% endfor %}
+
+{% assign default_lang = site.default_lang | default: "en" %}
+{% assign languages = site.languages | default: "en,de" | split: "," %}
+
+{% assign grouped_pages = all_pages | group_by_exp: "item", "item.url | remove_first: '/' | split: '/' | slice: 1, 10 | join: '/'" %}
+
+{% for group in grouped_pages %}
+  {% assign pages = group.items %}
+  {% assign canonical = pages | where: "lang", default_lang | first %}
+  {% if canonical == nil %}
+    {% assign canonical = pages.first %}
+  {% endif %}
+    <url>
+        <loc>{{ site.url }}{{ canonical.url }}</loc>
+    {% for lang in languages %}
+      {% assign alt = pages | where: "lang", lang | first %}
+      {% if alt %}
+        <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ alt.url }}" />
+      {% endif %}
+    {% endfor %}
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ canonical.url }}" />
+        <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+{% endfor %}
+
+</urlset>
