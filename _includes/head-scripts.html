@@ -1,56 +1,33 @@
-{%- comment -%}
-  Liquid code to generate hreflang tags for Jekyll.
-  This covers alternate language versions and the x-default tag.
-  Whitespace control is used to prevent empty lines in the output HTML.
-{%- endcomment -%}
-
-{%- comment -%} Gather all pages and documents from collections {%- endcomment -%}
 {%- assign all_pages = site.pages -%}
 {%- for collection in site.collections -%}
   {%- assign all_pages = all_pages | concat: collection.docs -%}
 {%- endfor -%}
 
-{%- comment -%} Generate hreflang tags for alternate languages {%- endcomment -%}
 {%- for lang_code in site.languages -%}
   {%- assign current_page_url = page.url -%}
   {%- assign alt_url = nil -%}
 
   {%- if page.lang == site.default_lang -%}
-    {# If the current page is in the default language, the alternate URL for other languages
-       is formed by prepending the language code to the current page's URL. #}
     {%- assign alt_url = '/' | append: lang_code | append: current_page_url -%}
   {%- elsif lang_code == site.default_lang -%}
-    {# If the current page is translated, and we're looking for the default language alternate,
-       remove the current language prefix from the URL. #}
     {%- assign current_prefix = '/' | append: page.lang | append: '/' -%}
     {%- assign alt_url = current_page_url | replace_first: current_prefix, '/' -%}
   {%- else -%}
-    {# If the current page is translated, and we're looking for another translated language,
-       replace the current language prefix with the target language prefix. #}
     {%- assign current_prefix = '/' | append: page.lang | append: '/' -%}
     {%- assign alt_prefix = '/' | append: lang_code | append: '/' -%}
     {%- assign alt_url = current_page_url | replace_first: current_prefix, alt_prefix -%}
   {%- endif -%}
 
-  {# Find the alternate page object based on the constructed URL #}
   {%- assign alt_page = all_pages | where: "url", alt_url | first -%}
 
-  {# Output the hreflang link only if the alternate page exists and is not the current page's language #}
   {%- if alt_page and lang_code != page.lang -%}
     <link rel="alternate" hreflang="{{ lang_code }}" href="{{ site.url }}{{ alt_page.url }}" />
   {%- endif -%}
 {%- endfor -%}
 
-{%- comment -%}
-  Generate the x-default hreflang tag.
-  It points to the current page if it's in the default language,
-  or to the default language version of the current page if it's a translated page.
-{%- endcomment -%}
 {%- if page.lang == site.default_lang -%}
-  {# If the current page is the default language, x-default points to itself. #}
   <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}" />
 {%- else -%}
-  {# If the current page is translated, x-default points to its default language counterpart. #}
   {%- assign current_prefix = '/' | append: page.lang | append: '/' -%}
   {%- assign default_url = page.url | replace_first: current_prefix, '/' -%}
   {%- assign default_page = all_pages | where: "url", default_url | first -%}
@@ -58,14 +35,6 @@
     <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ default_page.url }}" />
   {%- endif -%}
 {%- endif -%}
-
-{%- comment -%}
-  Self-referencing canonical tag.
-  This tells search engines the preferred version of THIS specific page.
-{%- endcomment -%}
-
-
-<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
 
 <script>
