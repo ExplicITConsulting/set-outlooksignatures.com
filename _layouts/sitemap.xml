@@ -1,0 +1,95 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    {% for post in site.posts %}
+    {% if post.sitemap != false %}
+    {% comment %} Use last_modified_at, then date, then site.time (build time) {% endcomment %}
+    {% assign last_mod = post.last_modified_at | default: post.date | default: site.time %}
+    <url>
+        <loc>{{ site.url }}{{ post.url | absolute_url }}</loc>
+        <lastmod>{{ last_mod | date_to_xmlschema }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+
+        {% assign page_path_without_lang = post.url %}
+        {% comment %} Remove language prefixes to get a consistent base path {% endcomment %}
+        {% for lang_code in site.languages %}
+            {% if lang_code != site.default_lang %}
+                {% assign prefix_with_slash = "/" | append: lang_code | append: "/" %}
+                {% if page_path_without_lang contains prefix_with_slash %}
+                    {% assign page_path_without_lang = page_path_without_lang | remove_first: prefix_with_slash | prepend: "/" %}
+                    {% break %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        {% for lang_code in site.languages %}
+            {% assign localized_url = site.url %}
+            {% if lang_code == site.default_lang %}
+                {% comment %} English documents are in the root {% endcomment %}
+                {% assign localized_url = localized_url | append: page_path_without_lang %}
+            {% else %}
+                {% comment %} Other languages are in their respective subdirectories {% endcomment %}
+                {% assign localized_url = localized_url | append: "/" | append: lang_code | append: page_path_without_lang %}
+            {% endif %}
+            <xhtml:link
+                rel="alternate"
+                hreflang="{{ lang_code }}"
+                href="{{ localized_url | absolute_url }}"
+            />
+        {% endfor %}
+    </url>
+    {% endif %}
+    {% endfor %}
+
+    {% for page in site.pages %}
+    {% unless page.sitemap == false or page.url contains '/assets/' or page.url contains '/_site/' or page.url contains '/.jekyll-cache/' or page.url contains '/vendor/' %}
+    {% comment %} Use last_modified_at, then date, then site.time (build time) {% endcomment %}
+    {% assign last_mod = page.last_modified_at | default: page.date | default: site.time %}
+    <url>
+        <loc>{{ site.url }}{{ page.url | absolute_url }}</loc>
+        <lastmod>{{ last_mod | date_to_xmlschema }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+
+        {% comment %}
+            Determine the base path without the language prefix.
+            This assumes a consistent naming convention across languages for related pages.
+            e.g., /about.html, /de/about.html, /fr/about.html
+            This also handles index.html files correctly.
+        {% endcomment %}
+        {% assign base_url_for_hreflang = page.url %}
+        {% for lang_code in site.languages %}
+            {% if lang_code != site.default_lang %}
+                {% assign prefix_with_slash = "/" | append: lang_code | append: "/" %}
+                {% if base_url_for_hreflang contains prefix_with_slash %}
+                    {% assign base_url_for_hreflang = base_url_for_hreflang | remove_first: prefix_with_slash | prepend: "/" %}
+                    {% break %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        {% for lang_code in site.languages %}
+            {% assign localized_url = site.url %}
+            {% if lang_code == site.default_lang %}
+                {% comment %} English documents are in the root {% endcomment %}
+                {% assign localized_url = localized_url | append: base_url_for_hreflang %}
+            {% else %}
+                {% comment %} Other languages are in their respective subdirectories {% endcomment %}
+                {% assign localized_url = localized_url | append: "/" | append: lang_code | append: base_url_for_hreflang %}
+            {% endif %}
+            <xhtml:link
+                rel="alternate"
+                hreflang="{{ lang_code }}"
+                href="{{ localized_url | absolute_url }}"
+            />
+        {% endfor %}
+    </url>
+    {% endunless %}
+    {% endfor %}
+</urlset>
