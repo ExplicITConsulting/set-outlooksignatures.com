@@ -498,6 +498,7 @@ If you want to deploy signatures for non-primary mailboxes, set the parameter `S
 If you want to deploy signatures for
 - mailboxes you don't add to Outlook but just use an assigned "Send As" or "Send on Behalf" right by choosing a different "From" address,
 - distribution lists, for which you use an assigned "Send As" or "Send on Behalf" right by choosing a different "From" address,
+
 create a group specific signature, where the group does not refer to the mailbox or distribution group the email is sent from, but rather the user or group who has the right to send from this mailbox or distribution group.
 
 An example:
