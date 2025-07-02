@@ -17,19 +17,8 @@ permalink: /sitemap.xml
   {% endif %}
 {% endfor %}
 
-{% for item in all_content limit: 1000 %} {# Increase limit to see more pages #}
+{% for item in all_content limit: 10000 %} {# Increased limit as per your suggestion #}
   {% endfor %}
-{# The rest of your sitemap generation code #}
-
-
-
-{% assign all_content = site.html_pages %}
-{% for collection in site.collections %}
-  {% if collection.output %} {# Still good practice to only include collections configured to output #}
-    {% assign all_content = all_content | concat: collection.docs %}
-  {% endif %}
-{% endfor %}
-
 {% assign default_lang = site.default_lang | default: "en" %}
 {% assign languages_string = site.languages | default: "en,de" %}
 {% assign languages = languages_string | split: "," %}
@@ -54,7 +43,7 @@ permalink: /sitemap.xml
     {% assign canonical = pages_in_group | first %}
   {% endif %}
 
-  {% if canonical %} {# Only output URL if a canonical page was found #}
+  {% if canonical %}
   <url>
     <loc>{{ site.url }}{{ canonical.url }}</loc>
     {% for lang in languages %}
