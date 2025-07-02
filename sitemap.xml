@@ -6,7 +6,7 @@ layout: null
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    {%- for post in site.posts -%}
+    {% for post in site.posts -%}
     {%- if post.sitemap != false -%}
     {%- assign last_mod = post.last_modified_at | default: post.date | default: site.time -%}
     <url>
@@ -50,10 +50,10 @@ layout: null
         {%- endfor -%}
     </url>
     {%- endif -%}
-    {%- endfor -%}
+    {%- endfor %}
 
-    {%- for page in site.pages -%}
-    {%- unless page.sitemap == false or page.url contains '/assets/' or page.url contains '/_site/' or page.url contains '/.jekyll-cache/' or page.url contains '/vendor/' -%}
+    {% for page in site.pages -%}
+    {%- unless page.sitemap == false or page.url contains '/assets/' or page.url contains '/_site/' or page.url contains '/.jekyll-cache/' or page.url contains '/vendor/' or page.url contains '.json' or page.url contains '.txt' or page.url contains '.xml' -%}
     {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time -%}
     <url>
         <loc>{{ page.url | absolute_url }}</loc>
@@ -95,5 +95,5 @@ layout: null
         {%- endfor -%}
     </url>
     {%- endunless -%}
-    {%- endfor -%}
+    {%- endfor %}
 </urlset>
