@@ -12,6 +12,19 @@ permalink: /sitemap.xml
 
 {% assign all_content = site.html_pages %}
 {% for collection in site.collections %}
+  {% if collection.output %}
+    {% assign all_content = all_content | concat: collection.docs %}
+  {% endif %}
+{% endfor %}
+
+{% for item in all_content limit: 1000 %} {# Increase limit to see more pages #}
+  {% endfor %}
+{# The rest of your sitemap generation code #}
+
+
+
+{% assign all_content = site.html_pages %}
+{% for collection in site.collections %}
   {% if collection.output %} {# Still good practice to only include collections configured to output #}
     {% assign all_content = all_content | concat: collection.docs %}
   {% endif %}
