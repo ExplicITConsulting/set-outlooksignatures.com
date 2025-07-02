@@ -6,6 +6,8 @@ permalink                : pretty
 footer_menu              : footer_menu
 locale                   : "en-US"
 lang                     : en
+languages                : ["en", "de"]
+default_lang             : "en"
 direction                : ltr # left to right
 google_analytics         : # UA-xxxxxxx
 title                    : "Set-OutlookSignatures and the Benefactor Circle add-on"
@@ -66,6 +68,7 @@ defaults:
       hero_image: "/assets/images/background, vietnam golden bridge.jpg"
       hero_height: is-small
       hero_darken: true
+      lang: "en"
 
 include:
   - ".well-known"
