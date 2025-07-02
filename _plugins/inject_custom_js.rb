@@ -169,7 +169,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
             anchor.innerHTML = "🔗";
             
             // PREVIOUSLY: heading.appendChild(anchor);
-            heading.insertBefore(anchor, heading.firstChild); // ✅ CHANGED
+            heading.insertBefore(anchor, heading.firstChild);
             });
         });
       </script>

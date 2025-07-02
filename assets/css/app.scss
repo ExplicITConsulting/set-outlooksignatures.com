@@ -80,13 +80,13 @@ h6 {
   /* You can adjust this value (e.g., -1.2em) as needed. */
   left: -1.5em;
 
-  /* Use transform ONLY for vertical centering. This is the fix. */
+  /* Use transform ONLY for vertical centering. */
   top: 50%;
   transform: translateY(-50%);
 
   /* Styling */
   text-decoration: none;
-  font-size: 0.8em;
+  font-size: 0.5em;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
