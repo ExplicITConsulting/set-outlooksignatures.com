@@ -61,3 +61,14 @@ body {
 pre code {
   color: black;
 }
+
+.anchor-link {
+  margin-left: 8px;
+  text-decoration: none;
+  opacity: 0.6;
+  font-size: 0.8em;
+}
+
+.anchor-link:hover {
+  opacity: 1;
+}
