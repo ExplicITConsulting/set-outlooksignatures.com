@@ -219,19 +219,9 @@ redirect_from:
 
 
 <h2 id="demo">Demo</h2>
-<p>In unserer persönlichen Produktdemonstration zeigen wir Ihnen, was Set-OutlookSignatures, das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> und das inkludierte Outlook Add-In für Sie tun können - interaktiv und Fokus auf Ihre konkreten Anforderungen.</p>
+<p>Wir zeigen Ihnen, was Set-OutlookSignatures, das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> und das inkludierte Outlook Add-In für Sie tun können - interaktiv und mit Fokus auf Ihre konkreten Anforderungen.</p>
 
 <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Jetzt persönliche Demo vereinbaren</button></a></p>
-
-<p>Unser Demo-Video gibt Ihnen einen Überblick über die wichtigsten Funktionen:<br>
-  <div class="columns">
-    <div class="column is-half">
-      <figure class="image is-16by9">
-        <iframe class="has-ratio" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI" title="Set-OutlookSignatures Benefactor Circle demo video" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </figure>
-    </div>
-  </div>
-</p>
 
 
 <h2>Finanzielle Vorteile</h2>
