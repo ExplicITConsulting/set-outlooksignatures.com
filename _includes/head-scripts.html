@@ -38,186 +38,187 @@
 
 
 <script>
-  // --- Helper Function (GLOBAL SCOPE) ---
-  // This function needs to be accessible to both the initial load logic
-  // and the dropdown change handler.
-  /**
-   * Normalizes a path by removing a trailing slash, unless it's the root path '/'.
-   * Also ensures a single leading slash and removes internal double slashes.
-   * @param {string} path The path to normalize.
-   * @returns {string} The normalized path.
-   */
-  function normalizePathForComparison(path) {
-      if (!path) return '/';
-      let normalized = path.replace(/\/\/+/g, '/');
-      if (normalized.length > 1 && normalized.endsWith('/')) {
-          normalized = normalized.slice(0, -1);
-      }
-      if (!normalized.startsWith('/')) {
-          normalized = '/' + normalized;
-      }
-      return normalized;
-  }
-
-
   document.addEventListener('DOMContentLoaded', function () {
-      const languageDropdown = document.getElementById('languageDropdown');
-      const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
-      
-      // Fallback if no dropdown exists (e.g., on a 404 page, or if dropdown isn't in layout)
-      if (availableLanguages.length === 0) {
-          availableLanguages.push('en', 'de'); // Add your default languages if dropdown is absent
+    const languageDropdown = document.getElementById('languageDropdown');
+    const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
+    if (availableLanguages.length === 0) {
+      availableLanguages.push('en', 'de');
+    }
+
+    let preferredLanguage = localStorage.getItem("languageDropdownValue");
+
+    if (preferredLanguage && availableLanguages.includes(preferredLanguage)) {
+      // Valid preferredLanguage from localStorage, use it.
+    } else {
+      if (navigator.languages && navigator.languages.length > 0) {
+        for (let i = 0; i < navigator.languages.length; i++) {
+          const browserLang = navigator.languages[i].toLowerCase().split("-")[0];
+          if (availableLanguages.includes(browserLang)) {
+            preferredLanguage = browserLang;
+            break;
+          }
+        }
       }
 
-      let preferredLanguageFromLocalStorage = localStorage.getItem("languageDropdownValue");
+      if (!preferredLanguage) {
+        const fallbackLang = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
+        if (availableLanguages.includes(fallbackLang)) {
+          preferredLanguage = fallbackLang;
+        }
+      }
 
+      if (!preferredLanguage) {
+        preferredLanguage = "en";
+      }
+    }
+
+    if (languageDropdown) {
+      languageDropdown.value = preferredLanguage;
+    }
+
+    // --- Start of dynamically fetched bot detection code ---
+    const CRAWLER_USER_AGENTS_JSON_URL = 'https://raw.githubusercontent.com/monperrus/crawler-user-agents/master/crawler-user-agents.json';
+    let compiledBotRegexes = []; // This array will store compiled RegExp objects
+
+    /**
+     * Compiles regex patterns from the fetched JSON data into RegExp objects.
+     * Handles the (?i) flag by using JavaScript's 'i' (case-insensitive) flag.
+     * @param {Array<Object>} jsonData - The array of objects from crawler-user-agents.json
+     * @returns {Array<RegExp>} An array of compiled RegExp objects.
+     */
+    function compileRegexes(jsonData) {
+      return jsonData.map(entry => {
+        try {
+          // Remove the (?i) prefix if present, as 'i' flag handles case-insensitivity
+          let pattern = entry.pattern;
+          let flags = 'i'; // Always case-insensitive as per (?i) convention in the JSON
+          if (pattern.startsWith('(?i)')) {
+            pattern = pattern.substring(4);
+          }
+          return new RegExp(pattern, flags);
+        } catch (e) {
+          console.warn('Invalid regex pattern from crawler-user-agents.json:', entry.pattern, e);
+          return null; // Return null for invalid patterns
+        }
+      }).filter(Boolean); // Filter out any null entries (invalid patterns)
+    }
+
+    /**
+     * Checks if the given userAgent string matches any of the compiled bot regexes.
+     * @param {string} userAgent - The user agent string to check.
+     * @returns {boolean} True if the user agent is a bot, false otherwise.
+     */
+    function isBot(userAgent) {
+      if (!userAgent || compiledBotRegexes.length === 0) {
+        // If no user agent or no patterns loaded, default to not a bot for safety
+        return false;
+      }
+      for (let i = 0; i < compiledBotRegexes.length; i++) {
+        if (compiledBotRegexes[i].test(userAgent)) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    /**
+     * Encapsulates the original redirection logic.
+     * This function will be called once the bot patterns are loaded (or if loading fails).
+     */
+    function executeRedirectionLogic() {
       const currentPathname = window.location.pathname;
-      let currentPageLangFromUrl = 'en'; // Default to 'en'
+      const currentHostname = window.location.hostname;
+      const currentProtocol = window.location.protocol;
+      const currentSearch = window.location.search;
+      const currentHash = window.location.hash;
 
-      // Determine the current page's language based on its URL
-      const match = currentPathname.match(/^\/([a-z]{2})(\/|$)/);
-      if (match && availableLanguages.includes(match[1])) {
-          // If the URL has a valid two-letter language prefix
-          currentPageLangFromUrl = match[1];
+      function normalizePathForComparison(path) {
+        if (!path) return '/';
+        let normalized = path.replace(/\/\/+/g, '/');
+        if (normalized.length > 1 && normalized.endsWith('/')) {
+          normalized = normalized.slice(0, -1);
+        }
+        if (!normalized.startsWith('/')) {
+          normalized = '/' + normalized;
+        }
+        return normalized;
+      }
+
+      let baseContentPath = '/';
+      const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
+      const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
+
+      if (pathSegmentMatch) {
+        baseContentPath = pathSegmentMatch[2] || '/';
       } else {
-          // If no language prefix, assume 'en' as default or if root path
-          currentPageLangFromUrl = 'en';
+        baseContentPath = currentPathname;
       }
+      baseContentPath = normalizePathForComparison(baseContentPath);
 
-
-      // --- Only set dropdown value, do NOT auto-redirect based on localStorage if it's not set ---
-      if (languageDropdown) {
-          if (preferredLanguageFromLocalStorage && availableLanguages.includes(preferredLanguageFromLocalStorage)) {
-              // If localStorage is set and valid, use it to set the dropdown.
-              languageDropdown.value = preferredLanguageFromLocalStorage;
-          } else {
-              // If localStorage is NOT set, or is invalid, initialize dropdown to the current page's language from URL.
-              languageDropdown.value = currentPageLangFromUrl;
-          }
-      }
-
-      // --- FLASH LANGUAGE SELECTOR LOGIC ---
-      // Condition 1: localStorage is not set
-      const localStorageNotSet = (!preferredLanguageFromLocalStorage || !availableLanguages.includes(preferredLanguageFromLocalStorage));
-
-      let browserPreferredLanguage = null;
-      // Condition 2: Determine preferred browser language (if localStorage not set)
-      if (localStorageNotSet) {
-          if (navigator.languages && navigator.languages.length > 0) {
-              for (let i = 0; i < navigator.languages.length; i++) {
-                  const browserLang = navigator.languages[i].toLowerCase().split("-")[0];
-                  if (availableLanguages.includes(browserLang)) {
-                      browserPreferredLanguage = browserLang;
-                      break; // Found a match
-                  }
-              }
-          }
-          if (!browserPreferredLanguage) { // Fallback to navigator.language
-              const fallbackLang = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
-              if (availableLanguages.includes(fallbackLang)) {
-                  browserPreferredLanguage = fallbackLang;
-              }
-          }
-      }
-
-      // Condition 3: The current page is NOT shown in the preferred browser language
-      const currentIsDifferentFromBrowserPref = (browserPreferredLanguage && currentPageLangFromUrl !== browserPreferredLanguage);
-
-      // Condition 4: The current page IS available in the preferred browser language
-      let alternatePageExistsInBrowserPref = false;
-      if (browserPreferredLanguage && currentIsDifferentFromBrowserPref) {
-          // Construct the potential alternate URL for the browser's preferred language
-          let baseContentPathForAlt = '/';
-          const currentPathMatchForAlt = currentPathname.match(/^\/([a-z]{2})(\/.*)?$/);
-          if (currentPathMatchForAlt) {
-              baseContentPathForAlt = currentPathMatchForAlt[2] || '/';
-          } else {
-              baseContentPathForAlt = currentPathname;
-          }
-          baseContentPathForAlt = normalizePathForComparison(baseContentPathForAlt); // <--- Uses the global function
-
-          let potentialAltPathname;
-          if (browserPreferredLanguage === "en") {
-              potentialAltPathname = baseContentPathForAlt;
-          } else {
-              potentialAltPathname = `/${browserPreferredLanguage}${baseContentPathForAlt === '/' ? '/' : baseContentPathForAlt}`;
-          }
-          potentialAltPathname = normalizePathForComparison(potentialAltPathname); // <--- Uses the global function
-
-          // Assume existence for now based on valid language if no explicit page list is available.
-          if (availableLanguages.includes(browserPreferredLanguage)) {
-              alternatePageExistsInBrowserPref = true;
-          }
-      }
-
-
-      // Final check for flashing the dropdown
-      if (localStorageNotSet && browserPreferredLanguage && currentIsDifferentFromBrowserPref && alternatePageExistsInBrowserPref) {
-          console.log(`Conditions met: localStorage not set, browser prefers ${browserPreferredLanguage}, current page is ${currentPageLangFromUrl}. Attempting to flash language dropdown.`);
-          if (languageDropdown) {
-              languageDropdown.classList.add('flash-language-dropdown');
-              setTimeout(() => {
-                  languageDropdown.classList.remove('flash-language-dropdown');
-              }, 10000);
-          }
-      }
-
-
-      // --- Redirection Logic: ONLY if localStorage is set AND valid AND current page is not already the preferred language ---
-      if (preferredLanguageFromLocalStorage && availableLanguages.includes(preferredLanguageFromLocalStorage) && currentPageLangFromUrl !== preferredLanguageFromLocalStorage) {
-          console.log(`LocalStorage preference found (${preferredLanguageFromLocalStorage}). Current page is ${currentPageLangFromUrl}. Initiating redirect.`);
-
-          const currentHostname = window.location.hostname;
-          const currentProtocol = window.location.protocol;
-          const currentSearch = window.location.search;
-          const currentHash = window.location.hash;
-
-          let baseContentPath = '/';
-          const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
-          const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
-
-          if (pathSegmentMatch) {
-              baseContentPath = pathSegmentMatch[2] || '/';
-          } else {
-              baseContentPath = currentPathname;
-          }
-          baseContentPath = normalizePathForComparison(baseContentPath); // <--- Uses the global function
-
-          let targetPathname;
-          if (preferredLanguageFromLocalStorage === "en") {
-              targetPathname = baseContentPath;
-          } else {
-              targetPathname = `/${preferredLanguageFromLocalStorage}${baseContentPath === '/' ? '/' : baseContentPath}`;
-          }
-          targetPathname = normalizePathForComparison(targetPathname); // <--- Uses the global function
-
-          const normalizedCurrentPathForComparison = normalizePathForComparison(currentPathname); // <--- Uses the global function
-          const normalizedTargetPathForComparison = normalizePathForComparison(targetPathname); // <--- Uses the global function (Fixed typo)
-
-          if (normalizedCurrentPathForComparison !== normalizedTargetPathForComparison) {
-              const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
-              const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
-              const fallbackToEnglishFullUrl = `${currentProtocol}//${currentHostname}${baseContentPath}${currentSearch}${currentHash}`;
-
-              fetch(targetFullUrl, { method: 'HEAD' })
-                  .then(response => {
-                      if (response.ok) {
-                          window.location.replace(targetFullUrl);
-                      } else {
-                          if (currentPageLangFromUrl !== 'en') {
-                              window.location.replace(fallbackToEnglishFullUrl);
-                          }
-                      }
-                  })
-                  .catch(error => {
-                      if (currentPageLangFromUrl !== 'en') {
-                          window.location.replace(fallbackToEnglishFullUrl);
-                      }
-                  });
-          }
+      let targetPathname;
+      if (preferredLanguage === "en") {
+        targetPathname = baseContentPath;
       } else {
-          console.log('No automatic redirection for this session (localStorage not set or already on preferred page).');
+        targetPathname = `/${preferredLanguage}${baseContentPath === '/' ? '/' : baseContentPath}`;
       }
+      targetPathname = normalizePathForComparison(targetPathname);
+
+      const normalizedCurrentPathForComparison = normalizePathForComparison(currentPathname);
+      const normalizedTargetPathForComparison = normalizePathForComparison(targetPathname);
+
+      if (normalizedCurrentPathForComparison !== normalizedTargetPathForComparison) {
+        // --- Bot detection check before redirection ---
+        if (isBot(navigator.userAgent)) {
+          console.log("Bot detected using dynamically loaded crawler-user-agents patterns. Skipping redirection.");
+          return; // Prevent redirection for bots
+        }
+        // --- End bot detection check ---
+
+        const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
+        const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
+        const fallbackToEnglishFullUrl = `${currentProtocol}//${currentHostname}${baseContentPath}${currentSearch}${currentHash}`;
+
+        fetch(targetFullUrl, { method: 'HEAD' })
+          .then(response => {
+            if (response.ok) {
+              window.location.replace(targetFullUrl);
+            } else {
+              if (normalizedCurrentPathForComparison !== normalizePathForComparison(baseContentPath)) {
+                window.location.replace(fallbackToEnglishFullUrl);
+              }
+            }
+          })
+          .catch(error => {
+            console.error('Error during HEAD request for target URL:', error);
+            if (normalizedCurrentPathForComparison !== normalizePathForComparison(baseContentPath)) {
+              window.location.replace(fallbackToEnglishFullUrl);
+            }
+          });
+      } else {
+        // No redirect needed, the current page is already the correct preferred language
+      }
+    }
+
+    // Fetch the crawler-user-agents JSON dynamically
+    fetch(CRAWLER_USER_AGENTS_JSON_URL)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        compiledBotRegexes = compileRegexes(data);
+        console.log(`Successfully loaded and compiled ${compiledBotRegexes.length} bot patterns.`);
+        executeRedirectionLogic(); // Proceed with redirection logic after patterns are loaded
+      })
+      .catch(error => {
+        console.error('Failed to load crawler user agents JSON. Proceeding without bot detection:', error);
+        compiledBotRegexes = []; // Ensure the list is empty if fetch fails
+        executeRedirectionLogic(); // Still proceed so the page functions, but without bot detection
+      });
+    // --- End of dynamically fetched bot detection code ---
+
   });
 </script>
 
