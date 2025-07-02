@@ -107,9 +107,6 @@ h6:hover .anchor-link {
 }
 
 @keyframes flash {
-  0% {
-    opacity: 1;
-  }
   50% {
     opacity: 0.5;
   }
@@ -119,8 +116,8 @@ h6:hover .anchor-link {
 }
 
 .flash-language-dropdown {
-  animation: flash 1s infinite alternate; /* Adjust duration and iteration as needed */
+  animation: flash 2s infinite alternate; /* Adjust duration and iteration as needed */
   /* Optional: Add a border or background color change for more emphasis */
-  border: 2px solid limegreen;
-  box-shadow: 0 0 10px limegreen;
+  border: 3px solid darkgoldenrod;
+  box-shadow: 0 0 10px darkgoldenrod;
 }
