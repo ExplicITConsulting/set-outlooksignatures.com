@@ -1,37 +1,41 @@
 {% assign all_pages = site.pages %}
 {% for collection in site.collections %}
-{% assign all_pages = all_pages | concat: collection.docs %}
+  {% assign all_pages = all_pages | concat: collection.docs %}
 {% endfor %}
 
 {% for lang in site.languages %}
-{% if lang != page.lang %}
-{% if page.lang == site.default_lang %}
-{% assign alt_url = '/' | append: lang | append: page.url %}
-{% elsif lang == site.default_lang %}
-{% assign alt_url = page.url | remove_first: '/' | split: '/' | slice: 1, 10 | join: '/' | prepend: '/' %}
-{% else %}
-{% assign alt_prefix = '/' | append: lang | append: '/' %}
-{% assign current_prefix = '/' | append: page.lang | append: '/' %}
-{% assign alt_url = page.url | replace_first: current_prefix, alt_prefix %}
-{% endif %}
+  {% if lang != page.lang %}
+    {% if page.lang == site.default_lang %}
+      {% assign alt_url = '/' | append: lang | append: page.url %}
+    {% elsif lang == site.default_lang %}
+      {% assign alt_url = page.url | remove_first: '/' | split: '/' | slice: 1, 10 | join: '/' | prepend: '/' %}
+    {% else %}
+      {% assign alt_prefix = '/' | append: lang | append: '/' %}
+      {% assign current_prefix = '/' | append: page.lang | append: '/' %}
+      {% assign alt_url = page.url | replace_first: current_prefix, alt_prefix %}
+    {% endif %}
 
-{% assign alt_page = all_pages | where: "url", alt_url | first %}
-{% if alt_page %}
-<link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ alt_page.url }}" />
-{% endif %}
-{% endif %}
+    {% assign alt_page = all_pages | where: "url", alt_url | first %}
+    {% if alt_page %}
+      <link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ alt_page.url }}" />
+    {% endif %}
+  {% endif %}
 {% endfor %}
 
 {%- comment -%}
-Add x-default hreflang pointing to the default language version (English at root)
+  Always add x-default hreflang pointing to the current page if it's in the default language,
+  or to the default language version if it's a translated page.
 {%- endcomment -%}
-{% if page.lang != site.default_lang %}
-{% assign default_url = page.url | remove_first: '/' | split: '/' | slice: 1, 10 | join: '/' | prepend: '/' %}
-{% assign default_page = all_pages | where: "url", default_url | first %}
-{% if default_page %}
-<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ default_page.url }}" />
+{% if page.lang == site.default_lang %}
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}" />
+{% else %}
+  {% assign default_url = page.url | remove_first: '/' | split: '/' | slice: 1, 10 | join: '/' | prepend: '/' %}
+  {% assign default_page = all_pages | where: "url", default_url | first %}
+  {% if default_page %}
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ default_page.url }}" />
+  {% endif %}
 {% endif %}
-{% endif %}
+
 
 
 <script>
