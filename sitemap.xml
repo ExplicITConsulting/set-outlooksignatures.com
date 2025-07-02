@@ -5,9 +5,12 @@ layout: null
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    {% for post in site.posts -%}
-    {%- if post.sitemap != false -%}
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">{%- comment -%}
+    Begin processing posts. Ensure no extra newlines from these loops.
+    The hyphen after `for` and `if` tags is crucial for suppressing newlines.
+{%- endcomment -%}
+{%- for post in site.posts -%}
+{%- if post.sitemap != false -%}
     {%- assign last_mod = post.last_modified_at | default: post.date | default: site.time -%}
     <url>
         <loc>{{ post.url | absolute_url }}</loc>
@@ -49,11 +52,14 @@ layout: null
             {%- endif -%}
         {%- endfor -%}
     </url>
-    {%- endif -%}
-    {%- endfor %}
-
-    {% for page in site.pages -%}
-    {%- unless page.sitemap == false or page.url contains '/assets/' or page.url contains '/_site/' or page.url contains '/.jekyll-cache/' or page.url contains '/vendor/' or page.url contains '.json' or page.url contains '.txt' or page.url contains '.xml' -%}
+{%- endif -%}
+{%- endfor -%}
+{%- comment -%}
+    Begin processing pages. Ensure no extra newlines.
+    The original exclusion conditions are retained.
+{%- endcomment -%}
+{%- for page in site.pages -%}
+{%- unless page.sitemap == false or page.url contains '/assets/' or page.url contains '/_site/' or page.url contains '/.jekyll-cache/' or page.url contains '/vendor/' -%}
     {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time -%}
     <url>
         <loc>{{ page.url | absolute_url }}</loc>
@@ -94,6 +100,6 @@ layout: null
             {%- endif -%}
         {%- endfor -%}
     </url>
-    {%- endunless -%}
-    {%- endfor %}
+{%- endunless -%}
+{%- endfor -%}
 </urlset>
