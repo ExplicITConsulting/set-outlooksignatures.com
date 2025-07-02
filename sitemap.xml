@@ -8,50 +8,29 @@ permalink: /sitemap.xml
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+                            http://www.w3.org/2001/XMLSchema-instance/sitemap.xsd">
 
-{% comment %}
-  Collect all pages and documents from collections.
-  We use `site.html_pages` for most static pages and `site.collections` for posts and other collections.
-  `site.html_pages` usually excludes non-HTML files automatically.
-{% endcomment %}
 {% assign all_content = site.html_pages %}
 {% for collection in site.collections %}
-  {% if collection.output %} {% comment %} Only include collections configured to output {% endcomment %}
+  {% if collection.output %}
     {% assign all_content = all_content | concat: collection.docs %}
   {% endif %}
 {% endfor %}
 
 {% assign default_lang = site.default_lang | default: "en" %}
-
-{% comment %}
-  Correct way to assign a variable.
-  Assume site.languages is an array or a comma-separated string in _config.yml.
-  Example in _config.yml: languages: ["en", "de"] or languages: "en,de"
-{% endcomment %}
 {% assign languages_string = site.languages | default: "en,de" %}
 {% assign languages = languages_string | split: "," %}
 
 {% comment %}
-  Group pages by their "base" URL for sitemap.
-  This logic assumes your language-specific pages have the same URL structure
-  except for a language prefix (e.g., /page and /de/page).
-  A common strategy is to remove the leading language segment.
-  You might need to adjust this based on your actual permalink structure.
-  For example, if URLs are /page.html and /de/page.html,
-  `item.url | replace: "/en/", "/" | replace: "/de/", "/"` etc. might be needed,
-  or if you have a `slug` variable in front matter that's consistent across languages.
-
-  A more robust way might be to add a `canonical_path` or `sitemap_group`
-  variable to your page's front matter, which is identical for all language versions
-  of the same content.
+  Apply all filtering conditions directly before grouping.
+  This makes the `group_by_exp` line longer but avoids an intermediate variable.
 {% endcomment %}
-
-{% assign grouped_pages = filtered_content | group_by_exp: "item", "item.url | split: '/' | slice: 1, -1 | join: '/' | remove_first: item.lang | remove_first: '/'" %}
+{% assign grouped_pages = all_content
+  | group_by_exp: "item", "item.url | split: '/' | slice: 1, -1 | join: '/' | remove_first: item.lang | remove_first: '/'"
+%}
 
 {% for group in grouped_pages %}
   {% assign pages_in_group = group.items %}
-  {% comment %} Find the canonical page, preferring the default language {% endcomment %}
   {% assign canonical = nil %}
   {% for page in pages_in_group %}
     {% if page.lang == default_lang %}
@@ -60,9 +39,10 @@ permalink: /sitemap.xml
     {% endif %}
   {% endfor %}
   {% if canonical == nil %}
-    {% assign canonical = pages_in_group | first %} {% comment %} Fallback to the first page if default language not found {% endcomment %}
+    {% assign canonical = pages_in_group | first %}
   {% endif %}
 
+  {% if canonical %} {# Only output URL if a canonical page was found #}
   <url>
     <loc>{{ site.url }}{{ canonical.url }}</loc>
     {% for lang in languages %}
@@ -72,10 +52,11 @@ permalink: /sitemap.xml
       {% endif %}
     {% endfor %}
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ canonical.url }}" />
-    <lastmod>{{ canonical.date | default: "now" | date_to_xmlschema }}</lastmod> {% comment %} Use page's last modified date if available, otherwise "now" {% endcomment %}
+    <lastmod>{{ canonical.date | default: "now" | date_to_xmlschema }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority> {% comment %} Adjust priority as needed {% endcomment %}
+    <priority>0.8</priority>
   </url>
+  {% endif %}
 {% endfor %}
 
 </urlset>
