@@ -12,7 +12,7 @@ permalink: /sitemap.xml
 
 {% assign all_content = site.html_pages %}
 {% for collection in site.collections %}
-  {% if collection.output %}
+  {% if collection.output %} {# Still good practice to only include collections configured to output #}
     {% assign all_content = all_content | concat: collection.docs %}
   {% endif %}
 {% endfor %}
@@ -22,8 +22,7 @@ permalink: /sitemap.xml
 {% assign languages = languages_string | split: "," %}
 
 {% comment %}
-  Apply all filtering conditions directly before grouping.
-  This makes the `group_by_exp` line longer but avoids an intermediate variable.
+  No filtering applied. All 'all_content' items will be considered for grouping.
 {% endcomment %}
 {% assign grouped_pages = all_content
   | group_by_exp: "item", "item.url | split: '/' | slice: 1, -1 | join: '/' | remove_first: item.lang | remove_first: '/'"
