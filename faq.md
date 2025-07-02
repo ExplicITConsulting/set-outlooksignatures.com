@@ -524,7 +524,7 @@ This works as long as the personal mailbox of a member of "Example\Group" is con
 Caveat: The `$CurrentMailbox[…]$` replacement variables refer to the user's personal mailbox in this case, not to m<area>@example.com.
 
 **Solution option B**  
-This option only works for mailboxes not for distribution groups.
+This option only works for mailboxes, not for distribution groups.
 
 Create signature templates for the mailbox m<area>@example.com and **assign them to m<area>@example.com**. Use the virtual mailbox feature of the Benefactor Circle add-on to make sure that m<area>@example.com is always treated as if it were added to Outlook, not matter if it has been added or not (see '`VirtualMailboxConfigFile`' in this document for details).
 
