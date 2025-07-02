@@ -129,45 +129,6 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
 
 
       <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const languageDropdown = document.getElementById('languageDropdown');
-          const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map(opt => opt.value);
-          const preferredLanguage = languageDropdown ? languageDropdown.value : 'en';
-
-          // 1. Add <meta http-equiv="Content-Language" ...>
-          const metaTag = document.createElement('meta');
-          metaTag.setAttribute('http-equiv', 'Content-Language');
-          metaTag.setAttribute('content', preferredLanguage);
-          document.head.appendChild(metaTag);
-
-          // 2. Add <link rel="alternate" hreflang="..."> for each language
-          const currentPath = window.location.pathname;
-          const baseContentPath = currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/'); // Remove language prefix if present
-          const protocol = window.location.protocol;
-          const host = window.location.host;
-
-          availableLanguages.forEach(lang => {
-            const link = document.createElement('link');
-            link.setAttribute('rel', 'alternate');
-            link.setAttribute('hreflang', lang);
-            const href = lang === 'en'
-              ? `${protocol}//${host}${baseContentPath}`
-              : `${protocol}//${host}/${lang}${baseContentPath}`;
-            link.setAttribute('href', href.replace(/\/+$/, '/') || '/');
-            document.head.appendChild(link);
-          });
-
-          // Optional: Add x-default hreflang
-          const defaultLink = document.createElement('link');
-          defaultLink.setAttribute('rel', 'alternate');
-          defaultLink.setAttribute('hreflang', 'x-default');
-          defaultLink.setAttribute('href', `${protocol}//${host}${baseContentPath}`);
-          document.head.appendChild(defaultLink);
-        });
-      </script>
-
-
-      <script>
         document.addEventListener("DOMContentLoaded", function () {
           const links = document.querySelectorAll("a[href]");
 
