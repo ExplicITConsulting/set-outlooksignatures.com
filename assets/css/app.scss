@@ -116,7 +116,7 @@ h6:hover .anchor-link {
 }
 
 .flash-language-dropdown {
-  animation: flash 2s infinite alternate; /* Adjust duration and iteration as needed */
+  animation: flash 2s infinite normal; /* Adjust duration and iteration as needed */
   /* Optional: Add a border or background color change for more emphasis */
   border: 3px solid darkgoldenrod;
   box-shadow: 0 0 10px darkgoldenrod;
