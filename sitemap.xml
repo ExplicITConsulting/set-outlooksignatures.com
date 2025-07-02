@@ -9,7 +9,7 @@ layout: none
 >
     {%- for post in site.posts -%}
     {%- if post.sitemap != false -%}
-    {%- assign last_mod = post.last_modified_at | default: post.date | default: site.time -%}
+    {%- assign last_mod = post.last_modified_at | default: post.date | default: site.time %}
     <url>
         <loc>{{ post.url | absolute_url }}</loc>
         <lastmod>{{ last_mod | date_to_xmlschema }}</lastmod>
