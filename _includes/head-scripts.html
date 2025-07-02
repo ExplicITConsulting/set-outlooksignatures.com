@@ -148,44 +148,6 @@
           console.log('No automatic redirection for this session (localStorage not set or already on preferred page).');
       }
   });
-
-
-  // --- Separate Event Listener for User Interaction with the Dropdown ---
-  // This part remains responsible for saving the user's EXPLICIT choice and redirecting.
-  document.addEventListener('DOMContentLoaded', function () {
-      const languageDropdown = document.getElementById('languageDropdown');
-      if (languageDropdown) {
-          languageDropdown.addEventListener('change', function () {
-              const selectedLanguage = this.value;
-              localStorage.setItem("languageDropdownValue", selectedLanguage); // Save user's explicit choice
-
-              const currentPathname = window.location.pathname;
-              const currentSearch = window.location.search;
-              const currentHash = window.location.hash;
-
-              let newPathname = '';
-              let baseContentPath = '/';
-              const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
-              const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
-
-              if (pathSegmentMatch) {
-                  baseContentPath = pathSegmentMatch[2] || '/';
-              } else {
-                  baseContentPath = currentPathname;
-              }
-              baseContentPath = baseContentPath.length > 1 && baseContentPath.endsWith('/') ? baseContentPath.slice(0, -1) : baseContentPath;
-
-              if (selectedLanguage === "en") {
-                  newPathname = baseContentPath;
-              } else {
-                  newPathname = `/${selectedLanguage}${baseContentPath === '/' ? '' : baseContentPath}`;
-              }
-
-              newPathname = newPathname.replace(/\/\/+/g, '/').replace(/^(?!.*\/)/, '/');
-              window.location.href = `${window.location.protocol}//${window.location.hostname}${newPathname}${currentSearch}${currentHash}`;
-          });
-      }
-  });
 </script>
 
 
