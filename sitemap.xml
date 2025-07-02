@@ -44,21 +44,21 @@ layout: none
                 {%- endif -%}
             {%- endfor -%}
 
-            {%- if found_localized_post -%}
+            {%- if found_localized_post %}
         <xhtml:link
             rel="alternate"
             hreflang="{{ lang_code }}"
             href="{{ site.url | append: localized_url_path | absolute_url }}"
         />
             {%- endif -%}
-        {%- endfor -%}
+        {%- endfor %}
     </url>
     {%- endif -%}
     {%- endfor -%}
 
     {%- for page in site.pages -%}
     {%- unless page.sitemap == false or page.url contains '/assets/' or page.url contains '/_site/' or page.url contains '/.jekyll-cache/' or page.url contains '/vendor/' -%}
-    {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time -%}
+    {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time %}
     <url>
         <loc>{{ page.url | absolute_url }}</loc>
         <lastmod>{{ last_mod | date_to_xmlschema }}</lastmod>
@@ -92,15 +92,15 @@ layout: none
                 {%- endif -%}
             {%- endfor -%}
 
-            {%- if found_localized_page -%}
+            {%- if found_localized_page %}
         <xhtml:link
             rel="alternate"
             hreflang="{{ lang_code }}"
             href="{{ site.url | append: localized_url_path | absolute_url }}"
         />
             {%- endif -%}
-        {%- endfor -%}
+        {%- endfor %}
     </url>
     {%- endunless -%}
-    {%- endfor -%}
+    {%- endfor %}
 </urlset>
