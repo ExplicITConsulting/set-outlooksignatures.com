@@ -62,3 +62,13 @@ pre code {
   color: black;
 }
 
+.anchor-link {
+  margin-left: 8px;
+  text-decoration: none;
+  opacity: 0.1;
+  font-size: 0.5em;
+}
+
+.anchor-link:hover {
+  opacity: 1;
+}
