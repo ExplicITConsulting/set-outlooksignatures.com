@@ -160,15 +160,16 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
                 while (document.getElementById(uniqueSlug)) {
                 uniqueSlug = `${slug}-${counter++}`;
                 }
-
                 heading.id = uniqueSlug;
             }
 
             const anchor = document.createElement("a");
             anchor.href = `#${heading.id}`;
             anchor.className = "anchor-link";
-            anchor.innerHTML = "🔗"; // You can replace this with an SVG or icon font
-            heading.appendChild(anchor);
+            anchor.innerHTML = "🔗";
+            
+            // PREVIOUSLY: heading.appendChild(anchor);
+            heading.insertBefore(anchor, heading.firstChild); // ✅ CHANGED
             });
         });
       </script>

@@ -62,13 +62,47 @@ pre code {
   color: black;
 }
 
-.anchor-link {
-  margin-left: 8px;
-  text-decoration: none;
-  opacity: 0.1;
-  font-size: 0.5em;
+/* Add relative positioning to all headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
 }
 
+.anchor-link {
+  /* Position the link absolutely, relative to the heading */
+  position: absolute;
+
+  /* Move it to the left of the heading */
+  transform: translateX(-120%);
+
+  /* Vertically center the link with the heading text */
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* Styling */
+  text-decoration: none;
+  font-size: 0.8em;
+
+  /* Hide by default and add a smooth transition */
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Show the anchor link on heading hover */
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  opacity: 0.6;
+}
+
+/* Increase opacity when hovering directly over the link */
 .anchor-link:hover {
   opacity: 1;
 }
