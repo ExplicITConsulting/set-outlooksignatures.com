@@ -505,10 +505,8 @@ An example:
 Members of the group "Example\Group" have the right to send as mailbox m<area>@example.com and as the distribution group dg<area>@example.com.
 
 You want to deploy signatures for the mailbox m<area>@example.com and the distribution group dg<area>@example.com.
-
-Problem 1: dg<area>@example.com can't be added as a mailbox to Outlook, as it is a distribution group.
-
-Problem 2: The mailbox m<area>@example.com is configured as non-primary maibox on most clients, because most of the users have the "Send as" permission, but not the "Full Access" permissions. Some users even don't connect the mailbox at all, they just choose m<area>@example.com as "From" address.
+- Problem 1: dg<area>@example.com can't be added as a mailbox to Outlook, as it is a distribution group.
+- Problem 2: The mailbox m<area>@example.com is configured as non-primary maibox on most clients, because most of the users have the "Send as" permission, but not the "Full Access" permissions. Some users even don't connect the mailbox at all, they just choose m<area>@example.com as "From" address.
 
 **Solution option A**  
 Create signature templates for the mailbox m<area>@example.com and the distribution group dg<area>@example.com and **assign them to the group that has been granted the "send as" permission**:
