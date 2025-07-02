@@ -143,35 +143,36 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
 
       <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+          const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
-            headings.forEach(function (heading) {
+          headings.forEach(function (heading) {
             if (!heading.id) {
-                // Generate a slug from the heading text
-                const slug = heading.textContent
+              const slug = heading.textContent
                 .toLowerCase()
-                .trim()
-                .replace(/[^\w\s-]/g, '') // Remove non-word characters
-                .replace(/\s+/g, '-');    // Replace spaces with dashes
+              .trim()
+              .replace(/[^\w\s-]/g, '')
+              .replace(/\s+/g, '-');
 
-                // Ensure uniqueness by appending a number if needed
-                let uniqueSlug = slug;
-                let counter = 1;
-                while (document.getElementById(uniqueSlug)) {
+              let uniqueSlug = slug;
+              let counter = 1;
+
+              while (document.getElementById(uniqueSlug)) {
                 uniqueSlug = `${slug}-${counter++}`;
-                }
+              }
 
-                heading.id = uniqueSlug;
+              heading.id = uniqueSlug;
             }
 
             const anchor = document.createElement("a");
             anchor.href = `#${heading.id}`;
             anchor.className = "anchor-link";
-            anchor.innerHTML = "🔗"; // You can replace this with an SVG or icon font
-            heading.appendChild(anchor);
-            });
+            anchor.innerHTML = "🔗";
+
+            // Insert anchor before the heading's text
+            heading.insertBefore(anchor, heading.firstChild);
+          });
         });
-        </script>
+      </script>
     HTMLHereDocString
 
     doc.output.gsub!('</head>', "#{code_to_add}\n</head>")

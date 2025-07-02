@@ -63,12 +63,13 @@ pre code {
 }
 
 .anchor-link {
-  margin-left: 8px;
+  margin-right: 8px;
   text-decoration: none;
-  opacity: 0.6;
+  opacity: 0;
   font-size: 0.8em;
 }
 
 .anchor-link:hover {
   opacity: 1;
 }
+
