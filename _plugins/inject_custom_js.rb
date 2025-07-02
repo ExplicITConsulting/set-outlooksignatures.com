@@ -130,7 +130,6 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       <script>
         document.addEventListener("DOMContentLoaded", function () {
           const links = document.querySelectorAll("a[href]");
-          const currentHostname = window.location.hostname;
 
           const externalLinkSvg = `
             <svg xmlns="http://www.w3.org/2000/svg" width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -142,41 +141,36 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
 
           links.forEach(link => {
             try {
-              const url = new URL(link.href);
+              const url = new URL(link.href, window.location.href);
 
-              if (url.hostname !== currentHostname) {
+              if (url.hostname.toLowerCase() !== window.location.hostname.toLowerCase()) {
                 link.setAttribute("target", "_blank");
+              }
 
-                // Determine the target element for appending the icon
-                let targetElement = link; // Default target is the link itself
-
-                // If the link contains a <button> element, we want to append the icon INSIDE the button
+              if ((link.getAttribute("target") || "").toLowerCase() === "_blank") {
+                let targetElement = link;
                 const buttonChild = link.querySelector('button');
                 if (buttonChild) {
                   targetElement = buttonChild;
                 }
 
-                // Check if the icon (svg within span.icon) already exists in the target element
                 if (!targetElement.querySelector(".icon svg")) {
-                  // Create the span.icon wrapper
                   const iconSpan = document.createElement("span");
                   iconSpan.classList.add("icon");
-                  iconSpan.style.marginLeft = "0.2em"; // Add space after text
-                  iconSpan.style.verticalAlign = "middle"
-
-                  // Insert the SVG markup into the span.icon
+                  iconSpan.style.marginLeft = "0.2em";
+                  iconSpan.style.verticalAlign = "middle";
                   iconSpan.innerHTML = externalLinkSvg.trim();
-
-                  // Append the span.icon to the determined target element
                   targetElement.appendChild(iconSpan);
                 }
               }
             } catch (e) {
-              // console.warn("Invalid URL encountered:", link.href, e);
+              // Invalid URL, skip
             }
           });
         });
       </script>
+
+
 
       <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -205,7 +199,6 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
             anchor.className = "anchor-link";
             anchor.innerHTML = "🔗";
             
-            // PREVIOUSLY: heading.appendChild(anchor);
             heading.insertBefore(anchor, heading.firstChild);
             });
         });
