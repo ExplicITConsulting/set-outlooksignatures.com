@@ -79,6 +79,7 @@
     // --- Start of dynamically fetched bot detection code ---
     const CRAWLER_USER_AGENTS_JSON_URL = 'https://raw.githubusercontent.com/monperrus/crawler-user-agents/master/crawler-user-agents.json';
     let compiledBotRegexes = []; // This array will store compiled RegExp objects
+    let assumeBotOnFetchFailure = false; // New flag to indicate if fetch failed
 
     /**
      * Compiles regex patterns from the fetched JSON data into RegExp objects.
@@ -111,6 +112,7 @@
     function isBot(userAgent) {
       if (!userAgent || compiledBotRegexes.length === 0) {
         // If no user agent or no patterns loaded, default to not a bot for safety
+        // This case is now mostly covered by assumeBotOnFetchFailure
         return false;
       }
       for (let i = 0; i < compiledBotRegexes.length; i++) {
@@ -168,9 +170,11 @@
 
       if (normalizedCurrentPathForComparison !== normalizedTargetPathForComparison) {
         // --- Bot detection check before redirection ---
-        if (isBot(navigator.userAgent)) {
-          console.log("Bot detected using dynamically loaded crawler-user-agents patterns. Skipping redirection.");
-          return; // Prevent redirection for bots
+        // If fetch failed, or if isBot returns true, skip redirection
+        if (assumeBotOnFetchFailure || isBot(navigator.userAgent)) {
+          const reason = assumeBotOnFetchFailure ? "fetch failed (assuming bot)" : "bot detected";
+          console.log(`Skipping redirection due to ${reason}.`);
+          return; // Prevent redirection for bots or failed fetch
         }
         // --- End bot detection check ---
 
@@ -209,13 +213,15 @@
       })
       .then(data => {
         compiledBotRegexes = compileRegexes(data);
+        assumeBotOnFetchFailure = false; // Reset if successful
         console.log(`Successfully loaded and compiled ${compiledBotRegexes.length} bot patterns.`);
         executeRedirectionLogic(); // Proceed with redirection logic after patterns are loaded
       })
       .catch(error => {
-        console.error('Failed to load crawler user agents JSON. Proceeding without bot detection:', error);
-        compiledBotRegexes = []; // Ensure the list is empty if fetch fails
-        executeRedirectionLogic(); // Still proceed so the page functions, but without bot detection
+        console.error('Failed to load crawler user agents JSON. Assuming it is a bot and skipping redirection:', error);
+        compiledBotRegexes = []; // Clear any potentially partial or old patterns
+        assumeBotOnFetchFailure = true; // Set the flag to assume bot
+        executeRedirectionLogic(); // Proceed, but it will now skip redirection due to the flag
       });
     // --- End of dynamically fetched bot detection code ---
 
