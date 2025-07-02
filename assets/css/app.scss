@@ -62,21 +62,13 @@ pre code {
   color: black;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  position: relative;
-  padding-left: 1.5em; /* Adjust based on icon size */
+.heading-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .anchor-link {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
   text-decoration: none;
   opacity: 0;
   font-size: 0.8em;
