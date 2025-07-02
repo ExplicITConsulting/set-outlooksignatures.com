@@ -1,24 +1,34 @@
-name: 'search-engines-urls-push'
+name: "search-engines-urls-push"
 on:
   workflow_dispatch:
   push:
   schedule:
     # Set the schedule time
-    - cron: '15 */3 * * *'
+    - cron: "15 */3 * * *"
 
 jobs:
   check-and-submit:
     runs-on: ubuntu-latest
     steps:
-    - name: Sleep  # allow GitHub pages to deploy the site, so the correct sitemap can be used
-      uses: GuillaumeFalourd/wait-sleep-action@v1
-      with:
-        time: '120s'
-    - name: 3Alan/search-engines-urls-push@v0.2.3
-      uses: 3Alan/search-engines-urls-push@v0.2.3
-      with:
-        site: ${{ secrets.SITE }}
-        sitemap: ${{ secrets.SITEMAP }}
-        bing-token: ${{ secrets.BING_TOKEN }}
-        google-client-email: ${{ secrets.GOOGLE_CLIENT_EMAIL }}
-        google-private-key: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+      - name: Sleep # allow GitHub pages to deploy the site, so the correct sitemap can be used
+        uses: GuillaumeFalourd/wait-sleep-action@v1
+        with:
+          time: "120s"
+      - name: 3Alan/search-engines-urls-push@v0.2.3
+        uses: 3Alan/search-engines-urls-push@v0.2.3
+        with:
+          site: ${{ secrets.SITE }}
+          sitemap: ${{ secrets.SITEMAP }}
+          bing-token: ${{ secrets.BING_TOKEN }}
+          google-client-email: ${{ secrets.GOOGLE_CLIENT_EMAIL }}
+          google-private-key: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+      - name: indexnow-action
+        uses: bojieyang/indexnow-action@v2
+        with:
+          endpoint: api.indexnow.org
+          limit: 1000
+          sitemap-location: ${{ secrets.SITEMAP }}
+          key: ${{ secrets.INDEXNOW_KEY }}
+          lastmod-required: false
+          since: 1
+          since-unit: minute
