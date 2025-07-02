@@ -24,9 +24,9 @@ redirect_from:
   Set-OutlookSignatures is the open-source standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
   </p>
 
-  <p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Download&nbsp;<span class="version-text">(loading…)</span>&nbsp;as ZIP file</button></a></p>
+  <p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Download <span class="version-text">(loading…)</span> as ZIP file</button></a></p>
 
-  <p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔&nbsp;Open changelog</button></a></p>
+  <p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Open changelog</button></a></p>
 
   <p>You can deploy first signatures in less than an hour. Just follow the easy 3-step-process to get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.</p>
 
