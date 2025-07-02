@@ -39,173 +39,152 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const languageDropdown = document.getElementById('languageDropdown');
-    const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
+      const languageDropdown = document.getElementById('languageDropdown');
+      const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
+      
+      // Fallback if no dropdown exists (e.g., on a 404 page, or if dropdown isn't in layout)
+      if (availableLanguages.length === 0) {
+          availableLanguages.push('en', 'de'); // Add your default languages if dropdown is absent
+      }
 
-    if (availableLanguages.length === 0) {
-      availableLanguages.push('en', 'de'); // Add your default languages if dropdown is absent
-    }
+      let preferredLanguageFromLocalStorage = localStorage.getItem("languageDropdownValue");
 
-    let preferredLanguageFromLocalStorage = localStorage.getItem("languageDropdownValue");
+      const currentPathname = window.location.pathname;
+      let currentPageLangFromUrl = 'en'; // Default to 'en'
 
-    const currentPathname = window.location.pathname;
-    let currentPageLangFromUrl = 'en'; // Default to 'en'
-    const match = currentPathname.match(/^\/([a-z]{2})(\/|$)/);
-
-    // Determine the current page's language based on its URL
-    if (match && match[1] !== 'en' && availableLanguages.includes(match[1])) {
-      // If the URL has a language prefix (and it's not 'en') AND it's a valid available language
-      currentPageLangFromUrl = match[1];
-    } else if (!match && currentPathname !== '/') {
-      // If no language prefix and not root, assume English.
-      // This is for pages like /about if they are only in English and directly at root.
-      currentPageLangFromUrl = 'en';
-    }
-    // If it's '/', it defaults to 'en'
-
-    let finalPreferredLanguageForScript = preferredLanguageFromLocalStorage;
-
-    // --- LOGIC FOR AUTOMATIC LOCALSTORAGE SETTING / REDIRECTION ---
-    // If localStorage is NOT set OR the stored language is not valid/available:
-    if (!preferredLanguageFromLocalStorage || !availableLanguages.includes(preferredLanguageFromLocalStorage)) {
-      // If the current page's URL indicates a specific language (and it's not 'en' default):
-      if (currentPageLangFromUrl !== 'en') { // Check if the current page is a non-default language
-        // Set preferred language to the current page's language
-        finalPreferredLanguageForScript = currentPageLangFromUrl;
-        localStorage.setItem("languageDropdownValue", currentPageLangFromUrl);
-        console.log(`User landed on a ${currentPageLangFromUrl} page. Setting localStorage preference.`);
+      // Determine the current page's language based on its URL
+      const match = currentPathname.match(/^\/([a-z]{2})(\/|$)/);
+      if (match && availableLanguages.includes(match[1])) {
+          // If the URL has a valid two-letter language prefix
+          currentPageLangFromUrl = match[1];
       } else {
-        // User landed on an English page, and no localStorage preference exists.
-        // Do not set localStorage, let them choose. No auto-redirect here.
-        finalPreferredLanguageForScript = 'en'; // Ensure dropdown defaults to English
-        console.log('User landed on an English page with no localStorage preference. No auto-redirect.');
-      }
-      // In this block (localStorage not set), we explicitly avoid any automatic redirects.
-    } else {
-      // localStorage IS set and valid. This is for returning users.
-      // We will potentially redirect them to their stored preferred language,
-      // unless they are already on that exact page.
-      finalPreferredLanguageForScript = preferredLanguageFromLocalStorage;
-      console.log(`LocalStorage preference found: ${finalPreferredLanguageForScript}. Checking for redirect.`);
-    }
-
-    // --- Update the dropdown value based on the final determined language for the script ---
-    if (languageDropdown) {
-      if (availableLanguages.includes(finalPreferredLanguageForScript)) {
-        languageDropdown.value = finalPreferredLanguageForScript;
-      } else {
-        // Fallback if computed language somehow isn't in dropdown options
-        languageDropdown.value = 'en';
-      }
-    }
-
-
-    // --- Redirection Logic (only if localStorage was set OR explicitly set by landing on non-EN page) ---
-    // Only redirect if a 'finalPreferredLanguageForScript' was determined AND
-    // if the current page's URL language doesn't match this determined language.
-    const isCurrentPagePreferred = (currentPageLangFromUrl === finalPreferredLanguageForScript);
-
-    // Proceed with fetch-based redirection only if localStorage was set and current page is not preferred language
-    if (preferredLanguageFromLocalStorage && availableLanguages.includes(preferredLanguageFromLocalStorage) && !isCurrentPagePreferred) {
-      const currentHostname = window.location.hostname;
-      const currentProtocol = window.location.protocol;
-      const currentSearch = window.location.search;
-      const currentHash = window.location.hash;
-
-      function normalizePathForComparison(path) {
-        if (!path) return '/';
-        let normalized = path.replace(/\/\/+/g, '/');
-        if (normalized.length > 1 && normalized.endsWith('/')) {
-          normalized = normalized.slice(0, -1);
-        }
-        if (!normalized.startsWith('/')) {
-          normalized = '/' + normalized;
-        }
-        return normalized;
+          // If no language prefix, assume 'en' as default or if root path
+          currentPageLangFromUrl = 'en';
       }
 
-      let baseContentPath = '/';
-      const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
-      const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
 
-      if (pathSegmentMatch) {
-        baseContentPath = pathSegmentMatch[2] || '/';
-      } else {
-        baseContentPath = currentPathname;
+      // --- Only set dropdown value, do NOT auto-redirect based on localStorage if it's not set ---
+      if (languageDropdown) {
+          if (preferredLanguageFromLocalStorage && availableLanguages.includes(preferredLanguageFromLocalStorage)) {
+              // If localStorage is set and valid, use it to set the dropdown.
+              languageDropdown.value = preferredLanguageFromLocalStorage;
+          } else {
+              // If localStorage is NOT set, or is invalid, initialize dropdown to the current page's language from URL.
+              // This is crucial for users landing directly on a localized page.
+              languageDropdown.value = currentPageLangFromUrl;
+          }
       }
-      baseContentPath = normalizePathForComparison(baseContentPath);
 
-      let targetPathname;
-      if (finalPreferredLanguageForScript === "en") {
-        targetPathname = baseContentPath;
-      } else {
-        targetPathname = `/${finalPreferredLanguageForScript}${baseContentPath === '/' ? '/' : baseContentPath}`;
-      }
-      targetPathname = normalizePathForComparison(targetPathname);
+      // --- Redirection Logic: ONLY if localStorage is set AND valid AND current page is not already the preferred language ---
+      if (preferredLanguageFromLocalStorage && availableLanguages.includes(preferredLanguageFromLocalStorage) && currentPageLangFromUrl !== preferredLanguageFromLocalStorage) {
+          console.log(`LocalStorage preference found (${preferredLanguageFromLocalStorage}). Current page is ${currentPageLangFromUrl}. Initiating redirect.`);
 
-      const normalizedCurrentPathForComparison = normalizePathForComparison(currentPathname);
-      const normalizedTargetPathForComparison = normalizePathForComparison(targetPathname);
+          const currentHostname = window.location.hostname;
+          const currentProtocol = window.location.protocol;
+          const currentSearch = window.location.search;
+          const currentHash = window.location.hash;
 
-      if (normalizedCurrentPathForComparison !== normalizedTargetPathForComparison) {
-        const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
-        const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
-        const fallbackToEnglishFullUrl = `${currentProtocol}//${currentHostname}${baseContentPath}${currentSearch}${currentHash}`;
-
-        fetch(targetFullUrl, { method: 'HEAD' })
-          .then(response => {
-            if (response.ok) {
-              window.location.replace(targetFullUrl);
-            } else {
-              if (normalizedCurrentPathForComparison !== normalizePathForComparison(baseContentPath)) {
-                window.location.replace(fallbackToEnglishFullUrl);
+          function normalizePathForComparison(path) {
+              if (!path) return '/';
+              let normalized = path.replace(/\/\/+/g, '/');
+              if (normalized.length > 1 && normalized.endsWith('/')) {
+                  normalized = normalized.slice(0, -1);
               }
-            }
-          })
-          .catch(error => {
-            if (normalizedCurrentPathForComparison !== normalizePathForComparison(baseContentPath)) {
-              window.location.replace(fallbackToEnglishFullUrl);
-            }
-          });
+              if (!normalized.startsWith('/')) {
+                  normalized = '/' + normalized;
+              }
+              return normalized;
+          }
+
+          let baseContentPath = '/';
+          const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
+          const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
+
+          if (pathSegmentMatch) {
+              baseContentPath = pathSegmentMatch[2] || '/';
+          } else {
+              baseContentPath = currentPathname;
+          }
+          baseContentPath = normalizePathForComparison(baseContentPath);
+
+          let targetPathname;
+          if (preferredLanguageFromLocalStorage === "en") {
+              targetPathname = baseContentPath;
+          } else {
+              targetPathname = `/${preferredLanguageFromLocalStorage}${baseContentPath === '/' ? '/' : baseContentPath}`;
+          }
+          targetPathname = normalizePathForComparison(targetPathname);
+
+          const normalizedCurrentPathForComparison = normalizePathForComparison(currentPathname);
+          const normalizedTargetPathForComparison = normalizePathForComparison(targetPathname);
+
+          if (normalizedCurrentPathForComparison !== normalizedTargetPathForComparison) {
+              const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
+              const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
+              const fallbackToEnglishFullUrl = `${currentProtocol}//${currentHostname}${baseContentPath}${currentSearch}${currentHash}`;
+
+              fetch(targetFullUrl, { method: 'HEAD' })
+                  .then(response => {
+                      if (response.ok) {
+                          window.location.replace(targetFullUrl);
+                      } else {
+                          // If target URL doesn't exist, and we're not already on the default English
+                          if (currentPageLangFromUrl !== 'en') { // Check against current page's actual language
+                              window.location.replace(fallbackToEnglishFullUrl);
+                          }
+                      }
+                  })
+                  .catch(error => {
+                      // If fetch fails, and we're not already on the default English
+                      if (currentPageLangFromUrl !== 'en') { // Check against current page's actual language
+                          window.location.replace(fallbackToEnglishFullUrl);
+                      }
+                  });
+          }
+      } else {
+          // No redirect needed or allowed for this session:
+          // - localStorage is not set (first-time visitor or bot)
+          // - or localStorage is set, but user is already on their preferred language page.
+          console.log('No automatic redirection for this session (localStorage not set or already on preferred page).');
       }
-    } else {
-      console.log('No automatic redirection needed or allowed for this session.');
-    }
   });
 
+
   // --- Separate Event Listener for User Interaction with the Dropdown ---
+  // This part remains responsible for saving the user's EXPLICIT choice and redirecting.
   document.addEventListener('DOMContentLoaded', function () {
-    const languageDropdown = document.getElementById('languageDropdown');
-    if (languageDropdown) {
-      languageDropdown.addEventListener('change', function () {
-        const selectedLanguage = this.value;
-        localStorage.setItem("languageDropdownValue", selectedLanguage); // Save user's explicit choice
+      const languageDropdown = document.getElementById('languageDropdown');
+      if (languageDropdown) {
+          languageDropdown.addEventListener('change', function () {
+              const selectedLanguage = this.value;
+              localStorage.setItem("languageDropdownValue", selectedLanguage); // Save user's explicit choice
 
-        const currentPathname = window.location.pathname;
-        const currentSearch = window.location.search;
-        const currentHash = window.location.hash;
+              const currentPathname = window.location.pathname;
+              const currentSearch = window.location.search;
+              const currentHash = window.location.hash;
 
-        let newPathname = '';
-        let baseContentPath = '/';
-        const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
-        const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
+              let newPathname = '';
+              let baseContentPath = '/';
+              const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
+              const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
 
-        if (pathSegmentMatch) {
-          baseContentPath = pathSegmentMatch[2] || '/';
-        } else {
-          baseContentPath = currentPathname;
-        }
-        baseContentPath = baseContentPath.length > 1 && baseContentPath.endsWith('/') ? baseContentPath.slice(0, -1) : baseContentPath;
+              if (pathSegmentMatch) {
+                  baseContentPath = pathSegmentMatch[2] || '/';
+              } else {
+                  baseContentPath = currentPathname;
+              }
+              baseContentPath = baseContentPath.length > 1 && baseContentPath.endsWith('/') ? baseContentPath.slice(0, -1) : baseContentPath;
 
-        if (selectedLanguage === "en") {
-          newPathname = baseContentPath;
-        } else {
-          newPathname = `/${selectedLanguage}${baseContentPath === '/' ? '' : baseContentPath}`;
-        }
+              if (selectedLanguage === "en") {
+                  newPathname = baseContentPath;
+              } else {
+                  newPathname = `/${selectedLanguage}${baseContentPath === '/' ? '' : baseContentPath}`;
+              }
 
-        newPathname = newPathname.replace(/\/\/+/g, '/').replace(/^(?!.*\/)/, '/');
-        window.location.href = `${window.location.protocol}//${window.location.hostname}${newPathname}${currentSearch}${currentHash}`;
-      });
-    }
+              newPathname = newPathname.replace(/\/\/+/g, '/').replace(/^(?!.*\/)/, '/');
+              window.location.href = `${window.location.protocol}//${window.location.hostname}${newPathname}${currentSearch}${currentHash}`;
+          });
+      }
   });
 </script>
 
