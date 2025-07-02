@@ -5,7 +5,8 @@ layout: null
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">{%- comment -%}
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- comment -%}
     Begin processing posts. Ensure no extra newlines from these loops.
     The hyphen after `for` and `if` tags is crucial for suppressing newlines.
 {%- endcomment -%}
