@@ -11,7 +11,7 @@ layout: null
     {% comment %} Use last_modified_at, then date, then site.time (build time) {% endcomment %}
     {% assign last_mod = post.last_modified_at | default: post.date | default: site.time %}
     <url>
-        <loc>{{ site.url }}{{ post.url | absolute_url }}</loc>
+        <loc>{{ post.url | absolute_url }}</loc>
         <lastmod>{{ last_mod | date_to_xmlschema }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
@@ -52,7 +52,7 @@ layout: null
     {% comment %} Use last_modified_at, then date, then site.time (build time) {% endcomment %}
     {% assign last_mod = page.last_modified_at | default: page.date | default: site.time %}
     <url>
-        <loc>{{ site.url }}{{ page.url | absolute_url }}</loc>
+        <loc>{{ page.url | absolute_url }}</loc>
         <lastmod>{{ last_mod | date_to_xmlschema }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
