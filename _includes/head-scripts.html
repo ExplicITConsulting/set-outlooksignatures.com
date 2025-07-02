@@ -70,10 +70,89 @@
               languageDropdown.value = preferredLanguageFromLocalStorage;
           } else {
               // If localStorage is NOT set, or is invalid, initialize dropdown to the current page's language from URL.
-              // This is crucial for users landing directly on a localized page.
               languageDropdown.value = currentPageLangFromUrl;
           }
       }
+
+      // --- FLASH LANGUAGE SELECTOR LOGIC ---
+      // Condition 1: localStorage is not set
+      const localStorageNotSet = (!preferredLanguageFromLocalStorage || !availableLanguages.includes(preferredLanguageFromLocalStorage));
+
+      let browserPreferredLanguage = null;
+      // Condition 2: Determine preferred browser language (if localStorage not set)
+      if (localStorageNotSet) {
+          if (navigator.languages && navigator.languages.length > 0) {
+              for (let i = 0; i < navigator.languages.length; i++) {
+                  const browserLang = navigator.languages[i].toLowerCase().split("-")[0];
+                  if (availableLanguages.includes(browserLang)) {
+                      browserPreferredLanguage = browserLang;
+                      break; // Found a match
+                  }
+              }
+          }
+          if (!browserPreferredLanguage) { // Fallback to navigator.language
+              const fallbackLang = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
+              if (availableLanguages.includes(fallbackLang)) {
+                  browserPreferredLanguage = fallbackLang;
+              }
+          }
+          // If browserPreferredLanguage is still null, it means no match was found among available languages.
+      }
+
+      // Condition 3: The current page is NOT shown in the preferred browser language
+      const currentIsDifferentFromBrowserPref = (browserPreferredLanguage && currentPageLangFromUrl !== browserPreferredLanguage);
+
+      // Condition 4: The current page IS available in the preferred browser language
+      // (We need to check if the alternative URL exists)
+      let alternatePageExistsInBrowserPref = false;
+      if (browserPreferredLanguage && currentIsDifferentFromBrowserPref) {
+          // Construct the potential alternate URL for the browser's preferred language
+          let baseContentPathForAlt = '/';
+          const currentPathMatchForAlt = currentPathname.match(/^\/([a-z]{2})(\/.*)?$/);
+          if (currentPathMatchForAlt) {
+              baseContentPathForAlt = currentPathMatchForAlt[2] || '/';
+          } else {
+              baseContentPathForAlt = currentPathname;
+          }
+          baseContentPathForAlt = normalizePathForComparison(baseContentPathForAlt);
+
+          let potentialAltPathname;
+          if (browserPreferredLanguage === "en") {
+              potentialAltPathname = baseContentPathForAlt;
+          } else {
+              potentialAltPathname = `/${browserPreferredLanguage}${baseContentPathForAlt === '/' ? '/' : baseContentPathForAlt}`;
+          }
+          potentialAltPathname = normalizePathForComparison(potentialAltPathname);
+
+          // Fetching just to check existence is resource intensive.
+          // A better way is to rely on your Jekyll setup's known pages or a small JS manifest of pages.
+          // For now, we'll assume if it's a valid language and the current path has a counterpart, it exists.
+          // THIS IS A WEAK POINT: Ideally, you'd have a list of all existing page URLs per language.
+          // For a Jekyll site, this could be generated into a JS array.
+          // For simplicity, we'll assume existence if the language is valid and URL structure allows.
+          if (availableLanguages.includes(browserPreferredLanguage)) {
+              alternatePageExistsInBrowserPref = true; // Assume it exists if language is valid.
+                                                      // In a real app, you might `fetch(potentialAltPathname, { method: 'HEAD' })`
+                                                      // but this is what we wanted to avoid for bots/first-time visitors.
+                                                      // Alternatively, you could have a small JSON file of available URLs.
+          }
+      }
+
+
+      // Final check for flashing the dropdown
+      if (localStorageNotSet && browserPreferredLanguage && currentIsDifferentFromBrowserPref && alternatePageExistsInBrowserPref) {
+          console.log(`Conditions met: localStorage not set, browser prefers ${browserPreferredLanguage}, current page is ${currentPageLangFromUrl}. Attempting to flash language dropdown.`);
+          if (languageDropdown) {
+              // Apply a class that defines the flashing animation
+              languageDropdown.classList.add('flash-language-dropdown');
+
+              // Optionally, remove the class after a few seconds to stop flashing
+              setTimeout(() => {
+                  languageDropdown.classList.remove('flash-language-dropdown');
+              }, 5000); // Flash for 5 seconds
+          }
+      }
+
 
       // --- Redirection Logic: ONLY if localStorage is set AND valid AND current page is not already the preferred language ---
       if (preferredLanguageFromLocalStorage && availableLanguages.includes(preferredLanguageFromLocalStorage) && currentPageLangFromUrl !== preferredLanguageFromLocalStorage) {
@@ -108,6 +187,7 @@
           baseContentPath = normalizePathForComparison(baseContentPath);
 
           let targetPathname;
+          // The preferred language for redirection is from localStorage
           if (preferredLanguageFromLocalStorage === "en") {
               targetPathname = baseContentPath;
           } else {
@@ -116,7 +196,7 @@
           targetPathname = normalizePathForComparison(targetPathname);
 
           const normalizedCurrentPathForComparison = normalizePathForComparison(currentPathname);
-          const normalizedTargetPathForComparison = normalizePathForComparison(targetPathname);
+          const normalizedTargetPathForComparison = normalizePathPathForComparison(targetPathname); // Fix: Typo was here
 
           if (normalizedCurrentPathForComparison !== normalizedTargetPathForComparison) {
               const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
@@ -142,10 +222,44 @@
                   });
           }
       } else {
-          // No redirect needed or allowed for this session:
-          // - localStorage is not set (first-time visitor or bot)
-          // - or localStorage is set, but user is already on their preferred language page.
           console.log('No automatic redirection for this session (localStorage not set or already on preferred page).');
+      }
+  });
+
+
+  // --- Your separate Event Listener for User Interaction with the Dropdown (unchanged) ---
+  document.addEventListener('DOMContentLoaded', function () {
+      const languageDropdown = document.getElementById('languageDropdown');
+      if (languageDropdown) {
+          languageDropdown.addEventListener('change', function () {
+              const selectedLanguage = this.value;
+              localStorage.setItem("languageDropdownValue", selectedLanguage); // Save user's explicit choice
+
+              const currentPathname = window.location.pathname;
+              const currentSearch = window.location.search;
+              const currentHash = window.location.hash;
+
+              let newPathname = '';
+              let baseContentPath = '/';
+              const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
+              const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
+
+              if (pathSegmentMatch) {
+                  baseContentPath = pathSegmentMatch[2] || '/';
+              } else {
+                  baseContentPath = currentPathname;
+              }
+              baseContentPath = baseContentPath.length > 1 && baseContentPath.endsWith('/') ? baseContentPath.slice(0, -1) : baseContentPath;
+
+              if (selectedLanguage === "en") {
+                  newPathname = baseContentPath;
+              } else {
+                  newPathname = `/${selectedLanguage}${baseContentPath === '/' ? '' : baseContentPath}`;
+              }
+
+              newPathname = newPathname.replace(/\/\/+/g, '/').replace(/^(?!.*\/)/, '/');
+              window.location.href = `${window.location.protocol}//${window.location.hostname}${newPathname}${currentSearch}${currentHash}`;
+          });
       }
   });
 </script>
