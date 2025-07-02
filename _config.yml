@@ -4,10 +4,10 @@ theme                    : bulma-clean-theme
 fixed_navbar             : top
 permalink                : pretty
 footer_menu              : footer_menu
-locale                   : "en-US"
+locale                   : "en"
 lang                     : en
 languages                : ["en", "de"]
-default_lang             : "en"
+default_lang             : en
 direction                : ltr # left to right
 google_analytics         : # UA-xxxxxxx
 title                    : "Set-OutlookSignatures and the Benefactor Circle add-on"
