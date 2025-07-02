@@ -2,9 +2,10 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
     {%- for post in site.posts -%}
     {%- if post.sitemap != false -%}
     {%- assign last_mod = post.last_modified_at | default: post.date | default: site.time -%}
@@ -44,7 +45,11 @@ layout: null
             {%- endfor -%}
 
             {%- if found_localized_post -%}
-        <xhtml:link rel="alternate" hreflang="{{ lang_code }}" href="{{ site.url | append: localized_url_path | absolute_url }}" />
+                <xhtml:link
+                    rel="alternate"
+                    hreflang="{{ lang_code }}"
+                    href="{{ site.url | append: localized_url_path | absolute_url }}"
+                />
             {%- endif -%}
         {%- endfor -%}
     </url>
@@ -89,7 +94,11 @@ layout: null
             {%- endfor -%}
 
             {%- if found_localized_page -%}
-        <xhtml:link rel="alternate" hreflang="{{ lang_code }}" href="{{ site.url | append: localized_url_path | absolute_url }}" />
+                <xhtml:link
+                    rel="alternate"
+                    hreflang="{{ lang_code }}"
+                    href="{{ site.url | append: localized_url_path | absolute_url }}"
+                />
             {%- endif -%}
         {%- endfor -%}
     </url>
