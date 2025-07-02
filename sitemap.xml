@@ -2,13 +2,11 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
-        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml">
     {%- for post in site.posts -%}
     {%- if post.sitemap != false -%}
-    {%- comment -%} Use last_modified_at, then date, then site.time (build time) {%- endcomment -%}
     {%- assign last_mod = post.last_modified_at | default: post.date | default: site.time -%}
     <url>
         <loc>{{ post.url | absolute_url }}</loc>
@@ -29,19 +27,25 @@ layout: null
         {%- endfor -%}
 
         {%- for lang_code in site.languages -%}
-            {%- assign localized_url = site.url -%}
+            {%- comment -%} Check if the localized version of the post exists {%- endcomment -%}
+            {%- assign localized_url_path = "" -%}
             {%- if lang_code == site.default_lang -%}
-                {%- comment -%} English documents are in the root {%- endcomment -%}
-                {%- assign localized_url = localized_url | append: page_path_without_lang -%}
+                {%- assign localized_url_path = page_path_without_lang -%}
             {%- else -%}
-                {%- comment -%} Other languages are in their respective subdirectories {%- endcomment -%}
-                {%- assign localized_url = localized_url | append: "/" | append: lang_code | append: page_path_without_lang -%}
+                {%- assign localized_url_path = "/" | append: lang_code | append: page_path_without_lang -%}
             {%- endif -%}
-            <xhtml:link
-                rel="alternate"
-                hreflang="{{ lang_code }}"
-                href="{{ localized_url | absolute_url }}"
-            />
+
+            {%- assign found_localized_post = false -%}
+            {%- for p in site.posts -%}
+                {%- if p.url == localized_url_path -%}
+                    {%- assign found_localized_post = true -%}
+                    {%- break -%}
+                {%- endif -%}
+            {%- endfor -%}
+
+            {%- if found_localized_post -%}
+        <xhtml:link rel="alternate" hreflang="{{ lang_code }}" href="{{ site.url | append: localized_url_path | absolute_url }}" />
+            {%- endif -%}
         {%- endfor -%}
     </url>
     {%- endif -%}
@@ -49,7 +53,6 @@ layout: null
 
     {%- for page in site.pages -%}
     {%- unless page.sitemap == false or page.url contains '/assets/' or page.url contains '/_site/' or page.url contains '/.jekyll-cache/' or page.url contains '/vendor/' -%}
-    {%- comment -%} Use last_modified_at, then date, then site.time (build time) {%- endcomment -%}
     {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time -%}
     <url>
         <loc>{{ page.url | absolute_url }}</loc>
@@ -57,12 +60,6 @@ layout: null
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
 
-        {%- comment -%}
-            Determine the base path without the language prefix.
-            This assumes a consistent naming convention across languages for related pages.
-            e.g., /about.html, /de/about.html, /fr/about.html
-            This also handles index.html files correctly.
-        {%- endcomment -%}
         {%- assign base_url_for_hreflang = page.url -%}
         {%- for lang_code in site.languages -%}
             {%- if lang_code != site.default_lang -%}
@@ -75,19 +72,25 @@ layout: null
         {%- endfor -%}
 
         {%- for lang_code in site.languages -%}
-            {%- assign localized_url = site.url -%}
+            {%- comment -%} Check if the localized version of the page exists {%- endcomment -%}
+            {%- assign localized_url_path = "" -%}
             {%- if lang_code == site.default_lang -%}
-                {%- comment -%} English documents are in the root {%- endcomment -%}
-                {%- assign localized_url = localized_url | append: base_url_for_hreflang -%}
+                {%- assign localized_url_path = base_url_for_hreflang -%}
             {%- else -%}
-                {%- comment -%} Other languages are in their respective subdirectories {%- endcomment -%}
-                {%- assign localized_url = localized_url | append: "/" | append: lang_code | append: base_url_for_hreflang -%}
+                {%- assign localized_url_path = "/" | append: lang_code | append: base_url_for_hreflang -%}
             {%- endif -%}
-            <xhtml:link
-                rel="alternate"
-                hreflang="{{ lang_code }}"
-                href="{{ localized_url | absolute_url }}"
-            />
+
+            {%- assign found_localized_page = false -%}
+            {%- for p in site.pages -%}
+                {%- if p.url == localized_url_path -%}
+                    {%- assign found_localized_page = true -%}
+                    {%- break -%}
+                {%- endif -%}
+            {%- endfor -%}
+
+            {%- if found_localized_page -%}
+        <xhtml:link rel="alternate" hreflang="{{ lang_code }}" href="{{ site.url | append: localized_url_path | absolute_url }}" />
+            {%- endif -%}
         {%- endfor -%}
     </url>
     {%- endunless -%}
