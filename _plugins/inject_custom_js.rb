@@ -140,42 +140,6 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
           });
         });
       </script>
-
-        <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
-
-            headings.forEach(function (heading) {
-            if (!heading.id) {
-                const slug = heading.textContent
-                .toLowerCase()
-                .trim()
-                .replace(/[^\w\s-]/g, '')
-                .replace(/\s+/g, '-');
-
-                let uniqueSlug = slug;
-                let counter = 1;
-                while (document.getElementById(uniqueSlug)) {
-                uniqueSlug = `${slug}-${counter++}`;
-                }
-
-                heading.id = uniqueSlug;
-            }
-
-            const wrapper = document.createElement("div");
-            wrapper.className = "heading-wrapper";
-            heading.parentNode.insertBefore(wrapper, heading);
-            wrapper.appendChild(heading);
-
-            const anchor = document.createElement("a");
-            anchor.href = `#${heading.id}`;
-            anchor.className = "anchor-link";
-            anchor.innerHTML = "🔗";
-
-            wrapper.insertBefore(anchor, heading);
-            });
-        });
-        </script>
     HTMLHereDocString
 
     doc.output.gsub!('</head>', "#{code_to_add}\n</head>")

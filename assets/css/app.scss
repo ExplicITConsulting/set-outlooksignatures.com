@@ -62,18 +62,3 @@ pre code {
   color: black;
 }
 
-.heading-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
-
-.anchor-link {
-  text-decoration: none;
-  opacity: 0;
-  font-size: 0.8em;
-}
-
-.anchor-link:hover {
-  opacity: 1;
-}
