@@ -79,12 +79,12 @@
             }
 
             // Now, safely define isBot and assumeBotOnFetchFailure after the external script should have loaded
-            const isBot = typeof window.isBot === 'function' ? window.isBot : () => {
+            const isBot = typeof window.isbot === 'function' ? window.isbot : () => {
                 console.warn("isBot function not found, defaulting to true (assuming bot).");
                 return true;
             };
-            // This flag will be true if window.isBot was not a function after loading attempt
-            const assumeBotOnFetchFailure = typeof window.isBot !== 'function';
+            // This flag will be true if window.isbot was not a function after loading attempt
+            const assumeBotOnFetchFailure = typeof window.isbot !== 'function';
 
             const languageDropdown = document.getElementById('languageDropdown');
             // Get available languages from the dropdown, or default if dropdown not found/empty
