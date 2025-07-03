@@ -40,117 +40,220 @@
 {%- endif -%}
 
 
-<script src="https://cdn.jsdelivr.net/npm/isbot@5/index.iife.min.js"></script>
-
-
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const isBot = typeof window.isBot === 'function' ? window.isBot : () => true;
-    const assumeBotOnFetchFailure = typeof window.isBot !== 'function';
+    /**
+     * Dynamically loads a JavaScript file.
+     * @param {string} src - The URL of the script to load.
+     * @param {function(Error|null, HTMLElement|null)} callback - Callback function (error, scriptElement)
+     */
+    function loadScript(src, callback) {
+        const script = document.createElement('script');
+        script.src = src;
+        // Set async to true to prevent blocking rendering, but ensure order if needed
+        script.async = true;
 
-    const languageDropdown = document.getElementById('languageDropdown');
-    const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
-    if (availableLanguages.length === 0) {
-      availableLanguages.push('en', 'de');
+        script.onload = () => {
+            console.log(`Script loaded: ${src}`);
+            callback(null, script);
+        };
+        script.onerror = () => {
+            console.error(`Failed to load script: ${src}`);
+            callback(new Error(`Failed to load script: ${src}`));
+        };
+        document.head.appendChild(script);
     }
 
-    let preferredLanguage = localStorage.getItem("languageDropdownValue");
+    // Wait for the DOM to be fully loaded before attempting to execute scripts
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOM Content Loaded. Attempting to load isbot script.');
 
-    if (!(preferredLanguage && availableLanguages.includes(preferredLanguage))) {
-      if (navigator.languages && navigator.languages.length > 0) {
-        for (let i = 0; i < navigator.languages.length; i++) {
-          const browserLang = navigator.languages[i].toLowerCase().split("-")[0];
-          if (availableLanguages.includes(browserLang)) {
-            preferredLanguage = browserLang;
-            break;
-          }
-        }
-      }
-
-      if (!preferredLanguage) {
-        const fallbackLang = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
-        if (availableLanguages.includes(fallbackLang)) {
-          preferredLanguage = fallbackLang;
-        }
-      }
-
-      if (!preferredLanguage) {
-        preferredLanguage = "en";
-      }
-    }
-
-    if (languageDropdown) {
-      languageDropdown.value = preferredLanguage;
-    }
-
-    function normalizePathForComparison(path) {
-      if (!path) return '/';
-      let normalized = path.replace(/\/\/+/g, '/');
-      if (normalized.length > 1 && normalized.endsWith('/')) {
-        normalized = normalized.slice(0, -1);
-      }
-      if (!normalized.startsWith('/')) {
-        normalized = '/' + normalized;
-      }
-      return normalized;
-    }
-
-    function executeRedirectionLogic() {
-      const currentPathname = window.location.pathname;
-      const currentHostname = window.location.hostname;
-      const currentProtocol = window.location.protocol;
-      const currentSearch = window.location.search;
-      const currentHash = window.location.hash;
-
-      let baseContentPath = '/';
-      const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
-      const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
-
-      if (pathSegmentMatch) {
-        baseContentPath = pathSegmentMatch[2] || '/';
-      } else {
-        baseContentPath = currentPathname;
-      }
-      baseContentPath = normalizePathForComparison(baseContentPath);
-
-      let targetPathname = preferredLanguage === "en"
-        ? baseContentPath
-        : `/${preferredLanguage}${baseContentPath === '/' ? '/' : baseContentPath}`;
-      targetPathname = normalizePathForComparison(targetPathname);
-
-      const normalizedCurrentPath = normalizePathForComparison(currentPathname);
-      const normalizedTargetPath = normalizePathForComparison(targetPathname);
-
-      if (normalizedCurrentPath !== normalizedTargetPath) {
-        if (assumeBotOnFetchFailure || isBot(navigator.userAgent)) {
-          console.log(`Skipping redirection due to ${assumeBotOnFetchFailure ? "fetch failure (assuming bot)" : "bot detected"}.`);
-          return;
-        }
-
-        const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
-        const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
-        const fallbackToEnglishFullUrl = `${currentProtocol}//${currentHostname}${baseContentPath}${currentSearch}${currentHash}`;
-
-        fetch(targetFullUrl, { method: 'HEAD' })
-          .then(response => {
-            if (response.ok) {
-              window.location.replace(targetFullUrl);
-            } else if (normalizedCurrentPath !== normalizePathForComparison(baseContentPath)) {
-              window.location.replace(fallbackToEnglishFullUrl);
+        // Load the isbot script dynamically
+        loadScript('https://cdn.jsdelivr.net/npm/isbot@5/index.iife.min.js', (error, script) => {
+            // This callback will execute once the 'isbot' script is loaded (or fails to load)
+            if (error) {
+                console.error('Error loading isbot script. Proceeding with assumption of bot on fetch failure.', error);
+                // If isbot fails to load, assumeBotOnFetchFailure will remain true,
+                // and isBot will default to always returning true.
+            } else {
+                console.log('isbot script loaded successfully.');
             }
-          })
-          .catch(error => {
-            console.error('Error during HEAD request for target URL:', error);
-            if (normalizedCurrentPath !== normalizePathForComparison(baseContentPath)) {
-              window.location.replace(fallbackToEnglishFullUrl);
-            }
-          });
-      }
-    }
 
-    executeRedirectionLogic();
-  });
+            // Now, safely define isBot and assumeBotOnFetchFailure after the external script should have loaded
+            const isBot = typeof window.isBot === 'function' ? window.isBot : () => {
+                console.warn("isBot function not found, defaulting to true (assuming bot).");
+                return true;
+            };
+            // This flag will be true if window.isBot was not a function after loading attempt
+            const assumeBotOnFetchFailure = typeof window.isBot !== 'function';
+
+            const languageDropdown = document.getElementById('languageDropdown');
+            // Get available languages from the dropdown, or default if dropdown not found/empty
+            const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
+            if (availableLanguages.length === 0) {
+                availableLanguages.push('en', 'de'); // Fallback languages if no dropdown or no options
+                console.log('No language dropdown options found, defaulting available languages to:', availableLanguages);
+            } else {
+                console.log('Available languages from dropdown:', availableLanguages);
+            }
+
+            let preferredLanguage = localStorage.getItem("languageDropdownValue");
+            console.log('Preferred language from localStorage:', preferredLanguage);
+
+            // Determine the preferred language based on localStorage, browser preferences, or fallback
+            if (!(preferredLanguage && availableLanguages.includes(preferredLanguage))) {
+                console.log('Preferred language not found in localStorage or not available. Checking browser languages.');
+                if (navigator.languages && navigator.languages.length > 0) {
+                    for (let i = 0; i < navigator.languages.length; i++) {
+                        const browserLang = navigator.languages[i].toLowerCase().split("-")[0];
+                        if (availableLanguages.includes(browserLang)) {
+                            preferredLanguage = browserLang;
+                            console.log('Found browser language in available languages:', preferredLanguage);
+                            break;
+                        }
+                    }
+                }
+
+                if (!preferredLanguage) {
+                    console.log('No browser language matched. Checking navigator.language/userLanguage.');
+                    const fallbackLang = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
+                    if (availableLanguages.includes(fallbackLang)) {
+                        preferredLanguage = fallbackLang;
+                        console.log('Found fallback language:', preferredLanguage);
+                    }
+                }
+
+                if (!preferredLanguage) {
+                    preferredLanguage = "en"; // Final fallback to English
+                    console.log('No preferred language determined, defaulting to "en".');
+                }
+            } else {
+                console.log('Using preferred language from localStorage:', preferredLanguage);
+            }
+
+            // Set the dropdown value if the dropdown exists
+            if (languageDropdown) {
+                languageDropdown.value = preferredLanguage;
+                console.log('Language dropdown set to:', preferredLanguage);
+            }
+
+            /**
+             * Normalizes a URL path for consistent comparison.
+             * Ensures it starts with '/' and does not end with '/' unless it's just '/'.
+             * @param {string} path - The path to normalize.
+             * @returns {string} The normalized path.
+             */
+            function normalizePathForComparison(path) {
+                if (!path) return '/';
+                let normalized = path.replace(/\/\/+/g, '/'); // Replace multiple slashes with a single one
+                if (normalized.length > 1 && normalized.endsWith('/')) {
+                    normalized = normalized.slice(0, -1); // Remove trailing slash unless it's just '/'
+                }
+                if (!normalized.startsWith('/')) {
+                    normalized = '/' + normalized; // Ensure it starts with a slash
+                }
+                return normalized;
+            }
+
+            /**
+             * Executes the redirection logic based on preferred language and current URL.
+             */
+            function executeRedirectionLogic() {
+                const currentPathname = window.location.pathname;
+                const currentHostname = window.location.hostname;
+                const currentProtocol = window.location.protocol;
+                const currentSearch = window.location.search;
+                const currentHash = window.location.hash;
+
+                console.log('Current URL details:', { currentPathname, currentHostname, currentProtocol, currentSearch, currentHash });
+
+                let baseContentPath = '/';
+                // Regex to capture a two-letter language folder (e.g., /en/ or /de/)
+                const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
+                const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
+
+                if (pathSegmentMatch) {
+                    // If a language folder is found, the base content path is what follows it
+                    baseContentPath = pathSegmentMatch[2] || '/';
+                    console.log('Language folder detected. Base content path:', baseContentPath);
+                } else {
+                    // Otherwise, the current pathname is the base content path
+                    baseContentPath = currentPathname;
+                    console.log('No language folder detected. Base content path:', baseContentPath);
+                }
+                baseContentPath = normalizePathForComparison(baseContentPath);
+                console.log('Normalized base content path:', baseContentPath);
+
+                // Construct the target pathname based on the preferred language
+                let targetPathname = preferredLanguage === "en"
+                    ? baseContentPath // English paths don't have a /en/ prefix
+                    : `/${preferredLanguage}${baseContentPath === '/' ? '/' : baseContentPath}`; // Other languages get /lang/ prefix
+                targetPathname = normalizePathForComparison(targetPathname);
+                console.log('Target pathname for redirection:', targetPathname);
+
+                const normalizedCurrentPath = normalizePathForComparison(currentPathname);
+                const normalizedTargetPath = normalizePathForComparison(targetPathname);
+
+                console.log('Normalized current path:', normalizedCurrentPath);
+                console.log('Normalized target path:', normalizedTargetPath);
+
+                // Only proceed with redirection if the current path is different from the target path
+                if (normalizedCurrentPath !== normalizedTargetPath) {
+                    if (assumeBotOnFetchFailure || isBot(navigator.userAgent)) {
+                        // This log will now correctly reflect if isBot loaded or if it defaulted to true
+                        console.log(`Skipping redirection due to ${assumeBotOnFetchFailure ? "fetch failure (isbot library not loaded or function not found, assuming bot)" : "bot detected by isbot library"}.`);
+                        return; // Stop execution if detected as a bot or if isbot failed to load
+                    }
+
+                    const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
+                    const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
+                    const fallbackToEnglishFullUrl = `${currentProtocol}//${currentHostname}${baseContentPath}${currentSearch}${currentHash}`;
+
+                    console.log('Current Full URL:', currentFullUrl);
+                    console.log('Target Full URL:', targetFullUrl);
+                    console.log('Fallback to English URL:', fallbackToEnglishFullUrl);
+
+                    // Perform a HEAD request to check if the target URL exists
+                    fetch(targetFullUrl, { method: 'HEAD' })
+                        .then(response => {
+                            if (response.ok) {
+                                // If the target URL exists and is accessible, redirect
+                                console.log('Target URL is reachable. Redirecting to:', targetFullUrl);
+                                window.location.replace(targetFullUrl);
+                            } else {
+                                // If target URL does not exist or is not OK, and current path is not already English base,
+                                // then redirect to the English base path.
+                                console.warn(`Target URL (${targetFullUrl}) returned status: ${response.status}. Attempting fallback.`);
+                                if (normalizedCurrentPath !== normalizePathForComparison(baseContentPath)) {
+                                    console.log('Current path is not English base. Redirecting to fallback English URL:', fallbackToEnglishFullUrl);
+                                    window.location.replace(fallbackToEnglishFullUrl);
+                                } else {
+                                    console.log('Current path is already English base. No further redirection.');
+                                }
+                            }
+                        })
+                        .catch(error => {
+                            // Handle network errors during the fetch request
+                            console.error('Error during HEAD request for target URL:', error);
+                            // If there's an error, and current path is not already English base,
+                            // then redirect to the English base path.
+                            if (normalizedCurrentPath !== normalizePathForComparison(baseContentPath)) {
+                                console.log('Fetch error. Current path is not English base. Redirecting to fallback English URL:', fallbackToEnglishFullUrl);
+                                window.location.replace(fallbackToEnglishFullUrl);
+                            } else {
+                                console.log('Fetch error. Current path is already English base. No further redirection.');
+                            }
+                        });
+                } else {
+                    console.log('Current path is already the target path. No redirection needed.');
+                }
+            }
+
+            // Execute the main redirection logic after isbot is handled
+            executeRedirectionLogic();
+        });
+    });
 </script>
+
 
 
 <script>
