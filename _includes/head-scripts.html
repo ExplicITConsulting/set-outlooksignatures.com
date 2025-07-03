@@ -40,122 +40,57 @@
 {%- endif -%}
 
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const languageDropdown = document.getElementById('languageDropdown');
-    // Important: If languageDropdown might not exist on all pages,
-    // consider a robust fallback or ensure it's always present.
-    // For now, assume it's always there for language detection.
-    const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
-    // Fallback if no dropdown exists (e.g., on a 404 page, or if dropdown isn't in layout)
-    if (availableLanguages.length === 0) {
-      availableLanguages.push('en', 'de'); // Add your default languages if dropdown is absent
-    }
+<script type="module">
+  import('https://cdn.jsdelivr.net/npm/isbot@latest/dist/index.min.js')
+    .then(({ default: isBot }) => {
+      window.isBot = isBot;
+      window.assumeBotOnFetchFailure = false;
+      initLanguageAndRedirection();
+    })
+    .catch((error) => {
+      console.warn('Failed to load isbot package. Assuming bot.', error);
+      window.isBot = () => true;
+      window.assumeBotOnFetchFailure = true;
+      initLanguageAndRedirection();
+    });
 
-    let preferredLanguage = localStorage.getItem("languageDropdownValue");
+  function initLanguageAndRedirection() {
+    document.addEventListener('DOMContentLoaded', function () {
+      const languageDropdown = document.getElementById('languageDropdown');
+      const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
+      if (availableLanguages.length === 0) {
+        availableLanguages.push('en', 'de');
+      }
 
-    // 1. Check if preferredLanguage is already set and valid
-    if (preferredLanguage && availableLanguages.includes(preferredLanguage)) {
-      // Valid preferredLanguage from localStorage, use it.
-    } else {
-      // 2. Try to get preferred language from navigator.languages
-      if (navigator.languages && navigator.languages.length > 0) {
-        for (let i = 0; i < navigator.languages.length; i++) {
-          const browserLang = navigator.languages[i].toLowerCase().split("-")[0];
-          if (availableLanguages.includes(browserLang)) {
-            preferredLanguage = browserLang;
-            break; // Found a match
+      let preferredLanguage = localStorage.getItem("languageDropdownValue");
+
+      if (!(preferredLanguage && availableLanguages.includes(preferredLanguage))) {
+        if (navigator.languages && navigator.languages.length > 0) {
+          for (let i = 0; i < navigator.languages.length; i++) {
+            const browserLang = navigator.languages[i].toLowerCase().split("-")[0];
+            if (availableLanguages.includes(browserLang)) {
+              preferredLanguage = browserLang;
+              break;
+            }
           }
         }
-      }
 
-      // 3. Fallback to navigator.language or navigator.userLanguage
-      if (!preferredLanguage) {
-        const fallbackLang = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
-        if (availableLanguages.includes(fallbackLang)) {
-          preferredLanguage = fallbackLang;
-        }
-      }
-
-      // 4. Final fallback to "en" if no suitable language was found
-      if (!preferredLanguage) {
-        preferredLanguage = "en"; // Default fallback
-      }
-    }
-
-    // Update the dropdown value and localStorage if you have a dropdown
-    if (languageDropdown) {
-      languageDropdown.value = preferredLanguage;
-    }
-
-    // Do not set localStorage here, but only when the user explicitly changes the dropdown
-    // localStorage.setItem("languageDropdownValue", preferredLanguage);
-
-    // --- Start of cached and dynamically fetched bot detection code ---
-    const CRAWLER_USER_AGENTS_JSON_URL = 'https://raw.githubusercontent.com/monperrus/crawler-user-agents/master/crawler-user-agents.json';
-    const CACHE_DURATION_MS = 1 * 24 * 60 * 60 * 1000; // 1 day in milliseconds
-
-    let compiledBotRegexes = []; // This array will store compiled RegExp objects
-    let assumeBotOnFetchFailure = false; // Flag to indicate if the fetch failed, implying it's a bot
-
-    /**
-     * Compiles regex pattern strings into RegExp objects.
-     * @param {Array<string>} patternStrings - An array of raw regex pattern strings.
-     * @returns {Array<RegExp>} An array of compiled RegExp objects.
-     */
-    function compileRegexes(patternStrings) {
-      if (!Array.isArray(patternStrings)) return [];
-      return patternStrings.map(pattern => {
-        try {
-          // Remove the (?i) prefix if present, as 'i' flag handles case-insensitivity in JS RegExp
-          let cleanedPattern = pattern;
-          let flags = 'i';
-          if (cleanedPattern.startsWith('(?i)')) {
-            cleanedPattern = cleanedPattern.substring(4);
+        if (!preferredLanguage) {
+          const fallbackLang = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
+          if (availableLanguages.includes(fallbackLang)) {
+            preferredLanguage = fallbackLang;
           }
-          return new RegExp(cleanedPattern, flags);
-        } catch (e) {
-          console.warn('Invalid regex pattern from crawler-user-agents.json:', pattern, e);
-          return null; // Return null for invalid patterns
         }
-      }).filter(Boolean); // Filter out any null entries
-    }
 
-    /**
-     * Checks if the given userAgent string matches any of the compiled bot regexes.
-     * @param {string} userAgent - The user agent string to check.
-     * @returns {boolean} True if the user agent is a bot, false otherwise.
-     */
-    function isBot(userAgent) {
-      if (!userAgent || compiledBotRegexes.length === 0) {
-        // Cannot detect bot if no user agent or no patterns are loaded/compiled
-        return false;
-      }
-      for (let i = 0; i < compiledBotRegexes.length; i++) {
-        if (compiledBotRegexes[i].test(userAgent)) {
-          return true;
+        if (!preferredLanguage) {
+          preferredLanguage = "en";
         }
       }
-      return false;
-    }
 
-    /**
-     * Encapsulates the original redirection logic. This function is called
-     * after bot patterns are loaded (from cache or network), or if network fetch fails.
-     */
-    function executeRedirectionLogic() {
-      const currentPathname = window.location.pathname;
-      const currentHostname = window.location.hostname;
-      const currentProtocol = window.location.protocol;
-      const currentSearch = window.location.search;
-      const currentHash = window.location.hash;
+      if (languageDropdown) {
+        languageDropdown.value = preferredLanguage;
+      }
 
-      /**
-       * Normalizes a path by removing a trailing slash, unless it's the root path '/'.
-       * Also ensures a single leading slash and removes internal double slashes.
-       * @param {string} path The path to normalize.
-       * @returns {string} The normalized path.
-       */
       function normalizePathForComparison(path) {
         if (!path) return '/';
         let normalized = path.replace(/\/\/+/g, '/');
@@ -168,116 +103,62 @@
         return normalized;
       }
 
-      let baseContentPath = '/';
-      const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
-      const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
+      function executeRedirectionLogic() {
+        const currentPathname = window.location.pathname;
+        const currentHostname = window.location.hostname;
+        const currentProtocol = window.location.protocol;
+        const currentSearch = window.location.search;
+        const currentHash = window.location.hash;
 
-      if (pathSegmentMatch) {
-        baseContentPath = pathSegmentMatch[2] || '/';
-      } else {
-        baseContentPath = currentPathname;
-      }
-      baseContentPath = normalizePathForComparison(baseContentPath);
+        let baseContentPath = '/';
+        const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
+        const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
 
-      let targetPathname;
-      if (preferredLanguage === "en") {
-        targetPathname = baseContentPath;
-      } else {
-        targetPathname = `/${preferredLanguage}${baseContentPath === '/' ? '/' : baseContentPath}`;
-      }
-      targetPathname = normalizePathForComparison(targetPathname);
-
-      const normalizedCurrentPathForComparison = normalizePathForComparison(currentPathname);
-      const normalizedTargetPathForComparison = normalizePathForComparison(targetPathname);
-
-      if (normalizedCurrentPathForComparison !== normalizedTargetPathForComparison) {
-        // Check if the current user agent is a bot using the loaded patterns
-        // OR if the fetch failed (in which case, we assume it's a bot)
-        if (assumeBotOnFetchFailure || isBot(navigator.userAgent)) {
-          const reason = assumeBotOnFetchFailure ? "fetch failed (assuming bot)" : "bot detected";
-          console.log(`Skipping redirection due to ${reason}.`);
-          return; // Exit to prevent redirection
+        if (pathSegmentMatch) {
+          baseContentPath = pathSegmentMatch[2] || '/';
+        } else {
+          baseContentPath = currentPathname;
         }
+        baseContentPath = normalizePathForComparison(baseContentPath);
 
-        const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
-        const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
-        const fallbackToEnglishFullUrl = `${currentProtocol}//${currentHostname}${baseContentPath}${currentSearch}${currentHash}`;
+        let targetPathname = preferredLanguage === "en"
+          ? baseContentPath
+          : `/${preferredLanguage}${baseContentPath === '/' ? '/' : baseContentPath}`;
+        targetPathname = normalizePathForComparison(targetPathname);
 
-        fetch(targetFullUrl, { method: 'HEAD' })
-          .then(response => {
-            if (response.ok) {
-              // The target URL exists, proceed with redirection
-              window.location.replace(targetFullUrl);
-            } else {
-              // The target URL does NOT exist, fall back to English
-              if (normalizedCurrentPathForComparison !== normalizePathForComparison(baseContentPath)) {
+        const normalizedCurrentPath = normalizePathForComparison(currentPathname);
+        const normalizedTargetPath = normalizePathForComparison(targetPathname);
+
+        if (normalizedCurrentPath !== normalizedTargetPath) {
+          if (window.assumeBotOnFetchFailure || window.isBot(navigator.userAgent)) {
+            console.log(`Skipping redirection due to ${window.assumeBotOnFetchFailure ? "fetch failure (assuming bot)" : "bot detected"}.`);
+            return;
+          }
+
+          const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
+          const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
+          const fallbackToEnglishFullUrl = `${currentProtocol}//${currentHostname}${baseContentPath}${currentSearch}${currentHash}`;
+
+          fetch(targetFullUrl, { method: 'HEAD' })
+            .then(response => {
+              if (response.ok) {
+                window.location.replace(targetFullUrl);
+              } else if (normalizedCurrentPath !== normalizePathForComparison(baseContentPath)) {
                 window.location.replace(fallbackToEnglishFullUrl);
               }
-            }
-          })
-          .catch(error => {
-            // This catch block handles errors for the HEAD request, not the initial JSON fetch.
-            console.error('Error during HEAD request for target URL:', error);
-            if (normalizedCurrentPathForComparison !== normalizePathForComparison(baseContentPath)) {
-              window.location.replace(fallbackToEnglishFullUrl);
-            }
-          });
-      } else {
-        // No redirect needed, the current page is already the correct preferred language
+            })
+            .catch(error => {
+              console.error('Error during HEAD request for target URL:', error);
+              if (normalizedCurrentPath !== normalizePathForComparison(baseContentPath)) {
+                window.location.replace(fallbackToEnglishFullUrl);
+              }
+            });
+        }
       }
-    }
 
-    /**
-     * Handles fetching bot patterns from the network and updating localStorage.
-     */
-    function fetchBotPatterns() {
-      fetch(CRAWLER_USER_AGENTS_JSON_URL)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then(data => {
-          // Extract only the pattern strings for storage to save space and simplify parsing
-          const patternStrings = data.map(entry => entry.pattern);
-          localStorage.setItem('botDetectionPatterns', JSON.stringify(patternStrings));
-          localStorage.setItem('botDetectionLastUpdated', Date.now().toString()); // Store current timestamp
-
-          compiledBotRegexes = compileRegexes(patternStrings);
-          assumeBotOnFetchFailure = false; // Fetch was successful
-          console.log(`Successfully loaded and compiled ${compiledBotRegexes.length} bot patterns from network.`);
-          executeRedirectionLogic();
-        })
-        .catch(error => {
-          console.error('Failed to load crawler user agents JSON from network. Assuming it is a bot and skipping redirection:', error);
-          compiledBotRegexes = []; // Clear patterns if fetch failed
-          assumeBotOnFetchFailure = true; // Set flag to assume bot
-          executeRedirectionLogic(); // Proceed, but redirection will be skipped
-        });
-    }
-
-    // --- Caching Logic: Check localStorage first ---
-    const cachedPatterns = localStorage.getItem('botDetectionPatterns');
-    const lastUpdated = localStorage.getItem('botDetectionLastUpdated');
-    const currentTime = Date.now();
-
-    if (cachedPatterns && lastUpdated && (currentTime - parseInt(lastUpdated, 10) < CACHE_DURATION_MS)) {
-      try {
-        const parsedPatterns = JSON.parse(cachedPatterns);
-        compiledBotRegexes = compileRegexes(parsedPatterns);
-        assumeBotOnFetchFailure = false; // Successfully loaded from cache
-        console.log(`Loaded ${compiledBotRegexes.length} bot patterns from cache.`);
-        executeRedirectionLogic(); // Proceed using cached data
-      } catch (e) {
-        console.warn("Error parsing cached bot patterns, forcing a new fetch:", e);
-        fetchBotPatterns(); // Cache invalid or corrupt, force a network fetch
-      }
-    } else {
-      fetchBotPatterns(); // No valid cache, perform a network fetch
-    }
-    // --- End of cached and dynamically fetched bot detection code ---
-  });
+      executeRedirectionLogic();
+    });
+  }
 </script>
 
 
