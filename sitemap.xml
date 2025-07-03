@@ -53,6 +53,14 @@ layout: none
         />
             {%- endif -%}
         {%- endfor %}
+
+        {%- comment -%} Add x-default link for posts {%- endcomment -%}
+        {%- assign default_lang_url_path = page_path_without_lang %}
+        <xhtml:link
+            rel="alternate"
+            hreflang="x-default"
+            href="{{ site.url | append: default_lang_url_path | absolute_url }}"
+        />
     </url>
     {%- endif -%}
     {%- endfor -%}
@@ -101,6 +109,14 @@ layout: none
         />
             {%- endif -%}
         {%- endfor %}
+
+        {%- comment -%} Add x-default link for pages {%- endcomment -%}
+        {%- assign default_lang_url_path = base_url_for_hreflang %}
+        <xhtml:link
+            rel="alternate"
+            hreflang="x-default"
+            href="{{ site.url | append: default_lang_url_path | absolute_url }}"
+        />
     </url>
     {%- endunless -%}
     {%- endfor %}
