@@ -40,125 +40,116 @@
 {%- endif -%}
 
 
-<script type="module">
-  import('https://cdn.jsdelivr.net/npm/isbot@latest/dist/index.min.js')
-    .then(({ default: isBot }) => {
-      window.isBot = isBot;
-      window.assumeBotOnFetchFailure = false;
-      initLanguageAndRedirection();
-    })
-    .catch((error) => {
-      console.warn('Failed to load isbot package. Assuming bot.', error);
-      window.isBot = () => true;
-      window.assumeBotOnFetchFailure = true;
-      initLanguageAndRedirection();
-    });
+<script src="https://cdn.jsdelivr.net/npm/isbot@5/index.iife.min.js"></script>
 
-  function initLanguageAndRedirection() {
-    document.addEventListener('DOMContentLoaded', function () {
-      const languageDropdown = document.getElementById('languageDropdown');
-      const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
-      if (availableLanguages.length === 0) {
-        availableLanguages.push('en', 'de');
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const isBot = typeof window.isBot === 'function' ? window.isBot : () => true;
+    const assumeBotOnFetchFailure = typeof window.isBot !== 'function';
+
+    const languageDropdown = document.getElementById('languageDropdown');
+    const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
+    if (availableLanguages.length === 0) {
+      availableLanguages.push('en', 'de');
+    }
+
+    let preferredLanguage = localStorage.getItem("languageDropdownValue");
+
+    if (!(preferredLanguage && availableLanguages.includes(preferredLanguage))) {
+      if (navigator.languages && navigator.languages.length > 0) {
+        for (let i = 0; i < navigator.languages.length; i++) {
+          const browserLang = navigator.languages[i].toLowerCase().split("-")[0];
+          if (availableLanguages.includes(browserLang)) {
+            preferredLanguage = browserLang;
+            break;
+          }
+        }
       }
 
-      let preferredLanguage = localStorage.getItem("languageDropdownValue");
+      if (!preferredLanguage) {
+        const fallbackLang = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
+        if (availableLanguages.includes(fallbackLang)) {
+          preferredLanguage = fallbackLang;
+        }
+      }
 
-      if (!(preferredLanguage && availableLanguages.includes(preferredLanguage))) {
-        if (navigator.languages && navigator.languages.length > 0) {
-          for (let i = 0; i < navigator.languages.length; i++) {
-            const browserLang = navigator.languages[i].toLowerCase().split("-")[0];
-            if (availableLanguages.includes(browserLang)) {
-              preferredLanguage = browserLang;
-              break;
+      if (!preferredLanguage) {
+        preferredLanguage = "en";
+      }
+    }
+
+    if (languageDropdown) {
+      languageDropdown.value = preferredLanguage;
+    }
+
+    function normalizePathForComparison(path) {
+      if (!path) return '/';
+      let normalized = path.replace(/\/\/+/g, '/');
+      if (normalized.length > 1 && normalized.endsWith('/')) {
+        normalized = normalized.slice(0, -1);
+      }
+      if (!normalized.startsWith('/')) {
+        normalized = '/' + normalized;
+      }
+      return normalized;
+    }
+
+    function executeRedirectionLogic() {
+      const currentPathname = window.location.pathname;
+      const currentHostname = window.location.hostname;
+      const currentProtocol = window.location.protocol;
+      const currentSearch = window.location.search;
+      const currentHash = window.location.hash;
+
+      let baseContentPath = '/';
+      const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
+      const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
+
+      if (pathSegmentMatch) {
+        baseContentPath = pathSegmentMatch[2] || '/';
+      } else {
+        baseContentPath = currentPathname;
+      }
+      baseContentPath = normalizePathForComparison(baseContentPath);
+
+      let targetPathname = preferredLanguage === "en"
+        ? baseContentPath
+        : `/${preferredLanguage}${baseContentPath === '/' ? '/' : baseContentPath}`;
+      targetPathname = normalizePathForComparison(targetPathname);
+
+      const normalizedCurrentPath = normalizePathForComparison(currentPathname);
+      const normalizedTargetPath = normalizePathForComparison(targetPathname);
+
+      if (normalizedCurrentPath !== normalizedTargetPath) {
+        if (assumeBotOnFetchFailure || isBot(navigator.userAgent)) {
+          console.log(`Skipping redirection due to ${assumeBotOnFetchFailure ? "fetch failure (assuming bot)" : "bot detected"}.`);
+          return;
+        }
+
+        const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
+        const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
+        const fallbackToEnglishFullUrl = `${currentProtocol}//${currentHostname}${baseContentPath}${currentSearch}${currentHash}`;
+
+        fetch(targetFullUrl, { method: 'HEAD' })
+          .then(response => {
+            if (response.ok) {
+              window.location.replace(targetFullUrl);
+            } else if (normalizedCurrentPath !== normalizePathForComparison(baseContentPath)) {
+              window.location.replace(fallbackToEnglishFullUrl);
             }
-          }
-        }
-
-        if (!preferredLanguage) {
-          const fallbackLang = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
-          if (availableLanguages.includes(fallbackLang)) {
-            preferredLanguage = fallbackLang;
-          }
-        }
-
-        if (!preferredLanguage) {
-          preferredLanguage = "en";
-        }
+          })
+          .catch(error => {
+            console.error('Error during HEAD request for target URL:', error);
+            if (normalizedCurrentPath !== normalizePathForComparison(baseContentPath)) {
+              window.location.replace(fallbackToEnglishFullUrl);
+            }
+          });
       }
+    }
 
-      if (languageDropdown) {
-        languageDropdown.value = preferredLanguage;
-      }
-
-      function normalizePathForComparison(path) {
-        if (!path) return '/';
-        let normalized = path.replace(/\/\/+/g, '/');
-        if (normalized.length > 1 && normalized.endsWith('/')) {
-          normalized = normalized.slice(0, -1);
-        }
-        if (!normalized.startsWith('/')) {
-          normalized = '/' + normalized;
-        }
-        return normalized;
-      }
-
-      function executeRedirectionLogic() {
-        const currentPathname = window.location.pathname;
-        const currentHostname = window.location.hostname;
-        const currentProtocol = window.location.protocol;
-        const currentSearch = window.location.search;
-        const currentHash = window.location.hash;
-
-        let baseContentPath = '/';
-        const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
-        const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
-
-        if (pathSegmentMatch) {
-          baseContentPath = pathSegmentMatch[2] || '/';
-        } else {
-          baseContentPath = currentPathname;
-        }
-        baseContentPath = normalizePathForComparison(baseContentPath);
-
-        let targetPathname = preferredLanguage === "en"
-          ? baseContentPath
-          : `/${preferredLanguage}${baseContentPath === '/' ? '/' : baseContentPath}`;
-        targetPathname = normalizePathForComparison(targetPathname);
-
-        const normalizedCurrentPath = normalizePathForComparison(currentPathname);
-        const normalizedTargetPath = normalizePathForComparison(targetPathname);
-
-        if (normalizedCurrentPath !== normalizedTargetPath) {
-          if (window.assumeBotOnFetchFailure || window.isBot(navigator.userAgent)) {
-            console.log(`Skipping redirection due to ${window.assumeBotOnFetchFailure ? "fetch failure (assuming bot)" : "bot detected"}.`);
-            return;
-          }
-
-          const currentFullUrl = `${currentProtocol}//${currentHostname}${currentPathname}${currentSearch}${currentHash}`;
-          const targetFullUrl = `${currentProtocol}//${currentHostname}${targetPathname}${currentSearch}${currentHash}`;
-          const fallbackToEnglishFullUrl = `${currentProtocol}//${currentHostname}${baseContentPath}${currentSearch}${currentHash}`;
-
-          fetch(targetFullUrl, { method: 'HEAD' })
-            .then(response => {
-              if (response.ok) {
-                window.location.replace(targetFullUrl);
-              } else if (normalizedCurrentPath !== normalizePathForComparison(baseContentPath)) {
-                window.location.replace(fallbackToEnglishFullUrl);
-              }
-            })
-            .catch(error => {
-              console.error('Error during HEAD request for target URL:', error);
-              if (normalizedCurrentPath !== normalizePathForComparison(baseContentPath)) {
-                window.location.replace(fallbackToEnglishFullUrl);
-              }
-            });
-        }
-      }
-
-      executeRedirectionLogic();
-    });
-  }
+    executeRedirectionLogic();
+  });
 </script>
 
 
