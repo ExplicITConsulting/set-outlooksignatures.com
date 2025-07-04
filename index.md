@@ -1,13 +1,7 @@
 ---
 layout: page
-title: |
-  <span class="title is-2">
-    Set-Outlook&shy;Signatures
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    Email signatures and out-of-office replies for Exchange and all of Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
-  </span>
+title: Set-Outlook&shy;Signatures
+subtitle: Email signatures and out-of-office replies for Exchange and all of Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
 description: |
   Email signatures and out-of-office replies for Exchange and all of Outlook.
   Full-featured, cost-effective, unsurpassed data privacy.
