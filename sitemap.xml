@@ -117,6 +117,5 @@ layout: none
             href="{{ site.url | append: default_lang_url_path | absolute_url }}"
         />
     </url>
-    {%- endunless -%}
     {%- endfor %}
 </urlset>
