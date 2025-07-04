@@ -249,7 +249,7 @@ redirect_from:
             <li>Roaming Signatures</li>
             <li>Signatures for Outlook Android, iOS and Web</li>
             <li>Signatures for additional mailboxes</li>
-            <li>Managing Out-of-Office Replies</li>
+            <li>Managing out-of-office Replies</li>
             <li>Deleting outdated signatures</li>
             <li>and much more</li>
           </ul>
