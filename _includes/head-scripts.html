@@ -282,7 +282,7 @@
             targetElement = buttonChild;
           }
 
-          if (!targetElement.querySelector("small svg[data-external-link-icon]")) {
+          if (!targetElement.querySelector("svg[data-external-link-icon]")) {
             const parser = new DOMParser();
             const svgDoc = parser.parseFromString(externalLinkSvg, "image/svg+xml");
             const svgElement = svgDoc.documentElement;
@@ -291,16 +291,11 @@
             svgElement.style.verticalAlign = "middle";
             svgElement.setAttribute("data-external-link-icon", "true"); // For easy selection later
 
-            // Create the single <small> element
-            const smallElement = document.createElement("small");
-
             // Create a text node for the non-breaking space
             const nbspNode = document.createTextNode('\u00A0'); // Unicode for &nbsp;
 
-            smallElement.appendChild(nbspNode); // Append the non-breaking space
-            smallElement.appendChild(svgElement); // Append the SVG
-
-            targetElement.appendChild(smallElement);
+            targetElement.appendChild(nbspNode);
+            targetElement.appendChild(svgElement);
           }
         }
       } catch (e) {
