@@ -66,8 +66,30 @@ layout: none
     {%- endfor -%}
 
     {%- for page in site.pages -%}
+        {%- assign in_root_directory = false -%}
+        {%- if page.dir == '/' -%}
+            {%- assign in_root_directory = true -%}
+        {%- endif -%}
+
+        {%- assign in_language_directory = false -%}
+        {%- for lang in site.languages -%}
+            {%- if page.dir contains '/' | append: lang | append: '/' -%}
+                {%- assign dir_segment = page.dir | split:'/' | first | append: '/' | append: page.dir | split:'/' | second -%}
+                {%- if dir_segment == lang or page.dir == '/' | append: lang -%}
+                    {%- assign in_language_directory = true -%}
+                    {%- break -%}
+                {%- endif -%}
+            {%- elsif page.dir == '/' | append: lang -%}
+                {%- assign in_language_directory = true -%}
+                {%- break -%}
+            {%- endif -%}
+        {%- endfor -%}
+
         {%- unless
-            page.sitemap == false
+            page.sitemap == false or
+            (in_root_directory == false and in_language_directory == false) or
+            page.url == '/404.html' or
+            page.url == '/robots.txt'
         -%}
             {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time %}
     <url>
