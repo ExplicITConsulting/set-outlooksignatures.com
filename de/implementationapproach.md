@@ -23,7 +23,7 @@ Es enthält bewährte Verfahren und Empfehlungen für Produktmanager, Architekte
 Es deckt mehrere allgemeine Überblicksthemen, Administration, Support, Training über den gesamten Lebenszyklus von der Beratung über Tests, Pilotbetrieb und Rollout bis hin zum Tagesgeschäft ab.
 
 
-## Table of Contents  <!-- omit in toc -->
+## Inhaltsverzeichnis  <!-- omit in toc -->
 - [1. Überblick](#1-überblick)
 - [2. Manuelle Wartung von Signaturen](#2-manuelle-wartung-von-signaturen)
   - [2.1. Signaturen in Outlook](#21-signaturen-in-outlook)
