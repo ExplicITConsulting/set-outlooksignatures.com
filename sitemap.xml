@@ -66,7 +66,8 @@ layout: none
     {%- endfor -%}
 
     {%- for page in site.pages -%}
-    {%- unless page.sitemap == false or page.url contains '/assets/' or page.url contains '/_site/' or page.url contains '/.jekyll-cache/' or page.url contains '/vendor/' -%}
+    {%- assign ext = page.url | split: '.' | last -%}
+    {%- unless page.sitemap == false or ext == 'json' or ext == 'txt' or ext == 'xml' -%}
     {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time %}
     <url>
         <loc>{{ page.url | absolute_url }}</loc>
