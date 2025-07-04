@@ -112,3 +112,7 @@ h6:hover .anchor-link {
 .content ol:not(:first-child) {
   margin-top: 0;
 }
+
+p + ul {
+  margin-top: 0; /* Or a small negative value like -0.5rem if needed */
+}
