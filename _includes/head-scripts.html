@@ -276,19 +276,7 @@
                         targetElement = buttonChild;
                     }
 
-                    // Get the current text content of the target element
-                    const currentText = targetElement.innerText; // Use innerText to get visible text
-
-                    // Check if the text starts with '➔'
-                    if (currentText.startsWith('➔')) {
-                        // If it starts with '➔', replace it with '🡥'
-                        // Use textContent to set, which avoids parsing HTML,
-                        // and then use replace for safety against other HTML
-                        targetElement.textContent = targetElement.textContent.replace('➔', '🡕');
-                    } else {
-                        // If it does not start with '➔', append the small arrow
-                        targetElement.innerHTML += "&#8201;<small>🡕</small>";
-                    }
+                    targetElement.innerHTML += "<small>&nbsp;🡕</small>";
                 }
             } catch (e) {
                 // Invalid URL, skip
