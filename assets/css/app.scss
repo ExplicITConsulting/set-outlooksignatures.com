@@ -107,3 +107,8 @@ h6:hover .anchor-link {
 .anchor-link:hover {
   opacity: 1;
 }
+
+.content ul:not(:first-child),
+.content ol:not(:first-child) {
+  margin-top: 0;
+}
