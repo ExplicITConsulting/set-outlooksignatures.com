@@ -284,10 +284,10 @@
                         // If it starts with '➔', replace it with '🡥'
                         // Use textContent to set, which avoids parsing HTML,
                         // and then use replace for safety against other HTML
-                        targetElement.textContent = targetElement.textContent.replace('➔', '🡥');
+                        targetElement.textContent = targetElement.textContent.replace('➔', '🡕');
                     } else {
                         // If it does not start with '➔', append the small arrow
-                        targetElement.innerHTML += "&#8201;<small>🡥</small>";
+                        targetElement.innerHTML += "&#8201;<small>🡕</small>";
                     }
                 }
             } catch (e) {
