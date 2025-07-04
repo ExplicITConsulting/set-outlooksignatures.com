@@ -10,9 +10,10 @@ layout: none
 >
     {%- for post in site.posts -%}
     {%- if post.sitemap != false -%}
+    {%- assign last_mod = post.last_modified_at | default: post.date | default: site.time | date_to_xmlschema %}
     <url>
         <loc>{{ post.url | absolute_url }}</loc>
-        <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
+        <lastmod>{{ last_mod }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         {%- assign page_path_without_lang = post.url -%}
@@ -65,10 +66,10 @@ layout: none
     {%- endfor -%}
 
     {%- for page in site.pages -%}
-    {%- unless page.sitemap == false or page.url contains '/assets/' or page.url contains '/_site/' or page.url contains '/.jekyll-cache/' or page.url contains '/vendor/' -%}
+    {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time | date_to_xmlschema %}
     <url>
         <loc>{{ page.url | absolute_url }}</loc>
-        <lastmod>{{ page.last_modified_at | default: page.date | date_to_xmlschema }}</lastmod>
+        <lastmod>{{ last_mod  }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         {%- assign base_url_for_hreflang = page.url -%}
