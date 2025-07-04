@@ -67,7 +67,9 @@ layout: none
 
     {%- for page in site.pages -%}
     {%- assign ext = page.url | split: '.' | last -%}
-    {%- unless page.sitemap == false or ext == 'json' or ext == 'txt' or ext == 'xml' or page.url contains '/assets/' or page.url contains '/_site/' or page.url contains '/.jekyll-cache/' or page.url contains '/vendor/' -%}
+    {%- assign lang_prefix = page.url | split: '/' | second -%}
+    {%- assign is_lang_page = languages contains lang_prefix -%}
+    {%- unless ext != 'html' or page.sitemap == false or page.url == '/404.html'  or (lang_prefix != '' and is_lang_page == false) -%}
     {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time %}
     <url>
         <loc>{{ page.url | absolute_url }}</loc>
