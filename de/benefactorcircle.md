@@ -248,7 +248,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Exklusive Benefactor Circle Funktionen</b><br>Zum Beispiel:
+        <b>Exklusive Benefactor Circle Funktionen</b><br>Unter anderem:
           <ul>
             <li>Zeitgesteuerte Kampagnen</li>
             <li>Roaming Signatures</li>
