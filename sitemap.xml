@@ -67,7 +67,6 @@ layout: none
 
     {%- for page in site.pages -%}
         {%- unless
-            page.output_ext != '.html' or
             page.sitemap == false
         -%}
             {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time %}
