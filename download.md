@@ -9,7 +9,7 @@ subtitle: |
     Get the Free and Open-Source core version
   </span>
 description: |
-  Get the Free and Open-Source core version
+  Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

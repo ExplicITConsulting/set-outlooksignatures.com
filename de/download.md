@@ -10,7 +10,7 @@ subtitle: |
     Holen Sie sich die kostenlose und quelloffene Kernversion
   </span>
 description: |
-  Holen Sie sich die kostenlose und quelloffene Kernversion
+  E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

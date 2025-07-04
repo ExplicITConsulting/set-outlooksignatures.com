@@ -10,7 +10,7 @@ subtitle: |
     Wir geben unsere Erfahrung an Sie weiter
   </span>
 description: |
-  Wir geben unsere Erfahrung an Sie weiter
+  Support für Set-OutlookSignatures. Kostenlose Hilfe über GitHub oder professionelle Beratung von ExplicIT. Expertenwissen, Workshops und Umsetzungshilfe.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

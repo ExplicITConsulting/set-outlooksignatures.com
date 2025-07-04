@@ -9,7 +9,7 @@ subtitle: |
     Topics that are addressed regularly
   </span>
 description: |
-  Topics that are addressed regularly
+  Find answers to common questions about Set-OutlookSignatures. Learn about setup, templates, deployment, roaming signatures, and advanced configuration.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

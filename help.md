@@ -9,7 +9,7 @@ subtitle: |
     Documentation and support ressources
   </span>
 description: |
-  Documentation and support ressources
+  Explore Set-OutlookSignatures help resources. From feature comparisons and setup guides to FAQs, technical details, and expert support options.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

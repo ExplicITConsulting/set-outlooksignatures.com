@@ -9,7 +9,7 @@ subtitle: |
     What it needs, how it works and how to use it
   </span>
 description: |
-  What it needs, how it works and how to use it
+  Explore technical details of Set-OutlookSignatures: System requirements, supported platforms, template formats, group logic, variables, and simulation mode.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

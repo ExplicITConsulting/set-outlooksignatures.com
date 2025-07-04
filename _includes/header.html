@@ -3,7 +3,7 @@
     <div class="container">
         <div class="navbar-brand">
             <a href="{{ site.baseurl }}/" class="navbar-item has-text-white">
-                <img src="/assets/images/set-outlooksignatures logo.png" alt="Set-OutlookSignatures">
+                <img src="/assets/images/set-outlooksignatures logo 500px.png" alt="Set-OutlookSignatures">
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu"
                 :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
@@ -42,16 +42,17 @@
             </div>
 
             <div class="navbar-end">
-                <a class="navbar-item has-text-white" href="/search">
+                <a class="navbar-item has-text-white" href="/search" aria-label="Search">
                     <span class="icon"><i class="fas fa-search"></i></span>
-                    <span></span>
+                    <span class="is-sr-only">Search</span>
                 </a>
 
                 <div class="navbar-item has-text-white">
+                    <label for="languageDropdown" class="is-sr-only">Select language</label>
                     <select id="languageDropdown" name="languageDropdown"
                         onchange="localStorage.setItem('languageDropdownValue', this.value); location.reload();">
-                        <option value="de">Deutsch</option>
-                        <option value="en">English</option>
+                        <option value="de">Deutsch (de)</option>
+                        <option value="en">English (en)</option>
                     </select>
                 </div>
 

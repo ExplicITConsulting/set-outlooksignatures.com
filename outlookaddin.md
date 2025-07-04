@@ -9,7 +9,7 @@ subtitle: |
     Signatures for Outlook on Android and iOS, advanced features for all platforms
   </span>
 description: |
-  Signatures for Outlook on Android and iOS, advanced features for all platforms
+  Extend Outlook with the Set-OutlookSignatures add-in. Automatic email signatures for iOS, Android, and all platforms. Self-hosted, secure, and enterprise-ready.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

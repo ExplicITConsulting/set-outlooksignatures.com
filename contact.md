@@ -9,7 +9,7 @@ subtitle: |
     Email, request a call-back, postal address
   </span>
 description: |
-  Email, request a call-back, postal address
+  Contact ExplicIT Consulting – reach us via email, request a call-back, or send a letter. Find our LinkedIn and GitHub links for more ways to connect.
 ---
 <div style="min-height: 100vh;">
 

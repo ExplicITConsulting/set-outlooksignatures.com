@@ -9,7 +9,7 @@ subtitle: |
     How to customize Set-Outlook&shy;Signatures
   </span>
 description: |
-  How to customize Set-OutlookSignatures
+  Customize Set-OutlookSignatures to fit your organization's needs. Configure behavior, integrate with Microsoft 365, and tailor signature deployment workflows.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
