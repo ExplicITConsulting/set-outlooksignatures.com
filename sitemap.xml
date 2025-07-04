@@ -72,6 +72,7 @@ layout: none
         {%- assign is_language_sub_dir = (lang_prefix != '' and site.languages contains lang_prefix) -%}
 
         {%- unless
+            ext != 'html' or
             page.sitemap == false or
             page.url == '/404.html' or
             (is_root_page == false and is_language_sub_dir == false)
