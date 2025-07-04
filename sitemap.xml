@@ -66,15 +66,9 @@ layout: none
     {%- endfor -%}
 
     {%- for page in site.pages -%}
-        {%- assign lang_prefix = page.url | split: '/' | second -%}
-        {%- assign is_root_page = (lang_prefix == '') -%}
-        {%- assign is_language_sub_dir = (lang_prefix != '' and site.languages contains lang_prefix) -%}
-
         {%- unless
             page.output_ext != '.html' or
-            page.sitemap == false or
-            page.url == '/404.html' or
-            (is_root_page == false and is_language_sub_dir == false)
+            page.sitemap == false
         -%}
             {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time %}
     <url>
