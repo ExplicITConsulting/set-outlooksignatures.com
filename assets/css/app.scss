@@ -114,5 +114,9 @@ h6:hover .anchor-link {
 }
 
 p + ul {
-  margin-top: 0; /* Or a small negative value like -0.5rem if needed */
+  margin-top: 0;
+}
+
+p:has(+ ul) {
+  margin-bottom: 0; /* only works in some browsers */
 }
