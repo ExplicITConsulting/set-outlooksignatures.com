@@ -282,24 +282,14 @@
             targetElement = buttonChild;
           }
 
-          if (!targetElement.querySelector("small small svg[data-external-link-icon]")) {
-            const parser = new DOMParser();
-            const svgDoc = parser.parseFromString(externalLinkSvg, "image/svg+xml");
-            const svgElement = svgDoc.documentElement;
-
-            svgElement.setAttribute("data-external-link-icon", "true"); // For easy selection later
-
-            // Create the nested <small> elements
-            const outerSmall = document.createElement("small");
-            const innerSmall = document.createElement("small");
-
-            // Apply styles to the outer <small> tag
-            outerSmall.style.marginLeft = "0.2em";
-            outerSmall.style.verticalAlign = "middle";
-
-            innerSmall.appendChild(svgElement);
-            outerSmall.appendChild(innerSmall);
-            targetElement.appendChild(outerSmall);
+          // Check if the SVG already exists within the <small> tag
+          if (!targetElement.querySelector("small svg[data-external-link-icon]")) {
+            // Add custom attribute and vertical-align style directly to the SVG
+            // The &nbsp; will provide the spacing
+            const svgContent = externalLinkSvg.replace('<svg', '<svg data-external-link-icon="true" style="vertical-align: middle;"');
+            // Wrap the &nbsp; and SVG content in a single <small> tag
+            const wrappedSvg = `<small>&nbsp;${svgContent.trim()}</small>`;
+            targetElement.insertAdjacentHTML('beforeend', wrappedSvg);
           }
         }
       } catch (e) {
