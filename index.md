@@ -1,11 +1,11 @@
 ---
 layout: page
 title: |
-  <span class="title is-2 has-text-white">
+  <span class="title is-2">
     Set-Outlook&shy;Signatures
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white">
+  <span class="subtitle is-4">
     Email signatures and out-of-office replies for Exchange and all of Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
   </span>
 description: |

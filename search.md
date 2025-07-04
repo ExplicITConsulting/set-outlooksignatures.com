@@ -1,11 +1,11 @@
 ---
 layout: page
 title: |
-  <span class="title is-2 has-text-white">
+  <span class="title is-2">
     Search and find
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white">
+  <span class="subtitle is-4">
     What are you looking for?
   </span>
 description: What are you looking for?

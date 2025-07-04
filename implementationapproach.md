@@ -2,11 +2,11 @@
 layout: page
 lang: en
 title: |
-  <span class="title is-2 has-text-white">
+  <span class="title is-2">
     Implementation approach
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white">
+  <span class="subtitle is-4">
     Real-life experience implementing the software in multi-client environments with a five-digit number of mailboxes
   </span>
 description: |

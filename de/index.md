@@ -2,11 +2,11 @@
 layout: page
 lang: de
 title: |
-  <span class="title is-2 has-text-white">
+  <span class="title is-2">
     Set-Outlook&shy;Signatures
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white">
+  <span class="subtitle is-4">
     E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
   </span>
 description: |

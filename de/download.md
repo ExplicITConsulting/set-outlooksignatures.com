@@ -2,11 +2,11 @@
 layout: page
 lang: de
 title: |
-  <span class="title is-2 has-text-white">
+  <span class="title is-2">
     Set-Outlook&shy;Signatures herunterladen
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white">
+  <span class="subtitle is-4">
     Holen Sie sich die kostenlose und quelloffene Kernversion
   </span>
 description: |

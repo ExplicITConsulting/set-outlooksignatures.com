@@ -1,11 +1,11 @@
 ---
 layout: page
 title: |
-  <span class="title is-2 has-text-white">
+  <span class="title is-2">
     Technical details, requirements and usage
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white">
+  <span class="subtitle is-4">
     What it needs, how it works and how to use it
   </span>
 description: |

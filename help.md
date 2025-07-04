@@ -1,11 +1,11 @@
 ---
 layout: page
 title: |
-  <span class="title is-2 has-text-white">
+  <span class="title is-2">
     Help
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white">
+  <span class="subtitle is-4">
     Documentation and support ressources
   </span>
 description: |

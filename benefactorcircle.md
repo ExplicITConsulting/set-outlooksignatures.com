@@ -1,11 +1,11 @@
 ---
 layout: page
 title: |
-  <span class="title is-2 has-text-white">
+  <span class="title is-2">
     The Benefactor Circle add-on
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white">
+  <span class="subtitle is-4">
     More features for your business
   </span>
 description: |

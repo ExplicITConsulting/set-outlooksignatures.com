@@ -2,11 +2,11 @@
 layout: page
 lang: de
 title: |
-  <span class="title is-2 has-text-white">
+  <span class="title is-2">
     Implementierungs-Ansatz
   </span>
 subtitle: |
-  <span class="subtitle is-4 has-text-white">
+  <span class="subtitle is-4">
     Erfahrungen aus der Praxis bei der Implementierung der Software in Multi-Client-Umgebungen mit einer fünfstelligen Anzahl von Postfächern
   </span>
 description: |
