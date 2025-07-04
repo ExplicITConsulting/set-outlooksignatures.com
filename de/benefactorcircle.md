@@ -1,6 +1,7 @@
 ---
 layout: page
 lang: de
+locale: de
 title: Das Benefactor Circle Add-On
 subtitle: Mehr Funktionen für Ihr Unternehmen
 description: Das Benefactor Circle Add-on erweitert Set-OutlookSignatures um mobile Signaturen, Roaming-Sync, OOF-Automatisierung, Signaturpflege und Profi-Funktionen.

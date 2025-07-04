@@ -24,7 +24,11 @@ bing_site_verification   :
 naver_site_verification  :
 yandex_site_verification :
 baidu_site_verification  :
-
+logo                     : "/assets/images/set-outlooksignatures logo 500px.png"
+social:
+  name: Explicit Consulting GmbH
+  links:
+    - https://www.linkedin.com/company/explicit-consulting-gmbh
 
 
 
@@ -66,6 +70,7 @@ defaults:
       hero_height: is-small
       # hero_darken: true
       lang: "en"
+      locale: "en"
 
 include:
   - ".well-known"

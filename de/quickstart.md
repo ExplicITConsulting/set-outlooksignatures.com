@@ -1,6 +1,7 @@
 ---
 layout: page
 lang: de
+locale: de
 title: Schnellstart-Anleitung
 subtitle: Erste Signaturen in unter einer Stunde
 description: Erste Signaturen in unter einer Stunde

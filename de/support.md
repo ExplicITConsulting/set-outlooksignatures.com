@@ -1,6 +1,7 @@
 ---
 layout: page
 lang: de
+locale: de
 title: Unterstützung erhalten
 subtitle: Wir geben unsere Erfahrung an Sie weiter
 description: Support für Set-OutlookSignatures. Kostenlose Hilfe über GitHub oder professionelle Beratung von ExplicIT. Expertenwissen, Workshops und Umsetzungshilfe.

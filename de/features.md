@@ -1,5 +1,7 @@
 ---
 layout: page
+lang: de
+locale: de
 title: Funktionen und Funktions-Vergleich
 subtitle: Unsere Lösung auf einen Blick und im Vergleich
 description: Unsere Lösung auf einen Blick und im Vergleich

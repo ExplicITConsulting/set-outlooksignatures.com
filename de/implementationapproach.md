@@ -1,6 +1,7 @@
 ---
 layout: page
 lang: de
+locale: de
 title: Implementierungs-Ansatz
 subtitle: Erfahrungen aus der Praxis bei der Implementierung der Software in Multi-Client-Umgebungen mit einer fünfstelligen Anzahl von Postfächern
 description: Erfahrungen aus der Praxis bei der Implementierung der Software in Multi-Client-Umgebungen mit einer fünfstelligen Anzahl von Postfächern

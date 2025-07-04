@@ -1,6 +1,7 @@
 ---
 layout: page
 lang: de
+locale: de
 title: Set-Outlook&shy;Signatures herunterladen
 subtitle: Holen Sie sich die kostenlose und quelloffene Kernversion
 description: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
