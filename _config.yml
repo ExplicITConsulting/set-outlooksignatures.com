@@ -62,7 +62,7 @@ defaults:
     values:
       layout: page
       image: "/assets/images/explicit consulting, color on black.png"
-      hero_image: "/assets/images/background, vietnam golden bridge.jpg"
+      # "/assets/images/background, vietnam golden bridge.jpg"
       hero_height: is-small
       hero_darken: true
       lang: "en"
