@@ -216,22 +216,54 @@ redirect_from:
 <p>Wir zeigen Ihnen, was Set-OutlookSignatures, das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> und das inkludierte Outlook Add-In für Sie tun können - interaktiv und mit Fokus auf Ihre konkreten Anforderungen.</p>
 
 <p>Erleben Sie live:</p>
-<ul>
-  <li><strong>Zentrale Verwaltung</strong>: Übernehmen Sie die Kontrolle über alle E-Mail-Signaturen und Abwesenheitsnotizen unternehmensweit, von Outlook-Clients bis zu mobilen Geräten und Outlook Web.</li>
-  <li><strong>Effizienz und Zeitersparnis</strong>: Reduzieren Sie den manuellen Aufwand durch automatisierte Bereitstellung konsistenter und rechtskonformer Signaturen.</li>
-  <li><strong>Markenkonformität &amp; Rechtssicherheit</strong>: Sichern Sie Ihre Corporate Identity und rechtliche Anforderungen in jeder E-Mail.</li>
-  <li><strong>Exklusive Benefactor Circle Funktionen</strong>: Entdecken Sie erweiterte Möglichkeiten wie
-    <ul>
-      <li>Zeitgesteuerte Kampagnen</li>
-      <li>Roaming Signatures</li>
-      <li>Signaturen für Outlook Android, iOS und Web</li>
-      <li>Signaturen für zusätzliche Postfächer</li>
-      <li>Verwalten von Abwesenheitsnotizen</li>
-      <li>Löschen veralteter Signaturen</li>
-      <li>und vieles mehr</li>
-    </ul>
-  </li>
-</ul>
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Zentrale Verwaltung</b><br>Übernehmen Sie die Kontrolle über alle E-Mail-Signaturen und Abwesenheitsnotizen unternehmensweit, von Outlook-Clients bis zu mobilen Geräten und Outlook Web.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Effizienz und Zeitersparnis</b><br>Reduzieren Sie den manuellen Aufwand durch automatisierte Bereitstellung konsistenter und rechtskonformer Signaturen.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Markenkonformität und Rechtssicherheit</b><br>Sichern Sie Ihre Corporate Identity und rechtliche Anforderungen in jeder E-Mail.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Exklusive Benefactor Circle Funktionen</b><br>Entdecken Sie erweiterte Möglichkeiten wie
+            <ul>
+              <li>Zeitgesteuerte Kampagnen</li>
+              <li>Roaming Signatures</li>
+              <li>Signaturen für Outlook Android, iOS und Web</li>
+              <li>Signaturen für zusätzliche Postfächer</li>
+              <li>Verwalten von Abwesenheitsnotizen</li>
+              <li>Löschen veralteter Signaturen</li>
+              <li>und vieles mehr</li>
+            </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 
 <p>Wir freuen uns darauf, Sie kennenzulernen!</p>
 
