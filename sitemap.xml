@@ -69,8 +69,9 @@ sitemap: false
     {%- for page in site.pages -%}
         {%- unless
             page.sitemap == false or
+            page.url startswith '/assets' or
             page.url == '/redirects.json' or
-            page.url startswith '/assets'
+            page.url == '/robots.txt'
         -%}
             {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time %}
     <url>
