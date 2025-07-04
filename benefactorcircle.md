@@ -1,15 +1,8 @@
 ---
 layout: page
-title: |
-  <span class="title is-2">
-    The Benefactor Circle add-on
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    More features for your business
-  </span>
-description: |
-  The Benefactor Circle add-on extends Set-OutlookSignatures with mobile support, roaming sync, OOF automation, signature cleanup, and enterprise-grade features.
+title: The Benefactor Circle add-on
+subtitle: More features for your business
+description: The Benefactor Circle add-on extends Set-OutlookSignatures with mobile support, roaming sync, OOF automation, signature cleanup, and enterprise-grade features.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

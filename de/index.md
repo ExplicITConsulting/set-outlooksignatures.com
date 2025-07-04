@@ -1,17 +1,9 @@
 ---
 layout: page
 lang: de
-title: |
-  <span class="title is-2">
-    Set-Outlook&shy;Signatures
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
-  </span>
-description: |
-  E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.
-  Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
+title: Set-Outlook&shy;Signatures
+subtitle: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
+description: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

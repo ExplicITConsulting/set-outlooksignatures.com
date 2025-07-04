@@ -1,15 +1,8 @@
 ---
 layout: page
-title: |
-  <span class="title is-2">
-    The Outlook add-in
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    Signatures for Outlook on Android and iOS, advanced features for all platforms
-  </span>
-description: |
-  Extend Outlook with the Set-OutlookSignatures add-in. Automatic email signatures for iOS, Android, and all platforms. Self-hosted, secure, and enterprise-ready.
+title: The Outlook add-in
+subtitle: Signatures for Outlook on Android and iOS, advanced features for all platforms
+description: Extend Outlook with the Set-OutlookSignatures add-in. Automatic email signatures for iOS, Android, and all platforms. Self-hosted, secure, and enterprise-ready.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

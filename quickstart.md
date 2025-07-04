@@ -1,15 +1,8 @@
 ---
 layout: page
-title: |
-  <span class="title is-2">
-    Quick Start Guide
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    First signatures in less than an hour
-  </span>
-description: |
-  First signatures in less than an hour
+title: Quick Start Guide
+subtitle: First signatures in less than an hour
+description: First signatures in less than an hour
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

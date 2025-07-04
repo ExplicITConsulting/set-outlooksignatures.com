@@ -1,16 +1,9 @@
 ---
 layout: page
 lang: de
-title: |
-  <span class="title is-2">
-    Implementierungs-Ansatz
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    Erfahrungen aus der Praxis bei der Implementierung der Software in Multi-Client-Umgebungen mit einer fünfstelligen Anzahl von Postfächern
-  </span>
-description: |
-  Erfahrungen aus der Praxis bei der Implementierung der Software in Multi-Client-Umgebungen mit einer fünfstelligen Anzahl von Postfächern
+title: Implementierungs-Ansatz
+subtitle: Erfahrungen aus der Praxis bei der Implementierung der Software in Multi-Client-Umgebungen mit einer fünfstelligen Anzahl von Postfächern
+description: Erfahrungen aus der Praxis bei der Implementierung der Software in Multi-Client-Umgebungen mit einer fünfstelligen Anzahl von Postfächern
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

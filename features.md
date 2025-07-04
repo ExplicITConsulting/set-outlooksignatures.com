@@ -1,15 +1,8 @@
 ---
 layout: page
-title: |
-  <span class="title is-2">
-    Features and feature comparison
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    Our solution at a glance and in benchmark
-  </span>
-description: |
-  Our solution at a glance and in benchmark
+title: Features and feature comparison
+subtitle: Our solution at a glance and in benchmark
+description: Our solution at a glance and in benchmark
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

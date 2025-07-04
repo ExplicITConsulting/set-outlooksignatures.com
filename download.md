@@ -1,15 +1,8 @@
 ---
 layout: page
-title: |
-  <span class="title is-2">
-    Download Set-Outlook&shy;Signatures
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    Get the Free and Open-Source core version
-  </span>
-description: |
-  Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
+title: Download Set-Outlook&shy;Signatures
+subtitle: Get the Free and Open-Source core version
+description: Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

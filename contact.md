@@ -1,15 +1,8 @@
 ---
 layout: page
-title: |
-  <span class="title is-2">
-    Let's get and stay in contact
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    Email, request a call-back, postal address
-  </span>
-description: |
-  Contact ExplicIT Consulting – reach us via email, request a call-back, or send a letter. Find our LinkedIn and GitHub links for more ways to connect.
+title: Let's get and stay in contact
+subtitle: Email, request a call-back, postal address
+description: Contact ExplicIT Consulting – reach us via email, request a call-back, or send a letter. Find our LinkedIn and GitHub links for more ways to connect.
 ---
 <div style="min-height: 100vh;">
 

@@ -1,16 +1,9 @@
 ---
 layout: page
 lang: de
-title: |
-  <span class="title is-2">
-    Unterstützung erhalten
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    Wir geben unsere Erfahrung an Sie weiter
-  </span>
-description: |
-  Support für Set-OutlookSignatures. Kostenlose Hilfe über GitHub oder professionelle Beratung von ExplicIT. Expertenwissen, Workshops und Umsetzungshilfe.
+title: Unterstützung erhalten
+subtitle: Wir geben unsere Erfahrung an Sie weiter
+description: Support für Set-OutlookSignatures. Kostenlose Hilfe über GitHub oder professionelle Beratung von ExplicIT. Expertenwissen, Workshops und Umsetzungshilfe.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

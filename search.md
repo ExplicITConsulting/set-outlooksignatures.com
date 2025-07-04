@@ -1,13 +1,7 @@
 ---
 layout: page
-title: |
-  <span class="title is-2">
-    Search and find
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    What are you looking for?
-  </span>
+title: Search and find
+subtitle: What are you looking for?
 description: What are you looking for?
 ---
 <div style="min-height: 100vh;">

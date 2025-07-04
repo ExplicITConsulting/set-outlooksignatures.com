@@ -1,15 +1,8 @@
 ---
 layout: page
-title: |
-  <span class="title is-2">
-    Parameters
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    How to customize Set-Outlook&shy;Signatures
-  </span>
-description: |
-  Customize Set-OutlookSignatures to fit your organization's needs. Configure behavior, integrate with Microsoft 365, and tailor signature deployment workflows.
+title: Parameters
+subtitle: How to customize Set-Outlook&shy;Signatures
+description: Customize Set-OutlookSignatures to fit your organization's needs. Configure behavior, integrate with Microsoft 365, and tailor signature deployment workflows.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

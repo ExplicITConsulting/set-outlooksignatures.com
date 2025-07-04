@@ -1,16 +1,9 @@
 ---
 layout: page
 lang: en
-title: |
-  <span class="title is-2">
-    Implementation approach
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    Real-life experience implementing the software in multi-client environments with a five-digit number of mailboxes
-  </span>
-description: |
-  Real-life experience implementing the software in multi-client environments with a five-digit number of mailboxes
+title: Implementation approach
+subtitle: Real-life experience implementing the software in multi-client environments with a five-digit number of mailboxes
+description: Real-life experience implementing the software in multi-client environments with a five-digit number of mailboxes
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

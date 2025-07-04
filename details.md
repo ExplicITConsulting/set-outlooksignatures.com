@@ -1,15 +1,8 @@
 ---
 layout: page
-title: |
-  <span class="title is-2">
-    Technical details, requirements and usage
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    What it needs, how it works and how to use it
-  </span>
-description: |
-  Explore technical details of Set-OutlookSignatures: System requirements, supported platforms, template formats, group logic, variables, and simulation mode.
+title: Technical details, requirements and usage
+subtitle: What it needs, how it works and how to use it
+description: Explore technical details of Set-OutlookSignatures: System requirements, supported platforms, template formats, group logic, variables, and simulation mode.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

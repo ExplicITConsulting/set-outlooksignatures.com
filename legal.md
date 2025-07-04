@@ -1,13 +1,7 @@
 ---
 layout: page
-title: |
-  <span class="title is-2">
-    Legal information
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    Impress, Privacy Notice, Terms and Conditions, etc.
-  </span>
+title: Legal information
+subtitle: Impress, Privacy Notice, Terms and Conditions, etc.
 description: Impress, Privacy Notice, Terms and Conditions, etc.
 ---
 

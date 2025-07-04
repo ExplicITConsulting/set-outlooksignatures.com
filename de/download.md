@@ -1,16 +1,9 @@
 ---
 layout: page
 lang: de
-title: |
-  <span class="title is-2">
-    Set-Outlook&shy;Signatures herunterladen
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    Holen Sie sich die kostenlose und quelloffene Kernversion
-  </span>
-description: |
-  E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
+title: Set-Outlook&shy;Signatures herunterladen
+subtitle: Holen Sie sich die kostenlose und quelloffene Kernversion
+description: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

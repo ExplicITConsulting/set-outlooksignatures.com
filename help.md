@@ -1,15 +1,8 @@
 ---
 layout: page
-title: |
-  <span class="title is-2">
-    Help
-  </span>
-subtitle: |
-  <span class="subtitle is-4">
-    Documentation and support ressources
-  </span>
-description: |
-  Explore Set-OutlookSignatures help resources. From feature comparisons and setup guides to FAQs, technical details, and expert support options.
+title: Help
+subtitle: Documentation and support ressources
+description: Explore Set-OutlookSignatures help resources. From feature comparisons and setup guides to FAQs, technical details, and expert support options.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
