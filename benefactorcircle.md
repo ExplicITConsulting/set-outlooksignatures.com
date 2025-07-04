@@ -211,9 +211,55 @@ redirect_from:
 <p>We show you what Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> and the included Outlook add-in can do for you - interactively and with focus on your actual needs.</p>
 
 <p>Experience live:</p>
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Centralized Management</b><br>Take control of all email signatures and out-of-office replies company-wide, from Outlook clients to mobile devices and Outlook Web.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Efficiency and Time Savings</b><br>Reduce manual effort through automated provision of consistent and legally compliant signatures.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Brand Compliance and Legal Certainty</b><br>Ensure your corporate identity and legal requirements in every email.
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Exclusive Benefactor Circle Features</b><br>iscover advanced possibilities such as
+          <ul>
+            <li>Time-controlled Campaigns</li>
+            <li>Roaming Signatures</li>
+            <li>Signatures for Outlook Android, iOS and Web</li>
+            <li>Signatures for additional mailboxes</li>
+            <li>Managing Out-of-Office Replies</li>
+            <li>Deleting outdated signatures</li>
+            <li>and much more</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <ul>
-  <li><strong>Centralized Management</strong>: Take control of all email signatures and out-of-office replies company-wide, from Outlook clients to mobile devices and Outlook Web.</li>
-  <li><strong>Efficiency and Time Savings</strong>: Reduce manual effort through automated provision of consistent and legally compliant signatures.</li>
   <li><strong>Brand Compliance &amp; Legal Certainty</strong>: Ensure your corporate identity and legal requirements in every email.</li>
   <li><strong>Exclusive Benefactor Circle Features</strong>: Discover advanced possibilities such as
     <ul>

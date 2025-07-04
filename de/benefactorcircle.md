@@ -249,19 +249,18 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Exklusive Benefactor Circle Funktionen</b><br>Entdecken Sie erweiterte Möglichkeiten wie
-            <ul>
-              <li>Zeitgesteuerte Kampagnen</li>
-              <li>Roaming Signatures</li>
-              <li>Signaturen für Outlook Android, iOS und Web</li>
-              <li>Signaturen für zusätzliche Postfächer</li>
-              <li>Verwalten von Abwesenheitsnotizen</li>
-              <li>Löschen veralteter Signaturen</li>
-              <li>und vieles mehr</li>
-            </ul>
+          <ul>
+            <li>Zeitgesteuerte Kampagnen</li>
+            <li>Roaming Signatures</li>
+            <li>Signaturen für Outlook Android, iOS und Web</li>
+            <li>Signaturen für zusätzliche Postfächer</li>
+            <li>Verwalten von Abwesenheitsnotizen</li>
+            <li>Löschen veralteter Signaturen</li>
+            <li>und vieles mehr</li>
+          </ul>
       </div>
     </div>
   </div>
-
 </div>
 
 
