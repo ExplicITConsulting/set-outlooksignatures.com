@@ -243,7 +243,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Exclusive Benefactor Circle features</b><br> in action, such as:
+        <b>Exclusive Benefactor Circle features</b><br>Such as:
           <ul>
             <li>Time-controlled Campaigns</li>
             <li>Roaming Signatures</li>
