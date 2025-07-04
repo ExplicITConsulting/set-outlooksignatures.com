@@ -66,6 +66,7 @@ layout: none
     {%- endfor -%}
 
     {%- for page in site.pages -%}
+    {%- unless page.sitemap == false or page.url contains '/assets/' or page.url contains '/_site/' or page.url contains '/.jekyll-cache/' or page.url contains '/vendor/' -%}
     {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time %}
     <url>
         <loc>{{ page.url | absolute_url }}</loc>
@@ -117,5 +118,6 @@ layout: none
             href="{{ site.url | append: default_lang_url_path | absolute_url }}"
         />
     </url>
+    {%- endunless -%}
     {%- endfor %}
 </urlset>
