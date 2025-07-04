@@ -215,6 +215,26 @@ redirect_from:
 <h2 id="demo">Demo</h2>
 <p>Wir zeigen Ihnen, was Set-OutlookSignatures, das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> und das inkludierte Outlook Add-In für Sie tun können - interaktiv und mit Fokus auf Ihre konkreten Anforderungen.</p>
 
+<p>Erleben Sie live:</p>
+<ul>
+  <li><strong>Zentrale Verwaltung</strong>: Übernehmen Sie die Kontrolle über alle E-Mail-Signaturen und Abwesenheitsnotizen unternehmensweit, von Outlook-Clients bis zu mobilen Geräten und Outlook Web.</li>
+  <li><strong>Effizienz und Zeitersparnis</strong>: Reduzieren Sie den manuellen Aufwand durch automatisierte Bereitstellung konsistenter und rechtskonformer Signaturen.</li>
+  <li><strong>Markenkonformität &amp; Rechtssicherheit</strong>: Sichern Sie Ihre Corporate Identity und rechtliche Anforderungen in jeder E-Mail.</li>
+  <li><strong>Exklusive Benefactor Circle Funktionen</strong>: Entdecken Sie erweiterte Möglichkeiten wie
+    <ul>
+      <li>Zeitgesteuerte Kampagnen</li>
+      <li>Roaming Signatures</li>
+      <li>Signaturen für Outlook Android, iOS und Web</li>
+      <li>Signaturen für zusätzliche Postfächer</li>
+      <li>Verwalten von Abwesenheitsnotizen</li>
+      <li>Löschen veralteter Signaturen</li>
+      <li>und vieles mehr</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Wir freuen uns darauf, Sie kennenzulernen!</p>
+
 <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Jetzt persönliche Demo vereinbaren</button></a></p>
 
 

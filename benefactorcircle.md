@@ -210,6 +210,26 @@ redirect_from:
 <h2 id="demo">Demo</h2>
 <p>We show you what Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> and the included Outlook add-in can do for you - interactively and with focus on your actual needs.</p>
 
+<p>Experience live:</p>
+<ul>
+  <li><strong>Centralized Management</strong>: Take control of all email signatures and out-of-office replies company-wide, from Outlook clients to mobile devices and Outlook Web.</li>
+  <li><strong>Efficiency and Time Savings</strong>: Reduce manual effort through automated provision of consistent and legally compliant signatures.</li>
+  <li><strong>Brand Compliance &amp; Legal Certainty</strong>: Ensure your corporate identity and legal requirements in every email.</li>
+  <li><strong>Exclusive Benefactor Circle Features</strong>: Discover advanced possibilities such as
+    <ul>
+      <li>Time-controlled Campaigns</li>
+      <li>Roaming Signatures</li>
+      <li>Signatures for Outlook Android, iOS and Web</li>
+      <li>Signatures for additional mailboxes</li>
+      <li>Managing Out-of-Office Replies</li>
+      <li>Deleting outdated signatures</li>
+      <li>and much more</li>
+    </ul>
+  </li>
+</ul>
+
+<p>We look forward to meeting you!</p>
+
 <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Schedule your personal demo</button></a></p>
 
 
