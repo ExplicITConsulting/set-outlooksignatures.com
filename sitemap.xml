@@ -70,7 +70,8 @@ sitemap: false
         {%- unless
             page.sitemap == false or
             page.url == '/redirects.json' or
-            page.url == '/robots.txt'
+            page.url == '/robots.txt' or
+            page.url == '/assets/css/app.css'
         -%}
             {%- assign last_mod = page.last_modified_at | default: page.date | default: site.time %}
     <url>
