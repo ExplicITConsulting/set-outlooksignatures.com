@@ -258,22 +258,6 @@ redirect_from:
   </div>
 </div>
 
-
-<ul>
-  <li><strong>Brand Compliance &amp; Legal Certainty</strong>: Ensure your corporate identity and legal requirements in every email.</li>
-  <li><strong>Exclusive Benefactor Circle Features</strong>: Discover advanced possibilities such as
-    <ul>
-      <li>Time-controlled Campaigns</li>
-      <li>Roaming Signatures</li>
-      <li>Signatures for Outlook Android, iOS and Web</li>
-      <li>Signatures for additional mailboxes</li>
-      <li>Managing Out-of-Office Replies</li>
-      <li>Deleting outdated signatures</li>
-      <li>and much more</li>
-    </ul>
-  </li>
-</ul>
-
 <p>We look forward to meeting you!</p>
 
 <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Schedule your personal demo</button></a></p>
