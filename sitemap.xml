@@ -69,7 +69,6 @@ sitemap: false
     {%- for page in site.pages -%}
         {%- unless
             page.sitemap == false or
-            page.url | startswith: '/assets/' or
             page.url == '/redirects.json' or
             page.url == '/robots.txt'
         -%}
