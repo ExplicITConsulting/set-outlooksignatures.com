@@ -64,7 +64,7 @@ defaults:
       image: "/assets/images/explicit consulting, color on black.png"
       # "/assets/images/background, vietnam golden bridge.jpg"
       hero_height: is-small
-      hero_darken: true
+      # hero_darken: true
       lang: "en"
 
 include:
