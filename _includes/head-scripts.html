@@ -256,46 +256,35 @@
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const links = document.querySelectorAll("a[href]");
+    document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll("a[href]");
 
-    const externalLinkSvg = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          `;
+        links.forEach(link => {
+            try {
+                const url = new URL(link.href, window.location.href);
 
-    links.forEach(link => {
-      try {
-        const url = new URL(link.href, window.location.href);
+                // If the link is external, set target="_blank"
+                if (url.hostname.toLowerCase() !== window.location.hostname.toLowerCase()) {
+                    link.setAttribute("target", "_blank");
+                }
 
-        if (url.hostname.toLowerCase() !== window.location.hostname.toLowerCase()) {
-          link.setAttribute("target", "_blank");
-        }
+                // If the link is set to open in a new tab, append the symbol
+                if ((link.getAttribute("target") || "").toLowerCase() === "_blank") {
+                    let targetElement = link;
+                    const buttonChild = link.querySelector('button');
+                    if (buttonChild) {
+                        targetElement = buttonChild;
+                    }
 
-        if ((link.getAttribute("target") || "").toLowerCase() === "_blank") {
-          let targetElement = link;
-          const buttonChild = link.querySelector('button');
-          if (buttonChild) {
-            targetElement = buttonChild;
-          }
-
-          if (!targetElement.querySelector(".icon svg")) {
-            const iconSpan = document.createElement("span");
-            iconSpan.classList.add("icon");
-            iconSpan.style.marginLeft = "0.2em";
-            iconSpan.style.verticalAlign = "middle";
-            iconSpan.innerHTML = externalLinkSvg.trim();
-            targetElement.appendChild(iconSpan);
-          }
-        }
-      } catch (e) {
-        // Invalid URL, skip
-      }
+                    // Append the text directly
+                    targetElement.innerHTML += "&nbsp;↗";
+                }
+            } catch (e) {
+                // Invalid URL, skip
+                console.error("Invalid URL encountered:", link.href, e);
+            }
+        });
     });
-  });
 </script>
 
 
