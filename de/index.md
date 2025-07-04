@@ -219,7 +219,7 @@ redirect_from:
 <a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: SpringGreen">➔ Schnellstart-Anleitung</button></a>
 
 
-<h2><span style="color: DeepSkyBlue;">Tiefer</span> eintauchen</h2>
+<h2><span style="color: RoyalBlue;">Tiefer</span> eintauchen</h2>
 <p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:<p>
 <ul>
   <li>Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern</li>
@@ -228,4 +228,4 @@ redirect_from:
   <li>Wie Sie erstklassigen Support erhalten</li>
 </ul>
 
-<a href="/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Hilfe- und Support-Center</button></a>
+<a href="/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: RoyalBlue">➔ Hilfe- und Support-Center</button></a>
