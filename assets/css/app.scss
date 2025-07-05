@@ -118,13 +118,13 @@ html::after {
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 33.3vw;
-  height: 100vh; /* Make the bounding box tall enough */
+  width: 33.3vw; /* Sets the width of the pseudo-element to 33.3% of the viewport width */
+  height: 50vh; /* Sets the height of the pseudo-element to 50% of the viewport height, acting as the max-height for the image */
   background-image: url("/assets/images/visitenkarten-hochkant.png");
-  background-repeat: no-repeat;
-  background-size: 33.3vw auto; /* Image width 25vw, height scales proportionally */
-  background-position: bottom right;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.5;
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-size: contain; /* Scales the background image to fit within the pseudo-element's dimensions (33.3vw x 50vh) while maintaining its aspect ratio. This ensures it's never taller than 50vh and respects the width preference. */
+  background-position: bottom right; /* Positions the background image at the bottom right corner of the pseudo-element */
+  pointer-events: none; /* Ensures the pseudo-element does not interfere with mouse events on content below it */
+  z-index: -1; /* Places the pseudo-element behind other content */
+  opacity: 0.5; /* Sets the transparency of the pseudo-element */
 }
