@@ -202,7 +202,8 @@ Set-OutlookSignatures erfordert **keine Installation auf Servern oder Clients**.
 - Netzwerkfreischaltungen:  
 	- Die Ports 389 (LDAP) and 3268 (Global Catalog), jeweils TCP and UDP, müssen zwischen Client und allen Domain Controllern freigeschaltet sein. Falls dies nicht der Fall ist, können signaturrelevante Informationen und Variablen nicht abgerufen werden. Die Software prüft bei jedem Lauf, ob der Zugriff möglich ist.  
 	- Für den Zugriff auf den SMB-File-Share mit den Software-Komponenten werden folgende Ports benötigt: 137 UDP, 138 UDP, 139 TCP, 445 TCP (Details <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)">in diesem Microsoft-Artikel</a>).  
-	- Für den Zugriff auf SharePoint Dokumentbibliotheken wird Port 443 TCP benötigt. Firewalls und Proxies dürfen WebDAV HTTP Extensions nicht blockieren.  
+	- Für den Zugriff auf SharePoint Dokumentbibliotheken wird Port 443 TCP benötigt. Firewalls und Proxies dürfen WebDAV HTTP Extensions nicht blockieren.
+
 ### 7.2. Server  
 Benötigt werden:
 - Ein SMB-File-Share, in den die Software und seine Komponenten abgelegt werden. Auf diesen File-Share und seine Inhalte müssen alle Benutzer lesend zugreifen können.  

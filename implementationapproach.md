@@ -205,7 +205,8 @@ The software core is **Free and Open-Source Software (FOSS)**. It is published u
 - Network unlocks:  
   - Ports 389 (LDAP) and 3268 (Global Catalog), TCP and UDP respectively, must be enabled between the client and all domain controllers. If this is not the case, signature-relevant information and variables cannot be retrieved. the software checks with each run whether access is possible.
 - To access the SMB share with the software components, the following ports are needed: 137 UDP, 138 UDP, 139 TCP, 445 TCP (details <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)">in this Microsoft article</a>).  
-  - For access to SharePoint document libraries, port 443 TCP is needed. When not using SharePoint Online with Graph, firewalls and proxies must not block WebDAV HTTP extensions.  
+  - For access to SharePoint document libraries, port 443 TCP is needed. When not using SharePoint Online with Graph, firewalls and proxies must not block WebDAV HTTP extensions.
+
 ### 7.2. Server  
 Required are:
 - An SMB file share in which the software and its components are stored. All users must have read access to this file share and its contents.  
