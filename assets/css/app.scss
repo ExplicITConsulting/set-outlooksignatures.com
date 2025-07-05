@@ -113,18 +113,18 @@ h6:hover .anchor-link {
   margin-top: 0;
 }
 
-body::after {
+html::after {
   content: "";
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 200px;
-  height: 200px;
+  width: 25vw;
+  height: 25vw;
   background-image: url("/assets/images/visitenkarten-hochkant.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom right;
   pointer-events: none;
-  z-index: 999;
-  opacity: 0.6;
+  z-index: -1;
+  opacity: 0.8;
 }
