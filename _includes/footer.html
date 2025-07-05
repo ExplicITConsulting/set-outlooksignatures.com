@@ -1,19 +1,17 @@
 <footer class="footer has-background-inherit">
     <div class="container">
-        {% if site.footer_menu %}
+        {%- if site.footer_menu -%}
             <div class="columns is-multiline">
-                {% for item in site.data[site.footer_menu] %}
-                <div class="column has-text-centered">
-                    <div style="hyphens: manual;">
-                        <a href="{{ item.link | relative_url }}">{{ item.name }}</a>
+                {%- for item in site.data[site.footer_menu] -%}
+                    <div class="column has-text-centered">
+                        <div style="hyphens: manual;" class="has-text-centered">
+                            <a href="{{ item.link | relative_url }}">{{ item.name }}</a>
+                        </div>
                     </div>
-                </div>
-                {% endfor %}
+                {%- endfor -%}
             </div>
-        {% endif %}
+        {%- endif -%}
     </div>
-    <div class="content is-small has-text-centered">
-        <p>&nbsp;</p>
-        <p>This site does not use cookies or analytic tools requiring you to consent or define allowed services. For our privacy notice, see the links above.</p>
-    </div>
+
+    <p class="content is-small has-text-centered">This site does not use cookies or analytic tools requiring you to consent or define allowed services. For our privacy notice, see the links above.</p>
 </footer>

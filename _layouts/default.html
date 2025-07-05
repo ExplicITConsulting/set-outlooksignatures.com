@@ -55,9 +55,9 @@
                 </div>
             </div>
         </section>
-        {% unless page.hide_footer %}
+        {%- unless page.hide_footer -%}
             {% include footer.html %}
-        {% endunless %}
+        {%- endunless -%}
         <script src="{{ site.baseurl }}/assets/js/app.js" type="text/javascript"></script>
         {%- include footer-scripts.html -%}
     </body>
