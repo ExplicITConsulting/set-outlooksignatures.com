@@ -128,3 +128,7 @@ html::after {
   z-index: -1; /* Places the pseudo-element behind other content */
   opacity: 0.5; /* Sets the transparency of the pseudo-element */
 }
+
+.footer {
+  padding-bottom: 0 !important; // Or just 0 if not needed
+}
