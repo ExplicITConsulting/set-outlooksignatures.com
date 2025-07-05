@@ -118,11 +118,12 @@ body::after {
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 25vw;
+  width: auto;
   height: auto;
   background-image: url("/assets/images/visitenkarten hochkant.png");
   background-repeat: no-repeat;
   background-size: contain;
   pointer-events: none; /* So it doesn't block clicks */
   z-index: -1; /* Behind content */
+  opacity: 0.8;
 }
