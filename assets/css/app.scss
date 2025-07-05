@@ -118,13 +118,13 @@ html::after {
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 25vw;
+  width: 33.3vw;
   height: 100vh; /* Make the bounding box tall enough */
   background-image: url("/assets/images/visitenkarten-hochkant.png");
   background-repeat: no-repeat;
-  background-size: 25vw auto; /* Image width 25vw, height scales proportionally */
+  background-size: 33.3vw auto; /* Image width 25vw, height scales proportionally */
   background-position: bottom right;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.8;
+  opacity: 0.5;
 }
