@@ -112,3 +112,17 @@ h6:hover .anchor-link {
 .content ol:not(:first-child) {
   margin-top: 0;
 }
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 25vw;
+  height: auto;
+  background-image: url("/assets/images/visitenkarten hochkant.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none; /* So it doesn't block clicks */
+  z-index: -1; /* Behind content */
+}
