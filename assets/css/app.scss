@@ -113,6 +113,10 @@ h6:hover .anchor-link {
   margin-top: 0;
 }
 
+.footer {
+  padding-bottom: 0 !important; // Or just 0 if not needed
+}
+
 html::after {
   content: "";
   position: fixed;
@@ -127,8 +131,4 @@ html::after {
   pointer-events: none; /* Ensures the pseudo-element does not interfere with mouse events on content below it */
   z-index: -1; /* Places the pseudo-element behind other content */
   opacity: 0.5; /* Sets the transparency of the pseudo-element */
-}
-
-.footer {
-  padding-bottom: 0 !important; // Or just 0 if not needed
 }

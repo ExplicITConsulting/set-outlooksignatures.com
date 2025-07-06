@@ -4,7 +4,7 @@ on:
   # push:
   schedule:
     # Set the schedule time
-    - cron: "15 */3 * * *"
+    - cron: "15 23 * * *"
 
 jobs:
   setup-delay:
