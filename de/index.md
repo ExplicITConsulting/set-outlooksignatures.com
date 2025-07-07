@@ -209,8 +209,29 @@ redirect_from:
 <p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p>
 
 <p>Erleben Sie live, wie schnell und intuitiv Sie Ihre Outlook-Signaturen und Abwesenheitsnotizen zentral verwalten und optimieren können.<p>
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Jetzt persönliche Demo vereinbaren</button></a></p>
+    </div>
+  </div>
 
-<p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Jetzt persönliche Demo vereinbaren</button></a></p>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual; width: 95%;"> <div class="scrolling-banner">
+          <div class="scrolling-track">
+            {%- for file in site.static_files -%}
+              {%- if file.path contains "/assets/images/clients/" -%}
+                <img src="{{ file.path | relative_url }}" alt="Banner image">
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <h2>Erste Signaturen <span style="color: DarkSeaGreen ;">in unter einer Stunde</span></h2>
@@ -229,3 +250,109 @@ redirect_from:
 </ul>
 
 <a href="/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Hilfe- und Support-Center</button></a>
+
+
+<style>
+  .scrolling-banner {
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .scrolling-banner .scrolling-track {
+    display: flex;
+    align-items: flex-start;
+    white-space: nowrap;
+    gap: 1.5em;
+    animation: scroll-left var(--scroll-duration) linear infinite;
+    min-width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  .scrolling-banner .scrolling-track img {
+    max-height: 4em;
+    max-width: 90%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: auto;
+    opacity: 1;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-1 * var(--total-original-images-width)));
+    }
+  }
+</style>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollingBanner = document.querySelector('.scrolling-banner');
+    const track = scrollingBanner?.querySelector('.scrolling-track');
+
+    if (!scrollingBanner || !track) return;
+
+    let images = Array.from(track.getElementsByTagName('img'));
+    if (images.length === 0) return;
+
+    // Shuffle images
+    for (let i = images.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [images[i], images[j]] = [images[j], images[i]];
+    }
+    track.innerHTML = '';
+    images.forEach(img => track.appendChild(img));
+
+    const setupAnimation = () => {
+      const originalImageCount = images.length;
+      let totalOriginalImagesWidth = 0;
+      const trackComputedStyle = getComputedStyle(track);
+      let imageGap = parseFloat(trackComputedStyle.columnGap);
+      if (isNaN(imageGap)) imageGap = 16;
+
+      images.forEach((img, index) => {
+        totalOriginalImagesWidth += img.offsetWidth;
+        if (index < originalImageCount - 1) {
+          totalOriginalImagesWidth += imageGap;
+        }
+      });
+
+      images.forEach(img => {
+        const clone = img.cloneNode(true);
+        track.appendChild(clone);
+      });
+
+      const animationSpeedPixelsPerSecond = 50;
+      const duration = totalOriginalImagesWidth > 0 ? totalOriginalImagesWidth / animationSpeedPixelsPerSecond : 0;
+
+      track.style.setProperty('--scroll-duration', `${duration}s`);
+      track.style.setProperty('--total-original-images-width', `${totalOriginalImagesWidth}px`);
+      track.style.setProperty('--image-spacing', `${imageGap}px`);
+    };
+
+    const loadImagePromises = images.map(img => {
+      if (img.complete) return Promise.resolve();
+      return new Promise(resolve => {
+        img.onload = resolve;
+        img.onerror = resolve;
+      });
+    });
+
+    Promise.all(loadImagePromises).then(() => {
+      setTimeout(setupAnimation, 50);
+    });
+  });
+</script>
