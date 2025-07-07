@@ -281,7 +281,7 @@ redirect_from:
 
 <p>Wir freuen uns darauf, Sie kennenzulernen!</p>
 
-<p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="word-break: break-word; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Jetzt persönliche Demo vereinbaren</button></a></p>
+<p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="overflow-wrap: break-word; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Jetzt persönliche Demo vereinbaren</button></a></p>
 
 
 <h2>Finanzielle Vorteile</h2>
