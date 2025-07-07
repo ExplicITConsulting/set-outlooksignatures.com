@@ -216,7 +216,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual; width: 95%;"> <div class="scrolling-banner">
           <div class="scrolling-track">
             {%- for file in site.static_files -%}
