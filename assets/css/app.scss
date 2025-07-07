@@ -10,6 +10,10 @@ $text: black;
 // Import Main CSS file from theme
 @import "main";
 
+* {
+  word-break: break-word;
+}
+
 .html {
   scroll-padding-top: $navbar-height;
 }
