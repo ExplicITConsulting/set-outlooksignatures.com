@@ -1,6 +1,7 @@
 ---
 layout: none
 sitemap: false
+permalink: /client-images.txt
 ---
 {%- for file in site.static_files -%}
     {%- if file.path contains "/assets/images/clients/" -%}
