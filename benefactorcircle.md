@@ -513,189 +513,176 @@ Benefactor Circle add-on</span>.</p>
 
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-      const scrollingBanner = document.querySelector('.scrolling-banner');
-      const track = scrollingBanner?.querySelector('.scrolling-track');
+    document.addEventListener('DOMContentLoaded', () => {
+        const scrollingBanner = document.querySelector('.scrolling-banner');
+        const track = scrollingBanner?.querySelector('.scrolling-track');
 
-      if (!scrollingBanner || !track) {
-          console.warn('Scrolling banner or track element not found. Please ensure the HTML structure is correct.');
-          return;
-      }
+        if (!scrollingBanner || !track) {
+            console.warn('Scrolling banner or track element not found. Please ensure the HTML structure is correct.');
+            return;
+        }
 
-      let position = 0;
-      const animationSpeedPixelsPerSecond = 50;
-      let totalOriginalImagesWidth = 0;
-      let imageGap = 0;
-      let lastTimestamp = null;
-      let originalImages = [];
+        let position = 0;
+        const animationSpeedPixelsPerSecond = 50;
+        let totalOriginalImagesWidth = 0;
+        let imageGap = 0;
+        let lastTimestamp = null;
+        let originalImages = [];
+        // Define a fixed number of sets to clone. Adjust this based on your design and expected banner width.
+        // A value of 3-5 often works well: original + 2-4 clones.
+        const FIXED_CLONE_SETS = 3; 
 
-      function debounce(func, delay) {
-          let timeout;
-          return function(...args) {
-              const context = this;
-              clearTimeout(timeout);
-              timeout = setTimeout(() => {
-                  func.apply(context, args);
-              }, delay);
-          };
-      }
+        function debounce(func, delay) {
+            let timeout;
+            return function(...args) {
+                const context = this;
+                clearTimeout(timeout);
+                timeout = setTimeout(() => {
+                    func.apply(context, args);
+                }, delay);
+            };
+        }
 
-      // Function to calculate dimensions and *re-clone* dynamically
-      function calculateDimensionsAndClone() {
-          if (originalImages.length === 0) {
-              console.warn('No original images to calculate dimensions for.');
-              totalOriginalImagesWidth = 0;
-              return;
-          }
+        // Function to calculate dimensions and set up the fixed clones
+        function setupFixedClones() {
+            if (originalImages.length === 0) {
+                console.warn('No original images to calculate dimensions for.');
+                totalOriginalImagesWidth = 0;
+                return;
+            }
 
-          const trackStyle = getComputedStyle(track);
-          imageGap = parseFloat(trackStyle.gap) || 0;
+            const trackStyle = getComputedStyle(track);
+            imageGap = parseFloat(trackStyle.gap) || 0;
 
-          let newTotalOriginalImagesWidth = 0;
-          originalImages.forEach((img, index) => {
-              newTotalOriginalImagesWidth += img.offsetWidth;
-              if (index < originalImages.length - 1) {
-                  newTotalOriginalImagesWidth += imageGap;
-              }
-          });
+            let newTotalOriginalImagesWidth = 0;
+            originalImages.forEach((img, index) => {
+                newTotalOriginalImagesWidth += img.offsetWidth;
+                if (index < originalImages.length - 1) {
+                    newTotalOriginalImagesWidth += imageGap;
+                }
+            });
 
-          const epsilon = 0.1;
-          if (totalOriginalImagesWidth > epsilon && Math.abs(newTotalOriginalImagesWidth - totalOriginalImagesWidth) > epsilon) {
-              position = (position / totalOriginalImagesWidth) * newTotalOriginalImagesWidth;
-          }
+            const epsilon = 0.1;
+            if (totalOriginalImagesWidth > epsilon && Math.abs(newTotalOriginalImagesWidth - totalOriginalImagesWidth) > epsilon) {
+                position = (position / totalOriginalImagesWidth) * newTotalOriginalImagesWidth;
+            }
 
-          totalOriginalImagesWidth = newTotalOriginalImagesWidth;
+            totalOriginalImagesWidth = newTotalOriginalImagesWidth;
 
-          if (totalOriginalImagesWidth <= epsilon) {
-              console.warn('Total width of images is 0 or very small after recalculation. Animation may not function correctly.');
-              return; // Exit if dimensions are invalid
-          }
+            if (totalOriginalImagesWidth <= epsilon) {
+                console.warn('Total width of images is 0 or very small after recalculation. Animation may not function correctly.');
+                return;
+            }
 
-          // --- Dynamic Cloning Logic ---
-          // Clear existing track content *before* appending new sets
-          track.innerHTML = '';
+            // --- Fixed Cloning Logic ---
+            // Clear existing track content *only once* when setting up
+            track.innerHTML = ''; 
 
-          // Determine how many sets are needed to fill the visible area plus a buffer
-          // `scrollingBanner.offsetWidth` gives the visible width of the container
-          const bannerWidth = scrollingBanner.offsetWidth;
-          let setsNeeded = 2; // Start with a minimum of 2 sets (original + 1 clone)
+            // Append the original set and then the fixed number of cloned sets
+            for (let i = 0; i < FIXED_CLONE_SETS; i++) {
+                originalImages.forEach(img => {
+                    track.appendChild(img.cloneNode(true)); // Always clone for fixed set, original handled by first iteration
+                });
+            }
+            // --- END Fixed Cloning Logic ---
+        }
 
-          if (totalOriginalImagesWidth > 0) {
-              // Calculate how many times original content fits into banner width.
-              // Add a buffer (e.g., 1 or 2) to ensure seamless transition.
-              // If the banner width is much larger than one set, we need more clones.
-              setsNeeded = Math.ceil(bannerWidth / totalOriginalImagesWidth) + 1;
-              // Ensure at least 2 sets for robust looping, especially if a single set is very wide.
-              setsNeeded = Math.max(setsNeeded, 2); 
-              // Add an extra set if banner is very wide and speed is high to prevent content running out
-              // You might adjust the '2' based on speed/viewport. For instance, `+ Math.ceil(animationSpeedPixelsPerSecond / 10)`
-              if (setsNeeded * totalOriginalImagesWidth < bannerWidth * 2) { // Ensure at least 2 full banner widths of content
-                  setsNeeded++;
-              }
-          }
-          // console.log(`Banner width: ${bannerWidth}px, totalOriginalImagesWidth: ${totalOriginalImagesWidth}px, Sets needed: ${setsNeeded}`);
-
-
-          // Append the calculated number of sets
-          for (let i = 0; i < setsNeeded; i++) {
-              originalImages.forEach(img => {
-                  // For the first pass (i === 0), append the actual original img element.
-                  // For subsequent passes, append clones of the original images.
-                  track.appendChild(i === 0 ? img : img.cloneNode(true));
-              });
-          }
-          // --- END Dynamic Cloning Logic ---
-      }
-
-      // Debounce the resize handler to prevent excessive recalculations
-      const debouncedRecalculate = debounce(calculateDimensionsAndClone, 200); // Call the new function
-      window.addEventListener('resize', debouncedRecalculate, { passive: true });
+        // Debounce the resize handler to prevent excessive recalculations
+        // Now, on resize, we only need to recalculate `totalOriginalImagesWidth`
+        // if image sizes change (e.g., due to responsive CSS), not re-clone.
+        // However, if your image sizes are dynamic, you might still need to call `setupFixedClones`
+        // or a simpler `recalculateWidths` function. For this example, we'll keep `setupFixedClones`
+        // for simplicity assuming it recalcs widths.
+        const debouncedSetup = debounce(setupFixedClones, 200); 
+        window.addEventListener('resize', debouncedSetup, { passive: true });
 
 
-      fetch('https://set-outlooksignatures.com/client-images.txt')
-          .then(response => {
-              if (!response.ok) {
-                  throw new Error(`HTTP error! status: ${response.status}`);
-              }
-              return response.text();
-          })
-          .then(text => {
-              const urls = text.split('\n').map(line => line.trim()).filter(Boolean);
+        fetch('https://set-outlooksignatures.com/client-images.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(text => {
+                const urls = text.split('\n').map(line => line.trim()).filter(Boolean);
 
-              if (urls.length === 0) {
-                  console.warn('No image URLs found in the text file. The banner will not display images.');
-                  return;
-              }
+                if (urls.length === 0) {
+                    console.warn('No image URLs found in the text file. The banner will not display images.');
+                    return;
+                }
 
-              originalImages = urls.map(url => {
-                  const img = new Image();
-                  img.src = url;
-                  const fileName = url.split('/').pop()?.split('.')[0] || 'Client Image';
-                  img.alt = fileName.replace(/[-_]/g, ' ');
-                  return img;
-              });
+                originalImages = urls.map(url => {
+                    const img = new Image();
+                    img.src = url;
+                    const fileName = url.split('/').pop()?.split('.')[0] || 'Client Image';
+                    img.alt = fileName.replace(/[-_]/g, ' ');
+                    return img;
+                });
 
-              for (let i = originalImages.length - 1; i > 0; i--) {
-                  const j = Math.floor(Math.random() * (i + 1));
-                  [originalImages[i], originalImages[j]] = [originalImages[j], originalImages[i]];
-              }
+                for (let i = originalImages.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [originalImages[i], originalImages[j]] = [originalImages[j], originalImages[i]];
+                }
 
-              // Before starting the animation, we need to ensure all original images are loaded
-              // so that their `offsetWidth` values are accurate for the initial `calculateDimensionsAndClone`.
-              const initialImageLoadPromises = originalImages.map(img => {
-                  return new Promise(resolve => {
-                      if (img.complete && img.naturalWidth !== 0) {
-                          resolve();
-                      } else {
-                          img.onload = resolve;
-                          img.onerror = (e) => {
-                              console.warn(`Failed to load original image: ${img.src}. It will be skipped.`, e);
-                              resolve(); // Resolve even on error
-                          };
-                      }
-                  });
-              });
+                const initialImageLoadPromises = originalImages.map(img => {
+                    return new Promise(resolve => {
+                        if (img.complete && img.naturalWidth !== 0) {
+                            resolve();
+                        } else {
+                            img.onload = resolve;
+                            img.onerror = (e) => {
+                                console.warn(`Failed to load original image: ${img.src}. It will be skipped.`, e);
+                                resolve(); 
+                            };
+                        }
+                    });
+                });
 
-              Promise.allSettled(initialImageLoadPromises).then(() => {
-                  // Now that original images are loaded and `offsetWidth` is accurate,
-                  // perform initial dimension calculation and cloning.
-                  calculateDimensionsAndClone();
+                Promise.allSettled(initialImageLoadPromises).then(() => {
+                    // Now that original images are loaded, set up the fixed clones.
+                    setupFixedClones();
 
-                  if (totalOriginalImagesWidth <= 0) {
-                      console.warn('Total width of images is 0 after initial load. Animation cannot start.');
-                      return;
-                  }
+                    if (totalOriginalImagesWidth <= 0) {
+                        console.warn('Total width of images is 0 after initial load. Animation cannot start.');
+                        return;
+                    }
 
-                  // Start the requestAnimationFrame loop
-                  requestAnimationFrame(animate);
+                    requestAnimationFrame(animate);
 
-              }).catch(error => {
-                  console.error('Error during initial image loading promise handling:', error);
-              });
-          })
-          .catch(error => {
-              console.error('Failed to load image URLs from text file:', error);
-          });
+                }).catch(error => {
+                    console.error('Error during initial image loading promise handling:', error);
+                });
+            })
+            .catch(error => {
+                console.error('Failed to load image URLs from text file:', error);
+            });
 
-      function animate(timestamp) {
-          if (!lastTimestamp) lastTimestamp = timestamp;
-          const deltaTime = Math.min((timestamp - lastTimestamp) / 1000, 1 / 30);
-          lastTimestamp = timestamp;
+        function animate(timestamp) {
+            if (!lastTimestamp) lastTimestamp = timestamp;
+            const deltaTime = Math.min((timestamp - lastTimestamp) / 1000, 1 / 30);
+            lastTimestamp = timestamp;
 
-          if (totalOriginalImagesWidth <= 0) {
-              requestAnimationFrame(animate);
-              return;
-          }
+            if (totalOriginalImagesWidth <= 0) {
+                requestAnimationFrame(animate);
+                return;
+            }
 
-          position -= animationSpeedPixelsPerSecond * deltaTime;
+            position -= animationSpeedPixelsPerSecond * deltaTime;
 
-          while (position <= -totalOriginalImagesWidth) {
-              position += totalOriginalImagesWidth;
-          }
+            // The looping logic needs to consider the total width of the *entire* track
+            // which now includes the original set plus all the fixed clones.
+            // Since we're appending `FIXED_CLONE_SETS` times, the total width for looping
+            // is `totalOriginalImagesWidth * FIXED_CLONE_SETS`.
+            // However, the effective "loop point" is still at `totalOriginalImagesWidth`
+            // because after one full set scrolls off, the next set is identical.
+            while (position <= -totalOriginalImagesWidth) {
+                position += totalOriginalImagesWidth;
+            }
 
-          track.style.transform = `translate3d(${position}px, 0, 0)`;
+            track.style.transform = `translate3d(${position}px, 0, 0)`;
 
-          requestAnimationFrame(animate);
-      }
-  });
+            requestAnimationFrame(animate);
+        }
+    });
 </script>
