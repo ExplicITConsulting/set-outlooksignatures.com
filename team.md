@@ -1,5 +1,4 @@
 ---
-sitemap: false
 layout: page
 lang: de
 locale: de
@@ -114,7 +113,7 @@ redirect_from:
                 </div>
                 </div>
                 <div class="content">
-                    <p>We focus on high quality products and services. We deliberately do without a sales team in favor of a lean and cost-effective structure, allowing us to not work with inflated prices that are later "reduced" through negotiations. Our clients appreciate this and are happy to recommend us to others.</p>
+                    <p>We focus on high quality products and services. We deliberately do without a sales team in favor of a lean and cost-effective structure, allowing us to not work with inflated prices that are later "reduced" through negotiations. Our clients appreciate this and recommend us to others.</p>
                 </div>
             </div>
         </div>
