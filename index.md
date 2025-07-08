@@ -316,7 +316,11 @@ redirect_from:
         const loadImagePromises = images.map(img => {
           return img.complete ? Promise.resolve() : new Promise(resolve => {
             img.onload = resolve;
-            img.onerrorPromises).then(() => {
+            img.onerror = () => resolve(); // Added resolve for onerror
+          });
+        });
+
+        Promise.all(loadImagePromises).then(() => { // Closed loadImagePromises).then(() => {
           // Clone images for seamless loop
           images.forEach(img => {
             const clone = img.cloneNode(true);
@@ -329,9 +333,11 @@ redirect_from:
           images.forEach((img, i) => {
             totalWidth += img.offsetWidth;
             if (i < images.length - 1) totalWidth += gap;
-        -duration', `${totalWidth / 50}s`);
+          });
+
+          track.style.setProperty('--scroll-duration', `${totalWidth / 50}s`); // Corrected line
           track.style.setProperty('--total-original-images-width', `${totalWidth}px`);
-        });
+        }); // Closing brace for the Promise.all.then() block
       })
       .catch(error => {
         console.error('Failed to load image URLs:', error);
