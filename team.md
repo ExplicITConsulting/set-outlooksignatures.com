@@ -4,7 +4,7 @@ layout: page
 lang: de
 locale: de
 title: Our management team
-subtitle: Driving innovation, delivering excellence
+subtitle: Dedicated to your success
 description: Get to know the people behind ExplicIT. Our collaborative team is dedicated to innovation, client satisfaction, and building lasting relationships.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
