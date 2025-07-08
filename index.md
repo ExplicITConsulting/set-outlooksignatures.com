@@ -278,6 +278,7 @@ redirect_from:
   }
 </style>
 
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const scrollingBanner = document.querySelector('.scrolling-banner');
