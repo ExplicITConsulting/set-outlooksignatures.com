@@ -261,6 +261,7 @@ redirect_from:
     white-space: nowrap;
     gap: 1.5em;
     animation: scroll-left var(--scroll-duration) linear infinite;
+    will-change: transform;
     min-width: 100%;
     max-width: 100%;
     box-sizing: border-box;
