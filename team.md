@@ -16,7 +16,7 @@ redirect_from:
 
 
 <div class="columns is-multiline">
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="column is-one-quarter-desktop is-one-third-tablet is-half-tablet-mobile">
         <div class="card">
             <div class="card-image">
                 <figure class="image is-1by1">
@@ -39,7 +39,7 @@ redirect_from:
             </div>
         </div>
     </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="column is-one-quarter-desktop is-one-third-tablet is-half-tablet-mobile">
         <div class="card is-one-third-desktop is-half-tablet is-full-mobile">
             <div class="card-image">
                 <figure class="image is-1by1">
@@ -62,7 +62,7 @@ redirect_from:
             </div>
         </div>
     </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="column is-one-quarter-desktop is-one-third-tablet is-half-tablet-mobile">
         <div class="card is-one-third-desktop is-half-tablet is-full-mobile">
             <div class="card-image">
                 <figure class="image is-1by1">
@@ -85,7 +85,7 @@ redirect_from:
             </div>
         </div>
     </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="column is-one-quarter-desktop is-one-third-tablet is-half-tablet-mobile">
         <div class="card is-one-third-desktop is-half-tablet is-full-mobile">
             <div class="card-image">
                 <figure class="image is-1by1">
