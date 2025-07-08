@@ -6,5 +6,5 @@ permalink: /client-images.txt
 {%- for file in site.static_files -%}
     {%- if file.path contains "/assets/images/clients/" -%}
 {{ file.path | absolute_url }}
-    {% endif -%}
+    {%- endif -%}
 {%- endfor -%}
