@@ -263,7 +263,11 @@ redirect_from:
     animation: scroll-left var(--scroll-duration) linear infinite;
     min-width: 100%;
     max-width: 100%;
-    box-sizing img {
+    box-sizing: border-box;
+  }
+
+
+  .scrolling-banner .scrolling-track img {
     max-height: 4em;
     max-width: 90%;
     height: auto;
@@ -278,10 +282,10 @@ redirect_from:
 
   @keyframes scroll-left {
     0% {
-      transform: translate3d(0, 0, 0);
+      transform: translateX(0%);
     }
     100% {
-      transform: translate3d(calc(-1 * var(--total-original-images-width)), 0, 0);
+      transform: translateX(calc(-1 * var(--total-original-images-width)));
     }
   }
 </style>
@@ -292,55 +296,114 @@ redirect_from:
     const scrollingBanner = document.querySelector('.scrolling-banner');
     const track = scrollingBanner?.querySelector('.scrolling-track');
 
-    if (!scrollingBanner || !track) return;
+    if (!scrollingBanner || !track) {
+      console.warn('Scrolling banner or track element not found.');
+      return;
+    }
 
+    // Fetch image URLs from the text file
     fetch('https://set-outlooksignatures.com/client-images.txt')
-      .then(response => response.text())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
       .then(text => {
-        const urls = text.split('\n').map(line => line.trim()).filter(Boolean);
-        const images = urls.map(url => {
+        const urls = text.split('\n').map(line => line.trim()).filter(line => line);
+
+        if (urls.length === 0) {
+          console.warn('No image URLs found in the text file.');
+          return;
+        }
+
+        // Create original image elements
+        const originalImages = [];
+        urls.forEach(url => {
           const img = document.createElement('img');
           img.src = url;
           img.alt = 'Client Image';
-          return img;
+          originalImages.push(img);
         });
 
         // Shuffle images
-        for (let i = images.length - 1; i > 0; i--) {
+        for (let i = originalImages.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
-          [images[i], images[j]] = [images[j], images[i]];
+          [originalImages[i], originalImages[j]] = [originalImages[j], originalImages[i]];
         }
 
-        images.forEach(img => track.appendChild(img));
+        // Append original images to the track
+        originalImages.forEach(img => track.appendChild(img));
 
-        const loadImagePromises = images.map(img => {
-          return img.complete ? Promise.resolve() : new Promise(resolve => {
+        // Clone original images to ensure seamless loop
+        // We typically need to clone the entire set once or twice.
+        // Cloning once should be sufficient for a continuous loop with the current CSS.
+        originalImages.forEach(img => {
+          track.appendChild(img.cloneNode(true));
+        });
+        // Append a second set of clones just to be sure there's always content for seamless transition
+        originalImages.forEach(img => {
+          track.appendChild(img.cloneNode(true));
+        });
+
+
+        // Wait for all images (originals + clones) to load to get accurate dimensions
+        const allImagesInTrack = Array.from(track.getElementsByTagName('img'));
+        const loadImagePromises = allImagesInTrack.map(img => {
+          if (img.complete) return Promise.resolve();
+          return new Promise(resolve => {
             img.onload = resolve;
-            img.onerror = () => resolve(); // Added resolve for onerror
+            img.onerror = () => {
+              console.warn(`Failed to load image: ${img.src}`);
+              resolve(); // Resolve even on error to not block the banner
+            };
           });
         });
 
-        Promise.all(loadImagePromises).then(() => { // Closed loadImagePromises).then(() => {
-          // Clone images for seamless loop
-          images.forEach(img => {
-            const clone = img.cloneNode(true);
-            track.appendChild(clone);
+        Promise.all(loadImagePromises).then(() => {
+          let totalOriginalImagesWidth = 0;
+          const trackComputedStyle = getComputedStyle(track);
+          // Ensure columnGap is read correctly, falls back to a default if not a number
+          let imageGap = parseFloat(trackComputedStyle.columnGap);
+          if (isNaN(imageGap) || imageGap < 0) imageGap = 16; // Default to 16px if invalid
+
+          // Calculate the total width of one set of the *original* images including gaps
+          // This is crucial for setting the --total-original-images-width CSS variable
+          originalImages.forEach((img, index) => {
+            totalOriginalImagesWidth += img.offsetWidth;
+            if (index < originalImages.length - 1) { // Add gap for all but the last image in the original set
+              totalOriginalImagesWidth += imageGap;
+            }
           });
 
-          // Calculate total width
-          const gap = parseFloat(getComputedStyle(track).gap) || 24;
-          let totalWidth = 0;
-          images.forEach((img, i) => {
-            totalWidth += img.offsetWidth;
-            if (i < images.length - 1) totalWidth += gap;
-          });
+          if (totalOriginalImagesWidth === 0) {
+              console.warn('Total width of images is 0, cannot set up animation.');
+              return;
+          }
 
-          track.style.setProperty('--scroll-duration', `${totalWidth / 50}s`); // Corrected line
-          track.style.setProperty('--total-original-images-width', `${totalWidth}px`);
-        }); // Closing brace for the Promise.all.then() block
+          let animationSpeedPixelsPerSecond = 50; // You can adjust this value
+          const duration = totalOriginalImagesWidth / animationSpeedPixelsPerSecond;
+
+          // Set CSS variables
+          track.style.setProperty('--scroll-duration', `${duration}s`);
+          track.style.setProperty('--total-original-images-width', `${totalOriginalImagesWidth}px`);
+          // The --image-spacing variable is set but not used in your current CSS.
+          // It's fine to keep it for debugging or future CSS additions if needed.
+          track.style.setProperty('--image-spacing', `${imageGap}px`);
+
+          // Trigger reflow to ensure animation variables are applied immediately
+          // eslint-disable-next-line no-unused-vars
+          void track.offsetWidth;
+
+          // Ensure animation is running. If it was paused, this restarts it.
+          track.style.animationPlayState = 'running';
+
+        }).catch(error => {
+          console.error('Error during image loading or animation setup:', error);
+        });
       })
       .catch(error => {
-        console.error('Failed to load image URLs:', error);
+        console.error('Failed to load image URLs from text file:', error);
       });
   });
 </script>
