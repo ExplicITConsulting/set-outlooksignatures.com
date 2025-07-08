@@ -273,7 +273,7 @@ redirect_from:
     flex-shrink: 0;
     flex-grow: 0;
     flex-basis: auto;
-    opacity: 0.8;
+    opacity: 1;
   }
 </style>
 
