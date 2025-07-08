@@ -214,7 +214,7 @@ redirect_from:
     </div>
   </div>
 
-  <div class="column">
+  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual; width: 95%;"> <div class="scrolling-banner">
@@ -251,7 +251,7 @@ redirect_from:
     pointer-events: none;
     display: flex;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
   }
 
   .scrolling-banner .scrolling-track {
@@ -260,7 +260,7 @@ redirect_from:
     white-space: nowrap;
     gap: 1.5em;
     will-change: transform;
-    min-width: 100%;
+    /* min-width: 100%; */
     box-sizing: border-box;
     transform-style: preserve-3d;
   }

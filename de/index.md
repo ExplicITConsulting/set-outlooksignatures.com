@@ -216,7 +216,7 @@ redirect_from:
     </div>
   </div>
 
-  <div class="column">
+  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, transparent); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual; width: 95%;"> <div class="scrolling-banner">
