@@ -22,7 +22,7 @@
     link: /implementationapproach
   - name: Support
     link: /support
-- name: "Team"
-  link: https://explicitconsulting.at/team
+  - name: "Team"
+    link: https://explicitconsulting.at/team
 - name: Download
   link: /download
