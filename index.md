@@ -256,6 +256,8 @@ redirect_from:
   }
 
   .scrolling-banner .scrolling-track {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
     display: flex;
     align-items: flex-start;
     white-space: nowrap;
@@ -269,6 +271,7 @@ redirect_from:
 
 
   .scrolling-banner .scrolling-track img {
+    image-rendering: auto;
     max-height: 4em;
     max-width: 90%;
     height: auto;
@@ -283,10 +286,10 @@ redirect_from:
 
   @keyframes scroll-left {
     0% {
-      transform: translateX(0%);
+      transform: translate3d(0, 0, 0);
     }
     100% {
-      transform: translateX(calc(-1 * var(--total-original-images-width)));
+      transform: translate3d(calc(-1 * var(--total-original-images-width)), 0, 0);
     }
   }
 </style>
