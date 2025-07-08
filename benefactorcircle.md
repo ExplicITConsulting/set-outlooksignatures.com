@@ -566,29 +566,34 @@ Benefactor Circle add-on</span>.</p>
           images.forEach(img => {
             const clone = img.cloneNode(true);
             track.appendChild(clone);
-         PixelsPerSecond = 50;
+          });
+
+          let animationSpeedPixelsPerSecond = 50;
           const duration = totalOriginalImagesWidth > 0 ? totalOriginalImagesWidth / animationSpeedPixelsPerSecond : 0;
 
           track.style.setProperty('--scroll-duration', `${duration}s`);
           track.style.setProperty('--total-original-images-width', `${totalOriginalImagesWidth}px`);
           track.style.setProperty('--image-spacing', `${imageGap}px`);
+
+          const loadImagePromises = images.map(img => {
+            if (img.complete) return Promise.resolve();
+            return new Promise(resolve => {
+              img.onload = resolve;
+              img.onerror = resolve;
+            });
+          });
+
+          Promise.all(loadImagePromises).then(() => {
+            setTimeout(setupAnimation, 50);
+          });
         };
 
-        const loadImagePromises = images.map(img => {
-          if (img.complete) return Promise.resolve();
-          return new Promise(resolve => {
-            img.onload = resolve;
-            img.onerror = resolve;
-          });
-        });
+        // Call setupAnimation initially after images are loaded
+        setupAnimation();
 
-        Promise.all(loadImagePromises).then(() => {
-          setTimeout(setupAnimation, 50);
-        });
       })
       .catch(error => {
         console.error('Failed to load image URLs:', error);
       });
   });
 </script>
-
