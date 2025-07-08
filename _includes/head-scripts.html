@@ -287,19 +287,29 @@
             const svgDoc = parser.parseFromString(externalLinkSvg, "image/svg+xml");
             const svgElement = svgDoc.documentElement;
 
-            // Set attributes for styling or identification directly on the SVG element
-            //svgElement.style.verticalAlign = "middle";
-            svgElement.setAttribute("data-external-link-icon", "true"); // For easy selection later
+            svgElement.setAttribute("data-external-link-icon", "true");
 
-            // Create a text node for the non-breaking space
+            // Apply inline-block display and vertical alignment for proper positioning
+            svgElement.style.display = "inline-block";
+            svgElement.style.verticalAlign = "middle"; // Or "text-top", "text-bottom" depending on desired alignment
+            svgElement.style.marginLeft = "0.25em"; // Add some space between text and icon
+
+            // Create a span to wrap the non-breaking space and SVG
+            // This helps in keeping them together as an inline unit
+            const iconWrapper = document.createElement('span');
+            iconWrapper.style.whiteSpace = 'nowrap'; // Prevent line break before the icon
+            
             const nbspNode = document.createTextNode('\u00A0'); // Unicode for &nbsp;
+            iconWrapper.appendChild(nbspNode);
+            iconWrapper.appendChild(svgElement);
 
-            targetElement.appendChild(nbspNode);
-            targetElement.appendChild(svgElement);
+            // Append the wrapper to the targetElement
+            targetElement.appendChild(iconWrapper);
           }
         }
       } catch (e) {
         // Invalid URL, skip
+        console.error("Error processing link:", e); // Log the error for debugging
       }
     });
   });
