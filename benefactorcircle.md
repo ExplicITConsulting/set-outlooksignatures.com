@@ -261,11 +261,6 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual; width: 95%;"> <div class="scrolling-banner">
           <div class="scrolling-track">
-            {%- for file in site.static_files -%}
-              {%- if file.path contains "/assets/images/clients/" -%}
-                <img src="{{ file.path | relative_url }}" alt="Banner image">
-              {%- endif -%}
-            {%- endfor -%}
           </div>
         </div>
       </div>
@@ -531,54 +526,69 @@ Benefactor Circle add-on</span>.</p>
 
     if (!scrollingBanner || !track) return;
 
-    let images = Array.from(track.getElementsByTagName('img'));
-    if (images.length === 0) return;
+    // Fetch image URLs from the text file
+    fetch('https://set-outlooksignatures.com/client-images.txt')
+      .then(response => response.text())
+      .then(text => {
+        const urls = text.split('\n').map(line => line.trim()).filter(line => line);
+        urls.forEach(url => {
+          const img = document.createElement('img');
+          img.src = url;
+          img.alt = 'Client Image';
+          track.appendChild(img);
+        });
 
-    // Shuffle images
-    for (let i = images.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [images[i], images[j]] = [images[j], images[i]];
-    }
-    track.innerHTML = '';
-    images.forEach(img => track.appendChild(img));
+        let images = Array.from(track.getElementsByTagName('img'));
+        if (images.length === 0) return;
 
-    const setupAnimation = () => {
-      const originalImageCount = images.length;
-      let totalOriginalImagesWidth = 0;
-      const trackComputedStyle = getComputedStyle(track);
-      let imageGap = parseFloat(trackComputedStyle.columnGap);
-      if (isNaN(imageGap)) imageGap = 16;
-
-      images.forEach((img, index) => {
-        totalOriginalImagesWidth += img.offsetWidth;
-        if (index < originalImageCount - 1) {
-          totalOriginalImagesWidth += imageGap;
+        // Shuffle images
+        for (let i = images.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [images[i], images[j]] = [images[j], images[i]];
         }
+        track.innerHTML = '';
+        images.forEach(img => track.appendChild(img));
+
+        const setupAnimation = () => {
+          const originalImageCount = images.length;
+          let totalOriginalImagesWidth = 0;
+          const trackComputedStyle = getComputedStyle(track);
+          let imageGap = parseFloat(trackComputedStyle.columnGap);
+          if (isNaN(imageGap)) imageGap = 16;
+
+          images.forEach((img, index) => {
+            totalOriginalImagesWidth += img.offsetWidth;
+            if (index < originalImageCount - 1) {
+              totalOriginalImagesWidth += imageGap;
+            }
+          });
+
+          images.forEach(img => {
+            const clone = img.cloneNode(true);
+            track.appendChild(clone);
+         PixelsPerSecond = 50;
+          const duration = totalOriginalImagesWidth > 0 ? totalOriginalImagesWidth / animationSpeedPixelsPerSecond : 0;
+
+          track.style.setProperty('--scroll-duration', `${duration}s`);
+          track.style.setProperty('--total-original-images-width', `${totalOriginalImagesWidth}px`);
+          track.style.setProperty('--image-spacing', `${imageGap}px`);
+        };
+
+        const loadImagePromises = images.map(img => {
+          if (img.complete) return Promise.resolve();
+          return new Promise(resolve => {
+            img.onload = resolve;
+            img.onerror = resolve;
+          });
+        });
+
+        Promise.all(loadImagePromises).then(() => {
+          setTimeout(setupAnimation, 50);
+        });
+      })
+      .catch(error => {
+        console.error('Failed to load image URLs:', error);
       });
-
-      images.forEach(img => {
-        const clone = img.cloneNode(true);
-        track.appendChild(clone);
-      });
-
-      const animationSpeedPixelsPerSecond = 50;
-      const duration = totalOriginalImagesWidth > 0 ? totalOriginalImagesWidth / animationSpeedPixelsPerSecond : 0;
-
-      track.style.setProperty('--scroll-duration', `${duration}s`);
-      track.style.setProperty('--total-original-images-width', `${totalOriginalImagesWidth}px`);
-      track.style.setProperty('--image-spacing', `${imageGap}px`);
-    };
-
-    const loadImagePromises = images.map(img => {
-      if (img.complete) return Promise.resolve();
-      return new Promise(resolve => {
-        img.onload = resolve;
-        img.onerror = resolve;
-      });
-    });
-
-    Promise.all(loadImagePromises).then(() => {
-      setTimeout(setupAnimation, 50);
-    });
   });
 </script>
+
