@@ -262,13 +262,11 @@ redirect_from:
     align-items: flex-start;
     white-space: nowrap;
     gap: 1.5em;
-    animation: scroll-left var(--scroll-duration) linear infinite;
     will-change: transform;
     min-width: 100%;
     max-width: 100%;
     box-sizing: border-box;
   }
-
 
   .scrolling-banner .scrolling-track img {
     image-rendering: auto;
@@ -283,15 +281,6 @@ redirect_from:
     flex-basis: auto;
     opacity: 1;
   }
-
-  @keyframes scroll-left {
-    0% {
-      transform: translate3d(0, 0, 0);
-    }
-    100% {
-      transform: translate3d(calc(-1 * var(--total-original-images-width)), 0, 0);
-    }
-  }
 </style>
 
 
@@ -304,6 +293,12 @@ redirect_from:
       console.warn('Scrolling banner or track element not found.');
       return;
     }
+
+    let position = 0; // Current scroll position
+    let animationSpeedPixelsPerSecond = 50; // You can adjust this value
+    let totalOriginalImagesWidth = 0;
+    let imageGap = 0;
+    let lastTimestamp = null; // For calculating delta time
 
     // Fetch image URLs from the text file
     fetch('https://set-outlooksignatures.com/client-images.txt')
@@ -341,7 +336,7 @@ redirect_from:
 
         // Clone original images to ensure seamless loop
         // We typically need to clone the entire set once or twice.
-        // Cloning once should be sufficient for a continuous loop with the current CSS.
+        // Cloning once should be sufficient for a continuous loop.
         originalImages.forEach(img => {
           track.appendChild(img.cloneNode(true));
         });
@@ -365,14 +360,11 @@ redirect_from:
         });
 
         Promise.all(loadImagePromises).then(() => {
-          let totalOriginalImagesWidth = 0;
           const trackComputedStyle = getComputedStyle(track);
-          // Ensure columnGap is read correctly, falls back to a default if not a number
-          let imageGap = parseFloat(trackComputedStyle.columnGap);
+          imageGap = parseFloat(trackComputedStyle.columnGap);
           if (isNaN(imageGap) || imageGap < 0) imageGap = 16; // Default to 16px if invalid
 
           // Calculate the total width of one set of the *original* images including gaps
-          // This is crucial for setting the --total-original-images-width CSS variable
           originalImages.forEach((img, index) => {
             totalOriginalImagesWidth += img.offsetWidth;
             if (index < originalImages.length - 1) { // Add gap for all but the last image in the original set
@@ -381,26 +373,12 @@ redirect_from:
           });
 
           if (totalOriginalImagesWidth === 0) {
-              console.warn('Total width of images is 0, cannot set up animation.');
-              return;
+            console.warn('Total width of images is 0, cannot set up animation.');
+            return;
           }
 
-          let animationSpeedPixelsPerSecond = 50; // You can adjust this value
-          const duration = totalOriginalImagesWidth / animationSpeedPixelsPerSecond;
-
-          // Set CSS variables
-          track.style.setProperty('--scroll-duration', `${duration}s`);
-          track.style.setProperty('--total-original-images-width', `${totalOriginalImagesWidth}px`);
-          // The --image-spacing variable is set but not used in your current CSS.
-          // It's fine to keep it for debugging or future CSS additions if needed.
-          track.style.setProperty('--image-spacing', `${imageGap}px`);
-
-          // Trigger reflow to ensure animation variables are applied immediately
-          // eslint-disable-next-line no-unused-vars
-          void track.offsetWidth;
-
-          // Ensure animation is running. If it was paused, this restarts it.
-          track.style.animationPlayState = 'running';
+          // Start the requestAnimationFrame loop
+          requestAnimationFrame(animate);
 
         }).catch(error => {
           console.error('Error during image loading or animation setup:', error);
@@ -409,5 +387,23 @@ redirect_from:
       .catch(error => {
         console.error('Failed to load image URLs from text file:', error);
       });
+
+    function animate(timestamp) {
+      if (!lastTimestamp) lastTimestamp = timestamp;
+      const deltaTime = (timestamp - lastTimestamp) / 1000; // Convert to seconds
+      lastTimestamp = timestamp;
+
+      // Update position based on speed and delta time
+      position -= animationSpeedPixelsPerSecond * deltaTime;
+
+      // Reset position to create a seamless loop
+      if (position <= -totalOriginalImagesWidth) {
+        position += totalOriginalImagesWidth;
+      }
+
+      track.style.transform = `translate3d(${position}px, 0, 0)`;
+
+      requestAnimationFrame(animate);
+    }
   });
 </script>
