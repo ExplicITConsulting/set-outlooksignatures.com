@@ -18,6 +18,13 @@ redirect_from:
 <h2>Driving Innovation, Delivering Excellence</h2>
 <p>Every success story has a dedicated team behind it, and ours is no exception. At ExplicIT, we are proud of the talented individuals who embody our values and work tirelessly to bring our vision to life. Discover the people who are committed to innovation and excellence in everything we do.</p>
 
+<p>We help you to be successful on an individual, team and company level. Whether we do this in the background or for all to see: Trustworthiness and mediation between management levels, specialist departments and IT are always at the heart of our services.</p>
+
+<p>Where we cannot help well enough ourselves, our specialised partners fill the gap.</p>
+
+<p>Our select group of consultants and partners have followed these principles for more than two decades, and will continue to do so in the future.</p>
+
+<p>&nbsp;</p>
 
 <div class="columns is-multiline">
     <div class="column is-one-quarter-desktop is-one-third-tablet is-half-tablet-mobile">
