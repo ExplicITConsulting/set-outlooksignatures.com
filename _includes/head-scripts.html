@@ -271,45 +271,72 @@
       try {
         const url = new URL(link.href, window.location.href);
 
+        // Check if the link is external (different hostname)
         if (url.hostname.toLowerCase() !== window.location.hostname.toLowerCase()) {
           link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener noreferrer"); // Good practice for _blank links
         }
 
+        // Only process links that open in a new tab (external links or explicitly set)
         if ((link.getAttribute("target") || "").toLowerCase() === "_blank") {
           let targetElement = link;
           const buttonChild = link.querySelector('button');
+
+          // If the link contains a button, append the icon to the button
           if (buttonChild) {
             targetElement = buttonChild;
           }
 
-          if (!targetElement.querySelector("svg[data-external-link-icon]")) {
+          // Prevent adding multiple icons to the same element
+          if (!targetElement.querySelector("span[data-external-link-wrapper]")) {
             const parser = new DOMParser();
             const svgDoc = parser.parseFromString(externalLinkSvg, "image/svg+xml");
             const svgElement = svgDoc.documentElement;
 
+            // Mark the SVG for identification (optional, but good for debugging/selection)
             svgElement.setAttribute("data-external-link-icon", "true");
 
-            // Apply inline-block display and vertical alignment for proper positioning
-            svgElement.style.display = "inline-block";
-            svgElement.style.verticalAlign = "middle"; // Or "text-top", "text-bottom" depending on desired alignment
-            svgElement.style.marginLeft = "0.25em"; // Add some space between text and icon
-
-            // Create a span to wrap the non-breaking space and SVG
-            // This helps in keeping them together as an inline unit
+            // --- Create a wrapper span to control inline behavior ---
             const iconWrapper = document.createElement('span');
-            iconWrapper.style.whiteSpace = 'nowrap'; // Prevent line break before the icon
-            
+            iconWrapper.setAttribute("data-external-link-wrapper", "true"); // For easy selection/debugging
+
+            // Apply all critical CSS properties directly via JavaScript
+            iconWrapper.style.cssText = `
+                display: inline-block;
+                white-space: nowrap; /* Ensures &nbsp; and SVG stay together */
+                margin-left: 0.25em; /* Space between text and icon */
+                vertical-align: middle; /* Aligns with surrounding text */
+                line-height: 0; /* Helps prevent extra vertical space */
+            `;
+            // Note: Using cssText can overwrite previous styles on the element.
+            // If you had other inline styles you needed to preserve, you'd add
+            // them here or append individually. For a newly created element, this is fine.
+
+            // Ensure the SVG itself respects inline flow and sizing
+            svgElement.style.cssText = `
+                display: inline-block;
+                vertical-align: middle;
+                width: 0.75em;
+                height: 0.75em;
+                flex-shrink: 0; /* Prevent flex containers from shrinking the SVG if button is flex */
+            `;
+            // Also good practice for SVGs:
+            svgElement.setAttribute("aria-hidden", "true"); // Hide from screen readers as it's decorative
+
+
+            // Create a text node for the non-breaking space
             const nbspNode = document.createTextNode('\u00A0'); // Unicode for &nbsp;
+
             iconWrapper.appendChild(nbspNode);
             iconWrapper.appendChild(svgElement);
 
-            // Append the wrapper to the targetElement
+            // Append the entire wrapper (containing &nbsp; and SVG) to the target element
             targetElement.appendChild(iconWrapper);
           }
         }
       } catch (e) {
-        // Invalid URL, skip
-        console.error("Error processing link:", e); // Log the error for debugging
+        // Log any errors during URL parsing or element manipulation
+        console.error("Error processing link:", link.href, e);
       }
     });
   });
