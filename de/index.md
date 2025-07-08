@@ -218,10 +218,8 @@ redirect_from:
 
   <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, transparent); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual; width: 95%;"> <div class="scrolling-banner">
-          <div class="scrolling-track">
-          </div>
+      <div class="scrolling-banner">
+        <div class="scrolling-track">
         </div>
       </div>
     </div>
@@ -262,7 +260,7 @@ redirect_from:
     white-space: nowrap;
     gap: 1.5em;
     will-change: transform;
-    min-width: 100%;
+    /* min-width: 100%; */
     box-sizing: border-box;
     transform-style: preserve-3d;
   }
@@ -277,7 +275,7 @@ redirect_from:
     flex-shrink: 0;
     flex-grow: 0;
     flex-basis: auto;
-    opacity: 1;
+    opacity: 0.8;
   }
 </style>
 
