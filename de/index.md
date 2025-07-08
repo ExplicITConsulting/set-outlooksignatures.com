@@ -22,6 +22,7 @@ redirect_from:
 ---
 
 
+<section class="section is-fullheight scroll-snap-item" id="section1">
 <h2>
   <span style="font-weight: normal;">Verwalten Sie Ihre </span>
   <span style="font-weight: bold;">Outlook-Signaturen</span>
@@ -64,8 +65,10 @@ redirect_from:
     </div>
   </div>
 </div>
+</section>
 
 
+<section class="section is-fullheight scroll-snap-item" id="section2">
 <h2>
   <span style="font-weight: normal;">Die </span>
   <span style="font-weight: bold;">Stärken</span>
@@ -162,10 +165,11 @@ redirect_from:
       </div>
     </div>
   </div>
-
 </div>
+</section>
 
 
+<section class="section is-fullheight scroll-snap-item" id="section2">
 <h2>Funktionalität trifft <span style="color: limegreen;">Expertise</span></h2>
 <p>Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
 
@@ -203,8 +207,10 @@ redirect_from:
   </div>
 
 </div>
+</section>
 
 
+<section class="section is-fullheight scroll-snap-item" id="section3">
 <h2>Verwalten Sie Ihre <span style="color: MediumAquamarine;">Outlook-Signaturen</span> zentral. Wir zeigen Ihnen, wie!</h2>
 <p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p>
 
@@ -225,12 +231,15 @@ redirect_from:
     </div>
   </div>
 </div>
+</section>
 
 
+<section class="section is-fullheight scroll-snap-item" id="section4">
 <h2>Erste Signaturen <span style="color: DarkSeaGreen ;">in unter einer Stunde</span></h2>
 <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
 <a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: DarkSeaGreen">➔ Schnellstart-Anleitung</button></a>
+</section>
 
 
 <h2><span style="color: DeepSkyBlue;">Tiefer</span> eintauchen</h2>
@@ -243,9 +252,59 @@ redirect_from:
 </ul>
 
 <a href="/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Hilfe- und Support-Center</button></a>
+</section>
 
 
 <style>
+/* html, body { */
+/*   margin: 0; */
+/*   padding: 0; */
+/*   height: 100%; */
+/*   overflow: hidden; /* Hide default browser scrollbar on body */
+/* } */
+
+
+.scroll-container {
+  height: 100vh; /* Take full viewport height */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scroll-snap-type: y mandatory; /* Mandatory snapping on the y-axis */
+}
+
+.scroll-snap-item {
+  scroll-snap-align: start; /* Snap each item to the start of the scroll container */
+  height: 100vh; /* Each item takes full viewport height */
+  display: flex; /* Use flexbox to center content vertically within the section */
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text within sections */
+  box-sizing: border-box; /* Include padding in height */
+  padding: 20px; /* Add some padding around the content */
+}
+
+/* Bulma specific helper - if 'is-fullheight' is not defined elsewhere */
+.is-fullheight {
+  min-height: 100vh;
+}
+
+/* Adjust Bulma's default section padding if needed for tighter snap */
+/* .section { */
+  /* padding: 3rem 1.5rem;  */ /* Bulma's default section padding */
+/* } */
+
+/* Override for snap items if you want different padding */
+/* .scroll-snap-item.section { */
+  /* padding: 1.5rem;  */ /* Or whatever padding suits your design for snapped sections */
+/* } */
+
+/* Optional: Add some background colors for better visual separation during development */
+/* #section1 { background-color: #f0f8ff; }
+/* #section2 { background-color: #f5f5dc; }
+/* #section3 { background-color: #e0ffff; }
+/* #sectionLast { background-color: #e6ffe6; }
+/* #sectionHelp { background-color: #f0f0ff; } */
+
+
   .scrolling-banner {
     overflow: hidden;
     pointer-events: none;
