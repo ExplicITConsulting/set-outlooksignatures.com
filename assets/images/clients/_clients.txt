@@ -1,0 +1,8 @@
+---
+layout: none
+---
+{%- for file in site.static_files -%}
+    {%- if file.path contains "/assets/images/clients/" -%}
+{{ file.path | relative_url }}
+    {%- endif -%}
+{%- endfor -%}
