@@ -263,11 +263,7 @@ redirect_from:
     animation: scroll-left var(--scroll-duration) linear infinite;
     min-width: 100%;
     max-width: 100%;
-    box-sizing: border-box;
-  }
-
-
-  .scrolling-banner .scrolling-track img {
+    box-sizing img {
     max-height: 4em;
     max-width: 90%;
     height: auto;
@@ -282,10 +278,10 @@ redirect_from:
 
   @keyframes scroll-left {
     0% {
-      transform: translateX(0%);
+      transform: translate3d(0, 0, 0);
     }
     100% {
-      transform: translateX(calc(-1 * var(--total-original-images-width)));
+      transform: translate3d(calc(-1 * var(--total-original-images-width)), 0, 0);
     }
   }
 </style>
@@ -298,71 +294,44 @@ redirect_from:
 
     if (!scrollingBanner || !track) return;
 
-    // Fetch image URLs from the text file
     fetch('https://set-outlooksignatures.com/client-images.txt')
       .then(response => response.text())
       .then(text => {
-        const urls = text.split('\n').map(line => line.trim()).filter(line => line);
-        urls.forEach(url => {
+        const urls = text.split('\n').map(line => line.trim()).filter(Boolean);
+        const images = urls.map(url => {
           const img = document.createElement('img');
           img.src = url;
           img.alt = 'Client Image';
-          track.appendChild(img);
+          return img;
         });
-
-        let images = Array.from(track.getElementsByTagName('img'));
-        if (images.length === 0) return;
 
         // Shuffle images
         for (let i = images.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [images[i], images[j]] = [images[j], images[i]];
         }
-        track.innerHTML = '';
+
         images.forEach(img => track.appendChild(img));
 
-        const setupAnimation = () => {
-          const originalImageCount = images.length;
-          let totalOriginalImagesWidth = 0;
-          const trackComputedStyle = getComputedStyle(track);
-          let imageGap = parseFloat(trackComputedStyle.columnGap);
-          if (isNaN(imageGap)) imageGap = 16;
-
-          images.forEach((img, index) => {
-            totalOriginalImagesWidth += img.offsetWidth;
-            if (index < originalImageCount - 1) {
-              totalOriginalImagesWidth += imageGap;
-            }
-          });
-
+        const loadImagePromises = images.map(img => {
+          return img.complete ? Promise.resolve() : new Promise(resolve => {
+            img.onload = resolve;
+            img.onerrorPromises).then(() => {
+          // Clone images for seamless loop
           images.forEach(img => {
             const clone = img.cloneNode(true);
             track.appendChild(clone);
           });
 
-          let animationSpeedPixelsPerSecond = 50;
-          const duration = totalOriginalImagesWidth > 0 ? totalOriginalImagesWidth / animationSpeedPixelsPerSecond : 0;
-
-          track.style.setProperty('--scroll-duration', `${duration}s`);
-          track.style.setProperty('--total-original-images-width', `${totalOriginalImagesWidth}px`);
-          track.style.setProperty('--image-spacing', `${imageGap}px`);
-
-          const loadImagePromises = images.map(img => {
-            if (img.complete) return Promise.resolve();
-            return new Promise(resolve => {
-              img.onload = resolve;
-              img.onerror = resolve;
-            });
-          });
-
-          Promise.all(loadImagePromises).then(() => {
-            setTimeout(setupAnimation, 50);
-          });
-        };
-
-        // Call setupAnimation initially after images are loaded
-        setupAnimation();
-
+          // Calculate total width
+          const gap = parseFloat(getComputedStyle(track).gap) || 24;
+          let totalWidth = 0;
+          images.forEach((img, i) => {
+            totalWidth += img.offsetWidth;
+            if (i < images.length - 1) totalWidth += gap;
+        -duration', `${totalWidth / 50}s`);
+          track.style.setProperty('--total-original-images-width', `${totalWidth}px`);
+        });
       })
       .catch(error => {
         console.error('Failed to load image URLs:', error);
