@@ -111,6 +111,10 @@ module Jekyll
 
         section_content_nodes = []
         current_node = heading_element.next_sibling
+      # Skip non-element siblings (e.g., text nodes with whitespace)
+      while current_node && !current_node.element?
+        current_node = current_node.next_sibling
+      end
 
         # Determine the end point for content collection for this section
         # If there's a next heading, that's the end. Otherwise, it's the end of the document.
