@@ -12,7 +12,7 @@ module Jekyll
     safe true
     # This generator should run after Markdown conversion to HTML.
     # Its priority can be normal, as it only collects data for site.data.
-    priority :normal 
+    priority :normal
 
     # This global set tracks all predicted IDs across the entire site for search purposes.
     # It must use the same ID generation logic as the HtmlModifierHook.
@@ -24,12 +24,12 @@ module Jekyll
       search_sections_data = []
 
       # Iterate through all posts to collect their data (using .docs.each for Jekyll 4+ compatibility)
-      site.posts.docs.each do |post|
+      site.posts.docs.each do |post| # This is correct for Jekyll::Collection (posts)
         collect_document_data(post, search_sections_data, site)
       end
 
-      # Iterate through all pages to collect their data (using .docs.each for consistency)
-      site.pages.docs.each do |page|
+      # Iterate through all pages to collect their data (site.pages is an Array, so just .each)
+      site.pages.each do |page| # <<< --- CORRECTED LINE: Removed .docs
         # Skip specific pages (like search.json itself), excluded pages,
         # non-content files, and ensure it's a renderable document.
         if page.data['title'] && page.url != '/search.json' && !page.data['sitemap_exclude'] && !page.path.include?('_data') && page.respond_to?(:content) && !page.is_a?(Jekyll::StaticFile)
