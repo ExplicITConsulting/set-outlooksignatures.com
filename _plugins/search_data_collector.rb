@@ -110,7 +110,7 @@ module Jekyll
         section_content_nodes = []
         current_node = heading_element.next_sibling
         while current_node
-          if ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].include?(current_node.name)
+          if ['h2', 'h3', 'h4', 'h5', 'h6'].include?(current_node.name)
             break
           end
           section_content_nodes << current_node
