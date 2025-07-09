@@ -3,9 +3,9 @@ sitemap: false
 layout: page
 lang: de
 locale: de
-title: Unser Team
-subtitle: xxx
-description: xxx
+title: Our management team
+subtitle: Driving innovation, delivering excellence
+description: Get to know the people behind ExplicIT. Our collaborative team is dedicated to innovation, client satisfaction, and building lasting relationships.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -13,6 +13,10 @@ image:
   alt: "Set-OutlookSignatures Benefactor Circle"
 redirect_from:
 ---
+
+
+<h2>Driving Innovation, Delivering Excellence</h2>
+<p>Every success story has a dedicated team behind it, and ours is no exception. At ExplicIT, we are proud of the talented individuals who embody our values and work tirelessly to bring our vision to life. Discover the people who are committed to innovation and excellence in everything we do.</p>
 
 
 <div class="columns is-multiline">
@@ -34,7 +38,7 @@ redirect_from:
                 </div>
                 </div>
                 <div class="content">
-                    <p>Markus specializes in bridging the gap between strategy and execution, leveraging over two decades of experience to deliver impactful solutions and drive digital transformation. As a trusted advisor, he aligns IT and business strategy for top-tier firms, providing expert consultancy and leading project portfolios. He is also the founder of ExplicIT Consulting and the original developer of Set-OutlookSignatures.</p>
+                    <p>Markus aligns IT and business strategy for top-tier firms, providing expert consultancy and leading project portfolios. He is the original developer of Set-OutlookSignatures.</p>
                 </div>
             </div>
         </div>
