@@ -73,6 +73,7 @@ h6 {
 }
 
 .anchor-link {
+  scroll-padding-top: $navbar-height;
   position: absolute;
 
   /* Position to the left of the heading text. */
