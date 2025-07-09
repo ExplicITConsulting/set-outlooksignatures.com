@@ -20,7 +20,7 @@ description: What are you looking for?
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
     json: '/search.json',
-    searchResultTemplate: '<li style="margin-bottom: 1.25em;"><a href="{url}"><span style="font-weight: normal; font-style: italic;">{url}</span><br /><span style="font-weight: bold; font-style: normal; font-size: 125%">{title}</a></li>',
+    searchResultTemplate: '<li><a href="{url}"><span style="font-weight: normal;">{url}</span><br><span style="font-weight: bold;">{title}</a></li>',
     noResultsText: 'No results found',
     fuzzy: false
   })
