@@ -10,7 +10,6 @@ permalink: /search.json # Ensure this is correct for your simple-jekyll-search s
     {%- assign counter = counter | plus: 1 -%}
     {
       "title"    : {{ item.title | jsonify }},
-      "subtitle" : {{ item.subtitle | jsonify }},
       "content"  : {{ item.content | jsonify }},
       "url"      : {{ item.url | jsonify }},
       "date"     : {{ item.date | jsonify }},
