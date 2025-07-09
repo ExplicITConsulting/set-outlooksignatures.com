@@ -23,13 +23,13 @@ module Jekyll
 
       search_sections_data = []
 
-      # Iterate through all posts to collect their data
-      site.posts.each do |post|
+      # Iterate through all posts to collect their data (using .docs.each for Jekyll 4+ compatibility)
+      site.posts.docs.each do |post|
         collect_document_data(post, search_sections_data, site)
       end
 
-      # Iterate through all pages to collect their data
-      site.pages.each do |page|
+      # Iterate through all pages to collect their data (using .docs.each for consistency)
+      site.pages.docs.each do |page|
         # Skip specific pages (like search.json itself), excluded pages,
         # non-content files, and ensure it's a renderable document.
         if page.data['title'] && page.url != '/search.json' && !page.data['sitemap_exclude'] && !page.path.include?('_data') && page.respond_to?(:content) && !page.is_a?(Jekyll::StaticFile)
@@ -45,6 +45,7 @@ module Jekyll
 
     private
 
+    # Helper method that defines how to collect data for a single document
     def collect_document_data(document, search_data_array, site)
       Jekyll.logger.debug "SearchDataCollector:", "Collecting data for: #{document.url}"
       Jekyll.logger.debug "SearchDataCollector: Document Class: #{document.class}"
@@ -120,6 +121,7 @@ module Jekyll
     end
 
     # Helper function to slugify text (MUST be IDENTICAL to the one in html_modifier_hook.rb)
+    # Defined as a private method within the Generator class.
     def slugify(text)
       text.to_s.downcase.strip
         .gsub(/[^a-z0-9\s-]/, '') # Remove non-word characters (excluding spaces and dashes)
@@ -128,6 +130,7 @@ module Jekyll
     end
 
     # Helper function to strip HTML and normalize whitespace (MUST be IDENTICAL to the one in html_modifier_hook.rb)
+    # Defined as a private method within the Generator class.
     def strip_html_and_normalize(html_content)
       Nokogiri::HTML.fragment(html_content).text
         .gsub(/\s+/, ' ') # Replace multiple whitespaces (including newlines) with a single space
