@@ -112,7 +112,7 @@ The client needs port 443 TCP to access a SharePoint document library. When not 
 
 
 ## 6. Why is out-of-office abbreviated OOF and not OOO?
-Back in the 1980s, Microsoft had a UNIX OS named Xenix … but read yourself <a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/why-is-oof-an-oof-and-not-an-ooo/ba-p/610191">here</a>.  
+Back in the 1980s, Microsoft had a UNIX OS named Xenix… But read yourself <a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/why-is-oof-an-oof-and-not-an-ooo/ba-p/610191">here</a>.  
 
 
 ## 7. Should I use .docx or .htm as file format for templates? Signatures in Outlook sometimes look different than my templates.
