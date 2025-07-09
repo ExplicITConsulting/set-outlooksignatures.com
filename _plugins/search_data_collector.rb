@@ -14,10 +14,8 @@ module Jekyll
     # Its priority can be normal, as it only collects data for site.data.
     priority :normal
 
-    # REMOVED: This global set @@all_predicted_ids_for_search is no longer needed
-    # to match the client-side JS and updated HtmlModifierHook logic,
+    # REMOVED: The global ID tracking set is removed to match the JS and HtmlModifierHook logic,
     # which only ensures ID uniqueness within a single document.
-    # @@all_predicted_ids_for_search = Set.new
 
     def generate(site)
       Jekyll.logger.info "SearchDataCollector:", "Starting to collect structured search data..."
@@ -75,7 +73,8 @@ module Jekyll
 
       # Parse the content (which is now guaranteed to be HTML or empty if conversion failed)
       doc_fragment = Nokogiri::HTML.fragment(content_to_parse)
-      document_predicted_ids = Set.new # Track predicted IDs for this specific document (matching JS scope)
+      # Track predicted IDs for this specific document, matching JS's document-level scope
+      document_predicted_ids = Set.new
 
       base_url = document.url
 
@@ -88,7 +87,7 @@ module Jekyll
           final_id = original_id
           Jekyll.logger.debug "SearchDataCollector:", "  Using existing ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
         else
-          # Use the updated slugify function that matches the JS logic
+          # Use the slugify function that matches the JS logic
           slug_base = slugify(heading_element.text)
           unique_slug = slug_base
           counter = 1
@@ -103,7 +102,7 @@ module Jekyll
 
         # Add to set to maintain uniqueness prediction for the current document
         document_predicted_ids.add(final_id)
-        # REMOVED: @@all_predicted_ids_for_search.add(final_id) # No global tracking for JS match
+        # REMOVED: Addition to @@all_predicted_ids_for_search is removed as global tracking is no longer used.
 
         # Extract section title (no anchor icon added at this stage)
         section_title = heading_element.text.strip
@@ -139,11 +138,11 @@ module Jekyll
       end
     end
 
-    # Helper function to slugify text, now IDENTICAL to the js_slugify in html_modifier_hook.rb
+    # [cite_start]Helper function to slugify text, now IDENTICAL to the js_slugify in html_modifier_hook.rb [cite: 1, 2, 21]
     def slugify(text)
       text.to_s.downcase.strip
-        .gsub(/[^a-z0-9\s-]/, '') # Remove non-word characters
-        .gsub(/\s+/, '-')        # Replace spaces with dashes
+        [cite_start].gsub(/[^a-z0-9\s-]/, '') # Remove non-word characters [cite: 1]
+        [cite_start].gsub(/\s+/, '-')        # Replace spaces with dashes [cite: 2]
     end
 
     # Helper function to strip HTML and normalize whitespace (MUST be IDENTICAL to the one in html_modifier_hook.rb)
