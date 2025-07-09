@@ -1,3 +1,4 @@
+# _plugins/search_data_generator.rb
 require 'nokogiri'
 require 'json'
 require 'uri'
@@ -6,13 +7,15 @@ require 'set'
 module Jekyll
   class SearchDataGenerator < Generator
     safe true
-    priority :normal # Ensure it runs after Markdown conversion
+    # Set priority to :highest to ensure this generator runs last among all generators.
+    # This means it operates on content that has been processed by other generators
+    # (if any) but before layouts are applied.
+    priority :highest # <--- THIS IS NOW EXPLICITLY SET TO :HIGHEST
 
-    # A global set to track all generated IDs across the entire site
-    @@all_generated_ids = Set.new
+    @@all_generated_ids = Set.new # Global set for site-wide unique ID tracking
 
     def generate(site)
-      Jekyll.logger.info "SearchDataGenerator:", "Starting to process documents for search data and anchor links..."
+      Jekyll.logger.info "SearchDataGenerator:", "Starting to process documents for search data and anchor links (priority: highest)..."
 
       search_sections_data = []
 
@@ -21,18 +24,17 @@ module Jekyll
         process_document(post, search_sections_data, site)
       end
 
-      # Process pages (excluding the search.json itself and other non-content pages)
+      # Process pages
       site.pages.each do |page|
         # Skip pages without a title, or the search.json template itself,
-        # or any other pages that shouldn't be indexed (e.g., templates, assets, or data files)
-        if page.data['title'] && page.url != '/search.json' && !page.data['sitemap_exclude'] && !page.path.include?('_data')
+        # or any other pages that shouldn't be indexed (e.g., templates, assets, or data files).
+        # Also, ensure it's a renderable document (not a StaticFile), as we expect HTML content.
+        if page.data['title'] && page.url != '/search.json' && !page.data['sitemap_exclude'] && !page.path.include?('_data') && page.respond_to?(:content) && !page.is_a?(Jekyll::StaticFile)
           process_document(page, search_sections_data, site)
         end
       end
 
-      # Store the generated data in site.data for access in Liquid templates
       site.data['search_sections_data'] = search_sections_data
-
       Jekyll.logger.info "SearchDataGenerator:", "Finished processing. Found #{search_sections_data.count} sections."
     end
 
@@ -40,8 +42,16 @@ module Jekyll
 
     def process_document(document, search_data_array, site)
       Jekyll.logger.debug "SearchDataGenerator:", "Processing document: #{document.url}"
+      Jekyll.logger.debug "SearchDataGenerator: Document Class: #{document.class}"
+      Jekyll.logger.debug "SearchDataGenerator: Document Path: #{document.path}"
+      Jekyll.logger.debug "SearchDataGenerator: Has Front Matter?: #{document.data.any?}"
+      Jekyll.logger.debug "SearchDataGenerator: Is Renderable?: #{document.respond_to?(:render) && !document.is_a?(Jekyll::StaticFile)}"
+      Jekyll.logger.debug "SearchDataGenerator: --- Raw Content Start (first 200 chars) ---"
+      Jekyll.logger.debug document.content.to_s[0..199].gsub(/\n/, '\\n')
+      Jekyll.logger.debug "SearchDataGenerator: --- Raw Content End ---"
 
       # Parse the document.content as an HTML fragment.
+      # This is the point where `document.content` *must* contain HTML for headings to be found.
       doc_fragment = Nokogiri::HTML.fragment(document.content)
 
       # Track generated IDs for this specific document to ensure uniqueness within it
@@ -49,15 +59,21 @@ module Jekyll
 
       base_url = document.url
 
+      headings_found_in_doc = false # Flag to track if any headings were processed for this document
+
       # Iterate over all heading types (h1 to h6) within the fragment
       doc_fragment.css('h1, h2, h3, h4, h5, h6').each do |heading_element|
+        headings_found_in_doc = true
         original_id = heading_element['id']
         final_id = nil
+
+        Jekyll.logger.debug "SearchDataGenerator:", "  Found heading HTML: #{heading_element.to_html.strip.slice(0, 50)}..."
+        Jekyll.logger.debug "SearchDataGenerator:", "  Original ID: #{original_id.inspect}"
 
         # Determine the final ID for the heading
         if original_id && !original_id.empty?
           final_id = original_id
-          Jekyll.logger.debug "SearchDataGenerator:", "  Using existing ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
+          Jekyll.logger.debug "SearchDataGenerator:", "  Using existing ID: #{final_id}"
         else
           # Generate a slug from the heading text
           slug_base = slugify(heading_element.text)
@@ -71,24 +87,20 @@ module Jekyll
           final_id = unique_slug
           # Assign the generated ID to the HTML element in the DOM
           heading_element['id'] = final_id
-          Jekyll.logger.debug "SearchDataGenerator:", "  Generated new ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
+          Jekyll.logger.debug "SearchDataGenerator:", "  Generated new ID: #{final_id}"
         end
 
         # Add the final ID to the sets for uniqueness tracking
         document_generated_ids.add(final_id)
         @@all_generated_ids.add(final_id)
 
-        # --- IMPORTANT: The following steps now run regardless of whether ID was original or generated ---
-
         # 1. Insert the anchor link (🔗)
         anchor = Nokogiri::XML::Node.new "a", doc_fragment # Create anchor node within this fragment's context
         anchor['href'] = "##{final_id}"
         anchor['class'] = "anchor-link"
         anchor.content = "🔗"
-
         heading_element.prepend_child(anchor)
-        Jekyll.logger.debug "SearchDataGenerator:", "  Anchor added for ID: #{final_id}. Heading now: #{heading_element.to_html.strip.slice(0, 100)}..."
-
+        Jekyll.logger.debug "SearchDataGenerator:", "  Anchor added. Heading now: #{heading_element.to_html.strip.slice(0, 100)}..."
 
         # 2. Extract section title and content for search.json
         # The title is the text content of the heading element.
@@ -111,14 +123,12 @@ module Jekyll
         section_content = strip_html_and_normalize(section_content_nodes.map(&:to_html).join(''))
         Jekyll.logger.debug "SearchDataGenerator:", "  Content snippet extracted for ID #{final_id}: #{section_content.slice(0, 100)}..."
 
-
         # 3. Construct the URL with the anchor
         full_url = "#{base_url}##{final_id}"
 
         # 4. Add to our search data array
         search_data_array << {
           "title"    => section_title,
-          "subtitle" => "",
           "content"  => section_content,
           "url"      => full_url,
           "date"     => document.data['date'] ? document.data['date'].to_s : nil,
@@ -126,6 +136,10 @@ module Jekyll
           "tags"     => document.data['tags'] || []
         }
         Jekyll.logger.debug "SearchDataGenerator:", "  Added to search data: #{full_url}"
+      end
+
+      if !headings_found_in_doc
+        Jekyll.logger.debug "SearchDataGenerator:", "  No headings processed in #{document.url} (or content was not HTML)."
       end
 
       # Update the document's content with the modified HTML fragment
