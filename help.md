@@ -33,6 +33,6 @@ redirect_from:
   <h2><a href="/support">Support</a></h2>
   <p>Passing on our experience to you</p>
 
-  <h2><a href="https://explicitconsulting.at/team">Our management team</a></h2>
+  <h2><a href="https://explicitconsulting.at/team">Our team</a></h2>
   <p>Dedicated to your success</p>
 </div>
