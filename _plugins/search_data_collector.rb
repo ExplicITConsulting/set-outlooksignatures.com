@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'nokogiri'
+require 'set'
 
 module Jekyll
   class SearchDataCollector < Generator
@@ -12,6 +13,7 @@ module Jekyll
         next unless page.output_ext == '.html'
         next unless page.output
 
+        used_slugs = Set.new
         doc_fragment = Nokogiri::HTML.fragment(page.output)
         all_headings = doc_fragment.css('h1, h2, h3, h4, h5, h6')
 
@@ -22,7 +24,7 @@ module Jekyll
           next if heading_text.empty?
 
           # Generate slugified ID
-          slug = slugify(heading_text)
+          slug = slugify(heading_text, used_slugs)
           final_id = heading_element['id'] || slug
           heading_element['id'] ||= final_id
 
@@ -45,9 +47,13 @@ module Jekyll
           section_content = section_content_nodes.map(&:text).join(' ').strip
 
           search_sections_data << {
+            'documenttitle' => page.data['title'] || '',
             'sectiontitle' => heading_text,
             'sectioncontent' => "#{heading_text} #{section_content}".strip,
-            'url' => "#{page.url}##{final_id}"
+            'url' => "#{page.url}##{final_id}",
+            'date' => page.data['date'] || '',
+            'category' => page.data['category'] || '',
+            'tags' => page.data['tags'] || []
           }
         end
 
@@ -58,10 +64,19 @@ module Jekyll
 
     private
 
-    def slugify(text)
-      text.to_s.downcase.strip
-          .gsub(/[^a-z0-9\s\-]/, '') # Remove non-word characters
-          .gsub(/\s+/, '-')          # Replace spaces with dashes
+    def slugify(text, used_slugs)
+      base_slug = text.to_s.downcase.strip
+                    .gsub(/[^\\w\\s-]/, '')  # Remove non-word characters except whitespace and hyphen
+                    .gsub(/\\s+/, '-')       # Replace whitespace with dashes
+
+      slug = base_slug
+      counter = 1
+      while used_slugs.include?(slug)
+        slug = "#{base_slug}-#{counter}"
+        counter += 1
+      end
+      used_slugs << slug
+      slug
     end
   end
 end
