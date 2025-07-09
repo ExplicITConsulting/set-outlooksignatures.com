@@ -68,7 +68,7 @@ module Jekyll
         anchor['href'] = "##{final_id}"
         anchor['class'] = "anchor-link"
         anchor.content = "🔗"
-        heading_element.add_child(anchor)
+        heading_element.prepend_child(anchor)
         Jekyll.logger.debug "HtmlModifierHook:", "  Anchor added. Heading now: #{heading_element.to_html.strip.slice(0, 100)}..."
       end
 
