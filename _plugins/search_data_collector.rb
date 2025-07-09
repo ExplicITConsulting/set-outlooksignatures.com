@@ -282,7 +282,7 @@ module Jekyll
         search_data_array << {
           "documenttitle"  => document.data['title'] || nil,
           "sectiontitle"   => section_title,
-          "sectioncontent" => section_content,
+          "sectioncontent" => "#{section_title} #{section_content}".strip, # Modified line
           "url"            => full_url,
           "date"           => document.data['date'] ? document.data['date'].to_s : nil,
           "category"       => document.data['category'] || nil,
