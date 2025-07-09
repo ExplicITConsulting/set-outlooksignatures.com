@@ -10,7 +10,7 @@ $text: black;
 // Import Main CSS file from theme
 @import "main";
 
-.html {
+html {
   scroll-padding-top: $navbar-height;
 }
 
@@ -73,7 +73,9 @@ h6 {
 }
 
 .anchor-link {
-  position: absolute;
+  position: relative;
+  margin-left: -1.5em;
+  padding-right: 0.5em;
 
   /* Position to the left of the heading text. */
   /* This moves the link outside the heading's content box. */
