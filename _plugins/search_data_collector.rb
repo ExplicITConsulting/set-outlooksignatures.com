@@ -14,9 +14,10 @@ module Jekyll
     # Its priority can be normal, as it only collects data for site.data.
     priority :normal
 
-    # This global set tracks all predicted IDs across the entire site for search purposes.
-    # It must use the same ID generation logic as the HtmlModifierHook.
-    @@all_predicted_ids_for_search = Set.new
+    # REMOVED: This global set @@all_predicted_ids_for_search is no longer needed
+    # to match the client-side JS and updated HtmlModifierHook logic,
+    # which only ensures ID uniqueness within a single document.
+    # @@all_predicted_ids_for_search = Set.new
 
     def generate(site)
       Jekyll.logger.info "SearchDataCollector:", "Starting to collect structured search data..."
@@ -74,7 +75,7 @@ module Jekyll
 
       # Parse the content (which is now guaranteed to be HTML or empty if conversion failed)
       doc_fragment = Nokogiri::HTML.fragment(content_to_parse)
-      document_predicted_ids = Set.new # Track predicted IDs for this specific document
+      document_predicted_ids = Set.new # Track predicted IDs for this specific document (matching JS scope)
 
       base_url = document.url
 
@@ -82,16 +83,17 @@ module Jekyll
         original_id = heading_element['id']
         final_id = nil
 
-        # Predict the final ID using the same logic that the HtmlModifierHook will use
+        # Predict the final ID using the same logic that the HtmlModifierHook (and JS) will use
         if original_id && !original_id.empty?
           final_id = original_id
           Jekyll.logger.debug "SearchDataCollector:", "  Using existing ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
         else
+          # Use the updated slugify function that matches the JS logic
           slug_base = slugify(heading_element.text)
           unique_slug = slug_base
           counter = 1
-          # Ensure uniqueness: first within this document's prediction, then globally across all predicted IDs
-          while document_predicted_ids.include?(unique_slug) || @@all_predicted_ids_for_search.include?(unique_slug)
+          # Ensure uniqueness only within this document's prediction, matching JS behavior
+          while document_predicted_ids.include?(unique_slug)
             unique_slug = "#{slug_base}-#{counter}"
             counter += 1
           end
@@ -99,9 +101,9 @@ module Jekyll
           Jekyll.logger.debug "SearchDataCollector:", "  Predicted new ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
         end
 
-        # Add to sets to maintain uniqueness prediction for the entire site for search purposes
+        # Add to set to maintain uniqueness prediction for the current document
         document_predicted_ids.add(final_id)
-        @@all_predicted_ids_for_search.add(final_id)
+        # REMOVED: @@all_predicted_ids_for_search.add(final_id) # No global tracking for JS match
 
         # Extract section title (no anchor icon added at this stage)
         section_title = heading_element.text.strip
@@ -137,12 +139,11 @@ module Jekyll
       end
     end
 
-    # Helper function to slugify text (MUST be IDENTICAL to the one in html_modifier_hook.rb)
+    # Helper function to slugify text, now IDENTICAL to the js_slugify in html_modifier_hook.rb
     def slugify(text)
       text.to_s.downcase.strip
-        .gsub(/[^a-z0-9\s-]/, '')
-        .gsub(/[\s_]+/, '-')
-        .gsub(/^-+|-+$/, '')
+        .gsub(/[^a-z0-9\s-]/, '') # Remove non-word characters
+        .gsub(/\s+/, '-')        # Replace spaces with dashes
     end
 
     # Helper function to strip HTML and normalize whitespace (MUST be IDENTICAL to the one in html_modifier_hook.rb)
