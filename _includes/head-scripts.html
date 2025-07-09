@@ -304,3 +304,15 @@
     });
   });
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('p + ul, p + ol').forEach(list => {
+      const prev = list.previousElementSibling;
+      if (prev && prev.tagName === 'P') {
+        prev.style.marginBottom = '0';
+        list.style.marginTop = '0';
+      }
+    });
+  });
+</script>
