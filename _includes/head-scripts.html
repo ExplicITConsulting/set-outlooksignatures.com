@@ -145,59 +145,140 @@
             function normalizePathForComparison(path) {
                 if (!path) return '/';
                 let normalized = path.replace(/\/\/+/g, '/'); // Replace multiple slashes with a single one
+                // Remove hash before normalization of trailing slash
+                const hashIndex = normalized.indexOf('#');
+                let hash = '';
+                if (hashIndex !== -1) {
+                    hash = normalized.substring(hashIndex);
+                    normalized = normalized.substring(0, hashIndex);
+                }
+
                 if (normalized.length > 1 && normalized.endsWith('/')) {
                     normalized = normalized.slice(0, -1); // Remove trailing slash unless it's just '/'
                 }
                 if (!normalized.startsWith('/')) {
                     normalized = '/' + normalized; // Ensure it starts with a slash
                 }
-                return normalized;
+                return normalized + hash; // Add hash back
             }
+
+            /**
+             * Extracts the anchor (hash) from a URL.
+             * @param {string} url - The URL string.
+             * @returns {string} The anchor, including the '#' prefix, or an empty string if no anchor.
+             */
+            function extractAnchor(url) {
+                const hashIndex = url.indexOf('#');
+                return hashIndex !== -1 ? url.substring(hashIndex) : '';
+            }
+
+            /**
+             * Checks if a URL document exists and if a specific anchor exists within that document.
+             * @param {string} url - The base URL to check (without the anchor).
+             * @param {string} anchor - The anchor (e.g., "#my-section") to check for existence.
+             * @returns {Promise<boolean>} A promise that resolves to true if both document and anchor exist, false otherwise.
+             */
+            async function checkUrlAndAnchorExistence(url, anchor) {
+                const urlWithoutAnchor = url.split('#')[0]; // Ensure we're checking the document without the hash
+
+                try {
+                    // Check if the document exists (HEAD request)
+                    console.log(`Checking document existence for: ${urlWithoutAnchor}`);
+                    const headResponse = await fetch(urlWithoutAnchor, { method: 'HEAD' });
+
+                    if (!headResponse.ok) {
+                        console.log(`Document does not exist or is not reachable: ${urlWithoutAnchor} Status: ${headResponse.status}`);
+                        return false;
+                    }
+                    console.log(`Document exists: ${urlWithoutAnchor}`);
+
+                    if (!anchor) {
+                        console.log('No anchor to check, document exists. Proceeding.');
+                        return true;
+                    }
+
+                    // If document exists, check if the anchor exists within its content (GET request)
+                    console.log(`Checking anchor existence for: ${anchor} within ${urlWithoutAnchor}`);
+                    const getResponse = await fetch(urlWithoutAnchor, { method: 'GET' });
+
+                    if (!getResponse.ok) {
+                        console.warn(`Failed to fetch document content to check anchor: ${urlWithoutAnchor} Status: ${getResponse.status}`);
+                        return false;
+                    }
+
+                    const htmlContent = await getResponse.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(htmlContent, 'text/html');
+                    const anchorId = anchor.substring(1); // Remove '#' from anchor
+
+                    const anchorElement = doc.getElementById(anchorId);
+                    if (anchorElement) {
+                        console.log(`Anchor '${anchor}' found in document.`);
+                        return true;
+                    } else {
+                        console.log(`Anchor '${anchor}' NOT found in document.`);
+                        return false;
+                    }
+                } catch (error) {
+                    console.error(`Error checking URL or anchor existence for ${url}:`, error);
+                    return false;
+                }
+            }
+
 
             /**
              * Executes the redirection logic based on preferred language and current URL.
              */
-            function executeRedirectionLogic() {
+            async function executeRedirectionLogic() {
                 const currentPathname = window.location.pathname;
                 const currentHostname = window.location.hostname;
                 const currentProtocol = window.location.protocol;
                 const currentSearch = window.location.search;
-                const currentHash = window.location.hash;
+                const currentHash = window.location.hash; // This includes the '#'
 
                 console.log('Current URL details:', { currentPathname, currentHostname, currentProtocol, currentSearch, currentHash });
+
+                const currentAnchor = extractAnchor(currentHash);
 
                 let baseContentPath = '/';
                 // Regex to capture a two-letter language folder (e.g., /en/ or /de/)
                 const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
                 const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
 
+                let pathWithoutLangOrHash = currentPathname;
                 if (pathSegmentMatch) {
                     // If a language folder is found, the base content path is what follows it
-                    baseContentPath = pathSegmentMatch[2] || '/';
-                    console.log('Language folder detected. Base content path:', baseContentPath);
+                    pathWithoutLangOrHash = pathSegmentMatch[2] || '/';
+                    console.log('Language folder detected. Path without language:', pathWithoutLangOrHash);
                 } else {
                     // Otherwise, the current pathname is the base content path
-                    baseContentPath = currentPathname;
-                    console.log('No language folder detected. Base content path:', baseContentPath);
+                    console.log('No language folder detected. Path without language:', pathWithoutLangOrHash);
                 }
-                baseContentPath = normalizePathForComparison(baseContentPath);
-                console.log('Normalized base content path:', baseContentPath);
+
+                // Remove hash from the base content path for proper normalization
+                const baseContentPathWithoutHash = pathWithoutLangOrHash.split('#')[0];
+                baseContentPath = normalizePathForComparison(baseContentPathWithoutHash);
+
+                console.log('Normalized base content path (without hash):', baseContentPath);
 
                 // Construct the target pathname based on the preferred language
                 let targetPathname = preferredLanguage === "en"
                     ? baseContentPath // English paths don't have a /en/ prefix
-                    : `/${preferredLanguage}${baseContentPath === '/' ? '/' : baseContentPath}`; // Other languages get /lang/ prefix
+                    : `/${preferredLanguage}${baseContentPath === '/' ? '' : baseContentPath}`; // Other languages get /lang/ prefix
+
                 targetPathname = normalizePathForComparison(targetPathname);
-                console.log('Target pathname for redirection:', targetPathname);
+                console.log('Target pathname for redirection (without hash):', targetPathname);
+
 
                 const normalizedCurrentPath = normalizePathForComparison(currentPathname);
                 const normalizedTargetPath = normalizePathForComparison(targetPathname);
 
-                console.log('Normalized current path:', normalizedCurrentPath);
-                console.log('Normalized target path:', normalizedTargetPath);
+                console.log('Normalized current path (including hash if present):', normalizedCurrentPath);
+                console.log('Normalized target path (without hash):', normalizedTargetPath);
 
-                // Only proceed with redirection if the current path is different from the target path
-                if (normalizedCurrentPath !== normalizedTargetPath) {
+
+                // Only proceed with redirection if the current path is different from the target path (ignoring hash for now for document check)
+                if (normalizedCurrentPath.split('#')[0] !== normalizedTargetPath.split('#')[0] || currentAnchor !== currentHash) {
                     if (assumeBotOnFetchFailure || isBot(navigator.userAgent)) {
                         // This log will now correctly reflect if isBot loaded or if it defaulted to true
                         console.log(`Skipping redirection due to ${assumeBotOnFetchFailure ? "fetch failure (isbot library not loaded or function not found, assuming bot)" : "bot detected by isbot library"}.`);
@@ -212,39 +293,26 @@
                     console.log('Target Full URL:', targetFullUrl);
                     console.log('Fallback to English URL:', fallbackToEnglishFullUrl);
 
-                    // Perform a HEAD request to check if the target URL exists
-                    fetch(targetFullUrl, { method: 'HEAD' })
-                        .then(response => {
-                            if (response.ok) {
-                                // If the target URL exists and is accessible, redirect
-                                console.log('Target URL is reachable. Redirecting to:', targetFullUrl);
-                                window.location.replace(targetFullUrl);
-                            } else {
-                                // If target URL does not exist or is not OK, and current path is not already English base,
-                                // then redirect to the English base path.
-                                console.warn(`Target URL (${targetFullUrl}) returned status: ${response.status}. Attempting fallback.`);
-                                if (normalizedCurrentPath !== normalizePathForComparison(baseContentPath)) {
-                                    console.log('Current path is not English base. Redirecting to fallback English URL:', fallbackToEnglishFullUrl);
-                                    window.location.replace(fallbackToEnglishFullUrl);
-                                } else {
-                                    console.log('Current path is already English base. No further redirection.');
-                                }
-                            }
-                        })
-                        .catch(error => {
-                            // Handle network errors during the fetch request
-                            console.error('Error during HEAD request for target URL:', error);
-                            // If there's an error, and current path is not already English base,
-                            // then redirect to the English base path.
-                            if (normalizedCurrentPath !== normalizePathForComparison(baseContentPath)) {
-                                console.log('Fetch error. Current path is not English base. Redirecting to fallback English URL:', fallbackToEnglishFullUrl);
-                                window.location.replace(fallbackToEnglishFullUrl);
-                            } else {
-                                console.log('Fetch error. Current path is already English base. No further redirection.');
-                            }
-                        });
+                    // Perform a check for the document and anchor existence
+                    const targetDocumentAndAnchorExist = await checkUrlAndAnchorExistence(targetFullUrl, currentAnchor);
+
+                    if (targetDocumentAndAnchorExist) {
+                        // If the target URL and anchor exist, redirect
+                        console.log('Target URL and anchor are reachable. Redirecting to:', targetFullUrl);
+                        window.location.replace(targetFullUrl);
+                    } else {
+                        // If target URL or anchor does not exist, and current path is not already English base,
+                        // then redirect to the English base path.
+                        console.warn(`Target URL (${targetFullUrl}) or anchor (${currentAnchor}) not found. Attempting fallback.`);
+                        if (normalizePathForComparison(currentPathname).split('#')[0] !== normalizePathForComparison(baseContentPath).split('#')[0]) {
+                            console.log('Current path is not English base. Redirecting to fallback English URL:', fallbackToEnglishFullUrl);
+                            window.location.replace(fallbackToEnglishFullUrl);
+                        } else {
+                            console.log('Current path is already English base or fallback failed. No further redirection.');
+                        }
+                    }
                 } else {
-                    console.log('Current path is already the target path. No redirection needed.');
+                    console.log('Current path and target path (and anchor) are the same. No redirection needed.');
                 }
             }
 
