@@ -125,7 +125,7 @@ module Jekyll
 
         # Add to our search data array
         search_data_array << {
-          "document_title" => document.data['title'] || nil,
+          "documenttitle"  => document.data['title'] || nil,
           "sectiontitle"   => section_title,
           "sectioncontent" => section_content,
           "url"            => full_url,

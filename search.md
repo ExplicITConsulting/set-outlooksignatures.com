@@ -20,7 +20,7 @@ description: What are you looking for?
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
     json: '/search.json',
-    searchResultTemplate: '<li><a href="{url}"><small><span style="font-weight: normal;">{url}</span><small><br><span style="font-weight: normal;">{document_title}</span><br><span style="font-weight: bold;">{title}</span></a></li>',
+    searchResultTemplate: '<li><a href="{url}"><small><span style="font-weight: normal;">{url}</span><small><br><span style="font-weight: normal;">{documenttitle}</span><br><span style="font-weight: bold;">{title}</span></a></li>',
     noResultsText: 'No results found',
     fuzzy: false,
     limit: 999,
