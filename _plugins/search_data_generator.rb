@@ -8,7 +8,8 @@ module Jekyll
     safe true
     priority :normal # Ensure it runs after Markdown conversion
 
-    @@all_generated_ids = Set.new # Global set for site-wide unique ID tracking
+    # A global set to track all generated IDs across the entire site
+    @@all_generated_ids = Set.new
 
     def generate(site)
       Jekyll.logger.info "SearchDataGenerator:", "Starting to process documents for search data and anchor links..."
@@ -20,7 +21,7 @@ module Jekyll
         process_document(post, search_sections_data, site)
       end
 
-      # Process pages
+      # Process pages (excluding the search.json itself and other non-content pages)
       site.pages.each do |page|
         # Skip pages without a title, or the search.json template itself,
         # or any other pages that shouldn't be indexed (e.g., templates, assets, or data files)
@@ -29,15 +30,18 @@ module Jekyll
         end
       end
 
+      # Store the generated data in site.data for access in Liquid templates
       site.data['search_sections_data'] = search_sections_data
+
       Jekyll.logger.info "SearchDataGenerator:", "Finished processing. Found #{search_sections_data.count} sections."
     end
 
     private
 
     def process_document(document, search_data_array, site)
+      Jekyll.logger.debug "SearchDataGenerator:", "Processing document: #{document.url}"
+
       # Parse the document.content as an HTML fragment.
-      # Nokogiri::HTML.fragment is key here to avoid adding DOCTYPE, html, head, body.
       doc_fragment = Nokogiri::HTML.fragment(document.content)
 
       # Track generated IDs for this specific document to ensure uniqueness within it
@@ -50,9 +54,10 @@ module Jekyll
         original_id = heading_element['id']
         final_id = nil
 
-        # 1. Ensure the heading has an ID
+        # Determine the final ID for the heading
         if original_id && !original_id.empty?
           final_id = original_id
+          Jekyll.logger.debug "SearchDataGenerator:", "  Using existing ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
         else
           # Generate a slug from the heading text
           slug_base = slugify(heading_element.text)
@@ -64,24 +69,31 @@ module Jekyll
             counter += 1
           end
           final_id = unique_slug
-          heading_element['id'] = final_id # Assign the ID to the HTML element
+          # Assign the generated ID to the HTML element in the DOM
+          heading_element['id'] = final_id
+          Jekyll.logger.debug "SearchDataGenerator:", "  Generated new ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
         end
 
-        # Add to sets for uniqueness tracking
+        # Add the final ID to the sets for uniqueness tracking
         document_generated_ids.add(final_id)
         @@all_generated_ids.add(final_id)
 
-        # 2. Insert the anchor link (🔗)
+        # --- IMPORTANT: The following steps now run regardless of whether ID was original or generated ---
+
+        # 1. Insert the anchor link (🔗)
         anchor = Nokogiri::XML::Node.new "a", doc_fragment # Create anchor node within this fragment's context
         anchor['href'] = "##{final_id}"
         anchor['class'] = "anchor-link"
         anchor.content = "🔗"
 
         heading_element.prepend_child(anchor)
+        Jekyll.logger.debug "SearchDataGenerator:", "  Anchor added for ID: #{final_id}. Heading now: #{heading_element.to_html.strip.slice(0, 100)}..."
 
-        # 3. Extract section title and content for search.json
-        # The title is the text content of the heading element
-        section_title = heading_element.text.sub('🔗', '').strip # Remove the anchor icon from the title for search index
+
+        # 2. Extract section title and content for search.json
+        # The title is the text content of the heading element.
+        # Remove the anchor icon from the title for search index if it was added.
+        section_title = heading_element.text.sub('🔗', '').strip
 
         # Get content until the next heading or end of the document
         section_content_nodes = []
@@ -95,41 +107,45 @@ module Jekyll
           current_node = current_node.next_sibling
         end
 
+        # Convert collected nodes to HTML, strip tags, normalize whitespace
         section_content = strip_html_and_normalize(section_content_nodes.map(&:to_html).join(''))
+        Jekyll.logger.debug "SearchDataGenerator:", "  Content snippet extracted for ID #{final_id}: #{section_content.slice(0, 100)}..."
 
-        # 4. Construct the URL with the anchor
+
+        # 3. Construct the URL with the anchor
         full_url = "#{base_url}##{final_id}"
 
-        # 5. Add to our search data array
+        # 4. Add to our search data array
         search_data_array << {
           "title"    => section_title,
+          "subtitle" => "",
           "content"  => section_content,
           "url"      => full_url,
           "date"     => document.data['date'] ? document.data['date'].to_s : nil,
           "category" => document.data['category'] || nil,
           "tags"     => document.data['tags'] || []
         }
+        Jekyll.logger.debug "SearchDataGenerator:", "  Added to search data: #{full_url}"
       end
 
       # Update the document's content with the modified HTML fragment
-      # Use `to_html` (or `to_s`) on the fragment to get its content without wrappers.
       document.content = doc_fragment.to_html(encoding: 'UTF-8')
+      Jekyll.logger.debug "SearchDataGenerator:", "Finished processing document: #{document.url}. Content updated."
     end
 
     # Helper function to slugify text
     def slugify(text)
       text.to_s.downcase.strip
-        .gsub(/[^a-z0-9\s-]/, '')
-        .gsub(/[\s_]+/, '-')
-        .gsub(/^-+|-+$/, '')
+        .gsub(/[^a-z0-9\s-]/, '') # Remove non-word characters (excluding spaces and dashes)
+        .gsub(/[\s_]+/, '-')      # Replace spaces/underscores with a single dash
+        .gsub(/^-+|-+$/, '')      # Remove leading/trailing dashes
     end
 
     # Helper function to strip HTML and normalize whitespace
     def strip_html_and_normalize(html_content)
-      # Nokogiri::HTML.fragment is also useful here for robust parsing of snippets
       Nokogiri::HTML.fragment(html_content).text
-        .gsub(/\s+/, ' ')
-        .strip
+        .gsub(/\s+/, ' ') # Replace multiple whitespaces (including newlines) with a single space
+        .strip            # Remove leading/trailing whitespace
     end
   end
 end
