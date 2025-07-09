@@ -144,23 +144,6 @@
             }
 
             /**
-             * Extracts the path and anchor from a given URL string.
-             * @param {string} url - The full URL string.
-             * @returns {{path: string, anchor: string}} An object containing the path and anchor.
-             */
-            function extractPathAndAnchor(url) {
-                const hashIndex = url.indexOf('#');
-                let path = url;
-                let anchor = '';
-
-                if (hashIndex !== -1) {
-                    path = url.substring(0, hashIndex);
-                    anchor = url.substring(hashIndex); // Includes the '#'
-                }
-                return { path, anchor };
-            }
-
-            /**
              * Checks if a URL document exists and if a specific anchor exists within that document.
              * @param {string} urlWithoutAnchor - The base URL to check (without the anchor).
              * @param {string} anchor - The anchor (e.g., "#my-section") to check for existence. Can be empty.
@@ -169,6 +152,7 @@
             async function checkDocumentAndAnchorAvailability(urlWithoutAnchor, anchor) {
                 try {
                     console.log(`[checkDocumentAndAnchorAvailability] Checking document existence for: ${urlWithoutAnchor}`);
+                    // Perform a HEAD request first to check document existence efficiently
                     const headResponse = await fetch(urlWithoutAnchor, { method: 'HEAD' });
 
                     if (!headResponse.ok) {
@@ -196,7 +180,7 @@
                     const doc = parser.parseFromString(htmlContent, 'text/html');
                     const anchorId = anchor.substring(1); // Remove '#' from anchor
 
-                    const anchorElement = doc.getElementById(anchorId);
+                    const anchorElement = doc.getElementById(anchorId) || doc.querySelector(`[name="${anchorId}"]`); // Also check for elements with 'name' attribute
                     if (anchorElement) {
                         console.log(`[checkDocumentAndAnchorAvailability] Anchor '${anchor}' found in document.`);
                         return true;
@@ -214,8 +198,9 @@
              * Executes the redirection logic based on preferred language and current URL.
              */
             async function executeRedirectionLogic() {
-                const currentFullUrl = window.location.href; // Get the full current URL including hash
-                const { path: currentPathname, anchor: currentHash } = extractPathAndAnchor(currentFullUrl);
+                // Use window.location.pathname and window.location.hash directly
+                const currentPathname = window.location.pathname; // e.g., /de/benefactorcircle/
+                const currentHash = window.location.hash;       // e.g., #demo
 
                 const currentHostname = window.location.hostname;
                 const currentProtocol = window.location.protocol;
@@ -227,23 +212,27 @@
                 const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
                 const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
 
-                let currentPathnameWithoutLang = currentPathname;
+                let currentPathnameWithoutLang = currentPathname; // Default to full pathname if no lang folder
 
+                // Extract the path without the leading language segment
                 if (pathSegmentMatch) {
-                    currentPathnameWithoutLang = pathSegmentMatch[2] || '/';
+                    currentPathnameWithoutLang = pathSegmentMatch[2] || '/'; // e.g., /benefactorcircle/
                     console.log('Language folder detected. Path without language:', currentPathnameWithoutLang);
                 } else {
-                    console.log('No language folder detected. Path without language:', currentPathnameWithoutLang);
+                    console.log('No language folder detected. Current pathname is the base content path:', currentPathnameWithoutLang);
                 }
 
+                // Normalize the base content path (e.g., /benefactorcircle/)
                 baseContentPath = normalizePathForComparison(currentPathnameWithoutLang);
-                console.log('Normalized base content path (without language prefix, without hash):', baseContentPath);
+                console.log('Normalized base content path (content path without language prefix):', baseContentPath);
 
                 // Construct the target pathname based on the preferred language
-                let targetPathnamePreferredLang = preferredLanguage === "en"
-                    ? baseContentPath // English paths don't have a /en/ prefix
-                    : `/${preferredLanguage}${baseContentPath === '/' ? '' : baseContentPath}`;
-
+                let targetPathnamePreferredLang;
+                if (preferredLanguage === "en") {
+                    targetPathnamePreferredLang = baseContentPath; // English paths don't have a /en/ prefix
+                } else {
+                    targetPathnamePreferredLang = `/${preferredLanguage}${baseContentPath === '/' ? '' : baseContentPath}`; // Other languages get /lang/ prefix
+                }
                 targetPathnamePreferredLang = normalizePathForComparison(targetPathnamePreferredLang);
                 console.log('Calculated target pathname for preferred language:', targetPathnamePreferredLang);
 
@@ -254,16 +243,13 @@
 
                 // Determine if the current URL (path + hash) already matches the intended target
                 // This prevents unnecessary checks and redirections if we're already where we want to be.
-                const currentUrlWithoutLangPrefix = normalizePathForComparison(currentPathnameWithoutLang);
-                const isAlreadyAtTarget = (preferredLanguage === "en" && currentUrlWithoutLangPrefix === baseContentPath && currentHash === window.location.hash) ||
-                                          (preferredLanguage !== "en" && currentPathname === `/${preferredLanguage}${baseContentPath === '/' ? '' : baseContentPath}` && currentHash === window.location.hash);
+                const normalizedCurrentPath = normalizePathForComparison(currentPathname);
+                const normalizedTargetPath = normalizePathForComparison(targetPathnamePreferredLang);
 
-
-                if (isAlreadyAtTarget) {
+                if (normalizedCurrentPath === normalizedTargetPath && currentHash === window.location.hash) {
                     console.log('Current URL (path and anchor) already matches the calculated target for the preferred language. No redirection needed.');
                     return;
                 }
-
 
                 // If bot detected, skip redirection
                 if (assumeBotOnFetchFailure || isBot(navigator.userAgent)) {
@@ -271,7 +257,7 @@
                     return;
                 }
 
-                // Check if the preferred language document and the original anchor exist in it
+                // Check if the preferred language document AND the original anchor exist in it
                 const targetDocAndAnchorExist = await checkDocumentAndAnchorAvailability(targetFullUrlWithoutAnchorPreferredLang, currentHash);
 
                 if (targetDocAndAnchorExist) {
