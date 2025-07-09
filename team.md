@@ -108,4 +108,4 @@ redirect_from:
             </div>
         </div>
     </div>
-</columns>
+</div>
