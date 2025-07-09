@@ -9,13 +9,13 @@ permalink: /search.json # Ensure this is correct for your simple-jekyll-search s
     {%- if counter > 0 -%},{%- endif -%}
     {%- assign counter = counter | plus: 1 -%}
     {
-      "document_title": {{ item.document_title | jsonify }},
-      "title"    : {{ item.sectiontitle | jsonify }},
-      "content"  : {{ item.sectioncontent | jsonify }},
-      "url"      : {{ item.url | jsonify }},
-      "date"     : {{ item.date | jsonify }},
-      "category" : {{ item.category | jsonify }},
-      "tags"     : {{ item.tags | join: ', ' | jsonify }}
+      "documenttitle" : {{ item.documenttitle | jsonify }},
+      "title"         : {{ item.sectiontitle | jsonify }},
+      "content"       : {{ item.sectioncontent | jsonify }},
+      "url"           : {{ item.url | jsonify }},
+      "date"          : {{ item.date | jsonify }},
+      "category"      : {{ item.category | jsonify }},
+      "tags"          : {{ item.tags | join: ', ' | jsonify }}
     }
   {%- endfor -%}
 ]
