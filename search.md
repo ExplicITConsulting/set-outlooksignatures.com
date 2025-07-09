@@ -22,8 +22,8 @@ description: What are you looking for?
     json: '/search.json',
     searchResultTemplate: '<li><a href="{url}"><span style="font-weight: normal;">{url}</span><br><span style="font-weight: bold;">{title}</a></li>',
     noResultsText: 'No results found',
-    fuzzy: false
-    limit: 999
+    fuzzy: false,
+    limit: 999999
   })
 </script>
 
