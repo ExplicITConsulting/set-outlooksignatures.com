@@ -24,7 +24,7 @@ description: What are you looking for?
     noResultsText: 'No results found',
     fuzzy: false,
     limit: 999,
-    debounceTime: 50
+    debounceTime: 1000
   })
 </script>
 
