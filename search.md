@@ -23,7 +23,7 @@ description: What are you looking for?
     searchResultTemplate: '<li><a href="{url}"><span style="font-weight: normal;">{url}</span><br><span style="font-weight: bold;">{title}</a></li>',
     noResultsText: 'No results found',
     fuzzy: false,
-    limit: 999999
+    limit: 999
   })
 </script>
 
