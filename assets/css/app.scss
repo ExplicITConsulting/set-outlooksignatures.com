@@ -113,6 +113,21 @@ h6:hover .anchor-link {
   margin-top: 0;
 }
 
+p + ul,
+p + ol {
+  margin-top: 0; // Targets the unordered or ordered list directly following a paragraph
+}
+
+p + ul,
+p + ol {
+  &::before {
+    // This pseudo-element targets the paragraph that is the immediate sibling
+    content: ""; // Needed for pseudo-elements to apply styles
+    display: block; // Ensures the margin applies correctly
+    margin-bottom: 0; // Sets the bottom margin of the paragraph to 0
+  }
+}
+
 .footer {
   padding-bottom: 0 !important; // Or just 0 if not needed
 }
