@@ -9,7 +9,7 @@ module Jekyll
     # No global ID tracking needed to match JS logic, which is per-document.
 
     # Register the hook to run after each page/document is fully rendered
-    Jekyll.Hooks.register [:pages, :documents], :post_render do |doc|
+    Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       # Skip if doc.output is nil or empty (no content), or if it's the search.json page itself,
       # or if it's explicitly excluded from sitemap/indexing, or not an HTML document.
       next if doc.output.nil? || doc.output.empty?
@@ -80,7 +80,7 @@ module Jekyll
     # Helper function to slugify text, adapted to match JS logic precisely
     # JS slugification:
     # .toLowerCase().trim()
-    # .replace(/[^a-z0-9\s-]/g, '') // Remove non-word characters
+    # .replace(/[^a-z0-9\s-]/g, '') # Remove non-word characters
     # .replace(/\s+/g, '-');    // Replace spaces with dashes
     def self.js_slugify(text)
       text.to_s.downcase.strip
