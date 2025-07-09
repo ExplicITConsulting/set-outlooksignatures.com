@@ -24,12 +24,12 @@ module Jekyll
       search_sections_data = []
 
       # Iterate through all posts to collect their data (using .docs.each for Jekyll 4+ compatibility)
-      site.posts.docs.each do |post| # This is correct for Jekyll::Collection (posts)
+      site.posts.docs.each do |post|
         collect_document_data(post, search_sections_data, site)
       end
 
       # Iterate through all pages to collect their data (site.pages is an Array, so just .each)
-      site.pages.each do |page| # <<< --- CORRECTED LINE: Removed .docs
+      site.pages.each do |page|
         # Skip specific pages (like search.json itself), excluded pages,
         # non-content files, and ensure it's a renderable document.
         if page.data['title'] && page.url != '/search.json' && !page.data['sitemap_exclude'] && !page.path.include?('_data') && page.respond_to?(:content) && !page.is_a?(Jekyll::StaticFile)
@@ -51,13 +51,29 @@ module Jekyll
       Jekyll.logger.debug "SearchDataCollector: Document Class: #{document.class}"
       Jekyll.logger.debug "SearchDataCollector: Document Path: #{document.path}"
       Jekyll.logger.debug "SearchDataCollector: Has Front Matter?: #{document.data.any?}"
-      Jekyll.logger.debug "SearchDataCollector: Is Renderable?: #{document.respond_to?(:render) && !document.is_a?(Jekyll::StaticFile)}"
-      Jekyll.logger.debug "SearchDataCollector: --- Document.content start (first 200 chars) ---"
-      Jekyll.logger.debug document.content.to_s[0..199].gsub(/\n/, '\\n') # Log first 200 chars, escape newlines
-      Jekyll.logger.debug "SearchDataCollector: --- Document.content end ---"
+      Jekyll.logger.debug "SearchDataCollector: Is Renderable?: #{document.respond_to?(:content) && !document.is_a?(Jekyll::StaticFile)}"
+      Jekyll.logger.debug "SearchDataCollector: --- Raw Document.content start (first 200 chars) ---"
+      Jekyll.logger.debug document.content.to_s[0..199].gsub(/\n/, '\\n') # Log raw content
+      Jekyll.logger.debug "SearchDataCollector: --- Raw Document.content end ---"
 
-      # Parse the document.content (which should be HTML from Markdown conversion)
-      doc_fragment = Nokogiri::HTML.fragment(document.content)
+      content_to_parse = document.content
+
+      # CRITICAL FIX: Convert Markdown to HTML if the document is a Markdown file
+      if document.extname =~ /\.(md|markdown)$/i
+        Jekyll.logger.debug "SearchDataCollector:", "  Document is Markdown. Converting to HTML for parsing..."
+        begin
+          converter = site.find_converter_instance(Jekyll::Converters::Markdown)
+          content_to_parse = converter.convert(document.content)
+        rescue => e
+          Jekyll.logger.error "SearchDataCollector:", "  Error converting Markdown for #{document.url}: #{e.message}"
+          content_to_parse = "" # Fallback to empty content if conversion fails
+        end
+      else
+        Jekyll.logger.debug "SearchDataCollector:", "  Document is not Markdown. Assuming HTML for parsing."
+      end
+
+      # Parse the content (which is now guaranteed to be HTML or empty if conversion failed)
+      doc_fragment = Nokogiri::HTML.fragment(content_to_parse)
       document_predicted_ids = Set.new # Track predicted IDs for this specific document
 
       base_url = document.url
@@ -121,20 +137,18 @@ module Jekyll
     end
 
     # Helper function to slugify text (MUST be IDENTICAL to the one in html_modifier_hook.rb)
-    # Defined as a private method within the Generator class.
     def slugify(text)
       text.to_s.downcase.strip
-        .gsub(/[^a-z0-9\s-]/, '') # Remove non-word characters (excluding spaces and dashes)
-        .gsub(/[\s_]+/, '-')      # Replace spaces/underscores with a single dash
-        .gsub(/^-+|-+$/, '')      # Remove leading/trailing dashes
+        .gsub(/[^a-z0-9\s-]/, '')
+        .gsub(/[\s_]+/, '-')
+        .gsub(/^-+|-+$/, '')
     end
 
     # Helper function to strip HTML and normalize whitespace (MUST be IDENTICAL to the one in html_modifier_hook.rb)
-    # Defined as a private method within the Generator class.
     def strip_html_and_normalize(html_content)
       Nokogiri::HTML.fragment(html_content).text
-        .gsub(/\s+/, ' ') # Replace multiple whitespaces (including newlines) with a single space
-        .strip            # Remove leading/trailing whitespace
+        .gsub(/\s+/, ' ')
+        .strip
     end
   end
 end
