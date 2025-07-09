@@ -10,9 +10,6 @@ module Jekyll
 
     def generate(site)
       site.pages.each do |page|
-        next unless page.output_ext == '.html'
-        next unless page.output
-
         used_slugs = Set.new
         doc_fragment = Nokogiri::HTML.fragment(page.output)
         all_headings = doc_fragment.css('h1, h2, h3, h4, h5, h6')
