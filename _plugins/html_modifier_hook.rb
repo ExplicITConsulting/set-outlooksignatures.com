@@ -31,7 +31,7 @@ module Jekyll
       headings_modified = false # Flag to see if any headings were found and modified
 
       # Iterate over all heading types (h1 to h6) within the final HTML fragment
-      doc_fragment.css('h2, h3, h4, h5, h6').each do |heading_element|
+      doc_fragment.css('h1, h2, h3, h4, h5, h6').each do |heading_element|
         headings_modified = true
         original_id = heading_element['id']
         final_id = nil
@@ -68,7 +68,7 @@ module Jekyll
         anchor['href'] = "##{final_id}"
         anchor['class'] = "anchor-link"
         anchor.content = "🔗"
-        heading_element.prepend_child(anchor)
+        heading_element.add_child(anchor)
         Jekyll.logger.debug "HtmlModifierHook:", "  Anchor added. Heading now: #{heading_element.to_html.strip.slice(0, 100)}..."
       end
 
