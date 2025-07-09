@@ -20,9 +20,29 @@ description: What are you looking for?
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
     json: '/search.json',
-    searchResultTemplate: '<li style="margin-bottom: 1.25em;"><a href="{url}"><span style="font-weight: normal; font-style: italic;">{url}</span><br /><span style="font-weight: bold; font-style: normal; font-size: 125%">{title}</span><br /><span style="font-weight: normal; font-style normal;">{subtitle}</span></a></li>',
+    searchResultTemplate: `
+        <li>
+            <a href="{url}">
+                <small>
+                    <span style="font-weight: normal;">
+                        {url}
+                    </span>
+                </small>
+                <br>
+                <span style="font-weight: normal;">
+                    {documenttitle}
+                </span>
+                <br>
+                <span style="font-weight: bold;">
+                    {title}
+                </span>
+            </a>
+        </li>
+      `,
     noResultsText: 'No results found',
-    fuzzy: false
+    fuzzy: false,
+    limit: 999,
+    debounceTime: 1000
   })
 </script>
 
