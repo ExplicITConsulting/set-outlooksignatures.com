@@ -125,12 +125,13 @@ module Jekyll
 
         # Add to our search data array
         search_data_array << {
-          "title"    => section_title,
-          "content"  => section_content,
-          "url"      => full_url,
-          "date"     => document.data['date'] ? document.data['date'].to_s : nil,
-          "category" => document.data['category'] || nil,
-          "tags"     => document.data['tags'] || []
+          "document_title" => document.data['title'] || nil,
+          "sectiontitle"   => section_title,
+          "sectioncontent" => section_content,
+          "url"            => full_url,
+          "date"           => document.data['date'] ? document.data['date'].to_s : nil,
+          "category"       => document.data['category'] || nil,
+          "tags"           => document.data['tags'] || []
         }
         Jekyll.logger.debug "SearchDataCollector:", "  Collected search data for ID: #{final_id}"
       end
