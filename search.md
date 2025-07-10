@@ -9,7 +9,6 @@ description: Search and find. What are you looking for?
     <input type="search" id="search-input" placeholder="Start typing to search..." class="input is-large mb-4">
 
     <div id="search-results" class="content">
-        <p>Results will appear here.</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.8.205/dist/flexsearch.bundle.min.js"></script>
