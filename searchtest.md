@@ -137,9 +137,14 @@ description: Search and find. What are you looking for?
                     if (item[field] && typeof item[field] === 'string' && item[field].length > 0) {
                         let fieldContent = item[field];
                         // Highlight matches in the current field
-                        if (result.highlight && result.highlight[field]) {
-                            fieldContent = highlightText(fieldContent, result.highlight[field]);
-                        }
+if (
+    result.highlight &&
+    Array.isArray(result.highlight[field]) &&
+    result.highlight[field].every(r => Array.isArray(r) && r.length === 2)
+) {
+    fieldContent = highlightText(fieldContent, result.highlight[field]);
+}
+
                         // Truncate content for display, add ellipsis if truncated
                         const truncatedContent = fieldContent.length > 150 ? fieldContent.substring(0, 150) + '...' : fieldContent;
                         displayContent += `<p class="is-size-7 mt-1"><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${truncatedContent}</p>`;
@@ -169,22 +174,25 @@ description: Search and find. What are you looking for?
         }
 
         // Helper function to highlight text
-        function highlightText(text, highlightRanges) {
-            // Sort ranges by start position to handle overlaps correctly
-            highlightRanges.sort((a, b) => a[0] - b[0]);
+function highlightText(text, highlightRanges) {
+    if (!Array.isArray(highlightRanges)) return text;
 
-            let highlightedText = '';
-            let lastIndex = 0;
+    highlightRanges.sort((a, b) => a[0] - b[0]);
+    let highlightedText = '';
+    let lastIndex = 0;
 
-            highlightRanges.forEach(range => {
-                const [start, end] = range;
-                highlightedText += text.substring(lastIndex, start);
-                highlightedText += `<mark>${text.substring(start, end)}</mark>`;
-                lastIndex = end;
-            });
-            highlightedText += text.substring(lastIndex);
-            return highlightedText;
-        }
+    highlightRanges.forEach(range => {
+        if (!Array.isArray(range) || range.length !== 2) return;
+        const [start, end] = range;
+        highlightedText += text.substring(lastIndex, start);
+        highlightedText += `<mark>${text.substring(start, end)}</mark>`;
+        lastIndex = end;
+    });
+
+    highlightedText += text.substring(lastIndex);
+    return highlightedText;
+}
+
 
         // Function to display suggestions (for autocomplete)
         // Now accepts an array of suggestions directly
