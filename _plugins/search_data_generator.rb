@@ -4,13 +4,21 @@ require 'uri'
 require 'yaml'
 
 module Jekyll
-  # This module contains the logic for extracting sections from a single page/post.
-  # It's now part of the same file as the generator.
   module HeadingSections
-    def self.get_heading_sections_for_search(page_or_post) # Make it a class method (self.)
+    def self.get_heading_sections_for_search(page_or_post)
+      Jekyll.logger.debug "HeadingSections:", "Processing item for sections: #{page_or_post.url || page_or_post.path}"
+      
       return [] unless page_or_post.respond_to?(:content)
 
       html_content = page_or_post.content
+      Jekyll.logger.debug "HeadingSections:", "HTML content length: #{html_content.length} for #{page_or_post.url || page_or_post.path}"
+      
+      # If content is empty or mostly whitespace, it won't yield sections
+      if html_content.strip.empty?
+        Jekyll.logger.warn "HeadingSections:", "Skipping (empty content): #{page_or_post.url || page_or_post.path}"
+        return []
+      end
+
       doc = Nokogiri::HTML(html_content)
 
       document_title = page_or_post.data['title'] || page_or_post.basename_without_ext.capitalize
@@ -20,6 +28,7 @@ module Jekyll
       page_tags = page_or_post.data['tags'].is_a?(Array) ? page_or_post.data['tags'] : []
 
       headings = doc.css('h1, h2, h3, h4, h5, h6')
+      Jekyll.logger.debug "HeadingSections:", "Found #{headings.size} headings for #{page_or_post.url || page_or_post.path}"
 
       sections = []
       existing_slugs_in_document = {} # Reset for each document
@@ -56,8 +65,9 @@ module Jekyll
             'category' => page_category,
             'tags' => page_tags
           }
+          Jekyll.logger.debug "HeadingSections:", "Added 'Introduction' section for #{page_or_post.url || page_or_post.path}"
         end
-      elsif !doc.text.strip.empty?
+      elsif !doc.text.strip.empty? # No headings, but there's content
          sections << {
           'documenttitle' => document_title,
           'sectiontitle' => document_title,
@@ -67,6 +77,7 @@ module Jekyll
           'category' => page_category,
           'tags' => page_tags
          }
+         Jekyll.logger.debug "HeadingSections:", "Added full content section (no headings) for #{page_or_post.url || page_or_post.path}"
       end
       # --- End handling content BEFORE the first heading ---
 
@@ -115,40 +126,49 @@ module Jekyll
           'category' => page_category,
           'tags' => page_tags
         }
+        Jekyll.logger.debug "HeadingSections:", "Added section for heading '#{heading.text.strip}' for #{page_or_post.url || page_or_post.path}"
       end
 
+      Jekyll.logger.debug "HeadingSections:", "Returning #{sections.size} sections for #{page_or_post.url || page_or_post.path}"
       sections
     end
   end
 
-  # This is the Jekyll Generator that uses the HeadingSections module.
   class SearchSectionsDataGenerator < Generator
     safe true
     priority :high
 
     def generate(site)
-      Jekyll.logger.info "Jekyll Data Generator:", "Generating search_sections_data for site.data"
+      Jekyll.logger.info "Jekyll Data Generator:", "Starting search_sections_data generation."
 
       all_search_sections = []
 
-      # Use the class method directly
+      # Iterate over pages
       site.pages.each do |page|
+        # Only process pages that will be outputted as HTML and have content
         if page.output == true && page.content && page.ext == ".html"
+          Jekyll.logger.debug "Jekyll Data Generator:", "Processing page: #{page.url}"
           sections = Jekyll::HeadingSections.get_heading_sections_for_search(page)
           all_search_sections.concat(sections)
+        else
+          Jekyll.logger.debug "Jekyll Data Generator:", "Skipping page (not output HTML or no content): #{page.url || page.path}"
         end
       end
 
+      # Iterate over posts
       site.posts.docs.each do |post|
+        # Only process posts that will be outputted as HTML and have content
         if post.output == true && post.content && post.ext == ".html"
+          Jekyll.logger.debug "Jekyll Data Generator:", "Processing post: #{post.url}"
           sections = Jekyll::HeadingSections.get_heading_sections_for_search(post)
           all_search_sections.concat(sections)
+        else
+          Jekyll.logger.debug "Jekyll Data Generator:", "Skipping post (not output HTML or no content): #{post.url || post.path}"
         end
       end
 
       site.data['search_sections_data'] = all_search_sections
-
-      Jekyll.logger.info "Jekyll Data Generator:", "Generated #{all_search_sections.size} search sections."
+      Jekyll.logger.info "Jekyll Data Generator:", "Finished. Total search sections generated: #{all_search_sections.size}"
     end
   end
 end
