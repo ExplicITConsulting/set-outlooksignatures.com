@@ -103,13 +103,13 @@ module Jekyll
 
         # Add to our search data array
         @@search_sections_data << { # Add to global array
-          "document"  => decoded_document_title, # Use decoded title for documenttitle
-          "section"          => section_title,
-          "content"        => "#{section_content}".strip,
-          "url"            => full_url,
-          "date"           => doc.data['date'] ? doc.data['date'].to_s : "",
-          "category"       => doc.data['category'] || "",
-          "tags"           => doc.data['tags'] && !doc.data['tags'].empty? ? doc.data['tags'].join(', ') : ""
+          "document" => decoded_document_title, # Use decoded title for documenttitle
+          "section"  => section_title,
+          "content"  => "#{section_content}".strip,
+          "url"      => full_url,
+          "date"     => doc.data['date'] ? doc.data['date'].to_s : "",
+          "category" => doc.data['category'] || "",
+          "tags"     => doc.data['tags'] && !doc.data['tags'].empty? ? doc.data['tags'].join(', ') : ""
         }
         Jekyll.logger.info "SearchDataCollector:", "   Collected search data for ID: #{final_id}"
       end
