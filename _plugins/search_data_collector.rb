@@ -1,8 +1,3 @@
-# _plugins/search_data_collector.rb
-# This plugin collects data for search.json by iterating through documents
-# and predicting heading IDs.
-# It now runs post-render for individual pages/documents to include all generated HTML content.
-
 require 'nokogiri'
 require 'json'
 require 'uri'
@@ -33,7 +28,7 @@ module Jekyll
       # Also explicitly check for common XML files that might be Jekyll::Page objects.
       # Corrected: Changed start_with! to start_with?
       next unless (doc.output.strip.start_with?('<') || doc.output.strip.start_with?('<!DOCTYPE')) &&
-                  !['/sitemap.xml', '/feed.xml'].include?(doc.url)
+                   !['/sitemap.xml', '/feed.xml'].include?(doc.url)
 
       Jekyll.logger.info "SearchDataCollector:", "Processing document: #{doc.url || doc.path}"
 
@@ -50,52 +45,7 @@ module Jekyll
       all_headings = doc_fragment.css('h1, h2, h3, h4, h5, h6')
       Jekyll.logger.info "SearchDataCollector:", "   Found #{all_headings.size} headings in #{doc.url || doc.path}"
 
-      # --- Handle content BEFORE the first heading (as an "Introduction" section) ---
-      first_heading_node = all_headings.first
-      pre_heading_content_nodes = []
-      if first_heading_node
-        # Collect all nodes before the first heading
-        doc_fragment.children.each do |node|
-          break if node == first_heading_node
-          pre_heading_content_nodes << node
-        end
-      else # If no headings at all, all content is "pre-heading"
-        doc_fragment.children.each do |node|
-          pre_heading_content_nodes << node
-        end
-      end
-
-      pre_heading_text = strip_html_and_normalize(pre_heading_content_nodes.map(&:to_html).join(''))
-
-      # If there's content before the first heading, or if there are no headings at all,
-      # create an "Introduction" section using the document's title or a default.
-      unless pre_heading_text.empty?
-        # Decode HTML entities in the document title for the section title
-        decoded_document_title = doc.data['title'] ? Nokogiri::HTML.fragment(doc.data['title']).text : nil
-        section_title = decoded_document_title || "Page Content" # Use document title or a default
-        
-        intro_slug_base = slugify(section_title) # Use slugified title for ID
-        unique_intro_slug = intro_slug_base
-        counter = 1
-        # Ensure uniqueness within the current document's predicted IDs
-        while document_predicted_ids_local.include?(unique_intro_slug)
-          unique_intro_slug = "#{intro_slug_base}-#{counter}"
-          counter += 1
-        end
-        document_predicted_ids_local.add(unique_intro_slug)
-
-        @@search_sections_data << { # Add to global array
-          "documenttitle"  => decoded_document_title, # Use decoded title for documenttitle
-          "title"          => section_title,
-          "content"        => pre_heading_text,
-          "url"            => "#{base_url}##{unique_intro_slug}",
-          "date"           => doc.data['date'] ? doc.data['date'].to_s : nil,
-          "category"       => doc.data['category'] || nil,
-          "tags"           => doc.data['tags'] && !doc.data['tags'].empty? ? doc.data['tags'].join(', ') : ""
-        }
-        Jekyll.logger.info "SearchDataCollector:", "   Collected 'Introduction' section (using document title) for #{doc.url || doc.path}"
-      end
-      # --- End handling content BEFORE the first heading ---
+      # --- Removed handling content BEFORE the first heading (as an "Introduction" section) ---
 
       all_headings.each_with_index do |heading_element, index|
         original_id = heading_element['id']
