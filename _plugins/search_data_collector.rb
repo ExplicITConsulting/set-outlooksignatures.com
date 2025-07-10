@@ -128,6 +128,7 @@ module Jekyll
           Jekyll.logger.info "SearchDataCollector:", "   Collected 'Introduction' section for #{document.url || document.path}"
         end
       elsif !doc_fragment.text.strip.empty? # No headings, but there's content for the whole page
+        # If there are no headings at all, treat the entire page content as one section
         search_data_array << {
           "documenttitle"  => document.data['title'] || nil,
           "sectiontitle"   => document.data['title'] || "Page Content", # Use doc title as section title if no headings
