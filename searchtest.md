@@ -93,7 +93,7 @@ description: Search and find. What are you looking for?
                 limit: 99, // Limit the number of results
                 enrich: true, // Return the full document (stored fields)
                 // highlight: true, // Enable highlighting!
-                // suggest: true // Request suggestions with the search results
+                suggest: true // Request suggestions with the search results
             });
 
             // FlexSearch can return results grouped by field if searching across multiple fields.
@@ -172,13 +172,7 @@ if (
                 }
 
 
-                html += `
-                    <li class="box mb-4">
-                        <a href="${url}" class="is-size-5 has-text-weight-bold">${title}</a>
-                        <p class="is-size-7">${url}</p>
-                        ${displayContent}
-                    </li>
-                `;
+                html += `<li class="box mb-4"><a href="${url}" class="is-size-5 has-text-weight-bold">${title}</a><p class="is-size-7">${url}</p>${displayContent}</li>`;
             });
             html += '</ul>';
             searchResultsContainer.innerHTML = html;
