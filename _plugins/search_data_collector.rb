@@ -15,7 +15,7 @@ module Jekyll
       # Skip if doc.output is nil or empty (no content), or if it's the search.json page itself,
       # or if it's explicitly excluded from sitemap/indexing.
       next if doc.output.nil? || doc.output.empty?
-      next if doc.url == '/search.json' || doc.url == '/404.html' || doc.data['sitemap_exclude']
+      next if doc.url == '/search.json' || doc.url == '/404.html' ||doc.data['sitemap_exclude']
 
       # Skip pages that are Jekyll redirects (using 'redirect_from'/'redirect_to' in front matter)
       # next if doc.data['redirect_from']
@@ -103,13 +103,13 @@ module Jekyll
 
         # Add to our search data array
         @@search_sections_data << { # Add to global array
-          "document" => "#{decoded_document_title}".strip, # Use decoded title for documenttitle
-          "section"  => "#{section_title}".strip,
-          "content"  => "#{section_content}".strip,
-          "url"      => "#{full_url}".strip,
-          "date"     => "#{doc.data['date'] ? doc.data['date'].to_s : nil}".strip,
-          "category" => "#{doc.data['category'] || nil}".strip,
-          "tags"     => "#{doc.data['tags'] && !doc.data['tags'].empty? ? doc.data['tags'].join(', ') : ""}".strip
+          "document"  => decoded_document_title, # Use decoded title for documenttitle
+          "section"          => section_title,
+          "content"        => "#{section_content}".strip,
+          "url"            => full_url,
+          "date"           => doc.data['date'] ? doc.data['date'].to_s : "",
+          "category"       => doc.data['category'] || "",
+          "tags"           => doc.data['tags'] && !doc.data['tags'].empty? ? doc.data['tags'].join(', ') : ""
         }
         Jekyll.logger.info "SearchDataCollector:", "   Collected search data for ID: #{final_id}"
       end
