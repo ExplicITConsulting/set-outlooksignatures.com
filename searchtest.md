@@ -10,6 +10,7 @@ permalink: /searchtest/
     <p>Results will appear here.</p>
 </div>
 
+<!-- Using jsdelivr.net for FlexSearch, with the correct URI for the latest 0.x.x minified bundle -->
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0/dist/flexsearch.bundle.min.js"></script>
 
 <script>
@@ -32,22 +33,10 @@ permalink: /searchtest/
             depth: 2, // Deeper search for nested objects if any (though our JSON is flat)
             optimize: true, // Optimize index for faster searches
             cache: true, // Cache search results
-            suggest: true, // Enable suggestions
-            // Advanced options for fuzzy, partial, and highlighting
-            // These are enabled by default with the above configurations,
-            // but can be explicitly set for clarity or fine-tuning.
-            // For example, to control fuzzy search:
-            // fuzzy: 0.2, // A value between 0 and 1 (0=no fuzzy, 1=max fuzzy)
-            // For partial search, 'tokenize: "full"' already handles it.
-            // Highlighting is handled in the search results display.
+            // Note: 'suggest: true' here primarily influences internal indexing for suggestions.
+            // The actual suggestion retrieval is done via the search method's options.
+            suggest: true,
         });
-
-        // Debugging: Log FlexSearch object and index properties
-        console.log('FlexSearch object:', FlexSearch);
-        console.log('FlexSearch.Document type:', typeof FlexSearch.Document);
-        console.log('Index object after initialization:', index);
-        console.log('index.suggest type:', typeof index.suggest);
-
 
         // Fetch the search.json data and populate the index
         fetch('/search.json')
@@ -89,34 +78,41 @@ permalink: /searchtest/
             }
 
             // Perform the search with advanced options
+            // Pass 'suggest: true' to the search method to get suggestions alongside results.
             const rawResults = index.search(query, {
                 limit: 20, // Limit the number of results
                 enrich: true, // Return the full document (stored fields)
-                suggest: true // Get suggestions for autocomplete (though index.suggest is used separately)
+                suggest: true // Request suggestions with the search results
             });
 
             // FlexSearch can return results grouped by field if searching across multiple fields.
             // This flattens the results to a single array of enriched documents.
             let flatResults = [];
+            let suggestions = []; // Array to hold extracted suggestions
+
             rawResults.forEach(fieldResult => {
                 // Check if it's a field-grouped result (e.g., {field: "title", result: [...]})
                 if (fieldResult && fieldResult.field && Array.isArray(fieldResult.result)) {
                     flatResults = flatResults.concat(fieldResult.result);
+                    // Extract suggestions if available at the field level
+                    if (fieldResult.suggestion) {
+                        suggestions.push(fieldResult.suggestion);
+                    }
                 } else if (fieldResult && fieldResult.doc) {
                     // It's already an enriched document directly
                     flatResults.push(fieldResult);
+                    // Extract suggestions if available at the document level
+                    if (fieldResult.suggestion) {
+                        suggestions.push(fieldResult.suggestion);
+                    }
+                } else if (typeof fieldResult === 'string') {
+                    // Sometimes 'suggest: true' can return raw suggestion strings directly in the top-level array
+                    suggestions.push(fieldResult);
                 }
             });
 
             displayResults(flatResults, query);
-
-            // Attempt to display suggestions, wrapped in try-catch for robustness
-            try {
-                displaySuggestions(query);
-            } catch (e) {
-                console.error("Error calling displaySuggestions:", e);
-                console.warn("Suggestion feature might not be available or correctly loaded.");
-            }
+            displaySuggestions(suggestions); // Pass the extracted suggestions
         }
 
         // Function to display search results
@@ -191,18 +187,15 @@ permalink: /searchtest/
         }
 
         // Function to display suggestions (for autocomplete)
-        function displaySuggestions(query) {
-            // This function is called within a try-catch in performSearch,
-            // so we don't need another try-catch here.
-            const suggestions = index.suggest(query, {
-                limit: 5, // Limit the number of suggestions
-                // You can add `fuzzy: true` here if you want fuzzy suggestions
-            });
+        // Now accepts an array of suggestions directly
+        function displaySuggestions(suggestions) {
+            // Remove duplicates from suggestions, as they might appear multiple times
+            const uniqueSuggestions = [...new Set(suggestions)];
 
-            // For simplicity, we'll just log suggestions to the console.
+            // For simplicity, we'll just log unique suggestions to the console.
             // In a real UI, you might display these in a dropdown below the search input.
-            if (suggestions.length > 0) {
-                console.log('Suggestions:', suggestions.map(s => s.suggestion));
+            if (uniqueSuggestions.length > 0) {
+                console.log('Suggestions:', uniqueSuggestions);
             } else {
                 console.log('No suggestions.');
             }
