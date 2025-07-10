@@ -28,7 +28,7 @@ module Jekyll
       # next if doc.data['redirect_from']
       next if doc.data['redirect_to']
       # Also skip pages whose *rendered content* is just a redirect message or meta refresh
-      # next if doc.output.strip.start_with?("Redirecting") || doc.output.include?('<meta http-equiv="refresh"')
+      next if doc.output.strip.start_with?("Redirecting") || doc.output.include?('<meta http-equiv="refresh"')
 
       # Basic check to ensure it's HTML content we can parse (e.g., not a static CSS/JS file)
       # This is more robust than relying on .extname alone for post_render hook.
