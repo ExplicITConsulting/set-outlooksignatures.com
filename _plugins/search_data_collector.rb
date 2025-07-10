@@ -1,89 +1,90 @@
 # _plugins/search_data_collector.rb
 # This plugin collects data for search.json by iterating through documents
 # and predicting heading IDs.
-# It does NOT modify the HTML content of documents.
+# It now runs post-render to include all generated HTML content.
 
 require 'nokogiri'
-require 'json' # Not directly used for search_data_array, but often useful for other Jekyll generators.
+require 'json'
 require 'uri'
 require 'set'
 
 module Jekyll
-  class SearchDataCollector < Generator
-    safe true
-    # This generator should run after Markdown conversion to HTML, but before Liquid rendering
-    # of search.json.txt. Priority :normal is usually fine, but :high ensures it runs early.
-    priority :normal # Changed from :high back to :normal as per the working example.
-
-    def generate(site)
-      Jekyll.logger.info "SearchDataCollector:", "Starting to collect structured search data..."
+  class SearchDataCollector
+    # Register a hook to run after the entire site has been written (post-render)
+    Jekyll::Hooks.register :site, :post_write do |site|
+      Jekyll.logger.info "SearchDataCollector:", "Starting to collect structured search data (post-render)..."
 
       search_sections_data = []
 
-      # Iterate through all posts to collect their data (using .docs.each for Jekyll 4+ compatibility)
-      site.posts.docs.each do |post|
-        collect_document_data(post, search_sections_data, site)
-      end
+      # Iterate through all posts and pages to collect their data
+      # At this stage, document.output contains the fully rendered HTML
+      (site.posts.docs + site.pages).each do |document|
+        # Skip specific documents that shouldn't be indexed
+        skip_reason = []
+        should_process = true
 
-      # Iterate through all pages to collect their data (site.pages is an Array, so just .each)
-      site.pages.each do |page|
-        # Skip specific pages (like search.json itself), excluded pages,
-        # non-content files, and ensure it's a renderable document.
-        if page.data['title'] && page.url != '/search.json' && !page.data['sitemap_exclude'] && !page.path.include?('_data') && page.respond_to?(:content) && !page.is_a?(Jekyll::StaticFile)
-          collect_document_data(page, search_sections_data, site)
+        # Skip the search.json output file itself
+        if document.url == '/search.json'
+          skip_reason << "is search.json output file"
+          should_process = false
+        end
+        # Skip pages explicitly marked for sitemap exclusion
+        if document.data['sitemap_exclude']
+          skip_reason << "sitemap_exclude is true"
+          should_process = false
+        end
+        # Skip files within the _data directory (though these typically wouldn't have output)
+        if document.path.include?('_data')
+          skip_reason << "path includes _data"
+          should_process = false
+        end
+        # Skip static files that don't have a 'output' property or meaningful content
+        # This is crucial for performance and accuracy post-render
+        unless document.respond_to?(:output) && !document.output.nil? && !document.output.strip.empty?
+          skip_reason << "no renderable output"
+          should_process = false
+        end
+        # Also skip binary files or files that are not HTML (e.g., images, CSS, JS)
+        unless document.extname =~ /\.html?$/i || document.extname =~ /\.xml$/i # Include XML for sitemaps, RSS etc. if desired
+          skip_reason << "not an HTML/XML file"
+          should_process = false
+        end
+
+
+        if should_process
+          collect_document_data(document, search_sections_data, site)
         else
-          Jekyll.logger.info "SearchDataCollector:", "Skipping page due to filter: #{page.url || page.path}"
+          Jekyll.logger.debug "SearchDataCollector:", "Skipping document #{document.url || document.path} due to filter: #{skip_reason.join(', ')}"
         end
       end
 
-      # Store the collected data in site.data for access in Liquid templates (e.g., search.json.liquid)
-      site.data['search_sections_data'] = search_sections_data
+      # Write the collected data directly to search.json in the destination directory
+      search_json_path = File.join(site.dest, 'search.json')
+      File.write(search_json_path, JSON.pretty_generate(search_sections_data))
 
-      Jekyll.logger.info "SearchDataCollector:", "Finished collecting search data. Found #{search_sections_data.count} sections."
+      Jekyll.logger.info "SearchDataCollector:", "Finished collecting search data. Found #{search_sections_data.count} sections. Wrote to #{search_json_path}"
     end
 
-    private
-
     # Helper method that defines how to collect data for a single document
-    def collect_document_data(document, search_data_array, site)
-      Jekyll.logger.info "SearchDataCollector:", "Collecting data for: #{document.url || document.path}"
-      Jekyll.logger.info "SearchDataCollector: Document Class: #{document.class}"
-      Jekyll.logger.info "SearchDataCollector: Document Path: #{document.path}"
-      Jekyll.logger.info "SearchDataCollector: Has Front Matter?: #{document.data.any?}"
-      Jekyll.logger.info "SearchDataCollector: Is Renderable?: #{document.respond_to?(:content) && !document.is_a?(Jekyll::StaticFile)}"
+    # This method now expects document.output (fully rendered HTML)
+    def self.collect_document_data(document, search_data_array, site)
+      Jekyll.logger.debug "SearchDataCollector:", "Collecting data for: #{document.url || document.path}"
+      Jekyll.logger.debug "SearchDataCollector: Document Class: #{document.class}"
+      Jekyll.logger.debug "SearchDataCollector: Document Path: #{document.path}"
+      Jekyll.logger.debug "SearchDataCollector: Has Front Matter?: #{document.data.any?}"
+      Jekyll.logger.debug "SearchDataCollector: Has Output?: #{document.respond_to?(:output) && !document.output.nil? && !document.output.strip.empty?}"
 
-      # Ensure document.content exists and is not empty before proceeding
-      if document.content.nil? || document.content.strip.empty?
-        Jekyll.logger.info "SearchDataCollector:", "   Document has no content or is empty. Skipping."
-        return
-      end
-
-      content_to_parse = document.content
-      Jekyll.logger.info "SearchDataCollector: --- Raw Document.content start (first 200 chars) ---"
-      Jekyll.logger.info content_to_parse.to_s[0..199].gsub(/\n/, '\\n') # Log raw content
-      Jekyll.logger.info "SearchDataCollector: --- Raw Document.content end ---"
-
-      # CRITICAL: Convert Markdown to HTML if the document is a Markdown file
-      if document.extname =~ /\.(md|markdown)$/i
-        Jekyll.logger.info "SearchDataCollector:", "   Document is Markdown. Converting to HTML for parsing..."
-        begin
-          converter = site.find_converter_instance(Jekyll::Converters::Markdown)
-          content_to_parse = converter.convert(document.content)
-          Jekyll.logger.info "SearchDataCollector:", "   Markdown conversion successful."
-        rescue => e
-          Jekyll.logger.error "SearchDataCollector:", "   Error converting Markdown for #{document.url || document.path}: #{e.message}"
-          content_to_parse = "" # Fallback to empty content if conversion fails
-        end
-      else
-        Jekyll.logger.info "SearchDataCollector:", "   Document is not Markdown. Assuming HTML for parsing."
-      end
-
-      # If after conversion (or if it was already HTML) content is empty, skip.
-      if content_to_parse.nil? || content_to_parse.strip.empty?
-        Jekyll.logger.info "SearchDataCollector:", "   Content after conversion is empty. Skipping section extraction."
-        return
-      end
+      content_to_parse = document.output # Use the fully rendered output
       
+      if content_to_parse.nil? || content_to_parse.strip.empty?
+        Jekyll.logger.debug "SearchDataCollector:", "   Document output is empty. Skipping."
+        return
+      end
+
+      Jekyll.logger.debug "SearchDataCollector: --- Rendered Document.output start (first 200 chars) ---"
+      Jekyll.logger.debug content_to_parse.to_s[0..199].gsub(/\n/, '\\n') # Log raw content
+      Jekyll.logger.debug "SearchDataCollector: --- Rendered Document.output end ---"
+
       doc_fragment = Nokogiri::HTML.fragment(content_to_parse)
       # Track predicted IDs for this specific document, matching JS's document-level scope
       document_predicted_ids = Set.new
@@ -92,53 +93,48 @@ module Jekyll
 
       # Get all heading elements in order
       all_headings = doc_fragment.css('h1, h2, h3, h4, h5, h6')
-      Jekyll.logger.info "SearchDataCollector:", "   Found #{all_headings.size} headings in #{document.url || document.path}"
+      Jekyll.logger.debug "SearchDataCollector:", "   Found #{all_headings.size} headings in #{document.url || document.path}"
 
-      # --- Handle content BEFORE the first heading ---
-      # This will be considered the "introduction" section if it exists.
+      # --- Handle content BEFORE the first heading (as an "Introduction" section) ---
       first_heading_node = all_headings.first
+      pre_heading_content_nodes = []
       if first_heading_node
-        pre_heading_content_nodes = []
+        # Collect all nodes before the first heading
         doc_fragment.children.each do |node|
           break if node == first_heading_node
           pre_heading_content_nodes << node
         end
-
-        pre_heading_text = strip_html_and_normalize(pre_heading_content_nodes.map(&:to_html).join(''))
-
-        unless pre_heading_text.empty?
-          intro_slug_base = "introduction"
-          unique_intro_slug = intro_slug_base
-          counter = 1
-          while document_predicted_ids.include?(unique_intro_slug)
-            unique_intro_slug = "#{intro_slug_base}-#{counter}"
-            counter += 1
-          end
-          document_predicted_ids.add(unique_intro_slug)
-
-          search_data_array << {
-            "documenttitle"  => document.data['title'] || nil,
-            "sectiontitle"   => "Introduction",
-            "sectioncontent" => pre_heading_text,
-            "url"            => "#{base_url}##{unique_intro_slug}",
-            "date"           => document.data['date'] ? document.data['date'].to_s : nil,
-            "category"       => document.data['category'] || nil,
-            "tags"           => document.data['tags'] || []
-          }
-          Jekyll.logger.info "SearchDataCollector:", "   Collected 'Introduction' section for #{document.url || document.path}"
+      else # If no headings at all, all content is "pre-heading"
+        doc_fragment.children.each do |node|
+          pre_heading_content_nodes << node
         end
-      elsif !doc_fragment.text.strip.empty? # No headings, but there's content for the whole page
-        # If there are no headings at all, treat the entire page content as one section
+      end
+
+      pre_heading_text = strip_html_and_normalize(pre_heading_content_nodes.map(&:to_html).join(''))
+
+      # If there's content before the first heading, or if there are no headings at all,
+      # create an "Introduction" section using the document's title or a default.
+      unless pre_heading_text.empty?
+        section_title = document.data['title'] || "Page Content" # Use document title or a default
+        intro_slug_base = slugify(section_title) # Use slugified title for ID
+        unique_intro_slug = intro_slug_base
+        counter = 1
+        while document_predicted_ids.include?(unique_intro_slug)
+          unique_intro_slug = "#{intro_slug_base}-#{counter}"
+          counter += 1
+        end
+        document_predicted_ids.add(unique_intro_slug)
+
         search_data_array << {
           "documenttitle"  => document.data['title'] || nil,
-          "sectiontitle"   => document.data['title'] || "Page Content", # Use doc title as section title if no headings
-          "sectioncontent" => strip_html_and_normalize(doc_fragment.to_html),
-          "url"            => base_url, # No specific anchor needed here
+          "sectiontitle"   => section_title,
+          "sectioncontent" => pre_heading_text,
+          "url"            => "#{base_url}##{unique_intro_slug}", # Use the slug for the URL anchor
           "date"           => document.data['date'] ? document.data['date'].to_s : nil,
           "category"       => document.data['category'] || nil,
           "tags"           => document.data['tags'] || []
         }
-        Jekyll.logger.info "SearchDataCollector:", "   Collected full page content section (no headings) for #{document.url || document.path}"
+        Jekyll.logger.debug "SearchDataCollector:", "   Collected 'Introduction' section (using document title) for #{document.url || document.path}"
       end
       # --- End handling content BEFORE the first heading ---
 
@@ -149,7 +145,7 @@ module Jekyll
         # Predict the final ID using the same logic that the JS will use
         if original_id && !original_id.empty?
           final_id = original_id
-          Jekyll.logger.info "SearchDataCollector:", "   Using existing ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
+          Jekyll.logger.debug "SearchDataCollector:", "   Using existing ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
         else
           # Use the slugify function that matches the JS logic
           slug_base = slugify(heading_element.text)
@@ -161,7 +157,7 @@ module Jekyll
             counter += 1
           end
           final_id = unique_slug
-          Jekyll.logger.info "SearchDataCollector:", "   Predicted new ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
+          Jekyll.logger.debug "SearchDataCollector:", "   Predicted new ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
         end
 
         # Add to set to maintain uniqueness prediction for the current document
@@ -202,19 +198,19 @@ module Jekyll
           "category"       => document.data['category'] || nil,
           "tags"           => document.data['tags'] || []
         }
-        Jekyll.logger.info "SearchDataCollector:", "   Collected search data for ID: #{final_id}"
+        Jekyll.logger.debug "SearchDataCollector:", "   Collected search data for ID: #{final_id}"
       end
     end
 
     # Helper function to slugify text, IDENTICAL to the js.txt logic
-    def slugify(text)
+    def self.slugify(text)
       text.to_s.downcase.strip
         .gsub(/[^a-z0-9\s-]/, '') # Remove non-word characters
         .gsub(/\s+/, '-')        # Replace spaces with dashes
     end
 
     # Helper function to strip HTML and normalize whitespace, now excluding script and style tags.
-    def strip_html_and_normalize(html_content)
+    def self.strip_html_and_normalize(html_content)
       doc = Nokogiri::HTML.fragment(html_content)
       # Remove script and style tags
       doc.css('script, style').each(&:remove)
