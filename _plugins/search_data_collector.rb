@@ -32,7 +32,7 @@ module Jekyll
         if page.data['title'] && page.url != '/search.json' && !page.data['sitemap_exclude'] && !page.path.include?('_data') && page.respond_to?(:content) && !page.is_a?(Jekyll::StaticFile)
           collect_document_data(page, search_sections_data, site)
         else
-          Jekyll.logger.debug "SearchDataCollector:", "Skipping page due to filter: #{page.url || page.path}"
+          Jekyll.logger.info "SearchDataCollector:", "Skipping page due to filter: #{page.url || page.path}"
         end
       end
 
@@ -46,41 +46,41 @@ module Jekyll
 
     # Helper method that defines how to collect data for a single document
     def collect_document_data(document, search_data_array, site)
-      Jekyll.logger.debug "SearchDataCollector:", "Collecting data for: #{document.url || document.path}"
-      Jekyll.logger.debug "SearchDataCollector: Document Class: #{document.class}"
-      Jekyll.logger.debug "SearchDataCollector: Document Path: #{document.path}"
-      Jekyll.logger.debug "SearchDataCollector: Has Front Matter?: #{document.data.any?}"
-      Jekyll.logger.debug "SearchDataCollector: Is Renderable?: #{document.respond_to?(:content) && !document.is_a?(Jekyll::StaticFile)}"
+      Jekyll.logger.info "SearchDataCollector:", "Collecting data for: #{document.url || document.path}"
+      Jekyll.logger.info "SearchDataCollector: Document Class: #{document.class}"
+      Jekyll.logger.info "SearchDataCollector: Document Path: #{document.path}"
+      Jekyll.logger.info "SearchDataCollector: Has Front Matter?: #{document.data.any?}"
+      Jekyll.logger.info "SearchDataCollector: Is Renderable?: #{document.respond_to?(:content) && !document.is_a?(Jekyll::StaticFile)}"
 
       # Ensure document.content exists and is not empty before proceeding
       if document.content.nil? || document.content.strip.empty?
-        Jekyll.logger.debug "SearchDataCollector:", "  Document has no content or is empty. Skipping."
+        Jekyll.logger.info "SearchDataCollector:", "   Document has no content or is empty. Skipping."
         return
       end
 
       content_to_parse = document.content
-      Jekyll.logger.debug "SearchDataCollector: --- Raw Document.content start (first 200 chars) ---"
-      Jekyll.logger.debug content_to_parse.to_s[0..199].gsub(/\n/, '\\n') # Log raw content
-      Jekyll.logger.debug "SearchDataCollector: --- Raw Document.content end ---"
+      Jekyll.logger.info "SearchDataCollector: --- Raw Document.content start (first 200 chars) ---"
+      Jekyll.logger.info content_to_parse.to_s[0..199].gsub(/\n/, '\\n') # Log raw content
+      Jekyll.logger.info "SearchDataCollector: --- Raw Document.content end ---"
 
       # CRITICAL: Convert Markdown to HTML if the document is a Markdown file
       if document.extname =~ /\.(md|markdown)$/i
-        Jekyll.logger.debug "SearchDataCollector:", "  Document is Markdown. Converting to HTML for parsing..."
+        Jekyll.logger.info "SearchDataCollector:", "   Document is Markdown. Converting to HTML for parsing..."
         begin
           converter = site.find_converter_instance(Jekyll::Converters::Markdown)
           content_to_parse = converter.convert(document.content)
-          Jekyll.logger.debug "SearchDataCollector:", "  Markdown conversion successful."
+          Jekyll.logger.info "SearchDataCollector:", "   Markdown conversion successful."
         rescue => e
-          Jekyll.logger.error "SearchDataCollector:", "  Error converting Markdown for #{document.url || document.path}: #{e.message}"
+          Jekyll.logger.error "SearchDataCollector:", "   Error converting Markdown for #{document.url || document.path}: #{e.message}"
           content_to_parse = "" # Fallback to empty content if conversion fails
         end
       else
-        Jekyll.logger.debug "SearchDataCollector:", "  Document is not Markdown. Assuming HTML for parsing."
+        Jekyll.logger.info "SearchDataCollector:", "   Document is not Markdown. Assuming HTML for parsing."
       end
 
       # If after conversion (or if it was already HTML) content is empty, skip.
       if content_to_parse.nil? || content_to_parse.strip.empty?
-        Jekyll.logger.debug "SearchDataCollector:", "  Content after conversion is empty. Skipping section extraction."
+        Jekyll.logger.info "SearchDataCollector:", "   Content after conversion is empty. Skipping section extraction."
         return
       end
       
@@ -92,7 +92,7 @@ module Jekyll
 
       # Get all heading elements in order
       all_headings = doc_fragment.css('h1, h2, h3, h4, h5, h6')
-      Jekyll.logger.debug "SearchDataCollector:", "  Found #{all_headings.size} headings in #{document.url || document.path}"
+      Jekyll.logger.info "SearchDataCollector:", "   Found #{all_headings.size} headings in #{document.url || document.path}"
 
       # --- Handle content BEFORE the first heading ---
       # This will be considered the "introduction" section if it exists.
@@ -125,7 +125,7 @@ module Jekyll
             "category"       => document.data['category'] || nil,
             "tags"           => document.data['tags'] || []
           }
-          Jekyll.logger.debug "SearchDataCollector:", "  Collected 'Introduction' section for #{document.url || document.path}"
+          Jekyll.logger.info "SearchDataCollector:", "   Collected 'Introduction' section for #{document.url || document.path}"
         end
       elsif !doc_fragment.text.strip.empty? # No headings, but there's content for the whole page
         search_data_array << {
@@ -137,7 +137,7 @@ module Jekyll
           "category"       => document.data['category'] || nil,
           "tags"           => document.data['tags'] || []
         }
-        Jekyll.logger.debug "SearchDataCollector:", "  Collected full page content section (no headings) for #{document.url || document.path}"
+        Jekyll.logger.info "SearchDataCollector:", "   Collected full page content section (no headings) for #{document.url || document.path}"
       end
       # --- End handling content BEFORE the first heading ---
 
@@ -148,7 +148,7 @@ module Jekyll
         # Predict the final ID using the same logic that the JS will use
         if original_id && !original_id.empty?
           final_id = original_id
-          Jekyll.logger.debug "SearchDataCollector:", "  Using existing ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
+          Jekyll.logger.info "SearchDataCollector:", "   Using existing ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
         else
           # Use the slugify function that matches the JS logic
           slug_base = slugify(heading_element.text)
@@ -160,7 +160,7 @@ module Jekyll
             counter += 1
           end
           final_id = unique_slug
-          Jekyll.logger.debug "SearchDataCollector:", "  Predicted new ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
+          Jekyll.logger.info "SearchDataCollector:", "   Predicted new ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
         end
 
         # Add to set to maintain uniqueness prediction for the current document
@@ -201,7 +201,7 @@ module Jekyll
           "category"       => document.data['category'] || nil,
           "tags"           => document.data['tags'] || []
         }
-        Jekyll.logger.debug "SearchDataCollector:", "  Collected search data for ID: #{final_id}"
+        Jekyll.logger.info "SearchDataCollector:", "   Collected search data for ID: #{final_id}"
       end
     end
 
@@ -212,9 +212,12 @@ module Jekyll
         .gsub(/\s+/, '-')        # Replace spaces with dashes
     end
 
-    # Helper function to strip HTML and normalize whitespace (MUST be IDENTICAL to the one in your JS if used elsewhere)
+    # Helper function to strip HTML and normalize whitespace, now excluding script and style tags.
     def strip_html_and_normalize(html_content)
-      Nokogiri::HTML.fragment(html_content).text
+      doc = Nokogiri::HTML.fragment(html_content)
+      # Remove script and style tags
+      doc.css('script, style').each(&:remove)
+      doc.text
         .gsub(/\s+/, ' ')
         .strip
     end
