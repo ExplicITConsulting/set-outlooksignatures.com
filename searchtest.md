@@ -18,7 +18,7 @@ description: Search and find. What are you looking for?
     (function() {
         // Define all possible fields from your search.json for indexing and storing.
         // This list should be exhaustive based on your JSON structure.
-        const allSearchFields = ["documenttitle", "title", "content", "url", "date", "category", "tags"];
+        const allSearchFields = ["document", "section", "content", "url", "date", "category", "tags"];
 
         // Initialize FlexSearch index
         const index = new FlexSearch.Document({
@@ -81,7 +81,7 @@ description: Search and find. What are you looking for?
             // Perform the search with advanced options
             // Pass 'suggest: true' to the search method to get suggestions alongside results.
             const rawResults = index.search(query, {
-                limit: 20, // Limit the number of results
+                limit: 99, // Limit the number of results
                 enrich: true, // Return the full document (stored fields)
                 suggest: true // Request suggestions with the search results
             });
@@ -219,6 +219,7 @@ description: Search and find. What are you looking for?
     .search-results-list {
         list-style: none;
         padding: 0;
+        margin: 0;
     }
 
     .search-results-list li {

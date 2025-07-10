@@ -103,9 +103,9 @@ module Jekyll
 
         # Add to our search data array
         @@search_sections_data << { # Add to global array
-          "documenttitle"  => decoded_document_title, # Use decoded title for documenttitle
-          "title"          => section_title,
-          "content"        => "#{section_title} #{section_content}".strip,
+          "document"  => decoded_document_title, # Use decoded title for documenttitle
+          "section"          => section_title,
+          "content"        => "#{section_content}".strip,
           "url"            => full_url,
           "date"           => doc.data['date'] ? doc.data['date'].to_s : nil,
           "category"       => doc.data['category'] || nil,
