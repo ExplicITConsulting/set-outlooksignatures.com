@@ -10,10 +10,11 @@ permalink: /searchtest/
     <p>Results will appear here.</p>
 </div>
 
-<script src="https://unpkg.com/flexsearch@0.8.205/dist/flexsearch.bundle.js"></script>
+<!-- Using jsdelivr.net for FlexSearch, which should resolve MIME type issues -->
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.8.205/dist/flexsearch.bundle.js"></script>
 
 <script>
-    (function () {
+    (function() {
         // Initialize FlexSearch index
         const index = new FlexSearch.Document({
             // Define the document fields to be indexed
@@ -191,8 +192,7 @@ permalink: /searchtest/
 
     .search-results-list li a {
         text-decoration: none;
-        color: #3273dc;
-        /* Bulma's info color */
+        color: #3273dc; /* Bulma's info color */
     }
 
     .search-results-list li a:hover {
@@ -200,8 +200,7 @@ permalink: /searchtest/
     }
 
     mark {
-        background-color: #ffe08a;
-        /* A light yellow for highlighting */
+        background-color: #ffe08a; /* A light yellow for highlighting */
         padding: 0 2px;
         border-radius: 3px;
     }
