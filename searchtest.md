@@ -11,7 +11,7 @@ permalink: /searchtest/
 </div>
 
 <!-- Using jsdelivr.net for FlexSearch, which should resolve MIME type issues -->
-<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.8.205/dist/flexsearch.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0/dist/flexsearch.bundle.min.js"></script>
 
 <script>
     (function() {
