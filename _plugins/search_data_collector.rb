@@ -30,7 +30,8 @@ module Jekyll
       # Basic check to ensure it's HTML content we can parse (e.g., not a static CSS/JS file)
       # This is more robust than relying on .extname alone for post_render hook.
       # Also explicitly check for common XML files that might be Jekyll::Page objects.
-      next unless (doc.output.strip.start_with?('<') || doc.output.strip.start_with!('<!DOCTYPE')) &&
+      # Corrected: Changed start_with! to start_with?
+      next unless (doc.output.strip.start_with?('<') || doc.output.strip.start_with?('<!DOCTYPE')) &&
                   !['/sitemap.xml', '/feed.xml'].include?(doc.url)
 
       Jekyll.logger.info "SearchDataCollector:", "Processing document: #{doc.url || doc.path}"
