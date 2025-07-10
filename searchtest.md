@@ -11,7 +11,7 @@ description: Search and find. What are you looking for?
     <p>Results will appear here.</p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/flexsearch@0/dist/flexsearch.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.8.205/dist/flexsearch.bundle.min.js"></script>
 
 <script>
     (function() {
