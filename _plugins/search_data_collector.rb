@@ -103,7 +103,7 @@ module Jekyll
 
         # Add to our search data array
         @@search_sections_data << { # Add to global array
-          "document" => "#{decoded_document_title, # Use decoded title for documenttitle
+          "document" => "#{decoded_document_title}".strip, # Use decoded title for documenttitle
           "section"  => "#{section_title}".strip,
           "content"  => "#{section_content}".strip,
           "url"      => "#{full_url}".strip,
