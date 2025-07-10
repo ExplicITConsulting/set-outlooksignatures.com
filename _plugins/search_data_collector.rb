@@ -17,23 +17,20 @@ module Jekyll
 
     # Register a hook to run after each individual page/document has been rendered
     Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
-      Jekyll.logger.info "SearchDataCollector:", "Triggered by document: #{doc.url || doc.path}"
-
       # Skip if doc.output is nil or empty (no content), or if it's the search.json page itself,
       # or if it's explicitly excluded from sitemap/indexing.
       next if doc.output.nil? || doc.output.empty?
       next if doc.url == '/search.json' || doc.data['sitemap_exclude']
 
       # Skip pages that are Jekyll redirects (using 'redirect_from'/'redirect_to' in front matter)
-      # next if doc.data['redirect_from']
-      next if doc.data['redirect_to']
+      next if doc.data['redirect_from'] || doc.data['redirect_to']
       # Also skip pages whose *rendered content* is just a redirect message or meta refresh
       next if doc.output.strip.start_with?("Redirecting") || doc.output.include?('<meta http-equiv="refresh"')
 
       # Basic check to ensure it's HTML content we can parse (e.g., not a static CSS/JS file)
       # This is more robust than relying on .extname alone for post_render hook.
       # Also explicitly check for common XML files that might be Jekyll::Page objects.
-      next unless (doc.output.strip.start_with?('<') || doc.output.strip.start_with?('<!DOCTYPE')) &&
+      next unless (doc.output.strip.start_with?('<') || doc.output.strip.start_with!('<!DOCTYPE')) &&
                   !['/sitemap.xml', '/feed.xml'].include?(doc.url)
 
       Jekyll.logger.info "SearchDataCollector:", "Processing document: #{doc.url || doc.path}"
@@ -71,7 +68,10 @@ module Jekyll
       # If there's content before the first heading, or if there are no headings at all,
       # create an "Introduction" section using the document's title or a default.
       unless pre_heading_text.empty?
-        section_title = doc.data['title'] || "Page Content" # Use document title or a default
+        # Decode HTML entities in the document title for the section title
+        decoded_document_title = doc.data['title'] ? Nokogiri::HTML.fragment(doc.data['title']).text : nil
+        section_title = decoded_document_title || "Page Content" # Use document title or a default
+        
         intro_slug_base = slugify(section_title) # Use slugified title for ID
         unique_intro_slug = intro_slug_base
         counter = 1
@@ -83,13 +83,13 @@ module Jekyll
         document_predicted_ids_local.add(unique_intro_slug)
 
         @@search_sections_data << { # Add to global array
-          "documenttitle"  => doc.data['title'] || nil,
-          "title"          => section_title, # Changed from "sectiontitle" to "title"
-          "content"        => pre_heading_text, # Changed from "sectioncontent" to "content"
-          "url"            => "#{base_url}##{unique_intro_slug}", # Use the slug for the URL anchor
+          "documenttitle"  => decoded_document_title, # Use decoded title for documenttitle
+          "title"          => section_title,
+          "content"        => pre_heading_text,
+          "url"            => "#{base_url}##{unique_intro_slug}",
           "date"           => doc.data['date'] ? doc.data['date'].to_s : nil,
           "category"       => doc.data['category'] || nil,
-          "tags"           => doc.data['tags'] && !doc.data['tags'].empty? ? doc.data['tags'].join(', ') : "" # Ensure tags is a string
+          "tags"           => doc.data['tags'] && !doc.data['tags'].empty? ? doc.data['tags'].join(', ') : ""
         }
         Jekyll.logger.info "SearchDataCollector:", "   Collected 'Introduction' section (using document title) for #{doc.url || doc.path}"
       end
@@ -121,6 +121,7 @@ module Jekyll
         document_predicted_ids_local.add(final_id)
 
         # Extract section title (no anchor icon added at this stage)
+        # heading_element.text automatically decodes entities
         section_title = heading_element.text.strip.gsub(/\s+/, ' ') # Normalize whitespace
 
         section_content_nodes = []
@@ -145,15 +146,18 @@ module Jekyll
         # Construct the URL with the predicted anchor
         full_url = "#{base_url}##{final_id}"
 
+        # Decode HTML entities in the document title for the documenttitle field
+        decoded_document_title = doc.data['title'] ? Nokogiri::HTML.fragment(doc.data['title']).text : nil
+
         # Add to our search data array
         @@search_sections_data << { # Add to global array
-          "documenttitle"  => doc.data['title'] || nil,
-          "title"          => section_title, # Changed from "sectiontitle" to "title"
-          "content"        => "#{section_title} #{section_content}".strip, # Changed from "sectioncontent" to "content"
+          "documenttitle"  => decoded_document_title, # Use decoded title for documenttitle
+          "title"          => section_title,
+          "content"        => "#{section_title} #{section_content}".strip,
           "url"            => full_url,
           "date"           => doc.data['date'] ? doc.data['date'].to_s : nil,
           "category"       => doc.data['category'] || nil,
-          "tags"           => doc.data['tags'] && !doc.data['tags'].empty? ? doc.data['tags'].join(', ') : "" # Ensure tags is a string
+          "tags"           => doc.data['tags'] && !doc.data['tags'].empty? ? doc.data['tags'].join(', ') : ""
         }
         Jekyll.logger.info "SearchDataCollector:", "   Collected search data for ID: #{final_id}"
       end
