@@ -33,7 +33,7 @@ module Jekyll
       next unless (doc.output.strip.start_with?('<') || doc.output.strip.start_with?('<!DOCTYPE')) &&
                   !['/sitemap.xml', '/feed.xml'].include?(doc.url)
 
-      Jekyll.logger.debug "SearchDataCollector:", "Processing document: #{doc.url || doc.path}"
+      Jekyll.logger.info "SearchDataCollector:", "Processing document: #{doc.url || doc.path}"
 
       # Parse the final HTML output (`doc.output`) as an HTML fragment
       doc_fragment = Nokogiri::HTML.fragment(doc.output)
@@ -46,7 +46,7 @@ module Jekyll
 
       # Get all heading elements in order
       all_headings = doc_fragment.css('h1, h2, h3, h4, h5, h6')
-      Jekyll.logger.debug "SearchDataCollector:", "   Found #{all_headings.size} headings in #{doc.url || doc.path}"
+      Jekyll.logger.info "SearchDataCollector:", "   Found #{all_headings.size} headings in #{doc.url || doc.path}"
 
       # --- Handle content BEFORE the first heading (as an "Introduction" section) ---
       first_heading_node = all_headings.first
@@ -81,14 +81,14 @@ module Jekyll
 
         @@search_sections_data << { # Add to global array
           "documenttitle"  => doc.data['title'] || nil,
-          "sectiontitle"   => section_title,
-          "sectioncontent" => pre_heading_text,
+          "title"          => section_title, # Changed from "sectiontitle" to "title"
+          "content"        => pre_heading_text, # Changed from "sectioncontent" to "content"
           "url"            => "#{base_url}##{unique_intro_slug}", # Use the slug for the URL anchor
           "date"           => doc.data['date'] ? doc.data['date'].to_s : nil,
           "category"       => doc.data['category'] || nil,
-          "tags"           => doc.data['tags'] || []
+          "tags"           => doc.data['tags'] && !doc.data['tags'].empty? ? doc.data['tags'].join(', ') : "" # Ensure tags is a string
         }
-        Jekyll.logger.debug "SearchDataCollector:", "   Collected 'Introduction' section (using document title) for #{doc.url || doc.path}"
+        Jekyll.logger.info "SearchDataCollector:", "   Collected 'Introduction' section (using document title) for #{doc.url || doc.path}"
       end
       # --- End handling content BEFORE the first heading ---
 
@@ -99,7 +99,7 @@ module Jekyll
         # Predict the final ID using the same logic that the JS will use
         if original_id && !original_id.empty?
           final_id = original_id
-          Jekyll.logger.debug "SearchDataCollector:", "   Using existing ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
+          Jekyll.logger.info "SearchDataCollector:", "   Using existing ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
         else
           # Use the slugify function that matches the JS logic
           slug_base = slugify(heading_element.text)
@@ -111,7 +111,7 @@ module Jekyll
             counter += 1
           end
           final_id = unique_slug
-          Jekyll.logger.debug "SearchDataCollector:", "   Predicted new ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
+          Jekyll.logger.info "SearchDataCollector:", "   Predicted new ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
         end
 
         # Add to set to maintain uniqueness prediction for the current document
@@ -145,14 +145,14 @@ module Jekyll
         # Add to our search data array
         @@search_sections_data << { # Add to global array
           "documenttitle"  => doc.data['title'] || nil,
-          "sectiontitle"   => section_title,
-          "sectioncontent" => "#{section_title} #{section_content}".strip, # Include section title in search content for better relevance
+          "title"          => section_title, # Changed from "sectiontitle" to "title"
+          "content"        => "#{section_title} #{section_content}".strip, # Changed from "sectioncontent" to "content"
           "url"            => full_url,
           "date"           => doc.data['date'] ? doc.data['date'].to_s : nil,
           "category"       => doc.data['category'] || nil,
-          "tags"           => doc.data['tags'] || []
+          "tags"           => doc.data['tags'] && !doc.data['tags'].empty? ? doc.data['tags'].join(', ') : "" # Ensure tags is a string
         }
-        Jekyll.logger.debug "SearchDataCollector:", "   Collected search data for ID: #{final_id}"
+        Jekyll.logger.info "SearchDataCollector:", "   Collected search data for ID: #{final_id}"
       end
     end
 
