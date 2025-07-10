@@ -143,7 +143,7 @@ description: Search and find. What are you looking for?
                         }
                         // Truncate content for display, add ellipsis if truncated
                         const truncatedContent = fieldContent.length > 150 ? fieldContent.substring(0, 150) + '...' : fieldContent;
-                        displayContent += `<p class="is-size-7 has-text-primary mt-1"><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${truncatedContent}</p>`;
+                        displayContent += `<p class="is-size-7 mt-1"><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${truncatedContent}</p>`;
                     }
                 });
 
@@ -159,8 +159,8 @@ description: Search and find. What are you looking for?
 
                 html += `
                     <li class="box mb-4">
-                        <a href="${url}" class="has-text-primary is-size-5 has-text-weight-bold">${title}</a>
-                        <p class="is-size-7 has-text-primary">${url}</p>
+                        <a href="${url}" class="is-size-5 has-text-weight-bold">${title}</a>
+                        <p class="is-size-7">${url}</p>
                         ${displayContent}
                     </li>
                 `;
