@@ -14,216 +14,232 @@ description: Search and find. What are you looking for?
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.8.205/dist/flexsearch.bundle.min.js"></script>
 
 <script>
-    (function() {
-        // Define all possible fields from your search.json for indexing and storing.
-        // This list should be exhaustive based on your JSON structure.
-        const allSearchFields = ["document", "section", "content", "url", "date", "category", "tags"];
+    (function() {
+        const allSearchFields = ["document", "section", "content", "url", "date", "category", "tags"];
 
-        // Initialize FlexSearch index
-        const index = new FlexSearch.Document({
-            // Define the document fields to be indexed
-            document: {
-                id: "url", // Unique identifier for each document
-                index: allSearchFields, // Index all specified fields
-                store: allSearchFields // Store all specified fields for retrieval
-            },
-            // Configure search options for better results
-            tokenize: "full", // Tokenize by words, allowing partial matches
-            resolution: 9, // Higher resolution for better relevance
-            depth: 2, // Deeper search for nested objects if any (though our JSON is flat)
-            optimize: true, // Optimize index for faster searches
-            cache: true, // Cache search results
-            // Note: 'suggest: true' here primarily influences internal indexing for suggestions.
-            // The actual suggestion retrieval is done via the search method's options.
-            suggest: true,
-        });
+        // Initialize FlexSearch index
+        const index = new FlexSearch.Document({
+            document: {
+                id: "url", // Unique identifier for each document
+                index: allSearchFields, // Index all specified fields
+                store: allSearchFields // Store all specified fields for retrieval
+            },
+            // Configure search options for better results
+            tokenize: "full", // Tokenize by words, allowing partial matches
+            resolution: 9, // Higher resolution for better relevance
+            depth: 2, // Deeper search for nested objects if any (though our JSON is flat)
+            optimize: true, // Optimize index for faster searches
+            cache: true, // Cache search results
+            // 'suggest' option removed
+        });
 
-        // Fetch the search.json data and populate the index
-        fetch('/search.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                data.forEach((item, i) => {
-                    // Add each item from the JSON to the FlexSearch index
-                    // Ensure 'url' is present and unique for each item.
-                    // If 'url' is not always present, you might need a fallback ID.
-                    if (item.url) {
-                        index.add(item);
-                    } else {
-                        console.warn('Item missing URL, skipping for FlexSearch index:', item);
-                    }
-                });
-                console.log('FlexSearch index populated successfully.');
-            })
-            .catch(error => {
-                console.error('Error fetching or parsing search.json:', error);
-                document.getElementById('search-results').innerHTML = '<p class="has-text-primary">Error loading search data. Please try again later.</p>';
-            });
+        // Fetch the search.json data and populate the index
+        fetch('/search.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                data.forEach((item, i) => {
+                    if (item.url) {
+                        index.add(item);
+                    } else {
+                        console.warn('Item missing URL, skipping for FlexSearch index:', item);
+                    }
+                });
+                console.log('FlexSearch index populated successfully.');
+            })
+            .catch(error => {
+                console.error('Error fetching or parsing search.json:', error);
+                document.getElementById('search-results').innerHTML = '<p class="has-text-primary">Error loading search data. Please try again later.</p>';
+            });
 
-        const searchInput = document.getElementById('search-input');
-        const searchResultsContainer = document.getElementById('search-results');
-        let searchTimeout;
+        const searchInput = document.getElementById('search-input');
+        const searchResultsContainer = document.getElementById('search-results');
+        let searchTimeout;
 
-// Function to perform search and display results
-        function performSearch() {
-            const query = searchInput.value.trim();
+        // Function to perform search and display results
+        function performSearch() {
+            const query = searchInput.value.trim();
 
-            if (query.length === 0) {
-                searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
-                return;
-            }
+            if (query.length === 0) {
+                searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
+                return;
+            }
 
-            // --- START ADDITION FOR OPTION 2 ---
-            // Explicitly check if the query is a non-empty string.
-            // This defends against potential edge cases where 'query' might not be a string
-            // or an empty string might somehow slip through due to timing/debounce.
             if (typeof query !== 'string' || query.length === 0) {
                 console.warn("Invalid search query received (not a non-empty string):", query);
                 searchResultsContainer.innerHTML = '<p>Please enter a valid search term.</p>';
                 return;
             }
-            // --- END ADDITION FOR OPTION 2 ---
 
-            // Perform the search with advanced options
-            const rawResults = index.search(query, {
-                limit: 99, // Limit the number of results
-                enrich: true, // Return the full document (stored fields)
-                // highlight: true, // Enable highlighting!
-                suggest: true // Request suggestions with the search results
-            });
+            // Perform the search with advanced options
+            const rawResults = index.search(query, {
+                limit: 99, // Limit the number of results
+                enrich: true, // Return the full document (stored fields)
+                // 'highlight' and 'suggest' options removed here to use custom logic
+            });
 
-            // FlexSearch can return results grouped by field if searching across multiple fields.
-            // This flattens the results to a single array of enriched documents.
-            let flatResults = [];
-            let suggestions = []; // Array to hold extracted suggestions
+            let flatResults = [];
+            
+            rawResults.forEach(fieldResult => {
+                if (fieldResult && fieldResult.field && Array.isArray(fieldResult.result)) {
+                    // Flatten results and add 'doc' property for consistency
+                    fieldResult.result.forEach(r => flatResults.push({ id: r.id, doc: index.get(r.id) }));
+                } else if (fieldResult && fieldResult.doc) {
+                    flatResults.push(fieldResult);
+                }
+            });
 
-            rawResults.forEach(fieldResult => {
-                // Check if it's a field-grouped result (e.g., {field: "title", result: [...]})
-                if (fieldResult && fieldResult.field && Array.isArray(fieldResult.result)) {
-                    flatResults = flatResults.concat(fieldResult.result);
-                    // Extract suggestions if available at the field level
-                    if (fieldResult.suggestion) {
-                        suggestions.push(fieldResult.suggestion);
-                    }
-                } else if (fieldResult && fieldResult.doc) {
-                    // It's already an enriched document directly
-                    flatResults.push(fieldResult);
-                    // Extract suggestions if available at the document level
-                    if (fieldResult.suggestion) {
-                        suggestions.push(fieldResult.suggestion);
-                    }
-                } else if (typeof fieldResult === 'string') {
-                    // Sometimes 'suggest: true' can return raw suggestion strings directly in the top-level array
-                    suggestions.push(fieldResult);
-                }
-            });
+            displayResults(flatResults, query);
+        }
 
-            displayResults(flatResults, query);
-            displaySuggestions(suggestions); // Pass the extracted suggestions
-        }
+        // Function to display search results
+        function displayResults(results, query) {
+            if (results.length === 0) {
+                searchResultsContainer.innerHTML = '<p>No results found.</p>';
+                return;
+            }
 
-        // Function to display search results
-        function displayResults(results, query) {
-            if (results.length === 0) {
-                searchResultsContainer.innerHTML = '<p>No results found.</p>';
-                return;
-            }
+            let html = '<ul class="search-results-list">';
+            results.forEach(result => {
+                const item = result.doc;
+                if (!item) {
+                    console.warn('Skipping search result with undefined document:', result);
+                    return;
+                }
 
-            let html = '<ul class="search-results-list">';
-            results.forEach(result => {
-                // IMPORTANT: Ensure result.doc is not undefined before proceeding
-                const item = result.doc;
-                if (!item) {
-                    console.warn('Skipping search result with undefined document:', result);
-                    return; // Skip this iteration if item (result.doc) is undefined
-                }
+                let displayContent = '';
+                allSearchFields.forEach(field => {
+                    if (item[field] && typeof item[field] === 'string' && item[field].length > 0) {
+                        let displayedFieldContent;
 
-                // Dynamically get content from all indexed fields for display
-                let displayContent = '';
-                allSearchFields.forEach(field => {
-                    if (item[field] && typeof item[field] === 'string' && item[field].length > 0) {
-                        let fieldContent = item[field];
-                        // Highlight matches in the current field
-if (
-    result.highlight &&
-    Array.isArray(result.highlight[field]) &&
-    result.highlight[field].every(r => Array.isArray(r) && r.length === 2)
-) {
-    fieldContent = highlightText(fieldContent, result.highlight[field]);
-}
+                        if (field === 'content' || field === 'section') {
+                            // For 'content' or 'section', generate a contextual snippet
+                            // Default: ~250 chars total, trying to show ~80 chars context around match
+                            displayedFieldContent = generateContextualSnippet(item[field], query, 250, 80);
+                        } else {
+                            // For other fields, just apply highlighting to the whole field
+                            displayedFieldContent = applyHighlighting(item[field], query);
+                            // Add simple truncation for non-content fields if they can be long, but not for URLs
+                            if (field !== 'url' && displayedFieldContent.length > 150) {
+                                displayedFieldContent = displayedFieldContent.substring(0, 150) + '...';
+                            }
+                        }
+                        
+                        displayContent += `<p class="is-size-7 mt-1"><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${displayedFieldContent}</p>`;
+                    }
+                });
 
-                        // Truncate content for display, add ellipsis if truncated
-                        const truncatedContent = fieldContent.length > 150 ? fieldContent.substring(0, 150) + '...' : fieldContent;
-                        displayContent += `<p class="is-size-7 mt-1"><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${truncatedContent}</p>`;
-                    }
-                });
+                let title = item.document || 'No Title';
+                title = applyHighlighting(title, query); // Apply highlighting to the title
 
+                const url = item.url || '#';
 
-                let title = item.document || 'No Title';
-                const url = item.url || '#';
+                html += `
+                    <li class="box mb-4">
+                        <a href="${url}" class="is-size-5 has-text-weight-bold">${title}</a>
+                        <p class="is-size-7">${url}</p>
+                        ${displayContent}
+                    </li>
+                `;
+            });
+            html += '</ul>';
+            searchResultsContainer.innerHTML = html;
+        }
 
-                // Highlight matches in title (which is 'document' in your index)
-                if (result.highlight && result.highlight.document) {
-                    title = highlightText(title, result.highlight.document);
-                }
+        // Helper function to apply <mark> highlighting tags
+        function applyHighlighting(text, query) {
+            if (!text || typeof text !== 'string' || !query || typeof query !== 'string' || query.trim().length === 0) {
+                return text;
+            }
+            // Escape special characters in the query for regex
+            const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            // Create a regex for case-insensitive global matching
+            const regex = new RegExp(`(${escapedQuery})`, 'gi');
+            // Replace matched terms with highlighted versions
+            return text.replace(regex, '<mark>$1</mark>');
+        }
 
+        // New helper function to generate a contextual snippet around highlighted terms
+        function generateContextualSnippet(fullText, query, totalSnippetLength = 250, contextChars = 80) {
+            if (!fullText || typeof fullText !== 'string' || !query || typeof query !== 'string' || query.trim().length === 0) {
+                // If no valid text or query, apply highlighting to a truncated version (if query is valid)
+                return applyHighlighting(fullText.substring(0, totalSnippetLength), query) + (fullText.length > totalSnippetLength ? '...' : '');
+            }
 
-                html += `<li class="box mb-4"><a href="${url}" class="is-size-5 has-text-weight-bold">${title}</a><p class="is-size-7">${url}</p>${displayContent}</li>`;
-            });
-            html += '</ul>';
-            searchResultsContainer.innerHTML = html;
-        }
+            const lowerText = fullText.toLowerCase();
+            const lowerQuery = query.toLowerCase();
+            
+            let matchIndexes = [];
+            let currentPos = lowerText.indexOf(lowerQuery);
+            while (currentPos !== -1) {
+                matchIndexes.push(currentPos);
+                currentPos = lowerText.indexOf(lowerQuery, currentPos + lowerQuery.length);
+            }
 
-        // Helper function to highlight text
-function highlightText(text, highlightRanges) {
-    if (!Array.isArray(highlightRanges)) return text;
+            if (matchIndexes.length === 0) {
+                // If query not found in text, return a simple truncated snippet with highlight applied
+                return applyHighlighting(fullText.substring(0, totalSnippetLength), query) + (fullText.length > totalSnippetLength ? '...' : '');
+            }
 
-    highlightRanges.sort((a, b) => a[0] - b[0]);
-    let highlightedText = '';
-    let lastIndex = 0;
+            // Use the first match to center the snippet
+            const firstMatchIndex = matchIndexes[0];
 
-    highlightRanges.forEach(range => {
-        if (!Array.isArray(range) || range.length !== 2) return;
-        const [start, end] = range;
-        highlightedText += text.substring(lastIndex, start);
-        highlightedText += `<mark>${text.substring(start, end)}</mark>`;
-        lastIndex = end;
-    });
+            // Calculate the ideal start and end of the snippet
+            let start = Math.max(0, firstMatchIndex - contextChars);
+            let end = Math.min(fullText.length, firstMatchIndex + lowerQuery.length + contextChars);
 
-    highlightedText += text.substring(lastIndex);
-    return highlightedText;
-}
-
-
-        // Function to display suggestions (for autocomplete)
-        // Now accepts an array of suggestions directly
-        function displaySuggestions(suggestions) {
-            // Remove duplicates from suggestions, as they might appear multiple times
-            const uniqueSuggestions = [...new Set(suggestions)];
-
-            // For simplicity, we'll just log unique suggestions to the console.
-            // In a real UI, you might display these in a dropdown below the search input.
-            if (uniqueSuggestions.length > 0) {
-                console.log('Suggestions:', uniqueSuggestions);
-            } else {
-                console.log('No suggestions.');
-            }
-        }
+            // If the calculated snippet is too short, extend it up to totalSnippetLength
+            if (end - start < totalSnippetLength) {
+                end = Math.min(fullText.length, start + totalSnippetLength);
+            }
+            if (end - start < totalSnippetLength) { // If still too short after extending end, expand from start
+                start = Math.max(0, end - totalSnippetLength);
+            }
+            // Ensure start isn't past end (can happen with very short texts/long queries)
+            if (start > end) { start = Math.max(0, end - totalSnippetLength); }
 
 
-        // Event listener for input changes with debounce
-        searchInput.addEventListener('input', () => {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(performSearch, 300); // Debounce to 300ms
-        });
+            // Try to adjust to word boundaries for readability
+            let actualStart = start;
+            if (start > 0) {
+                const spaceBefore = fullText.lastIndexOf(' ', start);
+                if (spaceBefore !== -1 && (start - spaceBefore) < (contextChars / 2)) { // Only adjust if space is somewhat close
+                    actualStart = spaceBefore + 1;
+                }
+            }
 
-        // Initial search (optional, e.g., if there's a pre-filled query)
-        // performSearch();
-    })();
+            let actualEnd = end;
+            if (end < fullText.length) {
+                const spaceAfter = fullText.indexOf(' ', end);
+                if (spaceAfter !== -1 && (spaceAfter - end) < (contextChars / 2)) { // Only adjust if space is somewhat close
+                    actualEnd = spaceAfter;
+                }
+            }
+            
+            // Re-adjust actualEnd if actualStart pushes it too far left, ensuring minimum length around highlight
+            if (actualEnd - actualStart < lowerQuery.length + (contextChars / 2)) {
+                actualEnd = Math.min(fullText.length, actualStart + totalSnippetLength);
+            }
+
+
+            let snippet = fullText.substring(actualStart, actualEnd);
+
+            // Add ellipses based on whether the snippet is a partial slice of the original text
+            const prefix = actualStart > 0 ? '...' : '';
+            const suffix = actualEnd < fullText.length ? '...' : '';
+
+            return prefix + applyHighlighting(snippet, query) + suffix;
+        }
+
+        searchInput.addEventListener('input', () => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(performSearch, 300);
+        });
+    })();
 </script>
 
 <style>
