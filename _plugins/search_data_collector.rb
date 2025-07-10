@@ -1,145 +1,61 @@
-# _plugins/search_data_collector.rb
-require 'nokogiri'
-require 'uri' # For URI encoding
+# _plugins/data_generator.rb
+require 'nokogiri' # Make sure nokogiri is required if you haven't already in heading_sections.rb
+require 'uri'
+require 'yaml' # To output data as YAML
 
 module Jekyll
-  module HeadingSections
-    def get_heading_sections_for_search(page_or_post)
-      # Ensure we're working with a Jekyll::Page or Jekyll::Document object
-      return [] unless page_or_post.respond_to?(:content)
+  class SearchSectionsDataGenerator < Generator
+    safe true
+    priority :high # Run early to make data available
 
-      # Get the HTML content after Jekyll's rendering (Markdown to HTML)
-      # page_or_post.content is already HTML here
-      html_content = page_or_post.content
+    def generate(site)
+      Jekyll.logger.info "Jekyll Data Generator:", "Generating search_sections_data for _data/search_sections_data.yml"
 
-      doc = Nokogiri::HTML(html_content)
+      all_search_sections = []
 
-      # Prepare data for search.json
-      document_title = page_or_post.data['title'] || page_or_post.basename_without_ext.capitalize
-      page_url = page_or_post.url
-      page_date = page_or_post.data['date'].nil? ? nil : page_or_post.data['date'].strftime("%Y-%m-%d")
-      page_category = page_or_post.data['categories'].is_a?(Array) ? page_or_post.data['categories'].join(', ') : page_or_post.data['categories']
-      page_tags = page_or_post.data['tags'].is_a?(Array) ? page_or_post.data['tags'] : []
-
-      headings = doc.css('h1, h2, h3, h4, h5, h6')
-
-      sections = []
-      # IMPORTANT: Reset existing_slugs for each document processed
-      # This ensures uniqueness is per document, matching the client-side JS.
-      existing_slugs_in_document = {}
-
-      # --- Handle content BEFORE the first heading ---
-      # This will be considered the "introduction" section.
-      first_heading = headings.first
-      if first_heading
-        pre_heading_content_nodes = []
-        # Get all child nodes of the body before the first heading
-        doc.css('body > *').each do |node|
-          break if node == first_heading
-          pre_heading_content_nodes << node
+      # Ensure the HeadingSections module is loaded (if not already by other means)
+      unless site.data.key?('heading_sections_helper_loaded')
+        # This is a bit of a hack: directly requiring the file might cause issues
+        # if Jekyll's load order is different. A better way is to ensure
+        # _plugins/heading_sections.rb defines a module/class that gets registered.
+        # The best approach is to move the core logic into a reusable class/module
+        # and then use it both as a Liquid filter AND here.
+        # For simplicity, we'll assume the methods from HeadingSections are available.
+        # If you run into "undefined method `get_heading_sections_for_search'",
+        # you might need to combine the two plugin files or refactor slightly.
+        #
+        # For now, let's include the methods directly if not already available
+        unless Jekyll::HeadingSections.respond_to?(:get_heading_sections_for_search)
+          require_relative 'heading_sections' # Ensure your heading_sections.rb is in _plugins
         end
-
-        pre_heading_text = pre_heading_content_nodes.map do |node|
-          node.text.strip # Get text content of pre-heading nodes
-        end.compact.join("\n").strip
-
-        unless pre_heading_text.empty?
-          # Generate a slug for the introduction section (e.g., "introduction")
-          intro_slug_base = "introduction"
-          unique_intro_slug = intro_slug_base
-          counter = 1
-          while existing_slugs_in_document.key?(unique_intro_slug)
-            unique_intro_slug = "#{intro_slug_base}-#{counter}"
-            counter += 1
-          end
-          existing_slugs_in_document[unique_intro_slug] = true
-
-          sections << {
-            'documenttitle' => document_title,
-            'sectiontitle' => "Introduction", # You can customize this
-            'sectioncontent' => pre_heading_text,
-            'url' => "#{page_url}##{unique_intro_slug}", # URL with anchor
-            'date' => page_date,
-            'category' => page_category,
-            'tags' => page_tags
-          }
-        end
-      elsif !doc.text.strip.empty? # No headings, but there's content
-         sections << {
-          'documenttitle' => document_title,
-          'sectiontitle' => document_title, # Use document title as section title
-          'sectioncontent' => doc.text.strip,
-          'url' => page_url, # No specific anchor needed here
-          'date' => page_date,
-          'category' => page_category,
-          'tags' => page_tags
-         }
-      end
-      # --- End handling content BEFORE the first heading ---
-
-
-      headings.each do |heading|
-        # --- Slug generation matching js.txt ---
-        # Generate a slug from the heading text [cite: 1]
-        slug = heading.text
-          .downcase # [cite: 1]
-          .strip #
-          .gsub(/[^\w\s-]/, '') # Remove non-word characters [cite: 1]
-          .gsub(/\s+/, '-') # Replace spaces with dashes 
-
-        # Ensure uniqueness by appending a number if needed 
-        let_unique_slug = slug
-        let_counter = 1
-        while existing_slugs_in_document.key?(let_unique_slug) # Check uniqueness against slugs *in this document*
-          let_unique_slug = "#{slug}-#{let_counter}"
-          let_counter += 1
-        end
-        existing_slugs_in_document[let_unique_slug] = true # Store for uniqueness within this document
-        # --- End slug generation ---
-
-        # The ID on the heading itself might not exist yet, so we generate it
-        # and assume the JS will later add it if it's not present.
-        # For the purpose of URL generation, we use our generated unique slug.
-        heading_id = let_unique_slug
-
-        section_content_nodes = []
-        current_node = heading.next_element || heading.next_sibling # Start with the next sibling
-
-        while current_node
-          # Check if the current node is a heading or if its name starts with 'h' followed by 1-6
-          is_next_heading = current_node.node_type == Nokogiri::XML::Node::ELEMENT_NODE &&
-                            current_node.name =~ /^h[1-6]$/
-
-          if is_next_heading
-            break # Stop if we hit the next heading
-          end
-
-          section_content_nodes << current_node
-          current_node = current_node.next_element || current_node.next_sibling
-        end
-
-        # Extract PCDATA from the collected nodes for sectioncontent
-        section_text = section_content_nodes.map do |node|
-          # For elements, get their text content recursively (PCDATA)
-          node.text.strip if node.node_type == Nokogiri::XML::Node::TEXT_NODE || node.node_type == Nokogiri::XML::Node::ELEMENT_NODE
-        end.compact.join("\n").strip
-
-        sections << {
-          'documenttitle' => document_title,
-          'sectiontitle' => heading.text.strip, # The text of the current heading
-          'sectioncontent' => section_text,
-          # URL including the anchor/hash/slug [cite: 3]
-          'url' => "#{page_url}##{heading_id}",
-          'date' => page_date,
-          'category' => page_category,
-          'tags' => page_tags
-        }
+        site.data['heading_sections_helper_loaded'] = true # Prevent multiple loads if this runs again
       end
 
-      sections
+      # Get all pages and posts that are outputting HTML
+      site.pages.each do |page|
+        if page.output == true && page.content && page.ext == ".html"
+          sections = Jekyll::HeadingSections.get_heading_sections_for_search(page)
+          all_search_sections.concat(sections)
+        end
+      end
+
+      site.posts.docs.each do |post| # For posts, use .docs
+        if post.output == true && post.content && post.ext == ".html"
+          sections = Jekyll::HeadingSections.get_heading_sections_for_search(post)
+          all_search_sections.concat(sections)
+        end
+      end
+
+      # Assign the generated data to site.data.search_sections_data
+      # This makes it available in Liquid as site.data.search_sections_data
+      site.data['search_sections_data'] = all_search_sections
+
+      # Optionally, save it to a YAML file for inspection (not strictly necessary for site.data)
+      # You can comment out the following lines if you don't need the actual file in _data
+      # File.open(File.join(site.source, '_data', 'search_sections_data.yml'), 'w') do |f|
+      #   f.write(all_search_sections.to_yaml)
+      # end
+      # Jekyll.logger.info "Jekyll Data Generator:", "Generated _data/search_sections_data.yml with #{all_search_sections.size} sections."
     end
   end
 end
-
-# Register the filter to be used in Liquid templates
-Liquid::Template.register_filter(Jekyll::HeadingSections)
