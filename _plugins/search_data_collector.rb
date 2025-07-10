@@ -17,6 +17,8 @@ module Jekyll
 
     # Register a hook to run after each individual page/document has been rendered
     Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
+      Jekyll.logger.info "SearchDataCollector:", "Triggered by document: #{doc.url || doc.path}"
+
       # Skip if doc.output is nil or empty (no content), or if it's the search.json page itself,
       # or if it's explicitly excluded from sitemap/indexing.
       next if doc.output.nil? || doc.output.empty?
