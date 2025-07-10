@@ -1,162 +1,145 @@
 # _plugins/search_data_collector.rb
-# This plugin collects data for search.json by iterating through documents
-# and predicting heading IDs.
-# It does NOT modify the HTML content of documents.
-
 require 'nokogiri'
-require 'json'
-require 'uri'
-require 'set'
+require 'uri' # For URI encoding
 
 module Jekyll
-  class SearchDataCollector < Generator
-    safe true
-    # This generator should run after Markdown conversion to HTML.
-    # Its priority can be normal, as it only collects data for site.data.
-    priority :normal
+  module HeadingSections
+    def get_heading_sections_for_search(page_or_post)
+      # Ensure we're working with a Jekyll::Page or Jekyll::Document object
+      return [] unless page_or_post.respond_to?(:content)
 
-    # REMOVED: The global ID tracking set is removed to match the JS and HtmlModifierHook logic,
-    # which only ensures ID uniqueness within a single document.
-    def generate(site)
-      Jekyll.logger.info "SearchDataCollector:", "Starting to collect structured search data..."
+      # Get the HTML content after Jekyll's rendering (Markdown to HTML)
+      # page_or_post.content is already HTML here
+      html_content = page_or_post.content
 
-      search_sections_data = []
+      doc = Nokogiri::HTML(html_content)
 
-      # Iterate through all posts to collect their data (using .docs.each for Jekyll 4+ compatibility)
-      site.posts.docs.each do |post|
-        collect_document_data(post, search_sections_data, site)
-      end
+      # Prepare data for search.json
+      document_title = page_or_post.data['title'] || page_or_post.basename_without_ext.capitalize
+      page_url = page_or_post.url
+      page_date = page_or_post.data['date'].nil? ? nil : page_or_post.data['date'].strftime("%Y-%m-%d")
+      page_category = page_or_post.data['categories'].is_a?(Array) ? page_or_post.data['categories'].join(', ') : page_or_post.data['categories']
+      page_tags = page_or_post.data['tags'].is_a?(Array) ? page_or_post.data['tags'] : []
 
-      # Iterate through all pages to collect their data (site.pages is an Array, so just .each)
-      site.pages.each do |page|
-        # Skip specific pages (like search.json itself), excluded pages,
-        # non-content files, and ensure it's a renderable document.
-        if page.data['title'] && page.url != '/search.json' && !page.data['sitemap_exclude'] && !page.path.include?('_data') && page.respond_to?(:content) && !page.is_a?(Jekyll::StaticFile)
-          collect_document_data(page, search_sections_data, site)
+      headings = doc.css('h1, h2, h3, h4, h5, h6')
+
+      sections = []
+      # IMPORTANT: Reset existing_slugs for each document processed
+      # This ensures uniqueness is per document, matching the client-side JS.
+      existing_slugs_in_document = {}
+
+      # --- Handle content BEFORE the first heading ---
+      # This will be considered the "introduction" section.
+      first_heading = headings.first
+      if first_heading
+        pre_heading_content_nodes = []
+        # Get all child nodes of the body before the first heading
+        doc.css('body > *').each do |node|
+          break if node == first_heading
+          pre_heading_content_nodes << node
         end
-      end
 
-      # Store the collected data in site.data for access in Liquid templates (e.g., search.json.liquid)
-      site.data['search_sections_data'] = search_sections_data
+        pre_heading_text = pre_heading_content_nodes.map do |node|
+          node.text.strip # Get text content of pre-heading nodes
+        end.compact.join("\n").strip
 
-      Jekyll.logger.info "SearchDataCollector:", "Finished collecting search data. Found #{search_sections_data.count} sections."
-    end
-
-    private
-
-    # Helper method that defines how to collect data for a single document
-    def collect_document_data(document, search_data_array, site)
-      Jekyll.logger.debug "SearchDataCollector:", "Collecting data for: #{document.url}"
-      Jekyll.logger.debug "SearchDataCollector: Document Class: #{document.class}"
-      Jekyll.logger.debug "SearchDataCollector: Document Path: #{document.path}"
-      Jekyll.logger.debug "SearchDataCollector: Has Front Matter?: #{document.data.any?}"
-      Jekyll.logger.debug "SearchDataCollector: Is Renderable?: #{document.respond_to?(:content) && !document.is_a?(Jekyll::StaticFile)}"
-      Jekyll.logger.debug "SearchDataCollector: --- Raw Document.content start (first 200 chars) ---"
-      Jekyll.logger.debug document.content.to_s[0..199].gsub(/\n/, '\\n') # Log raw content
-      Jekyll.logger.debug "SearchDataCollector: --- Raw Document.content end ---"
-
-      content_to_parse = document.content
-
-      # CRITICAL FIX: Convert Markdown to HTML if the document is a Markdown file
-      if document.extname =~ /\.(md|markdown)$/i
-        Jekyll.logger.debug "SearchDataCollector:", "  Document is Markdown. Converting to HTML for parsing..."
-        begin
-          converter = site.find_converter_instance(Jekyll::Converters::Markdown)
-          content_to_parse = converter.convert(document.content)
-        rescue => e
-          Jekyll.logger.error "SearchDataCollector:", "  Error converting Markdown for #{document.url}: #{e.message}"
-          content_to_parse = "" # Fallback to empty content if conversion fails
-        end
-      else
-        Jekyll.logger.debug "SearchDataCollector:", "  Document is not Markdown. Assuming HTML for parsing."
-      end
-
-      doc_fragment = Nokogiri::HTML.fragment(content_to_parse)
-      # Track predicted IDs for this specific document, matching JS's document-level scope
-      document_predicted_ids = Set.new
-
-      base_url = document.url
-
-      # Get all heading elements in order
-      all_headings = doc_fragment.css('h1, h2, h3, h4, h5, h6')
-
-      all_headings.each_with_index do |heading_element, index|
-        original_id = heading_element['id']
-        final_id = nil
-
-        # Predict the final ID using the same logic that the HtmlModifierHook (and JS) will use
-        if original_id && !original_id.empty?
-          final_id = original_id
-          Jekyll.logger.debug "SearchDataCollector:", "  Using existing ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
-        else
-          # Use the slugify function that matches the JS logic
-          slug_base = slugify(heading_element.text)
-          unique_slug = slug_base
+        unless pre_heading_text.empty?
+          # Generate a slug for the introduction section (e.g., "introduction")
+          intro_slug_base = "introduction"
+          unique_intro_slug = intro_slug_base
           counter = 1
-          # Ensure uniqueness only within this document's prediction, matching JS behavior
-          while document_predicted_ids.include?(unique_slug)
-            unique_slug = "#{slug_base}-#{counter}"
+          while existing_slugs_in_document.key?(unique_intro_slug)
+            unique_intro_slug = "#{intro_slug_base}-#{counter}"
             counter += 1
           end
-          final_id = unique_slug
-          Jekyll.logger.debug "SearchDataCollector:", "  Predicted new ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
+          existing_slugs_in_document[unique_intro_slug] = true
+
+          sections << {
+            'documenttitle' => document_title,
+            'sectiontitle' => "Introduction", # You can customize this
+            'sectioncontent' => pre_heading_text,
+            'url' => "#{page_url}##{unique_intro_slug}", # URL with anchor
+            'date' => page_date,
+            'category' => page_category,
+            'tags' => page_tags
+          }
         end
+      elsif !doc.text.strip.empty? # No headings, but there's content
+         sections << {
+          'documenttitle' => document_title,
+          'sectiontitle' => document_title, # Use document title as section title
+          'sectioncontent' => doc.text.strip,
+          'url' => page_url, # No specific anchor needed here
+          'date' => page_date,
+          'category' => page_category,
+          'tags' => page_tags
+         }
+      end
+      # --- End handling content BEFORE the first heading ---
 
-        # Add to set to maintain uniqueness prediction for the current document
-        document_predicted_ids.add(final_id)
 
-        # Extract section title (no anchor icon added at this stage)
-        # Add .gsub(/\s+/, ' ') to normalize whitespace, including newlines
-        section_title = heading_element.text.strip.gsub(/\s+/, ' ')
+      headings.each do |heading|
+        # --- Slug generation matching js.txt ---
+        # Generate a slug from the heading text [cite: 1]
+        slug = heading.text
+          .downcase # [cite: 1]
+          .strip #
+          .gsub(/[^\w\s-]/, '') # Remove non-word characters [cite: 1]
+          .gsub(/\s+/, '-') # Replace spaces with dashes 
+
+        # Ensure uniqueness by appending a number if needed 
+        let_unique_slug = slug
+        let_counter = 1
+        while existing_slugs_in_document.key?(let_unique_slug) # Check uniqueness against slugs *in this document*
+          let_unique_slug = "#{slug}-#{let_counter}"
+          let_counter += 1
+        end
+        existing_slugs_in_document[let_unique_slug] = true # Store for uniqueness within this document
+        # --- End slug generation ---
+
+        # The ID on the heading itself might not exist yet, so we generate it
+        # and assume the JS will later add it if it's not present.
+        # For the purpose of URL generation, we use our generated unique slug.
+        heading_id = let_unique_slug
 
         section_content_nodes = []
-        current_node = heading_element.next_sibling
-
-        # Determine the end point for content collection for this section
-        # If there's a next heading, that's the end. Otherwise, it's the end of the document.
-        next_heading = all_headings[index + 1]
+        current_node = heading.next_element || heading.next_sibling # Start with the next sibling
 
         while current_node
-          # If the current node is the next heading, stop collecting content for this section
-          if next_heading && current_node == next_heading
-            break
+          # Check if the current node is a heading or if its name starts with 'h' followed by 1-6
+          is_next_heading = current_node.node_type == Nokogiri::XML::Node::ELEMENT_NODE &&
+                            current_node.name =~ /^h[1-6]$/
+
+          if is_next_heading
+            break # Stop if we hit the next heading
           end
+
           section_content_nodes << current_node
-          current_node = current_node.next_sibling
+          current_node = current_node.next_element || current_node.next_sibling
         end
 
-        # Strip HTML tags and normalize whitespace for search content
-        section_content = strip_html_and_normalize(section_content_nodes.map(&:to_html).join(''))
+        # Extract PCDATA from the collected nodes for sectioncontent
+        section_text = section_content_nodes.map do |node|
+          # For elements, get their text content recursively (PCDATA)
+          node.text.strip if node.node_type == Nokogiri::XML::Node::TEXT_NODE || node.node_type == Nokogiri::XML::Node::ELEMENT_NODE
+        end.compact.join("\n").strip
 
-        # Construct the URL with the predicted anchor
-        full_url = "#{base_url}##{final_id}"
-
-        # Add to our search data array
-        search_data_array << {
-          "documenttitle"  => document.data['title'] || nil,
-          "sectiontitle"   => section_title,
-          "sectioncontent" => "#{section_title} #{section_content}".strip, # Include section title in search content for better relevance
-          "url"            => full_url,
-          "date"           => document.data['date'] ? document.data['date'].to_s : nil,
-          "category"       => document.data['category'] || nil,
-          "tags"           => document.data['tags'] || []
+        sections << {
+          'documenttitle' => document_title,
+          'sectiontitle' => heading.text.strip, # The text of the current heading
+          'sectioncontent' => section_text,
+          # URL including the anchor/hash/slug [cite: 3]
+          'url' => "#{page_url}##{heading_id}",
+          'date' => page_date,
+          'category' => page_category,
+          'tags' => page_tags
         }
-        Jekyll.logger.debug "SearchDataCollector:", "  Collected search data for ID: #{final_id}"
       end
-    end
 
-    # Helper function to slugify text, now IDENTICAL to the js_slugify in html_modifier_hook.rb
-    def slugify(text)
-      text.to_s.downcase.strip
-        .gsub(/[^a-z0-9\s-]/, '') # Remove non-word characters
-        .gsub(/\s+/, '-')        # Replace spaces with dashes
-    end
-
-    # Helper function to strip HTML and normalize whitespace (MUST be IDENTICAL to the one in html_modifier_hook.rb)
-    def strip_html_and_normalize(html_content)
-      Nokogiri::HTML.fragment(html_content).text
-        .gsub(/\s+/, ' ')
-        .strip
+      sections
     end
   end
 end
+
+# Register the filter to be used in Liquid templates
+Liquid::Template.register_filter(Jekyll::HeadingSections)
