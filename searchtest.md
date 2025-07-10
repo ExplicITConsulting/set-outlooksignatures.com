@@ -10,7 +10,6 @@ permalink: /searchtest/
     <p>Results will appear here.</p>
 </div>
 
-<!-- Using jsdelivr.net for FlexSearch, with the correct URI for the latest 0.x.x minified bundle -->
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0/dist/flexsearch.bundle.min.js"></script>
 
 <script>
@@ -42,6 +41,13 @@ permalink: /searchtest/
             // For partial search, 'tokenize: "full"' already handles it.
             // Highlighting is handled in the search results display.
         });
+
+        // Debugging: Log FlexSearch object and index properties
+        console.log('FlexSearch object:', FlexSearch);
+        console.log('FlexSearch.Document type:', typeof FlexSearch.Document);
+        console.log('Index object after initialization:', index);
+        console.log('index.suggest type:', typeof index.suggest);
+
 
         // Fetch the search.json data and populate the index
         fetch('/search.json')
@@ -83,20 +89,34 @@ permalink: /searchtest/
             }
 
             // Perform the search with advanced options
-            // `limit` can be adjusted based on how many results you want to show
-            const results = index.search(query, {
+            const rawResults = index.search(query, {
                 limit: 20, // Limit the number of results
                 enrich: true, // Return the full document (stored fields)
-                suggest: true, // Get suggestions for autocomplete
-                // You can fine-tune fuzzy, partial, and match options here if needed
-                // For example, to enable fuzzy search with a specific tolerance:
-                // fuzzy: true, // Enables fuzzy matching
-                // For partial search, 'tokenize: "full"' already handles it.
-                // Highlighting is handled in the search results display.
+                suggest: true // Get suggestions for autocomplete (though index.suggest is used separately)
             });
 
-            displayResults(results, query);
-            displaySuggestions(query);
+            // FlexSearch can return results grouped by field if searching across multiple fields.
+            // This flattens the results to a single array of enriched documents.
+            let flatResults = [];
+            rawResults.forEach(fieldResult => {
+                // Check if it's a field-grouped result (e.g., {field: "title", result: [...]})
+                if (fieldResult && fieldResult.field && Array.isArray(fieldResult.result)) {
+                    flatResults = flatResults.concat(fieldResult.result);
+                } else if (fieldResult && fieldResult.doc) {
+                    // It's already an enriched document directly
+                    flatResults.push(fieldResult);
+                }
+            });
+
+            displayResults(flatResults, query);
+
+            // Attempt to display suggestions, wrapped in try-catch for robustness
+            try {
+                displaySuggestions(query);
+            } catch (e) {
+                console.error("Error calling displaySuggestions:", e);
+                console.warn("Suggestion feature might not be available or correctly loaded.");
+            }
         }
 
         // Function to display search results
@@ -108,11 +128,11 @@ permalink: /searchtest/
 
             let html = '<ul class="search-results-list">';
             results.forEach(result => {
-                // IMPORTANT: Add a check to ensure result.doc is not undefined
+                // IMPORTANT: Ensure result.doc is not undefined before proceeding
                 const item = result.doc;
                 if (!item) {
-                    console.warn('Skipping undefined search result:', result);
-                    return; // Skip this iteration if item is undefined
+                    console.warn('Skipping search result with undefined document:', result);
+                    return; // Skip this iteration if item (result.doc) is undefined
                 }
 
                 // Dynamically get content from all indexed fields for display
@@ -120,10 +140,13 @@ permalink: /searchtest/
                 allSearchFields.forEach(field => {
                     if (item[field] && typeof item[field] === 'string' && item[field].length > 0) {
                         let fieldContent = item[field];
+                        // Highlight matches in the current field
                         if (result.highlight && result.highlight[field]) {
                             fieldContent = highlightText(fieldContent, result.highlight[field]);
                         }
-                        displayContent += `<p class="is-size-7 has-text-grey-light mt-1"><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${fieldContent.substring(0, 150)}...</p>`;
+                        // Truncate content for display, add ellipsis if truncated
+                        const truncatedContent = fieldContent.length > 150 ? fieldContent.substring(0, 150) + '...' : fieldContent;
+                        displayContent += `<p class="is-size-7 has-text-grey-light mt-1"><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${truncatedContent}</p>`;
                     }
                 });
 
@@ -169,6 +192,8 @@ permalink: /searchtest/
 
         // Function to display suggestions (for autocomplete)
         function displaySuggestions(query) {
+            // This function is called within a try-catch in performSearch,
+            // so we don't need another try-catch here.
             const suggestions = index.suggest(query, {
                 limit: 5, // Limit the number of suggestions
                 // You can add `fuzzy: true` here if you want fuzzy suggestions
