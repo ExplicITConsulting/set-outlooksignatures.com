@@ -6,7 +6,7 @@ description: Search and find. What are you looking for?
 ---
 
 <div style="min-height: 100vh;">
-    <input type="search" id="search-input" placeholder="Start typing to search..." class="input is-large mb-4">
+    <input type="search" id="search-input" placeholder="Start typing to search…" class="input is-large mb-4">
 
     <div id="search-results" class="content">
     </div>
@@ -169,7 +169,7 @@ description: Search and find. What are you looking for?
             function generateContextualSnippet(fullText, query, totalSnippetLength = 250, contextChars = 80) {
                 if (!fullText || typeof fullText !== 'string' || !query || typeof query !== 'string' || query.trim().length === 0) {
                     // If no valid text or query, apply highlighting to a truncated version (if query is valid)
-                    return applyHighlighting(fullText.substring(0, totalSnippetLength), query) + (fullText.length > totalSnippetLength ? '...' : '');
+                    return applyHighlighting(fullText.substring(0, totalSnippetLength), query) + (fullText.length > totalSnippetLength ? '' : '…');
                 }
 
                 const lowerText = fullText.toLowerCase();
@@ -184,7 +184,7 @@ description: Search and find. What are you looking for?
 
                 if (matchIndexes.length === 0) {
                     // If query not found in text, return a simple truncated snippet with highlight applied
-                    return applyHighlighting(fullText.substring(0, totalSnippetLength), query) + (fullText.length > totalSnippetLength ? '...' : '');
+                    return applyHighlighting(fullText.substring(0, totalSnippetLength), query) + (fullText.length > totalSnippetLength ? '…' : '');
                 }
 
                 // Use the first match to center the snippet
@@ -231,8 +231,8 @@ description: Search and find. What are you looking for?
                 let snippet = fullText.substring(actualStart, actualEnd);
 
                 // Add ellipses based on whether the snippet is a partial slice of the original text
-                const prefix = actualStart > 0 ? '...' : '';
-                const suffix = actualEnd < fullText.length ? '...' : '';
+                const prefix = actualStart > 0 ? '…' : '';
+                const suffix = actualEnd < fullText.length ? '…' : '';
 
                 return prefix + applyHighlighting(snippet, query) + suffix;
             }
