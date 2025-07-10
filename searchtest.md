@@ -68,7 +68,7 @@ description: Search and find. What are you looking for?
         const searchResultsContainer = document.getElementById('search-results');
         let searchTimeout;
 
-        // Function to perform search and display results
+// Function to perform search and display results
         function performSearch() {
             const query = searchInput.value.trim();
 
@@ -76,6 +76,17 @@ description: Search and find. What are you looking for?
                 searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
                 return;
             }
+
+            // --- START ADDITION FOR OPTION 2 ---
+            // Explicitly check if the query is a non-empty string.
+            // This defends against potential edge cases where 'query' might not be a string
+            // or an empty string might somehow slip through due to timing/debounce.
+            if (typeof query !== 'string' || query.length === 0) {
+                console.warn("Invalid search query received (not a non-empty string):", query);
+                searchResultsContainer.innerHTML = '<p>Please enter a valid search term.</p>';
+                return;
+            }
+            // --- END ADDITION FOR OPTION 2 ---
 
             // Perform the search with advanced options
             const rawResults = index.search(query, {
