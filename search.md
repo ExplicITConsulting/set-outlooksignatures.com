@@ -124,12 +124,14 @@ description: Search and find. What are you looking for?
                             // For other fields, just apply highlighting to the whole field
                             displayedFieldContent = applyHighlighting(item[field], query);
                             // Add simple truncation for non-content fields if they can be long, but not for URLs
-                            if (field !== 'url' && displayedFieldContent.length > 150) {
-                                displayedFieldContent = displayedFieldContent.substring(0, 150) + '...';
+                            if (field !== 'url' && displayedFieldContent.length > 250) {
+                                displayedFieldContent = displayedFieldContent.substring(0, 250) + '…';
                             }
                         }
                         
-                        displayContent += `<p class="mt-1"><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${displayedFieldContent}</p>`;
+                        if (field !== 'url') {
+                            displayContent += `<p><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${displayedFieldContent}</p>`;
+                        }
                     }
                 });
 
