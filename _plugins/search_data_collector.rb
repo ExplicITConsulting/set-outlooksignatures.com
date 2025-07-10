@@ -1,7 +1,7 @@
 # _plugins/search_data_collector.rb
 # This plugin collects data for search.json by iterating through documents
 # and predicting heading IDs.
-# It now runs post-render to include all generated HTML content.
+# It now runs post-render for individual pages/documents to include all generated HTML content.
 
 require 'nokogiri'
 require 'json'
@@ -10,90 +10,43 @@ require 'set'
 
 module Jekyll
   class SearchDataCollector
-    # Register a hook to run after the entire site has been written (post-render)
-    Jekyll::Hooks.register :site, :post_write do |site|
-      Jekyll.logger.info "SearchDataCollector:", "Starting to collect structured search data (post-render)..."
+    # Initialize a class variable to store collected data across all documents
+    @@search_sections_data = []
+    # Initialize a class variable to store predicted IDs across all documents to maintain uniqueness
+    @@document_predicted_ids_global = Set.new
 
-      search_sections_data = []
+    # Register a hook to run after each individual page/document has been rendered
+    Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
+      # Skip if doc.output is nil or empty (no content), or if it's the search.json page itself,
+      # or if it's explicitly excluded from sitemap/indexing.
+      next if doc.output.nil? || doc.output.empty?
+      next if doc.url == '/search.json' || doc.data['sitemap_exclude']
 
-      # Iterate through all posts and pages to collect their data
-      # At this stage, document.output contains the fully rendered HTML
-      (site.posts.docs + site.pages).each do |document|
-        # Skip specific documents that shouldn't be indexed
-        skip_reason = []
-        should_process = true
+      # Skip pages that are Jekyll redirects (using 'redirect_from'/'redirect_to' in front matter)
+      next if doc.data['redirect_from'] || doc.data['redirect_to']
+      # Also skip pages whose *rendered content* is just a redirect message or meta refresh
+      next if doc.output.strip.start_with?("Redirecting") || doc.output.include?('<meta http-equiv="refresh"')
 
-        # Skip the search.json output file itself
-        if document.url == '/search.json'
-          skip_reason << "is search.json output file"
-          should_process = false
-        end
-        # Skip pages explicitly marked for sitemap exclusion
-        if document.data['sitemap_exclude']
-          skip_reason << "sitemap_exclude is true"
-          should_process = false
-        end
-        # Skip files within the _data directory (though these typically wouldn't have output)
-        if document.path.include?('_data')
-          skip_reason << "path includes _data"
-          should_process = false
-        end
-        # Skip static files that don't have a 'output' property or meaningful content
-        # This is crucial for performance and accuracy post-render
-        unless document.respond_to?(:output) && !document.output.nil? && !document.output.strip.empty?
-          skip_reason << "no renderable output"
-          should_process = false
-        end
-        # Also skip binary files or files that are not HTML (e.g., images, CSS, JS)
-        unless document.extname =~ /\.html?$/i || document.extname =~ /\.xml$/i # Include XML for sitemaps, RSS etc. if desired
-          skip_reason << "not an HTML/XML file"
-          should_process = false
-        end
+      # Basic check to ensure it's HTML content we can parse (e.g., not a static CSS/JS file)
+      # This is more robust than relying on .extname alone for post_render hook.
+      # Also explicitly check for common XML files that might be Jekyll::Page objects.
+      next unless (doc.output.strip.start_with?('<') || doc.output.strip.start_with?('<!DOCTYPE')) &&
+                  !['/sitemap.xml', '/feed.xml'].include?(doc.url)
 
+      Jekyll.logger.debug "SearchDataCollector:", "Processing document: #{doc.url || doc.path}"
 
-        if should_process
-          collect_document_data(document, search_sections_data, site)
-        else
-          Jekyll.logger.debug "SearchDataCollector:", "Skipping document #{document.url || document.path} due to filter: #{skip_reason.join(', ')}"
-        end
-      end
+      # Parse the final HTML output (`doc.output`) as an HTML fragment
+      doc_fragment = Nokogiri::HTML.fragment(doc.output)
 
-      # Write the collected data directly to search.json in the destination directory
-      search_json_path = File.join(site.dest, 'search.json')
-      File.write(search_json_path, JSON.pretty_generate(search_sections_data))
-
-      Jekyll.logger.info "SearchDataCollector:", "Finished collecting search data. Found #{search_sections_data.count} sections. Wrote to #{search_json_path}"
-    end
-
-    # Helper method that defines how to collect data for a single document
-    # This method now expects document.output (fully rendered HTML)
-    def self.collect_document_data(document, search_data_array, site)
-      Jekyll.logger.debug "SearchDataCollector:", "Collecting data for: #{document.url || document.path}"
-      Jekyll.logger.debug "SearchDataCollector: Document Class: #{document.class}"
-      Jekyll.logger.debug "SearchDataCollector: Document Path: #{document.path}"
-      Jekyll.logger.debug "SearchDataCollector: Has Front Matter?: #{document.data.any?}"
-      Jekyll.logger.debug "SearchDataCollector: Has Output?: #{document.respond_to?(:output) && !document.output.nil? && !document.output.strip.empty?}"
-
-      content_to_parse = document.output # Use the fully rendered output
-      
-      if content_to_parse.nil? || content_to_parse.strip.empty?
-        Jekyll.logger.debug "SearchDataCollector:", "   Document output is empty. Skipping."
-        return
-      end
-
-      Jekyll.logger.debug "SearchDataCollector: --- Rendered Document.output start (first 200 chars) ---"
-      Jekyll.logger.debug content_to_parse.to_s[0..199].gsub(/\n/, '\\n') # Log raw content
-      Jekyll.logger.debug "SearchDataCollector: --- Rendered Document.output end ---"
-
-      doc_fragment = Nokogiri::HTML.fragment(content_to_parse)
       # Track predicted IDs for this specific document, matching JS's document-level scope
-      document_predicted_ids = Set.new
+      # This needs to be per-document, so we'll pass a new Set to the helper method.
+      document_predicted_ids_local = Set.new
 
-      base_url = document.url
+      base_url = doc.url
 
       # Get all heading elements in order
       all_headings = doc_fragment.css('h1, h2, h3, h4, h5, h6')
-      Jekyll.logger.debug "SearchDataCollector:", "   Found #{all_headings.size} headings in #{document.url || document.path}"
+      Jekyll.logger.debug "SearchDataCollector:", "   Found #{all_headings.size} headings in #{doc.url || doc.path}"
 
       # --- Handle content BEFORE the first heading (as an "Introduction" section) ---
       first_heading_node = all_headings.first
@@ -115,26 +68,27 @@ module Jekyll
       # If there's content before the first heading, or if there are no headings at all,
       # create an "Introduction" section using the document's title or a default.
       unless pre_heading_text.empty?
-        section_title = document.data['title'] || "Page Content" # Use document title or a default
+        section_title = doc.data['title'] || "Page Content" # Use document title or a default
         intro_slug_base = slugify(section_title) # Use slugified title for ID
         unique_intro_slug = intro_slug_base
         counter = 1
-        while document_predicted_ids.include?(unique_intro_slug)
+        # Ensure uniqueness within the current document's predicted IDs
+        while document_predicted_ids_local.include?(unique_intro_slug)
           unique_intro_slug = "#{intro_slug_base}-#{counter}"
           counter += 1
         end
-        document_predicted_ids.add(unique_intro_slug)
+        document_predicted_ids_local.add(unique_intro_slug)
 
-        search_data_array << {
-          "documenttitle"  => document.data['title'] || nil,
+        @@search_sections_data << { # Add to global array
+          "documenttitle"  => doc.data['title'] || nil,
           "sectiontitle"   => section_title,
           "sectioncontent" => pre_heading_text,
           "url"            => "#{base_url}##{unique_intro_slug}", # Use the slug for the URL anchor
-          "date"           => document.data['date'] ? document.data['date'].to_s : nil,
-          "category"       => document.data['category'] || nil,
-          "tags"           => document.data['tags'] || []
+          "date"           => doc.data['date'] ? doc.data['date'].to_s : nil,
+          "category"       => doc.data['category'] || nil,
+          "tags"           => doc.data['tags'] || []
         }
-        Jekyll.logger.debug "SearchDataCollector:", "   Collected 'Introduction' section (using document title) for #{document.url || document.path}"
+        Jekyll.logger.debug "SearchDataCollector:", "   Collected 'Introduction' section (using document title) for #{doc.url || doc.path}"
       end
       # --- End handling content BEFORE the first heading ---
 
@@ -151,8 +105,8 @@ module Jekyll
           slug_base = slugify(heading_element.text)
           unique_slug = slug_base
           counter = 1
-          # Ensure uniqueness only within this document's prediction, matching JS behavior
-          while document_predicted_ids.include?(unique_slug)
+          # Ensure uniqueness within the current document's predicted IDs
+          while document_predicted_ids_local.include?(unique_slug)
             unique_slug = "#{slug_base}-#{counter}"
             counter += 1
           end
@@ -161,7 +115,7 @@ module Jekyll
         end
 
         # Add to set to maintain uniqueness prediction for the current document
-        document_predicted_ids.add(final_id)
+        document_predicted_ids_local.add(final_id)
 
         # Extract section title (no anchor icon added at this stage)
         section_title = heading_element.text.strip.gsub(/\s+/, ' ') # Normalize whitespace
@@ -189,18 +143,33 @@ module Jekyll
         full_url = "#{base_url}##{final_id}"
 
         # Add to our search data array
-        search_data_array << {
-          "documenttitle"  => document.data['title'] || nil,
+        @@search_sections_data << { # Add to global array
+          "documenttitle"  => doc.data['title'] || nil,
           "sectiontitle"   => section_title,
           "sectioncontent" => "#{section_title} #{section_content}".strip, # Include section title in search content for better relevance
           "url"            => full_url,
-          "date"           => document.data['date'] ? document.data['date'].to_s : nil,
-          "category"       => document.data['category'] || nil,
-          "tags"           => document.data['tags'] || []
+          "date"           => doc.data['date'] ? doc.data['date'].to_s : nil,
+          "category"       => doc.data['category'] || nil,
+          "tags"           => doc.data['tags'] || []
         }
         Jekyll.logger.debug "SearchDataCollector:", "   Collected search data for ID: #{final_id}"
       end
     end
+
+    # Register a hook to run after the entire site has been written to write the final JSON
+    Jekyll::Hooks.register :site, :post_write do |site|
+      Jekyll.logger.info "SearchDataCollector:", "Finished processing all documents. Writing search.json..."
+
+      # Write the collected data directly to search.json in the destination directory
+      search_json_path = File.join(site.dest, 'search.json')
+      File.write(search_json_path, JSON.pretty_generate(@@search_sections_data))
+
+      Jekyll.logger.info "SearchDataCollector:", "Finished collecting search data. Found #{@@search_sections_data.count} sections. Wrote to #{search_json_path}"
+      # Clear the data for subsequent builds if Jekyll server is running
+      @@search_sections_data = []
+      @@document_predicted_ids_global = Set.new
+    end
+
 
     # Helper function to slugify text, IDENTICAL to the js.txt logic
     def self.slugify(text)
