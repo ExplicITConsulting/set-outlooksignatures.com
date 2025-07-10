@@ -92,8 +92,8 @@ description: Search and find. What are you looking for?
             const rawResults = index.search(query, {
                 limit: 99, // Limit the number of results
                 enrich: true, // Return the full document (stored fields)
-                highlight: true, // Enable highlighting!
-                suggest: true // Request suggestions with the search results
+                // highlight: true, // Enable highlighting!
+                // suggest: true // Request suggestions with the search results
             });
 
             // FlexSearch can return results grouped by field if searching across multiple fields.
