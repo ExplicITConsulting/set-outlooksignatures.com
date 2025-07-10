@@ -26,7 +26,7 @@ module Jekyll
 
       # Skip pages that are Jekyll redirects (using 'redirect_from'/'redirect_to' in front matter)
       # next if doc.data['redirect_from']
-      # next if doc.data['redirect_to']
+      next if doc.data['redirect_to']
       # Also skip pages whose *rendered content* is just a redirect message or meta refresh
       # next if doc.output.strip.start_with?("Redirecting") || doc.output.include?('<meta http-equiv="refresh"')
 
