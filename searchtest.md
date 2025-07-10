@@ -1,10 +1,11 @@
 ---
 layout: page
-title: Search Your Site
-permalink: /searchtest/
+title: Search and find
+subtitle: What are you looking for?
+description: Search and find. What are you looking for?
 ---
 
-<input type="search" id="search-input" placeholder="Start typing to search..." class="input is-large is-rounded mb-4">
+<input type="search" id="search-input" placeholder="Start typing to search..." class="input is-large mb-4">
 
 <div id="search-results" class="content">
     <p>Results will appear here.</p>
@@ -61,7 +62,7 @@ permalink: /searchtest/
             })
             .catch(error => {
                 console.error('Error fetching or parsing search.json:', error);
-                document.getElementById('search-results').innerHTML = '<p class="has-text-danger">Error loading search data. Please try again later.</p>';
+                document.getElementById('search-results').innerHTML = '<p class="has-text-primary">Error loading search data. Please try again later.</p>';
             });
 
         const searchInput = document.getElementById('search-input');
@@ -142,7 +143,7 @@ permalink: /searchtest/
                         }
                         // Truncate content for display, add ellipsis if truncated
                         const truncatedContent = fieldContent.length > 150 ? fieldContent.substring(0, 150) + '...' : fieldContent;
-                        displayContent += `<p class="is-size-7 has-text-grey-light mt-1"><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${truncatedContent}</p>`;
+                        displayContent += `<p class="is-size-7 has-text-primary mt-1"><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${truncatedContent}</p>`;
                     }
                 });
 
@@ -158,8 +159,8 @@ permalink: /searchtest/
 
                 html += `
                     <li class="box mb-4">
-                        <a href="${url}" class="has-text-info is-size-5 has-text-weight-bold">${title}</a>
-                        <p class="is-size-7 has-text-grey-light">${url}</p>
+                        <a href="${url}" class="has-text-primary is-size-5 has-text-weight-bold">${title}</a>
+                        <p class="is-size-7 has-text-primary">${url}</p>
                         ${displayContent}
                     </li>
                 `;
@@ -223,14 +224,14 @@ permalink: /searchtest/
     .search-results-list li {
         margin-bottom: 1rem;
         padding: 1rem;
-        border-radius: 8px;
+        /* border-radius: 8px; */
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
+        background-color: transparent;
     }
 
     .search-results-list li a {
         text-decoration: none;
-        color: #3273dc; /* Bulma's info color */
+        color: deepskyblue; /* Bulma's info color */
     }
 
     .search-results-list li a:hover {
@@ -238,7 +239,7 @@ permalink: /searchtest/
     }
 
     mark {
-        background-color: #ffe08a; /* A light yellow for highlighting */
+        background-color: limegreen; /* A light yellow for highlighting */
         padding: 0 2px;
         border-radius: 3px;
     }
