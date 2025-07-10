@@ -14,8 +14,8 @@ module Jekyll
       Jekyll.logger.debug "HeadingSections:", "HTML content length: #{html_content.length} for #{page_or_post.url || page_or_post.path}"
       
       # If content is empty or mostly whitespace, it won't yield sections
-      if html_content.strip.empty?
-        Jekyll.logger.warn "HeadingSections:", "Skipping (empty content): #{page_or_post.url || page_or_post.path}"
+      if html_content.nil? || html_content.strip.empty?
+        Jekyll.logger.warn "HeadingSections:", "Skipping (empty or nil content after rendering): #{page_or_post.url || page_or_post.path}"
         return []
       end
 
@@ -143,27 +143,32 @@ module Jekyll
 
       all_search_sections = []
 
+      # List of extensions Jekyll usually processes into HTML
+      processable_extensions = ['.html', '.md', '.markdown']
+
       # Iterate over pages
       site.pages.each do |page|
         # Only process pages that will be outputted as HTML and have content
-        if page.output == true && page.content && page.ext == ".html"
+        # Check if the page's original extension is one that Jekyll converts to HTML
+        if page.output == true && page.content && processable_extensions.include?(page.ext)
           Jekyll.logger.debug "Jekyll Data Generator:", "Processing page: #{page.url}"
           sections = Jekyll::HeadingSections.get_heading_sections_for_search(page)
           all_search_sections.concat(sections)
         else
-          Jekyll.logger.debug "Jekyll Data Generator:", "Skipping page (not output HTML or no content): #{page.url || page.path}"
+          Jekyll.logger.debug "Jekyll Data Generator:", "Skipping page (not output HTML, no content, or unprocessable extension '#{page.ext}'): #{page.url || page.path}"
         end
       end
 
       # Iterate over posts
       site.posts.docs.each do |post|
         # Only process posts that will be outputted as HTML and have content
-        if post.output == true && post.content && post.ext == ".html"
+        # Check if the post's original extension is one that Jekyll converts to HTML
+        if post.output == true && post.content && processable_extensions.include?(post.ext)
           Jekyll.logger.debug "Jekyll Data Generator:", "Processing post: #{post.url}"
           sections = Jekyll::HeadingSections.get_heading_sections_for_search(post)
           all_search_sections.concat(sections)
         else
-          Jekyll.logger.debug "Jekyll Data Generator:", "Skipping post (not output HTML or no content): #{post.url || post.path}"
+          Jekyll.logger.debug "Jekyll Data Generator:", "Skipping post (not output HTML, no content, or unprocessable extension '#{post.ext}'): #{post.url || post.path}"
         end
       end
 
