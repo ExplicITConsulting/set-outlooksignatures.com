@@ -10,18 +10,22 @@ permalink: /searchtest/
     <p>Results will appear here.</p>
 </div>
 
-<!-- Using jsdelivr.net for FlexSearch, which should resolve MIME type issues -->
+<!-- Using jsdelivr.net for FlexSearch, with the correct URI for the latest 0.x.x minified bundle -->
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0/dist/flexsearch.bundle.min.js"></script>
 
 <script>
     (function() {
+        // Define all possible fields from your search.json for indexing and storing.
+        // This list should be exhaustive based on your JSON structure.
+        const allSearchFields = ["documenttitle", "title", "content", "url", "date", "category", "tags"];
+
         // Initialize FlexSearch index
         const index = new FlexSearch.Document({
             // Define the document fields to be indexed
             document: {
                 id: "url", // Unique identifier for each document
-                index: ["title", "content", "documenttitle", "url"], // Fields to search within
-                store: ["title", "content", "documenttitle", "url"] // Fields to store and return with results
+                index: allSearchFields, // Index all specified fields
+                store: allSearchFields // Store all specified fields for retrieval
             },
             // Configure search options for better results
             tokenize: "full", // Tokenize by words, allowing partial matches
@@ -50,10 +54,13 @@ permalink: /searchtest/
             .then(data => {
                 data.forEach((item, i) => {
                     // Add each item from the JSON to the FlexSearch index
-                    // Assign a unique ID for each item, using its index in the array
-                    // if 'url' is not guaranteed to be unique or present for all items.
-                    // Assuming 'url' is unique and present based on the user's description.
-                    index.add(item);
+                    // Ensure 'url' is present and unique for each item.
+                    // If 'url' is not always present, you might need a fallback ID.
+                    if (item.url) {
+                        index.add(item);
+                    } else {
+                        console.warn('Item missing URL, skipping for FlexSearch index:', item);
+                    }
                 });
                 console.log('FlexSearch index populated successfully.');
             })
@@ -84,7 +91,8 @@ permalink: /searchtest/
                 // You can fine-tune fuzzy, partial, and match options here if needed
                 // For example, to enable fuzzy search with a specific tolerance:
                 // fuzzy: true, // Enables fuzzy matching
-                // For partial search, it's covered by `tokenize: "full"`
+                // For partial search, 'tokenize: "full"' already handles it.
+                // Highlighting is handled in the search results display.
             });
 
             displayResults(results, query);
@@ -100,28 +108,40 @@ permalink: /searchtest/
 
             let html = '<ul class="search-results-list">';
             results.forEach(result => {
-                // Access the original document data from the 'doc' property
+                // IMPORTANT: Add a check to ensure result.doc is not undefined
                 const item = result.doc;
+                if (!item) {
+                    console.warn('Skipping undefined search result:', result);
+                    return; // Skip this iteration if item is undefined
+                }
+
+                // Dynamically get content from all indexed fields for display
+                let displayContent = '';
+                allSearchFields.forEach(field => {
+                    if (item[field] && typeof item[field] === 'string' && item[field].length > 0) {
+                        let fieldContent = item[field];
+                        if (result.highlight && result.highlight[field]) {
+                            fieldContent = highlightText(fieldContent, result.highlight[field]);
+                        }
+                        displayContent += `<p class="is-size-7 has-text-grey-light mt-1"><strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${fieldContent.substring(0, 150)}...</p>`;
+                    }
+                });
+
+
                 let title = item.title || item.documenttitle || 'No Title';
-                let content = item.content || 'No content snippet available.';
                 const url = item.url || '#';
 
-                // Highlight matches in title and content
-                // FlexSearch returns `_highlight` property on the enriched results
-                if (result.highlight) {
-                    if (result.highlight.title) {
-                        title = highlightText(title, result.highlight.title);
-                    }
-                    if (result.highlight.content) {
-                        content = highlightText(content, result.highlight.content);
-                    }
+                // Highlight matches in title
+                if (result.highlight && result.highlight.title) {
+                    title = highlightText(title, result.highlight.title);
                 }
+
 
                 html += `
                     <li class="box mb-4">
                         <a href="${url}" class="has-text-info is-size-5 has-text-weight-bold">${title}</a>
                         <p class="is-size-7 has-text-grey-light">${url}</p>
-                        <p class="mt-2">${content.substring(0, 200)}...</p>
+                        ${displayContent}
                     </li>
                 `;
             });
