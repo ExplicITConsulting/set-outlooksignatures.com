@@ -284,7 +284,7 @@ redirect_from:
 
 <p>&nbsp;</p>
 
-<p>Wer zuerst mehr über die Grundlagen sehen möchte und einen bodenständigen Zugang zu schätzen weiß, findet in unserem Demo-Video einen kompakten Überblick über die wichtigsten Funktionen von Set-OutlookSignatures – anhand eines realen Beispiels, direkt, praxisnah und ohne viel Inszenierung.<br>Beurteilen Sie das Buch nicht nach seinem Einband: Unser Fokus liegt ganz bewusst auf der Funktionalität und Qualität unserer Software, wir sind weder Marketing-Profis noch schauspielerisch besonders talentiert.<br>
+<p>Wenn Sie zuerst mehr über die Grundlagen sehen möchten und einen bodenständigen Zugang zu schätzen wissen, finden Sie in unserem Demo-Video einen kompakten Überblick über die wichtigsten Funktionen von Set-OutlookSignatures – anhand eines realen Beispiels, direkt, praxisnah und ohne viel Inszenierung.<br>Sie werden sehen: Unser Fokus liegt auf der Funktionalität und Qualität unserer Software, wir sind weder Marketing-Profis noch schauspielerisch besonders talentiert.<br>
   <div class="columns">
     <div class="column is-one-third-desktop is-half-tablet is-full-mobil">
       <figure class="image is-16by9">

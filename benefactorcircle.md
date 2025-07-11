@@ -278,7 +278,7 @@ redirect_from:
 
 <p>&nbsp;</p>
 
-<p>If you’d like to start with the basics and appreciate a down-to-earth approach, our demo video offers a compact overview of the key features of Set-OutlookSignatures – based on a real-world example, straightforward, practical, and without much staging.<br>Don't judge a book by its cover: Our focus is deliberately on the functionality and quality of our software, we're neither marketing professionals nor particularly gifted actors.<br>
+<p>If you’d like to start with the basics and appreciate a down-to-earth approach, our demo video offers a compact overview of the key features of Set-OutlookSignatures – based on a real-world example, straightforward, practical, and without much staging.<br>You will see: Our focus is on the functionality and quality of our software, we're neither marketing professionals nor particularly gifted actors.<br>
   <div class="columns">
     <div class="column is-one-third-desktop is-half-tablet is-full-mobil">
       <figure class="image is-16by9">
