@@ -138,7 +138,7 @@ description: Search and find. What are you looking for?
 
                 displayContent = `
                     <p><strong>Document:</strong> ${displayContentDictionary.document.rawContent}&emsp;<strong>Section:</strong> ${displayContentDictionary.section.rawContent}</p>
-                    <p><strong>Content:</strong> ${displayContentDictionary.content.rawContent}</p>
+                    <p>${displayContentDictionary.content.rawContent}</p>
                 `;
 
 
