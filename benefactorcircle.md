@@ -276,9 +276,11 @@ redirect_from:
   </div>
 </div>
 
-<p>If you’d like to start with the basics and appreciate a down-to-earth video, our demo offers a compact overview of the key features of Set-OutlookSignatures – based on a real-world example, straightforward, practical, and without much staging.<br>It also quickly becomes clear that our focus is deliberately on the functionality and quality of our software, not on producing polished videos.<br>
+<p>&nbsp;</p>
+
+<p>If you’d like to start with the basics and appreciate a down-to-earth approach, our demo video offers a compact overview of the key features of Set-OutlookSignatures – based on a real-world example, straightforward, practical, and without much staging.<br>Don't judge a book by its cover: Our focus is deliberately on the functionality and quality of our software, we're neither marketing professionals nor particularly gifted actors.<br>
   <div class="columns">
-    <div class="column is-half">
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobil">
       <figure class="image is-16by9">
         <iframe class="has-ratio" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI" title="Set-OutlookSignatures Benefactor Circle demo video" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </figure>
