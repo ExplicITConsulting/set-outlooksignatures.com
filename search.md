@@ -142,8 +142,8 @@ description: Search and find. What are you looking for?
 
                 html += `
                     <li class="box mb-4">
-                        <a href="${url}" class="has-text-weight-bold">${title}</a><br>
-                        ${displayContentDictionary.section.rawContent}
+                        <a href="${url}"><strong>${title}</strong></a>, ${displayContentDictionary.section.rawContent}
+                        <p>&nbsp;</p>
                         <p>${displayContentDictionary.content.rawContent}</p>
                     </li>
                 `;
@@ -266,12 +266,5 @@ description: Search and find. What are you looking for?
 
     .search-results-list li a:hover {
         text-decoration: underline;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .input.is-large {
-            font-size: 1rem;
-        }
     }
 </style>
