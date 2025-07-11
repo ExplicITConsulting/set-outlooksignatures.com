@@ -15,7 +15,7 @@ module Jekyll
       # Skip if doc.output is nil or empty (no content), or if it's the search.json page itself,
       # or if it's explicitly excluded from sitemap/indexing.
       next if doc.output.nil? || doc.output.empty?
-      next if doc.url == '/search.json' || doc.url == '/404.html' ||doc.data['sitemap_exclude']
+      next if doc.url == '/search.json' || doc.url == '/404.html' || doc.data['sitemap'] == false
 
       # Skip pages that are Jekyll redirects (using 'redirect_from'/'redirect_to' in front matter)
       # next if doc.data['redirect_from']
