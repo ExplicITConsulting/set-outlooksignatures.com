@@ -282,6 +282,16 @@ redirect_from:
   </div>
 </div>
 
+<p>Wer zuerst mehr über die Grundlagen sehen möchte und ein bodenständiges Video zu schätzen weiß, findet in unserem Demo-Video einen kompakten Überblick über die wichtigsten Funktionen von Set-OutlookSignatures – anhand eines realen Beispiels, direkt, praxisnah und ohne viel Inszenierung.<br>Dabei wird auch schnell klar, dass unser Fokus ganz bewusst auf der Funktionalität und Qualität unserer Software liegt und nicht auf der Produktion aufwendiger Videos.<br>
+  <div class="columns">
+    <div class="column is-half">
+      <figure class="image is-16by9">
+        <iframe class="has-ratio" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI" title="Set-OutlookSignatures Benefactor Circle demo video" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </figure>
+    </div>
+  </div>
+</p>
+
 <h2>Finanzielle Vorteile</h2>
 <p>Für die Berechnung des Business Case stellen sich drei zentrale Fragen:</p>
 <ul>
