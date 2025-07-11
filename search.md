@@ -111,7 +111,6 @@ description: Search and find. What are you looking for?
                 }
 
                 let displayContentDictionary = {}
-                let displayContent = '';
                 
                 allSearchFields.forEach(field => {
                     if (item[field] && typeof item[field] === 'string' && item[field].length > 0) {
@@ -136,22 +135,15 @@ description: Search and find. What are you looking for?
                     }
                 });
 
-                displayContent = `
-                    <p><strong>Document:</strong> ${displayContentDictionary.document.rawContent}&emsp;<strong>Section:</strong> ${displayContentDictionary.section.rawContent}</p>
-                    <p>${displayContentDictionary.content.rawContent}</p>
-                `;
-
-
-                let title = item.document || 'No Title';
+                let title = displayContentDictionary.document.rawContent || 'No Title';
                 title = applyHighlighting(title, query); // Apply highlighting to the title
 
                 const url = item.url || '#';
 
                 html += `
                     <li class="box mb-4">
-                        <a href="${url}" class="has-text-weight-bold">${title}</a>
-                        <p>${url}</p>
-                        ${displayContent}
+                        <a href="${url}" class="has-text-weight-bold">${title}</a> Section: ${displayContentDictionary.section.rawContent}
+                        <p>${displayContentDictionary.content.rawContent}</p>
                     </li>
                 `;
             });
