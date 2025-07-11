@@ -142,7 +142,8 @@ description: Search and find. What are you looking for?
 
                 html += `
                     <li class="box mb-4">
-                        <a href="${url}" class="has-text-weight-bold">${title}</a> Section: ${displayContentDictionary.section.rawContent}
+                        <a href="${url}" class="has-text-weight-bold">${title}</a><br>
+                        ${displayContentDictionary.section.rawContent}
                         <p>${displayContentDictionary.content.rawContent}</p>
                     </li>
                 `;
