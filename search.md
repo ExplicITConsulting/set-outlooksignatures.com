@@ -119,7 +119,7 @@ description: Search and find. What are you looking for?
                         if (field === 'content' || field === 'section') {
                             // For 'content' or 'section', generate a contextual snippet
                             // Default: ~250 chars total, trying to show ~80 chars context around match
-                            displayedFieldContent = generateContextualSnippet(item[field], query, 150, 80);
+                            displayedFieldContent = generateContextualSnippet(item[field], query, 500, 80);
                         } else {
                             // For other fields, just apply highlighting to the whole field
                             displayedFieldContent = applyHighlighting(item[field], query);
