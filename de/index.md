@@ -277,9 +277,14 @@ redirect_from:
     opacity: 1;
   }
 
-  @keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-1 * var(--original-set-width))); }
+  @keyframes scroll-resetting {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
   }
 </style>
 
@@ -290,109 +295,11 @@ redirect_from:
       const track = scrollingBanner?.querySelector('.scrolling-track');
 
       if (!scrollingBanner || !track) {
-          console.warn('Scrolling banner or track element not found. Please ensure the HTML structure is correct.');
+          console.warn('Scrolling banner or track element not found.');
           return;
       }
 
-
-      let originalImages = []; // Stores the *actual* original image elements after loading
-      let originalSetWidth = 0; // Still need this to define the animation loop point
-
-      // Number of clone sets. You might need more if your banner is very wide
-      // or if the content is very short compared to the viewport.
-      const NUM_CLONE_SETS = 2; // Typically 1 or 2 is enough
-
-      // Function to calculate the width of a single set of original images
-      function calculateOriginalSetWidth() {
-          const trackStyle = getComputedStyle(track);
-          const imageGap = parseFloat(trackStyle.gap) || 0;
-
-          let calculatedWidth = 0;
-
-          // Sum the width of the *original* image elements plus their gaps
-          originalImages.forEach((img, index) => {
-              calculatedWidth += img.offsetWidth;
-              if (index < originalImages.length - 1) { // Add gap for all but the last image
-                  calculatedWidth += imageGap;
-              }
-          });
-          originalSetWidth = calculatedWidth;
-
-          if (originalSetWidth === 0) {
-              console.warn('originalSetWidth calculated as 0. Images might not have rendered correctly or are missing dimensions.');
-          }
-      }
-
-      // This function will be called initially to populate the track
-      function populateTrackAndCalculateWidths(loadedImgs) {
-          if (loadedImgs.length === 0) {
-              console.warn('No images to display after loading and filtering.');
-              return;
-          }
-
-          track.innerHTML = ''; // Clear existing content
-
-          // 1. Append the actual original image elements to the DOM
-          loadedImgs.forEach(img => track.appendChild(img));
-          
-          // Store these specific image elements which form the 'original set'
-          originalImages = [...loadedImgs]; 
-
-          // 2. IMPORTANT: Force a reflow/recalculation by the browser.
-          //    This ensures images have their correct computed offsetWidths after being added to DOM.
-          //    Accessing an offset property triggers this.
-          track.offsetWidth; 
-
-          // 3. Calculate the width of the original set *after* they are rendered
-          calculateOriginalSetWidth();
-
-          // If the calculated width is still 0, something is fundamentally wrong with image loading/sizing.
-          if (originalSetWidth === 0) {
-              console.error('Cannot proceed: originalSetWidth is 0 even after rendering.');
-              return;
-          }
-
-          // 4. Append clones for seamless scrolling
-          // Append enough clones to always fill the screen and allow for seamless looping.
-          // We'll calculate a more dynamic number of clones here.
-          // Continue cloning until the track's total scrollWidth is at least twice the banner's visible width
-          // plus the original set's width, to ensure smooth transition.
-          const minTotalTrackWidth = scrollingBanner.offsetWidth * 2 + originalSetWidth;
-          let currentTrackWidth = track.scrollWidth;
-
-          while (currentTrackWidth < minTotalTrackWidth) {
-              originalImages.forEach(img => {
-                  track.appendChild(img.cloneNode(true));
-              });
-              currentTrackWidth = track.scrollWidth; // Update width after appending
-          }
-
-
-          // 5. Set the CSS variable for animation duration
-          // This speed (pixels/second) translates to a duration (seconds) over originalSetWidth.
-          const animationDurationSeconds = originalSetWidth / 50; // 50 pixels/second from your original speed
-          track.style.setProperty('--scroll-duration', `${animationDurationSeconds}s`);
-          track.style.setProperty('--original-set-width', `${originalSetWidth}px`); // Set this for keyframes
-      }
-
-      // Debounce the resize handler to re-calculate widths and possibly re-clone
-      const debouncedRecalculateOnResize = debounce(() => {
-          // Recalculate and re-clone if the screen size changes significantly,
-          // as the number of visible original images or the banner width might change.
-          // We need to re-populate from the *original* fetched images.
-          // If images can change size on resize, originalImages (the actual DOM elements) might need to be re-created
-          // or their sizes re-evaluated carefully. For now, we'll re-run populate.
-          if (originalImages.length > 0) { // Only re-run if we have images loaded
-              populateTrackAndCalculateWidths(originalImages.map(img => img.cloneNode(true))); // Pass fresh clones
-              // Note: Re-cloning here means we're creating new DOM elements,
-              // which might be slightly inefficient. A more advanced solution
-              // might only re-evaluate `originalSetWidth` and adjust the
-              // number of clones without recreating all of them.
-          }
-      }, 200);
-
-      window.addEventListener('resize', debouncedRecalculateOnResize, { passive: true });
-
+      const animationSpeedPixelsPerSecond = 50;
 
       fetch('https://set-outlooksignatures.com/client-images.txt')
           .then(response => {
@@ -403,50 +310,90 @@ redirect_from:
               const urls = text.split('\n').map(line => line.trim()).filter(Boolean);
 
               if (urls.length === 0) {
-                  console.warn('No image URLs found. Banner will not display images.');
+                  console.warn('No image URLs found. Banner will not display.');
                   return;
               }
 
-              const imagePromises = urls.map(url => {
+              // Create Image objects and store them
+              const imagesToLoad = urls.map(url => {
+                  const img = new Image();
+                  img.src = url;
+                  img.alt = url.split('/').pop()?.split('.')[0] || 'Image';
+                  return img;
+              });
+
+              // Shuffle the order of images
+              for (let i = imagesToLoad.length - 1; i > 0; i--) {
+                  const j = Math.floor(Math.random() * (i + 1));
+                  [imagesToLoad[i], imagesToLoad[j]] = [imagesToLoad[j], imagesToLoad[i]];
+              }
+
+              // Append images to the track (they are initially 0 width until loaded)
+              imagesToLoad.forEach(img => track.appendChild(img));
+
+              // Wait for all images to load to get accurate dimensions
+              const imageLoadPromises = imagesToLoad.map(img => {
                   return new Promise(resolve => {
-                      const img = new Image();
-                      img.src = url;
-                      img.alt = url.split('/').pop()?.split('.')[0] || 'Image';
-                      img.onload = () => resolve(img);
-                      img.onerror = (e) => {
-                          console.warn(`Failed to load image: ${img.src}. Skipping.`, e);
-                          resolve(null);
-                      };
+                      if (img.complete && img.naturalWidth > 0) {
+                          resolve(img); // Already loaded
+                      } else {
+                          img.onload = () => resolve(img);
+                          img.onerror = () => {
+                              console.warn(`Failed to load image: ${img.src}. Skipping from calculation.`);
+                              resolve(null); // Resolve with null for failed images
+                          };
+                      }
                   });
               });
 
-              Promise.allSettled(imagePromises).then(results => {
-                  const loadedImages = results
+              Promise.allSettled(imageLoadPromises).then(results => {
+                  // Filter out any images that failed to load
+                  const successfullyLoadedImages = results
                       .filter(result => result.status === 'fulfilled' && result.value !== null)
                       .map(result => result.value);
 
-                  // Shuffle the loaded images
-                  for (let i = loadedImages.length - 1; i > 0; i--) {
-                      const j = Math.floor(Math.random() * (i + 1));
-                      [loadedImages[i], loadedImages[j]] = [loadedImages[j], loadedImages[i]];
+                  if (successfullyLoadedImages.length === 0) {
+                      console.warn('No images loaded successfully. Cannot start banner animation.');
+                      return;
                   }
 
-                  // Populate and start animation
-                  populateTrackAndCalculateWidths(loadedImages);
+                  // IMPORTANT: Ensure all images are in the DOM and rendered
+                  // This forces a reflow to get accurate scrollWidth
+                  track.offsetWidth; 
+
+                  const totalTrackContentWidth = track.scrollWidth;
+
+                  if (totalTrackContentWidth === 0) {
+                      console.warn('Calculated track width is 0. Images might not be taking up space.');
+                      return;
+                  }
+
+                  // Calculate the duration based on desired speed and total content width
+                  const animationDurationSeconds = totalTrackContentWidth / animationSpeedPixelsPerSecond;
+                  
+                  // Set the CSS custom property for the animation duration
+                  track.style.setProperty('--scroll-duration', `${animationDurationSeconds}s`);
               });
           })
           .catch(error => {
               console.error('Failed to fetch or process image URLs:', error);
           });
 
-      // Basic debounce function
-      function debounce(func, delay) {
-          let timeout;
-          return function(...args) {
-              const context = this;
-              clearTimeout(timeout);
-              timeout = setTimeout(() => func.apply(context, args), delay);
-          };
-      }
+      // Add a debounce for resize if you want the animation duration to adapt
+      // if the track's scrollWidth changes significantly on window resize (e.g., fluid images)
+      // For `max-height: 4em`, likely not strictly necessary unless `gap` changes.
+      let resizeTimeout;
+      const updateAnimationDuration = () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+              if (track && track.scrollWidth > 0) {
+                  const newTotalTrackContentWidth = track.scrollWidth;
+                  const newAnimationDurationSeconds = newTotalTrackContentWidth / animationSpeedPixelsPerSecond;
+                  track.style.setProperty('--scroll-duration', `${newAnimationDurationSeconds}s`);
+                  console.log('Resized: New animation duration set to', newAnimationDurationSeconds);
+              }
+          }, 200);
+      };
+      window.addEventListener('resize', updateAnimationDuration, { passive: true });
   });
 </script>
