@@ -314,31 +314,36 @@ redirect_from:
           return;
         }
 
-        // Shuffle the original URLs
+        // --- 1. Shuffle the original URLs FIRST ---
+        // This `urls` array will become our single, unique, shuffled set.
         for (let i = urls.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [urls[i], urls[j]] = [urls[j], urls[i]]; // Fisher-Yates shuffle
         }
 
-        const originalShuffledUrls = [...urls]; // This is now your shuffled original set
+        const originalShuffledUniqueUrls = [...urls]; // Store this as the definitive unique, shuffled set
 
-        // We want to scroll through one full set of unique, shuffled images,
-        // and then have the exact same sequence appear again for the loop.
-        let finalUrls = [...originalShuffledUrls, ...originalShuffledUrls];
+        // --- 2. Create the final list of URLs for the track ---
+        // This is the array that will be used to create the actual img elements.
+        // It should contain the original shuffled set, followed by a duplicate for looping.
+        const finalUrlsForDOM = [...originalShuffledUniqueUrls];
+        finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a second copy for seamless looping
+
+        console.log('JS DEBUG: Original Shuffled Unique URLs:', originalShuffledUniqueUrls.map(url => url.split('/').pop()));
+        console.log('JS DEBUG: Final URLs (for DOM creation):', finalUrlsForDOM.map(url => url.split('/').pop()));
 
 
         // Populate the track with images
         const imageElements = [];
         let loadedCount = 0;
-        const totalImagesToLoad = finalUrls.length;
+        const totalImagesToLoad = finalUrlsForDOM.length;
 
-        // Handle cases where no images are loaded
         if (totalImagesToLoad === 0) {
             console.warn('No images to load after processing URLs.');
             return;
         }
 
-        finalUrls.forEach(url => {
+        finalUrlsForDOM.forEach(url => { // Use finalUrlsForDOM here
           const img = new Image();
           img.src = url;
           img.alt = url.split('/').pop()?.split('.')[0] || 'Image';
@@ -363,34 +368,51 @@ redirect_from:
         function setupAnimation() {
           requestAnimationFrame(() => {
             const bannerWidth = banner.clientWidth;
-            const gapSize = parseFloat(getComputedStyle(track).gap) || 0;
+            const computedStyle = getComputedStyle(track);
+            const gapSize = parseFloat(computedStyle.gap) || 0;
 
-            // Calculate the width of the *original shuffled* set of images including their gaps.
-            // This is the distance the animation needs to travel for one full "loop" cycle.
+            // Calculate the exact scroll distance:
+            // This must be the total width of *one full unique set* of images PLUS their internal gaps.
             let scrollDistance = 0;
-            for (let i = 0; i < originalShuffledUrls.length; i++) {
-              // Find the corresponding image element. Since imageElements are populated in order of finalUrls,
-              // the first `originalShuffledUrls.length` elements in `imageElements` correspond to the first unique set.
-              const img = imageElements[i];
-              if (img) { // Ensure the image element exists (might have failed to load)
-                scrollDistance += img.offsetWidth;
-                if (i < originalShuffledUrls.length - 1) {
-                  scrollDistance += gapSize;
+            if (originalShuffledUniqueUrls.length > 0) {
+                for (let i = 0; i < originalShuffledUniqueUrls.length; i++) {
+                    // Reference the image elements corresponding to the *first* unique set in the DOM
+                    const img = imageElements[i];
+                    if (img) {
+                        scrollDistance += img.offsetWidth;
+                        if (i < originalShuffledUniqueUrls.length - 1) {
+                            scrollDistance += gapSize;
+                        }
+                    } else {
+                        console.warn(`JS DEBUG: Image element for original index ${i} not found or failed to load. Scroll distance may be inaccurate.`);
+                    }
                 }
-              }
             }
 
-            // If the calculated scrollDistance is 0 or less, or content isn't wide enough, disable animation
-            if (scrollDistance <= 0 || track.scrollWidth <= bannerWidth) {
-              console.warn('Content is not wide enough to scroll or scroll distance is zero. Disabling animation.');
+            // --- CRITICAL DEBUGGING OUTPUT ---
+            console.log('--- Animation Setup Details ---');
+            console.log('JS DEBUG: Banner (Viewport) Width:', bannerWidth, 'px');
+            console.log('JS DEBUG: Track Scroll Width (Total Content Width in DOM):', track.scrollWidth, 'px');
+            console.log('JS DEBUG: Calculated Scroll Distance (one unique set):', scrollDistance, 'px');
+            console.log('JS DEBUG: Gap Size:', gapSize, 'px');
+            console.log('JS DEBUG: Rendered Image Element Info (first original set only):');
+            const renderedImageInfo = imageElements.slice(0, originalShuffledUniqueUrls.length).map((img, index) => ({
+                src: originalShuffledUniqueUrls[index].split('/').pop(),
+                offsetWidth: img ? img.offsetWidth : 'N/A'
+            }));
+            console.table(renderedImageInfo);
+            console.log('------------------------------');
+            // --- END CRITICAL DEBUGGING OUTPUT ---
+
+            if (scrollDistance <= 0 || track.scrollWidth <= bannerWidth + 1) {
+              console.warn('JS DEBUG: Content is not wide enough to scroll or scroll distance is zero. Disabling animation.');
               track.style.animation = 'none';
               return;
             }
 
             const pixelsPerSecond = 50; // Adjust this value to control speed
-            const animationDuration = scrollDistance / pixelsPerSecond; // Duration in seconds
+            const animationDuration = scrollDistance / pixelsPerSecond;
 
-            // Create a dynamic stylesheet to inject the custom keyframes
             const styleSheet = document.createElement('style');
             styleSheet.type = 'text/css';
             document.head.appendChild(styleSheet);
@@ -404,7 +426,6 @@ redirect_from:
             `;
             styleSheet.sheet.insertRule(keyframesRule, styleSheet.sheet.cssRules.length);
 
-            // Apply the animation with the calculated duration
             track.style.animation = `${animationName} ${animationDuration}s linear infinite`;
             track.style.animationPlayState = 'running';
           });
