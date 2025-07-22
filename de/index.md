@@ -252,6 +252,7 @@ redirect_from:
     display: flex;
     align-items: center;
     width: 100%;
+    height: 100%;
   }
 
   .scrolling-banner .scrolling-track {
@@ -259,11 +260,9 @@ redirect_from:
     align-items: flex-start;
     white-space: nowrap;
     gap: 1.5em;
-    will-change: transform;
-    /* min-width: 100%; */
     box-sizing: border-box;
-    transform-style: preserve-3d;
-  }
+    animation: scroll-left var(--scroll-duration) linear infinite;
+}
 
   .scrolling-banner .scrolling-track img {
     max-height: 4em;
@@ -277,12 +276,17 @@ redirect_from:
     flex-basis: auto;
     opacity: 1;
   }
+
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-1 * var(--original-set-width))); }
+  }
 </style>
 
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-      const scrollingBanner = document.querySelector('.scrolling-banner'); // Good to keep this reference
+      const scrollingBanner = document.querySelector('.scrolling-banner');
       const track = scrollingBanner?.querySelector('.scrolling-track');
 
       if (!scrollingBanner || !track) {
@@ -290,94 +294,105 @@ redirect_from:
           return;
       }
 
-      const animationSpeedPixelsPerSecond = 50; // pixels per second
-      let position = 0;
-      let lastTimestamp = null;
-      let originalSetWidth = 0; // Width of ONE complete set of original images
-      let imageGap = 0; // To store the computed CSS gap
 
-      // Number of cloned sets to append. 2 is usually a good minimum for seamlessness.
-      const NUM_CLONE_SETS = 2; 
+      let originalImages = []; // Stores the *actual* original image elements after loading
+      let originalSetWidth = 0; // Still need this to define the animation loop point
+
+      // Number of clone sets. You might need more if your banner is very wide
+      // or if the content is very short compared to the viewport.
+      const NUM_CLONE_SETS = 2; // Typically 1 or 2 is enough
 
       // Function to calculate the width of a single set of original images
       function calculateOriginalSetWidth() {
-          // Get the computed gap from the track's CSS
           const trackStyle = getComputedStyle(track);
-          imageGap = parseFloat(trackStyle.gap) || 0; // fallback to 0 if not found
+          const imageGap = parseFloat(trackStyle.gap) || 0;
 
           let calculatedWidth = 0;
-          // Iterate only over the *actual* original image elements that were first appended
-          // This is crucial to get the width of ONE set.
-          // We'll assume the first 'originalImages.length' children of the track are the originals.
-          // This makes the cloning reliable.
-          for (let i = 0; i < originalImages.length; i++) {
-              const img = originalImages[i]; // Use the actual image elements
+
+          // Sum the width of the *original* image elements plus their gaps
+          originalImages.forEach((img, index) => {
               calculatedWidth += img.offsetWidth;
-              if (i < originalImages.length - 1) {
+              if (index < originalImages.length - 1) { // Add gap for all but the last image
                   calculatedWidth += imageGap;
               }
-          }
+          });
           originalSetWidth = calculatedWidth;
 
-          // Fallback/Warning: If width is 0 after calculation
           if (originalSetWidth === 0) {
               console.warn('originalSetWidth calculated as 0. Images might not have rendered correctly or are missing dimensions.');
           }
       }
 
       // This function will be called initially to populate the track
-      function populateTrackAndCalculateWidths(loadedImages) {
-          if (loadedImages.length === 0) {
+      function populateTrackAndCalculateWidths(loadedImgs) {
+          if (loadedImgs.length === 0) {
               console.warn('No images to display after loading and filtering.');
               return;
           }
 
-          // Clear existing content (important for re-initialization, or initial setup)
-          track.innerHTML = ''; 
+          track.innerHTML = ''; // Clear existing content
 
           // 1. Append the actual original image elements to the DOM
-          loadedImages.forEach(img => track.appendChild(img));
+          loadedImgs.forEach(img => track.appendChild(img));
           
           // Store these specific image elements which form the 'original set'
-          // This is critical for calculateOriginalSetWidth to reference them.
-          originalImages = [...loadedImages]; 
+          originalImages = [...loadedImgs]; 
 
           // 2. IMPORTANT: Force a reflow/recalculation by the browser.
           //    This ensures images have their correct computed offsetWidths after being added to DOM.
-          //    A simple way is to access an offset property.
-          track.offsetWidth; // Trigger reflow
+          //    Accessing an offset property triggers this.
+          track.offsetWidth; 
 
           // 3. Calculate the width of the original set *after* they are rendered
           calculateOriginalSetWidth();
 
+          // If the calculated width is still 0, something is fundamentally wrong with image loading/sizing.
+          if (originalSetWidth === 0) {
+              console.error('Cannot proceed: originalSetWidth is 0 even after rendering.');
+              return;
+          }
+
           // 4. Append clones for seamless scrolling
-          for (let i = 0; i < NUM_CLONE_SETS; i++) {
+          // Append enough clones to always fill the screen and allow for seamless looping.
+          // We'll calculate a more dynamic number of clones here.
+          // Continue cloning until the track's total scrollWidth is at least twice the banner's visible width
+          // plus the original set's width, to ensure smooth transition.
+          const minTotalTrackWidth = scrollingBanner.offsetWidth * 2 + originalSetWidth;
+          let currentTrackWidth = track.scrollWidth;
+
+          while (currentTrackWidth < minTotalTrackWidth) {
               originalImages.forEach(img => {
                   track.appendChild(img.cloneNode(true));
               });
+              currentTrackWidth = track.scrollWidth; // Update width after appending
           }
+
+
+          // 5. Set the CSS variable for animation duration
+          // This speed (pixels/second) translates to a duration (seconds) over originalSetWidth.
+          const animationDurationSeconds = originalSetWidth / 50; // 50 pixels/second from your original speed
+          track.style.setProperty('--scroll-duration', `${animationDurationSeconds}s`);
+          track.style.setProperty('--original-set-width', `${originalSetWidth}px`); // Set this for keyframes
       }
 
-      // Debounce the resize handler to prevent excessive recalculations
-      // On resize, we only need to recalculate the originalSetWidth if images are responsive
-      // and potentially adjust the current position if the total width changes dramatically.
+      // Debounce the resize handler to re-calculate widths and possibly re-clone
       const debouncedRecalculateOnResize = debounce(() => {
-          // If image sizes are truly fluid and change significantly on resize,
-          // you might need to re-run populateTrackAndCalculateWidths or a simpler
-          // recalculation of originalSetWidth.
-          // For now, assuming fixed max-height, originalSetWidth should remain stable
-          // unless image sources themselves change.
-          // However, if the `gap` changes via responsive CSS, this needs to re-evaluate.
-          // It's safer to recalculate.
-          calculateOriginalSetWidth();
-          // You might need to adjust 'position' here if originalSetWidth changed
-          // e.g., position = (position / oldWidth) * newWidth;
+          // Recalculate and re-clone if the screen size changes significantly,
+          // as the number of visible original images or the banner width might change.
+          // We need to re-populate from the *original* fetched images.
+          // If images can change size on resize, originalImages (the actual DOM elements) might need to be re-created
+          // or their sizes re-evaluated carefully. For now, we'll re-run populate.
+          if (originalImages.length > 0) { // Only re-run if we have images loaded
+              populateTrackAndCalculateWidths(originalImages.map(img => img.cloneNode(true))); // Pass fresh clones
+              // Note: Re-cloning here means we're creating new DOM elements,
+              // which might be slightly inefficient. A more advanced solution
+              // might only re-evaluate `originalSetWidth` and adjust the
+              // number of clones without recreating all of them.
+          }
       }, 200);
 
       window.addEventListener('resize', debouncedRecalculateOnResize, { passive: true });
 
-
-      let originalImages = []; // Stores the *actual* original image elements after loading
 
       fetch('https://set-outlooksignatures.com/client-images.txt')
           .then(response => {
@@ -392,27 +407,20 @@ redirect_from:
                   return;
               }
 
-              // Create Image objects
               const imagePromises = urls.map(url => {
                   return new Promise(resolve => {
                       const img = new Image();
                       img.src = url;
                       img.alt = url.split('/').pop()?.split('.')[0] || 'Image';
-                      // Important: Set CSS properties *before* loading if you want accurate initial dimensions
-                      // For `max-height`, it's usually applied via CSS, but if you dynamically set it, do it here.
-                      // img.style.maxHeight = '4em'; // Example if setting inline
-                      // img.style.height = 'auto'; // Example if setting inline
-
                       img.onload = () => resolve(img);
                       img.onerror = (e) => {
                           console.warn(`Failed to load image: ${img.src}. Skipping.`, e);
-                          resolve(null); // Resolve with null for failed images
+                          resolve(null);
                       };
                   });
               });
 
               Promise.allSettled(imagePromises).then(results => {
-                  // Filter out successfully loaded images
                   const loadedImages = results
                       .filter(result => result.status === 'fulfilled' && result.value !== null)
                       .map(result => result.value);
@@ -423,41 +431,13 @@ redirect_from:
                       [loadedImages[i], loadedImages[j]] = [loadedImages[j], loadedImages[i]];
                   }
 
+                  // Populate and start animation
                   populateTrackAndCalculateWidths(loadedImages);
-
-                  if (originalSetWidth === 0) {
-                      console.warn('Animation cannot start: originalSetWidth is 0.');
-                      return;
-                  }
-
-                  requestAnimationFrame(animate);
               });
           })
           .catch(error => {
               console.error('Failed to fetch or process image URLs:', error);
           });
-
-      function animate(timestamp) {
-          if (!lastTimestamp) lastTimestamp = timestamp;
-          const deltaTime = Math.min((timestamp - lastTimestamp) / 1000, 1 / 30); // Cap delta to prevent huge jumps
-          lastTimestamp = timestamp;
-
-          if (originalSetWidth === 0) { // Safety check in case width becomes 0 mid-animation (e.g., images disappear)
-              requestAnimationFrame(animate);
-              return;
-          }
-
-          position -= animationSpeedPixelsPerSecond * deltaTime;
-
-          // Loop condition: when the entire original set has scrolled off-screen
-          if (position <= -originalSetWidth) {
-              position += originalSetWidth;
-          }
-
-          track.style.transform = `translate3d(${position}px, 0, 0)`; // Use translate3d for better performance
-
-          requestAnimationFrame(animate);
-      }
 
       // Basic debounce function
       function debounce(func, delay) {
