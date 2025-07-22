@@ -329,9 +329,7 @@ redirect_from:
         const finalUrlsForDOM = [...originalShuffledUniqueUrls];
         finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a second copy for seamless looping
 
-        console.log('JS DEBUG: Original Shuffled Unique URLs:', originalShuffledUniqueUrls.map(url => url.split('/').pop()));
-        console.log('JS DEBUG: Final URLs (for DOM creation):', finalUrlsForDOM.map(url => url.split('/').pop()));
-
+        track.innerHTML = ''; // Clear existing content of the track
 
         // Populate the track with images
         const imageElements = [];
@@ -390,18 +388,10 @@ redirect_from:
             }
 
             // --- CRITICAL DEBUGGING OUTPUT ---
-            console.log('--- Animation Setup Details ---');
-            console.log('JS DEBUG: Banner (Viewport) Width:', bannerWidth, 'px');
-            console.log('JS DEBUG: Track Scroll Width (Total Content Width in DOM):', track.scrollWidth, 'px');
-            console.log('JS DEBUG: Calculated Scroll Distance (one unique set):', scrollDistance, 'px');
-            console.log('JS DEBUG: Gap Size:', gapSize, 'px');
-            console.log('JS DEBUG: Rendered Image Element Info (first original set only):');
             const renderedImageInfo = imageElements.slice(0, originalShuffledUniqueUrls.length).map((img, index) => ({
                 src: originalShuffledUniqueUrls[index].split('/').pop(),
                 offsetWidth: img ? img.offsetWidth : 'N/A'
             }));
-            console.table(renderedImageInfo);
-            console.log('------------------------------');
             // --- END CRITICAL DEBUGGING OUTPUT ---
 
             if (scrollDistance <= 0 || track.scrollWidth <= bannerWidth + 1) {
