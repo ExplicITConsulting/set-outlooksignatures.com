@@ -276,138 +276,54 @@ redirect_from:
     flex-basis: auto;
     opacity: 1;
   }
+
+  @keyframes scroll-full-track {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); 
+    }
+  }
 </style>
 
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-      const scrollingBanner = document.querySelector('.scrolling-banner');
-      const track = scrollingBanner?.querySelector('.scrolling-track');
+      const track = document.querySelector('.scrolling-track');
 
-      if (!scrollingBanner || !track) {
-          console.warn('Scrolling banner or track element not found. Please ensure the HTML structure is correct.');
+      if (!track) {
+          console.warn('Scrolling track element not found. Please ensure the HTML structure is correct.');
           return;
       }
 
-      const animationSpeedPixelsPerSecond = 50; // pixels per second
-      let currentPosition = 0; // The transform X position
-      let lastTimestamp = null;
-      let imagesInTrack = []; // Stores references to the actual <img> elements in the track
-
-      // Function to handle moving images
-      function shiftImage() {
-          if (imagesInTrack.length === 0) return;
-
-          // Get the first image element in the track
-          const firstImage = imagesInTrack[0];
-          
-          // Check if the first image has scrolled completely out of view
-          // currentPosition is negative, so we check if its *absolute* value
-          // is greater than or equal to the image's offsetWidth
-          if (Math.abs(currentPosition) >= firstImage.offsetWidth + (parseFloat(getComputedStyle(track).gap) || 0)) {
-              // Append the first image to the end of the track
-              track.appendChild(firstImage);
-
-              // Adjust the currentPosition to compensate for the image moving.
-              // Effectively, we "snap back" the transform by the width of the image that just moved.
-              currentPosition += firstImage.offsetWidth + (parseFloat(getComputedStyle(track).gap) || 0);
-
-              // Re-order our internal array to match the DOM
-              imagesInTrack.shift(); // Remove from beginning
-              imagesInTrack.push(firstImage); // Add to end
-          }
-      }
-
-      // Animation loop
-      function animate(timestamp) {
-          if (!lastTimestamp) lastTimestamp = timestamp;
-          const deltaTime = Math.min((timestamp - lastTimestamp) / 1000, 1 / 30); // Cap delta for stability
-          lastTimestamp = timestamp;
-
-          // Move the entire track to the left
-          currentPosition -= animationSpeedPixelsPerSecond * deltaTime;
-
-          // Apply the transform
-          track.style.transform = `translateX(${currentPosition}px)`;
-
-          // Check if we need to shift an image to the end
-          shiftImage();
-
-          requestAnimationFrame(animate);
-      }
-
-      // Load images and start animation
       fetch('https://set-outlooksignatures.com/client-images.txt')
           .then(response => {
-              if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+              if (!response.ok) {
+                  throw new Error(`HTTP error! status: ${response.status}`);
+              }
               return response.text();
           })
           .then(text => {
-              const urls = text.split('\n').map(line => line.trim()).filter(Boolean);
+              let urls = text.split('\n').map(line => line.trim()).filter(Boolean);
 
               if (urls.length === 0) {
-                  console.warn('No image URLs found. Banner will not display.');
+                  console.warn('No image URLs found. Banner will not display images.');
                   return;
               }
 
-              // Create Image objects
-              const imagePromises = urls.map(url => {
-                  return new Promise(resolve => {
-                      const img = new Image();
-                      img.src = url;
-                      img.alt = url.split('/').pop()?.split('.')[0] || 'Image';
-                      img.onload = () => resolve(img);
-                      img.onerror = (e) => {
-                          console.warn(`Failed to load image: ${img.src}. Skipping.`);
-                          resolve(null);
-                      };
-                  });
-              });
+              // Shuffle the URLs
+              for (let i = urls.length - 1; i > 0; i--) {
+                  const j = Math.floor(Math.random() * (i + 1));
+                  [urls[i], urls[j]] = [urls[j], urls[i]];
+              }
 
-              Promise.allSettled(imagePromises).then(results => {
-                  const loadedImages = results
-                      .filter(result => result.status === 'fulfilled' && result.value !== null)
-                      .map(result => result.value);
-
-                  if (loadedImages.length === 0) {
-                      console.warn('No images loaded successfully. Cannot start banner animation.');
-                      return;
-                  }
-
-                  // Shuffle the loaded images
-                  for (let i = loadedImages.length - 1; i > 0; i--) {
-                      const j = Math.floor(Math.random() * (i + 1));
-                      [loadedImages[i], loadedImages[j]] = [loadedImages[j], loadedImages[i]];
-                  }
-
-                  // Append images to the track
-                  loadedImages.forEach(img => track.appendChild(img));
-                  imagesInTrack = [...loadedImages]; // Store references to the initial images
-
-                  // IMPORTANT: Append *clones* of all images initially.
-                  // This is crucial to ensure there's enough content to scroll through
-                  // before the first image needs to be recycled. Without initial clones,
-                  // you might see a blank space before the first image gets appended.
-                  // The number of clones needed depends on your banner width.
-                  // A good rule of thumb: clone enough to fill the banner at least 1-2 times over.
-                  const bannerVisibleWidth = scrollingBanner.offsetWidth;
-                  let currentTrackContentWidth = track.scrollWidth;
-
-                  while (currentTrackContentWidth < (bannerVisibleWidth * 2)) { // Ensure track is at least 2x banner width
-                      loadedImages.forEach(img => {
-                          const clone = img.cloneNode(true);
-                          track.appendChild(clone);
-                          imagesInTrack.push(clone); // Add clones to our tracking array
-                      });
-                      currentTrackContentWidth = track.scrollWidth;
-                  }
-                  
-                  // Start the animation only if there are images
-                  if (imagesInTrack.length > 0) {
-                      requestAnimationFrame(animate);
-                  } else {
-                      console.warn('No images in track after initial setup. Animation will not start.');
-                  }
+              // Create and append images
+              urls.forEach(url => {
+                  const img = new Image();
+                  img.src = url;
+                  img.alt = url.split('/').pop()?.split('.')[0] || 'Image';
+                  track.appendChild(img);
               });
           })
           .catch(error => {
