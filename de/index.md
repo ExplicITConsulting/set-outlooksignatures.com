@@ -261,7 +261,7 @@ redirect_from:
     white-space: nowrap;
     gap: 1.5em;
     box-sizing: border-box;
-    animation: scroll-left var(--scroll-duration) linear infinite;
+    animation: scroll-full-track 60s linear infinite;
 }
 
   .scrolling-banner .scrolling-track img {
