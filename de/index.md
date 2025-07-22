@@ -285,37 +285,49 @@ redirect_from:
     const track = document.querySelector('.scrolling-track');
     const speed = 50; // pixels per second
     let position = 0;
-    let totalWidth = 0;
     let lastTimestamp = null;
+    let originalSetWidth = 0; // Renamed to clarify: width of ONE set of original images
 
     fetch('https://set-outlooksignatures.com/client-images.txt')
       .then(res => res.text())
       .then(text => {
         let urls = text.split('\n').map(u => u.trim()).filter(Boolean);
-
         // Shuffle the URLs
         for (let i = urls.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [urls[i], urls[j]] = [urls[j], urls[i]];
         }
-
-        const images = urls.map(url => {
+        const originalImages = urls.map(url => { // Keep original images separate
           const img = new Image();
           img.src = url;
           img.alt = url.split('/').pop()?.split('.')[0] || 'Image';
           return img;
         });
 
-        Promise.all(images.map(img => new Promise(resolve => {
+        Promise.all(originalImages.map(img => new Promise(resolve => {
           img.onload = () => resolve();
           img.onerror = () => resolve(); // skip failed images
         }))).then(() => {
-          images.forEach(img => track.appendChild(img));
-          images.forEach(img => track.appendChild(img.cloneNode(true))); // clone once
+          // --- Essential Change for Seamless Loop ---
+          // 1. Append the original images first
+          originalImages.forEach(img => track.appendChild(img));
 
-          totalWidth = [...track.children].reduce((sum, img) => sum + img.offsetWidth + 10, 0); // include gap
+          // 2. Calculate the width of this *original set*
+          //    Important: If your track has `gap` or `column-gap` applied via CSS,
+          //    `track.scrollWidth` here will correctly include those gaps for the *first* set.
+          originalSetWidth = track.scrollWidth;
+
+          // 3. Append clones of the original images to create the continuous effect
+          //    You typically need at least one full clone set, sometimes two for wider banners
+          //    or fast speeds to prevent seeing the "reset."
+          originalImages.forEach(img => track.appendChild(img.cloneNode(true)));
+          // You might even append a second set of clones:
+          // originalImages.forEach(img => track.appendChild(img.cloneNode(true)));
+          // --- End Essential Change ---
+
           requestAnimationFrame(animate);
         });
+      });
 
     function animate(timestamp) {
       if (!lastTimestamp) lastTimestamp = timestamp;
@@ -323,7 +335,12 @@ redirect_from:
       lastTimestamp = timestamp;
 
       position -= speed * delta;
-      if (position <= -totalWidth / 2) position = 0;
+
+      // Wrap around when the original set has scrolled completely out of view
+      // Reset to the position where the first clone set starts.
+      if (Math.abs(position) >= originalSetWidth) {
+        position += originalSetWidth; // Adjust position to simulate infinite loop
+      }
 
       track.style.transform = `translateX(${position}px)`;
       requestAnimationFrame(animate);
