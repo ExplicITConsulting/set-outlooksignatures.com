@@ -282,68 +282,191 @@ redirect_from:
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const track = document.querySelector('.scrolling-track');
-    const speed = 50; // pixels per second
-    let position = 0;
-    let lastTimestamp = null;
-    let originalSetWidth = 0; // Renamed to clarify: width of ONE set of original images
+      const scrollingBanner = document.querySelector('.scrolling-banner'); // Good to keep this reference
+      const track = scrollingBanner?.querySelector('.scrolling-track');
 
-    fetch('https://set-outlooksignatures.com/client-images.txt')
-      .then(res => res.text())
-      .then(text => {
-        let urls = text.split('\n').map(u => u.trim()).filter(Boolean);
-        // Shuffle the URLs
-        for (let i = urls.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [urls[i], urls[j]] = [urls[j], urls[i]];
-        }
-        const originalImages = urls.map(url => { // Keep original images separate
-          const img = new Image();
-          img.src = url;
-          img.alt = url.split('/').pop()?.split('.')[0] || 'Image';
-          return img;
-        });
-
-        Promise.all(originalImages.map(img => new Promise(resolve => {
-          img.onload = () => resolve();
-          img.onerror = () => resolve(); // skip failed images
-        }))).then(() => {
-          // --- Essential Change for Seamless Loop ---
-          // 1. Append the original images first
-          originalImages.forEach(img => track.appendChild(img));
-
-          // 2. Calculate the width of this *original set*
-          //    Important: If your track has `gap` or `column-gap` applied via CSS,
-          //    `track.scrollWidth` here will correctly include those gaps for the *first* set.
-          originalSetWidth = track.scrollWidth;
-
-          // 3. Append clones of the original images to create the continuous effect
-          //    You typically need at least one full clone set, sometimes two for wider banners
-          //    or fast speeds to prevent seeing the "reset."
-          originalImages.forEach(img => track.appendChild(img.cloneNode(true)));
-          // You might even append a second set of clones:
-          // originalImages.forEach(img => track.appendChild(img.cloneNode(true)));
-          // --- End Essential Change ---
-
-          requestAnimationFrame(animate);
-        });
-      });
-
-    function animate(timestamp) {
-      if (!lastTimestamp) lastTimestamp = timestamp;
-      const delta = (timestamp - lastTimestamp) / 1000;
-      lastTimestamp = timestamp;
-
-      position -= speed * delta;
-
-      // Wrap around when the original set has scrolled completely out of view
-      // Reset to the position where the first clone set starts.
-      if (Math.abs(position) >= originalSetWidth) {
-        position += originalSetWidth; // Adjust position to simulate infinite loop
+      if (!scrollingBanner || !track) {
+          console.warn('Scrolling banner or track element not found. Please ensure the HTML structure is correct.');
+          return;
       }
 
-      track.style.transform = `translateX(${position}px)`;
-      requestAnimationFrame(animate);
-    }
+      const animationSpeedPixelsPerSecond = 50; // pixels per second
+      let position = 0;
+      let lastTimestamp = null;
+      let originalSetWidth = 0; // Width of ONE complete set of original images
+      let imageGap = 0; // To store the computed CSS gap
+
+      // Number of cloned sets to append. 2 is usually a good minimum for seamlessness.
+      const NUM_CLONE_SETS = 2; 
+
+      // Function to calculate the width of a single set of original images
+      function calculateOriginalSetWidth() {
+          // Get the computed gap from the track's CSS
+          const trackStyle = getComputedStyle(track);
+          imageGap = parseFloat(trackStyle.gap) || 0; // fallback to 0 if not found
+
+          let calculatedWidth = 0;
+          // Iterate only over the *actual* original image elements that were first appended
+          // This is crucial to get the width of ONE set.
+          // We'll assume the first 'originalImages.length' children of the track are the originals.
+          // This makes the cloning reliable.
+          for (let i = 0; i < originalImages.length; i++) {
+              const img = originalImages[i]; // Use the actual image elements
+              calculatedWidth += img.offsetWidth;
+              if (i < originalImages.length - 1) {
+                  calculatedWidth += imageGap;
+              }
+          }
+          originalSetWidth = calculatedWidth;
+
+          // Fallback/Warning: If width is 0 after calculation
+          if (originalSetWidth === 0) {
+              console.warn('originalSetWidth calculated as 0. Images might not have rendered correctly or are missing dimensions.');
+          }
+      }
+
+      // This function will be called initially to populate the track
+      function populateTrackAndCalculateWidths(loadedImages) {
+          if (loadedImages.length === 0) {
+              console.warn('No images to display after loading and filtering.');
+              return;
+          }
+
+          // Clear existing content (important for re-initialization, or initial setup)
+          track.innerHTML = ''; 
+
+          // 1. Append the actual original image elements to the DOM
+          loadedImages.forEach(img => track.appendChild(img));
+          
+          // Store these specific image elements which form the 'original set'
+          // This is critical for calculateOriginalSetWidth to reference them.
+          originalImages = [...loadedImages]; 
+
+          // 2. IMPORTANT: Force a reflow/recalculation by the browser.
+          //    This ensures images have their correct computed offsetWidths after being added to DOM.
+          //    A simple way is to access an offset property.
+          track.offsetWidth; // Trigger reflow
+
+          // 3. Calculate the width of the original set *after* they are rendered
+          calculateOriginalSetWidth();
+
+          // 4. Append clones for seamless scrolling
+          for (let i = 0; i < NUM_CLONE_SETS; i++) {
+              originalImages.forEach(img => {
+                  track.appendChild(img.cloneNode(true));
+              });
+          }
+      }
+
+      // Debounce the resize handler to prevent excessive recalculations
+      // On resize, we only need to recalculate the originalSetWidth if images are responsive
+      // and potentially adjust the current position if the total width changes dramatically.
+      const debouncedRecalculateOnResize = debounce(() => {
+          // If image sizes are truly fluid and change significantly on resize,
+          // you might need to re-run populateTrackAndCalculateWidths or a simpler
+          // recalculation of originalSetWidth.
+          // For now, assuming fixed max-height, originalSetWidth should remain stable
+          // unless image sources themselves change.
+          // However, if the `gap` changes via responsive CSS, this needs to re-evaluate.
+          // It's safer to recalculate.
+          calculateOriginalSetWidth();
+          // You might need to adjust 'position' here if originalSetWidth changed
+          // e.g., position = (position / oldWidth) * newWidth;
+      }, 200);
+
+      window.addEventListener('resize', debouncedRecalculateOnResize, { passive: true });
+
+
+      let originalImages = []; // Stores the *actual* original image elements after loading
+
+      fetch('https://set-outlooksignatures.com/client-images.txt')
+          .then(response => {
+              if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+              return response.text();
+          })
+          .then(text => {
+              const urls = text.split('\n').map(line => line.trim()).filter(Boolean);
+
+              if (urls.length === 0) {
+                  console.warn('No image URLs found. Banner will not display images.');
+                  return;
+              }
+
+              // Create Image objects
+              const imagePromises = urls.map(url => {
+                  return new Promise(resolve => {
+                      const img = new Image();
+                      img.src = url;
+                      img.alt = url.split('/').pop()?.split('.')[0] || 'Image';
+                      // Important: Set CSS properties *before* loading if you want accurate initial dimensions
+                      // For `max-height`, it's usually applied via CSS, but if you dynamically set it, do it here.
+                      // img.style.maxHeight = '4em'; // Example if setting inline
+                      // img.style.height = 'auto'; // Example if setting inline
+
+                      img.onload = () => resolve(img);
+                      img.onerror = (e) => {
+                          console.warn(`Failed to load image: ${img.src}. Skipping.`, e);
+                          resolve(null); // Resolve with null for failed images
+                      };
+                  });
+              });
+
+              Promise.allSettled(imagePromises).then(results => {
+                  // Filter out successfully loaded images
+                  const loadedImages = results
+                      .filter(result => result.status === 'fulfilled' && result.value !== null)
+                      .map(result => result.value);
+
+                  // Shuffle the loaded images
+                  for (let i = loadedImages.length - 1; i > 0; i--) {
+                      const j = Math.floor(Math.random() * (i + 1));
+                      [loadedImages[i], loadedImages[j]] = [loadedImages[j], loadedImages[i]];
+                  }
+
+                  populateTrackAndCalculateWidths(loadedImages);
+
+                  if (originalSetWidth === 0) {
+                      console.warn('Animation cannot start: originalSetWidth is 0.');
+                      return;
+                  }
+
+                  requestAnimationFrame(animate);
+              });
+          })
+          .catch(error => {
+              console.error('Failed to fetch or process image URLs:', error);
+          });
+
+      function animate(timestamp) {
+          if (!lastTimestamp) lastTimestamp = timestamp;
+          const deltaTime = Math.min((timestamp - lastTimestamp) / 1000, 1 / 30); // Cap delta to prevent huge jumps
+          lastTimestamp = timestamp;
+
+          if (originalSetWidth === 0) { // Safety check in case width becomes 0 mid-animation (e.g., images disappear)
+              requestAnimationFrame(animate);
+              return;
+          }
+
+          position -= animationSpeedPixelsPerSecond * deltaTime;
+
+          // Loop condition: when the entire original set has scrolled off-screen
+          if (position <= -originalSetWidth) {
+              position += originalSetWidth;
+          }
+
+          track.style.transform = `translate3d(${position}px, 0, 0)`; // Use translate3d for better performance
+
+          requestAnimationFrame(animate);
+      }
+
+      // Basic debounce function
+      function debounce(func, delay) {
+          let timeout;
+          return function(...args) {
+              const context = this;
+              clearTimeout(timeout);
+              timeout = setTimeout(() => func.apply(context, args), delay);
+          };
+      }
   });
 </script>
