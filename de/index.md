@@ -292,7 +292,7 @@ redirect_from:
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.scrolling-track');
-    const banner = document.querySelector('.scrolling-banner'); // Get the banner to know its visible width
+    const banner = document.querySelector('.scrolling-banner');
 
     if (!track || !banner) {
       console.warn('Scrolling track or banner element not found. Please ensure the HTML structure is correct.');
@@ -314,108 +314,100 @@ redirect_from:
           return;
         }
 
-        // To ensure a continuous loop, duplicate the images.
-        // A common strategy is to duplicate the original set of images.
-        // This allows the animation to scroll past the original set and
-        // seamlessly transition to the duplicates, then reset.
-        const originalUrls = [...urls]; // Keep original for duplication
-        urls = [...originalUrls, ...originalUrls]; // Duplicate the set for seamless loop
-
-        const finalUrls = [...urls]; // The first set
-        // Adding the original set again to create a loopable track
-        for (let i = 0; i < originalUrls.length; i++) {
-             finalUrls.push(originalUrls[i]);
+        // Shuffle the original URLs
+        for (let i = urls.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [urls[i], urls[j]] = [urls[j], urls[i]]; // Fisher-Yates shuffle
         }
-        
+
+        const originalShuffledUrls = [...urls]; // This is now your shuffled original set
+
+        // We want to scroll through one full set of unique, shuffled images,
+        // and then have the exact same sequence appear again for the loop.
+        let finalUrls = [...originalShuffledUrls, ...originalShuffledUrls];
+
+
         // Populate the track with images
         const imageElements = [];
+        let loadedCount = 0;
+        const totalImagesToLoad = finalUrls.length;
+
+        // Handle cases where no images are loaded
+        if (totalImagesToLoad === 0) {
+            console.warn('No images to load after processing URLs.');
+            return;
+        }
+
         finalUrls.forEach(url => {
           const img = new Image();
           img.src = url;
           img.alt = url.split('/').pop()?.split('.')[0] || 'Image';
-          img.onload = () => { // Ensure image is loaded before calculating
-            track.appendChild(img);
-            imageElements.push(img); // Store reference to loaded images
 
-            // Check if all images are loaded
-            if (imageElements.length === finalUrls.length) {
+          img.onload = () => {
+            track.appendChild(img);
+            imageElements.push(img);
+            loadedCount++;
+            if (loadedCount === totalImagesToLoad) {
               setupAnimation();
             }
           };
           img.onerror = () => {
             console.error(`Failed to load image: ${url}`);
-            // If an image fails, still try to set up animation if enough others load
-            if (imageElements.length === finalUrls.length) { // Or some threshold
-                 setupAnimation();
+            loadedCount++;
+            if (loadedCount === totalImagesToLoad) {
+              setupAnimation();
             }
           };
         });
 
-        // Function to set up the animation after images are loaded
         function setupAnimation() {
-            // Wait a tiny bit for browser layout to settle after images are appended
-            // requestAnimationFrame is a good way to ensure the DOM is ready for calculations
-            requestAnimationFrame(() => {
-                const trackWidth = track.scrollWidth; // Actual total width of the track including gap
-                const bannerWidth = banner.clientWidth; // Visible width of the banner
-                const gapSize = parseFloat(getComputedStyle(track).gap) || 0;
-                const numImages = imageElements.length;
+          requestAnimationFrame(() => {
+            const bannerWidth = banner.clientWidth;
+            const gapSize = parseFloat(getComputedStyle(track).gap) || 0;
 
-                // Calculate the actual content width (images + gaps)
-                let totalContentWidth = 0;
-                imageElements.forEach(img => {
-                    totalContentWidth += img.offsetWidth;
-                });
-                totalContentWidth += (numImages - 1) * gapSize; // Add total gap size
-
-                // The distance we need to scroll is the total content width minus the banner's visible width
-                // For a seamless loop with duplicated content, we scroll exactly the width of the *original* content.
-                // Let's refine this to scroll past the first set of original images.
-                // The trackWidth now includes the duplicated images.
-                // We want to scroll until the *start* of the duplicated set aligns with the *start* of the banner.
-                // This distance is essentially the total width of one set of original images + their gaps.
-                let scrollDistance = 0;
-                if (originalUrls.length > 0) {
-                     // Calculate the width of the original set of images + their gaps
-                     // This is tricky if images have variable widths.
-                     // A safer way is to just scroll the `trackWidth - bannerWidth`
-                     // and ensure enough duplicates are there.
-                     // Or, ideally, scroll exactly the width of the first complete set of images.
-                     // Let's re-calculate the content width of just the *first* set of images
-                     for (let i = 0; i < originalUrls.length; i++) {
-                         scrollDistance += imageElements[i].offsetWidth;
-                         if (i < originalUrls.length - 1) { // Add gap for all but the last image
-                             scrollDistance += gapSize;
-                         }
-                     }
+            // Calculate the width of the *original shuffled* set of images including their gaps.
+            // This is the distance the animation needs to travel for one full "loop" cycle.
+            let scrollDistance = 0;
+            for (let i = 0; i < originalShuffledUrls.length; i++) {
+              // Find the corresponding image element. Since imageElements are populated in order of finalUrls,
+              // the first `originalShuffledUrls.length` elements in `imageElements` correspond to the first unique set.
+              const img = imageElements[i];
+              if (img) { // Ensure the image element exists (might have failed to load)
+                scrollDistance += img.offsetWidth;
+                if (i < originalShuffledUrls.length - 1) {
+                  scrollDistance += gapSize;
                 }
+              }
+            }
 
-                // If the track is not wider than the banner, no need to scroll
-                if (totalContentWidth <= bannerWidth) {
-                    console.warn('Content is not wide enough to scroll. Adjust images or banner width.');
-                    track.style.animation = 'none'; // Disable animation if not needed
-                    return;
-                }
+            // If the calculated scrollDistance is 0 or less, or content isn't wide enough, disable animation
+            if (scrollDistance <= 0 || track.scrollWidth <= bannerWidth) {
+              console.warn('Content is not wide enough to scroll or scroll distance is zero. Disabling animation.');
+              track.style.animation = 'none';
+              return;
+            }
 
-                // Create a dynamic stylesheet to inject the custom keyframes
-                const styleSheet = document.createElement('style');
-                styleSheet.type = 'text/css';
-                document.head.appendChild(styleSheet);
+            const pixelsPerSecond = 50; // Adjust this value to control speed
+            const animationDuration = scrollDistance / pixelsPerSecond; // Duration in seconds
 
-                // Define the keyframe with the calculated scroll distance
-                const animationName = 'scroll-full-track-dynamic-' + Date.now(); // Unique name
-                const keyframesRule = `
-                    @keyframes ${animationName} {
-                        from { transform: translateX(0); }
-                        to { transform: translateX(${-scrollDistance}px); } /* Use the calculated distance */
-                    }
-                `;
-                styleSheet.sheet.insertRule(keyframesRule, styleSheet.sheet.cssRules.length);
+            // Create a dynamic stylesheet to inject the custom keyframes
+            const styleSheet = document.createElement('style');
+            styleSheet.type = 'text/css';
+            document.head.appendChild(styleSheet);
 
-                // Apply the animation to the track
-                track.style.animation = `${animationName} 60s linear infinite`;
-                track.style.animationPlayState = 'running'; // Ensure it starts playing
-            });
+            const animationName = 'scroll-full-track-dynamic-' + Date.now();
+            const keyframesRule = `
+              @keyframes ${animationName} {
+                from { transform: translateX(0); }
+                to { transform: translateX(${-scrollDistance}px); }
+              }
+            `;
+            styleSheet.sheet.insertRule(keyframesRule, styleSheet.sheet.cssRules.length);
+
+            // Apply the animation with the calculated duration
+            track.style.animation = `${animationName} ${animationDuration}s linear infinite`;
+            track.style.animationPlayState = 'running';
+          });
         }
       })
       .catch(error => {
