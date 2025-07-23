@@ -570,7 +570,8 @@ Benefactor Circle add-on</span>.</p>
         // This is the array that will be used to create the actual img elements.
         // It should contain the original shuffled set, followed by a duplicate for looping.
         const finalUrlsForDOM = [...originalShuffledUniqueUrls];
-        // finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a second copy for seamless looping
+        finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a second copy for seamless looping
+        finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a third copy for seamless looping
 
         track.innerHTML = ''; // Clear existing content of the track
 

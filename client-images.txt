@@ -4,7 +4,7 @@ sitemap: false
 permalink: /client-images.txt
 ---
 {%- for file in site.static_files -%}
-{%- if file.path contains "/assets/images/clients/" -%}
-{{ file.path | absolute_url }}
-{% endif -%}
+  {%- if file.path == "/assets/images/clients/" | append: file.name -%}
+    {{ file.path | absolute_url }}
+  {%- endif -%}
 {%- endfor -%}
