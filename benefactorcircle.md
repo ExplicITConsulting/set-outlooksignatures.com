@@ -312,7 +312,7 @@ redirect_from:
   <p>2 changes per year, 3 minutes per change, 2 signatures, 1 client: 0.55 * 2 * 3 * 2 * 1 = 6.60</p>
 </blockquote>
 
-<p>Per user and year, the costs are now 6.60&nbsp;€ in manual effort compared to 3.00&nbsp;€ for a centrally managed solution with Set-OutlookSignatures and the 
+<p>Per user and year, the costs are now 6.60&nbsp;€ in manual effort compared to 3.00&nbsp;€ for a centrally managed solution with Set-OutlookSignatures and the
 <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">
 Benefactor Circle add-on</span>.</p>
 
@@ -557,6 +557,8 @@ Benefactor Circle add-on</span>.</p>
           return;
         }
 
+        console.log('URLs from text file (before shuffle):', urls);
+
         // --- 1. Shuffle the original URLs FIRST ---
         // This `urls` array will become our single, unique, shuffled set.
         for (let i = urls.length - 1; i > 0; i--) {
@@ -564,7 +566,8 @@ Benefactor Circle add-on</span>.</p>
           [urls[i], urls[j]] = [urls[j], urls[i]]; // Fisher-Yates shuffle
         }
 
-        const originalShuffledUniqueUrls = [...urls]; // Store this as the definitive unique, shuffled set
+         const originalShuffledUniqueUrls = [...urls]; // Store this as the definitive unique, shuffled set
+        console.log('originalShuffledUniqueUrls (after shuffle, before duplication):', originalShuffledUniqueUrls);
 
         // --- 2. Create the final list of URLs for the track ---
         // This is the array that will be used to create the actual img elements.
@@ -572,6 +575,7 @@ Benefactor Circle add-on</span>.</p>
         const finalUrlsForDOM = [...originalShuffledUniqueUrls];
         finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a second copy for seamless looping
         finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a third copy for seamless looping
+        console.log('finalUrlsForDOM (ready for DOM insertion):', finalUrlsForDOM);
 
         track.innerHTML = ''; // Clear existing content of the track
 
