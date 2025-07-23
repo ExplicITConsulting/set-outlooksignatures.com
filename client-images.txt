@@ -11,7 +11,7 @@ permalink: /client-images.txt
     {%- assign file_directory_calculated = file_directory_calculated | append: "/" -%}
   {%- endunless -%}
 
-  {%- if file_directory_calculated == expected_dir_path -%}
+  {%- if file_directory_calculated == expected_dir_path %}
     {{ file.path | absolute_url }}
-  {%- endif -%}
+  {% endif -%}
 {%- endfor -%}
