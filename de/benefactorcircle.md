@@ -566,6 +566,10 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
       .then(text => {
         let urls = text.split('\n').map(line => line.trim()).filter(Boolean);
 
+        // Optional: Add this line if your client-images.txt might sometimes have duplicate URLs
+        // and you only want unique images for the original set.
+        // urls = [...new Set(urls)];
+
         if (urls.length === 0) {
           console.warn('No image URLs found. Banner will not display images.');
           return;
@@ -587,69 +591,109 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
         finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a second copy for seamless looping
         finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a third copy for seamless looping
 
+        // Debugging logs (keep these to verify the data structure is correct)
+        console.log('URLs from text file (before shuffle):', urls);
+        console.log('originalShuffledUniqueUrls (after shuffle, before duplication):', originalShuffledUniqueUrls);
+        console.log('finalUrlsForDOM (ready for DOM insertion):', finalUrlsForDOM);
+
         track.innerHTML = ''; // Clear existing content of the track
 
         // Populate the track with images
-        const imageElements = [];
+        const imageElements = []; // This will now store all img elements in the correct order
         let loadedCount = 0;
         const totalImagesToLoad = finalUrlsForDOM.length;
 
         if (totalImagesToLoad === 0) {
-            console.warn('No images to load after processing URLs.');
-            return;
+          console.warn('No images to load after processing URLs.');
+          return;
         }
 
-        finalUrlsForDOM.forEach(url => { // Use finalUrlsForDOM here
+        // 1. Create ALL image elements and append them to the DOM immediately
+        // This ensures the DOM order matches finalUrlsForDOM exactly.
+        finalUrlsForDOM.forEach(url => {
           const img = new Image();
           img.src = url;
-          img.alt = `https://${url.split('/').pop()?.split('.').slice(0, -1).join('.')}` || 'Image';
+          // The alt attribute is being constructed from the URL. This might not be ideal
+          // for accessibility if the filename doesn't represent the image content well.
+          // Consider a more descriptive alt text if possible.
+          img.alt = `https://${url.split('/').pop()?.split('.').slice(0, -1).join('.')}` || 'Client Logo';
+
+          // Append the image to the DOM immediately in the correct order
+          track.appendChild(img);
+          imageElements.push(img); // Store reference for animation setup later
+        });
+
+        // 2. Now, attach onload/onerror handlers to the already-appended images
+        // This ensures that `setupAnimation` only runs after all *visual* elements are loaded
+        // and their dimensions are available.
+        imageElements.forEach((img, index) => {
+          // We already have the correct URL from finalUrlsForDOM, but img.src is also set.
+          // Using the URL from finalUrlsForDOM for error logging clarity.
+          const url = finalUrlsForDOM[index];
 
           img.onload = () => {
-            track.appendChild(img);
-            imageElements.push(img);
             loadedCount++;
             if (loadedCount === totalImagesToLoad) {
               setupAnimation();
             }
           };
+          
           img.onerror = () => {
             console.error(`Failed to load image: ${url}`);
             loadedCount++;
+            // Still attempt to set up animation even if some images fail to load
             if (loadedCount === totalImagesToLoad) {
               setupAnimation();
             }
           };
+
+          // Important: For cached images, 'onload' might not fire.
+          // Manually check and trigger if the image is already complete.
+          // naturalHeight > 0 is a good check for successful load vs broken image
+          if (img.complete && img.naturalHeight > 0) {
+            img.onload(); // Manually trigger onload if already complete
+          } else if (img.complete && img.naturalHeight === 0) {
+              // Image is complete but height is 0, likely a broken image.
+              img.onerror(); // Manually trigger onerror
+          }
         });
+
 
         function setupAnimation() {
           requestAnimationFrame(() => {
             const bannerWidth = banner.clientWidth;
             const computedStyle = getComputedStyle(track);
+            // Ensure gapSize is parsed correctly, it could be a string like "10px"
             const gapSize = parseFloat(computedStyle.gap) || 0;
 
             // Calculate the exact scroll distance:
             // This must be the total width of *one full unique set* of images PLUS their internal gaps.
             let scrollDistance = 0;
             if (originalShuffledUniqueUrls.length > 0) {
-                for (let i = 0; i < originalShuffledUniqueUrls.length; i++) {
-                    // Reference the image elements corresponding to the *first* unique set in the DOM
-                    const img = imageElements[i];
-                    if (img) {
-                        scrollDistance += img.offsetWidth;
-                        if (i < originalShuffledUniqueUrls.length - 1) {
-                            scrollDistance += gapSize;
-                        }
-                    } else {
-                        console.warn(`JS DEBUG: Image element for original index ${i} not found or failed to load. Scroll distance may be inaccurate.`);
-                    }
+              for (let i = 0; i < originalShuffledUniqueUrls.length; i++) {
+                // Reference the image elements corresponding to the *first* unique set in the DOM
+                const img = imageElements[i]; // imageElements is now guaranteed to be in the correct order
+                if (img) {
+                  scrollDistance += img.offsetWidth;
+                  if (i < originalShuffledUniqueUrls.length - 1) {
+                    scrollDistance += gapSize;
+                  }
+                } else {
+                  console.warn(`JS DEBUG: Image element for original index ${i} not found or failed to load. Scroll distance may be inaccurate.`);
                 }
+              }
             }
 
             // --- CRITICAL DEBUGGING OUTPUT ---
+            // This output helps verify the calculated scroll distance and image dimensions
             const renderedImageInfo = imageElements.slice(0, originalShuffledUniqueUrls.length).map((img, index) => ({
-                src: originalShuffledUniqueUrls[index].split('/').pop(),
-                offsetWidth: img ? img.offsetWidth : 'N/A'
+              src: originalShuffledUniqueUrls[index].split('/').pop(),
+              offsetWidth: img ? img.offsetWidth : 'N/A'
             }));
+            console.log('JS DEBUG: Info for first unique set of images (for scrollDistance calculation):', renderedImageInfo);
+            console.log('JS DEBUG: Calculated scrollDistance:', scrollDistance, 'px');
+            console.log('JS DEBUG: Total track scrollWidth (should be ~3x scrollDistance):', track.scrollWidth, 'px');
+            console.log('JS DEBUG: Banner clientWidth:', bannerWidth, 'px');
             // --- END CRITICAL DEBUGGING OUTPUT ---
 
             if (scrollDistance <= 0 || track.scrollWidth <= bannerWidth + 1) {
@@ -661,11 +705,22 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
             const pixelsPerSecond = 50; // Adjust this value to control speed
             const animationDuration = scrollDistance / pixelsPerSecond;
 
-            const styleSheet = document.createElement('style');
-            styleSheet.type = 'text/css';
-            document.head.appendChild(styleSheet);
+            // Check if a styleSheet for this animation already exists to avoid duplicates
+            let styleSheet = document.getElementById('dynamic-scroll-animation-style');
+            if (!styleSheet) {
+                styleSheet = document.createElement('style');
+                styleSheet.type = 'text/css';
+                styleSheet.id = 'dynamic-scroll-animation-style'; // Give it an ID for easier lookup
+                document.head.appendChild(styleSheet);
+            } else {
+                // Clear previous rules if reusing the stylesheet
+                while(styleSheet.sheet && styleSheet.sheet.cssRules.length > 0) {
+                    styleSheet.sheet.deleteRule(0);
+                }
+            }
 
-            const animationName = 'scroll-full-track-dynamic-' + Date.now();
+
+            const animationName = 'scroll-full-track-dynamic-' + Date.now(); // Unique name each time
             const keyframesRule = `
               @keyframes ${animationName} {
                 from { transform: translateX(0); }
@@ -674,6 +729,7 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
             `;
             styleSheet.sheet.insertRule(keyframesRule, styleSheet.sheet.cssRules.length);
 
+            // Apply the animation
             track.style.animation = `${animationName} ${animationDuration}s linear infinite`;
             track.style.animationPlayState = 'running';
           });
