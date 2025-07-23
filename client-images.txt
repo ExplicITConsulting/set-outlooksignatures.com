@@ -4,7 +4,14 @@ sitemap: false
 permalink: /client-images.txt
 ---
 {%- for file in site.static_files -%}
-  {%- if file.path == "/assets/images/clients/" | append: file.name -%}
+  {%- assign expected_dir_path = "/assets/images/clients/" -%}
+  {%- assign file_directory_calculated = file.path | remove: file.name -%}
+
+  {%- unless file_directory_calculated | last == "/" -%}
+    {%- assign file_directory_calculated = file_directory_calculated | append: "/" -%}
+  {%- endunless -%}
+
+  {%- if file_directory_calculated == expected_dir_path -%}
     {{ file.path | absolute_url }}
   {%- endif -%}
 {%- endfor -%}
