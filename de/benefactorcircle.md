@@ -584,7 +584,8 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
         // This is the array that will be used to create the actual img elements.
         // It should contain the original shuffled set, followed by a duplicate for looping.
         const finalUrlsForDOM = [...originalShuffledUniqueUrls];
-        // finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a second copy for seamless looping
+        finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a second copy for seamless looping
+        finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a third copy for seamless looping
 
         track.innerHTML = ''; // Clear existing content of the track
 
@@ -601,7 +602,7 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
         finalUrlsForDOM.forEach(url => { // Use finalUrlsForDOM here
           const img = new Image();
           img.src = url;
-          img.alt = url.split('/').pop()?.split('.')[0] || 'Image';
+          img.alt = `https://${url.split('/').pop()?.split('.').slice(0, -1).join('.')}` || 'Image';
 
           img.onload = () => {
             track.appendChild(img);

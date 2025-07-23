@@ -588,7 +588,7 @@ Benefactor Circle add-on</span>.</p>
         finalUrlsForDOM.forEach(url => { // Use finalUrlsForDOM here
           const img = new Image();
           img.src = url;
-          img.alt = url.split('/').pop()?.split('.')[0] || 'Image';
+          img.alt = `https://${url.split('/').pop()?.split('.').slice(0, -1).join('.')}` || 'Image';
 
           img.onload = () => {
             track.appendChild(img);
