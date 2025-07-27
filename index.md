@@ -163,7 +163,7 @@ redirect_from:
 </div>
 
 
-<h2>Functionality meets <span style="color: limegreen">expertise</span></h2>
+<h2>Functionality meets <span style="color: #90CA6F">expertise</span></h2>
 
 <p>The optional <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> extends the free and open-source Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.<p>
 
@@ -172,7 +172,7 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #32CD3200, limegreen, limegreen); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #90CA6F00, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Cost-efficient and transparent</b><br>
         Fair prices. No subscriptions. No maintenance contracts.
@@ -182,7 +182,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #32CD3200, limegreen, limegreen); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #90CA6F00, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Support with handshake quality</b><br>
         Solution-driven. At eye level. Accountable.
@@ -192,7 +192,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #32CD3200, limegreen, limegreen); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #90CA6F00, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Tangible added value</b><br>
         Your investment pays off. From day one.
@@ -203,7 +203,7 @@ redirect_from:
 
 
 
-<h2>Manage your <span style="color: MediumAquamarine;">Outlook signatures</span> centrally. We’ll show you how!</h2>
+<h2>Manage your <span style="color: #28A951;">Outlook signatures</span> centrally. We’ll show you how!</h2>
 <p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.<p>
 
 <p>Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.<p>
@@ -225,10 +225,10 @@ redirect_from:
 </div>
 
 
-<h2>First signatures <span style="color: DarkSeaGreen">in less than an hour</span></h2>
+<h2>First signatures <span style="color: MediumAquamarine">in less than an hour</span></h2>
 <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 
-<a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: DarkSeaGreen">➔ Quick Start Guide</button></a>
+<a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: MediumAquamarine">➔ Quick Start Guide</button></a>
 
 
 <h2>Dive <span style="color: DeepSkyBlue;">deeper</span></h2>

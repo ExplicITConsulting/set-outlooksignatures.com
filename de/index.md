@@ -166,7 +166,7 @@ redirect_from:
 </div>
 
 
-<h2>Funktionalität trifft <span style="color: limegreen;">Expertise</span></h2>
+<h2>Funktionalität trifft <span style="color: #90CA6F;">Expertise</span></h2>
 <p>Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
 
 <p>Auf Wunsch richten wir unsere Lösung gemeinsam mit Ihnen ein: Einfach, auf Ihre Bedürfnisse zugeschnitten und mit nachhaltigem Wissenstransfer.<p>
@@ -174,7 +174,7 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #32CD3200, limegreen, limegreen); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #90CA6F00, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Kosteneffizient und transparent</b><br>
         Faire Preise. Keine Abos. Keine Wartungsverträge.
@@ -184,7 +184,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #32CD3200, limegreen, limegreen); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #90CA6F00, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Support mit Handschlagqualität</b><br>
         Lösungsstark. Auf Augenhöhe. Verantwortungsbewusst.
@@ -194,7 +194,7 @@ redirect_from:
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #32CD3200, limegreen, limegreen); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #90CA6F00, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Spürbarer Mehrwert</b><br>
         Ihre Investition entlastet. Vom ersten Tag an.
@@ -205,7 +205,7 @@ redirect_from:
 </div>
 
 
-<h2>Verwalten Sie Ihre <span style="color: MediumAquamarine;">Outlook-Signaturen</span> zentral. Wir zeigen Ihnen, wie!</h2>
+<h2>Verwalten Sie Ihre <span style="color: #28A951;">Outlook-Signaturen</span> zentral. Wir zeigen Ihnen, wie!</h2>
 <p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p>
 
 <p>Erleben Sie live, wie schnell und intuitiv Sie Ihre Outlook-Signaturen und Abwesenheitsnotizen zentral verwalten und optimieren können.<p>
@@ -227,10 +227,10 @@ redirect_from:
 </div>
 
 
-<h2>Erste Signaturen <span style="color: DarkSeaGreen ;">in unter einer Stunde</span></h2>
+<h2>Erste Signaturen <span style="color: MediumAquamarine ;">in unter einer Stunde</span></h2>
 <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
-<a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: DarkSeaGreen">➔ Schnellstart-Anleitung</button></a>
+<a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: MediumAquamarine">➔ Schnellstart-Anleitung</button></a>
 
 
 <h2><span style="color: DeepSkyBlue;">Tiefer</span> eintauchen</h2>
