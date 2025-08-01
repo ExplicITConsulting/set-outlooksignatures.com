@@ -262,7 +262,7 @@ redirect_from:
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">➔ Schedule your personal demo</button></a></p>
+      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at/"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">➔ Schedule your personal demo now</button></a></p>
     </div>
   </div>
 
