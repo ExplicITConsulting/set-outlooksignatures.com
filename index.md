@@ -26,7 +26,7 @@ redirect_from:
   <span style="font-weight: normal;"> centrally and fully automated</span>
 </h2>
 <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
-<p>Thanks to centrally managed templates that automatically populate with your company data, every email gets the professional appearance your business deserves: Up-to-date, consistent, and on-brand.</p>
+<p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
 
 
 <h2><span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span>, more professionalism</h2>
@@ -39,7 +39,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F5000, coral, coral); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Always up-to-date contact data and company information</b>
+        <b>Always up-to-date contact details and company information</b>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F5000, coral, coral); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Consistent and compelling appearance in every email</b>
+        <b>Consistent and convincing appearance in every email</b>
       </div>
     </div>
   </div>
@@ -75,7 +75,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Simply for everyone</b><br>
+        <b>Simple for everyone</b><br>
         Intuitive for IT and marketing, invisible to your employees.
       </div>
     </div>
@@ -126,7 +126,7 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Flexible assignment</b><br>
-        Control signatures by department, location, language, role, time, and many other properties from various data sources.
+        Control signatures by department, location, language, role, time and many other properties from different data sources.
       </div>
     </div>
   </div>
