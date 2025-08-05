@@ -70,7 +70,7 @@ redirect_from:
   <span style="font-weight: normal;">Die </span>
   <span style="font-weight: bold;">Stärken</span>
   <span style="font-weight: normal;"> von </span><br>
-  <span style="font-weight: normal; font-style: italic;">Set-OutlookSignatures</span>
+  <span style="font-weight: normal;">Set-OutlookSignatures</span>
 </h2>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
