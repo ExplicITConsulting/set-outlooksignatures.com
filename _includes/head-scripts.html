@@ -161,6 +161,9 @@
           }
           console.log(`[checkDocumentAndAnchorAvailability] Document exists: ${urlWithoutAnchor}`);
 
+          return true;
+
+          /*
           if (!anchor) {
             console.log('[checkDocumentAndAnchorAvailability] No anchor specified. Document is available. Proceeding.');
             return true;
@@ -188,6 +191,7 @@
             console.log(`[checkDocumentAndAnchorAvailability] Anchor '${anchor}' NOT found in document.`);
             return false;
           }
+          */
         } catch (error) {
           console.error(`[checkDocumentAndAnchorAvailability] Error during checkDocumentAndAnchorAvailability for ${urlWithoutAnchor} with anchor ${anchor}:`, error);
           return false;
