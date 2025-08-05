@@ -70,7 +70,7 @@ redirect_from:
   <span style="font-weight: normal;">Die </span>
   <span style="font-weight: bold;">Stärken</span>
   <span style="font-weight: normal;"> von </span>
-  <span style="font-style: italic;">Set-OutlookSignatures</span>
+  <span style="font-weight: normal; font-style: italic;">Set-OutlookSignatures</span>
 </h2>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -205,8 +205,8 @@ redirect_from:
 </div>
 
 
-<h2><span style="font-weight: normal;">Verwalten Sie Ihre </span><span style="font-weight: normal; color: #28A951;">Outlook-Signaturen</span><span style="font-weight: normal;"> zentral. Wir zeigen Ihnen, wie!</h2>
-<p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p></span>
+<h2><span style="font-weight: normal;">Verwalten Sie Ihre </span><span style="font-weight: normal; color: #28A951;">Outlook-Signaturen</span><span style="font-weight: normal;"> zentral. Wir zeigen Ihnen, wie!</span></h2>
+<p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p>
 
 <p>Erleben Sie live, wie schnell und intuitiv Sie Ihre Outlook-Signaturen und Abwesenheitsnotizen zentral verwalten und optimieren können.<p>
 <div class="columns is-multiline">
