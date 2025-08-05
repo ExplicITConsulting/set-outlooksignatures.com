@@ -21,15 +21,15 @@ redirect_from:
 
 
 <h2>
-  <span style="font-weight: normal;">Manage your </span><br>
-  <span style="font-weight: bold;">Outlook signatures</span><br>
+  <span style="font-weight: normal;">Manage your </span>
+  <span style="font-weight: bold;">Outlook signatures</span>
   <span style="font-weight: normal;"> centrally and fully automated</span>
 </h2>
 <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
 <p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
 
 
-<h2><span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span><span style="font-weight: normal;">,<br>more professionalism</span></h2>
+<h2><span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span><span style="font-weight: normal;">, more professionalism</span></h2>
 <p>Manually maintaining signatures ties up valuable personnel and financial resources. This quickly leads to outdated information that does not comply with internal or regulatory requirements.</p>
 
 <p>With Set-OutlookSignatures, you fully automate this process.</p>
@@ -67,7 +67,7 @@ redirect_from:
 <h2>
   <span style="font-weight: normal;">The </span>
   <span style="font-weight: bold;">strengths</span>
-  <span style="font-weight: normal;"> of </span><br>
+  <span style="font-weight: normal;"> of </span>
   <span style="font-weight: normal;">Set-OutlookSignatures</span>
 </h2>
 <div class="columns is-multiline">
@@ -163,7 +163,7 @@ redirect_from:
 </div>
 
 
-<h2><span style="font-weight: normal;">Functionality<br>meets </span><span style="color: #90CA6F">expertise</span></h2>
+<h2><span style="font-weight: normal;">Functionality meets </span><span style="color: #90CA6F">expertise</span></h2>
 
 <p>The optional <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> extends the free and open-source Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.<p>
 
@@ -203,7 +203,7 @@ redirect_from:
 
 
 
-<h2><span style="font-weight: normal;">Manage your<br></span><span style="font-weight: bold; color: #28A951;">Outlook signatures</span><span style="font-weight: normal;"> centrally.<br>We’ll show you how!</span></h2>
+<h2><span style="font-weight: normal;">Manage your </span><span style="font-weight: bold; color: #28A951;">Outlook signatures</span><span style="font-weight: normal;"> centrally. We’ll show you how!</span></h2>
 <p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.<p>
 
 <p>Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.<p>
@@ -225,13 +225,13 @@ redirect_from:
 </div>
 
 
-<h2><span style="font-weight: normal;">First signatures </span><span style="color: MediumAquamarine"><br>in less than an hour</span></h2>
+<h2><span style="font-weight: normal;">First signatures </span><span style="color: MediumAquamarine">in less than an hour</span></h2>
 <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 
 <a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: MediumAquamarine">➔ Quick Start Guide</button></a>
 
 
-<h2><span style="font-weight: normal;">Dive </span><br><span style="color: DeepSkyBlue;">deeper</span></h2>
+<h2><span style="font-weight: normal;">Dive </span><span style="color: DeepSkyBlue;">deeper</span></h2>
 <p>Visit our help and support center to find out more:<p>
 <ul>
   <li>The detailed feature set and a comparison with market companions</li>
