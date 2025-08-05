@@ -39,7 +39,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F5000, coral, coral); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Always up-to-date contact details<br>and company information</b>
+        <b>Always up-to-date contact details and company information</b>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F5000, coral, coral); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Consistent and convincing<br>appearance in every email</b>
+        <b>Consistent and convincing appearance in every email</b>
       </div>
     </div>
   </div>
@@ -57,7 +57,7 @@ redirect_from:
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #FF7F5000, coral, coral); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>No manual updating<br>by your employees</b>
+        <b>No manual updating by your employees</b>
       </div>
     </div>
   </div>
@@ -76,7 +76,7 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Simple for everyone</b><br>
-        Intuitive for IT and marketing,<br>invisible to your employees.
+        Intuitive for IT and marketing, invisible to your employees.
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Dynamic content</b><br>
-        Predefined and custom attributes<br>at user, mailbox, and manager level.
+        Predefined and custom attributes at user, mailbox, and manager level.
       </div>
     </div>
   </div>
@@ -96,7 +96,7 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Out-of-office replies</b><br>
-        Manage out-of-office messages centrally,<br>for internal and external recipients.
+        Manage out-of-office messages centrally, for internal and external recipients.
       </div>
     </div>
   </div>
@@ -136,7 +136,7 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>No new infrastructure required</b><br>
-        Set-OutlookSignatures runs on your<br>existing systems and creates no<br>new dependencies.
+        Set-OutlookSignatures runs on your existing systems and creates no new dependencies.
       </div>
     </div>
   </div>
@@ -146,7 +146,7 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Unsurpassed data privacy</b><br>
-        All data remains in your trusted<br>environment, within your existing<br>security and governance structures.
+        All data remains in your trusted environment, within your existing security and governance structures.
       </div>
     </div>
   </div>
@@ -156,7 +156,7 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #A9A9A900, silver, silver); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Additional marketing channel</b><br>
-        Design templates freely in Word or HTML.<br>Use signatures for campaigns and brand<br>messaging, free and effectively.
+        Design templates freely in Word or HTML. Use signatures for campaigns and brand messaging, free and effectively.
       </div>
     </div>
   </div>
@@ -175,7 +175,7 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #90CA6F00, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Cost-efficient and transparent</b><br>
-        Fair prices. No subscriptions.<br>No maintenance contracts.
+        Fair prices. No subscriptions. No maintenance contracts.
       </div>
     </div>
   </div>
@@ -185,7 +185,7 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #90CA6F00, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Support with handshake quality</b><br>
-        Solution-driven. At eye level.<br>Accountable.
+        Solution-driven. At eye level. Accountable.
       </div>
     </div>
   </div>
@@ -195,7 +195,7 @@ redirect_from:
       <span style="font-weight: bold; background-image: linear-gradient(to right, #90CA6F00, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Tangible added value</b><br>
-        Your investment pays off.<br>From day one.
+        Your investment pays off. From day one.
       </div>
     </div>
   </div>
