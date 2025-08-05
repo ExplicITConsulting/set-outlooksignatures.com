@@ -68,7 +68,7 @@ redirect_from:
   <span style="font-weight: normal;">The </span>
   <span style="font-weight: bold;">strengths</span>
   <span style="font-weight: normal;"> of </span>
-  <span style="font-style: italic;">Set-OutlookSignatures</span>
+  <span style="font-weight: normal; font-style: italic;">Set-OutlookSignatures</span>
 </h2>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -203,8 +203,8 @@ redirect_from:
 
 
 
-<h2><span style="font-weight: normal;">Manage your </span><span style="font-weight: bold; color: #28A951;">Outlook signatures</span><span style="font-weight: normal;"> centrally. We’ll show you how!</h2>
-<p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.<p></span>
+<h2><span style="font-weight: normal;">Manage your </span><span style="font-weight: bold; color: #28A951;">Outlook signatures</span><span style="font-weight: normal;"> centrally. We’ll show you how!</span></h2>
+<p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.<p>
 
 <p>Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.<p>
 <div class="columns is-multiline">
