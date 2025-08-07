@@ -18,7 +18,7 @@ redirect_from:
 Set-OutlookSignatures ist der Open-Source-Standard für E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
 </p>
 
-<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ <span class="version-text">(lade…)</span>&nbsp;als ZIP-Datei herunterladen</button></a></p>
+<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔&nbsp;<span class="version-text">(lade…)</span>&nbsp;als ZIP-Datei herunterladen</button></a></p>
 
 <p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Changelog öffnen</button></a></p>
 
