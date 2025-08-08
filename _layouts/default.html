@@ -18,11 +18,18 @@
 >
     {% include head.html %}
     <body>
-        <script
-          src="https://app.livechatai.com/embed.js"
-          data-id="cme2jwryl000vjy0ce0e3khfx"
-          async defer>
-        </script>
+        <!-- Chat Widget with custom settings -->
+        <script src="https://webchatagent.com/widget/web-chat-agent.js" async></script>
+        <web-chat-agent
+            chatbot-id="4145838a-81f4-4190-8b42-cd4f84db7a8f"
+            theme-color="#4f46e5"
+            title="Siggy"
+            avatar-src="https://set-outlooksignatures.com/assets/images/set-outlooksignatures%20icon.ico"
+            welcome-message="Hi, I am Siggy! Ask me about Set-OutlookSignatures and the Benefactor Circle add-on."
+            speech-bubble-text="Hi, I am Siggy!\nAsk me about Set-OutlookSignatures and the Benefactor Circle add-on."
+            bot-message-color="#f3f4f6"
+            user-message-color="#2563eb"
+        ></web-chat-agent>
 
         <div style="min-height: 100vh;">
             {% include skip-to-content.html %}
