@@ -18,30 +18,19 @@ module Jekyll
       Jekyll.logger.info "SearchDataCollector:", "Processing document: #{doc.url || doc.path}"
 
       doc_fragment = Nokogiri::HTML.fragment(doc.output)
-
       base_url = doc.url
 
       all_headings = doc_fragment.css('h1, h2, h3, h4, h5, h6')
       Jekyll.logger.info "SearchDataCollector:", "  Found #{all_headings.size} headings in #{doc.url || doc.path}"
 
-      # Initialize a counter to match the JS logic
-      counter = 1
-
       all_headings.each_with_index do |heading_element, index|
-        original_id = heading_element['id']
-        final_id = nil
+        final_id = heading_element['id']
 
-        if original_id && !original_id.empty?
-          final_id = original_id
-          Jekyll.logger.info "SearchDataCollector:", "  Using existing ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
-        else
-          # Match the JavaScript logic: assign a counter-based ID
-          final_id = "heading-#{counter}"
-          Jekyll.logger.info "SearchDataCollector:", "  Predicted new ID: #{final_id} for heading: #{heading_element.text.strip.slice(0, 50)}..."
+        # Skip this heading if it doesn't have an ID
+        unless final_id && !final_id.empty?
+          Jekyll.logger.info "SearchDataCollector:", "  Skipping heading without an ID: #{heading_element.text.strip.slice(0, 50)}..."
+          next
         end
-
-        # Increment the counter for the next heading
-        counter += 1
 
         section_title = heading_element.text.strip.gsub(/\s+/, ' ')
 

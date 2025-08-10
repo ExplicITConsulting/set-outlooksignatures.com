@@ -350,21 +350,19 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
-    let counter = 1; // Start a simple counter for the IDs
 
     headings.forEach(function (heading) {
-      if (!heading.id) {
-        // Assign a unique ID based on the counter
-        const uniqueId = `heading-${counter++}`;
-        heading.id = uniqueId;
+      // Check if the heading already has an ID, which should be the case
+      // after the Jekyll plugin runs.
+      if (heading.id) {
+        const anchor = document.createElement("a");
+        anchor.href = `#${heading.id}`;
+        anchor.className = "anchor-link";
+        anchor.innerHTML = "🔗"; // Or use an SVG for better styling
+
+        // Insert the anchor link as the first child of the heading
+        heading.insertBefore(anchor, heading.firstChild);
       }
-
-      const anchor = document.createElement("a");
-      anchor.href = `#${heading.id}`;
-      anchor.className = "anchor-link";
-      anchor.innerHTML = "🔗";
-
-      heading.insertBefore(anchor, heading.firstChild);
     });
   });
 </script>
@@ -412,3 +410,6 @@
       style="border:0;" alt="" /></p>
 </noscript>
 <!-- End mtrcs code -->
+
+
+<script async src="https://bigsur.ai/plugin/js/static.js"></script>
