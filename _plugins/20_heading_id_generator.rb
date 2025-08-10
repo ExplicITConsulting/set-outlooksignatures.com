@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'uri'
-require 'set'
+require 'set' # Added this line
 
 module Jekyll
   class HeadingIdGenerator
@@ -17,33 +17,35 @@ module Jekyll
       
       existing_ids = Set.new(all_headings.map { |h| h['id'] }.compact)
 
-      # Track the modified elements and their original HTML
-      modified_elements = {}
+      modified_html = doc.output
 
       all_headings.each do |heading_element|
         if heading_element['id'].nil? || heading_element['id'].empty?
+          # Generate a new ID and ensure it's unique
           new_id = "heading-#{counter}"
           while existing_ids.include?(new_id)
             counter += 1
             new_id = "heading-#{counter}"
           end
-
+          
+          # Store the original and new HTML
+          original_html = heading_element.to_s
           heading_element['id'] = new_id
+          new_html = heading_element.to_s
+
+          # Use a more robust substitution to avoid issues
+          modified_html = modified_html.sub(original_html, new_html)
+
           existing_ids.add(new_id)
           Jekyll.logger.info "HeadingIdGenerator:", " Assigned new ID: '#{new_id}' to a heading."
-          
-          # Store the updated element's outer HTML and its original state for later replacement
-          modified_elements[heading_element.to_s] = heading_element.to_s
         else
           Jekyll.logger.info "HeadingIdGenerator:", " Heading already has ID: '#{heading_element['id']}'."
         end
         counter += 1
       end
 
-      # Perform a targeted replacement instead of re-serializing the entire document
-      modified_elements.each do |original, modified|
-        doc.output.sub!(original, modified)
-      end
+      # Update the document's output with the new IDs
+      doc.output = modified_html
       
       Jekyll.logger.info "HeadingIdGenerator:", "Finished processing #{doc.url || doc.path}."
     end
