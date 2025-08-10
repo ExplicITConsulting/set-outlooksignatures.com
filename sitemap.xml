@@ -127,3 +127,9 @@ sitemap: false
         {%- endunless -%}
     {%- endfor %}
 </urlset>
+
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <sitemap>
+        <loc>https://explicitconsulting.at/sitemap.xml</loc>
+    </sitemap>
+</sitemapindex>
