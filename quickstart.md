@@ -17,7 +17,15 @@ redirect_from:
 ---
 
 
-## Step 1: One-time preparations
+## Step 1: Download Set-OutlookSignatures
+Download Set-OutlookSignatures and extract the archive to a local folder.
+
+<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔&nbsp;Download&nbsp;<span class="version-text">the latest release</span>&nbsp;as ZIP file</button></a></p>
+
+On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'. This removes the 'mark of the web', which can prevent script execution in PowerShell.
+
+
+## Step 2: One-time preparations
 **Client and user**  
 For a first test run, it is recommended to log on with a test user on a Windows system with Word and Outlook installed, and Outlook being configured with at least the test user's mailbox. If you use your own user, existing signatures will be overwritten in the worst case.
 
@@ -37,14 +45,6 @@ The code in the script file is well documented, containing all details about the
 If you require PowerShell script to be signed with select certificates, use AppLocker or a comparable solution such as Defender, CrowdStrike, Ivanti, and others, you may need to specifically allow Set-OutlookSignatures to be run and to load libraries from the TEMP folder (which is used to not lock files in their original location).
 
 Ask your endpoint security administrator to trust software signed with ExplicIT Consulting's certificate. All PS1 and DLL files that come with the Set-OutlookSignatures download in step 2 are signed with this certificate.
-
-
-## Step 2: Download Set-OutlookSignatures
-Download Set-OutlookSignatures and extract the archive to a local folder.
-
-<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔&nbsp;Download&nbsp;<span class="version-text">the latest release</span>&nbsp;as ZIP file</button></a></p>
-
-On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'. This removes the 'mark of the web', which can prevent script execution in PowerShell.
 
 
 ## Step 3: Run Set-OutlookSignatures
