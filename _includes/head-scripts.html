@@ -419,13 +419,18 @@
 
 <!-- Start logging bigsur.ai interaction to Matomo -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const messageContainer = document.getElementById('messageContainer');
-    if (!messageContainer) {
-      console.error('Chatbot message container not found.');
-      return;
-    }
+  // Wait until the chatbot's container exists before running observer logic
+  function waitForMessageContainer(callback) {
+    const checkInterval = setInterval(() => {
+      const messageContainer = document.getElementById('messageContainer');
+      if (messageContainer) {
+        clearInterval(checkInterval);
+        callback(messageContainer);
+      }
+    }, 100); // check every 100ms
+  }
 
+  waitForMessageContainer((messageContainer) => {
     const observer = new MutationObserver(mutationsList => {
       for (const mutation of mutationsList) {
         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
@@ -436,6 +441,7 @@
                   const text = child.textContent.trim();
                   if (window._paq && text.length) {
                     _paq.push(['trackEvent', 'Chatbot', 'Interaction', text]);
+                    console.log('Logged chatbot interaction to Matomo:', text);
                   }
                 }
               });
@@ -445,6 +451,7 @@
       }
     });
 
+    // Start observing for new messages
     observer.observe(messageContainer, { childList: true });
   });
 </script>
