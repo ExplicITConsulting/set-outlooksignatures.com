@@ -414,227 +414,289 @@
 
 <!-- Start logging bigsur.ai interaction to Matomo -->
 <script>
-  // AI Chatbot Matomo Logger
-  // Monitors streaming events and captures questions/answers for Matomo tracking
+  // AI Chatbot Matomo Logger - Structure-based approach
+  // Monitors DOM changes to capture questions/answers for Matomo tracking
+  // Does NOT rely on CSS classes or IDs (except messageContainer)
 
   (function() {
       'use strict';
       
       // Configuration
       const CONFIG = {
-          LOG_PREFIX: '[bsai]',
           MESSAGE_CONTAINER_ID: 'messageContainer',
-          POLL_INTERVAL: 100, // ms to check for messageContainer
-          MAX_POLL_ATTEMPTS: 300, // 30 seconds max wait
-          STREAM_TIMEOUT: 30000 // 30 seconds timeout for streams
+          POLL_INTERVAL: 500, // ms to check for messageContainer
+          DEBOUNCE_DELAY: 1000 // ms to wait after changes before processing
       };
       
-      // Storage for active streams and processed messages
-      const streamTracker = new Map();
-      const processedMessages = new Set();
+      // Storage for processed messages and current state
       let messageContainer = null;
       let observer = null;
+      let processTimeout = null;
+      const processedElements = new WeakSet();
+      const qaHistory = [];
       
       // Matomo tracking function (replace with your actual Matomo implementation)
-      function trackToMatomo(question, answer, streamId) {
+      function trackToMatomo(question, answer, elementInfo) {
           console.log('[MATOMO] Tracking Q&A:', {
               question: question,
               answer: answer,
-              streamId: streamId,
+              elementInfo: elementInfo,
               timestamp: new Date().toISOString()
           });
           
           // Replace this with your actual Matomo tracking code
           // Example:
-          // _paq.push(['trackEvent', 'AI Chatbot', 'Question Asked', question]);
-          // _paq.push(['trackEvent', 'AI Chatbot', 'Answer Provided', answer]);
+          // if (typeof _paq !== 'undefined') {
+          //     _paq.push(['trackEvent', 'AI Chatbot', 'Question', question]);
+          //     _paq.push(['trackEvent', 'AI Chatbot', 'Answer', answer]);
+          // }
       }
       
-      // Extract text content from an element, cleaning up formatting
-      function extractTextContent(element) {
+      // Extract clean text content from an element
+      function getCleanText(element) {
           if (!element) return '';
           
-          // Clone the element to avoid modifying the original
-          const clone = element.cloneNode(true);
-          
-          // Remove any script tags
-          const scripts = clone.querySelectorAll('script');
-          scripts.forEach(script => script.remove());
-          
-          // Get text content and clean it up
-          let text = clone.textContent || clone.innerText || '';
-          
-          // Clean up whitespace and special characters
-          text = text.replace(/\s+/g, ' ').trim();
-          
-          return text;
-      }
-      
-      // Find question and answer elements in the message container
-      function extractQuestionsAndAnswers() {
-          if (!messageContainer) return [];
-          
-          const results = [];
-          const messages = messageContainer.querySelectorAll('[data-id]');
-          
-          messages.forEach(message => {
-              const messageId = message.getAttribute('data-id');
-              
-              if (processedMessages.has(messageId)) {
-                  return; // Skip already processed messages
+          // Get all text nodes, excluding script tags
+          const walker = document.createTreeWalker(
+              element,
+              NodeFilter.SHOW_TEXT,
+              {
+                  acceptNode: function(node) {
+                      const parent = node.parentElement;
+                      if (parent && (parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE')) {
+                          return NodeFilter.FILTER_REJECT;
+                      }
+                      return NodeFilter.FILTER_ACCEPT;
+                  }
               }
-              
-              // Look for user questions (typically have different styling/structure)
-              const questionElement = document.getElementById(messageId.replace('m', ''));
-              let question = '';
-              
-              if (questionElement) {
-                  // Extract question text, excluding any icons/svgs
-                  question = extractTextContent(questionElement);
-                  // Remove any remaining svg-related text or icons
-                  question = question.replace(/Search/g, '').replace(/Prompt/g, '').trim();
-              }
-              
-              // Extract answer from the current message element
-              let answer = extractTextContent(message);
-              
-              if (question && answer && question !== answer) {
-                  results.push({
-                      messageId: messageId,
-                      question: question,
-                      answer: answer
-                  });
-                  
-                  processedMessages.add(messageId);
-              }
-          });
+          );
           
-          return results;
-      }
-      
-      // Process completed streams
-      function processCompletedStream(streamId) {
-          const streamData = streamTracker.get(streamId);
-          if (!streamData) return;
-          
-          // Extract current questions and answers
-          const qaPairs = extractQuestionsAndAnswers();
-          
-          // Find the most recent Q&A pair that might correspond to this stream
-          const latestQA = qaPairs[qaPairs.length - 1];
-          
-          if (latestQA) {
-              console.log(`[STREAM ${streamId}] Found Q&A:`, latestQA);
-              trackToMatomo(latestQA.question, latestQA.answer, streamId);
+          let text = '';
+          let node;
+          while (node = walker.nextNode()) {
+              text += node.textContent;
           }
           
-          // Cleanup
-          streamTracker.delete(streamId);
+          return text.replace(/\s+/g, ' ').trim();
       }
       
-      // Override console.log to capture streaming events
-      function interceptConsoleLog() {
-          const originalLog = console.log;
+      // Detect if element is likely a user question based on structure patterns
+      function isLikelyUserQuestion(element) {
+          const text = getCleanText(element);
           
-          console.log = function(...args) {
-              // Call original console.log
-              originalLog.apply(console, args);
+          // Skip if no meaningful text
+          if (text.length === 0) return false;
+          
+          // User questions simply don't have data-id attributes
+          return !element.hasAttribute('data-id');
+      }
+      
+      // Detect if element is likely an AI response based on structure patterns  
+      function isLikelyAIResponse(element) {
+          const text = getCleanText(element);
+          
+          // Skip if no meaningful text
+          if (text.length === 0) return false;
+          
+          // AI responses simply have data-id attributes
+          return element.hasAttribute('data-id');
+      }
+      
+      // Find potential question-answer pairs based on document order and structure
+      function findQuestionAnswerPairs() {
+          if (!messageContainer) return [];
+          
+          const pairs = [];
+          const allElements = Array.from(messageContainer.querySelectorAll('*'));
+          
+          // Filter to only meaningful elements with text content
+          const meaningfulElements = allElements.filter(el => {
+              const text = getCleanText(el);
+              return text.length > 5 && !processedElements.has(el);
+          });
+          
+          // Look for question-answer patterns
+          for (let i = 0; i < meaningfulElements.length - 1; i++) {
+              const currentElement = meaningfulElements[i];
+              const nextElement = meaningfulElements[i + 1];
               
-              // Check if this is a BSAI log message
-              const message = args.join(' ');
+              // Skip if we've already processed these
+              if (processedElements.has(currentElement) || processedElements.has(nextElement)) {
+                  continue;
+              }
               
-              if (message.includes(CONFIG.LOG_PREFIX)) {
-                  if (message.includes('Stream with id') && message.includes('started by user')) {
-                      // Extract stream ID
-                      const streamIdMatch = message.match(/Stream with id ([a-zA-Z0-9]+) started by user/);
-                      if (streamIdMatch) {
-                          const streamId = streamIdMatch[1];
-                          console.log(`[TRACKER] Stream started: ${streamId}`);
-                          
-                          streamTracker.set(streamId, {
-                              startTime: Date.now(),
-                              status: 'active'
+              const currentText = getCleanText(currentElement);
+              const nextText = getCleanText(nextElement);
+              
+              // Check if current looks like question and next looks like answer
+              if (isLikelyUserQuestion(currentElement) && isLikelyAIResponse(nextElement)) {
+                  // Additional validation: question should be different from answer
+                  if (currentText !== nextText && !nextText.includes(currentText)) {
+                      
+                      // Clean up question text
+                      const cleanQuestion = currentText
+                          .replace(/^(test\d+|hello|hi|hey)\s*/i, '')
+                          .replace(/\s+(test\d+)$/i, '')
+                          .trim();
+                      
+                      if (cleanQuestion.length > 0) {
+                          pairs.push({
+                              questionElement: currentElement,
+                              answerElement: nextElement,
+                              question: cleanQuestion,
+                              answer: nextText,
+                              timestamp: Date.now()
                           });
                           
-                          // Set timeout for stream
-                          setTimeout(() => {
-                              if (streamTracker.has(streamId)) {
-                                  console.warn(`[TRACKER] Stream ${streamId} timed out`);
-                                  streamTracker.delete(streamId);
-                              }
-                          }, CONFIG.STREAM_TIMEOUT);
-                      }
-                  } else if (message.includes('Stream with id') && message.includes('ended successfully')) {
-                      // Extract stream ID
-                      const streamIdMatch = message.match(/Stream with id ([a-zA-Z0-9]+) ended successfully/);
-                      if (streamIdMatch) {
-                          const streamId = streamIdMatch[1];
-                          console.log(`[TRACKER] Stream ended: ${streamId}`);
-                          
-                          // Process the completed stream after a short delay to ensure DOM is updated
-                          setTimeout(() => {
-                              processCompletedStream(streamId);
-                          }, 500);
+                          // Mark as processed
+                          processedElements.add(currentElement);
+                          processedElements.add(nextElement);
                       }
                   }
               }
-          };
+          }
+          
+          return pairs;
       }
       
-      // Set up mutation observer to watch for new messages
-      function setupMessageObserver() {
+      // Alternative approach: look for sequential patterns in direct children
+      function findSequentialPairs() {
+          if (!messageContainer) return [];
+          
+          const pairs = [];
+          const directChildren = Array.from(messageContainer.children);
+          
+          for (let i = 0; i < directChildren.length - 1; i++) {
+              const current = directChildren[i];
+              const next = directChildren[i + 1];
+              
+              if (processedElements.has(current) || processedElements.has(next)) {
+                  continue;
+              }
+              
+              const currentText = getCleanText(current);
+              const nextText = getCleanText(next);
+              
+              // Look for element without data-id followed by element with data-id
+              if (!current.hasAttribute('data-id') && next.hasAttribute('data-id') && 
+                  currentText.length > 0 && nextText.length > 0) {
+                  
+                  const cleanQuestion = currentText
+                      .replace(/^(test\d+)\s*/i, '')
+                      .trim();
+                  
+                  if (cleanQuestion.length > 0) {
+                      pairs.push({
+                          questionElement: current,
+                          answerElement: next,
+                          question: cleanQuestion,
+                          answer: nextText,
+                          timestamp: Date.now()
+                      });
+                      
+                      processedElements.add(current);
+                      processedElements.add(next);
+                  }
+              }
+          }
+          
+          return pairs;
+      }
+      
+      // Process new Q&A pairs and track to Matomo
+      function processNewPairs() {
+          // Try both approaches
+          let newPairs = findQuestionAnswerPairs();
+          if (newPairs.length === 0) {
+              newPairs = findSequentialPairs();
+          }
+          
+          newPairs.forEach(pair => {
+              // Check if this pair is actually new
+              const isDuplicate = qaHistory.some(existing => 
+                  existing.question === pair.question && 
+                  existing.answer === pair.answer
+              );
+              
+              if (!isDuplicate) {
+                  console.log('[TRACKER] New Q&A pair found:', {
+                      question: pair.question.substring(0, 50) + (pair.question.length > 50 ? '...' : ''),
+                      answer: pair.answer.substring(0, 50) + (pair.answer.length > 50 ? '...' : '')
+                  });
+                  
+                  qaHistory.push(pair);
+                  trackToMatomo(pair.question, pair.answer, {
+                      questionHasDataId: pair.questionElement.hasAttribute('data-id'),
+                      answerHasDataId: pair.answerElement.hasAttribute('data-id')
+                  });
+              }
+          });
+      }
+      
+      // Debounced processing function
+      function scheduleProcessing() {
+          if (processTimeout) {
+              clearTimeout(processTimeout);
+          }
+          
+          processTimeout = setTimeout(() => {
+              processNewPairs();
+          }, CONFIG.DEBOUNCE_DELAY);
+      }
+      
+      // Set up mutation observer to watch for DOM changes
+      function setupObserver() {
           if (!messageContainer || observer) return;
           
           observer = new MutationObserver((mutations) => {
+              let hasRelevantChanges = false;
+              
               mutations.forEach((mutation) => {
-                  if (mutation.type === 'childList' || mutation.type === 'subtree') {
-                      // New messages might have been added
-                      setTimeout(() => {
-                          const newQAPairs = extractQuestionsAndAnswers();
-                          if (newQAPairs.length > 0) {
-                              console.log('[TRACKER] New messages detected:', newQAPairs.length);
+                  if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                      for (let node of mutation.addedNodes) {
+                          if (node.nodeType === Node.ELEMENT_NODE) {
+                              hasRelevantChanges = true;
+                              break;
                           }
-                      }, 100);
+                      }
+                  }
+                  
+                  if (mutation.type === 'attributes' || mutation.type === 'characterData') {
+                      hasRelevantChanges = true;
                   }
               });
+              
+              if (hasRelevantChanges) {
+                  scheduleProcessing();
+              }
           });
           
           observer.observe(messageContainer, {
               childList: true,
               subtree: true,
+              attributes: true,
               characterData: true
           });
           
-          console.log('[TRACKER] Message observer setup complete');
+          console.log('[TRACKER] Observer setup complete - monitoring all changes');
+          processNewPairs();
       }
       
-      // Wait for messageContainer to be available
+      // Wait for messageContainer to appear (indefinite polling)
       function waitForMessageContainer() {
-          let attempts = 0;
-          
           const checkContainer = () => {
               messageContainer = document.getElementById(CONFIG.MESSAGE_CONTAINER_ID);
               
               if (messageContainer) {
-                  console.log('[TRACKER] Message container found, setting up monitoring');
-                  setupMessageObserver();
-                  interceptConsoleLog();
-                  
-                  // Process any existing messages
-                  const existingQAs = extractQuestionsAndAnswers();
-                  console.log(`[TRACKER] Found ${existingQAs.length} existing Q&A pairs`);
-                  
+                  console.log('[TRACKER] Message container found, setting up observer');
+                  setupObserver();
                   return;
               }
               
-              attempts++;
-              if (attempts < CONFIG.MAX_POLL_ATTEMPTS) {
-                  setTimeout(checkContainer, CONFIG.POLL_INTERVAL);
-              } else {
-                  console.error('[TRACKER] Failed to find messageContainer after maximum attempts');
-              }
+              setTimeout(checkContainer, CONFIG.POLL_INTERVAL);
           };
           
+          console.log('[TRACKER] Waiting for message container...');
           checkContainer();
       }
       
@@ -644,34 +706,40 @@
               observer.disconnect();
               observer = null;
           }
-          streamTracker.clear();
-          processedMessages.clear();
+          if (processTimeout) {
+              clearTimeout(processTimeout);
+              processTimeout = null;
+          }
           console.log('[TRACKER] Cleanup completed');
       }
       
-      // Initialize the tracker
-      function init() {
-          console.log('[TRACKER] Initializing AI Chatbot Matomo Logger');
-          
-          // Cleanup any existing instances
-          cleanup();
-          
-          // Start monitoring
-          waitForMessageContainer();
-          
-          // Cleanup on page unload
-          window.addEventListener('beforeunload', cleanup);
-      }
+      // Public API
+      window.chatbotTracker = {
+          cleanup: cleanup,
+          processNow: processNewPairs,
+          getHistory: () => [...qaHistory],
+          getStats: () => ({
+              totalPairs: qaHistory.length,
+              processedElements: processedElements,
+              isObserving: observer !== null
+          }),
+          debugElements: () => {
+              if (!messageContainer) return [];
+              const all = Array.from(messageContainer.querySelectorAll('*'));
+              return all.map(el => ({
+                  tag: el.tagName,
+                  hasDataId: el.hasAttribute('data-id'),
+                  textLength: getCleanText(el).length,
+                  text: getCleanText(el).substring(0, 50)
+              }));
+          }
+      };
       
-      // Export cleanup function for manual cleanup if needed
-      window.chatbotTrackerCleanup = cleanup;
+      // Initialize
+      console.log('[TRACKER] AI Chatbot Matomo Logger initialized (no CSS class dependencies)');
+      waitForMessageContainer();
       
-      // Auto-initialize
-      if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', init);
-      } else {
-          init();
-      }
+      window.addEventListener('beforeunload', cleanup);
   })();
 </script>
 <!-- End logging bigsur.ai interaction to Matomo -->
