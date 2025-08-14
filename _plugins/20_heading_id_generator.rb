@@ -16,7 +16,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
     %Q{<#{tag_name} id="heading-#{id_counter}"#{rest}>}.tap { id_counter += 1 }
   end
 
-  # Add data-matomo-content-name using the heading's id
+  # Add data-content-name using the heading's id
   regex_add_matomo = /<(h[1-6])([^>]*)\bid="([^"]+)"([^>]*)>/i
   doc.output = doc.output.gsub(regex_add_matomo) do
     tag_name = Regexp.last_match(1)
@@ -24,8 +24,8 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
     heading_id = Regexp.last_match(3)
     after_id = Regexp.last_match(4)
 
-    unless doc.output.include?("data-matomo-content-name=\"#{heading_id}\"")
-      %Q{<#{tag_name}#{before_id}id="#{heading_id}"#{after_id} data-matomo-content-name="#{full_page_url}##{heading_id}">}
+    unless doc.output.include?("data-content-name=\"#{heading_id}\"")
+      %Q{<#{tag_name}#{before_id}id="#{heading_id}"#{after_id} data-content-name="#{full_page_url}##{heading_id}">}
     else
       Regexp.last_match(0) # return original if already present
     end
