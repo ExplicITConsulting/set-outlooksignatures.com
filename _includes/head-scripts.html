@@ -493,8 +493,8 @@
                 // Check if this is a new AI response element
                 if (aiResponseElement.hasAttribute('data-id') && !processedElements.has(aiResponseElement)) {
                     
-                    const streamingLinkElement = aiResponseElement.querySelector('[queryid]');
-                    const queryId = streamingLinkElement?.getAttribute('queryid');
+                    const queryLinkElement = aiResponseElement.querySelector('[queryid]');
+                    const queryId = queryLinkElement?.getAttribute('queryid');
 
                     // If a queryId exists, it points to the user's question
                     if (queryId) {
@@ -502,9 +502,10 @@
 
                         if (questionElement && !processedElements.has(questionElement)) {
                             const questionText = getCleanText(questionElement);
-
-                            // The AI's response text is the innerHTML of the streaming link element
-                            const answerText = getCleanText(streamingLinkElement);
+                            
+                            // Find the answer text in the next sibling of the queryLinkElement
+                            const answerContentElement = queryLinkElement.nextElementSibling;
+                            const answerText = getCleanText(answerContentElement);
                             
                             if (questionText.length > 0 && answerText.length > 0) {
                                 console.log('[TRACKER] New Q&A pair found:', {
@@ -521,7 +522,6 @@
                                     timestamp: Date.now()
                                 });
 
-                                // Mark both elements as processed
                                 processedElements.add(questionElement);
                                 processedElements.add(aiResponseElement);
 
