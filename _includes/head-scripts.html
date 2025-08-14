@@ -682,21 +682,35 @@
           processNewPairs();
       }
       
-      // Wait for messageContainer to appear (indefinite polling)
+      // Wait for messageContainer to appear (indefinite polling with better detection)
       function waitForMessageContainer() {
+          let attempts = 0;
+          
           const checkContainer = () => {
+              attempts++;
               messageContainer = document.getElementById(CONFIG.MESSAGE_CONTAINER_ID);
               
               if (messageContainer) {
-                  console.log('[TRACKER] Message container found, setting up observer');
+                  console.log(`[TRACKER] Message container found after ${attempts} attempts, setting up observer`);
                   setupObserver();
                   return;
+              }
+              
+              // Log progress every 10 attempts (5 seconds)
+              if (attempts % 10 === 0) {
+                  console.log(`[TRACKER] Still waiting for message container... (attempt ${attempts})`);
+                  
+                  // Debug: check if any elements with similar IDs exist
+                  const possibleElements = document.querySelectorAll('[id*="message"], [id*="Message"], [id*="container"], [id*="Container"]');
+                  if (possibleElements.length > 0) {
+                      console.log('[TRACKER] Found similar elements:', Array.from(possibleElements).map(el => el.id));
+                  }
               }
               
               setTimeout(checkContainer, CONFIG.POLL_INTERVAL);
           };
           
-          console.log('[TRACKER] Waiting for message container...');
+          console.log('[TRACKER] Waiting for async chat to load and create message container...');
           checkContainer();
       }
       
@@ -735,9 +749,57 @@
           }
       };
       
-      // Initialize
-      console.log('[TRACKER] AI Chatbot Matomo Logger initialized (no CSS class dependencies)');
-      waitForMessageContainer();
+      // Initialize - handle async loading better
+      function init() {
+          console.log('[TRACKER] AI Chatbot Matomo Logger initialized');
+          console.log('[TRACKER] Document ready state:', document.readyState);
+          
+          // Start looking for messageContainer immediately
+          waitForMessageContainer();
+          
+          // Also set up a global mutation observer to watch for the entire chat being loaded
+          const globalObserver = new MutationObserver((mutations) => {
+              // Only check if we haven't found messageContainer yet
+              if (!messageContainer) {
+                  const found = document.getElementById(CONFIG.MESSAGE_CONTAINER_ID);
+                  if (found) {
+                      console.log('[TRACKER] Message container detected via global observer');
+                      globalObserver.disconnect(); // Stop global observing
+                      messageContainer = found;
+                      setupObserver();
+                  }
+              }
+          });
+          
+          // Watch the entire document for changes
+          globalObserver.observe(document.body || document.documentElement, {
+              childList: true,
+              subtree: true
+          });
+          
+          // Cleanup global observer after 60 seconds to avoid memory leaks
+          setTimeout(() => {
+              if (globalObserver) {
+                  globalObserver.disconnect();
+                  console.log('[TRACKER] Global observer cleanup after timeout');
+              }
+          }, 60000);
+      }
+      
+      // Start initialization based on document state
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+          // Also try on window load in case DOMContentLoaded was missed
+          window.addEventListener('load', () => {
+              if (!messageContainer) {
+                  console.log('[TRACKER] Retrying initialization on window load');
+                  init();
+              }
+          });
+      } else {
+          // Document already loaded, start immediately
+          init();
+      }
       
       window.addEventListener('beforeunload', cleanup);
   })();
