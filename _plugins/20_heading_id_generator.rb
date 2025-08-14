@@ -25,7 +25,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
     after_id = Regexp.last_match(4)
 
     unless doc.output.include?("data-content-name=\"#{heading_id}\"")
-      %Q{<#{tag_name}#{before_id}id="#{heading_id}"#{after_id} data-track-content data-content-name="#{full_page_url}##{heading_id}">}
+      %Q{<#{tag_name}#{before_id}id="#{heading_id}"#{after_id} data-track-content="" data-content-name="#{full_page_url}##{heading_id}" data-content-piece="#{full_page_url}##{heading_id}" data-content-target="#{full_page_url}##{heading_id}">}
     else
       Regexp.last_match(0) # return original if already present
     end
