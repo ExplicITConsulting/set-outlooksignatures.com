@@ -417,53 +417,35 @@
 <!-- End bigsur.ai chatbot code -->
 
 
-<!-- Start log bigsur.ai asked questions to Matomo -->
+<!-- Start logging bigsur.ai interaction to Matomo -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const messageContainer = document.getElementById('messageContainer');
-
     if (!messageContainer) {
-      console.error('Chatbot message container not found. Check the ID of the chat window.');
+      console.error('Chatbot message container not found.');
       return;
     }
 
-    // Define the callback function for the observer
-    const callback = function(mutationsList, observer) {
+    const observer = new MutationObserver(mutationsList => {
       for (const mutation of mutationsList) {
         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
           mutation.addedNodes.forEach(node => {
-            // Check if the added node is an element and contains a user message
-            // The user message element has a div with a child svg that has a specific aria-label
-            const userMessageElement = node.querySelector('svg[aria-label="Search"]');
-            
-            if (userMessageElement) {
-              // Find the parent div of the SVG to get the message text
-              const messageDiv = userMessageElement.closest('div[data-id]');
-              
-              if (messageDiv) {
-                  const questionText = messageDiv.textContent.trim();
-                  
-                  // Track the event with Matomo
-                  if (typeof _paq !== 'undefined' && questionText.length > 0) {
-                    _paq.push(['trackEvent', 'Chatbot', 'Question Asked', questionText]);
-                    console.log('Matomo tracked a chatbot question:', questionText);
+            if (node.nodeType === Node.ELEMENT_NODE) {
+              node.childNodes.forEach(child => {
+                if (child.nodeType === Node.TEXT_NODE) {
+                  const text = child.textContent.trim();
+                  if (window._paq && text.length) {
+                    _paq.push(['trackEvent', 'Chatbot', 'Interaction', text]);
                   }
-              }
+                }
+              });
             }
           });
         }
       }
-    };
+    });
 
-    // Configure the observer to watch for additions to the message container's children
-    const observerConfig = {
-      childList: true,
-      subtree: true
-    };
-    const observer = new MutationObserver(callback);
-
-    // Start observing the messageContainer
-    observer.observe(messageContainer, observerConfig);
+    observer.observe(messageContainer, { childList: true });
   });
 </script>
-<!-- End log bigsur.ai asked questions to Matomo -->
+<!-- End logging bigsur.ai interaction to Matomo -->
