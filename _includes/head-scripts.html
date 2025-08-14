@@ -689,25 +689,15 @@
           const checkContainer = () => {
               attempts++;
               
-              // First try direct getElementById
-              messageContainer = document.getElementById(CONFIG.MESSAGE_CONTAINER_ID);
+              // 1. Get the custom element first
+              const bsaiPluginElement = document.querySelector('bsai-plugin');
               
-              // If not found, search deeper in custom elements and shadow DOM
-              if (!messageContainer) {
-                  // Look inside bsai-plugin and other custom elements
-                  const customElements = document.querySelectorAll('bsai-plugin, [class*="bsai"]');
-                  for (const element of customElements) {
-                      const found = element.querySelector(`#${CONFIG.MESSAGE_CONTAINER_ID}`);
-                      if (found) {
-                          messageContainer = found;
-                          break;
-                      }
-                  }
-                  
-                  // Also try a broader search in the entire document
-                  if (!messageContainer) {
-                      messageContainer = document.querySelector(`#${CONFIG.MESSAGE_CONTAINER_ID}`);
-                  }
+              if (bsaiPluginElement && bsaiPluginElement.shadowRoot) {
+                  // 2. Look for the message container *inside* the Shadow DOM
+                  messageContainer = bsaiPluginElement.shadowRoot.getElementById(CONFIG.MESSAGE_CONTAINER_ID);
+              } else {
+                  // Fallback for cases where it's not in a shadow root
+                  messageContainer = document.getElementById(CONFIG.MESSAGE_CONTAINER_ID);
               }
               
               if (messageContainer) {
@@ -720,17 +710,6 @@
               // Log progress every 10 attempts (5 seconds)
               if (attempts % 10 === 0) {
                   console.log(`[TRACKER] Still waiting for message container... (attempt ${attempts})`);
-                  
-                  // Debug: check for bsai-plugin and similar elements
-                  const bsaiElements = document.querySelectorAll('bsai-plugin, [class*="bsai"], [id*="message"], [id*="Message"]');
-                  if (bsaiElements.length > 0) {
-                      console.log('[TRACKER] Found BSAI-related elements:', bsaiElements.length);
-                      console.log('[TRACKER] Sample elements:', Array.from(bsaiElements).slice(0, 3).map(el => ({
-                          tag: el.tagName,
-                          id: el.id,
-                          classes: el.className
-                      })));
-                  }
               }
               
               setTimeout(checkContainer, CONFIG.POLL_INTERVAL);
@@ -739,7 +718,7 @@
           console.log('[TRACKER] Waiting for async chat to load and create message container...');
           checkContainer();
       }
-      
+
       // Cleanup function
       function cleanup() {
           if (observer) {
