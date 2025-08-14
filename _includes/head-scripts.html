@@ -480,154 +480,63 @@
           return text.replace(/\s+/g, ' ').trim();
       }
       
-      // Detect if element is likely a user question based on structure patterns
-      function isLikelyUserQuestion(element) {
-          const text = getCleanText(element);
-          
-          // User questions are direct children with an id and no data-id
-          return element.parentElement && 
-                element.parentElement.id === CONFIG.MESSAGE_CONTAINER_ID &&
-                element.id && 
-                !element.hasAttribute('data-id');
-      }
-
-      // Detect if element is likely an AI response based on structure patterns  
-      function isLikelyAIResponse(element) {
-          const text = getCleanText(element);
-          
-          // AI responses are nested elements with a data-id
-          return element.hasAttribute('data-id');
-      } 
-
       // Find potential question-answer pairs based on document order and structure
       function findQuestionAnswerPairs() {
           if (!messageContainer) return [];
           
           const pairs = [];
-          const allElements = Array.from(messageContainer.querySelectorAll('*'));
+          const directChildren = Array.from(messageContainer.children);
           
-          // Filter to only meaningful elements with text content
-          const meaningfulElements = allElements.filter(el => {
-              const text = getCleanText(el);
-              return text.length > 5 && !processedElements.has(el);
+          const meaningfulElements = directChildren.filter(el => {
+              return !processedElements.has(el);
           });
           
-          // Look for question-answer patterns
           for (let i = 0; i < meaningfulElements.length - 1; i++) {
-              const currentElement = meaningfulElements[i];
-              const nextElement = meaningfulElements[i + 1];
+              const userQueryElement = meaningfulElements[i];
+              const aiResponseParent = meaningfulElements[i + 1];
+
+              const questionText = getCleanText(userQueryElement);
               
-              // Skip if we've already processed these
-              if (processedElements.has(currentElement) || processedElements.has(nextElement)) {
-                  continue;
-              }
-              
-              const currentText = getCleanText(currentElement);
-              const nextText = getCleanText(nextElement);
-              
-              // Check if current looks like question and next looks like answer
-              if (isLikelyUserQuestion(currentElement) && isLikelyAIResponse(nextElement)) {
-                  // Additional validation: question should be different from answer
-                  if (currentText !== nextText && !nextText.includes(currentText)) {
-                      
-                      // Clean up question text
-                      const cleanQuestion = currentText
-                          .replace(/^(test\d+|hello|hi|hey)\s*/i, '')
-                          .replace(/\s+(test\d+)$/i, '')
-                          .trim();
-                      
-                      if (cleanQuestion.length > 0) {
-                          pairs.push({
-                              questionElement: currentElement,
-                              answerElement: nextElement,
-                              question: cleanQuestion,
-                              answer: nextText,
+              if (userQueryElement.id && !userQueryElement.hasAttribute('data-id') && aiResponseParent.hasAttribute('data-id') && questionText.length > 0) {
+                  // Find the actual AI message text element inside its parent
+                  const aiMessageElement = aiResponseParent.querySelector('[class*="kvliy7"]');
+                  const answerText = aiMessageElement ? getCleanText(aiMessageElement) : '';
+                  
+                  if (answerText.length > 0) {
+                      // Check if this pair is actually new
+                      const isDuplicate = qaHistory.some(existing =>
+                          existing.question === questionText &&
+                          existing.answer === answerText
+                      );
+
+                      if (!isDuplicate) {
+                          console.log('[TRACKER] New Q&A pair found:', {
+                              question: questionText,
+                              answer: answerText
+                          });
+                          
+                          qaHistory.push({
+                              questionElement: userQueryElement,
+                              answerElement: aiMessageElement,
+                              question: questionText,
+                              answer: answerText,
                               timestamp: Date.now()
+                          });
+
+                          trackToMatomo(questionText, answerText, {
+                              questionHasDataId: userQueryElement.hasAttribute('data-id'),
+                              answerHasDataId: aiResponseParent.hasAttribute('data-id')
                           });
                           
                           // Mark as processed
-                          processedElements.add(currentElement);
-                          processedElements.add(nextElement);
+                          processedElements.add(userQueryElement);
+                          processedElements.add(aiResponseParent);
                       }
                   }
               }
           }
           
           return pairs;
-      }
-      
-      // Alternative approach: look for sequential patterns in direct children
-      function findSequentialPairs() {
-          if (!messageContainer) return [];
-          
-          const pairs = [];
-          const directChildren = Array.from(messageContainer.children);
-          
-          for (let i = 0; i < directChildren.length - 1; i++) {
-              const current = directChildren[i];
-              const next = directChildren[i + 1];
-              
-              if (processedElements.has(current) || processedElements.has(next)) {
-                  continue;
-              }
-              
-              const currentText = getCleanText(current);
-              const nextText = getCleanText(next);
-              
-              // Look for element without data-id followed by element with data-id
-              if (!current.hasAttribute('data-id') && next.hasAttribute('data-id') && 
-                  currentText.length > 0 && nextText.length > 0) {
-                  
-                  const cleanQuestion = currentText
-                      .replace(/^(test\d+)\s*/i, '')
-                      .trim();
-                  
-                  if (cleanQuestion.length > 0) {
-                      pairs.push({
-                          questionElement: current,
-                          answerElement: next,
-                          question: cleanQuestion,
-                          answer: nextText,
-                          timestamp: Date.now()
-                      });
-                      
-                      processedElements.add(current);
-                      processedElements.add(next);
-                  }
-              }
-          }
-          
-          return pairs;
-      }
-      
-      // Process new Q&A pairs and track to Matomo
-      function processNewPairs() {
-          // Try both approaches
-          let newPairs = findQuestionAnswerPairs();
-          if (newPairs.length === 0) {
-              newPairs = findSequentialPairs();
-          }
-          
-          newPairs.forEach(pair => {
-              // Check if this pair is actually new
-              const isDuplicate = qaHistory.some(existing => 
-                  existing.question === pair.question && 
-                  existing.answer === pair.answer
-              );
-              
-              if (!isDuplicate) {
-                  console.log('[TRACKER] New Q&A pair found:', {
-                      question: pair.question.substring(0, 50) + (pair.question.length > 50 ? '...' : ''),
-                      answer: pair.answer.substring(0, 50) + (pair.answer.length > 50 ? '...' : '')
-                  });
-                  
-                  qaHistory.push(pair);
-                  trackToMatomo(pair.question, pair.answer, {
-                      questionHasDataId: pair.questionElement.hasAttribute('data-id'),
-                      answerHasDataId: pair.answerElement.hasAttribute('data-id')
-                  });
-              }
-          });
       }
       
       // Debounced processing function
@@ -637,7 +546,7 @@
           }
           
           processTimeout = setTimeout(() => {
-              processNewPairs();
+              findQuestionAnswerPairs();
           }, CONFIG.DEBOUNCE_DELAY);
       }
       
@@ -650,12 +559,7 @@
               
               mutations.forEach((mutation) => {
                   if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-                      for (let node of mutation.addedNodes) {
-                          if (node.nodeType === Node.ELEMENT_NODE) {
-                              hasRelevantChanges = true;
-                              break;
-                          }
-                      }
+                      hasRelevantChanges = true;
                   }
                   
                   if (mutation.type === 'attributes' || mutation.type === 'characterData') {
@@ -676,7 +580,7 @@
           });
           
           console.log('[TRACKER] Observer setup complete - monitoring all changes');
-          processNewPairs();
+          findQuestionAnswerPairs();
       }
       
       // Wait for messageContainer to appear (indefinite polling with better detection)
@@ -686,14 +590,11 @@
           const checkContainer = () => {
               attempts++;
               
-              // 1. Get the custom element first
               const bsaiPluginElement = document.querySelector('bsai-plugin');
               
               if (bsaiPluginElement && bsaiPluginElement.shadowRoot) {
-                  // 2. Look for the message container *inside* the Shadow DOM
                   messageContainer = bsaiPluginElement.shadowRoot.getElementById(CONFIG.MESSAGE_CONTAINER_ID);
               } else {
-                  // Fallback for cases where it's not in a shadow root
                   messageContainer = document.getElementById(CONFIG.MESSAGE_CONTAINER_ID);
               }
               
@@ -715,7 +616,7 @@
           console.log('[TRACKER] Waiting for async chat to load and create message container...');
           checkContainer();
       }
-
+      
       // Cleanup function
       function cleanup() {
           if (observer) {
@@ -732,7 +633,7 @@
       // Public API
       window.chatbotTracker = {
           cleanup: cleanup,
-          processNow: processNewPairs,
+          processNow: findQuestionAnswerPairs,
           getHistory: () => [...qaHistory],
           getStats: () => ({
               totalPairs: qaHistory.length,
@@ -756,19 +657,14 @@
           console.log('[TRACKER] AI Chatbot Matomo Logger initialized');
           console.log('[TRACKER] Document ready state:', document.readyState);
           
-          // Start looking for messageContainer immediately
           waitForMessageContainer();
           
-          // Also set up a global mutation observer to watch for the entire chat being loaded
           const globalObserver = new MutationObserver((mutations) => {
-              // Only check if we haven't found messageContainer yet
               if (!messageContainer) {
-                  // Check for messageContainer in the mutations
                   for (const mutation of mutations) {
                       if (mutation.type === 'childList') {
                           for (const node of mutation.addedNodes) {
                               if (node.nodeType === Node.ELEMENT_NODE) {
-                                  // Check if the added node contains messageContainer
                                   let found = null;
                                   if (node.id === CONFIG.MESSAGE_CONTAINER_ID) {
                                       found = node;
@@ -790,13 +686,11 @@
               }
           });
           
-          // Watch the entire document for changes
           globalObserver.observe(document.body || document.documentElement, {
               childList: true,
               subtree: true
           });
           
-          // Cleanup global observer after 60 seconds to avoid memory leaks
           setTimeout(() => {
               if (globalObserver) {
                   globalObserver.disconnect();
@@ -805,10 +699,8 @@
           }, 60000);
       }
       
-      // Start initialization based on document state
       if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', init);
-          // Also try on window load in case DOMContentLoaded was missed
           window.addEventListener('load', () => {
               if (!messageContainer) {
                   console.log('[TRACKER] Retrying initialization on window load');
@@ -816,7 +708,6 @@
               }
           });
       } else {
-          // Document already loaded, start immediately
           init();
       }
       
