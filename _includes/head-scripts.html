@@ -419,40 +419,264 @@
 
 <!-- Start logging bigsur.ai interaction to Matomo -->
 <script>
-  // Wait until the chatbot's container exists before running observer logic
-  function waitForMessageContainer(callback) {
-    const checkInterval = setInterval(() => {
-      const messageContainer = document.getElementById('messageContainer');
-      if (messageContainer) {
-        clearInterval(checkInterval);
-        callback(messageContainer);
-      }
-    }, 100); // check every 100ms
-  }
+  // AI Chatbot Matomo Logger
+  // Monitors streaming events and captures questions/answers for Matomo tracking
 
-  waitForMessageContainer((messageContainer) => {
-    const observer = new MutationObserver(mutationsList => {
-      for (const mutation of mutationsList) {
-        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-          mutation.addedNodes.forEach(node => {
-            if (node.nodeType === Node.ELEMENT_NODE) {
-              node.childNodes.forEach(child => {
-                if (child.nodeType === Node.TEXT_NODE) {
-                  const text = child.textContent.trim();
-                  if (window._paq && text.length) {
-                    _paq.push(['trackEvent', 'Chatbot', 'Interaction', text]);
-                    console.log('Logged chatbot interaction to Matomo:', text);
-                  }
-                }
-              });
-            }
+  (function() {
+      'use strict';
+      
+      // Configuration
+      const CONFIG = {
+          LOG_PREFIX: '[bsai]',
+          MESSAGE_CONTAINER_ID: 'messageContainer',
+          POLL_INTERVAL: 100, // ms to check for messageContainer
+          MAX_POLL_ATTEMPTS: 300, // 30 seconds max wait
+          STREAM_TIMEOUT: 30000 // 30 seconds timeout for streams
+      };
+      
+      // Storage for active streams and processed messages
+      const streamTracker = new Map();
+      const processedMessages = new Set();
+      let messageContainer = null;
+      let observer = null;
+      
+      // Matomo tracking function (replace with your actual Matomo implementation)
+      function trackToMatomo(question, answer, streamId) {
+          console.log('[MATOMO] Tracking Q&A:', {
+              question: question,
+              answer: answer,
+              streamId: streamId,
+              timestamp: new Date().toISOString()
           });
-        }
+          
+          // Replace this with your actual Matomo tracking code
+          // Example:
+          // _paq.push(['trackEvent', 'AI Chatbot', 'Question Asked', question]);
+          // _paq.push(['trackEvent', 'AI Chatbot', 'Answer Provided', answer]);
       }
-    });
-
-    // Start observing for new messages
-    observer.observe(messageContainer, { childList: true });
-  });
+      
+      // Extract text content from an element, cleaning up formatting
+      function extractTextContent(element) {
+          if (!element) return '';
+          
+          // Clone the element to avoid modifying the original
+          const clone = element.cloneNode(true);
+          
+          // Remove any script tags
+          const scripts = clone.querySelectorAll('script');
+          scripts.forEach(script => script.remove());
+          
+          // Get text content and clean it up
+          let text = clone.textContent || clone.innerText || '';
+          
+          // Clean up whitespace and special characters
+          text = text.replace(/\s+/g, ' ').trim();
+          
+          return text;
+      }
+      
+      // Find question and answer elements in the message container
+      function extractQuestionsAndAnswers() {
+          if (!messageContainer) return [];
+          
+          const results = [];
+          const messages = messageContainer.querySelectorAll('[data-id]');
+          
+          messages.forEach(message => {
+              const messageId = message.getAttribute('data-id');
+              
+              if (processedMessages.has(messageId)) {
+                  return; // Skip already processed messages
+              }
+              
+              // Look for user questions (typically have different styling/structure)
+              const questionElement = document.getElementById(messageId.replace('m', ''));
+              let question = '';
+              
+              if (questionElement) {
+                  // Extract question text, excluding any icons/svgs
+                  question = extractTextContent(questionElement);
+                  // Remove any remaining svg-related text or icons
+                  question = question.replace(/Search/g, '').replace(/Prompt/g, '').trim();
+              }
+              
+              // Extract answer from the current message element
+              let answer = extractTextContent(message);
+              
+              if (question && answer && question !== answer) {
+                  results.push({
+                      messageId: messageId,
+                      question: question,
+                      answer: answer
+                  });
+                  
+                  processedMessages.add(messageId);
+              }
+          });
+          
+          return results;
+      }
+      
+      // Process completed streams
+      function processCompletedStream(streamId) {
+          const streamData = streamTracker.get(streamId);
+          if (!streamData) return;
+          
+          // Extract current questions and answers
+          const qaPairs = extractQuestionsAndAnswers();
+          
+          // Find the most recent Q&A pair that might correspond to this stream
+          const latestQA = qaPairs[qaPairs.length - 1];
+          
+          if (latestQA) {
+              console.log(`[STREAM ${streamId}] Found Q&A:`, latestQA);
+              trackToMatomo(latestQA.question, latestQA.answer, streamId);
+          }
+          
+          // Cleanup
+          streamTracker.delete(streamId);
+      }
+      
+      // Override console.log to capture streaming events
+      function interceptConsoleLog() {
+          const originalLog = console.log;
+          
+          console.log = function(...args) {
+              // Call original console.log
+              originalLog.apply(console, args);
+              
+              // Check if this is a BSAI log message
+              const message = args.join(' ');
+              
+              if (message.includes(CONFIG.LOG_PREFIX)) {
+                  if (message.includes('Stream with id') && message.includes('started by user')) {
+                      // Extract stream ID
+                      const streamIdMatch = message.match(/Stream with id ([a-zA-Z0-9]+) started by user/);
+                      if (streamIdMatch) {
+                          const streamId = streamIdMatch[1];
+                          console.log(`[TRACKER] Stream started: ${streamId}`);
+                          
+                          streamTracker.set(streamId, {
+                              startTime: Date.now(),
+                              status: 'active'
+                          });
+                          
+                          // Set timeout for stream
+                          setTimeout(() => {
+                              if (streamTracker.has(streamId)) {
+                                  console.warn(`[TRACKER] Stream ${streamId} timed out`);
+                                  streamTracker.delete(streamId);
+                              }
+                          }, CONFIG.STREAM_TIMEOUT);
+                      }
+                  } else if (message.includes('Stream with id') && message.includes('ended successfully')) {
+                      // Extract stream ID
+                      const streamIdMatch = message.match(/Stream with id ([a-zA-Z0-9]+) ended successfully/);
+                      if (streamIdMatch) {
+                          const streamId = streamIdMatch[1];
+                          console.log(`[TRACKER] Stream ended: ${streamId}`);
+                          
+                          // Process the completed stream after a short delay to ensure DOM is updated
+                          setTimeout(() => {
+                              processCompletedStream(streamId);
+                          }, 500);
+                      }
+                  }
+              }
+          };
+      }
+      
+      // Set up mutation observer to watch for new messages
+      function setupMessageObserver() {
+          if (!messageContainer || observer) return;
+          
+          observer = new MutationObserver((mutations) => {
+              mutations.forEach((mutation) => {
+                  if (mutation.type === 'childList' || mutation.type === 'subtree') {
+                      // New messages might have been added
+                      setTimeout(() => {
+                          const newQAPairs = extractQuestionsAndAnswers();
+                          if (newQAPairs.length > 0) {
+                              console.log('[TRACKER] New messages detected:', newQAPairs.length);
+                          }
+                      }, 100);
+                  }
+              });
+          });
+          
+          observer.observe(messageContainer, {
+              childList: true,
+              subtree: true,
+              characterData: true
+          });
+          
+          console.log('[TRACKER] Message observer setup complete');
+      }
+      
+      // Wait for messageContainer to be available
+      function waitForMessageContainer() {
+          let attempts = 0;
+          
+          const checkContainer = () => {
+              messageContainer = document.getElementById(CONFIG.MESSAGE_CONTAINER_ID);
+              
+              if (messageContainer) {
+                  console.log('[TRACKER] Message container found, setting up monitoring');
+                  setupMessageObserver();
+                  interceptConsoleLog();
+                  
+                  // Process any existing messages
+                  const existingQAs = extractQuestionsAndAnswers();
+                  console.log(`[TRACKER] Found ${existingQAs.length} existing Q&A pairs`);
+                  
+                  return;
+              }
+              
+              attempts++;
+              if (attempts < CONFIG.MAX_POLL_ATTEMPTS) {
+                  setTimeout(checkContainer, CONFIG.POLL_INTERVAL);
+              } else {
+                  console.error('[TRACKER] Failed to find messageContainer after maximum attempts');
+              }
+          };
+          
+          checkContainer();
+      }
+      
+      // Cleanup function
+      function cleanup() {
+          if (observer) {
+              observer.disconnect();
+              observer = null;
+          }
+          streamTracker.clear();
+          processedMessages.clear();
+          console.log('[TRACKER] Cleanup completed');
+      }
+      
+      // Initialize the tracker
+      function init() {
+          console.log('[TRACKER] Initializing AI Chatbot Matomo Logger');
+          
+          // Cleanup any existing instances
+          cleanup();
+          
+          // Start monitoring
+          waitForMessageContainer();
+          
+          // Cleanup on page unload
+          window.addEventListener('beforeunload', cleanup);
+      }
+      
+      // Export cleanup function for manual cleanup if needed
+      window.chatbotTrackerCleanup = cleanup;
+      
+      // Auto-initialize
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+      } else {
+          init();
+      }
+  })();
 </script>
 <!-- End logging bigsur.ai interaction to Matomo -->
