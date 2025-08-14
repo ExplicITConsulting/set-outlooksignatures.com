@@ -484,24 +484,21 @@
       function isLikelyUserQuestion(element) {
           const text = getCleanText(element);
           
-          // Skip if no meaningful text
-          if (text.length === 0) return false;
-          
-          // User questions simply don't have data-id attributes
-          return !element.hasAttribute('data-id');
+          // User questions are direct children with an id and no data-id
+          return element.parentElement && 
+                element.parentElement.id === CONFIG.MESSAGE_CONTAINER_ID &&
+                element.id && 
+                !element.hasAttribute('data-id');
       }
-      
+
       // Detect if element is likely an AI response based on structure patterns  
       function isLikelyAIResponse(element) {
           const text = getCleanText(element);
           
-          // Skip if no meaningful text
-          if (text.length === 0) return false;
-          
-          // AI responses simply have data-id attributes
+          // AI responses are nested elements with a data-id
           return element.hasAttribute('data-id');
-      }
-      
+      } 
+
       // Find potential question-answer pairs based on document order and structure
       function findQuestionAnswerPairs() {
           if (!messageContainer) return [];
