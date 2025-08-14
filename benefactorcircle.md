@@ -282,7 +282,14 @@ redirect_from:
   <div class="columns">
     <div class="column is-one-third-desktop is-half-tablet is-full-mobil">
       <figure class="image is-16by9">
-        <iframe class="has-ratio" width="560" height="315" src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI" title="Set-OutlookSignatures Benefactor Circle demo video" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="has-ratio" width="560" height="315"
+          id="youtube-video-player"
+          src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI?enablejsapi=1"
+          title="Set-OutlookSignatures Benefactor Circle demo video"
+          frameborder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
       </figure>
     </div>
   </div>
@@ -723,4 +730,36 @@ Benefactor Circle add-on</span>.</p>
         console.error('Failed to fetch or process image URLs:', error);
       });
   });
+</script>
+
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+  var player;
+  function onYouTubeIframeAPIReady() {
+    // Create a new YT.Player object for the iframe with id="youtube-video-player"
+    player = new YT.Player('youtube-video-player', {
+      events: {
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+
+  // This function is called by the YouTube API whenever the player's state changes
+  function onPlayerStateChange(event) {
+    var videoTitle = "Set-OutlookSignatures Demo"; // Customize this
+    var currentTime = player.getCurrentTime();
+
+    if (event.data === YT.PlayerState.PLAYING) {
+      // Track when the video starts playing
+      _paq.push(['trackEvent', 'Video', 'Play', videoTitle, Math.round(currentTime)]);
+    } else if (event.data === YT.PlayerState.PAUSED) {
+      // Track when the video is paused
+      _paq.push(['trackEvent', 'Video', 'Pause', videoTitle, Math.round(currentTime)]);
+    } else if (event.data === YT.PlayerState.ENDED) {
+      // Track when the video ends
+      _paq.push(['trackEvent', 'Video', 'Ended', videoTitle, Math.round(currentTime)]);
+    }
+  }
 </script>
