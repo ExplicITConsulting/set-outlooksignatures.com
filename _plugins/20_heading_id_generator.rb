@@ -2,15 +2,32 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
   # Only process HTML files
   next unless doc.output_ext == '.html'
 
+  site_url = doc.site.config['url'].to_s.chomp('/')
+  page_url = doc.url.to_s
+  full_page_url = "#{site_url}#{page_url}"
+
   id_counter = 1
 
-  # This regex matches <h1> ... <h6> tags that do NOT have an id= attribute
-  # and captures the start tag (group 1) and the rest of the tag name & attributes (group 2)
-  regex = /<(h[1-6])\b(?![^>]*\bid=)([^>]*)>/i
-
-  doc.output = doc.output.gsub(regex) do
+  # Add missing id attributes to headings
+  regex_add_id = /<(h[1-6])\b(?![^>]*\bid=)([^>]*)>/i
+  doc.output = doc.output.gsub(regex_add_id) do
     tag_name = Regexp.last_match(1)
     rest = Regexp.last_match(2)
     %Q{<#{tag_name} id="heading-#{id_counter}"#{rest}>}.tap { id_counter += 1 }
+  end
+
+  # Add data-matomo-content-name using the heading's id
+  regex_add_matomo = /<(h[1-6])([^>]*)\bid="([^"]+)"([^>]*)>/i
+  doc.output = doc.output.gsub(regex_add_matomo) do
+    tag_name = Regexp.last_match(1)
+    before_id = Regexp.last_match(2)
+    heading_id = Regexp.last_match(3)
+    after_id = Regexp.last_match(4)
+
+    unless doc.output.include?("data-matomo-content-name=\"#{heading_id}\"")
+      %Q{<#{tag_name}#{before_id}id="#{heading_id}"#{after_id} data-matomo-content-name="#{full_page_url}##{heading_id}">}
+    else
+      Regexp.last_match(0) # return original if already present
+    end
   end
 end
