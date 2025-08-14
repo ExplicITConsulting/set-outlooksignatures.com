@@ -485,51 +485,55 @@
         
         // Find potential question-answer pairs based on queryid
         function findQuestionAnswerPairs() {
-            if (!messageContainer) return;
+            if (!messageContainer) {
+                return;
+            }
 
-            const children = Array.from(messageContainer.children);
+            const allChildren = Array.from(messageContainer.querySelectorAll('[queryid]'));
 
-            for (const aiResponseElement of children) {
-                // Check if this is a new AI response element
-                if (aiResponseElement.hasAttribute('data-id') && !processedElements.has(aiResponseElement)) {
-                    
-                    const queryLinkElement = aiResponseElement.querySelector('[queryid]');
-                    const queryId = queryLinkElement?.getAttribute('queryid');
+            for (const queryLinkElement of allChildren) {
+                // Find the AI response container, which is the parent of the queryLinkElement
+                const aiResponseContainer = queryLinkElement.closest('[data-id]');
 
-                    // If a queryId exists, it points to the user's question
-                    if (queryId) {
-                        const questionElement = messageContainer.querySelector(`#${queryId}`);
+                if (!aiResponseContainer || processedElements.has(aiResponseContainer)) {
+                    continue;
+                }
 
-                        if (questionElement && !processedElements.has(questionElement)) {
-                            const questionText = getCleanText(questionElement);
-                            
-                            // Find the answer text in the next sibling of the queryLinkElement
-                            const answerContentElement = queryLinkElement.nextElementSibling;
-                            const answerText = getCleanText(answerContentElement);
-                            
-                            if (questionText.length > 0 && answerText.length > 0) {
-                                console.log('[TRACKER] New Q&A pair found:', {
-                                    question: questionText,
-                                    answer: answerText,
-                                    queryId: queryId
-                                });
-                                
-                                qaHistory.push({
-                                    questionElement: questionElement,
-                                    answerElement: aiResponseElement,
-                                    question: questionText,
-                                    answer: answerText,
-                                    timestamp: Date.now()
-                                });
+                const queryId = queryLinkElement.getAttribute('queryid');
+                const questionElement = messageContainer.querySelector(`#${queryId}`);
 
-                                processedElements.add(questionElement);
-                                processedElements.add(aiResponseElement);
+                if (questionElement && !processedElements.has(questionElement)) {
+                    const questionText = getCleanText(questionElement);
 
-                                trackToMatomo(questionText, answerText, {
-                                    queryId: queryId
-                                });
-                            }
-                        }
+                    // Find the answer text element by excluding the queryLinkElement and button groups
+                    const potentialAnswerElements = Array.from(aiResponseContainer.querySelectorAll('div'));
+                    const answerElement = potentialAnswerElements.find(el => 
+                        el !== queryLinkElement && !el.querySelector('button') && getCleanText(el).length > 0
+                    );
+
+                    const answerText = answerElement ? getCleanText(answerElement) : '';
+
+                    if (questionText.length > 0 && answerText.length > 0) {
+                        console.log('[TRACKER] New Q&A pair found with robust selectors:', {
+                            question: questionText,
+                            answer: answerText,
+                            queryId: queryId
+                        });
+                        
+                        qaHistory.push({
+                            questionElement: questionElement,
+                            answerElement: aiResponseContainer,
+                            question: questionText,
+                            answer: answerText,
+                            timestamp: Date.now()
+                        });
+
+                        processedElements.add(questionElement);
+                        processedElements.add(aiResponseContainer);
+
+                        trackToMatomo(questionText, answerText, {
+                            queryId: queryId
+                        });
                     }
                 }
             }
