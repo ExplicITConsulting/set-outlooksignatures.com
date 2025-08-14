@@ -93,6 +93,15 @@ description: Search and find. What are you looking for?
             });
 
             displayResults(flatResults, query);
+
+            // Report the search to Matomo, including the search result count
+            if (typeof _paq !== 'undefined') {
+                _paq.push(['trackSiteSearch',
+                    query, // The search keyword
+                    false, // Search category (optional, set to false)
+                    flatResults.length // The number of results shown to the user
+                ]);
+            }
         }
 
         // Function to display search results
