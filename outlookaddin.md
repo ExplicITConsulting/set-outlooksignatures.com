@@ -138,6 +138,17 @@ To configure the add-in and deploy it to your web server:
   - If you want or do not want to disable client signatures configured by your users.
   - Your cloud environment and the ID of the Entra ID app (required for Exchange Online mailboxes only).
   - Enable or disable debug logging.
+  - Add custom code to the add-in so you can directly influence which signature it will set.  
+    For example, you can set a specific signature…
+      - …when there are only internal recipients, or another signature when there are external recipients
+      - …depending on the from email address
+      - …when a specific customer is in the To field
+      - …when the current item is a mail or an appointment
+      - …when the current item is a new mail, or another signature when it is a reply or a forward
+      - …depending on the subject
+      - …or any other condition derived from the information available in the customRulesProperties object  
+
+      See '.\sample code\CustomRulesCode.js' in the Outlook add-in folder for details.
 - Run '`run_before_deployment.ps1`' in PowerShell.
 - Upload the content of the '`publish`' folder to your web server.
 
@@ -187,7 +198,7 @@ The Integrated Apps feature is the recommended way to deploy Outlook add-ins. It
 - Microsoft is actively blocking access to roaming signatures for Outlook add-ins. The add-in will be updated when this block has been removed. In the meantime, the add-in has access to the data of the last run of Set-OutlookSignatures v4.14.0 and higher.
 - The Microsoft APIs only allow access to online content. There is no way to access offline mailbox content or the file system. This means that the Outlook add-in only works when Outlook has an online connection to the user's mailbox.
 - The easiest way to test the add-in and its basic functionality is to use the taskpane (see 'Usage' for details). For specific debugging on Android and iOS, you need to use the DEBUG option in '`run_before_deployment.ps1`'.
-- The add-in can run automatically when one of the following launch events is triggered by Outlook: OnNewMessageCompose, OnNewAppointmentOrganizer, OnMessageFromChanged, OnAppointmentFromChanged.
+- The add-in can run automatically when one of the following launch events is triggered by Outlook: OnNewMessageCompose, OnNewAppointmentOrganizer, OnMessageFromChanged, OnAppointmentFromChanged, OnMessageRecipientsChanged, OnAppointmentAttendeesChanged.
   - Not all these events are supported on all platforms and editions of Outlook, see [this Microsoft article](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/autolaunch#supported-events) for an up-to-date list.
   - While not publicly documented, [Outlook currently does not support add-ins on calendar invite responses](https://github.com/OfficeDev/office-js/issues/4094#issuecomment-1923444325).
 - Microsoft dynamically updates the local copy of the office.js framework, there is no 1:1 relation between the version of Outlook and the version of the framework. This may lead to problems that suddenly appear although neither Outlook nor the add-in have changed. For example, the add-in may suddenly no longer work for shared mailboxes in Classic Outlook for Windows on some devices, while it does on others and in Outlook Web.
