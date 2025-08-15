@@ -158,8 +158,8 @@ Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle
             </tr>
             <tr>
                 <td style="text-align:left">Apply signature based on recipients</td>
-                <td style="text-align:left">🟡 Manually</td>
-                <td style="text-align:left">🟡 One signature for all recipients, based on first rule match</td>
+                <td style="text-align:left">🟢 Highly customizable, not only based on recipients</td>
+                <td style="text-align:left">🟡 Internal or external</td>
                 <td style="text-align:left">🔴</td>
                 <td style="text-align:left">🔴</td>
             </tr>

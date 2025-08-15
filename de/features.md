@@ -160,9 +160,9 @@ Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on 
                 <td style="text-align:left">🟢 Bei Umleitung aller E-Mails auf ein Drittsystem</td>
             </tr>
             <tr>
-                <td style="text-align:left">Signaturen auf Basis der Empfänger auswählen</td>
-                <td style="text-align:left">🟡 Manuell</td>
-                <td style="text-align:left">🟡 Eine Signatur für alle Empfänger, basierend auf der ersten zutreffenden Regel</td>
+                <td style="text-align:left">Signaturen auf Basis der Empfänger</td>
+                <td style="text-align:left">🟢 Hochgradig anpassbar, nicht nur basierend auf den Empfängern</td>
+                <td style="text-align:left">🟡 Interne oder externe Empfänger</td>
                 <td style="text-align:left">🔴</td>
                 <td style="text-align:left">🔴</td>
             </tr>
