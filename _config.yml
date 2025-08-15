@@ -17,6 +17,7 @@ baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "ExplicITConsulting/set-outlooksignatures.com" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 favicon                  : "/assets/images/set-outlooksignatures icon.ico"
 force_theme              : #light
+gh_sponsor               : GruberMarkus
 
 # SEO Related
 google_site_verification :
