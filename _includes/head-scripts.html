@@ -448,7 +448,7 @@
 
       if (typeof _paq !== 'undefined') {
         _paq.push(['trackEvent', 'AI Chatbot', 'Question', question]);
-        _paq.push(['trackEvent', 'AI Chatbot', 'Answer', answer]);
+        // _paq.push(['trackEvent', 'AI Chatbot', 'Answer', answer]);
       }
     }
 
@@ -456,32 +456,13 @@
     function getCleanText(element) {
       if (!element) return '';
 
-      // Use a more robust selector to exclude specific non-text elements
       const clonedElement = element.cloneNode(true);
-      clonedElement.querySelectorAll('script, style, button, [role="button"], [class*="1k8zfwi"]').forEach(el => el.remove());
 
-      // Get all text nodes, excluding script tags
-      const walker = document.createTreeWalker(
-        clonedElement,
-        NodeFilter.SHOW_TEXT,
-        {
-          acceptNode: function (node) {
-            const parent = node.parentElement;
-            if (parent && (parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE')) {
-              return NodeFilter.FILTER_REJECT;
-            }
-            return NodeFilter.FILTER_ACCEPT;
-          }
-        }
-      );
+      // Remove button groups and other non-text elements based on stable attributes
+      clonedElement.querySelectorAll('[role="button"], button, .bsai-prompt').forEach(el => el.remove());
 
-      let text = '';
-      let node;
-      while (node = walker.nextNode()) {
-        text += node.textContent;
-      }
-
-      return text.replace(/\s+/g, ' ').trim();
+      // Get all remaining text content
+      return clonedElement.textContent.replace(/\s+/g, ' ').trim();
     }
 
     function findQuestionAnswerPairs() {
@@ -489,18 +470,16 @@
         return;
       }
 
-      // Select both question and answer containers
       const allMessages = Array.from(messageContainer.querySelectorAll('[id^="m"], [data-id]'));
 
       for (let i = 0; i < allMessages.length; i++) {
         const currentElement = allMessages[i];
 
-        // Check if the element has already been processed
         if (processedElements.has(currentElement)) {
           continue;
         }
 
-        // Find a question element (e.g., with an ID starting with 'm')
+        // This is a question element based on its ID
         if (currentElement.id && currentElement.id.startsWith('m')) {
           const questionElement = currentElement;
           const questionText = getCleanText(questionElement);
@@ -531,7 +510,6 @@
 
               trackToMatomo(questionText, answerText, {});
 
-              // Skip the next element (the answer) since we've already processed it
               i++;
             }
           }
