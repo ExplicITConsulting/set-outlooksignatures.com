@@ -14,11 +14,11 @@ redirect_from:
 ---
 
 
-<h2>Nachhaltiger Mehrwert für Ihr Unternehmen</h2>
+<h2 id="sustainable-value">Nachhaltiger Mehrwert für Ihr Unternehmen</h2>
 <p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> von <a href="https://explicitconsulting.at">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Möglichkeiten für Ihr Unternehmen.</p>
 
 
-<h3>Zusätzliche Funktionen</h3>
+<h3 id="additional-features">Zusätzliche Funktionen</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -157,7 +157,7 @@ redirect_from:
 </div>
 
 
-<h3>Priorisierter Support</h3>
+<h3 id="prioritized-support">Priorisierter Support</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -188,7 +188,7 @@ redirect_from:
 </div>
 
 
-<h3>Kostenlose Versions-Upgrades und Archiv</h3>
+<h3 id="free-upgrades">Kostenlose Versions-Upgrades und Archiv</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -301,8 +301,8 @@ redirect_from:
   </div>
 </p>
 
-<h2>Finanzielle Vorteile</h2>
-<p>Für die Berechnung des Business Case stellen sich drei zentrale Fragen:</p>
+<h2 id="financial-benefits">Finanzielle Vorteile</h2>
+<p>Das Benefactor Circle Add-On ist eine Investition, die sich ab dem ersten Tag rechnet. Eine Kosten-Nutzen-Rechnung in Form eines Business Cases muss drei Aspekte berücksichtigen:</p>
 <ul>
   <li>Wie hoch sind die Kosten durch nicht konforme Signaturen und Abwesenheitsnotizen – sei es durch Reputationsverlust oder Bußgelder wegen Nichteinhaltung von Vorschriften?</li>
   <li>Welchen Mehrwert bietet die Nutzung von E-Mails als zusätzlicher Marketingkanal?</li>
@@ -339,8 +339,8 @@ redirect_from:
 
 <p><strong>Set-OutlookSignatures amortisiert sich sofort und hilft Ihnen sogar, mehr Umsatz zu generieren.</strong></p>
 
-<h2>Kauf, Verlängerung und Änderung von Lizenzen</h2>
-<h3>Preis und allgemeine Informationen</h3>
+<h2 id="licenses">Kauf, Verlängerung und Änderung von Lizenzen</h2>
+<h3 id="price">Preis und allgemeine Informationen</h3>
 <p>Der Preis beträgt derzeit <strong>3,00 € netto pro Postfach und Jahr</strong>, was <strong>0,25 € netto pro Postfach und Monat</strong> entspricht.</p>
 
 <p>Wir gestalten die Lizenzkosten so fair wie möglich. Fair bedeutet:</p>
@@ -374,7 +374,7 @@ redirect_from:
 <p>Wenn Sie während einer laufenden Lizenzperiode weitere Postfächer hinzufügen möchten, zahlen Sie nur den aktuellen Preis anteilig für die verbleibenden Monate der Lizenzlaufzeit.</p>
 
 
-<h3 id="trialversion">Testversion</h3>
+<h3 id="trial">Testversion</h3>
 <p>Sie möchten vielleicht mit einer 14-tägigen Testlizenz starten.</p>
 
 <p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.<br>
@@ -398,7 +398,7 @@ Die Testphase beginnt mit der Erstellung und Übermittlung der Lizenzdatei, nich
 
 <p>Wir empfehlen dringend, die Testphase erst zu starten, wenn die kostenlose Kernversion erfolgreich implementiert wurde. Stellen Sie außerdem sicher, dass Sie einen Testplan haben und Zeit für die Durchführung reserviert ist.</p>
 
-<h3>Bestellprozess für Lizenzen</h3>
+<h3 id="order">Bestellprozess für Lizenzen</h3>
 <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb">
   <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Lizenzangebot anfordern</button>
 </a></p>
@@ -413,7 +413,7 @@ Die Testphase beginnt mit der Erstellung und Übermittlung der Lizenzdatei, nich
   <li>'-BenefactorCircleId' mit Ihrer Benefactor Circle-ID</li>
 </ul>
 
-<h3>Verlängerung oder Verkürzung einer Lizenzlaufzeit</h3>
+<h3 id="change-license-period">Verlängerung oder Verkürzung einer Lizenzlaufzeit</h3>
 <p>Eine Lizenzlaufzeit kann nicht verlängert werden.<br>
 Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen Zahlungseingangs, und verlängern sich nicht automatisch.</p>
 
@@ -421,17 +421,17 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
 
 <p>Sie werden rechtzeitig im Voraus darüber informiert, dass Ihre Lizenz demnächst abläuft.</p>
 
-<h3>Reduzierung der lizenzierten Postfächer</h3>
+<h3 id="reduce-licensed-mailboxes">Reduzierung der lizenzierten Postfächer</h3>
 <p>Die Gesamtanzahl der lizenzierten Postfächer kann während einer laufenden Lizenzperiode nicht reduziert werden, da die Lizenzgebühren im Voraus für ein Jahr ab dem Datum des Zahlungseingangs entrichtet werden.</p>
 
-<h3>Verschieben lizenzierter Postfächer zwischen Lizenzgruppen</h3>
+<h3 id="change-license-groups">Verschieben lizenzierter Postfächer zwischen Lizenzgruppen</h3>
 <p>Das Verschieben von Lizenzen bedeutet, dass sich die Gesamtanzahl der lizenzierten Postfächer nicht ändert, sondern lediglich deren Verteilung auf verschiedene Lizenzgruppen. Dies kann beispielsweise im Rahmen von Konsolidierungen in Active Directory erforderlich sein.</p>
 
 <p>Ein einmaliger Wechsel von Postfächern zwischen Lizenzgruppen ist pro Lizenzperiode möglich.</p>
 
 <p>Wenn weitere Verschiebungen notwendig sind, müssen zusätzliche Lizenzen vorübergehend erworben werden. Die Gesamtanzahl der Lizenzen kann dann zu Beginn der nächsten Lizenzperiode wieder reduziert werden.</p>
 
-<h3>Erhöhung der Anzahl lizenzierter Postfächer</h3>
+<h3 id="add-more-mailboxes">Erhöhung der Anzahl lizenzierter Postfächer</h3>
 <p>Wenn während einer laufenden Lizenzperiode zusätzliche Postfächer lizenziert werden, werden nur die zusätzlichen Lizenzen berechnet: Anteilig für die verbleibende Laufzeit, aufgerundet auf volle Monate.</p>
 
 <p>Der Preis für neue Lizenzen entspricht dem Listenpreis zum Zeitpunkt der Bestellung.</p>
@@ -439,7 +439,7 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
 <p>Die Zahlung verlängert nicht die Lizenzlaufzeit, sondern erhöht lediglich die Anzahl der lizenzierten Postfächer innerhalb der bestehenden Laufzeit.</p>
 
 
-<h2>Funktionsweise von Lizenzgruppen</h2>
+<h2 id="license-groups">Funktionsweise von Lizenzgruppen</h2>
 <p>Jede Benefactor Circle-Lizenz ist an eine oder mehrere Active Directory- oder Entra ID-Gruppen gebunden, sogenannte Lizenzgruppen.</p>
 
 <p>Zur maximalen Datensicherheit und einfachen Verwaltung ist die Lizenz nicht an bestimmte Postfächer („Named Users“) gebunden, sondern nur an eine Gruppe mit einer definierten maximalen Mitgliederanzahl.</p>
@@ -489,13 +489,13 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
 
 <p>Wenn eine Verbindung zu Microsoft Graph verfügbar ist, wird diese zur Prüfung der Gruppenmitgliedschaft verwendet. Eine Graph-Verbindung ist verpflichtend, wenn die Standardlizenzgruppe eine Entra ID-Gruppe ist.</p>
 
-<h2>Lizenz- und Softwareversion</h2>
+<h2 id="version-match">Lizenz- und Softwareversion</h2>
 <p>Lizenz- und Softwareversionen sind untrennbar miteinander verbunden. Jede neue Version von Set-OutlookSignatures bringt auch eine neue Lizenzversion mit sich, und umgekehrt.</p>
 
 <p>Die Verwendung unterschiedlicher Versionen von Software und Lizenzdatei wird nicht unterstützt, da dies zu unerwartetem Verhalten führen kann. Wenn ein Versionskonflikt erkannt wird, wird eine Warnmeldung im Log protokolliert.</p>
 
 
-<h2>Hilfe und Support</h2>
+<h2 id="support">Hilfe und Support</h2>
 <p>Set-OutlookSignatures und das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> sind sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.</p>
 
 <p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:<p>

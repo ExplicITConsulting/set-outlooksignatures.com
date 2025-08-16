@@ -13,7 +13,7 @@ image:
 redirect_from:
 ---
 
-<h2>Set-OutlookSignatures</h2>
+<h2 id="set-outlooksignatures">Set-OutlookSignatures</h2>
 <p>
 Set-OutlookSignatures ist der Open-Source-Standard für E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
 </p>
@@ -26,7 +26,7 @@ Set-OutlookSignatures ist der Open-Source-Standard für E-Mail-Signaturen und Ab
 
 <p><a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Schnellstart-Anleitung</button></a></p>
 
-<h2>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></h2>
+<h2 id="benefactor-circle">Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></h2>
 <p>Das Benefactor Circle Add-On von <a href="https://explicitconsulting.at">ExplicIT Consulting</a> erweitert die Open-Source-Version um großartige zusätzliche Funktionen für Ihr Unternehmen.</p>
 
 <p><a href="/benefactorcircle"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Das Benefactor Circle Add-On</button></a></p>

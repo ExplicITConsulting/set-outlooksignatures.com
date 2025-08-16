@@ -19,7 +19,7 @@ redirect_from:
 ---
 
 
-## Schritt 1: Set-OutlookSignatures herunterladen
+## Schritt 1: Set-OutlookSignatures herunterladen {#step-1}
 Laden Sie Set-OutlookSignatures herunter und entpacken Sie das Archiv in einen lokalen Ordner.
 
 <p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔&nbsp;<span class="version-text">Die aktuelle Version</span>&nbsp;als ZIP-Datei herunterladen</button></a></p>
@@ -29,7 +29,7 @@ Heben Sie unter Windows und macOS die Blockierung der Datei 'Set-OutlookSignatur
 Wenn Sie AppLocker oder eine vergleichbare Lösung (Defender, CrowdStrike, Ivanti und andere) verwenden, müssen Sie möglicherweise die vorhandene digitale Signatur zu Ihrer Zulassungsliste hinzufügen oder zusätzliche Einstellungen in Ihrer Sicherheitssoftware festlegen.
 
 
-## Schritt 2: Einmalige Vorbereitungen
+## Schritt 2: Einmalige Vorbereitungen {#step-2}
 **Client und Benutzer**  
 Für einen ersten Testlauf ist es empfehlenswert, sich mit einem Testbenutzer auf einem Windows-System anzumelden, auf dem Word und Outlook installiert sind und Outlook zumindest mit dem Postfach des Testbenutzers konfiguriert ist. Wenn Sie Ihren eigenen Benutzer verwenden, werden im schlimmsten Fall bestehende Signaturen überschrieben.
 
@@ -51,7 +51,7 @@ Wenn Sie verlangen, dass PowerShell-Skripte mit ausgewählten Zertifikaten signi
 Bitten Sie Ihren Endpoint Security Administrator Software zu vertrauen, die mit dem Zertifikat von ExplicIT Consulting signiert ist. Alle PS1- und DLL-Dateien, die im Download von Set-OutlookSignatures in Schritt 2 enhalten sind, sind mit diesem Zertifikat signiert.
 
 
-## Schritt 3: Set-OutlookSignatures ausführen
+## Schritt 3: Set-OutlookSignatures ausführen  {#step-3}
 - **Wenn alle Postfächer on-prem gehalten werden**
   ```
   powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"
@@ -70,7 +70,7 @@ Set-OutlookSignatures verteilt jetzt erste Signaturen, basierend auf Standardein
 Öffnen Sie Outlook und werfen Sie einen Blick auf die neu erzeugten Signaturen, besonders auf die Vorzeigesignatur 'Test all default replacement variables'.
 
 
-## Anpassungen vornehmen
+## Anpassungen vornehmen {#customize}
 Wenn mit den Standardeinstellungen alles gut funktioniert, haben Sie einen soliden Ausgangspunkt für Ihre eigenen Anpassungen.
 
 Sie können Set-OutlookSignatures jetzt für Ihre konkreten Anforderungen konfigurieren. Zum Beispiel:
@@ -85,7 +85,7 @@ Die [Liste der Funktionen](/features) und die [Dokumentation der Parameter](/par
 Die [FAQ-Seite](/faq) hilft Ihnen, Antworten auf die am häufigsten an uns gestellten Fragen zu finden. Um tiefer einzutauchen, bietet unser [Hilfe- und Support-Zentrum](/help) großartige Unterlagen.
 
 
-## Benötigen Sie Hilfe oder weitere Funktionen?
+## Benötigen Sie Hilfe oder weitere Funktionen? {#support}
 Set-OutlookSignatures ist sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.
 
 Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Evaluierung, Planung, Implementierung und dem laufenden Betrieb unterstützen kann: Unser Partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen [kostenpflichtigen Support](/support), und das <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> bietet zusätzliche Funktionen für Ihr Unternehmen.

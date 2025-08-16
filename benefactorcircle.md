@@ -12,10 +12,10 @@ redirect_from:
 ---
 
 
-<h2>Sustainable added value for your business</h2>
+<h2 id="sustainable-value">Sustainable added value for your business</h2>
 <p>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> from <a href="https://explicitconsulting.at">ExplicIT Consulting</a> enhances the free Set-OutlookSignatures with great additional possibilities for your company.</p>
 
-<h3>Additional features</h3>
+<h3 id="additional-features">Additional features</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -153,7 +153,7 @@ redirect_from:
   </div>
 </div>
 
-<h3>Prioritized support</h3>
+<h3 id="prioritized-support">Prioritized support</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -183,7 +183,7 @@ redirect_from:
   </div>
 </div>
 
-<h3>Free version upgrades and archive</h3>
+<h3 id="free-upgrades">Free version upgrades and archive</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -295,8 +295,8 @@ redirect_from:
   </div>
 </p>
 
-<h2>Financial benefits</h2>
-<p>There are three relevant questions to calculate the business case:</p>
+<h2 id="financial-benefits">Financial benefits</h2>
+<p>The Benefactor Circle Add-On is an investment that pays off from day one. A cost-benefit analysis in the form of a business case must consider three aspects:</p>
 <ul>
   <li>How much do non-compliant signatures and out-of-office replies cost in terms of loss of reputation or in terms of fines for non-compliance?</li>
   <li>What is the added value of using email as an additional marketing channel?</li>
@@ -336,8 +336,8 @@ Benefactor Circle add-on</span>.</p>
 <p><strong>Set-OutlookSignatures pays for itself immediately and actually helps you earn more money.</strong></p>
 
 
-<h2>Buying, extending and changing licenses</h2>
-<h3>Price and general information</h3>
+<h2 id="licenses">Buying, extending and changing licenses</h2>
+<h3 id="price">Price and general information</h3>
 <p>The price currently is <strong>3.00 € net per mailbox and year</strong>, which is <strong>0.25 € net per mailbox and month</strong>.</p>
 
 <p>We keep license costs as fair as possible. Fair means:</p>
@@ -368,7 +368,7 @@ Benefactor Circle add-on</span>.</p>
 <p>If you wish to add additional mailboxes during an active license period, you will only be charged the current price for these additional mailboxes for the remaining months of your license period.</p>
 
 
-<h3 id="trialversion">Trial version</h3>
+<h3 id="trial">Trial version</h3>
 <p>You may want to start with a 14-day trial license.</p>
 
 <p>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.<br>If you look for help implementing the free and open-source core version of Set-OutlookSignatures, go through the Quick Start Guide in the readme file, open an issue at GitHub, or contact us: We are happy to help you implement Set-OutlookSignatures in your own environment as part of our fee-based support.</p>
@@ -392,7 +392,7 @@ Benefactor Circle add-on</span>.</p>
 <p>It is strongly recommended to start your trial only when the free and open-source version of Set-OutlookSignatures has already been implemented successfully. Also make sure you have a test plan and reserved time to execute it.</p>
 
 
-<h3>Order process for non-trial versions</h3>
+<h3 id="order">Order process for non-trial versions</h3>
 <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a license quote</button></a></p>
 
 <p>You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.</p>
@@ -406,7 +406,7 @@ Benefactor Circle add-on</span>.</p>
 </ul>
 
 
-<h3>Extending or reducing a license period</h3>
+<h3 id="change-license-period">Extending or reducing a license period</h3>
 <p>A license period cannot be extended. Licenses are valid for one year, starting with the date the full payment is received, and do not auto-renew.</p>
 
 <p>To continue using Set-OutlookSignatures with Benefactor Circle benefits, just place a new order to receive a new license file.</p>
@@ -414,11 +414,11 @@ Benefactor Circle add-on</span>.</p>
 <p>You will be informed in advance that your license is about to expire.</p>
 
 
-<h3>Reducing the number of licensed mailboxes</h3>
+<h3 id="reduce-licensed-mailboxes">Reducing the number of licensed mailboxes</h3>
 <p>The total number of licensed mailboxes can not be reduced during a license period (one year starting from the date of payment reception), as the license fees are paid in advance.</p>
 
 
-<h3>Moving licensed mailboxes between license groups</h3>
+<h3 id="change-license-groups">Moving licensed mailboxes between license groups</h3>
 <p>Moving licenses means that the total number of licensed mailboxes does not change, but their distribution across license groups. This can, for example, be necessary due to Active Directory consolidations.</p>
 
 <p>Shifting licenses between license groups is possible once per license period.</p>
@@ -426,13 +426,13 @@ Benefactor Circle add-on</span>.</p>
 <p>If more license shifts are required, additional licenses have to be acquired temporarily, the total number of licenses can then be reduced when the new license period begins.</p>
 
 
-<h3>Increasing the number of licensed mailboxes</h3>
+<h3 id="add-more-mailboxes">Increasing the number of licensed mailboxes</h3>
 <p>When adding licenses mid-term, only additional licenses are billed, for the remaining period rounded up to full months.</p>
 
 <p>The price for new licenses is the list price at the time of ordering. The payment does not extend the license period but increases the number of licensed mailboxes within it.</p>
 
 
-<h3>How license groups work</h3>
+<h3 id="license-groups">How license groups work</h3>
 <p>Each Benefactor Circle license is bound to one or more Active Directory or Entra ID groups, called a license group. For maximum data protection and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
 
 <p>For most environments, only one license group is needed.<br>In on-prem and hybrid environments with multiple Active Directory domains, you may define a separate license group for each AD DNS domain, each license group with a separate maximum member count.<br>If you have multiple entra ID tenants, you may define one Entra ID group per tenant.</p>
@@ -475,13 +475,13 @@ Benefactor Circle add-on</span>.</p>
 <p>When a connection to Microsoft Graph is available, Graph is used to check license group membership. A connection to Graph is enforced when the default license group is an Entra ID group.</p>
 
 
-<h2>License and software version</h2>
+<h2 id="version-match">License and software version</h2>
 <p>License and software versions go hand in hand, so every new release of Set-OutlookSignatures also means a new license release, and vice-versa.</p>
 
 <p>Using different versions of software and license file is not supported, as this leads to unexpected results. A warning message is logged when a version mismatch is detected.</p>
 
 
-<h2>Help and support</h2>
+<h2 id="support">Help and support</h2>
 <p>Set-OutlookSignatures and the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> are very well documented, which inevitably brings with it a lot of content.</p>
 
 <p>Visit our help and support center to find out more:<p>
