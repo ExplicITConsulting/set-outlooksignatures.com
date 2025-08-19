@@ -22,7 +22,7 @@ redirect_from:
 ---
 
 
-## Funktionen&nbsp;&nbsp;&nbsp;&nbsp;<a href="#funktions-vergleich"><img src="https://img.shields.io/badge/zum-Funktions--Vergleich-limegreen?labelColor=black" alt="Zum Funktions-Vergleich"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/zur-🚀%20Schnellstart--Anleitung%20🚀-limegreen?labelColor=black" alt="Zur Schnellstart-Anleitung"></a> {#features}
+## Funktionen&nbsp;&nbsp;&nbsp;&nbsp;<a href="#feature-comparison"><img src="https://img.shields.io/badge/zum-Funktions--Vergleich-limegreen?labelColor=black" alt="Zum Funktions-Vergleich"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/zur-🚀%20Schnellstart--Anleitung%20🚀-limegreen?labelColor=black" alt="Zur Schnellstart-Anleitung"></a> {#features}
 Mit SetOutlookSignatures können Signaturen und Abwesenheitsnotizen:
 - Aus **Vorlagen im DOCX- oder HTML-Dateiformat** generiert werden.
 - Mit einer **Vielzahl von Variablen**, einschließlich **Fotos und Bildern**, aus Entra ID, Active Directory und anderen Quellen angepasst werden.
@@ -66,7 +66,7 @@ Der Kern der Software ist als **Freie Open-Source-Software (FOSS)** quelloffen u
 Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on vorbehalten**. Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.
 
 
-## Funktions-Vergleich&nbsp;&nbsp;&nbsp;&nbsp;<a href="#funktionen"><img src="https://img.shields.io/badge/zu den-Funktionen-limegreen?labelColor=black" alt="Zu den Funktionen"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/zur-🚀%20Schnellstart--Anleitung%20🚀-limegreen?labelColor=black" alt="Zur Schnellstart-Anleitung"></a> {#feature-comparison}
+## Funktions-Vergleich&nbsp;&nbsp;&nbsp;&nbsp;<a href="#features"><img src="https://img.shields.io/badge/zu den-Funktionen-limegreen?labelColor=black" alt="Zu den Funktionen"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/zur-🚀%20Schnellstart--Anleitung%20🚀-limegreen?labelColor=black" alt="Zur Schnellstart-Anleitung"></a> {#feature-comparison}
 
 <div class="table-container">
     <table class="table is-bordered is-striped is-hoverable is-fullwidth">
