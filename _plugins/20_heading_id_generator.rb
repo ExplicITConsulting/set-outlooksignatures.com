@@ -9,7 +9,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
   id_counter = 1
 
   # Add missing id attributes to headings
-  regex_add_id = /<(h[1-6])\b(?![^>]*\bid=)([^>]*)>/i
+  regex_add_id = /<(h[2-6])\b(?![^>]*\bid=)([^>]*)>/i
   doc.output = doc.output.gsub(regex_add_id) do
     tag_name = Regexp.last_match(1)
     rest = Regexp.last_match(2)
@@ -17,7 +17,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
   end
 
   # Add data-content-name using the heading's id
-  regex_add_matomo = /<(h[1-6])([^>]*)\bid="([^"]+)"([^>]*)>/i
+  regex_add_matomo = /<(h[2-6])([^>]*)\bid="([^"]+)"([^>]*)>/i
   doc.output = doc.output.gsub(regex_add_matomo) do
     tag_name = Regexp.last_match(1)
     before_id = Regexp.last_match(2)
