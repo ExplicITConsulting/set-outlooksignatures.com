@@ -228,7 +228,7 @@ redirect_from:
 <h2 id="quickstart"><span style="font-weight: normal;">First signatures </span><span style="color: MediumAquamarine">in less than an hour</span></h2>
 <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 
-<a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: MediumAquamarine">➔ Quick Start Guide</button></a>
+<a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="height: 4em; background-color: MediumAquamarine">➔ Quick Start Guide</button></a>
 
 
 <h2 id="dive-deeper"><span style="font-weight: normal;">Dive </span><span style="color: DeepSkyBlue;">deeper</span></h2>
