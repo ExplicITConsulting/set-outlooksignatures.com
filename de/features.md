@@ -273,10 +273,10 @@ Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on 
             </tr>
             <tr>
                 <td style="text-align:left">Outlook Add-In</td>
-                <td style="text-align:left">🟡 Nicht für on-prem Postfächer auf Android und iOS</td>
-                <td style="text-align:left">🟡 Nicht für Termine</td>
-                <td style="text-align:left">🟡 Nicht für Termine</td>
-                <td style="text-align:left">🟢</td>
+                <td style="text-align:left">🟢 Nicht für on-prem Postfächer auf Android und iOS. Hochgrad anpassbar mit Regeln, eigenem Code und zur Laufzeit generierten Signaturen</td>
+                <td style="text-align:left">🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
+                <td style="text-align:left">🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
+                <td style="text-align:left">🔴 Nicht für on-prem Postfächer</td>
             </tr>
             <tr>
                 <td style="text-align:left">Preismodel für Support</td>

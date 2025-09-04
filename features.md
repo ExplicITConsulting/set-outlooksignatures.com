@@ -272,10 +272,10 @@ Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle
             </tr>
             <tr>
                 <td style="text-align:left">Outlook add-in</td>
-                <td style="text-align:left">🟡 No on-prem mailboxes on mobile devices</td>
-                <td style="text-align:left">🟡 Not for appointments</td>
-                <td style="text-align:left">🟡 Not for appointments</td>
-                <td style="text-align:left">🟢</td>
+                <td style="text-align:left">🟢 No on-prem mailboxes on mobile devices. Highly customizable with rules, own code and runtime-generated signatures.</td>
+                <td style="text-align:left">🟡 No on-prem mailboxes on mobile devices, not for appointments</td>
+                <td style="text-align:left">🟡 No on-prem mailboxes on mobile devices, not for appointments</td>
+                <td style="text-align:left">🔴 No on-prem mailboxes</td>
             </tr>
             <tr>
                 <td style="text-align:left">Support pricing model</td>

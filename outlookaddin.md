@@ -116,9 +116,15 @@ If you want to create the Entra ID app manually, the required minimum settings f
 - Authentication platform '`Single-page application`' with a redirect URI of '`brk-multihub://<your_deployment_domain>`'.
   If your DEPLOYMENT_URL is 'https://outlook-addin-01.example.com', the redirect URI must be '`brk-multihub://outlook-addin-01.example.com`'.
 - Access to the following '`delegated`' (not application!) '`Graph API`' permissions:
-  - '`Mail.Read`'
-    Allows to read emails in mailbox of the currently logged-on user (and in no other mailboxes).
+  - '`Mail.Read`'  
+    Allows to read emails in mailbox of the currently logged-on user (and in no other mailboxes).  
     Required because of Microsoft restrictions accessing roaming signatures.
+  - '`GroupMember.Read.All`'  
+    Allows the app to list groups, read basic group properties and read membership of all groups the signed-in user has access to.  
+    Required to find and check license groups.
+  - '`User.Read.All`'  
+    Allows the app to read the full set of profile properties, reports, and managers of other users in your organization, on behalf of the signed-in user.  
+    Required to get the UPN for a given SMTP email address.
 - Grant admin consent for all permissions
 
 
@@ -146,9 +152,11 @@ To configure the add-in and deploy it to your web server:
       - …when the current item is a mail or an appointment
       - …when the current item is a new mail, or another signature when it is a reply or a forward
       - …depending on the subject
-      - …or any other condition derived from the information available in the customRulesProperties object  
+      - …or any other condition derived from the information available in the customRulesProperties object
 
-      See '.\sample code\CustomRulesCode.js' in the Outlook add-in folder for details.
+      You can even create your own signature at runtime, without choosing one previously deployed with Set-OutlookSignatures.
+
+      See '`.\sample code\CustomRulesCode.js`' in the Outlook add-in folder for details.
 - Run '`run_before_deployment.ps1`' in PowerShell.
 - Upload the content of the '`publish`' folder to your web server.
 
