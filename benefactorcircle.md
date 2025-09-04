@@ -492,7 +492,7 @@ Benefactor Circle add-on</span>.</p>
   <li>How to get first-class support</li>
 </ul>
 
-<p><a href="/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Help and Support-Center</button></a></p>
+<p><a href="https://set-outlooksignatures.com/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Help and Support-Center</button></a></p>
 
 
 <style>

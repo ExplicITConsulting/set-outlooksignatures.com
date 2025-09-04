@@ -506,7 +506,7 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
   <li>Wie Sie erstklassigen Support erhalten</li>
 </ul>
 
-<p><a href="/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Hilfe- und Support-Center</button></a></p>
+<p><a href="https://set-outlooksignatures.com/help"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Hilfe- und Support-Center</button></a></p>
 
 
 <style>
