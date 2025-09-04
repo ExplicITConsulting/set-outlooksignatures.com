@@ -10,7 +10,7 @@ languages                : ["en", "de"]
 default_lang             : en
 direction                : ltr # left to right
 google_analytics         : # UA-xxxxxxx
-title                    : "Set-OutlookSignatures and the Benefactor Circle add-on"
+title                    : "Set-OutlookSignatures"
 description              : "Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy."
 url                      : "https://set-outlooksignatures.com" # the base hostname & protocol for your site
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
