@@ -153,7 +153,7 @@ This document provides an overview of the functional scope and administration of
 
 The product is used for the central administration and local distribution of textual signatures and out-of-office replies to clients. Outlook on Windows, Outlook Web and New Outlook are supported as targets.
 
-Integration into the client, which is secured with the help of AppLocker and other mechanisms such as Microsoft Purview Informatoin Protection, is technically and organisationally simple thanks to established measures (such as the digital signing of PowerShell scripts).
+Integration into the client, which is secured with the help of AppLocker and other mechanisms such as Microsoft Purview Information Protection, is technically and organisationally simple thanks to established measures (such as the digital signing of PowerShell scripts).
 ### 6.2. Features
 With Set-OutlookSignatures, signatures and out-of-office replies can be:
 - Generated from **templates in DOCX or HTML** file format  

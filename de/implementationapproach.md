@@ -160,7 +160,7 @@ Dieses Dokument bietet einen Überblick über Funktionsumfang und Administration
 
 Das Produkt dient der zentralen Verwaltung und lokalen Verteilung textueller Signaturen und Abwesenheits-Nachrichten auf Clients. Als Zielplattform werden dabei Outlook auf Windows, New Outlook und Outlook Web unterstützt.
 
-Die Einbindung in den mit Hilfe von AppLocker und anderen Mechanismen wie z. B. Microsoft Purview Informatoin Protection abgesicherten Client ist durch etablierte Maßnahmen (wie z. B. dem digitalen Signieren von PowerShell-Scripts) technisch und organisatorisch einfach möglich.  
+Die Einbindung in den mit Hilfe von AppLocker und anderen Mechanismen wie z. B. Microsoft Purview Information Protection abgesicherten Client ist durch etablierte Maßnahmen (wie z. B. dem digitalen Signieren von PowerShell-Scripts) technisch und organisatorisch einfach möglich.  
 ### 6.2. Funktionen  
 **Signaturen und OOF-Nachrichten können:**
 - Aus **Vorlagen im DOCX- oder HTML**-Dateiformat generiert werden  
