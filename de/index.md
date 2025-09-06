@@ -299,7 +299,7 @@ redirect_from:
       return;
     }
 
-    fetch('https://set-outlooksignatures.com/client-images.txt')
+    fetch('https://set-outlooksignatures.com/customer-images.txt')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -309,7 +309,7 @@ redirect_from:
       .then(text => {
         let urls = text.split('\n').map(line => line.trim()).filter(Boolean);
 
-        // Optional: Add this line if your client-images.txt might sometimes have duplicate URLs
+        // Optional: Add this line if your customer-images.txt might sometimes have duplicate URLs
         // and you only want unique images for the original set.
         // urls = [...new Set(urls)];
 

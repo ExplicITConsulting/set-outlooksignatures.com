@@ -1,10 +1,10 @@
 ---
 layout: none
 sitemap: false
-permalink: /client-images.txt
+permalink: /customer-images.txt
 ---
 {%- for file in site.static_files -%}
-  {%- assign expected_dir_path = "/assets/images/clients/" -%}
+  {%- assign expected_dir_path = "/assets/images/customers/" -%}
   {%- assign file_directory_calculated = file.path | remove: file.name -%}
 
   {%- unless file_directory_calculated | last == "/" -%}

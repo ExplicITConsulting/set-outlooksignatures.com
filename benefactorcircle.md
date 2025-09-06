@@ -547,7 +547,7 @@ Benefactor Circle add-on</span>.</p>
       return;
     }
 
-    fetch('https://set-outlooksignatures.com/client-images.txt')
+    fetch('https://set-outlooksignatures.com/customer-images.txt')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -557,7 +557,7 @@ Benefactor Circle add-on</span>.</p>
       .then(text => {
         let urls = text.split('\n').map(line => line.trim()).filter(Boolean);
 
-        // Optional: Add this line if your client-images.txt might sometimes have duplicate URLs
+        // Optional: Add this line if your customer-images.txt might sometimes have duplicate URLs
         // and you only want unique images for the original set.
         // urls = [...new Set(urls)];
 
@@ -607,7 +607,7 @@ Benefactor Circle add-on</span>.</p>
           // The alt attribute is being constructed from the URL. This might not be ideal
           // for accessibility if the filename doesn't represent the image content well.
           // Consider a more descriptive alt text if possible.
-          img.alt = `https://${url.split('/').pop()?.split('.').slice(0, -1).join('.')}` || 'Client Logo';
+          img.alt = `https://${url.split('/').pop()?.split('.').slice(0, -1).join('.')}` || 'Customer Logo';
 
           // Append the image to the DOM immediately in the correct order
           track.appendChild(img);
