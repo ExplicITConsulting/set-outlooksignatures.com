@@ -56,6 +56,7 @@ redirect_from:
 - [40. What about Microsoft turning off Exchange Web Services for Exchange Online?](#40-what-about-microsoft-turning-off-exchange-web-services-for-exchange-online)
 - [41. Roaming signatures in Classic Outlook for Windows look different](#41-roaming-signatures-in-classic-outlook-for-windows-look-different)
 - [42. Does it support cross-tenant access and Multitenant Organizations?](#42-does-it-support-cross-tenant-access-and-multitenant-organizations)
+- [43. Can I change the case (uppercase/lowercase) of replacement variables in templates?](#43-can-i-change-the-case-uppercaselowercase-of-replacement-variables-in-templates)
 
 
 ## 1. Where can I find the changelog?
@@ -1040,3 +1041,13 @@ Yes, Set-OutlookSignatures and the Benefactor Circle add-on support cross-tenant
 Cross-tenant access is not limited to what Microsoft calls [Multitenant Organization](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/overview), it can be established between any two tenants allowing cross-tenant access for the other.
 
 See the description of the parameter '`GraphClientID`' for details.
+
+
+## 43. Can I change the case (uppercase/lowercase) of replacement variables in templates?
+Yes. Replacement variables can be displayed in uppercase, lowercase, or capitalized form depending on your formatting needs and the type of template you're using:
+- When using DOCX templates, you can use Word’s formatting options, such as "all caps", which is then translated to CSS 'text-transform'.
+- When using HTML templates, you can use the CSS 'text-transform' property directly to control text casing.
+
+In rare cases, email clients may ignore this CSS property or render it inconsistently.
+
+To ensure consistent results across all platforms, use a custom replacement variable config file ('`ReplacementVariableConfigFile`' parameter) to create a new replacement variable or modify an existing one to your needs. This ensures the same appearance across all mail clients and often is more flexible than a pure formatting option.
