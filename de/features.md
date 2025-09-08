@@ -88,7 +88,7 @@ Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on 
                 <td style="text-align:left">🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">E-mails bleiben in Ihrer Umgebung (keim Umleiten auf Drittsysteme)</td>
+                <td style="text-align:left">E-Mails bleiben in Ihrer Umgebung (keim Umleiten auf Drittsysteme)</td>
                 <td style="text-align:left">🟢</td>
                 <td style="text-align:left">🟡 Optional, reduziert den Funktionsumfang</td>
                 <td style="text-align:left">🔴</td>
