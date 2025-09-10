@@ -27,11 +27,11 @@ redirect_from:
   Auf GitHub können nur Fragen beantwortet werden, die sich direkt auf Set-OutlookSignatures beziehen.
 </p>
 <p>
-  Mit dem <a href="#fee-based-support">kostenpflichtigen Support</a> von ExplicIT Consulting können Sie auf die Überholspur wechseln.
+  Mit dem erstklassigen <a href="#professional-support">professionellen Support</a> von ExplicIT Consulting können Sie auf die Überholspur wechseln.
 </p>
 
 
-<h2 id="fee-based-support">Kostenpflichtiger Support</h2>
+<h2 id="professional-support">Professioneller Support</h2>
 <p>
   Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen kostenpflichtigen Support.
 </p>
@@ -48,7 +48,9 @@ redirect_from:
   Sie kaufen nicht irgendeinen Support, sondern unser umfassendes Know-how als Hersteller, Implementierer, und Berater. Support heißt für uns nicht nur, eine Lösung für Ihr Problem zu liefern, sondern auch unsere Erfahrung an Sie weiterzugeben, damit Sie wissen, wie und warum. Unsere Unterstützung ist also eine Investition in Ihr eigenes Wissen und das Ihrer Mitarbeiter, die sich sofort auszahlt.
 </p>
 <p>
-  <strong>Unser All-Inclusive-Support-Versprechen: </strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem Benefactor Circle Add-on, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme. Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.
+  <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von <strong>Set-OutlookSignatures</strong>, dem <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></strong>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support <strong>kostenlos – ohne Ausnahme</strong>.
+  <br>
+  Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.
 </p>
 
 <p>

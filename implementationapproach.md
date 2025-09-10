@@ -13,7 +13,7 @@ image:
 
 
 ## What approach do we recommend for implementing the software? {#recommended-approach} <!-- omit in toc -->
-For most companies, the <a href="/quickstart">quick start guide</a> is the most efficient way to get started. It enables you to implement Set-OutlookSignatures and the Benefactor Circle add-on on your own in no time. Full <a href="/support#fee-based-support">implementation support</a> rarely takes more than half a day.
+For most companies, the <a href="/quickstart">quick start guide</a> is the most efficient way to get started. It enables you to implement Set-OutlookSignatures and the Benefactor Circle add-on on your own in no time. Full <a href="/support#professional-support">implementation support</a> rarely takes more than half a day.
 
 This document is intended for organizations that need to ensure formal processes and traceability in addition to efficiency. It contains a structured example of how implementation can be approached in environments where traceability and compliance are essential, such as in high-security or highly regulated environments. It shows how rapid implementation can be combined with strict governance requirements.
 
@@ -428,7 +428,7 @@ We share our experience gained during the definition of requirements for a signa
 
 For companies within the group that wish to implement the solution independently, we recommend starting with the <a href="/quickstart">Quick Start Guide</a>. Thanks to the extensive documentation, clients can usually implement Set-OutlookSignatures and the Benefactor Circle add-on on their own in a short amount of time.
 
-We offer support to all group companies in the form of workshops and training sessions. The following list represents the maximum scope—both in terms of content and time—within a full preparation and implementation project. **Complete <a href="/support#fee-based-support">implementation support</a> in a "train the trainer" format rarely takes more than half a day.**
+We offer support to all group companies in the form of workshops and training sessions. The following list represents the maximum scope—both in terms of content and time—within a full preparation and implementation project. **Complete <a href="/support#professional-support">implementation support</a> in a "train the trainer" format rarely takes more than half a day.**
 
 ### 6.1. Consulting and Implementation Phase {#consulting-implementation-phase}
 #### Initial Alignment on Textual Signatures <!-- omit in toc -->

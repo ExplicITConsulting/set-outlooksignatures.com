@@ -344,7 +344,10 @@ Benefactor Circle add-on</span>.</p>
 <ul>
   <li>Small companies always just pay the same low price as big enterprises.</li>
   <li>No maintenance or support contracts hidden in the annual price. You only pay for the support you actually need — and often, thanks to the documentation, you won’t need any.</li>
-  <li><strong>All-inclusive support promise:</strong> If your support request stems from a bug in the latest version of Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is free — no exceptions. For all other issues, you will receive the same top-notch support at a fair price.</li>
+  <li><strong>Our support promise: </strong>If your support request is due to a bug in the latest version of <strong>Set-OutlookSignatures</strong>, the <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></strong>, its documentation, or the provided components, support is <strong>free — no exceptions</strong>.
+  <br>
+  For all other issues, you will receive the same top-tier support at a fair price.
+  </li>
   <li>No additional infrastructure or external data transfers. Everything runs on your existing systems, within your own security boundaries.</li>
   <li>No inflated prices that are later “discounted” through negotiations.</li>
 </ul>
@@ -371,7 +374,7 @@ Benefactor Circle add-on</span>.</p>
 <h3 id="trial">Trial version</h3>
 <p>You may want to start with a 14-day trial license.</p>
 
-<p>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.<br>If you look for help implementing the free and open-source core version of Set-OutlookSignatures, go through the Quick Start Guide in the readme file, open an issue at GitHub, or contact us: We are happy to help you implement Set-OutlookSignatures in your own environment as part of our fee-based support.</p>
+<p>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.<br>If you look for help implementing the free and open-source core version of Set-OutlookSignatures, go through the Quick Start Guide in the readme file, open an issue at GitHub, or contact us: We are happy to help you implement Set-OutlookSignatures in your own environment as part of our professional support services.</p>
 
 <p>As soon as the open-source core version is running, it is time to take the next step:</p>
 

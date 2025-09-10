@@ -15,7 +15,7 @@ image:
 
 ## Welchen Ansatz für die Implementierung der Software empfehlen wir? {#recommended-approach} <!-- omit in toc -->
 
-Für die meisten Unternehmen ist die <a href="/quickstart">Schnellstart-Anleitung</a> der effizienteste Einstieg. Sie ermöglicht eine eigenständige Implementierung von Set-OutlookSignatures und dem Benefactor Circle Add-On in kürzester Zeit. Eine vollständige <a href="/support#fee-based-support">Implementierungsunterstützung</a> benötigt selten mehr als einen halben Tag.
+Für die meisten Unternehmen ist die <a href="/quickstart">Schnellstart-Anleitung</a> der effizienteste Einstieg. Sie ermöglicht eine eigenständige Implementierung von Set-OutlookSignatures und dem Benefactor Circle Add-On in kürzester Zeit. Eine vollständige <a href="/support#professional-support">Implementierungsunterstützung</a> benötigt selten mehr als einen halben Tag.
 
 Dieses Dokument richtet sich an Organisationen, die neben Effizienz auch formelle Prozesse und Nachvollziehbarkeit sicherstellen müssen. Es enthält ein strukturiertes Beispiel dafür, wie die Implementierung in Umgebungen angegangen werden kann, in denen Rückverfolgbarkeit und Compliance unerlässlich sind, z. B. in Hochsicherheits- oder stark regulierten Umgebungen. Es zeigt, wie sich schnelle Implementierung mit strengen Governance-Anforderungen verbinden lässt.
 
@@ -439,7 +439,7 @@ Wir teilen unsere Erfahrungen, die wir im Rahmen der Definition der Anforderunge
 
 Den Gesellschaften im Konzern, die die Lösung ohne weitere Unterstützung selbst einführen möchten, empfehlen wir, zunächst die <a href="/quickstart">Schnellstart-Anleitung</a> zu befolgen. Dank der umfassenden Dokumentation können Kunden Set-OutlookSignatures und das Benefactor Circle Add-On in der Regel innerhalb kürzester Zeit selbstständig implementieren.
 
-Allen Gesellschaften im Konzern bieten wir Unterstützung in Form von Workshops und Schulungen an. Die folgende Liste ist als maximale inhaltliche und zeitliche Ausprägung im Rahmen eines vollständigen Vorbereitungs- und Einführungsprojekts zu verstehen - **vollständige <a href="/support#fee-based-support">Implementierungsunterstützung</a> in Form von "train the trainer" benötigt selten mehr als einen halben Tag**.
+Allen Gesellschaften im Konzern bieten wir Unterstützung in Form von Workshops und Schulungen an. Die folgende Liste ist als maximale inhaltliche und zeitliche Ausprägung im Rahmen eines vollständigen Vorbereitungs- und Einführungsprojekts zu verstehen - **vollständige <a href="/support#professional-support">Implementierungsunterstützung</a> in Form von "train the trainer" benötigt selten mehr als einen halben Tag**.
 
 ### 6.1. Beratungs- und Einführungsphase {#consulting-implementation-phase}
 

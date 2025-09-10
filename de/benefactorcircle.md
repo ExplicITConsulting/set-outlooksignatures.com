@@ -348,7 +348,10 @@ redirect_from:
   <li>Kleine Unternehmen zahlen denselben niedrigen Preis wie große Konzerne.</li>
   <li>Keine Wartungs- oder Supportverträge, die als „kostenlos“ beworben werden, aber tatsächlich im Jahrespreis versteckt sind und selten im vollen Umfang genutzt werden.<br>
   Bei uns zahlen Sie nur für den Support, den Sie tatsächlich benötigen – dank der umfangreichen Dokumentation ist dieser meist gar nicht erforderlich.<br>
-  <strong>Unser All-Inclusive-Support-Versprechen: Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme. Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.</strong></li>
+  <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von <strong>Set-OutlookSignatures</strong>, dem <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></strong>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support <strong>kostenlos – ohne Ausnahme</strong>.
+  <br>
+  Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.
+  </li>
   <li>Keine zusätzliche Infrastruktur, die von Dritten betrieben wird und unabhängig von der Nutzung Kosten verursacht.<br>
   Keine Schnittstellen, die Ihre Daten regelmäßig an externe Rechenzentren übertragen, um Signaturen aufzubereiten, und an die jede E-Mail zur Signaturanwendung weitergeleitet werden muss.<br>
   Alles läuft auf Ihren bestehenden Systemen, denen Sie bereits vertrauen und die Sie selbst verwalten – innerhalb Ihrer eigenen Sicherheitsgrenzen.</li>
