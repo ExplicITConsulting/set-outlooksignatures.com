@@ -26,7 +26,7 @@ redirect_from:
   On GitHub, only questions directly releated to Set-OutlookSignatures can be answered.
 </p>
 <p>
-  You can switch to the fast lane using ExplicIT Consulting's top-tier <a href="#professinal-support">professional support</a>.
+  You can switch to the fast lane using ExplicIT Consulting's top-tier <a href="#professional-support">professional support</a>.
 </p>
 
 
