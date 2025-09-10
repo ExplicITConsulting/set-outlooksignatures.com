@@ -88,7 +88,7 @@ Die [FAQ-Seite](/faq) hilft Ihnen, Antworten auf die am häufigsten an uns geste
 ## Benötigen Sie Hilfe oder weitere Funktionen? {#support}
 Set-OutlookSignatures ist sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.
 
-Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Evaluierung, Planung, Implementierung und dem laufenden Betrieb unterstützen kann: Unser Partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen [kostenpflichtigen Support](/support), und das <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> bietet zusätzliche Funktionen für Ihr Unternehmen.
+Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Evaluierung, Planung, Implementierung und dem laufenden Betrieb unterstützen kann: Unser Partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen [professionellen Support](/support), und das <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> bietet zusätzliche Funktionen für Ihr Unternehmen.
 
 <p><a href="/support"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Support-Optionen ansehen</button></a></p>
 

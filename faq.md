@@ -923,7 +923,7 @@ I draw the line where companies, rather than individuals, benefit one-sidedly. T
 By the way: Companies often make wrong assumptions about free and open source software. Open source software absolutely can contain closed source code. Also, the term "open source" does not automatically imply free usage or even free access to the code. And the permission to use software for free does not imply free support.
 
 ### 35.2. Not sure if Set-OutlookSignatures is the right solution for your company?
-The core of Set-OutlookSignatures is available free of charge as open-source software and can be used for as long and for as many mailboxes as your company wants.<br>All documentation is publicly available, and you can get free community support at GitHub or get top-notch professional support, training, workshops and more from [ExplicIT Consulting](/support).
+The core of Set-OutlookSignatures is available free of charge as open-source software and can be used for as long and for as many mailboxes as your company wants.<br>All documentation is publicly available, and you can get free community support at GitHub or get top-tier professional support, training, workshops and more from [ExplicIT Consulting](/support).
 
 For a small annual fee per mailbox, the [Benefactor Circle add-on](/benefactorcircle) offers additional enterprise-grade features.<br>All documentation is publicly available, and the free 14-day trial version allows companies to test all additional features at no cost.
 

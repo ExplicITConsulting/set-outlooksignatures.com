@@ -62,7 +62,7 @@ You want to know more?
 
 The '`sample code`' folder contains additional scripts and advanced usage examples, such as deploying signatures without user or client interaction.
 
-When facing a problem: Before creating a new issue, check the documentation, previous [issues](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=) and [discussions](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=). You can also switch to the fast lane: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers top-notch [professional support](/support).
+When facing a problem: Before creating a new issue, check the documentation, previous [issues](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=) and [discussions](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=). You can also switch to the fast lane: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers top-tier [professional support](/support).
 
 You are welcome to share your experiences with Set-OutlookSignatures, exchange ideas with other users or suggest new features in our [discussions board](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=).
 

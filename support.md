@@ -26,13 +26,13 @@ redirect_from:
   On GitHub, only questions directly releated to Set-OutlookSignatures can be answered.
 </p>
 <p>
-  You can switch to the fast lane using ExplicIT Consulting's top-notch <a href="#professinal-support">professional support</a>.
+  You can switch to the fast lane using ExplicIT Consulting's top-tier <a href="#professinal-support">professional support</a>.
 </p>
 
 
 <h2 id="professional-support">Professional support</h2>
 <p>
-  Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> provides top-notch professional support.
+  Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> provides top-tier professional support.
 </p>
 <p>
   You prefer to be guided through the setup and customization process instead of working through the documentation yourself?
@@ -44,10 +44,14 @@ redirect_from:
   Then our offer is just right for you.
 </p>
 <p>
-  You are not buying just any support, but our comprehensive expertise as manufacturer, consultant and implementer. For us, support means not only providing a solution to your problem, but also passing on our experience to you so that you know how and why. Our support is therefore an investment in your own knowledge and that of your employees, which pays off immediately.
+  You are not just purchasing support, you are gaining access to our deep expertise as the developer, implementer, and consultant.
+  <br>
+  For us, support means not only delivering high-quality solutions quickly, but also sharing our knowledge so you understand the how and why.
+  <br>
+  This makes our support an investment in your team’s expertise, delivering immediate value.
 </p>
 <p>
-  <strong>Our support promise: </strong>If your support request is due to a bug in the latest version of <strong>Set-OutlookSignatures</strong>, the <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></strong>, its documentation, or the provided components, support is <strong>free — no exceptions</strong>.
+  <strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is <strong>free - no exceptions</strong>.
   <br>
   For all other issues, you will receive the same top-tier support at a fair price.
 </p>

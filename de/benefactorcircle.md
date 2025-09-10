@@ -381,7 +381,7 @@ redirect_from:
 <p>Sie möchten vielleicht mit einer 14-tägigen Testlizenz starten.</p>
 
 <p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.<br>
-Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion benötigen, lesen Sie die Kurzanleitung in der Readme-Datei, öffnen Sie ein Issue auf GitHub oder kontaktieren Sie uns direkt – wir helfen Ihnen im Rahmen unseres kostenpflichtigen Supports gerne bei der Einführung von Set-OutlookSignatures in Ihrer Umgebung.</p>
+Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion benötigen, lesen Sie die Kurzanleitung in der Readme-Datei, öffnen Sie ein Issue auf GitHub oder kontaktieren Sie uns direkt – wir helfen Ihnen im Rahmen unseres professionellen Supports gerne bei der Einführung von Set-OutlookSignatures in Ihrer Umgebung.</p>
 
 <p>Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:</p>
 

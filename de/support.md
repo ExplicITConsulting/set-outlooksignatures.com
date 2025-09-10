@@ -33,7 +33,7 @@ redirect_from:
 
 <h2 id="professional-support">Professioneller Support</h2>
 <p>
-  Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen kostenpflichtigen Support.
+  Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen professionellen Support.
 </p>
 <p>
   Sie ziehen es vor, durch den Einrichtungs- und Anpassungsprozess geführt zu werden, anstatt sich selbst durch die Dokumentation zu arbeiten?
@@ -48,7 +48,7 @@ redirect_from:
   Sie kaufen nicht irgendeinen Support, sondern unser umfassendes Know-how als Hersteller, Implementierer, und Berater. Support heißt für uns nicht nur, eine Lösung für Ihr Problem zu liefern, sondern auch unsere Erfahrung an Sie weiterzugeben, damit Sie wissen, wie und warum. Unsere Unterstützung ist also eine Investition in Ihr eigenes Wissen und das Ihrer Mitarbeiter, die sich sofort auszahlt.
 </p>
 <p>
-  <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von <strong>Set-OutlookSignatures</strong>, dem <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></strong>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support <strong>kostenlos – ohne Ausnahme</strong>.
+  <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support <strong>kostenlos - ohne Ausnahme</strong>.
   <br>
   Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.
 </p>
@@ -56,7 +56,7 @@ redirect_from:
 <p>
   <a href="https://forms.cloud.microsoft/r/CnwjH98vSs">
     <button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">
-      ➔ Kostenpflichtigen Support anfordern
+      ➔ Professionellen Support anfordern
     </button>
   </a>
 </p>
