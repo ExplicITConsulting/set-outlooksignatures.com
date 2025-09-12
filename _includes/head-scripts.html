@@ -83,7 +83,7 @@
       // If the preferred language is not the default, add its prefix.
       // First, remove the old language prefix if it exists.
       const pathWithoutOldLang = currentLanguage === defaultLanguage ? currentPathname : currentPathname.replace(`/${currentLanguage}`, '');
-      newPathname = `/${preferredLanguage}${pathWithoutOldLang}`;
+      newPathname = `/${preferredLanguage}${pathWithoutOldOldLang}`;
     }
 
     const newUrl = `${window.location.protocol}//${window.location.hostname}${newPathname}${window.location.search}${window.location.hash}`;
@@ -100,9 +100,30 @@
       });
   }
 
-  document.addEventListener('DOMContentLoaded', executeRedirectionLogic);
-</script>
+  function setDropdownLanguage() {
+    const languageDropdown = document.getElementById('languageDropdown');
 
+    if (!languageDropdown) {
+      return;
+    }
+
+    const preferredLanguage = localStorage.getItem("languageDropdownValue");
+    const availableLanguages = Array.from(languageDropdown.options).map(option => option.value);
+
+    let selectedLanguage;
+
+    if (preferredLanguage && availableLanguages.includes(preferredLanguage)) {
+      selectedLanguage = preferredLanguage;
+    } else {
+      selectedLanguage = 'en';
+    }
+
+    languageDropdown.value = selectedLanguage;
+  }
+
+  setDropdownLanguage();
+  executeRedirectionLogic();
+</script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
