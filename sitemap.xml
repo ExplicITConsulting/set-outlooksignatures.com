@@ -7,7 +7,7 @@ sitemap: false
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {%- assign pages_and_posts = site.pages | concat: site.posts -%}
 {%- assign sitemap_urls = pages_and_posts | where_exp:"item", "item.sitemap != false" | where_exp:"item", "item.url != '/robots.txt'" | where_exp:"item", "item.url != '/redirects.json'" -%}
-{%- for lang in site.languages %}{% for node in sitemap_urls %}{% if node.url %}{% unless site.exclude_from_localization contains node.path or node.url contains '/assets/' -%}
+{%- for lang in site.languages %}{% for node in sitemap_urls %}{% if node.url %}{% unless site.exclude_from_localization contains node.path or node.url contains '/assets/' %}
   <url>
     <loc>{% if lang == site.default_lang %}{{ node.url | absolute_url }}{% else %}{{ node.url | prepend: lang | prepend: '/' | absolute_url }}{% endif %}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
