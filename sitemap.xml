@@ -9,6 +9,7 @@ sitemap: false
 {%- assign pages_and_posts = site.pages | concat: site.posts -%}
 {%- assign sitemap_urls = pages_and_posts | where_exp:"item", "item.sitemap != false" | where_exp:"item", "item.url != '/robots.txt'" | where_exp:"item", "item.url != '/redirects.json'" -%}
 {%- for node in sitemap_urls -%}
+{%- unless node.url contains '/assets/' -%}
   {%- assign current_lang_prefix = "/" | append: node.lang | append: "/" | remove: "/" | prepend: "/" -%}
   {%- assign canonical_url_path = node.url | remove: current_lang_prefix -%}
   {%- if node.url == "/" or node.lang == default_lang -%}
@@ -37,5 +38,6 @@ sitemap: false
       />
     </url>
   {%- endif -%}
+{%- endunless -%}
 {%- endfor %}
 </urlset>
