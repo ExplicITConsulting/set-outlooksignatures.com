@@ -3,19 +3,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="{{ site.theme_color | default: '#ffffff' }}">
 
-    <meta http-equiv="Content-Language" content="{{page.lang}}">
+    <meta http-equiv="Content-Language" content="{{ page.lang }}">
+    {%- assign url_path = page.url | remove_first: '/' | split: '/' -%}
+    {%- if url_path.first == page.lang -%}
+    {%- assign url_path = url_path | slice: 1, url_path.size | join: '/' -%}
+    {%- else -%}
     {%- assign url_path = page.url | remove_first: '/' -%}
-    {%- if page.lang != site.default_lang -%}
-    {%- assign lang_prefix_with_slash = page.lang | append: '/' -%}
-    {%- assign url_path = url_path | remove_first: lang_prefix_with_slash -%}
     {%- endif -%}
 
-    {%- if page.lang == site.default_lang %}
-    <link rel="canonical" href="{{ site.baseurl }}/{{ url_path }}" />
-    {%- else %}
-    <link rel="canonical" href="{{ site.baseurl }}/{{ page.lang }}/{{ url_path }}" />
+    {%- if page.lang == site.default_lang -%}
+    {%- assign canonical_url = site.baseurl | append: '/' | append: url_path -%}
+    {%- else -%}
+    {%- assign canonical_url = site.baseurl | append: '/' | append: page.lang | append: '/' | append: url_path -%}
     {%- endif -%}
-
+    <link rel="canonical" href="{{ canonical_url }}" />
     {%- for lang in site.languages -%}
     {%- if lang == site.default_lang %}
     <link rel="alternate" hreflang="{{ lang }}" href="{{ site.baseurl }}/{{ url_path }}" />
