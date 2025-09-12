@@ -47,7 +47,7 @@
                 </a>
 
                 <div class="navbar-item has-text-white">
-                    <label for="languageDropdown">🌐 </label>
+                    <label for="languageDropdown">🌐</label>
                     <select id="languageDropdown" name="languageDropdown"
                         onchange="localStorage.setItem('languageDropdownValue', this.value); location.reload();">
                         <option value="de">Deutsch (de)</option>
@@ -56,7 +56,7 @@
                 </div>
 
                 {% if site.gh_sponsor %}
-                <a class="navbar-item has-text-white" href="https://github.com/sponsors/{{ site.gh_sponsor }}" aria-lable="Sponsor">
+                <a class="navbar-item has-text-white" href="https://github.com/sponsors/{{ site.gh_sponsor }}" aria-label="Sponsor">
                     <span>♡︎ Sponsor</span>
                 </a>
                 {% endif %}
