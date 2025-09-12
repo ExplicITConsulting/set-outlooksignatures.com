@@ -1,7 +1,6 @@
 ---
 layout: none
 sitemap: false
-page_id: customer-images.txt
 ---
 {%- for file in site.static_files -%}
   {%- assign expected_dir_path = "/assets/images/customers/" -%}
