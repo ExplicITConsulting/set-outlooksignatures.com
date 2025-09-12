@@ -5,45 +5,74 @@ sitemap: false
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
 {%- assign default_lang = site.default_lang | default: "en" -%}
 {%- assign pages_and_posts = site.pages | concat: site.posts -%}
 
-{%- comment -%} Filter for canonical URLs in the default language {%- endcomment -%}
-{%- assign canonical_urls = pages_and_posts
+{%- comment -%} Filter the list to get all canonical (English) pages {%- endcomment -%}
+{%- assign canonical_pages = pages_and_posts
   | where_exp:"item", "item.sitemap != false"
   | where_exp:"item", "item.url != '/robots.txt'"
   | where_exp:"item", "item.url != '/redirects.json'"
-  | where_exp:"item", "item.lang == default_lang"
-  | map:"url"
-  | uniq
+  | where_exp:"item", "item.url contains '/assets/' == false"
+  | where_exp:"item", "item.url contains '/404' == false"
 -%}
 
-{%- for canonical_path in canonical_urls -%}
-  {%- assign page_in_default_lang = pages_and_posts | where_exp:"item", "item.url == canonical_path" | first -%}
-  {%- if page_in_default_lang and page_in_default_lang.url and page_in_default_lang.url != "/404/" and page_in_default_lang.url != "/404" and page_in_default_lang.url contains '/assets/' == false -%}
-    <url>
-      <loc>{{ canonical_path | absolute_url }}</loc>
-      <lastmod>{{ page_in_default_lang.last_modified_at | default: page_in_default_lang.date | default: site.time | date_to_xmlschema }}</lastmod>
+{%- comment -%} Part 1: Generate entries for all canonical (English) pages {%- endcomment -%}
+{%- for node in canonical_pages -%}
+  <url>
+    <loc>{{ node.url | absolute_url }}</loc>
+    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
 
-      {%- for lang in site.languages -%}
-        {%- assign alternate_url = canonical_path -%}
-        {%- if lang != default_lang -%}
-          {%- assign alternate_url = "/" | append: lang | append: canonical_path -%}
-        {%- endif -%}
-        <xhtml:link
-          rel="alternate"
-          hreflang="{{ lang }}"
-          href="{{ alternate_url | absolute_url }}"
-        />
-      {%- endfor -%}
-      
+    {%- for lang in site.languages -%}
+      {%- assign alternate_url = node.url -%}
+      {%- if lang != default_lang -%}
+        {%- assign alternate_url = "/" | append: lang | append: node.url -%}
+      {%- endif -%}
       <xhtml:link
         rel="alternate"
-        hreflang="x-default"
-        href="{{ canonical_path | absolute_url }}"
+        hreflang="{{ lang }}"
+        href="{{ alternate_url | absolute_url }}"
       />
-    </url>
-  {%- endif -%}
+    {%- endfor -%}
+    
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="{{ node.url | absolute_url }}"
+    />
+  </url>
+{%- endfor -%}
+
+{%- comment -%} Part 2: Generate entries for all translated (non-English) pages {%- endcomment -%}
+{%- for lang in site.languages -%}
+  {%- unless lang == default_lang -%}
+    {%- for node in canonical_pages -%}
+      <url>
+        {%- assign localized_url = "/" | append: lang | append: node.url -%}
+        <loc>{{ localized_url | absolute_url }}</loc>
+        <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+        
+        {%- for inner_lang in site.languages -%}
+          {%- assign inner_alternate_url = node.url -%}
+          {%- if inner_lang != default_lang -%}
+            {%- assign inner_alternate_url = "/" | append: inner_lang | append: node.url -%}
+          {%- endif -%}
+          <xhtml:link
+            rel="alternate"
+            hreflang="{{ inner_lang }}"
+            href="{{ inner_alternate_url | absolute_url }}"
+          />
+        {%- endfor -%}
+
+        <xhtml:link
+          rel="alternate"
+          hreflang="x-default"
+          href="{{ node.url | absolute_url }}"
+        />
+      </url>
+    {%- endfor -%}
+  {%- endunless -%}
 {%- endfor -%}
 
 </urlset>
