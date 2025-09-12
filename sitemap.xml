@@ -62,7 +62,7 @@ sitemap: false
           <xhtml:link
             rel="alternate"
             hreflang="x-default"
-            href="{{ node.url | absolute_url }}"
+            href="{{ inner_alternate_url | absolute_url }}"
           />
         </url>
       {%- endunless -%}
