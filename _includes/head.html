@@ -3,32 +3,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="{{ site.theme_color | default: '#ffffff' }}">
 
+
     <meta http-equiv="Content-Language" content="{{ page.lang }}">
     <link rel="canonical" href="{{ site.baseurl }}{{ page.url }}" />
-    {% for lang in site.languages %}
-    {% if lang == site.default_lang %}
-    <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ page.url_without_lang }}"{% endstatic_href %} />
-    {% else %}
-    <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="/{{ lang }}{{ page.url_without_lang }}"{% endstatic_href %} />
-    {% endif %}
-    {% endfor %}
-    <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ page.url_without_lang }}"{% endstatic_href %} />
+    {%- for lang in site.languages -%}
+    {%- if lang == site.default_lang -%}
+        {%- assign hreflang_url = page.url_without_lang -%}
+    {%- else -%}
+        {%- assign hreflang_url = '/' | append: lang | append: page.url_without_lang -%}
+    {%- endif %}
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ hreflang_url | absolute_url }}" />
+    {%- endfor %}
+    <link rel="alternate" hreflang="x-default" {% static_href %}ferh="{{ page.url_without_lang | absolute_url }}"{% endstatic_href %} />
 
-    <link rel="stylesheet" {% static_href %}href="{{ site.baseurl }}/assets/css/app.css"{% endstatic_href %}>
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
     <link
         rel="shortcut icon"
         type="image/png"
         {% if site.favicon %}
-            {% static_href %}href="{{ site.favicon | relative_url }}"{% endstatic_href %}
+            href="{{ site.favicon | relative_url }}"
         {% else %}
-            {% static_href %}href="{{ site.baseurl }}/favicon.png"{% endstatic_href %}
+            href="{{ site.baseurl }}/favicon.png"
         {% endif %}
     >
 
     <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
-    
+
     {% unless site.hide_share_buttons %}
-        <link rel="stylesheet" {% static_href %}href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css"{% endstatic_href %}>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css">
     {% endunless %}
     {% seo %}
     {% if site.feed %}
