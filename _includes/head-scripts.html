@@ -44,7 +44,27 @@
   document.addEventListener('DOMContentLoaded', function () {
     const languageDropdown = document.getElementById('languageDropdown');
     const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
-    let preferredLanguage = localStorage.getItem("languageDropdownValue") || "en";
+
+    // New function to get the language from the URL
+    function getLanguageFromUrl() {
+      const path = window.location.pathname;
+      const anyTwoLetterFolderRegex = /^\/([a-z]{2})(?:\/|$)/;
+      const match = path.match(anyTwoLetterFolderRegex);
+
+      if (match) {
+        const urlLang = match[1];
+        // Check if the extracted language code is in the list of available languages
+        if (availableLanguages.includes(urlLang)) {
+          return urlLang;
+        }
+      }
+
+      // If no language prefix is found, assume the default language is "en".
+      return "en";
+    }
+
+    // Change this line to use the new function
+    let preferredLanguage = localStorage.getItem("languageDropdownValue") || getLanguageFromUrl();
     if (languageDropdown) languageDropdown.value = preferredLanguage;
 
     // Global object to hold the map of alternate paths by language
@@ -200,6 +220,8 @@
     executeRedirectionLogic();
   });
 </script>
+
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
