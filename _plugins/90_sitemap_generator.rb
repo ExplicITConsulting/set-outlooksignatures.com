@@ -1,3 +1,4 @@
+
 require 'jekyll'
 require 'fileutils'
 require 'time'
@@ -31,6 +32,7 @@ module Jekyll
           langs.each do |lang, data|
             f.puts "    <xhtml:link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{data[:url]}\" />"
           end
+
           f.puts "    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"#{default_url}\" />"
           f.puts "  </url>"
         end
@@ -50,8 +52,10 @@ module Jekyll
           relative_path.start_with?("/#{l}/")
         end || site.config['default_lang']
 
-        base_path = relative_path.sub(/^\/#{lang}/, "")
-        base_path = "/" if base_path == ""
+        clean_path = relative_path.sub(/^\/#{lang}/, "")
+        clean_path = clean_path.sub(/index\.html$/, "")
+        clean_path = clean_path.sub(/\.html$/, "")
+        base_path = clean_path.empty? ? "/" : "/#{clean_path}"
 
         localized_pages[base_path][lang] = {
           path: path,
