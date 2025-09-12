@@ -52,13 +52,7 @@ whitelist:
 sass:
   style: compressed
   source_dir: _sass
-
-# HTML Compression
-# - https://jch.penibelst.de/
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
+  sourcemap: never
 
 # Defaults
 defaults:
@@ -75,6 +69,3 @@ defaults:
 
 include:
   - ".well-known"
-
-sass:
-  sourcemap: never
