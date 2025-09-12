@@ -5,8 +5,17 @@
 
 
     <meta http-equiv="Content-Language" content="{{ page.lang }}">
+    <link rel="canonical" {{ Unrelativized_Link href="{{ site.baseurl }}{{ page.url }}" }} />
+    {%- for lang in site.languages -%}
+    {%- if lang == site.default_lang -%}
+        {%- assign hreflang_url = page.url_without_lang -%}
+    {%- else -%}
+        {%- assign hreflang_url = '/' | append: lang | append: page.url_without_lang -%}
+    {%- endif %}
+    <link rel="alternate" hreflang="{{ lang }}" {{ Unrelativized_Link href="{{ hreflang_url | absolute_url }}" }} />
+    {%- endfor %}
+    <link rel="alternate" hreflang="x-default" {{ Unrelativized_Link href="{{ page.url_without_lang | absolute_url }}" }} />
 
-    {{ I18n_Headers }}
 
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
     <link
