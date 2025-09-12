@@ -155,11 +155,12 @@
     function normalizePathWithoutLang(path) {
       const anyTwoLetterFolderRegex = /^\/([a-z]{2})(?:\/|$)/;
       const langMatch = path.match(anyTwoLetterFolderRegex);
-      let baseContentPath = path;
       if (langMatch) {
-        baseContentPath = langMatch[2] || '/';
+        // Corrected to remove the language code and return the rest of the path
+        const baseContentPath = path.replace(anyTwoLetterFolderRegex, '/');
+        return baseContentPath === '/' ? '/' : baseContentPath.replace(/\/$/, '');
       }
-      return baseContentPath;
+      return path;
     }
 
     /**
