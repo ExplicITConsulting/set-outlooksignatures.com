@@ -8,6 +8,6 @@ sitemap: false
 {% for lang in site.languages %}{% for node in site.pages | concat: site.posts %}{% if node.url %}{% unless site.exclude_from_localization contains node.path %}
   <url>
     <loc>{% if lang == site.default_lang %}{{ node.url | absolute_url }}{% else %}{{ node.url | prepend: lang | prepend: '/' | absolute_url }}{% endif %}</loc>
-    {% if node.last_modified_at %}<lastmod>{{ node.last_modified_at | date_to_xmlschema }}</lastmod>{% else %}<lastmod>{{ node.date | date_to_xmlschema }}</lastmod>{% endif %}
+    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
   </url>{% endunless %}{% endif %}{% endfor %}{% endfor %}
 </urlset>
