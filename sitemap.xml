@@ -1,0 +1,17 @@
+---
+layout: none
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>{{ site.url }}/sitemap-language.xml</loc>
+  </sitemap>
+  {% for lang in site.languages %}
+    {% unless lang == site.default_lang %}
+      <sitemap>
+        <loc>{{ site.url }}/{{ lang }}/sitemap-language.xml</loc>
+      </sitemap>
+    {% endunless %}
+  {% endfor %}
+</sitemapindex>
