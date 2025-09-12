@@ -136,18 +136,18 @@
     }
 
     /**
-     * Normalizes a URL path for consistent comparison.
-     */
-    function normalizePathForComparison(path) {
-      if (!path) return '/';
-      let normalized = path.replace(/\/\/+/g, '/');
-      if (normalized.length > 1 && normalized.endsWith('/')) {
-        normalized = normalized.slice(0, -1);
+    * Extracts the base path without the language prefix.
+    */
+    function normalizePathWithoutLang(path) {
+      const anyTwoLetterFolderRegex = /^\/([a-z]{2})(?:\/|$)/;
+      const langMatch = path.match(anyTwoLetterFolderRegex);
+      if (langMatch) {
+        // Return the path with the language prefix replaced by a single slash
+        const baseContentPath = path.replace(anyTwoLetterFolderRegex, '/');
+        // Ensure the root path is just '/'
+        return baseContentPath === '/' ? '/' : baseContentPath.replace(/\/+$/, '');
       }
-      if (!normalized.startsWith('/')) {
-        normalized = '/' + normalized;
-      }
-      return normalized;
+      return path;
     }
 
     /**
