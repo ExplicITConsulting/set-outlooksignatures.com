@@ -5,34 +5,39 @@ sitemap: false
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-{%- assign current_lang = page.lang | default: site.default_lang -%}
+{%- assign default_lang = site.default_lang | default: "en" -%}
+{%- assign languages = site.languages | default: "en" -%}
 {%- assign pages_and_posts = site.pages | concat: site.posts -%}
 {%- assign sitemap_urls = pages_and_posts | where_exp:"item", "item.sitemap != false" | where_exp:"item", "item.url != '/robots.txt'" | where_exp:"item", "item.url != '/redirects.json'" -%}
 {%- for node in sitemap_urls -%}
-{%- if node.url -%}
-{%- unless site.exclude_from_localization contains node.path or node.url contains '/assets/' %}
+{%- assign url = node.url | remove: 'index.html' -%}
+{%- if url and url != "/" -%}
+{%- assign is_localized = false -%}
+{%- for lang in languages -%}
+{%- if url contains "/" | append: lang | append: "/" -%}
+{%- assign is_localized = true -%}
+{%- endif -%}
+{%- endfor -%}
+{%- unless site.exclude_from_localization contains node.path or url contains '/assets/' or is_localized %}
   <url>
-    <loc>{{ node.url | absolute_url }}</loc>
+    <loc>{{ url | absolute_url }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-    {%- for lang in site.languages -%}
-      {%- if lang == site.default_lang -%}
-        {%- assign alternate_url = node.url | absolute_url -%}
-      {%- else -%}
-        {%- assign alternate_url = node.url | prepend: lang | prepend: '/' | absolute_url -%}
-      {%- endif %}
+    {%- for lang in languages -%}
+      {%- assign alternate_url = url | prepend: lang | prepend: '/' | absolute_url -%}
+      {%- if lang == default_lang -%}
+        {%- assign alternate_url = url | absolute_url -%}
+      {%- endif -%}
     <xhtml:link
       rel="alternate"
       hreflang="{{ lang }}"
       href="{{ alternate_url }}"
     />
     {%- endfor -%}
-    {%- if site.default_lang %}
     <xhtml:link
       rel="alternate"
       hreflang="x-default"
-      href="{{ node.url | absolute_url }}"
+      href="{{ url | absolute_url }}"
     />
-    {%- endif %}
   </url>
 {%- endunless -%}
 {%- endif -%}
