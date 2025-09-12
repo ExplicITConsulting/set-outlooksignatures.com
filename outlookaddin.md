@@ -9,6 +9,7 @@ image:
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "outlookaddin"
+permalink: /outlookaddin
 ---
 
 ## The Outlook add-in<!-- omit in toc -->

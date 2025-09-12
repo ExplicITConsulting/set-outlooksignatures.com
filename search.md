@@ -4,6 +4,7 @@ title: Search and find
 subtitle: What are you looking for?
 description: Search and find. What are you looking for?
 page_id: "search"
+permalink: /search
 ---
 
 <input type="search" id="search-input" placeholder="Start typing to search…" class="input is-large mb-4">

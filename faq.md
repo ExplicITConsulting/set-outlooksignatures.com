@@ -9,6 +9,7 @@ image:
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "faq"
+permalink: /faq
 ---
 
 ## Frequently Asked Questions (FAQ)<!-- omit in toc -->
