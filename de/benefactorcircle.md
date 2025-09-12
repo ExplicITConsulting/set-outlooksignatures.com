@@ -601,9 +601,9 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
         finalUrlsForDOM.push(...originalShuffledUniqueUrls); // Add a third copy for seamless looping
 
         // Debugging logs (keep these to verify the data structure is correct)
-        console.log('URLs from text file (before shuffle):', urls);
-        console.log('originalShuffledUniqueUrls (after shuffle, before duplication):', originalShuffledUniqueUrls);
-        console.log('finalUrlsForDOM (ready for DOM insertion):', finalUrlsForDOM);
+        // console.log('URLs from text file (before shuffle):', urls);
+        // console.log('originalShuffledUniqueUrls (after shuffle, before duplication):', originalShuffledUniqueUrls);
+        // console.log('finalUrlsForDOM (ready for DOM insertion):', finalUrlsForDOM);
 
         track.innerHTML = ''; // Clear existing content of the track
 
@@ -699,10 +699,11 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
               src: originalShuffledUniqueUrls[index].split('/').pop(),
               offsetWidth: img ? img.offsetWidth : 'N/A'
             }));
-            console.log('JS DEBUG: Info for first unique set of images (for scrollDistance calculation):', renderedImageInfo);
-            console.log('JS DEBUG: Calculated scrollDistance:', scrollDistance, 'px');
-            console.log('JS DEBUG: Total track scrollWidth (should be ~3x scrollDistance):', track.scrollWidth, 'px');
-            console.log('JS DEBUG: Banner clientWidth:', bannerWidth, 'px');
+            
+            // console.log('JS DEBUG: Info for first unique set of images (for scrollDistance calculation):', renderedImageInfo);
+            // console.log('JS DEBUG: Calculated scrollDistance:', scrollDistance, 'px');
+            // console.log('JS DEBUG: Total track scrollWidth (should be ~3x scrollDistance):', track.scrollWidth, 'px');
+            // console.log('JS DEBUG: Banner clientWidth:', bannerWidth, 'px');
             // --- END CRITICAL DEBUGGING OUTPUT ---
 
             if (scrollDistance <= 0 || track.scrollWidth <= bannerWidth + 1) {

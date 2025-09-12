@@ -91,7 +91,8 @@
             pathMap[baseContentPath] = languagePaths;
           }
         });
-        console.log('Path map loaded successfully from sitemap:', pathMap);
+
+        // console.log('Path map loaded successfully from sitemap:', pathMap);
       } catch (error) {
         console.error('Could not load or parse sitemap:', error);
       }
@@ -125,7 +126,7 @@
               newHref.search = url.search;
               link.setAttribute('href', newHref.href);
             } else {
-              console.log(`No alternate path found for base path ${baseContentPath} in language ${preferredLanguage}. Leaving link as is.`);
+              // console.log(`No alternate path found for base path ${baseContentPath} in language ${preferredLanguage}. Leaving link as is.`);
             }
           }
         } catch (e) {
@@ -182,13 +183,17 @@
       if (targetPathnamePreferredLang) {
         if (currentPathname !== normalizePathForComparison(targetPathnamePreferredLang)) {
           const finalRedirectUrl = `${currentProtocol}//${currentHostname}${targetPathnamePreferredLang}${currentSearch}${currentHash}`;
-          console.log('Target document exists. Redirecting to:', finalRedirectUrl);
+
+          // console.log('Target document exists. Redirecting to:', finalRedirectUrl);
+
           window.location.replace(finalRedirectUrl);
+
           return;
         }
       }
 
-      console.log('Current URL already matches or no alternate found. Rewriting links...');
+      //console.log('Current URL already matches or no alternate found. Rewriting links...');
+
       rewriteInternalLinks();
     }
 

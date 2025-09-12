@@ -48,7 +48,8 @@ description: Search and find. What are you looking for?
                         console.warn('Item missing URL, skipping for FlexSearch index:', item);
                     }
                 });
-                console.log('FlexSearch index populated successfully.');
+                
+                // console.log('FlexSearch index populated successfully.');
             })
             .catch(error => {
                 console.error('Error fetching or parsing search.json:', error);
