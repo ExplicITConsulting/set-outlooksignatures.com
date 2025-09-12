@@ -5,20 +5,20 @@
 
     <meta http-equiv="Content-Language" content="{{page.lang}}">
     {%- if page.lang == site.default_lang %}
-    <link rel="canonical" href="{{ site.baseurl }}{{ page.permalink }}" />
+    <link rel="canonical" href="{{ site.baseurl }}{{ page.url }}" />
     {%- else %}
-    <link rel="canonical" href="{{ site.baseurl }}/{{ page.lang }}{{ page.permalink }}" />
+    <link rel="canonical" href="{{ site.baseurl }}/{{ page.lang }}{{ page.url }}" />
     {%- endif -%}
-
-    {%- assign default_href = site.baseurl | append: page.permalink -%}
+    {%- assign default_href = site.baseurl | append: page.url -%}
     {%- for lang in site.languages -%}
     {%- if lang == site.default_lang %}
-        <link rel="alternate" hreflang="{{ lang }}" href="{{ default_href }}" />
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ default_href }}" />
     {%- else %}
-        <link rel="alternate" hreflang="{{ lang }}" href="{{ site.baseurl }}/{{ lang }}{{ page.permalink }}" />
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ site.baseurl }}/{{ lang }}{{ page.url }}" />
     {%- endif -%}
     {%- endfor %}
     <link rel="alternate" hreflang="x-default" href="{{ default_href }}" />
+
 
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
     <link
