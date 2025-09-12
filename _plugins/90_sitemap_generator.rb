@@ -16,6 +16,25 @@ module Jekyll
         f.puts '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">'
 
         items = site.posts.docs + site.pages
+
+        # Include localized static HTML files
+        localized_htmls = site.static_files.select do |f|
+          f.extname == ".html" && f.path.include?(site.dest)
+        end
+
+        localized_htmls.each do |file|
+          # Skip if already included in site.pages
+          next if items.any? { |i| i.url == file.relative_path }
+
+          # Create a fake page-like object
+          item = OpenStruct.new(
+            url: "/" + file.relative_path.sub(/^#{site.dest}\//, ""),
+            data: { 'date' => File.mtime(file.path), 'sitemap' => true }
+          )
+
+          items << item
+        end
+
         items.each do |item|
           next if item.data['sitemap'] == false
           next if ['/redirects.json', '/robots.txt', '/assets/css/app.css'].include?(item.url)
