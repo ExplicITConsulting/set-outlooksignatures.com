@@ -8,15 +8,6 @@ image:
   height: 1200
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
-redirect_from:
-  - /set-outlooksignatures
-  - /set-outlooksignature
-  - /setoutlooksignatures
-  - /setoutlooksignature
-  - /outlook-signatures
-  - /outlook-signature
-  - /outlooksignatures
-  - /outlooksignature
 ---
 
 

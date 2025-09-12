@@ -8,7 +8,6 @@ image:
   height: 1200
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
-redirect_from:
 ---
 
 <h2><a href="/features">Features and feature comparison</a></h2>

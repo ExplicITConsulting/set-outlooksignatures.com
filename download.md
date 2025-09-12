@@ -8,7 +8,7 @@ image:
   height: 1200
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
-redirect_from:
+from:
 ---
 
 <h2 id="set-outlooksignatures">Set-OutlookSignatures</h2>

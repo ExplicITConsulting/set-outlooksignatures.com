@@ -10,12 +10,6 @@ image:
   height: 1200
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
-redirect_from:
-  - /de/quick
-  - /de/quick-start
-  - /de/quickstartguide
-  - /de/quickstart-guide
-  - /de/quick-start-guide
 ---
 
 
