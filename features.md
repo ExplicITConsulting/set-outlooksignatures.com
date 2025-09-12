@@ -8,6 +8,7 @@ image:
   height: 1200
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
+permalink: /features
 ---
 
 ## Features&nbsp;&nbsp;&nbsp;&nbsp;<a href="#feature-comparison"><img src="https://img.shields.io/badge/go%20to-Feature%20comparison-limegreen?labelColor=black" alt="Go to Feature comparison"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/go%20to-🚀%20Quick%20Start%20Guide%20🚀-limegreen?labelColor=black" alt="Go to Quick Start Guide"></a> {#features}
