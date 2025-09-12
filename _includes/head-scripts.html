@@ -65,48 +65,30 @@
 
         const urls = xmlDoc.querySelectorAll('url');
         urls.forEach(urlElement => {
+          const locElement = urlElement.querySelector('loc');
+          if (!locElement) return;
+
+          const locUrl = new URL(locElement.textContent);
+          const locPath = normalizePathForComparison(locUrl.pathname);
+          const baseContentPath = normalizePathWithoutLang(locPath);
+
           const alternateLinks = urlElement.querySelectorAll('xhtml\\:link, link[rel="alternate"]');
-          if (alternateLinks.length > 0) {
-            let currentPath = null;
-            const languagePaths = {};
+          const languagePaths = {};
 
-            // First, get the main language link from the <loc> tag
-            const locElement = urlElement.querySelector('loc');
-            if (locElement) {
+          alternateLinks.forEach(link => {
+            const lang = link.getAttribute('hreflang');
+            const href = link.getAttribute('href');
+            if (lang && href) {
               try {
-                const path = new URL(locElement.textContent).pathname;
-                const langMatch = path.match(/^\/([a-z]{2})(?:\/|$)/);
-                const lang = langMatch ? langMatch[1] : 'en';
-                languagePaths[lang] = path;
-                currentPath = path;
+                languagePaths[lang] = normalizePathForComparison(new URL(href).pathname);
               } catch (e) {
-                console.error('Invalid URL in sitemap <loc>:', locElement.textContent);
+                console.error('Invalid URL in sitemap <xhtml:link>:', href);
               }
             }
+          });
 
-            // Then, get all alternate language links
-            alternateLinks.forEach(link => {
-              const lang = link.getAttribute('hreflang');
-              const href = link.getAttribute('href');
-              if (lang && href) {
-                try {
-                  languagePaths[lang] = new URL(href).pathname;
-                } catch (e) {
-                  console.error('Invalid URL in sitemap <xhtml:link>:', href);
-                }
-              }
-            });
-
-            // Now populate the global pathMap
-            if (currentPath) {
-              if (!pathMap[currentPath]) {
-                pathMap[currentPath] = {};
-              }
-              for (const lang in languagePaths) {
-                const alternatePath = languagePaths[lang];
-                pathMap[currentPath][lang] = alternatePath;
-              }
-            }
+          if (baseContentPath) {
+            pathMap[baseContentPath] = languagePaths;
           }
         });
         console.log('Path map loaded successfully from sitemap:', pathMap);
@@ -129,10 +111,11 @@
           const url = new URL(href, window.location.href);
 
           if (url.hostname === currentHostname) {
-            const currentLinkPath = url.pathname;
+            const currentLinkPath = normalizePathForComparison(url.pathname);
+            const baseContentPath = normalizePathWithoutLang(currentLinkPath);
 
-            // Look up the alternate path in the map
-            const alternatePaths = pathMap[currentLinkPath];
+            // Use the base path to look up the alternate path in the map
+            const alternatePaths = pathMap[baseContentPath];
             if (alternatePaths && alternatePaths[preferredLanguage]) {
               const targetPath = alternatePaths[preferredLanguage];
 
@@ -142,7 +125,7 @@
               newHref.search = url.search;
               link.setAttribute('href', newHref.href);
             } else {
-              console.log(`No alternate path found for ${currentLinkPath} in language ${preferredLanguage}. Leaving link as is.`);
+              console.log(`No alternate path found for base path ${baseContentPath} in language ${preferredLanguage}. Leaving link as is.`);
             }
           }
         } catch (e) {
@@ -167,24 +150,36 @@
     }
 
     /**
+     * Extracts the base path without the language prefix.
+     */
+    function normalizePathWithoutLang(path) {
+      const anyTwoLetterFolderRegex = /^\/([a-z]{2})(?:\/|$)/;
+      const langMatch = path.match(anyTwoLetterFolderRegex);
+      let baseContentPath = path;
+      if (langMatch) {
+        baseContentPath = langMatch[2] || '/';
+      }
+      return baseContentPath;
+    }
+
+    /**
      * Executes the redirection logic based on preferred language and current URL.
      */
     async function executeRedirectionLogic() {
       await loadSitemapPaths();
 
-      const currentPathname = window.location.pathname;
+      const currentPathname = normalizePathForComparison(window.location.pathname);
+      const baseContentPath = normalizePathWithoutLang(currentPathname);
       const currentHash = window.location.hash;
       const currentHostname = window.location.hostname;
       const currentProtocol = window.location.protocol;
       const currentSearch = window.location.search;
 
-      // Check the path map for the correct path for the preferred language
-      const alternatePaths = pathMap[currentPathname];
+      const alternatePaths = pathMap[baseContentPath];
       const targetPathnamePreferredLang = alternatePaths ? alternatePaths[preferredLanguage] : null;
 
       if (targetPathnamePreferredLang) {
-        // If an alternate path exists and it's different from the current path, redirect
-        if (normalizePathForComparison(currentPathname) !== normalizePathForComparison(targetPathnamePreferredLang)) {
+        if (currentPathname !== normalizePathForComparison(targetPathnamePreferredLang)) {
           const finalRedirectUrl = `${currentProtocol}//${currentHostname}${targetPathnamePreferredLang}${currentSearch}${currentHash}`;
           console.log('Target document exists. Redirecting to:', finalRedirectUrl);
           window.location.replace(finalRedirectUrl);
