@@ -10,14 +10,24 @@ module Jekyll
       return unless site && site.respond_to?(:dest)
 
       default_lang = site.config['default_lang']
+      languages = site.config['languages']
       base_url = site.config['url']
       current_lang = site.data['lang'] || default_lang
 
-      # Collect all pages and documents for the current language's build.
       urls = []
       (site.pages + site.documents).each do |document|
+        # Use a consistent, reliable method to filter URLs.
+        if current_lang == default_lang
+          # For the default language, include only URLs without a language prefix.
+          next if languages.any? { |l| document.url.start_with?("/#{l}/") }
+        else
+          # For other languages, include only URLs with the correct language prefix.
+          next unless document.url.start_with?("/#{current_lang}/")
+        end
+
+        # Use document.data to access the front matter.
         next if document.data['sitemap'] == false
-        next if document.url.nil? || document.url.start_with?('/assets/') || document.url.include?('/sitemap') || document.url.include?('404.html')
+        next if document.url.nil? || document.url.start_with?('/assets/') || document.url.include?('/sitemap') || document.url.include?('404.html') || document.url.include?('redirects.json')
 
         lastmod = (document.last_modified_at rescue Time.now).iso8601
         url = base_url + document.url
@@ -25,16 +35,9 @@ module Jekyll
         urls << { url: url, lastmod: lastmod }
       end
 
-      # Determine the sitemap filename and path.
       sitemap_filename = "sitemap-#{current_lang}.xml"
-      sitemap_path = (current_lang == default_lang) ?
-                     File.join(site.dest, sitemap_filename) :
-                     File.join(site.dest, current_lang, sitemap_filename)
+      sitemap_path = File.join(site.dest, sitemap_filename)
 
-      # Ensure the directory exists.
-      FileUtils.mkdir_p(File.dirname(sitemap_path))
-
-      # Generate the XML content.
       File.open(sitemap_path, "w:utf-8") do |f|
         doc = Nokogiri::XML::Builder.new do |xml|
           xml.urlset('xmlns' => "http://www.sitemaps.org/schemas/sitemap/0.9") do
@@ -51,7 +54,6 @@ module Jekyll
     end
   end
 
-  # This hook runs for each language build, correctly isolated by Polyglot.
   Jekyll::Hooks.register :site, :post_write do |site|
     Jekyll::LanguageSitemapGenerator.generate(site)
   end

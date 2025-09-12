@@ -19,9 +19,7 @@ module Jekyll
         doc = Nokogiri::XML::Builder.new do |xml|
           xml.sitemapindex('xmlns' => "http://www.sitemaps.org/schemas/sitemap/0.9") do
             languages.each do |lang|
-              sitemap_loc = (lang == default_lang) ?
-                            "#{base_url}/sitemap-#{lang}.xml" :
-                            "#{base_url}/#{lang}/sitemap-#{lang}.xml"
+              sitemap_loc = "#{base_url}/sitemap-#{lang}.xml"
 
               xml.sitemap do
                 xml.loc sitemap_loc
@@ -35,7 +33,6 @@ module Jekyll
     end
   end
 
-  # This hook runs only once, after all language builds are complete.
   Jekyll::Hooks.register :polyglot, :post_write do |site|
     Jekyll::SitemapIndexGenerator.generate(site)
   end
