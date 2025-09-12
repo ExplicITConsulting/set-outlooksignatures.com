@@ -10,11 +10,11 @@ sitemap: false
 {%- assign sitemap_urls = pages_and_posts | where_exp:"item", "item.sitemap != false" | where_exp:"item", "item.url != '/robots.txt'" | where_exp:"item", "item.url != '/redirects.json'" -%}
 {%- for node in sitemap_urls -%}
 {%- if node.url -%}
-{%- unless site.exclude_from_localization contains node.path or node.url contains '/assets/' -%}
+{%- unless site.exclude_from_localization contains node.path or node.url contains '/assets/' %}
   <url>
     <loc>{{ node.url | absolute_url }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-    {% for lang in site.languages %}
+    {%- for lang in site.languages -%}
       {%- if lang == site.default_lang -%}
         {%- assign alternate_url = node.url | absolute_url -%}
       {%- else -%}
