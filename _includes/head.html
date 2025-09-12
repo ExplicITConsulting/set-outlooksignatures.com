@@ -5,16 +5,14 @@
 
 
     <meta http-equiv="Content-Language" content="{{ page.lang }}">
-    <link rel="canonical" href="{{ site.url }}{{ page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | replace:'index.html','' }}">
-    {%- assign canonical_url_path = page.url | remove_first: page.lang %}
-    <link rel="canonical" href="{{ Unrelativized_Link canonical_url_path }}" />
+    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | replace:'index.html','' }}">
     {%- for lang in site.languages -%}
     {%- if lang == site.default_lang -%}
-        {%- assign hreflang_url = page.url_without_lang -%}
+        {%- assign hreflang_url = "{{ site.url }}{{ site.baseurl }}{{ page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | replace:'index.html','' }}" -%}
     {%- else -%}
-        {%- assign hreflang_url = '/' | append: lang | append: page.url_without_lang -%}
+        {%- assign hreflang_url = "{{ site.url }}{{ site.baseurl }}{{ page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | prepend: lang | prepend: '/' | replace:'index.html','' }}" -%}
     {%- endif %}
-    <link rel="alternate" hreflang="{{ lang }}" href="{{ Unrelativized_Link hreflang_url y| absolute_url }}" />
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ Unrelativized_Link hreflang_url }}" />
     {%- endfor %}
     <link rel="alternate" hreflang="x-default" href="{{ Unrelativized_Link site.url | append: site.baseurl | append: page.url | absolute_url }}" />
 
