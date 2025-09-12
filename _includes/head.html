@@ -3,21 +3,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="{{ site.theme_color | default: '#ffffff' }}">
 
-    <meta http-equiv="Content-Language" content="{{site.active_lang}}">
+    <meta http-equiv="Content-Language" content="{{page.lang}}">
 
-    {% if page.lang == site.default_lang %}
-    <link rel="canonical" href="{{site.baseurl}}{{page.permalink}}" />
-    {% else %}
-    <link rel="canonical" href="{{site.baseurl}}/{{page.lang}}{{page.permalink}}" />
-    {% endif %}
-    <link rel="alternate" hreflang="{{site.default_lang}}" href="{{site.baseurl}}{{page.permalink}}" />
-    <link rel="alternate" hreflang="x-default" href="{{site.baseurl}}{{page.permalink}}" />
-    {% for lang in site.languages %}
-    {% if lang == site.default_lang %}
-    {% continue %}
-    {% endif %}
-    <link rel="alternate" hreflang="{{lang}}" href="{{site.baseurl}}/{{lang}}{{page.permalink}}" />
-    {% endfor %}
+    {%- if page.lang == site.default_lang -%}
+    <link rel="canonical" href="{{ site.baseurl }}{{ page.permalink }}" />
+    {%- else -%}
+    <link rel="canonical" href="{{ site.baseurl }}/{{ page.lang }}{{ page.permalink }}" />
+    {%- endif -%}
+
+    {%- assign default_href = site.baseurl | append: page.permalink -%}
+    {%- for lang in site.languages -%}
+    {%- if lang == site.default_lang -%}
+        <link rel="alternate" hreflang="{{ lang }}" href="{{ default_href }}" />
+    {%- else -%}
+        <link rel="alternate" hreflang="{{ lang }}" href="{{ site.baseurl }}/{{ lang }}{{ page.permalink }}" />
+    {%- endif -%}
+    {%- endfor -%}
+    <link rel="alternate" hreflang="x-default" href="{{ default_href }}" />
 
 
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
