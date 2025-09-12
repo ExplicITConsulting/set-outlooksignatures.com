@@ -4,22 +4,21 @@
     <meta name="theme-color" content="{{ site.theme_color | default: '#ffffff' }}">
 
     <meta http-equiv="Content-Language" content="{{page.lang}}">
-    {%- if page.lang == site.default_lang -%}
+    {%- if page.lang == site.default_lang %}
     <link rel="canonical" href="{{ site.baseurl }}{{ page.permalink }}" />
-    {%- else -%}
+    {%- else %}
     <link rel="canonical" href="{{ site.baseurl }}/{{ page.lang }}{{ page.permalink }}" />
     {%- endif -%}
 
     {%- assign default_href = site.baseurl | append: page.permalink -%}
     {%- for lang in site.languages -%}
-    {%- if lang == site.default_lang -%}
+    {%- if lang == site.default_lang %}
         <link rel="alternate" hreflang="{{ lang }}" href="{{ default_href }}" />
-    {%- else -%}
+    {%- else %}
         <link rel="alternate" hreflang="{{ lang }}" href="{{ site.baseurl }}/{{ lang }}{{ page.permalink }}" />
     {%- endif -%}
-    {%- endfor -%}
+    {%- endfor %}
     <link rel="alternate" hreflang="x-default" href="{{ default_href }}" />
-
 
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
     <link
