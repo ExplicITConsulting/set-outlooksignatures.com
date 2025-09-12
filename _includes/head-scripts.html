@@ -41,244 +41,66 @@
 
 
 <script>
-  /**
-   * Dynamically loads a JavaScript file.
-   * @param {string} src - The URL of the script to load.
-   * @param {function(Error|null, HTMLElement|null)} callback - Callback function (error, scriptElement)
-   */
-  function loadScript(src, callback) {
-    const script = document.createElement('script');
-    script.src = src;
-    script.async = true;
+  function executeRedirectionLogic() {
+    const languageDropdown = document.getElementById('languageDropdown');
 
-    script.onload = () => {
-      console.log(`Script loaded: ${src}`);
-      callback(null, script);
-    };
-    script.onerror = () => {
-      console.error(`Failed to load script: ${src}`);
-      callback(new Error(`Failed to load script: ${src}`));
-    };
-    document.head.appendChild(script);
+    if (!languageDropdown) {
+      // If no dropdown, we can't determine available languages, so we stop.
+      return;
+    }
+
+    const preferredLanguage = localStorage.getItem("languageDropdownValue");
+    const currentPathname = window.location.pathname;
+
+    // Extract all available language codes from the dropdown.
+    const availableLanguages = Array.from(languageDropdown.options).map(option => option.value);
+
+    // English is the default and does not have a language prefix in the URL.
+    const defaultLanguage = 'en';
+    const otherLanguages = availableLanguages.filter(lang => lang !== defaultLanguage);
+
+    // Check the current path for a language prefix.
+    const languagePathRegex = new RegExp(`^/(${otherLanguages.join('|')})(/|$)`);
+    const currentLanguageMatch = currentPathname.match(languagePathRegex);
+    const currentLanguage = currentLanguageMatch ? currentLanguageMatch[1] : defaultLanguage;
+
+    // Only proceed if a preferred language is set and it's different from the current page's language.
+    if (!preferredLanguage || preferredLanguage === currentLanguage) {
+      return;
+    }
+
+    // Construct the new pathname based on the preferred language.
+    let newPathname;
+
+    if (preferredLanguage === defaultLanguage) {
+      // If the preferred language is the default ('en'), remove any language prefix.
+      newPathname = currentPathname.replace(new RegExp(`^/${currentLanguage}`), '');
+      // Ensure the path is not empty after replacement.
+      if (newPathname === '') {
+        newPathname = '/';
+      }
+    } else {
+      // If the preferred language is not the default, add its prefix.
+      // First, remove the old language prefix if it exists.
+      const pathWithoutOldLang = currentLanguage === defaultLanguage ? currentPathname : currentPathname.replace(`/${currentLanguage}`, '');
+      newPathname = `/${preferredLanguage}${pathWithoutOldLang}`;
+    }
+
+    const newUrl = `${window.location.protocol}//${window.location.hostname}${newPathname}${window.location.search}${window.location.hash}`;
+
+    // Check if the new URL exists before redirecting.
+    fetch(newUrl, { method: 'HEAD' })
+      .then(response => {
+        if (response.ok) {
+          window.location.replace(newUrl);
+        }
+      })
+      .catch(error => {
+        console.error('Error checking for new URL:', error);
+      });
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOM Content Loaded. Attempting to load isbot script.');
-
-    loadScript('https://cdn.jsdelivr.net/npm/isbot@5/index.iife.min.js', (error, script) => {
-      if (error) {
-        console.error('Error loading isbot script. Proceeding with assumption of bot on fetch failure.', error);
-      } else {
-        console.log('isbot script loaded successfully.');
-      }
-
-      const isBot = typeof window.isbot === 'function' ? window.isbot : () => {
-        console.warn("isBot function not found, defaulting to true (assuming bot).");
-        return true;
-      };
-      const assumeBotOnFetchFailure = typeof window.isbot !== 'function';
-
-      const languageDropdown = document.getElementById('languageDropdown');
-      const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
-      if (availableLanguages.length === 0) {
-        availableLanguages.push('en', 'de'); // Fallback languages if no dropdown or no options
-        console.log('No language dropdown options found, defaulting available languages to:', availableLanguages);
-      } else {
-        console.log('Available languages from dropdown:', availableLanguages);
-      }
-
-      let preferredLanguage = localStorage.getItem("languageDropdownValue");
-      console.log('Preferred language from localStorage:', preferredLanguage);
-
-      if (!(preferredLanguage && availableLanguages.includes(preferredLanguage))) {
-        console.log('Preferred language not found in localStorage or not available. Checking browser languages.');
-        if (navigator.languages && navigator.languages.length > 0) {
-          for (let i = 0; i < navigator.languages.length; i++) {
-            const browserLang = navigator.languages[i].toLowerCase().split("-")[0];
-            if (availableLanguages.includes(browserLang)) {
-              preferredLanguage = browserLang;
-              console.log('Found browser language in available languages:', preferredLanguage);
-              break;
-            }
-          }
-        }
-
-        if (!preferredLanguage) {
-          console.log('No browser language matched. Checking navigator.language/userLanguage.');
-          const fallbackLang = (navigator.language || navigator.userLanguage || "").toLowerCase().split("-")[0];
-          if (availableLanguages.includes(fallbackLang)) {
-            preferredLanguage = fallbackLang;
-            console.log('Found fallback language:', fallbackLang);
-          }
-        }
-
-        if (!preferredLanguage) {
-          preferredLanguage = "en"; // Final fallback to English
-          console.log('No preferred language determined, defaulting to "en".');
-        }
-      } else {
-        console.log('Using preferred language from localStorage:', preferredLanguage);
-      }
-
-      if (languageDropdown) {
-        languageDropdown.value = preferredLanguage;
-        console.log('Language dropdown set to:', preferredLanguage);
-      }
-
-      /**
-       * Normalizes a URL path for consistent comparison.
-       * Ensures it starts with '/' and does not end with '/' unless it's just '/'.
-       * @param {string} path - The path to normalize.
-       * @returns {string} The normalized path.
-       */
-      function normalizePathForComparison(path) {
-        if (!path) return '/';
-        let normalized = path.replace(/\/\/+/g, '/'); // Replace multiple slashes with a single one
-        if (normalized.length > 1 && normalized.endsWith('/')) {
-          normalized = normalized.slice(0, -1); // Remove trailing slash unless it's just '/'
-        }
-        if (!normalized.startsWith('/')) {
-          normalized = '/' + normalized; // Ensure it starts with a slash
-        }
-        return normalized;
-      }
-
-      /**
-       * Checks if a URL document exists and if a specific anchor exists within that document.
-       * @param {string} urlWithoutAnchor - The base URL to check (without the anchor).
-       * @param {string} anchor - The anchor (e.g., "#my-section") to check for existence. Can be empty.
-       * @returns {Promise<boolean>} A promise that resolves to true if both document and anchor exist (or no anchor needed), false otherwise.
-       */
-      async function checkDocumentAndAnchorAvailability(urlWithoutAnchor, anchor) {
-        try {
-          console.log(`[checkDocumentAndAnchorAvailability] Checking document existence for: ${urlWithoutAnchor}`);
-          // Perform a HEAD request first to check document existence efficiently
-          const headResponse = await fetch(urlWithoutAnchor, { method: 'HEAD' });
-
-          if (!headResponse.ok) {
-            console.log(`[checkDocumentAndAnchorAvailability] Document does not exist or is not reachable: ${urlWithoutAnchor} Status: ${headResponse.status}`);
-            return false;
-          }
-          console.log(`[checkDocumentAndAnchorAvailability] Document exists: ${urlWithoutAnchor}`);
-
-          return true;
-
-          /*
-          if (!anchor) {
-            console.log('[checkDocumentAndAnchorAvailability] No anchor specified. Document is available. Proceeding.');
-            return true;
-          }
-
-          // If document exists and an anchor is specified, check if the anchor exists within its content (GET request)
-          console.log(`[checkDocumentAndAnchorAvailability] Fetching document content to check anchor existence for: ${anchor} within ${urlWithoutAnchor}`);
-          const getResponse = await fetch(urlWithoutAnchor, { method: 'GET' });
-
-          if (!getResponse.ok) {
-            console.warn(`[checkDocumentAndAnchorAvailability] Failed to fetch document content to check anchor: ${urlWithoutAnchor} Status: ${getResponse.status}`);
-            return false;
-          }
-
-          const htmlContent = await getResponse.text();
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(htmlContent, 'text/html');
-          const anchorId = anchor.substring(1); // Remove '#' from anchor
-
-          const anchorElement = doc.getElementById(anchorId) || doc.querySelector(`[name="${anchorId}"]`); // Also check for elements with 'name' attribute
-          if (anchorElement) {
-            console.log(`[checkDocumentAndAnchorAvailability] Anchor '${anchor}' found in document.`);
-            return true;
-          } else {
-            console.log(`[checkDocumentAndAnchorAvailability] Anchor '${anchor}' NOT found in document.`);
-            return false;
-          }
-          */
-        } catch (error) {
-          console.error(`[checkDocumentAndAnchorAvailability] Error during checkDocumentAndAnchorAvailability for ${urlWithoutAnchor} with anchor ${anchor}:`, error);
-          return false;
-        }
-      }
-
-      /**
-       * Executes the redirection logic based on preferred language and current URL.
-       */
-      async function executeRedirectionLogic() {
-        // Use window.location.pathname and window.location.hash directly
-        const currentPathname = window.location.pathname; // e.g., /de/benefactorcircle/
-        const currentHash = window.location.hash;       // e.g., #demo
-
-        const currentHostname = window.location.hostname;
-        const currentProtocol = window.location.protocol;
-        const currentSearch = window.location.search;
-
-        console.log('Current URL details:', { currentPathname, currentHostname, currentProtocol, currentSearch, currentHash });
-
-        let baseContentPath = '/';
-        const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
-        const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
-
-        let currentPathnameWithoutLang = currentPathname; // Default to full pathname if no lang folder
-
-        // Extract the path without the leading language segment
-        if (pathSegmentMatch) {
-          currentPathnameWithoutLang = pathSegmentMatch[2] || '/'; // e.g., /benefactorcircle/
-          console.log('Language folder detected. Path without language:', currentPathnameWithoutLang);
-        } else {
-          console.log('No language folder detected. Current pathname is the base content path:', currentPathnameWithoutLang);
-        }
-
-        // Normalize the base content path (e.g., /benefactorcircle/)
-        baseContentPath = normalizePathForComparison(currentPathnameWithoutLang);
-        console.log('Normalized base content path (content path without language prefix):', baseContentPath);
-
-        // Construct the target pathname based on the preferred language
-        let targetPathnamePreferredLang;
-        if (preferredLanguage === "en") {
-          targetPathnamePreferredLang = baseContentPath; // English paths don't have a /en/ prefix
-        } else {
-          targetPathnamePreferredLang = `/${preferredLanguage}${baseContentPath === '/' ? '' : baseContentPath}`; // Other languages get /lang/ prefix
-        }
-        targetPathnamePreferredLang = normalizePathForComparison(targetPathnamePreferredLang);
-        console.log('Calculated target pathname for preferred language:', targetPathnamePreferredLang);
-
-        // Construct the full target URL without the anchor, for the preferred language
-        const targetFullUrlWithoutAnchorPreferredLang = `${currentProtocol}//${currentHostname}${targetPathnamePreferredLang}${currentSearch}`;
-
-        console.log('Target full URL (preferred language, without hash):', targetFullUrlWithoutAnchorPreferredLang);
-
-        // Determine if the current URL (path + hash) already matches the intended target
-        // This prevents unnecessary checks and redirections if we're already where we want to be.
-        const normalizedCurrentPath = normalizePathForComparison(currentPathname);
-        const normalizedTargetPath = normalizePathForComparison(targetPathnamePreferredLang);
-
-        if (normalizedCurrentPath === normalizedTargetPath && currentHash === window.location.hash) {
-          console.log('Current URL (path and anchor) already matches the calculated target for the preferred language. No redirection needed.');
-          return;
-        }
-
-        // If bot detected, skip redirection
-        if (assumeBotOnFetchFailure || isBot(navigator.userAgent)) {
-          console.log(`Skipping redirection due to ${assumeBotOnFetchFailure ? "fetch failure (isbot library not loaded or function not found, assuming bot)" : "bot detected by isbot library"}.`);
-          return;
-        }
-
-        // Check if the preferred language document AND the original anchor exist in it
-        const targetDocAndAnchorExist = await checkDocumentAndAnchorAvailability(targetFullUrlWithoutAnchorPreferredLang, currentHash);
-
-        if (targetDocAndAnchorExist) {
-          // Only redirect if the target document and the original anchor exist in the preferred language
-          const finalRedirectUrl = `${targetFullUrlWithoutAnchorPreferredLang}${currentHash}`;
-          console.log('Target document and original anchor exist in preferred language. Redirecting to:', finalRedirectUrl);
-          window.location.replace(finalRedirectUrl);
-        } else {
-          // If the target document or the original anchor does NOT exist in the preferred language, do nothing.
-          console.log('Target document in preferred language or original anchor in that document not found. No redirection will occur.');
-          // The script will simply allow the browser to load the current URL.
-        }
-      }
-
-      executeRedirectionLogic();
-    });
-  });
+  document.addEventListener('DOMContentLoaded', executeRedirectionLogic);
 </script>
 
 
@@ -408,7 +230,7 @@
 </script>
 
 <noscript>
-  <p><img referrerpolicy="no-referrer-when-downgrade" src="//mtrcs.set-outlooksignatures.com/poop.php?idsite=1&amp;rec=1"
-      style="border:0;" alt="" /></p>
+  <p><img referrerpolicy="no-referrer-when-downgrade"
+      src="//mtrcs.set-outlooksignatures.com/poop.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p>
 </noscript>
 <!-- End mtrcs code -->
