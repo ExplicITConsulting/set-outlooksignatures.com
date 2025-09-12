@@ -47,11 +47,15 @@
                 </a>
 
                 <div class="navbar-item has-text-white">
-                    <select id="languageDropdown" name="languageDropdown" aria-label="Select language"
-                        onchange="localStorage.setItem('languageDropdownValue', this.value); location.reload();">
-                        <option value="de">🌐 Deutsch (de)</option>
-                        <option value="en">🌐 English (en)</option>
-                    </select>
+                    <span>
+                        <!-- jekyll-polyglot will process ferh= into href= through the static_href liquid block tag without relativizing the url; useful for making language navigation switchers  -->
+                        {% for tongue in site.languages %}
+                        <a {% if tongue==site.active_lang %}style="font-weight: bold;" {% endif %} {% static_href
+                            %}href="{% if tongue == site.default_lang %}{{site.baseurl}}{{page.url}}{% else %}{{site.baseurl}}/{{ tongue }}{{page.url}}{% endif %}"
+                            {% endstatic_href %}>{{ tongue }}</a>{%- if forloop.last == false -%}{{" "}}{{ site.langsep
+                        }}{%- endif -%}
+                        {% endfor %}
+                    </span>
                 </div>
 
                 {% if site.gh_sponsor %}

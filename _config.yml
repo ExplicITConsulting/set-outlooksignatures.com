@@ -1,36 +1,37 @@
-theme                    : bulma-clean-theme
+theme: bulma-clean-theme
 
 # Site Settings
-fixed_navbar             : top
-permalink                : pretty
-footer_menu              : footer_menu
-locale                   : "en"
-lang                     : en
-languages                : ["en", "de"]
-default_lang             : en
-direction                : ltr # left to right
-google_analytics         : # UA-xxxxxxx
-title                    : "Set-OutlookSignatures"
-description              : "Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy."
-url                      : "https://set-outlooksignatures.com" # the base hostname & protocol for your site
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "ExplicITConsulting/set-outlooksignatures.com" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-favicon                  : "/assets/images/set-outlooksignatures icon.ico"
-force_theme              : #light
+fixed_navbar: top
+permalink: pretty
+footer_menu: footer_menu
+locale: "en"
+lang: en
+languages: ["en", "de"]
+default_lang: "en"
+exclude_from_localization: ["javascript", "images", "css", "public", "sitemap"]
+lang_from_path: true
+parallel_localization: true
+direction: ltr # left to right
+google_analytics: # UA-xxxxxxx
+title: "Set-OutlookSignatures"
+description: "Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy."
+url: "https://set-outlooksignatures.com" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. "/blog"
+repository: "ExplicITConsulting/set-outlooksignatures.com" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+favicon: "/assets/images/set-outlooksignatures icon.ico"
+force_theme: #light
 
 # SEO Related
-google_site_verification :
-bing_site_verification   :
-naver_site_verification  :
-yandex_site_verification :
-baidu_site_verification  :
-logo                     : "/assets/images/set-outlooksignatures logo 500px.png"
+google_site_verification:
+bing_site_verification:
+naver_site_verification:
+yandex_site_verification:
+baidu_site_verification:
+logo: "/assets/images/set-outlooksignatures logo 500px.png"
 social:
   name: Explicit Consulting GmbH
   links:
     - https://www.linkedin.com/company/explicit-consulting-gmbh
-
-
 
 # Plugins (previously gems:)
 plugins:
@@ -39,6 +40,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-redirect-from
+  - jekyll-polyglot
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -57,7 +59,6 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
 
 # Defaults
 defaults:

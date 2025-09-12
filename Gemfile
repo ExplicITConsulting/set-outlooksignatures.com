@@ -11,4 +11,5 @@ group :jekyll_plugins do
     gem "jekyll-include-cache"
     gem "jekyll-redirect-from"
     gem "nokogiri"
+    gem "jekyll-polyglot"
 end
