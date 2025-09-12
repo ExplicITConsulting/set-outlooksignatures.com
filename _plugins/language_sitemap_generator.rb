@@ -16,10 +16,6 @@ module Jekyll
       # Collect all pages and documents for the current language's build.
       urls = []
       (site.pages + site.documents).each do |document|
-        # Skip if the document is not part of the current language build.
-        next unless (document.data['lang'] || default_lang) == current_lang
-
-        # Use document.data to access the front matter.
         next if document.data['sitemap'] == false
         next if document.url.nil? || document.url.start_with?('/assets/') || document.url.include?('/sitemap') || document.url.include?('404.html')
 
