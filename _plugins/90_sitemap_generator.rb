@@ -43,6 +43,7 @@ module Jekyll
       end
     end
 
+
     def self.strip_lang_prefix(url, languages, default_lang)
       languages.each do |lang|
         next if lang == default_lang
