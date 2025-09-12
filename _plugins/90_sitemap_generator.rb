@@ -15,48 +15,23 @@ module Jekyll
         f.puts '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"'
         f.puts '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">'
 
-        items = site.posts.docs + site.pages
+        localized_pages = collect_localized_pages(site)
 
-        # Include localized static HTML files
-        localized_htmls = site.static_files.select do |f|
-          f.extname == ".html" && f.path.include?(site.dest)
-        end
+        localized_pages.each do |base_path, langs|
+          default_lang = site.config['default_lang']
+          default_url = langs[default_lang] ? langs[default_lang][:url] : langs.values.first[:url]
+          lastmod = langs[default_lang] ? langs[default_lang][:lastmod] : langs.values.first[:lastmod]
 
-        localized_htmls.each do |file|
-          # Skip if already included in site.pages
-          next if items.any? { |i| i.url == file.relative_path }
-
-          # Create a fake page-like object
-          item = OpenStruct.new(
-            url: "/" + file.relative_path.sub(/^#{site.dest}\//, ""),
-            data: { 'date' => File.mtime(file.path), 'sitemap' => true }
-          )
-
-          items << item
-        end
-
-        items.each do |item|
-          next if item.data['sitemap'] == false
-          next if ['/redirects.json', '/robots.txt', '/assets/css/app.css'].include?(item.url)
-
-          lastmod = item.data['last_modified_at'] || item.data['date'] || site.time
-          url = site.config['url'].to_s + item.url
           f.puts "  <url>"
-          f.puts "    <loc>#{url}</loc>"
-          f.puts "    <lastmod>#{lastmod.iso8601}</lastmod>"
+          f.puts "    <loc>#{default_url}</loc>"
+          f.puts "    <lastmod>#{lastmod}</lastmod>"
           f.puts "    <changefreq>daily</changefreq>"
           f.puts "    <priority>1.0</priority>"
 
-          base_path = strip_lang_prefix(item.url, site.config['languages'], site.config['default_lang'])
-
-          site.config['languages'].each do |lang|
-            localized_url = lang == site.config['default_lang'] ? base_path : "/#{lang}#{base_path}"
-            if items.any? { |i| i.url == localized_url }
-              f.puts "    <xhtml:link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{site.config['url']}#{localized_url}\" />"
-            end
+          langs.each do |lang, data|
+            f.puts "    <xhtml:link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{data[:url]}\" />"
           end
-
-          f.puts "    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"#{site.config['url']}#{base_path}\" />"
+          f.puts "    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"#{default_url}\" />"
           f.puts "  </url>"
         end
 
@@ -64,13 +39,28 @@ module Jekyll
       end
     end
 
-    def self.strip_lang_prefix(url, languages, default_lang)
-      languages.each do |lang|
-        next if lang == default_lang
-        prefix = "/#{lang}/"
-        return url.sub(prefix, "/") if url.start_with?(prefix)
+    def self.collect_localized_pages(site)
+      localized_pages = Hash.new { |h, k| h[k] = {} }
+
+      Dir.glob(File.join(site.dest, "**", "*.html")).each do |path|
+        relative_path = path.sub(site.dest, "")
+        next if relative_path.include?("/assets/") || relative_path.include?("/sitemap.xml")
+
+        lang = site.config['languages'].find do |l|
+          relative_path.start_with?("/#{l}/")
+        end || site.config['default_lang']
+
+        base_path = relative_path.sub(/^\/#{lang}/, "")
+        base_path = "/" if base_path == ""
+
+        localized_pages[base_path][lang] = {
+          path: path,
+          url: site.config['url'] + relative_path,
+          lastmod: File.mtime(path).iso8601
+        }
       end
-      url
+
+      localized_pages
     end
   end
 
