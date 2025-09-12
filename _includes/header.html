@@ -49,27 +49,16 @@
                 <div class="navbar-item has-text-white">
                     <span>
                         {% comment %}
-                        First, capture the URL anchor if it exists.
-                        The 'split' filter will create an array, and 'last' will grab the anchor.
+                        This script dynamically gets the anchor from the browser URL
+                        and updates the links to preserve it. It does not use Liquid.
                         {% endcomment %}
 
-                        {% assign url_parts = page.url | split: '#' %}
-                        {% assign url_with_lang = page.url %}
-
-                        {% if url_parts.size > 1 %}
-                        {% assign anchor = '#' | append: url_parts.last %}
-                        {% else %}
-                        {% assign anchor = '' %}
-                        {% endif %}
-
-                        {% comment %}
-                        Now, loop through languages and add the dynamic anchor.
-                        {% endcomment %}
                         {% for tongue in site.languages %}
-                        <a {% if tongue==site.active_lang %}style="font-weight: bold;" {% endif %} {% static_href
-                            %}href="{% if tongue == site.default_lang %}{{ site.baseurl }}{{ url_with_lang }}{% else %}{{ site.baseurl }}/{{ tongue }}{{ url_with_lang }}{% endif %}{{ anchor }}"
-                            {% endstatic_href %}>{{ tongue }}</a>{%- if forloop.last == false -%}{{ " | " }}{%- endif
-                        -%}
+                        <a {% if tongue==site.active_lang %}style="font-weight: bold;" {% endif %}
+                            href="{% if tongue == site.default_lang %}{{ site.baseurl }}{{ page.url }}{% else %}{{ site.baseurl }}/{{ tongue }}{{ page.url }}{% endif %}"
+                            data-base-url="{% if tongue == site.default_lang %}{{ site.baseurl }}{{ page.url }}{% else %}{{ site.baseurl }}/{{ tongue }}{{ page.url }}{% endif %}">
+                            {{ tongue }}
+                        </a>{%- if forloop.last == false -%}{{ " | " }}{%- endif -%}
                         {% endfor %}
                     </span>
                 </div>

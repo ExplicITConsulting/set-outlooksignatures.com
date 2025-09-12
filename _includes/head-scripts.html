@@ -170,3 +170,19 @@
       src="//mtrcs.set-outlooksignatures.com/poop.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p>
 </noscript>
 <!-- End mtrcs code -->
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const languageLinks = document.querySelectorAll('a[data-base-url]');
+    const currentAnchor = window.location.hash;
+
+    if (currentAnchor) {
+      languageLinks.forEach(link => {
+        const baseHref = link.getAttribute('data-base-url');
+        link.href = baseHref + currentAnchor;
+      });
+    }
+  });
+</script>
