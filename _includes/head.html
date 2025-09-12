@@ -5,7 +5,8 @@
 
 
     <meta http-equiv="Content-Language" content="{{ page.lang }}">
-    {%- assign canonical_url = site.url | append: site.baseurl | append: (page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | replace:'index.html','') %}
+    {%- assign canonical_url = page.url | remove: '/' | remove_first: site.active_lang | replace:'index.html','' | absolute_url %}
+    {{ canonical_url }}
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="alternate" hreflang="x-default" href="{{ canonical_url }}">
     {%- for lang in site.languages -%}
