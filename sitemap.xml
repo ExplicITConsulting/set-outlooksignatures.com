@@ -13,5 +13,5 @@ permalink: /sitemap.xml
     <loc>{{ site.url }}/{{ lang }}/sitemap-language.xml</loc>
   </sitemap>
     {% endunless -%}
-  {%- endfor -%}
+  {%- endfor %}
 </sitemapindex>
