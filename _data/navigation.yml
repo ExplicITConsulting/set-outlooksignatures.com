@@ -4,7 +4,7 @@
     <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>
   link: /benefactorcircle
 - name: "Demo"
-  link: /benefactorcircle/#demo
+  link: /benefactorcircle#demo
 - name: "Help and support"
   link: /help
   dropdown:
