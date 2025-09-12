@@ -75,3 +75,6 @@ defaults:
 
 include:
   - ".well-known"
+
+sass:
+    sourcemap: never
