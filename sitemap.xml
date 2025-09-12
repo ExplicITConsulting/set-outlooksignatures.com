@@ -12,22 +12,20 @@ sitemap: false
 {%- assign all_docs = site.posts | concat: site.pages -%}
 {%- assign grouped_docs = all_docs | group_by: 'relative_path' -%}
 
-{%- for group in grouped_docs -%}
-  {%- assign default_lang_doc = group.items | where: "lang", site.default_lang | first -%}
-  {%- assign canonical_doc = default_lang_doc -%}
+{%- comment -%} Fallback for documents without a relative_path (e.g., custom collections) {%- endcomment -%}
+{%- assign grouped_docs_fallback = grouped_docs -%}
+{%- if grouped_docs.size == 0 -%}
+  {%- assign grouped_docs_fallback = all_docs | group_by: 'url' -%}
+{%- endif -%}
 
-  {%- comment -%} If no default language document exists, choose a canonical one from the available languages. {%- endcomment -%}
-  {%- unless default_lang_doc -%}
-    {%- for lang in site.languages -%}
-      {%- assign fallback_doc = group.items | where: "lang", lang | first -%}
-      {%- if fallback_doc -%}
-        {%- assign canonical_doc = fallback_doc -%}
-        {%- break -%}
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endunless -%}
+{%- for group in grouped_docs_fallback -%}
+  {%- assign canonical_doc = nil -%}
+  {%- for doc in group.items -%}
+    {%- if doc.lang == site.default_lang or canonical_doc == nil -%}
+      {%- assign canonical_doc = doc -%}
+    {%- endif -%}
+  {%- endfor -%}
 
-  {%- comment -%} Only process groups that have at least one valid document to link to. {%- endcomment -%}
   {%- if canonical_doc and canonical_doc.sitemap != false and canonical_doc.url != '/redirects.json' and canonical_doc.url != '/robots.txt' -%}
   <url>
     <loc>{{ canonical_doc.url | absolute_url }}</loc>
