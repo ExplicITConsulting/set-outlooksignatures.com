@@ -4,14 +4,14 @@ sitemap: false
 permalink: /customer-images.txt
 ---
 {%- for file in site.static_files -%}
-  {%- assign expected_dir_path = "/assets/images/customers/" -%}
-  {%- assign file_directory_calculated = file.path | remove: file.name -%}
+  {%- assign expected_dir_path = "/assets/images/customers/" -%}
+  {%- assign file_directory_calculated = file.path | remove: file.name -%}
 
-  {%- unless file_directory_calculated[-1] == "/" -%}
-    {%- assign file_directory_calculated = file_directory_calculated | append: "/" -%}
-  {%- endunless -%}
+  {%- unless file_directory_calculated | last == "/" -%}
+    {%- assign file_directory_calculated = file_directory_calculated | append: "/" -%}
+  {%- endunless -%}
 
-  {%- if file_directory_calculated == expected_dir_path %}
-    {{ file.path | absolute_url }}
-  {% endif -%}
+  {%- if file_directory_calculated == expected_dir_path %}
+    {{ file.path | absolute_url }}
+  {% endif -%}
 {%- endfor -%}
