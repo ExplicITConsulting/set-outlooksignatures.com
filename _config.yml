@@ -77,4 +77,4 @@ include:
   - ".well-known"
 
 sass:
-    sourcemap: never
+  sourcemap: never
