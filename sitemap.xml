@@ -5,35 +5,37 @@ sitemap: false
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- assign default_lang = site.default_lang | default: "en" -%}
 {%- assign pages_and_posts = site.pages | concat: site.posts -%}
 {%- assign sitemap_urls = pages_and_posts | where_exp:"item", "item.sitemap != false" | where_exp:"item", "item.url != '/robots.txt'" | where_exp:"item", "item.url != '/redirects.json'" -%}
 {%- for node in sitemap_urls -%}
-{%- assign canonical_url = node.url | remove: 'index.html' -%}
-{%- if node.lang != site.default_lang -%}
-  {%- assign canonical_url = node.url | remove: 'index.html' | remove: node.lang | remove: '/' -%}
-{%- endif -%}
-{%- if node.url -%}
-{%- unless site.exclude_from_localization contains node.path or node.url contains '/assets/' %}
-  <url>
-    <loc>{{ node.url | absolute_url | remove: 'index.html' }}</loc>
-    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-    {%- for lang in site.languages -%}
-    {%- assign alternate_page = site.pages | where: "ref", node.ref | where: "lang", lang | first -%}
-    {%- if alternate_page -%}
+  {%- assign current_lang_prefix = "/" | append: node.lang | append: "/" | remove: "/" | prepend: "/" -%}
+  {%- assign canonical_url_path = node.url | remove: current_lang_prefix -%}
+  {%- if node.url == "/" or node.lang == default_lang -%}
+    {%- assign canonical_url_path = node.url -%}
+  {%- endif -%}
+
+  {%- if node.url and node.url != "/404/" and node.url != "/404" and node.lang == default_lang -%}
+    <url>
+      <loc>{{ node.url | absolute_url }}</loc>
+      <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+      {%- for lang in site.languages -%}
+        {%- assign alternate_url = canonical_url_path -%}
+        {%- if lang != default_lang -%}
+          {%- assign alternate_url = "/" | append: lang | append: canonical_url_path -%}
+        {%- endif -%}
+        <xhtml:link
+          rel="alternate"
+          hreflang="{{ lang }}"
+          href="{{ alternate_url | absolute_url }}"
+        />
+      {%- endfor -%}
       <xhtml:link
         rel="alternate"
-        hreflang="{{ lang }}"
-        href="{{ alternate_page.url | absolute_url | remove: 'index.html' }}"
+        hreflang="x-default"
+        href="{{ node.url | absolute_url }}"
       />
-    {%- endif -%}
-    {%- endfor -%}
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="{{ site.pages | where: "ref", node.ref | where: "lang", site.default_lang | first | absolute_url | remove: 'index.html' }}"
-    />
-  </url>
-{%- endunless -%}
-{%- endif -%}
+    </url>
+  {%- endif -%}
 {%- endfor %}
 </urlset>
