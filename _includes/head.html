@@ -3,9 +3,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="{{ site.theme_color | default: '#ffffff' }}">
 
-    {% I18n_Headers %}
+    <meta http-equiv="Content-Language" content="{{site.active_lang}}">
 
-    
+    {% if page.lang == site.default_lang %}
+    <link rel="canonical" href="{{site.baseurl}}{{page.permalink}}" />
+    {% else %}
+    <link rel="canonical" href="{{site.baseurl}}/{{page.lang}}{{page.permalink}}" />
+    {% endif %}
+    <link rel="alternate" hreflang="{{site.default_lang}}" href="{{site.baseurl}}{{page.permalink}}" />
+    <link rel="alternate" hreflang="x-default" href="{{site.baseurl}}{{page.permalink}}" />
+    {% for lang in site.languages %}
+    {% if lang == site.default_lang %}
+    {% continue %}
+    {% endif %}
+    <link rel="alternate" hreflang="{{lang}}" href="{{site.baseurl}}/{{lang}}{{page.permalink}}" />
+    {% endfor %}
+
+
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
     <link
         rel="shortcut icon"
