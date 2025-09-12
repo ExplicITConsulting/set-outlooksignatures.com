@@ -7,11 +7,11 @@ permalink: /sitemap.xml
   <sitemap>
     <loc>{{ site.url }}/sitemap-language.xml</loc>
   </sitemap>
-  {% for lang in site.languages %}
-    {% unless lang == site.default_lang %}
-      <sitemap>
-        <loc>{{ site.url }}/{{ lang }}/sitemap-language.xml</loc>
-      </sitemap>
-    {% endunless %}
-  {% endfor %}
+  {%- for lang in site.languages -%}
+    {%- unless lang == site.default_lang -%}
+  <sitemap>
+    <loc>{{ site.url }}/{{ lang }}/sitemap-language.xml</loc>
+  </sitemap>
+    {% endunless -%}
+  {%- endfor -%}
 </sitemapindex>
