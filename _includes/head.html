@@ -5,8 +5,8 @@
 
 
     <meta http-equiv="Content-Language" content="{{ page.lang }}">
-    {%- assign canonical_url_path = page.url | remove_first: {{ site.active_lang }} %}
-    <link rel="canonical" href="{{ Unrelativized_Link '' | relative_url | absolute_url }}" />
+    {%- assign canonical_url_path = page.url | remove_first: site.active_lang %}
+    <link rel="canonical" href="{{ Unrelativized_Link canonical_url_path | absolute_url }}" />
     {%- for lang in site.languages -%}
     {%- if lang == site.default_lang -%}
         {%- assign hreflang_url = page.url_without_lang -%}
