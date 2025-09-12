@@ -5,6 +5,7 @@
 
 
     <meta http-equiv="Content-Language" content="{{ page.lang }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | replace:'index.html','' }}">
     {%- assign canonical_url_path = page.url | remove_first: page.lang %}
     <link rel="canonical" href="{{ Unrelativized_Link canonical_url_path }}" />
     {%- for lang in site.languages -%}
