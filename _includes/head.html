@@ -8,11 +8,11 @@
     <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | replace:'index.html','' }}">
     <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ site.baseurl }}{{ page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | replace:'index.html','' }}">
     {%- for lang in site.languages -%}
-    {%- if lang == site.default_lang -%}
-        {%- assign hreflang_url = "{{ site.url }}{{ site.baseurl }}{{ page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | replace:'index.html','' }}" -%}
-    {%- else -%}
-        {%- assign hreflang_url = "{{ site.url }}{{ site.baseurl }}{{ page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | prepend: lang | prepend: '/' | replace:'index.html','' }}" -%}
-    {%- endif %}
+        {%- if lang == site.default_lang -%}
+            {%- assign hreflang_url = site.url | append: site.baseurl | append: (page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | replace: 'index.html','') -%}
+        {%- else -%}
+            {%- assign hreflang_url = site.url | append: site.baseurl | append: '/' | append: lang | append: (page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | replace: 'index.html','') -%}
+        {%- endif %}
     <link rel="alternate" hreflang="{{ lang }}" href="{{ Unrelativized_Link hreflang_url }}">
     {%- endfor %}
 
