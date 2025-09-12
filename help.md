@@ -8,7 +8,7 @@ image:
   height: 1200
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
-permalink: /help
+page_id: help
 ---
 
 <h2><a href="/features">Features and feature comparison</a></h2>
