@@ -43,142 +43,157 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const languageDropdown = document.getElementById('languageDropdown');
-
     const availableLanguages = Array.from(languageDropdown ? languageDropdown.options : []).map((option) => option.value);
+    let preferredLanguage = localStorage.getItem("languageDropdownValue") || "en";
+    if (languageDropdown) languageDropdown.value = preferredLanguage;
 
-    if (availableLanguages.length === 0) {
-      availableLanguages.push('en', 'de'); // Fallback languages if no dropdown or no options
-      console.log('No language dropdown options found, defaulting available languages to:', availableLanguages);
-    } else {
-      console.log('Available languages from dropdown:', availableLanguages);
+    // Global object to hold the map of alternate paths by language
+    let pathMap = {};
+
+    /**
+     * Fetches and parses the sitemap.xml to build a map of alternate paths.
+     */
+    async function loadSitemapPaths() {
+      try {
+        const response = await fetch('/sitemap.xml');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const xmlText = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+
+        const urls = xmlDoc.querySelectorAll('url');
+        urls.forEach(urlElement => {
+          const alternateLinks = urlElement.querySelectorAll('xhtml\\:link, link[rel="alternate"]');
+          if (alternateLinks.length > 0) {
+            let currentPath = null;
+            const languagePaths = {};
+
+            // First, get the main language link from the <loc> tag
+            const locElement = urlElement.querySelector('loc');
+            if (locElement) {
+              try {
+                const path = new URL(locElement.textContent).pathname;
+                const langMatch = path.match(/^\/([a-z]{2})(?:\/|$)/);
+                const lang = langMatch ? langMatch[1] : 'en';
+                languagePaths[lang] = path;
+                currentPath = path;
+              } catch (e) {
+                console.error('Invalid URL in sitemap <loc>:', locElement.textContent);
+              }
+            }
+
+            // Then, get all alternate language links
+            alternateLinks.forEach(link => {
+              const lang = link.getAttribute('hreflang');
+              const href = link.getAttribute('href');
+              if (lang && href) {
+                try {
+                  languagePaths[lang] = new URL(href).pathname;
+                } catch (e) {
+                  console.error('Invalid URL in sitemap <xhtml:link>:', href);
+                }
+              }
+            });
+
+            // Now populate the global pathMap
+            if (currentPath) {
+              if (!pathMap[currentPath]) {
+                pathMap[currentPath] = {};
+              }
+              for (const lang in languagePaths) {
+                const alternatePath = languagePaths[lang];
+                pathMap[currentPath][lang] = alternatePath;
+              }
+            }
+          }
+        });
+        console.log('Path map loaded successfully from sitemap:', pathMap);
+      } catch (error) {
+        console.error('Could not load or parse sitemap:', error);
+      }
     }
 
-    let preferredLanguage = localStorage.getItem("languageDropdownValue");
-    console.log('Preferred language from localStorage:', preferredLanguage);
+    /**
+     * Rewrites all internal links on the page to the correct language.
+     */
+    function rewriteInternalLinks() {
+      const currentHostname = window.location.hostname;
 
-    if (!preferredLanguage) {
-      preferredLanguage = "en"; // Final fallback to English
-      console.log('No preferred language determined, defaulting to "en".');
-    }
+      document.querySelectorAll('a').forEach(link => {
+        try {
+          const href = link.getAttribute('href');
+          if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
 
-    if (languageDropdown) {
-      languageDropdown.value = preferredLanguage;
-      console.log('Language dropdown set to:', preferredLanguage);
+          const url = new URL(href, window.location.href);
+
+          if (url.hostname === currentHostname) {
+            const currentLinkPath = url.pathname;
+
+            // Look up the alternate path in the map
+            const alternatePaths = pathMap[currentLinkPath];
+            if (alternatePaths && alternatePaths[preferredLanguage]) {
+              const targetPath = alternatePaths[preferredLanguage];
+
+              // The target page exists, so rewrite the link
+              const newHref = new URL(targetPath, window.location.href);
+              newHref.hash = url.hash;
+              newHref.search = url.search;
+              link.setAttribute('href', newHref.href);
+            } else {
+              console.log(`No alternate path found for ${currentLinkPath} in language ${preferredLanguage}. Leaving link as is.`);
+            }
+          }
+        } catch (e) {
+          console.error('Error rewriting link:', link, e);
+        }
+      });
     }
 
     /**
      * Normalizes a URL path for consistent comparison.
-     * Ensures it starts with '/' and does not end with '/' unless it's just '/'.
-     * @param {string} path - The path to normalize.
-     * @returns {string} The normalized path.
      */
     function normalizePathForComparison(path) {
       if (!path) return '/';
-      let normalized = path.replace(/\/\/+/g, '/'); // Replace multiple slashes with a single one
+      let normalized = path.replace(/\/\/+/g, '/');
       if (normalized.length > 1 && normalized.endsWith('/')) {
-        normalized = normalized.slice(0, -1); // Remove trailing slash unless it's just '/'
+        normalized = normalized.slice(0, -1);
       }
       if (!normalized.startsWith('/')) {
-        normalized = '/' + normalized; // Ensure it starts with a slash
+        normalized = '/' + normalized;
       }
       return normalized;
-    }
-
-    /**
-     * Checks if a URL document exists and if a specific anchor exists within that document.
-     * @param {string} urlWithoutAnchor - The base URL to check (without the anchor).
-     * @param {string} anchor - The anchor (e.g., "#my-section") to check for existence. Can be empty.
-     * @returns {Promise<boolean>} A promise that resolves to true if both document and anchor exist (or no anchor needed), false otherwise.
-     */
-    async function checkDocumentAndAnchorAvailability(urlWithoutAnchor, anchor) {
-      try {
-        console.log(`[checkDocumentAndAnchorAvailability] Checking document existence for: ${urlWithoutAnchor}`);
-        // Perform a HEAD request first to check document existence efficiently
-        const headResponse = await fetch(urlWithoutAnchor, { method: 'HEAD' });
-
-        if (!headResponse.ok) {
-          console.log(`[checkDocumentAndAnchorAvailability] Document does not exist or is not reachable: ${urlWithoutAnchor} Status: ${headResponse.status}`);
-          return false;
-        }
-        console.log(`[checkDocumentAndAnchorAvailability] Document exists: ${urlWithoutAnchor}`);
-
-        return true;
-      } catch (error) {
-        console.error(`[checkDocumentAndAnchorAvailability] Error during checkDocumentAndAnchorAvailability for ${urlWithoutAnchor} with anchor ${anchor}:`, error);
-        return false;
-      }
     }
 
     /**
      * Executes the redirection logic based on preferred language and current URL.
      */
     async function executeRedirectionLogic() {
-      // Use window.location.pathname and window.location.hash directly
-      const currentPathname = window.location.pathname; // e.g., /de/benefactorcircle/
-      const currentHash = window.location.hash;       // e.g., #demo
+      await loadSitemapPaths();
 
+      const currentPathname = window.location.pathname;
+      const currentHash = window.location.hash;
       const currentHostname = window.location.hostname;
       const currentProtocol = window.location.protocol;
       const currentSearch = window.location.search;
 
-      console.log('Current URL details:', { currentPathname, currentHostname, currentProtocol, currentSearch, currentHash });
+      // Check the path map for the correct path for the preferred language
+      const alternatePaths = pathMap[currentPathname];
+      const targetPathnamePreferredLang = alternatePaths ? alternatePaths[preferredLanguage] : null;
 
-      let baseContentPath = '/';
-      const anyTwoLetterFolderRegex = /^\/([a-z]{2})(\/.*)?$/;
-      const pathSegmentMatch = currentPathname.match(anyTwoLetterFolderRegex);
-
-      let currentPathnameWithoutLang = currentPathname; // Default to full pathname if no lang folder
-
-      // Extract the path without the leading language segment
-      if (pathSegmentMatch) {
-        currentPathnameWithoutLang = pathSegmentMatch[2] || '/'; // e.g., /benefactorcircle/
-        console.log('Language folder detected. Path without language:', currentPathnameWithoutLang);
-      } else {
-        console.log('No language folder detected. Current pathname is the base content path:', currentPathnameWithoutLang);
+      if (targetPathnamePreferredLang) {
+        // If an alternate path exists and it's different from the current path, redirect
+        if (normalizePathForComparison(currentPathname) !== normalizePathForComparison(targetPathnamePreferredLang)) {
+          const finalRedirectUrl = `${currentProtocol}//${currentHostname}${targetPathnamePreferredLang}${currentSearch}${currentHash}`;
+          console.log('Target document exists. Redirecting to:', finalRedirectUrl);
+          window.location.replace(finalRedirectUrl);
+          return;
+        }
       }
 
-      // Normalize the base content path (e.g., /benefactorcircle/)
-      baseContentPath = normalizePathForComparison(currentPathnameWithoutLang);
-      console.log('Normalized base content path (content path without language prefix):', baseContentPath);
-
-      // Construct the target pathname based on the preferred language
-      let targetPathnamePreferredLang;
-      if (preferredLanguage === "en") {
-        targetPathnamePreferredLang = baseContentPath; // English paths don't have a /en/ prefix
-      } else {
-        targetPathnamePreferredLang = `/${preferredLanguage}${baseContentPath === '/' ? '' : baseContentPath}`; // Other languages get /lang/ prefix
-      }
-      targetPathnamePreferredLang = normalizePathForComparison(targetPathnamePreferredLang);
-      console.log('Calculated target pathname for preferred language:', targetPathnamePreferredLang);
-
-      // Construct the full target URL without the anchor, for the preferred language
-      const targetFullUrlWithoutAnchorPreferredLang = `${currentProtocol}//${currentHostname}${targetPathnamePreferredLang}${currentSearch}`;
-
-      console.log('Target full URL (preferred language, without hash):', targetFullUrlWithoutAnchorPreferredLang);
-
-      // Determine if the current URL (path + hash) already matches the intended target
-      // This prevents unnecessary checks and redirections if we're already where we want to be.
-      const normalizedCurrentPath = normalizePathForComparison(currentPathname);
-      const normalizedTargetPath = normalizePathForComparison(targetPathnamePreferredLang);
-
-      if (normalizedCurrentPath === normalizedTargetPath && currentHash === window.location.hash) {
-        console.log('Current URL (path and anchor) already matches the calculated target for the preferred language. No redirection needed.');
-        return;
-      }
-
-      // Check if the preferred language document AND the original anchor exist in it
-      const targetDocAndAnchorExist = await checkDocumentAndAnchorAvailability(targetFullUrlWithoutAnchorPreferredLang, currentHash);
-
-      if (targetDocAndAnchorExist) {
-        // Only redirect if the target document and the original anchor exist in the preferred language
-        const finalRedirectUrl = `${targetFullUrlWithoutAnchorPreferredLang}${currentHash}`;
-        console.log('Target document and original anchor exist in preferred language. Redirecting to:', finalRedirectUrl);
-        window.location.replace(finalRedirectUrl);
-      } else {
-        // If the target document or the original anchor does NOT exist in the preferred language, do nothing.
-        console.log('Target document in preferred language or original anchor in that document not found. No redirection will occur.');
-        // The script will simply allow the browser to load the current URL.
-      }
+      console.log('Current URL already matches or no alternate found. Rewriting links...');
+      rewriteInternalLinks();
     }
 
     executeRedirectionLogic();
