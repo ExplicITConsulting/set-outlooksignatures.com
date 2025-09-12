@@ -5,11 +5,34 @@ sitemap: false
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- assign current_lang = page.lang | default: site.default_lang -%}
 {%- assign pages_and_posts = site.pages | concat: site.posts -%}
 {%- assign sitemap_urls = pages_and_posts | where_exp:"item", "item.sitemap != false" | where_exp:"item", "item.url != '/robots.txt'" | where_exp:"item", "item.url != '/redirects.json'" -%}
-{%- for lang in site.languages %}{% for node in sitemap_urls %}{% if node.url %}{% unless site.exclude_from_localization contains node.path or node.url contains '/assets/' %}
+{%- for node in sitemap_urls -%}
+{%- if node.url -%}
+{%- unless site.exclude_from_localization contains node.path or node.url contains '/assets/' -%}
   <url>
-    <loc>{% if lang == site.default_lang %}{{ node.url | absolute_url }}{% else %}{{ node.url | prepend: lang | prepend: '/' | absolute_url }}{% endif %}</loc>
+    <loc>{{ node.url | absolute_url }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-  </url>{% endunless %}{% endif %}{% endfor %}{% endfor %}
+    {% for lang in site.languages %}
+      {%- if lang == site.default_lang -%}
+        {%- assign alternate_url = node.url | absolute_url -%}
+      {%- else -%}
+        {%- assign alternate_url = node.url | prepend: lang | prepend: '/' | absolute_url -%}
+      {%- endif -%}
+      <xhtml:link
+        rel="alternate"
+        hreflang="{{ lang }}"
+        href="{{ alternate_url }}" />
+    {%- endfor -%}
+    {%- if site.default_lang -%}
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="{{ node.url | absolute_url }}" />
+    {%- endif -%}
+  </url>
+{%- endunless -%}
+{%- endif -%}
+{%- endfor -%}
 </urlset>
