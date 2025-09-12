@@ -15,6 +15,7 @@ exclude_from_localization:
   - "/css"
   - "/public"
   - "/sitemap.xml"
+  - "/sitemap-language.xml"
   - "/customer-images.txt"
   - "/Gemfile"
   - "/robots.txt"
