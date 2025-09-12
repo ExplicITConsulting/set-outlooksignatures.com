@@ -4,20 +4,22 @@
     <meta name="theme-color" content="{{ site.theme_color | default: '#ffffff' }}">
 
     <meta http-equiv="Content-Language" content="{{page.lang}}">
+    {%- assign lang_prefix = '/' | append: page.lang | append: '/' -%}
+    {%- assign clean_url = page.url | remove_first: lang_prefix -%}
     {%- if page.lang == site.default_lang %}
-    <link rel="canonical" href="{{ site.baseurl }}{{ page.url }}" />
+    <link rel="canonical" href="{{ site.baseurl }}{{ clean_url }}" />
     {%- else %}
-    <link rel="canonical" href="{{ site.baseurl }}/{{ page.lang }}{{ page.url }}" />
+    <link rel="canonical" href="{{ site.baseurl }}/{{ page.lang }}{{ clean_url }}" />
     {%- endif -%}
-    {%- assign default_href = site.baseurl | append: page.url -%}
+
     {%- for lang in site.languages -%}
     {%- if lang == site.default_lang %}
-    <link rel="alternate" hreflang="{{ lang }}" href="{{ default_href }}" />
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ site.baseurl }}{{ clean_url }}" />
     {%- else %}
-    <link rel="alternate" hreflang="{{ lang }}" href="{{ site.baseurl }}/{{ lang }}{{ page.url }}" />
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ site.baseurl }}/{{ lang }}{{ clean_url }}" />
     {%- endif -%}
     {%- endfor %}
-    <link rel="alternate" hreflang="x-default" href="{{ default_href }}" />
+    <link rel="alternate" hreflang="x-default" href="{{ site.baseurl }}{{ clean_url }}" />
 
 
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
