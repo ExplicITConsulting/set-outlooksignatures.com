@@ -11,7 +11,7 @@ sitemap: false
 
 {%- comment -%} Part 1: Generate entries for all canonical (English) pages {%- endcomment -%}
 {%- for node in pages_and_posts -%}
-  {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' or node.url contains '/de/' -%}
+  {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' or node.url contains '/de/' %}
     <url>
       <loc>{{ node.url | absolute_url }}</loc>
       <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
@@ -20,14 +20,13 @@ sitemap: false
         {%- assign alternate_url = node.url -%}
         {%- if lang != default_lang -%}
           {%- assign alternate_url = "/" | append: lang | append: node.url -%}
-        {%- endif -%}
+        {%- endif %}
         <xhtml:link
           rel="alternate"
           hreflang="{{ lang }}"
           href="{{ alternate_url | absolute_url }}"
         />
-      {%- endfor -%}
-      
+      {%- endfor %}
       <xhtml:link
         rel="alternate"
         hreflang="x-default"
@@ -41,9 +40,9 @@ sitemap: false
 {%- for lang in site.languages -%}
   {%- unless lang == default_lang -%}
     {%- for node in pages_and_posts -%}
-      {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' or node.url contains '/de/' -%}
+      {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' or node.url contains '/de/' %}
         <url>
-          {%- assign localized_url = "/" | append: lang | append: node.url -%}
+          {%- assign localized_url = "/" | append: lang | append: node.url %}
           <loc>{{ localized_url | absolute_url }}</loc>
           <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
           
@@ -51,14 +50,13 @@ sitemap: false
             {%- assign inner_alternate_url = node.url -%}
             {%- if inner_lang != default_lang -%}
               {%- assign inner_alternate_url = "/" | append: inner_lang | append: node.url -%}
-            {%- endif -%}
+            {%- endif %}
             <xhtml:link
               rel="alternate"
               hreflang="{{ inner_lang }}"
               href="{{ inner_alternate_url | absolute_url }}"
             />
-          {%- endfor -%}
-
+          {%- endfor %}
           <xhtml:link
             rel="alternate"
             hreflang="x-default"
@@ -68,6 +66,5 @@ sitemap: false
       {%- endunless -%}
     {%- endfor -%}
   {%- endunless -%}
-{%- endfor -%}
-
+{%- endfor %}
 </urlset>
