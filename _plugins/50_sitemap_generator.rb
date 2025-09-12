@@ -1,4 +1,6 @@
-# _plugins/sitemap_generator.rb
+# _plugins/50_sitemap_generator.rb
+
+
 module Jekyll
   class SitemapGenerator < Generator
     safe true
@@ -6,13 +8,9 @@ module Jekyll
 
     def generate(site)
       # Get all documents from pages and posts
-      all_documents = site.pages.concat(site.posts)
-
-      # Check if Polyglot is enabled
-      if site.config['languages']
-        # If Polyglot is active, get all documents from all languages
-        all_documents = site.posts.docs.concat(site.pages.docs)
-      end
+      # The .to_a method is used to ensure we are working with arrays
+      # and not internal Jekyll collections, which can have different behaviors.
+      all_documents = site.posts.to_a.concat(site.pages.to_a)
 
       # Add the documents to the custom collection
       site.collections['sitemap_pages'].docs = all_documents

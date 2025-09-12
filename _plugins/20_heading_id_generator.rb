@@ -1,3 +1,5 @@
+# _plugins/20_heading_id_generator.rb
+
 Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
   # Only process HTML files
   next unless doc.output_ext == '.html'

@@ -1,3 +1,5 @@
+# _plugins/80_search_data_collector.rb
+
 require 'nokogiri'
 require 'json'
 require 'uri'
