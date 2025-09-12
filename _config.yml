@@ -8,8 +8,7 @@ locale: "en"
 lang: en
 languages: ["en", "de"]
 default_lang: "en"
-exclude_from_localization: ["javascript", "images", "css", "public", "sitemap", "sitemap.xml"]
-lang_from_path: true
+exclude_from_localization: ["assets", "javascript", "images", "css", "public", "sitemap", "sitemap.xml", "customer-images.txt", "Gemfile", "robots.txt", "search.json"]
 parallel_localization: false
 direction: ltr # left to right
 google_analytics: # UA-xxxxxxx
