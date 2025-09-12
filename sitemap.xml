@@ -4,19 +4,20 @@ sitemap: false
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {%- assign default_lang = site.default_lang | default: "en" -%}
 {%- assign pages_and_posts = site.pages | concat: site.posts -%}
 {%- assign sitemap_urls = pages_and_posts | where_exp:"item", "item.sitemap != false" | where_exp:"item", "item.url != '/robots.txt'" | where_exp:"item", "item.url != '/redirects.json'" -%}
 {%- for node in sitemap_urls -%}
 {%- unless node.url contains '/assets/' -%}
+
   {%- assign current_lang_prefix = "/" | append: node.lang | append: "/" | remove: "/" | prepend: "/" -%}
   {%- assign canonical_url_path = node.url | remove: current_lang_prefix -%}
   {%- if node.url == "/" or node.lang == default_lang -%}
     {%- assign canonical_url_path = node.url -%}
   {%- endif -%}
 
-  {%- if node.url and node.url != "/404/" and node.url != "/404" and node.lang == default_lang -%}
+  {%- if node.url and node.url != "/404/" and node.url != "/404" -%}
     <url>
       <loc>{{ node.url | absolute_url }}</loc>
       <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
@@ -31,11 +32,19 @@ sitemap: false
           href="{{ alternate_url | absolute_url }}"
         />
       {%- endfor -%}
+      {%- if node.lang == default_lang -%}
       <xhtml:link
         rel="alternate"
         hreflang="x-default"
         href="{{ node.url | absolute_url }}"
       />
+      {%- else -%}
+      <xhtml:link
+        rel="alternate"
+        hreflang="x-default"
+        href="{{ canonical_url_path | absolute_url }}"
+      />
+      {%- endif -%}
     </url>
   {%- endif -%}
 {%- endunless -%}
