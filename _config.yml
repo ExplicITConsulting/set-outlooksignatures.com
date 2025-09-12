@@ -10,7 +10,7 @@ languages: ["en", "de"]
 default_lang: "en"
 exclude_from_localization: ["javascript", "images", "css", "public", "sitemap"]
 lang_from_path: true
-parallel_localization: true
+parallel_localization: false
 direction: ltr # left to right
 google_analytics: # UA-xxxxxxx
 title: "Set-OutlookSignatures"
