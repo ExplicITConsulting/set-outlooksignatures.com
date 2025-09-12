@@ -4,27 +4,20 @@
     <meta name="theme-color" content="{{ site.theme_color | default: '#ffffff' }}">
 
     <meta http-equiv="Content-Language" content="{{ page.lang }}">
-    {%- assign url_path = page.url | remove_first: '/' | split: '/' -%}
-    {%- if url_path.first == page.lang -%}
-    {%- assign url_path = url_path | slice: 1, url_path.size | join: '/' -%}
-    {%- else -%}
-    {%- assign url_path = page.url | remove_first: '/' -%}
-    {%- endif -%}
-
-    {%- if page.lang == site.default_lang -%}
-    {%- assign canonical_url = site.baseurl | append: '/' | append: url_path -%}
-    {%- else -%}
-    {%- assign canonical_url = site.baseurl | append: '/' | append: page.lang | append: '/' | append: url_path -%}
-    {%- endif -%}
-    <link rel="canonical" href="{{ canonical_url }}" />
+    {%- assign lang_prefix = '/' | append: page.lang | append: '/' -%}
+    {%- assign clean_url = page.url | remove_first: lang_prefix -%}
+    {%- if clean_url == page.url -%}
+    {%- assign clean_url = page.url -%}
+    {%- endif %}
+    <link rel="canonical" href="{{ site.baseurl }}{{ page.url }}" />
     {%- for lang in site.languages -%}
     {%- if lang == site.default_lang %}
-    <link rel="alternate" hreflang="{{ lang }}" href="{{ site.baseurl }}/{{ url_path }}" />
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ site.baseurl }}{{ clean_url }}" />
     {%- else %}
-    <link rel="alternate" hreflang="{{ lang }}" href="{{ site.baseurl }}/{{ lang }}/{{ url_path }}" />
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ site.baseurl }}/{{ lang }}{{ clean_url }}" />
     {%- endif -%}
     {%- endfor %}
-    <link rel="alternate" hreflang="x-default" href="{{ site.baseurl }}/{{ url_path }}" />
+    <link rel="alternate" hreflang="x-default" href="{{ site.baseurl }}{{ clean_url }}" />
 
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
     <link
