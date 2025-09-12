@@ -12,7 +12,7 @@ module Jekyll
         f.puts '        xmlns:xhtml="http://www.w3.org/1999/xhtml"'
         f.puts '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"'
         f.puts '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">'
-        
+
         items = site.posts.docs + site.pages
         items.each do |item|
           next if item.data['sitemap'] == false
@@ -53,7 +53,9 @@ module Jekyll
     end
   end
 
-  Hooks.register :polyglot, :post_write do |site|
+
+  Jekyll::Hooks.register :polyglot, :post_write do |site|
     PolyglotSitemapGenerator.generate(site)
   end
+
 end
