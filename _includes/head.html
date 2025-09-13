@@ -5,9 +5,9 @@
 
     <meta http-equiv="Content-Language" content="{{ page.lang }}">
     {%- if page.lang == site.default_lang -%}
-        {%- assign canonicalUrl = page.url  %}
+        {%- assign canonicalUrl = page.url -%}
     {%- else -%}
-        {%- assign canonicalUrl = page.url | prepend: page.lang | prepend: '/' %}
+        {%- assign canonicalUrl = page.url | prepend: page.lang | prepend: '/' -%}
     {%- endif %}
     <link rel="canonical" {% static_href %}href="{{ canonicalUrl | absolute_url }}"{% endstatic_href %}>
     <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ page.url | absolute_url }}"{% endstatic_href %}>
