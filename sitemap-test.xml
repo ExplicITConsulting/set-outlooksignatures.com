@@ -7,7 +7,7 @@ sitemap: false
 {%- assign sorted_langs = site.languages -%}
 
 {%- if default_lang -%}
-  {%- assign sorted_langs = sorted_langs | prepend: default_lang | uniq -%}
+  {%- assign sorted_langs = sorted_langs | unshift: default_lang | uniq -%}
 {%- endif -%}
 
 {%- for lang_code in sorted_langs -%}
