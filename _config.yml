@@ -32,22 +32,6 @@ social:
   links:
     - https://www.linkedin.com/company/explicit-consulting-gmbh
 
-# Plugins (previously gems:)
-plugins:
-  - jekyll-paginate
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-include-cache
-  - jekyll-redirect-from
-  - jekyll-polyglot
-
-# mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-paginate
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-include-cache
-
 sass:
   style: compressed
   source_dir: _sass
