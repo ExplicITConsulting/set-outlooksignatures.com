@@ -1,11 +1,51 @@
-# This plugin combines pages and posts from all languages,
-# sorts them, and generates a multilingual sitemap file.
-# It uses the `:after_reset` hook to ensure all documents are available.
+require 'json' # Required for JSON.pretty_generate
 
-Jekyll::Hooks.register :site, :after_reset do |site|
-  # Get all posts and pages from the site.
-  # This hook runs before language-specific builds,
-  # so all documents are available.
+Jekyll::Hooks.register :polyglot, :post_write do |site|
+  # Start the output with the required front matter block
+  output_content = <<~FRONTMATTER
+    ---
+    layout: none
+    sitemap: false
+    ---
+  FRONTMATTER
+
+  # Append the debugging information directly after the front matter.
+  # Use string interpolation to safely embed variables.
+  output_content << "\n--- Debugging Jekyll Polyglot Hook ---\n"
+  
+  # Check the state of the pages collection
+  output_content << "site.pages is nil? #{site.pages.nil?}\n"
+  output_content << "Number of pages: #{site.pages.size}\n"
+
+  # Print the URLs of all pages to confirm their existence
+  output_content << "Page URLs:\n"
+  site.pages.each do |page|
+    output_content << "  - #{page.url}\n"
+  end
+  
+  # Check the state of the posts collection
+  output_content << "site.posts is nil? #{site.posts.nil?}\n"
+  output_content << "Number of posts: #{site.posts.docs.size}\n"
+
+  # Print the URLs of all posts
+  output_content << "Post URLs:\n"
+  site.posts.docs.each do |post|
+    output_content << "  - #{post.url}\n"
+  end
+
+  # Log the full dump of the configuration
+  output_content << "Site configuration:\n"
+  output_content << JSON.pretty_generate(site.config)
+  
+  output_content << "\n----------------------------------------\n"
+
+  # Now, append the sitemap content after the debugging info
+  output_content << <<~XML
+    <?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  XML
+  
+  # Get all posts and pages
   all_nodes = site.posts.docs.dup.concat(site.pages.dup)
 
   # Group nodes by their `page_id` front matter variable
@@ -16,21 +56,15 @@ Jekyll::Hooks.register :site, :after_reset do |site|
   languages = site.config['languages'] || [default_lang]
 
   # Create a custom sort order map for languages
-  lang_order = Hash.new(99) # Default high value for languages not in the list
-  lang_order[default_lang] = 0 # Default language comes first
+  lang_order = Hash.new(99)
+  lang_order[default_lang] = 0
   languages.each_with_index do |lang, index|
     lang_order[lang] = index + 1
   end
 
-  # Prepare the output content with the XML header
-  output_content = <<~XML
-    <?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  XML
-
   # Iterate through each group, sort it, and add to the output string
   grouped_nodes.each do |page_id, nodes|
-    next unless page_id # Skip nodes without a page_id
+    next unless page_id
 
     # Sort the nodes based on the custom language order
     sorted_nodes = nodes.sort_by { |node| lang_order[node.data['lang']] }
@@ -50,9 +84,12 @@ Jekyll::Hooks.register :site, :after_reset do |site|
   # Close the XML file
   output_content << "</urlset>"
 
-  # Create a new Jekyll page for the sitemap and add it to the site's pages.
-  # This tells Jekyll to write the file during its build process.
-  page = Jekyll::PageWithoutAFile.new(site, site.source, '/', 'sitemap-test.xml')
-  page.content = output_content
-  site.pages << page
+  # Create the file in the _site (destination) directory
+  begin
+    destination_path = File.join(site.dest, 'sitemap-test.xml')
+    File.write(destination_path, output_content)
+    Jekyll.logger.info "Successfully generated sitemap-test.xml"
+  rescue => e
+    Jekyll.logger.error "Error creating sitemap-test.xml: #{e.message}"
+  end
 end
