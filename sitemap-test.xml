@@ -6,36 +6,51 @@ sitemap: false
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-{%- assign default_lang = site.default_lang | default: "en" -%}
+{%- assign default_lang = site.default_lang -%}
 {%- assign pages_and_posts = site.pages | concat: site.posts -%}
 
 {%- for node in pages_and_posts -%}
   {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' %}
     <url>
       <loc>{{ node.url | absolute_url }}</loc>
+      {% comment %}
+        Sort permalinks:
+        1. Get all available languages from permalink_lang.
+        2. Filter site.languages to get the correct order.
+        3. Prepend the default language if it exists.
+        4. Remove any duplicates.
+      {% endcomment %}
+      {%- assign available_langs = node.permalink_lang | keys -%}
+      {%- assign sorted_langs = site.languages | where_exp:"lang", "available_langs contains lang" -%}
+      {%- if default_lang and available_langs contains default_lang -%}
+        {%- assign temp_array = sorted_langs | prepend: default_lang -%}
+        {%- assign sorted_langs = temp_array | uniq -%}
+      {%- endif -%}
 
-{%- for nodePermalinkLang in node.permalink_lang %}
-nodePermalinkLang
-{%- endfor -%}
+      {%- assign x_default_url = "" -%}
+      {%- for lang_code in sorted_langs -%}
+        {%- if node.permalink_lang[lang_code] -%}
+          {%- if forloop.first -%}
+            {%- assign x_default_url = node.permalink_lang[lang_code] -%}
+          {%- endif -%}
+          <xhtml:link
+            rel="alternate"
+            hreflang="{{ lang_code }}"
+            href="{{ node.permalink_lang[lang_code] | absolute_url }}"
+          />
+        {%- endif -%}
+      {%- endfor -%}
 
       <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
 
-      {%- for lang in site.languages -%}
-        {%- assign alternate_url = node.url -%}
-        {%- if lang != default_lang -%}
-          {%- assign alternate_url = "/" | append: lang | append: node.url -%}
-        {%- endif %}
+      {%- if x_default_url != "" -%}
         <xhtml:link
           rel="alternate"
-          hreflang="{{ lang }}"
-          href="{{ alternate_url | absolute_url }}"
+          hreflang="x-default"
+          href="{{ x_default_url | absolute_url }}"
         />
-      {%- endfor %}
-      <xhtml:link
-        rel="alternate"
-        hreflang="x-default"
-        href="{{ node.url | absolute_url }}"
-      />
+      {%- endif -%}
     </url>
   {%- endunless -%}
 {%- endfor -%}
+</urlset>
