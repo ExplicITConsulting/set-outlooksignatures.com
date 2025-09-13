@@ -51,7 +51,7 @@ permalink: /search
                             console.warn('Item missing URL, skipping for FlexSearch index:', item);
                         }
                     });
-                    
+
                     // console.log('FlexSearch index populated successfully.');
                 })
                 .catch(error => {
@@ -80,15 +80,6 @@ permalink: /search
                 return;
             }
 
-            // Report the search to Matomo, including the search result count
-            if (typeof _paq !== 'undefined') {
-                _paq.push(['trackSiteSearch',
-                    query, // The search keyword
-                    false, // Search category (optional, set to false)
-                    false // The number of results shown to the user (optional, set to false)
-                ]);
-            }
-
             // Perform the search with advanced options
             const rawResults = index.search(query, {
                 limit: 99, // Limit the number of results
@@ -97,7 +88,7 @@ permalink: /search
             });
 
             let flatResults = [];
-            
+
             rawResults.forEach(fieldResult => {
                 if (fieldResult && fieldResult.field && Array.isArray(fieldResult.result)) {
                     // Flatten results and add 'doc' property for consistency
@@ -112,6 +103,15 @@ permalink: /search
 
         // Function to display search results
         function displayResults(results, query) {
+            // Report the search to Matomo, including the search result count
+            if (typeof _paq !== 'undefined') {
+                _paq.push(['trackSiteSearch',
+                    query, // The search keyword
+                    false, // Search category (optional, set to false)
+                    results.length // The number of results shown to the user (optional, set to false)
+                ]);
+            }
+
             if (results.length === 0) {
                 searchResultsContainer.innerHTML = '<p>No results found.</p>';
                 return;
@@ -126,7 +126,7 @@ permalink: /search
                 }
 
                 let displayContentDictionary = {}
-                
+
                 allSearchFields.forEach(field => {
                     if (item[field] && typeof item[field] === 'string' && item[field].length > 0) {
                         let displayedFieldContent;
@@ -143,7 +143,7 @@ permalink: /search
                                 displayedFieldContent = displayedFieldContent.substring(0, 500) + '…';
                             }
                         }
-                        
+
                         displayContentDictionary[field] = {
                             rawContent: displayedFieldContent
                         };
@@ -188,7 +188,7 @@ permalink: /search
 
             const lowerText = fullText.toLowerCase();
             const lowerQuery = query.toLowerCase();
-            
+
             let matchIndexes = [];
             let currentPos = lowerText.indexOf(lowerQuery);
             while (currentPos !== -1) {
@@ -235,7 +235,7 @@ permalink: /search
                     actualEnd = spaceAfter;
                 }
             }
-            
+
             // Re-adjust actualEnd if actualStart pushes it too far left, ensuring minimum length around highlight
             if (actualEnd - actualStart < lowerQuery.length + (contextChars / 2)) {
                 actualEnd = Math.min(fullText.length, actualStart + totalSnippetLength);
