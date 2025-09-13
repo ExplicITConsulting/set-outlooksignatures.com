@@ -25,7 +25,14 @@ sitemap: false
 
     {% comment %} Get the URL to be used for canonical and x-default based on the prioritized language list {% endcomment %}
     {%- assign x_default_url = "" -%}
-    {%- assign full_permalink_lang = node.permalink_lang | jsonify | parse_json -%}
+    {%- assign full_permalink_lang = '' | split: '' | pop -%}
+    {%- for item in node.permalink_lang -%}
+      {%- assign key = item[0] -%}
+      {%- assign value = item[1] -%}
+      {%- assign temp_hash = '' | split: '' | pop -%}
+      {%- assign temp_hash = temp_hash | assign: key, value -%}
+      {%- assign full_permalink_lang = full_permalink_lang | merge: temp_hash -%}
+    {%- endfor -%}
     {%- for lang_code in sorted_langs -%}
       {%- if full_permalink_lang[lang_code] -%}
         {%- if lang_code == site.default_lang -%}
