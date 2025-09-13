@@ -6,34 +6,43 @@ sitemap: false
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+{%- assign default_lang = site.default_lang | default: "en" -%}
 {%- assign pages_and_posts = site.pages | concat: site.posts -%}
 {%- assign url_groups = pages_and_posts | group_by: "url" -%}
 
 {%- for group in url_groups -%}
-  {%- assign canonical_node = group.items | where: "lang", site.default_lang | first | default: group.items.first -%}
-  {%- unless canonical_node.sitemap == false or canonical_node.url contains '/robots.txt' or canonical_node.url contains '/redirects.json' or canonical_node.url contains '/assets/' or canonical_node.url contains '/404' %}
+  {%- for node in group.items -%}
+  {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' %}
+    {%- assign node_lang = node.lang | default: default_lang -%}
+    {%- if node_lang == default_lang -%}
+      {%- assign currentUrl = node.url -%}
+    {%- else -%}
+      {%- assign currentUrl = "/" | append: node_lang | append: node.url -%}
+    {%- endif -%}
     <url>
-      <loc>{{ canonical_node.url | absolute_url }}</loc>
-      <lastmod>{{ canonical_node.last_modified_at | default: canonical_node.date | default: site.time | date_to_xmlschema }}</lastmod>
+      <loc>{{ currentUrl | absolute_url }}</loc>
+      <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
 
-      {%- for node in group.items -%}
-        {%- assign node_lang = node.lang | default: site.default_lang -%}
-        {%- assign alternate_url = node.url -%}
-        {%- if node_lang != site.default_lang -%}
-          {%- assign alternate_url = "/" | append: node_lang | append: node.url -%}
-        {%- endif %}
-      <xhtml:link
-        rel="alternate"
-        hreflang="{{ node_lang }}"
-        href="{{ alternate_url | absolute_url }}"
-      />
+      {%- for alternate_node in group.items -%}
+        {%- assign alternate_lang = alternate_node.lang | default: default_lang -%}
+        {%- if alternate_lang == default_lang -%}
+          {%- assign alternate_url = alternate_node.url -%}
+        {%- else -%}
+          {%- assign alternate_url = "/" | append: alternate_lang | append: alternate_node.url -%}
+        {%- endif -%}
+        <xhtml:link
+          rel="alternate"
+          hreflang="{{ alternate_lang }}"
+          href="{{ alternate_url | absolute_url }}"
+        />
       {%- endfor %}
+
       <xhtml:link
         rel="alternate"
         hreflang="x-default"
-        href="{{ canonical_node.url | absolute_url }}"
+        href="{{ canonicalUrl | absolute_url }}"
       />
     </url>
   {%- endunless -%}
+  {%- endfor -%}
 {%- endfor -%}
-</urlset>
