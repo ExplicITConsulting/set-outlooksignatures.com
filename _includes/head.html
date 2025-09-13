@@ -12,11 +12,7 @@
         {%- if lang == site.default_lang -%}
             {%- assign hreflang_url = canonical_url -%}
         {%- else -%}
-            {%- if lang == site.active_lang -%}
-                {%- assign hreflang_url = canonical_url -%}
-            {%- else -%}
-                {%- assign hreflang_url = page.url | remove: '/' | remove_first: site.active_lang | prepend: lang | prepend: '/' | replace: 'index.html','' -%}
-            {%- endif %}                
+            {%- assign hreflang_url = page.url | remove: '/' | remove_first: site.active_lang | prepend: lang | prepend: '/' | replace:'index.html','' | absolute_url %}
         {%- endif %}
     <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ hreflang_url }}"{% endstatic_href %}>
     {%- endfor %}
