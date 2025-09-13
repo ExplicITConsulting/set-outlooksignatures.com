@@ -34,29 +34,30 @@ permalink: /search
             // 'suggest' option removed
         });
 
-        // Fetch the search.json data and populate the index
-        fetch('/search.json')
-            .then(response => {
+        // Fetch the search.json files and populate the index
+        ['/search.json', '/de/search.json'].forEach(url => {
+            fetch(url)
+                .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 return response.json();
-            })
-            .then(data => {
-                data.forEach((item, i) => {
+                })
+                .then(data => {
+                data.forEach(item => {
                     if (item.url) {
-                        index.add(item);
+                    index.add(item);
                     } else {
-                        console.warn('Item missing URL, skipping for FlexSearch index:', item);
+                    console.warn('Item missing URL, skipping for FlexSearch index:', item);
                     }
                 });
-                
-                // console.log('FlexSearch index populated successfully.');
-            })
-            .catch(error => {
-                console.error('Error fetching or parsing search.json:', error);
+                })
+                .catch(error => {
+                console.error(`Error fetching or parsing ${url}:`, error);
                 document.getElementById('search-results').innerHTML = '<p>Error loading search data. Please try again later.</p>';
-            });
+                });
+            }
+        );
 
         const searchInput = document.getElementById('search-input');
         const searchResultsContainer = document.getElementById('search-results');
