@@ -8,25 +8,25 @@ sitemap: false
 
 {%- assign default_lang = site.default_lang | default: "en" -%}
 {%- assign pages_and_posts = site.pages | concat: site.posts -%}
-{%- assign url_groups = pages_and_posts | group_by: "canonical_url" -%}
+
+{%- for node in pages_and_posts -%}
+  {%- assign node_lang = node.lang | default: default_lang -%}
+  {%- if node_lang != default_lang -%}
+    {%- assign canonical_path = node.url | remove_first: "/" | remove_first: node_lang -%}
+  {%- else -%}
+    {%- assign canonical_path = node.url -%}
+  {%- endif -%}
+  {%- assign node.canonical_path = canonical_path -%}
+{%- endfor -%}
+
+{%- assign url_groups = pages_and_posts | group_by: "canonical_path" -%}
 
 {%- for group in url_groups -%}
-  {%- assign canonical_url = group.name -%}
-  {%- assign canonical_page = group.items | where:"lang",default_lang | first -%}
-  {%- assign default_page_found = false -%}
-
-  {%- for node in group.items -%}
-    {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' %}
-      {%- if node.lang == default_lang or node.lang == nil %}
-        {%- assign default_page_found = true -%}
-      {%- endif -%}
-    {%- endunless -%}
-  {%- endfor -%}
-
-  {%- if default_page_found -%}
+  {%- assign canonical_node = group.items | where:"lang",default_lang | first -%}
+  {%- if canonical_node -%}
   <url>
-    <loc>{{ canonical_page.url | absolute_url }}</loc>
-    <lastmod>{{ canonical_page.last_modified_at | default: canonical_page.date | default: site.time | date_to_xmlschema }}</lastmod>
+    <loc>{{ canonical_node.url | absolute_url }}</loc>
+    <lastmod>{{ canonical_node.last_modified_at | default: canonical_node.date | default: site.time | date_to_xmlschema }}</lastmod>
 
     {%- for alternate_node in group.items -%}
       {%- assign alternate_lang = alternate_node.lang | default: default_lang -%}
@@ -45,8 +45,10 @@ sitemap: false
     <xhtml:link
       rel="alternate"
       hreflang="x-default"
-      href="{{ canonical_page.url | absolute_url }}"
+      href="{{ canonical_node.url | absolute_url }}"
     />
   </url>
   {%- endif -%}
 {%- endfor -%}
+
+</urlset>
