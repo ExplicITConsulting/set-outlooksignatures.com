@@ -2,9 +2,40 @@
 layout: none
 sitemap: false
 ---
-{% for page in site.pages %}
-  {% for lang in site.languages %}
-    {% capture lang_href %}{{site.baseurl}}/{% if lang != site.default_lang %}{{ lang }}/{% endif %}{% if page.permalink_lang[lang] != '/' %}{{page.permalink_lang[lang]}}{% endif %}{% endcapture %}
-    <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ lang_href }}"{% endstatic_href %} />
-  {% endfor %}
-{% endfor %}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+{%- assign default_lang = site.default_lang | default: "en" -%}
+{%- assign pages_and_posts = site.pages | concat: site.posts -%}
+
+{%- for node in pages_and_posts -%}
+  {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' %}
+    <url>
+      <loc>{{ node.url | absolute_url }}</loc>
+
+{%- for nodePermalinkLang in node.permalink_lang %}
+nodePermalinkLang
+{%- endfor -%}
+
+      <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+
+      {%- for lang in site.languages -%}
+        {%- assign alternate_url = node.url -%}
+        {%- if lang != default_lang -%}
+          {%- assign alternate_url = "/" | append: lang | append: node.url -%}
+        {%- endif %}
+        <xhtml:link
+          rel="alternate"
+          hreflang="{{ lang }}"
+          href="{{ alternate_url | absolute_url }}"
+        />
+      {%- endfor %}
+      <xhtml:link
+        rel="alternate"
+        hreflang="x-default"
+        href="{{ node.url | absolute_url }}"
+      />
+    </url>
+  {%- endunless -%}
+{%- endfor -%}
