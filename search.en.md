@@ -38,23 +38,25 @@ permalink: /search
         ['/search.json', '/de/search.json'].forEach(url => {
             fetch(url)
                 .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
                 })
                 .then(data => {
-                data.forEach(item => {
-                    if (item.url) {
-                    index.add(item);
-                    } else {
-                    console.warn('Item missing URL, skipping for FlexSearch index:', item);
-                    }
-                });
+                    data.forEach((item, i) => {
+                        if (item.url) {
+                            index.add(item);
+                        } else {
+                            console.warn('Item missing URL, skipping for FlexSearch index:', item);
+                        }
+                    });
+                    
+                    // console.log('FlexSearch index populated successfully.');
                 })
                 .catch(error => {
-                console.error(`Error fetching or parsing ${url}:`, error);
-                document.getElementById('search-results').innerHTML = '<p>Error loading search data. Please try again later.</p>';
+                    console.error('Error fetching or parsing search.json:', error);
+                    document.getElementById('search-results').innerHTML = '<p>Error loading search data. Please try again later.</p>';
                 });
             }
         );

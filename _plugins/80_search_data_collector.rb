@@ -11,7 +11,7 @@ module Jekyll
 
     Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       next if doc.output.nil? || doc.output.empty?
-      next if doc.url == '/search.json' || doc.url == '/404.html' || doc.data['sitemap'] == false
+      next if doc.url == '/search.json' || doc.url == '/404.html' || doc.data['sitemap'] == false || doc.data['lang'] != site.active_lang
       next if doc.data['redirect_to']
       next if doc.output.strip.start_with?("Redirecting") || doc.output.include?('<meta http-equiv="refresh"')
       next unless (doc.output.strip.start_with?('<') || doc.output.strip.start_with?('<!DOCTYPE')) &&
@@ -20,7 +20,11 @@ module Jekyll
       Jekyll.logger.info "SearchDataCollector:", "Processing document: #{doc.url || doc.path}"
 
       doc_fragment = Nokogiri::HTML.fragment(doc.output)
-      base_url = doc.url
+        if site.active_lang == site.default_lang
+          base_url = doc.url
+        else
+          base_url = "/#{site.active_lang}#{doc.url}"
+        end
 
       all_headings = doc_fragment.css('h1, h2, h3, h4, h5, h6')
       Jekyll.logger.info "SearchDataCollector:", "  Found #{all_headings.size} headings in #{doc.url || doc.path}"
