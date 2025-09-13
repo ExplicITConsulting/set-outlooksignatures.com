@@ -48,11 +48,7 @@
 
                 <div class="navbar-item has-text-white">
                     <span>
-                        {% comment %}
-                        This script dynamically gets the anchor from the browser URL
-                        and updates the links to preserve it. It does not use Liquid.
-                        {% endcomment %}
-
+                        🌐 
                         {% for tongue in site.languages %}
                         <a {% if tongue == site.active_lang %}style="font-weight: bold;" {% endif %}
                             class="has-text-white"
