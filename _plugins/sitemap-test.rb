@@ -1,12 +1,11 @@
-# This plugin combines pages and posts, sorts them by language,
-# and writes the result to a new sitemap file in the site's output directory.
-# It hooks into the :post_write event of the jekyll-polyglot plugin.
+# This plugin combines pages and posts from all languages,
+# sorts them, and generates a multilingual sitemap file.
+# It uses the `:after_reset` hook to ensure all documents are available.
 
-# The polyglot hook does not reliably pass the site object, so we access it via Jekyll.last_site.
-Jekyll::Hooks.register :polyglot, :post_write do
-  site = Jekyll.last_site
-  
-  # Get all posts and pages
+Jekyll::Hooks.register :site, :after_reset do |site|
+  # Get all posts and pages from the site.
+  # This hook runs before language-specific builds,
+  # so all documents are available.
   all_nodes = site.posts.docs.dup.concat(site.pages.dup)
 
   # Group nodes by their `page_id` front matter variable
@@ -51,12 +50,9 @@ Jekyll::Hooks.register :polyglot, :post_write do
   # Close the XML file
   output_content << "</urlset>"
 
-  # Create the file in the _site (destination) directory
-  begin
-    destination_path = File.join(site.dest, 'sitemap-test.xml')
-    File.write(destination_path, output_content)
-    Jekyll.logger.info "Successfully generated sitemap-test.xml"
-  rescue => e
-    Jekyll.logger.error "Error creating sitemap-test.xml: #{e.message}"
-  end
+  # Create a new Jekyll page for the sitemap and add it to the site's pages.
+  # This tells Jekyll to write the file during its build process.
+  page = Jekyll::PageWithoutAFile.new(site, site.source, '/', 'sitemap-test.xml')
+  page.content = output_content
+  site.pages << page
 end
