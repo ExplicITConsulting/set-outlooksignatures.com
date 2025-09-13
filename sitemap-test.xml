@@ -45,23 +45,28 @@ sitemap: false
         {%- assign languagePrefix = "/" | append: languageCode -%}
       {%- endif -%}
 
-      {%- if node.permalink_lang[languageCode] -%}
-        <url>
-          <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url }}</loc>
-          <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-  
+      {%- if node.permalink_lang[languageCode] %}
+  <url>
+    <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url }}</loc>
+    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+
+        {%- if canonicalUrl != "" %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
+        {%- endif %}
+
         {%- for languageCode in sorted_langs -%}
           {%- if node.permalink_lang[languageCode] %}
-            <xhtml:link rel="alternate" hreflang="{{ languageCode }}" href="{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url }}" />
+            {%- if languageCode == default_lang -%}
+              {%- assign languagePrefix = "" -%}
+            {%- else -%}
+              {%- assign languagePrefix = "/" | append: languageCode -%}
+            {%- endif %}
+    <xhtml:link rel="alternate" hreflang="{{ languageCode }}" href="{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url }}" />
           {%- endif -%}
-        {%- endfor -%}
-      
-        {%- if canonicalUrl != "" %}
-          <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
-        {%- endif %}
-        </url>
+        {%- endfor %}
+  </url>
       {%- endif -%}
     {%- endfor -%}
   {%- endunless -%}
-{%- endfor -%}
+{%- endfor %}
 </urlset>
