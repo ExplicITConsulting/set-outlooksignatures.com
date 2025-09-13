@@ -3,11 +3,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="{{ site.theme_color | default: '#ffffff' }}">
 
-    <meta http-equiv="Content-Language" content="{{ page.lang }}">
-    {%- if page.lang == site.default_lang -%}
+    <meta http-equiv="Content-Language" content="{{ site.active_lang }}">
+    {%- if site.active_lang == site.default_lang -%}
         {%- assign canonicalUrl = page.url -%}
     {%- else -%}
-        {%- assign canonicalUrl = '/' | append: page.lang | append: page.url -%}
+        {%- assign canonicalUrl = '/' | append: site.active_lang | append: page.url -%}
     {%- endif %}
     <link rel="canonical" {% static_href %}href="{{ canonicalUrl | absolute_url }}"{% endstatic_href %}>
     <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ page.url | absolute_url }}"{% endstatic_href %}>
