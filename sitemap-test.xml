@@ -1,0 +1,58 @@
+---
+layout: none
+sitemap: false
+---
+{% comment %}
+  This Liquid snippet combines site.pages and site.posts,
+  groups them by a shared `page_id`, sorts each group,
+  and then outputs the URL and language for each node.
+{% endcomment %}
+
+{% comment %} Step 1: Combine site.pages and site.posts into a single collection {% endcomment %}
+{% assign all_nodes = site.pages | concat: site.posts %}
+
+{% comment %}
+  Step 2: Group all nodes by their `page_id`.
+  This assumes that each page and post has a `page_id`
+  in its front matter for grouping purposes.
+{% endcomment %}
+{% assign grouped_nodes = all_nodes | group_by: 'page_id' %}
+
+{% comment %} Step 3 & 4: Loop through each group and then each node. {% endcomment %}
+{% for group in grouped_nodes %}
+  {% comment %} Sort the nodes within the current group {% endcomment %}
+  {% assign current_group_nodes = group.items %}
+  {% assign sorted_group_nodes = '' | split: '' %}
+
+  {% comment %} Sub-step 3a: Get the node with the default language first {% endcomment %}
+  {% assign default_node = current_group_nodes | where: 'lang', site.default_lang | first %}
+  {% if default_node %}
+    {% assign sorted_group_nodes = sorted_group_nodes | push: default_node %}
+  {% endif %}
+
+  {% comment %}
+    Sub-step 3b: Loop through site.languages to get the remaining nodes
+    in the specified order. We exclude the default language to avoid duplication.
+  {% endcomment %}
+  {% for lang in site.languages %}
+    {% unless lang == site.default_lang %}
+      {% assign lang_node = current_group_nodes | where: 'lang', lang | first %}
+      {% if lang_node %}
+        {% assign sorted_group_nodes = sorted_group_nodes | push: lang_node %}
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+
+  {% comment %} Step 4: Loop through the now sorted nodes and display URL and language {% endcomment %}
+  <div class="node-group">
+    <h3>Group: {{ group.name }}</h3>
+    <ul>
+      {% for node in sorted_group_nodes %}
+        <li>
+          URL: <a href="{{ node.url | relative_url }}">{{ node.url }}</a>,
+          Lang: {{ node.lang }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
