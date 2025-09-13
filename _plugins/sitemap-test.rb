@@ -1,7 +1,6 @@
 require 'json' # Required for JSON.pretty_generate
 
-Jekyll::Hooks.register :polyglot, :post_write do
-  site = Jekyll.last_site
+Jekyll::Hooks.register :polyglot, :post_write do |site|
 
   # Start the output with the required front matter block
   output_content = <<~FRONTMATTER
