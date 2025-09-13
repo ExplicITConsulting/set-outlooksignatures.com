@@ -35,17 +35,22 @@ sitemap: false
     {%- endfor -%}
     {%- for lang_code in sorted_langs -%}
       {%- if full_permalink_lang[lang_code] -%}
+        {%- assign temp_url = full_permalink_lang[lang_code] -%}
         {%- if lang_code == site.default_lang -%}
-          {%- full_permalink_lang[lang_code] = full_permalink_lang[lang_code] | absolute_url -%}
+          {%- assign temp_url = temp_url | absolute_url -%}
         {%- else -%}
-          {%- full_permalink_lang[lang_code] = "/" | append: lang_code | append: full_permalink_lang[lang_code] | absolute_url -%}
+          {%- assign temp_url = "/" | append: lang_code | append: temp_url | absolute_url -%}
         {%- endif -%}
+        
+        {%- assign new_hash = '' | split: '' | pop -%}
+        {%- assign new_hash = new_hash | assign: lang_code, temp_url -%}
+        {%- assign full_permalink_lang = full_permalink_lang | merge: new_hash -%}
+        
         {%- if x_default_url == "" -%}
-          {%- assign x_default_url = full_permalink_lang[lang_code] -%}
+          {%- assign x_default_url = temp_url -%}
         {%- endif %}
       {%- endif -%}
     {%- endfor -%}
-
 
     {% comment %} Create a url entry for each language specific permalink of the node {% endcomment %}
     {%- for lang_code in sorted_langs -%}
