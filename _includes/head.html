@@ -6,7 +6,7 @@
 
     <meta http-equiv="Content-Language" content="{{ page.lang }}">
     {%- if site.active_lang == site.default_lang -%}
-        {%- assign canonical_url = page.url %}
+        {%- assign canonical_url = page.url | prepend: '/' %}
     {%- else -%}
         {%- assign canonical_url = page.url | remove_first: '/' | remove_first: site.active_lang %}
     {%- endif %}
