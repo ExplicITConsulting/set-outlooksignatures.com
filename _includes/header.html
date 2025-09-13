@@ -1,11 +1,11 @@
-<nav class="navbar is-primary {% if site.fixed_navbar %} is-fixed-{{ site.fixed_navbar }} {% endif %}"
+9<nav class="navbar is-primary {% if site.fixed_navbar %} is-fixed-{{ site.fixed_navbar }} {% endif %}"
     x-data="{ openNav: false }">
     <div class="container">
         <div class="navbar-brand">
             <a href="{{ site.baseurl }}/" class="navbar-item has-text-white">
                 <img src="/assets/images/set-outlooksignatures logo 500px.png" alt="Set-OutlookSignatures">
             </a>
-            <a class="navbar-item is-right has-text-white is-hidden-desktop is-hidden-tablet" x-on:click="openNav = !openNav"
+            <a class="navbar-item ml-auto is-right has-text-white is-hidden-desktop is-hidden-tablet" x-on:click="openNav = !openNav"
                 aria-label="Search, language, menu">
                 <span>🔍︎🌐</span>
             </a>
