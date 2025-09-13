@@ -20,10 +20,10 @@ module Jekyll
       Jekyll.logger.info "SearchDataCollector:", "Processing document: #{doc.url || doc.path}"
 
       doc_fragment = Nokogiri::HTML.fragment(doc.output)
-        if site.active_lang == site.default_lang
+        if doc.site.active_lang == doc.site.default_lang
           base_url = doc.url
         else
-          base_url = "/#{site.active_lang}#{doc.url}"
+          base_url = "/#{doc.site.active_lang}#{doc.url}"
         end
 
       all_headings = doc_fragment.css('h1, h2, h3, h4, h5, h6')
