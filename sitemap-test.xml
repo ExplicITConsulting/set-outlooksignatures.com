@@ -4,7 +4,7 @@ sitemap: false
 ---
 
 {% comment %} Create a prioritized language list {% endcomment %}
-{%- assign default_lang = site.default_lang -%}
+{%- assign default_lang = site.default_lang | default: site.languages.first -%}
 {%- assign sorted_langs = site.languages -%}
 {%- if default_lang -%}
   {%- assign sorted_langs = sorted_langs | unshift: default_lang | uniq -%}
@@ -16,56 +16,48 @@ sitemap: false
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-{%- assign default_lang = site.default_lang -%}
-{%- assign pages_and_posts = site.pages | concat: site.posts -%}
+{%- assign pagesAndPosts = site.pages | concat: site.posts -%}
 
-{%- for node in pages_and_posts -%}
-  {% comment %} Filterstuff that should not be in the sitemap {% endcomment %}
+{%- for node in pagesAndPosts -%}
+  {% comment %} Filter stuff that should not be in the sitemap {% endcomment %}
   {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' %}
 
     {% comment %} Get the URL to be used for canonical and x-default based on the prioritized language list {% endcomment %}
-    {%- assign x_default_url = "" -%}
-    {%- assign full_permalink_lang = '' | split: '' | pop -%}
-    {%- for item in node.permalink_lang -%}
-      {%- assign key = item[0] -%}
-      {%- assign value = item[1] -%}
-      {%- assign temp_hash = '' | split: '' | pop -%}
-      {%- assign temp_hash = temp_hash | assign: key, value -%}
-      {%- assign full_permalink_lang = full_permalink_lang | merge: temp_hash -%}
-    {%- endfor -%}
-    {%- for lang_code in sorted_langs -%}
-      {%- if full_permalink_lang[lang_code] -%}
-        {%- assign temp_url = full_permalink_lang[lang_code] -%}
-        {%- if lang_code == site.default_lang -%}
-          {%- assign temp_url = temp_url | absolute_url -%}
-        {%- else -%}
-          {%- assign temp_url = "/" | append: lang_code | append: temp_url | absolute_url -%}
-        {%- endif -%}
-        
-        {%- assign new_hash = '' | split: '' | pop -%}
-        {%- assign new_hash = new_hash | assign: lang_code, temp_url -%}
-        {%- assign full_permalink_lang = full_permalink_lang | merge: new_hash -%}
-        
-        {%- if x_default_url == "" -%}
-          {%- assign x_default_url = temp_url -%}
+    {%- assign canonicalUrl = "" -%}
+    {%- for languageCode in sorted_langs -%}
+      {%- if node.permalink_lang[languageCode] -%}
+        {%- if canonicalUrl == "" -%}
+          {%- if languageCode == default_lang -%}
+            {%- assign canonicalUrl = node.permalink_lang[languageCode] | absolute_url -%}
+          {%- else -%}
+            {%- assign languagePrefix = "/" | append: languageCode | append: node.permalink_lang[languageCode] | absolute_url -%}
+          {%- endif -%}
         {%- endif %}
       {%- endif -%}
     {%- endfor -%}
 
+
     {% comment %} Create a url entry for each language specific permalink of the node {% endcomment %}
-    {%- for lang_code in sorted_langs -%}
-      {%- if full_permalink_lang[lang_code] -%}
+    {%- for languageCode in sorted_langs -%}
+      {%- if languageCode == default_lang -%}
+        {%- assign languagePrefix = "" -%}
+      {%- else -%}
+        {%- assign languagePrefix = "/" | append: languageCode -%}
+      {%- endif -%}
+
+      {%- if node.permalink_lang[languageCode] -%}
         <url>
-          <loc>{{ full_permalink_lang[lang_code] | absolute_url }}</loc>
+          <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url }}</loc>
           <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-        {%- for lang_code in sorted_langs -%}
-          {%- if full_permalink_lang[lang_code] %}
-            <xhtml:link rel="alternate" hreflang="{{ lang_code }}" href="{{ full_permalink_lang[lang_code] | absolute_url }}" />
+  
+        {%- for languageCode in sorted_langs -%}
+          {%- if node.permalink_lang[languageCode] %}
+            <xhtml:link rel="alternate" hreflang="{{ languageCode }}" href="{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url }}" />
           {%- endif -%}
         {%- endfor -%}
       
-        {%- if x_default_url != "" %}
-          <xhtml:link rel="alternate" hreflang="x-default" href="{{ x_default_url }}" />
+        {%- if canonicalUrl != "" %}
+          <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
         {%- endif %}
         </url>
       {%- endif -%}
