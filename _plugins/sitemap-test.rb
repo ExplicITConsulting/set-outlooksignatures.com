@@ -2,8 +2,10 @@
 # and writes the result to a new sitemap file in the site's output directory.
 # It hooks into the :post_write event of the jekyll-polyglot plugin.
 
-# The polyglot hook passes the site object, so we can access it directly.
-Jekyll::Hooks.register :polyglot, :post_write do |site|
+# The polyglot hook does not reliably pass the site object, so we access it via Jekyll.last_site.
+Jekyll::Hooks.register :polyglot, :post_write do
+  site = Jekyll.last_site
+  
   # Get all posts and pages
   all_nodes = site.posts.docs.dup.concat(site.pages.dup)
 
