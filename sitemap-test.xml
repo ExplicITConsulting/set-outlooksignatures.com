@@ -2,6 +2,23 @@
 layout: none
 sitemap: false
 ---
+
+{%- assign default_lang = site.default_lang -%}
+
+{%- if default_lang -%}
+  {%- assign default_lang_array = default_lang | split: "" -%}
+  {%- assign other_langs = site.languages | minus: default_lang_array -%}
+  {%- assign sorted_langs = default_lang_array | concat: other_langs -%}
+{%- else -%}
+  {%- assign sorted_langs = site.languages -%}
+{%- endif -%}
+
+{%- for lang_code in sorted_langs -%}
+  {{ lang_code }}
+{%- endfor -%}
+
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -14,13 +31,6 @@ sitemap: false
   <url>
     <loc>{{ node.url | absolute_url }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-      {% comment %}
-        Sort permalinks:
-        1. Get all available languages from permalink_lang.
-        2. Filter site.languages to get the correct order.
-        3. Prepend the default language if it exists.
-        4. Remove any duplicates.
-      {% endcomment %}
       {%- assign available_langs = node.permalink_lang | keys -%}
       {%- assign sorted_langs = site.languages | where_exp:"lang", "available_langs contains lang" -%}
       {%- if default_lang and available_langs contains default_lang -%}
