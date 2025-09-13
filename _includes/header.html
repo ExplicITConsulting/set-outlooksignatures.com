@@ -51,7 +51,7 @@
                         🌐 
                         {%- for tongue in site.languages -%}
                         <a
-                            {%- if tongue == site.active_lang -%}style="font-weight: bold;"{%- endif %}
+                            {%- if tongue == site.active_lang %}style="font-weight: bold;"{%- endif %}
                             class="has-text-white"
                             {% static_href %}href="{% if tongue == site.default_lang %}{{ site.baseurl }}{{ page.url }}{% else %}{{ site.baseurl }}/{{ tongue }}{{ page.url }}{% endif %}"{% endstatic_href %}
                             data-base-url="{% if tongue == site.default_lang %}{{ site.baseurl }}{{ page.url }}{% else %}{{ site.baseurl }}/{{ tongue }}{{ page.url }}{% endif %}">
