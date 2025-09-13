@@ -36,7 +36,20 @@
     {% unless site.hide_share_buttons %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css">
     {% endunless %}
-    {% seo %}
+
+
+{% comment %} seo tag without canonical link {% endcomment %}
+{% assign seo_lines = seo | split: '
+' %}
+{% assign filtered_lines = '' | split: '' %}
+{% for line in seo_lines %}
+  {% unless line contains 'rel="canonical"' %}
+    {% assign filtered_lines = filtered_lines | push: line %}
+  {% endunless %}
+{% endfor %}
+{{ filtered_lines | join: '
+' }}
+
     {% if site.feed %}
         {% feed_meta %}
     {% endif %}
