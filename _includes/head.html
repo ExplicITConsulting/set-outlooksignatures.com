@@ -39,11 +39,11 @@
 
 
     {% capture seo_raw %}{% seo %}{% endcapture %}
-    {% assign seo_lines = seo_raw | split: '\n' %}
+    {% assign seo_lines = seo_raw | newline_to_br | split: '<br />' %}
 
     {% for line in seo_lines %}
     {% unless line contains '<link' and line contains ' rel="canonical"' %}
-        {{ line | strip }}
+        {{ line }}
     {% endunless %}
     {% endfor %}
 
