@@ -5,10 +5,10 @@
             <a href="{{ site.baseurl }}/" class="navbar-item has-text-white">
                 <img src="/assets/images/set-outlooksignatures logo 500px.png" alt="Set-OutlookSignatures">
             </a>
-            <a class="navbar-item ml-auto has-text-white is-hidden-desktop is-hidden-tablet" x-on:click="openNav = !openNav"
-                aria-label="Search, language, menu">
-                <span>🔍︎🌐</span>
-            </a>
+            <div class="navbar-item ml-auto mr-0 has-text-white is-hidden-desktop is-hidden-tablet"
+                x-on:click="openNav = !openNav" aria-label="Search, language, menu">
+                🔍︎🌐
+            </div>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu"
                 :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
                 <span aria-hidden="true"></span>
@@ -21,27 +21,27 @@
             <div class="navbar-start">
                 <!-- <a href="{{ site.baseurl }}/" class="navbar-item has-text-white {% if page.url == "/" %}is-active{% endif %}">Features</a> -->
                 {% if site.data.navigation %}
-                    {% for item in site.data.navigation %}
-                        {% if item.dropdown %}
+                {% for item in site.data.navigation %}
+                {% if item.dropdown %}
                 <div
                     class="navbar-item has-dropdown is-hoverable {% if site.fixed_navbar == 'bottom' %} has-dropdown-up {% endif %}">
                     <a href="{{ item.link | relative_url }}"
                         class="navbar-link has-text-white {% if page.url contains item.link %}is-selected{% endif %}">{{
                         item.name }}</a>
                     <div class="navbar-dropdown">
-                            {% for subitem in item.dropdown %}
+                        {% for subitem in item.dropdown %}
                         <a href="{{ subitem.link | relative_url }}"
                             class="navbar-item {% if page.url contains subitem.link %}is-selected{% endif %}">{{
                             subitem.name }}</a>
-                            {% endfor %}
+                        {% endfor %}
                     </div>
                 </div>
-                        {% else %}
+                {% else %}
                 <a href="{{ item.link | relative_url }}"
                     class="navbar-item has-text-white {% if page.url contains item.link %}is-selected{% endif %}">{{
                     item.name }}</a>
-                        {% endif %}
-                    {% endfor %}
+                {% endif %}
+                {% endfor %}
                 {% endif %}
             </div>
 
