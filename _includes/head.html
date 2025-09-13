@@ -3,9 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="{{ site.theme_color | default: '#ffffff' }}">
 
-
-{% I18n_Headers %}
-
     <meta http-equiv="Content-Language" content="{{ page.lang }}">
     {%- if page.lang == site.default_lang -%}
         {%- assign canonicalUrl = page.url  %}
