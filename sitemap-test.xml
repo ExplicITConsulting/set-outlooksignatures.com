@@ -3,16 +3,12 @@ layout: none
 sitemap: false
 ---
 
+{% comment %} Create a prioritized language list {% endcomment %}
 {%- assign default_lang = site.default_lang -%}
 {%- assign sorted_langs = site.languages -%}
-
 {%- if default_lang -%}
   {%- assign sorted_langs = sorted_langs | unshift: default_lang | uniq -%}
 {%- endif -%}
-
-{%- for lang_code in sorted_langs -%}
-  {{ lang_code }}
-{%- endfor -%}
 
 
 
@@ -24,31 +20,38 @@ sitemap: false
 {%- assign pages_and_posts = site.pages | concat: site.posts -%}
 
 {%- for node in pages_and_posts -%}
+  {% comment %} Filterstuff that should not be in the sitemap {% endcomment %}
   {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' %}
-  <url>
-    <loc>{{ node.url | absolute_url }}</loc>
-    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-      {%- assign available_langs = node.permalink_lang | keys -%}
-      {%- assign sorted_langs = site.languages | where_exp:"lang", "available_langs contains lang" -%}
-      {%- if default_lang and available_langs contains default_lang -%}
-        {%- assign temp_array = sorted_langs | prepend: default_lang -%}
-        {%- assign sorted_langs = temp_array | uniq -%}
+
+    {% comment %} Get the URL to be used for canonical and x-default based on the prioritized language list {% endcomment %}
+    {%- assign x_default_url = "" -%}
+    {%- for lang_code in sorted_langs -%}
+      {%- if node.permalink_lang[lang_code] -%}
+        {%- if x_default_url == "" -%}
+          {%- assign x_default_url = node.permalink_lang[lang_code] -%}
+        {%- endif %}
       {%- endif -%}
+    {%- endfor -%}
 
-      {%- assign x_default_url = "" -%}
-      {%- for lang_code in sorted_langs -%}
-        {%- if node.permalink_lang[lang_code] -%}
-          {%- if forloop.first -%}
-            {%- assign x_default_url = node.permalink_lang[lang_code] -%}
-          {%- endif %}
-    <xhtml:link rel="alternate" hreflang="{{ lang_code }}" href="{{ node.permalink_lang[lang_code] | absolute_url }}" />
-        {%- endif -%}
-      {%- endfor -%}
 
-      {%- if x_default_url != "" %}
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ x_default_url | absolute_url }}" />
-      {%- endif %}
-  </url>
+    {% comment %} Create a url entry for each language specific permalink of the node {% endcomment %}
+    {%- for lang_code in sorted_langs -%}
+      {%- if node.permalink_lang[lang_code] -%}
+        <url>
+          <loc>{{ node.permalink_lang[lang_code] | absolute_url }}</loc>
+          <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+        {%- for lang_code in sorted_langs -%}
+          {%- if node.permalink_lang[lang_code] %}
+            <xhtml:link rel="alternate" hreflang="{{ lang_code }}" href="{{ node.permalink_lang[lang_code] | absolute_url }}" />
+          {%- endif -%}
+        {%- endfor -%}
+      
+        {%- if x_default_url != "" %}
+          <xhtml:link rel="alternate" hreflang="x-default" href="{{ x_default_url | absolute_url }}" />
+        {% - endif %}
+        </url>
+      {%- endif -%}
+    {%- endfor -%}
   {%- endunless -%}
 {%- endfor -%}
 </urlset>
