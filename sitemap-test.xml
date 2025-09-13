@@ -33,14 +33,14 @@ sitemap: false
         {%- if node.permalink_lang[lang_code] -%}
           {%- if forloop.first -%}
             {%- assign x_default_url = node.permalink_lang[lang_code] -%}
-          {%- endif -%}
+          {%- endif %}
     <xhtml:link rel="alternate" hreflang="{{ lang_code }}" href="{{ node.permalink_lang[lang_code] | absolute_url }}" />
         {%- endif -%}
       {%- endfor -%}
 
-      {%- if x_default_url != "" -%}
+      {%- if x_default_url != "" %}
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ x_default_url | absolute_url }}" />
-      {%- endif -%}
+      {%- endif %}
   </url>
   {%- endunless -%}
 {%- endfor -%}
