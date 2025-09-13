@@ -25,10 +25,16 @@ sitemap: false
 
     {% comment %} Get the URL to be used for canonical and x-default based on the prioritized language list {% endcomment %}
     {%- assign x_default_url = "" -%}
+    {%- assign full_permalink_lang = node.permalink_lang -%}
     {%- for lang_code in sorted_langs -%}
-      {%- if node.permalink_lang[lang_code] -%}
+      {%- if full_permalink_lang[lang_code] -%}
+        {%- if lang_code == site.default_lang -%}
+          {%- full_permalink_lang[lang_code] = full_permalink_lang[lang_code] | absolute_url -%}
+        {%- else -%}
+          {%- full_permalink_lang[lang_code] = "/" | append: lang_code | append: full_permalink_lang[lang_code] | absolute_url -%}
+        {%- endif -%}
         {%- if x_default_url == "" -%}
-          {%- assign x_default_url = node.permalink_lang[lang_code] -%}
+          {%- assign x_default_url = full_permalink_lang[lang_code] -%}
         {%- endif %}
       {%- endif -%}
     {%- endfor -%}
@@ -36,18 +42,18 @@ sitemap: false
 
     {% comment %} Create a url entry for each language specific permalink of the node {% endcomment %}
     {%- for lang_code in sorted_langs -%}
-      {%- if node.permalink_lang[lang_code] -%}
+      {%- if full_permalink_lang[lang_code] -%}
         <url>
-          <loc>{{ node.permalink_lang[lang_code] | absolute_url }}</loc>
+          <loc>{{ full_permalink_lang[lang_code] | absolute_url }}</loc>
           <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
         {%- for lang_code in sorted_langs -%}
-          {%- if node.permalink_lang[lang_code] %}
-            <xhtml:link rel="alternate" hreflang="{{ lang_code }}" href="{{ node.permalink_lang[lang_code] | absolute_url }}" />
+          {%- if full_permalink_lang[lang_code] %}
+            <xhtml:link rel="alternate" hreflang="{{ lang_code }}" href="{{ full_permalink_lang[lang_code] | absolute_url }}" />
           {%- endif -%}
         {%- endfor -%}
       
         {%- if x_default_url != "" %}
-          <xhtml:link rel="alternate" hreflang="x-default" href="{{ x_default_url | absolute_url }}" />
+          <xhtml:link rel="alternate" hreflang="x-default" href="{{ x_default_url }}" />
         {%- endif %}
         </url>
       {%- endif -%}
