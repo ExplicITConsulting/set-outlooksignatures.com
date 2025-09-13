@@ -43,7 +43,7 @@
 
     {%- for line in seo_lines -%}
         {%- unless line contains '<link' and line contains ' rel="canonical"' %}
-            {{ line }}
+            {{ line | strip }}
         {%- endunless -%}
     {%- endfor -%}
 
