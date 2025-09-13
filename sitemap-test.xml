@@ -4,13 +4,10 @@ sitemap: false
 ---
 
 {%- assign default_lang = site.default_lang -%}
+{%- assign sorted_langs = site.languages -%}
 
 {%- if default_lang -%}
-  {%- assign default_lang_array = default_lang | split: "" -%}
-  {%- assign other_langs = site.languages | minus: default_lang_array -%}
-  {%- assign sorted_langs = default_lang_array | concat: other_langs -%}
-{%- else -%}
-  {%- assign sorted_langs = site.languages -%}
+  {%- assign sorted_langs = sorted_langs | prepend: default_lang | uniq -%}
 {%- endif -%}
 
 {%- for lang_code in sorted_langs -%}
