@@ -36,7 +36,17 @@
     {% unless site.hide_share_buttons %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css">
     {% endunless %}
-    {% seo %}
+
+
+    {% assign seo_output = seo | newline_to_br %}
+    {% assign seo_lines = seo_output | split: '<br />' %}
+
+    {% for line in seo_lines %}
+        {% unless line contains "link" and line contains "rel" and line contains "canonical" %}
+            {{ line | strip }}
+        {% endunless %}
+    {% endfor %}
+
     {% if site.feed %}
         {% feed_meta %}
     {% endif %}
