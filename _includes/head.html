@@ -10,9 +10,9 @@
     <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ canonical_url | absolute_url }}"{% endstatic_href %}>
     {%- for lang in site.languages -%}
         {%- if lang == site.default_lang -%}
-            {%- assign hreflang_url = canonical_url -%}
+            {%- assign hreflang_url = canonical_url | absolute_url -%}
         {%- else -%}
-            {%- assign hreflang_url = page.url | remove: '/' | remove_first: site.active_lang | prepend: lang | prepend: '/' | replace:'index.html','' | absolute_url %}
+            {%- assign hreflang_url = canonical_url | prepend: '/' | prepend: lang | absolute_url %}
         {%- endif %}
     <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ hreflang_url }}"{% endstatic_href %}>
     {%- endfor %}
