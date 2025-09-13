@@ -11,7 +11,7 @@ module Jekyll
 
     Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
       next if doc.output.nil? || doc.output.empty?
-      next if doc.url == '/search.json' || doc.url == '/404.html' || doc.data['sitemap'] == false || doc.data['lang'] != site.active_lang
+      next if doc.url == '/search.json' || doc.url == '/404.html' || doc.data['sitemap'] == false || doc.data['lang'] != doc.site.active_lang
       next if doc.data['redirect_to']
       next if doc.output.strip.start_with?("Redirecting") || doc.output.include?('<meta http-equiv="refresh"')
       next unless (doc.output.strip.start_with?('<') || doc.output.strip.start_with?('<!DOCTYPE')) &&
