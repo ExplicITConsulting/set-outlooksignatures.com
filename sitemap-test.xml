@@ -48,7 +48,7 @@ sitemap: false
       
         {%- if x_default_url != "" %}
           <xhtml:link rel="alternate" hreflang="x-default" href="{{ x_default_url | absolute_url }}" />
-        {% - endif %}
+        {%- endif %}
         </url>
       {%- endif -%}
     {%- endfor -%}
