@@ -11,8 +11,9 @@ sitemap: false
 
 {%- for node in pages_and_posts -%}
   {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' %}
-    <url>
-      <loc>{{ node.url | absolute_url }}</loc>
+  <url>
+    <loc>{{ node.url | absolute_url }}</loc>
+    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
       {% comment %}
         Sort permalinks:
         1. Get all available languages from permalink_lang.
@@ -33,24 +34,14 @@ sitemap: false
           {%- if forloop.first -%}
             {%- assign x_default_url = node.permalink_lang[lang_code] -%}
           {%- endif -%}
-          <xhtml:link
-            rel="alternate"
-            hreflang="{{ lang_code }}"
-            href="{{ node.permalink_lang[lang_code] | absolute_url }}"
-          />
+    <xhtml:link rel="alternate" hreflang="{{ lang_code }}" href="{{ node.permalink_lang[lang_code] | absolute_url }}" />
         {%- endif -%}
       {%- endfor -%}
 
-      <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-
       {%- if x_default_url != "" -%}
-        <xhtml:link
-          rel="alternate"
-          hreflang="x-default"
-          href="{{ x_default_url | absolute_url }}"
-        />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ x_default_url | absolute_url }}" />
       {%- endif -%}
-    </url>
+  </url>
   {%- endunless -%}
 {%- endfor -%}
 </urlset>
