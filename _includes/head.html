@@ -7,7 +7,7 @@
     {%- if page.lang == site.default_lang -%}
         {%- assign canonicalUrl = page.url -%}
     {%- else -%}
-        {%- assign canonicalUrl = page.url | prepend: page.lang | prepend: '/' -%}
+        {%- assign canonicalUrl = '/' | append: page.lang | append: page.url -%}
     {%- endif %}
     <link rel="canonical" {% static_href %}href="{{ canonicalUrl | absolute_url }}"{% endstatic_href %}>
     <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ page.url | absolute_url }}"{% endstatic_href %}>
@@ -15,7 +15,7 @@
         {%- if lang == site.default_lang -%}
             {%- assign hreflang_url = page.url | absolute_url -%}
         {%- else -%}
-            {%- assign hreflang_url = page.url | prepend: lang | prepend: '/' | absolute_url %}
+            {%- assign hreflang_url = '/' | append: lang | append: page.url | absolute_url -%}
         {%- endif %}
     <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ hreflang_url }}"{% endstatic_href %}>
     {%- endfor %}
