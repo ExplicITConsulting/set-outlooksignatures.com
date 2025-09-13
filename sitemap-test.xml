@@ -20,7 +20,7 @@ sitemap: false
 
 {%- for node in pagesAndPosts -%}
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
-  {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' %}
+  {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
 
     {%- comment -%} Get the URL to be used for canonical and x-default based on the prioritized language list {%- endcomment -%}
     {%- assign canonicalUrl = "" -%}
@@ -32,7 +32,7 @@ sitemap: false
           {%- else -%}
             {%- assign languagePrefix = "/" | append: languageCode | append: node.permalink_lang[languageCode] | absolute_url -%}
           {%- endif -%}
-        {%- endif %}
+        {%- endif -%}
       {%- endif -%}
     {%- endfor -%}
 
@@ -52,10 +52,10 @@ sitemap: false
 
         {%- if canonicalUrl != "" %}
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
-        {%- endif %}
+        {%- endif -%}
 
         {%- for languageCode in sorted_langs -%}
-          {%- if node.permalink_lang[languageCode] %}
+          {%- if node.permalink_lang[languageCode] -%}
             {%- if languageCode == default_lang -%}
               {%- assign languagePrefix = "" -%}
             {%- else -%}
