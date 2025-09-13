@@ -5,13 +5,12 @@
             <a href="{{ site.baseurl }}/" class="navbar-item has-text-white">
                 <img src="/assets/images/set-outlooksignatures logo 500px.png" alt="Set-OutlookSignatures">
             </a>
-            <a class="navbar-item has-text-white is-right is-hidden-desktop is-hidden-tablet" x-on:click="openNav = !openNav"
+            <a class="navbar-item has-text-white burger is-hidden-desktop is-hidden-tablet" x-on:click="openNav = !openNav"
                 aria-label="Search, language, menu">
                 <span>🔍︎🌐</span>
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu"
                 :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
-                <span>🔍︎🌐</span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
