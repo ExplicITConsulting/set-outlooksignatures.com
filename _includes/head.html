@@ -10,7 +10,7 @@
     {%- else -%}
         {%- assign canonical_url = page.url | remove_first: '/' | remove_first: site.active_lang | prepend: '/' %}
     {%- endif %}
-    <link rel="canonical" {% static_href %}href="{{ canonical_url | absolute_url }}"{% endstatic_href %}>
+    <link rel="canonical" {% static_href %}href="{{ page.url | absolute_url }}"{% endstatic_href %}>
     <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ canonical_url | absolute_url }}"{% endstatic_href %}>
     {%- for lang in site.languages -%}
         {%- if lang == site.default_lang -%}
