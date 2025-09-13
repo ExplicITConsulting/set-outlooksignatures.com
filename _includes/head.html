@@ -6,16 +6,15 @@
 
     <meta http-equiv="Content-Language" content="{{ page.lang }}">
     {%- assign canonical_url = page.url | remove: '/' | remove_first: site.active_lang | replace:'index.html','' | absolute_url %}
-    {{ canonical_url }}
     <link rel="canonical" {% static_href %}href="{{ canonical_url }}"{% endstatic_href %}>
     <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ canonical_url }}"{% endstatic_href %}>
     {%- for lang in site.languages -%}
         {%- if lang == site.default_lang -%}
-            {%- assign hreflang_url = site.url | append: site.baseurl | append: (page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | replace: 'index.html','') -%}
+            {%- assign hreflang_url = canonical_url -%}
         {%- else -%}
-            {%- assign hreflang_url = site.url | append: site.baseurl | append: '/' | append: lang | append: (page.url | remove: '/' | remove_first: site.active_lang | prepend: '/' | replace: 'index.html','') -%}
+            {%- assign hreflang_url = page.url | remove: '/' | remove_first: site.active_lang | prepend: lang | prepend: '/' | replace: 'index.html','' -%}
         {%- endif %}
-    <link rel="alternate" hreflang="{{ lang }}" href="{{ Unrelativized_Link hreflang_url }}">
+    <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ hreflang_url }}"{% endstatic_href %}>
     {%- endfor %}
 
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
