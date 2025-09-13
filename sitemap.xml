@@ -2,68 +2,70 @@
 layout: none
 sitemap: false
 ---
+
+{%- comment -%} Create a prioritized language list {%- endcomment -%}
+{%- assign default_lang = site.default_lang | default: site.languages.first -%}
+{%- assign sorted_langs = site.languages -%}
+{%- if default_lang -%}
+  {%- assign sorted_langs = sorted_langs | unshift: default_lang | uniq -%}
+{%- endif -%}
+
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-{%- assign default_lang = site.default_lang | default: "en" -%}
-{%- assign pages_and_posts = site.pages | concat: site.posts -%}
+{%- assign pagesAndPosts = site.pages | concat: site.posts -%}
 
-{%- comment -%} Part 1: Generate entries for all canonical (English) pages {%- endcomment -%}
-{%- for node in pages_and_posts -%}
-  {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' %}
-    <url>
-      <loc>{{ node.url | absolute_url }}</loc>
-      <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+{%- for node in pagesAndPosts -%}
+  {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
+  {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
 
-      {%- for lang in site.languages -%}
-        {%- assign alternate_url = node.url -%}
-        {%- if lang != default_lang -%}
-          {%- assign alternate_url = "/" | append: lang | append: node.url -%}
-        {%- endif %}
-        <xhtml:link
-          rel="alternate"
-          hreflang="{{ lang }}"
-          href="{{ alternate_url | absolute_url }}"
-        />
-      {%- endfor %}
-      <xhtml:link
-        rel="alternate"
-        hreflang="x-default"
-        href="{{ node.url | absolute_url }}"
-      />
-    </url>
-  {%- endunless -%}
-{%- endfor -%}
+    {%- comment -%} Get the URL to be used for canonical and x-default based on the prioritized language list {%- endcomment -%}
+    {%- assign canonicalUrl = "" -%}
+    {%- for languageCode in sorted_langs -%}
+      {%- if node.permalink_lang[languageCode] -%}
+        {%- if canonicalUrl == "" -%}
+          {%- if languageCode == default_lang -%}
+            {%- assign canonicalUrl = node.permalink_lang[languageCode] | absolute_url -%}
+          {%- else -%}
+            {%- assign languagePrefix = "/" | append: languageCode | append: node.permalink_lang[languageCode] | absolute_url -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
 
-{%- comment -%} Part 2: Generate entries for all translated (non-English) pages {%- endcomment -%}
-{%- for lang in site.languages -%}
-  {%- unless lang == default_lang -%}
-    {%- for node in pages_and_posts -%}
-      {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' or node.url contains '/de/' %}
-        <url>
-          {%- assign localized_url = "/" | append: lang | append: node.url %}
-          <loc>{{ localized_url | absolute_url }}</loc>
-          <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-          
-          {%- for inner_lang in site.languages -%}
-            {%- assign inner_alternate_url = node.url -%}
-            {%- if inner_lang != default_lang -%}
-              {%- assign inner_alternate_url = "/" | append: inner_lang | append: node.url -%}
+
+    {%- comment -%} Create a url entry for each language specific permalink of the node {%- endcomment -%}
+    {%- for languageCode in sorted_langs -%}
+      {%- if languageCode == default_lang -%}
+        {%- assign languagePrefix = "" -%}
+      {%- else -%}
+        {%- assign languagePrefix = "/" | append: languageCode -%}
+      {%- endif -%}
+
+      {%- if node.permalink_lang[languageCode] %}
+  <url>
+    <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url }}</loc>
+    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+
+        {%- if canonicalUrl != "" %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
+        {%- endif -%}
+
+        {%- for languageCode in sorted_langs -%}
+          {%- if node.permalink_lang[languageCode] -%}
+            {%- if languageCode == default_lang -%}
+              {%- assign languagePrefix = "" -%}
+            {%- else -%}
+              {%- assign languagePrefix = "/" | append: languageCode -%}
             {%- endif %}
-            <xhtml:link
-              rel="alternate"
-              hreflang="{{ inner_lang }}"
-              href="{{ inner_alternate_url | absolute_url }}"
-            />
-          {%- endfor %}
-          <xhtml:link
-            rel="alternate"
-            hreflang="x-default"
-            href="{{ inner_alternate_url | absolute_url }}"
-          />
-        </url>
-      {%- endunless -%}
+    <xhtml:link rel="alternate" hreflang="{{ languageCode }}" href="{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url }}" />
+          {%- endif -%}
+        {%- endfor %}
+  </url>
+      {%- endif -%}
     {%- endfor -%}
   {%- endunless -%}
 {%- endfor %}
