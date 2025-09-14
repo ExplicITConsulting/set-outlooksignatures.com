@@ -39,19 +39,17 @@
                 {% else %}
                 <a href="{{ item.link | relative_url }}"
                     class="navbar-item has-text-white {% if page.url contains item.link %}is-selected{% endif %}">{{
-                    item.name }}</a>
+                    item.name }}
+                </a>
                 {% endif %}
                 {% endfor %}
                 {% endif %}
             </div>
 
             <div class="navbar-end">
-
-                <div class="navbar-item has-text-white">
-                    <a class="has-text-white" href="/search" aria-label="Search">
-                        <span>🔍︎ Search</span>
-                    </a>
-                </div>
+                <a class="navbar-item has-text-white" href="/search" aria-label="Search">
+                    🔍︎ Search
+                </a>
 
                 <div class="navbar-item has-text-white">
                     🌐
@@ -66,15 +64,10 @@
                 </div>
 
                 {% if site.gh_sponsor and page.hide_gh_sponsor != true %}
-                <div class="navbar-item has-text-white">
-                    <a class="has-text-white" href="https://github.com/sponsors/{{ site.gh_sponsor }}"
-                        aria-label="Sponsor">
-                        <svg data-external-link-icon></svg>
-                        <span>
-                            <span style="color: deeppink; font-weight: bold;">♡︎</span> Sponsor
-                        </span>
-                    </a>
-                </div>
+                <a class="navbar-item has-text-white" href="https://github.com/sponsors/{{ site.gh_sponsor }}" aria-label="Sponsor">
+                    <svg data-external-link-icon></svg>
+                        <span style="color: deeppink; font-weight: bold;">♡︎</span> Sponsor
+                </a>
                 {% endif %}
             </div>
         </div>
