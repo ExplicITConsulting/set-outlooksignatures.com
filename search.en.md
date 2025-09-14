@@ -12,7 +12,7 @@ permalink: /search
 <div id="search-results" class="content">
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8.2/dist/flexsearch.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js"></script>
 
 <script>
     (function() {
@@ -36,7 +36,7 @@ permalink: /search
             // Configure search options for better results
             tokenize: "full", // Tokenize by words, allowing partial matches
             resolution: 9, // Higher resolution for better relevance
-            encoder: Charset.LatinSoundex, // Full Soundex transformation for max fuzzy search
+            encoder: FlexSearch.Charset.LatinSoundex, // Full Soundex transformation for max fuzzy search
             cache: true, // Cache search results
             context: true // Enable context index
         });
