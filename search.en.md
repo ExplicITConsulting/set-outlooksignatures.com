@@ -126,15 +126,15 @@ permalink: /search
                 suggest: true,
                 highlight: {
                     template: '<mark style="background-color: yellow;">$1</mark>',
-                    boundary: 500,
+                boundary: {
+                    // length before match  
+                    before: 50,
+                    // length after match  
+                    after: 50,
+                    // overall length  
+                    total: 500  
+                }
                     merge: true,
-                    ellipsis: {
-                        // pass a template, where $1 is
-                        // a placeholder for the ellipsis
-                        template: "$1<br>",
-                        // define custom ellipsis
-                        pattern: "[…]"
-                    },
                 }
             };
             
