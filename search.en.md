@@ -66,8 +66,6 @@ permalink: /search
                 searchInput.disabled = false;
                 
                 // Add event listeners AFTER the indexes are ready
-                
-                // Listener for the "Enter" key in the input field
                 searchInput.addEventListener('keydown', (event) => {
                     if (event.key === 'Enter') {
                         event.preventDefault();
@@ -75,15 +73,6 @@ permalink: /search
                     }
                 });
 
-                // Listener for the button click event
-                const searchButton = document.getElementById('search-button');
-                if (searchButton) {
-                    searchButton.addEventListener('click', () => {
-                        performSearch();
-                    });
-                }
-
-                // Listener for clearing results on input
                 searchInput.addEventListener('input', () => {
                     searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
                 });
@@ -126,66 +115,38 @@ permalink: /search
                 searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
                 return;
             }
-
             if (typeof query !== 'string' || query.length === 0) {
                 console.warn("Invalid search query received (not a non-empty string):", query);
                 searchResultsContainer.innerHTML = '<p>Please enter a valid search term.</p>';
                 return;
             }
 
-            const currentPageLang = document.documentElement.lang;
             let allResults = [];
-            const seenUrls = new Set();
-            const languagesToSearch = Object.keys(languages);
-
-            // Prioritize the current page's language
-            if (languagesToSearch.includes(currentPageLang)) {
-                searchAndAddResults(currentPageLang);
-            }
-
-            // Then, loop through all other languages
-            languagesToSearch.forEach(lang => {
-                if (lang !== currentPageLang) {
-                    searchAndAddResults(lang);
-                }
-            });
-
-            // Sort the combined results by their relevance score
-            allResults.sort((a, b) => a.score - b.score);
-
-            displayResults(allResults, query);
-
-            function searchAndAddResults(lang) {
+            // Iterate over all initialized indexes and perform search
+            Object.keys(indexes).forEach(lang => {
                 const rawResults = indexes[lang].search(query, {
                     limit: 99,
                     enrich: true,
                 });
-
-                const langResults = {};
+                
+                // Flatten and enrich results with their score for sorting
                 rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
-                            if (!langResults[r.id]) {
-                                langResults[r.id] = {
-                                    id: r.id,
-                                    doc: indexes[lang].get(r.id),
-                                    score: r.score,
-                                    lang: lang,
-                                };
-                            } else {
-                                langResults[r.id].score = Math.min(langResults[r.id].score, r.score);
+                            // Get the full document and add the score for sorting
+                            const doc = indexes[lang].get(r.id);
+                            if (doc) {
+                                allResults.push({ id: r.id, doc: doc, score: r.score });
                             }
                         });
                     }
                 });
+            });
 
-                Object.values(langResults).forEach(item => {
-                    if (!seenUrls.has(item.id)) {
-                        allResults.push(item);
-                        seenUrls.add(item.id);
-                    }
-                });
-            }
+            // Step 2: Sort the combined results by their relevance score
+            allResults.sort((a, b) => a.score - b.score);
+
+            displayResults(allResults, query);
         }
 
         // The remaining functions (displayResults, applyHighlighting, generateContextualSnippet)
