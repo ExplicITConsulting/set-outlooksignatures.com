@@ -13,8 +13,8 @@ page_id: "implementationapproach"
 permalink: /implementationapproach
 ---
 
-
-## What approach do we recommend for implementing the software? {#recommended-approach} <!-- omit in toc -->
+<!-- omit in toc -->
+## What approach do we recommend for implementing the software? {#recommended-approach}
 For most companies, the <a href="/quickstart">quick start guide</a> is the most efficient way to get started. It enables you to implement Set-OutlookSignatures and the Benefactor Circle add-on on your own in no time. Full <a href="/support#professional-support">implementation support</a> rarely takes more than half a day.
 
 This document is intended for organizations that need to ensure formal processes and traceability in addition to efficiency. It contains a structured example of how implementation can be approached in environments where traceability and compliance are essential, such as in high-security or highly regulated environments. It shows how rapid implementation can be combined with strict governance requirements.
@@ -56,7 +56,8 @@ Without third-party software, signatures must also be manually maintained separa
 ### 2.2. Automatic Signature Maintenance {#automatic-signature-maintenance}
 With automatic signature maintenance, no actions are required from the end user. All specifications are defined centrally, and signatures update automatically across all devices and systems.
 
-#### 2.2.1. Server-Based Solutions {#server-based-signature-solutions} <!-- omit in toc -->
+<!-- omit in toc -->
+#### 2.2.1. Server-Based Solutions {#server-based-signature-solutions}
 The biggest advantage of a server-based solution is that every email is processed based on a defined set of rules, regardless of the application or device used to send it.
 
 Since the signature is appended on the server, the user does not see which signature is used while composing the email.
@@ -73,7 +74,8 @@ Cloud-based solutions require that all internal and external emails, as well as 
 
 We therefore advise against server-based solutions.
 
-#### 2.2.2. Client-Based Signatures {#client-based-signature-solutions}  <!-- omit in toc -->
+<!-- omit in toc -->
+#### 2.2.2. Client-Based Signatures {#client-based-signature-solutions}
 With client-based solutions, the definition of templates and optionally their distribution is done centrally, while the signature is added to the email on the client side.
 
 The biggest disadvantage of client-based solutions compared to server-based ones is their dependency on specific email clients. In practice, this is of little relevance, as Microsoft Outlook is usually used for reasons of maintainability and consistency. Outlook is available for Android, iOS, macOS, and Windows, and additionally as a web application on virtually all other platforms.

@@ -14,8 +14,8 @@ page_id: "implementationapproach"
 permalink: /implementationapproach
 ---
 
-
-## Welchen Ansatz für die Implementierung der Software empfehlen wir? {#recommended-approach} <!-- omit in toc -->
+<!-- omit in toc -->
+## Welchen Ansatz für die Implementierung der Software empfehlen wir? {#recommended-approach}
 
 Für die meisten Unternehmen ist die <a href="/quickstart">Schnellstart-Anleitung</a> der effizienteste Einstieg. Sie ermöglicht eine eigenständige Implementierung von Set-OutlookSignatures und dem Benefactor Circle Add-On in kürzester Zeit. Eine vollständige <a href="/support#professional-support">Implementierungsunterstützung</a> benötigt selten mehr als einen halben Tag.
 
@@ -61,7 +61,8 @@ Ohne Einsatz von Dritthersteller-Software sind die Signaturen zudem auch auf And
 
 Bei der automatischen Wartung von Signaturen fallen keine Tätigkeiten für den Endbenutzer an. Alle Vorgaben werden zentral definiert, Signaturen aktualisieren sich auf allen Geräten und Systemen automatisch.
 
-#### 2.2.1. Serverbasierte Lösungen {#server-based-signature-solutions} <!-- omit in toc -->
+<!-- omit in toc -->
+#### 2.2.1. Serverbasierte Lösungen {#server-based-signature-solutions}
 
 Der größte Vorteil einer serverbasierten Lösung ist, dass an Hand eines definierten Regelsatzes jedes E-Mail erfasst wird, ganz gleich, von welcher Applikation oder welchem Gerät es verschickt wurde.
 
@@ -79,7 +80,8 @@ Cloud-basierte Lösungen setzen voraus, dass alle internen und externen E-Mails 
 
 Wir raten daher von serverbasierten Lösungen ab.
 
-#### 2.2.2. Clientbasierte Signaturen {#client-based-signature-solutions} <!-- omit in toc -->
+<!-- omit in toc -->
+#### 2.2.2. Clientbasierte Signaturen {#client-based-signature-solutions}
 
 Bei clientbasierten Lösungen erfolgt die Definition der Vorlagen und optional auch deren Verteilung zentral, das Hinzufügen der Signaturen zu einer E-Mail erfolgt am Client.
 
