@@ -128,7 +128,13 @@ permalink: /search
                     template: '<mark style="background-color: yellow;">$1</mark>',
                     boundary: 500,
                     merge: true,
-                    ellipsis: " […] "
+                    ellipsis: {
+                        // pass a template, where $1 is
+                        // a placeholder for the ellipsis
+                        template: "$1<br>",
+                        // define custom ellipsis
+                        pattern: "[…]"
+                    },
                 }
             };
             
