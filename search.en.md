@@ -32,17 +32,14 @@ permalink: /search
         searchInput.placeholder = "Loading search data…";
         searchInput.disabled = true;
 
-        // Initialize a container for multiple FlexSearch indexes
         const indexes = {};
         const languages = {
             'en': '/search.json',
             'de': '/de/search.json'
         };
 
-        // Determine the current page language
         const currentLang = document.documentElement.lang || 'en';
 
-        // Function to create a new FlexSearch index for a given language
         function createIndex(lang) {
             return new FlexSearch.Document({
                 document: {
@@ -61,14 +58,12 @@ permalink: /search
         let filesToLoad = Object.keys(languages).map(lang => languages[lang]);
         let filesLoaded = 0;
 
-        // Function to check if all files are loaded
         function checkIfReady() {
             filesLoaded++;
             if (filesLoaded === filesToLoad.length) {
                 searchInput.placeholder = "What are you looking for?";
                 searchInput.disabled = false;
                 
-                // Add event listeners AFTER the indexes are ready
                 document.getElementById('search-button').addEventListener('click', performSearch);
                 
                 searchInput.addEventListener('keydown', (event) => {
@@ -78,14 +73,12 @@ permalink: /search
                     }
                 });
 
-                // This event listener will clear the results when the input changes.
                 searchInput.addEventListener('input', () => {
                     searchResultsContainer.innerHTML = '';
                 });
             }
         }
 
-        // Fetch the search.json files and populate the correct index
         Object.keys(languages).forEach(lang => {
             const url = languages[lang];
             indexes[lang] = createIndex(lang);
@@ -114,7 +107,6 @@ permalink: /search
                 });
         });
 
-        // Function to perform search across all indexes
         function performSearch() {
             const query = searchInput.value.trim();
             if (query.length === 0) {
@@ -130,7 +122,7 @@ permalink: /search
             let allResults = [];
             const searchOptions = {
                 limit: 99,
-                enrich: true,
+                // DO NOT USE enrich: true
                 suggest: true,
                 highlight: {
                     template: '<mark style="background-color: yellow;">$1</mark>',
@@ -140,7 +132,6 @@ permalink: /search
                 boundary: 32
             };
             
-            // Search the current language index first.
             const currentLangIndex = indexes[currentLang];
             if (currentLangIndex) {
                 const rawResults = currentLangIndex.search(query, searchOptions);
@@ -148,18 +139,17 @@ permalink: /search
                 rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
-                            // The 'doc' property now contains the enriched and highlighted document
-                            const doc = r.doc; 
-                            if (doc) {
-                                // Add a higher score for results from the current language
-                                allResults.push({ id: r.id, doc: doc, score: r.score - 1000, lang: currentLang });
+                            const originalDoc = currentLangIndex.get(r.id);
+                            if (originalDoc) {
+                                // Merge the highlight from the result into the original document
+                                const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
+                                allResults.push({ id: r.id, doc: highlightedDoc, score: r.score - 1000, lang: currentLang });
                             }
                         });
                     }
                 });
             }
 
-            // Search other language indexes.
             Object.keys(indexes).forEach(lang => {
                 if (lang !== currentLang) {
                     const otherLangIndex = indexes[lang];
@@ -168,9 +158,10 @@ permalink: /search
                     rawResults.forEach(fieldResult => {
                         if (fieldResult && fieldResult.result) {
                             fieldResult.result.forEach(r => {
-                                const doc = r.doc;
-                                if (doc) {
-                                    allResults.push({ id: r.id, doc: doc, score: r.score, lang: lang });
+                                const originalDoc = otherLangIndex.get(r.id);
+                                if (originalDoc) {
+                                    const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
+                                    allResults.push({ id: r.id, doc: highlightedDoc, score: r.score, lang: lang });
                                 }
                             });
                         }
@@ -178,9 +169,7 @@ permalink: /search
                 }
             });
 
-            // Sort the combined results by their relevance score.
             allResults.sort((a, b) => a.score - b.score);
-
             displayResults(allResults);
         }
 
@@ -189,7 +178,6 @@ permalink: /search
                 _paq.push(['trackSiteSearch', searchInput.value.trim(), false, results.length]);
             }
             
-            // Deduplicate results, as a single document may appear in multiple indexes
             const uniqueResults = [];
             const seenUrls = new Set();
             results.forEach(result => {
@@ -212,14 +200,12 @@ permalink: /search
                     return;
                 }
                 
-                // FlexSearch provides the highlighted content directly on the item object
+                // The item.highlight property now contains the highlighted content
                 const title = item.document || 'No Title';
                 const url = item.url || '#';
                 const sectionContent = item.section || '';
-                const mainContent = item.content || '';
+                const mainContent = item.highlight || '';
 
-                // Note: FlexSearch's `boundary` and `merge` options handle the ellipsis and context.
-                // The template string now just needs to use these variables.
                 html += `
                     <li class="box mb-4">
                         <p><a href="${url}"><strong>${title}</strong></a><br>${sectionContent}</p>
@@ -230,6 +216,5 @@ permalink: /search
             html += '</ul>';
             searchResultsContainer.innerHTML = html;
         }
-
     })();
 </script>
