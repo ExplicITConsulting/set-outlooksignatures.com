@@ -16,6 +16,13 @@ permalink: /search
     </div>
 </div>
 
+<div id="suggestions-container" class="dropdown is-active">
+    <div id="suggestions-menu" class="dropdown-menu" role="menu">
+        <div class="dropdown-content">
+        </div>
+    </div>
+</div>
+
 <div id="search-results" class="content">
 </div>
 
@@ -28,6 +35,11 @@ permalink: /search
         const searchInput = document.getElementById('search-input');
         const searchResultsContainer = document.getElementById('search-results');
         
+        // New elements for the suggestion feature
+        const suggestionsContainer = document.getElementById('suggestions-container');
+        const suggestionsMenu = document.querySelector('#suggestions-container .dropdown-content');
+        const suggestionLimit = 5; // How many suggestions to show at a time
+
         // Step 1: Set initial placeholder and disable the input
         searchInput.placeholder = "Loading search data…";
         searchInput.disabled = true;
@@ -40,8 +52,6 @@ permalink: /search
         };
 
         // Determine the current language from the URL or a global variable
-        // This is a crucial addition to make the prioritization work.
-        // We'll use a simple URL-based method, assuming the German site is under /de/.
         const currentLang = window.location.pathname.startsWith('/de/') ? 'de' : 'en';
 
         // Function to create a new FlexSearch index for a given language
@@ -79,9 +89,29 @@ permalink: /search
                     }
                 });
 
-                searchInput.addEventListener('input', () => {
-                    // We'll remove this listener and instead clear results only on an empty query
-                    // This prevents the page from clearing as the user types
+                // New event listener for suggestions
+                searchInput.addEventListener('input', (event) => {
+                    const query = event.target.value.trim();
+                    if (query.length > 2) { // Only show suggestions after 3 characters
+                        showSuggestions(query);
+                    } else {
+                        hideSuggestions();
+                    }
+                });
+
+                // Hide suggestions when clicking outside
+                document.addEventListener('click', (event) => {
+                    if (!suggestionsContainer.contains(event.target) && event.target !== searchInput) {
+                        hideSuggestions();
+                    }
+                });
+
+                // Clear suggestions when the search input is focused, if it was hidden
+                searchInput.addEventListener('focus', (event) => {
+                    const query = event.target.value.trim();
+                    if (query.length > 2) {
+                        showSuggestions(query);
+                    }
                 });
             }
         }
@@ -127,6 +157,9 @@ permalink: /search
                 searchResultsContainer.innerHTML = '<p>Please enter a valid search term.</p>';
                 return;
             }
+
+            // Hide suggestions when a full search is performed
+            hideSuggestions();
 
             let allResults = [];
             
@@ -178,6 +211,62 @@ permalink: /search
             allResults.sort((a, b) => a.score - b.score);
 
             displayResults(allResults, query);
+        }
+
+        // New function to display suggestions
+        function showSuggestions(query) {
+            let suggestions = [];
+
+            // Search the current language index first
+            const currentLangIndex = indexes[currentLang];
+            if (currentLangIndex) {
+                const rawResults = currentLangIndex.search(query, { limit: suggestionLimit, enrich: true });
+                rawResults.forEach(fieldResult => {
+                    if (fieldResult && fieldResult.result) {
+                        fieldResult.result.forEach(r => {
+                            const doc = currentLangIndex.get(r.id);
+                            if (doc) {
+                                suggestions.push({ id: r.id, doc: doc, score: r.score });
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Deduplicate suggestions and sort
+            const uniqueSuggestions = [];
+            const seenUrls = new Set();
+            suggestions.forEach(suggestion => {
+                if (suggestion.doc && !seenUrls.has(suggestion.doc.url)) {
+                    uniqueSuggestions.push(suggestion);
+                    seenUrls.add(suggestion.doc.url);
+                }
+            });
+            uniqueSuggestions.sort((a, b) => a.score - b.score);
+
+            if (uniqueSuggestions.length > 0) {
+                let html = '';
+                uniqueSuggestions.slice(0, suggestionLimit).forEach(item => {
+                    const title = item.doc.document || 'No Title';
+                    const url = item.doc.url || '#';
+                    const snippet = item.doc.section || item.doc.content || '';
+                    html += `
+                        <a href="${url}" class="dropdown-item">
+                            <p><strong>${applyHighlighting(title, query)}</strong></p>
+                            <p class="is-size-7 has-text-grey-light">${generateContextualSnippet(snippet, query, 100, 20)}</p>
+                        </a>
+                    `;
+                });
+                suggestionsMenu.innerHTML = html;
+                suggestionsContainer.classList.add('is-active');
+            } else {
+                hideSuggestions();
+            }
+        }
+
+        function hideSuggestions() {
+            suggestionsContainer.classList.remove('is-active');
+            suggestionsMenu.innerHTML = '';
         }
 
         // The rest of the functions (displayResults, applyHighlighting, generateContextualSnippet) are unchanged as they handle the display logic, not the search engine's configuration.
