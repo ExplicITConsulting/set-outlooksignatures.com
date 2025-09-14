@@ -121,31 +121,3 @@
     }
   });
 </script>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Get the current URL's hash (e.g., #section-1)
-    const currentHash = window.location.hash;
-    
-    // If there is no hash, do nothing
-    if (!currentHash) {
-      return;
-    }
-    
-    // Select all anchor tags inside the element with the id 'language-switcher'
-    const links = document.querySelectorAll('#language-switcher a');
-    
-    // Iterate over each anchor tag
-    links.forEach(link => {
-      // Get the original href attribute and the data-base-url attribute
-      const originalHref = link.getAttribute('href');
-      
-      // Check if the original href already contains a hash to prevent duplication
-      if (originalHref && originalHref.indexOf('#') === -1) {
-        // Append the current hash to the href
-        link.href = originalHref + currentHash;
-      }
-    });
-  });
-</script>
