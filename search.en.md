@@ -20,7 +20,9 @@ permalink: /search
 
         const searchInput = document.getElementById('search-input');
         const searchResultsContainer = document.getElementById('search-results');
-        let searchTimeout;
+        
+        // Remove the searchTimeout variable as it is no longer needed
+        // let searchTimeout; 
 
         // Step 1: Set initial placeholder and disable the input
         searchInput.placeholder = "Loading search data...";
@@ -53,10 +55,19 @@ permalink: /search
                 // console.log('FlexSearch index populated successfully.');
                 searchInput.placeholder = "Start typing to search…";
                 searchInput.disabled = false;
-                // Add event listener AFTER the index is ready
+                
+                // Add event listeners AFTER the index is ready
+                // Listener for the 'Enter' keypress
+                searchInput.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter') {
+                        event.preventDefault(); // Prevent form submission if the input is in a form
+                        performSearch();
+                    }
+                });
+
+                // Listener to clear results when the input changes
                 searchInput.addEventListener('input', () => {
-                    clearTimeout(searchTimeout);
-                    searchTimeout = setTimeout(performSearch, 1000);
+                    searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
                 });
             }
         }
