@@ -79,9 +79,11 @@ permalink: /search
                     }
                 });
 
+                // ⭐ Add this new event listener to clear results on input change
                 searchInput.addEventListener('input', () => {
-                    // We'll remove this listener and instead clear results only on an empty query
-                    // This prevents the page from clearing as the user types
+                    if (searchInput.value.trim() === '') {
+                        searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
+                    }
                 });
             }
         }
