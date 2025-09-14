@@ -7,9 +7,13 @@ page_id: "search"
 permalink: /search
 ---
 
-<div class="search-container">
-    <input type="search" id="search-input" placeholder="What are you looking for?" class="input is-large">
-    <button id="search-button" class="button is-large">Search</button>
+<div class="field has-addons">
+    <div class="control is-expanded">
+        <input type="search" id="search-input" placeholder="What are you looking for?" class="input is-large">
+    </div>
+    <div class="control">
+        <button id="search-button" class="button is-large">Search</button>
+    </div>
 </div>
 
 <div id="search-results" class="content">
@@ -62,6 +66,8 @@ permalink: /search
                 searchInput.disabled = false;
                 
                 // Add event listeners AFTER the indexes are ready
+                
+                // Listener for the "Enter" key in the input field
                 searchInput.addEventListener('keydown', (event) => {
                     if (event.key === 'Enter') {
                         event.preventDefault();
@@ -69,6 +75,15 @@ permalink: /search
                     }
                 });
 
+                // Listener for the button click event
+                const searchButton = document.getElementById('search-button');
+                if (searchButton) {
+                    searchButton.addEventListener('click', () => {
+                        performSearch();
+                    });
+                }
+
+                // Listener for clearing results on input
                 searchInput.addEventListener('input', () => {
                     searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
                 });
