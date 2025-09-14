@@ -36,9 +36,9 @@ permalink: /search
             // Configure search options for better results
             tokenize: "full", // Tokenize by words, allowing partial matches
             resolution: 9, // Higher resolution for better relevance
-            depth: 2, // Deeper search for nested objects if any (though our JSON is flat)
-            optimize: true, // Optimize index for faster searches
+            encoder: Charset.LatinSoundex, // Full Soundex transformation for max fuzzy search
             cache: true, // Cache search results
+            context: true // Enable context index
         });
 
         // Keep track of how many files have been loaded
