@@ -2,14 +2,6 @@
   document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll("a[href]");
 
-    const externalLinkSvg = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          `;
-
     links.forEach(link => {
       try {
         const url = new URL(link.href, window.location.href);
@@ -22,26 +14,22 @@
           link.classList.add("mtrcs-external-link");
 
           let targetElement = link;
-
           const buttonChild = link.querySelector('button');
           if (buttonChild) {
             targetElement = buttonChild;
           }
 
-          if (!targetElement.querySelector("svg[data-external-link-icon]")) {
-            const parser = new DOMParser();
-            const svgDoc = parser.parseFromString(externalLinkSvg, "image/svg+xml");
-            const svgElement = svgDoc.documentElement;
+          // Check if the arrow character has already been added
+          if (!targetElement.querySelector("span.external-link-arrow")) {
+            // Create a span element for the arrow and space
+            const arrowSpan = document.createElement("span");
+            arrowSpan.className = "external-link-arrow";
+            arrowSpan.style.whiteSpace = "nowrap"; // Keep the space and arrow together
 
-            // Set attributes for styling or identification directly on the SVG element
-            //svgElement.style.verticalAlign = "middle";
-            svgElement.setAttribute("data-external-link-icon", "true"); // For easy selection later
+            // Add the non-breaking space and the arrow
+            arrowSpan.innerHTML = `&nbsp;↗`;
 
-            // Create a text node for the non-breaking space
-            const nbspNode = document.createTextNode('\u00A0'); // Unicode for &nbsp;
-
-            targetElement.appendChild(nbspNode);
-            targetElement.appendChild(svgElement);
+            targetElement.appendChild(arrowSpan);
           }
         }
       } catch (e) {
