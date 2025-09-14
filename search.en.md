@@ -148,7 +148,7 @@ permalink: /search
                 rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
-                            // The 'doc' property now contains the highlighted content
+                            // The 'doc' property now contains the enriched and highlighted document
                             const doc = r.doc; 
                             if (doc) {
                                 // Add a higher score for results from the current language
@@ -212,11 +212,14 @@ permalink: /search
                     return;
                 }
                 
+                // FlexSearch provides the highlighted content directly on the item object
                 const title = item.document || 'No Title';
                 const url = item.url || '#';
                 const sectionContent = item.section || '';
                 const mainContent = item.content || '';
 
+                // Note: FlexSearch's `boundary` and `merge` options handle the ellipsis and context.
+                // The template string now just needs to use these variables.
                 html += `
                     <li class="box mb-4">
                         <p><a href="${url}"><strong>${title}</strong></a><br>${sectionContent}</p>
