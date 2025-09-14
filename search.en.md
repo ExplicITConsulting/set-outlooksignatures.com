@@ -11,9 +11,6 @@ permalink: /search
     <div class="control is-expanded">
         <input type="search" id="search-input" placeholder="What are you looking for?" class="input is-large">
     </div>
-    <div class="control">
-        <button id="search-button" class="button is-large">Search</button>
-    </div>
 </div>
 
 <div id="search-results" class="content">
@@ -54,9 +51,28 @@ permalink: /search
                 lang: lang
             });
         }
-
+        
         let filesToLoad = Object.keys(languages).map(lang => languages[lang]);
         let filesLoaded = 0;
+        
+        // Debounce function specifically for the _paq tracking
+        function debounce(func, delay) {
+            let timeoutId;
+            return function(...args) {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                    func.apply(this, args);
+                }, delay);
+            };
+        }
+
+        const debouncedTrackSearch = debounce(function() {
+            if (typeof _paq !== 'undefined') {
+                const query = searchInput.value.trim();
+                const resultsCount = searchResultsContainer.querySelectorAll('li').length;
+                _paq.push(['trackSiteSearch', query, false, resultsCount]);
+            }
+        }, 2000); // 2000ms delay for _paq
 
         function checkIfReady() {
             filesLoaded++;
@@ -64,17 +80,16 @@ permalink: /search
                 searchInput.placeholder = "What are you looking for?";
                 searchInput.disabled = false;
                 
-                document.getElementById('search-button').addEventListener('click', performSearch);
-                
-                searchInput.addEventListener('keydown', (event) => {
-                    if (event.key === 'Enter') {
-                        event.preventDefault();
-                        performSearch();
-                    }
-                });
-
+                // Attach the event listener to trigger both actions
                 searchInput.addEventListener('input', () => {
-                    searchResultsContainer.innerHTML = '';
+                    const query = searchInput.value.trim();
+                    if (query.length > 0) {
+                        performSearch(); // Immediate search
+                        debouncedTrackSearch(); // Debounced _paq call
+                    } else {
+                        // Clear results if the input is empty
+                        searchResultsContainer.innerHTML = '';
+                    }
                 });
             }
         }
@@ -122,17 +137,13 @@ permalink: /search
             let allResults = [];
             const searchOptions = {
                 limit: 99,
-                // DO NOT USE enrich: true
                 suggest: true,
                 highlight: {
                     template: '<mark style="background-color: yellow;">$1</mark>',
                     boundary: {
-                        // length before match  
                         before: 50,
-                        // length after match  
                         after: 50,
-                        // overall length  
-                        total: 500  
+                        total: 500 
                     },
                     merge: true,
                 }
@@ -147,7 +158,6 @@ permalink: /search
                         fieldResult.result.forEach(r => {
                             const originalDoc = currentLangIndex.get(r.id);
                             if (originalDoc) {
-                                // Merge the highlight from the result into the original document
                                 const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
                                 allResults.push({ id: r.id, doc: highlightedDoc, score: r.score - 1000, lang: currentLang });
                             }
@@ -180,10 +190,6 @@ permalink: /search
         }
 
         function displayResults(results) {
-            if (typeof _paq !== 'undefined') {
-                _paq.push(['trackSiteSearch', searchInput.value.trim(), false, results.length]);
-            }
-            
             const uniqueResults = [];
             const seenUrls = new Set();
             results.forEach(result => {
@@ -206,7 +212,6 @@ permalink: /search
                     return;
                 }
                 
-                // The item.highlight property now contains the highlighted content
                 const title = item.document || 'No Title';
                 const url = item.url || '#';
                 const sectionContent = item.section || '';
