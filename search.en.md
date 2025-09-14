@@ -81,11 +81,11 @@ permalink: /search
                 searchInput.disabled = false;
                 
                 // Add event listeners AFTER the indexes are ready
-                document.getElementById('search-button').addEventListener('click', performSearch);
+                document.getElementById('search-button').addEventListener('click', () => performSearch(searchInput.value.trim()));
                 searchInput.addEventListener('keydown', (event) => {
                     if (event.key === 'Enter') {
                         event.preventDefault();
-                        performSearch();
+                        performSearch(searchInput.value.trim());
                     }
                 });
 
@@ -145,25 +145,11 @@ permalink: /search
                 });
         });
 
-        // Function to perform search across all indexes
-        function performSearch() {
-            const query = searchInput.value.trim();
-            if (query.length === 0) {
-                searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
-                return;
-            }
-            if (typeof query !== 'string' || query.length === 0) {
-                console.warn("Invalid search query received (not a non-empty string):", query);
-                searchResultsContainer.innerHTML = '<p>Please enter a valid search term.</p>';
-                return;
-            }
-
-            // Hide suggestions when a full search is performed
-            hideSuggestions();
-
+        // REFACTORED: New reusable function to get and sort search results
+        function getSearchResults(query) {
             let allResults = [];
             
-            // Step 1 (Crucial Change): Search the current language index first.
+            // Search the current language index first.
             const currentLangIndex = indexes[currentLang];
             if (currentLangIndex) {
                 const rawResults = currentLangIndex.search(query, {
@@ -184,7 +170,7 @@ permalink: /search
                 });
             }
 
-            // Step 2: Search other language indexes.
+            // Search other language indexes.
             Object.keys(indexes).forEach(lang => {
                 if (lang !== currentLang) {
                     const otherLangIndex = indexes[lang];
@@ -206,52 +192,52 @@ permalink: /search
                 }
             });
 
-            // Step 3: Sort the combined results by their relevance score.
-            // Results from the current language will have a lower (better) score due to the -1000 offset.
+            // Deduplicate results, as a single document may appear in multiple indexes
+            const uniqueResults = [];
+            const seenUrls = new Set();
             allResults.sort((a, b) => a.score - b.score);
+            
+            allResults.forEach(result => {
+                if (result.doc && !seenUrls.has(result.doc.url)) {
+                    uniqueResults.push(result);
+                    seenUrls.add(result.doc.url);
+                }
+            });
 
-            displayResults(allResults, query);
+            return uniqueResults;
+        }
+
+        // REFACTORED: Function to perform search across all indexes
+        function performSearch(query) {
+            if (query.length === 0) {
+                searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
+                return;
+            }
+            if (typeof query !== 'string' || query.length === 0) {
+                console.warn("Invalid search query received (not a non-empty string):", query);
+                searchResultsContainer.innerHTML = '<p>Please enter a valid search term.</p>';
+                return;
+            }
+
+            // Hide suggestions when a full search is performed
+            hideSuggestions();
+
+            const results = getSearchResults(query);
+            
+            if (typeof _paq !== 'undefined') {
+                _paq.push(['trackSiteSearch', query, false, results.length]);
+            }
+
+            displayResults(results, query);
         }
 
         // New function to display suggestions
         function showSuggestions(query) {
-            let suggestions = [];
+            const suggestions = getSearchResults(query).slice(0, suggestionLimit);
 
-            // Search all language indexes
-            Object.keys(indexes).forEach(lang => {
-                const index = indexes[lang];
-                const rawResults = index.search(query, { limit: 99, enrich: true });
-                rawResults.forEach(fieldResult => {
-                    if (fieldResult && fieldResult.result) {
-                        fieldResult.result.forEach(r => {
-                            const doc = index.get(r.id);
-                            if (doc) {
-                                // Prioritize the current language by adjusting the score
-                                let score = r.score;
-                                if (lang === currentLang) {
-                                    score -= 1000;
-                                }
-                                suggestions.push({ id: r.id, doc: doc, score: score, lang: lang });
-                            }
-                        });
-                    }
-                });
-            });
-
-            // Deduplicate suggestions and sort
-            const uniqueSuggestions = [];
-            const seenUrls = new Set();
-            suggestions.sort((a, b) => a.score - b.score);
-            suggestions.forEach(suggestion => {
-                if (suggestion.doc && !seenUrls.has(suggestion.doc.url)) {
-                    uniqueSuggestions.push(suggestion);
-                    seenUrls.add(suggestion.doc.url);
-                }
-            });
-
-            if (uniqueSuggestions.length > 0) {
+            if (suggestions.length > 0) {
                 let html = '';
-                uniqueSuggestions.slice(0, suggestionLimit).forEach(item => {
+                suggestions.forEach(item => {
                     const title = item.doc.document || 'No Title';
                     const url = item.doc.url || '#';
                     const snippet = item.doc.section || item.doc.content || '';
@@ -275,25 +261,12 @@ permalink: /search
         }
 
         function displayResults(results, query) {
-            if (typeof _paq !== 'undefined') {
-                _paq.push(['trackSiteSearch', query, false, results.length]);
-            }
-            // Deduplicate results, as a single document may appear in multiple indexes
-            const uniqueResults = [];
-            const seenUrls = new Set();
-            results.forEach(result => {
-                if (result.doc && !seenUrls.has(result.doc.url)) {
-                    uniqueResults.push(result);
-                    seenUrls.add(result.doc.url);
-                }
-            });
-
-            if (uniqueResults.length === 0) {
+            if (results.length === 0) {
                 searchResultsContainer.innerHTML = '<p>No results found.</p>';
                 return;
             }
             let html = '<ul class="search-results-list">';
-            uniqueResults.forEach(result => {
+            results.forEach(result => {
                 const item = result.doc;
                 if (!item) {
                     console.warn('Skipping search result with undefined document:', result);
