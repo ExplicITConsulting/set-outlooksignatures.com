@@ -12,7 +12,7 @@ permalink: /search
 <div id="search-results" class="content">
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.8.205/dist/flexsearch.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.8/dist/flexsearch.bundle.min.js"></script>
 
 <script>
     (function() {
@@ -56,7 +56,7 @@ permalink: /search
                 // Add event listener AFTER the index is ready
                 searchInput.addEventListener('input', () => {
                     clearTimeout(searchTimeout);
-                    searchTimeout = setTimeout(performSearch, 300);
+                    searchTimeout = setTimeout(performSearch, 1000);
                 });
             }
         }
