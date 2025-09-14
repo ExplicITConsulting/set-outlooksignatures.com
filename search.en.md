@@ -134,12 +134,12 @@ permalink: /search
                         // overall length  
                         total: 500  
                     },
-                    ellipsis: [{
+                    ellipsis: {
                         // pass a template, where $1 is
                         // a placeholder for the ellipsis
                         template: "<b>$1</b>",
                         // define custom ellipsis
-                        pattern: "[…]"]
+                        pattern: "[…]"
                     },
                     merge: true,
                 }
