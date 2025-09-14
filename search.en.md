@@ -217,32 +217,37 @@ permalink: /search
         function showSuggestions(query) {
             let suggestions = [];
 
-            // Search the current language index first
-            const currentLangIndex = indexes[currentLang];
-            if (currentLangIndex) {
-                const rawResults = currentLangIndex.search(query, { limit: suggestionLimit, enrich: true });
+            // Search all language indexes
+            Object.keys(indexes).forEach(lang => {
+                const index = indexes[lang];
+                const rawResults = index.search(query, { limit: 99, enrich: true });
                 rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
-                            const doc = currentLangIndex.get(r.id);
+                            const doc = index.get(r.id);
                             if (doc) {
-                                suggestions.push({ id: r.id, doc: doc, score: r.score });
+                                // Prioritize the current language by adjusting the score
+                                let score = r.score;
+                                if (lang === currentLang) {
+                                    score -= 1000;
+                                }
+                                suggestions.push({ id: r.id, doc: doc, score: score, lang: lang });
                             }
                         });
                     }
                 });
-            }
+            });
 
             // Deduplicate suggestions and sort
             const uniqueSuggestions = [];
             const seenUrls = new Set();
+            suggestions.sort((a, b) => a.score - b.score);
             suggestions.forEach(suggestion => {
                 if (suggestion.doc && !seenUrls.has(suggestion.doc.url)) {
                     uniqueSuggestions.push(suggestion);
                     seenUrls.add(suggestion.doc.url);
                 }
             });
-            uniqueSuggestions.sort((a, b) => a.score - b.score);
 
             if (uniqueSuggestions.length > 0) {
                 let html = '';
@@ -268,9 +273,6 @@ permalink: /search
             suggestionsContainer.classList.remove('is-active');
             suggestionsMenu.innerHTML = '';
         }
-
-        // The rest of the functions (displayResults, applyHighlighting, generateContextualSnippet) are unchanged as they handle the display logic, not the search engine's configuration.
-        // They are provided here for completeness and can be copied and pasted from the original code.
 
         function displayResults(results, query) {
             if (typeof _paq !== 'undefined') {
