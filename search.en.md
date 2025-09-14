@@ -44,11 +44,10 @@ permalink: /search
                     store: allSearchFields
                 },
                 tokenize: "full",
-                resolution: 9,
                 encoder: FlexSearch.Charset.LatinSoundex,
                 cache: true,
                 context: true,
-                lang: lang // Specify the language
+                lang: lang
             });
         }
 
