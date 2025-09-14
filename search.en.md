@@ -1,5 +1,7 @@
 ---
 layout: page
+lang: en
+locale: en
 title: What are you looking for?
 subtitle: Find it here
 description: What are you looking for? Find it here.
