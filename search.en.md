@@ -167,22 +167,28 @@ permalink: /search
             const regex = new RegExp(`(${escapedQuery})`, 'gi');
             return text.replace(regex, '<mark>$1</mark>');
         }
+
         function generateContextualSnippet(fullText, query, totalSnippetLength = 250, contextChars = 80) {
-            if (!fullText || typeof fullText !== 'string' || !query || typeof query !== 'string' || query.trim().length === 0) {
-                return applyHighlighting(fullText.substring(0, totalSnippetLength), query) + (fullText.length > totalSnippetLength ? '' : '…');
-            }
-            const lowerText = fullText.toLowerCase();
-            const lowerQuery = query.toLowerCase();
-            let matchIndexes = [];
-            let currentPos = lowerText.indexOf(lowerQuery);
-            while (currentPos !== -1) {
-                matchIndexes.push(currentPos);
-                currentPos = lowerText.indexOf(lowerQuery, currentPos + lowerQuery.length);
-            }
-            if (matchIndexes.length === 0) {
-                return applyHighlighting(fullText.substring(0, totalSnippetLength), query) + (fullText.length > totalSnippetLength ? '…' : '');
-            }
-            const firstMatchIndex = matchIndexes[0];
+        if (!fullText || typeof fullText !== 'string' || !query || typeof query !== 'string' || query.trim().length === 0) {
+            return applyHighlighting(fullText.substring(0, totalSnippetLength), query) + (fullText.length > totalSnippetLength ? '' : '…');
+        }
+
+        const lowerText = fullText.toLowerCase();
+        const lowerQuery = query.toLowerCase();
+
+        let matchIndexes = [];
+        // The fix: search for the query string with optional word boundaries.
+        const regex = new RegExp(`\\b${lowerQuery}\\b|${lowerQuery}`, 'g');
+        let match;
+        while ((match = regex.exec(lowerText)) !== null) {
+            matchIndexes.push(match.index);
+        }
+
+        if (matchIndexes.length === 0) {
+            return applyHighlighting(fullText.substring(0, totalSnippetLength), query) + (fullText.length > totalSnippetLength ? '…' : '');
+        }
+
+        const firstMatchIndex = matchIndexes[0];
             let start = Math.max(0, firstMatchIndex - contextChars);
             let end = Math.min(fullText.length, firstMatchIndex + lowerQuery.length + contextChars);
             if (end - start < totalSnippetLength) {
