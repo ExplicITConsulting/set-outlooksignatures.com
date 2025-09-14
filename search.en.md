@@ -126,6 +126,7 @@ permalink: /search
                 searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
                 return;
             }
+
             if (typeof query !== 'string' || query.length === 0) {
                 console.warn("Invalid search query received (not a non-empty string):", query);
                 searchResultsContainer.innerHTML = '<p>Please enter a valid search term.</p>';
@@ -133,28 +134,50 @@ permalink: /search
             }
 
             let allResults = [];
+            const seenUrls = new Set(); // Use a Set to track and prevent duplicate results
+
             // Iterate over all initialized indexes and perform search
             Object.keys(indexes).forEach(lang => {
                 const rawResults = indexes[lang].search(query, {
                     limit: 99,
                     enrich: true,
                 });
+
+                // The rawResults structure is an array of objects, one for each field searched.
+                // We need to flatten this structure and combine scores for the same document.
+                const langResults = {}; // Object to hold results for this language
                 
-                // Flatten and enrich results with their score for sorting
                 rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
-                            // Get the full document and add the score for sorting
-                            const doc = indexes[lang].get(r.id);
-                            if (doc) {
-                                allResults.push({ id: r.id, doc: doc, score: r.score });
+                            if (!langResults[r.id]) {
+                                // If it's the first time we see this document, initialize it.
+                                langResults[r.id] = {
+                                    id: r.id,
+                                    doc: indexes[lang].get(r.id),
+                                    score: r.score,
+                                    lang: lang,
+                                };
+                            } else {
+                                // If we've already seen this document, combine the scores.
+                                // A lower score is better, so take the min score.
+                                langResults[r.id].score = Math.min(langResults[r.id].score, r.score);
                             }
                         });
                     }
                 });
+
+                // Push the collected and de-duplicated results for this language into the main array
+                Object.values(langResults).forEach(item => {
+                    if (!seenUrls.has(item.id)) {
+                        allResults.push(item);
+                        seenUrls.add(item.id);
+                    }
+                });
             });
 
-            // Step 2: Sort the combined results by their relevance score
+            // Sort the final combined results by their relevance score
+            // A lower score is more relevant.
             allResults.sort((a, b) => a.score - b.score);
 
             displayResults(allResults, query);
