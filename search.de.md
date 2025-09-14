@@ -9,7 +9,7 @@ permalink: /search
 
 <div class="field has-addons">
     <div class="control is-expanded">
-        <input type="search" id="search-input" placeholder="Type to search" class="input is-large">
+        <input type="search" id="search-input" placeholder="Suchen Sie hier" class="input is-large">
     </div>
 </div>
 
@@ -40,7 +40,13 @@ permalink: /search
 
             languageCodes.forEach(code => {
                 const trimmedCode = code.trim();
-                languages[trimmedCode] = `/${trimmedCode}/search.json`;
+
+                // Check for the English language code
+                if (trimmedCode === 'en') {
+                    languages[trimmedCode] = '/search.json';
+                } else {
+                    languages[trimmedCode] = `/${trimmedCode}/search.json`;
+                }
             });
         }
 

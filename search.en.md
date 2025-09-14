@@ -40,7 +40,13 @@ permalink: /search
 
             languageCodes.forEach(code => {
                 const trimmedCode = code.trim();
-                languages[trimmedCode] = `/${trimmedCode}/search.json`;
+
+                // Check for the English language code
+                if (trimmedCode === 'en') {
+                    languages[trimmedCode] = '/search.json';
+                } else {
+                    languages[trimmedCode] = `/${trimmedCode}/search.json`;
+                }
             });
         }
 
