@@ -27,8 +27,7 @@ permalink: /search
 
         const searchInput = document.getElementById('search-input');
         const searchResultsContainer = document.getElementById('search-results');
-        const searchButton = document.getElementById('search-button');
-
+        
         // Step 1: Set initial placeholder and disable the input
         searchInput.placeholder = "Loading search data…";
         searchInput.disabled = true;
@@ -48,59 +47,25 @@ permalink: /search
                     index: allSearchFields,
                     store: allSearchFields
                 },
+                tokenize: "full",
+                encoder: FlexSearch.Charset.LatinSoundex,
+                cache: true,
+                context: true,
                 lang: lang
             });
         }
-        
-        /**
-         * Dynamically loads FlexSearch language preset scripts.
-         * @returns {Promise<void>} A promise that resolves when all scripts are loaded.
-         */
-        function loadLanguagePresets() {
-            const languagesToLoad = Object.keys(languages);
-            const scriptPromises = languagesToLoad.map(lang => {
-                return new Promise((resolve, reject) => {
-                    const script = document.createElement('script');
-                    script.src = `https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/lang/${lang}.js`;
-                    script.onload = () => resolve();
-                    script.onerror = () => reject(new Error(`Failed to load FlexSearch language preset: ${lang}.js`));
-                    document.head.appendChild(script);
-                });
-            });
-            return Promise.all(scriptPromises);
-        }
 
-        // Start the loading process for both language presets and search data
-        loadLanguagePresets()
-            .then(() => {
-                const searchDataPromises = Object.keys(languages).map(lang => {
-                    return fetch(languages[lang])
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error(`HTTP error! status: ${response.status}`);
-                            }
-                            return response.json();
-                        })
-                        .then(data => {
-                            // After data is fetched and presets are loaded, create and populate the index
-                            indexes[lang] = createIndex(lang);
-                            data.forEach(item => {
-                                if (item.url) {
-                                    indexes[lang].add(item);
-                                } else {
-                                    console.warn(`Item missing URL in ${languages[lang]}, skipping for FlexSearch index:`, item);
-                                }
-                            });
-                        });
-                });
-                return Promise.all(searchDataPromises);
-            })
-            .then(() => {
-                // All data and presets are loaded, now enable the search functionality
+        let filesToLoad = Object.keys(languages).map(lang => languages[lang]);
+        let filesLoaded = 0;
+
+        // Function to check if all files are loaded
+        function checkIfReady() {
+            filesLoaded++;
+            if (filesLoaded === filesToLoad.length) {
                 searchInput.placeholder = "What are you looking for?";
                 searchInput.disabled = false;
                 
-                searchButton.addEventListener('click', performSearch);
+                // Add event listeners AFTER the indexes are ready
                 searchInput.addEventListener('keydown', (event) => {
                     if (event.key === 'Enter') {
                         event.preventDefault();
@@ -111,11 +76,37 @@ permalink: /search
                 searchInput.addEventListener('input', () => {
                     searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
                 });
-            })
-            .catch(error => {
-                console.error(`Error during search data or preset loading:`, error);
-                searchResultsContainer.innerHTML = '<p>Error loading search data. Some results may be missing. You can still search, but not all data might be available. Please try reloading the page.</p>';
-            });
+            }
+        }
+
+        // Fetch the search.json files and populate the correct index
+        Object.keys(languages).forEach(lang => {
+            const url = languages[lang];
+            indexes[lang] = createIndex(lang); // Create an index for each language
+            
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    data.forEach(item => {
+                        if (item.url) {
+                            indexes[lang].add(item);
+                        } else {
+                            console.warn(`Item missing URL in ${url}, skipping for FlexSearch index:`, item);
+                        }
+                    });
+                    checkIfReady();
+                })
+                .catch(error => {
+                    console.error(`Error fetching or parsing ${url}:`, error);
+                    searchResultsContainer.innerHTML = '<p>Error loading search data. Some results may be missing. You can still search, but not all data might be available. Please try reloading the page.</p>';
+                    checkIfReady();
+                });
+        });
 
         // Function to perform search across all indexes
         function performSearch() {
@@ -131,6 +122,7 @@ permalink: /search
             }
 
             let allResults = [];
+            // Iterate over all initialized indexes and perform search
             Object.keys(indexes).forEach(lang => {
                 const rawResults = indexes[lang].search(query, {
                     limit: 99,
@@ -138,9 +130,11 @@ permalink: /search
                     fuzzy: true,
                 });
                 
+                // Flatten and enrich results with their score for sorting
                 rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
+                            // Get the full document and add the score for sorting
                             const doc = indexes[lang].get(r.id);
                             if (doc) {
                                 allResults.push({ id: r.id, doc: doc, score: r.score });
@@ -150,12 +144,14 @@ permalink: /search
                 });
             });
 
+            // Step 2: Sort the combined results by their relevance score
             allResults.sort((a, b) => a.score - b.score);
 
             displayResults(allResults, query);
         }
 
-        // The remaining functions (displayResults, applyHighlighting, generateContextualSnippet) are unchanged
+        // The remaining functions (displayResults, applyHighlighting, generateContextualSnippet)
+        // are unchanged as they handle the display logic, not the search engine's configuration.
         function displayResults(results, query) {
             if (typeof _paq !== 'undefined') {
                 _paq.push(['trackSiteSearch', query, false, results.length]);
