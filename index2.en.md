@@ -19,7 +19,7 @@ page_id: "index2"
 {{ I18n_Headers }}
 
 ## page.url
-{% page.url %}
+{{ page.url }}
 
 ## page.permalink
-{% page.permalink %}
+{{ page.permalink }}
