@@ -16,13 +16,6 @@ permalink: /search
     </div>
 </div>
 
-<div id="suggestions-container" class="dropdown is-active">
-    <div id="suggestions-menu" class="dropdown-menu" role="menu">
-        <div class="dropdown-content">
-        </div>
-    </div>
-</div>
-
 <div id="search-results" class="content">
 </div>
 
@@ -35,11 +28,6 @@ permalink: /search
         const searchInput = document.getElementById('search-input');
         const searchResultsContainer = document.getElementById('search-results');
         
-        // New elements for the suggestion feature
-        const suggestionsContainer = document.getElementById('suggestions-container');
-        const suggestionsMenu = document.querySelector('#suggestions-container .dropdown-content');
-        const suggestionLimit = 5; // How many suggestions to show at a time
-
         // Step 1: Set initial placeholder and disable the input
         searchInput.placeholder = "Loading search data…";
         searchInput.disabled = true;
@@ -52,6 +40,8 @@ permalink: /search
         };
 
         // Determine the current language from the URL or a global variable
+        // This is a crucial addition to make the prioritization work.
+        // We'll use a simple URL-based method, assuming the German site is under /de/.
         const currentLang = window.location.pathname.startsWith('/de/') ? 'de' : 'en';
 
         // Function to create a new FlexSearch index for a given language
@@ -81,37 +71,17 @@ permalink: /search
                 searchInput.disabled = false;
                 
                 // Add event listeners AFTER the indexes are ready
-                document.getElementById('search-button').addEventListener('click', () => performSearch(searchInput.value.trim()));
+                document.getElementById('search-button').addEventListener('click', performSearch);
                 searchInput.addEventListener('keydown', (event) => {
                     if (event.key === 'Enter') {
                         event.preventDefault();
-                        performSearch(searchInput.value.trim());
+                        performSearch();
                     }
                 });
 
-                // New event listener for suggestions
-                searchInput.addEventListener('input', (event) => {
-                    const query = event.target.value.trim();
-                    if (query.length > 2) { // Only show suggestions after 3 characters
-                        showSuggestions(query);
-                    } else {
-                        hideSuggestions();
-                    }
-                });
-
-                // Hide suggestions when clicking outside
-                document.addEventListener('click', (event) => {
-                    if (!suggestionsContainer.contains(event.target) && event.target !== searchInput) {
-                        hideSuggestions();
-                    }
-                });
-
-                // Clear suggestions when the search input is focused, if it was hidden
-                searchInput.addEventListener('focus', (event) => {
-                    const query = event.target.value.trim();
-                    if (query.length > 2) {
-                        showSuggestions(query);
-                    }
+                searchInput.addEventListener('input', () => {
+                    // We'll remove this listener and instead clear results only on an empty query
+                    // This prevents the page from clearing as the user types
                 });
             }
         }
@@ -145,11 +115,22 @@ permalink: /search
                 });
         });
 
-        // REFACTORED: New reusable function to get and sort search results
-        function getSearchResults(query) {
+        // Function to perform search across all indexes
+        function performSearch() {
+            const query = searchInput.value.trim();
+            if (query.length === 0) {
+                searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
+                return;
+            }
+            if (typeof query !== 'string' || query.length === 0) {
+                console.warn("Invalid search query received (not a non-empty string):", query);
+                searchResultsContainer.innerHTML = '<p>Please enter a valid search term.</p>';
+                return;
+            }
+
             let allResults = [];
             
-            // Search the current language index first.
+            // Step 1 (Crucial Change): Search the current language index first.
             const currentLangIndex = indexes[currentLang];
             if (currentLangIndex) {
                 const rawResults = currentLangIndex.search(query, {
@@ -170,7 +151,7 @@ permalink: /search
                 });
             }
 
-            // Search other language indexes.
+            // Step 2: Search other language indexes.
             Object.keys(indexes).forEach(lang => {
                 if (lang !== currentLang) {
                     const otherLangIndex = indexes[lang];
@@ -192,81 +173,36 @@ permalink: /search
                 }
             });
 
+            // Step 3: Sort the combined results by their relevance score.
+            // Results from the current language will have a lower (better) score due to the -1000 offset.
+            allResults.sort((a, b) => a.score - b.score);
+
+            displayResults(allResults, query);
+        }
+
+        // The rest of the functions (displayResults, applyHighlighting, generateContextualSnippet) are unchanged as they handle the display logic, not the search engine's configuration.
+        // They are provided here for completeness and can be copied and pasted from the original code.
+
+        function displayResults(results, query) {
+            if (typeof _paq !== 'undefined') {
+                _paq.push(['trackSiteSearch', query, false, results.length]);
+            }
             // Deduplicate results, as a single document may appear in multiple indexes
             const uniqueResults = [];
             const seenUrls = new Set();
-            allResults.sort((a, b) => a.score - b.score);
-            
-            allResults.forEach(result => {
+            results.forEach(result => {
                 if (result.doc && !seenUrls.has(result.doc.url)) {
                     uniqueResults.push(result);
                     seenUrls.add(result.doc.url);
                 }
             });
 
-            return uniqueResults;
-        }
-
-        // REFACTORED: Function to perform search across all indexes
-        function performSearch(query) {
-            if (query.length === 0) {
-                searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
-                return;
-            }
-            if (typeof query !== 'string' || query.length === 0) {
-                console.warn("Invalid search query received (not a non-empty string):", query);
-                searchResultsContainer.innerHTML = '<p>Please enter a valid search term.</p>';
-                return;
-            }
-
-            // Hide suggestions when a full search is performed
-            hideSuggestions();
-
-            const results = getSearchResults(query);
-            
-            if (typeof _paq !== 'undefined') {
-                _paq.push(['trackSiteSearch', query, false, results.length]);
-            }
-
-            displayResults(results, query);
-        }
-
-        // New function to display suggestions
-        function showSuggestions(query) {
-            const suggestions = getSearchResults(query).slice(0, suggestionLimit);
-
-            if (suggestions.length > 0) {
-                let html = '';
-                suggestions.forEach(item => {
-                    const title = item.doc.document || 'No Title';
-                    const url = item.doc.url || '#';
-                    const snippet = item.doc.section || item.doc.content || '';
-                    html += `
-                        <a href="${url}" class="dropdown-item">
-                            <p><strong>${applyHighlighting(title, query)}</strong></p>
-                            <p class="is-size-7 has-text-grey-light">${generateContextualSnippet(snippet, query, 100, 20)}</p>
-                        </a>
-                    `;
-                });
-                suggestionsMenu.innerHTML = html;
-                suggestionsContainer.classList.add('is-active');
-            } else {
-                hideSuggestions();
-            }
-        }
-
-        function hideSuggestions() {
-            suggestionsContainer.classList.remove('is-active');
-            suggestionsMenu.innerHTML = '';
-        }
-
-        function displayResults(results, query) {
-            if (results.length === 0) {
+            if (uniqueResults.length === 0) {
                 searchResultsContainer.innerHTML = '<p>No results found.</p>';
                 return;
             }
             let html = '<ul class="search-results-list">';
-            results.forEach(result => {
+            uniqueResults.forEach(result => {
                 const item = result.doc;
                 if (!item) {
                     console.warn('Skipping search result with undefined document:', result);
