@@ -79,10 +79,10 @@ permalink: /search
                     }
                 });
 
-                // ⭐ Add this new event listener to clear results on input change
+                // ⭐ This is the new event listener to clear results on input change
                 searchInput.addEventListener('input', () => {
                     if (searchInput.value.trim() === '') {
-                        searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
+                        searchResultsContainer.innerHTML = '';
                     }
                 });
             }
