@@ -31,7 +31,6 @@ permalink: /search
             depth: 2, // Deeper search for nested objects if any (though our JSON is flat)
             optimize: true, // Optimize index for faster searches
             cache: true, // Cache search results
-            suggest: false, // 'suggest' option removed
             encoder: Charset.LatinSoundex,
         });
 
