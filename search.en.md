@@ -127,6 +127,7 @@ permalink: /search
                 const rawResults = indexes[lang].search(query, {
                     limit: 99,
                     enrich: true,
+                    fuzzy: true,
                 });
                 
                 // Flatten and enrich results with their score for sorting
