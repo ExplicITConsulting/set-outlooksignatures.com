@@ -20,7 +20,7 @@
           link.setAttribute("target", "_blank");
         }
 
-        if ((link.getAttribute("target") || "").toLowerCase() === "_blank") {
+        if ((link.getAttribute("target") || "").toLowerCase() === "_blank" && !link.classList.contains("no-external-link-icon")) {
           let targetElement = link;
           const buttonChild = link.querySelector('button');
           if (buttonChild) {
