@@ -121,23 +121,3 @@
     }
   });
 </script>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const languageSwitcher = document.getElementById('language-switcher');
-    if (!languageSwitcher) return;
-
-    const currentAnchor = window.location.hash;
-
-    if (currentAnchor) {
-      const languageLinks = languageSwitcher.querySelectorAll('a');
-      languageLinks.forEach((link) => {
-        const href = link.getAttribute('href');
-        if (href) {
-          link.setAttribute('href', href + currentAnchor);
-        }
-      });
-    }
-  });
-</script>
