@@ -1,8 +1,8 @@
 ---
 layout: page
-title: What are you looking for?
-subtitle: Find it here
-description: What are you looking for? Find it here.
+title: Was suchen Sie?
+subtitle: Finden Sie es hier
+description: Was suchen Sie? Finden Sie es hier.
 page_id: "search"
 permalink: /search
 ---
@@ -26,7 +26,7 @@ permalink: /search
         const searchResultsContainer = document.getElementById('search-results');
 
         // Set initial placeholder and disable the input
-        searchInput.placeholder = "Loading data…";
+        searchInput.placeholder = "Lade Daten…";
         searchInput.disabled = true;
 
         const indexes = {};
