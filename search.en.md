@@ -126,8 +126,7 @@ permalink: /search
             Object.keys(indexes).forEach(lang => {
                 const rawResults = indexes[lang].search(query, {
                     limit: 99,
-                    enrich: true,
-                    fuzzy: true,
+                    enrich: true
                 });
                 
                 // Flatten and enrich results with their score for sorting
