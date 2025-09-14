@@ -133,25 +133,39 @@ permalink: /search
                 return;
             }
 
+            const currentPageLang = document.documentElement.lang;
             let allResults = [];
-            const seenUrls = new Set(); // Use a Set to track and prevent duplicate results
+            const seenUrls = new Set();
+            const languagesToSearch = Object.keys(languages);
 
-            // Iterate over all initialized indexes and perform search
-            Object.keys(indexes).forEach(lang => {
+            // Prioritize the current page's language
+            if (languagesToSearch.includes(currentPageLang)) {
+                searchAndAddResults(currentPageLang);
+            }
+
+            // Then, loop through all other languages
+            languagesToSearch.forEach(lang => {
+                if (lang !== currentPageLang) {
+                    searchAndAddResults(lang);
+                }
+            });
+
+            // Sort the combined results by their relevance score
+            allResults.sort((a, b) => a.score - b.score);
+
+            displayResults(allResults, query);
+
+            function searchAndAddResults(lang) {
                 const rawResults = indexes[lang].search(query, {
                     limit: 99,
                     enrich: true,
                 });
 
-                // The rawResults structure is an array of objects, one for each field searched.
-                // We need to flatten this structure and combine scores for the same document.
-                const langResults = {}; // Object to hold results for this language
-                
+                const langResults = {};
                 rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
                             if (!langResults[r.id]) {
-                                // If it's the first time we see this document, initialize it.
                                 langResults[r.id] = {
                                     id: r.id,
                                     doc: indexes[lang].get(r.id),
@@ -159,28 +173,19 @@ permalink: /search
                                     lang: lang,
                                 };
                             } else {
-                                // If we've already seen this document, combine the scores.
-                                // A lower score is better, so take the min score.
                                 langResults[r.id].score = Math.min(langResults[r.id].score, r.score);
                             }
                         });
                     }
                 });
 
-                // Push the collected and de-duplicated results for this language into the main array
                 Object.values(langResults).forEach(item => {
                     if (!seenUrls.has(item.id)) {
                         allResults.push(item);
                         seenUrls.add(item.id);
                     }
                 });
-            });
-
-            // Sort the final combined results by their relevance score
-            // A lower score is more relevant.
-            allResults.sort((a, b) => a.score - b.score);
-
-            displayResults(allResults, query);
+            }
         }
 
         // The remaining functions (displayResults, applyHighlighting, generateContextualSnippet)
