@@ -125,15 +125,22 @@ permalink: /search
                     enrich: true,
                 });
                 
-                // Flatten the results from each language-specific index
+                // Flatten and enrich results with their score for sorting
                 rawResults.forEach(fieldResult => {
-                    if (fieldResult && fieldResult.field && Array.isArray(fieldResult.result)) {
-                        fieldResult.result.forEach(r => allResults.push({ id: r.id, doc: indexes[lang].get(r.id) }));
-                    } else if (fieldResult && fieldResult.doc) {
-                        allResults.push(fieldResult);
+                    if (fieldResult && fieldResult.result) {
+                        fieldResult.result.forEach(r => {
+                            // Get the full document and add the score for sorting
+                            const doc = indexes[lang].get(r.id);
+                            if (doc) {
+                                allResults.push({ id: r.id, doc: doc, score: r.score });
+                            }
+                        });
                     }
                 });
             });
+
+            // Step 2: Sort the combined results by their relevance score
+            allResults.sort((a, b) => a.score - b.score);
 
             displayResults(allResults, query);
         }
