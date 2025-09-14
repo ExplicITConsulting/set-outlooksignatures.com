@@ -130,13 +130,11 @@
 
     const currentAnchor = window.location.hash;
 
-    // Check if a URL hash (anchor) exists
     if (currentAnchor) {
       const languageLinks = languageSwitcher.querySelectorAll('a');
       languageLinks.forEach((link) => {
         const href = link.getAttribute('href');
-        
-        // Check if the link's href is not null and does not already contain an anchor
+        // This check is now robust because the Liquid code guarantees no existing anchor.
         if (href && href.indexOf('#') === -1) {
           link.setAttribute('href', href + currentAnchor);
         }
