@@ -1,26 +1,3 @@
----
-layout: page
-title: Search and find
-subtitle: What are you looking for?
-description: Search and find. What are you looking for?
-page_id: "search"
-permalink: /search
----
-
-<div class="field has-addons">
-    <div class="control is-expanded">
-        <input type="search" id="search-input" placeholder="What are you looking for?" class="input is-large">
-    </div>
-    <div class="control">
-        <button id="search-button" class="button is-large">Search</button>
-    </div>
-</div>
-
-<div id="search-results" class="content">
-</div>
-
-<script src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js"></script>
-
 <script>
     (function() {
         const allSearchFields = ["document", "section", "content", "url", "date", "category", "tags"];
@@ -28,7 +5,7 @@ permalink: /search
         const searchInput = document.getElementById('search-input');
         const searchResultsContainer = document.getElementById('search-results');
         
-        // Step 1: Set initial placeholder and disable the input
+        // Set initial placeholder and disable the input
         searchInput.placeholder = "Loading search data…";
         searchInput.disabled = true;
 
@@ -39,10 +16,8 @@ permalink: /search
             'de': '/de/search.json'
         };
 
-        // Determine the current language from the URL or a global variable
-        // This is a crucial addition to make the prioritization work.
-        // We'll use a simple URL-based method, assuming the German site is under /de/.
-        const currentLang = window.location.pathname.startsWith('/de/') ? 'de' : 'en';
+        // Determine the current page language
+        const currentLang = document.documentElement.lang || 'en';
 
         // Function to create a new FlexSearch index for a given language
         function createIndex(lang) {
@@ -72,6 +47,7 @@ permalink: /search
                 
                 // Add event listeners AFTER the indexes are ready
                 document.getElementById('search-button').addEventListener('click', performSearch);
+                
                 searchInput.addEventListener('keydown', (event) => {
                     if (event.key === 'Enter') {
                         event.preventDefault();
@@ -79,11 +55,9 @@ permalink: /search
                     }
                 });
 
-                // ⭐ This is the new event listener to clear results on input change
+                // This event listener will clear the results when the input changes.
                 searchInput.addEventListener('input', () => {
-                    if (searchInput.value.trim() === '') {
-                        searchResultsContainer.innerHTML = '';
-                    }
+                    searchResultsContainer.innerHTML = '';
                 });
             }
         }
@@ -91,7 +65,7 @@ permalink: /search
         // Fetch the search.json files and populate the correct index
         Object.keys(languages).forEach(lang => {
             const url = languages[lang];
-            indexes[lang] = createIndex(lang); // Create an index for each language
+            indexes[lang] = createIndex(lang);
             
             fetch(url)
                 .then(response => {
@@ -121,7 +95,7 @@ permalink: /search
         function performSearch() {
             const query = searchInput.value.trim();
             if (query.length === 0) {
-                searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
+                searchResultsContainer.innerHTML = '';
                 return;
             }
             if (typeof query !== 'string' || query.length === 0) {
@@ -132,7 +106,7 @@ permalink: /search
 
             let allResults = [];
             
-            // Step 1 (Crucial Change): Search the current language index first.
+            // Search the current language index first.
             const currentLangIndex = indexes[currentLang];
             if (currentLangIndex) {
                 const rawResults = currentLangIndex.search(query, {
@@ -153,7 +127,7 @@ permalink: /search
                 });
             }
 
-            // Step 2: Search other language indexes.
+            // Search other language indexes.
             Object.keys(indexes).forEach(lang => {
                 if (lang !== currentLang) {
                     const otherLangIndex = indexes[lang];
@@ -175,15 +149,11 @@ permalink: /search
                 }
             });
 
-            // Step 3: Sort the combined results by their relevance score.
-            // Results from the current language will have a lower (better) score due to the -1000 offset.
+            // Sort the combined results by their relevance score.
             allResults.sort((a, b) => a.score - b.score);
 
             displayResults(allResults, query);
         }
-
-        // The rest of the functions (displayResults, applyHighlighting, generateContextualSnippet) are unchanged as they handle the display logic, not the search engine's configuration.
-        // They are provided here for completeness and can be copied and pasted from the original code.
 
         function displayResults(results, query) {
             if (typeof _paq !== 'undefined') {
