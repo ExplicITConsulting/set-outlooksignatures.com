@@ -7,7 +7,10 @@ page_id: "search"
 permalink: /search
 ---
 
-<input type="search" id="search-input" placeholder="Start typing to search…" class="input is-large mb-4">
+<div class="search-container">
+    <input type="search" id="search-input" placeholder="What are you looking for?" class="input is-large">
+    <button id="search-button" class="button is-large">Search</button>
+</div>
 
 <div id="search-results" class="content">
 </div>
@@ -21,59 +24,63 @@ permalink: /search
         const searchInput = document.getElementById('search-input');
         const searchResultsContainer = document.getElementById('search-results');
         
-        // Remove the searchTimeout variable as it is no longer needed
-        // let searchTimeout; 
-
         // Step 1: Set initial placeholder and disable the input
-        searchInput.placeholder = "Loading search data...";
+        searchInput.placeholder = "Loading search data…";
         searchInput.disabled = true;
 
-        // Initialize FlexSearch index
-        const index = new FlexSearch.Document({
-            document: {
-                id: "url", // Unique identifier for each document
-                index: allSearchFields, // Index all specified fields
-                store: allSearchFields // Store all specified fields for retrieval
-            },
-            // Configure search options for better results
-            tokenize: "full", // Tokenize by words, allowing partial matches
-            resolution: 9, // Higher resolution for better relevance
-            encoder: FlexSearch.Charset.LatinSoundex, // Full Soundex transformation for max fuzzy search
-            cache: true, // Cache search results
-            context: true // Enable context index
-        });
+        // Initialize a container for multiple FlexSearch indexes
+        const indexes = {};
+        const languages = {
+            'en': '/search.json',
+            'de': '/de/search.json'
+        };
 
-        // Keep track of how many files have been loaded
-        let filesToLoad = ['/search.json', '/de/search.json'];
+        // Function to create a new FlexSearch index for a given language
+        function createIndex(lang) {
+            return new FlexSearch.Document({
+                document: {
+                    id: "url",
+                    index: allSearchFields,
+                    store: allSearchFields
+                },
+                tokenize: "full",
+                resolution: 9,
+                encoder: FlexSearch.Charset.LatinSoundex,
+                cache: true,
+                context: true,
+                lang: lang // Specify the language
+            });
+        }
+
+        let filesToLoad = Object.keys(languages).map(lang => languages[lang]);
         let filesLoaded = 0;
 
         // Function to check if all files are loaded
         function checkIfReady() {
             filesLoaded++;
-            // Step 3: Check if all files are loaded and if so, update the UI
             if (filesLoaded === filesToLoad.length) {
-                // console.log('FlexSearch index populated successfully.');
-                searchInput.placeholder = "Start typing to search…";
+                searchInput.placeholder = "What are you looking for?";
                 searchInput.disabled = false;
                 
-                // Add event listeners AFTER the index is ready
-                // Listener for the 'Enter' keypress
+                // Add event listeners AFTER the indexes are ready
                 searchInput.addEventListener('keydown', (event) => {
                     if (event.key === 'Enter') {
-                        event.preventDefault(); // Prevent form submission if the input is in a form
+                        event.preventDefault();
                         performSearch();
                     }
                 });
 
-                // Listener to clear results when the input changes
                 searchInput.addEventListener('input', () => {
                     searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
                 });
             }
         }
 
-        // Fetch the search.json files and populate the index
-        filesToLoad.forEach(url => {
+        // Fetch the search.json files and populate the correct index
+        Object.keys(languages).forEach(lang => {
+            const url = languages[lang];
+            indexes[lang] = createIndex(lang); // Create an index for each language
+            
             fetch(url)
                 .then(response => {
                     if (!response.ok) {
@@ -84,22 +91,21 @@ permalink: /search
                 .then(data => {
                     data.forEach(item => {
                         if (item.url) {
-                            index.add(item);
+                            indexes[lang].add(item);
                         } else {
-                            console.warn('Item missing URL, skipping for FlexSearch index:', item);
+                            console.warn(`Item missing URL in ${url}, skipping for FlexSearch index:`, item);
                         }
                     });
                     checkIfReady();
                 })
                 .catch(error => {
-                    console.error('Error fetching or parsing search.json:', error);
-                    // In case of error, still try to enable the search
+                    console.error(`Error fetching or parsing ${url}:`, error);
                     searchResultsContainer.innerHTML = '<p>Error loading search data. Some results may be missing. You can still search, but not all data might be available. Please try reloading the page.</p>';
                     checkIfReady();
                 });
         });
 
-        // Function to perform search and display results (no changes here)
+        // Function to perform search across all indexes
         function performSearch() {
             const query = searchInput.value.trim();
             if (query.length === 0) {
@@ -111,22 +117,30 @@ permalink: /search
                 searchResultsContainer.innerHTML = '<p>Please enter a valid search term.</p>';
                 return;
             }
-            const rawResults = index.search(query, {
-                limit: 99,
-                enrich: true,
+
+            let allResults = [];
+            // Iterate over all initialized indexes and perform search
+            Object.keys(indexes).forEach(lang => {
+                const rawResults = indexes[lang].search(query, {
+                    limit: 99,
+                    enrich: true,
+                });
+                
+                // Flatten the results from each language-specific index
+                rawResults.forEach(fieldResult => {
+                    if (fieldResult && fieldResult.field && Array.isArray(fieldResult.result)) {
+                        fieldResult.result.forEach(r => allResults.push({ id: r.id, doc: indexes[lang].get(r.id) }));
+                    } else if (fieldResult && fieldResult.doc) {
+                        allResults.push(fieldResult);
+                    }
+                });
             });
-            let flatResults = [];
-            rawResults.forEach(fieldResult => {
-                if (fieldResult && fieldResult.field && Array.isArray(fieldResult.result)) {
-                    fieldResult.result.forEach(r => flatResults.push({ id: r.id, doc: index.get(r.id) }));
-                } else if (fieldResult && fieldResult.doc) {
-                    flatResults.push(fieldResult);
-                }
-            });
-            displayResults(flatResults, query);
+
+            displayResults(allResults, query);
         }
 
-        // Function to display search results
+        // The remaining functions (displayResults, applyHighlighting, generateContextualSnippet)
+        // are unchanged as they handle the display logic, not the search engine's configuration.
         function displayResults(results, query) {
             if (typeof _paq !== 'undefined') {
                 _paq.push(['trackSiteSearch', query, false, results.length]);
@@ -176,7 +190,6 @@ permalink: /search
                     `;
                 } catch (error) {
                     console.error(`Error processing search result for URL: ${item.url || 'N/A'}. Displaying unformatted content.`, error);
-                    // Fallback to plain, unformatted content
                     html += `
                         <li class="box mb-4">
                             <p><a href="${item.url || '#'}"><strong>${item.document || 'No Title'}</strong></a><br>${item.section || ''}</p>
@@ -189,52 +202,41 @@ permalink: /search
             searchResultsContainer.innerHTML = html;
         }
 
-        // Helper function to apply <mark> highlighting tags
         function applyHighlighting(text, query) {
             if (!text || typeof text !== 'string' || !query || typeof query !== 'string' || query.trim().length === 0) {
                 return text;
             }
             const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const regex = new RegExp(`(${escapedQuery})`, 'gi');
-            
             return text.replace(regex, '<mark>$1</mark>');
         }
 
-        // Helper function to generate a contextual snippet around highlighted terms
         function generateContextualSnippet(fullText, query, totalSnippetLength = 250, contextChars = 80) {
             if (!fullText || typeof fullText !== 'string' || !query || typeof query !== 'string' || query.trim().length === 0) {
                 return fullText.substring(0, totalSnippetLength) + (fullText.length > totalSnippetLength ? '…' : '');
             }
-
             const lowerText = fullText.toLowerCase();
             const lowerQuery = query.toLowerCase();
-
             const matchIndexes = [];
             const regex = new RegExp(`\\b${lowerQuery}\\b|${lowerQuery}`, 'g');
             let match;
             while ((match = regex.exec(lowerText)) !== null) {
                 matchIndexes.push(match.index);
             }
-
-            // If no direct match is found, return a truncated, un-highlighted snippet.
             if (matchIndexes.length === 0) {
                 return fullText.substring(0, totalSnippetLength) + (fullText.length > totalSnippetLength ? '…' : '');
             }
-
             const firstMatchIndex = matchIndexes[0];
             let start = Math.max(0, firstMatchIndex - contextChars);
             let end = Math.min(fullText.length, firstMatchIndex + lowerQuery.length + contextChars);
-
             if (end - start < totalSnippetLength) {
                 end = Math.min(fullText.length, start + totalSnippetLength);
             }
             if (end - start < totalSnippetLength) {
                 start = Math.max(0, end - totalSnippetLength);
             }
-            
             let actualStart = start;
             let actualEnd = end;
-
             if (start > 0) {
                 const spaceBefore = fullText.lastIndexOf(' ', start);
                 if (spaceBefore !== -1) {
@@ -247,16 +249,13 @@ permalink: /search
                     actualEnd = spaceAfter;
                 }
             }
-
             if (actualStart > actualEnd) { 
                 actualStart = start; 
                 actualEnd = end; 
             }
-
             let snippet = fullText.substring(actualStart, actualEnd);
             const prefix = actualStart > 0 ? '…' : '';
             const suffix = actualEnd < fullText.length ? '…' : '';
-
             return prefix + applyHighlighting(snippet, query) + suffix;
         }
     })();
