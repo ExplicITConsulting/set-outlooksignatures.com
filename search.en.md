@@ -12,7 +12,7 @@ permalink: /search
 <div id="search-results" class="content">
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.8/dist/flexsearch.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.8.205/dist/flexsearch.bundle.min.js"></script>
 
 <script>
     (function() {
@@ -83,7 +83,6 @@ permalink: /search
             const rawResults = index.search(query, {
                 limit: 99, // Limit the number of results
                 enrich: true, // Return the full document (stored fields)
-                // 'highlight' and 'suggest' options removed here to use custom logic
             });
 
             let flatResults = [];
