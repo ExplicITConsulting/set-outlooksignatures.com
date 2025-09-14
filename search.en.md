@@ -39,6 +39,11 @@ permalink: /search
             'de': '/de/search.json'
         };
 
+        // Determine the current language from the URL or a global variable
+        // This is a crucial addition to make the prioritization work.
+        // We'll use a simple URL-based method, assuming the German site is under /de/.
+        const currentLang = window.location.pathname.startsWith('/de/') ? 'de' : 'en';
+
         // Function to create a new FlexSearch index for a given language
         function createIndex(lang) {
             return new FlexSearch.Document({
@@ -66,6 +71,7 @@ permalink: /search
                 searchInput.disabled = false;
                 
                 // Add event listeners AFTER the indexes are ready
+                document.getElementById('search-button').addEventListener('click', performSearch);
                 searchInput.addEventListener('keydown', (event) => {
                     if (event.key === 'Enter') {
                         event.preventDefault();
@@ -74,7 +80,8 @@ permalink: /search
                 });
 
                 searchInput.addEventListener('input', () => {
-                    searchResultsContainer.innerHTML = '<p>Results will appear here.</p>';
+                    // We'll remove this listener and instead clear results only on an empty query
+                    // This prevents the page from clearing as the user types
                 });
             }
         }
@@ -122,45 +129,80 @@ permalink: /search
             }
 
             let allResults = [];
-            // Iterate over all initialized indexes and perform search
-            Object.keys(indexes).forEach(lang => {
-                const rawResults = indexes[lang].search(query, {
+            
+            // Step 1 (Crucial Change): Search the current language index first.
+            const currentLangIndex = indexes[currentLang];
+            if (currentLangIndex) {
+                const rawResults = currentLangIndex.search(query, {
                     limit: 99,
                     enrich: true
                 });
                 
-                // Flatten and enrich results with their score for sorting
                 rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
-                            // Get the full document and add the score for sorting
-                            const doc = indexes[lang].get(r.id);
+                            const doc = currentLangIndex.get(r.id);
                             if (doc) {
-                                allResults.push({ id: r.id, doc: doc, score: r.score });
+                                // Add a higher score for results from the current language
+                                allResults.push({ id: r.id, doc: doc, score: r.score - 1000, lang: currentLang });
                             }
                         });
                     }
                 });
+            }
+
+            // Step 2: Search other language indexes.
+            Object.keys(indexes).forEach(lang => {
+                if (lang !== currentLang) {
+                    const otherLangIndex = indexes[lang];
+                    const rawResults = otherLangIndex.search(query, {
+                        limit: 99,
+                        enrich: true
+                    });
+                    
+                    rawResults.forEach(fieldResult => {
+                        if (fieldResult && fieldResult.result) {
+                            fieldResult.result.forEach(r => {
+                                const doc = otherLangIndex.get(r.id);
+                                if (doc) {
+                                    allResults.push({ id: r.id, doc: doc, score: r.score, lang: lang });
+                                }
+                            });
+                        }
+                    });
+                }
             });
 
-            // Step 2: Sort the combined results by their relevance score
+            // Step 3: Sort the combined results by their relevance score.
+            // Results from the current language will have a lower (better) score due to the -1000 offset.
             allResults.sort((a, b) => a.score - b.score);
 
             displayResults(allResults, query);
         }
 
-        // The remaining functions (displayResults, applyHighlighting, generateContextualSnippet)
-        // are unchanged as they handle the display logic, not the search engine's configuration.
+        // The rest of the functions (displayResults, applyHighlighting, generateContextualSnippet) are unchanged as they handle the display logic, not the search engine's configuration.
+        // They are provided here for completeness and can be copied and pasted from the original code.
+
         function displayResults(results, query) {
             if (typeof _paq !== 'undefined') {
                 _paq.push(['trackSiteSearch', query, false, results.length]);
             }
-            if (results.length === 0) {
+            // Deduplicate results, as a single document may appear in multiple indexes
+            const uniqueResults = [];
+            const seenUrls = new Set();
+            results.forEach(result => {
+                if (result.doc && !seenUrls.has(result.doc.url)) {
+                    uniqueResults.push(result);
+                    seenUrls.add(result.doc.url);
+                }
+            });
+
+            if (uniqueResults.length === 0) {
                 searchResultsContainer.innerHTML = '<p>No results found.</p>';
                 return;
             }
             let html = '<ul class="search-results-list">';
-            results.forEach(result => {
+            uniqueResults.forEach(result => {
                 const item = result.doc;
                 if (!item) {
                     console.warn('Skipping search result with undefined document:', result);
