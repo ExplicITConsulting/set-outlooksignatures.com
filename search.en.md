@@ -126,14 +126,14 @@ permalink: /search
                 suggest: true,
                 highlight: {
                     template: '<mark style="background-color: yellow;">$1</mark>',
-                boundary: {
-                    // length before match  
-                    before: 50,
-                    // length after match  
-                    after: 50,
-                    // overall length  
-                    total: 500  
-                }
+                    boundary: {
+                        // length before match  
+                        before: 50,
+                        // length after match  
+                        after: 50,
+                        // overall length  
+                        total: 500  
+                    },
                     merge: true,
                 }
             };
