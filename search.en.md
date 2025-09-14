@@ -126,10 +126,9 @@ permalink: /search
                 suggest: true,
                 highlight: {
                     template: '<mark style="background-color: yellow;">$1</mark>',
-                    boundary: 32,
+                    boundary: 500,
                     merge: true
-                },
-                boundary: 32
+                }
             };
             
             const currentLangIndex = indexes[currentLang];
