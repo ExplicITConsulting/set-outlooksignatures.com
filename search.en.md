@@ -127,7 +127,8 @@ permalink: /search
                 highlight: {
                     template: '<mark style="background-color: yellow;">$1</mark>',
                     boundary: 500,
-                    merge: true
+                    merge: true,
+                    ellipsis: " […] "
                 }
             };
             
