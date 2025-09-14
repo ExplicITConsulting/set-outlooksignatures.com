@@ -1,3 +1,26 @@
+---
+layout: page
+title: Search and find
+subtitle: What are you looking for?
+description: Search and find. What are you looking for?
+page_id: "search"
+permalink: /search
+---
+
+<div class="field has-addons">
+    <div class="control is-expanded">
+        <input type="search" id="search-input" placeholder="What are you looking for?" class="input is-large">
+    </div>
+    <div class="control">
+        <button id="search-button" class="button is-large">Search</button>
+    </div>
+</div>
+
+<div id="search-results" class="content">
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js"></script>
+
 <script>
     (function() {
         const allSearchFields = ["document", "section", "content", "url", "date", "category", "tags"];
