@@ -128,19 +128,28 @@ permalink: /search
             }
 
             let allResults = [];
+            const searchOptions = {
+                limit: 99,
+                enrich: true,
+                suggest: true,
+                highlight: {
+                    template: '<mark style="background-color: yellow;">$1</mark>',
+                    boundary: 32,
+                    merge: true
+                },
+                boundary: 32
+            };
             
             // Search the current language index first.
             const currentLangIndex = indexes[currentLang];
             if (currentLangIndex) {
-                const rawResults = currentLangIndex.search(query, {
-                    limit: 99,
-                    enrich: true
-                });
+                const rawResults = currentLangIndex.search(query, searchOptions);
                 
                 rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
-                            const doc = currentLangIndex.get(r.id);
+                            // The 'doc' property now contains the highlighted content
+                            const doc = r.doc; 
                             if (doc) {
                                 // Add a higher score for results from the current language
                                 allResults.push({ id: r.id, doc: doc, score: r.score - 1000, lang: currentLang });
@@ -154,15 +163,12 @@ permalink: /search
             Object.keys(indexes).forEach(lang => {
                 if (lang !== currentLang) {
                     const otherLangIndex = indexes[lang];
-                    const rawResults = otherLangIndex.search(query, {
-                        limit: 99,
-                        enrich: true
-                    });
+                    const rawResults = otherLangIndex.search(query, searchOptions);
                     
                     rawResults.forEach(fieldResult => {
                         if (fieldResult && fieldResult.result) {
                             fieldResult.result.forEach(r => {
-                                const doc = otherLangIndex.get(r.id);
+                                const doc = r.doc;
                                 if (doc) {
                                     allResults.push({ id: r.id, doc: doc, score: r.score, lang: lang });
                                 }
@@ -175,13 +181,14 @@ permalink: /search
             // Sort the combined results by their relevance score.
             allResults.sort((a, b) => a.score - b.score);
 
-            displayResults(allResults, query);
+            displayResults(allResults);
         }
 
-        function displayResults(results, query) {
+        function displayResults(results) {
             if (typeof _paq !== 'undefined') {
-                _paq.push(['trackSiteSearch', query, false, results.length]);
+                _paq.push(['trackSiteSearch', searchInput.value.trim(), false, results.length]);
             }
+            
             // Deduplicate results, as a single document may appear in multiple indexes
             const uniqueResults = [];
             const seenUrls = new Set();
@@ -196,6 +203,7 @@ permalink: /search
                 searchResultsContainer.innerHTML = '<p>No results found.</p>';
                 return;
             }
+            
             let html = '<ul class="search-results-list">';
             uniqueResults.forEach(result => {
                 const item = result.doc;
@@ -204,106 +212,21 @@ permalink: /search
                     return;
                 }
                 
-                try {
-                    let displayContentDictionary = {};
-                    allSearchFields.forEach(field => {
-                        const content = item[field];
-                        if (content && typeof content === 'string' && content.length > 0) {
-                            let displayedFieldContent;
-                            if (field === 'content' || field === 'section') {
-                                displayedFieldContent = generateContextualSnippet(content, query, 500, 80);
-                            } else {
-                                displayedFieldContent = applyHighlighting(content, query);
-                                if (field !== 'url' && displayedFieldContent.length > 500) {
-                                    displayedFieldContent = displayedFieldContent.substring(0, 500) + '…';
-                                }
-                            }
-                            displayContentDictionary[field] = {
-                                rawContent: displayedFieldContent
-                            };
-                        }
-                    });
+                const title = item.document || 'No Title';
+                const url = item.url || '#';
+                const sectionContent = item.section || '';
+                const mainContent = item.content || '';
 
-                    const title = displayContentDictionary.document?.rawContent || item.document || 'No Title';
-                    const url = item.url || '#';
-                    const sectionContent = displayContentDictionary.section?.rawContent || item.section || '';
-                    const mainContent = displayContentDictionary.content?.rawContent || item.content || '';
-
-                    html += `
-                        <li class="box mb-4">
-                            <p><a href="${url}"><strong>${title}</strong></a><br>${sectionContent}</p>
-                            <p>${mainContent}</p>
-                        </li>
-                    `;
-                } catch (error) {
-                    console.error(`Error processing search result for URL: ${item.url || 'N/A'}. Displaying unformatted content.`, error);
-                    html += `
-                        <li class="box mb-4">
-                            <p><a href="${item.url || '#'}"><strong>${item.document || 'No Title'}</strong></a><br>${item.section || ''}</p>
-                            <p>${item.content || ''}</p>
-                        </li>
-                    `;
-                }
+                html += `
+                    <li class="box mb-4">
+                        <p><a href="${url}"><strong>${title}</strong></a><br>${sectionContent}</p>
+                        <p>${mainContent}</p>
+                    </li>
+                `;
             });
             html += '</ul>';
             searchResultsContainer.innerHTML = html;
         }
 
-        function applyHighlighting(text, query) {
-            if (!text || typeof text !== 'string' || !query || typeof query !== 'string' || query.trim().length === 0) {
-                return text;
-            }
-            const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const regex = new RegExp(`(${escapedQuery})`, 'gi');
-            return text.replace(regex, '<mark>$1</mark>');
-        }
-
-        function generateContextualSnippet(fullText, query, totalSnippetLength = 250, contextChars = 80) {
-            if (!fullText || typeof fullText !== 'string' || !query || typeof query !== 'string' || query.trim().length === 0) {
-                return fullText.substring(0, totalSnippetLength) + (fullText.length > totalSnippetLength ? '…' : '');
-            }
-            const lowerText = fullText.toLowerCase();
-            const lowerQuery = query.toLowerCase();
-            const matchIndexes = [];
-            const regex = new RegExp(`\\b${lowerQuery}\\b|${lowerQuery}`, 'g');
-            let match;
-            while ((match = regex.exec(lowerText)) !== null) {
-                matchIndexes.push(match.index);
-            }
-            if (matchIndexes.length === 0) {
-                return fullText.substring(0, totalSnippetLength) + (fullText.length > totalSnippetLength ? '…' : '');
-            }
-            const firstMatchIndex = matchIndexes[0];
-            let start = Math.max(0, firstMatchIndex - contextChars);
-            let end = Math.min(fullText.length, firstMatchIndex + lowerQuery.length + contextChars);
-            if (end - start < totalSnippetLength) {
-                end = Math.min(fullText.length, start + totalSnippetLength);
-            }
-            if (end - start < totalSnippetLength) {
-                start = Math.max(0, end - totalSnippetLength);
-            }
-            let actualStart = start;
-            let actualEnd = end;
-            if (start > 0) {
-                const spaceBefore = fullText.lastIndexOf(' ', start);
-                if (spaceBefore !== -1) {
-                    actualStart = spaceBefore + 1;
-                }
-            }
-            if (end < fullText.length) {
-                const spaceAfter = fullText.indexOf(' ', end);
-                if (spaceAfter !== -1) {
-                    actualEnd = spaceAfter;
-                }
-            }
-            if (actualStart > actualEnd) { 
-                actualStart = start; 
-                actualEnd = end; 
-            }
-            let snippet = fullText.substring(actualStart, actualEnd);
-            const prefix = actualStart > 0 ? '…' : '';
-            const suffix = actualEnd < fullText.length ? '…' : '';
-            return prefix + applyHighlighting(snippet, query) + suffix;
-        }
     })();
 </script>
