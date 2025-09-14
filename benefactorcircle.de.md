@@ -10,6 +10,7 @@ image:
   height: 1200
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
+hide_gh_sponsor: true
 page_id: "benefactorcircle"
 permalink: /benefactorcircle
 ---
