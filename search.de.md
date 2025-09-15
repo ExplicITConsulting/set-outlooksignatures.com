@@ -100,15 +100,15 @@ permalink: /search
 
         async function initializeSearch() {
             try {
-                // 1. Load FlexSearch main library
+                // 1. Load the main FlexSearch library first.
                 await loadScript(flexsearchBaseUrl);
 
-                // 2. Populate LanguageCodes is already handled by the languages object setup.
-                // 3. Loop through languageCodes to load language pack and search.json
+                // 2. Loop through languageCodes to load language packs and search.json sequentially.
                 for (const lang of Object.keys(languages)) {
                     try {
                         let languagePack = null;
-                        if (lang !== 'en') { // 'en' doesn't have a specific language pack in FlexSearch 0.8
+                        if (lang !== 'en') { // 'en' doesn't have a separate language pack in FlexSearch 0.8
+                            // Wait for the language pack to load before proceeding.
                             await loadScript(`${languagePackBaseUrl}${lang}.min.js`);
                             languagePack = FlexSearch.lang[lang] || FlexSearch.Charset.LatinSoundex;
                         }
