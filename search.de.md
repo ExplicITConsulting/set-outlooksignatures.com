@@ -1,7 +1,7 @@
 ---
 layout: page
-lang: en
-locale: en
+lang: de
+locale: de
 title: Wonach suchen Sie?
 subtitle: Finden Sie es hier
 description: Wonach suchen Sie? Finden Sie es hier.
