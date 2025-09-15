@@ -1,0 +1,5 @@
+search_search-input_placeholder_error: "Fehler beim Laden der Daten."
+search_search-input_placeholder_loading: "Lade Daten…"
+search_search-input_placeholder_ready: "Suchbegriff eingeben"
+search_resultsContainer_placeholder_queryEmpty: "Bitte geben Sie einen gültigen Suchbegriff ein."
+search_resultsContainer_placeholder_queryNoResults: "Keine Suchergebnisse gefunden."

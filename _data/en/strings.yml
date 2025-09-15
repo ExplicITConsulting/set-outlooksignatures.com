@@ -1,0 +1,5 @@
+search_search-input_placeholder_error: "Error loading search data."
+search_search-input_placeholder_loading: "Loading data…"
+search_search-input_placeholder_ready: "Type to search"
+search_resultsContainer_placeholder_queryEmpty: "Please enter a valid search term."
+search_resultsContainer_placeholder_queryNoResults: "No results found."
