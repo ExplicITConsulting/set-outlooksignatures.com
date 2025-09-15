@@ -107,11 +107,10 @@ permalink: /search
                 for (const lang of Object.keys(languages)) {
                     try {
                         let languagePack = null;
-                        if (lang !== 'en') {
-                            // Await the script load before accessing FlexSearch.lang.
-                            await loadScript(`${languagePackBaseUrl}${lang}.min.js`);
-                            languagePack = FlexSearch.lang[lang] || FlexSearch.Charset.LatinSoundex;
-                        }
+
+                        // Await the script load before accessing FlexSearch.lang.
+                        await loadScript(`${languagePackBaseUrl}${lang}.min.js`);
+                        languagePack = FlexSearch.Language[lang] || FlexSearch.Charset.LatinSoundex;
 
                         const response = await fetch(languages[lang]);
                         if (!response.ok) {
