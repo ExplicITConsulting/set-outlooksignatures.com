@@ -18,6 +18,7 @@ permalink: /search
 <div id="search-results" class="content">
 </div>
 
+
 <script>
     (function() {
         const flexsearchBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js";
@@ -40,10 +41,8 @@ permalink: /search
 
         if (languagesMeta) {
             const languageCodes = languagesMeta.content.toLowerCase().split(',');
-
             languageCodes.forEach(code => {
                 const trimmedCode = code.trim();
-
                 // Check for the English language code
                 if (trimmedCode === 'en') {
                     languages[trimmedCode] = '/search.json';
@@ -89,88 +88,78 @@ permalink: /search
             }
         }, 2000); // 2000ms delay for _paq
 
-        // New Promise to load the main FlexSearch library
-        const loadMainFlexSearch = new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = flexsearchBaseUrl;
-            script.onload = () => resolve();
-            script.onerror = () => {
-                console.error(`FlexSearch main library failed to load.`);
-                reject(new Error("FlexSearch library loading failed."));
-            };
-            document.head.appendChild(script);
-        });
+        async function loadScript(url) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = url;
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error(`Failed to load script: ${url}`));
+                document.head.appendChild(script);
+            });
+        }
 
-        loadMainFlexSearch.then(() => {
-            return Promise.all(Object.keys(languages).map(lang => {
-                const languagePackUrl = `${languagePackBaseUrl}${lang}.min.js`;
-                const jsonUrl = languages[lang];
+        async function initializeSearch() {
+            try {
+                // 1. Load FlexSearch main library
+                await loadScript(flexsearchBaseUrl);
 
-                // REVISED: This section is the key fix
-                const loadLanguagePack = new Promise(resolve => {
-                    if (lang in FlexSearch.lang) {
-                        return resolve(FlexSearch.lang[lang]);
+                // 2. Populate LanguageCodes is already handled by the languages object setup.
+                // 3. Loop through languageCodes to load language pack and search.json
+                for (const lang of Object.keys(languages)) {
+                    try {
+                        let languagePack = null;
+                        if (lang !== 'en') { // 'en' doesn't have a specific language pack in FlexSearch 0.8
+                            await loadScript(`${languagePackBaseUrl}${lang}.min.js`);
+                            languagePack = FlexSearch.lang[lang] || FlexSearch.Charset.LatinSoundex;
+                        }
+
+                        const response = await fetch(languages[lang]);
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        const data = await response.json();
+
+                        const index = createIndex(lang, languagePack);
+                        data.forEach(item => {
+                            if (item.url) {
+                                index.add(item);
+                            } else {
+                                console.warn(`Item missing URL in ${languages[lang]}, skipping for FlexSearch index:`, item);
+                            }
+                        });
+                        indexes[lang] = index;
+                    } catch (error) {
+                        console.error(`Error loading data for language "${lang}":`, error);
+                        delete languages[lang];
                     }
-                    const script = document.createElement('script');
-                    script.src = languagePackUrl;
-                    script.onload = () => {
-                        // The language pack script adds the object to FlexSearch.lang
-                        resolve(FlexSearch.lang[lang]);
-                    };
-                    script.onerror = () => {
-                        console.warn(`FlexSearch language pack not available for "${lang}". Falling back to default encoder.`);
-                        resolve(null); // Resolve with null to indicate failure
-                    };
-                    document.head.appendChild(script);
-                });
+                }
 
-                const loadJsonData = fetch(jsonUrl).then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                });
-
-                return Promise.all([loadLanguagePack, loadJsonData]).then(([languagePack, data]) => {
-                    const index = createIndex(lang, languagePack);
-                    data.forEach(item => {
-                        if (item.url) {
-                            index.add(item);
+                if (Object.keys(indexes).length > 0) {
+                    searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_ready }}";
+                    searchInput.disabled = false;
+                    searchInput.addEventListener('input', () => {
+                        const query = searchInput.value.trim();
+                        if (query.length > 0) {
+                            performSearch();
+                            debouncedTrackSearch();
                         } else {
-                            console.warn(`Item missing URL in ${jsonUrl}, skipping for FlexSearch index:`, item);
+                            searchResultsContainer.innerHTML = '';
                         }
                     });
-                    indexes[lang] = index;
-                }).catch(error => {
-                    console.error(`Error loading data for language "${lang}":`, error);
-                    delete languages[lang];
-                });
-            }));
-        }).then(() => {
-            if (Object.keys(indexes).length > 0) {
-                searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_ready }}";
-                searchInput.disabled = false;
-            } else {
+                } else {
+                    searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
+                    searchInput.disabled = true;
+                    searchResultsContainer.innerHTML = '<p>Error loading search data. Please check your network connection and reload the page.</p>';
+                }
+            } catch (error) {
+                console.error('Initialization failed:', error);
                 searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
                 searchInput.disabled = true;
-                searchResultsContainer.innerHTML = '<p>Error loading search data. Please check your network connection and reload the page.</p>';
+                searchResultsContainer.innerHTML = '<p>Search functionality failed to load. Please try again later.</p>';
             }
+        }
 
-            searchInput.addEventListener('input', () => {
-                const query = searchInput.value.trim();
-                if (query.length > 0) {
-                    performSearch();
-                    debouncedTrackSearch();
-                } else {
-                    searchResultsContainer.innerHTML = '';
-                }
-            });
-        }).catch(error => {
-            console.error('Initialization failed:', error);
-            searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
-            searchInput.disabled = true;
-            searchResultsContainer.innerHTML = '<p>Search functionality failed to load. Please try again later.</p>';
-        });
+        initializeSearch();
 
         function performSearch() {
             const query = searchInput.value.trim();
@@ -201,7 +190,6 @@ permalink: /search
             const currentLangIndex = indexes[currentLang];
             if (currentLangIndex) {
                 const rawResults = currentLangIndex.search(query, searchOptions);
-
                 rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
