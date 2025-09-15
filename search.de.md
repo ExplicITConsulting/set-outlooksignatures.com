@@ -106,13 +106,20 @@ permalink: /search
                 const languagePackUrl = `${languagePackBaseUrl}${lang}.min.js`;
                 const jsonUrl = languages[lang];
 
+                // REVISED: This section is the key fix
                 const loadLanguagePack = new Promise(resolve => {
+                    if (lang in FlexSearch.lang) {
+                        return resolve(FlexSearch.lang[lang]);
+                    }
                     const script = document.createElement('script');
                     script.src = languagePackUrl;
-                    script.onload = () => resolve(FlexSearch.lang[lang]);
+                    script.onload = () => {
+                        // The language pack script adds the object to FlexSearch.lang
+                        resolve(FlexSearch.lang[lang]);
+                    };
                     script.onerror = () => {
                         console.warn(`FlexSearch language pack not available for "${lang}". Falling back to default encoder.`);
-                        resolve(null); // Resolve with null to indicate failure, but don't block
+                        resolve(null); // Resolve with null to indicate failure
                     };
                     document.head.appendChild(script);
                 });
@@ -136,12 +143,10 @@ permalink: /search
                     indexes[lang] = index;
                 }).catch(error => {
                     console.error(`Error loading data for language "${lang}":`, error);
-                    // Handle the case where a language data file fails to load
-                    delete languages[lang]; // Remove the language from the list to prevent further errors
+                    delete languages[lang];
                 });
             }));
         }).then(() => {
-            // Check if there are any successfully loaded indexes before enabling the search input
             if (Object.keys(indexes).length > 0) {
                 searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_ready }}";
                 searchInput.disabled = false;
@@ -151,14 +156,12 @@ permalink: /search
                 searchResultsContainer.innerHTML = '<p>Error loading search data. Please check your network connection and reload the page.</p>';
             }
 
-            // Attach the event listener to trigger both actions
             searchInput.addEventListener('input', () => {
                 const query = searchInput.value.trim();
                 if (query.length > 0) {
-                    performSearch(); // Immediate search
-                    debouncedTrackSearch(); // Debounced _paq call
+                    performSearch();
+                    debouncedTrackSearch();
                 } else {
-                    // Clear results if the input is empty
                     searchResultsContainer.innerHTML = '';
                 }
             });
