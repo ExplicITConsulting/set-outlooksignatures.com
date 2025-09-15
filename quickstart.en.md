@@ -70,7 +70,7 @@ You can now configure Set-OutlookSignatures to your own needs. For example:
   It is a good idea to begin by copying the folder '.\sample templates' and modifying it's contents.  
   Make sure to tell Set-OutlookSignatures where to find your custom configuration by adding the parameters 'SignatureTemplatePath', 'SignatureIniFile', 'OOFTemplatePath' and 'OOFIniFile'.
 - Adapt other [parameters](/parameters) you may find useful.
-- Start using [simulation mode](/parameters/#16-simulateuser).
+- Start using [simulation mode](/parameters#16-simulateuser).
 
 The [feature list](/features) and the [parameter documentation](/parameters) show what's possible.
 

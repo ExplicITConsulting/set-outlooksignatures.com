@@ -422,7 +422,7 @@ The free part of the software is licensed under the "European Union Public Licen
 
 The Benefactor Circle add-on is licensed based on the number of mailboxes intended to use it. There is no need to name mailboxes individually.
 
-By avoiding tiered pricing and discounts, the <a href="/benefactorcircle/#financial-benefits">cost-benefit ratio</a> is already favorable even for a small number of mailboxes.
+By avoiding tiered pricing and discounts, the <a href="/benefactorcircle#financial-benefits">cost-benefit ratio</a> is already favorable even for a small number of mailboxes.
 
 
 ## 6. Support from the IT Service Provider {#support-it-service-provider}

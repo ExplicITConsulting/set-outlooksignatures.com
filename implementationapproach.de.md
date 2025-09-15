@@ -433,7 +433,7 @@ Das kostenlose Teil der Software ist unter der "European Union Public License (E
 
 Das Benefactor Circle Add-On wird auf Basis der Anzahl jener Postfächer, die es nutzen sollen, lizenziert. Eine namentliche Nennung der Postfächer gibt es nicht.
 
-Durch Verzicht auf Staffelpreise und Rabatte fällt die <a href="/benefactorcircle/#financial-benefits">Kosten-Nutzen-Rechnung</a> schon bei einer kleinen Anzahl von Postfächern positiv aus.
+Durch Verzicht auf Staffelpreise und Rabatte fällt die <a href="/benefactorcircle#financial-benefits">Kosten-Nutzen-Rechnung</a> schon bei einer kleinen Anzahl von Postfächern positiv aus.
 
 ## 6. Unterstützung durch den IT-Dienstleister {#support-it-service-provider}
 

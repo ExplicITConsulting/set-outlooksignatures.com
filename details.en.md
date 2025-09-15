@@ -47,8 +47,8 @@ permalink: /details
 
 ## 1. Get to know Set-OutlookSignatures
 To get to know Set-OutlookSignatures, we recommend the following sequence:
-1. The [feature comparison](/features/#feature-comparison) gives you a quick overview of topics to consider when choosing a solution for central management and deployment of email signatures and out-of-office replies. 
-2. Learn in detail about the [feature list](/features/#features) of Set-OutlookSignatures and the Benefactor Circle add-on.
+1. The [feature comparison](/features#feature-comparison) gives you a quick overview of topics to consider when choosing a solution for central management and deployment of email signatures and out-of-office replies. 
+2. Learn in detail about the [feature list](/features#features) of Set-OutlookSignatures and the Benefactor Circle add-on.
 3. Watch the [demo video](/benefactorcircle#demo) to see how a typical real-life use case is implemented.
 4. Get practical: Deploy first signatures in less than an hour with the [Quick Start Guide](/quickstart)!
 
@@ -58,7 +58,7 @@ You want to know more?
 - [Frequently Asked Questions (FAQ)](/faq)
 - [The Outlook add-in](/outlookaddin)
 - The [Changelog](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md)
-- An [organizational implementation approach](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/Implementation%20approach.md)
+- An [organizational implementation approach](/implementationapproach)
 - Features available exclusively to [Benefactor Circle](/benefactorcircle) members
 
 The '`sample code`' folder contains additional scripts and advanced usage examples, such as deploying signatures without user or client interaction.
