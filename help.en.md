@@ -1,5 +1,7 @@
 ---
 layout: page
+lang: en
+locale: en
 title: Help
 subtitle: Documentation and support ressources
 description: Explore Set-OutlookSignatures help resources. From feature comparisons and setup guides to FAQs, technical details, and expert support options.
