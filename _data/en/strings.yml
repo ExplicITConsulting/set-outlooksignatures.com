@@ -1,3 +1,6 @@
+search_title: "What are you looking for?"
+search_subtitle: "Find it here"
+search_description: "What are you looking for? Find it here."
 search_search-input_placeholder_error: "Error loading search data."
 search_search-input_placeholder_loading: "Loading data…"
 search_search-input_placeholder_ready: "Type to search"

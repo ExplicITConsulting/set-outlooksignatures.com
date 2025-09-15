@@ -2,9 +2,9 @@
 layout: page
 lang: en
 locale: en
-title: What are you looking for?
-subtitle: Find it here
-description: What are you looking for? Find it here.
+title: {{ site.data[site.active_lang].strings.search_title }}
+subtitle: {{ site.data[site.active_lang].strings.search_subtitle }}
+description: {{ site.data[site.active_lang].strings.search_description }}
 page_id: "search"
 permalink: /search
 ---
