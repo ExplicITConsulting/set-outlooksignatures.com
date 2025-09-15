@@ -18,10 +18,11 @@ permalink: /search
 <div id="search-results" class="content">
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js"></script>
-
 <script>
     (function() {
+        const flexsearchBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js";
+        const languagePackBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/lang/";
+        
         const allSearchFields = ["document", "section", "content", "url", "date", "category", "tags"];
 
         const searchInput = document.getElementById('search-input');
@@ -32,7 +33,6 @@ permalink: /search
         searchInput.disabled = true;
 
         const indexes = {};
-        const languagePackBaseUrl = "https://raw.githubusercontent.com/nextapps-de/flexsearch/refs/heads/master/dist/lang/";
 
         // Get the languages string from the custom meta tag
         const languagesMeta = document.querySelector('meta[name="site-languages"]');
@@ -89,44 +89,58 @@ permalink: /search
             }
         }, 2000); // 2000ms delay for _paq
 
-        Promise.all(Object.keys(languages).map(lang => {
-            const languagePackUrl = `${languagePackBaseUrl}${lang}.min.js`;
-            const jsonUrl = languages[lang];
+        // New Promise to load the main FlexSearch library
+        const loadMainFlexSearch = new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = flexsearchBaseUrl;
+            script.onload = () => resolve();
+            script.onerror = () => {
+                console.error(`FlexSearch main library failed to load.`);
+                reject(new Error("FlexSearch library loading failed."));
+            };
+            document.head.appendChild(script);
+        });
 
-            const loadLanguagePack = new Promise(resolve => {
-                const script = document.createElement('script');
-                script.src = languagePackUrl;
-                script.onload = () => resolve(FlexSearch.lang[lang]);
-                script.onerror = () => {
-                    console.warn(`FlexSearch language pack not available for "${lang}". Falling back to default encoder.`);
-                    resolve(null); // Resolve with null to indicate failure, but don't block
-                };
-                document.head.appendChild(script);
-            });
+        loadMainFlexSearch.then(() => {
+            return Promise.all(Object.keys(languages).map(lang => {
+                const languagePackUrl = `${languagePackBaseUrl}${lang}.min.js`;
+                const jsonUrl = languages[lang];
 
-            const loadJsonData = fetch(jsonUrl).then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            });
-
-            return Promise.all([loadLanguagePack, loadJsonData]).then(([languagePack, data]) => {
-                const index = createIndex(lang, languagePack);
-                data.forEach(item => {
-                    if (item.url) {
-                        index.add(item);
-                    } else {
-                        console.warn(`Item missing URL in ${jsonUrl}, skipping for FlexSearch index:`, item);
-                    }
+                const loadLanguagePack = new Promise(resolve => {
+                    const script = document.createElement('script');
+                    script.src = languagePackUrl;
+                    script.onload = () => resolve(FlexSearch.lang[lang]);
+                    script.onerror = () => {
+                        console.warn(`FlexSearch language pack not available for "${lang}". Falling back to default encoder.`);
+                        resolve(null); // Resolve with null to indicate failure, but don't block
+                    };
+                    document.head.appendChild(script);
                 });
-                indexes[lang] = index;
-            }).catch(error => {
-                console.error(`Error loading data for language "${lang}":`, error);
-                // Handle the case where a language data file fails to load
-                delete languages[lang]; // Remove the language from the list to prevent further errors
-            });
-        })).then(() => {
+
+                const loadJsonData = fetch(jsonUrl).then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                });
+
+                return Promise.all([loadLanguagePack, loadJsonData]).then(([languagePack, data]) => {
+                    const index = createIndex(lang, languagePack);
+                    data.forEach(item => {
+                        if (item.url) {
+                            index.add(item);
+                        } else {
+                            console.warn(`Item missing URL in ${jsonUrl}, skipping for FlexSearch index:`, item);
+                        }
+                    });
+                    indexes[lang] = index;
+                }).catch(error => {
+                    console.error(`Error loading data for language "${lang}":`, error);
+                    // Handle the case where a language data file fails to load
+                    delete languages[lang]; // Remove the language from the list to prevent further errors
+                });
+            }));
+        }).then(() => {
             // Check if there are any successfully loaded indexes before enabling the search input
             if (Object.keys(indexes).length > 0) {
                 searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_ready }}";
@@ -148,6 +162,11 @@ permalink: /search
                     searchResultsContainer.innerHTML = '';
                 }
             });
+        }).catch(error => {
+            console.error('Initialization failed:', error);
+            searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
+            searchInput.disabled = true;
+            searchResultsContainer.innerHTML = '<p>Search functionality failed to load. Please try again later.</p>';
         });
 
         function performSearch() {
