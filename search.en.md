@@ -23,7 +23,7 @@ permalink: /search
     (function() {
         const flexsearchBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js";
         const languagePackBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/lang/";
-        
+
         const allSearchFields = ["document", "section", "content", "url", "date", "category", "tags"];
 
         const searchInput = document.getElementById('search-input');
@@ -138,12 +138,14 @@ permalink: /search
                     searchInput.disabled = false;
                     searchInput.addEventListener('input', () => {
                         const query = searchInput.value.trim();
+
                         if (query.length > 0) {
                             performSearch();
-                            debouncedTrackSearch();
                         } else {
                             searchResultsContainer.innerHTML = '';
                         }
+
+                        debouncedTrackSearch();
                     });
                 } else {
                     searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
