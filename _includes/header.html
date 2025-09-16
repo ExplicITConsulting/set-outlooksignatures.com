@@ -7,12 +7,11 @@
             </a>
 
             <div class="navbar-item ml-auto mr-0 has-text-white is-hidden-desktop is-hidden-tablet">
+                <a class="navbar-item ml-auto mr-0 has-text-white is-hidden-desktop is-hidden-tablet" href="/search">
+                    🔍︎
+                </a>
                 <span>
-                    <a class="navbar-item ml-auto mr-0 has-text-white is-hidden-desktop is-hidden-tablet"
-                        href="/search">
-                        🔍︎
-                    </a>
-                    &nbsp;&nbsp;🌐
+                    🌐
                     {%- assign page_path_without_anchor = page.url | split: '#' | first -%}
                     {%- for tongue in site.languages -%}
                     <a {% if tongue==site.active_lang %}style="font-weight: bold;" {% endif %} class="has-text-white" {%
