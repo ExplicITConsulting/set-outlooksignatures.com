@@ -125,14 +125,20 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-      // 1. Get the user's preferred languages from the browser.
+      // 1. Get the user's preferred languages (two-letter codes).
       const preferredLanguages = (navigator.languages || [navigator.language]).map(lang => lang.substring(0, 2));
 
-      // 2. Get all available language options from the page.
+      // 2. Get all available language options on the page.
       const availableLanguages = Array.from(document.querySelectorAll('#language-switcher a')).map(link => link.textContent.trim().substring(0, 2));
 
-      // 3. Find if any of the available languages are a preferred language.
-      const isPreferredLanguageAvailable = availableLanguages.some(lang => preferredLanguages.includes(lang));
+      // 3. Find the most preferred language that is also available.
+      let mostPreferredAvailableLanguage = null;
+      for (const preferredLang of preferredLanguages) {
+          if (availableLanguages.includes(preferredLang)) {
+              mostPreferredAvailableLanguage = preferredLang;
+              break; // Stop at the first match, as it's the most preferred.
+          }
+      }
 
       // 4. Get the currently active language.
       const currentLanguageElement = document.querySelector('#language-switcher a[style*="font-weight: bold"]');
@@ -141,15 +147,12 @@
       }
       const currentLanguage = currentLanguageElement.textContent.trim().substring(0, 2);
 
-      // 5. Check if the currently selected language is one of the preferred languages.
-      const isCurrentLanguagePreferred = preferredLanguages.includes(currentLanguage);
-
-      // 6. Add a glow if a preferred language is available, but NOT the one currently selected.
+      // 5. Apply the glow class if the current language is not the most preferred available one.
       const languageSwitcher = document.getElementById('language-switcher');
-      if (languageSwitcher && isPreferredLanguageAvailable && !isCurrentLanguagePreferred) {
+      if (languageSwitcher && mostPreferredAvailableLanguage && currentLanguage !== mostPreferredAvailableLanguage) {
           languageSwitcher.classList.add('glow-warning');
-      } else {
-          // Optional: Remove the class if the condition is no longer met.
+      } else if (languageSwitcher) {
+          // Remove the class if the condition is not met.
           languageSwitcher.classList.remove('glow-warning');
       }
   });
