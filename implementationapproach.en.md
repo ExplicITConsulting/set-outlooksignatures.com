@@ -12,7 +12,6 @@ image:
 page_id: "implementationapproach"
 permalink: /implementationapproach
 ---
-
 <!-- omit in toc -->
 ## What approach do we recommend for implementing the software? {#recommended-approach}
 For most companies, the <a href="/quickstart">quick start guide</a> is the most efficient way to get started. It enables you to implement Set-OutlookSignatures and the Benefactor Circle add-on on your own in no time. Full <a href="/support#professional-support">implementation support</a> rarely takes more than half a day.

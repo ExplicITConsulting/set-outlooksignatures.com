@@ -11,7 +11,6 @@ image:
 page_id: "download"
 permalink: /download
 ---
-
 <h2 id="set-outlooksignatures">Set-OutlookSignatures</h2>
 <p>
 Set-OutlookSignatures is the open-source standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.

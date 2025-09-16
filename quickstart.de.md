@@ -13,8 +13,6 @@ image:
 page_id: "quickstart"
 permalink: /quickstart
 ---
-
-
 ## Schritt 1: Set-OutlookSignatures herunterladen {#step-1}
 Laden Sie Set-OutlookSignatures herunter und entpacken Sie das Archiv in einen lokalen Ordner.
 

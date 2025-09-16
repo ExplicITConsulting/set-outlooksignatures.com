@@ -13,7 +13,6 @@ image:
 page_id: "support"
 permalink: /support
 ---
-
 <h2 id="free-support">Kostenlose Unterstützung</h2>
 <p>
   Bevor Sie auf GitHub ein neues Problem melden, prüfen Sie die Dokumentation, früher gemeldete 

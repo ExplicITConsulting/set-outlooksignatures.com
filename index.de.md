@@ -13,8 +13,6 @@ image:
 page_id: "index"
 permalink: /
 ---
-
-
 <h2 id="outlook-signature-management">
   <span style="font-weight: normal;">Verwalten Sie Ihre </span>
   <span style="font-weight: bold;">Outlook-Signaturen</span>

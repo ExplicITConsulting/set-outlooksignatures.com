@@ -8,32 +8,6 @@ description: What are you looking for? Find it here.
 page_id: "search2"
 permalink: /search2
 ---
-
-{% if site.active_lang != 'en' %}
-  {% unless page.lang == site.active_lang %}
-<div class="notification is-warning is-light py-1">
-    <button class="delete py-0 my-0"></button>
-    <p>{{ site.data[site.active_lang].strings.page_not_translated }}</p>
-</div>
-<div class="notification is-warning is-light py-1" style="position: relative;">
-  <button class="delete" style="position: absolute; top: 0.4rem; right: 1rem;"></button>
-  <p>{{ site.data[site.active_lang].strings.page_not_translated }}</p>
-</div>
-  {% endunless %}
-{% endif %}
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-            const $notification = $delete.parentNode;
-
-            $delete.addEventListener('click', () => {
-                $notification.parentNode.removeChild($notification);
-            });
-        });
-    });
-</script>
-
 <div class="field has-addons">
     <div class="control is-expanded">
         <input type="search" id="search-input" placeholder="{{ site.data[site.active_lang].strings.search_search-input_placeholder_ready }}" class="input is-large">

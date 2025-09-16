@@ -11,7 +11,6 @@ image:
 page_id: "support"
 permalink: /support
 ---
-
 <h2 id="free-support">Free support</h2>
 <p>
   Before creating a new issue on GitHub, check the documentation, previous 

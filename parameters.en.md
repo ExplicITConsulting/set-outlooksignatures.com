@@ -11,7 +11,6 @@ image:
 page_id: "parameters"
 permalink: /parameters
 ---
-
 ## Parameters<!-- omit in toc -->
 - [1. SignatureTemplatePath](#1-signaturetemplatepath)
 - [2. SignatureIniFile](#2-signatureinifile)

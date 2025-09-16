@@ -8,8 +8,6 @@ description: Kontakt zu ExplicIT Consulting – erreichen Sie uns per E-Mail, fo
 page_id: "contact"
 permalink: /contact
 ---
-
-
 <h2>Senden Sie uns eine E-Mail</h2>
 <p>
   Für allgemeine Fragen schreiben Sie uns an 

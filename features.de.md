@@ -13,8 +13,6 @@ image:
 page_id: "features"
 permalink: /features
 ---
-
-
 ## Funktionen&nbsp;&nbsp;&nbsp;&nbsp;<a href="#feature-comparison"><img src="https://img.shields.io/badge/zum-Funktions--Vergleich-limegreen?labelColor=black" alt="Zum Funktions-Vergleich"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/quickstart"><img src="https://img.shields.io/badge/zur-🚀%20Schnellstart--Anleitung%20🚀-limegreen?labelColor=black" alt="Zur Schnellstart-Anleitung"></a> {#features}
 Mit SetOutlookSignatures können Signaturen und Abwesenheitsnotizen:
 - Aus **Vorlagen im DOCX- oder HTML-Dateiformat** generiert werden.

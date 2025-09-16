@@ -24,6 +24,16 @@
                 {% include cookie-banner.html %}
             {% endif %}
             {% include header.html %}
+
+            {% if site.active_lang != 'en' %}
+                {% unless page.lang == site.active_lang %}
+                    <div class="notification is-warning is-light py-1" style="position: relative;">
+                    <button class="delete" style="position: absolute; top: 0.4rem; right: 1rem;"></button>
+                    <p>{{ site.data[site.active_lang].strings.page_not_translated }}</p>
+                    </div>
+                {% endunless %}
+            {% endif %}
+
             {% unless page.hide_hero %}
                 {% include hero.html %}
             {% endunless %}

@@ -13,7 +13,6 @@ image:
 page_id: "download"
 permalink: /download
 ---
-
 <h2 id="set-outlooksignatures">Set-OutlookSignatures</h2>
 <p>
 Set-OutlookSignatures ist der Open-Source-Standard für E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.

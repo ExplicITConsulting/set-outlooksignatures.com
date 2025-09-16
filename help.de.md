@@ -13,7 +13,6 @@ image:
 page_id: "help"
 permalink: /help
 ---
-
 <h2><a href="/features">Funktionen und Funktionsvergleich</a></h2>
 <p>Unsere Lösung auf einen Blick und im Vergleich</p>
 

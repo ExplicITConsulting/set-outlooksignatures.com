@@ -11,7 +11,6 @@ image:
 page_id: "faq"
 permalink: /faq
 ---
-
 ## Frequently Asked Questions (FAQ)<!-- omit in toc -->
 - [1. Where can I find the changelog?](#1-where-can-i-find-the-changelog)
 - [2. How can I contribute, propose a new feature or file a bug?](#2-how-can-i-contribute-propose-a-new-feature-or-file-a-bug)

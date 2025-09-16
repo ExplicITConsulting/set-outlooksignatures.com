@@ -11,7 +11,6 @@ image:
 page_id: "details"
 permalink: /details
 ---
-
 ## Technical details<!-- omit in toc -->
 - [1. Get to know Set-OutlookSignatures](#1-get-to-know-set-outlooksignatures)
 - [2. Requirements](#2-requirements)

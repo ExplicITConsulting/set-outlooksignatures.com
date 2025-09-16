@@ -13,7 +13,6 @@ image:
 page_id: "implementationapproach"
 permalink: /implementationapproach
 ---
-
 <!-- omit in toc -->
 ## Welchen Ansatz für die Implementierung der Software empfehlen wir? {#recommended-approach}
 

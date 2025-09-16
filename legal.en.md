@@ -6,7 +6,6 @@ description: Impress, Privacy Notice, Terms and Conditions, etc.
 page_id: "legal"
 permalink: /legal
 ---
-
 <!-- omit in toc -->
 ## Topics
 - [Impress](#impress)

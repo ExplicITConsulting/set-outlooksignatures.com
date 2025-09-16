@@ -8,8 +8,6 @@ description: Contact ExplicIT Consulting – reach us via email, request a call-
 page_id: "contact"
 permalink: /contact
 ---
-
-
 <h2>Send us an email</h2>
 <p>
   For general questions, write us at 
