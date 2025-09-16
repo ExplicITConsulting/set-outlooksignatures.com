@@ -22,3 +22,25 @@ $hero-darken: $dark !default;
 .gh-sponsor {
   color: #ea4aaa;
 }
+
+
+.glow-warning {
+    /* Base glow color */
+    box-shadow: 0 0 10px 5px #ff5722, /* A warm, eye-catching orange glow */
+                0 0 20px 10px #ff9800,
+                0 0 30px 15px #ffc107;
+    border-radius: 5px; /* A subtle rounding of corners for a softer effect */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+    
+    /* Animation for a pulsing effect */
+    animation: pulse-glow 2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 10px 5px #ff5722;
+    }
+    100% {
+        box-shadow: 0 0 20px 10px #ff9800;
+    }
+}

@@ -121,3 +121,36 @@
     }
   });
 </script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      // 1. Get the user's preferred languages from the browser.
+      const preferredLanguages = (navigator.languages || [navigator.language]).map(lang => lang.substring(0, 2));
+
+      // 2. Get all available language options from the page.
+      const availableLanguages = Array.from(document.querySelectorAll('#language-switcher a')).map(link => link.textContent.trim().substring(0, 2));
+
+      // 3. Find if any of the available languages are a preferred language.
+      const isPreferredLanguageAvailable = availableLanguages.some(lang => preferredLanguages.includes(lang));
+
+      // 4. Get the currently active language.
+      const currentLanguageElement = document.querySelector('#language-switcher a[style*="font-weight: bold"]');
+      if (!currentLanguageElement) {
+          return; // Exit if no active language is found.
+      }
+      const currentLanguage = currentLanguageElement.textContent.trim().substring(0, 2);
+
+      // 5. Check if the currently selected language is one of the preferred languages.
+      const isCurrentLanguagePreferred = preferredLanguages.includes(currentLanguage);
+
+      // 6. Add a glow if a preferred language is available, but NOT the one currently selected.
+      const languageSwitcher = document.getElementById('language-switcher');
+      if (languageSwitcher && isPreferredLanguageAvailable && !isCurrentLanguagePreferred) {
+          languageSwitcher.classList.add('glow-warning');
+      } else {
+          // Optional: Remove the class if the condition is no longer met.
+          languageSwitcher.classList.remove('glow-warning');
+      }
+  });
+</script>
