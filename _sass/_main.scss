@@ -18,34 +18,3 @@ $hero-darken: $dark !default;
 @import "block-list";
 @import "promo-page";
 @import "category";
-
-.gh-sponsor {
-  color: #ea4aaa;
-}
-
-
-.glow-warning {
-    /* Make the inline element a block to allow box-shadow */
-    display: inline-block;
-    /* Add padding to create space for the glow */
-    padding: 5px 10px; 
-    /* Use negative margin to pull the element back into place */
-    margin: -5px -10px;
-    border-radius: 8px; /* Softer rounded corners */
-
-    /* The box-shadow for the glow effect */
-    box-shadow: 0 0 12px 6px rgba(255, 87, 34, 0.7),
-                0 0 25px 12px rgba(255, 152, 0, 0.5);
-    
-    /* Animation for a pulsing effect */
-    animation: pulse-glow 2s infinite alternate;
-}
-
-@keyframes pulse-glow {
-    0% {
-        box-shadow: 0 0 12px 6px rgba(255, 87, 34, 0.7);
-    }
-    100% {
-        box-shadow: 0 0 25px 12px rgba(255, 152, 0, 0.7);
-    }
-}
