@@ -12,7 +12,7 @@ permalink: /search2
 {% if site.active_lang != 'en' %}
   {% unless page.lang == site.active_lang %}
 <div class="notification is-warning is-light">
-    <p>This page is currently only available in English.</p>
+    <p>{{ site.data[site.active_lang].strings.page_not_translated }}</p>
 </div>
   {% endunless %}
 {% endif %}
