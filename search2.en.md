@@ -11,10 +11,10 @@ permalink: /search2
 
 {% if site.active_lang != 'en' %}
   {% unless page.lang == site.active_lang %}
-    <div class="notification is-info">
-        <button class="delete"></button>
-      <p class="is-size-7">This page is currently only available in English.</p>
-    </div>
+<div class="notification is-info">
+    <button class="delete"></button>
+    <p class="is-size-7">This page is currently only available in English.</p>
+</div>
   {% endunless %}
 {% endif %}
 
