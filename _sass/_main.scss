@@ -25,12 +25,17 @@ $hero-darken: $dark !default;
 
 
 .glow-warning {
-    /* Base glow color */
-    box-shadow: 0 0 10px 5px #ff5722, /* A warm, eye-catching orange glow */
-                0 0 20px 10px #ff9800,
-                0 0 30px 15px #ffc107;
-    border-radius: 5px; /* A subtle rounding of corners for a softer effect */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+    /* Make the inline element a block to allow box-shadow */
+    display: inline-block;
+    /* Add padding to create space for the glow */
+    padding: 5px 10px; 
+    /* Use negative margin to pull the element back into place */
+    margin: -5px -10px;
+    border-radius: 8px; /* Softer rounded corners */
+
+    /* The box-shadow for the glow effect */
+    box-shadow: 0 0 12px 6px rgba(255, 87, 34, 0.7),
+                0 0 25px 12px rgba(255, 152, 0, 0.5);
     
     /* Animation for a pulsing effect */
     animation: pulse-glow 2s infinite alternate;
@@ -38,9 +43,9 @@ $hero-darken: $dark !default;
 
 @keyframes pulse-glow {
     0% {
-        box-shadow: 0 0 10px 5px #ff5722;
+        box-shadow: 0 0 12px 6px rgba(255, 87, 34, 0.7);
     }
     100% {
-        box-shadow: 0 0 20px 10px #ff9800;
+        box-shadow: 0 0 25px 12px rgba(255, 152, 0, 0.7);
     }
 }
