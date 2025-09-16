@@ -11,12 +11,24 @@ permalink: /search2
 
 {% if site.active_lang != 'en' %}
   {% unless page.lang == site.active_lang %}
-<div class="notification is-warning is-light">
+<div class="notification is-warning is-light p-0">
+    <button class="delete"></button>
     <p>{{ site.data[site.active_lang].strings.page_not_translated }}</p>
 </div>
   {% endunless %}
 {% endif %}
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+            const $notification = $delete.parentNode;
+
+            $delete.addEventListener('click', () => {
+                $notification.parentNode.removeChild($notification);
+            });
+        });
+    });
+</script>
 
 <div class="field has-addons">
     <div class="control is-expanded">
