@@ -10,19 +10,17 @@
                 id="language-switcher-mobile">
                 <a href="/search">🔍︎</a>
                 &nbsp;&nbsp;
-                <span>
-                    🌐
-                    {%- assign page_path_without_anchor = page.url | split: '#' | first -%}
-                    {%- for tongue in site.languages -%}
-                    <a {% if tongue==site.active_lang %}style="font-weight: bold;" {% endif %} class="has-text-white" {%
-                        static_href
-                        %}href="{% if tongue == site.default_lang %}{{ site.baseurl }}{{ page.url }}{% else %}{{ site.baseurl }}/{{ tongue }}{{ page.url }}{% endif %}"
-                        {% endstatic_href %}
-                        data-base-url="{% if tongue == site.default_lang %}{{ site.baseurl }}{{ page.url }}{% else %}{{ site.baseurl }}/{{ tongue }}{{ page.url }}{% endif %}">
-                        {{ tongue }}
-                    </a>{% if forloop.last == false %}{{ " | " }}{% endif %}
-                    {%- endfor -%}
-                </span>
+                🌐
+                {%- assign page_path_without_anchor = page.url | split: '#' | first -%}
+                {%- for tongue in site.languages -%}
+                <a {% if tongue==site.active_lang %}style="font-weight: bold;" {% endif %} class="has-text-white" {%
+                    static_href
+                    %}href="{% if tongue == site.default_lang %}{{ site.baseurl }}{{ page.url }}{% else %}{{ site.baseurl }}/{{ tongue }}{{ page.url }}{% endif %}"
+                    {% endstatic_href %}
+                    data-base-url="{% if tongue == site.default_lang %}{{ site.baseurl }}{{ page.url }}{% else %}{{ site.baseurl }}/{{ tongue }}{{ page.url }}{% endif %}">
+                    {{ tongue }}
+                </a>{% if forloop.last == false %}{{ " | " }}{% endif %}
+                {%- endfor -%}
             </div>
 
             <a role="button" class="ml-0 navbar-burger burger" aria-label="menu" aria-expanded="false"
