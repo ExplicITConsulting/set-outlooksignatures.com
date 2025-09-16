@@ -5,9 +5,11 @@
             <a href="{{ site.baseurl }}/" class="navbar-item has-text-white">
                 <img src="/assets/images/set-outlooksignatures logo 500px.png" alt="Set-OutlookSignatures">
             </a>
+
             <a class="navbar-item ml-auto has-text-white is-hidden-desktop is-hidden-tablet" href="/search">
                 🔍︎
             </a>
+
             <div class="navbar-item ml-auto has-text-white is-hidden-desktop is-hidden-tablet"
                 id="language-switcher-mobile">
                 <span>
@@ -24,6 +26,7 @@
                     {%- endfor -%}
                 </span>
             </div>
+
             <a role="button" class="ml-0 navbar-burger burger" aria-label="menu" aria-expanded="false"
                 data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
                 <span aria-hidden="true"></span>
