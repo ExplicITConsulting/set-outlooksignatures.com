@@ -16,7 +16,7 @@ permalink: /search2
     <p>{{ site.data[site.active_lang].strings.page_not_translated }}</p>
 </div>
 <div class="notification is-warning is-light py-1" style="position: relative;">
-  <button class="delete py-1" style="position: absolute;"></button>
+  <button class="delete" style="position: absolute; top: 0.5rem; right: 0.5rem;"></button>
   <p>{{ site.data[site.active_lang].strings.page_not_translated }}</p>
 </div>
   {% endunless %}
