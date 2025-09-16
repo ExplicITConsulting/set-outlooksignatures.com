@@ -9,7 +9,7 @@ page_id: "search"
 permalink: /search
 ---
 
-<<div class="field has-addons">
+<div class="field has-addons">
     <div class="control is-expanded">
         <input type="search" id="search-input" placeholder="{{ site.data[site.active_lang].strings.search_search-input_placeholder_ready }}" class="input is-large">
     </div>
