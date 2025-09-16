@@ -15,6 +15,10 @@ permalink: /search2
     <button class="delete py-0 my-0"></button>
     <p>{{ site.data[site.active_lang].strings.page_not_translated }}</p>
 </div>
+<div class="notification is-warning is-light py-1" style="position: relative;">
+  <button class="delete" style="position: absolute; top: 0.1rem; right: 0.1rem;"></button>
+  <p>{{ site.data[site.active_lang].strings.page_not_translated }}</p>
+</div>
   {% endunless %}
 {% endif %}
 
