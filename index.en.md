@@ -14,9 +14,7 @@ page_id: "index"
 permalink: /
 ---
 <h2 id="outlook-signature-management">
-  <span style="font-weight: normal;">Manage your </span>
-  <span style="font-weight: bold;">Outlook signatures</span>
-  <span style="font-weight: normal;"> centrally and fully automated</span>
+  Manage your<span class="has-text-weight-extrabold"> Outlook signatures </span>centrally and fully automated
 </h2>
 <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
 <p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
