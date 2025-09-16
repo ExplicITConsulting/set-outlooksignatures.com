@@ -17,7 +17,7 @@ permalink: /search2
 </div>
 <div class="notification is-warning is-light py-1 is-flex is-align-items-start">
   <p>{{ site.data[site.active_lang].strings.page_not_translated }}</p>
-  <button class="delete ml-auto py-1"></button>
+  <button class="delete ml-auto py-0 my-0"></button>
 </div>
   {% endunless %}
 {% endif %}
