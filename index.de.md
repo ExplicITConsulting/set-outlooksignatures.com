@@ -14,7 +14,7 @@ page_id: "index"
 permalink: /
 ---
 <h2 id="outlook-signature-management">
-  Verwalten Sie Ihre<span class="has-text-weight-extrabold"> Outlook-Signaturen </span>zentral und vollautomatisch
+  Verwalten Sie Ihre<span style="font-weight: bolder;"> Outlook-Signaturen </span>zentral und vollautomatisch
 </h2>
 <p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
 <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
@@ -58,7 +58,7 @@ permalink: /
 
 
 <h2 id="strengths">
-  Die<span class="has-text-weight-extrabold"> Stärken </span>von Set-OutlookSignatures
+  Die<span style="font-weight: bolder;"> Stärken </span>von Set-OutlookSignatures
 </h2>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
