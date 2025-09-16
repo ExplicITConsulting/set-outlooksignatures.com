@@ -9,6 +9,16 @@ page_id: "search2"
 permalink: /search2
 ---
 
+{% if site.active_lang != 'en' %}
+  {% unless page.lang == site.active_lang %}
+    <div class="notification is-info">
+        <button class="delete"></button>
+      <p class="is-size-7">This page is currently only available in English.</p>
+    </div>
+  {% endunless %}
+{% endif %}
+
+
 <div class="field has-addons">
     <div class="control is-expanded">
         <input type="search" id="search-input" placeholder="{{ site.data[site.active_lang].strings.search_search-input_placeholder_ready }}" class="input is-large">
@@ -268,11 +278,3 @@ permalink: /search2
     })();
 </script>
 
-{% if site.active_lang != 'en' %}
-  {% unless page.lang == site.active_lang %}
-    <div class="notification is-info">
-        <button class="delete"></button>
-      <p class="is-size-7">This page is currently only available in English.</p>
-    </div>
-  {% endunless %}
-{% endif %}
