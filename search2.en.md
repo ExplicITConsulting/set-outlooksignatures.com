@@ -5,8 +5,8 @@ locale: en
 title: What are you looking for?
 subtitle: Find it here
 description: What are you looking for? Find it here.
-page_id: "search"
-permalink: /search
+page_id: "search2"
+permalink: /search2
 ---
 
 <div class="field has-addons">
