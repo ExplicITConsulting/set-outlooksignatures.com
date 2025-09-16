@@ -12,7 +12,7 @@ permalink: /search2
 {% if site.active_lang != 'en' %}
   {% unless page.lang == site.active_lang %}
 <div class="notification is-warning is-light p-0">
-    <button class="delete"></button>
+    <button class="delete p-0"></button>
     <p>{{ site.data[site.active_lang].strings.page_not_translated }}</p>
 </div>
   {% endunless %}
