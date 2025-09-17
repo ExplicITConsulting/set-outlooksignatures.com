@@ -4,7 +4,7 @@ lang: de
 locale: de
 title: Schnellstart-Anleitung
 subtitle: Erste Signaturen in unter einer Stunde
-description: Erste Signaturen in unter einer Stunde
+description: Schnellstart-Anleitung. Verteilen Sie Ihre rsten Signaturen in unter einer Stunde.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

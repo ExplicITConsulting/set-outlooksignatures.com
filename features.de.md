@@ -4,7 +4,7 @@ lang: de
 locale: de
 title: Funktionen und Funktions-Vergleich
 subtitle: Unsere Lösung auf einen Blick und im Vergleich
-description: Unsere Lösung auf einen Blick und im Vergleich
+description: Funktionen und Funktions-Vergleich. Unsere Lösung auf einen Blick und im Vergleich.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

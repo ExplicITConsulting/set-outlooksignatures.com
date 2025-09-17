@@ -2,7 +2,7 @@
 layout: page
 title: Features and feature comparison
 subtitle: Our solution at a glance and in benchmark
-description: Our solution at a glance and in benchmark
+description: Features and feature comparison. Our solution at a glance and in benchmark.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
