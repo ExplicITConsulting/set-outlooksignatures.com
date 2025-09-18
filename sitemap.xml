@@ -21,13 +21,13 @@ sitemap: false
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
   {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
 
-    {%- comment -%} Get the URL to be used for canonical and x-default based on the prioritized language list {%- endcomment -%}
-    {%- assign canonicalUrl = "" -%}
+    {%- comment -%} Get the URL to be used for x-default based on the prioritized language list {%- endcomment -%}
+    {%- assign xDefaultUrl = "" -%}
     {%- for languageCode in sorted_langs -%}
       {%- if node.permalink_lang[languageCode] -%}
-        {%- if canonicalUrl == "" -%}
+        {%- if xDefaultUrl == "" -%}
           {%- if languageCode == default_lang -%}
-            {%- assign canonicalUrl = node.permalink_lang[languageCode] | absolute_url -%}
+            {%- assign xDefaultUrl = node.permalink_lang[languageCode] | absolute_url -%}
           {%- else -%}
             {%- assign languagePrefix = "/" | append: languageCode | append: node.permalink_lang[languageCode] | absolute_url -%}
           {%- endif -%}
@@ -49,8 +49,8 @@ sitemap: false
     <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
 
-        {%- if canonicalUrl != "" %}
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
+        {%- if xDefaultUrl != "" %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ xDefaultUrl }}" />
         {%- endif -%}
 
         {%- for languageCode in sorted_langs -%}
