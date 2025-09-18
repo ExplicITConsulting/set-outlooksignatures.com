@@ -11,7 +11,6 @@ image:
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "index"
-permalink: /
 ---
 <h2 id="outlook-signature-management">
   Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally and fully automated

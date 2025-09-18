@@ -9,7 +9,6 @@ image:
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "parameters"
-permalink: /parameters/
 ---
 ## Parameters<!-- omit in toc -->
 - [1. SignatureTemplatePath](#1-signaturetemplatepath)

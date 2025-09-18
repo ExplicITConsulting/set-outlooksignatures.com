@@ -9,7 +9,6 @@ image:
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "details"
-permalink: /details/
 ---
 ## Technical details<!-- omit in toc -->
 - [1. Get to know Set-OutlookSignatures](#1-get-to-know-set-outlooksignatures)

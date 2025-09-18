@@ -9,7 +9,6 @@ image:
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "download"
-permalink: /download/
 ---
 <h2 id="set-outlooksignatures">Set-OutlookSignatures</h2>
 <p>
