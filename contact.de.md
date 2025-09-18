@@ -6,7 +6,7 @@ title: Bleiben wir in Kontakt
 subtitle: E-Mail, Rückruf anfordern, Postadresse
 description: Kontakt zu ExplicIT Consulting – erreichen Sie uns per E-Mail, fordern Sie einen Rückruf an oder senden Sie einen Brief. Finden Sie unsere LinkedIn- und GitHub-Links für weitere Kontaktmöglichkeiten.
 page_id: "contact"
-permalink: /contact
+permalink: /contact/
 ---
 <h2>Senden Sie uns eine E-Mail</h2>
 <p>
