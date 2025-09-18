@@ -14,7 +14,7 @@ permalink: /legal/
 - [Brands and trademarks](#brands-and-trademarks)
 - [General terms and conditions, Allgemeine Geschäftsbedingungen](#general-terms-and-conditions-allgemeine-geschäftsbedingungen)
   - [English: General terms and conditions for the sale and the delivery of organisational and programming services and permissions to use copyrighted software products](#english-general-terms-and-conditions-for-the-sale-and-the-delivery-of-organisational-and-programming-services-and-permissions-to-use-copyrighted-software-products)
-- [Deutsch: Allgemeine Geschäftsbedingungen für den Verkauf und die Lieferung von Organisations-, Programmierleistungen und Werknutzungsbewilligungen von Softwareprodukten](#deutsch-allgemeine-geschäftsbedingungen-für-den-verkauf-und-die-lieferung-von-organisations--programmierleistungen-und-werknutzungsbewilligungen-von-softwareprodukten)
+  - [Deutsch: Allgemeine Geschäftsbedingungen für den Verkauf und die Lieferung von Organisations-, Programmierleistungen und Werknutzungsbewilligungen von Softwareprodukten](#deutsch-allgemeine-geschäftsbedingungen-für-den-verkauf-und-die-lieferung-von-organisations--programmierleistungen-und-werknutzungsbewilligungen-von-softwareprodukten)
 - [Privacy policy](#privacy-policy)
 
 ## Impress
@@ -206,7 +206,7 @@ Section 924 of the Austrian Civil Code ‘Assumption of Deficiency’ shall be e
 
 13.2 In the event that any disputes, which cannot be solved by mutual agreement, arise from this Contract, the parties to the contract agree to engage a listed mediator (Austrian Civil Rights Mediation Law (ZivMediatG) specialized in business mediation from the list of the Austrian Ministry of Justice in order to reconcile these out of court. Should no mutual agreement regarding the selection of the business mediator or with regard to content be possible, legal measures shall be initiated no sooner than one month after the negotiations fail. In the event that mediation could not be held or was discontinued, any litigation initiated shall be subject to Austrian law. As agreed, all necessary costs incurred due to previous mediation, particularly for legal advisors consulted, may be claimed in litigation or arbitration as ‘pre-trial costs’.
 
-## Deutsch: Allgemeine Geschäftsbedingungen für den Verkauf und die Lieferung von Organisations-, Programmierleistungen und Werknutzungsbewilligungen von Softwareprodukten
+### Deutsch: Allgemeine Geschäftsbedingungen für den Verkauf und die Lieferung von Organisations-, Programmierleistungen und Werknutzungsbewilligungen von Softwareprodukten
 1	Vertragsumfang und Gültigkeit
 
 1.1. Alle Aufträge und Vereinbarungen sind nur dann rechtsverbindlich, wenn sie vom Auftragnehmer schriftlich und firmengemäß gezeichnet werden und verpflichten nur in dem in der Auftragsbestätigung angegebenem Umfang. Einkaufsbedingungen des Auftraggebers werden für das gegenständliche Rechtsgeschäft und die gesamte Geschäftsbeziehung hiermit ausgeschlossen. Angebote sind grundsätzlich freibleibend.
