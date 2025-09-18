@@ -10,6 +10,7 @@ image:
   alt: "Set-OutlookSignatures Benefactor Circle"
 hide_gh_sponsor: true
 page_id: "outlookaddin"
+permalink: /outlookaddin/
 ---
 ## The Outlook add-in<!-- omit in toc -->
 - [1. Overview](#1-overview)

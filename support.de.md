@@ -11,6 +11,7 @@ image:
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "support"
+permalink: /support/
 ---
 <h2 id="free-support">Kostenlose Unterstützung</h2>
 <p>

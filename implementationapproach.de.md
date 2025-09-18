@@ -11,6 +11,7 @@ image:
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "implementationapproach"
+permalink: /implementationapproach/
 ---
 <!-- omit in toc -->
 ## Welchen Ansatz für die Implementierung der Software empfehlen wir? {#recommended-approach}

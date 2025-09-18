@@ -6,6 +6,7 @@ title: Wonach suchen Sie?
 subtitle: Finden Sie es hier
 description: Wonach suchen Sie? Finden Sie es hier.
 page_id: "search"
+permalink: /search/
 ---
 <div class="field has-addons">
     <div class="control is-expanded">

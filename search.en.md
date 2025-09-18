@@ -6,6 +6,7 @@ title: What are you looking for?
 subtitle: Find it here
 description: What are you looking for? Find it here.
 page_id: "search"
+permalink: /search/
 ---
 <div class="field has-addons">
     <div class="control is-expanded">
