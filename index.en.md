@@ -8,7 +8,7 @@ description: Email signatures and out-of-office replies for Exchange and all of 
 hero_link: /quickstart
 hero_link_text: "<span><b>➔ Quick Start Guide: </b>Deploy signatures within minutes, free and open-source.</span>"
 hero_link_style: |
-  style="min-height: 4em; background-color: MediumAquamarine; white-space: normal; word-break: break-word; hyphens: auto;"
+  style="min-height: 4em; background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -228,7 +228,7 @@ permalink: /
 </h2>
 <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 
-<a href="/quickstart"><button class="button is-custom-color is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4em; background-color: MediumAquamarine">➔ Quick Start Guide</button></a>
+<a href="/quickstart"><button class="button is-custom-color is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4em; background-color: LimeGreen">➔ Quick Start Guide</button></a>
 
 
 <h2 id="dive-deeper">

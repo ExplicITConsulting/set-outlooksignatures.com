@@ -8,7 +8,7 @@ description: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Va
 hero_link: /quickstart
 hero_link_text: "<span><b>➔ Schnellstart-Anleitung: </b>Signaturen binnen Minuten verteilen, kostenlos und quelloffen.</span>"
 hero_link_style: |
-   style="min-height: 4em; background-color: MediumAquamarine; white-space: normal; word-break: break-word; hyphens: auto;"
+   style="min-height: 4em; background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -228,7 +228,7 @@ permalink: /
 </h2>
 <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
-<a href="/quickstart"><button class="button is-custom-color is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4em; background-color: MediumAquamarine">➔ Schnellstart-Anleitung</button></a>
+<a href="/quickstart"><button class="button is-custom-color is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4em; background-color: LimeGreen">➔ Schnellstart-Anleitung</button></a>
 
 
 <h2 id="dive-deeper">
