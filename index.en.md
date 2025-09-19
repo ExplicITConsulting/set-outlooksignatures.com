@@ -6,7 +6,7 @@ title: Set-Outlook&shy;Signatures
 subtitle: Email signatures and out-of-office replies for Exchange and all of Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
 description: Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 hero_link: /quickstart
-hero_link_text: "<span><b>➔ Quick Start Guide:</b> Deploy signatures within minutes</span>"
+hero_link_text: "<span><b>➔ Quick Start Guide</b><br>Deploy signatures within minutes. Free and Open-Source.</span>"
 hero_link_style: |
   style="height: 4em; background-color: MediumAquamarine; hyphens: auto;"
 image:
@@ -20,7 +20,7 @@ permalink: /
 <h2 id="outlook-signature-management">
   Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally and fully automated
 </h2>
-<p>Set-OutlookSignatures is the leading free and open-source software taking the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
+<p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
 <p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
 
 

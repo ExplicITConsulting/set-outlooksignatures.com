@@ -20,7 +20,7 @@ permalink: /
 <h2 id="outlook-signature-management">
   Verwalten Sie Ihre<span style="font-weight: bolder;"> Outlook-Signaturen </span>zentral und vollautomatisch
 </h2>
-<p>Set-OutlookSignatures ist die führende kostenlose Open-Source-Software, die Ihnen die mühsame manuelle Pflege von Outlook-Signaturen und Abwesenheitsnotizen abnimmt.</p>
+<p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
 <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
 
 
