@@ -16,7 +16,7 @@ permalink: /quickstart/
 ## Schritt 1: Set-OutlookSignatures herunterladen {#step-1}
 Laden Sie Set-OutlookSignatures herunter und entpacken Sie das Archiv in einen lokalen Ordner.
 
-<p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Software herunterladen</button></a></p>
+<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Software herunterladen</button></a></p>
 
 Heben Sie unter Windows und macOS die Blockierung der Datei 'Set-OutlookSignatures.ps1' auf. Sie können dazu das PowerShell-Cmdlet 'Unblock-File' verwenden oder im Datei-Explorer mit der rechten Maustaste auf die Datei klicken, Eigenschaften auswählen und 'Unblock' anklicken. Dadurch wird das 'Mark of the Web' entfernt, das die Ausführung in PowerShell verhindern kann.
 
@@ -87,3 +87,36 @@ Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Eval
 <p><a href="/support"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Support-Optionen ansehen</button></a></p>
 
 <p><a href="/benefactorcircle"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Das Benefactor Circle Add-On</button></a></p>
+
+<script>
+    // Function to fetch the latest release and update the link
+    async function updateDownloadLink() {
+        const owner = 'Set-OutlookSignatures';
+        const repo = 'Set-OutlookSignatures';
+        const repoURL = `https://api.github.com/repos/${owner}/${repo}/releases/latest`;
+
+        try {
+            const response = await fetch(repoURL);
+            if (!response.ok) {
+                throw new Error(`GitHub API request failed with status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            const firstAsset = data.assets[0];
+
+            if (firstAsset && firstAsset.browser_download_url) {
+                const downloadLink = document.getElementById('download-link');
+                if (downloadLink) {
+                    downloadLink.href = firstAsset.browser_download_url;
+                }
+            } else {
+                console.error('No assets found for the latest release.');
+            }
+        } catch (error) {
+            console.error('Error fetching latest release:', error);
+        }
+    }
+
+    // Bind the function to the DOMContentLoaded event
+    document.addEventListener('DOMContentLoaded', updateDownloadLink);
+</script>
