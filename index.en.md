@@ -7,9 +7,9 @@ subtitle: Email signatures and out-of-office replies for Exchange and all of Out
 description: Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 hero_link: /quickstart
 hero_link_text: |
-  Free and Open-Source Software
+  Set-OutlookSignatures is Free and Open-Source Software
   <br>
-  Deploy signatures within minutes: ➔ Quick Start Guide
+  <b>Deploy signatures within minutes: ➔ Quick Start Guide</b>
 hero_link_style: |
   style="height: 4em; background-color: MediumAquamarine"
 image:
