@@ -130,3 +130,8 @@ html::after {
   z-index: -1; /* Places the pseudo-element behind other content */
   opacity: 0.5; /* Sets the transparency of the pseudo-element */
 }
+
+.button.is-custom-color:hover {
+  /* Using filter() to make the button brighter on hover */
+  filter: brightness(125%);
+}
