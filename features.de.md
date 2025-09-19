@@ -13,14 +13,14 @@ image:
 page_id: "features"
 permalink: /features/
 ---
-Set-OutlookSignatures verfügt über sehr viele Funktionen, was auf den ersten Blick etwas überwältigend sein kann.
-
-Für eine schnelle erste Einschätzung empfehlen wir unseren <a href="#feature-comparison"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Funktions-Vergleich</button></a>.
-
-Nichts geht über praktische Erfahrung: Verteilen Sie Signaturen in Minuten mit unserer <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Schnellstart-Anleitung</button></a>.
+<div class="box">
+    <p>Set-OutlookSignatures verfügt über sehr viele Funktionen, was auf den ersten Blick etwas überwältigend sein kann.</p>
+    <p>Für eine schnelle erste Einschätzung empfehlen wir unseren <a href="#feature-comparison"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Funktions-Vergleich</button></a>.</p>
+    <p>Nichts geht über praktische Erfahrung: Verteilen Sie Signaturen in Minuten mit unserer <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Schnellstart-Anleitung</button></a>.</p>
+</div>
 
 ## Funktionen {#features}
-Mit SetOutlookSignatures können Signaturen und Abwesenheitsnotizen:
+Mit Set-OutlookSignatures können Signaturen und Abwesenheitsnotizen:
 - Aus **Vorlagen im DOCX- oder HTML-Dateiformat** generiert werden.
 - Mit einer **Vielzahl von Variablen**, einschließlich **Fotos und Bildern**, aus Entra ID, Active Directory und anderen Quellen angepasst werden.
   - Variablen stehen für den **aktuell angemeldeten Benutzer, das aktuelle Postfach und deren Manager** zur Verfügung.
@@ -70,7 +70,7 @@ Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on 
         <thead>
             <tr>
                 <th style="text-align:left">Feature</th>
-                <th style="text-align:left">Set-OutlookSignatures mit dem<br><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></th>
+                <th style="text-align:left">Set-OutlookSignatures<br>mit dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></th>
                 <th style="text-align:left">Marktbegleiter A</th>
                 <th style="text-align:left">Marktbegleiter B</th>
                 <th style="text-align:left">Marktbegleiter C</th>

@@ -11,11 +11,11 @@ image:
 page_id: "features"
 permalink: /features/
 ---
-Set-OutlookSignatures has a huge feature set, which can be a bit overwhelming at first sight.
-
-For a quick first assessment, we recommend our <a href="#feature-comparison"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Feature comparison</button></a>.
-
-Nothing beats practical experience: Deploy signatures within minutes with our <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Quick Start Guide</button></a>.
+<div class="box">
+    <p>Set-OutlookSignatures has a huge feature set, which can be a bit overwhelming at first sight.</p>
+    <p>For a quick first assessment, we recommend our <a href="#feature-comparison"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Feature comparison</button></a>.</p>
+    <p>Nothing beats practical experience: Deploy signatures within minutes with our <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Quick Start Guide</button></a>.</p>
+</div>
 
 ## Features {#features}
 Set-OutlookSignatures has a huge feature set, which can be a bit 
@@ -67,7 +67,7 @@ Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle
         <thead>
             <tr>
                 <th style="text-align:left">Feature</th>
-                <th style="text-align:left">Set-OutlookSignatures with the<br><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></th>
+                <th style="text-align:left">Set-OutlookSignatures<br>with the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></th>
                 <th style="text-align:left">Market Companion&nbsp;A</th>
                 <th style="text-align:left">Market Companion&nbsp;B</th>
                 <th style="text-align:left">Market Companion&nbsp;C</th>
