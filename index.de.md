@@ -7,9 +7,8 @@ subtitle: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varia
 description: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
 hero_link: /quickstart
 hero_link_text: |
-  Set-OutlookSignatures ist freie und quelloffene Software
-  <br>
-  <b>Signaturen binnen Minuten verteilen: ➔ Quick Start Guide</b>
+  <b>➔ Schnellstart-Anleitung</b>
+  Signaturen binnen Minuten verteilen mit freier und quelloffener Software
 hero_link_style: |
   style="height: 4em; background-color: MediumAquamarine"
 image:
