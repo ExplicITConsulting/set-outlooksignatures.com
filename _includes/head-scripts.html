@@ -158,7 +158,7 @@
           // Animate the current button
           buttons[i].classList.add('animated-now');
           i++;
-          setTimeout(animateNextButton, delayBetweenButtons); // Animate next button with a small delay
+          setTimeout(animateNextButton, animationDuration + delayBetweenButtons); // Animate next button with a small delay
         } else {
           // All buttons have been animated, wait for the full run delay
           setTimeout(() => {
