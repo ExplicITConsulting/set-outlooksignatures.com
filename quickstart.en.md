@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Quick Start Guide
-subtitle: First signatures in less than an hour
-description: Quick Start Guide. Deploy your first signatures in less than an hour.
+subtitle: Deploy signatures within minutes
+description: Quick Start Guide. Deploy signatures within minutes.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
