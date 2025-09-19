@@ -60,7 +60,7 @@ Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle
         <thead>
             <tr>
                 <th style="text-align:left">Feature</th>
-                <th style="text-align:left">Set-OutlookSignatures with the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></th>
+                <th style="text-align:left">Set-OutlookSignatures with the<br><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></th>
                 <th style="text-align:left">Market Companion&nbsp;A</th>
                 <th style="text-align:left">Market Companion&nbsp;B</th>
                 <th style="text-align:left">Market Companion&nbsp;C</th>

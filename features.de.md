@@ -64,7 +64,7 @@ Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on 
         <thead>
             <tr>
                 <th style="text-align:left">Feature</th>
-                <th style="text-align:left">Set-OutlookSignatures mit dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></th>
+                <th style="text-align:left">Set-OutlookSignatures mit dem<br><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></th>
                 <th style="text-align:left">Marktbegleiter A</th>
                 <th style="text-align:left">Marktbegleiter B</th>
                 <th style="text-align:left">Marktbegleiter C</th>
