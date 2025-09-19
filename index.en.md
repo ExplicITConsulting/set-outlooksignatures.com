@@ -16,9 +16,9 @@ permalink: /
 <h2 id="outlook-signature-management">
   Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally and fully automated
 </h2>
-<p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
+<p>Set-OutlookSignatures is the leading free and open-source software taking the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
 <p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
-<p><span style="color: MediumAquamarine"><b>Deploy signatures within minutes:</b></span><br><a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="height: 4em; background-color: MediumAquamarine">➔ Quick Start Guide</button></a></p>
+<p><b>Deploy signatures within minutes:</b><br><a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="height: 4em; background-color: MediumAquamarine">➔ Quick Start Guide</button></a></p>
 
 
 <h2 id="less-effort">
