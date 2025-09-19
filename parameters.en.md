@@ -405,7 +405,7 @@ Format: yyyyMMddHHmm (yyyy = year, MM = two-digit month, dd = two-digit day, HH 
 Default value: $null
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SimulateTime "202312311859"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateUser ""202312311859"""`  
+Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateTime ""202312311859"""`  
 
 
 ## 19. SimulateAndDeploy

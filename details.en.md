@@ -800,12 +800,18 @@ Simulation mode is enabled when the parameter `SimulateUser` is passed to the so
 
 Simulation mode is useful for content creators and admins, as it allows to simulate the behavior of the software and to inspect the resulting signature files before going live. Such a dry-run is not only very helpful for running tests in the production environment without affecting anyone, it also greatly supports problem analysis.
   
-In simulation mode, Outlook registry entries are not considered and nothing is changed in Outlook and Outlook web. The template files are handled just as during a real script run, but the signatures are only saved to the folder defined by the [`AdditionalSignaturePath`](/parameters/#14-additionalsignaturepath) parameter.
+In simulation mode, Outlook registry entries are not considered and nothing is changed in Outlook and Outlook web. The template files are handled just as during a real script run, but the signatures are only saved to the folder defined by the [AdditionalSignaturePath](/parameters/#14-additionalsignaturepath) parameter.
   
-[`SimulateUser`](/parameters/#16-simulateuser) is a mandatory parameter for simulation mode. This value replaces the currently logged-in user. Use a logon name in the format 'Domain\User' or a Universal Principal Name (UPN, looks like an email address, but is not neecessarily one).
+[SimulateUser](/parameters/#16-simulateuser) is a mandatory parameter for simulation mode. This value replaces the currently logged-in user. Use a logon name in the format 'Domain\User' or a Universal Principal Name (UPN, looks like an email address, but is not neecessarily one).
 
-[`SimulateMailboxes`](/parameters/#17-simulatemailboxes) is optional for simulation mode, although highly recommended. It is a comma separated list of email addresses replacing the list of mailboxes otherwise gathered from the registry.
+[SimulateMailboxes](/parameters/#17-simulatemailboxes) is optional for simulation mode, although highly recommended. It is a comma separated list of email addresses replacing the list of mailboxes otherwise gathered from the registry.
 
-[`SimulateTime`](/parameters/#18-simulatetime) is optional for simulation mode. Simulating a certain time is helpful when time-based templates are used.
+[SimulateTime](/parameters/#18-simulatetime) is optional for simulation mode. Simulating a certain time is helpful when time-based templates are used.
 
-See '`.\sample code\SimulationModeHelper.ps1`' for sample code showing how to use simulation mode.
+An example: Simulate user a@example.com with the additional mailbox x@example.com, and save the results to 'c:\test':
+
+```
+& .\Set-OutlookSignatures.ps1 -SimulateUser 'a@example.com' -SimulateMailboxes 'a@example.com', 'x@example.com' -AdditionalSignaturePath 'c:\test'
+```
+
+Also see '`.\sample code\SimulationModeHelper.ps1`' for sample code showing how to use simulation mode.
