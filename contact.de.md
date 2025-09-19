@@ -17,7 +17,7 @@ permalink: /contact/
 </p>
 <p>
   <a href="mailto:set-outlooksignatures@explicitconsulting.at">
-    <button class="button is-custom-color is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">
+    <button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">
       ➔ Kontakt zu ExplicIT Consulting
     </button>
   </a>

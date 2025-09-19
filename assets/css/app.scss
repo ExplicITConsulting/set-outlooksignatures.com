@@ -131,7 +131,7 @@ html::after {
   opacity: 0.5; /* Sets the transparency of the pseudo-element */
 }
 
-.button.is-custom-color:hover {
+.button:hover {
   /* Using filter() to make the button brighter on hover */
   filter: brightness(125%);
 }

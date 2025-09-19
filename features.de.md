@@ -13,7 +13,7 @@ image:
 page_id: "features"
 permalink: /features/
 ---
-## Funktionen&nbsp;&nbsp;&nbsp;&nbsp; <a href="#feature-comparison"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold">➔ Funktions-Vergleich</button></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold">➔ Schnellstart-Anleitung</button></a> {#features}
+## Funktionen&nbsp;&nbsp;&nbsp;&nbsp; <a href="#feature-comparison"><button class="button is-success is-link is-small is-hovered has-text-black" style="background-color: LimeGreen;">➔ Funktions-Vergleich</button></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black" style="background-color: LimeGreen;">➔ Schnellstart-Anleitung</button></a> {#features}
 Mit SetOutlookSignatures können Signaturen und Abwesenheitsnotizen:
 - Aus **Vorlagen im DOCX- oder HTML-Dateiformat** generiert werden.
 - Mit einer **Vielzahl von Variablen**, einschließlich **Fotos und Bildern**, aus Entra ID, Active Directory und anderen Quellen angepasst werden.
@@ -57,7 +57,7 @@ Der Kern der Software ist als **Freie Open-Source-Software (FOSS)** quelloffen u
 Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on vorbehalten**. Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.
 
 
-## Funktions-Vergleich&nbsp;&nbsp;&nbsp;&nbsp; <a href="#features"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold">➔ Funktionen</button></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold">➔ Schnellstart-Anleitung</button></a> {#feature-comparison}
+## Funktions-Vergleich&nbsp;&nbsp;&nbsp;&nbsp; <a href="#features"><button class="button is-success is-link is-small is-hovered has-text-black" style="background-color: LimeGreen;">➔ Funktionen</button></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black" style="background-color: LimeGreen;">➔ Schnellstart-Anleitung</button></a> {#feature-comparison}
 
 <div class="table-container">
     <table class="table is-bordered is-striped is-hoverable is-fullwidth">
