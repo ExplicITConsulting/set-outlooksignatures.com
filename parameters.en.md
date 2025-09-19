@@ -530,7 +530,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 
 
 ## 27. EmbedImagesInHtmlAdditionalSignaturePath
-Some feature as 'EmbedImagesInHtml' parameter, but only valid for the path defined in AdditionalSignaturesPath when not in simulation mode.
+Some feature as 'EmbedImagesInHtml' parameter, but only valid for the path defined in AdditionalSignaturePath when not in simulation mode.
 
 Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
 
