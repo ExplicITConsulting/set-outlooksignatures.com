@@ -9,7 +9,7 @@
             <h1 class="title is-2">{{ page.title }}</h1>
             <p class="subtitle is-4">{{ page.subtitle }}<p>
             {% if page.hero_link %}
-                <div class="my-4" style="hyphens: auto;">
+                <div class="my-4">
                     <a href="{{ page.hero_link | relative_url }}" class="button is-link is-normal is-hover has-text-black has-text-left" {{ page.hero_link_style }}>
                         {{- page.hero_link_text -}}
                     </a>
