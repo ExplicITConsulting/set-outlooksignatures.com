@@ -26,13 +26,13 @@ permalink: /support/
   On GitHub, only questions directly releated to Set-OutlookSignatures can be answered.
 </p>
 <p>
-  You can switch to the fast lane using ExplicIT Consulting's top-tier <a href="#professional-support">professional support</a>.
+  You can switch to the fast lane using ExplicIT Consulting's first-class <a href="#professional-support">professional support</a>.
 </p>
 
 
 <h2 id="professional-support">Professional support</h2>
 <p>
-  Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> provides top-tier professional support.
+  Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> provides first-class professional support.
 </p>
 <p>
   You prefer to be guided through the setup and customization process instead of working through the documentation yourself?
@@ -53,7 +53,7 @@ permalink: /support/
 <p>
   <strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is <strong>free - no exceptions</strong>.
   <br>
-  For all other issues, you will receive the same top-tier support at a fair price.
+  For all other issues, you will receive the same first-class support at a fair price.
 </p>
 
 <p>
