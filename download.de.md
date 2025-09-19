@@ -22,7 +22,7 @@ Set-OutlookSignatures ist der Open-Source-Standard für E-Mail-Signaturen und Ab
 
 <p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Changelog lesen</button></a></p>
 
-<p>Sie können Signaturen binnen Minuten verteilen. Folgen Sie der einfachen 3-Schritte-Anleitung, um einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu erhalten und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
+<p>Sie können Signaturen in Minuten verteilen. Folgen Sie der einfachen 3-Schritte-Anleitung, um einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu erhalten und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
 
 <p><a href="/quickstart"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Schnellstart-Anleitung</button></a></p>
 

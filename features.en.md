@@ -11,7 +11,14 @@ image:
 page_id: "features"
 permalink: /features/
 ---
-## Features&nbsp;&nbsp;&nbsp;&nbsp; <a href="#feature-comparison"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Feature comparison</button></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Quick Start Guide</button></a> {#features}
+Set-OutlookSignatures has a huge feature set, which can be a bit overwhelming at first sight.
+
+For a quick first assessment, we recommend our <a href="#feature-comparison"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Feature comparison</button></a>.
+
+Nothing beats practical experience: Deploy signatures within minutes with our <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Quick Start Guide</button></a>.
+
+## Features {#features}
+Set-OutlookSignatures has a huge feature set, which can be a bit 
 With Set-OutlookSignatures, signatures and out-of-office replies can be:
 - Generated from **templates in DOCX or HTML** file format.
 - Customized with a **broad range of variables**, including **photos and images**, from Entra ID, Active Directory and other sources.
@@ -53,7 +60,7 @@ The software core is **Free and Open-Source Software (FOSS)**. It is published u
 Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle">Benefactor Circle add-on</a>.** The optional <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> extends the free and open-source Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve.
 
 
-## Feature comparison&nbsp;&nbsp;&nbsp;&nbsp; <a href="#features"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Features</button></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Quick Start Guide</button></a> {#feature-comparison}
+## Feature comparison {#feature-comparison}
 
 <div class="table-container">
     <table class="table is-bordered is-striped is-hoverable is-fullwidth">
