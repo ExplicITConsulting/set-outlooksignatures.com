@@ -5,6 +5,8 @@ locale: de
 title: Set-Outlook&shy;Signatures
 subtitle: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
 description: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Varianten von Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
+hero_link: /quickstart
+hero_link_text: "Signaturen binnen Minuten verteilen: ➔ Schnellstart-Anleitung"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -18,7 +20,6 @@ permalink: /
 </h2>
 <p>Set-OutlookSignatures ist die führende kostenlose Open-Source-Software, die Ihnen die mühsame manuelle Pflege von Outlook-Signaturen und Abwesenheitsnotizen abnimmt.</p>
 <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
-<p><b>Signaturen binnen Minuten verteilen:</b><br><a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="height: 4em; background-color: MediumAquamarine">➔ Schnellstart-Anleitung</button></a></p>
 
 
 <h2 id="less-effort">
