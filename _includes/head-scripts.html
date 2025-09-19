@@ -138,26 +138,40 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.button');
-    let currentIndex = 0;
+    const buttons = document.querySelectorAll('.button-animated');
+    const animationDuration = 1000; // 1 second, matching the CSS
+    const delayBetweenButtons = 200; // Small delay between animating each button
+    const fullRunDelay = 5000; // 5 seconds delay between full runs
 
-    function animateButton() {
-      // Remove the animation class from the previous button
-      if (currentIndex > 0) {
-        buttons[currentIndex - 1].classList.remove('animated-now');
-      } else {
-        // Loop back to the end of the array if we've reached the start
-        buttons[buttons.length - 1].classList.remove('animated-now');
+    function animateSequence() {
+      let i = 0;
+      function animateNextButton() {
+        if (i < buttons.length) {
+          // Remove class from previous button
+          if (i > 0) {
+            buttons[i - 1].classList.remove('animated-now');
+          } else {
+            // Loop back to the end if at the start
+            buttons[buttons.length - 1].classList.remove('animated-now');
+          }
+
+          // Animate the current button
+          buttons[i].classList.add('animated-now');
+          i++;
+          setTimeout(animateNextButton, delayBetweenButtons); // Animate next button with a small delay
+        } else {
+          // All buttons have been animated, wait for the full run delay
+          setTimeout(() => {
+            // Remove the last button's animation class to prepare for the next run
+            buttons[buttons.length - 1].classList.remove('animated-now');
+            // Start the sequence again
+            animateSequence();
+          }, fullRunDelay);
+        }
       }
-
-      // Add the animation class to the current button
-      buttons[currentIndex].classList.add('animated-now');
-
-      // Move to the next button in the sequence
-      currentIndex = (currentIndex + 1) % buttons.length;
+      animateNextButton(); // Start the sequence
     }
 
-    // Start the animation loop with a slight delay between each button
-    setInterval(animateButton, 1200);
+    animateSequence(); // Initial call to start the whole process
   });
 </script>
