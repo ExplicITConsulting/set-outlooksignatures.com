@@ -4,6 +4,8 @@
 
     links.forEach(link => {
       try {
+        link.classList.add("mtrcs-external-link");
+
         const url = new URL(link.href, window.location.href);
 
         if (url.hostname.toLowerCase() !== window.location.hostname.toLowerCase()) {
@@ -11,8 +13,6 @@
         }
 
         if ((link.getAttribute("target") || "").toLowerCase() === "_blank" && !link.classList.contains("no-external-link-icon")) {
-          link.classList.add("mtrcs-external-link");
-
           let targetElement = link;
           const buttonChild = link.querySelector('button');
           if (buttonChild) {
@@ -102,7 +102,8 @@
 
 <noscript>
   <p><img referrerpolicy="no-referrer-when-downgrade"
-      src="//mtrcs.set-outlooksignatures.com/poop.php?idsite=1&amp;bots=1&amp;rec=1&amp;action_name=page_view&amp;url={{ site.url }}{{ page.url | relative_url }}&amp;rand={{ "now" | date: "%s" }}&amp;apiv=1" style="border:0;" alt="" /></p>
+      src="//mtrcs.set-outlooksignatures.com/poop.php?idsite=1&amp;bots=1&amp;rec=1&amp;action_name=page_view&amp;url={{ site.url }}{{ page.url | relative_url }}&amp;rand={{ "
+      now" | date: "%s" }}&amp;apiv=1" style="border:0;" alt="" /></p>
 </noscript>
 <!-- End mtrcs code -->
 
@@ -124,13 +125,13 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-            const $notification = $delete.parentNode;
+  document.addEventListener('DOMContentLoaded', () => {
+    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+      const $notification = $delete.parentNode;
 
-            $delete.addEventListener('click', () => {
-                $notification.parentNode.removeChild($notification);
-            });
-        });
+      $delete.addEventListener('click', () => {
+        $notification.parentNode.removeChild($notification);
+      });
     });
+  });
 </script>
