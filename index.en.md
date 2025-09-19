@@ -8,6 +8,7 @@ description: Email signatures and out-of-office replies for Exchange and all of 
 hero_link: /quickstart
 hero_link_text: |
   Free and Open-Source Software
+  <br>
   Deploy signatures within minutes: ➔ Quick Start Guide
 hero_link_style: |
   style="height: 4em; background-color: MediumAquamarine"

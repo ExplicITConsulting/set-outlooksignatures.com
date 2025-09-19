@@ -8,6 +8,7 @@ description: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Va
 hero_link: /quickstart
 hero_link_text: |
   Kostenlose Open-Source Software
+  <br>
   Signaturen binnen Minuten verteilen: ➔ Quick Start Guide
 hero_link_style: |
   style="height: 4em; background-color: MediumAquamarine"
