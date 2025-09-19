@@ -224,7 +224,7 @@ permalink: /
 
 
 <h2 id="quickstart">
-  Deploy signatures<span style="color: MediumAquamarine"> within minutes</span>
+  Deploy signatures<span style="color: LimeGreen;"> within minutes</span>
 </h2>
 <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 

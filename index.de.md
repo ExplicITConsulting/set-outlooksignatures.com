@@ -224,7 +224,7 @@ permalink: /
 
 
 <h2 id="quickstart">
-  Signaturen<span style="color: MediumAquamarine ;"> binnen Minuten </span> verteilen
+  Signaturen<span style="color: LimeGreen;"> binnen Minuten </span> verteilen
 </h2>
 <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
