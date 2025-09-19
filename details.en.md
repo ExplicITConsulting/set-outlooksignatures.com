@@ -798,11 +798,9 @@ If a user executes Set-OutlookSignatures on a client several times in succession
 ## 11. Simulation mode  
 Simulation mode is enabled when the parameter `SimulateUser` is passed to the software. It answers the question `"What will the signatures look like for user A, when Outlook is configured for the mailboxes X, Y and Z?"`.
 
-Simulation mode is useful for content creators and admins, as it allows to simulate the behavior of the software and to inspect the resulting signature files before going live. Such a dry-run is not only useful for running tests in the production environment without affecting anyone, it also supports problem analysis.
+Simulation mode is useful for content creators and admins, as it allows to simulate the behavior of the software and to inspect the resulting signature files before going live. Such a dry-run is not only very helpful for running tests in the production environment without affecting anyone, it also greatly supports problem analysis.
   
-In simulation mode, Outlook registry entries are not considered and nothing is changed in Outlook and Outlook web.
-
-The template files are handled just as during a real script run, but the signatures are only saved to the folder defined by the `AdditionalSignaturePath` parameter.
+In simulation mode, Outlook registry entries are not considered and nothing is changed in Outlook and Outlook web. The template files are handled just as during a real script run, but the signatures are only saved to the folder defined by the `AdditionalSignaturePath` parameter.
   
 `SimulateUser` is a mandatory parameter for simulation mode. This value replaces the currently logged-in user. Use a logon name in the format 'Domain\User' or a Universal Principal Name (UPN, looks like an email address, but is not neecessarily one).
 
