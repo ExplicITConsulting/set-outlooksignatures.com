@@ -135,3 +135,29 @@
     });
   });
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.button');
+    let currentIndex = 0;
+
+    function animateButton() {
+      // Remove the animation class from the previous button
+      if (currentIndex > 0) {
+        buttons[currentIndex - 1].classList.remove('animated-now');
+      } else {
+        // Loop back to the end of the array if we've reached the start
+        buttons[buttons.length - 1].classList.remove('animated-now');
+      }
+
+      // Add the animation class to the current button
+      buttons[currentIndex].classList.add('animated-now');
+
+      // Move to the next button in the sequence
+      currentIndex = (currentIndex + 1) % buttons.length;
+    }
+
+    // Start the animation loop with a slight delay between each button
+    setInterval(animateButton, 1200);
+  });
+</script>
