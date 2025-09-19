@@ -18,7 +18,7 @@ permalink: /
 </h2>
 <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
 <p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
-<p><span style="color: MediumAquamarine">Deploy your first signatures in less than an hour: </span><a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="height: 4em; background-color: MediumAquamarine">➔ Quick Start Guide</button></a></p>
+<p>Deploy your first signatures <span style="color: MediumAquamarine">in less than an hour:</span><br><a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="height: 4em; background-color: MediumAquamarine">➔ Quick Start Guide</button></a></p>
 
 
 <h2 id="less-effort">

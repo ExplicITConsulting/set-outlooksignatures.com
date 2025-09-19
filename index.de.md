@@ -18,7 +18,7 @@ permalink: /
 </h2>
 <p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
 <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
-<p><span style="color: MediumAquamarine">Verteilen Sie Ihre ersten Signaturen in weniger als einer Stunde: </span><a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="height: 4em; background-color: MediumAquamarine">➔ Schnellstart-Anleitung</button></a></p>
+<p>Verteilen Sie Ihre ersten Signaturen <span style="color: MediumAquamarine">in weniger als einer Stunde:</span><br><a href="/quickstart"><button class="button is-link is-normal is-hover has-text-black has-text-weight-bold" style="height: 4em; background-color: MediumAquamarine">➔ Schnellstart-Anleitung</button></a></p>
 
 
 <h2 id="less-effort">
