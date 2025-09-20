@@ -11,7 +11,12 @@ jobs:
     outputs:
       has_new_commits: ${{ steps.check.outputs.has_new_commits }}
     steps:
-      - name: Check for workflow dispatch
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 10 # Fetch enough history to check for recent commits
+
+      - name: Check for workflow dispatch or new commits
         id: check
         run: |
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
@@ -28,12 +33,6 @@ jobs:
               echo "has_new_commits=false" >> $GITHUB_OUTPUT
             fi
           fi
-
-      - name: Checkout repository
-        if: ${{ steps.check.outputs.has_new_commits == 'true' }}
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 10 # Fetch enough history to check for recent commits
 
   setup-delay:
     runs-on: ubuntu-latest
