@@ -1,23 +1,54 @@
 name: "search-engines-urls-push"
 on:
+  push:
   workflow_dispatch:
-  # push:
   schedule:
-    # Set the schedule time
     - cron: "15 23 * * *"
 
 jobs:
+  check-for-new-commits:
+    runs-on: ubuntu-latest
+    outputs:
+      has_new_commits: ${{ steps.check.outputs.has_new_commits }}
+    steps:
+      - name: Check for workflow dispatch
+        id: check
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "Workflow was manually dispatched. Running all jobs."
+            echo "has_new_commits=true" >> $GITHUB_OUTPUT
+          else
+            echo "Not a manual run. Checking for recent commits."
+            git log --since="24 hours" -n 1 | grep "commit"
+            if [ $? -eq 0 ]; then
+              echo "There are new commits in the last 24 hours."
+              echo "has_new_commits=true" >> $GITHUB_OUTPUT
+            else
+              echo "No new commits in the last 24 hours."
+              echo "has_new_commits=false" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Checkout repository
+        if: ${{ steps.check.outputs.has_new_commits == 'true' }}
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 10 # Fetch enough history to check for recent commits
+
   setup-delay:
     runs-on: ubuntu-latest
+    needs: check-for-new-commits
+    if: needs.check-for-new-commits.outputs.has_new_commits == 'true'
     steps:
-      - name: Sleep # allow GitHub pages to deploy the site, so the correct sitemap can be used
+      - name: Sleep
         uses: GuillaumeFalourd/wait-sleep-action@v1
         with:
           time: "120s"
 
   submit-to-search-engines:
     runs-on: ubuntu-latest
-    needs: setup-delay # This job will run after setup-delay completes
+    needs: setup-delay
+    if: always() && needs.setup-delay.result == 'success'
     steps:
       - name: 3Alan/search-engines-urls-push@v0.2.3
         uses: 3Alan/search-engines-urls-push@v0.2.3
@@ -30,7 +61,8 @@ jobs:
 
   submit-to-indexnow:
     runs-on: ubuntu-latest
-    needs: setup-delay # This job will run in parallel with 'submit-to-search-engines' because they both depend only on 'setup-delay'
+    needs: setup-delay
+    if: always() && needs.setup-delay.result == 'success'
     steps:
       - name: indexnow-action
         uses: bojieyang/indexnow-action@v2
