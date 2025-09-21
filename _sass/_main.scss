@@ -18,13 +18,3 @@ $hero-darken: $dark !default;
 @import "block-list";
 @import "promo-page";
 @import "category";
-
-p + ul,
-p + ol {
-  margin-top: 0;
-}
-
-p + ul:not(:first-child),
-p + ol:not(:first-child) {
-  margin-bottom: 0;
-}

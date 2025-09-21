@@ -8,8 +8,9 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
   page_url = doc.url.to_s
   full_page_url = "#{site_url}#{page_url}"
 
-  # Add missing id attributes to headings (your original logic)
   id_counter = 1
+
+  # Add missing id attributes to headings
   regex_add_id = /<(h[2-6])\b(?![^>]*\bid=)([^>]*)>/i
   doc.output = doc.output.gsub(regex_add_id) do
     tag_name = Regexp.last_match(1)
@@ -17,20 +18,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
     %Q{<#{tag_name} id="heading-#{id_counter}"#{rest}>}.tap { id_counter += 1 }
   end
 
-  # Add the anchor links using regex (new functionality)
-  # This targets headings that have an 'id' attribute and captures the inner content.
-  regex_add_anchor = /(<h[1-6]\b[^>]*\bid=["'][^"']+["'][^>]*>)(.*?)(<\/h[1-6]>)/i
-  doc.output = doc.output.gsub(regex_add_anchor) do
-    opening_tag = Regexp.last_match(1)
-    content = Regexp.last_match(2)
-    closing_tag = Regexp.last_match(3)
-
-    # Reconstruct the heading with the new anchor link.
-    # We use a non-breaking space for formatting.
-    "#{opening_tag}<a href='##{opening_tag.match(/id=['"]([^'"]+)['"]/)[1]}' class='anchor-link'>🔗</a>&nbsp;#{content}#{closing_tag}"
-  end
-
-  # Add Matomo tracking attributes (your original logic, now running on the modified HTML)
+  # Add data-content-name using the heading's id
   regex_add_matomo = /<(h[2-6])([^>]*)\bid="([^"]+)"([^>]*)>/i
   doc.output = doc.output.gsub(regex_add_matomo) do
     tag_name = Regexp.last_match(1)
@@ -41,7 +29,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
     unless doc.output.include?("data-content-name=\"#{heading_id}\"")
       %Q{<#{tag_name}#{before_id}id="#{heading_id}"#{after_id} data-track-content="" data-content-name="#{full_page_url}##{heading_id}" data-content-piece="#{full_page_url}##{heading_id}" data-content-target="#{full_page_url}##{heading_id}">}
     else
-      Regexp.last_match(0)
+      Regexp.last_match(0) # return original if already present
     end
   end
 end
