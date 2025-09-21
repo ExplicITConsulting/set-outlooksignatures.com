@@ -4,12 +4,12 @@
 
     links.forEach(link => {
       try {
+        link.classList.add("mtrcs-external-link");
+
         const url = new URL(link.href, window.location.href);
 
         if (url.hostname.toLowerCase() !== window.location.hostname.toLowerCase()) {
           link.setAttribute("target", "_blank");
-
-          link.classList.add("mtrcs-external-link");
         }
 
         if ((link.getAttribute("target") || "").toLowerCase() === "_blank" && !link.classList.contains("no-external-link-icon")) {
