@@ -753,7 +753,7 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
 </script>
 
 
-<script src="https://www.youtube.com/iframe_api"></script>
+<script defer src="https://www.youtube.com/iframe_api"></script>
 
 <script>
   var player;

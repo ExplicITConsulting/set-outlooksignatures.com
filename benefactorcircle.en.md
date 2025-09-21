@@ -737,7 +737,7 @@ Benefactor Circle add-on</span>.</p>
 </script>
 
 
-<script src="https://www.youtube.com/iframe_api"></script>
+<script defer src="https://www.youtube.com/iframe_api"></script>
 
 <script>
   var player;
