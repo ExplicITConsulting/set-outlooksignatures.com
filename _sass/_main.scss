@@ -18,39 +18,3 @@ $hero-darken: $dark !default;
 @import "block-list";
 @import "promo-page";
 @import "category";
-
-// External Link Arrow Styling
-a.mtrcs-external-link {
-  .external-link-arrow {
-    white-space: nowrap;
-  }
-}
-
-// Spacing between paragraphs and lists
-p + ul,
-p + ol {
-  margin-top: 0;
-}
-p {
-  margin-bottom: 0;
-}
-
-// Button Animations
-.button.animated-now {
-  // Your animation properties here
-  animation-name: pulse-animation; // Example animation
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes pulse-animation {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}

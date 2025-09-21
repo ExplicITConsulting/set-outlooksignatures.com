@@ -1,34 +1,80 @@
 <script>
-  // Remove Bulma notifications
-  document.addEventListener('DOMContentLoaded', () => {
-    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-      const $notification = $delete.parentNode;
-      $delete.addEventListener('click', () => {
-        $notification.parentNode.removeChild($notification);
-      });
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("a[href]");
+
+    links.forEach(link => {
+      try {
+        const url = new URL(link.href, window.location.href);
+
+        if (url.hostname.toLowerCase() !== window.location.hostname.toLowerCase()) {
+          link.setAttribute("target", "_blank");
+
+          link.classList.add("mtrcs-external-link");
+        }
+
+        if ((link.getAttribute("target") || "").toLowerCase() === "_blank" && !link.classList.contains("no-external-link-icon")) {
+          let targetElement = link;
+          const buttonChild = link.querySelector('button');
+          if (buttonChild) {
+            targetElement = buttonChild;
+          }
+
+          // Check if the arrow character has already been added
+          if (!targetElement.querySelector("span.external-link-arrow")) {
+            // Create a span element for the arrow and space
+            const arrowSpan = document.createElement("span");
+            arrowSpan.className = "external-link-arrow";
+            arrowSpan.style.whiteSpace = "nowrap"; // Keep the space and arrow together
+
+            // Add the non-breaking space and the arrow
+            arrowSpan.innerHTML = `&nbsp;↗`;
+
+            targetElement.appendChild(arrowSpan);
+          }
+        }
+      } catch (e) {
+        // Invalid URL, skip
+      }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('p + ul, p + ol').forEach(list => {
+      const prev = list.previousElementSibling;
+      if (prev && prev.tagName === 'P') {
+        prev.style.marginBottom = '0';
+        list.style.marginTop = '0';
+      }
     });
   });
 </script>
 
 
 <script>
-  // Add anchor to language switcher links
-  document.addEventListener('DOMContentLoaded', () => {
-    const languageLinks = document.querySelectorAll('a[data-base-url]');
-    const currentAnchor = window.location.hash;
+  document.addEventListener("DOMContentLoaded", function () {
+    const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
-    if (currentAnchor) {
-      languageLinks.forEach(link => {
-        const baseHref = link.getAttribute('data-base-url');
-        link.href = baseHref + currentAnchor;
-      });
-    }
+    headings.forEach(function (heading) {
+      // Check if the heading already has an ID, which should be the case
+      // after the Jekyll plugin runs.
+      if (heading.id) {
+        const anchor = document.createElement("a");
+        anchor.href = `#${heading.id}`;
+        anchor.className = "anchor-link";
+        anchor.innerHTML = "🔗"; // Or use an SVG for better styling
+
+        // Insert the anchor link as the first child of the heading
+        heading.insertBefore(anchor, heading.firstChild);
+      }
+    });
   });
 </script>
 
 
+<!-- Start mtrcs code -->
 <script>
-  // Analytics code
   var _paq = window._paq = window._paq || [];
   _paq.push(["setRequestMethod", "POST"]);
   _paq.push(["disableCookies"]);
@@ -44,6 +90,7 @@
   _paq.push(['trackVisibleContentImpressions']);
   _paq.push(['enableLinkTracking']);
 
+
   (function () {
     var u = "//mtrcs.set-outlooksignatures.com/";
     _paq.push(["setTrackerUrl", u + "poop.php"]);
@@ -51,4 +98,80 @@
     var d = document, g = d.createElement("script"), s = d.getElementsByTagName("script")[0];
     g.type = "text/javascript"; g.async = true; g.defer = true; g.src = u + "poop.js"; s.parentNode.insertBefore(g, s);
   })();
+</script>
+
+<noscript>
+  <p><img referrerpolicy="no-referrer-when-downgrade"
+      src="//mtrcs.set-outlooksignatures.com/poop.php?idsite=1&amp;bots=1&amp;rec=1&amp;action_name=page_view&amp;url={{ site.url }}{{ page.url | relative_url }}&amp;rand={{ "
+      now" | date: "%s" }}&amp;apiv=1" style="border:0;" alt="" /></p>
+</noscript>
+<!-- End mtrcs code -->
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const languageLinks = document.querySelectorAll('a[data-base-url]');
+    const currentAnchor = window.location.hash;
+
+    if (currentAnchor) {
+      languageLinks.forEach(link => {
+        const baseHref = link.getAttribute('data-base-url');
+        link.href = baseHref + currentAnchor;
+      });
+    }
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+      const $notification = $delete.parentNode;
+
+      $delete.addEventListener('click', () => {
+        $notification.parentNode.removeChild($notification);
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.button');
+    const animationDuration = 1000; // 1 second, matching the CSS
+    const delayBetweenButtons = 200; // Small delay between animating each button
+    const fullRunDelay = 3000; // Seconds delay between full runs
+
+    function animateSequence() {
+      let i = 0;
+      function animateNextButton() {
+        if (i < buttons.length) {
+          // Remove class from previous button
+          if (i > 0) {
+            buttons[i - 1].classList.remove('animated-now');
+          } else {
+            // Loop back to the end if at the start
+            buttons[buttons.length - 1].classList.remove('animated-now');
+          }
+
+          // Animate the current button
+          buttons[i].classList.add('animated-now');
+          i++;
+          setTimeout(animateNextButton, animationDuration + delayBetweenButtons); // Animate next button with a small delay
+        } else {
+          // All buttons have been animated, wait for the full run delay
+          setTimeout(() => {
+            // Remove the last button's animation class to prepare for the next run
+            buttons[buttons.length - 1].classList.remove('animated-now');
+            // Start the sequence again
+            animateSequence();
+          }, fullRunDelay);
+        }
+      }
+      animateNextButton(); // Start the sequence
+    }
+
+    animateSequence(); // Initial call to start the whole process
+  });
 </script>
