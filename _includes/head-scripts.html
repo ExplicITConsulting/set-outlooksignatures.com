@@ -4,12 +4,14 @@
 
     links.forEach(link => {
       try {
-        link.classList.add("mtrcs-external-link");
 
         const url = new URL(link.href, window.location.href);
 
         if (url.hostname.toLowerCase() !== window.location.hostname.toLowerCase()) {
+          link.classList.add("mtrcs-external-link");
           link.setAttribute("target", "_blank");
+        } else {
+          link.classList.add("mtrcs-internal-link");
         }
 
         if ((link.getAttribute("target") || "").toLowerCase() === "_blank" && !link.classList.contains("no-external-link-icon")) {
@@ -85,7 +87,7 @@
   _paq.push(["setCookieDomain", "*.set-outlooksignatures.com"]);
   _paq.push(["setDomains", ["*.set-outlooksignatures.com"]]);
   _paq.push(['enableHeartBeatTimer']);
-  _paq.push(['setLinkClasses', "mtrcs-external-link"]);
+  _paq.push(['setLinkClasses', ["mtrcs-external-link", "mtrcs-internal-link"]]);
   _paq.push(['trackPageView']);
   _paq.push(['trackVisibleContentImpressions']);
   _paq.push(['enableLinkTracking']);
