@@ -110,16 +110,23 @@
 
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const languageLinks = document.querySelectorAll('a[data-base-url]');
-    const currentAnchor = window.location.hash;
+  document.addEventListener('DOMContentLoaded', () => {
+    // Define a function to handle the link updates
+    const updateLanguageLinks = () => {
+      const currentHash = window.location.hash;
+      const languageLinks = document.querySelectorAll('a[data-base-url]');
 
-    if (currentAnchor) {
       languageLinks.forEach(link => {
         const baseHref = link.getAttribute('data-base-url');
-        link.href = baseHref + currentAnchor;
+        link.href = baseHref + currentHash;
       });
-    }
+    };
+
+    // Initial call when the DOM is ready
+    updateLanguageLinks();
+
+    // Listen for hash changes and update the links again
+    window.addEventListener('hashchange', updateLanguageLinks);
   });
 </script>
 
