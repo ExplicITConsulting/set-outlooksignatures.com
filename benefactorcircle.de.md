@@ -6,15 +6,15 @@ title: Das Benefactor Circle Add-On
 subtitle: Mehr Funktionen für Ihr Unternehmen
 description: Das Benefactor Circle Add-on erweitert Set-OutlookSignatures um mobile Signaturen, Roaming-Sync, OOF-Automatisierung, Signaturpflege und Profi-Funktionen.
 hero_link: "#demo"
-hero_link_text: "<span>➔ Jetzt persönliche Demo vereinbaren</span>"
+hero_link_text: "<span><b>➔ Jetzt persönliche Demo vereinbaren</b></span>"
 hero_link_style: |
    style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
 hero_link2: "#trial"
-hero_link2_text: "<span>➔ 14-Tage-Testlizenz anfordern</span>"
+hero_link2_text: "<span><b>➔ 14-Tage-Testlizenz anfordern</b></span>"
 hero_link2_style: |
    style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
 hero_link3: "#order"
-hero_link3_text: "<span>➔ Lizenzangebot anfordern</span>"
+hero_link3_text: "<span><b>➔ Lizenzangebot anfordern</b></span>"
 hero_link3_style: |
    style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
 
@@ -222,7 +222,7 @@ permalink: /benefactorcircle/
   </div>
 </div>
 
-<a href="#trial"><button class="button is-link is-normal is-hovered has-text-black" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Testlizenz oder Angebot anfordern</button></a>
+<a href="#trial"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Testlizenz oder Angebot anfordern</button></a>
 
 
 <h2 id="demo">Demo</h2>
@@ -281,7 +281,7 @@ permalink: /benefactorcircle/
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at"><button class="button is-link is-normal is-hovered has-text-black" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">➔ Jetzt persönliche Demo vereinbaren</button></a></p>
+      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">➔ Jetzt persönliche Demo vereinbaren</button></a></p>
     </div>
   </div>
 
@@ -399,7 +399,7 @@ Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion ben�
 <p>Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:</p>
 
 <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb">
-  <button class="button is-link is-normal is-hovered has-text-black" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ 14-Tage-Testlizenz anfordern</button>
+  <button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ 14-Tage-Testlizenz anfordern</button>
 </a></p>
 
 <p>Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:</p>
@@ -416,7 +416,7 @@ Die Testphase beginnt mit der Erstellung und Übermittlung der Lizenzdatei, nich
 
 <h3 id="order">Bestellprozess für Lizenzen</h3>
 <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb">
-  <button class="button is-link is-normal is-hovered has-text-black" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Lizenzangebot anfordern</button>
+  <button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Lizenzangebot anfordern</button>
 </a></p>
 
 <p>Sie erhalten in Kürze ein Angebot. Sobald alle Details geklärt sind, erhalten Sie eine Rechnung und können den Zahlungsprozess starten.</p>
@@ -522,4 +522,4 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
   <li>Wie Sie erstklassigen Support erhalten</li>
 </ul>
 
-<p><a href="https://set-outlooksignatures.com/help"><button class="button is-link is-normal is-hovered has-text-black" style="background-color: DeepSkyBlue">➔ Hilfe- und Support-Center</button></a></p>
+<p><a href="https://set-outlooksignatures.com/help"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Hilfe- und Support-Center</button></a></p>
