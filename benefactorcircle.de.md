@@ -464,17 +464,17 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
 
 <p>Eine Lizenzgruppe besteht aus drei Komponenten:</p>
 <ul>
-  <li>Dem DNS-Domänennamen der lokalen Active Directory-Domäne. Für cloud-only-Gruppen verwenden Sie 'EntraID_&lt;TenantID&gt;' oder 'EntraID_&lt;TenantDNSDomain&gt;'.</li>
+  <li>Dem DNS-Domänennamen der lokalen Active Directory-Domäne. Für cloud-only-Gruppen verwenden Sie '<code>EntraID_&lt;TenantID&gt;</code>' oder '<code>EntraID_&lt;TenantDNSDomain&gt;</code>'.</li>
   <li>Der SID (Security Identifier) oder der Entra ID Object ID der Lizenzgruppe.</li>
   <li>Der maximalen Anzahl an Postfächern, die für diese Gruppe lizenziert sind.</li>
 </ul>
 
 <p><strong>Wo sollte die Lizenzgruppe erstellt werden?</strong></p>
 <ul>
-  <li>Bei Verwendung von '-GraphOnly true' erstellen Sie die Gruppe in Entra ID. Die Lizenzgruppe lautet dann 'EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID Ihrer Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>
-  Alternativ kann auch eine lokale AD-Gruppe verwendet werden, sofern sie mit Entra ID synchronisiert ist: '&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;SID der Lizenzgruppe&gt;'</li>
-  <li>In hybriden Umgebungen ohne '-GraphOnly true' erstellen Sie die Gruppe in Ihrem lokalen AD und synchronisieren Sie sie mit Entra ID. Die Lizenzgruppe lautet dann '&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>Alternativ kann auch eine Entra ID-Gruppe verwendet werden ('EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID&gt;, &lt;SID der Lizenzgruppe&gt;'), was funktional '-GraphOnly true' entspricht.</li>
-  <li>In reinen On-Premises-Umgebungen sind nur lokale AD-Gruppen zulässig: '&lt;AD-DNS-Domäne&gt;, &lt;SID&gt;, &lt;AnzahlLizenzen&gt;'<br>
+  <li>Bei Verwendung von '-GraphOnly true' erstellen Sie die Gruppe in Entra ID. Die Lizenzgruppe lautet dann '<code>EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID Ihrer Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;</code>'<br>
+  Alternativ kann auch eine lokale AD-Gruppe verwendet werden, sofern sie mit Entra ID synchronisiert ist: '<code>&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;SID der Lizenzgruppe&gt;</code>'</li>
+  <li>In hybriden Umgebungen ohne '-GraphOnly true' erstellen Sie die Gruppe in Ihrem lokalen AD und synchronisieren Sie sie mit Entra ID. Die Lizenzgruppe lautet dann '<code>&lt;AD-DNS-Domäne&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;</code>'<br>Alternativ kann auch eine Entra ID-Gruppe verwendet werden ('<code>EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID&gt;, &lt;SID der Lizenzgruppe&gt;</code>'), was funktional '-GraphOnly true' entspricht.</li>
+  <li>In reinen On-Premises-Umgebungen sind nur lokale AD-Gruppen zulässig: '<code>&lt;AD-DNS-Domäne&gt;, &lt;SID&gt;, &lt;AnzahlLizenzen&gt;</code>'<br>
   Bei späterem Wechsel in eine hybride Umgebung ist keine Anpassung nötig, solange die Gruppen synchronisiert werden.</li>
 </ul>
 
