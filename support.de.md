@@ -36,16 +36,17 @@ permalink: /support/
   Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen professionellen Support.
 </p>
 <p>
-  Sie ziehen es vor, durch den Einrichtungs- und Anpassungsprozess geführt zu werden, anstatt sich selbst durch die Dokumentation zu arbeiten?
-</p>
-<p>
-  Sie sind auf der Suche nach maßgeschneiderten Workshops, praktischer Unterstützung bei der Implementierung, Schulungen, Unterstützung bei der Erstellung von Vorlagen und anderen Dienstleistungen im Zusammenhang mit der zentralen Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen?
+  Sie ziehen es vor, durch den Einrichtungs- und Anpassungsprozess geführt zu werden, anstatt sich selbst durch die Dokumentation zu arbeiten? Sie sind auf der Suche nach maßgeschneiderten Workshops, praktischer Unterstützung bei der Implementierung, Schulungen, Unterstützung bei der Erstellung von Vorlagen und anderen Dienstleistungen im Zusammenhang mit der zentralen Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen?
 </p>
 <p>
   Dann ist unser Angebot genau das Richtige für Sie.
 </p>
 <p>
-  Sie kaufen nicht irgendeinen Support, sondern unser umfassendes Know-how als Hersteller, Implementierer, und Berater. Support heißt für uns nicht nur, eine Lösung für Ihr Problem zu liefern, sondern auch unsere Erfahrung an Sie weiterzugeben, damit Sie wissen, wie und warum. Unsere Unterstützung ist also eine Investition in Ihr eigenes Wissen und das Ihrer Mitarbeiter, die sich sofort auszahlt.
+  Sie kaufen nicht irgendeinen Support, sondern unser umfassendes Know-how als Hersteller, Implementierer, und Berater.
+  <br>
+  Support heißt für uns nicht nur, eine Lösung für Ihr Problem zu liefern, sondern auch unsere Erfahrung an Sie weiterzugeben, damit Sie wissen, wie und warum.
+  <br>
+  Unsere Unterstützung ist also eine Investition in Ihr eigenes Wissen und das Ihrer Mitarbeiter, die sich sofort auszahlt.
 </p>
 <p>
   <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support <strong>kostenlos - ohne Ausnahme</strong>.
@@ -55,7 +56,7 @@ permalink: /support/
 
 <p>
   <a href="https://forms.cloud.microsoft/r/CnwjH98vSs">
-    <button class="button is-link is-normal is-hovered has-text-black" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">
+    <button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">
       ➔ Professionellen Support anfordern
     </button>
   </a>
