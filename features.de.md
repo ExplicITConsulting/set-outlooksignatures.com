@@ -15,8 +15,8 @@ permalink: /features/
 ---
 <div class="box">
     <p>Set-OutlookSignatures verfügt über sehr viele Funktionen, was auf den ersten Blick etwas überwältigend sein kann.</p>
-    <p>Für eine schnelle erste Einschätzung empfehlen wir unseren <a href="#feature-comparison"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Funktions-Vergleich</button></a>.</p>
-    <p>Nichts geht über praktische Erfahrung: Verteilen Sie Signaturen in Minuten mit unserer <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">➔ Schnellstart-Anleitung</button></a>.</p>
+    <p>Für eine schnelle erste Einschätzung empfehlen wir unseren <a href="#feature-comparison"><button class="button is-success is-link is-small is-hovered has-text-black" style="background-color: LimeGreen;">➔ Funktions-Vergleich</button></a>.</p>
+    <p>Nichts geht über praktische Erfahrung: Verteilen Sie Signaturen in Minuten mit unserer <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black" style="background-color: LimeGreen;">➔ Schnellstart-Anleitung</button></a>.</p>
 </div>
 
 ## Funktionen {#features}
