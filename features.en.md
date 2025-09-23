@@ -12,7 +12,7 @@ hero_link2_text: "<span><b>➔ Feature comparison </b>with market companions</sp
 hero_link2_style: |
   style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
 hero_link3: "/quickstart"
-hero_link3_text: "<span><b>➔ Quick Start Guide: </b>Deploy signatures in minutes</span>"
+hero_link3_text: "<span><b>➔ Quick Start Guide: </b>Deploy signatures within minutes</span>"
 hero_link3_style: |
   style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
 image:
