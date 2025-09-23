@@ -3,8 +3,8 @@ layout: page
 lang: de
 locale: de
 title: Schnellstart-Anleitung
-subtitle: Signaturen in Minuten verteilen
-description: Schnellstart-Anleitung. Signaturen in Minuten verteilen.
+subtitle: Signaturen in wenigen Minuten verteilen
+description: Schnellstart-Anleitung. Signaturen in wenigen Minuten verteilen.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
