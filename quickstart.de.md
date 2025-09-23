@@ -16,7 +16,7 @@ permalink: /quickstart/
 ## Schritt 1: Set-OutlookSignatures herunterladen {#step-1}
 Laden Sie Set-OutlookSignatures herunter und entpacken Sie das Archiv in einen lokalen Ordner.
 
-<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases"><button class="button is-link is-normal is-hovered has-text-black" style="background-color: limegreen">➔ Software herunterladen</button></a></p>
+<p><a id="download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Software herunterladen</button></a></p>
 
 Heben Sie unter Windows und macOS die Blockierung der Datei 'Set-OutlookSignatures.ps1' auf. Sie können dazu das PowerShell-Cmdlet 'Unblock-File' verwenden oder im Datei-Explorer mit der rechten Maustaste auf die Datei klicken, Eigenschaften auswählen und 'Unblock' anklicken. Dadurch wird das 'Mark of the Web' entfernt, das die Ausführung in PowerShell verhindern kann.
 
@@ -65,9 +65,9 @@ Set-OutlookSignatures verteilt jetzt erste Signaturen, basierend auf Standardein
 
 
 ## Anpassungen vornehmen {#customize}
-Wenn mit den Standardeinstellungen alles gut funktioniert, haben Sie einen soliden Ausgangspunkt für Ihre eigenen Anpassungen.
+Gratulation, Sie haben jetzt einen soliden Ausgangspunkt für Ihre eigenen Anpassungen!
 
-Sie können Set-OutlookSignatures jetzt für Ihre konkreten Anforderungen konfigurieren. Zum Beispiel:
+Ein paar Beispiele:
 - Erstellen Sie einen Ordner mit Ihren eigenen Vorlagen und Konfigurationen.  
   Es ist eine gute Idee, den Ordner '.\sample templates' zu kopieren und dessen Inhalte zu bearbeiten.  
   Vergessen Sie nicht, Set-OutlookSignatures mit den Parametern 'SignatureTemplatePath', 'SignatureIniFile', 'OOFTemplatePath' and 'OOFIniFile' mitzuteilen, wo Ihre Vorlagen und Konfiguration zu finden sind.
@@ -84,9 +84,9 @@ Set-OutlookSignatures ist sehr gut dokumentiert, was unweigerlich eine Menge Inh
 
 Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Evaluierung, Planung, Implementierung und dem laufenden Betrieb unterstützen kann: Unser Partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen [professionellen Support](/support), und das <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> bietet zusätzliche Funktionen für Ihr Unternehmen.
 
-<p><a href="/support"><button class="button is-link is-normal is-hovered has-text-black" style="background-color: limegreen">➔ Support-Optionen ansehen</button></a></p>
+<p><a href="/support"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Support-Optionen ansehen</button></a></p>
 
-<p><a href="/benefactorcircle"><button class="button is-link is-normal is-hovered has-text-black" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Das Benefactor Circle Add-On</button></a></p>
+<p><a href="/benefactorcircle"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Das Benefactor Circle Add-On</button></a></p>
 
 <script>
     // Function to fetch the latest release and update the link
