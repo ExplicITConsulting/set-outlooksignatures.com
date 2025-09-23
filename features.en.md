@@ -18,7 +18,6 @@ permalink: /features/
 </div>
 
 ## Features {#features}
-Set-OutlookSignatures has a huge feature set, which can be a bit 
 With Set-OutlookSignatures, signatures and out-of-office replies can be:
 - Generated from **templates in DOCX or HTML** file format.
 - Customized with a **broad range of variables**, including **photos and images**, from Entra ID, Active Directory and other sources.

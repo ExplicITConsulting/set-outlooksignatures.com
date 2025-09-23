@@ -208,7 +208,7 @@ permalink: /
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="/benefactorcircle#demo"><button class="button is-link is-normal is-hovered has-text-black" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">➔ Schedule your personal demo now</button></a></p>
+      <p><a href="/benefactorcircle#demo"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">➔ Schedule your personal demo now</button></a></p>
     </div>
   </div>
 
@@ -228,7 +228,7 @@ permalink: /
 </h2>
 <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 
-<a href="/quickstart"><button class="button is-link is-normal is-hovered has-text-black" style="min-height: 4em; background-color: LimeGreen">➔ Quick Start Guide</button></a>
+<a href="/quickstart"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-color: LimeGreen">➔ Quick Start Guide</button></a>
 
 
 <h2 id="dive-deeper">
@@ -242,7 +242,7 @@ permalink: /
   <li>How to get first-class support</li>
 </ul>
 
-<a href="/help"><button class="button is-link is-normal is-hovered has-text-black" style="background-color: DeepSkyBlue">➔ Help and Support-Center</button></a>
+<a href="/help"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Help and Support-Center</button></a>
 
 
 <style>
