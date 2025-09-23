@@ -157,3 +157,44 @@ html::after {
 .animated-now {
   animation: pulse 1s ease-in-out forwards;
 }
+
+.scrolling-banner {
+  overflow: hidden; /* This hides content outside its bounds */
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  width: 100%; /* The visible viewport width for the banner */
+  height: 100%;
+}
+
+.scrolling-banner .scrolling-track {
+  display: flex; /* Makes images arrange horizontally */
+  align-items: flex-start;
+  white-space: nowrap; /* Prevents images from wrapping to the next line */
+  gap: 1.5em; /* Spacing between images */
+  box-sizing: border-box;
+  /* We'll set the animation via JS after calculating width */
+  /* animation: scroll-full-track 60s linear infinite; */
+}
+
+.scrolling-banner .scrolling-track img {
+  max-height: 4em; /* Fixed height for consistency */
+  /* max-width: 90%; */ /* This can make images of different aspect ratios have different effective widths. Consider a fixed width if you want consistent scroll speed */
+  height: auto;
+  width: auto; /* Allow natural width based on max-height, but ensure flex-shrink: 0 is important */
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0; /* Prevents images from shrinking */
+  flex-grow: 0;
+  flex-basis: auto;
+  opacity: 1;
+}
+
+/* Define a base keyframe name, but the exact values will be injected */
+@keyframes scroll-full-track-dynamic {
+  from {
+    transform: translateX(0);
+  }
+  /* 'to' value will be set by JavaScript */
+  /* to { transform: translateX(calc(var(--scroll-distance) * -1)); } */
+}

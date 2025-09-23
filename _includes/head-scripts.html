@@ -163,3 +163,168 @@
     });
   });
 </script>
+
+
+<script>
+  // The event listener is essential here because the script is in the <head>
+  // and the DOM elements it needs (track, banner) haven't been parsed yet.
+  document.addEventListener('DOMContentLoaded', async () => {
+    const track = document.querySelector('.scrolling-track');
+    const banner = document.querySelector('.scrolling-banner');
+
+    if (!track || !banner) {
+      console.warn('Scrolling track or banner element not found. Please ensure the HTML structure is correct.');
+      return;
+    }
+
+    try {
+      const response = await fetch('https://set-outlooksignatures.com/customer-images.txt');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const text = await response.text();
+      let urls = text.split('\n').map(line => line.trim()).filter(Boolean);
+
+      urls = [...new Set(urls)];
+
+      if (urls.length === 0) {
+        console.warn('No image URLs found. Banner will not display images.');
+        return;
+      }
+
+      for (let i = urls.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [urls[i], urls[j]] = [urls[j], urls[i]];
+      }
+
+      const originalShuffledUniqueUrls = [...urls];
+      const finalUrlsForDOM = [...originalShuffledUniqueUrls, ...originalShuffledUniqueUrls, ...originalShuffledUniqueUrls];
+
+      track.innerHTML = '';
+      const imagePromises = finalUrlsForDOM.map(url => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.src = url;
+          img.alt = `https://${url.split('/').pop()?.split('.').slice(0, -1).join('.')}` || 'Customer Logo';
+
+          img.onload = () => resolve({ img, loaded: true });
+          img.onerror = () => {
+            console.error(`Failed to load image: ${url}`);
+            resolve({ img: null, loaded: false });
+          };
+
+          if (img.complete) {
+            if (img.naturalHeight > 0) {
+              resolve({ img, loaded: true });
+            } else {
+              resolve({ img: null, loaded: false });
+            }
+          }
+        });
+      });
+
+      const loadedImageResults = await Promise.all(imagePromises);
+      const imageElements = loadedImageResults.map(result => result.img).filter(img => img !== null);
+
+      if (imageElements.length === 0) {
+        console.warn('All images failed to load. Disabling animation.');
+        return;
+      }
+
+      imageElements.forEach(img => track.appendChild(img));
+
+      requestAnimationFrame(() => {
+        const bannerWidth = banner.clientWidth;
+        const computedStyle = getComputedStyle(track);
+        const gapSize = parseFloat(computedStyle.gap) || 0;
+
+        let scrollDistance = 0;
+        for (let i = 0; i < originalShuffledUniqueUrls.length; i++) {
+          const img = track.children[i];
+          if (img) {
+            scrollDistance += img.offsetWidth;
+            if (i < originalShuffledUniqueUrls.length - 1) {
+              scrollDistance += gapSize;
+            }
+          }
+        }
+
+        if (scrollDistance <= 0 || track.scrollWidth <= bannerWidth + 1) {
+          console.warn('Content is not wide enough to scroll. Disabling animation.');
+          track.style.animation = 'none';
+          return;
+        }
+
+        const pixelsPerSecond = 50;
+        const animationDuration = scrollDistance / pixelsPerSecond;
+        const animationName = 'scroll-full-track-dynamic-' + Date.now();
+
+        let styleSheet = document.getElementById('dynamic-scroll-animation-style');
+        if (!styleSheet) {
+          styleSheet = document.createElement('style');
+          styleSheet.id = 'dynamic-scroll-animation-style';
+          document.head.appendChild(styleSheet);
+        } else {
+          while (styleSheet.sheet && styleSheet.sheet.cssRules.length > 0) {
+            styleSheet.sheet.deleteRule(0);
+          }
+        }
+
+        const keyframesRule = `
+          @keyframes ${animationName} {
+            from { transform: translateX(0); }
+            to { transform: translateX(${-scrollDistance}px); }
+          }
+        `;
+        styleSheet.sheet.insertRule(keyframesRule, styleSheet.sheet.cssRules.length);
+
+        track.style.animation = `${animationName} ${animationDuration}s linear infinite`;
+        track.style.animationPlayState = 'running';
+      });
+
+    } catch (error) {
+      console.error('Failed to fetch or process image URLs:', error);
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const playerElement = document.getElementById('youtube-video-player');
+  if (playerElement) {
+    // Define the onYouTubeIframeAPIReady function before loading the script.
+    // The YouTube API will call this function automatically once it's loaded.
+    window.onYouTubeIframeAPIReady = () => {
+      // Create a new YT.Player object for the iframe with id="youtube-video-player"
+      window.player = new YT.Player('youtube-video-player', {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    };
+
+    // This function is called by the YouTube API whenever the player's state changes.
+    function onPlayerStateChange(event) {
+      const videoTitle = "Set-OutlookSignatures Demo"; // Customize this
+      const currentTime = window.player.getCurrentTime();
+
+      if (event.data === YT.PlayerState.PLAYING) {
+        // Track when the video starts playing
+        _paq.push(['trackEvent', 'Video', 'Play', videoTitle, Math.round(currentTime)]);
+      } else if (event.data === YT.PlayerState.PAUSED) {
+        // Track when the video is paused
+        _paq.push(['trackEvent', 'Video', 'Pause', videoTitle, Math.round(currentTime)]);
+      } else if (event.data === YT.PlayerState.ENDED) {
+        // Track when the video ends
+        _paq.push(['trackEvent', 'Video', 'Ended', videoTitle, Math.round(currentTime)]);
+      }
+    }
+    
+    // Dynamically create and append the script tag to the body.
+    // This is the key step that loads the script only when needed.
+    const script = document.createElement('script');
+    script.src = 'https://www.youtube.com/iframe_api';
+    document.body.appendChild(script);
+  }
+});
+</script>
