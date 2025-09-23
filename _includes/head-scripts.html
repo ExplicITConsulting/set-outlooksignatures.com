@@ -148,39 +148,18 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.button');
-    const animationDuration = 1000; // 1 second, matching the CSS
-    const delayBetweenButtons = 200; // Small delay between animating each button
-    const fullRunDelay = 3000; // Seconds delay between full runs
+    const delayBetweenButtons = 200; // 0.2-second stagger
+    const animationFrequency = 4000; // 4-second frequency for each button
 
-    function animateSequence() {
-      let i = 0;
-      function animateNextButton() {
-        if (i < buttons.length) {
-          // Remove class from previous button
-          if (i > 0) {
-            buttons[i - 1].classList.remove('animated-now');
-          } else {
-            // Loop back to the end if at the start
-            buttons[buttons.length - 1].classList.remove('animated-now');
-          }
-
-          // Animate the current button
-          buttons[i].classList.add('animated-now');
-          i++;
-          setTimeout(animateNextButton, animationDuration + delayBetweenButtons); // Animate next button with a small delay
-        } else {
-          // All buttons have been animated, wait for the full run delay
+    buttons.forEach((button, index) => {
+      setTimeout(() => {
+        setInterval(() => {
+          button.classList.add('animated-now');
           setTimeout(() => {
-            // Remove the last button's animation class to prepare for the next run
-            buttons[buttons.length - 1].classList.remove('animated-now');
-            // Start the sequence again
-            animateSequence();
-          }, fullRunDelay);
-        }
-      }
-      animateNextButton(); // Start the sequence
-    }
-
-    animateSequence(); // Initial call to start the whole process
+            button.classList.remove('animated-now');
+          }, 1000); // Remove class after the 1-second animation completes
+        }, animationFrequency);
+      }, index * delayBetweenButtons);
+    });
   });
 </script>
