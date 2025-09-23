@@ -5,6 +5,18 @@ locale: de
 title: Funktionen und Funktions-Vergleich
 subtitle: Unsere Lösung auf einen Blick und im Vergleich
 description: Funktionen und Funktions-Vergleich. Unsere Lösung auf einen Blick und im Vergleich.
+hero_link: "#features"
+hero_link_text: "<span><b>➔ Funktionen: </b>Was unsere Lösung kann</span>"
+hero_link_style: |
+  style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
+hero_link2: "#feature-comparison"
+hero_link2_text: "<span><b>➔ Funktions-Vergleich </b>mit Marktbegleitern</span>"
+hero_link2_style: |
+  style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
+hero_link3: "/quickstart"
+hero_link3_text: "<span><b>➔ Schnellstart-Anleitung: </b>Signaturen in Minuten verteilen</span>"
+hero_link3_style: |
+  style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -13,12 +25,6 @@ image:
 page_id: "features"
 permalink: /features/
 ---
-<div class="box">
-    <p>Set-OutlookSignatures verfügt über sehr viele Funktionen, was auf den ersten Blick etwas überwältigend sein kann.</p>
-    <p>Für eine schnelle erste Einschätzung empfehlen wir unseren <a href="#feature-comparison"><button class="button is-success is-link is-small is-hovered has-text-black" style="background-color: LimeGreen;">➔ Funktions-Vergleich</button></a>.</p>
-    <p>Nichts geht über praktische Erfahrung: Verteilen Sie Signaturen in Minuten mit unserer <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black" style="background-color: LimeGreen;">➔ Schnellstart-Anleitung</button></a>.</p>
-</div>
-
 ## Funktionen {#features}
 Mit Set-OutlookSignatures können Signaturen und Abwesenheitsnotizen:
 - Aus **Vorlagen im DOCX- oder HTML-Dateiformat** generiert werden.

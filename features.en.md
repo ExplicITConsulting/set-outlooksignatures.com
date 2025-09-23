@@ -3,6 +3,18 @@ layout: page
 title: Features and feature comparison
 subtitle: Our solution at a glance and in benchmark
 description: Features and feature comparison. Our solution at a glance and in benchmark.
+hero_link: "#features"
+hero_link_text: "<span><b>➔ Features: </b>What our solution is able to do</span>"
+hero_link_style: |
+  style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
+hero_link2: "#feature-comparison"
+hero_link2_text: "<span><b>➔ Feature comparison </b>with market companions</span>"
+hero_link2_style: |
+  style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
+hero_link3: "/quickstart"
+hero_link3_text: "<span><b>➔ Quick Start Guide: </b>Deploy signatures in minutes</span>"
+hero_link3_style: |
+  style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -11,12 +23,6 @@ image:
 page_id: "features"
 permalink: /features/
 ---
-<div class="box">
-    <p>Set-OutlookSignatures has a huge feature set, which can be a bit overwhelming at first sight.</p>
-    <p>For a quick first assessment, we recommend our <a href="#feature-comparison"><button class="button is-success is-link is-small is-hovered has-text-black" style="background-color: LimeGreen;">➔ Feature comparison</button></a>.</p>
-    <p>Nothing beats practical experience: Deploy signatures within minutes with our <a href="/quickstart"><button class="button is-success is-link is-small is-hovered has-text-black" style="background-color: LimeGreen;">➔ Quick Start Guide</button></a>.</p>
-</div>
-
 ## Features {#features}
 With Set-OutlookSignatures, signatures and out-of-office replies can be:
 - Generated from **templates in DOCX or HTML** file format.
