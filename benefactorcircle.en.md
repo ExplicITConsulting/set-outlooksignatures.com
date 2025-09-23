@@ -4,15 +4,15 @@ title: The Benefactor Circle add-on
 subtitle: More features for your business
 description: The Benefactor Circle add-on extends Set-OutlookSignatures with mobile support, roaming sync, OOF automation, signature cleanup, and enterprise-grade features.
 hero_link: "#demo"
-hero_link_text: "<span><b>➔ Schedule your personal demo now</b></span>"
+hero_link_text: "<span>➔ Schedule your personal demo now</span>"
 hero_link_style: |
    style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
 hero_link2: "#trial"
-hero_link2_text: "<span><b>➔ Request a 14-day trial license</b></span>"
+hero_link2_text: "<span>➔ Request a 14-day trial license</span>"
 hero_link2_style: |
    style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
 hero_link3: "#order"
-hero_link3_text: "<span><b>➔ Request a license quote</b></span>"
+hero_link3_text: "<span>➔ Request a license quote</span>"
 hero_link3_style: |
    style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
 image:
