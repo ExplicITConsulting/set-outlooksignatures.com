@@ -198,3 +198,13 @@ html::after {
   /* 'to' value will be set by JavaScript */
   /* to { transform: translateX(calc(var(--scroll-distance) * -1)); } */
 }
+
+p + ul,
+p + ol {
+  margin-top: 0;
+}
+
+p:has(+ ul),
+p:has(+ ol) {
+  margin-bottom: 0;
+}

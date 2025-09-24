@@ -41,18 +41,6 @@
   });
 </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('p + ul, p + ol').forEach(list => {
-      const prev = list.previousElementSibling;
-      if (prev && prev.tagName === 'P') {
-        prev.style.marginBottom = '0';
-        list.style.marginTop = '0';
-      }
-    });
-  });
-</script>
-
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -88,7 +76,7 @@
   _paq.push(["setDomains", ["*.set-outlooksignatures.com"]]);
   _paq.push(['enableHeartBeatTimer']);
   _paq.push(['setLinkClasses', ["mtrcs-external-link", "mtrcs-internal-link"]]);
-  _paq.push(['setDownloadClasses', ["mtrcs-download"]]);  
+  _paq.push(['setDownloadClasses', ["mtrcs-download"]]);
   _paq.push(['trackPageView']);
   _paq.push(['trackVisibleContentImpressions', true]);
   _paq.push(['enableLinkTracking']);
@@ -167,8 +155,6 @@
 
 
 <script>
-  // The event listener is essential here because the script is in the <head>
-  // and the DOM elements it needs (track, banner) haven't been parsed yet.
   document.addEventListener('DOMContentLoaded', async () => {
     const track = document.querySelector('.scrolling-track');
     const banner = document.querySelector('.scrolling-banner');
@@ -291,41 +277,41 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-  const playerElement = document.getElementById('youtube-video-player');
-  if (playerElement) {
-    // Define the onYouTubeIframeAPIReady function before loading the script.
-    // The YouTube API will call this function automatically once it's loaded.
-    window.onYouTubeIframeAPIReady = () => {
-      // Create a new YT.Player object for the iframe with id="youtube-video-player"
-      window.player = new YT.Player('youtube-video-player', {
-        events: {
-          'onStateChange': onPlayerStateChange
+    const playerElement = document.getElementById('youtube-video-player');
+    if (playerElement) {
+      // Define the onYouTubeIframeAPIReady function before loading the script.
+      // The YouTube API will call this function automatically once it's loaded.
+      window.onYouTubeIframeAPIReady = () => {
+        // Create a new YT.Player object for the iframe with id="youtube-video-player"
+        window.player = new YT.Player('youtube-video-player', {
+          events: {
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      };
+
+      // This function is called by the YouTube API whenever the player's state changes.
+      function onPlayerStateChange(event) {
+        const videoTitle = "Set-OutlookSignatures Demo"; // Customize this
+        const currentTime = window.player.getCurrentTime();
+
+        if (event.data === YT.PlayerState.PLAYING) {
+          // Track when the video starts playing
+          _paq.push(['trackEvent', 'Video', 'Play', videoTitle, Math.round(currentTime)]);
+        } else if (event.data === YT.PlayerState.PAUSED) {
+          // Track when the video is paused
+          _paq.push(['trackEvent', 'Video', 'Pause', videoTitle, Math.round(currentTime)]);
+        } else if (event.data === YT.PlayerState.ENDED) {
+          // Track when the video ends
+          _paq.push(['trackEvent', 'Video', 'Ended', videoTitle, Math.round(currentTime)]);
         }
-      });
-    };
-
-    // This function is called by the YouTube API whenever the player's state changes.
-    function onPlayerStateChange(event) {
-      const videoTitle = "Set-OutlookSignatures Demo"; // Customize this
-      const currentTime = window.player.getCurrentTime();
-
-      if (event.data === YT.PlayerState.PLAYING) {
-        // Track when the video starts playing
-        _paq.push(['trackEvent', 'Video', 'Play', videoTitle, Math.round(currentTime)]);
-      } else if (event.data === YT.PlayerState.PAUSED) {
-        // Track when the video is paused
-        _paq.push(['trackEvent', 'Video', 'Pause', videoTitle, Math.round(currentTime)]);
-      } else if (event.data === YT.PlayerState.ENDED) {
-        // Track when the video ends
-        _paq.push(['trackEvent', 'Video', 'Ended', videoTitle, Math.round(currentTime)]);
       }
+
+      // Dynamically create and append the script tag to the body.
+      // This is the key step that loads the script only when needed.
+      const script = document.createElement('script');
+      script.src = 'https://www.youtube.com/iframe_api';
+      document.body.appendChild(script);
     }
-    
-    // Dynamically create and append the script tag to the body.
-    // This is the key step that loads the script only when needed.
-    const script = document.createElement('script');
-    script.src = 'https://www.youtube.com/iframe_api';
-    document.body.appendChild(script);
-  }
-});
+  });
 </script>
