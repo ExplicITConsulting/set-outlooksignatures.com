@@ -210,7 +210,7 @@ p:has(+ ol) {
 }
 
 a.mtrcs-external-link::after {
-  content: "&nbsp;↗"; /* The icon you want to use */
+  content: "↗"; /* The icon you want to use */
   font-size: 0.8em;
   vertical-align: super;
   margin-left: 0.2em;
