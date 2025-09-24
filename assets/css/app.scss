@@ -209,20 +209,8 @@ p:has(+ ol) {
   margin-bottom: 0;
 }
 
-/* Rule for links that are NOT buttons. This is the general case. */
-a.mtrcs-external-link::after {
-  content: "\00A0↗";
-  font-size: 0.8em;
-  vertical-align: super;
-}
 
-/*
- * Rule for links that contain a button.
- * This rule is more specific and will override the general rule
- * when an <a> tag with the class 'mtrcs-external-link' has a
- * button as a direct child.
- */
-a.mtrcs-external-link > button::after {
+a.mtrcs-external-link::after {
   content: "\00A0↗";
   font-size: 0.8em;
   vertical-align: super;

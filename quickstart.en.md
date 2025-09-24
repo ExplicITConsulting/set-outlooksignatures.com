@@ -14,7 +14,7 @@ permalink: /quickstart/
 ## Step 1: Download Set-OutlookSignatures {#step-1}
 Download Set-OutlookSignatures and extract the archive to a local folder.
 
-<p><a class="sos-download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold mtrcs-download" style="background-color: limegreen">➔ Download software</button></a></p>
+<p><a class="sos-download-link" href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold mtrcs-download" style="background-color: limegreen">➔ Download software</a></p>
 
 On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'. This removes the 'mark of the web', which can prevent script execution in PowerShell.
 
@@ -80,6 +80,6 @@ Set-OutlookSignatures is very well documented, which inevitably brings with it a
 
 If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers first-class [professional support](/support), and their <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
 
-<p><a href="/support"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ See support options</button></a></p>
+<p><a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ See support options</a></p>
 
-<p><a href="/benefactorcircle"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ The Benefactor Circle add-on</button></a></p>
+<p><a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ The Benefactor Circle add-on</a></p>

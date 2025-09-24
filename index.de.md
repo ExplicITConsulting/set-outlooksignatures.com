@@ -208,7 +208,7 @@ permalink: /
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="/benefactorcircle#demo"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">➔ Jetzt persönliche Demo vereinbaren</button></a></p>
+      <p><a href="/benefactorcircle#demo" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">➔ Jetzt persönliche Demo vereinbaren</a></p>
     </div>
   </div>
 
@@ -228,7 +228,7 @@ permalink: /
 </h2>
 <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
-<a href="/quickstart"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-color: LimeGreen">➔ Schnellstart-Anleitung</button></a>
+<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-color: LimeGreen">➔ Schnellstart-Anleitung</a>
 
 
 <h2 id="dive-deeper">
@@ -242,4 +242,4 @@ permalink: /
   <li>Wie Sie erstklassigen Support erhalten</li>
 </ul>
 
-<a href="/help"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Hilfe- und Support-Center</button></a>
+<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Hilfe- und Support-Center</a>

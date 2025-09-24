@@ -216,7 +216,7 @@ permalink: /benefactorcircle/
   </div>
 </div>
 
-<p><a href="#trial"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a trial license or quote</button></a></p>
+<p><a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a trial license or quote</a></p>
 
 
 <h2 id="demo">Demo</h2>
@@ -274,7 +274,7 @@ permalink: /benefactorcircle/
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">➔ Schedule your personal demo now</button></a></p>
+      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">➔ Schedule your personal demo now</a></p>
     </div>
   </div>
 
@@ -390,8 +390,7 @@ Benefactor Circle add-on</span>.</p>
 
 <p>As soon as the open-source core version is running, it is time to take the next step:</p>
 
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb">
-  <button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a 14-day trial license</button>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a 14-day trial license
 </a></p>
 
 <p>To use the license file, just add two parameters to your call of &apos;Set-OutlookSignatures.ps1&apos;:</p>
@@ -408,7 +407,7 @@ Benefactor Circle add-on</span>.</p>
 
 
 <h3 id="order">Order process for non-trial versions</h3>
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a license quote</button></a></p>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Request a license quote</a></p>
 
 <p>You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.</p>
 
@@ -507,4 +506,4 @@ Benefactor Circle add-on</span>.</p>
   <li>How to get first-class support</li>
 </ul>
 
-<p><a href="https://set-outlooksignatures.com/help"><button class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Help and Support-Center</button></a></p>
+<p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Help and Support-Center</a></p>
