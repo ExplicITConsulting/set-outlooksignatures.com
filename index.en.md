@@ -158,7 +158,7 @@ permalink: /
 
 
 <h2 id="expertise">
-  Functionality meets<span style="color: #90CA6F"> expertise</span>
+  Functionality meets<span style="color: LimeGreen"> expertise</span>
 </h2>
 
 <p>The optional <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> extends the free and open-source Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.<p>
