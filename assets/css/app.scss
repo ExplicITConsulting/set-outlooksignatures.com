@@ -211,7 +211,7 @@ p:has(+ ol) {
 
 /* Rule for links that are NOT buttons. This is the general case. */
 a.mtrcs-external-link::after {
-  content: "&nbsp;↗";
+  content: "\00A0↗";
   font-size: 0.8em;
   vertical-align: super;
 }
@@ -223,7 +223,7 @@ a.mtrcs-external-link::after {
  * button as a direct child.
  */
 a.mtrcs-external-link > button::after {
-  content: "&nbsp;↗";
+  content: "\00A0↗";
   font-size: 0.8em;
   vertical-align: super;
 }
