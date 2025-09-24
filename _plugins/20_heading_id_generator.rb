@@ -11,8 +11,8 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
   id_counter = 1
 
   # This single regex will handle all the changes
-  # It finds h2-h6 tags and captures their content and attributes.
-  doc.output = doc.output.gsub(/<(h[2-6])([^>]*)>(.*?)<\/\1>/i) do |match|
+  # It now captures any content, including nested HTML, between the heading tags.
+  doc.output = doc.output.gsub(/<(h[2-6])([^>]*)>(.*?)<\/\1>/im) do |match|
     tag_name = Regexp.last_match(1)
     attributes = Regexp.last_match(2)
     content = Regexp.last_match(3)
@@ -23,10 +23,10 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
     heading_id = if id_match
                    id_match[1]
                  else
-                   # If no ID exists, create one
+                   # If no ID exists, always create one using a counter
                    "heading-#{id_counter}".tap { id_counter += 1 }
                  end
-
+    
     # Remove any old id to replace it with the new one
     sanitized_attributes = attributes.gsub(/id="[^"]*"/i, '').strip
 
