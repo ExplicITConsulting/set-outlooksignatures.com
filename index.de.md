@@ -25,7 +25,7 @@ permalink: /
 
 
 <h2 id="less-effort">
-  <span style="font-weight: bolder; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>, mehr Professionalität
+  <span style="background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>, mehr Professionalität
 </h2>
 <p>Die manuelle Pflege von Signaturen bindet wertvolle personelle und finanzielle Kapazitäten. Das führt schnell zu veralteten Angaben, die weder internen noch regulatorischen Vorgaben entsprechen.</p>
 
