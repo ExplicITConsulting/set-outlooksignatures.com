@@ -42,7 +42,7 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
     new_heading_tag += ">"
 
     # Add the anchor link as the first child
-    anchor_link = %Q{<a href="##{heading_id}" class="anchor-link" aria-hidden="true">🔗</a>}
+    anchor_link = %Q{<a href="##{heading_id}" class="anchor-link">🔗</a>}
 
     # Reassemble the complete heading element
     "#{new_heading_tag}#{anchor_link}#{content}</#{tag_name}>"
