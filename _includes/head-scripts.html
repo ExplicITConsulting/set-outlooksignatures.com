@@ -1,25 +1,3 @@
-<!-- Add anchor to headings -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
-
-    headings.forEach(function (heading) {
-      // Check if the heading already has an ID, which should be the case
-      // after the Jekyll plugin runs.
-      if (heading.id) {
-        const anchor = document.createElement("a");
-        anchor.href = `#${heading.id}`;
-        anchor.className = "anchor-link";
-        anchor.innerHTML = "🔗"; // Or use an SVG for better styling
-
-        // Insert the anchor link as the first child of the heading
-        heading.insertBefore(anchor, heading.firstChild);
-      }
-    });
-  });
-</script>
-
-
 <!-- mtrcs js code -->
 <script>
   var _paq = window._paq = window._paq || [];
