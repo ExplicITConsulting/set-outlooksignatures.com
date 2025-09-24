@@ -7,37 +7,44 @@ Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
   site_url = doc.site.config['url'].to_s.chomp('/')
   page_url = doc.url.to_s
   full_page_url = "#{site_url}#{page_url}"
-
+  
   id_counter = 1
 
-  # Add missing id attributes to headings
-  regex_add_id = /<(h[2-6])\b(?![^>]*\bid=)([^>]*)>/i
-  doc.output = doc.output.gsub(regex_add_id) do
+  # This single regex will handle all the changes
+  # It finds h2-h6 tags and captures their content and attributes.
+  doc.output = doc.output.gsub(/<(h[2-6])([^>]*)>(.*?)<\/\1>/i) do |match|
     tag_name = Regexp.last_match(1)
-    rest = Regexp.last_match(2)
-    %Q{<#{tag_name} id="heading-#{id_counter}"#{rest}>}.tap { id_counter += 1 }
-  end
+    attributes = Regexp.last_match(2)
+    content = Regexp.last_match(3)
 
-  # Add data-content-name using the heading's id and also add the anchor link
-  regex_add_matomo_and_anchor = /<(h[2-6])([^>]*)\bid="([^"]+)"([^>]*)>(.*?)<\/\1>/i
-  doc.output = doc.output.gsub(regex_add_matomo_and_anchor) do
-    tag_name = Regexp.last_match(1)
-    before_id = Regexp.last_match(2)
-    heading_id = Regexp.last_match(3)
-    after_id = Regexp.last_match(4)
-    content = Regexp.last_match(5)
+    # Check for an existing 'id' attribute
+    id_match = attributes.match(/id="([^"]+)"/i)
+    
+    heading_id = if id_match
+                   id_match[1]
+                 else
+                   # If no ID exists, create one
+                   "heading-#{id_counter}".tap { id_counter += 1 }
+                 end
 
-    # Reconstruct the heading tag with the Matomo tracking attributes
-    new_heading_tag = unless doc.output.include?("data-content-name=\"#{heading_id}\"")
-      %Q{<#{tag_name}#{before_id}id="#{heading_id}"#{after_id} data-track-content="" data-content-name="#{full_page_url}##{heading_id}" data-content-piece="#{full_page_url}##{heading_id}" data-content-target="#{full_page_url}##{heading_id}">}
-    else
-      Regexp.last_match(0)
+    # Remove any old id to replace it with the new one
+    sanitized_attributes = attributes.gsub(/id="[^"]*"/i, '').strip
+
+    # Construct the full heading tag with all attributes
+    new_heading_tag = "<#{tag_name} id=\"#{heading_id}\"#{sanitized_attributes}"
+
+    # Add Matomo tracking attributes
+    unless new_heading_tag.include?("data-content-name=")
+      new_heading_tag += %Q{ data-track-content="" data-content-name="#{full_page_url}##{heading_id}" data-content-piece="#{full_page_url}##{heading_id}" data-content-target="#{full_page_url}##{heading_id}"}
     end
-    
-    # Add the anchor link as the first child of the heading
+
+    # Close the opening tag
+    new_heading_tag += ">"
+
+    # Add the anchor link as the first child
     anchor_link = %Q{<a href="##{heading_id}" class="anchor-link" aria-hidden="true">🔗</a>}
-    
-    # Combine the new heading tag, the anchor link, and the original content
+
+    # Reassemble the complete heading element
     "#{new_heading_tag}#{anchor_link}#{content}</#{tag_name}>"
   end
 end
