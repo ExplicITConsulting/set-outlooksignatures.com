@@ -25,7 +25,7 @@ permalink: /
 
 
 <h2 id="less-effort">
-  <span style="background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span>, more professionalism
+  <span style="font-weight: bolder; background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span>, more professionalism
 </h2>
 <p>Manually maintaining signatures ties up valuable personnel and financial resources. This quickly leads to outdated information that does not comply with internal or regulatory requirements.</p>
 
