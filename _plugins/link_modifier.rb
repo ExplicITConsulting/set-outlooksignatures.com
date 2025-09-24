@@ -6,7 +6,6 @@ module Jekyll
     def modify_links(input)
       site_url = @context.registers[:site].config['url']
       
-      # The main gsub loop to find all <a> tags
       input.gsub(/<a([^>]*?)href="([^"]+)"([^>]*?)>/) do |match|
         href = $2
 
@@ -18,7 +17,6 @@ module Jekyll
         begin
           uri = URI.parse(href)
 
-          # Existing logic to check for external vs. internal links and modify classes
           new_attrs = ''
           new_class = ''
           
@@ -32,18 +30,12 @@ module Jekyll
           if is_external
             new_class += " mtrcs-external-link"
             new_attrs += ' target="_blank"'
-            
-            unless new_class.include?('no-external-link-icon')
-              updated_match = match.sub(/<\/a>/, "&nbsp;↗</a>")
-            else
-              updated_match = match
-            end
           else
             new_class += " mtrcs-internal-link"
-            updated_match = match
           end
 
-          updated_match = updated_match.sub(/class=["']([^"']*)["']/, '').sub("href=\"#{href}\"", "href=\"#{href}\"#{new_attrs}")
+          # Reconstruct the link's attributes. Do not touch the content.
+          updated_match = match.sub(/class=["']([^"']*)["']/, '').sub("href=\"#{href}\"", "href=\"#{href}\"#{new_attrs}")
           
           unless new_class.strip.empty?
             updated_match = updated_match.sub("href=\"#{href}\"", "href=\"#{href}\" class=\"#{new_class.strip}\"")
@@ -52,7 +44,6 @@ module Jekyll
           updated_match
 
         rescue URI::InvalidURIError, ArgumentError
-          # Fallback for any other unexpected invalid URIs
           next match
         end
       end
