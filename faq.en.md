@@ -11,18 +11,19 @@ image:
 page_id: "faq"
 permalink: /faq/
 ---
-<div class="box">
-  <p>Set-OutlookSignatures is designed to be highly flexible and extensively configurable. Its transparent documentation reflects this versatility: Many configuration goals can be achieved in multiple ways.</p>
-  <p>This FAQ highlights common topics and clarifies typical points of confusion. If your question isn’t covered or you need tailored advice, additional resources are available:</p>
-  <p>
-    <div class="buttons">
-      <a href="/parameters" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Parameters</a>
-      <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ See support options</a>
-    </div>
-  </p>
-</div>
+## Many roads lead to Rome
+<p>Set-OutlookSignatures is designed to be highly flexible and extensively configurable. Its transparent documentation reflects this versatility: Many configuration goals can be achieved in multiple ways.</p>
+<p>This FAQ highlights common topics and clarifies typical points of confusion. If your question isn’t covered or you need tailored advice, additional resources are available:</p>
+<p>
+  <div class="buttons">
+    <a href="/parameters" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Parameters</a>
+    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ See support options</a>
+  </div>
+</p>
+
 
 ## Frequently Asked Questions (FAQ)<!-- omit in toc -->
+- [Many roads lead to Rome](#many-roads-lead-to-rome)
 - [1. Where can I find the changelog?](#1-where-can-i-find-the-changelog)
 - [2. How can I contribute, propose a new feature or file a bug?](#2-how-can-i-contribute-propose-a-new-feature-or-file-a-bug)
 - [3. How is the account of a mailbox identified?](#3-how-is-the-account-of-a-mailbox-identified)
