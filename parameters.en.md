@@ -11,6 +11,17 @@ image:
 page_id: "parameters"
 permalink: /parameters/
 ---
+<div class="box">
+  </p>Set-OutlookSignatures is designed to be highly flexible and extensively configurable. Its transparent documentation reflects this versatility: Many configuration goals can be achieved in multiple ways.</p>
+  <p>This page outlines the available parameters to help you tailor the tool to your specific needs. If you're unsure which approach best suits your scenario, additional resources are available:</p>
+  <p>
+    <div class="buttons">
+      <a href="/faq" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Frequently Asked Questions (FAQ)</a>
+      <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ See support options</a>
+    </div>
+  </p>
+</div>
+
 ## Parameters<!-- omit in toc -->
 - [1. SignatureTemplatePath](#1-signaturetemplatepath)
 - [2. SignatureIniFile](#2-signatureinifile)
