@@ -228,7 +228,7 @@ permalink: /
 </h2>
 <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
-<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-color: LimeGreen">➔ Schnellstart-Anleitung</a>
+<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen">➔ Schnellstart-Anleitung</a>
 
 
 <h2 id="dive-deeper">
