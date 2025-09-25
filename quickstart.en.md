@@ -80,6 +80,9 @@ Set-OutlookSignatures is very well documented, which inevitably brings with it a
 
 If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers first-class [professional support](/support), and their <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
 
-<p><a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ See support options</a></p>
-
-<p><a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ The Benefactor Circle add-on</a></p>
+<p>
+  <div class="buttons">
+    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ See support options</a>
+    <a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ The Benefactor Circle add-on</a>
+  </div>
+</p>

@@ -16,9 +16,12 @@ permalink: /download/
 Set-OutlookSignatures is the open-source standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 </p>
 
-<p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal is-hovered has-text-black has-text-weight-bold mtrcs-download" style="background-color: limegreen">➔ Download software</a></p>
-
-<p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Read the changelog</a></p>
+<p>
+  <div class="buttons">
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal is-hovered has-text-black has-text-weight-bold mtrcs-download" style="background-color: limegreen">➔ Download software</a>
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Read the changelog</a>
+  </div>
+</p>
 
 <p>You can deploy signatures within minutes. Just follow the easy 3-step-process to get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.</p>
 
