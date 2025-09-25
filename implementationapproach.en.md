@@ -16,6 +16,13 @@ permalink: /implementationapproach/
 ## What approach do we recommend for implementing the software? {#recommended-approach}
 For most companies, the <a href="/quickstart">quick start guide</a> is the most efficient way to get started. It enables you to implement Set-OutlookSignatures and the Benefactor Circle add-on on your own in no time. Full <a href="/support#professional-support">implementation support</a> rarely takes more than half a day.
 
+<p>
+  <div class="buttons">
+    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Quick Start Guide</a>
+    <a href="/support#professional-support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Support</a>
+  </div>
+</p>
+
 This document is intended for organizations that need to ensure formal processes and traceability in addition to efficiency. It contains a structured example of how implementation can be approached in environments where traceability and compliance are essential, such as in high-security or highly regulated environments. It shows how rapid implementation can be combined with strict governance requirements.
 
 The content is based on practical experience with deploying the solution in multi-tenant environments with tens of thousands of mailboxes. The document is intended for IT service providers, internal IT teams, and business departments responsible for email and client systems.

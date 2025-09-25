@@ -18,6 +18,13 @@ permalink: /implementationapproach/
 
 Für die meisten Unternehmen ist die <a href="/quickstart">Schnellstart-Anleitung</a> der effizienteste Einstieg. Sie ermöglicht eine eigenständige Implementierung von Set-OutlookSignatures und dem Benefactor Circle Add-On in kürzester Zeit. Eine vollständige <a href="/support#professional-support">Implementierungsunterstützung</a> benötigt selten mehr als einen halben Tag.
 
+<p>
+  <div class="buttons">
+    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Schnellstart-Anleitung</a>
+    <a href="/support#professional-support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Support</a>
+  </div>
+</p>
+
 Dieses Dokument richtet sich an Organisationen, die neben Effizienz auch formelle Prozesse und Nachvollziehbarkeit sicherstellen müssen. Es enthält ein strukturiertes Beispiel dafür, wie die Implementierung in Umgebungen angegangen werden kann, in denen Rückverfolgbarkeit und Compliance unerlässlich sind, z. B. in Hochsicherheits- oder stark regulierten Umgebungen. Es zeigt, wie sich schnelle Implementierung mit strengen Governance-Anforderungen verbinden lässt.
 
 Der Inhalt basiert auf praktischen Erfahrungen mit der Bereitstellung der Lösung in Multi-Tenant-Umgebungen mit zehntausenden Postfächern. Das Dokument richtet sich an IT-Dienstleister, interne IT-Teams und Fachabteilungen, die für E-Mail- und Client-Systeme verantwortlich sind.

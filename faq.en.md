@@ -18,7 +18,7 @@ permalink: /faq/
 <p>
   <div class="buttons">
     <a href="/parameters" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Parameters</a>
-    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ See support options</a>
+    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">➔ Support</a>
   </div>
 </p>
 
