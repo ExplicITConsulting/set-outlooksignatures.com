@@ -127,21 +127,51 @@
 
 <!-- Button animation -->
 <script>
-  document.addEventListener('DOMContentLoaded', async () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.button');
-    const delayBetweenButtons = 400; // 0.2-second stagger
-    const animationFrequency = 5000; // 4-second frequency for each button
+    const animationDuration = 1000;
+    const totalCycle = 5000;
+    const staggerDelay = 400;
 
-    buttons.forEach((button, index) => {
-      setTimeout(() => {
-        setInterval(() => {
+    // This array stores the absolute time in milliseconds when each button should animate next.
+    const nextAnimationTimes = Array.from(buttons).map((_, index) => {
+      return Date.now() + (index * staggerDelay);
+    });
+
+    const animateButtons = () => {
+      const now = Date.now();
+      let nextTimeoutTime = Infinity;
+
+      buttons.forEach((button, index) => {
+        const nextTime = nextAnimationTimes[index];
+
+        if (now >= nextTime) {
           button.classList.add('animated-now');
+
+          // This setTimeout is only created when an animation is triggered
           setTimeout(() => {
             button.classList.remove('animated-now');
-          }, 1000); // Remove class after the 1-second animation completes
-        }, animationFrequency);
-      }, index * delayBetweenButtons);
-    });
+          }, animationDuration);
+
+          // Update the next animation time for this button
+          nextAnimationTimes[index] += totalCycle;
+        }
+
+        // Find the time until the *next* earliest animation needs to happen
+        const timeUntilNext = nextAnimationTimes[index] - now;
+        if (timeUntilNext < nextTimeoutTime) {
+          nextTimeoutTime = timeUntilNext;
+        }
+      });
+
+      // Use a single, self-calling setTimeout to manage the next check.
+      // We ensure a minimum delay of 10ms to prevent the browser from becoming unresponsive.
+      const delay = Math.max(10, nextTimeoutTime);
+      setTimeout(animateButtons, delay);
+    };
+
+    // Start the animation loop
+    animateButtons();
   });
 </script>
 
