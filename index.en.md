@@ -200,7 +200,7 @@ permalink: /
 
 
 <h2 id="demo">
-  Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally. We’ll show you how!
+  Manage your<span style="color: LimeGreen;"> Outlook signatures </span>centrally. We’ll show you how!
 </h2>
 <p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.<p>
 
@@ -224,7 +224,7 @@ permalink: /
 
 
 <h2 id="quickstart">
-  Deploy signatures<span style="font-weight: bolder;"> within minutes</span>
+  Deploy signatures<span style="color: LimeGreen;"> within minutes</span>
 </h2>
 <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 
@@ -232,7 +232,7 @@ permalink: /
 
 
 <h2 id="dive-deeper">
-  Dive<span style="font-weight: bolder;"> deeper</span>
+  Dive<span style="color: DeepSkyBlue;"> deeper</span>
 </h2>
 <p>Visit our help and support center to find out more:<p>
 <ul>
@@ -242,4 +242,4 @@ permalink: /
   <li>How to get first-class support</li>
 </ul>
 
-<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen">➔ Help and Support-Center</a>
+<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Help and Support-Center</a>
