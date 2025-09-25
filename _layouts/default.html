@@ -19,10 +19,6 @@
     {% include head.html %}
     <body>
         <div style="min-height: 100vh;">
-            {% include skip-to-content.html %}
-            {% if site.cookie_policy %}
-                {% include cookie-banner.html %}
-            {% endif %}
             {% include header.html %}
 
             {% if site.active_lang != 'en' %}
@@ -37,32 +33,12 @@
             {% unless page.hide_hero %}
                 {% include hero.html %}
             {% endunless %}
-            {% include callouts.html %}
             <section class="section pt-0">
                 <div class="container">
                     <div class="columns is-multiline">
-                        {% if page.menubar_toc %}
-                            <div class="column is-4-desktop is-4-tablet">
-                                {% assign contentsTitle = page.toc_title | default: 'Contents' %}
-                                {% include toc.html html=content class='menu-list' h_min=2 h_max=3 contents_title=contentsTitle %}
-                            </div>
-                        {% elsif page.menubar %}
-                            <div class="column is-4-desktop is-4-tablet">
-                                {% include menubar.html %}
-                            </div>
-                        {% endif %}
                         <main class="column {{ content_width }}" id="main-content">
-                            {% include tabs.html %}
-                            {% include showcase.html %}
-                            {% include sponsors.html %}
-                            {% include gallery.html %}
                             {{ content | modify_links }}
                         </main>
-                        {% if site.posts and page.show_sidebar %}
-                            <div class="column is-4-desktop is-4-tablet">
-                                {% include latest-posts.html %}
-                            </div>
-                        {% endif %}
                     </div>
                 </div>
             </section>
