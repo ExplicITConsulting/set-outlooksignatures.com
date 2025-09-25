@@ -172,104 +172,96 @@
         return;
       }
 
-      // Shuffle the URLs
       for (let i = urls.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [urls[i], urls[j]] = [urls[j], urls[i]];
       }
 
       const originalShuffledUniqueUrls = [...urls];
-      // Repeat the URLs to ensure a seamless scroll effect
       const finalUrlsForDOM = [...originalShuffledUniqueUrls, ...originalShuffledUniqueUrls, ...originalShuffledUniqueUrls];
 
       track.innerHTML = '';
+      const imagePromises = finalUrlsForDOM.map(url => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.src = url;
+          img.alt = `https://${url.split('/').pop()?.split('.').slice(0, -1).join('.')}` || 'Customer Logo';
 
-      // --- Intersection Observer Logic for Lazy Loading ---
-      const imageElements = [];
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            const src = img.getAttribute('data-src');
-            if (src) {
-              img.src = src; // Set the src to trigger image download
-              img.onload = () => observer.unobserve(img);
-              img.onerror = () => observer.unobserve(img);
+          img.onload = () => resolve({ img, loaded: true });
+          img.onerror = () => {
+            console.error(`Failed to load image: ${url}`);
+            resolve({ img: null, loaded: false });
+          };
+
+          if (img.complete) {
+            if (img.naturalHeight > 0) {
+              resolve({ img, loaded: true });
+            } else {
+              resolve({ img: null, loaded: false });
             }
           }
         });
-      }, {
-        // Load images when they are within 200 pixels of the viewport
-        rootMargin: '200px'
       });
 
-      // Create img elements with placeholders and a data-src attribute
-      finalUrlsForDOM.forEach(url => {
-        const img = document.createElement('img');
-        img.setAttribute('data-src', url);
-        img.alt = `https://${url.split('/').pop()?.split('.').slice(0, -1).join('.')}` || 'Customer Logo';
-        // Use a tiny transparent placeholder GIF to prevent broken image icons
-        img.src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
-        img.classList.add('lazy-image');
+      const loadedImageResults = await Promise.all(imagePromises);
+      const imageElements = loadedImageResults.map(result => result.img).filter(img => img !== null);
 
-        track.appendChild(img);
-        imageElements.push(img);
-        observer.observe(img); // Start observing the element
+      if (imageElements.length === 0) {
+        console.warn('All images failed to load. Disabling animation.');
+        return;
+      }
+
+      imageElements.forEach(img => track.appendChild(img));
+
+      requestAnimationFrame(() => {
+        const bannerWidth = banner.clientWidth;
+        const computedStyle = getComputedStyle(track);
+        const gapSize = parseFloat(computedStyle.gap) || 0;
+
+        let scrollDistance = 0;
+        for (let i = 0; i < originalShuffledUniqueUrls.length; i++) {
+          const img = track.children[i];
+          if (img) {
+            scrollDistance += img.offsetWidth;
+            if (i < originalShuffledUniqueUrls.length - 1) {
+              scrollDistance += gapSize;
+            }
+          }
+        }
+
+        if (scrollDistance <= 0 || track.scrollWidth <= bannerWidth + 1) {
+          console.warn('Content is not wide enough to scroll. Disabling animation.');
+          track.style.animation = 'none';
+          return;
+        }
+
+        const pixelsPerSecond = 50;
+        const animationDuration = scrollDistance / pixelsPerSecond;
+        const animationName = 'scroll-full-track-dynamic-' + Date.now();
+
+        let styleSheet = document.getElementById('dynamic-scroll-animation-style');
+        if (!styleSheet) {
+          styleSheet = document.createElement('style');
+          styleSheet.id = 'dynamic-scroll-animation-style';
+          document.head.appendChild(styleSheet);
+        } else {
+          while (styleSheet.sheet && styleSheet.sheet.cssRules.length > 0) {
+            styleSheet.sheet.deleteRule(0);
+          }
+        }
+
+        const keyframesRule = `
+          @keyframes ${animationName} {
+            from { transform: translateX(0); }
+            to { transform: translateX(${-scrollDistance}px); }
+          }
+        `;
+        styleSheet.sheet.insertRule(keyframesRule, styleSheet.sheet.cssRules.length);
+
+        track.style.animation = `${animationName} ${animationDuration}s linear infinite`;
+        track.style.animationPlayState = 'running';
       });
 
-      // Wait for a short duration or a specific event to ensure initial images are loaded
-      // and their dimensions are available before calculating the animation.
-      setTimeout(() => {
-        requestAnimationFrame(() => {
-          const bannerWidth = banner.clientWidth;
-          const computedStyle = getComputedStyle(track);
-          const gapSize = parseFloat(computedStyle.gap) || 0;
-
-          let scrollDistance = 0;
-          // Calculate the scroll distance based on the dimensions of the first set of images
-          for (let i = 0; i < originalShuffledUniqueUrls.length; i++) {
-            const img = track.children[i];
-            if (img) {
-              scrollDistance += img.offsetWidth;
-              if (i < originalShuffledUniqueUrls.length - 1) {
-                scrollDistance += gapSize;
-              }
-            }
-          }
-
-          if (scrollDistance <= 0 || track.scrollWidth <= bannerWidth + 1) {
-            console.warn('Content is not wide enough to scroll. Disabling animation.');
-            track.style.animation = 'none';
-            return;
-          }
-
-          const pixelsPerSecond = 50;
-          const animationDuration = scrollDistance / pixelsPerSecond;
-          const animationName = 'scroll-full-track-dynamic-' + Date.now();
-
-          let styleSheet = document.getElementById('dynamic-scroll-animation-style');
-          if (!styleSheet) {
-            styleSheet = document.createElement('style');
-            styleSheet.id = 'dynamic-scroll-animation-style';
-            document.head.appendChild(styleSheet);
-          } else {
-            while (styleSheet.sheet && styleSheet.sheet.cssRules.length > 0) {
-              styleSheet.sheet.deleteRule(0);
-            }
-          }
-
-          const keyframesRule = `
-                    @keyframes ${animationName} {
-                        from { transform: translateX(0); }
-                        to { transform: translateX(${-scrollDistance}px); }
-                    }
-                `;
-          styleSheet.sheet.insertRule(keyframesRule, styleSheet.sheet.cssRules.length);
-
-          track.style.animation = `${animationName} ${animationDuration}s linear infinite`;
-          track.style.animationPlayState = 'running';
-        });
-      }, 100); // Small delay to allow initial image dimensions to be available
     } catch (error) {
       console.error('Failed to fetch or process image URLs:', error);
     }
