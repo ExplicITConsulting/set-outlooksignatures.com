@@ -131,11 +131,14 @@
     const buttons = document.querySelectorAll('.button');
     const animationDuration = 1000;
     const totalCycle = 5000;
-    const staggerDelay = 400;
+    const staggerDelay = 300;
+
+    // Set the start time for the entire animation sequence
+    const startTime = Date.now();
 
     // This array stores the absolute time in milliseconds when each button should animate next.
     const nextAnimationTimes = Array.from(buttons).map((_, index) => {
-      return Date.now() + (index * staggerDelay);
+      return startTime + (index * staggerDelay);
     });
 
     const animateButtons = () => {
