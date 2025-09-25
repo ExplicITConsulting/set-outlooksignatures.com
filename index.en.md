@@ -158,7 +158,7 @@ permalink: /
 
 
 <h2 id="expertise">
-  Functionality meets<span style="color: LimeGreen"> expertise</span>
+  Functionality meets<span style="color: #90CA6F"> expertise</span>
 </h2>
 
 <p>The optional <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> extends the free and open-source Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.<p>
@@ -168,7 +168,7 @@ permalink: /
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, LimeGreen, LimeGreen); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Cost-efficient and transparent</b><br>
         Fair prices. No subscriptions. No maintenance contracts.
@@ -178,7 +178,7 @@ permalink: /
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, LimeGreen, LimeGreen); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Support with handshake quality</b><br>
         Solution-driven. At eye level. Accountable.
@@ -188,7 +188,7 @@ permalink: /
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, LimeGreen, LimeGreen); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Tangible added value</b><br>
         Your investment pays off. From day one.
@@ -200,7 +200,7 @@ permalink: /
 
 
 <h2 id="demo">
-  Manage your<span style="color: LimeGreen;"> Outlook signatures </span>centrally. We’ll show you how!
+  Manage your<span style="color: #28A951;"> Outlook signatures </span>centrally. We’ll show you how!
 </h2>
 <p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.<p>
 
