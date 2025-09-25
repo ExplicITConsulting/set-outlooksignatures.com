@@ -158,7 +158,7 @@ permalink: /
 
 
 <h2 id="expertise">
-  Functionality meets<span style="color: #90CA6F"> expertise</span>
+  Functionality meets<span class="has-text-success"> expertise</span>
 </h2>
 
 <p>The optional <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> extends the free and open-source Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.<p>
@@ -200,7 +200,7 @@ permalink: /
 
 
 <h2 id="demo">
-  Manage your<span style="color: #28A951;"> Outlook signatures </span>centrally. We’ll show you how!
+  Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally. We’ll show you how!
 </h2>
 <p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.<p>
 
@@ -224,15 +224,15 @@ permalink: /
 
 
 <h2 id="quickstart">
-  Deploy signatures<span style="color: LimeGreen;"> within minutes</span>
+  Deploy signatures<span class="has-text-success"> within minutes</span>
 </h2>
 <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 
-<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen">➔ Quick Start Guide</a>
+<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">➔ Quick Start Guide</a>
 
 
 <h2 id="dive-deeper">
-  Dive<span style="color: DeepSkyBlue;"> deeper</span>
+  Dive<span class="has-text-link"> deeper</span>
 </h2>
 <p>Visit our help and support center to find out more:<p>
 <ul>
@@ -242,4 +242,4 @@ permalink: /
   <li>How to get first-class support</li>
 </ul>
 
-<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Help and Support-Center</a>
+<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">➔ Help and Support-Center</a>

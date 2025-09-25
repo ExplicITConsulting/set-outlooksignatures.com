@@ -159,7 +159,7 @@ permalink: /
 
 
 <h2 id="expertise">
-  Funktionalität trifft<span style="color: #90CA6F;"> Expertise</span>
+  Funktionalität trifft<span class="has-text-success"> Expertise</span>
 </h2>
 <p>Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
 
@@ -200,7 +200,7 @@ permalink: /
 
 
 <h2 id="demo">
-  Verwalten Sie Ihre<span style="color: #28A951;"> Outlook-Signaturen </span>zentral. Wir zeigen Ihnen, wie!
+  Verwalten Sie Ihre<span style="font-weight: bolder;"> Outlook-Signaturen </span>zentral. Wir zeigen Ihnen, wie!
 </h2>
 <p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p>
 
@@ -224,15 +224,15 @@ permalink: /
 
 
 <h2 id="quickstart">
-  Signaturen<span style="color: LimeGreen;"> in wenigen Minuten </span> verteilen
+  Signaturen<span class="has-text-success"> in wenigen Minuten </span> verteilen
 </h2>
 <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
-<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen">➔ Schnellstart-Anleitung</a>
+<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">➔ Schnellstart-Anleitung</a>
 
 
 <h2 id="dive-deeper">
-  <span style="color: DeepSkyBlue;">Tiefer </span>eintauchen
+  <span class="has-text-link">Tiefer </span>eintauchen
 </h2>
 <p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:<p>
 <ul>
@@ -242,4 +242,4 @@ permalink: /
   <li>Wie Sie erstklassigen Support erhalten</li>
 </ul>
 
-<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: DeepSkyBlue">➔ Hilfe- und Support-Center</a>
+<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">➔ Hilfe- und Support-Center</a>
