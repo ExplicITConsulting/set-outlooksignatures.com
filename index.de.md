@@ -168,7 +168,7 @@ permalink: /
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success-on-scheme), var(--bulma-success-on-scheme)); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Kosteneffizient und transparent</b><br>
         Faire Preise. Keine Abos. Keine Wartungsverträge.
@@ -178,7 +178,7 @@ permalink: /
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success-on-scheme), var(--bulma-success-on-scheme)); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Support mit Handschlagqualität</b><br>
         Lösungsstark. Auf Augenhöhe. Verantwortungsbewusst.
@@ -188,7 +188,7 @@ permalink: /
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, #90CA6F, #90CA6F); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success-on-scheme), var(--bulma-success-on-scheme)); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Spürbarer Mehrwert</b><br>
         Ihre Investition entlastet. Vom ersten Tag an.
