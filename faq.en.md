@@ -12,7 +12,7 @@ page_id: "faq"
 permalink: /faq/
 ---
 <div class="box">
-  </p>Set-OutlookSignatures is designed to be highly flexible and extensively configurable. Its transparent documentation reflects this versatility: Many configuration goals can be achieved in multiple ways.</p>
+  <p>Set-OutlookSignatures is designed to be highly flexible and extensively configurable. Its transparent documentation reflects this versatility: Many configuration goals can be achieved in multiple ways.</p>
   <p>This FAQ highlights common topics and clarifies typical points of confusion. If your question isn’t covered or you need tailored advice, additional resources are available:</p>
   <p>
     <div class="buttons">
