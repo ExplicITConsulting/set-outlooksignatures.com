@@ -172,104 +172,95 @@
         return;
       }
 
-      // Shuffle the URLs
       for (let i = urls.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [urls[i], urls[j]] = [urls[j], urls[i]];
       }
 
       const originalShuffledUniqueUrls = [...urls];
-      // Repeat the URLs to ensure a seamless scroll effect
       const finalUrlsForDOM = [...originalShuffledUniqueUrls, ...originalShuffledUniqueUrls, ...originalShuffledUniqueUrls];
 
       track.innerHTML = '';
 
-      // --- Intersection Observer Logic for Lazy Loading ---
-      const imageElements = [];
+      const pixelsPerSecond = 50;
+      let currentPosition = 0;
+      let lastTimestamp = null;
+      const totalWidthOfOneSet = await new Promise(resolve => {
+        let loadedCount = 0;
+        const imagesToLoad = originalShuffledUniqueUrls.length;
+        const tempDiv = document.createElement('div');
+        tempDiv.style.cssText = 'position: absolute; top: -9999px; visibility: hidden; display: flex; gap: var(--scrolling-gap, 1rem);';
+        document.body.appendChild(tempDiv);
+
+        originalShuffledUniqueUrls.forEach(url => {
+          const img = new Image();
+          img.onload = img.onerror = () => {
+            loadedCount++;
+            if (loadedCount === imagesToLoad) {
+              const totalWidth = Array.from(tempDiv.children).reduce((acc, el) => acc + el.offsetWidth, 0) + (imagesToLoad - 1) * parseFloat(getComputedStyle(tempDiv).gap);
+              document.body.removeChild(tempDiv);
+              resolve(totalWidth);
+            }
+          };
+          img.src = url;
+          img.alt = '';
+          tempDiv.appendChild(img);
+        });
+      });
+
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const img = entry.target;
             const src = img.getAttribute('data-src');
             if (src) {
-              img.src = src; // Set the src to trigger image download
+              img.src = src;
               img.onload = () => observer.unobserve(img);
               img.onerror = () => observer.unobserve(img);
             }
           }
         });
       }, {
-        // Load images when they are within 200 pixels of the viewport
         rootMargin: '200px'
       });
 
-      // Create img elements with placeholders and a data-src attribute
       finalUrlsForDOM.forEach(url => {
         const img = document.createElement('img');
         img.setAttribute('data-src', url);
         img.alt = `https://${url.split('/').pop()?.split('.').slice(0, -1).join('.')}` || 'Customer Logo';
-        // Use a tiny transparent placeholder GIF to prevent broken image icons
         img.src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
         img.classList.add('lazy-image');
-
         track.appendChild(img);
-        imageElements.push(img);
-        observer.observe(img); // Start observing the element
+        observer.observe(img);
       });
 
-      // Wait for a short duration or a specific event to ensure initial images are loaded
-      // and their dimensions are available before calculating the animation.
-      setTimeout(() => {
-        requestAnimationFrame(() => {
-          const bannerWidth = banner.clientWidth;
-          const computedStyle = getComputedStyle(track);
-          const gapSize = parseFloat(computedStyle.gap) || 0;
+      function animate(timestamp) {
+        if (!lastTimestamp) {
+          lastTimestamp = timestamp;
+        }
+        const deltaTime = timestamp - lastTimestamp;
+        lastTimestamp = timestamp;
+        const scrollSpeed = pixelsPerSecond;
+        currentPosition -= (scrollSpeed * deltaTime) / 1000;
 
-          let scrollDistance = 0;
-          // Calculate the scroll distance based on the dimensions of the first set of images
-          for (let i = 0; i < originalShuffledUniqueUrls.length; i++) {
-            const img = track.children[i];
-            if (img) {
-              scrollDistance += img.offsetWidth;
-              if (i < originalShuffledUniqueUrls.length - 1) {
-                scrollDistance += gapSize;
-              }
-            }
-          }
+        const contentWidth = totalWidthOfOneSet;
+        if (-currentPosition >= contentWidth) {
+          currentPosition += contentWidth;
+        }
 
-          if (scrollDistance <= 0 || track.scrollWidth <= bannerWidth + 1) {
-            console.warn('Content is not wide enough to scroll. Disabling animation.');
-            track.style.animation = 'none';
-            return;
-          }
+        track.style.transform = `translateX(${currentPosition}px)`;
 
-          const pixelsPerSecond = 50;
-          const animationDuration = scrollDistance / pixelsPerSecond;
-          const animationName = 'scroll-full-track-dynamic-' + Date.now();
+        requestAnimationFrame(animate);
+      }
 
-          let styleSheet = document.getElementById('dynamic-scroll-animation-style');
-          if (!styleSheet) {
-            styleSheet = document.createElement('style');
-            styleSheet.id = 'dynamic-scroll-animation-style';
-            document.head.appendChild(styleSheet);
-          } else {
-            while (styleSheet.sheet && styleSheet.sheet.cssRules.length > 0) {
-              styleSheet.sheet.deleteRule(0);
-            }
-          }
+      // Start the animation only after the initial full set of images have been measured
+      if (totalWidthOfOneSet > 0) {
+        requestAnimationFrame(animate);
+      } else {
+        console.warn('Content is not wide enough to scroll. Disabling animation.');
+        track.style.animation = 'none';
+      }
 
-          const keyframesRule = `
-                    @keyframes ${animationName} {
-                        from { transform: translateX(0); }
-                        to { transform: translateX(${-scrollDistance}px); }
-                    }
-                `;
-          styleSheet.sheet.insertRule(keyframesRule, styleSheet.sheet.cssRules.length);
-
-          track.style.animation = `${animationName} ${animationDuration}s linear infinite`;
-          track.style.animationPlayState = 'running';
-        });
-      }, 100); // Small delay to allow initial image dimensions to be available
     } catch (error) {
       console.error('Failed to fetch or process image URLs:', error);
     }
