@@ -4,11 +4,11 @@ title: Technical details, requirements and usage
 subtitle: What it needs, how it works and how to use it
 description: Explore technical details of Set-OutlookSignatures. System requirements, supported platforms, template formats, group logic, variables, and simulation mode.
 hero_link: /quickstart
-hero_link_text: "<span>➔ Quick Start Guide</span>"
+hero_link_text: "<span><b>➔ Quick Start Guide</b></span>"
 hero_link_style: |
   style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
 hero_link2: /support
-hero_link2_text: "<span>➔ Support</span>"
+hero_link2_text: "<span><b>➔ Support</b></span>"
 hero_link2_style: |
   style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
 image:
