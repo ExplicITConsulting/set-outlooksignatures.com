@@ -168,8 +168,8 @@
       });
 
       // Use a single, self-calling setTimeout to manage the next check.
-      // We ensure a minimum delay of 10ms to prevent the browser from becoming unresponsive.
-      const delay = Math.max(10, nextTimeoutTime);
+      // We ensure a minimum delay of 100ms to prevent the browser from becoming unresponsive.
+      const delay = Math.max(100, nextTimeoutTime);
       setTimeout(animateButtons, delay);
     };
 
