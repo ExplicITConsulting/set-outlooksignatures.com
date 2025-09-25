@@ -72,7 +72,7 @@ Some examples:
 
 The [feature list](/features) and the [parameter documentation](/parameters) show what's possible.
 
-The [FAQ section](/faq) helps you find answer to the most popular questions we get asked. For a deep dive, our [help and support center](/help) has great ressources.
+The [FAQ section](/faq) helps you find answers to the most popular questions we get asked. For a deep dive, our [help and support center](/help) has great ressources.
 
 
 ## Looking for help or more features? {#support}
