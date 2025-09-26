@@ -8,15 +8,15 @@ description: Funktionen und Funktions-Vergleich. Unsere Lösung auf einen Blick 
 hero_link: "#features"
 hero_link_text: "<span><b>➔ Funktionen: </b>Was unsere Lösung kann</span>"
 hero_link_style: |
-  style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
+  style="background-color: LimeGreen;"
 hero_link2: "#feature-comparison"
 hero_link2_text: "<span><b>➔ Funktions-Vergleich </b>mit Marktbegleitern</span>"
 hero_link2_style: |
-  style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
+  style="background-color: LimeGreen;"
 hero_link3: "/quickstart"
 hero_link3_text: "<span><b>➔ Schnellstart-Anleitung: </b>Signaturen in wenigen Minuten verteilen</span>"
 hero_link3_style: |
-  style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
+  style="background-color: LimeGreen;"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

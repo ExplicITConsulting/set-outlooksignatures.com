@@ -8,7 +8,7 @@ description: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und alle Va
 hero_link: /quickstart
 hero_link_text: "<span><b>➔ Schnellstart-Anleitung: </b>Signaturen in wenigen Minuten verteilen, kostenlos und quelloffen.</span>"
 hero_link_style: |
-   style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
+   style="background-color: LimeGreen;"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

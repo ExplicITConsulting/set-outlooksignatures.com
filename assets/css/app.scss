@@ -72,6 +72,12 @@ h6 {
   position: relative;
 }
 
+.button {
+  white-space: normal;
+  word-break: break-word;
+  hyphens: auto;
+}
+
 .anchor-link {
   position: absolute;
 

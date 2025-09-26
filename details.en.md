@@ -6,11 +6,11 @@ description: Explore technical details of Set-OutlookSignatures. System requirem
 hero_link: /quickstart
 hero_link_text: "<span><b>➔ Quick Start Guide</b></span>"
 hero_link_style: |
-  style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
+  style="background-color: LimeGreen;"
 hero_link2: /support
 hero_link2_text: "<span><b>➔ Support</b></span>"
 hero_link2_style: |
-  style="background-color: LimeGreen; white-space: normal; word-break: break-word; hyphens: auto;"
+  style="background-color: LimeGreen;"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
