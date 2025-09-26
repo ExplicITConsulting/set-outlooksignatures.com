@@ -1,5 +1,5 @@
 require 'uri'
-require 'nokogumbo' # Ensure you have 'nokogumbo' and its dependency 'nokogiri' installed
+require 'nokogiri' # Use Nokogiri directly, which is the standard
 
 module Jekyll
   module LinkModifier
@@ -13,19 +13,18 @@ module Jekyll
       begin
         site_hostname = URI.parse(site_url).hostname.downcase
       rescue URI::InvalidURIError, ArgumentError
-        # If site_url itself is invalid, we can't reliably compare, so return original input
         return input
       end
 
-      # 2. Parse the HTML input using Nokogumbo for robust HTML5 parsing
-      # Nokogumbo.parse_fragment is suitable for partial HTML content (like page body)
-      doc = Nokogumbo.parse_fragment(input)
+      # 2. Parse the HTML input using Nokogiri::HTML.fragment for robust HTML parsing
+      # This is the modern replacement for Nokogumbo.parse_fragment
+      doc = Nokogiri::HTML.fragment(input)
       
       # 3. Select all <a> tags
       doc.css('a').each do |link|
         href = link['href']
         
-        # Skip if no href attribute exists or it's a mailto/tel link
+        # Skip if no href attribute or it's a mailto/tel link
         next unless href
         if href.start_with?('mailto:') || href.start_with?('tel:')
           next
@@ -44,14 +43,19 @@ module Jekyll
           
           if is_external
             link_class_to_add = "mtrcs-external-link"
+            
             # Set external link attributes
             link['target'] = '_blank'
-          elsif is_absolute || (uri.path && !uri.path.empty?)
-            # Treat all other internal links (absolute or relative with a path)
-            link_class_to_add = "mtrcs-internal-link"
+            
+            # Ensure 'noopener noreferrer' is present in 'rel' attribute
+            rel_attrs = (link['rel'] || '').split(/\s+/).reject(&:empty?)
+            unless rel_attrs.include?('noopener') && rel_attrs.include?('noreferrer')
+              rel_attrs << 'noopener' << 'noreferrer'
+              link['rel'] = rel_attrs.uniq.join(' ')
+            end
           else
-            # Skip fragments, only containing a query or simple relative links without a path
-            next
+            # Internal link logic (can be expanded if you need to differentiate internal types)
+            link_class_to_add = "mtrcs-internal-link"
           end
 
           # 5. Modify the class attribute
@@ -73,7 +77,8 @@ module Jekyll
       
       # 6. Return the modified HTML content
       # #to_html on a fragment returns the concatenated content of its children
-      doc.to_html(encoding: 'UTF-8', save_with: Nokogiri::XML::Node::SaveOptions::AS_HTML)
+      # Using to_s is equivalent to to_html on a fragment and often cleaner
+      doc.to_s
     end
   end
 end
