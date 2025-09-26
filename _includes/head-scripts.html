@@ -352,14 +352,14 @@
     /* Move the left edge to the horizontal center */
 
     /* 2. RESIZING TO 25% */
-    width: 25vw;
+    width: 33vw;
     /* Set the width to 25% of the viewport width */
-    height: 25vh;
+    height: 33vh;
     /* Set the height to 25% of the viewport height */
 
     /* 3. FINAL ALIGNMENT */
     /* Shifts the element back by half its own width/height to center it */
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(20deg);
 
     /* Keep existing background properties for the image within this smaller box */
     background-repeat: no-repeat;
@@ -369,7 +369,7 @@
     /* Keep other properties */
     pointer-events: none;
     z-index: -2;
-    opacity: 0.6;
+    opacity: 0.2;
     filter: var(--bg-filter, none);
   }
 
