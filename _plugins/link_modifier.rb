@@ -9,17 +9,15 @@ module Jekyll
 
       return input unless site_url
 
-      # 1. Determine site hostname for comparison
+      # Get site hostname
       begin
         site_hostname = URI.parse(site_url).hostname.downcase
       rescue URI::InvalidURIError, ArgumentError
         return input
       end
 
-      # 2. Parse the HTML input
       doc = Nokogiri::HTML.fragment(input)
 
-      # 3. Process each <a> tag
       doc.css('a').each do |link|
         href = link['href']
         next unless href
@@ -45,9 +43,10 @@ module Jekyll
               link_class_to_add = "mtrcs-internal-link"
             end
           else
-            # Relative URL — treat as internal
+            # Relative or fragment-only URL — treat as internal
             link_class_to_add = "mtrcs-internal-link"
           end
+
           # Add class if needed
           unless link_class_to_add.empty?
             current_classes = (link['class'] || '').split(/\s+/).reject(&:empty?)
@@ -60,7 +59,7 @@ module Jekyll
           next
         end
       end
-      # 4. Return modified HTML
+
       doc.to_s
     end
   end
