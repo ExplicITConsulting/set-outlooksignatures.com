@@ -2,23 +2,17 @@ require 'uri'
 require 'nokogiri'
 
 module Jekyll
-  module LinkModifier
-    def modify_links(input)
-      site = @context.registers[:site]
-      site_url = site.config['url']
-      return input unless site_url
+  class LinkModifierHook
+    def self.modify_links(html, site_url)
+      return html unless site_url
 
-      # Get site hostname
       begin
         site_hostname = URI.parse(site_url).hostname.downcase
       rescue URI::InvalidURIError, ArgumentError
-        return input
+        return html
       end
 
-      # Normalize input to avoid malformed tags
-      normalized_input = input.gsub(/>\s+</, '><').strip
-
-      doc = Nokogiri::HTML.fragment(normalized_input)
+      doc = Nokogiri::HTML.fragment(html)
 
       doc.css('a').each do |link|
         href = link['href']
@@ -31,7 +25,6 @@ module Jekyll
           uri = URI.parse(href)
 
           if uri.scheme && uri.hostname
-            # Absolute URL
             is_external = uri.hostname.downcase != site_hostname
             if is_external
               link_class_to_add = "mtrcs-external-link"
@@ -46,20 +39,15 @@ module Jekyll
               link_class_to_add = "mtrcs-internal-link"
             end
           else
-            # Relative or fragment-only URL — treat as internal
             link_class_to_add = "mtrcs-internal-link"
           end
 
-          # Add class if needed
-          unless link_class_to_add.empty?
-            current_classes = (link['class'] || '').split(/\s+/).reject(&:empty?)
-            unless current_classes.include?(link_class_to_add)
-              current_classes << link_class_to_add
-              link['class'] = current_classes.join(' ')
-            end
+          current_classes = (link['class'] || '').split(/\s+/).reject(&:empty?)
+          unless current_classes.include?(link_class_to_add)
+            current_classes << link_class_to_add
+            link['class'] = current_classes.join(' ')
           end
         rescue URI::InvalidURIError, ArgumentError
-          # Treat as internal if it's a fragment-only link
           if href.start_with?('#')
             current_classes = (link['class'] || '').split(/\s+/).reject(&:empty?)
             unless current_classes.include?('mtrcs-internal-link')
@@ -67,7 +55,6 @@ module Jekyll
               link['class'] = current_classes.join(' ')
             end
           end
-          next
         end
       end
 
@@ -76,4 +63,8 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_filter(Jekyll::LinkModifier)
+# Register the hook for pages and posts
+Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
+  site_url = doc.site.config['url']
+  doc.output = Jekyll::LinkModifierHook.modify_links(doc.output, site_url)
+end
