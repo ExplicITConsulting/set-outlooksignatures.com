@@ -337,3 +337,68 @@
 
   document.addEventListener('DOMContentLoaded', updateDownloadLink);
 </script>
+
+
+<!-- Add and lazy load background image -->
+<style>
+  html::before {
+    content: "";
+    position: fixed;
+    top: var(--bulma-navbar-height);
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    pointer-events: none;
+    z-index: -2;
+    opacity: 0.5;
+    /* This filter will be applied when the 'dark-mode-bg' class is present. It inverts the colors of the background image. */
+    filter: var(--bg-filter, none);
+  }
+
+  html.loaded::before {
+    background-image: url("/assets/images/background, vietnam golden bridge sketch light compressed.jpg");
+  }
+
+  /* Define a new class for dark mode background. This class will be added and removed by JavaScript. */
+  html.dark-mode-bg::before {
+    --bg-filter: invert(1) hue-rotate(180deg);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Add the 'loaded' class to display the background image.
+    document.documentElement.classList.add('loaded');
+
+    // Detect system preference for dark mode.
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Apply dark mode background filter if system prefers dark.
+    if (prefersDark) {
+      document.documentElement.classList.add('dark-mode-bg');
+    }
+
+    // Watch for changes in system preference.
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+      if (event.matches) {
+        document.documentElement.classList.add('dark-mode-bg');
+      } else {
+        document.documentElement.classList.remove('dark-mode-bg');
+      }
+    });
+
+    // Optional: MutationObserver if other scripts might toggle 'dark-mode-bg' manually.
+    const observer = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          // You could add logic here if needed to respond to manual class changes.
+        }
+      }
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+  });
+</script>
