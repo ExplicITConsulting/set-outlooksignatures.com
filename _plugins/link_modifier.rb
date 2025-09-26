@@ -6,7 +6,6 @@ module Jekyll
     def modify_links(input)
       site = @context.registers[:site]
       site_url = site.config['url']
-
       return input unless site_url
 
       # Get site hostname
@@ -16,16 +15,20 @@ module Jekyll
         return input
       end
 
-      doc = Nokogiri::HTML.fragment(input)
+      # Normalize input to avoid malformed tags
+      normalized_input = input.gsub(/>\s+</, '><').strip
+
+      doc = Nokogiri::HTML.fragment(normalized_input)
 
       doc.css('a').each do |link|
         href = link['href']
         next unless href
         next if href.start_with?('mailto:') || href.start_with?('tel:')
 
+        link_class_to_add = ''
+
         begin
           uri = URI.parse(href)
-          link_class_to_add = ''
 
           if uri.scheme && uri.hostname
             # Absolute URL
@@ -56,6 +59,14 @@ module Jekyll
             end
           end
         rescue URI::InvalidURIError, ArgumentError
+          # Treat as internal if it's a fragment-only link
+          if href.start_with?('#')
+            current_classes = (link['class'] || '').split(/\s+/).reject(&:empty?)
+            unless current_classes.include?('mtrcs-internal-link')
+              current_classes << 'mtrcs-internal-link'
+              link['class'] = current_classes.join(' ')
+            end
+          end
           next
         end
       end
