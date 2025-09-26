@@ -33,7 +33,7 @@ module Jekyll
         attributes_suffix = $4
 
         # Skip special links
-        next full_tag if href.start_with?('mailto:', 'tel:', '#')
+        next full_tag if href.start_with?('mailto:', 'tel:')
 
         # Determine link type
         is_external = begin
