@@ -215,7 +215,7 @@ p:has(+ ol) {
   margin-bottom: 0;
 }
 
-a.mtrcs-external-link::after {
+a.mtrcs-external-link:not(.no-external-link-icon)::after {
   content: "\00A0↗";
   font-size: 0.8em;
   vertical-align: top;
