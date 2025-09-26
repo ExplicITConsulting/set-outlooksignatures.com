@@ -346,27 +346,25 @@
     position: fixed;
 
     /* 1. POSITIONING FOR CENTERING */
-    top: 50%;
     /* Move the top edge to the vertical center */
-    left: 50%;
+    top: 50%;
     /* Move the left edge to the horizontal center */
+    left: 50%;
 
-    /* 2. RESIZING TO 25% */
+    /* 2. RESIZING TO 33% */
+    /* Set the width to 33% of the viewport width */
     width: 33vw;
-    /* Set the width to 25% of the viewport width */
+    /* Set the height to 33% of the viewport height */
     height: 33vh;
-    /* Set the height to 25% of the viewport height */
 
     /* 3. FINAL ALIGNMENT */
     /* Shifts the element back by half its own width/height to center it */
     transform: translate(-50%, -50%) rotate(20deg);
 
-    /* Keep existing background properties for the image within this smaller box */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
 
-    /* Keep other properties */
     pointer-events: none;
     z-index: -2;
     opacity: 0.2;
