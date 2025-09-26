@@ -344,17 +344,32 @@
   html::before {
     content: "";
     position: fixed;
-    top: var(--bulma-navbar-height);
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+
+    /* 1. POSITIONING FOR CENTERING */
+    top: 50%;
+    /* Move the top edge to the vertical center */
+    left: 50%;
+    /* Move the left edge to the horizontal center */
+
+    /* 2. RESIZING TO 25% */
+    width: 25vw;
+    /* Set the width to 25% of the viewport width */
+    height: 25vh;
+    /* Set the height to 25% of the viewport height */
+
+    /* 3. FINAL ALIGNMENT */
+    /* Shifts the element back by half its own width/height to center it */
+    transform: translate(-50%, -50%);
+
+    /* Keep existing background properties for the image within this smaller box */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+
+    /* Keep other properties */
     pointer-events: none;
     z-index: -2;
     opacity: 0.6;
-    /* This filter will be applied when the 'dark-mode-bg' class is present. It inverts the colors of the background image. */
     filter: var(--bg-filter, none);
   }
 
