@@ -35,6 +35,12 @@ module Jekyll
             if is_external
               link_class_to_add = "mtrcs-external-link"
               link['target'] = '_blank'
+
+              rel_attrs = (link['rel'] || '').split(/\s+/).reject(&:empty?)
+              unless rel_attrs.include?('noopener') && rel_attrs.include?('noreferrer')
+                rel_attrs << 'noopener' << 'noreferrer'
+                link['rel'] = rel_attrs.uniq.join(' ')
+              end
             else
               link_class_to_add = "mtrcs-internal-link"
             end
