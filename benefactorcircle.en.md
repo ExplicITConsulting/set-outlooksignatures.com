@@ -269,8 +269,10 @@ permalink: /benefactorcircle/
   </div>
 </div>
 
+<p>&nbsp;</p>
+
 <div class="columns">
-  <div class="column">
+  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
     <p>If you’d like to start with the basics and appreciate a down-to-earth approach, our demo video offers a compact overview of the key features of Set-OutlookSignatures – based on a real-world example, straightforward, practical, and without much staging.</p>
     <p>You will see: Our focus is on the functionality and quality of our software, we're neither marketing professionals nor particularly gifted actors.</p>
   </div>
