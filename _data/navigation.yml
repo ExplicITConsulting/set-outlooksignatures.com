@@ -7,11 +7,11 @@
 - name: Download
   link: /download
 - name: |
-    <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>
+    <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span>
   link: /benefactorcircle
 - name: Demo
   link: /benefactorcircle#demo
-- name: Help and Support
+- name: Resources
   link: /help
   dropdown:
   - name: Frequently Asked Questions (FAQ)
