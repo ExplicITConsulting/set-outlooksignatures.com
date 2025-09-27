@@ -255,14 +255,7 @@ permalink: /benefactorcircle/
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Exclusive Benefactor Circle features</b><br>Among others:
-          <ul>
-            <li>Time-controlled Campaigns</li>
-            <li>Roaming Signatures</li>
-            <li>Signatures for Outlook Android, iOS and Web</li>
-            <li>Signatures for additional mailboxes</li>
-            <li>Managing out-of-office Replies</li>
-            <li>Deleting outdated signatures</li>
+        <b>Benefactor Circle features</b><br>Time-controlled campaigns, roaming signatures, signatures for Outlook Android/iOS/macOS, signatures for Outlook Web and New Outlook, signatures for additional mailboxes, out-of-office replies, deleting outdated signatures, and more.
           </ul>
       </div>
     </div>

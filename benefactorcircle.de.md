@@ -261,15 +261,7 @@ permalink: /benefactorcircle/
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Exklusive Benefactor Circle Funktionen</b><br>Unter anderem:
-          <ul>
-            <li>Zeitgesteuerte Kampagnen</li>
-            <li>Roaming Signatures</li>
-            <li>Signaturen für Outlook Android, iOS und Web</li>
-            <li>Signaturen für zusätzliche Postfächer</li>
-            <li>Verwalten von Abwesenheitsnotizen</li>
-            <li>Löschen veralteter Signaturen</li>
-          </ul>
+        <b>Benefactor Circle Funktionen</b><br>Zeitgesteuerte Kampagnen, roaming signatures, Signaturen für Outlook Android/iOS/macOS, Signaturen für Outlook Web und New Outlook, Signaturen für zusätzliche Postfächer, Abwesenheitsnotizen, Löschen veralteter Signaturen, und mehr.
       </div>
     </div>
   </div>
