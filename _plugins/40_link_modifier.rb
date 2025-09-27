@@ -10,6 +10,9 @@ module Jekyll
     # Regex to find a class attribute within the captured attributes.
     CLASS_ATTR_REGEX = /class\s*=\s*(["'])((?:(?!\1).)*)\1/im
 
+    # Class list to check for (if ANY are present, skip adding mtrcs-link classes)
+    DOWNLOAD_CLASSES = ['mtrcs-download']
+
     def self.modify_links_preserving_formatting(html, site_url)
       return html unless site_url
 
@@ -47,25 +50,38 @@ module Jekyll
 
         class_to_add = is_external ? 'mtrcs-external-link' : 'mtrcs-internal-link'
 
-        new_attributes = ""
-        class_added = false
+        # 0. Check for the existing 'DOWNLOAD_CLASSES'
+        skip_link_class_addition = false
+        current_classes = []
 
-        # 1. Modify or add the 'class' attribute
         if full_tag =~ CLASS_ATTR_REGEX
           # class found: $2 is the existing class list
           current_classes = $2.split
-          unless current_classes.include?(class_to_add)
-            # Add the new class to the list
-            new_classes = (current_classes + [class_to_add]).join(' ')
-            # Replace the old class attribute with the new one in the full_tag
-            full_tag.sub!(CLASS_ATTR_REGEX, "class=\"#{new_classes}\"")
+          
+          # Check if ANY class in DOWNLOAD_CLASSES is present in current_classes
+          skip_link_class_addition = current_classes.any? do |current_class|
+              DOWNLOAD_CLASSES.include?(current_class)
           end
-          class_added = true
+        end
+        
+        # If any of the skip classes are present, bypass adding the standard link classes.
+        if skip_link_class_addition
+            class_added = false
         else
-          # Class not found: Add the class attribute to the end of the opening tag's attributes
-          # Rebuild the attributes string for simplicity of insertion
-          full_tag = full_tag.sub(/>/i, " class=\"#{class_to_add}\">")
-          class_added = true
+            # 1. Modify or add the 'class' attribute
+            if full_tag =~ CLASS_ATTR_REGEX
+              # class found: current_classes already populated above
+              unless current_classes.include?(class_to_add)
+                # Add the new class to the list
+                new_classes = (current_classes + [class_to_add]).join(' ')
+                # Replace the old class attribute with the new one in the full_tag
+                full_tag.sub!(CLASS_ATTR_REGEX, "class=\"#{new_classes}\"")
+              end
+            else
+              # Class not found: Add the class attribute to the end of the opening tag's attributes
+              full_tag = full_tag.sub(/>/i, " class=\"#{class_to_add}\">")
+            end
+            class_added = true
         end
 
         # 2. Add 'target' and 'rel' for external links if not present
@@ -74,16 +90,25 @@ module Jekyll
             # Insert the attributes before the closing '>' of the opening tag
             full_tag = full_tag.sub(/>/i, ' target="_blank">')
           end
-          unless full_tag.include?('rel=')
-            # Standard security/SEO rel attributes
-            rel_attr = 'rel="noopener noreferrer"'
-            if full_tag =~ /rel\s*=\s*(["'])/i
-              # If rel exists, append to it
-              full_tag.sub!(/rel\s*=\s*(["'])([^"']*)\1/i) { |m| "rel=\"#{$2.strip} noopener noreferrer\"" }
-            else
-              # Insert new rel attribute
-              full_tag = full_tag.sub(/>/i, " #{rel_attr}>")
+          
+          # Handle rel attribute: Add noopener noreferrer if not present or append to existing.
+          if full_tag =~ /rel\s*=\s*(["'])([^"']*)\1/i
+            # If rel exists, append to it 
+            current_rel = $2.strip.split(/\s+/).compact.uniq
+            
+            required_rels = %w[noopener noreferrer]
+            
+            required_rels.each do |rel|
+                current_rel << rel unless current_rel.include?(rel)
             end
+            
+            new_rel_value = current_rel.join(' ')
+            # Replace the old rel attribute with the new one
+            full_tag.sub!(/rel\s*=\s*(["'])([^"']*)\1/i) { |m| "rel=\"#{new_rel_value}\"" }
+          else
+            # Insert new rel attribute if none exists
+            rel_attr = 'rel="noopener noreferrer"'
+            full_tag = full_tag.sub(/>/i, " #{rel_attr}>")
           end
         end
 
