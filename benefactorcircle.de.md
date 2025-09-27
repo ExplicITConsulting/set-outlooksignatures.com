@@ -338,7 +338,7 @@ permalink: /benefactorcircle/
 
 <h2 id="licenses">Kauf, Verlängerung und Änderung von Lizenzen</h2>
 <h3 id="price">Preis und allgemeine Informationen</h3>
-<p>Der Preis beträgt derzeit <strong>3,00 € netto pro Postfach und Jahr</strong>, was <strong>0,25 € netto pro Postfach und Monat</strong> entspricht.</p>
+<p>Set-OutlookSignatures ist kostenlos und quelloffen. Die erweiterten Funktionen des <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></strong> kosten <strong>3,00 € pro Postfach und Jahr</strong>, was <strong>0,25 € pro Postfach und Monat</strong> entspricht.</p>
 
 <p>Wir gestalten die Lizenzkosten so fair wie möglich. Fair bedeutet:</p>
 <ul>

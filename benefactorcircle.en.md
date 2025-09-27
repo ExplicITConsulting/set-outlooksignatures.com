@@ -334,7 +334,7 @@ Benefactor Circle add-on</span>.</p>
 
 <h2 id="licenses">Buying, extending and changing licenses</h2>
 <h3 id="price">Price and general information</h3>
-<p>The price currently is <strong>3.00 € net per mailbox and year</strong>, which is <strong>0.25 € net per mailbox and month</strong>.</p>
+<p>Set-OutlookSignatures is free and open-source. The advanced features of the <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></strong> cost <strong>3.00 € per mailbox and year</strong>, which corresponds to <strong>0.25 € per mailbox and month</strong>.</p>
 
 <p>We keep license costs as fair as possible. Fair means:</p>
 <ul>
