@@ -220,9 +220,7 @@ permalink: /benefactorcircle/
 
 
 <h2 id="demo">Demo</h2>
-<p>We show you what Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> and the included Outlook add-in can do for you - interactively and with focus on your actual needs.</p>
-
-<p>Experience live:</p>
+<p>We show you what Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> and the included Outlook add-in can do for you - interactively and with focus on your actual needs. Experience live:</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
