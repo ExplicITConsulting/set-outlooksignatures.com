@@ -207,12 +207,12 @@ html::after {
 
 p + ul,
 p + ol {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 p:has(+ ul),
 p:has(+ ol) {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 a.mtrcs-external-link:not(.no-external-link-icon)::after {
