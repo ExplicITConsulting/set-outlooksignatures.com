@@ -269,24 +269,25 @@ permalink: /benefactorcircle/
   </div>
 </div>
 
-<p>&nbsp;</p>
-
-<p>If you’d like to start with the basics and appreciate a down-to-earth approach, our demo video offers a compact overview of the key features of Set-OutlookSignatures – based on a real-world example, straightforward, practical, and without much staging.<br>You will see: Our focus is on the functionality and quality of our software, we're neither marketing professionals nor particularly gifted actors.<br>
-  <div class="columns">
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobil">
-      <figure class="image is-16by9">
-        <iframe class="has-ratio" width="560" height="315"
-          id="youtube-video-player"
-          src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI?enablejsapi=1"
-          title="Set-OutlookSignatures Benefactor Circle demo video"
-          frameborder="0"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-      </figure>
-    </div>
+<div class="columns">
+  <div class="column">
+    <p>If you’d like to start with the basics and appreciate a down-to-earth approach, our demo video offers a compact overview of the key features of Set-OutlookSignatures – based on a real-world example, straightforward, practical, and without much staging.</p>
+    <p>You will see: Our focus is on the functionality and quality of our software, we're neither marketing professionals nor particularly gifted actors.</p>
   </div>
-</p>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <figure class="image is-16by9">
+      <iframe class="has-ratio" width="560" height="315"
+        id="youtube-video-player"
+        src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI?enablejsapi=1"
+        title="Set-OutlookSignatures Benefactor Circle demo video"
+        frameborder="0"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </figure>
+  </div>
+</div>
+
 
 <h2 id="financial-benefits">Financial benefits</h2>
 <p>The Benefactor Circle Add-On is an investment that pays off from day one. A cost-benefit analysis in the form of a business case must consider three aspects:</p>

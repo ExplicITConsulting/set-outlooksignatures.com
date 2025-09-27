@@ -276,24 +276,25 @@ permalink: /benefactorcircle/
   </div>
 </div>
 
-<p>&nbsp;</p>
-
-<p>Wenn Sie zuerst mehr über die Grundlagen sehen möchten und einen bodenständigen Zugang zu schätzen wissen, finden Sie in unserem Demo-Video einen kompakten Überblick über die wichtigsten Funktionen von Set-OutlookSignatures – anhand eines realen Beispiels, direkt, praxisnah und ohne viel Inszenierung.<br>Sie werden sehen: Unser Fokus liegt auf der Funktionalität und Qualität unserer Software, wir sind weder Marketing-Profis noch schauspielerisch besonders talentiert.<br>
-  <div class="columns">
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobil">
-      <figure class="image is-16by9">
-        <iframe class="has-ratio" width="560" height="315"
-          id="youtube-video-player"
-          src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI?enablejsapi=1"
-          title="Set-OutlookSignatures Benefactor Circle demo video"
-          frameborder="0"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-      </figure>
-    </div>
+<div class="columns">
+  <div class="column">
+    <p>Wenn Sie zuerst mehr über die Grundlagen sehen möchten und einen bodenständigen Zugang zu schätzen wissen, finden Sie in unserem Demo-Video einen kompakten Überblick über die wichtigsten Funktionen von Set-OutlookSignatures – anhand eines realen Beispiels, direkt, praxisnah und ohne viel Inszenierung.</p>
+    <p>Sie werden sehen: Unser Fokus liegt auf der Funktionalität und Qualität unserer Software, wir sind weder Marketing-Profis noch schauspielerisch besonders talentiert.</p>
   </div>
-</p>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <figure class="image is-16by9">
+      <iframe class="has-ratio" width="560" height="315"
+        id="youtube-video-player"
+        src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI?enablejsapi=1"
+        title="Set-OutlookSignatures Benefactor Circle demo video"
+        frameborder="0"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </figure>
+  </div>
+</div>
+
 
 <h2 id="financial-benefits">Finanzielle Vorteile</h2>
 <p>Das Benefactor Circle Add-On ist eine Investition, die sich ab dem ersten Tag rechnet. Eine Kosten-Nutzen-Rechnung in Form eines Business Cases muss drei Aspekte berücksichtigen:</p>
