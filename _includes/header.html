@@ -33,34 +33,34 @@
         <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
             <div class="navbar-start">
                 <!-- <a href="{{ site.baseurl }}/" class="navbar-item has-text-white {% if page.url == "/" %}is-active{% endif %}">Features</a> -->
-                {% if site.data.navigation %}
-                {% for item in site.data.navigation %}
-                {% if item.dropdown %}
-                <div
-                    class="navbar-item has-dropdown is-hoverable {% if site.fixed_navbar == 'bottom' %} has-dropdown-up {% endif %}">
-                    <a href="{{ item.link | relative_url }}"
-                        class="navbar-link has-text-white {% if page.url contains item.link %}is-selected{% endif %}">{{
-                        item.name }}</a>
-                    <div class="navbar-dropdown">
-                        {% for subitem in item.dropdown %}
-                        <a href="{{ subitem.link | relative_url }}"
-                            class="navbar-item {% if page.url contains subitem.link %}is-selected{% endif %}">{{
-                            subitem.name }}</a>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% else %}
-                <a href="{{ item.link | relative_url }}"
-                    class="navbar-item has-text-white {% if page.url contains item.link %}is-selected{% endif %}">{{
-                    item.name }}</a>
-                {% endif %}
-                {% endfor %}
+                {% if site.data[site.active_lang].navigation %}
+                    {% for item in site.data[site.active_lang].navigation %}
+                        {% if item.dropdown %}
+                            <div
+                                class="navbar-item has-dropdown is-hoverable {% if site.fixed_navbar == 'bottom' %} has-dropdown-up {% endif %}">
+                                <a href="{{ item.link | relative_url }}"
+                                    class="navbar-link has-text-white {% if page.url contains item.link %}is-selected{% endif %}">{{
+                                    item.name }}</a>
+                                <div class="navbar-dropdown">
+                                    {% for subitem in item.dropdown %}
+                                    <a href="{{ subitem.link | relative_url }}"
+                                        class="navbar-item {% if page.url contains subitem.link %}is-selected{% endif %}">{{
+                                        subitem.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% else %}
+                            <a href="{{ item.link | relative_url }}"
+                                class="navbar-item has-text-white {% if page.url contains item.link %}is-selected{% endif %}">{{
+                                item.name }}</a>
+                        {% endif %}
+                    {% endfor %}
                 {% endif %}
             </div>
 
             <div class="navbar-end">
                 <a class="navbar-item has-text-white" href="/search" aria-label="Search">
-                    <span>🔍︎ Search</span>
+                    <span>🔍︎ {{ site.data[site.active_lang].strings.search }}</span>
                 </a>
 
                 <div class="navbar-item has-text-white" id="language-switcher">

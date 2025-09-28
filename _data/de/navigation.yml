@@ -1,8 +1,8 @@
-- name: Features
+- name: Funktionen
   link: /features
-- name: Price
+- name: Preis
   link: /benefactorcircle#price
-- name: Quick Start
+- name: Schnellstart
   link: /quickstart
 - name: Download
   link: /download
@@ -11,18 +11,18 @@
   link: /benefactorcircle
 - name: Demo
   link: /benefactorcircle#demo
-- name: Resources
+- name: Ressourcen
   link: /help
   dropdown:
-  - name: Frequently Asked Questions (FAQ)
+  - name: Häufig gestellte Fragen (FAQ)
     link: /faq
-  - name: Technical Details, Requirements, Usage
+  - name: Technische Details, Anforderungen, Nutzung
     link: /details
-  - name: Parameters
+  - name: Parameter
     link: /parameters
-  - name: Implementation Approach
+  - name: Implementierungsansatz
     link: /implementationapproach
-  - name: The Outlook Add-In
+  - name: Das Outlook Add-In
     link: /outlookaddin
   - name: Support
     link: /support

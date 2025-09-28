@@ -1,0 +1,5 @@
+# Individual footer menu items
+- name: "Kontakt"
+  link: /contact
+- name: "Rechtliches"
+  link: /legal

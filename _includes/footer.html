@@ -1,14 +1,14 @@
 <footer class="footer has-background-inherit mt-0 pt-0">
     {%- if site.footer_menu -%}
         <p class="has-text-centered is-small">
-            {%- for item in site.data[site.footer_menu] -%}
-                <a href="{{ item.link | relative_url }}">{{ item.name }}</a>
-                {%- unless forloop.last -%}
-                    <span> | </span>
-                {%- endunless -%}
-            {%- endfor -%}
+        {%- for item in site.data[site.active_lang].footer_menu -%}
+            <a href="{{ item.link | relative_url }}">{{ item.name }}</a>
+            {%- unless forloop.last -%}
+                <span> | </span>
+            {%- endunless -%}
+        {%- endfor -%}
         </p>
     {%- endif -%}
 
-    <p class="has-text-centered is-small">This site does not use cookies or analytic tools requiring you to consent or define allowed services. For our privacy notice, see the links above.</p>
+    <p class="has-text-centered is-small">{{ site.data[site.active_lang].strings.footer_no-cookie-hint }}</p>
 </footer>

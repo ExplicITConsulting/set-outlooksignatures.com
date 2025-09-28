@@ -1,0 +1,28 @@
+- name: Features
+  link: /features
+- name: Price
+  link: /benefactorcircle#price
+- name: Quick Start
+  link: /quickstart
+- name: Download
+  link: /download
+- name: |
+    <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span>
+  link: /benefactorcircle
+- name: Demo
+  link: /benefactorcircle#demo
+- name: Resources
+  link: /help
+  dropdown:
+  - name: Frequently asked questions (FAQ)
+    link: /faq
+  - name: Technical details, requirements, usage
+    link: /details
+  - name: Parameters
+    link: /parameters
+  - name: Implementation approach
+    link: /implementationapproach
+  - name: The Outlook add-in
+    link: /outlookaddin
+  - name: Support
+    link: /support
