@@ -877,7 +877,7 @@ As an alternative, you may consider one or both of the following alternatives:
 There is one thing you cannot disable: Outlook always allows users to edit the copy of the signature after it was added to an email.
 
 ### Outlook Web
-Unfortunately, Outlook Web cannot be configured as granularly as Outlook. In Exchange Online as well as in Exchange on-prem, the `Set-OwaMailboxPolicy` cmdlet does not allow you to configure signature settings in detail, but only to disable or enable signature features`SignaturesEnabled` for specific groups of mailboxes.
+Unfortunately, Outlook Web cannot be configured as granularly as Outlook. In Exchange Online as well as in Exchange on-prem, the `Set-OwaMailboxPolicy` cmdlet does not allow you to configure signature settings in detail, but only to disable or enable signature features via the `SignaturesEnabled` parameter for specific groups of mailboxes.
 
 There is no option to write protect signatures, or to keep users from from adding, editing and removing signatures without disabling all signature-related features.
 
