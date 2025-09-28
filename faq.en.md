@@ -37,6 +37,7 @@ permalink: /faq/
 - [10. How can I start the software only when there is a connection to the Active Directory on-prem?](#10-how-can-i-start-the-software-only-when-there-is-a-connection-to-the-active-directory-on-prem)
 - [11. Can multiple script instances run in parallel?](#11-can-multiple-script-instances-run-in-parallel)
 - [12. How do I start the software from the command line or a scheduled task?](#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)
+  - [Start Set-OutlookSignatures in hidden/invisible mode](#start-set-outlooksignatures-in-hiddeninvisible-mode)
 - [13. How to create a shortcut to the software with parameters?](#13-how-to-create-a-shortcut-to-the-software-with-parameters)
 - [14. What is the recommended approach for implementing the software?](#14-what-is-the-recommended-approach-for-implementing-the-software)
 - [15. What is the recommended approach for custom configuration files?](#15-what-is-the-recommended-approach-for-custom-configuration-files)
@@ -47,6 +48,8 @@ permalink: /faq/
 - [20. How to deploy signatures for "Send As", "Send On Behalf" etc.?](#20-how-to-deploy-signatures-for-send-as-send-on-behalf-etc)
 - [21. Can I centrally manage and deploy Outook stationery with this script?](#21-can-i-centrally-manage-and-deploy-outook-stationery-with-this-script)
 - [22. Why is dynamic group membership not considered on premises?](#22-why-is-dynamic-group-membership-not-considered-on-premises)
+  - [Entra ID](#entra-id)
+  - [Active Directory on premises](#active-directory-on-premises)
 - [23. Why is no admin or user GUI available?](#23-why-is-no-admin-or-user-gui-available)
 - [24. What if a user has no Outlook profile or is prohibited from starting Outlook?](#24-what-if-a-user-has-no-outlook-profile-or-is-prohibited-from-starting-outlook)
 - [25. What if Outlook is not installed at all?](#25-what-if-outlook-is-not-installed-at-all)
@@ -56,8 +59,16 @@ permalink: /faq/
 - [29. Images in signatures have a different size than in templates, or a black background](#29-images-in-signatures-have-a-different-size-than-in-templates-or-a-black-background)
 - [30. How do I alternate banners and other images in signatures?](#30-how-do-i-alternate-banners-and-other-images-in-signatures)
 - [31. How can I deploy and run Set-OutlookSignatures using Microsoft Intune?](#31-how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune)
+  - [Application package](#application-package)
+  - [Remediation script](#remediation-script)
 - [32. Why does Set-OutlookSignatures run slower sometimes?](#32-why-does-set-outlooksignatures-run-slower-sometimes)
+  - [Windows power mode](#windows-power-mode)
+  - [Malware protection](#malware-protection)
+  - [Time of execution](#time-of-execution)
+  - [Script and Word process priority](#script-and-word-process-priority)
 - [33. Keep users from adding, editing and removing signatures](#33-keep-users-from-adding-editing-and-removing-signatures)
+  - [Outlook](#outlook)
+  - [Outlook Web](#outlook-web)
 - [34. What is the recommended folder structure for script, license, template and config files?](#34-what-is-the-recommended-folder-structure-for-script-license-template-and-config-files)
 - [35. How to disable the tagline in signatures?](#35-how-to-disable-the-tagline-in-signatures)
   - [35.1. Why the tagline?](#351-why-the-tagline)
@@ -349,7 +360,7 @@ If you provided your users a link so they can start Set-OutlookSignatures.ps1 wi
 
 Please see `.\sample code\Set-OutlookSignatures.cmd` for an example. Don't forget to adapt path names to your environment.
 
-###Start Set-OutlookSignatures in hidden/invisible mode
+### Start Set-OutlookSignatures in hidden/invisible mode
 Even when the `hidden` parameter is passed to PowerShell, a window is created and minimized. Although this only takes some tenths of a second, it is not only optically disturbing, but the new window may also steal the keyboard focus.
 
 The only workaround is to start PowerShell from another program, which does not need an own console window. Some examples for such programs are:
@@ -564,7 +575,7 @@ Dynamic group membership is not considered when using an on premises Active Dire
 
 The reason for this is that Graph and on-prem AD handle dynamic group membership differently:
 
-###Entra ID
+### Entra ID
 Entra ID caches information about dynamic group membership at the group as well as at the user level. It regularly runs the LDAP queries defining dynamic groups and updates existing attributes with member information.
 
 Dynamic groups in Entra ID are therefore not strictly dynamic in terms of running the defining LDAP query every time a dynamic group is used and thus providing near real-time member information - they behave more like regularly updated static groups, which makes handling for scripts and applications much easier.
@@ -573,7 +584,7 @@ For the use in Set-OutlookSignatures, there is no difference between a static an
 - Querying the `transitiveMemberOf` attribute of a user returns static as well as dynamic group membership.
 - Querying the `members` attribute of a group returns the group's members, no matter if the group is static or dynamic.
 
-###Active Directory on premises
+### Active Directory on premises
 Active Directory on premises does not cache any information about membership in dynamic groups at the user level, so dynamic groups do not appear in attributes such as `memberOf` and `tokenGroups`.
 
 Active Directory on premises also does not cache any information about members of dynamic groups at the group level, so the group attribute `members` is always empty.
@@ -784,14 +795,14 @@ There are multiple ways to integrate Set-OutlookSignatures in Intune, depending 
 
 When not using an Always On VPN, place your configuration and template files in a SharePoint document library that can be accessed from the internet.
 
-###Application package
+### Application package
 The classic way is to deploy an application package. You can use tools such as [IntuneWin32App](https://github.com/MSEndpointMgr/IntuneWin32App) for this.
 
 As Set-OutlookSignatures does not have a classic installer, you will have to create a small wrapper script that simulates an installer. You will have to update the package or create a new one with every new release you plan to use - just as with any other application you want to deploy.
 
 Deployment is only the first step, as the software needs to be run regularly. You have multiple options for this: Let the user run it via a start menu entry or a desktop shortcut, use scheduled tasks, a background service, or a remediation script (which is probably the most convenient way to do it).
 
-###Remediation script
+### Remediation script
 With remediation, you have two scripts: One checking for a certain status, and another one running when the detection script exits with an error code of 1.
 
 Remediation scripts can easily be configured to run in the context of the current user, which is required for Set-OutlookSignatures, and you can define how often they should run.
@@ -819,27 +830,27 @@ This is not because different code is being executed, but because of multiple fa
 
 Please don't forget: Set-OutlookSignatures usually runs in the background, without the user even noticing it. From this point of view, processing times do not really matter - slow execution may even be wanted, as it consumes less resources which in turn are available for interactive applications used in the foreground.
 
-###Windows power mode
+### Windows power mode
 Windows has power plans and, in newer versions, power modes. These can have a huge impact, as the following test result shows:
 - Best power efficiency: 113 seconds
 - Balanced: 32 seconds
 - Best performance: 27 seconds
 
-###Malware protection
+### Malware protection
 Malware protection is an absolute must, but security typically comes with a drawback in terms of comfort: Malware protection costs performance.
 
 We do not recommend to turn off malware protection, but to optimize it for your environment. Some examples:
 - Place Set-OutlookSignatures and template files on a server share. When the files are scanned on the server, you may consider to exclude the server share from scanning on the client.
 - Your anti-malware may have an option to not scan digitally signed files every time they are executed. Set-OutlookSignatures and its dependencies are digitally signed with an Extend Validation (EV) certificate for tamper protection and easy integration into locked-down environments. You can sign the executables with your own certificate, too.
 
-###Time of execution
+### Time of execution
 The time of execution can have a huge impact.
 - Consider not running Set-OutlookSignatures right at logon, but maybe a bit later. Logon is resource intensive, as not only the user environment is created, but all sorts of automatisms kick off: Autostarting applications, file synchronisation, software updates, and so on.
 - Consider not executing all tasks and scripts at the same time, but starting them in groups or one after the other.
 - Set-OutlookSignatures relies on network connections. At times with higher network traffic, such as on a Monday morning with all users starting their computers and logging on within a rather short timespan, things may just be a bit slower.
 - Do not run Set-OutlookSignatures for all your users at the same time. Instead of "Every two hours, starting at 08:00", use a more varied interval such as "Every two hours after logon".
 
-###Script and Word process priority
+### Script and Word process priority
 As mentioned before, Set-OutlookSignatures usually runs in the background, without the user even noticing it.
 
 From this point of view, processing times do not really matter - slow execution may even be wanted, as it consumes less resources which in turn are available for interactive applications used in the foreground.
@@ -848,7 +859,7 @@ You can define the process priority with the `ScriptProcessPriority` and `WordPr
 
 
 ## 33. Keep users from adding, editing and removing signatures
-###Outlook
+### Outlook
 You can disable GUI elements so that users cannot add, edit and remove signatures in Outlook by using the 'Do not allow signatures for email messages' Group Policy Object (GPO) setting.
 
 Caveats are:
@@ -865,7 +876,7 @@ As an alternative, you may consider one or both of the following alternatives:
 
 There is one thing you cannot disable: Outlook always allows users to edit the copy of the signature after it was added to an email.
 
-###Outlook Web
+### Outlook Web
 Unfortunately, Outlook Web cannot be configured as granularly as Outlook. In Exchange Online as well as in Exchange on-prem, the `Set-OwaMailboxPolicy` cmdlet does not allow you to configure signature settings in detail, but only to disable or enable signature features`SignaturesEnabled` for specific groups of mailboxes.
 
 There is no option to write protect signatures, or to keep users from from adding, editing and removing signatures without disabling all signature-related features.
