@@ -18,6 +18,9 @@ url: "https://set-outlooksignatures.com" # the base hostname & protocol for your
 baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: "ExplicITConsulting/set-outlooksignatures.com" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 favicon: "/assets/images/set-outlooksignatures icon.ico"
+navbar_logo: "/assets/images/set-outlooksignatures logo 500px.png"
+navbar_logo_alt: "Set-OutlookSignatures"
+
 force_theme: #light
 gh_sponsor: 
 
