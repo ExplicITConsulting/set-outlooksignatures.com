@@ -56,3 +56,6 @@ defaults:
 
 include:
   - ".well-known"
+
+kramdown:
+  auto_ids: false
