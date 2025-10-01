@@ -1,20 +1,21 @@
+{::options auto_ids="true" /}
+
 ---
 layout: page
 title: Legal information
 subtitle: Impress, Privacy Notice, Terms and Conditions, etc.
 description: Impress, Privacy Notice, Terms and Conditions, etc.
 page_id: "legal"
+<!-- omit in toc -->
 permalink: /legal/
 ---
+
 <!-- omit in toc -->
 ## Topics
 - [Impress](#impress)
-- [Data protection notice](#data-protection-notice)
 - [Liability notice and copyright](#liability-notice-and-copyright)
 - [Brands and trademarks](#brands-and-trademarks)
-- [General terms and conditions, Allgemeine Geschäftsbedingungen](#general-terms-and-conditions-allgemeine-geschäftsbedingungen)
-  - [English: General terms and conditions for the sale and the delivery of organisational and programming services and permissions to use copyrighted software products](#english-general-terms-and-conditions-for-the-sale-and-the-delivery-of-organisational-and-programming-services-and-permissions-to-use-copyrighted-software-products)
-  - [Deutsch: Allgemeine Geschäftsbedingungen für den Verkauf und die Lieferung von Organisations-, Programmierleistungen und Werknutzungsbewilligungen von Softwareprodukten](#deutsch-allgemeine-geschäftsbedingungen-für-den-verkauf-und-die-lieferung-von-organisations--programmierleistungen-und-werknutzungsbewilligungen-von-softwareprodukten)
+- [General terms and conditions for the sale and the delivery of organisational and programming services and permissions to use copyrighted software products](#general-terms-and-conditions-for-the-sale-and-the-delivery-of-organisational-and-programming-services-and-permissions-to-use-copyrighted-software-products)
 - [Privacy policy](#privacy-policy)
 
 ## Impress
@@ -24,38 +25,23 @@ Kaiser-Ebersdorfer Straße 206b/3/2
 Austria  
 
 [welcome@explicitconsulting.at](mailto:welcome@explicitconsulting.at)  
-<a href="https://explicitconsulting.at">https://explicitconsulting.at</a>
+[https://explicitconsulting.at](https://explicitconsulting.at)
 
-Registered at company court / Firmengericht: Handelsgericht Wien, Austria  
-<a href="https://justizonline.gv.at/jop/web/firmenbuchabfrage" >Registration number / Firmenbuchnummer</a>: FN 607013t  
-<a href="https://www.gisa.gv.at/abfrage">Business Licence Information System / Gewerbe­informations­system Austria (GISA)</a>: 36123599  
-<a href="https://ec.europa.eu/taxation_customs/vies/#/vat-validation">VAT ID / UID</a>: ATU79529869  
+Registered at company court: Handelsgericht Wien, Austria  
+<a href="https://justizonline.gv.at/jop/web/firmenbuchabfrage"  target="_blank">Registration number</a>: FN 607013t  
+<a href="https://www.gisa.gv.at/abfrage" target="_blank">Business Licence Information System</a>: 36123599  
+<a href="https://ec.europa.eu/taxation_customs/vies/#/vat-validation" target="_blank">VAT ID</a>: ATU79529869  
 
-<a href="https://www.dnb.com/duns-number/lookup.html">DUNS</a>: 300886290  
-<a href="https://www.gs1.org/services/verified-by-gs1">GLN</a>: 9110033592241  
+<a href="https://www.dnb.com/duns-number/lookup.html" target="_blank">DUNS</a>: 300886290  
+<a href="https://www.gs1.org/services/verified-by-gs1" target="_blank">GLN</a>: 9110033592241  
 
-<a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register-search">EU Funding & Tenders Participant Identification Code (PIC)</a>: 873316415  
-<a href="https://eportal.nspa.nato.int/Codification/CageTool/home">NATO Commercial and Government Entity (NCAGE) code</a>: 8336N  
-<a href="https://sam.gov/search">US Unique Entity ID</a> (SAM.gov, CPARS, eSRS, FPDS, FSRS, and others): JBT3VZ82GKY7  
+<a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register-search" target="_blank">EU Funding & Tenders Participant Identification Code (PIC)</a>: 873316415  
+<a href="https://eportal.nspa.nato.int/Codification/CageTool/home" target="_blank">NATO Commercial and Government Entity (NCAGE) code</a>: 8336N  
+<a href="https://sam.gov/search" target="_blank">US Unique Entity ID</a> (SAM.gov, CPARS, eSRS, FPDS, FSRS, and others): JBT3VZ82GKY7  
 
 Member of the Austrian Economic Chamber and the Vienna Economic Chamber, UBIT section (management consulting, accounting and information technology).  
-Mitglied der Wirtschaftskammer Österreich und der Wirtschaftskammer Wien, Sparte UBIT (Unternehmensberatung, Buchhaltung und Informationstechnologie)  
 
 Managing Director: Markus Gruber
-
-
-## Data protection notice
-Set-OutlookSignatures and the Benefactor Circle license add-on do not store any telemetry data, do not "phone home", and do not transfer any data, only the absolute minimum necessary data between:
-- the end user's Windows client,
-- the end user's on-prem Active Directory and/or Entra ID,
-- the end user's Exchange or Exchange Online system,
-- https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/main/docs/releases.txt to check for new releases,
-- and the file server or SharePoint document library storing the sofware, it's sub-components, template and configuration files.
-
-The data transfer always happens in the security context of the user executing the program.
-
-For license purposes, only the absolutely required information is stored and processed: Invoice address, email addresses for technical and commercial communication, license group information (domain, SID, maximum members) and payment information.
-
 
 ## Liability notice and copyright
 ExplicIT Consulting GmbH makes every effort to continuously update and review the content of the website. However, no liability is assumed for the completeness, correctness and up-to-dateness. The same applies to websites referred to via hyperlinks. Any connection to linked websites is at the user's own risk.
@@ -67,8 +53,7 @@ Unless otherwise stated, the copyright of all content provided on this website i
 ## Brands and trademarks
 
 All product and company names are trademarks of their respective owners.
-## General terms and conditions, Allgemeine Geschäftsbedingungen
-### English: General terms and conditions for the sale and the delivery of organisational and programming services and permissions to use copyrighted software products
+## General terms and conditions for the sale and the delivery of organisational and programming services and permissions to use copyrighted software products
 1 Scope of contract and validity
 
 1.1. All orders and agreements shall only be legally binding insofar as these are signed in writing with the legally binding signature of the company of the Contractor and shall only obligate to the extent stated in the acceptance of order. Purchase conditions of the Client shall herewith be excluded for the respective legal transaction and the entire business relationship. All offers are generally non-binding.
@@ -206,145 +191,6 @@ Section 924 of the Austrian Civil Code ‘Assumption of Deficiency’ shall be e
 
 13.2 In the event that any disputes, which cannot be solved by mutual agreement, arise from this Contract, the parties to the contract agree to engage a listed mediator (Austrian Civil Rights Mediation Law (ZivMediatG) specialized in business mediation from the list of the Austrian Ministry of Justice in order to reconcile these out of court. Should no mutual agreement regarding the selection of the business mediator or with regard to content be possible, legal measures shall be initiated no sooner than one month after the negotiations fail. In the event that mediation could not be held or was discontinued, any litigation initiated shall be subject to Austrian law. As agreed, all necessary costs incurred due to previous mediation, particularly for legal advisors consulted, may be claimed in litigation or arbitration as ‘pre-trial costs’.
 
-### Deutsch: Allgemeine Geschäftsbedingungen für den Verkauf und die Lieferung von Organisations-, Programmierleistungen und Werknutzungsbewilligungen von Softwareprodukten
-1	Vertragsumfang und Gültigkeit
-
-1.1. Alle Aufträge und Vereinbarungen sind nur dann rechtsverbindlich, wenn sie vom Auftragnehmer schriftlich und firmengemäß gezeichnet werden und verpflichten nur in dem in der Auftragsbestätigung angegebenem Umfang. Einkaufsbedingungen des Auftraggebers werden für das gegenständliche Rechtsgeschäft und die gesamte Geschäftsbeziehung hiermit ausgeschlossen. Angebote sind grundsätzlich freibleibend.
-
-2 Leistung und Prüfung
-
-2.1. Gegenstand eines Auftrages kann sein:
-- Ausarbeitung von Organisationskonzepten
-- Global- und Detailanalysen
-- Erstellung von Individualprogrammen
-- Lieferung von Bibliotheks- (Standard-)Programmen
-- Erwerb von Nutzungsberechtigungen für Softwareprodukte
-- Erwerb von Werknutzungsbewilligungen
-- Mitwirkung bei der Inbetriebnahme (Umstellungsunterstützung)
-- Telefonische Beratung
-- Programmwartung
-- Erstellung von Programmträgern
-- Sonstige Dienstleistungen
-2.2. Die Ausarbeitung individueller Organisationskonzepte und Programme erfolgt nach Art und Umfang der vom Auftraggeber vollständig zur Verfügung gestellten bindenden Informationen, Unterlagen und Hilfsmittel. Dazu zählen auch praxisgerechte Testdaten sowie Testmöglichkeiten in ausreichendem Ausmaß, die der Auftraggeber zeitgerecht, in der Normalarbeitszeit und auf seine Kosten zur Verfügung stellt. Wird vom Auftraggeber bereits auf der zum Test zur Verfügung gestellten Anlage im Echtbetrieb gearbeitet, liegt die Verantwortung für die Sicherung der Echtdaten beim Auftraggeber.
-
-2.3. Grundlage für die Erstellung von Individualprogrammen ist die schriftliche Leistungsbeschreibung, die der Auftragnehmer gegen Kostenberechnung aufgrund der ihm zur Verfügung gestellten Unterlagen und Informationen ausarbeitet bzw. der Auftraggeber zur Verfügung stellt. Diese Leistungsbeschreibung ist vom Auftraggeber auf Richtigkeit und Vollständigkeit zu überprüfen und mit seinem Zustimmungsvermerk zu versehen. Später auftretende Änderungswünsche können zu gesonderten Termin- und Preisvereinbarungen führen.
-
-2.4. Individuell erstellte Software bzw. Programmadaptierungen bedürfen für das jeweils betroffene Programmpaket einer Programmabnahme spätestens vier Wochen ab Lieferung durch den Auftraggeber. Diese wird in einem Protokoll vom Auftraggeber bestätigt. (Prüfung auf Richtigkeit und Vollständigkeit anhand der vom Auftragnehmer akzeptierten Leistungsbeschreibung mittels der unter Punkt 2.2. angeführten zur Verfügung gestellten Testdaten). Lässt der Auftraggeber den Zeitraum von vier Wochen ohne Programmabnahme verstreichen, so gilt die gelieferte Software mit dem Enddatum des genannten Zeitraumes als abgenommen. Bei Einsatz der Software im Echtbetrieb durch den Auftraggeber gilt die Software jedenfalls als abgenommen.
-Etwa auftretende Mängel, das sind Abweichungen von der schriftlich vereinbarten Leistungsbeschreibung, sind vom Auftraggeber ausreichend dokumentiert dem Auftragnehmer zu melden, der um rasche mögliche Mängelbehebung bemüht ist. Liegen schriftlich gemeldete, wesentliche Mängel vor, das heißt, dass der Echtbetrieb nicht begonnen oder fortgesetzt werden kann, so ist nach Mängelbehebung eine neuerliche Abnahme erforderlich.
-Der Auftraggeber ist nicht berechtigt, die Abnahme von Software wegen unwesentlicher Mängel abzulehnen.
-
-2.5. Bei Bestellung von Bibliotheks-(Standard-)Programmen bestätigt der Auftraggeber mit der Bestellung die Kenntnis des Leistungsumfanges der bestellten Programme.
-
-2.6. Sollte sich im Zuge der Arbeiten herausstellen, dass die Ausführung des Auftrages gemäß Leistungsbeschreibung tatsächlich oder juristisch unmöglich ist, ist der Auftragnehmer verpflichtet, dies dem Auftraggeber sofort anzuzeigen. Ändert der Auftraggeber die Leistungsbeschreibung nicht dahingehend bzw. schafft die Voraussetzung, dass eine Ausführung möglich wird, kann der Auftragnehmer die Ausführung ablehnen. Ist die Unmöglichkeit der Ausführung die Folge eines Versäumnisses des Auftraggebers oder einer nachträglichen Änderung der Leistungsbeschreibung durch den Auftraggeber, ist der Auftragnehmer berechtigt, vom Auftrag zurückzutreten. Die bis dahin für die Tätigkeit des Auftragnehmers angefallenen Kosten und Spesen sowie allfällige Abbaukosten sind vom Auftraggeber zu ersetzen.
-
-2.7. Ein Versand von Programmträgern, Dokumentationen und Leistungsbeschreibungen erfolgt auf Kosten und Gefahr des Auftraggebers. Darüber hinaus vom Auftraggeber gewünschte Schulung und Erklärungen werden gesondert in Rechnung gestellt. Versicherungen erfolgen nur auf Wunsch des Auftraggebers.
-
-2.8. Ausdrücklich weisen wir daraufhin, dass eine barrierefreie Ausgestaltung (von Websites) iSd Bundesgesetzes über die Gleichstellung von Menschen mit Behinderungen (Bundes-Behindertengleichstellungsgesetz – BGStG)“ nicht im Angebot enthalten ist, sofern diese nicht gesondert/ individuell vom Auftraggeber angefordert wurde. Sollte die barrierefreie Ausgestaltung nicht vereinbart worden sein, so obliegt dem Auftraggeber die Überprüfung der Leistung auf ihre Zulässigkeit im Hinblick auf das Bundes-Behindertengleichstellungsgesetz durchzuführen. Ebenso hat der Auftraggeber von ihm bereit gestellte Inhalte auf ihre rechtliche, insbesondere wettbewerbs-, marken-, urheber- und verwaltungsrechtliche Zulässigkeit zu überprüfen. Der Auftragnehmer haftet im Falle leichter Fahrlässigkeit oder nach Erfüllung einer allfälligen Warnpflicht gegenüber dem Kunden nicht für die rechtliche Zulässigkeit von Inhalten, wenn diese vom Kunden vorgegeben wurden.
-
-3 Preise, Steuern und Gebühren
-
-3.1. Alle Preise verstehen sich in Euro ohne Umsatzsteuer. Sie gelten nur für den vorliegenden Auftrag. Die genannten Preise verstehen sich ab Geschäftssitz bzw. -stelle des Auftragnehmers. Die Kosten von Programmträgern (z.B. CD’s, Magnetbänder, Magnetplatten, Floppy Disks, Streamer Tapes, Magnetbandkassetten usw.) sowie allfällige Vertragsgebühren werden gesondert in Rechnung gestellt.
-
-3.2. Bei Bibliotheks- (Standard)-Programmen gelten die am Tag der Lieferung gültigen Listenpreise. Bei allen anderen Dienstleistungen (Organisationsberatung, Programmierung, Einschulung, Umstellungsunterstützung, telefonische Beratung usw.) wird der Arbeitsaufwand zu den am Tag der Leistungserbringung gültigen Sätzen verrechnet. Abweichungen von einem dem Vertragspreis zugrundeliegenden Zeitaufwand, der nicht vom Auftragnehmer zu vertreten ist, wird nach tatsächlichem Anfall berechnet.
-
-3.3. Die Kosten für Fahrt-, Tag- und Nächtigungsgelder werden dem Auftraggeber gesondert nach den jeweils gültigen Sätzen in Rechnung gestellt. Wegzeiten gelten als Arbeitszeit.
-
-4 Liefertermin
-
-4.1. Der Auftragnehmer ist bestrebt, die vereinbarten Termine der Erfüllung (Fertigstellung) möglichst genau einzuhalten.
-
-4.2. Die angestrebten Erfüllungstermine können nur dann eingehalten werden, wenn der Auftraggeber zu den vom Auftragnehmer angegebenen Terminen alle notwendigen Arbeiten und Unterlagen vollständig, insbesondere die von ihm akzeptierte Leistungsbeschreibung lt. Punkt 2.3. zur Verfügung stellt und seiner Mitwirkungsverpflichtung im erforderlichen Ausmaß nachkommt.
-Lieferverzögerungen und Kostenerhöhungen, die durch unrichtige, unvollständige oder nachträglich geänderte Angaben und Informationen bzw. zur Verfügung gestellte Unterlagen entstehen, sind vom Auftragnehmer nicht zu vertreten und können nicht zum Verzug des Auftragnehmers führen. Daraus resultierende Mehrkosten trägt der Auftraggeber.
-
-4.3. Bei Aufträgen, die mehrere Einheiten bzw. Programme umfassen, ist der Auftragnehmer berechtigt, Teillieferungen durchzuführen bzw. Teilrechnungen zu legen.
-
-5 Zahlung
-
-5.1. Die vom Auftragnehmer gelegten Rechnungen inklusive Umsatzsteuer sind spätestens 14 Tage ab Fakturenerhalt ohne jeden Abzug und spesenfrei zahlbar. Für Teilrechnungen gelten die für den Gesamtauftrag festgelegten Zahlungsbedingungen analog.
-
-5.2. Bei Aufträgen, die mehrere Einheiten (z.B. Programme und/oder Schulungen, Realisierungen in Teilschritten) umfassen, ist der Auftragnehmer berechtigt, nach Lieferung jeder einzelnen Einheit oder Leistung Rechnung zu legen.
-
-5.3. Die Einhaltung der vereinbarten Zahlungstermine bildet eine wesentliche Bedingung für die Durchführung der Lieferung bzw. Vertragserfüllung durch den Auftragnehmer. Die Nichteinhaltung der vereinbarten Zahlungen berechtigen den Auftragnehmer, die laufenden Arbeiten einzustellen und vom Vertrag zurückzutreten. Alle damit verbundenen Kosten sowie der Gewinnentgang sind vom Auftraggeber zu tragen.  
-
-Bei Zahlungsverzug werden Verzugszinsen im banküblichen Ausmaß verrechnet. Bei Nichteinhaltung zweier Raten bei Teilzahlungen ist der Auftragnehmer berechtigt, Terminverlust in Kraft treten zu lassen und übergebene Akzepte fällig zu stellen.
-
-5.4. Der Auftraggeber ist nicht berechtigt, Zahlungen wegen nicht vollständiger Gesamtlieferung, Garantie- oder Gewährleistungsansprüchen oder Bemängelungen zurück zu halten.
-
-6 Urheberrecht und Nutzung
-
-6.1. Der Auftragnehmer erteilt dem Auftraggeber nach Bezahlung des vereinbarten Entgelts ein nicht ausschließliches, nicht übertragbares, nicht unterlizenzierbares und zeitlich begrenztes Recht die Software für die im Vertrag spezifizierte Hardware und im Ausmaß der erworbenen Anzahl Lizenzen für die gleichzeitige Nutzung auf mehreren Arbeitsplätzen zu verwenden, sämtliche auf der Grundlage des Vertrages des Auftragnehmers erstellten Arbeitsergebnisse zum eigenen, internen Gebrauch zu nutzen. Sämtliche sonstige Rechte verbleiben beim Auftragnehmer.
-
-Durch die Mitwirkung des Auftraggebers bei der Herstellung der Software werden keine Rechte über die im gegenständlichen Vertrag festgelegte Nutzung erworben. Jede Verletzung der Urheberrechte des Auftragnehmers zieht Schadenersatzansprüche nach sich, wobei in einem solchen Fall volle Genugtuung zu leisten ist.
-
-6.2. Die Anfertigung von Kopien für Archiv- und Datensicherungszwecke ist dem Auftraggeber unter der Bedingung gestattet, dass in der Software kein ausdrückliches Verbot des Lizenzgebers oder Dritter enthalten ist, und dass sämtliche Copyright- und Eigentumsvermerke in diese Kopien unverändert mit übertragen werden.
-
-6.3. Sollte für die Herstellung von Interoperabilität der gegenständlichen Software die Offenlegung der Schnittstellen erforderlich sein, ist dies vom Auftraggeber gegen Kostenvergütung beim Auftragnehmer zu beauftragen. Kommt der Auftragnehmer dieser Forderung nicht nach und erfolgt eine Dekompilierung gemäß Urheberrechtsgesetz, sind die Ergebnisse ausschließlich zur Herstellung der Interoperabilität zu verwenden. Missbrauch hat Schadenersatz zur Folge. 
-
-6.4. Wird dem Auftraggeber eine Software zur Verfügung gestellt, deren Lizenzinhaber ein Dritter ist (zB Standardsoftware von Microsoft), so richtet sich die Einräumung des Nutzungsrechts nach den Lizenzbestimmungen des Lizenzinhabers (Hersteller).
-
-7 Rücktrittsrecht
-
-7.1. Für den Fall der Überschreitung einer vereinbarten Lieferzeit aus alleinigem Verschulden oder rechtswidrigem Handeln des Auftragnehmers ist der Auftraggeber berechtigt, mittels eingeschriebenen Briefes vom betreffenden Auftrag zurückzutreten, wenn auch innerhalb der angemessenen Nachfrist die vereinbarte Leistung in wesentlichen Teilen nicht erbracht wird und den Auftraggeber daran kein Verschulden trifft.
-
-7.2. Höhere Gewalt, Arbeitskonflikte, Naturkatastrophen und Transportsperren sowie sonstige Umstände, die außerhalb der Einflussmöglichkeit des Auftragnehmers liegen, entbinden den Auftragnehmer von der Lieferverpflichtung bzw. gestatten ihm eine Neufestsetzung der vereinbarten Lieferzeit.
-
-7.3. Stornierungen durch den Auftraggeber sind nur mit schriftlicher Zustimmung des Auftragnehmers möglich. Ist der Auftragnehmer mit einem Storno einverstanden, so hat er das Recht, neben den erbrachten Leistungen und aufgelaufenen Kosten eine Stornogebühr in der Höhe von 30% des noch nicht abgerechneten Auftragswertes des Gesamtprojektes zu verrechnen.
-
-8 Gewährleistung, Wartung, Änderungen
-
-8.1. Der Auftragnehmer gewährleistet, dass die Software die in der dazugehörigen Dokumentation beschriebenen Funktionen erfüllt, sofern die Software auf dem im Vertrag beschriebenen Betriebssystem genutzt wird.
-
-8.2.1 Voraussetzung für die Fehlerbeseitigung ist, dass  
-– der Auftraggeber den Fehler ausreichend in einer Fehlermeldung beschreibt und diese für den Auftragnehmer bestimmbar ist;  
-– der Auftraggeber dem Auftragnehmer alle für die Fehlerbeseitigung erforderlichen Unterlagen zur Verfügung stellt;  
-– der Auftraggeber oder ein ihm zurechenbarer Dritter keine Eingriffe in die Software vorgenommen hat;  
-– die Software unter den Bestimmungsmäßigen Betriebsbedingungen entsprechend der Dokumentation betrieben wird.  
-
-8.2.2 Im Falle der Gewährleistung hat Verbesserung jedenfalls Vorrang vor Preisminderung oder Wandlung. Bei gerechtfertigter Mängelrüge werden die Mängel in angemessener Frist behoben, wobei der Auftraggeber dem Auftragnehmer alle zur Untersuchung und Mängelbehebung erforderlichen Maßnahmen ermöglicht.  
-
-Die Vermutung der Mangelhaftigkeit gem. § 924 ABGB gilt als ausgeschlossen.
-
-8.2.3 Korrekturen und Ergänzungen, die sich bis zur Übergabe der vereinbarten Leistung aufgrund organisatorischer und programmtechnischer Mängel, welche vom Auftragnehmer zu vertreten sind, als notwendig erweisen, werden kostenlos vom Auftragnehmer durchgeführt.
-
-8.3. Kosten für Hilfestellung, Fehldiagnose sowie Fehler- und Störungsbeseitigung, die vom Auftraggeber zu vertreten sind sowie sonstige Korrekturen, Änderungen und Ergänzungen werden vom Auftragnehmer gegen Berechnung durchgeführt. Dies gilt auch für die Behebung von Mängeln, wenn Programmänderungen, Ergänzungen oder sonstige Eingriffe vom Auftraggeber selbst oder von dritter Seite vorgenommen worden sind.
-
-8.4. Ferner übernimmt der Auftragnehmer keine Gewähr für Fehler, Störungen oder Schäden, die auf unsachgemäße Bedienung, geänderter Betriebssystemkomponenten, Schnittstellen und Parameter, Verwendung ungeeigneter Organisationsmittel und Datenträger, soweit solche vorgeschrieben sind, anormale Betriebsbedingungen (insbesondere Abweichungen von den Installations- und Lagerbedingungen) sowie auf Transportschäden zurückzuführen sind.
-
-8.5. Für Programme, die durch eigene Programmierer des Auftraggebers bzw. Dritte nachträglich verändert werden, entfällt jegliche Gewährleistung durch den Auftragnehmer.
-
-8.6. Soweit Gegenstand des Auftrages die Änderung oder Ergänzung bereits bestehender Programme ist, bezieht sich die Gewährleistung auf die Änderung oder Ergänzung. Die Gewährleistung für das ursprüngliche Programm lebt dadurch nicht wieder auf.
-
-8.7. Gewährleistungsansprüche verjähren in sechs (6) Monaten ab Übergabe.
-
-9 Haftung
-
-9.1. Der Auftragnehmer haftet dem Auftraggeber für von ihm nachweislich verschuldete Schäden nur im Falle groben Verschuldens. Dies gilt sinngemäß auch für Schäden, die auf vom Auftragnehmer beigezogene Dritte zurückzuführen sind. Im Falle von verschuldeten Personenschäden haftet der Auftragnehmer unbeschränkt.
-
-9.2. Die Haftung für mittelbare Schäden - wie beispielsweise entgangenen Gewinn, Kosten die mit einer Betriebsunterbrechung verbunden sind, Datenverluste oder Ansprüche Dritter - wird ausdrücklich ausgeschlossen.
-
-9.3. Schadensersatzansprüche verjähren nach den gesetzlichen Vorschriften, jedoch spätestens mit Ablauf eines Jahres ab Kenntnis des Schadens und des Schädigers.
-
-9.4. Sofern der Auftragnehmer das Werk unter Zuhilfenahme Dritter erbringt und in diesem Zusammenhang Gewährleistungs- und/oder Haftungsansprüche gegenüber diesen Dritten entstehen, tritt der Auftragnehmer diese Ansprüche an den Auftraggeber ab. Der Auftraggeber wird sich in diesem Fall vorrangig an diese Dritten halten.
-
-9.5. Ist die Datensicherung ausdrücklich als Leistung vereinbart, so ist die Haftung für den Verlust von Daten abweichend von Punkt 9.2 nicht ausgeschlossen, jedoch für die Wiederherstellung der Daten begrenzt bis maximal 10 % der Auftragssumme je Schadensfall, maximal jedoch 15.000 €. Weitergehende als die in diesem Vertrag genannten Gewährleistungs- und Schadenersatzansprüche des AG -gleich aus welchem Rechtsgrund- sind ausgeschlossen. 
-
-10 Loyalität
-
-10.1. Die Vertragspartner verpflichten sich zur gegenseitigen Loyalität. Sie werden jede Abwerbung und Beschäftigung, auch über Dritte, von Mitarbeitern, die an der Realisierung der Aufträge gearbeitet haben, des anderen Vertragspartners während der Dauer des Vertrages und 12 Monate nach Beendigung des Vertrages unterlassen. Der dagegen verstoßende Vertragspartner ist verpflichtet, pauschalierten Schadenersatz in der Höhe eines Jahresgehaltes des Mitarbeiters zu zahlen.
-
-11 Geheimhaltung
-
-11.1. Der Auftragnehmer verpflichtet seine Mitarbeiter, die Bestimmungen gemäß § 6 des Datenschutzgesetzes einzuhalten.
-
-12 Sonstiges
-
-12.1 Sollten einzelne Bestimmungen dieses Vertrages unwirksam sein oder unwirksam werden, so wird hierdurch der übrige Inhalt dieses Vertrages nicht berührt. Die Vertragspartner werden partnerschaftlich zusammenwirken, um eine Regelung zu finden, die den unwirksamen Bestimmungen möglichst nahekommt.
-
-13 Schlussbestimmungen
-
-13.1 Soweit nicht anders vereinbart, gelten die zwischen Unternehmern zur Anwendung kommenden gesetzlichen Bestimmungen ausschließlich nach österreichischem Recht, auch dann, wenn der Auftrag im Ausland durchgeführt wird. Für eventuelle Streitigkeiten gilt ausschließlich die örtliche Zuständigkeit des sachlich zuständigen Gerichtes für den Geschäftssitz des Auftragnehmers als vereinbart. Für den Verkauf an Verbraucher im Sinne des Konsumentenschutzgesetzes gelten die vorstehenden Bestimmungen nur insoweit, als das Konsumentenschutzgesetz nicht zwingend andere Bestimmungen vorsieht.
-
-13.2 Für den Fall von Streitigkeiten aus diesem Vertrag, die nicht einvernehmlich geregelt werden können, vereinbaren die Vertragsparteien einvernehmlich zur außergerichtlichen Beilegung des Konfliktes eingetragene Mediatoren (ZivMediatG) mit dem Schwerpunkt Wirtschafts-Mediation aus der Liste des Justizministeriums beizuziehen. Sollte über die Auswahl der Wirtschafts-Mediatoren oder inhaltlich kein Einvernehmen hergestellt werden können, werden frühestens ein Monat ab Scheitern der Verhandlungen rechtliche Schritte eingeleitet. Im Falle einer nicht zustande gekommenen oder abgebrochenen Mediation, gilt in einemallfällig eingeleiteten Gerichtsverfahren österreichisches Recht. Sämtliche aufgrund einer vorherigen Mediation angelaufenen notwendigen Aufwendungen, insbesondere auch jene für eine(n) beigezogene(n) RechtsberaterIn, können vereinbarungsgemäß in einem Gerichts- oder Schiedsgerichtsverfahren als „vorprozessuale Kosten“ geltend gemacht werden.
 
 ## Privacy policy
 <!-- omit in toc -->
