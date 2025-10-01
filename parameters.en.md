@@ -1,5 +1,3 @@
-{::options auto_ids="true" /}
-
 ---
 layout: page
 title: Parameters
@@ -11,7 +9,6 @@ image:
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "parameters"
-<!-- omit in toc -->
 permalink: /parameters/
 ---
 <!-- omit in toc -->

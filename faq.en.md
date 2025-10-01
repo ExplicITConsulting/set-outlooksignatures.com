@@ -1,5 +1,3 @@
-{::options auto_ids="true" /}
-
 ---
 layout: page
 title: Frequently Asked Questions (FAQ)
@@ -11,7 +9,6 @@ image:
   width: 630
   alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "faq"
-<!-- omit in toc -->
 permalink: /faq/
 ---
 <!-- omit in toc -->
