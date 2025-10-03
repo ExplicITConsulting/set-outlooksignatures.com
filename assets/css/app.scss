@@ -143,23 +143,19 @@ html::after {
 }
 
 @keyframes pulse {
-  75% {
-    /* 0s mark: Start of the pulse */
+  0%,
+  75%,
+  100% {
+    /* Idle state: 0% (start), 75% (end of waiting), and 100% (end of cycle) */
     transform: scale(1);
     box-shadow: none;
     filter: brightness(100%);
   }
   87.5% {
-    /* 2.5s mark (50% of 5s): Peak of the pulse */
+    /* Peak of the pulse: Happens between 75% and 100% */
     transform: scale(0.95);
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     filter: brightness(125%);
-  }
-  100% {
-    /* 5s mark: Returns to idle and repeats immediately */
-    transform: scale(1);
-    box-shadow: none;
-    filter: brightness(100%);
   }
 }
 
