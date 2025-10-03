@@ -64,12 +64,12 @@
                 </a>
 
                 <div class="navbar-item has-dropdown is-hoverable {% if site.fixed_navbar == 'bottom' %} has-dropdown-up {% endif %}" id="language-switcher">
-                    <a class="navbar-link has-text-white">
+                    <div class="navbar-link has-text-white">
                         🌐&nbsp;
                         {%- assign page_path_without_anchor = page.url | split: '#' | first -%}
                         {%- assign active_tongue = site.active_lang -%}
                         {{ active_tongue | upcase }}
-                    </a>
+                    </div>
 
                     <div class="navbar-dropdown">
                         {%- for tongue in site.languages -%}
