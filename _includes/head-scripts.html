@@ -125,7 +125,6 @@
 </script>
 
 
-<!-- Button animation -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.button');
@@ -133,25 +132,37 @@
     const totalCycle = 5000;
     const staggerDelay = 1000;
 
-    // Set the start time for the entire animation sequence
-    const startTime = Date.now();
+    // Set the start time. Use the initial timestamp from rAF for best sync.
+    // For the first call, we'll get 'now' from the rAF callback.
+    let startTime = 0;
 
     // This array stores the absolute time in milliseconds when each button should animate next.
-    const nextAnimationTimes = Array.from(buttons).map((_, index) => {
-      return startTime + (index * staggerDelay);
-    });
+    // We'll initialize it in the first rAF call.
+    const nextAnimationTimes = [];
 
-    const animateButtons = () => {
-      const now = Date.now();
-      let nextTimeoutTime = Infinity;
+    // The main animation loop. 'timestamp' is provided by the browser.
+    const animateButtons = (timestamp) => {
+      // 1. Initialize startTime and nextAnimationTimes on the very first call
+      if (startTime === 0) {
+        startTime = timestamp;
+        // Calculate the initial next animation time based on the rAF timestamp
+        buttons.forEach((_, index) => {
+          nextAnimationTimes.push(startTime + (index * staggerDelay));
+        });
+      }
+
+      // Use the accurate timestamp provided by rAF
+      const now = timestamp;
 
       buttons.forEach((button, index) => {
         const nextTime = nextAnimationTimes[index];
 
         if (now >= nextTime) {
+          // Trigger the animation class
           button.classList.add('animated-now');
 
-          // This setTimeout is only created when an animation is triggered
+          // Schedule the class removal using setTimeout. 
+          // (This is fine as it's a one-off task, not the loop itself)
           setTimeout(() => {
             button.classList.remove('animated-now');
           }, animationDuration);
@@ -159,22 +170,16 @@
           // Update the next animation time for this button
           nextAnimationTimes[index] += totalCycle;
         }
-
-        // Find the time until the *next* earliest animation needs to happen
-        const timeUntilNext = nextAnimationTimes[index] - now;
-        if (timeUntilNext < nextTimeoutTime) {
-          nextTimeoutTime = timeUntilNext;
-        }
       });
 
-      // Use a single, self-calling setTimeout to manage the next check.
-      // We ensure a minimum delay of 100ms to prevent the browser from becoming unresponsive.
-      const delay = Math.max(100, nextTimeoutTime);
-      setTimeout(animateButtons, delay);
+      // Crucial: Schedule the next frame for this function
+      requestAnimationFrame(animateButtons);
     };
 
     // Start the animation loop
-    animateButtons();
+    if (buttons.length > 0) {
+      requestAnimationFrame(animateButtons);
+    }
   });
 </script>
 
