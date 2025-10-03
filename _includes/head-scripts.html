@@ -130,6 +130,8 @@
   document.addEventListener('DOMContentLoaded', async () => {
     const track = document.querySelector('.scrolling-track');
     const banner = document.querySelector('.scrolling-banner');
+    const DYNAMIC_CSS_ID = 'dynamic-scroll-animation-style';
+    const ANIMATION_NAME = 'scroll-full-track-dynamic';
 
     if (!track || !banner) {
       console.warn('Scrolling track or banner element not found.');
@@ -145,7 +147,6 @@
       }
 
       const text = await response.text();
-      // Trim, filter out empty lines, and ensure uniqueness in one chain
       let urls = [...new Set(
         text.split('\n').map(line => line.trim()).filter(Boolean)
       )];
@@ -155,23 +156,21 @@
         return;
       }
 
-      // Fisher-Yates shuffle (in-place)
+      // Fisher-Yates shuffle
       for (let i = urls.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [urls[i], urls[j]] = [urls[j], urls[i]];
       }
 
       const originalShuffledUrls = urls;
-      // Concatenate three times for seamless looping
       const finalUrlsForDOM = [...originalShuffledUrls, ...originalShuffledUrls, ...originalShuffledUrls];
 
-      // --- 2. Create and Load Image Elements ---
+      // --- 2. Create and Load Image Elements (Cleaned-up Promise Logic) ---
       track.innerHTML = '';
       const imagePromises = finalUrlsForDOM.map(url => new Promise((resolve) => {
         const img = new Image();
         img.src = url;
 
-        // Simplified alt text generation (safer with optional chaining)
         const filename = url.split('/').pop() || '';
         img.alt = filename.split('.').slice(0, -1).join('.') || 'Customer Logo';
 
@@ -181,47 +180,38 @@
           resolve({ img: null, loaded: false });
         };
 
-        // Use addEventListener with {once: true} for cleaner one-time handlers
+        // Rely on the event listeners for both fresh and cached images
         img.addEventListener('load', handleLoad, { once: true });
         img.addEventListener('error', handleError, { once: true });
-
-        // Handle cached images immediately (cleaner check)
-        if (img.complete) {
-          img.naturalHeight > 0 ? resolve({ img, loaded: true }) : handleError();
-        }
       }));
 
       const imageElements = (await Promise.all(imagePromises))
         .map(result => result.img)
-        .filter(img => img !== null); // Filter out failed images
+        .filter(img => img !== null);
 
       if (imageElements.length === 0) {
         console.warn('All images failed to load. Disabling animation.');
         return;
       }
 
-      // Append only the successfully loaded images to the DOM
       imageElements.forEach(img => track.appendChild(img));
 
 
-      // --- 3. Calculate Scroll Distance and Apply Dynamic Animation ---
+      // --- 3. Calculate Scroll Distance and Apply Dynamic Animation (Cleaned-up CSS Insertion) ---
       requestAnimationFrame(() => {
         const bannerWidth = banner.clientWidth;
         const computedStyle = getComputedStyle(track);
-        // Use logical OR for fallback
         const gapSize = parseFloat(computedStyle.gap) || 0;
 
         let scrollDistance = 0;
-        // Only calculate the distance for ONE full set of original unique URLs
+        // Only calculate distance for ONE full set of unique URLs
         for (let i = 0; i < originalShuffledUrls.length; i++) {
           const img = track.children[i];
           if (img) {
-            // Calculate image width + gap, excluding the gap after the last image
             scrollDistance += img.offsetWidth + (i < originalShuffledUrls.length - 1 ? gapSize : 0);
           }
         }
 
-        // Validation check
         if (scrollDistance <= 0 || track.scrollWidth <= bannerWidth + 1) {
           console.warn('Content is not wide enough to scroll. Disabling animation.');
           track.style.animation = 'none';
@@ -230,29 +220,33 @@
 
         const pixelsPerSecond = 50;
         const animationDuration = scrollDistance / pixelsPerSecond;
-        const animationName = 'scroll-full-track-dynamic'; // Use a static name
 
-        // Setup dynamic style sheet (moved cleanup logic inside)
-        let styleSheet = document.getElementById('dynamic-scroll-animation-style');
+        // Setup dynamic style sheet
+        let styleSheet = document.getElementById(DYNAMIC_CSS_ID);
         if (!styleSheet) {
           styleSheet = document.createElement('style');
-          styleSheet.id = 'dynamic-scroll-animation-style';
+          styleSheet.id = DYNAMIC_CSS_ID;
           document.head.appendChild(styleSheet);
         }
         const sheet = styleSheet.sheet;
 
-        // Remove existing keyframes rule if it exists (cleaner cleanup)
-        const existingRuleIndex = Array.from(sheet.cssRules).findIndex(rule =>
-          rule.type === CSSRule.KEYFRAMES_RULE && rule.name === animationName
-        );
-        if (existingRuleIndex > -1) sheet.deleteRule(existingRuleIndex);
+        // CSS Rule Cleanup
+        let ruleIndexToDelete = -1;
+        for (let i = 0; i < sheet.cssRules.length; i++) {
+          const rule = sheet.cssRules[i];
+          if (rule.type === CSSRule.KEYFRAMES_RULE && rule.name === ANIMATION_NAME) {
+            ruleIndexToDelete = i;
+            break;
+          }
+        }
+        if (ruleIndexToDelete !== -1) sheet.deleteRule(ruleIndexToDelete);
 
         // Insert new keyframes rule
-        const keyframesRule = `@keyframes ${animationName} { from { transform: translateX(0); } to { transform: translateX(${-scrollDistance}px); } }`;
+        const keyframesRule = `@keyframes ${ANIMATION_NAME} { from { transform: translateX(0); } to { transform: translateX(${-scrollDistance}px); } }`;
         sheet.insertRule(keyframesRule, sheet.cssRules.length);
 
         // Apply animation
-        track.style.animation = `${animationName} ${animationDuration}s linear infinite`;
+        track.style.animation = `${ANIMATION_NAME} ${animationDuration}s linear infinite`;
         track.style.animationPlayState = 'running';
       });
 
