@@ -166,77 +166,55 @@ html::after {
 }
 
 /* Base application of the animation */
-.button {
-  /* Ensure it is signaled as clickable */
-  cursor: pointer;
-
-  /* Apply the animation loop */
-  animation-name: pulse;
-  animation-duration: 5s; /* totalCycle = 5000ms */
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite; /* Loop forever (resource-efficient via GPU) */
+@keyframes pulse {
+  0%,
+  10%,
+  90%,
+  100% {
+    /* Idle state for most of the 5s cycle */
+    transform: scale(1);
+    box-shadow: none;
+    filter: brightness(100%);
+  }
+  5% {
+    /* The signal state (briefly at the start of the cycle, 0.25s) */
+    transform: scale(0.95);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    filter: brightness(125%);
+  }
 }
 
-/* Apply the Stagger Delay (1s per button) using :nth-child() */
-.button:nth-child(1) {
+.button {
+  cursor: pointer;
+  animation-name: pulse;
+  animation-duration: 5s; /* The mandatory 5000ms cycle time */
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Groups 1, 6, 11, 16 (A=5, B=1) */
+.button:nth-child(5n + 1) {
+  animation-delay: 0s;
+}
+
+/* Groups 2, 7, 12, 17 (A=5, B=2) */
+.button:nth-child(5n + 2) {
   animation-delay: 1s;
 }
-.button:nth-child(2) {
+
+/* Groups 3, 8, 13, 18 (A=5, B=3) */
+.button:nth-child(5n + 3) {
   animation-delay: 2s;
 }
-.button:nth-child(3) {
+
+/* Groups 4, 9, 14, 19 (A=5, B=4) */
+.button:nth-child(5n + 4) {
   animation-delay: 3s;
 }
-.button:nth-child(4) {
+
+/* Groups 5, 10, 15, 20 (A=5, B=5) */
+.button:nth-child(5n + 5) {
   animation-delay: 4s;
-}
-.button:nth-child(5) {
-  animation-delay: 5s;
-}
-.button:nth-child(6) {
-  animation-delay: 6s;
-}
-.button:nth-child(7) {
-  animation-delay: 7s;
-}
-.button:nth-child(8) {
-  animation-delay: 8s;
-}
-.button:nth-child(9) {
-  animation-delay: 9s;
-}
-.button:nth-child(10) {
-  animation-delay: 10s;
-}
-.button:nth-child(11) {
-  animation-delay: 11s;
-}
-.button:nth-child(12) {
-  animation-delay: 12s;
-}
-.button:nth-child(13) {
-  animation-delay: 13s;
-}
-.button:nth-child(14) {
-  animation-delay: 14s;
-}
-.button:nth-child(15) {
-  animation-delay: 15s;
-}
-.button:nth-child(16) {
-  animation-delay: 16s;
-}
-.button:nth-child(17) {
-  animation-delay: 17s;
-}
-.button:nth-child(18) {
-  animation-delay: 18s;
-}
-.button:nth-child(19) {
-  animation-delay: 19s;
-}
-.button:nth-child(20) {
-  animation-delay: 20s;
 }
 
 .scrolling-banner {
