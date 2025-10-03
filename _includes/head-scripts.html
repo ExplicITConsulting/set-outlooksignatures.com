@@ -132,82 +132,96 @@
     const banner = document.querySelector('.scrolling-banner');
 
     if (!track || !banner) {
-      console.warn('Scrolling track or banner element not found. Please ensure the HTML structure is correct.');
+      console.warn('Scrolling track or banner element not found.');
       return;
     }
 
     try {
+      // --- 1. Fetch and Prepare URLs ---
       const response = await fetch('https://set-outlooksignatures.com/customer-images.txt');
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        console.error(`HTTP error! status: ${response.status}`);
+        return;
       }
-      const text = await response.text();
-      let urls = text.split('\n').map(line => line.trim()).filter(Boolean);
 
-      urls = [...new Set(urls)];
+      const text = await response.text();
+      // Trim, filter out empty lines, and ensure uniqueness in one chain
+      let urls = [...new Set(
+        text.split('\n').map(line => line.trim()).filter(Boolean)
+      )];
 
       if (urls.length === 0) {
         console.warn('No image URLs found. Banner will not display images.');
         return;
       }
 
+      // Fisher-Yates shuffle (in-place)
       for (let i = urls.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [urls[i], urls[j]] = [urls[j], urls[i]];
       }
 
-      const originalShuffledUniqueUrls = [...urls];
-      const finalUrlsForDOM = [...originalShuffledUniqueUrls, ...originalShuffledUniqueUrls, ...originalShuffledUniqueUrls];
+      const originalShuffledUrls = urls;
+      // Concatenate three times for seamless looping
+      const finalUrlsForDOM = [...originalShuffledUrls, ...originalShuffledUrls, ...originalShuffledUrls];
 
+      // --- 2. Create and Load Image Elements ---
       track.innerHTML = '';
-      const imagePromises = finalUrlsForDOM.map(url => {
-        return new Promise((resolve) => {
-          const img = new Image();
-          img.src = url;
-          img.alt = `https://${url.split('/').pop()?.split('.').slice(0, -1).join('.')}` || 'Customer Logo';
+      const imagePromises = finalUrlsForDOM.map(url => new Promise((resolve) => {
+        const img = new Image();
+        img.src = url;
 
-          img.onload = () => resolve({ img, loaded: true });
-          img.onerror = () => {
-            console.error(`Failed to load image: ${url}`);
-            resolve({ img: null, loaded: false });
-          };
+        // Simplified alt text generation (safer with optional chaining)
+        const filename = url.split('/').pop() || '';
+        img.alt = filename.split('.').slice(0, -1).join('.') || 'Customer Logo';
 
-          if (img.complete) {
-            if (img.naturalHeight > 0) {
-              resolve({ img, loaded: true });
-            } else {
-              resolve({ img: null, loaded: false });
-            }
-          }
-        });
-      });
+        const handleLoad = () => resolve({ img, loaded: true });
+        const handleError = () => {
+          console.error(`Failed to load image: ${url}`);
+          resolve({ img: null, loaded: false });
+        };
 
-      const loadedImageResults = await Promise.all(imagePromises);
-      const imageElements = loadedImageResults.map(result => result.img).filter(img => img !== null);
+        // Use addEventListener with {once: true} for cleaner one-time handlers
+        img.addEventListener('load', handleLoad, { once: true });
+        img.addEventListener('error', handleError, { once: true });
+
+        // Handle cached images immediately (cleaner check)
+        if (img.complete) {
+          img.naturalHeight > 0 ? resolve({ img, loaded: true }) : handleError();
+        }
+      }));
+
+      const imageElements = (await Promise.all(imagePromises))
+        .map(result => result.img)
+        .filter(img => img !== null); // Filter out failed images
 
       if (imageElements.length === 0) {
         console.warn('All images failed to load. Disabling animation.');
         return;
       }
 
+      // Append only the successfully loaded images to the DOM
       imageElements.forEach(img => track.appendChild(img));
 
+
+      // --- 3. Calculate Scroll Distance and Apply Dynamic Animation ---
       requestAnimationFrame(() => {
         const bannerWidth = banner.clientWidth;
         const computedStyle = getComputedStyle(track);
+        // Use logical OR for fallback
         const gapSize = parseFloat(computedStyle.gap) || 0;
 
         let scrollDistance = 0;
-        for (let i = 0; i < originalShuffledUniqueUrls.length; i++) {
+        // Only calculate the distance for ONE full set of original unique URLs
+        for (let i = 0; i < originalShuffledUrls.length; i++) {
           const img = track.children[i];
           if (img) {
-            scrollDistance += img.offsetWidth;
-            if (i < originalShuffledUniqueUrls.length - 1) {
-              scrollDistance += gapSize;
-            }
+            // Calculate image width + gap, excluding the gap after the last image
+            scrollDistance += img.offsetWidth + (i < originalShuffledUrls.length - 1 ? gapSize : 0);
           }
         }
 
+        // Validation check
         if (scrollDistance <= 0 || track.scrollWidth <= bannerWidth + 1) {
           console.warn('Content is not wide enough to scroll. Disabling animation.');
           track.style.animation = 'none';
@@ -216,27 +230,28 @@
 
         const pixelsPerSecond = 50;
         const animationDuration = scrollDistance / pixelsPerSecond;
-        const animationName = 'scroll-full-track-dynamic-' + Date.now();
+        const animationName = 'scroll-full-track-dynamic'; // Use a static name
 
+        // Setup dynamic style sheet (moved cleanup logic inside)
         let styleSheet = document.getElementById('dynamic-scroll-animation-style');
         if (!styleSheet) {
           styleSheet = document.createElement('style');
           styleSheet.id = 'dynamic-scroll-animation-style';
           document.head.appendChild(styleSheet);
-        } else {
-          while (styleSheet.sheet && styleSheet.sheet.cssRules.length > 0) {
-            styleSheet.sheet.deleteRule(0);
-          }
         }
+        const sheet = styleSheet.sheet;
 
-        const keyframesRule = `
-          @keyframes ${animationName} {
-            from { transform: translateX(0); }
-            to { transform: translateX(${-scrollDistance}px); }
-          }
-        `;
-        styleSheet.sheet.insertRule(keyframesRule, styleSheet.sheet.cssRules.length);
+        // Remove existing keyframes rule if it exists (cleaner cleanup)
+        const existingRuleIndex = Array.from(sheet.cssRules).findIndex(rule =>
+          rule.type === CSSRule.KEYFRAMES_RULE && rule.name === animationName
+        );
+        if (existingRuleIndex > -1) sheet.deleteRule(existingRuleIndex);
 
+        // Insert new keyframes rule
+        const keyframesRule = `@keyframes ${animationName} { from { transform: translateX(0); } to { transform: translateX(${-scrollDistance}px); } }`;
+        sheet.insertRule(keyframesRule, sheet.cssRules.length);
+
+        // Apply animation
         track.style.animation = `${animationName} ${animationDuration}s linear infinite`;
         track.style.animationPlayState = 'running';
       });
