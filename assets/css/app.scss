@@ -142,87 +142,42 @@ html::after {
   filter: brightness(125%);
 }
 
-/*
- * Keyframes define the animation cycle.
- * Total Cycle: 5s (5000ms, as per original totalCycle)
- * The 'pulse' signal must occur quickly within this 5s cycle.
- */
 @keyframes pulse {
-  0%,
-  10%,
-  90%,
-  100% {
-    /* Idle state for most of the 5s cycle */
+  0% {
+    /* 0s mark: Start of the pulse */
     transform: scale(1);
     box-shadow: none;
     filter: brightness(100%);
   }
-  5% {
-    /* The signal state (briefly at the start of the cycle, around 0.25s) */
+  50% {
+    /* 2.5s mark (50% of 5s): Peak of the pulse */
     transform: scale(0.95);
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     filter: brightness(125%);
   }
-}
-
-/* Base application of the animation */
-@keyframes pulse {
-  0%,
-  10%,
-  90%,
   100% {
-    /* Idle state for most of the 5s cycle */
+    /* 5s mark: Returns to idle and repeats immediately */
     transform: scale(1);
     box-shadow: none;
     filter: brightness(100%);
-  }
-  5% {
-    /* The signal state (briefly at the start of the cycle, 0.25s) */
-    transform: scale(0.95);
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-    filter: brightness(125%);
   }
 }
 
 .button {
   cursor: pointer;
 
-  /* Optimization Hints to force immediate animation calculation */
-  will-change: transform, filter, box-shadow;
-  animation-play-state: running; /* Explicitly set the animation to run */
+  /* Reset optimization hints since stagger is gone */
+  will-change: auto;
+  animation-play-state: running;
 
-  /* Base Animation Properties */
+  /* Set the animation back to 5 seconds to repeat the cycle every 5s */
   animation-name: pulse;
-  animation-duration: 5s; /* The mandatory 5000ms cycle time */
+  animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-}
 
-/* 1s Stagger Groups (5 buttons per group, as the delay wraps around the 5s duration) */
-
-/* Buttons 1, 6, 11, 16 */
-.button:nth-child(5n + 1) {
+  /* No delay, so all buttons animate at the same time */
   animation-delay: 0s;
-}
-
-/* Buttons 2, 7, 12, 17 */
-.button:nth-child(5n + 2) {
-  animation-delay: 1s;
-}
-
-/* Buttons 3, 8, 13, 18 */
-.button:nth-child(5n + 3) {
-  animation-delay: 2s;
-}
-
-/* Buttons 4, 9, 14, 19 */
-.button:nth-child(5n + 4) {
-  animation-delay: 3s;
-}
-
-/* Buttons 5, 10, 15, 20 */
-.button:nth-child(5n + 5) {
-  animation-delay: 4s;
 }
 
 .scrolling-banner {
