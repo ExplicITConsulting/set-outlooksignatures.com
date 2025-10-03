@@ -328,36 +328,42 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', async () => {
-    // Add the 'loaded' class to display the background image.
-    document.documentElement.classList.add('loaded');
-
-    // Detect system preference for dark mode.
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    // Apply dark mode background filter if system prefers dark.
-    if (prefersDark) {
-      document.documentElement.classList.add('dark-mode-bg');
+  /**
+   * Standalone script for lazy loading the background image and applying
+   * a dark mode filter based on system preference.
+   */
+  (function () {
+    // Use DOMContentLoaded check if you place the script in the <head>
+    // If placed before the closing </body> tag, a simple check is usually sufficient.
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initBackgroundLogic);
+    } else {
+      initBackgroundLogic();
     }
 
-    // Watch for changes in system preference.
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-      if (event.matches) {
-        document.documentElement.classList.add('dark-mode-bg');
-      } else {
-        document.documentElement.classList.remove('dark-mode-bg');
-      }
-    });
+    function initBackgroundLogic() {
+      const html = document.documentElement;
 
-    // Optional: MutationObserver if other scripts might toggle 'dark-mode-bg' manually.
-    const observer = new MutationObserver((mutationsList) => {
-      for (const mutation of mutationsList) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-          // You could add logic here if needed to respond to manual class changes.
+      // 1. Lazy Load: Add the 'loaded' class to trigger background-image loading via CSS.
+      html.classList.add('loaded');
+
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+      const updateDarkMode = (event) => {
+        // event.matches is true if dark mode is preferred
+        if (event.matches) {
+          html.classList.add('dark-mode-bg');
+        } else {
+          html.classList.remove('dark-mode-bg');
         }
-      }
-    });
+      };
 
-    observer.observe(document.documentElement, { attributes: true });
-  });
+      // 2. Initial check: Apply the correct state immediately on load.
+      updateDarkMode(mediaQuery);
+
+      // 3. Watch for changes in system preference.
+      // This is more efficient than polling or unnecessary timers.
+      mediaQuery.addEventListener('change', updateDarkMode);
+    }
+  })();
 </script>
