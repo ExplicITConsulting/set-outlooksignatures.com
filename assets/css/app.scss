@@ -142,26 +142,101 @@ html::after {
   filter: brightness(125%);
 }
 
+/*
+ * Keyframes define the animation cycle.
+ * Total Cycle: 5s (5000ms, as per original totalCycle)
+ * The 'pulse' signal must occur quickly within this 5s cycle.
+ */
 @keyframes pulse {
-  0% {
+  0%,
+  10%,
+  90%,
+  100% {
+    /* Idle state for most of the 5s cycle */
     transform: scale(1);
     box-shadow: none;
-    filter: brightness(100%); /* Start with no brightness change */
+    filter: brightness(100%);
   }
-  50% {
+  5% {
+    /* The signal state (briefly at the start of the cycle, around 0.25s) */
     transform: scale(0.95);
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-    filter: brightness(125%); /* Apply the brightness at the midpoint */
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: none;
-    filter: brightness(100%); /* Return to normal brightness */
+    filter: brightness(125%);
   }
 }
 
-.animated-now {
-  animation: pulse 1s ease-in-out forwards;
+/* Base application of the animation */
+.button {
+  /* Ensure it is signaled as clickable */
+  cursor: pointer;
+
+  /* Apply the animation loop */
+  animation-name: pulse;
+  animation-duration: 5s; /* totalCycle = 5000ms */
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; /* Loop forever (resource-efficient via GPU) */
+}
+
+/* Apply the Stagger Delay (1s per button) using :nth-child() */
+.button:nth-child(1) {
+  animation-delay: 1s;
+}
+.button:nth-child(2) {
+  animation-delay: 2s;
+}
+.button:nth-child(3) {
+  animation-delay: 3s;
+}
+.button:nth-child(4) {
+  animation-delay: 4s;
+}
+.button:nth-child(5) {
+  animation-delay: 5s;
+}
+.button:nth-child(6) {
+  animation-delay: 6s;
+}
+.button:nth-child(7) {
+  animation-delay: 7s;
+}
+.button:nth-child(8) {
+  animation-delay: 8s;
+}
+.button:nth-child(9) {
+  animation-delay: 9s;
+}
+.button:nth-child(10) {
+  animation-delay: 10s;
+}
+.button:nth-child(11) {
+  animation-delay: 11s;
+}
+.button:nth-child(12) {
+  animation-delay: 12s;
+}
+.button:nth-child(13) {
+  animation-delay: 13s;
+}
+.button:nth-child(14) {
+  animation-delay: 14s;
+}
+.button:nth-child(15) {
+  animation-delay: 15s;
+}
+.button:nth-child(16) {
+  animation-delay: 16s;
+}
+.button:nth-child(17) {
+  animation-delay: 17s;
+}
+.button:nth-child(18) {
+  animation-delay: 18s;
+}
+.button:nth-child(19) {
+  animation-delay: 19s;
+}
+.button:nth-child(20) {
+  animation-delay: 20s;
 }
 
 .scrolling-banner {
