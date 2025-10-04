@@ -292,7 +292,7 @@ permalink: /benefactorcircle/
 
 
 <h2 id="financial-benefits">Financial benefits</h2>
-<p>The Benefactor Circle Add-On is an investment that pays off from day one. A cost-benefit analysis in the form of a business case must consider three aspects:</p>
+<p>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> is an investment that pays off from day one. A cost-benefit analysis in the form of a business case must consider three aspects:</p>
 <ul>
   <li>How much do non-compliant signatures and out-of-office replies cost in terms of loss of reputation or in terms of fines for non-compliance?</li>
   <li>What is the added value of using email as an additional marketing channel?</li>
@@ -335,15 +335,15 @@ Benefactor Circle add-on</span>.</p>
 <h2 id="licenses">Buying, extending and changing licenses</h2>
 <h3 id="price">Price and general information</h3>
 <p>Set-OutlookSignatures does not cost anything.<br>Starting as a technology demonstrator for scripting techniques, it has grown into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies. Read more about its history and the intentions behind it <a href="https://set-outlooksignatures.com/faq/#351-why-the-tagline">here</a>.</p>
-<p>The advanced features of the <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></strong> cost <strong>only 3.00 € per mailbox and year</strong>, which corresponds to <strong>merely 0.25 € per mailbox and month</strong>.</p>
+<p>The advanced features of the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> cost <strong>only 3.00 € per mailbox and year</strong>, which corresponds to <strong>merely 0.25 € per mailbox and month</strong>.</p>
 
-<p>The <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></strong> is an investment that pays off from day one - certainly for you, too: <a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Cost-benefit analysis, business case</a></p>
+<p>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> is an investment that pays off from day one - certainly for you, too: <a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Cost-benefit analysis, business case</a></p>
 
 <p>We keep license costs as fair as possible. Fair means:</p>
 <ul>
   <li>Small companies always just pay the same low price as big enterprises.</li>
   <li>No maintenance or support contracts hidden in the annual price. You only pay for the support you actually need — and often, thanks to the documentation, you won’t need any.</li>
-  <li><strong>Our support promise: </strong>If your support request is due to a bug in the latest version of <strong>Set-OutlookSignatures</strong>, the <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></strong>, its documentation, or the provided components, support is <strong>free - no exceptions</strong>.
+  <li><strong>Our support promise: </strong>If your support request is due to a bug in the latest version of <strong>Set-OutlookSignatures</strong>, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is <strong>free - no exceptions</strong>.
   <br>
   For all other issues, you will receive the same first-class support at a fair price.
   </li>

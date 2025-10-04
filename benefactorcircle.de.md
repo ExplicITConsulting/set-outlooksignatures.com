@@ -299,7 +299,7 @@ permalink: /benefactorcircle/
 
 
 <h2 id="financial-benefits">Finanzielle Vorteile</h2>
-<p>Das Benefactor Circle Add-On ist eine Investition, die sich ab dem ersten Tag rechnet. Eine Kosten-Nutzen-Rechnung in Form eines Business Cases muss drei Aspekte berücksichtigen:</p>
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> ist eine Investition, die sich ab dem ersten Tag rechnet. Eine Kosten-Nutzen-Rechnung in Form eines Business Cases muss drei Aspekte berücksichtigen:</p>
 <ul>
   <li>Wie hoch sind die Kosten durch nicht konforme Signaturen und Abwesenheitsnotizen – sei es durch Reputationsverlust oder Bußgelder wegen Nichteinhaltung von Vorschriften?</li>
   <li>Welchen Mehrwert bietet die Nutzung von E-Mails als zusätzlicher Marketingkanal?</li>
@@ -339,16 +339,16 @@ permalink: /benefactorcircle/
 <h2 id="licenses">Kauf, Verlängerung und Änderung von Lizenzen</h2>
 <h3 id="price">Preis und allgemeine Informationen</h3>
 <p>Set-OutlookSignatures kostet nichts.<br>Als Technologie-Demonstrator für Skripting-Techniken gestartet, hat es sich zum anspruchsvollsten und vielseitigsten kostenlosen und Open-Source-Tool für die Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen entwickelt. Lesen Sie <a href="https://set-outlooksignatures.com/faq/#351-why-the-tagline">hier</a> mehr über seine Geschichte und die Absichten dahinter.</p>
-<p>Die erweiterten Funktionen des <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></strong> kosten <strong>nur 3.00 € pro Postfach und Jahr</strong>, was  <strong>lediglich 0.25 € pro Postfach und Monat</strong> entspricht.</p>
+<p>Die erweiterten Funktionen des <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> kosten <strong>nur 3.00 € pro Postfach und Jahr</strong>, was  <strong>lediglich 0.25 € pro Postfach und Monat</strong> entspricht.</p>
 
-<p>Das <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></strong> ist eine Investition, die sich ab dem ersten Tag rechnet - ganz sicher auf für Sie: <a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Kosten-Nutzen-Rechnung, Business Case</a></p>
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> ist eine Investition, die sich ab dem ersten Tag rechnet - ganz sicher auf für Sie: <a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Kosten-Nutzen-Rechnung, Business Case</a></p>
 
 <p>Wir gestalten die Lizenzkosten so fair wie möglich. Fair bedeutet:</p>
 <ul>
   <li>Kleine Unternehmen zahlen denselben niedrigen Preis wie große Konzerne.</li>
   <li>Keine Wartungs- oder Supportverträge, die als „kostenlos“ beworben werden, aber tatsächlich im Jahrespreis versteckt sind und selten im vollen Umfang genutzt werden.<br>
   Bei uns zahlen Sie nur für den Support, den Sie tatsächlich benötigen – dank der umfangreichen Dokumentation ist dieser meist gar nicht erforderlich.<br>
-  <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von <strong>Set-OutlookSignatures</strong>, dem <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></strong>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support <strong>kostenlos – ohne Ausnahme</strong>.
+  <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von <strong>Set-OutlookSignatures</strong>, dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support <strong>kostenlos – ohne Ausnahme</strong>.
   <br>
   Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.
   </li>
@@ -380,7 +380,7 @@ permalink: /benefactorcircle/
 <h3 id="trial">Testversion</h3>
 <p>Sie möchten vielleicht mit einer 14-tägigen Testlizenz starten.</p>
 
-<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.<br>
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.<br>
 Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion benötigen, lesen Sie die Kurzanleitung in der Readme-Datei, öffnen Sie ein Issue auf GitHub oder kontaktieren Sie uns direkt – wir helfen Ihnen im Rahmen unseres professionellen Supports gerne bei der Einführung von Set-OutlookSignatures in Ihrer Umgebung.</p>
 
 <p>Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:</p>
