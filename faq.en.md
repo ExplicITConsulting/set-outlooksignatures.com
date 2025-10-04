@@ -915,36 +915,34 @@ Alternative options for storing files:
 
 
 ## 35. How to disable the tagline in signatures?
-Set-OutlookSignatures adds a tagline to each signature deployed for mailboxes without a [Benefactor Circle](/benefactorcircle) license.
+Set-OutlookSignatures adds a tagline to each signature deployed for mailboxes without a [Benefactor Circle](/benefactorcircle) license. You may also refer to the tagline as footer message, nag text, reminder blurb, outreach snippet, upgrade nudge, reminder blurb, and more.
 
 Signatures for mailboxes with a [Benefactor Circle](/benefactorcircle) license do not get this tagline appended.
-
-Dear companies, please do not forget:
-- Invest in the free and open-source software you depend on. Contributors are working behind the scenes to make open-source better for everyone. Give them the help and recognition they deserve.
-- Sponsor the free and open-source software your teams use to keep your business running. Fund the projects that make up your software supply chain to improve its performance, reliability, and stability.
-
-Being free and open-source software, Set-OutlookSignatures saves your company a remarkable amount of money compared to commercial software.
 
 Buy a Benefactor Circle license to add additional enterprise-grade features: See [`Benefactor Circle`](/benefactorcircle) for details about these features and their benefits for your business.
 
 ### 35.1. Why the tagline?
-I initially created Set-OutlookSignatures to give back to the community by showing how to correctly script stuff that I have seen being done in wrong and incomplete ways over and over again:
-- Efficient queries for nested Active Directory group membership,
-- working with SID history,
-- working with AD queries in the most complex environments and across trusts,
-- parallel code execution in PowerShell,
-- working with Graph,
-- and, of course, a fresh approach on how to manage and deploy signatures for Outlook.
+In the words of Markus Gruber, the creator of Set-OutlookSignatures:
 
-Since the free version of Set-OutlookSignatures has first been published in 2021, dozens of features have been added. Quickly scroll through the CHANGELOG to get an idea of what I am talking about.<br>I invested more than a thousand hours of my spare time developing them, and I spent a whole lot of money setting up and maintaining different test environments. And I plan to continue doing so and keep the core of Set-OutlookSignatures free and open source software.
-
-You are probably an Exchange or client administrator, and as such you are part of the community I want to give something back to.
-
-I do not expect or request thank yous from fellow admins, as our community lives from both giving and taking.
-
-I draw the line where companies, rather than individuals, benefit one-sidedly. The tagline reminds companies that they benefit from open source software and that there is a way to ensure that Set-OutlookSignatures remains open source and is developed further by supporting it financially and at the same time gaining access to even more useful features.
-
-By the way: Companies often make wrong assumptions about free and open source software. Open source software absolutely can contain closed source code. Also, the term "open source" does not automatically imply free usage or even free access to the code. And the permission to use software for free does not imply free support.
+> Set-OutlookSignatures is my way of giving back to the community. I first released it in 2021 as a demonstrator showcasing the practical use of efficient Active Directory queries for nested group membership, including support for SID history, disjoint DNS namespaces, and cross-trust queries.
+>
+>Soon, I introduced showcases for parallel code execution in PowerShell, a complete Graph authentication module supporting authentication brokers and paged Graph queries, and of course, dozens of signature-related features. A quick scroll through the changelog will give you a good idea of its evolution.
+>
+> Today, Set-OutlookSignatures is more than just a vehicle for demonstrating PowerShell techniques - it has grown into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies.
+>
+> Developing and testing it has taken thousands of hours of spare time and considerable financial investment in cross-platform test environments. I intend to continue developing and maintaining Set-OutlookSignatures, and to keep its core free and open-source.
+>
+> If you're an Exchange or client administrator, you're part of the community I want to support. I don’t expect or request thank-yous, our community thrives on mutual support.
+>
+> However, I draw the line when companies benefit one-sidedly. The tagline added to each signature reminds organizations that they benefit from open-source software and that there’s a way to ensure Set-OutlookSignatures remains open source: by supporting it financially and gaining access to even more useful features.
+>
+> A note to companies: Open-source software is often misunderstood. It can include closed-source components. Open source doesn’t automatically mean free usage or even unrestricted access to the code. And it does not imply free support.
+> 
+> In this spirit:
+> - Invest in the free and open-source software you depend on. Contributors work behind the scenes to make it better for everyone. Support them.
+> - Sponsor the tools your teams rely on. Funding these projects improves performance, reliability, and stability across your software supply chain.
+>
+> By choosing Set-OutlookSignatures, your company can significantly reduce costs compared to commercial alternatives — all while benefiting from a powerful, open-source solution. And by upgrading to the Benefactor Circle add-on, you help secure the future of Set-OutlookSignatures.
 
 ### 35.2. Not sure if Set-OutlookSignatures is the right solution for your company?
 The core of Set-OutlookSignatures is available free of charge as open-source software and can be used for as long and for as many mailboxes as your company wants.<br>All documentation is publicly available, and you can get free community support at GitHub or get first-class professional support, training, workshops and more from [ExplicIT Consulting](/support).
