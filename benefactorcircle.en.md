@@ -334,10 +334,10 @@ Benefactor Circle add-on</span>.</p>
 
 <h2 id="licenses">Buying, extending and changing licenses</h2>
 <h3 id="price">Price and general information</h3>
-<p>Set-OutlookSignatures does not cost anything.<br>Starting as a technology demonstrator for scripting techniques, it has grown into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies. Read more about its history and the intentions behind it <a href="/faq/#351-why-the-tagline">here</a>.</p>
+<p>Set-OutlookSignatures does not cost anything.<br>Starting as a technology demonstrator for scripting techniques, it has grown into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies. Read more about its history and the intentions behind it <a href="https://set-outlooksignatures.com/faq/#351-why-the-tagline">here</a>.</p>
 <p>The advanced features of the <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></strong> cost <strong>only 3.00 € per mailbox and year</strong>, which corresponds to <strong>merely 0.25 € per mailbox and month</strong>.</p>
 
-<p>The Benefactor Circle Add-On is an investment that pays off from day one - certainly for you, too: <a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Cost-benefit analysis, business case</a></p>
+<p>The <strong><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></strong> is an investment that pays off from day one - certainly for you, too: <a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">➔ Cost-benefit analysis, business case</a></p>
 
 <p>We keep license costs as fair as possible. Fair means:</p>
 <ul>
