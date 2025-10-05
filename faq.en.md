@@ -926,7 +926,7 @@ In the words of Markus Gruber, the creator of Set-OutlookSignatures:
 
 > Set-OutlookSignatures is my way of giving back to the community. I first released it in 2021 as a demonstrator showcasing the practical use of efficient Active Directory queries for nested group membership, including support for SID history, disjoint DNS namespaces, and cross-trust queries.
 >
->Soon, I introduced showcases for parallel code execution in PowerShell, a complete Graph authentication module supporting authentication brokers and paged Graph queries, and of course, dozens of signature-related features. A quick scroll through the changelog will give you a good idea of its evolution.
+>Soon, I introduced showcases for parallel code execution in PowerShell, a complete Graph authentication module supporting authentication brokers, cross-tenant authentication paged Graph queries, and many more re-usable functions. A quick scroll through the changelog will give you a good idea of its evolution.
 >
 > Today, Set-OutlookSignatures is more than just a vehicle for demonstrating PowerShell techniques - it has grown into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies.
 >
