@@ -1193,7 +1193,7 @@ Files:
 ### 44.8. Bringing hidden treasures to light
 As a member of the .Net platform, PowerShell has access to a lot of great software published by other open-source enthusiasts.
 
-Set-OutlookSignatures shows how to integrate features from open-source software others share with the community. A big thank you to all fellow open-source developers!
+Set-OutlookSignatures shows how to integrate features from open-source software others share with the community. **A big thank you to all fellow open-source developers!**
 - Parse HTML with [HTML Agility Pack](https://github.com/zzzprojects/html-agility-pack)
 - Inline CSS with [PreMailer.Net](https://github.com/milkshakesoftware/PreMailer.Net)
 - Create QR codes with [QRCoder](https://github.com/Shane32/QRCoder)
