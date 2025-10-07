@@ -933,15 +933,15 @@ To remove the tagline and unlock advanced features, consider upgrading to [Benef
 ### 35.1. Why the tagline?
 In the words of Markus Gruber, the creator of Set-OutlookSignatures:
 
-> Set-OutlookSignatures is my way of giving back to the community. Since it was first released in 2021 as a demonstrator showcasing the practical use of efficient Active Directory queries, many reusable code snippets have been added — read about them in the FAQ '[What can I learn from the code of Set-OutlookSignatures?](#44-what-can-i-learn-from-the-code-of-set-outlooksignatures)'.
+> Set-OutlookSignatures is my way of giving back to the community. Since it was first released in 2021 as a demonstrator showcasing the practical use of efficient Active Directory queries, many reusable code snippets have been added: Read about them in the FAQ '[What can I learn from the code of Set-OutlookSignatures?](#44-what-can-i-learn-from-the-code-of-set-outlooksignatures)'.
 >
-> Today, Set-OutlookSignatures is more than just a vehicle for demonstrating PowerShell techniques — it has grown into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies.
+> Today, Set-OutlookSignatures is more than just a vehicle for demonstrating PowerShell techniques. It has grown into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies.
 >
 > Developing and testing it has taken thousands of hours of spare time and considerable financial investment in cross-platform test environments. I intend to continue developing and maintaining Set-OutlookSignatures, and to keep its core free and open-source.
 >
 > If you're an Exchange or client administrator, you're part of the community I want to support. I don’t expect or request thank-yous, as our community thrives on mutual support. Your feedback, bug reports, and shared use cases help improve the tool for everyone.
 >
-> That said, it’s important to ensure the relationship isn’t one-sided when companies benefit significantly. The tagline added to each signature reminds organizations that they benefit from open-source software and that continued open-source availability depends on financial support — which also unlocks additional useful features.
+> That said, it’s important to ensure the relationship isn’t one-sided when companies benefit significantly. The tagline added to each signature reminds organizations that they benefit from open-source software and that continued open-source availability depends on financial support, which also unlocks additional useful features.
 >
 > A note to companies: Open-source software is often misunderstood. It can include closed-source components. Open source does not automatically mean free usage or even free access to the code. And it does not imply free support.
 > 
@@ -949,7 +949,7 @@ In the words of Markus Gruber, the creator of Set-OutlookSignatures:
 > - **Invest** in the free and open-source software you depend on. Contributors work behind the scenes to make it better for everyone. Support them.
 > - **Sponsor** the tools your teams rely on. Funding these projects improves performance, reliability, and stability across your software supply chain.
 >
-> By choosing Set-OutlookSignatures, your company can significantly reduce costs compared to commercial alternatives — all while benefiting from a powerful, open-source solution. And by upgrading to the Benefactor Circle add-on, you help secure the future of Set-OutlookSignatures.
+> By choosing Set-OutlookSignatures, your company can significantly reduce costs compared to commercial alternatives, all while benefiting from a powerful, open-source solution. And by upgrading to the Benefactor Circle add-on, you help secure the future of Set-OutlookSignatures.
 
 ### 35.2. Not sure if Set-OutlookSignatures is the right solution for your company?
 

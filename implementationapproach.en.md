@@ -110,7 +110,7 @@ Based on the previously mentioned conditions and discussions with all involved p
 - Be synchronized in Outlook Web and as roaming signatures.
 - Be centrally managed, but also allow parallel user signatures.
 - Be automatically inserted into new emails, replies, forwards, and calendar events.
-- Be made available for other email clients besides Outlook—if not automatically, then at least for manual integration (e.g., Apple Mail).
+- Be made available for other email clients besides Outlook. If not automatically, then at least for manual integration (e.g., Apple Mail).
 
 **Deployment and execution should:**
 - Be possible on Windows, Linux, and macOS clients, including terminal servers or shared devices.
@@ -409,7 +409,7 @@ After gathering customer requirements and testing several server- and client-bas
 
 It supports all variants of Outlook and Exchange as target platforms: Windows, macOS, Android, iOS, Linux, and Web. Both classic and new Outlook. On-premises, hybrid, and cloud-only. By optionally storing signatures in the mailbox, they are also available in other email clients.
 
-Signature management is centralized and can be fully or partially delegated—e.g., to marketing—on a per-template basis. Only Microsoft Word is required for management; HTML knowledge is optional.
+Signature management is centralized and can be fully or partially delegated, e.g. to marketing, on a per-template basis. Only Microsoft Word is required for management; HTML knowledge is optional.
 
 Signature generation and distribution can be done in three combinable ways:
 - Locally on clients: This is the preferred method, as most unused computing power is available on clients (Windows, Linux, macOS).
@@ -418,7 +418,7 @@ Signature generation and distribution can be done in three combinable ways:
 
 All three methods support all types of email encryption, and integration into clients secured with AppLocker and other mechanisms (e.g., Microsoft Purview Information Protection) is technically and organizationally straightforward using established practices such as digitally signed PowerShell scripts.
 
-The architecture ensures that no data leaves existing systems—there is no transmission to external providers.
+The architecture ensures that no data leaves existing system, there is no transmission to external providers.
 
 Any number of independent instances can be operated, which is beneficial for phased rollouts or for companies loosely affiliated with a corporate group.
 
@@ -438,7 +438,7 @@ We share our experience gained during the definition of requirements for a signa
 
 For companies within the group that wish to implement the solution independently, we recommend starting with the <a href="/quickstart">Quick Start Guide</a>. Thanks to the extensive documentation, clients can usually implement Set-OutlookSignatures and the Benefactor Circle add-on on their own in a short amount of time.
 
-We offer support to all group companies in the form of workshops and training sessions. The following list represents the maximum scope—both in terms of content and time—within a full preparation and implementation project. **Complete <a href="/support#professional-support">implementation support</a> in a "train the trainer" format rarely takes more than half a day.**
+We offer support to all group companies in the form of workshops and training sessions. The following list represents the maximum scope, both in terms of content and time, within a full preparation and implementation project. **Complete <a href="/support#professional-support">implementation support</a> in a "train the trainer" format rarely takes more than half a day.**
 
 ### 6.1. Consulting and Implementation Phase {#consulting-implementation-phase}
 #### Initial Alignment on Textual Signatures <!-- omit in toc -->

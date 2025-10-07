@@ -342,7 +342,7 @@ Benefactor Circle add-on</span>.</p>
 <p>We keep license costs as fair as possible. Fair means:</p>
 <ul>
   <li>Small companies always just pay the same low price as big enterprises.</li>
-  <li>No maintenance or support contracts hidden in the annual price. You only pay for the support you actually need — and often, thanks to the documentation, you won’t need any.</li>
+  <li>No maintenance or support contracts hidden in the annual price. You only pay for the support you actually need - and typically, thanks to the documentation, you won’t need any.</li>
   <li><strong>Our support promise: </strong>If your support request is due to a bug in the latest version of <strong>Set-OutlookSignatures</strong>, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is <strong>free - no exceptions</strong>.
   <br>
   For all other issues, you will receive the same first-class support at a fair price.
