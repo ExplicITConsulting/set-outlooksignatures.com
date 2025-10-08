@@ -30,3 +30,6 @@ permalink: /help/
 
 <h2><a href="/support">Support</a></h2>
 <p>Wir geben unsere Erfahrung an Sie weiter</p>
+
+<h2><a href="/contact">Kontakt</a></h2>
+<p>title: Bleiben wir in Kontakt</p>
