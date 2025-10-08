@@ -32,4 +32,4 @@ permalink: /help/
 <p>Wir geben unsere Erfahrung an Sie weiter</p>
 
 <h2><a href="/contact">Kontakt</a></h2>
-<p>title: Bleiben wir in Kontakt</p>
+<p>Bleiben wir in Kontakt</p>
