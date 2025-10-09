@@ -164,7 +164,7 @@ When Active Directory is used, SIDHistory is always included when evaluating gro
 
 In Exchange resource forest scenarios with linked mailboxes, the group membership of the linked account (as populated in msExchMasterAccountSID) is not considered, only the group membership of the actual mailbox.
 
-Group membership from Active Directory on-prem is retrieved by combining queries:
+Group membership from Active Directory is retrieved by combining queries:
 - Security groups are determined via the tokenGroupsGlobalAndUniversal attribute. Querying this attribute is nearly instant, resource saving on client and server, and also considers sIDHistory. This query includes security groups with the global or universal scope type in the whole forest.
 - Distribution groups are queried via special LDAP_MATCHING_RULE_IN_CHAIN query that allows for very fast searching of group membership in the whole forest.
 - Group membership across trusts is considered when the trusted domain/forest is included in TrustsToCheckForGroups, which is the default for all detected trusts. Cross-trust group membership is retrieved with an optimized LDAP query, considering the sID and sIDHistory of the group memberships retrieved in the steps before. This query only includes groups with the domain local scope type, as this is the only group type that can be used across trusts.

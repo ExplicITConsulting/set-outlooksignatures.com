@@ -34,7 +34,7 @@ permalink: /faq/
 - [7. Should I use .docx or .htm as file format for templates? Signatures in Outlook sometimes look different than my templates.](#7-should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates)
 - [8. How can I log the software output?](#8-how-can-i-log-the-software-output)
 - [9. How can I get more script output for troubleshooting?](#9-how-can-i-get-more-script-output-for-troubleshooting)
-- [10. How can I start the software only when there is a connection to the Active Directory on-prem?](#10-how-can-i-start-the-software-only-when-there-is-a-connection-to-the-active-directory-on-prem)
+- [10. How can I start the software only when there is a connection to Active Directory?](#10-how-can-i-start-the-software-only-when-there-is-a-connection-to-active-directory)
 - [11. Can multiple script instances run in parallel?](#11-can-multiple-script-instances-run-in-parallel)
 - [12. How do I start the software from the command line or a scheduled task?](#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)
   - [12.1. Start Set-OutlookSignatures in hidden/invisible mode](#121-start-set-outlooksignatures-in-hiddeninvisible-mode)
@@ -88,8 +88,9 @@ permalink: /faq/
   - [44.4. Parallel code execution](#444-parallel-code-execution)
   - [44.5. Create desktop icons cross-platform](#445-create-desktop-icons-cross-platform)
   - [44.6. Create and configure apps in Entra ID, grant admin consent](#446-create-and-configure-apps-in-entra-id-grant-admin-consent)
-  - [44.7. Test Active Directory client connectivity](#447-test-active-directory-client-connectivity)
-  - [44.8. Bringing hidden treasures to light](#448-bringing-hidden-treasures-to-light)
+  - [44.7. Test Active Directory trusts](#447-test-active-directory-trusts)
+  - [44.8. Start only if working Active Directory connection is available](#448-start-only-if-working-active-directory-connection-is-available)
+  - [44.9. Bringing hidden treasures to light](#449-bringing-hidden-treasures-to-light)
 
 
 ## 1. Where can I find the changelog?
@@ -207,137 +208,14 @@ Stop-Transcript
 Start the software with the '-verbose' parameter to get the maximum output for troubleshooting.
 
 
-## 10. How can I start the software only when there is a connection to the Active Directory on-prem?
+## 10. How can I start the software only when there is a connection to Active Directory?
 Per default, Set-OutlookSignatures tries to get the required information from Active Directory. When no Active Directory server can be reached, the Graph API is used to get the required information from Entra ID.
 
 To use only Entra ID, you set the '`GraphOnly`' parameter to '`true`'.
 
-There is no direct way to disable the use of Entra ID, which can result in users complaining about pop-up windows regarding authentication because no Entra ID app has been set-up yet. This can also be required when Set-OutlookSignatures is run every time a VPN connection is established, but the client firewall is too slow opening the required ports.
+There is no direct way to disable the use of Entra ID. When you do not have Entra ID but run Set-OutlookSignatures when there is (yet) no connection to Active Directory, this can lead to users complaining about pop-up windows regarding authentication because no Entra ID app has been set-up yet. This can also be required when Set-OutlookSignatures is run every time a VPN connection is established, but the client firewall is too slow opening the required ports.
 
-With the following code, you can make sure that Set-OutlookSignatures is only run when a connection to Active Directory is available:
-
-```
-# Only run Set-OutlookSignatures when there is a connection to a Domain Controller.
-# Covers the following cases:
-#   - At least one DC from the user's domain is pingable
-#   - At least one Global Catalog server from the user's domain is reachable via a GC query
-#   - The querying user exists and is not locked
-#   - All domains in the user's forest are reachable via LDAP and GC queries
-
-
-$testIntervalSeconds = 5 # Interval between retries
-$testTimeoutSeconds = 120 # For how long to retry (in seconds) before giving up
-
-
-Write-Host 'Start AD connectivity test'
-
-Add-Type -AssemblyName System.DirectoryServices.AccountManagement
-$testCurrentUserDN = ([System.DirectoryServices.AccountManagement.UserPrincipal]::Current).DistinguishedName
-
-if (
-  $($null -eq $testCurrentUserDN) -or
-  $(($testCurrentUserDN -split ',DC=').Count -lt 3)
-) {
-  Write-Host '  User is not a member of a domain, do not go on with further tests.'
-} else {
-  $testStartTime = Get-Date
-  $testSuccess = $false
-
-  do {
-    if (Test-Connection $(($testCurrentUserDN -split ',DC=')[1..999] -join '.') -Count 1 -Quiet) {
-      Write-Host '  User on-prem AD can be reached, perform test query against AD.'
-
-      $testCurrentUserADProps = $null
-
-      try {
-        $testSearch = New-Object DirectoryServices.DirectorySearcher
-        $testSearch.PageSize = 1000
-        $testSearch.SearchRoot = "GC://$(($testCurrentUserDN -split ',DC=')[1..999] -join '.')"
-        $testSearch.Filter = "((distinguishedname=$($testCurrentUserDN)))"
-
-        $testCurrentUserADProps = $testSearch.FindOne().Properties
-      } catch {
-        $testCurrentUserADProps = $null
-      }
-
-      if ($null -ne $testCurrentUserADProps) {
-        Write-Host '  AD query was successful, user is not locked, DC is reachable via GC query: Start Set-OutlookSignatures.'
-
-        # Get all domains of the current user forest, as they must be reachable, too
-        Write-Host '  Testing child domains'
-
-        $testCurrentUserForest = (([ADSI]"LDAP://$(($testCurrentUserDN -split ',DC=')[1..999] -join '.')/RootDSE").rootDomainNamingContext -ireplace [Regex]::Escape('DC='), '' -ireplace [Regex]::Escape(','), '.').tolower()
-
-        $testSearch.SearchRoot = "GC://$($testCurrentUserForest)"
-        $testSearch.Filter = '(ObjectClass=trustedDomain)'
-        $testTrustedDomains = @($testSearch.FindAll())
-
-        $testTrustedDomains = @(
-          @() +
-          $testCurrentUserForest +
-          @(
-            @($testTrustedDomains) | Where-Object { (($_.properties.trustattributes -eq 32) -and ($_.properties.name -ine $testCurrentUserForest)) }
-          ).properties.name
-        ) | Select-Object -Unique
-
-        $testTrustedDomainFailCount = 0
-
-        foreach ($testTrustedDomain in $testTrustedDomains) {
-          if ($testTrustedDomainFailCount -gt 0) {
-            break
-          }
-
-          Write-Host "    $($testTrustedDomain)"
-
-          foreach ($CheckProtocolText in @('LDAP', 'GC')) {
-            if ($testTrustedDomainFailCount -gt 0) {
-              break
-            }
-
-            $testSearch.searchroot = New-Object System.DirectoryServices.DirectoryEntry("$($CheckProtocolText)://$testTrustedDomain")
-            $testSearch.filter = '(objectclass=user)'
-
-            try {
-              $null = ([ADSI]"$(($testSearch.FindOne()).path)")
-
-              Write-Host "      $($CheckProtocolText): Passed"
-            } catch {
-              $testTrustedDomainFailCount++
-
-              Write-Host "      $($CheckProtocolText): Failed"
-            }
-          }
-        }
-
-        if ($testTrustedDomainFailCount -eq 0) {
-          $testSuccess = $true
-        }
-
-        #
-        # Start Set-OutlookSignatures here
-        #
-      } else {
-        Write-Host '  AD query failed, user might be locked or DCs can not be reached via GC query: Do not start Set-OutlookSignatures.'
-      }
-
-    } else {
-      Write-Host '  User on-prem AD can not be reached, do not go on with further tests.'
-    }
-
-    if ($testSuccess -ne $true) {
-      $testElapsedSeconds = [math]::Ceiling((New-TimeSpan -Start $testStartTime).TotalSeconds)
-
-      if ($testElapsedSeconds -ge $testTimeoutSeconds) {
-        Write-Host "  Timeout reached ($($testTimeoutSeconds) seconds). Tests stopped."
-        break
-      } else {
-        Write-Host "  Retrying in $($testIntervalSeconds) seconds. $($testTimeoutSeconds - $testElapsedSeconds) seconds left until timeout."
-        Start-Sleep -Seconds $testIntervalSeconds
-      }
-    }
-  } while ($testSuccess -ne $true)
-}
-```
+With the code from '`.\sample code\Start-IfADAvailable.ps1`', you can make sure that Set-OutlookSignatures is only run when a connection to Active Directory is available.
 
 
 ## 11. Can multiple script instances run in parallel?
@@ -1089,7 +967,7 @@ To ensure consistent results across all platforms, use a custom replacement vari
 ## 44. What can I learn from the code of Set-OutlookSignatures?
 Set-OutlookSignatures is not just a tool for managing Outlook signatures and out-of-office replies. It is free and open-source because I want to give something back to the community that has helped me so often over the years.
 
-The following gives you an overview which scripting techniques you can learn from Set-OutlookSignatures.
+The following gives you an overview which scripting techniques you can learn from Set-OutlookSignatures. Beside the big learning topics mentioned in this FAQ, main and supporting files of Set-OutlookSignatures are sprinkled with small code snippets you may find useful, usually with a short comment - chances are good that you will stumble across some small gems of code by just browsing through it.
 
 You have found some lines of code that you can use for yourself? Great, that's exactly how it's meant to be. My pleasure!<br>One small request: If you have a minute, please <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">let me know</a> which part of the code you were able to reuse.
 
@@ -1173,7 +1051,7 @@ The included code shows how to fully automate the creation and configuration of 
 Files:
 - '`.\sample code\Create-EntraApp.ps1`'
 
-### 44.7. Test Active Directory client connectivity
+### 44.7. Test Active Directory trusts
 Active Directory has been introduced nearly 30 years ago, but one still comes across environments with misconfigured DNS servers and firewalls. It becomes even more problematic when trusts are involved - although the requirements are well documented and firewalls typically have built-in filters.
 
 For such cases, Set-OutlookSignatures includes code to check AD trusts and AD connectivity from a client computer.
@@ -1190,7 +1068,19 @@ This code is also a good example for parallel code execution in PowerShell.
 Files:
 - '`.\sample code\Test-ADTrust.ps1`'
 
-### 44.8. Bringing hidden treasures to light
+### 44.8. Start only if working Active Directory connection is available
+This a much simpler and faster variant of '`.\sample code\Test-ADTrust.ps1`', intenden for a simpler use case: Quickly check if a working connection to Active Directory can be established, and only run Set-OutlookSignatures when Active Directory answers.
+
+This is useful when, for example, you use a VPN connection event trigger to start Set-OutlookSignatures, but your client firewall takes some time to update its dynamic ruleset.
+
+This code would not be worth nothing if it did not consider some typical caveats: Getting the current user, querying a Domain Controller and a Global Catalog, checking if the user is locked, quickly testing if intraforest-trusts work, retry and timeout mechanisms.
+
+Sounds complicated, but is straightforward and highly reusable for any software with similar requirements.
+
+Files:
+- '`.\sample code\Start-IfADAvailable.ps1`'
+
+### 44.9. Bringing hidden treasures to light
 As a member of the .Net platform, PowerShell has access to a lot of great software published by other open-source enthusiasts.
 
 Set-OutlookSignatures shows how to integrate features from open-source software others share with the community. **A big thank you to all fellow open-source developers!**
