@@ -8,7 +8,7 @@ hero_link_text: "<span><b>➔ Features: </b>What our solution is able to do</spa
 hero_link_style: |
   style="background-color: LimeGreen;"
 hero_link2: "#feature-comparison"
-hero_link2_text: "<span><b>➔ Feature comparison </b>with market companions</span>"
+hero_link2_text: "<span><b>➔ Feature comparison </b>with peers</span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
 hero_link3: "/quickstart"
@@ -73,9 +73,9 @@ Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle
             <tr>
                 <th style="text-align:left">Feature</th>
                 <th style="text-align:left">Set-OutlookSignatures<br>with the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></th>
-                <th style="text-align:left">Market Companion&nbsp;A</th>
-                <th style="text-align:left">Market Companion&nbsp;B</th>
-                <th style="text-align:left">Market Companion&nbsp;C</th>
+                <th style="text-align:left">Peer&nbsp;A</th>
+                <th style="text-align:left">Peer&nbsp;B</th>
+                <th style="text-align:left">Peer&nbsp;C</th>
             </tr>
         </thead>
         <tbody>

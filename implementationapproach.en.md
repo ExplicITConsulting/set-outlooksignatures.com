@@ -140,9 +140,9 @@ Based on the required feature set, various solutions were evaluated, tested, and
             <tr>
                 <th style="text-align:left">Feature</th>
                 <th style="text-align:left">Set-OutlookSignatures with the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></th>
-                <th style="text-align:left">Market Companion&nbsp;A</th>
-                <th style="text-align:left">Market Companion&nbsp;B</th>
-                <th style="text-align:left">Market Companion&nbsp;C</th>
+                <th style="text-align:left">Peer&nbsp;A</th>
+                <th style="text-align:left">Peer&nbsp;B</th>
+                <th style="text-align:left">Peer&nbsp;C</th>
             </tr>
         </thead>
         <tbody>
