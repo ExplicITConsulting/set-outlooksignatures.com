@@ -361,8 +361,6 @@ permalink: /benefactorcircle/
 
 <p>Sie müssen keine einzelnen Postfächer benennen. Stattdessen definieren Sie mindestens eine Active Directory- oder Entra ID-Gruppe, die die betreffenden Postfächer enthält, und geben die maximale Anzahl rekursiver Mitglieder pro Gruppe an.</p>
 
-<p>Es spielt keine Rolle, wie viele Benutzer auf ein Postfach zugreifen. Wenn Sie nur für ein einzelnes Postfach Signaturen bereitstellen möchten, das von 50 Personen genutzt wird, benötigen Sie nur eine Lizenz.</p>
-
 <p>Es gibt keine Mindestanzahl an Postfächern. Allerdings muss jede Rechnung einen Mindestbetrag von 210,00 € netto erreichen. Lizenzen sind im Voraus zu bezahlen und gelten für ein Jahr ab dem Datum des vollständigen Zahlungseingangs. Es gibt keine automatische Verlängerung oder ein Abonnement.</p>
 
 <p>Wenn Sie während einer laufenden Lizenzperiode zusätzliche Postfächer hinzufügen, werden diese anteilig zum aktuellen Lizenzpreis für die verbleibenden Monate berechnet. Der Mindestbetrag pro Rechnung bleibt dabei bestehen.</p>
