@@ -6,7 +6,7 @@ title: Set-Outlook&shy;Signatures
 subtitle: Email signatures and out-of-office replies for Exchange and all of Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
 description: Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 hero_link: /quickstart
-hero_link_text: "<span><b>➔ Quick Start Guide: </b>Deploy signatures within minutes, free and open-source.</span>"
+hero_link_text: "<span><b>Quick Start Guide: </b>Deploy signatures within minutes, free and open-source.</span>"
 hero_link_style: |
   style="background-color: LimeGreen;"
 hero_link2: /faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures
@@ -212,7 +212,7 @@ permalink: /
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="/benefactorcircle#demo" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">➔ Schedule your personal demo now</a></p>
+      <p><a href="/benefactorcircle#demo" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">Schedule your personal demo now</a></p>
     </div>
   </div>
 
@@ -232,7 +232,7 @@ permalink: /
 </h2>
 <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 
-<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">➔ Quick Start Guide</a>
+<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Quick Start Guide</a>
 
 
 <h2 id="dive-deeper">
@@ -246,4 +246,4 @@ permalink: /
   <li>How to get first-class support</li>
 </ul>
 
-<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">➔ Help and Support-Center</a>
+<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Help and Support-Center</a>

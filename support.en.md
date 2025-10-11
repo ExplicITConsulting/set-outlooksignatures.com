@@ -55,6 +55,6 @@ permalink: /support/
 
 <p>
   <a href="https://forms.cloud.microsoft/r/CnwjH98vSs" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">
-      ➔ Request professional support
+      Request professional support
   </a>
 </p>

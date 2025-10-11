@@ -4,15 +4,15 @@ title: Features and feature comparison
 subtitle: Our solution at a glance and in benchmark
 description: Features and feature comparison. Our solution at a glance and in benchmark.
 hero_link: "#features"
-hero_link_text: "<span><b>➔ Features: </b>What our solution is able to do</span>"
+hero_link_text: "<span><b>Features: </b>What our solution is able to do</span>"
 hero_link_style: |
   style="background-color: LimeGreen;"
 hero_link2: "#feature-comparison"
-hero_link2_text: "<span><b>➔ Feature comparison </b>with peers</span>"
+hero_link2_text: "<span><b>Feature comparison </b>with peers</span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
 hero_link3: "/quickstart"
-hero_link3_text: "<span><b>➔ Quick Start Guide: </b>Deploy signatures within minutes</span>"
+hero_link3_text: "<span><b>Quick Start Guide: </b>Deploy signatures within minutes</span>"
 hero_link3_style: |
   style="background-color: LimeGreen;"
 image:
