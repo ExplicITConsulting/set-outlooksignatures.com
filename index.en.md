@@ -9,6 +9,10 @@ hero_link: /quickstart
 hero_link_text: "<span><b>➔ Quick Start Guide: </b>Deploy signatures within minutes, free and open-source.</span>"
 hero_link_style: |
   style="background-color: LimeGreen;"
+hero_link2: /faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures
+hero_link2_text: "<span><b>Learn from the code</b></span>"
+hero_link2_style: |
+  style="background-color: LimeGreen;"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200

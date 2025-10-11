@@ -84,13 +84,14 @@ permalink: /faq/
 - [44. What can I learn from the code of Set-OutlookSignatures?](#44-what-can-i-learn-from-the-code-of-set-outlooksignatures)
   - [44.1. Active Directory group membership enumeration without compromises](#441-active-directory-group-membership-enumeration-without-compromises)
   - [44.2. Microsoft Graph authentication and re-authentication](#442-microsoft-graph-authentication-and-re-authentication)
-  - [44.3. Deploy and run software using desired state configuration (DSC)](#443-deploy-and-run-software-using-desired-state-configuration-dsc)
-  - [44.4. Parallel code execution](#444-parallel-code-execution)
-  - [44.5. Create desktop icons cross-platform](#445-create-desktop-icons-cross-platform)
-  - [44.6. Create and configure apps in Entra ID, grant admin consent](#446-create-and-configure-apps-in-entra-id-grant-admin-consent)
-  - [44.7. Test Active Directory trusts](#447-test-active-directory-trusts)
-  - [44.8. Start only if working Active Directory connection is available](#448-start-only-if-working-active-directory-connection-is-available)
-  - [44.9. Bringing hidden treasures to light](#449-bringing-hidden-treasures-to-light)
+  - [44.3. Graph cross-tenant and multitenant-organization access](#443-graph-cross-tenant-and-multitenant-organization-access)
+  - [44.4. Deploy and run software using desired state configuration (DSC)](#444-deploy-and-run-software-using-desired-state-configuration-dsc)
+  - [44.5. Parallel code execution](#445-parallel-code-execution)
+  - [44.6. Create desktop icons cross-platform](#446-create-desktop-icons-cross-platform)
+  - [44.7. Create and configure apps in Entra ID, grant admin consent](#447-create-and-configure-apps-in-entra-id-grant-admin-consent)
+  - [44.8. Test Active Directory trusts](#448-test-active-directory-trusts)
+  - [44.9. Start only if working Active Directory connection is available](#449-start-only-if-working-active-directory-connection-is-available)
+  - [44.10. Bringing hidden treasures to light](#4410-bringing-hidden-treasures-to-light)
 
 
 ## 1. Where can I find the changelog?
@@ -1007,7 +1008,17 @@ Files:
 - '`.\Set-OutlookSignatures.ps1`'
 - '`.\bin\MSAL.PS`'
 
-### 44.3. Deploy and run software using desired state configuration (DSC)
+### 44.3. Graph cross-tenant and multitenant-organization access
+The function '`GraphDomainToTenantID`' takes a DNS domain name, an email address, a URL or a tenant ID and tells you the tenant ID and the cloud it belongs to. It keeps a cache for fast lookups.
+
+The function '`GraphSwitchContext`' manages the authentication tokens for different tenant IDs and allows you to easily switch between them by accepting the same input as '`GraphDomainToTenantID`'.
+
+As all code of Set-OutlookSignatures, these functions not only work with the public cloud but also with national clouds (GCC High, GCC DoD, China).
+
+Files:
+- '`.\Set-OutlookSignatures.ps1`'
+
+### 44.4. Deploy and run software using desired state configuration (DSC)
 Deploy software without having to create a software package, and run it on a schedule without having to work with scheduled tasks?
 
 More and more Enterprise Mobility Management (EMM) products, such as Microsoft Intune, provide exactly this with a feature named desired state configuration (DSC). The idea is simple: A script periodically checks if a desired state exists and in reality, and takes action when real and desired state differ.
@@ -1018,7 +1029,7 @@ Files:
 - '`.\sample code\Intune-SetOutlookSignatures-Detect.ps1`'
 - '`.\sample code\Intune-SetOutlookSignatures-Remediate.ps1`'
 
-### 44.4. Parallel code execution
+### 44.5. Parallel code execution
 PowerShell 7 has made parallel code execution much easier with '`Foreach-Object -Parallel`' and background jobs, but they lack some features and are not available at all or only with a reduced feature set for PowerShell 5.
 
 Set-OutlookSignatures uses parallel code execution in multiple places to speed up operations and to solve DLL/module dependency problems. For maximum comfort and compatibility, runspaces are used for this.
@@ -1030,7 +1041,7 @@ Files:
 - '`.\sample code\SimulateAndDeploy.ps1`'
 - '`.\sample code\Test-ADTrust.ps1`'
 
-### 44.5. Create desktop icons cross-platform
+### 44.6. Create desktop icons cross-platform
 Creating desktop icons seems to be a trivial task: Create the shortcut on a sample client and then deploy it.
 
 It gets more of a challenge when you want to create the shortcut based on parameters, as Microsoft does not deeply document the required file format, and as there is no built-in cmdlet in PowerShell.
@@ -1040,7 +1051,7 @@ Set-OutlookSignatures not only includes code showing how it is done on Windows, 
 Files:
 - '`.\sample code\Create-DesktopIcon.ps1`'
 
-### 44.6. Create and configure apps in Entra ID, grant admin consent
+### 44.7. Create and configure apps in Entra ID, grant admin consent
 Basically every interaction with Microsoft 365, Microsoft Azure, and Entra ID requires an Entra ID app in the background. This is an integral part of the design of the Graph API, providing higher security as permissions have to be defined in detail and, in many cases, must be granted use by administrators.
 
 Although Entra ID apps are used all the time by all products interacting with Microsoft could products, administrators generally only have very little knowledge about how Entra ID apps work in detail, or why they are even required.
@@ -1054,7 +1065,7 @@ The included code shows how to fully automate the creation and configuration of 
 Files:
 - '`.\sample code\Create-EntraApp.ps1`'
 
-### 44.7. Test Active Directory trusts
+### 44.8. Test Active Directory trusts
 Active Directory has been introduced nearly 30 years ago, but one still comes across environments with misconfigured DNS servers and firewalls. It becomes even more problematic when trusts are involved - although the requirements are well documented and firewalls typically have built-in filters.
 
 For such cases, Set-OutlookSignatures includes code to check AD trusts and AD connectivity from a client computer.
@@ -1071,7 +1082,7 @@ This code is also a good example for parallel code execution in PowerShell.
 Files:
 - '`.\sample code\Test-ADTrust.ps1`'
 
-### 44.8. Start only if working Active Directory connection is available
+### 44.9. Start only if working Active Directory connection is available
 This a much simpler and faster variant of '`.\sample code\Test-ADTrust.ps1`', intenden for a simpler use case: Quickly check if a working connection to Active Directory can be established, and only run Set-OutlookSignatures when Active Directory answers.
 
 This is useful when, for example, you use a VPN connection event trigger to start Set-OutlookSignatures, but your client firewall takes some time to update its dynamic ruleset.
@@ -1083,7 +1094,7 @@ Sounds complicated, but is straightforward and highly reusable for any software 
 Files:
 - '`.\sample code\Start-IfADAvailable.ps1`'
 
-### 44.9. Bringing hidden treasures to light
+### 44.10. Bringing hidden treasures to light
 As a member of the .Net platform, PowerShell has access to a lot of great software published by other open-source enthusiasts.
 
 Set-OutlookSignatures shows how to integrate features from open-source software others share with the community. **A big thank you to all fellow open-source developers!**
