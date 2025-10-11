@@ -803,18 +803,18 @@ Alternative options for storing files:
 
 
 ## 35. How to disable the tagline in signatures?
-Set-OutlookSignatures automatically adds a tagline to signatures for mailboxes without a [Benefactor Circle](/benefactorcircle) license. You may also refer to the tagline as a footer message, nag text, outreach snippet, upgrade nudge, or reminder blurb.
+Set-OutlookSignatures appends a small, subtle attribution to signatures: 'Free and open-source [Set-OutlookSignatures](https://set-outlooksignatures.com)'
 
-Mailboxes with a Benefactor Circle license do not include this tagline.
+This unobtrusive text may also be called tagline, footer message, nag text, outreach snippet, upgrade nudge, or reminder blurb.
 
-To remove the tagline and unlock advanced features, consider upgrading to [Benefactor Circle](/benefactorcircle). See the linked page for details and business benefits.
+Signatures for mailboxes with a [Benefactor Circle](/benefactorcircle) license automatically remove this attribution.
 
 ### 35.1. Why the tagline?
 In the words of Markus Gruber, the creator of Set-OutlookSignatures:
 
 > Set-OutlookSignatures is my way of giving back to the community. Since it was first released in 2021 as a demonstrator showcasing the practical use of efficient Active Directory queries, many reusable code snippets have been added: Read about them in the FAQ '[What can I learn from the code of Set-OutlookSignatures?](#44-what-can-i-learn-from-the-code-of-set-outlooksignatures)'.
 >
-> Today, Set-OutlookSignatures is more than just a vehicle for demonstrating PowerShell techniques. It has grown into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies.
+> Today, Set-OutlookSignatures is more than just a vehicle for demonstrating PowerShell techniques. It has evolved into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies.
 >
 > Developing and testing it has taken thousands of hours of spare time and considerable financial investment in cross-platform test environments. I intend to continue developing and maintaining Set-OutlookSignatures, and to keep its core free and open-source.
 >
@@ -839,7 +839,7 @@ All documentation is publicly available. You can get free community support on G
 For a small annual fee per mailbox, the [Benefactor Circle add-on](/benefactorcircle) offers additional enterprise-grade features. Companies can test all premium features at no cost during a free 14-day trial.
 
 Unsure whether the add-on will deliver value for your company?  
-The chapter '[Financial Benefits](https://set-outlooksignatures.com/benefactorcircle/#financial-benefits)' shows how to calculate the value based on your company’s specific needs.  
+The chapter '[Financial Benefits](/benefactorcircle/#financial-benefits)' shows how to calculate the value based on your company’s specific needs.  
 If your company concludes that the add-on does not provide sufficient value, it can still use the free and open-source version of Set-OutlookSignatures.
 
 
