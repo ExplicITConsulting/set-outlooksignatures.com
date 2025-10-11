@@ -2,7 +2,7 @@
 layout: page
 title: Download Set-Outlook&shy;Signatures
 subtitle: Get the Free and Open-Source core version
-description: Email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
+description: Email signatures and out-of-office replies for Exchange and Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -13,7 +13,7 @@ permalink: /download/
 ---
 <h2 id="set-outlooksignatures">Set-OutlookSignatures</h2>
 <p>
-Set-OutlookSignatures is the open-source standard for email signatures and out-of-office replies for Exchange and all of Outlook. Full-featured, cost-effective, unsurpassed data privacy.
+Set-OutlookSignatures is the open-source standard for email signatures and out-of-office replies for Exchange and Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 </p>
 
 <p>
