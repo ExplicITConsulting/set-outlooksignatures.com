@@ -299,7 +299,7 @@ permalink: /benefactorcircle/
 
 
 <h2 id="financial-benefits">Finanzielle Vorteile</h2>
-<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> ist eine Investition, die sich ab dem ersten Tag rechnet. Eine Kosten-Nutzen-Rechnung in Form eines Business Cases muss drei Aspekte berücksichtigen:</p>
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> ist eine Investition, die sich ab dem ersten Tag rechnet. Eine Kosten-Nutzen-Rechnung in Form eines Business Cases muss drei Aspekte berücksichtigen:</p>
 <ul>
   <li>Wie hoch sind die Kosten durch nicht konforme Signaturen und Abwesenheitsnotizen – sei es durch Reputationsverlust oder Bußgelder wegen Nichteinhaltung von Vorschriften?</li>
   <li>Welchen Mehrwert bietet die Nutzung von E-Mails als zusätzlicher Marketingkanal?</li>
@@ -338,49 +338,41 @@ permalink: /benefactorcircle/
 
 <h2 id="licenses">Kauf, Verlängerung und Änderung von Lizenzen</h2>
 <h3 id="price">Preis und allgemeine Informationen</h3>
-<p>Set-OutlookSignatures kostet nichts.<br>Als Technologie-Demonstrator für Skripting-Techniken gestartet, hat es sich zum anspruchsvollsten und vielseitigsten kostenlosen und Open-Source-Tool für die Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen entwickelt. Lesen Sie <a href="https://set-outlooksignatures.com/faq/#351-why-the-tagline">hier</a> mehr über seine Geschichte und die Absichten dahinter.</p>
-<p>Die erweiterten Funktionen des <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> kosten <strong>nur 3.00 € pro Postfach und Jahr</strong>, was  <strong>lediglich 0.25 € pro Postfach und Monat</strong> entspricht.</p>
+<p>Set-OutlookSignatures ist vollständig kostenlos. Ursprünglich als Technologie-Demonstrator für Scripting-Techniken geschaffen, hat sich das Tool zur fortschrittlichsten und vielseitigsten kostenlosen Open-Source-Lösung für die Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen entwickelt. Mehr über die Entstehungsgeschichte und die dahinterstehenden Absichten erfahren Sie <a href="https://set-outlooksignatures.com/faq/#351-why-the-tagline">hier</a>.</p>
 
-<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> ist eine Investition, die sich ab dem ersten Tag rechnet - ganz sicher auf für Sie: <a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Kosten-Nutzen-Rechnung, Business Case</a></p>
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> schaltet erweiterte Funktionen frei und ist für <strong>nur 3.00 € pro Postfach und Jahr</strong> erhältlich, das entspricht <strong>lediglich 0.25 € pro Postfach und Monat</strong>.</p>
 
-<p>Wir gestalten die Lizenzkosten so fair wie möglich. Fair bedeutet:</p>
+<p>Dieses Add-On ist eine Investition, die sich vom ersten Tag an auszahlt - ganz sicher auch für Sie: <a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Kosten-Nutzen-Rechnung, Business Case</a></p>
+
+<p>Wir gestalten die Lizenzkosten so fair und transparent wie möglich:</p>
 <ul>
-  <li>Kleine Unternehmen zahlen denselben niedrigen Preis wie große Konzerne.</li>
-  <li>Keine Wartungs- oder Supportverträge, die als „kostenlos“ beworben werden, aber tatsächlich im Jahrespreis versteckt sind und selten im vollen Umfang genutzt werden.<br>
-  Bei uns zahlen Sie nur für den Support, den Sie tatsächlich benötigen – dank der umfangreichen Dokumentation ist dieser meist gar nicht erforderlich.<br>
-  <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von <strong>Set-OutlookSignatures</strong>, dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support <strong>kostenlos – ohne Ausnahme</strong>.
+  <li>Kleine Unternehmen zahlen denselben günstigen Preis wie große Konzerne.</li>
+  <li>Es gibt keine versteckten Wartungs- oder Supportverträge im Jahrespreis. Sie zahlen nur für den Support, den Sie tatsächlich benötigen – und dank unserer Dokumentation ist das in der Regel gar nicht nötig.</li>
+  <li>
+  <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos – ohne Ausnahme.
   <br>
-  Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.
+  Für alle anderen Anliegen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.
   </li>
-  <li>Keine zusätzliche Infrastruktur, die von Dritten betrieben wird und unabhängig von der Nutzung Kosten verursacht.<br>
-  Keine Schnittstellen, die Ihre Daten regelmäßig an externe Rechenzentren übertragen, um Signaturen aufzubereiten, und an die jede E-Mail zur Signaturanwendung weitergeleitet werden muss.<br>
-  Alles läuft auf Ihren bestehenden Systemen, denen Sie bereits vertrauen und die Sie selbst verwalten – innerhalb Ihrer eigenen Sicherheitsgrenzen.</li>
-  <li>Keine künstlich überhöhten Preise, die dann durch Verhandlungen "reduziert" werden.</li>
+  <li>Keine zusätzliche Infrastruktur oder externe Datenübertragungen. Alles läuft auf Ihren bestehenden Systemen, innerhalb Ihrer eigenen Sicherheitsgrenzen.</li>
+  <li>Keine künstlich überhöhten Preise, die später durch Verhandlungen "reduziert" werden.</li>
 </ul>
 
-<p>Es gibt keine Mindestanzahl an Postfächern, nur einen Mindestbetrag von 210,00 € netto pro Rechnung.</p>
+<p>Lizenzen sind nur für Postfächer erforderlich, die <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span>-Funktionen nutzen. Dies gilt auch für gemeinsam genutzte Postfächer. Jedes Postfach benötigt eine eigene Lizenz, unabhängig davon, wie viele Benutzer darauf zugreifen, wie viele Signaturen bereitgestellt werden oder wie häufig diese geändert werden.</p>
 
-<p>Jedes Postfach in Ihrer Umgebung, für das Sie ein exklusives Benefactor Circle-Feature nutzen möchten, benötigt eine Lizenz - auch shared mailboxes.</p>
+<p>Sie müssen keine einzelnen Postfächer benennen. Stattdessen definieren Sie mindestens eine Active Directory- oder Entra ID-Gruppe, die die betreffenden Postfächer enthält, und geben die maximale Anzahl rekursiver Mitglieder pro Gruppe an.</p>
 
 <p>Es spielt keine Rolle, wie viele Benutzer auf ein Postfach zugreifen. Wenn Sie nur für ein einzelnes Postfach Signaturen bereitstellen möchten, das von 50 Personen genutzt wird, benötigen Sie nur eine Lizenz.</p>
 
-<p>Die Postfächer müssen nicht namentlich benannt werden. Es reicht, wenn Sie mindestens eine Active Directory- oder Entra ID-Gruppe definieren, die die Postfächer enthält, sowie die maximale Anzahl rekursiver Mitglieder pro Gruppe.</p>
+<p>Es gibt keine Mindestanzahl an Postfächern. Allerdings muss jede Rechnung einen Mindestbetrag von 210,00 € netto erreichen. Lizenzen sind im Voraus zu bezahlen und gelten für ein Jahr ab dem Datum des vollständigen Zahlungseingangs. Es gibt keine automatische Verlängerung oder ein Abonnement.</p>
 
-<p>Es ist unerheblich, wie viele Signaturen Sie haben oder wie oft Sie diese ändern.</p>
+<p>Wenn Sie während einer laufenden Lizenzperiode zusätzliche Postfächer hinzufügen, werden diese anteilig zum aktuellen Lizenzpreis für die verbleibenden Monate berechnet. Der Mindestbetrag pro Rechnung bleibt dabei bestehen.</p>
 
-<p>Lizenzen sind im Voraus zahlbar und gelten ein Jahr ab Zahlungseingang. Es gibt keine automatische Verlängerung oder Abo-Verpflichtung.</p>
-
-<p>Solange eine Lizenz gültig ist, sind kostenlose Versions-Upgrades und priorisierte Supportanfragen enthalten.</p>
-
-<p>Wir arbeiten kontinuierlich daran, unsere Preise so niedrig und stabil wie möglich zu halten – mit dem Ziel, sie nur an die Inflation anzupassen. Preise können sich daher ändern. Da Sie im Voraus zahlen, entstehen keine nachträglichen Kosten.</p>
-
-<p>Wenn Sie während einer laufenden Lizenzperiode weitere Postfächer hinzufügen möchten, zahlen Sie nur den aktuellen Preis anteilig für die verbleibenden Monate der Lizenzlaufzeit.</p>
-
+<p>Solange eine Lizenz gültig ist, sind kostenlose Versions-Upgrades sowie priorisierte Bearbeitung von Supportanfragen enthalten.</p>
 
 <h3 id="trial">Testversion</h3>
 <p>Sie möchten vielleicht mit einer 14-tägigen Testlizenz starten.</p>
 
-<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.<br>
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> erweitert den Funktionsumfang der kostenlosen und quelloffenen Kernversion von Set-OutlookSignatures. Bitte stellen Sie daher sicher, dass die Kernversion korrekt funktioniert, bevor Sie eine Testlizenz anfordern.<br>
 Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion benötigen, lesen Sie die Kurzanleitung in der Readme-Datei, öffnen Sie ein Issue auf GitHub oder kontaktieren Sie uns direkt – wir helfen Ihnen im Rahmen unseres professionellen Supports gerne bei der Einführung von Set-OutlookSignatures in Ihrer Umgebung.</p>
 
 <p>Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:</p>
@@ -391,7 +383,7 @@ Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion ben�
 <p>Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:</p>
 <ul>
   <li>'-BenefactorCircleLicenseFile' mit dem Pfad zu Ihrer individuellen Lizenzdatei</li>
-  <li>'-BenefactorCircleId' mit Ihrer Benefactor Circle-ID</li>
+  <li>'-BenefactorCircleId' mit Ihrer <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> ID</li>
 </ul>
 
 <p>Testlizenzen können nicht verlängert oder erneut ausgestellt werden.<br>
@@ -411,14 +403,14 @@ Die Testphase beginnt mit der Erstellung und Übermittlung der Lizenzdatei, nich
 <p>Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:</p>
 <ul>
   <li>'-BenefactorCircleLicenseFile' mit dem Pfad zu Ihrer individuellen Lizenzdatei</li>
-  <li>'-BenefactorCircleId' mit Ihrer Benefactor Circle-ID</li>
+  <li>'-BenefactorCircleId' mit Ihrer <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> ID</li>
 </ul>
 
 <h3 id="change-license-period">Verlängerung oder Verkürzung einer Lizenzlaufzeit</h3>
 <p>Eine Lizenzlaufzeit kann nicht verlängert werden.<br>
 Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen Zahlungseingangs, und verlängern sich nicht automatisch.</p>
 
-<p>Wenn Sie Set-OutlookSignatures weiterhin mit den Vorteilen des Benefactor Circle nutzen möchten, geben Sie einfach eine neue Bestellung auf, um eine neue Lizenzdatei zu erhalten.</p>
+<p>Wenn Sie Set-OutlookSignatures weiterhin mit den Vorteilen des <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-Ons</span> nutzen möchten, geben Sie einfach eine neue Bestellung auf, um eine neue Lizenzdatei zu erhalten.</p>
 
 <p>Sie werden rechtzeitig im Voraus darüber informiert, dass Ihre Lizenz demnächst abläuft.</p>
 
@@ -441,7 +433,7 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
 
 
 <h2 id="license-groups">Funktionsweise von Lizenzgruppen</h2>
-<p>Jede Benefactor Circle-Lizenz ist an eine oder mehrere Active Directory- oder Entra ID-Gruppen gebunden, sogenannte Lizenzgruppen.</p>
+<p>Jede <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span>-Lizenz ist an eine oder mehrere Active Directory- oder Entra ID-Gruppen gebunden, sogenannte Lizenzgruppen.</p>
 
 <p>Zur maximalen Datensicherheit und einfachen Verwaltung ist die Lizenz nicht an bestimmte Postfächer („Named Users“) gebunden, sondern nur an eine Gruppe mit einer definierten maximalen Mitgliederanzahl.</p>
 
@@ -463,7 +455,7 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
   Bei späterem Wechsel in eine hybride Umgebung ist keine Anpassung nötig, solange die Gruppen synchronisiert werden.</li>
 </ul>
 
-<p><strong>Lizenzprüfung bei Nutzung eines exklusiven Benefactor Circle-Features:</strong></p>
+<p><strong>Lizenzprüfung bei Nutzung eines exklusiven <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span>-Features:</strong></p>
 <ol>
   <li>Bestimmen der passenden Lizenzgruppe
     <ol>
@@ -476,7 +468,7 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
   <li>Prüfen, ob das aktuelle Postfach Mitglied der Lizenzgruppe ist.</li>
 </ol>
 
-<p>Wenn einer dieser Schritte fehlschlägt, gilt das Postfach als nicht lizenziert und Benefactor Circle-Funktionen können nicht verwendet werden.</p>
+<p>Wenn einer dieser Schritte fehlschlägt, gilt das Postfach als nicht lizenziert und <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span>-Funktionen können nicht verwendet werden.</p>
 
 <p>Der Benutzer, der Set-OutlookSignatures ausführt, muss in der Lage sein, alle direkten und indirekten Mitglieder aller Lizenzgruppen aufzulösen, insbesondere über AD-Vertrauensstellungen hinweg.</p>
 

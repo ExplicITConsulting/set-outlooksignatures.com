@@ -334,41 +334,32 @@ Benefactor Circle add-on</span>.</p>
 
 <h2 id="licenses">Buying, extending and changing licenses</h2>
 <h3 id="price">Price and general information</h3>
-<p>Set-OutlookSignatures does not cost anything.<br>Starting as a technology demonstrator for scripting techniques, it has grown into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies. Read more about its history and the intentions behind it <a href="https://set-outlooksignatures.com/faq/#351-why-the-tagline">here</a>.</p>
-<p>The advanced features of the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> cost <strong>only 3.00 € per mailbox and year</strong>, which corresponds to <strong>merely 0.25 € per mailbox and month</strong>.</p>
+<p>Set-OutlookSignatures is completely free of charge. Originally developed as a technology demonstrator for scripting techniques, it has evolved into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies. You can read more about its history and the intentions behind it <a href="https://set-outlooksignatures.com/faq/#351-why-the-tagline">here</a>.</p>
+<p>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> unlocks advanced features and is available for <strong>only 3.00 € per mailbox per year</strong>, which equals <strong>just 0.25 € per mailbox per month</strong>.</p>
 
-<p>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> is an investment that pays off from day one - certainly for you, too: <a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Cost-benefit analysis, business case</a></p>
+<p>This add-on is an investment that pays off from day one - certainly for you as well: <a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Cost-benefit analysis, business case</a></p>
 
-<p>We keep license costs as fair as possible. Fair means:</p>
+<p>We keep license costs as fair and transparent as possible:</p>
 <ul>
-  <li>Small companies always just pay the same low price as big enterprises.</li>
-  <li>No maintenance or support contracts hidden in the annual price. You only pay for the support you actually need - and typically, thanks to the documentation, you won’t need any.</li>
-  <li><strong>Our support promise: </strong>If your support request is due to a bug in the latest version of <strong>Set-OutlookSignatures</strong>, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is <strong>free - no exceptions</strong>.
+  <li>Small companies pay the same low price as large enterprises.</li>
+  <li>No bundled maintenance or support contracts hidden in the annual price. You only pay for support if and when you need it - and thanks to our documentation, you likely won’t.</li>
+  <li><strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is free - no exceptions.
   <br>
   For all other issues, you will receive the same first-class support at a fair price.
   </li>
   <li>No additional infrastructure or external data transfers. Everything runs on your existing systems, within your own security boundaries.</li>
-  <li>No inflated prices that are later “discounted” through negotiations.</li>
+  <li>No inflated prices that are later "discounted" through negotiations.</li>
 </ul>
 
-<p>There is no minimum number of mailboxes, only a minimum amount of 210.00 € net per invoice.</p>
+<p>Licenses are required only for mailboxes that utilize <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> features. This includes shared mailboxes. Each mailbox requires one license, regardless of how many users access it, how many signatures are deployed, or how frequently those signatures are modified.</p>
 
-<p>Each mailbox in your environment for which you want to use an exclusive Benefactor Circle feature requires a license. This also applies to shared mailboxes.</p>
+<p>You do not need to specify individual mailbox names. Instead, define at least one Active Directory or Entra ID group that includes the relevant mailboxes. For each group, indicate the maximum number of recursive members.<p>
 
-<p>It does not matter how many users access a mailbox. If you only want to provide signatures for a single mailbox that is used by 50 people, you only need to purchase 1 license.</p>
+<p>There is no minimum number of mailboxes required. However, each invoice must meet a minimum net amount of 210.00 €. Licenses are paid in advance and are valid for one year from the date full payment is received. There is no automatic renewal or subscription.</p>
 
-<p>The mailboxes do not need to be named. You just need to define at least one Active Directory or Entra ID group containing the mailboxes and the maximum number of recursive members for each group.</p>
+<p>If you add mailboxes during an active license period, you will be charged the current license price for those additional mailboxes, calculated for the remaining months of your license term. The minimum invoice amount still applies.</p>
 
-<p>It doesn't matter how many signatures you have or how often you change them.</p>
-
-<p>Licenses are payable in advance and are valid for one year from the date of receipt of full payment. There is no automatic renewal or subscription.</p>
-
-<p>As long as a license is valid, it includes free version upgrades and prioritization of support requests.</p>
-
-<p>We work hard to keep our prices as low and stable as possible, with the aim of only adjusting them for inflation. So prices are subject to change. Since you pay upfront, you can and will never be charged after the fact.</p>
-
-<p>If you wish to add additional mailboxes during an active license period, you will only be charged the current price for these additional mailboxes for the remaining months of your license period.</p>
-
+<p>While a license is active, it includes free version upgrades and prioritization of support requests.</p>
 
 <h3 id="trial">Trial version</h3>
 <p>You may want to start with a 14-day trial license.</p>
@@ -383,7 +374,7 @@ Benefactor Circle add-on</span>.</p>
 <p>To use the license file, just add two parameters to your call of &apos;Set-OutlookSignatures.ps1&apos;:</p>
 <ul>
   <li>&apos;-BenefactorCircleLicenseFile&apos; with the path to your individualized license file</li>
-  <li>&apos;-BenefactorCircleId&apos; with your Benefactor Circle ID</li>
+  <li>&apos;-BenefactorCircleId&apos; with your <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> ID</li>
 </ul>
 
 <p>Trial licenses can not be extended or re-issued. They are limited to 14 days runtime and a maximum of 20 mailboxes.</p>
@@ -403,14 +394,14 @@ Benefactor Circle add-on</span>.</p>
 <p>To use the license file, just add two parameters to your call of &apos;Set-OutlookSignatures.ps1&apos;:</p>
 <ul>
   <li>&apos;-BenefactorCircleFile&apos; with the path to your individualized license file</li>
-  <li>&apos;-BenefactorCircleId&apos; with your Benefactor Circle ID</li>
+  <li>&apos;-BenefactorCircleId&apos; with your <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> ID</li>
 </ul>
 
 
 <h3 id="change-license-period">Extending or reducing a license period</h3>
 <p>A license period cannot be extended. Licenses are valid for one year, starting with the date the full payment is received, and do not auto-renew.</p>
 
-<p>To continue using Set-OutlookSignatures with Benefactor Circle benefits, just place a new order to receive a new license file.</p>
+<p>To continue using Set-OutlookSignatures with <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> benefits, just place a new order to receive a new license file.</p>
 
 <p>You will be informed in advance that your license is about to expire.</p>
 
@@ -434,7 +425,7 @@ Benefactor Circle add-on</span>.</p>
 
 
 <h3 id="license-groups">How license groups work</h3>
-<p>Each Benefactor Circle license is bound to one or more Active Directory or Entra ID groups, called a license group. For maximum data protection and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
+<p>Each <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> license is bound to one or more Active Directory or Entra ID groups, called a license group. For maximum data protection and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
 
 <p>For most environments, only one license group is needed.<br>In on-prem and hybrid environments with multiple Active Directory domains, you may define a separate license group for each AD DNS domain, each license group with a separate maximum member count.<br>If you have multiple entra ID tenants, you may define one Entra ID group per tenant.</p>
 
@@ -452,7 +443,7 @@ Benefactor Circle add-on</span>.</p>
   <li>In pure on-prem environments, you can only use on-prem groups. The license group is then '<code>&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'.<br>When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.</li>
 </ul>
 
-<p>When a Benefactor Circle exclusive feature is about to be used, the license is checked as follows:</p>
+<p>When a <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> exclusive feature is about to be used, the license is checked as follows:</p>
 <ol>
   <li>Determine which license group to use.
     <ol>
@@ -465,7 +456,7 @@ Benefactor Circle add-on</span>.</p>
   <li>Check if the current mailbox is a member of the license group.</li>
 </ol>
 
-<p>As soon as one of these steps fails, the mailbox is not licensed and Benefactor Circle features can not be used for it.</p>
+<p>As soon as one of these steps fails, the mailbox is not licensed and <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> features can not be used for it.</p>
 
 <p>You need to make sure that the user running Set-OutlookSignatures is able to resolve all direct and indirect members of all license groups, especially across on-prem AD trusts.<br>Primary group membership (such as in 'Domain Users') is not considered due to Active Directory and Entra ID query restrictions.<br>Dynamic groups are supported when Entra ID is queried, but not when Active Directory is queried.</p>
 
