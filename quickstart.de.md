@@ -72,8 +72,10 @@ Sie können jetzt mit Ihren eigenen Anpassungen starten. Hier ein paar beliebte 
 Sie möchten wissen, wie die mitgelieferten Beispiel-Signaturen für einen anderen Benutzer aussehen? Dann nutzen Sie doch einfach den integrierten [Simulations-Modus](/details/#11-simulation-mode):
 - Wählen die E-Mail-Adresse eines beliebigen Benutzers in Ihrem System aus.
 - Starten Sie Set-OutlookSignatures in einer neuen PowerShell-Session erneut, dieses Mal aber zusätzlich mit dem Parameter '`-SimulateUser a@example.com`' ('a@example.com' ersetzen Sie durch die zuvor ausgewählte E-Mail-Adresse).
-- In Ihrem 'Dokumente'-Ordner finden Sie nun einen neuen Unterordner 'Outlook Signatures', in dem Sie die Signaturen des simulierten Benutzers finden, die als Standard definierten Signaturen und auch die Abwesenheitstexte.
-- Der [Simulations-Modus](/details/#11-simulation-mode) kann noch viel mehr und ist dadurch sehr gut für Tests und Analysen in Produktionsumgebungen geeignet.
+
+In Ihrem 'Dokumente'-Ordner finden Sie nun einen neuen Unterordner 'Outlook Signatures', in dem Sie die Signaturen des simulierten Benutzers finden, die als Standard definierten Signaturen und auch die Abwesenheitstexte.
+
+Der [Simulations-Modus](/details/#11-simulation-mode) kann noch viel mehr und ist dadurch sehr gut für Tests und Analysen in Produktionsumgebungen geeignet.
 
 ### Eigene Vorlagen verwenden {#customize-templates}
 Keine Beispiel-Signatur ist so schön wie Ihre eigene. Lassen wir Set-OutlookSignatures also mit Ihren eigenen Vorlagen arbeiten!

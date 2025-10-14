@@ -68,8 +68,10 @@ You can now start with your own customizations. Here are a few popular examples:
 Would you like to see what the sample signatures provided look like for another user? Then simply use the integrated [simulation mode](/details/#11-simulation-mode):
 - Select the email address of any user in your system.
 - Restart Set-OutlookSignatures in a new PowerShell session, but this time with the additional parameter '`-SimulateUser a@example.com`' (replace ‘a@example.com’ with the email address you selected earlier).
-- In your 'Documents' folder, you will now find a new subfolder called 'Outlook Signatures', which contains the signatures of the simulated user, the default signatures, and the out-of-office messages.
-- The [simulation mode](/details/#11-simulation-mode) can do much more and is therefore very well suited for testing and analysis in production environments.
+
+In your 'Documents' folder, you will now find a new subfolder called 'Outlook Signatures', which contains the signatures of the simulated user, the default signatures, and the out-of-office messages.
+
+The [simulation mode](/details/#11-simulation-mode) can do much more and is therefore very well suited for testing and analysis in production environments.
 
 ### Use own templates {#customize-templates}
 No sample signature is as beautiful as your own. So let's let Set-OutlookSignatures work with your own templates!
