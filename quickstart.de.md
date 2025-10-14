@@ -59,25 +59,53 @@ Bitten Sie Ihren Endpoint Security Administrator Software zu vertrauen, die mit 
 
 Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie folgenden Parameter hinzu: '-CloudEnvironment \[AzureUSGovernment\|AzureUSGovernmentDoD\|AzureChina\]'
 
-Set-OutlookSignatures verteilt jetzt erste Signaturen, basierend auf Standardeinstellungen und Beispielvorlagen.
+Set-OutlookSignatures fügt jetzt Signaturen, basierend auf Standardeinstellungen und integrierten Beispielvorlagen, zu Ihrem Outlook hinzu.
 
-Öffnen Sie Outlook und werfen Sie einen Blick auf die neu erzeugten Signaturen, besonders auf die Vorzeigesignatur 'Test all default replacement variables'.
+Öffnen Sie Outlook und werfen Sie einen Blick auf die neu erzeugten Signaturen: 'Formal', 'Informal' und die besonders umfangreiche 'Test all default replacement variables'.
 
+Glückwunsch, Sie haben jetzt einen soliden Ausgangspunkt für Ihre eigenen Anpassungen!
 
 ## Anpassungen vornehmen {#customize}
-Gratulation, Sie haben jetzt einen soliden Ausgangspunkt für Ihre eigenen Anpassungen!
+Sie können jetzt mit Ihren eigenen Anpassungen starten. Hier ein paar beliebte Beispiele:
 
-Ein paar Beispiele:
+### Simulationsmodus {#customize-simulate}
+Sie möchten wissen, wie die mitgelieferten Beispiel-Signaturen für einen anderen Benutzer aussehen? Dann nutzen Sie doch einfach den integrierten [Simulations-Modus](/details/#11-simulation-mode):
+- Wählen die E-Mail-Adresse eines beliebigen Benutzers in Ihrem System aus.
+- Starten Sie Set-OutlookSignatures in einer neuen PowerShell-Session erneut, dieses Mal aber zusätzlich mit dem Parameter '`-SimulateUser a@example.com`' ('a@example.com' ersetzen Sie durch die zuvor ausgewählte E-Mail-Adresse).
+- In Ihrem 'Dokumente'-Ordner finden Sie nun einen neuen Unterordner 'Outlook Signatures', in dem Sie die Signaturen des simulierten Benutzers finden, die als Standard definierten Signaturen und auch die Abwesenheitstexte.
+- Der [Simulations-Modus](/details/#11-simulation-mode) kann noch viel mehr und ist dadurch sehr gut für Tests und Analysen in Produktionsumgebungen geeignet.
+
+### Eigene Vorlagen verwenden {#customize-templates}
+Keine Beispiel-Signatur ist so schön wie Ihre eigene. Lassen wir Set-OutlookSignatures also mit Ihren eigenen Vorlagen arbeiten!
+
 - Erstellen Sie einen Ordner mit Ihren eigenen Vorlagen und Konfigurationen.  
-  Es ist eine gute Idee, den Ordner '.\sample templates' zu kopieren und dessen Inhalte zu bearbeiten.  
-  Vergessen Sie nicht, Set-OutlookSignatures mit den Parametern 'SignatureTemplatePath', 'SignatureIniFile', 'OOFTemplatePath' and 'OOFIniFile' mitzuteilen, wo Ihre Vorlagen und Konfiguration zu finden sind.
-- Passen Sie andere [Parameter](/parameters) an, die Sie nützlich finden.
-- Beginnen Sie, den [Simulations-Modus](/details/#11-simulation-mode) zu nutzen.
+  - Kopieren Sie für den Anfang einfach den Ordner '.\sample templates' und passen Sie die enthaltenen Vorlagen an.
+- Lassen Sie Set-OutlookSignatures erneut laufen und geben Sie an, wo es die neuen Vorlagen findet:
+  - '`-SignatureTemplatePath 'c:\your_signature_template_path'`' für den Ordner, in dem Ihre Signatur-Vorlagen liegen.
+  - '`-SignatureIniFile 'c:\your_signatures_template_path\_Signatures.ini'`' für den Pfad zur Signatur-Konfiguration.
+  - Wenn Sie statt den DOCX- die HTML-Vorlagen angepasst haben, verwenden Sie zusätzlich '`-UseHtmTemplates true`'.
+
+Ihr eigene Signatur in Outlook sieht gut aus? Mit dem [Simulations-Modus](/details/#11-simulation-mode) finden Sie im Handumdrehen heraus, wie sie für ein anderes Postfach aussieht.
+
+### Und jetzt Sie! {#customize-you}
+Passen Sie andere [Parameter](/parameters) an, die Sie nützlich finden.
 
 Die [Liste der Funktionen](/features) und die [Dokumentation der Parameter](/parameters) zeigen, was möglich ist.
 
-Die [FAQ-Seite](/faq) hilft Ihnen, Antworten auf die am häufigsten an uns gestellten Fragen zu finden. Um tiefer einzutauchen, bietet unser [Hilfe- und Support-Zentrum](/help) großartige Unterlagen.
+Auf unserer [FAQ-Seite](/faq) finden Sie Antworten auf die am häufigsten gestellten Fragen. Um tiefer einzutauchen, bietet unser [Hilfe- und Support-Zentrum](/help) großartige Unterlagen.
 
+## Zeigen Sie, was Sie geschaffen haben {#show-what-you-created}
+Wir wissen, dass einige von Ihnen visuell beeindruckende E-Mail-Signaturen erstellt, clevere Abwesenheitsnotizen verfasst, benutzerdefinierte Ersatzvariablen implementiert und sogar Systeme von Drittanbietern auf eine Weise integriert haben, die weit über die Grundlagen hinausgeht.
+
+Jetzt haben Sie die Möglichkeit, diese mit der Community zu teilen.
+
+Wir suchen:
+- Finale Versionen oder Vorlagen Ihrer E-Mail-Signaturen
+- Beispiele für Abwesenheitsnotizen
+- Ausschnitte aus benutzerdefiniertem Code oder Integrationslogik
+- Eine kurze Stellungnahme zu Ihren Erfahrungen mit Set-OutlookSignatures oder dem Benefactor Circle Add-On
+
+Nehmen Sie einfach [Kontakt](/contact) mit uns auf!
 
 ## Benötigen Sie Hilfe oder weitere Funktionen? {#support}
 Set-OutlookSignatures ist sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.

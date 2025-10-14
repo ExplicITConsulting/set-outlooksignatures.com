@@ -91,7 +91,9 @@ permalink: /faq/
   - [44.7. Create and configure apps in Entra ID, grant admin consent](#447-create-and-configure-apps-in-entra-id-grant-admin-consent)
   - [44.8. Test Active Directory trusts](#448-test-active-directory-trusts)
   - [44.9. Start only if working Active Directory connection is available](#449-start-only-if-working-active-directory-connection-is-available)
-  - [44.10. Bringing hidden treasures to light](#4410-bringing-hidden-treasures-to-light)
+  - [44.10. Avoid system sleep](#4410-avoid-system-sleep)
+  - [44.11. Detect exit signals](#4411-detect-exit-signals)
+  - [44.12. Bringing hidden treasures to light](#4412-bringing-hidden-treasures-to-light)
 
 
 ## 1. Where can I find the changelog?
@@ -1094,7 +1096,28 @@ Sounds complicated, but is straightforward and highly reusable for any software 
 Files:
 - '`.\sample code\Start-IfADAvailable.ps1`'
 
-### 44.10. Bringing hidden treasures to light
+### 44.10. Avoid system sleep
+Blocking a system from going to sleep is not a big challenge, making it configurable on Windows, and work cross-platform on Linux and macOS is already a bit harder.
+
+The '`BlockSleep`' function of Set-OutlookSignatures makes it easy to block and allow system sleep as you wish.
+
+Files:
+- '`.\Set-OutlookSignatures.ps1`'
+
+### 44.11. Detect exit signals
+It is hard for long-running scripts to detect exit signals and even harder to react with a graceful exit in-time.
+
+The '`WatchCatchableExitSignal`' family of functions makes this much easier. They detect
+- logoff, reboot and shutdown messages on Windows
+- catchable POSIX signals (SIGINT, SIGTERM, SIGQUIT, SIGHUP) on Linux and macOS
+via a separate parallel thread and make them available to the whole PowerShell session.
+
+A long-running script can then check regularly for these signals, and react accordingly. Set-OutlookSignatures and the Benefactor Circle add-on perform these checks more than 500 times throughout their code.
+
+Files:
+- '`.\Set-OutlookSignatures.ps1`'
+
+### 44.12. Bringing hidden treasures to light
 As a member of the .Net platform, PowerShell has access to a lot of great software published by other open-source enthusiasts.
 
 Set-OutlookSignatures shows how to integrate features from open-source software others share with the community. **A big thank you to all fellow open-source developers!**

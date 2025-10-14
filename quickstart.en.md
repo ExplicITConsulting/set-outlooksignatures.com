@@ -55,25 +55,52 @@ Ask your endpoint security administrator to trust software signed with ExplicIT 
 
 If you are not using the public Microsoft cloud but a national cloud, add the following parameter: '-CloudEnvironment \[AzureUSGovernment\|AzureUSGovernmentDoD\|AzureChina\]'
 
-Set-OutlookSignatures now deploys signatures using default settings and sample templates.
+Set-OutlookSignatures now adds signatures based on default settings and sample templates to your Outlook.
 
-Open Outlook and have a look at the newly created signatures, especially to the showcase signature named 'Test all default replacement variables'.
+Open Outlook and take a look at the newly created signatures. 'Formal', 'Informal' and the particularly comprehensive 'Test all default replacement variables'.
 
-
-## Start customizing {#customize}
 Congratulations, you now have a robust starting point for your own customizations!
 
-Some examples:
-- Create a folder with your own template and signature configuration files.  
-  It is a good idea to begin by copying the folder '.\sample templates' and modifying it's contents.  
-  Make sure to tell Set-OutlookSignatures where to find your custom configuration by adding the parameters 'SignatureTemplatePath', 'SignatureIniFile', 'OOFTemplatePath' and 'OOFIniFile'.
-- Adapt other [parameters](/parameters) you may find useful.
-- Start using [simulation mode](/details/#11-simulation-mode).
+## Customize settings {#customize}
+You can now start with your own customizations. Here are a few popular examples:
 
-The [feature list](/features) and the [parameter documentation](/parameters) show what's possible.
+### Simulaton mode {#customize-simulate}
+Would you like to see what the sample signatures provided look like for another user? Then simply use the integrated [simulation mode](/details/#11-simulation-mode):
+- Select the email address of any user in your system.
+- Restart Set-OutlookSignatures in a new PowerShell session, but this time with the additional parameter '`-SimulateUser a@example.com`' (replace ‘a@example.com’ with the email address you selected earlier).
+- In your 'Documents' folder, you will now find a new subfolder called 'Outlook Signatures', which contains the signatures of the simulated user, the default signatures, and the out-of-office messages.
+- The [simulation mode](/details/#11-simulation-mode) can do much more and is therefore very well suited for testing and analysis in production environments.
 
-The [FAQ section](/faq) helps you find answers to the most popular questions we get asked. For a deep dive, our [help and support center](/help) has great ressources.
+### Use own templates {#customize-templates}
+No sample signature is as beautiful as your own. So let's let Set-OutlookSignatures work with your own templates!
 
+- Create a folder with your own templates and configurations.
+- To get started, simply copy the '.\sample templates' folder and customize the templates it contains.
+- Run Set-OutlookSignatures again and specify where to find the new templates:
+  - '`-SignatureTemplatePath 'c:\your_signature_template_path'`' for the folder where your signature templates are located.
+  - '`-SignatureIniFile 'c:\your_signatures_template_path\_Signatures.ini'`' for the path to the signature configuration file.
+  - If you have customized the HTML templates instead of the DOCX templates, also use ‘`-UseHtmTemplates true`’.
+
+Does your own signature look good in Outlook? With the [simulation mode](/details/#11-simulation-mode), you can quickly find out how it looks for another mailbox.
+
+### And now you! {#customize-you}
+Adjust other [parameters](/parameters) that you find useful.
+
+The [list of features](/features) and [parameter documentation](/parameters) show what is possible.
+
+You can find answers to the most frequently asked questions on our [FAQ page](/faq). For more in-depth information, our [Help and Support Center](/help) offers excellent documentation.
+
+## Show what you've created {#show-what-you-created}
+We know that some of you have built visually stunning email signatures, crafted clever out-of-office replies, implemented custom replacement variables, and even integrated third-party systems in ways that go far beyond the basics.
+
+We're looking for:
+- Final versions or templates of your email signatures
+- Examples of out-of-office replies
+- Snippets of custom code or integration logic
+- A short statement about your experience with Set-OutlookSignatures or the Benefactor Circle add on
+- Your name, role, and company, along with a photo and company logo for your showcase
+
+Just [get in touch](/contact) with us!
 
 ## Looking for help or more features? {#support}
 Set-OutlookSignatures is very well documented, which inevitably brings with it a lot of content.
