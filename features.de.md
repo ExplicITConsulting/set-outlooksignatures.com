@@ -164,9 +164,9 @@ Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on 
             </tr>
             <tr>
                 <td style="text-align:left">Signaturen auf Basis der Empfänger</td>
-                <td style="text-align:left">🟢 Hochgradig anpassbar, nicht nur basierend auf den Empfängern</td>
-                <td style="text-align:left">🟡 Interne oder externe Empfänger</td>
-                <td style="text-align:left">🔴</td>
+                <td style="text-align:left">🟡 Hochgradig anpassbar, 10+ Eigenschaften. Gleiche Signatur für alle Empfänger.</td>
+                <td style="text-align:left">🟡 Interne, Externe, Gruppenmitglieder, E-Mail-Adressen. Unterschiedliche Signaturen nur bei Umleitung aller E-Mails auf ein Drittsystem.</td>
+                <td style="text-align:left">🟡 Interne und Externe. Gleiche Signatur für alle Empfänger.</td>
                 <td style="text-align:left">🔴</td>
             </tr>
             <tr>

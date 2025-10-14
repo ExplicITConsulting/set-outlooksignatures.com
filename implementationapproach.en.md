@@ -229,9 +229,9 @@ Based on the required feature set, various solutions were evaluated, tested, and
             </tr>
             <tr>
                 <td style="text-align:left">Apply signature based on recipients</td>
-                <td style="text-align:left">🟢 Highly customizable, not only based on recipients</td>
-                <td style="text-align:left">🟡 Internal or external</td>
-                <td style="text-align:left">🔴</td>
+                <td style="text-align:left">🟡 Highly customizable, 10+ properties. Same signature for all recipients.</td>
+                <td style="text-align:left">🟡 Internal, external, group membership, email address. Different signature for each recipient via email re-routing to a 3rd party datacenter.</td>
+                <td style="text-align:left">🟡 Internal or external. Same signature for all recipients.</td>
                 <td style="text-align:left">🔴</td>
             </tr>
             <tr>
