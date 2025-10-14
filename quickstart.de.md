@@ -55,9 +55,9 @@ Bitten Sie Ihren Endpoint Security Administrator Software zu vertrauen, die mit 
   ```
   powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId aus Schritt 1 Entra ID>"
   ```
-  Der Parameter '-GraphOnly true' stellt sicher, dass das on-prem Active Directory ignoriert wird und stattdessen nur Graph/Entra ID zum Finden von Postfächern und deren Attributen verwendet wird.
+  Der Parameter '`-GraphOnly true`' stellt sicher, dass das on-prem Active Directory ignoriert wird und stattdessen nur Graph/Entra ID zum Finden von Postfächern und deren Attributen verwendet wird.
 
-Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie folgenden Parameter hinzu: '-CloudEnvironment \[AzureUSGovernment\|AzureUSGovernmentDoD\|AzureChina\]'
+Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie folgenden Parameter hinzu: '`-CloudEnvironment \[AzureUSGovernment\|AzureUSGovernmentDoD\|AzureChina\]`'
 
 Set-OutlookSignatures fügt jetzt Signaturen, basierend auf Standardeinstellungen und integrierten Beispielvorlagen, zu Ihrem Outlook hinzu.
 
@@ -73,7 +73,7 @@ Sie möchten wissen, wie die mitgelieferten Beispiel-Signaturen für einen ander
 - Wählen die E-Mail-Adresse eines beliebigen Benutzers in Ihrem System aus.
 - Starten Sie Set-OutlookSignatures in einer neuen PowerShell-Session erneut, dieses Mal aber zusätzlich mit dem Parameter '`-SimulateUser a@example.com`' ('a@example.com' ersetzen Sie durch die zuvor ausgewählte E-Mail-Adresse).
 
-In Ihrem 'Dokumente'-Ordner finden Sie nun einen neuen Unterordner 'Outlook Signatures', in dem Sie die Signaturen des simulierten Benutzers finden, die als Standard definierten Signaturen und auch die Abwesenheitstexte.
+In Ihrem 'Dokumente'-Ordner finden Sie nun einen neuen Unterordner 'Outlook Signatures', in dem Sie die Signaturen des simulierten Benutzers finden.
 
 Der [Simulations-Modus](/details/#11-simulation-mode) kann noch viel mehr und ist dadurch sehr gut für Tests und Analysen in Produktionsumgebungen geeignet.
 
@@ -84,7 +84,7 @@ Keine Beispiel-Signatur ist so schön wie Ihre eigene. Lassen wir Set-OutlookSig
   - Kopieren Sie für den Anfang einfach den Ordner '.\sample templates' und passen Sie die enthaltenen Vorlagen an.
 - Lassen Sie Set-OutlookSignatures erneut laufen und geben Sie an, wo es die neuen Vorlagen findet:
   - '`-SignatureTemplatePath 'c:\your_signature_template_path'`' für den Ordner, in dem Ihre Signatur-Vorlagen liegen.
-  - '`-SignatureIniFile 'c:\your_signatures_template_path\_Signatures.ini'`' für den Pfad zur Signatur-Konfiguration.
+  - '`-SignatureIniFile 'c:\your_signature_template_path\_Signatures.ini'`' für den Pfad zur Signatur-Konfiguration.
   - Wenn Sie statt den DOCX- die HTML-Vorlagen angepasst haben, verwenden Sie zusätzlich '`-UseHtmTemplates true`'.
 
 Ihr eigene Signatur in Outlook sieht gut aus? Mit dem [Simulations-Modus](/details/#11-simulation-mode) finden Sie im Handumdrehen heraus, wie sie für ein anderes Postfach aussieht.

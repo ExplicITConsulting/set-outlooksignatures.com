@@ -51,9 +51,9 @@ Ask your endpoint security administrator to trust software signed with ExplicIT 
   ```
   powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from step 1 Entra ID>"
   ```
-  The '-GraphOnly true' parameter makes sure that on-prem Active Directory is ignored and only Graph/Entra ID is used to find mailboxes and their attributes.
+  The '`-GraphOnly true`' parameter makes sure that on-prem Active Directory is ignored and only Graph/Entra ID is used to find mailboxes and their attributes.
 
-If you are not using the public Microsoft cloud but a national cloud, add the following parameter: '-CloudEnvironment \[AzureUSGovernment\|AzureUSGovernmentDoD\|AzureChina\]'
+If you are not using the public Microsoft cloud but a national cloud, add the following parameter: '`-CloudEnvironment \[AzureUSGovernment\|AzureUSGovernmentDoD\|AzureChina\]`'
 
 Set-OutlookSignatures now adds signatures based on default settings and sample templates to your Outlook.
 
@@ -69,7 +69,7 @@ Would you like to see what the sample signatures provided look like for another 
 - Select the email address of any user in your system.
 - Restart Set-OutlookSignatures in a new PowerShell session, but this time with the additional parameter '`-SimulateUser a@example.com`' (replace ‘a@example.com’ with the email address you selected earlier).
 
-In your 'Documents' folder, you will now find a new subfolder called 'Outlook Signatures', which contains the signatures of the simulated user, the default signatures, and the out-of-office messages.
+In your 'Documents' folder, you will now find a new subfolder called 'Outlook Signatures', which contains the signatures of the simulated user.
 
 The [simulation mode](/details/#11-simulation-mode) can do much more and is therefore very well suited for testing and analysis in production environments.
 
@@ -80,7 +80,7 @@ No sample signature is as beautiful as your own. So let's let Set-OutlookSignatu
 - To get started, simply copy the '.\sample templates' folder and customize the templates it contains.
 - Run Set-OutlookSignatures again and specify where to find the new templates:
   - '`-SignatureTemplatePath 'c:\your_signature_template_path'`' for the folder where your signature templates are located.
-  - '`-SignatureIniFile 'c:\your_signatures_template_path\_Signatures.ini'`' for the path to the signature configuration file.
+  - '`-SignatureIniFile 'c:\your_signature_template_path\_Signatures.ini'`' for the path to the signature configuration file.
   - If you have customized the HTML templates instead of the DOCX templates, also use ‘`-UseHtmTemplates true`’.
 
 Does your own signature look good in Outlook? With the [simulation mode](/details/#11-simulation-mode), you can quickly find out how it looks for another mailbox.
