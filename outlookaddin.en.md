@@ -197,7 +197,7 @@ Centralized Deployment and deployment via Integrated Apps both provide the follo
 - When the relevant Microsoft 365 app starts, the add-in automatically downloads. If the add-in supports add-in commands, the add-in automatically appears in the ribbon within the Microsoft 365 app.
 - Add-ins no longer appear for users if the admin turns off or deletes the add-in, or if the user is removed from Microsoft Entra ID or from a group that the add-in is assigned to.
 
-The Integrated Apps feature is the recommended way to deploy Outlook add-ins. It is not yet available for tenants in sovereign and government clouds, so in these environments you have to use Centralized Deployment instead.
+The Integrated Apps feature is the recommended way to deploy Outlook add-ins for mass use in production, while sideloading is the ideal method for tests. It is not yet available for tenants in sovereign and government clouds, so in these environments you have to use Centralized Deployment instead.
 - Details about Integrated Apps: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide
 - Details about Centralized Deployment: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide
 
