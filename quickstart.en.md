@@ -64,7 +64,7 @@ Congratulations, you now have a robust starting point for your own customization
 ## Customize settings {#customize}
 You can now start with your own customizations. Here are a few popular examples:
 
-**Simulaton mode** {#customize-simulate}
+**Simulaton mode** {#customize-simulate}  
 Would you like to see what the sample signatures provided look like for another user? Then simply use the integrated [simulation mode](/details/#11-simulation-mode):
 - Select the email address of any user in your system.
 - Restart Set-OutlookSignatures in a new PowerShell session, but this time with the additional parameter '`-SimulateUser a@example.com`' (replace ‘a@example.com’ with the email address you selected earlier).
@@ -73,7 +73,7 @@ In your 'Documents' folder, you will now find a new subfolder called 'Outlook Si
 
 The [simulation mode](/details/#11-simulation-mode) can do much more and is therefore very well suited for testing and analysis in production environments.
 
-**Use own templates** {#customize-templates}
+**Use own templates** {#customize-templates}  
 No sample signature is as beautiful as your own. So let's let Set-OutlookSignatures work with your own templates!
 
 - Create a folder with your own templates and configurations.
@@ -85,7 +85,7 @@ No sample signature is as beautiful as your own. So let's let Set-OutlookSignatu
 
 Does your own signature look good in Outlook? With the [simulation mode](/details/#11-simulation-mode), you can quickly find out how it looks for another mailbox.
 
-**And now you!** {#customize-you}
+**And now you!** {#customize-you}  
 Adjust other [parameters](/parameters) that you find useful.
 
 The [list of features](/features) and [parameter documentation](/parameters) show what is possible.

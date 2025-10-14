@@ -68,7 +68,7 @@ Glückwunsch, Sie haben jetzt einen soliden Ausgangspunkt für Ihre eigenen Anpa
 ## Anpassungen vornehmen {#customize}
 Sie können jetzt mit Ihren eigenen Anpassungen starten. Hier ein paar beliebte Beispiele:
 
-**Simulationsmodus** {#customize-simulate}
+**Simulationsmodus** {#customize-simulate}  
 Sie möchten wissen, wie die mitgelieferten Beispiel-Signaturen für einen anderen Benutzer aussehen? Dann nutzen Sie doch einfach den integrierten [Simulations-Modus](/details/#11-simulation-mode):
 - Wählen die E-Mail-Adresse eines beliebigen Benutzers in Ihrem System aus.
 - Starten Sie Set-OutlookSignatures in einer neuen PowerShell-Session erneut, dieses Mal aber zusätzlich mit dem Parameter '`-SimulateUser a@example.com`' ('a@example.com' ersetzen Sie durch die zuvor ausgewählte E-Mail-Adresse).
@@ -77,7 +77,7 @@ In Ihrem 'Dokumente'-Ordner finden Sie nun einen neuen Unterordner 'Outlook Sign
 
 Der [Simulations-Modus](/details/#11-simulation-mode) kann noch viel mehr und ist dadurch sehr gut für Tests und Analysen in Produktionsumgebungen geeignet.
 
-**Eigene Vorlagen verwenden** {#customize-templates}
+**Eigene Vorlagen verwenden** {#customize-templates}  
 Keine Beispiel-Signatur ist so schön wie Ihre eigene. Lassen wir Set-OutlookSignatures also mit Ihren eigenen Vorlagen arbeiten!
 
 - Erstellen Sie einen Ordner mit Ihren eigenen Vorlagen und Konfigurationen.  
@@ -89,7 +89,7 @@ Keine Beispiel-Signatur ist so schön wie Ihre eigene. Lassen wir Set-OutlookSig
 
 Ihr eigene Signatur in Outlook sieht gut aus? Mit dem [Simulations-Modus](/details/#11-simulation-mode) finden Sie im Handumdrehen heraus, wie sie für ein anderes Postfach aussieht.
 
-**Und jetzt Sie!** {#customize-you}
+**Und jetzt Sie!** {#customize-you}  
 Passen Sie andere [Parameter](/parameters) an, die Sie nützlich finden.
 
 Die [Liste der Funktionen](/features) und die [Dokumentation der Parameter](/parameters) zeigen, was möglich ist.
