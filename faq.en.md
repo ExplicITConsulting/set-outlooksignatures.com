@@ -91,9 +91,11 @@ permalink: /faq/
   - [44.7. Create and configure apps in Entra ID, grant admin consent](#447-create-and-configure-apps-in-entra-id-grant-admin-consent)
   - [44.8. Test Active Directory trusts](#448-test-active-directory-trusts)
   - [44.9. Start only if working Active Directory connection is available](#449-start-only-if-working-active-directory-connection-is-available)
-  - [44.10. Avoid system sleep](#4410-avoid-system-sleep)
+  - [44.10. Prohibit system sleep](#4410-prohibit-system-sleep)
   - [44.11. Detect exit signals](#4411-detect-exit-signals)
-  - [44.12. Bringing hidden treasures to light](#4412-bringing-hidden-treasures-to-light)
+  - [44.12. Format phone numbers](#4412-format-phone-numbers)
+  - [44.13. Format postal addresses](#4413-format-postal-addresses)
+  - [44.14. Bringing hidden treasures to light](#4414-bringing-hidden-treasures-to-light)
 
 
 ## 1. Where can I find the changelog?
@@ -1096,7 +1098,7 @@ Sounds complicated, but is straightforward and highly reusable for any software 
 Files:
 - '`.\sample code\Start-IfADAvailable.ps1`'
 
-### 44.10. Avoid system sleep
+### 44.10. Prohibit system sleep
 Blocking a system from going to sleep is not a big challenge, making it configurable on Windows, and work cross-platform on Linux and macOS is already a bit harder.
 
 The '`BlockSleep`' function of Set-OutlookSignatures makes it easy to block and allow system sleep as you wish.
@@ -1117,7 +1119,46 @@ A long-running script can then check regularly for these signals, and react acco
 Files:
 - '`.\Set-OutlookSignatures.ps1`'
 
-### 44.12. Bringing hidden treasures to light
+### 44.12. Format phone numbers
+Just like addresses, phone numbers seem like child's play: you simply type them into your phone and - voilà - it rings at the other end.
+
+This only works because the dialer software on our phone performs hundreds of calculations to convert the numbers you type into a correct technical format. We think that numbers are easy, because:
+- We think they are just numbers (wrong - they are strings, with mandatory and optional characters with special meanings).
+- We think in local numbers, not in international ones.
+- Converting local numbers is much more than prefixing a '+' and the country code.
+- We think there is only one phone number format that rules them all.
+
+If you still think phone number formatting is an easy task, reading the article '[Falsehoods Programmers Believe About Phone Numbers](https://github.com/google/libphonenumber/blob/master/FALSEHOODS.md)' will change your mind.
+
+Google has created probably the best phone number formatters, made it free and open-source, and maintains it regularly. It covers all countries and regions, includes all the public data that is available about country codes, and all the experience from the Android number dialer.
+
+Set-OutlookSignatures makes the .Net port of this library available. The function '`FormatPhoneNumber`' allows any given phone number with optional or indirect country information to be formatted in the four relevant technical formats, as well as in a fully customizable format.
+
+With only one input, you get a perfectly formatted number for national dialing, international dialing, `'tel:'`-links and more. Extensions are supported, too.
+
+Files:
+- '`.\Set-OutlookSignatures.ps1`'
+- '`.\config\default replacement variables.ps1`'
+
+### 44.13. Format postal addresses
+Just like phone numbers, addresses seem like child's play. This is true for national addressing, because we are used how correctly write an address for our own region.
+
+But: Different countries, different customs. Read the article '[Falsehoods programmers believe about addresses](https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/)' to get a glimpse of what is possible. Three cheers for all the mailmen around the world!
+
+Since all attempts to remedy the cause of this chaos have failed, there is a global community of people and companies that maintain a collection of country-specific address formats, rules, and conditions and describe them in a standardized technical format.
+
+These address formatting templates are then made accessible by free and open-source software implementations. As there has been none for .Net or PowerShell, I created one.
+
+The '`AddressFormatter`' module comes with the '`Format-PostalAddress`' cmdlet. The cmdlet takes named standard address components and the coutry code as input, and returns the correctly formatted address string.
+
+A real relief for any multinational company or when sending letters to recipients in different countries!
+
+Files:
+- '`.\Set-OutlookSignatures.ps1`'
+- '`.\config\default replacement variables.ps1`'
+- '`https://github.com/GruberMarkus/AddressFormatter`'
+
+### 44.14. Bringing hidden treasures to light
 As a member of the .Net platform, PowerShell has access to a lot of great software published by other open-source enthusiasts.
 
 Set-OutlookSignatures shows how to integrate features from open-source software others share with the community. **A big thank you to all fellow open-source developers!**
