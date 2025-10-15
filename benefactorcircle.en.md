@@ -51,7 +51,7 @@ permalink: /benefactorcircle/
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Signatures for automapped and additional mailboxes</b>
+        <b>Signatures for automapped and additional mailboxes</b><br>cover delegate and shared mailbox scenarios.
       </div>
     </div>
   </div>
@@ -123,7 +123,7 @@ permalink: /benefactorcircle/
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Deletion of user-created signatures</b>
+        <b>Deletion of user-created signatures</b><br>for maximum control.
       </div>
     </div>
   </div>
@@ -141,7 +141,7 @@ permalink: /benefactorcircle/
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>High-resolution images from DOCX templates</b>
+        <b>High-resolution images from DOCX templates</b><br>For razor-sharp banners and images.
       </div>
     </div>
   </div>
@@ -150,7 +150,7 @@ permalink: /benefactorcircle/
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Remove the tagline</b><br>added by the free and open source version at the end of signatures.
+        <b>Remove the tagline</b><br>'Free and open-source Set-OutlookSignatures', added by the free and open source version at the end of signatures.
       </div>
     </div>
   </div>

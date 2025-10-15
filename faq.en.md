@@ -805,7 +805,7 @@ Alternative options for storing files:
 
 
 ## 35. How to disable the tagline in signatures?
-Set-OutlookSignatures appends a small, subtle attribution to signatures: 'Free and open-source [Set-OutlookSignatures](https://set-outlooksignatures.com)'
+Set-OutlookSignatures appends a small, subtle attribution to signatures: 'Free and open-source Set-OutlookSignatures'
 
 This unobtrusive text may also be called tagline, footer message, nag text, outreach snippet, upgrade nudge, or reminder blurb.
 
