@@ -1120,28 +1120,27 @@ Files:
 - '`.\Set-OutlookSignatures.ps1`'
 
 ### 44.12. Format phone numbers
-Just like addresses, phone numbers seem like child's play: you simply type them into your phone and - voilà - it rings at the other end.
+Just like postal addresses, phone numbers seem like child's play: You simply type them into your phone and - voilà - it rings at the other end.
 
-This only works because the dialer software on our phone performs hundreds of calculations to convert the numbers you type into a correct technical format. We think that numbers are easy, because:
-- We think they are just numbers (wrong - they are strings, with mandatory and optional characters with special meanings).
-- We think in local numbers, not in international ones.
-- Converting local numbers is much more than prefixing a '+' and the country code.
+This only works because the dialer software on our phones performs hundreds of calculations to convert the numbers you type into a correct technical format. Phone numbers seem to be easy because:
+- We think they are just numbers, but they are strings with mandatory and optional characters with special meanings.
+- We think in local numbers, not in international ones. Converting them is much more than prefixing a '+' and the country code.
 - We think there is only one phone number format that rules them all.
 
 If you still think phone number formatting is an easy task, reading the article '[Falsehoods Programmers Believe About Phone Numbers](https://github.com/google/libphonenumber/blob/master/FALSEHOODS.md)' will change your mind.
 
-Google has created probably the best phone number formatters, made it free and open-source, and maintains it regularly. It covers all countries and regions, includes all the public data that is available about country codes, and all the experience from the Android number dialer.
+Google has created probably the best phone number formatter, made it free and open-source, and maintains it regularly. It covers all countries and regions, includes all the public data that is available about country codes, and all the experience from the Android number dialer.
 
 Set-OutlookSignatures makes the .Net port of this library available. The function '`FormatPhoneNumber`' allows any given phone number with optional or indirect country information to be formatted in the four relevant technical formats, as well as in a fully customizable format.
 
-With only one input, you get a perfectly formatted number for national dialing, international dialing, `'tel:'`-links and more. Extensions are supported, too.
+With only one input, you get a perfectly formatted number for national dialing, international dialing, `'tel:'`-links and more. Extensions are supported, too, when being made technically distinguishable.
 
 Files:
 - '`.\Set-OutlookSignatures.ps1`'
 - '`.\config\default replacement variables.ps1`'
 
 ### 44.13. Format postal addresses
-Just like phone numbers, addresses seem like child's play. This is true for national addressing, because we are used how correctly write an address for our own region.
+Just like phone numbers, postal addresses seem like child's play. This is true for national addressing because we are used to writing addresses for our own country.
 
 But: Different countries, different customs. Read the article '[Falsehoods programmers believe about addresses](https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/)' to get a glimpse of what is possible. Three cheers for all the mailmen around the world!
 
@@ -1149,7 +1148,7 @@ Since all attempts to remedy the cause of this chaos have failed, there is a glo
 
 These address formatting templates are then made accessible by free and open-source software implementations. As there has been none for .Net or PowerShell, I created one.
 
-The '`AddressFormatter`' module comes with the '`Format-PostalAddress`' cmdlet. The cmdlet takes named standard address components and the coutry code as input, and returns the correctly formatted address string.
+The '`AddressFormatter`' module comes with the '`Format-PostalAddress`' cmdlet. The cmdlet takes named standard address components - there are more than 20 of them! - and the coutry code as input, and returns the correctly formatted address string.
 
 A real relief for any multinational company or when sending letters to recipients in different countries!
 
