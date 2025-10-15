@@ -51,7 +51,7 @@ permalink: /benefactorcircle/
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Signatures for automapped and additional mailboxes</b><br>cover delegate and shared mailbox scenarios.
+        <b>Signatures for automapped and additional mailboxes</b><br>Cover delegate and shared mailbox scenarios.
       </div>
     </div>
   </div>
@@ -123,7 +123,7 @@ permalink: /benefactorcircle/
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Deletion of user-created signatures</b><br>for maximum control.
+        <b>Deletion of user-created signatures</b><br>For maximum control.
       </div>
     </div>
   </div>

@@ -55,7 +55,7 @@ permalink: /benefactorcircle/
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Signaturen für automatisch zugeordnete und zusätzliche Postfächer</b><br>decken Delegations-Szenarien und Shared Mailboxes ab.
+        <b>Signaturen für automatisch zugeordnete und zusätzliche Postfächer</b><br>Decken Sie Delegations-Szenarien und Shared Mailboxes ab.
       </div>
     </div>
   </div>
@@ -127,7 +127,7 @@ permalink: /benefactorcircle/
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Löschen benutzererstellter Signaturen</b><br>für maximale Kontrolle.
+        <b>Löschen benutzererstellter Signaturen</b><br>Für maximale Kontrolle.
       </div>
     </div>
   </div>
