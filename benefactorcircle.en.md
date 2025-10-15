@@ -150,7 +150,7 @@ permalink: /benefactorcircle/
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Remove the tagline</b><br>'Free and open-source Set-OutlookSignatures', added by the free and open source version at the end of signatures.
+        <b>Remove the tagline</b><br>Remove the 'Free and open-source Set-OutlookSignatures' hint appended to signatures.
       </div>
     </div>
   </div>
