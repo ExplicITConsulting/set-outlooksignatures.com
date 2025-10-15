@@ -56,3 +56,6 @@ defaults:
 
 include:
   - ".well-known"
+
+kramdown:
+    smart_quotes: ["apos", "apos", "quot", "quot"]
