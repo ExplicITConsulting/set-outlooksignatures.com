@@ -77,7 +77,7 @@ In Ihrem 'Dokumente'-Ordner finden Sie nun einen neuen Unterordner 'Outlook Sign
 
 Der [Simulations-Modus](/details/#11-simulation-mode) kann noch viel mehr und ist dadurch sehr gut für Tests und Analysen in Produktionsumgebungen geeignet.
 
-### Eigene Vorlagen verwenden {#customize-templates}  
+### Ihre eigenen Vorlagen verwenden {#customize-templates}  
 Keine Beispiel-Signatur ist so schön wie Ihre eigene. Lassen wir Set-OutlookSignatures also mit Ihren eigenen Vorlagen arbeiten!
 
 - Erstellen Sie einen Ordner mit Ihren eigenen Vorlagen und Konfigurationen.  

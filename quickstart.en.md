@@ -73,7 +73,7 @@ In your 'Documents' folder, you will now find a new subfolder called 'Outlook Si
 
 The [simulation mode](/details/#11-simulation-mode) can do much more and is therefore very well suited for testing and analysis in production environments.
 
-### Use own templates {#customize-templates}  
+### Use your own templates {#customize-templates}  
 No sample signature is as beautiful as your own. So let's let Set-OutlookSignatures work with your own templates!
 
 - Create a folder with your own templates and configurations.
