@@ -6,7 +6,7 @@ title: Set-Outlook&shy;Signatures
 subtitle: Email signatures and out-of-office replies for Exchange and Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
 description: Email signatures and out-of-office replies for Exchange and Outlook. Full-featured, cost-effective, unsurpassed data privacy.
 hero_link: /quickstart
-hero_link_text: "<span><b>Quick Start Guide: </b>Deploy signatures within minutes</span>"
+hero_link_text: "<span><b>Quick Start: </b>Deploy signatures within minutes</span>"
 hero_link_style: |
   style="background-color: LimeGreen;"
 hero_link2: /faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures
