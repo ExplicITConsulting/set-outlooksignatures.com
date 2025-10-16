@@ -6,7 +6,7 @@ title: Set-Outlook&shy;Signatures
 subtitle: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
 description: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
 hero_link: /quickstart
-hero_link_text: "<span><b>Schnellstart-Anleitung: </b>Signaturen in wenigen Minuten verteilen, kostenlos und quelloffen.</span>"
+hero_link_text: "<span><b>Schnellstart-Anleitung: </b>Signaturen in wenigen Minuten verteilen</span>"
 hero_link_style: |
    style="background-color: LimeGreen;"
 hero_link2: /faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures
