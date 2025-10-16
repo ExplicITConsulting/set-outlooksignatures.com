@@ -10,7 +10,7 @@ hero_link_text: "<span><b>Schnellstart-Anleitung: </b>Signaturen in wenigen Minu
 hero_link_style: |
    style="background-color: LimeGreen;"
 hero_link2: /faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures
-hero_link2_text: "<span><b>Vom Code lernen</b></span>"
+hero_link2_text: "<span><b>Hinter den Kulissen: </b>Vom Code lernen</span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
 image:
