@@ -3,7 +3,7 @@
         <div class="content">
             <p>{% if post.date %}{{ post.date | date: '%Y-%m-%d' }}: {% endif %}{{ post.title }}</p>
             {% if post.summary %}
-            {{ post.summary | markdownify }}
+            {{ post.summary }}
             {% else %}
             {{ post.excerpt | markdownify }}
             {% endif %}
