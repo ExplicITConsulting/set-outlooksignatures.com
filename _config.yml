@@ -59,3 +59,7 @@ include:
 
 kramdown:
     smart_quotes: ["apos", "apos", "quot", "quot"]
+
+collections:
+  posts:
+    output: true
