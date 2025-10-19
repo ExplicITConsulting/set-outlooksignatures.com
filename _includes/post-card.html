@@ -1,10 +1,7 @@
 <div class="card">
-    <header class="card-header">
-        <a class="card-header-title" href="{{ site.baseurl }}{{ post.url }}">{% if post.date %}{{ post.date | date: '%Y-%m-%d' }}: {% endif %}{{ post.title }}</a>
-    </header>
     <div class="card-content">
         <div class="content">
-            <p></p>
+            <a class="title" href="{{ site.baseurl }}{{ post.url }}">{% if post.date %}{{ post.date | date: '%Y-%m-%d' }}: {% endif %}{{ post.title }}</a>
             {% if post.summary %}
             {{ post.summary | markdownify }}
             {% else %}
