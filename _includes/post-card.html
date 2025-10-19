@@ -1,11 +1,14 @@
 <div class="card">
+    <header class="card-header">
+        <a class="card-header-title" href="{{ site.baseurl }}{{ post.url }}">{% if post.date %}{{ post.date | date: '%Y-%m-%d' }}: {% endif %}{{ post.title }}</a>
+    </header>
     <div class="card-content">
         <div class="content">
-            <p>{% if post.date %}{{ post.date | date: '%Y-%m-%d' }}: {% endif %}{{ post.title }}</p>
+            <p></p>
             {% if post.summary %}
-            {{ post.summary | strip_html }}
+            {{ post.summary | markdownify }}
             {% else %}
-            {{ post.excerpt | strip_html }}
+            {{ post.excerpt }}
             {% endif %}
         </div>
         <div class="has-text-centered">
