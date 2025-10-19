@@ -7,5 +7,5 @@ group :jekyll_plugins do
     gem "jekyll-polyglot"
     gem "bulma-clean-theme"
     gem "nokogiri"
-    gem "jekyll-paginate-v2"
+    gem "jekyll-paginate"
 end
