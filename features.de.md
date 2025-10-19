@@ -296,6 +296,20 @@ Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on 
                 <td style="text-align:left">🔴</td>
             </tr>
             <tr>
+                <td style="text-align:left">Telefonnummern formatieren</td>
+                <td style="text-align:left">🟢 E164, International, National, RFC3966, Regex, benutzerdefiniert</td>
+                <td style="text-align:left">🟡 Regex</td>
+                <td style="text-align:left">🔴</td>
+                <td style="text-align:left">🟡 RegEx</td>
+            </tr>
+            <tr>
+                <td style="text-align:left">Postadressen formatieren</td>
+                <td style="text-align:left">🟢 Vorlagen für über 200 Länder/Regionen, benutzerdefiniert</td>
+                <td style="text-align:left">🟡 Regex</td>
+                <td style="text-align:left">🔴</td>
+                <td style="text-align:left">🟡 RegEx</td>
+            </tr>
+            <tr>
                 <td style="text-align:left">Lizenzkosten für 100 Postfächer, 1 Jahr</td>
                 <td style="text-align:left">🟢 300&nbsp;€</td>
                 <td style="text-align:left">🔴 ca. 1.600&nbsp;€</td>

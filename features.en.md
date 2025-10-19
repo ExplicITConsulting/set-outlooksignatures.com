@@ -296,6 +296,20 @@ Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle
                 <td style="text-align:left">🔴</td>
             </tr>
             <tr>
+                <td style="text-align:left">Phone number formatting</td>
+                <td style="text-align:left">🟢 E164, international, national, RFC3966, regex, custom</td>
+                <td style="text-align:left">🟡 Regex</td>
+                <td style="text-align:left">🔴</td>
+                <td style="text-align:left">🟡 RegEx</td>
+            </tr>
+            <tr>
+                <td style="text-align:left">Postal address formatting</td>
+                <td style="text-align:left">🟢 Templates for more than 200 countries/regions, custom</td>
+                <td style="text-align:left">🟡 Regex</td>
+                <td style="text-align:left">🔴</td>
+                <td style="text-align:left">🟡 RegEx</td>
+            </tr>
+            <tr>
                 <td style="text-align:left">License cost for 100 mailboxes, 1 year</td>
                 <td style="text-align:left">🟢 300&nbsp;€</td>
                 <td style="text-align:left">🔴 ca. 1,600&nbsp;€</td>
