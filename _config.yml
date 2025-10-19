@@ -20,7 +20,7 @@ repository: "ExplicITConsulting/set-outlooksignatures.com" # GitHub username/rep
 favicon: "/assets/images/set-outlooksignatures icon.ico"
 navbar_logo: "/assets/images/set-outlooksignatures logo 500px.png"
 navbar_logo_alt: "Set-OutlookSignatures"
-
+hide_share_buttons: true
 force_theme: #light
 gh_sponsor: 
 
