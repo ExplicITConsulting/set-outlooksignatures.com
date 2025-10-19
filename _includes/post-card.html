@@ -5,9 +5,9 @@
     <div class="card-content">
         <div class="content">
             {% if post.summary %}
-                {{ post.summary }}
+                {{ post.summary | markdownify }}
             {% else %}
-                <p>{{ post.excerpt }}</p>
+                <p>{{ post.excerpt | markdownify }}</p>
             {% endif %}
         </div>
         <div class="has-text-centered">
