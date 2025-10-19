@@ -3,9 +3,9 @@
         <div class="content">
             <p>{% if post.date %}{{ post.date | date: '%Y-%m-%d' }}: {% endif %}{{ post.title }}</p>
             {% if post.summary %}
-            {{ post.summary }}
+            {{ post.summary | strip_html }}
             {% else %}
-            {{ post.excerpt | markdownify }}
+            {{ post.excerpt | strip_html }}
             {% endif %}
         </div>
         <div class="has-text-centered">
