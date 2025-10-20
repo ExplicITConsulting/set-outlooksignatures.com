@@ -18,7 +18,7 @@
             {% elsif page == 1 %}
                 <li>
                     <a
-                        href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | split: '/' | pop | join: '/' }}"
+                        href="{{ site.pagination.permalink | prepend: site.baseurl | replace: '//', '/' | split: '/' | pop | join: '/' }}"
                         class="pagination-link"
                     >
                         {{- page -}}
@@ -27,7 +27,7 @@
             {% else %}
                 <li>
                     <a
-                        href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}"
+                        href="{{ site.pagination.permalink | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}"
                         class="pagination-link"
                     >
                         {{- page -}}
