@@ -8,7 +8,7 @@ image: none
 published: true
 author: Markus Gruber
 tags:
-page_id: "2025-10-21-current-state-and-future-of-roaming-signatures"
+page_id: "2025-10-20-current-state-and-future-of-roaming-signatures"
 permalink: /blog/:year/:month/:day/:slug/
 ---
 ## Eine bahnbrechende Neuerung mit Pferdefuß

@@ -2,7 +2,7 @@
 layout: post
 lang: de
 locale: de
-title: "Deploy email signatures without end user interaction or client-side software"
+title: "Signaturen ohne Endbenutzer-Interaktion oder clientseitige Software verteilen"
 description:
 image: none
 published: true
