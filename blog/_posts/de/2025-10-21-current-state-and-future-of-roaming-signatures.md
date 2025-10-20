@@ -24,9 +24,9 @@ Schnellvorlauf bis Mitte 2024: Obwohl die meisten Mandanten Roaming-Signaturen n
 Wir bei Set-OutlookSignatures und ExplicIT sind überzeugt, dass Roaming-Signaturen die Zukunft sind. Aber die langsame Einführung und die begrenzte Kommunikation seitens Microsoft haben die Einführung erschwert. Aus diesem Grund haben wir viel in die Unterstützung dieser Funktion innerhalb von Set-OutlookSignatures investiert und bieten Funktionen, die keine andere Lösung auf dem Markt bieten kann.
 
 Unsere Empfehlung für die meisten Kunden:
-✅ Aktivieren Sie Roaming-Signaturen in Ihrem Mandanten.
-✅ Deaktivieren Sie sie auf der Client-Seite
-✅ Überlassen Sie Set-OutlookSignatures den Rest
+- Aktivieren Sie Roaming-Signaturen in Ihrem Mandanten.
+- Deaktivieren Sie sie auf der Client-Seite
+- Überlassen Sie Set-OutlookSignatures den Rest
 
 ## Und wie sieht es mit der mobilen Unterstützung aus?
 Derzeit ist dies ein Problem, das oft eine teure Umleitung auf der Serverseite erfordert, nur um eine Signatur anzuwenden. Sobald Microsoft jedoch eine offizielle API veröffentlicht, wird sich dies ändern. In der Zwischenzeit schließt das Outlook Add-In – Teil des Benefactor Circle-Add-ons – diese Lücke.

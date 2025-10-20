@@ -2,7 +2,7 @@
 layout: post
 lang: en
 locale: en
-title: "Randomly alternate Banners and Other Images"
+title: "Randomly alternate banners and other images"
 description:
 image: none
 published: true
