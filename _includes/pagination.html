@@ -1,22 +1,24 @@
 <nav class="pagination is-centered">
     {% if paginator.previous_page %}
-        <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="pagination-previous">&lt;</a>
+    <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="pagination-previous">&lt;</a>
     {% else %}
-        <p class="pagination-previous" disabled>&lt;</p>
+    <p class="pagination-previous" disabled>&lt;</p>
     {% endif %}
     {% if paginator.next_page %}
-        <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="pagination-next">&gt;</a>
+    <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="pagination-next">&gt;</a>
     {% else %}
-        <p class="pagination-next" disabled>&gt;</p>
+    <p class="pagination-next" disabled>&gt;</p>
     {% endif %}
 
     <ul class="pagination-list">
         {% if paginator.page_trail %}
-            {% for trail in paginator.page_trail %}
-                <li class="pagination-link {% if page.url == trail.path %} has-text-weight-bold {% endif %}">
-                    <a href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
-                </li>
-            {% endfor %}
+        {% for trail in paginator.page_trail %}
+        <li>
+            <a href="{{ trail.path | prepend: site.baseurl }}"
+                class="pagination-link {% if page.url == trail.path %} has-text-weight-bold {% endif %}"
+                title="{{trail.title}}">{{ trail.num }}</a>
+        </li>
+        {% endfor %}
         {% endif %}
     </ul>
 </nav>
