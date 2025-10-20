@@ -3,9 +3,11 @@
         <div class="content">
             <div class="level is-mobile">
                 <div class="level-left">
-                    <a class="title" href="{{ site.baseurl }}{{ post.url }}">
-                    {{ post.title }}
-                    </a>
+                    <h2>
+                        <a class="title" href="{{ site.baseurl }}{{ post.url }}">
+                            {{ post.title }}
+                        </a>
+                    </h2>
                 </div>
                 
                 <div class="level-right">
@@ -15,9 +17,9 @@
                 </div>
             </div>
             {% if post.summary %}
-            {{ post.summary | markdownify }}
+                {{ post.summary | markdownify | strip_html | prepend: "…" }}
             {% else %}
-            {{ post.excerpt }}
+                {{ post.content | markdownify | strip_html | truncatewords: 50 | prepend: "…" }}
             {% endif %}
         </div>
         <div class="has-text-centered">
