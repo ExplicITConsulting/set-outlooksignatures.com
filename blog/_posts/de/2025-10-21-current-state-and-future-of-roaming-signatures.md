@@ -1,14 +1,14 @@
 ---
 layout: post
-lang: en
-locale: en
+lang: de
+locale: de
 title: "Aktueller Stand und Zukunft von Roaming-Signaturen"
 description:
 image: none
 published: true
 author: Markus Gruber
-tags: ["new release"]
-page_id: "2025-10-18-current-state-and-future-of-roaming-signatures"
+tags:
+page_id: "2025-10-21-current-state-and-future-of-roaming-signatures"
 permalink: /blog/:year/:month/:day/:slug/
 ---
 ## Eine bahnbrechende Neuerung mit Pferdefuß
