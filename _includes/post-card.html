@@ -17,11 +17,11 @@
                 </div>
             </div>
             {% if post.summary %}
-                {% assign truncated_text = post.summary | markdownify | replace: "<br>", "_NEWLINE_" | strip_html %}
+                {% assign truncated_text = post.summary | markdownify | replace: "<br>", "_NEWLINE_" | replace: "</h2>", "_NEWLINE_" | replace: "</p>", "_NEWLINE_" | strip_html %}
             {% else %}
-                {% assign truncated_text = post.content | markdownify | replace: "<br>", "_NEWLINE_" | strip_html | truncatewords: 50 %}
+                {% assign truncated_text = post.content | markdownify | replace: "<br>", "_NEWLINE_" | replace: "</h2>", "_NEWLINE_" | replace: "</p>", "_NEWLINE_" | strip_html | truncatewords: 50 %}
             {% endif %}
-            {{ truncated_text | replace: "_NEWLINE_", "<br>" | append: "…" }}
+            {{ truncated_text | replace: "_NEWLINE_", "<br>" }}
         </div>
         <div class="has-text-centered">
             <a href="{{ site.baseurl }}{{ post.url }}" class="button" style="background-color: limegreen;">{{ site.data[site.active_lang].strings.post_read_full }}</a>
