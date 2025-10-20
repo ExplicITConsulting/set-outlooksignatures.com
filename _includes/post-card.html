@@ -1,19 +1,12 @@
 <div class="card" style="background-color: transparent;">
     <div class="card-content">
         <div class="content">
-            <div class="level is-mobile">
-                <div class="level-left">
-                    <h2>
-                        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                    </h2>
-                </div>
-                
-                <div class="level-right">
-                    {% if post.date %}
-                        <p>{{ post.date | date: '%Y-%m-%d' }}</p>
-                    {% endif %}
-                </div>
-            </div>
+            {% if post.date %}
+                <p class="m-0 p-0">{{ post.date | date: '%Y-%m-%d' }}</p>
+            {% endif %}
+            <h2>
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            </h2>
             {% if post.summary %}
                 {% assign truncated_text = post.summary | markdownify | replace: "<br>", "_NEWLINE_" | replace: "</h2>", "_NEWLINE_" | replace: "</p>", "_NEWLINE_" | strip_html %}
             {% else %}
