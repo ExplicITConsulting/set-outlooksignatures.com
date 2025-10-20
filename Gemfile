@@ -8,4 +8,5 @@ group :jekyll_plugins do
     gem "bulma-clean-theme"
     gem "nokogiri"
     gem "jekyll-paginate-v2"
+    gen "jekyll-feed"
 end

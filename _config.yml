@@ -67,6 +67,7 @@ collections:
 plugins:
   - jekyll-polyglot
   - jekyll-paginate-v2
+  - jekyll-feed
 
 pagination:
   # Site-wide kill switch, disabled here it doesn't run at all 
@@ -107,3 +108,6 @@ pagination:
   # Optional, the default name of the index file for generated pages (e.g. 'index.html')
   # Without file extension
   indexpage: 'index'
+
+feed:
+  path: /feed.xml
