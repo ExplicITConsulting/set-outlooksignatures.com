@@ -1,39 +1,22 @@
 <nav class="pagination is-centered">
     {% if paginator.previous_page %}
-        <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="pagination-previous is-info">&lt;</a>
+    <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="pagination-previous is-info">&lt;</a>
     {% else %}
-        <p class="pagination-previous" disabled>&lt;</p>
+    <p class="pagination-previous" disabled>&lt;</p>
     {% endif %}
     {% if paginator.next_page %}
-        <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="pagination-next is-info">&gt;</a>
+    <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="pagination-next is-info">&gt;</a>
     {% else %}
-        <p class="pagination-next" disabled>&gt;</p>
+    <p class="pagination-next" disabled>&gt;</p>
     {% endif %}
+
     <ul class="pagination-list">
-        {% for page in (1..paginator.total_pages) %}
-            {% if page == paginator.page %}
-                <li>
-                    <a class="pagination-link is-current">{{ page }}</a>
+        {% if paginator.page_trail %}
+            {% for trail in paginator.page_trail %}
+                <li class="pagination-link {{% if page.url == trail.path %}} is-current {{% endif %}}">
+                    <a href=" {{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
                 </li>
-            {% elsif page == 1 %}
-                <li>
-                    <a
-                        href="{{ site.pagination.permalink | prepend: site.baseurl | replace: '//', '/' | split: '/' | pop | join: '/' }}"
-                        class="pagination-link"
-                    >
-                        {{- page -}}
-                    </a>
-                </li>
-            {% else %}
-                <li>
-                    <a
-                        href="{{ site.pagination.permalink | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}"
-                        class="pagination-link"
-                    >
-                        {{- page -}}
-                    </a>
-                </li>
-            {% endif %}
-        {% endfor %}
+            {% endfor %}
+        {% endif %}
     </ul>
 </nav>
