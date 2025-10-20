@@ -23,7 +23,6 @@
             {% endif %}
             {% assign lines = truncated_text | split: "_NEWLINE_" %}
             {% for line in lines %}
-                {# Skip any empty lines that might result from splitting #}
                 {% unless line | strip == empty %}
                     {% if forloop.first %}
                         <p><strong>{{ line | strip }}</strong></p>
