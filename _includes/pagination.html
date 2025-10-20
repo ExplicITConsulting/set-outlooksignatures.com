@@ -13,7 +13,7 @@
     <ul class="pagination-list">
         {% if paginator.page_trail %}
             {% for trail in paginator.page_trail %}
-                <li class="pagination-link {% if page.url == trail.path %} is-selected {% endif %}">
+                <li class="pagination-link {% if page.url == trail.path %} is-bold {% endif %}">
                     <a href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
                 </li>
             {% endfor %}
