@@ -2,7 +2,7 @@
     <div class="card-content">
         <div class="content">
             {% if post.date %}
-                <p class="mb-0 pb-0">{{ post.date | date: '%Y-%m-%d' }}</p>
+                <p class="mb-0 pb-0 is-size-7">{{ post.date | date: '%Y-%m-%d' }}</p>
             {% endif %}
             <h2 class="mt-0 pt-0">
                 <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
