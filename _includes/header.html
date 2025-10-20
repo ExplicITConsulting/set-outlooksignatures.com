@@ -67,7 +67,7 @@
                             {%- else -%}
                                 {%- assign link_url = site.baseurl | append: "/" | append: tongue | append: page.url -%}
                             {%- endif -%}
-                            <a class="navbar-item has-text-white {% if tongue == site.active_lang %}is-active{% endif %}" {% static_href
+                            <a class="navbar-item {% if tongue == site.active_lang %}is-selected{% endif %}" {% static_href
                                 %}href="{{ link_url }}" {% endstatic_href %} data-base-url="{{ link_url }}">
                                 {{ tongue | upcase }}
                             </a>
