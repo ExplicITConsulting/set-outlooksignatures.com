@@ -13,8 +13,8 @@
     <ul class="pagination-list">
         {% if paginator.page_trail %}
             {% for trail in paginator.page_trail %}
-                <li class="pagination-link">
-                    <a class="{% if page.url == trail.path %} has-text-bold {% endif %}" href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
+                <li class="pagination-link {% if page.url == trail.path %} has-text-weight-bold {% endif %}">
+                    <a href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
                 </li>
             {% endfor %}
         {% endif %}
