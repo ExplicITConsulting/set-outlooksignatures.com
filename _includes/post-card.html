@@ -23,13 +23,11 @@
             {% endif %}
             {% assign lines = truncated_text | split: "_NEWLINE_" %}
             {% for line in lines %}
-                {% unless line | strip == empty %}
-                    {% if forloop.first %}
-                        <p><strong>{{ line | strip }}</strong></p>
-                    {% else %}
-                        <p>{{ line | strip }}</p>
-                    {% endif %}
-                {% endunless %}
+                {% if forloop.first %}
+                    <p><strong>{{ line }}</strong></p>
+                {% else %}
+                    <p>{{ line }}</p>
+                {% endif %}
             {% endfor %}
         </div>
         <div class="has-text-centered">
