@@ -15,7 +15,7 @@
         {% for trail in paginator.page_trail %}
         <li>
             <a href="{{ trail.path | prepend: site.baseurl }}"
-                class="pagination-link {% if page.url == trail.path %} has-text-weight-bold {% endif %}"
+                class="pagination-link {% if page.url == trail.path %} is-current {% endif %}"
                 title="{{trail.title}}">{{ trail.num }}</a>
         </li>
         {% endfor %}
