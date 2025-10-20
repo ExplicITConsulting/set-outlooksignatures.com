@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="content">
-    <p>{{ post.date | date: '%Y-%m-%d' }}, {{ page.author }}</p>
+    <p>{{ page.date | date: '%Y-%m-%d' }}, {{ page.author }}</p>
 
     {% if page.series %}
         {% include series.html %}
