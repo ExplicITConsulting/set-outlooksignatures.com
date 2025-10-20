@@ -126,8 +126,8 @@ html::after {
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 33.3vw; /* Sets the width of the pseudo-element to 33.3% of the viewport width */
-  height: 50vh; /* Sets the height of the pseudo-element to 50% of the viewport height, acting as the max-height for the image */
+  width: 25vw;
+  height: 33vh;
   background-image: url("/assets/images/visitenkarten-hochkant.png");
   background-repeat: no-repeat; /* Prevents the background image from repeating */
   background-size: contain; /* Scales the background image to fit within the pseudo-element's dimensions (33.3vw x 50vh) while maintaining its aspect ratio. This ensures it's never taller than 50vh and respects the width preference. */
