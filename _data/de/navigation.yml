@@ -11,6 +11,8 @@
   link: /benefactorcircle
 - name: Demo
   link: /benefactorcircle#demo
+- name: Blog
+  link: /blog
 - name: Ressourcen
   link: /help
   dropdown:
