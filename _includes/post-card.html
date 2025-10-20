@@ -10,9 +10,7 @@
                 
                 <div class="level-right">
                     {% if post.date %}
-                    <p class="is-size-7">
-                        {{ post.date | date: '%Y-%m-%d' }}
-                    </p>
+                        <p>{{ post.date | date: '%Y-%m-%d' }}</p>
                     {% endif %}
                 </div>
             </div>
