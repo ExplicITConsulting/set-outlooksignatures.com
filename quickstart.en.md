@@ -64,7 +64,7 @@ Congratulations, you now have a robust starting point for your own customization
 ## Customize settings {#customize}
 You can now start with your own customizations. Here are a few popular examples:
 
-**Simulaton mode**  
+**Simulation mode**  
 Would you like to see what the sample signatures provided look like for another user? Then simply use the integrated [simulation mode](/details/#11-simulation-mode):
 - Select the email address of any user in your system.
 - Restart Set-OutlookSignatures in a new PowerShell session, but this time with the additional parameter '`-SimulateUser a@example.com`' (replace 'a@example.com’ with the email address you selected earlier).
