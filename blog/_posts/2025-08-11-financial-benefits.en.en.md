@@ -35,4 +35,5 @@ And the benefits go beyond cost savings:
 
 Set-OutlookSignatures pays for itself and helps you unlock new value from every message.
 
-Interested in learning more or seeing our solution in action? [Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+## Interested in learning more or seeing our solution in action?
+[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!

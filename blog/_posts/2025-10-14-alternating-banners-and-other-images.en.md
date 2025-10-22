@@ -47,4 +47,5 @@ You can enhance this even further:
 - You could assign banners based on your share price or expected weather queried from a web service  
 - And much more, including any combination of the above
 
-Interested in learning more or seeing our solution in action? [Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+## Interested in learning more or seeing our solution in action?
+[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!

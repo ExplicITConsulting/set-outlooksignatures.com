@@ -25,4 +25,5 @@ Enter the Benefactor Circle add-on:
 
 Because email signatures aren’t just a sign-off, they’re part of your brand, your compliance strategy, and your communication culture.
 
-Interested in learning more or seeing our solution in action? [Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+## Interested in learning more or seeing our solution in action?
+[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!

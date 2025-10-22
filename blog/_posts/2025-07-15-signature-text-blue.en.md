@@ -28,4 +28,5 @@ And here’s the kicker: Some Outlook versions struggle to interpret ‘Automati
 
 With Set-OutlookSignatures, you can standardize signature formatting across your organization. No surprises, no color shifts, just consistent branding.
 
-Interested in learning more or seeing our solution in action? [Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+## Interested in learning more or seeing our solution in action?
+[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!

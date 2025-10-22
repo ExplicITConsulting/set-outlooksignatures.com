@@ -35,4 +35,5 @@ Und die Vorteile gehen über Kosteneinsparungen hinaus:
 
 Set-OutlookSignatures macht sich bezahlt und hilft Ihnen, aus jeder Nachricht neuen Mehrwert zu schöpfen.
 
-Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen? [Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
+[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
