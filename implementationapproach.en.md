@@ -3,7 +3,7 @@ layout: page
 lang: en
 title: Implementation approach
 subtitle: Implementation in a complex environment with a five-digit number of mailboxes
-description: Implementation approach. Real-life experience implementing the software in multi-client environments with a five-digit number of mailboxes.
+description: Discover our implementation approach for complex multi-client environments with thousands of mailboxes—real-world experience for smooth deployment.
 page_id: "implementationapproach"
 permalink: /implementationapproach/
 ---

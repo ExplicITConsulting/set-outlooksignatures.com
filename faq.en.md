@@ -2,7 +2,7 @@
 layout: page
 title: Frequently Asked Questions (FAQ)
 subtitle: Topics that are addressed regularly
-description: Find answers to common questions about Set-OutlookSignatures. Learn about setup, templates, deployment, roaming signatures, and advanced configuration.
+description: "Get answers to common Set-OutlookSignatures questions: setup, templates, deployment, roaming signatures, and advanced configuration."
 page_id: "faq"
 permalink: /faq/
 ---

@@ -2,7 +2,7 @@
 layout: page
 title: Technical details, requirements and usage
 subtitle: What it needs, how it works and how to use it
-description: Explore technical details of Set-OutlookSignatures. System requirements, supported platforms, template formats, group logic, variables, and simulation mode.
+description: "Discover Set-OutlookSignatures technical details: system requirements, supported platforms, template formats, group logic, variables, and simulation mode."
 hero_link: /quickstart
 hero_link_text: "<span><b>Quick Start Guide</b></span>"
 hero_link_style: |

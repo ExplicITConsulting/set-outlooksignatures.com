@@ -2,7 +2,7 @@
 layout: page
 title: Features and feature comparison
 subtitle: Our solution at a glance and in benchmark
-description: Features and feature comparison. Our solution at a glance and in benchmark.
+description: Compare features and benefits of our solution at a glance with clear benchmarks for informed decisions.
 hero_link: "#features"
 hero_link_text: "<span><b>Features: </b>What our solution is able to do</span>"
 hero_link_style: |

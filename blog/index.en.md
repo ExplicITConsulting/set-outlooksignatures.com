@@ -2,9 +2,9 @@
 layout: blog
 lang: en
 locale: en
-title: Blog
-subtitle: News and interesting facts
-description: Blog about news and interesting facts.
+title: Master Outlook signatures
+subtitle: Tips, tools, and trends for IT and marketing teams
+description: Discover practical tips, tools, and trends for mastering Outlook signatures—designed for IT administrators and marketing teams aiming to streamline email branding and compliance.
 pagination: 
   enabled: true
 page_id: "blog"

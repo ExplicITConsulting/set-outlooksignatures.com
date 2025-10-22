@@ -4,7 +4,7 @@ lang: de
 locale: de
 title: Funktionen und Funktions-Vergleich
 subtitle: Unsere Lösung auf einen Blick und im Vergleich
-description: Funktionen und Funktions-Vergleich. Unsere Lösung auf einen Blick und im Vergleich.
+description: Vergleichen Sie Funktionen und Vorteile unserer Lösung auf einen Blick – klare Übersicht für den besten Funktions-Vergleich.
 hero_link: "#features"
 hero_link_text: "<span><b>Funktionen: </b>Was unsere Lösung kann</span>"
 hero_link_style: |

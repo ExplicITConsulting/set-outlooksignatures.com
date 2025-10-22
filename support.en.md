@@ -2,7 +2,7 @@
 layout: page
 title: Get support
 subtitle: Passing on our experience to you
-description: Get support for Set-OutlookSignatures. Explore free GitHub help or premium consulting from ExplicIT. Expert guidance, workshops, and implementation support.
+description: "Get Set-OutlookSignatures support: Free GitHub help or premium support, plus expert guidance, workshops, and implementation assistance."
 page_id: "support"
 permalink: /support/
 ---

@@ -4,7 +4,7 @@ lang: de
 locale: de
 title: Hilfe
 subtitle: Dokumentation und Support-Ressourcen
-description: Entdecken Sie die Hilfsressourcen von Set-OutlookSignatures. Von Funktionsvergleichen und Einrichtungsanleitungen bis hin zu FAQs, technischen Details und Experten-Support-Optionen.
+description: "Entdecken Sie Set-OutlookSignatures Hilfe: Dokumentation, FAQs, Einrichtungsanleitungen, technische Details und Experten-Support."
 page_id: "help"
 permalink: /help/
 ---
