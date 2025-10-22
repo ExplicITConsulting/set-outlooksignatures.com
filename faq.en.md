@@ -3,11 +3,6 @@ layout: page
 title: Frequently Asked Questions (FAQ)
 subtitle: Topics that are addressed regularly
 description: Find answers to common questions about Set-OutlookSignatures. Learn about setup, templates, deployment, roaming signatures, and advanced configuration.
-image:
-  path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
-  height: 1200
-  width: 630
-  alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "faq"
 permalink: /faq/
 ---

@@ -13,11 +13,6 @@ hero_link2: /faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures
 hero_link2_text: "<span><b>Behind the scenes: </b>Learn from the code</span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
-image:
-  path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
-  height: 1200
-  width: 630
-  alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "index"
 permalink: /
 ---

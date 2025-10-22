@@ -11,11 +11,6 @@ hero_link2: /support
 hero_link2_text: "<span><b>Support</b></span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
-image:
-  path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
-  height: 1200
-  width: 630
-  alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "details"
 permalink: /details/
 ---

@@ -15,11 +15,6 @@ hero_link3: "/quickstart"
 hero_link3_text: "<span><b>Quick Start Guide: </b>Deploy signatures within minutes</span>"
 hero_link3_style: |
   style="background-color: LimeGreen;"
-image:
-  path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
-  height: 1200
-  width: 630
-  alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "features"
 permalink: /features/
 ---

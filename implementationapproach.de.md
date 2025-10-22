@@ -5,11 +5,6 @@ locale: de
 title: Implementierungs-Ansatz
 subtitle: Einführung in einer komplexen Umgebung mit zehntausenden Postfächern
 description: Implementierungs-Ansatz. Praktische Erfahrung mit der Implementierung der Software in Multi-Client-Umgebungen mit einer fünfstelligen Anzahl von Postfächern.
-image:
-  path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
-  height: 1200
-  width: 630
-  alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "implementationapproach"
 permalink: /implementationapproach/
 ---

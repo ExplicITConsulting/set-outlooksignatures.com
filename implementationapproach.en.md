@@ -4,11 +4,6 @@ lang: en
 title: Implementation approach
 subtitle: Implementation in a complex environment with a five-digit number of mailboxes
 description: Implementation approach. Real-life experience implementing the software in multi-client environments with a five-digit number of mailboxes.
-image:
-  path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
-  height: 1200
-  width: 630
-  alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "implementationapproach"
 permalink: /implementationapproach/
 ---

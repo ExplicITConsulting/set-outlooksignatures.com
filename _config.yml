@@ -47,7 +47,11 @@ defaults:
       path: ""
     values:
       layout: page
-      image: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
+      image:
+        path: "/assets/images/set-outlooksignatures opengraph1200x630.png"
+        height: 1200
+        width: 630
+        alt: "Set-OutlookSignatures"
       # "/assets/images/background, vietnam golden bridge.jpg"
       hero_height: is-small
       # hero_darken: true

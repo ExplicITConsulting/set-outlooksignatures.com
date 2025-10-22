@@ -3,11 +3,6 @@ layout: page
 title: Quick Start Guide
 subtitle: Deploy signatures within minutes
 description: Quick Start Guide. Deploy signatures within minutes.
-image:
-  path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
-  height: 1200
-  width: 630
-  alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "quickstart"
 permalink: /quickstart/
 ---

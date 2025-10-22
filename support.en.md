@@ -3,11 +3,6 @@ layout: page
 title: Get support
 subtitle: Passing on our experience to you
 description: Get support for Set-OutlookSignatures. Explore free GitHub help or premium consulting from ExplicIT. Expert guidance, workshops, and implementation support.
-image:
-  path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
-  height: 1200
-  width: 630
-  alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "support"
 permalink: /support/
 ---

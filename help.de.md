@@ -5,11 +5,6 @@ locale: de
 title: Hilfe
 subtitle: Dokumentation und Support-Ressourcen
 description: Entdecken Sie die Hilfsressourcen von Set-OutlookSignatures. Von Funktionsvergleichen und Einrichtungsanleitungen bis hin zu FAQs, technischen Details und Experten-Support-Optionen.
-image:
-  path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
-  height: 1200
-  width: 630
-  alt: "Set-OutlookSignatures Benefactor Circle"
 page_id: "help"
 permalink: /help/
 ---
