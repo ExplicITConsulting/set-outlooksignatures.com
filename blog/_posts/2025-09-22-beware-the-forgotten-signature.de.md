@@ -4,7 +4,6 @@ lang: de
 locale: de
 title: "Hütet euch vor der vergessenen Signatur 👻🎃"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

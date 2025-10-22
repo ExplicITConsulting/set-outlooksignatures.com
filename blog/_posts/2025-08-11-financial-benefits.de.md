@@ -4,7 +4,6 @@ lang: de
 locale: de
 title: "Ist zentralisiertes Signaturmanagement nur ein Kostenfaktor oder eine versteckte Chance?"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

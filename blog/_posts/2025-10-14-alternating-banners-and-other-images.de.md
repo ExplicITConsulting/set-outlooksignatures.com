@@ -4,7 +4,6 @@ lang: de
 locale: de
 title: "Banner und andere Bilder zufällig wechseln"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

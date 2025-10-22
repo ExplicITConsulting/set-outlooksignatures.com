@@ -4,7 +4,6 @@ lang: de
 locale: de
 title: "Signaturen ohne Endbenutzer-Interaktion oder clientseitige Software verteilen"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

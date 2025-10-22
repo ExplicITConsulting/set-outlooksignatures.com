@@ -4,7 +4,6 @@ lang: en
 locale: en
 title: "Beware the Forgotten Signature 👻🎃"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

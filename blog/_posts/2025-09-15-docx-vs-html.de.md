@@ -4,7 +4,6 @@ lang: de
 locale: de
 title: "DOCX oder HTML?"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

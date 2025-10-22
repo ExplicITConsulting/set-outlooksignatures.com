@@ -4,7 +4,6 @@ lang: de
 locale: de
 title: "Signaturen für Senden Als und Senden Im Auftrag Von"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

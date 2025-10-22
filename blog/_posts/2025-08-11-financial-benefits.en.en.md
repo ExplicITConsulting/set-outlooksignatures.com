@@ -4,7 +4,6 @@ lang: en
 locale: en
 title: "Is centralized signature management just a cost center or a hidden opportunity?"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

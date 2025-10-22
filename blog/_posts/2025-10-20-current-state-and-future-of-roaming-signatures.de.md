@@ -4,7 +4,6 @@ lang: de
 locale: de
 title: "Aktueller Stand und Zukunft von Roaming-Signaturen"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags:

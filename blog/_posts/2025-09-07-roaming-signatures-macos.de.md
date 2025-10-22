@@ -4,7 +4,6 @@ lang: de
 locale: de
 title: "Roaming Signatures für Outlook am Mac?"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

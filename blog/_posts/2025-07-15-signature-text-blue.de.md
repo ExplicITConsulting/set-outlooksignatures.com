@@ -4,7 +4,6 @@ lang: de
 locale: de
 title: "Warum wird der Text der Outlook-Signatur manchmal blau statt schwarz angezeigt?"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

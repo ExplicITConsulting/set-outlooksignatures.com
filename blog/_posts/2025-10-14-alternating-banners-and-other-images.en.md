@@ -4,7 +4,6 @@ lang: en
 locale: en
 title: "Randomly alternate banners and other images"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

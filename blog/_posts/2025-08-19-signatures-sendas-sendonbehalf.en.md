@@ -4,7 +4,6 @@ lang: en
 locale: en
 title: "Signatures for Send As and Send on Behalf"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

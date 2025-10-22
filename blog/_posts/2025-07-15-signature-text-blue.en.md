@@ -4,7 +4,6 @@ lang: en
 locale: en
 title: "Why does Outlook signature text sometimes turn blue instead of staying black?"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

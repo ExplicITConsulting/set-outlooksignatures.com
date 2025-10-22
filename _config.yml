@@ -47,7 +47,7 @@ defaults:
       path: ""
     values:
       layout: page
-      image: "/assets/images/explicit consulting, color on black.png"
+      image: "/assets/images/set-outlooksignatures logo.png"
       # "/assets/images/background, vietnam golden bridge.jpg"
       hero_height: is-small
       # hero_darken: true

@@ -4,7 +4,6 @@ lang: en
 locale: en
 title: "Deploy email signatures without end user interaction or client-side software"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

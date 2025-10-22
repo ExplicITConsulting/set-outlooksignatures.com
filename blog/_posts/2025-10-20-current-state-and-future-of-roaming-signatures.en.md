@@ -4,7 +4,6 @@ lang: en
 locale: en
 title: "Current state and future of roaming signatures"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 

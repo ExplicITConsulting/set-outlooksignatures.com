@@ -4,7 +4,6 @@ lang: en
 locale: en
 title: "What can I learn from the code of Set-OutlookSignatures?"
 description:
-image: none
 published: true
 author: Markus Gruber
 tags: 
