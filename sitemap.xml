@@ -14,10 +14,10 @@ sitemap: false
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- comment -%} Old: {%- assign allNodes = site.pages | concat: site.posts -%} {%- endcomment -%}
+{%- assign allNodes = site.pages -%}
 
-{%- assign pagesAndPosts = site.pages | concat: site.posts -%}
-
-{%- for node in pagesAndPosts -%}
+{%- for node in AllNodes -%}
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
   {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
 
