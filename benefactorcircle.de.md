@@ -28,7 +28,7 @@ page_id: "benefactorcircle"
 permalink: /benefactorcircle/
 ---
 <h2 id="sustainable-value">Nachhaltiger Mehrwert für Ihr Unternehmen</h2>
-<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> von <a href="https://explicitconsulting.at">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Möglichkeiten für Ihr Unternehmen.</p>
+<p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> von <a href="https://explicitconsulting.at/">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Möglichkeiten für Ihr Unternehmen.</p>
 
 
 <h3 id="additional-features">Zusätzliche Funktionen</h3>
@@ -497,4 +497,4 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
   <li>Wie Sie erstklassigen Support erhalten</li>
 </ul>
 
-<p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen">Hilfe- und Support-Center</a></p>
+<p><a href="https://set-outlooksignatures.com/help/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen">Hilfe- und Support-Center</a></p>

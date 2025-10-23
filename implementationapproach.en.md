@@ -414,7 +414,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
 After gathering customer requirements and testing several server- and client-based products, we recommend using the free open-source software **Set-OutlookSignatures** with the paid **"Benefactor Circle"** extension.
 
 ### 5.1. General Description {#general-description}
-<a href="https://set-outlooksignatures.com">Set-OutlookSignatures</a> is a free open-source product with a paid add-on for advanced enterprise features.
+<a href="https://set-outlooksignatures.com/">Set-OutlookSignatures</a> is a free open-source product with a paid add-on for advanced enterprise features.
 
 It supports all variants of Outlook and Exchange as target platforms: Windows, macOS, Android, iOS, Linux, and Web. Both classic and new Outlook. On-premises, hybrid, and cloud-only. By optionally storing signatures in the mailbox, they are also available in other email clients.
 
@@ -447,7 +447,7 @@ We share our experience gained during the definition of requirements for a signa
 
 For companies within the group that wish to implement the solution independently, we recommend starting with the <a href="/quickstart/">Quick Start Guide</a>. Thanks to the extensive documentation, clients can usually implement Set-OutlookSignatures and the Benefactor Circle add-on on their own in a short amount of time.
 
-We offer support to all group companies in the form of workshops and training sessions. The following list represents the maximum scope, both in terms of content and time, within a full preparation and implementation project. **Complete <a href="/support#professional-support">implementation support</a> in a "train the trainer" format rarely takes more than half a day.**
+We offer support to all group companies in the form of workshops and training sessions. The following list represents the maximum scope, both in terms of content and time, within a full preparation and implementation project. **Complete <a href="/support/#professional-support">implementation support</a> in a "train the trainer" format rarely takes more than half a day.**
 
 ### 6.1. Consulting and Imp/lementation Phase {#consulting-implementation-phase}
 #### Initial Alignment on Textual Signatures <!-- omit in toc -->

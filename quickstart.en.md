@@ -102,7 +102,7 @@ Just [get in touch](/contact/) with us!
 ## Looking for help or more features? {#support}
 Set-OutlookSignatures is very well documented, which inevitably brings with it a lot of content.
 
-If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers first-class [professional support](/support/), and their <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
+If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner <a href="https://explicitconsulting.at/">ExplicIT Consulting</a> offers first-class [professional support](/support/), and their <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
 
 <p>
   <div class="buttons">

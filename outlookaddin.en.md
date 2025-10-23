@@ -157,7 +157,7 @@ To configure the add-in and deploy it to your web server:
 - Upload the content of the '`publish`' folder to your web server.
 
 When the '`manifest.xml`' file changes, you also need to update your app deployment in Exchange, so that your clients download the updated release. This is required when:
-- A new release of the Outlook add-in is published by <a href="https://explicitconsulting.at">ExplicIT Consulting</a>.
+- A new release of the Outlook add-in is published by <a href="https://explicitconsulting.at/">ExplicIT Consulting</a>.
 - You change a configuration option in the '`run_before_deployment.ps1`' file which is marked to require an updated deployment.
 - You modify the '`manifest.xml`' file manually.
 

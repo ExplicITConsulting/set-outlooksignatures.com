@@ -28,7 +28,7 @@ permalink: /support/
 
 <h2 id="professional-support">Professioneller Support</h2>
 <p>
-  Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen professionellen Support.
+  Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at/">ExplicIT Consulting</a> bietet erstklassigen professionellen Support.
 </p>
 <p>
   Sie ziehen es vor, durch den Einrichtungs- und Anpassungsprozess geführt zu werden, anstatt sich selbst durch die Dokumentation zu arbeiten? Sie sind auf der Suche nach maßgeschneiderten Workshops, praktischer Unterstützung bei der Implementierung, Schulungen, Unterstützung bei der Erstellung von Vorlagen und anderen Dienstleistungen im Zusammenhang mit der zentralen Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen?

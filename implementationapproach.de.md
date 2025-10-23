@@ -424,7 +424,7 @@ Nach einer Erhebung der Kundenanforderungen und Tests mehrerer server- und clien
 
 ### 5.1. Allgemeine Beschreibung {#general-description}
 
-<a href="https://set-outlooksignatures.com">Set-OutlookSignatures</a> ist ein kostenloses Open-Source-Produkt mit einem kostenpflichtigen Add-On für erweiterte Unternehmensfunktionen.
+<a href="https://set-outlooksignatures.com/">Set-OutlookSignatures</a> ist ein kostenloses Open-Source-Produkt mit einem kostenpflichtigen Add-On für erweiterte Unternehmensfunktionen.
 
 Als Zielplattform werden alle Varianten von Outlook und Exchange unterstützt: Windows, macOS, Android, iOS, Linux, Web. Klassisches und neues Outlook. On-prem, hybrid und cloud-only. Durch optional im Postfach gespeicherte Signaturen stehen diese auch in anderen E-Mail-Clients zur Verfügung.
 
