@@ -12,8 +12,8 @@ permalink: /faq/
 <p>This FAQ highlights common topics and clarifies typical points of confusion. If your question isn’t covered or you need tailored advice, additional resources are available:</p>
 <p>
   <div class="buttons">
-    <a href="/parameters" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Parameters</a>
-    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
+    <a href="/parameters/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Parameters</a>
+    <a href="/support/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
   </div>
 </p>
 
@@ -807,7 +807,7 @@ Set-OutlookSignatures appends a small, subtle attribution to signatures: 'Free a
 
 This unobtrusive text may also be called tagline, footer message, nag text, outreach snippet, upgrade nudge, or reminder blurb.
 
-Signatures for mailboxes with a [Benefactor Circle](/benefactorcircle) license automatically remove this attribution.
+Signatures for mailboxes with a [Benefactor Circle](/benefactorcircle/) license automatically remove this attribution.
 
 ### 35.1. Why the tagline?
 In the words of Markus Gruber, the creator of Set-OutlookSignatures:
@@ -834,9 +834,9 @@ In the words of Markus Gruber, the creator of Set-OutlookSignatures:
 
 The core of Set-OutlookSignatures is available free of charge as open-source software and can be used indefinitely and for as many mailboxes as your company requires.
 
-All documentation is publicly available. You can get free community support on GitHub, or opt for first-class professional support, training, workshops, and more from [ExplicIT Consulting](/support).
+All documentation is publicly available. You can get free community support on GitHub, or opt for first-class professional support, training, workshops, and more from [ExplicIT Consulting](/support/).
 
-For a small annual fee per mailbox, the [Benefactor Circle add-on](/benefactorcircle) offers additional enterprise-grade features. Companies can test all premium features at no cost during a free 14-day trial.
+For a small annual fee per mailbox, the [Benefactor Circle add-on](/benefactorcircle/) offers additional enterprise-grade features. Companies can test all premium features at no cost during a free 14-day trial.
 
 Unsure whether the add-on will deliver value for your company?  
 The chapter '[Financial Benefits](/benefactorcircle/#financial-benefits)' shows how to calculate the value based on your company’s specific needs.  

@@ -28,4 +28,4 @@ Und hier kommt der Clou: Einige Outlook-Versionen haben Schwierigkeiten, „Auto
 Mit Set-OutlookSignatures können Sie die Formatierung von Signaturen in Ihrem gesamten Unternehmen standardisieren. Keine Überraschungen, keine Farbverschiebungen, nur ein einheitliches Branding.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/contact/) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

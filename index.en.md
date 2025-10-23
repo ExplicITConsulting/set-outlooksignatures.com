@@ -5,7 +5,7 @@ locale: en
 title: Set-Outlook&shy;Signatures
 subtitle: Email signatures and out-of-office replies for Exchange and Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
 description: Email signatures and out-of-office replies for Exchange and Outlook. Full-featured, cost-effective, unsurpassed data privacy.
-hero_link: /quickstart
+hero_link: /quickstart/
 hero_link_text: "<span><b>Quick Start: </b>Deploy signatures within minutes</span>"
 hero_link_style: |
   style="background-color: LimeGreen;"
@@ -160,7 +160,7 @@ permalink: /
   Functionality meets<span class="has-text-success"> expertise</span>
 </h2>
 
-<p>The optional <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> extends Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.<p>
+<p>The optional <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> extends Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.<p>
 
 <p>If desired, we’ll set up our solution together with you: Simple, tailored to your needs, and with sustainable knowledge transfer.<p>
 
@@ -207,7 +207,7 @@ permalink: /
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="/benefactorcircle#demo" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">Schedule your personal demo now</a></p>
+      <p><a href="/benefactorcircle/#demo" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">Schedule your personal demo now</a></p>
     </div>
   </div>
 
@@ -227,7 +227,7 @@ permalink: /
 </h2>
 <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 
-<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Quick Start Guide</a>
+<a href="/quickstart/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Quick Start Guide</a>
 
 
 <h2 id="dive-deeper">
@@ -241,4 +241,4 @@ permalink: /
   <li>How to get first-class support</li>
 </ul>
 
-<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Help and Support-Center</a>
+<a href="/help/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Help and Support-Center</a>

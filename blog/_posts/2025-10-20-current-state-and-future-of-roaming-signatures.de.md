@@ -31,4 +31,4 @@ Unsere Empfehlung für die meisten Kunden:
 Derzeit ist dies ein Problem, das oft eine teure Umleitung auf der Serverseite erfordert, nur um eine Signatur anzuwenden. Sobald Microsoft jedoch eine offizielle API veröffentlicht, wird sich dies ändern. In der Zwischenzeit schließt das Outlook Add-In – Teil des Benefactor Circle-Add-ons – diese Lücke.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/contact/) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

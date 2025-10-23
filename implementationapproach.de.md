@@ -11,12 +11,12 @@ permalink: /implementationapproach/
 <!-- omit in toc -->
 ## Welchen Ansatz für die Implementierung der Software empfehlen wir? {#recommended-approach}
 
-Für die meisten Unternehmen ist die <a href="/quickstart">Schnellstart-Anleitung</a> der effizienteste Einstieg. Sie ermöglicht eine eigenständige Implementierung von Set-OutlookSignatures und dem Benefactor Circle Add-On in kürzester Zeit. Eine vollständige <a href="/support#professional-support">Implementierungsunterstützung</a> benötigt selten mehr als einen halben Tag.
+Für die meisten Unternehmen ist die <a href="/quickstart/">Schnellstart-Anleitung</a> der effizienteste Einstieg. Sie ermöglicht eine eigenständige Implementierung von Set-OutlookSignatures und dem Benefactor Circle Add-On in kürzester Zeit. Eine vollständige <a href="/support/#professional-support">Implementierungsunterstützung</a> benötigt selten mehr als einen halben Tag.
 
 <p>
   <div class="buttons">
-    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Schnellstart-Anleitung</a>
-    <a href="/support#professional-support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
+    <a href="/quickstart/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Schnellstart-Anleitung</a>
+    <a href="/support/#professional-support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
   </div>
 </p>
 
@@ -448,7 +448,7 @@ Das kostenlose Teil der Software ist unter der "European Union Public License (E
 
 Das Benefactor Circle Add-On wird auf Basis der Anzahl jener Postfächer, die es nutzen sollen, lizenziert. Eine namentliche Nennung der Postfächer gibt es nicht.
 
-Durch Verzicht auf Staffelpreise und Rabatte fällt die <a href="/benefactorcircle#financial-benefits">Kosten-Nutzen-Rechnung</a> schon bei einer kleinen Anzahl von Postfächern positiv aus.
+Durch Verzicht auf Staffelpreise und Rabatte fällt die <a href="/benefactorcircle/#financial-benefits">Kosten-Nutzen-Rechnung</a> schon bei einer kleinen Anzahl von Postfächern positiv aus.
 
 ## 6. Unterstützung durch den IT-Dienstleister {#support-it-service-provider}
 
@@ -456,9 +456,9 @@ Als IT-Dienstleister empfehlen wir Set-OutlookSignatures nicht nur, sondern biet
 
 Wir teilen unsere Erfahrungen, die wir im Rahmen der Definition der Anforderungen für eine Signatur-Lösung, der Evaluierung und dem Vergleich verschiedener Lösungen, sowie der Einführung von Set-OutlookSignatures und dem Benefactor Circle Add-On gesammelt haben.
 
-Den Gesellschaften im Konzern, die die Lösung ohne weitere Unterstützung selbst einführen möchten, empfehlen wir, zunächst die <a href="/quickstart">Schnellstart-Anleitung</a> zu befolgen. Dank der umfassenden Dokumentation können Kunden Set-OutlookSignatures und das Benefactor Circle Add-On in der Regel innerhalb kürzester Zeit selbstständig implementieren.
+Den Gesellschaften im Konzern, die die Lösung ohne weitere Unterstützung selbst einführen möchten, empfehlen wir, zunächst die <a href="/quickstart/">Schnellstart-Anleitung</a> zu befolgen. Dank der umfassenden Dokumentation können Kunden Set-OutlookSignatures und das Benefactor Circle Add-On in der Regel innerhalb kürzester Zeit selbstständig implementieren.
 
-Allen Gesellschaften im Konzern bieten wir Unterstützung in Form von Workshops und Schulungen an. Die folgende Liste ist als maximale inhaltliche und zeitliche Ausprägung im Rahmen eines vollständigen Vorbereitungs- und Einführungsprojekts zu verstehen - **vollständige <a href="/support#professional-support">Implementierungsunterstützung</a> in Form von "train the trainer" benötigt selten mehr als einen halben Tag**.
+Allen Gesellschaften im Konzern bieten wir Unterstützung in Form von Workshops und Schulungen an. Die folgende Liste ist als maximale inhaltliche und zeitliche Ausprägung im Rahmen eines vollständigen Vorbereitungs- und Einführungsprojekts zu verstehen - **vollständige <a href="/support/#professional-support">Implementierungsunterstützung</a> in Form von "train the trainer" benötigt selten mehr als einen halben Tag**.
 
 ### 6.1. Beratungs- und Einführungsphase {#consulting-implementation-phase}
 

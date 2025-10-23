@@ -1,32 +1,32 @@
 - name: Funktionen
-  link: /features
+  link: /features/
 - name: Preis
-  link: /benefactorcircle#price
+  link: /benefactorcircle/#price
 - name: Schnellstart
-  link: /quickstart
+  link: /quickstart/
 - name: Download
-  link: /download
+  link: /download/
 - name: |
     <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span>
-  link: /benefactorcircle
+  link: /benefactorcircle/
 - name: Demo
-  link: /benefactorcircle#demo
+  link: /benefactorcircle/#demo
 - name: Blog
-  link: /blog
+  link: /blog/
 - name: Ressourcen
-  link: /help
+  link: /help/
   dropdown:
   - name: Häufig gestellte Fragen (FAQ)
-    link: /faq
+    link: /faq/
   - name: Technische Details, Anforderungen, Nutzung
-    link: /details
+    link: /details/
   - name: Parameter
-    link: /parameters
+    link: /parameters/
   - name: Implementierungsansatz
-    link: /implementationapproach
+    link: /implementationapproach/
   - name: Das Outlook Add-In
-    link: /outlookaddin
+    link: /outlookaddin/
   - name: Support
-    link: /support
+    link: /support/
   - name: Kontakt
-    link: /contact
+    link: /contact/

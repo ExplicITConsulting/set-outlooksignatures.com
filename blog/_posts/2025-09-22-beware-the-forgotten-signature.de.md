@@ -28,4 +28,4 @@ Erstellen Sie einfach Ihre Vorlage, weisen Sie sie ausgewählten oder allen Post
 Nichts Saures, nur Süsses für die Sichtbarkeit Ihrer Marke.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/contact/) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

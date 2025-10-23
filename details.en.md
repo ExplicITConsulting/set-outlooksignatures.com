@@ -3,7 +3,7 @@ layout: page
 title: Technical details, requirements and usage
 subtitle: What it needs, how it works and how to use it
 description: "Discover Set-OutlookSignatures technical details: system requirements, supported platforms, template formats, group logic, variables, and simulation mode."
-hero_link: /quickstart
+hero_link: /quickstart/
 hero_link_text: "<span><b>Quick Start Guide</b></span>"
 hero_link_style: |
   style="background-color: LimeGreen;"
@@ -49,23 +49,23 @@ permalink: /details/
 
 ## 1. Get to know Set-OutlookSignatures
 To get to know Set-OutlookSignatures, we recommend the following sequence:
-1. The [feature comparison](/features#feature-comparison) gives you a quick overview of topics to consider when choosing a solution for central management and deployment of email signatures and out-of-office replies. 
-2. Learn in detail about the [feature list](/features#features) of Set-OutlookSignatures and the Benefactor Circle add-on.
-3. Watch the [demo video](/benefactorcircle#demo) to see how a typical real-life use case is implemented.
-4. Get practical: Deploy signatures within minutes with the [Quick Start Guide](/quickstart)!
+1. The [feature comparison](/features/#feature-comparison) gives you a quick overview of topics to consider when choosing a solution for central management and deployment of email signatures and out-of-office replies. 
+2. Learn in detail about the [feature list](/features/#features) of Set-OutlookSignatures and the Benefactor Circle add-on.
+3. Watch the [demo video](/benefactorcircle/#demo) to see how a typical real-life use case is implemented.
+4. Get practical: Deploy signatures within minutes with the [Quick Start Guide](/quickstart/)!
 
 You want to know more?
-- [Requirements and usage](/details)
-- [Parameters](/parameters)
-- [Frequently Asked Questions (FAQ)](/faq)
-- [The Outlook add-in](/outlookaddin)
+- [Requirements and usage](/details/)
+- [Parameters](/parameters/)
+- [Frequently Asked Questions (FAQ)](/faq/)
+- [The Outlook add-in](/outlookaddin/)
 - The [Changelog](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md)
-- An [organizational implementation approach](/implementationapproach)
-- Features available exclusively to [Benefactor Circle](/benefactorcircle) members
+- An [organizational implementation approach](/implementationapproach/)
+- Features available exclusively to [Benefactor Circle](/benefactorcircle/) members
 
 The '`sample code`' folder contains additional scripts and advanced usage examples, such as deploying signatures without user or client interaction.
 
-When facing a problem: Before creating a new issue, check the documentation, previous [issues](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=) and [discussions](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=). You can also switch to the fast lane: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers first-class [professional support](/support).
+When facing a problem: Before creating a new issue, check the documentation, previous [issues](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=) and [discussions](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=). You can also switch to the fast lane: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers first-class [professional support](/support/).
 
 You are welcome to share your experiences with Set-OutlookSignatures, exchange ideas with other users or suggest new features in our [discussions board](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=).
 
@@ -121,7 +121,7 @@ Not all features are yet available on Linux and macOS. Every parameter contains 
 
 #### 2.1.2. Linux specific restrictions and notes
 - Users need to access their mailboxes via Outlook Web, as no other form of Outlook is available on Linux (use emulation tools such as Wine, CrossOver, PlayOnLinux, Proton, etc. at your own risk).
-  - Support for Outlook Web requires the Benefactor Circle add-on. See <a href="/benefactorcircle">Benefactor Circle</a> for details.
+  - Support for Outlook Web requires the Benefactor Circle add-on. See <a href="/benefactorcircle/">Benefactor Circle</a> for details.
 - When using email clients such as Mozilla Thunderbird, GNOME Evolution, KDE KMail or others, you can still use signatures created by Set-OutlookSignatures with the Benefactor Circle add-on, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
 
 
@@ -132,7 +132,7 @@ Not all features are yet available on Linux and macOS. Every parameter contains 
   - Until New Outlook supports roaming signatures (not yet announced by Microsoft), it is treated like Outlook for Windows configured not to use roaming signatures. Consider using the '-MailboxSpecificSignatureNames' parameter.
   - If New Outlook is enabled, an alternate method of account detection is used, as scripting is not yet supported by Microsoft, but already announced on the M365 roadmap. This alternate method may detect accounts that are no longer used in Outlook (see software output for details).  
   - If the alternate method does not find accounts, Outlook Web is used and existing signatures are synchronized with New Outlook for Mac.
-    - Support for Outlook Web requires the Benefactor Circle add-on. See <a href="/benefactorcircle">Benefactor Circle</a> for details.
+    - Support for Outlook Web requires the Benefactor Circle add-on. See <a href="/benefactorcircle/">Benefactor Circle</a> for details.
 - Classic Outlook for Mac and New Outlook for Mac do not allow external software to set default signatures.
 - When using email clients such as Apple Mail or others, you can still use signatures created by Set-OutlookSignatures with the Benefactor Circle add-on, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
 

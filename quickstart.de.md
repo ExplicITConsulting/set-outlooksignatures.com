@@ -22,7 +22,7 @@ Wenn Sie AppLocker oder eine vergleichbare Lösung (Defender, CrowdStrike, Ivant
 **Client und Benutzer**  
 Für einen ersten Testlauf ist es empfehlenswert, sich mit einem Testbenutzer auf einem Windows-System anzumelden, auf dem Word und Outlook installiert sind und Outlook zumindest mit dem Postfach des Testbenutzers konfiguriert ist. Wenn Sie Ihren eigenen Benutzer verwenden, werden im schlimmsten Fall bestehende Signaturen überschrieben.
 
-Für die vollständige Unterstützung von Linux und macOS ist das <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erforderlich und die Postfächer müssen in Exchange Online gehostet werden.
+Für die vollständige Unterstützung von Linux und macOS ist das <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erforderlich und die Postfächer müssen in Exchange Online gehostet werden.
 
 **Entra ID**  
 Wenn sich einige oder alle Postfächer in Exchange Online befinden, müssen Sie zunächst eine Entra ID App registrieren, da Set-OutlookSignatures Berechtigungen für den Zugriff auf die Graph API benötigt.
@@ -85,11 +85,11 @@ Keine Beispiel-Signatur ist so schön wie Ihre eigene. Lassen wir Set-OutlookSig
 Ihr eigene Signatur in Outlook sieht gut aus? Mit dem [Simulations-Modus](/details/#11-simulation-mode) finden Sie im Handumdrehen heraus, wie sie für ein anderes Postfach aussieht.
 
 **Und jetzt Sie!**  
-Passen Sie andere [Parameter](/parameters) an, die Sie nützlich finden.
+Passen Sie andere [Parameter](/parameters/) an, die Sie nützlich finden.
 
-Die [Liste der Funktionen](/features) und die [Dokumentation der Parameter](/parameters) zeigen, was möglich ist.
+Die [Liste der Funktionen](/features/) und die [Dokumentation der Parameter](/parameters/) zeigen, was möglich ist.
 
-Auf unserer [FAQ-Seite](/faq) finden Sie Antworten auf die am häufigsten gestellten Fragen. Um tiefer einzutauchen, bietet unser [Hilfe- und Support-Zentrum](/help) großartige Unterlagen.
+Auf unserer [FAQ-Seite](/faq/) finden Sie Antworten auf die am häufigsten gestellten Fragen. Um tiefer einzutauchen, bietet unser [Hilfe- und Support-Zentrum](/help/) großartige Unterlagen.
 
 ## Zeigen Sie, was Sie geschaffen haben {#show-what-you-created}
 Wir wissen, dass einige von Ihnen visuell beeindruckende E-Mail-Signaturen erstellt, clevere Abwesenheitsnotizen verfasst, benutzerdefinierte Ersatzvariablen implementiert und sogar Systeme von Drittanbietern auf eine Weise integriert haben, die weit über die Grundlagen hinausgeht.
@@ -102,16 +102,16 @@ Wir suchen:
 - Ausschnitte aus benutzerdefiniertem Code oder Integrationslogik
 - Eine kurze Stellungnahme zu Ihren Erfahrungen mit Set-OutlookSignatures oder dem Benefactor Circle Add-On
 
-Nehmen Sie einfach [Kontakt](/contact) mit uns auf!
+Nehmen Sie einfach [Kontakt](/contact/) mit uns auf!
 
 ## Benötigen Sie Hilfe oder weitere Funktionen? {#support}
 Set-OutlookSignatures ist sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.
 
-Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Evaluierung, Planung, Implementierung und dem laufenden Betrieb unterstützen kann: Unser Partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen [professionellen Support](/support), und das <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> bietet zusätzliche Funktionen für Ihr Unternehmen.
+Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Evaluierung, Planung, Implementierung und dem laufenden Betrieb unterstützen kann: Unser Partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen [professionellen Support](/support/), und das <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> bietet zusätzliche Funktionen für Ihr Unternehmen.
 
 <p>
   <div class="buttons">
-    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support-Optionen ansehen</a>
-    <a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Das Benefactor Circle Add-On</a>
+    <a href="/support/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support-Optionen ansehen</a>
+    <a href="/benefactorcircle/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Das Benefactor Circle Add-On</a>
   </div>
 </p>
