@@ -10,13 +10,13 @@
     {%- else -%}
         {%- assign canonicalUrl = '/' | append: site.active_lang | append: page.url -%}
     {%- endif %}
-    <link rel="canonical" {% static_href %}href="{{ canonicalUrl | absolute_url }}"{% endstatic_href %}>
-    <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ page.url | absolute_url }}"{% endstatic_href %}>
+    <link rel="canonical" {% static_href %}href="{{ canonicalUrl | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}"{% endstatic_href %}>
+    <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ page.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}"{% endstatic_href %}>
     {%- for lang in site.languages -%}
         {%- if lang == site.default_lang -%}
-            {%- assign hreflang_url = page.url | absolute_url -%}
+            {%- assign hreflang_url = page.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
         {%- else -%}
-            {%- assign hreflang_url = '/' | append: lang | append: page.url | absolute_url -%}
+            {%- assign hreflang_url = '/' | append: lang | append: page.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
         {%- endif %}
     <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ hreflang_url }}"{% endstatic_href %}>
     {%- endfor %}

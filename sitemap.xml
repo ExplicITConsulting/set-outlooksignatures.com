@@ -27,9 +27,9 @@ sitemap: false
       {%- if node.permalink_lang[languageCode] -%}
         {%- if xDefaultUrl == "" -%}
           {%- if languageCode == default_lang -%}
-            {%- assign xDefaultUrl = node.permalink_lang[languageCode] | absolute_url -%}
+            {%- assign xDefaultUrl = node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
           {%- else -%}
-            {%- assign languagePrefix = "/" | append: languageCode | append: node.permalink_lang[languageCode] | absolute_url -%}
+            {%- assign languagePrefix = "/" | append: languageCode | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
           {%- endif -%}
         {%- endif -%}
       {%- endif -%}
@@ -46,7 +46,7 @@ sitemap: false
 
       {%- if node.permalink_lang[languageCode] %}
   <url>
-    <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url }}</loc>
+    <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
 
         {%- if xDefaultUrl != "" %}
@@ -60,7 +60,7 @@ sitemap: false
             {%- else -%}
               {%- assign languagePrefix = "/" | append: languageCode -%}
             {%- endif %}
-    <xhtml:link rel="alternate" hreflang="{{ languageCode }}" href="{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url }}" />
+    <xhtml:link rel="alternate" hreflang="{{ languageCode }}" href="{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}" />
           {%- endif -%}
         {%- endfor %}
   </url>

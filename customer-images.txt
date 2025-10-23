@@ -11,6 +11,6 @@ sitemap: false
   {%- endunless -%}
 
   {%- if file_directory_calculated == expected_dir_path %}
-    {{ file.path | absolute_url }}
+    {{ file.path | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}
   {% endif -%}
 {%- endfor -%}
