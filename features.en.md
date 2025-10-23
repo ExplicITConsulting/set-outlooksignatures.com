@@ -11,7 +11,7 @@ hero_link2: "#feature-comparison"
 hero_link2_text: "<span><b>Feature comparison </b>with peers</span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
-hero_link3: "/quickstart"
+hero_link3: "/quickstart/"
 hero_link3_text: "<span><b>Quick Start Guide: </b>Deploy signatures within minutes</span>"
 hero_link3_style: |
   style="background-color: LimeGreen;"
