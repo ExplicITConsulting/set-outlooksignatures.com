@@ -14,8 +14,7 @@ sitemap: false
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-{%- comment -%} Old: {%- assign allNodes = site.pages | concat: site.posts -%} {%- endcomment -%}
-{%- assign allNodes = site.pages -%}
+{%- assign allNodes = site.pages | concat: site.posts -%}
 
 {%- for node in allNodes -%}
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
@@ -45,25 +44,29 @@ sitemap: false
       {%- endif -%}
 
       {%- if node.permalink_lang[languageCode] %}
+        {%- assign current_permalink = node.permalink_lang[languageCode] -%}
+        {%- unless unique_permalinks contains current_permalink -%}
+          {%- assign unique_permalinks = unique_permalinks | push: current_permalink -%}
   <url>
     <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
 
-        {%- if xDefaultUrl != "" %}
+          {%- if xDefaultUrl != "" %}
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ xDefaultUrl }}" />
-        {%- endif -%}
-
-        {%- for languageCode in sorted_langs -%}
-          {%- if node.permalink_lang[languageCode] -%}
-            {%- if languageCode == default_lang -%}
-              {%- assign languagePrefix = "" -%}
-            {%- else -%}
-              {%- assign languagePrefix = "/" | append: languageCode -%}
-            {%- endif %}
-    <xhtml:link rel="alternate" hreflang="{{ languageCode }}" href="{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}" />
           {%- endif -%}
-        {%- endfor %}
+
+          {%- for languageCode in sorted_langs -%}
+            {%- if node.permalink_lang[languageCode] -%}
+              {%- if languageCode == default_lang -%}
+                {%- assign languagePrefix = "" -%}
+              {%- else -%}
+                {%- assign languagePrefix = "/" | append: languageCode -%}
+              {%- endif %}
+    <xhtml:link rel="alternate" hreflang="{{ languageCode }}" href="{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}" />
+            {%- endif -%}
+          {%- endfor %}
   </url>
+        {%- endunless -%}
       {%- endif -%}
     {%- endfor -%}
   {%- endunless -%}
