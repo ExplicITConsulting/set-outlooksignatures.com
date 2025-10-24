@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: "Roaming Signatures für Outlook am Mac?"
 description:
 published: true

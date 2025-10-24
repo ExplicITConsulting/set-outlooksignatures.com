@@ -1,5 +1,7 @@
 ---
 layout: page
+lang: "en"
+locale: "en"
 title: The Outlook add-in
 subtitle: Signatures for Outlook on Android and iOS, advanced features for all platforms
 description: Extend Outlook with the Set-OutlookSignatures add-in. Automatic email signatures for iOS, Android, and all platforms. Self-hosted, secure, and enterprise-ready.

@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: en
-locale: en
+lang: "en"
+locale: "en"
 title: "Deploy email signatures without end user interaction or client-side software"
 description:
 published: true

@@ -5,7 +5,7 @@ fixed_navbar: top
 permalink: pretty
 footer_menu: footer_menu
 locale: "en"
-lang: en
+lang: "en"
 languages: ["en", "de"]
 default_lang: "en"
 exclude_from_localization: ["assets", "javascript", "images", "css", "public", "sitemap.xml", "customer-images.txt", "Gemfile", "robots.txt", "CNAME"]
@@ -55,8 +55,8 @@ defaults:
       # "/assets/images/background, vietnam golden bridge.jpg"
       hero_height: is-small
       # hero_darken: true
-      lang: en
-      locale: en
+      lang: "en"
+      locale: "en"
 
 include:
   - ".well-known"

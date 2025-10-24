@@ -1,5 +1,7 @@
 ---
 layout: page
+lang: "en"
+locale: "en"
 title: The Benefactor Circle add-on
 subtitle: More features for your business
 description: Extend Set-OutlookSignatures with mobile support, roaming sync, OOF automation, signature cleanup, and enterprise-grade features.

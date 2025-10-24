@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: en
-locale: en
+lang: "en"
+locale: "en"
 title: "Current state and future of roaming signatures"
 description:
 published: true

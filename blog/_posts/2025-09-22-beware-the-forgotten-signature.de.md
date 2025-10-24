@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: "Hütet euch vor der vergessenen Signatur 👻🎃"
 description:
 published: true

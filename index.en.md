@@ -1,7 +1,7 @@
 ---
 layout: page
-lang: en
-locale: en
+lang: "en"
+locale: "en"
 title: Set-Outlook&shy;Signatures
 subtitle: Email signatures and out-of-office replies for Exchange and Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
 description: Email signatures and out-of-office replies for Exchange and Outlook. Full-featured, cost-effective, unsurpassed data privacy.

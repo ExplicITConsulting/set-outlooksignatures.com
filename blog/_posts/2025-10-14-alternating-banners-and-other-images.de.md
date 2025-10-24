@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: "Banner und andere Bilder zufällig wechseln"
 description:
 published: true

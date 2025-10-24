@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: "Was kann ich aus dem Code von Set-OutlookSignatures lernen?"
 description:
 published: true

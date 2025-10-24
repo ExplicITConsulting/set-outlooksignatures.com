@@ -1,7 +1,7 @@
 ---
 layout: page
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: Set-Outlook&shy;Signatures
 subtitle: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
 description: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.

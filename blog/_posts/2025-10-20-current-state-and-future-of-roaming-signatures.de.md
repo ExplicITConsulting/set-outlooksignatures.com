@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: "Aktueller Stand und Zukunft von Roaming-Signaturen"
 description:
 published: true

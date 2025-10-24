@@ -1,7 +1,7 @@
 ---
 layout: page
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: Schnellstart-Anleitung
 subtitle: Signaturen in wenigen Minuten verteilen
 description: Schnellstart-Anleitung. Signaturen in wenigen Minuten verteilen.

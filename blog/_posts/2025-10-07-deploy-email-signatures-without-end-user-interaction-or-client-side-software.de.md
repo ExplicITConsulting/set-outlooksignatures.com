@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: "Signaturen ohne Endbenutzer-Interaktion oder clientseitige Software verteilen"
 description:
 published: true

@@ -1,7 +1,7 @@
 ---
 layout: page
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: Bleiben wir in Kontakt
 subtitle: E-Mail, Rückruf anfordern, Postadresse
 description: Kontaktieren Sie ExplicIT Consulting per E-Mail, Rückruf oder Post. Finden Sie auch unsere LinkedIn- und GitHub-Profile für mehr Infos.

@@ -1,7 +1,7 @@
 ---
 layout: page
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: Unterstützung erhalten
 subtitle: Wir geben unsere Erfahrung an Sie weiter
 description: Erhalten Sie Support für Set-OutlookSignatures: kostenlose Hilfe via GitHub oder professionelle Beratung, Workshops und Expertenwissen.

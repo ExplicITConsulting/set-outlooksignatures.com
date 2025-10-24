@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: en
-locale: en
+lang: "en"
+locale: "en"
 title: "Is centralized signature management just a cost center or a hidden opportunity?"
 description:
 published: true

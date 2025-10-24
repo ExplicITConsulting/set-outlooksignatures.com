@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: en
-locale: en
+lang: "en"
+locale: "en"
 title: "DOCX or HTML?"
 description:
 published: true

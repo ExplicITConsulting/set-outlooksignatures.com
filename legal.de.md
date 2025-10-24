@@ -1,7 +1,7 @@
 ---
 layout: page
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: Rechtliche Informationen
 subtitle: Impressum, Datenschutzerklärung, Allgemeine Geschäftsbedingungen, etc.
 description: Rechtliche Informationen. Impressum, Datenschutzerklärung, Allgemeine Geschäftsbedingungen, etc.

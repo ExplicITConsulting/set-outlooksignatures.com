@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: "Ist zentralisiertes Signaturmanagement nur ein Kostenfaktor oder eine versteckte Chance?"
 description:
 published: true

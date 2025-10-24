@@ -1,7 +1,7 @@
 ---
 layout: page
-lang: en
-locale: en
+lang: "en"
+locale: "en"
 title: Help
 subtitle: Documentation and support ressources
 description: "Access Set-OutlookSignatures help: feature comparisons, setup guides, FAQs, technical details, and expert support resources."

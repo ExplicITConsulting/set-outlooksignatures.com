@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: "Signaturen für Senden Als und Senden Im Auftrag Von"
 description:
 published: true

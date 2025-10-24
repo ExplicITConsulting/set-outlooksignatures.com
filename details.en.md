@@ -1,5 +1,7 @@
 ---
 layout: page
+lang: "en"
+locale: "en"
 title: Technical details, requirements and usage
 subtitle: What it needs, how it works and how to use it
 description: "Discover Set-OutlookSignatures technical details: system requirements, supported platforms, template formats, group logic, variables, and simulation mode."

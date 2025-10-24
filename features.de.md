@@ -1,7 +1,7 @@
 ---
 layout: page
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: Funktionen und Funktions-Vergleich
 subtitle: Unsere Lösung auf einen Blick und im Vergleich
 description: Vergleichen Sie Funktionen und Vorteile unserer Lösung auf einen Blick – klare Übersicht für den besten Funktions-Vergleich.

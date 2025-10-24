@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: en
-locale: en
+lang: "en"
+locale: "en"
 title: "Beware the Forgotten Signature 👻🎃"
 description:
 published: true

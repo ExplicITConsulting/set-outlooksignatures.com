@@ -1,5 +1,7 @@
 ---
 layout: page
+lang: "en"
+locale: "en"
 title: Features and feature comparison
 subtitle: Our solution at a glance and in benchmark
 description: Compare features and benefits of our solution at a glance with clear benchmarks for informed decisions.

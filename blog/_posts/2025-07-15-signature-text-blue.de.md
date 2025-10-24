@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: de
-locale: de
+lang: "de"
+locale: "de"
 title: "Warum wird der Text der Outlook-Signatur manchmal blau statt schwarz angezeigt?"
 description:
 published: true

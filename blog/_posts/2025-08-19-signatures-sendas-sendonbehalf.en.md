@@ -1,7 +1,7 @@
 ---
 layout: post
-lang: en
-locale: en
+lang: "en"
+locale: "en"
 title: "Signatures for Send As and Send on Behalf"
 description:
 published: true

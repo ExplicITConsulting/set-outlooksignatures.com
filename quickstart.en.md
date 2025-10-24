@@ -1,5 +1,7 @@
 ---
 layout: page
+lang: "en"
+locale: "en"
 title: Quick Start Guide
 subtitle: Deploy signatures within minutes
 description: Quick Start Guide. Deploy signatures within minutes.
