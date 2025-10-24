@@ -55,8 +55,8 @@ defaults:
       # "/assets/images/background, vietnam golden bridge.jpg"
       hero_height: is-small
       # hero_darken: true
-      lang: "en"
-      locale: "en"
+      lang: en
+      locale: en
 
 include:
   - ".well-known"
