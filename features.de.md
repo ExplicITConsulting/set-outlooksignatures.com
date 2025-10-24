@@ -1,10 +1,10 @@
 ---
-layout: page
+layout: "page"
 lang: "de"
 locale: "de"
-title: Funktionen und Funktions-Vergleich
-subtitle: Unsere Lösung auf einen Blick und im Vergleich
-description: Vergleichen Sie Funktionen und Vorteile unserer Lösung auf einen Blick – klare Übersicht für den besten Funktions-Vergleich.
+title: "Funktionen und Funktions-Vergleich"
+subtitle: "Unsere Lösung auf einen Blick und im Vergleich"
+description: "Vergleichen Sie Funktionen und Vorteile unserer Lösung auf einen Blick – klare Übersicht für den besten Funktions-Vergleich."
 hero_link: "#features"
 hero_link_text: "<span><b>Funktionen: </b>Was unsere Lösung kann</span>"
 hero_link_style: |
@@ -18,7 +18,7 @@ hero_link3_text: "<span><b>Schnellstart-Anleitung: </b>Signaturen in wenigen Min
 hero_link3_style: |
   style="background-color: LimeGreen;"
 page_id: "features"
-permalink: /features/
+permalink: "/features/"
 ---
 ## Funktionen {#features}
 Mit Set-OutlookSignatures können Signaturen und Abwesenheitsnotizen:

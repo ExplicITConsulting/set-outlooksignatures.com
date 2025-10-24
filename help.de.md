@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: "page"
 lang: "de"
 locale: "de"
-title: Hilfe
-subtitle: Dokumentation und Support-Ressourcen
+title: "Hilfe"
+subtitle: "Dokumentation und Support-Ressourcen"
 description: "Entdecken Sie Set-OutlookSignatures Hilfe: Dokumentation, FAQs, Einrichtungsanleitungen, technische Details und Experten-Support."
 page_id: "help"
-permalink: /help/
+permalink: "/help/"
 ---
 <h2><a href="/faq/">Häufig gestellte Fragen (FAQ)</a></h2>
 <p>Themen, die regelmäßig angesprochen werden</p>

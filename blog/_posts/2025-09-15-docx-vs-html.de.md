@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "de"
 locale: "de"
 title: "DOCX oder HTML?"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "docs-vs-html"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 ## Die Wahl der Signaturvorlage, auf die es wirklich ankommt
 Die meisten Lösungen binden Sie an einen proprietären HTML-Editor. Bei Set-OutlookSignatures glauben wir jedoch daran, Ihnen die Freiheit der Wahl zu lassen.

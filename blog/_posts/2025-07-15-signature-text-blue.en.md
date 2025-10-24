@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "en"
 locale: "en"
 title: "Why does Outlook signature text sometimes turn blue instead of staying black?"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "signature-text-blue"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 Ever noticed your email signature text mysteriously changing color, especially in replies or forwards?
 

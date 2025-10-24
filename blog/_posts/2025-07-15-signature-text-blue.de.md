@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "de"
 locale: "de"
 title: "Warum wird der Text der Outlook-Signatur manchmal blau statt schwarz angezeigt?"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "signature-text-blue"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 Ist Ihnen schon einmal aufgefallen, dass sich die Farbe Ihres E-Mail-Signaturtextes auf mysteriöse Weise ändert, insbesondere in Antworten oder Weiterleitungen?
 

@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: "page"
 lang: "en"
 locale: "en"
-title: Legal information
-subtitle: Impress, Privacy Notice, Terms and Conditions, etc.
-description: Impress, Privacy Notice, Terms and Conditions, etc.
+title: "Legal information"
+subtitle: "Impress, Privacy Notice, Terms and Conditions, etc."
+description: "Impress, Privacy Notice, Terms and Conditions, etc."
 page_id: "legal"
-permalink: /legal/
+permalink: "/legal/"
 ---
 
 <!-- omit in toc -->

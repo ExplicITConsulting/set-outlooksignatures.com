@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: "page"
 lang: "de"
 locale: "de"
-title: Schnellstart-Anleitung
-subtitle: Signaturen in wenigen Minuten verteilen
-description: Schnellstart-Anleitung. Signaturen in wenigen Minuten verteilen.
+title: "Schnellstart-Anleitung"
+subtitle: b"Signaturen in wenigen Minuten verteilen"
+description: "Schnellstart-Anleitung. Signaturen in wenigen Minuten verteilen.""
 page_id: "quickstart"
-permalink: /quickstart/
+permalink: "/quickstart/"
 ---
 ## Schritt 1: Set-OutlookSignatures herunterladen {#step-1}
 Laden Sie Set-OutlookSignatures herunter und entpacken Sie das Archiv in einen lokalen Ordner.

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "de"
 locale: "de"
 title: "Banner und andere Bilder zufällig wechseln"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "alternating-banners-and-other-images"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 ## Führen Sie eine Marketingkampagne mit mehreren Bannern durch?
 

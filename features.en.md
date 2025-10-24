@@ -1,10 +1,10 @@
 ---
-layout: page
+layout: "page"
 lang: "en"
 locale: "en"
-title: Features and feature comparison
-subtitle: Our solution at a glance and in benchmark
-description: Compare features and benefits of our solution at a glance with clear benchmarks for informed decisions.
+title: "Features and feature comparison"
+subtitle: "Our solution at a glance and in benchmark"
+description: "Compare features and benefits of our solution at a glance with clear benchmarks for informed decisions."
 hero_link: "#features"
 hero_link_text: "<span><b>Features: </b>What our solution is able to do</span>"
 hero_link_style: |
@@ -18,7 +18,7 @@ hero_link3_text: "<span><b>Quick Start Guide: </b>Deploy signatures within minut
 hero_link3_style: |
   style="background-color: LimeGreen;"
 page_id: "features"
-permalink: /features/
+permalink: "/features/"
 ---
 ## Features {#features}
 With Set-OutlookSignatures, signatures and out-of-office replies can be:

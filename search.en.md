@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: "page"
 lang: "en"
 locale: "en"
-title: What are you looking for?
-subtitle: Find it here
+title: "What are you looking for?"
+subtitle: "Find it here"
 description: "Find what you need quickly: explore resources, answers, and solutions tailored to your needs."
 page_id: "search"
-permalink: /search/
+permalink: "/search/"
 ---
 <div class="field has-addons">
     <div class="control is-expanded">

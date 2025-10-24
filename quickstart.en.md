@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: "page"
 lang: "en"
 locale: "en"
-title: Quick Start Guide
-subtitle: Deploy signatures within minutes
-description: Quick Start Guide. Deploy signatures within minutes.
+title: "Quick Start Guide"
+subtitle: "Deploy signatures within minutes"
+description: "Quick Start Guide. Deploy signatures within minutes."
 page_id: "quickstart"
-permalink: /quickstart/
+permalink: "/quickstart/"
 ---
 ## Step 1: Download Set-OutlookSignatures {#step-1}
 Download Set-OutlookSignatures and extract the archive to a local folder.

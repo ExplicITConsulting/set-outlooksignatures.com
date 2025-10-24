@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "de"
 locale: "de"
 title: "Was kann ich aus dem Code von Set-OutlookSignatures lernen?"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags:
 slug: "learn-from-the-code"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 Set-OutlookSignatures ist nicht nur ein Tool zum Verwalten von Outlook-Signaturen und Abwesenheitsnotizen. Es ist kostenlos und Open Source, weil ich der Community, die mir über die Jahre so oft geholfen hat, etwas zurückgeben möchte.
 

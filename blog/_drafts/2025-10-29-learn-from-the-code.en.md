@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "en"
 locale: "en"
 title: "What can I learn from the code of Set-OutlookSignatures?"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "learn-from-the-code"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 Set-OutlookSignatures is not just a tool for managing Outlook signatures and out-of-office replies. It is free and open-source because I want to give something back to the community that has helped me so often over the years.
 

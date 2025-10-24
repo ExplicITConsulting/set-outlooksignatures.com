@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "de"
 locale: "de"
 title: "Hütet euch vor der vergessenen Signatur 👻🎃"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "beware-the-forgotten-signature"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 ## Ihre E-Mail-Signatur mag harmlos erscheinen…
 …aber wenn Sie sie unverändert lassen, kann sie zu einem Geist verpasster Gelegenheiten werden.

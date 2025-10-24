@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "de"
 locale: "de"
 title: "Aktueller Stand und Zukunft von Roaming-Signaturen"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags:
 slug: "current-state-and-future-of-roaming-signatures"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 ## Eine bahnbrechende Neuerung mit Pferdefuß
 Als Microsoft im Jahr 2020 Roaming-Signaturen ankündigte, klang dies wie eine bahnbrechende Neuerung. Keine lokale Speicherung von Signaturen mehr. Ein einheitliches Erlebnis auf allen Geräten. Und endlich eine Lösung für die Beschränkung auf eine Signatur in Outlook Web vor Ort.

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "en"
 locale: "en"
 title: "Randomly alternate banners and other images"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "alternating-banners-and-other-images"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 ## Running a marketing campaign with multiple banners?
 Rotating them manually across your team’s signatures is nearly impossible and definitely not scalable.

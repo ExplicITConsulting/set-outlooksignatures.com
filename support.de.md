@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: "page"
 lang: "de"
 locale: "de"
-title: Unterstützung erhalten
-subtitle: Wir geben unsere Erfahrung an Sie weiter
-description: Erhalten Sie Support für Set-OutlookSignatures: kostenlose Hilfe via GitHub oder professionelle Beratung, Workshops und Expertenwissen.
+title: "Unterstützung erhalten"
+subtitle: "Wir geben unsere Erfahrung an Sie weiter"
+description: "Erhalten Sie Support für Set-OutlookSignatures: kostenlose Hilfe via GitHub oder professionelle Beratung, Workshops und Expertenwissen."
 page_id: "support"
-permalink: /support/
+permalink: "/support/"
 ---
 <h2 id="free-support">Kostenlose Unterstützung</h2>
 <p>

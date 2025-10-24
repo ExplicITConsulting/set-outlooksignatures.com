@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: "page"
 lang: "de"
 locale: "de"
-title: Set-Outlook&shy;Signatures herunterladen
-subtitle: Holen Sie sich die kostenlose und quelloffene Kernversion
-description: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
+title: "Set-Outlook&shy;Signatures herunterladen"
+subtitle: "Holen Sie sich die kostenlose und quelloffene Kernversion"
+description: "E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz."
 page_id: "download"
-permalink: /download/
+permalink: "/download/"
 ---
 <h2 id="set-outlooksignatures">Set-OutlookSignatures</h2>
 <p>

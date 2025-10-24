@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "en"
 locale: "en"
 title: "Current state and future of roaming signatures"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "current-state-and-future-of-roaming-signatures"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 ## A game changer with a downside
 When Microsoft announced roaming signatures back in 2020, it sounded like a game-changer. No more local signature storage. A consistent experience across devices. And finally, a solution to the one-signature limitation in on-prem Outlook Web.

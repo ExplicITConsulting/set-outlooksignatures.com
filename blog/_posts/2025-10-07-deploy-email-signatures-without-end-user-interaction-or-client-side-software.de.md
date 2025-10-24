@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "de"
 locale: "de"
 title: "Signaturen ohne Endbenutzer-Interaktion oder clientseitige Software verteilen"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "deploy-email-signatures-without-end-user-interaction-or-client-side-software"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 ## In manchen Umgebungen ist die Ausführung clientbasierter Tools einfach keine Option
 Dies ist häufig bei Microsoft 365 F-Lizenzen oder Bring-Your-Own-Device (BYOD)-Konfigurationen der Fall.

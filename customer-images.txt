@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: "none"
 sitemap: false
 ---
 {%- for file in site.static_files -%}

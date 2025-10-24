@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "en"
 locale: "en"
 title: "Signatures for Send As and Send on Behalf"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "signatures-sendas-sendonbehalf"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 ## How do you deploy signatures for Send As and Send on Behalf scenarios?
 You want to assign signatures to mailboxes or distribution lists that users don’t add to Outlook, but use by selecting a different "From" address with Send As or Send on Behalf rights?

@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: "page"
 lang: "en"
 locale: "en"
-title: Download Set-Outlook&shy;Signatures
-subtitle: Get the Free and Open-Source core version
-description: Email signatures and out-of-office replies for Exchange and Outlook. Full-featured, cost-effective, unsurpassed data privacy.
+title: "Download Set-Outlook&shy;Signatures"
+subtitle: "Get the Free and Open-Source core version"
+description: "Email signatures and out-of-office replies for Exchange and Outlook. Full-featured, cost-effective, unsurpassed data privacy."
 page_id: "download"
-permalink: /download/
+permalink: "/download/"
 ---
 <h2 id="set-outlooksignatures">Set-OutlookSignatures</h2>
 <p>

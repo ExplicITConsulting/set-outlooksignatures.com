@@ -1,10 +1,10 @@
 ---
-layout: page
+layout: "page"
 lang: "de"
 locale: "de"
-title: Set-Outlook&shy;Signatures
-subtitle: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
-description: E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
+title: "Set-Outlook&shy;Signatures"
+subtitle: "E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz."
+description: "E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz."
 hero_link: /quickstart/
 hero_link_text: "<span><b>Schnellstart: </b>Signaturen in wenigen Minuten verteilen</span>"
 hero_link_style: |
@@ -14,7 +14,7 @@ hero_link2_text: "<span><b>Hinter den Kulissen: </b>Vom Code lernen</span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
 page_id: "index"
-permalink: /
+permalink: "/"
 ---
 <h2 id="outlook-signature-management">
   Verwalten Sie Ihre<span style="font-weight: bolder;"> Outlook-Signaturen </span>zentral und vollautomatisch

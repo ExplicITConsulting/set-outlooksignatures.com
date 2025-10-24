@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "de"
 locale: "de"
 title: "Signaturen für Senden Als und Senden Im Auftrag Von"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "signatures-sendas-sendonbehalf"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 ## Wie implementieren Sie Signaturen für Szenarien mit „Senden Als” und „Senden Im Auftrag Von”?
 

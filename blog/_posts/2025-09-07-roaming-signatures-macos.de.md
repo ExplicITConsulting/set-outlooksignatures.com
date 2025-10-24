@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: "post"
 lang: "de"
 locale: "de"
 title: "Roaming Signatures für Outlook am Mac?"
@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "roaming-signatures-macos"
-permalink: /blog/:year/:month/:day/:slug/
+permalink: "/blog/:year/:month/:day/:slug/"
 ---
 ## Wir haben die Lösung für Sie
 Haben Sie Benutzer, die mit Outlook für Mac auf Exchange Online-Postfächer zugreifen? Dann sollten Sie sich das anhören.

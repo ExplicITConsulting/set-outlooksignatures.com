@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: "page"
 lang: "en"
 locale: "en"
-title: Frequently Asked Questions (FAQ)
-subtitle: Topics that are addressed regularly
+title: "Frequently Asked Questions (FAQ)"
+subtitle: "Topics that are addressed regularly"
 description: "Get answers to common Set-OutlookSignatures questions: setup, templates, deployment, roaming signatures, and advanced configuration."
 page_id: "faq"
-permalink: /faq/
+permalink: "/faq/"
 ---
 <!-- omit in toc -->
 ## Many roads lead to Rome

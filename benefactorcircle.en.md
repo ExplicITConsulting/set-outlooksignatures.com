@@ -1,10 +1,10 @@
 ---
-layout: page
+layout: "page"
 lang: "en"
 locale: "en"
-title: The Benefactor Circle add-on
-subtitle: More features for your business
-description: Extend Set-OutlookSignatures with mobile support, roaming sync, OOF automation, signature cleanup, and enterprise-grade features.
+title: "The Benefactor Circle add-on"
+subtitle: "More features for your business"
+description: "Extend Set-OutlookSignatures with mobile support, roaming sync, OOF automation, signature cleanup, and enterprise-grade features."
 hero_link: "#demo"
 hero_link_text: "<span><b>Schedule your personal demo now</b></span>"
 hero_link_style: |
@@ -24,7 +24,7 @@ image:
   alt: "Set-OutlookSignatures Benefactor Circle"
 hide_gh_sponsor: true
 page_id: "benefactorcircle"
-permalink: /benefactorcircle/
+permalink: "/benefactorcircle/"
 ---
 <h2 id="sustainable-value">Sustainable added value for your business</h2>
 <p>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> from <a href="https://explicitconsulting.at/">ExplicIT Consulting</a> enhances the free Set-OutlookSignatures with great additional possibilities for your company.</p>

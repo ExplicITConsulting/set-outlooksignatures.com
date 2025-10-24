@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: "page"
 lang: "de"
 locale: "de"
-title: Implementierungs-Ansatz
-subtitle: Einführung in einer komplexen Umgebung mit zehntausenden Postfächern
-description: Erfahren Sie unseren Implementierungs-Ansatz für komplexe Multi-Client-Umgebungen mit zehntausenden Postfächern – praxisnah und effizient.
+title: "Implementierungs-Ansatz"
+subtitle: "Einführung in einer komplexen Umgebung mit zehntausenden Postfächern"
+description: "Erfahren Sie unseren Implementierungs-Ansatz für komplexe Multi-Client-Umgebungen mit zehntausenden Postfächern – praxisnah und effizient."
 page_id: "implementationapproach"
-permalink: /implementationapproach/
+permalink: "/implementationapproach/"
 ---
 <!-- omit in toc -->
 ## Welchen Ansatz für die Implementierung der Software empfehlen wir? {#recommended-approach}

@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: "page"
 lang: "en"
 locale: "en"
-title: Technical details, requirements and usage
-subtitle: What it needs, how it works and how to use it
+title: "Technical details, requirements and usage"
+subtitle: "What it needs, how it works and how to use it"
 description: "Discover Set-OutlookSignatures technical details: system requirements, supported platforms, template formats, group logic, variables, and simulation mode."
 hero_link: /quickstart/
 hero_link_text: "<span><b>Quick Start Guide</b></span>"
@@ -14,7 +14,7 @@ hero_link2_text: "<span><b>Support</b></span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
 page_id: "details"
-permalink: /details/
+permalink: "/details/"
 ---
 ## Technical details<!-- omit in toc -->
 - [1. Get to know Set-OutlookSignatures](#1-get-to-know-set-outlooksignatures)

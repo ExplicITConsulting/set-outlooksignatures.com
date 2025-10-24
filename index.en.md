@@ -1,10 +1,10 @@
 ---
-layout: page
+layout: "page"
 lang: "en"
 locale: "en"
-title: Set-Outlook&shy;Signatures
-subtitle: Email signatures and out-of-office replies for Exchange and Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy.
-description: Email signatures and out-of-office replies for Exchange and Outlook. Full-featured, cost-effective, unsurpassed data privacy.
+title: "Set-Outlook&shy;Signatures"
+subtitle: "Email signatures and out-of-office replies for Exchange and Outlook.<br>Full-featured, cost-effective, unsurpassed data privacy."
+description: "Email signatures and out-of-office replies for Exchange and Outlook. Full-featured, cost-effective, unsurpassed data privacy."
 hero_link: /quickstart/
 hero_link_text: "<span><b>Quick Start: </b>Deploy signatures within minutes</span>"
 hero_link_style: |
@@ -14,7 +14,7 @@ hero_link2_text: "<span><b>Behind the scenes: </b>Learn from the code</span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
 page_id: "index"
-permalink: /
+permalink: "/"
 ---
 <h2 id="outlook-signature-management">
   Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally and fully automated
