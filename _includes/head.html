@@ -4,7 +4,6 @@
     <meta name="theme-color" content="{{ site.theme_color | default: '#ffffff' }}">
 
     <meta name="site-languages" content="{{ site.languages | join: ',' }}">
-    {% I18n_Headers %}
     <meta http-equiv="Content-Language" content="{{ site.active_lang }}">
     {%- if site.active_lang == site.default_lang -%}
         {%- assign canonicalUrl = page.url -%}
