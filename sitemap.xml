@@ -13,8 +13,9 @@ sitemap: false
 
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-{%- assign allNodes = site.pages -%}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- assign allNodes = site.docs | concat: site.posts -%}
 
 {% for collection in site.collections %}
   {%- assign collection_docs = site[collection.label] -%}
