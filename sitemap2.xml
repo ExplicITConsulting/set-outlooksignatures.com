@@ -74,12 +74,77 @@ sitemap: false
 
 
 
-<debug_log type="Variants-Found-Count-Final" count="{{ lang_url_map | size }}" />
 
-        {%- if lang_url_map | size > 0 -%}
-        <debug_log type="Post-Ready-For-Output" />
+
+{%- comment -%}
+POSTS - FINAL MULTILINGUAL GROUPING LOGIC
+----------------------------------------------------------------
+Groups posts by their canonical URL path (URL stripped of the language prefix).
+Assumes 'default_lang' and 'sorted_langs' are defined earlier in the template.
+{%- endcomment -%}
+
+{%- assign processed_post_group_keys = "" | split: "" -%}
+{%- assign processed_post_urls = "" | split: "" -%}
+
+{%- for root_post in site.posts -%}
+  {%- comment -%} 1. Initial Filtering {%- endcomment -%}
+  {%- unless root_post.sitemap == false or root_post.url contains '/robots.txt' or root_post.url contains '/redirects.json' or root_post.url contains '/assets/' or root_post.url contains '/404' -%}
+
+    {%- comment -%} 2. Determine Canonical Grouping Key {%- endcomment -%}
+    {%- assign post_lang = root_post.lang | default: default_lang -%}
+    {%- assign canonical_path_key = root_post.url -%}
+    
+    {%- comment -%} Strip the language prefix (e.g., /de/) from the start of the URL path {%- endcomment -%}
+    {%- assign current_prefix = "/" | append: post_lang -%}
+    {%- if current_prefix != "/" | append: default_lang -%}
+        {%- if canonical_path_key | slice: 0, current_prefix.size == current_prefix -%}
+            {%- assign canonical_path_key = canonical_path_key | remove_first: current_prefix -%}
         {%- endif -%}
+    {%- endif -%}
 
+    {%- comment -%} Set group_key: Use canonical_path_key, fallback to page_id {%- endcomment -%}
+    {%- assign group_key = canonical_path_key | default: root_post.page_id -%}
+
+    {%- if group_key and group_key != "" -%}
+      {%- comment -%} 3. Check if this unique group has been processed {%- endcomment -%}
+      {%- unless processed_post_group_keys contains group_key -%}
+        
+        {%- assign processed_post_group_keys = processed_post_group_keys | push: group_key -%}
+        {%- assign lang_url_map = {} -%}
+        {%- assign lang_lastmod_map = {} -%}
+        {%- assign xDefaultUrl = "" -%}
+
+        {%- comment -%} 4. Inner loop: Find all variants matching this group_key {%- endcomment -%}
+        {%- for variant_post in site.posts -%}
+
+          {%- assign variant_lang = variant_post.lang | default: default_lang -%}
+          {%- assign variant_canonical_path_key = variant_post.url -%}
+          
+            {%- comment -%} Determine the variant's canonical path key {%- endcomment -%}
+            {%- assign variant_prefix = "/" | append: variant_lang -%}
+            {%- if variant_prefix != "/" | append: default_lang -%}
+                {%- if variant_canonical_path_key | slice: 0, variant_prefix.size == variant_prefix -%}
+                    {%- assign variant_canonical_path_key = variant_canonical_path_key | remove_first: variant_prefix -%}
+                {%- endif -%}
+            {%- endif -%}
+            
+          {%- assign variant_group_key = variant_canonical_path_key | default: variant_post.page_id -%}
+
+          {%- if variant_group_key == group_key -%}
+            {%- comment -%} Found a sibling: map its URL and lastmod by its language {%- endcomment -%}
+            
+            {%- assign variant_url_raw = variant_post.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+            
+            {%- assign lang_url_map = lang_url_map | merge: variant_lang : variant_url_raw -%}
+            {%- assign lang_lastmod_map = lang_lastmod_map | merge: variant_lang : variant_post.last_modified_at | default: variant_post.date | default: site.time | date_to_xmlschema -%}
+
+            {%- if variant_lang == default_lang -%}
+              {%- assign xDefaultUrl = variant_url_raw -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- comment -%} 5. Finalize x-default URL if not set (fallback to first language found) {%- endcomment -%}
         {%- if xDefaultUrl == "" -%}
           {%- for languageCode in sorted_langs -%}
             {%- if lang_url_map[languageCode] -%}
@@ -89,14 +154,15 @@ sitemap: false
           {%- endfor -%}
         {%- endif -%}
 
+        {%- comment -%} 6. Output <url> entry for each language variant found {%- endcomment -%}
         {%- for languageCode in sorted_langs -%}
           {%- assign current_permalink = lang_url_map[languageCode] -%}
           {%- assign current_lastmod = lang_lastmod_map[languageCode] -%}
 
           {%- if current_permalink -%}
+            {%- comment -%} Ensure this specific URL isn't duplicated by pages or other runs {%- endcomment -%}
             {%- unless processed_post_urls contains current_permalink or unique_permalinks contains current_permalink -%}
-                <debug_log type="Output-Success-Final" url="{{ current_permalink }}" />
-                {%- assign processed_post_urls = processed_post_urls | push: current_permalink -%}
+              {%- assign processed_post_urls = processed_post_urls | push: current_permalink -%}
   <url>
     <loc>{{ current_permalink }}</loc>
     <lastmod>{{ current_lastmod }}</lastmod>
@@ -105,6 +171,7 @@ sitemap: false
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ xDefaultUrl }}" />
               {%- endif -%}
 
+              {%- comment -%} Add all other variants as alternates {%- endcomment -%}
               {%- for alternate_lang in sorted_langs -%}
                 {%- if lang_url_map[alternate_lang] -%}
     <xhtml:link rel="alternate" hreflang="{{ alternate_lang }}" href="{{ lang_url_map[alternate_lang] }}" />
@@ -114,4 +181,14 @@ sitemap: false
             {%- endunless -%}
           {%- endif -%}
         {%- endfor -%}
+
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endunless -%}
+{%- endfor %}
+
+
+
+
+
 </urlset>
