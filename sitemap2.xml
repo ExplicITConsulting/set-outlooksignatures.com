@@ -46,7 +46,7 @@ sitemap: false
       {%- if node.permalink_lang[languageCode] %}
         {%- assign current_permalink = languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://"  -%}
         {%- unless unique_permalinks contains current_permalink -%}
-          {%- assign unique_permalinks = unique_permalinks | push: current_permalink -%}
+          {%- assign unique_permalinks = unique_permalinks | push: current_permalink %}
   <url>
     <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
@@ -66,7 +66,7 @@ sitemap: false
             {%- endif -%}
           {%- endfor %}
   </url>
-        {%- endunless -%}
+        {% endunless -%}
       {%- endif -%}
     {%- endfor -%}
   {%- endunless -%}
