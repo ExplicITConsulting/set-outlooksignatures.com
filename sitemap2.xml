@@ -13,7 +13,8 @@ sitemap: false
 
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {%- assign unique_permalinks = "" | split: "" -%}
 
 {%- for node in site.pages -%}
@@ -67,25 +68,23 @@ sitemap: false
           {%- endfor %}
   </url>
         {%- endunless -%}
-      {%- else -%}
-  <url>
-    <loc>{{ node.url  | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}</loc>
-    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-  </url>
       {%- endif -%}
     {%- endfor -%}
   {%- endunless -%}
 {%- endfor %}
 
+
 {%- for node in site.posts -%}
   {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
-    {%- unless unique_permalinks contains current_permalink -%}
-      {%- assign unique_permalinks = unique_permalinks | push: current_permalink -%}
-        {%- if site.active_lang == site.default_lang -%}
-          {%- assign canonicalUrl = node.url -%}
-        {%- else -%}
-          {%- assign canonicalUrl = '/' | append: site.active_lang | append: node.url -%}
-        {%- endif %}
+      {%- if site.active_lang == site.default_lang -%}
+        {%- assign canonicalUrl = node.url -%}
+      {%- else -%}
+        {%- assign canonicalUrl = '/' | append: site.active_lang | append: node.url -%}
+      {%- endif %}
+
+      {%- assign unique_permalinks = unique_permalinks | push: canonicalUrl -%}
+
+      {%- unless unique_permalinks contains current_permalink -%}
   <url>
     <loc>{{ canonicalUrl }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
