@@ -82,7 +82,7 @@ sitemap: false
       {%- assign canonicalUrl = '/' | append: site.active_lang | append: node.url -%}
     {%- endif %}
 
-    {%- unless unique_permalinks contains current_permalink -%}
+    {%- unless unique_permalinks contains canonicalUrl -%}
       {%- assign unique_permalinks = unique_permalinks | push: canonicalUrl -%}
   <url>
     <loc>{{ canonicalUrl }}</loc>
