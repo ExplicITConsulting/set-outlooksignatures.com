@@ -14,7 +14,7 @@ direction: ltr # left to right
 google_analytics: # UA-xxxxxxx
 title: "Set-OutlookSignatures"
 description: "Email signatures and out-of-office replies for Exchange and Outlook. Full-featured, cost-effective, unsurpassed data privacy."
-url: "https://set-outlooksignatures.com/" # the base hostname & protocol for your site
+url: "https://set-outlooksignatures.com" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: "ExplicITConsulting/set-outlooksignatures.com" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 favicon: "/assets/images/set-outlooksignatures icon.ico"
