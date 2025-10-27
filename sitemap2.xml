@@ -72,11 +72,13 @@ sitemap: false
   {%- endunless -%}
 {%- endfor %}
 
+
+
 {%- comment -%}
-POSTS - Final Debug/Robust Block: Grouping by static 'page_id'
+POSTS - DEBUG VERSION
 --------------------------------------------------------------
-Uses the confirmed static 'page_id' for grouping, ensuring all siblings are found.
-This avoids issues with dynamic URL path manipulation.
+The code below includes debug logging to help identify why posts are not appearing.
+Check the final rendered sitemap.xml for these debug comments.
 {%- endcomment -%}
 
 {%- assign processed_post_group_keys = "" | split: "" -%}
@@ -86,15 +88,13 @@ This avoids issues with dynamic URL path manipulation.
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
   {%- unless root_post.sitemap == false or root_post.url contains '/robots.txt' or root_post.url contains '/redirects.json' or root_post.url contains '/assets/' or root_post.url contains '/404' -%}
 
-    {%- comment -%} Set the grouping key to the guaranteed static 'page_id' {%- endcomment -%}
-    {%- assign group_key = root_post.page_id | default: root_post.permalink -%}
-
-    {%- if group_key and group_key != "" -%}
+    {%- comment -%} DEBUG: Initial Post Check {%- endcomment -%}
+        {%- assign group_key = root_post.page_id | default: root_post.permalink -%}
+        {%- if group_key and group_key != "" -%}
       {%- comment -%} Check if this group has been fully processed {%- endcomment -%}
       {%- unless processed_post_group_keys contains group_key -%}
-
-        {%- comment -%} New group found. Mark it as processed and initialize maps. {%- endcomment -%}
-        {%- assign processed_post_group_keys = processed_post_group_keys | push: group_key -%}
+        
+                {%- assign processed_post_group_keys = processed_post_group_keys | push: group_key -%}
         {%- assign lang_url_map = {} -%}
         {%- assign lang_lastmod_map = {} -%}
         {%- assign xDefaultUrl = "" -%}
@@ -106,23 +106,21 @@ This avoids issues with dynamic URL path manipulation.
           {%- if variant_group_key == group_key -%}
             {%- comment -%} Found a sibling: map its URL and lastmod by its language {%- endcomment -%}
             {%- assign variant_lang = variant_post.lang | default: default_lang -%}
-            
-            {%- comment -%} Normalize the unique URL for this variant {%- endcomment -%}
+
+                        
             {%- assign variant_url_raw = variant_post.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
             
             {%- assign lang_url_map = lang_url_map | merge: variant_lang : variant_url_raw -%}
             {%- assign lang_lastmod_map = lang_lastmod_map | merge: variant_lang : variant_post.last_modified_at | default: variant_post.date | default: site.time | date_to_xmlschema -%}
 
-            {%- comment -%} Set x-default URL if it is the default language {%- endcomment -%}
             {%- if variant_lang == default_lang -%}
               {%- assign xDefaultUrl = variant_url_raw -%}
             {%- endif -%}
           {%- endif -%}
         {%- endfor -%}
-
-        {%- comment -%} Finalize x-default URL if not set {%- endcomment -%}
-        {%- if xDefaultUrl == "" -%}
-          {%- for languageCode in sorted_langs -%}
+        
+                {%- if xDefaultUrl == "" -%}
+                      {%- for languageCode in sorted_langs -%}
             {%- if lang_url_map[languageCode] -%}
               {%- assign xDefaultUrl = lang_url_map[languageCode] -%}
               {%- break -%}
@@ -136,9 +134,9 @@ This avoids issues with dynamic URL path manipulation.
           {%- assign current_lastmod = lang_lastmod_map[languageCode] -%}
 
           {%- if current_permalink -%}
-            {%- comment -%} Ensure this specific URL isn't duplicated by pages or other post runs {%- endcomment -%}
+                            {%- comment -%} Ensure this specific URL isn't duplicated by pages or other post runs {%- endcomment -%}
             {%- unless processed_post_urls contains current_permalink or unique_permalinks contains current_permalink -%}
-              {%- assign processed_post_urls = processed_post_urls | push: current_permalink -%}
+                              {%- assign processed_post_urls = processed_post_urls | push: current_permalink -%}
   <url>
     <loc>{{ current_permalink }}</loc>
     <lastmod>{{ current_lastmod }}</lastmod>
@@ -162,6 +160,4 @@ This avoids issues with dynamic URL path manipulation.
     {%- endif -%}
   {%- endunless -%}
 {%- endfor %}
-
-{%- comment -%} POSTS - End of post specific code {%- endcomment -%}
 </urlset>
