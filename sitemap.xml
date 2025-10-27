@@ -10,8 +10,6 @@ sitemap: false
   {%- assign sorted_langs = sorted_langs | unshift: default_lang | uniq -%}
 {%- endif -%}
 
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {%- assign allNodes = site.pages | concat: site.posts -%}
@@ -21,52 +19,78 @@ sitemap: false
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
   {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
 
-    {%- comment -%} Get the URL to be used for x-default based on the prioritized language list {%- endcomment -%}
-    {%- assign xDefaultUrl = "" -%}
-    {%- for languageCode in sorted_langs -%}
-      {%- if node.permalink_lang[languageCode] -%}
-        {%- if xDefaultUrl == "" -%}
-          {%- if languageCode == default_lang -%}
-            {%- assign xDefaultUrl = node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
-          {%- else -%}
-            {%- assign languagePrefix = "/" | append: languageCode | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
-          {%- endif -%}
-        {%- endif -%}
-      {%- endif -%}
-    {%- endfor -%}
+    {%- comment -%}
+      STEP 1: Determine the x-default URL.
+      It should point to the default language version of the content.
+      Fallback to node.url if permalink_lang for the default isn't set.
+    {%- endcomment -%}
+    {%- assign xDefaultLink = "" -%}
+    {%- if node.permalink_lang[default_lang] -%}
+      {%- comment -%} Use default lang permalink (if available) {%- endcomment -%}
+      {%- assign xDefaultLink = node.permalink_lang[default_lang] -%}
+    {%- else -%}
+      {%- comment -%} Fallback to node.url (the base URL) {%- endcomment -%}
+      {%- assign xDefaultLink = node.url -%}
+    {%- endif -%}
+    {%- assign xDefaultUrl = xDefaultLink | absolute_url | replace: "//", "/" | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
 
 
-    {%- comment -%} Create a url entry for each language specific permalink of the node {%- endcomment -%}
+    {%- comment -%}
+      STEP 2: Create a <url> entry for each language-specific permalink of the node.
+      Crucially, for the default language, we MUST check node.url if permalink_lang is missing.
+    {%- endcomment -%}
     {%- for languageCode in sorted_langs -%}
-      {%- if languageCode == default_lang -%}
-        {%- assign languagePrefix = "" -%}
-      {%- else -%}
+      {%- assign languagePrefix = "" -%}
+      {%- if languageCode != default_lang -%}
         {%- assign languagePrefix = "/" | append: languageCode -%}
       {%- endif -%}
 
-      {%- if node.permalink_lang[languageCode] %}
-        {%- assign current_permalink = languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://"  -%}
+      {%- assign permalink_to_use = "" -%}
+      
+      {%- if node.permalink_lang[languageCode] -%}
+        {%- comment -%} Translation exists: use the language-specific permalink {%- endcomment -%}
+        {%- assign permalink_to_use = node.permalink_lang[languageCode] -%}
+      {%- elsif languageCode == default_lang -%}
+        {%- comment -%} No translation, but it's the default lang: use the node's base url {%- endcomment -%}
+        {%- assign permalink_to_use = node.url -%}
+      {%- endif -%}
+
+      {%- if permalink_to_use != "" %}
+        {%- assign current_permalink = languagePrefix | append: permalink_to_use | absolute_url | replace: "//", "/" | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+
+        {%- comment -%} Prevent duplicate entries if logic somehow generates the same URL {%- endcomment -%}
         {%- unless unique_permalinks contains current_permalink -%}
           {%- assign unique_permalinks = unique_permalinks | push: current_permalink -%}
-  <url>
-    <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}</loc>
-    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+          <url>
+            <loc>{{ current_permalink }}</loc>
+            <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
 
-          {%- if xDefaultUrl != "" %}
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ xDefaultUrl }}" />
-          {%- endif -%}
-
-          {%- for languageCode in sorted_langs -%}
-            {%- if node.permalink_lang[languageCode] -%}
-              {%- if languageCode == default_lang -%}
-                {%- assign languagePrefix = "" -%}
-              {%- else -%}
-                {%- assign languagePrefix = "/" | append: languageCode -%}
-              {%- endif %}
-    <xhtml:link rel="alternate" hreflang="{{ languageCode }}" href="{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}" />
+            {%- comment -%} x-default link {%- endcomment -%}
+            {%- if xDefaultUrl != "" %}
+            <xhtml:link rel="alternate" hreflang="x-default" href="{{ xDefaultUrl }}" />
             {%- endif -%}
-          {%- endfor %}
-  </url>
+
+            {%- comment -%} Alternate links for all languages {%- endcomment -%}
+            {%- for langCode in sorted_langs -%}
+              {%- assign altLanguagePrefix = "" -%}
+              {%- if langCode != default_lang -%}
+                {%- assign altLanguagePrefix = "/" | append: langCode -%}
+              {%- endif -%}
+
+              {%- assign alternate_link = "" -%}
+              {%- if node.permalink_lang[langCode] -%}
+                {%- comment -%} Translation exists: use the language-specific permalink {%- endcomment -%}
+                {%- assign alternate_link = node.permalink_lang[langCode] -%}
+              {%- elsif langCode == default_lang -%}
+                {%- comment -%} No translation, but it's the default lang: use the node's base url {%- endcomment -%}
+                {%- assign alternate_link = node.url -%}
+              {%- endif -%}
+
+              {%- if alternate_link != "" -%}
+            <xhtml:link rel="alternate" hreflang="{{ langCode }}" href="{{ altLanguagePrefix | append: alternate_link | absolute_url | replace: "//", "/" | replace: "http:/", "http://" | replace: "https:/", "https://" }}" />
+              {%- endif -%}
+            {%- endfor %}
+          </url>
         {%- endunless -%}
       {%- endif -%}
     {%- endfor -%}
