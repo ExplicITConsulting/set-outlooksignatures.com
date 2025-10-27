@@ -2,32 +2,165 @@
 layout: "none"
 sitemap: false
 ---
+
+{%- comment -%} Create a prioritized language list {%- endcomment -%}
+{%- assign default_lang = site.default_lang | default: site.languages.first -%}
+{%- assign sorted_langs = site.languages -%}
+{%- if default_lang -%}
+  {%- assign sorted_langs = sorted_langs | unshift: default_lang | uniq -%}
+{%- endif -%}
+
+{%- assign unique_permalinks = "" | split: "" -%}
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-{% for lang in site.languages %}
 
-    {% for node in site.pages %}
-        {% comment %}<!-- very lazy check to see if page is in the exclude list - this means excluded pages are not gonna be in the sitemap at all, write exceptions as necessary -->{% endcomment %}
-        {% unless site.exclude_from_localization contains node.path %}
-            {% comment %}<!-- assuming if there's not layout assigned, then not include the page in the sitemap, you may want to change this -->{% endcomment %}
-            {% if node.layout %}
-                <url>
-                    <loc>{% if lang == site.default_lang %}{{ node.url | absolute_url }}{% else %}{{ node.url | prepend: lang | prepend: '/' | absolute_url }}{% endif %}</loc>
-                    {% if node.last_modified_at and node.last_modified_at != node.date %}<lastmod>{{ node.last_modified_at | date: '%Y-%m-%dT%H:%M:%S%:z' }}</lastmod>{% elsif node.date %}<lastmod>{{ node.date | date: '%Y-%m-%dT%H:%M:%S%:z' }}</lastmod>{% endif %}
-                </url>
-            {% endif %}
-        {% endunless %}
-    {% endfor %}
 
-    {% comment %}<!-- This loops through all site collections including posts -->{% endcomment %}
-    {% for collection in site.collections %}
-        {% for node in site[collection.label] %}
-            <url>
-                <loc>{% if lang == site.default_lang %}{{ node.url | absolute_url }}{% else %}{{ node.url | prepend: lang | prepend: '/' | absolute_url }}{% endif %}</loc>
-                {% if node.last_modified_at and node.last_modified_at != node.date %}<lastmod>{{ node.last_modified_at | date: '%Y-%m-%dT%H:%M:%S%:z' }}</lastmod>{% elsif node.date %}<lastmod>{{ node.date | date: '%Y-%m-%dT%H:%M:%S%:z' }}</lastmod>{% endif %}
-            </url>
-        {% endfor %}
-    {% endfor %}
+{%- for node in site.pages -%}
+  {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
+  {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
 
-{% endfor %}
+    {%- comment -%} Get the URL to be used for x-default based on the prioritized language list {%- endcomment -%}
+    {%- assign xDefaultUrl = "" -%}
+    {%- for languageCode in sorted_langs -%}
+      {%- if node.permalink_lang[languageCode] -%}
+        {%- if xDefaultUrl == "" -%}
+          {%- if languageCode == default_lang -%}
+            {%- assign xDefaultUrl = node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+          {%- else -%}
+            {%- assign languagePrefix = "/" | append: languageCode | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+
+    {%- comment -%} Create a url entry for each language specific permalink of the node {%- endcomment -%}
+    {%- for languageCode in sorted_langs -%}
+      {%- if languageCode == default_lang -%}
+        {%- assign languagePrefix = "" -%}
+      {%- else -%}
+        {%- assign languagePrefix = "/" | append: languageCode -%}
+      {%- endif -%}
+
+      {%- if node.permalink_lang[languageCode] %}
+        {%- assign current_permalink = languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://"  -%}
+        {%- unless unique_permalinks contains current_permalink -%}
+          {%- assign unique_permalinks = unique_permalinks | push: current_permalink -%}
+  <url>
+    <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}</loc>
+    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+
+          {%- if xDefaultUrl != "" %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ xDefaultUrl }}" />
+          {%- endif -%}
+
+          {%- for languageCode in sorted_langs -%}
+            {%- if node.permalink_lang[languageCode] -%}
+              {%- if languageCode == default_lang -%}
+                {%- assign languagePrefix = "" -%}
+              {%- else -%}
+                {%- assign languagePrefix = "/" | append: languageCode -%}
+              {%- endif %}
+    <xhtml:link rel="alternate" hreflang="{{ languageCode }}" href="{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}" />
+            {%- endif -%}
+          {%- endfor %}
+  </url>
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endunless -%}
+{%- endfor %}
+
+{%- comment -%}
+POSTS - Start of post specific code
+---------------------------------
+Grouping logic: post.permalink (front matter, which may contain variables) or post.page_id.
+We iterate over posts to find all variants of a conceptual post and then generate the <url> entries.
+{%- endcomment -%}
+
+{%- assign processed_post_group_keys = "" | split: "" -%}
+{%- assign processed_post_urls = "" | split: "" -%}
+
+{%- for root_post in site.posts -%}
+  {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
+  {%- unless root_post.sitemap == false or root_post.url contains '/robots.txt' or root_post.url contains '/redirects.json' or root_post.url contains '/assets/' or root_post.url contains '/404' -%}
+
+    {%- comment -%} Determine the grouping key - permalink has higher priority than page_id {%- endcomment -%}
+    {%- assign group_key = root_post.permalink | default: root_post.page_id -%}
+
+    {%- if group_key and group_key != "" -%}
+      {%- unless processed_post_group_keys contains group_key -%}
+
+        {%- comment -%} New group found. Process all variants for this group key. {%- endcomment -%}
+        {%- assign processed_post_group_keys = processed_post_group_keys | push: group_key -%}
+        {%- assign lang_url_map = "" | split: "" | first | default: {} -%}
+        {%- assign lang_lastmod_map = "" | split: "" | first | default: {} -%}
+        {%- assign xDefaultUrl = "" -%}
+
+        {%- comment -%} Find all variants and build the lang_url_map and lang_lastmod_map {%- endcomment -%}
+        {%- for variant_post in site.posts -%}
+          {%- assign variant_group_key = variant_post.permalink | default: variant_post.page_id -%}
+          {%- if variant_group_key == group_key -%}
+            {%- comment -%} 'lang' front matter is used, defaulting to site.default_lang {%- endcomment -%}
+            {%- assign lang = variant_post.lang | default: default_lang -%}
+            
+            {%- comment -%} Apply the same URL normalization as for pages {%- endcomment -%}
+            {%- assign variant_url_raw = variant_post.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+            
+            {%- comment -%} Add to the maps (lang: absolute_url) and (lang: lastmod) {%- endcomment -%}
+            {%- assign lang_url_map = lang_url_map | merge: lang : variant_url_raw -%}
+            {%- assign lang_lastmod_map = lang_lastmod_map | merge: lang : variant_post.last_modified_at | default: variant_post.date | default: site.time | date_to_xmlschema -%}
+
+            {%- comment -%} Set x-default URL if it is the default language {%- endcomment -%}
+            {%- if lang == default_lang -%}
+              {%- assign xDefaultUrl = variant_url_raw -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- comment -%} If x-default was not found (no default lang post), use the first one available {%- endcomment -%}
+        {%- if xDefaultUrl == "" -%}
+          {%- for languageCode in sorted_langs -%}
+            {%- if lang_url_map[languageCode] -%}
+              {%- assign xDefaultUrl = lang_url_map[languageCode] -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+
+        {%- comment -%} Generate the URL entry for each language variant found {%- endcomment -%}
+        {%- for languageCode in sorted_langs -%}
+          {%- assign current_permalink = lang_url_map[languageCode] -%}
+          {%- assign current_lastmod = lang_lastmod_map[languageCode] -%}
+
+          {%- if current_permalink -%}
+            {%- comment -%} Use a separate array to ensure a final URL is only output once (even if it's the same as a page URL) {%- endcomment -%}
+            {%- unless processed_post_urls contains current_permalink or unique_permalinks contains current_permalink -%}
+              {%- assign processed_post_urls = processed_post_urls | push: current_permalink -%}
+  <url>
+    <loc>{{ current_permalink }}</loc>
+    <lastmod>{{ current_lastmod }}</lastmod>
+
+              {%- if xDefaultUrl != "" %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ xDefaultUrl }}" />
+              {%- endif -%}
+
+              {%- comment -%} Add all other variants as alternates {%- endcomment -%}
+              {%- for alternate_lang in sorted_langs -%}
+                {%- if lang_url_map[alternate_lang] -%}
+    <xhtml:link rel="alternate" hreflang="{{ alternate_lang }}" href="{{ lang_url_map[alternate_lang] }}" />
+                {%- endif -%}
+              {%- endfor %}
+  </url>
+            {%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+      {%- endif -%}
+    {%- endif -%}
+  {%- endunless -%}
+{%- endfor %}
+
+{%- comment -%} POSTS - End of post specific code {%- endcomment -%}
 </urlset>
