@@ -84,7 +84,7 @@ sitemap: false
       {%- else -%}
         {%- assign localizedUrl = '/' | append: node.lang | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
       {%- endif -%}
-  <xxx>{{ localizedUrl }}</xxx>
+
       {%- unless unique_permalinks contains localizedUrl -%}
         {%- assign unique_permalinks = unique_permalinks | push: localizedUrl %}
     <url>
