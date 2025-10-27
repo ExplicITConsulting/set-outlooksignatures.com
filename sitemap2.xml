@@ -75,54 +75,62 @@ sitemap: false
 
 
 {%- comment -%}
-POSTS - DEBUG VERSION
---------------------------------------------------------------
-The code below includes debug logging to help identify why posts are not appearing.
-Check the final rendered sitemap.xml for these debug comments.
+POSTS - FINAL CORRECTED VERSION (Grouping by Canonical URL Path)
+----------------------------------------------------------------
+The key is the RESOLVED URL, stripped of language prefix, followed by page_id as a fallback.
 {%- endcomment -%}
 
-{%- assign processed_post_group_keys = "" | split: "" -%}
-{%- assign processed_post_urls = "" | split: "" -%}
-
-{%- comment -%}
-POSTS - DEBUG VERSION (Using Direct Output Tags)
-This version outputs XML tags to track flow. Check your sitemap.xml for <debug_log> tags.
-{%- endcomment -%}
-
-<debug_section_posts>
+<debug_section_posts_final>
 {%- assign processed_post_group_keys = "" | split: "" -%}
 {%- assign processed_post_urls = "" | split: "" -%}
 
 {%- for root_post in site.posts -%}
 <debug_log type="Post-Start" url="{{ root_post.url }}" lang="{{ root_post.lang }}" page_id="{{ root_post.page_id }}" />
 
-  {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
   {%- unless root_post.sitemap == false or root_post.url contains '/robots.txt' or root_post.url contains '/redirects.json' or root_post.url contains '/assets/' or root_post.url contains '/404' -%}
+
+    {%- comment -%} 1. Create the canonical path key (URL without language prefix) {%- endcomment -%}
+    {%- assign post_lang = root_post.lang | default: default_lang -%}
+    {%- assign canonical_path_key = root_post.url -%}
     
-    <debug_log type="Filter-Pass" url="{{ root_post.url }}" />
-    {%- assign group_key = root_post.page_id | default: root_post.permalink -%}
-    <debug_log type="Group-Key-Assigned" key="{{ group_key }}" />
+    {%- comment -%} Remove the language prefix from the URL. Example: /de/blog/... -> /blog/... {%- endcomment -%}
+    {%- assign current_prefix = "/" | append: post_lang -%}
+    {%- if current_prefix != "/" | append: default_lang -%}
+        {%- if canonical_path_key | slice: 0, current_prefix.size == current_prefix -%}
+            {%- assign canonical_path_key = canonical_path_key | remove_first: current_prefix -%}
+        {%- endif -%}
+    {%- endif -%}
+
+    {%- comment -%} 2. Set group_key: Use canonical_path_key, fallback to page_id {%- endcomment -%}
+    {%- assign group_key = canonical_path_key | default: root_post.page_id -%}
     
+    <debug_log type="Group-Key-Final" key="{{ group_key }}" canonical_url="{{ canonical_path_key }}" />
+
     {%- if group_key and group_key != "" -%}
-      {%- comment -%} Check if this group has been fully processed {%- endcomment -%}
       {%- unless processed_post_group_keys contains group_key -%}
-        <debug_log type="New-Group-Start" key="{{ group_key }}" />
-        
-                {%- assign processed_post_group_keys = processed_post_group_keys | push: group_key -%}
+        <debug_log type="New-Group-Start-Final" key="{{ group_key }}" />
+        {%- assign processed_post_group_keys = processed_post_group_keys | push: group_key -%}
         {%- assign lang_url_map = {} -%}
         {%- assign lang_lastmod_map = {} -%}
         {%- assign xDefaultUrl = "" -%}
 
-        {%- comment -%} Second loop: Find all variants belonging to this group_key {%- endcomment -%}
+        {%- comment -%} Inner loop: Find all variants matching the canonical path key {%- endcomment -%}
         {%- for variant_post in site.posts -%}
-          {%- assign variant_group_key = variant_post.page_id | default: variant_post.permalink -%}
-          <debug_log type="Variant-Check" key="{{ group_key }}" variant_key="{{ variant_group_key }}" variant_url="{{ variant_post.url }}" />
+
+          {%- assign variant_lang = variant_post.lang | default: default_lang -%}
+          {%- assign variant_canonical_path_key = variant_post.url -%}
+          
+            {%- assign variant_prefix = "/" | append: variant_lang -%}
+            {%- if variant_prefix != "/" | append: default_lang -%}
+                {%- if variant_canonical_path_key | slice: 0, variant_prefix.size == variant_prefix -%}
+                    {%- assign variant_canonical_path_key = variant_canonical_path_key | remove_first: variant_prefix -%}
+                {%- endif -%}
+            {%- endif -%}
+            
+          {%- assign variant_group_key = variant_canonical_path_key | default: variant_post.page_id -%}
 
           {%- if variant_group_key == group_key -%}
-            {%- comment -%} Found a sibling: map its URL and lastmod by its language {%- endcomment -%}
-            {%- assign variant_lang = variant_post.lang | default: default_lang -%}
-
-            <debug_log type="Variant-Match" lang="{{ variant_lang }}" url="{{ variant_post.url }}" />
+            <debug_log type="Variant-Match-Final" lang="{{ variant_lang }}" url="{{ variant_post.url }}" />
             
             {%- assign variant_url_raw = variant_post.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
             
@@ -135,10 +143,9 @@ This version outputs XML tags to track flow. Check your sitemap.xml for <debug_l
           {%- endif -%}
         {%- endfor -%}
         
-        <debug_log type="Variants-Found-Count" count="{{ lang_url_map | size }}" />
-        
+        <debug_log type="Variants-Found-Count-Final" count="{{ lang_url_map | size }}" />
+
         {%- if xDefaultUrl == "" -%}
-          <debug_log type="xDefault-Fallback" />
           {%- for languageCode in sorted_langs -%}
             {%- if lang_url_map[languageCode] -%}
               {%- assign xDefaultUrl = lang_url_map[languageCode] -%}
@@ -147,15 +154,13 @@ This version outputs XML tags to track flow. Check your sitemap.xml for <debug_l
           {%- endfor -%}
         {%- endif -%}
 
-        {%- comment -%} Output <url> entry for each language variant found {%- endcomment -%}
         {%- for languageCode in sorted_langs -%}
           {%- assign current_permalink = lang_url_map[languageCode] -%}
           {%- assign current_lastmod = lang_lastmod_map[languageCode] -%}
 
           {%- if current_permalink -%}
-            {%- comment -%} Ensure this specific URL isn't duplicated by pages or other post runs {%- endcomment -%}
             {%- unless processed_post_urls contains current_permalink or unique_permalinks contains current_permalink -%}
-                <debug_log type="Output-Success" url="{{ current_permalink }}" />
+                <debug_log type="Output-Success-Final" url="{{ current_permalink }}" />
                 {%- assign processed_post_urls = processed_post_urls | push: current_permalink -%}
   <url>
     <loc>{{ current_permalink }}</loc>
@@ -165,7 +170,6 @@ This version outputs XML tags to track flow. Check your sitemap.xml for <debug_l
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ xDefaultUrl }}" />
               {%- endif -%}
 
-              {%- comment -%} Add all other variants as alternates {%- endcomment -%}
               {%- for alternate_lang in sorted_langs -%}
                 {%- if lang_url_map[alternate_lang] -%}
     <xhtml:link rel="alternate" hreflang="{{ alternate_lang }}" href="{{ lang_url_map[alternate_lang] }}" />
@@ -180,5 +184,5 @@ This version outputs XML tags to track flow. Check your sitemap.xml for <debug_l
     {%- endif -%}
   {%- endunless -%}
 {%- endfor %}
-</debug_section_posts>
+</debug_section_posts_final>
 </urlset>
