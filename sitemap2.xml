@@ -86,16 +86,19 @@ sitemap: false
         {%- else -%}
           {%- assign canonicalUrl = '/' | append: site.active_lang | append: node.url -%}
         {%- endif %}
-    <link rel="canonical" {% static_href %}href="{{ canonicalUrl | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}"{% endstatic_href %}>
-    <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}"{% endstatic_href %}>
+  <url>
+    <loc>{{ canonicalUrl }}</loc>
+    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
         {%- for lang in site.languages -%}
           {%- if lang == site.default_lang -%}
             {%- assign hreflang_url = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
           {%- else -%}
             {%- assign hreflang_url = '/' | append: lang | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
           {%- endif %}
-    <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ hreflang_url }}"{% endstatic_href %}>
+    <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ hreflang_url }}" />
         {%- endfor %}
+  </url>
       {%- endunless -%}
     {%- endunless -%}
 {%- endfor %}
