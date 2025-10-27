@@ -87,7 +87,7 @@ sitemap: false
         {%- endif -%}
 
         {%- unless unique_permalinks contains localizedUrl -%}
-          {%- assign unique_permalinks = unique_permalinks | push: localizedUrl %}
+          {%- assign unique_permalinks = unique_permalinks | push: localizedUrl -%}
     <url>
       <loc>{{ localizedUrl }}</loc>
       <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
