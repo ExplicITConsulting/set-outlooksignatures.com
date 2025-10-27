@@ -88,19 +88,19 @@ sitemap: false
 
         {%- unless unique_permalinks contains localizedUrl -%}
           {%- assign unique_permalinks = unique_permalinks | push: localizedUrl -%}
-    <url>
-      <loc>{{ localizedUrl }}</loc>
-      <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-      <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
+  <url>
+    <loc>{{ localizedUrl }}</loc>
+    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
           {%- for lang in site.languages -%}
             {%- if lang == default_lang -%}
               {%- assign hreflang_url = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
             {%- else -%}
               {%- assign hreflang_url = '/' | append: lang | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
             {%- endif %}
-      <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ hreflang_url }}" />
+    <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ hreflang_url }}" />
           {%- endfor %}
-    </url>
+  </url>
         {% endunless -%}
       {%- endfor -%}
     {%- endunless -%}
