@@ -17,7 +17,7 @@ sitemap: false
 {%- assign allNodes = site.pages -%}
 
 {% for collection in site.collections %}
-  {%- assign collection_docs = site[collection.label] | default: "" | split: "" -%}
+  {%- assign collection_docs = site[collection.label] -%}
   {%- assign allNodes = allNodes | concat: collection_docs -%}
 {% endfor %}
 
