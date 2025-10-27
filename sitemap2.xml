@@ -76,18 +76,20 @@ sitemap: false
 
 {%- for node in site.posts -%}
   {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
-    {%- if site.active_lang == site.default_lang -%}
+    {%- if node.lang == site.default_lang -%}
       {%- assign canonicalUrl = node.url -%}
     {%- else -%}
-      {%- assign canonicalUrl = '/' | append: site.active_lang | append: node.url -%}
+      {%- assign canonicalUrl = '/' | append: node.lang | append: node.url -%}
     {%- endif %}
+
+    {$- assign canonicalurl = canonicalUrl | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
 
     {%- unless unique_permalinks contains canonicalUrl -%}
       {%- assign unique_permalinks = unique_permalinks | push: canonicalUrl -%}
   <url>
     <loc>{{ canonicalUrl }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
       {%- for lang in site.languages -%}
         {%- if lang == site.default_lang -%}
           {%- assign hreflang_url = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
