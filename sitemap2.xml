@@ -73,10 +73,10 @@ sitemap: false
 {%- endfor %}
 
 {%- comment -%}
-POSTS - Start of post specific code
+POSTS - Final Corrected Liquid Block (Assumes permalink/page_id always present)
 ---------------------------------
-Grouping logic: post.permalink (front matter, which may contain variables) or post.page_id.
-We iterate over posts to find all variants of a conceptual post and then generate the <url> entries.
+Grouping logic: post.permalink (Higher Priority) or post.page_id.
+Ensures each group (post variant set) is processed only once.
 {%- endcomment -%}
 
 {%- assign processed_post_group_keys = "" | split: "" -%}
@@ -86,7 +86,7 @@ We iterate over posts to find all variants of a conceptual post and then generat
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
   {%- unless root_post.sitemap == false or root_post.url contains '/robots.txt' or root_post.url contains '/redirects.json' or root_post.url contains '/assets/' or root_post.url contains '/404' -%}
 
-    {%- comment -%} Determine the grouping key - permalink has higher priority than page_id {%- endcomment -%}
+    {%- comment -%} Determine the grouping key - permalink has higher priority {%- endcomment -%}
     {%- assign group_key = root_post.permalink | default: root_post.page_id -%}
 
     {%- if group_key and group_key != "" -%}
@@ -94,13 +94,14 @@ We iterate over posts to find all variants of a conceptual post and then generat
 
         {%- comment -%} New group found. Process all variants for this group key. {%- endcomment -%}
         {%- assign processed_post_group_keys = processed_post_group_keys | push: group_key -%}
-        {%- assign lang_url_map = "" | split: "" | first | default: {} -%}
-        {%- assign lang_lastmod_map = "" | split: "" | first | default: {} -%}
+        {%- assign lang_url_map = {} -%}
+        {%- assign lang_lastmod_map = {} -%}
         {%- assign xDefaultUrl = "" -%}
 
-        {%- comment -%} Find all variants and build the lang_url_map and lang_lastmod_map {%- endcomment -%}
+        {%- comment -%} Find all variants with the same group_key {%- endcomment -%}
         {%- for variant_post in site.posts -%}
           {%- assign variant_group_key = variant_post.permalink | default: variant_post.page_id -%}
+          
           {%- if variant_group_key == group_key -%}
             {%- comment -%} 'lang' front matter is used, defaulting to site.default_lang {%- endcomment -%}
             {%- assign lang = variant_post.lang | default: default_lang -%}
@@ -119,7 +120,7 @@ We iterate over posts to find all variants of a conceptual post and then generat
           {%- endif -%}
         {%- endfor -%}
 
-        {%- comment -%} If x-default was not found (no default lang post), use the first one available {%- endcomment -%}
+        {%- comment -%} If x-default was not found, use the first one available based on sorted_langs {%- endcomment -%}
         {%- if xDefaultUrl == "" -%}
           {%- for languageCode in sorted_langs -%}
             {%- if lang_url_map[languageCode] -%}
@@ -135,7 +136,7 @@ We iterate over posts to find all variants of a conceptual post and then generat
           {%- assign current_lastmod = lang_lastmod_map[languageCode] -%}
 
           {%- if current_permalink -%}
-            {%- comment -%} Use a separate array to ensure a final URL is only output once (even if it's the same as a page URL) {%- endcomment -%}
+            {%- comment -%} Check if this specific URL was already added by the pages loop (unique_permalinks) or a previous post group loop (processed_post_urls) {%- endcomment -%}
             {%- unless processed_post_urls contains current_permalink or unique_permalinks contains current_permalink -%}
               {%- assign processed_post_urls = processed_post_urls | push: current_permalink -%}
   <url>
@@ -158,7 +159,7 @@ We iterate over posts to find all variants of a conceptual post and then generat
         {%- endfor -%}
 
       {%- endunless -%}
-    {%- endif -%} 👈 **This was the missing line causing the error.**
+    {%- endif -%}
   {%- endunless -%}
 {%- endfor %}
 
