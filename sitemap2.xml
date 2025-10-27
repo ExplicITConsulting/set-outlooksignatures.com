@@ -71,37 +71,38 @@ sitemap: false
       {%- endif -%}
     {%- endfor -%}
   {%- endunless -%}
-{%- endfor %}
+{%- endfor -%}
 
 
-{%- for node in site.posts -%}
-  {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
-    {%- assign canonicalUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+{%- for collection in site.collections -%}
+  {%- for node in site[collection.label] -%}
+      {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
+        {%- assign canonicalUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
 
-    {%- if node.lang == default_lang -%}
-      {%- assign localizedUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
-    {%- else -%}
-      {%- assign localizedUrl = '/' | append: node.lang | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
-    {%- endif -%}
-<xxx>{{ localizedUrl }}</xxx>
-    {%- unless unique_permalinks contains localizedUrl -%}
-      {%- assign unique_permalinks = unique_permalinks | push: localizedUrl %}
-  <url>
-    <loc>{{ localizedUrl }}</loc>
-    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
-      {%- for lang in site.languages -%}
-        {%- if lang == node.lang -%}
-          {%- assign hreflang_url = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+        {%- if node.lang == default_lang -%}
+          {%- assign localizedUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
         {%- else -%}
-          {%- assign hreflang_url = '/' | append: lang | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
-        {%- endif %}
-    <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ hreflang_url }}" />
-      {%- endfor %}
-  </url>
-    {%- endunless -%}
-  {%- endunless -%}
-{%- endfor %}
-
-  
+          {%- assign localizedUrl = '/' | append: node.lang | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+        {%- endif -%}
+    <xxx>{{ localizedUrl }}</xxx>
+        {%- unless unique_permalinks contains localizedUrl -%}
+          {%- assign unique_permalinks = unique_permalinks | push: localizedUrl %}
+      <url>
+        <loc>{{ localizedUrl }}</loc>
+        <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
+          {%- for lang in site.languages -%}
+            {%- if lang == node.lang -%}
+              {%- assign hreflang_url = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+            {%- else -%}
+              {%- assign hreflang_url = '/' | append: lang | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+            {%- endif %}
+        <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ hreflang_url }}" />
+          {%- endfor %}
+      </url>
+        {%- endunless -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endfor %}  
 </urlset>
