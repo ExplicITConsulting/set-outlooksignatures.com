@@ -73,12 +73,10 @@ sitemap: false
 {%- endfor %}
 
 {%- comment -%}
-POSTS - Final Robust Liquid Block
-----------------------------------------------------------------
-Grouping Strategy:
-1. Canonical Path (post.url stripped of language prefix).
-2. Fallback: post.page_id (since you confirmed it's always set).
-This ensures every multilingual post variant gets grouped successfully.
+POSTS - Final Debug/Robust Block: Grouping by static 'page_id'
+--------------------------------------------------------------
+Uses the confirmed static 'page_id' for grouping, ensuring all siblings are found.
+This avoids issues with dynamic URL path manipulation.
 {%- endcomment -%}
 
 {%- assign processed_post_group_keys = "" | split: "" -%}
@@ -88,23 +86,11 @@ This ensures every multilingual post variant gets grouped successfully.
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
   {%- unless root_post.sitemap == false or root_post.url contains '/robots.txt' or root_post.url contains '/redirects.json' or root_post.url contains '/assets/' or root_post.url contains '/404' -%}
 
-    {%- comment -%} 1. Attempt to create a canonical path key by stripping the language prefix {%- endcomment -%}
-    {%- assign post_lang = root_post.lang | default: default_lang -%}
-    {%- assign canonical_path_key = root_post.url -%}
-
-    {%- if post_lang != default_lang -%}
-      {%- assign prefix = "/" | append: post_lang -%}
-      {%- comment -%} Ensure the prefix is at the start before removing {%- endcomment -%}
-      {%- if canonical_path_key | slice: 0, prefix.size == prefix -%}
-        {%- assign canonical_path_key = canonical_path_key | remove_first: prefix -%}
-      {%- endif -%}
-    {%- endif -%}
-    
-    {%- comment -%} 2. Set the final grouping key, prioritizing the canonical path {%- endcomment -%}
-    {%- assign group_key = canonical_path_key | default: root_post.page_id -%}
+    {%- comment -%} Set the grouping key to the guaranteed static 'page_id' {%- endcomment -%}
+    {%- assign group_key = root_post.page_id | default: root_post.permalink -%}
 
     {%- if group_key and group_key != "" -%}
-      {%- comment -%} Check if this group (canonical path) has been fully processed {%- endcomment -%}
+      {%- comment -%} Check if this group has been fully processed {%- endcomment -%}
       {%- unless processed_post_group_keys contains group_key -%}
 
         {%- comment -%} New group found. Mark it as processed and initialize maps. {%- endcomment -%}
@@ -115,22 +101,11 @@ This ensures every multilingual post variant gets grouped successfully.
 
         {%- comment -%} Second loop: Find all variants belonging to this group_key {%- endcomment -%}
         {%- for variant_post in site.posts -%}
-          
-          {%- comment -%} Re-create the canonical path key for the variant {%- endcomment -%}
-          {%- assign variant_lang = variant_post.lang | default: default_lang -%}
-          {%- assign variant_canonical_path_key = variant_post.url -%}
-          
-          {%- if variant_lang != default_lang -%}
-            {%- assign prefix = "/" | append: variant_lang -%}
-            {%- if variant_canonical_path_key | slice: 0, prefix.size == prefix -%}
-              {%- assign variant_canonical_path_key = variant_canonical_path_key | remove_first: prefix -%}
-            {%- endif -%}
-          {%- endif -%}
-          {%- assign variant_group_key = variant_canonical_path_key | default: variant_post.page_id -%}
-
+          {%- assign variant_group_key = variant_post.page_id | default: variant_post.permalink -%}
 
           {%- if variant_group_key == group_key -%}
             {%- comment -%} Found a sibling: map its URL and lastmod by its language {%- endcomment -%}
+            {%- assign variant_lang = variant_post.lang | default: default_lang -%}
             
             {%- comment -%} Normalize the unique URL for this variant {%- endcomment -%}
             {%- assign variant_url_raw = variant_post.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
