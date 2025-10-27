@@ -87,7 +87,7 @@ sitemap: false
   <url>
     <loc>{{ canonicalUrl }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}" />
       {%- for lang in site.languages -%}
         {%- if lang == site.default_lang -%}
           {%- assign hreflang_url = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
