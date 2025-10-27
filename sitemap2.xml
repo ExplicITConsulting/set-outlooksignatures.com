@@ -84,15 +84,29 @@ Check the final rendered sitemap.xml for these debug comments.
 {%- assign processed_post_group_keys = "" | split: "" -%}
 {%- assign processed_post_urls = "" | split: "" -%}
 
+{%- comment -%}
+POSTS - DEBUG VERSION (Using Direct Output Tags)
+This version outputs XML tags to track flow. Check your sitemap.xml for <debug_log> tags.
+{%- endcomment -%}
+
+<debug_section_posts>
+{%- assign processed_post_group_keys = "" | split: "" -%}
+{%- assign processed_post_urls = "" | split: "" -%}
+
 {%- for root_post in site.posts -%}
+<debug_log type="Post-Start" url="{{ root_post.url }}" lang="{{ root_post.lang }}" page_id="{{ root_post.page_id }}" />
+
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
   {%- unless root_post.sitemap == false or root_post.url contains '/robots.txt' or root_post.url contains '/redirects.json' or root_post.url contains '/assets/' or root_post.url contains '/404' -%}
-
-    {%- comment -%} DEBUG: Initial Post Check {%- endcomment -%}
-        {%- assign group_key = root_post.page_id | default: root_post.permalink -%}
-        {%- if group_key and group_key != "" -%}
+    
+    <debug_log type="Filter-Pass" url="{{ root_post.url }}" />
+    {%- assign group_key = root_post.page_id | default: root_post.permalink -%}
+    <debug_log type="Group-Key-Assigned" key="{{ group_key }}" />
+    
+    {%- if group_key and group_key != "" -%}
       {%- comment -%} Check if this group has been fully processed {%- endcomment -%}
       {%- unless processed_post_group_keys contains group_key -%}
+        <debug_log type="New-Group-Start" key="{{ group_key }}" />
         
                 {%- assign processed_post_group_keys = processed_post_group_keys | push: group_key -%}
         {%- assign lang_url_map = {} -%}
@@ -102,12 +116,14 @@ Check the final rendered sitemap.xml for these debug comments.
         {%- comment -%} Second loop: Find all variants belonging to this group_key {%- endcomment -%}
         {%- for variant_post in site.posts -%}
           {%- assign variant_group_key = variant_post.page_id | default: variant_post.permalink -%}
+          <debug_log type="Variant-Check" key="{{ group_key }}" variant_key="{{ variant_group_key }}" variant_url="{{ variant_post.url }}" />
 
           {%- if variant_group_key == group_key -%}
             {%- comment -%} Found a sibling: map its URL and lastmod by its language {%- endcomment -%}
             {%- assign variant_lang = variant_post.lang | default: default_lang -%}
 
-                        
+            <debug_log type="Variant-Match" lang="{{ variant_lang }}" url="{{ variant_post.url }}" />
+            
             {%- assign variant_url_raw = variant_post.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
             
             {%- assign lang_url_map = lang_url_map | merge: variant_lang : variant_url_raw -%}
@@ -119,8 +135,11 @@ Check the final rendered sitemap.xml for these debug comments.
           {%- endif -%}
         {%- endfor -%}
         
-                {%- if xDefaultUrl == "" -%}
-                      {%- for languageCode in sorted_langs -%}
+        <debug_log type="Variants-Found-Count" count="{{ lang_url_map | size }}" />
+        
+        {%- if xDefaultUrl == "" -%}
+          <debug_log type="xDefault-Fallback" />
+          {%- for languageCode in sorted_langs -%}
             {%- if lang_url_map[languageCode] -%}
               {%- assign xDefaultUrl = lang_url_map[languageCode] -%}
               {%- break -%}
@@ -134,9 +153,10 @@ Check the final rendered sitemap.xml for these debug comments.
           {%- assign current_lastmod = lang_lastmod_map[languageCode] -%}
 
           {%- if current_permalink -%}
-                            {%- comment -%} Ensure this specific URL isn't duplicated by pages or other post runs {%- endcomment -%}
+            {%- comment -%} Ensure this specific URL isn't duplicated by pages or other post runs {%- endcomment -%}
             {%- unless processed_post_urls contains current_permalink or unique_permalinks contains current_permalink -%}
-                              {%- assign processed_post_urls = processed_post_urls | push: current_permalink -%}
+                <debug_log type="Output-Success" url="{{ current_permalink }}" />
+                {%- assign processed_post_urls = processed_post_urls | push: current_permalink -%}
   <url>
     <loc>{{ current_permalink }}</loc>
     <lastmod>{{ current_lastmod }}</lastmod>
@@ -160,4 +180,5 @@ Check the final rendered sitemap.xml for these debug comments.
     {%- endif -%}
   {%- endunless -%}
 {%- endfor %}
+</debug_section_posts>
 </urlset>
