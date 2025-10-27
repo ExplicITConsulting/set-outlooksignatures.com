@@ -13,11 +13,11 @@ sitemap: false
 
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-{%- assign allNodes = site.pages | concat: site.posts -%}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {%- assign unique_permalinks = "" | split: "" -%}
 
-{%- for node in allNodes -%}
+{%- for node in site.pages -%}
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
   {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
 
@@ -44,10 +44,10 @@ sitemap: false
         {%- assign languagePrefix = "/" | append: languageCode -%}
       {%- endif -%}
 
-      {%- if node.permalink_lang[languageCode] %}
+      {%- if node.permalink_lang[languageCode] -%}
         {%- assign current_permalink = languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://"  -%}
         {%- unless unique_permalinks contains current_permalink -%}
-          {%- assign unique_permalinks = unique_permalinks | push: current_permalink -%}
+          {%- assign unique_permalinks = unique_permalinks | push: current_permalink %}
   <url>
     <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
@@ -71,5 +71,39 @@ sitemap: false
       {%- endif -%}
     {%- endfor -%}
   {%- endunless -%}
+{%- endfor -%}
+
+
+{%- for collection in site.collections -%}
+  {%- for node in site[collection.label] -%}
+    {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
+      {%- assign canonicalUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+
+      {%- for languageCode in sorted_langs -%}
+        {%- if languageCode == default_lang -%}
+          {%- assign localizedUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+        {%- else -%}
+          {%- assign localizedUrl = '/' | append: languageCode | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+        {%- endif -%}
+
+        {%- unless unique_permalinks contains localizedUrl -%}
+          {%- assign unique_permalinks = unique_permalinks | push: localizedUrl %}
+  <url>
+    <loc>{{ localizedUrl }}</loc>
+    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
+          {%- for lang in site.languages -%}
+            {%- if lang == default_lang -%}
+              {%- assign hreflang_url = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+            {%- else -%}
+              {%- assign hreflang_url = '/' | append: lang | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+            {%- endif %}
+    <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ hreflang_url }}" />
+          {%- endfor %}
+  </url>
+        {%- endunless -%}
+      {%- endfor -%}
+    {%- endunless -%}
+  {%- endfor -%}
 {%- endfor %}
 </urlset>
