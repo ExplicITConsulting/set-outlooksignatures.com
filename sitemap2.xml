@@ -14,10 +14,9 @@ sitemap: false
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-{%- assign allNodes = site.pages | concat: site.posts -%}
 {%- assign unique_permalinks = "" | split: "" -%}
 
-{%- for node in allNodes -%}
+{%- for node in site.pages -%}
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
   {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
 
@@ -77,4 +76,29 @@ sitemap: false
     {%- endfor -%}
   {%- endunless -%}
 {%- endfor %}
+
+{%- for node in site.posts -%}
+  {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
+    {%- unless unique_permalinks contains current_permalink -%}
+      {%- assign unique_permalinks = unique_permalinks | push: current_permalink -%}
+        {%- if site.active_lang == site.default_lang -%}
+          {%- assign canonicalUrl = node.url -%}
+        {%- else -%}
+          {%- assign canonicalUrl = '/' | append: site.active_lang | append: node.url -%}
+        {%- endif %}
+    <link rel="canonical" {% static_href %}href="{{ canonicalUrl | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}"{% endstatic_href %}>
+    <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}"{% endstatic_href %}>
+        {%- for lang in site.languages -%}
+          {%- if lang == site.default_lang -%}
+            {%- assign hreflang_url = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+          {%- else -%}
+            {%- assign hreflang_url = '/' | append: lang | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+          {%- endif %}
+    <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ hreflang_url }}"{% endstatic_href %}>
+        {%- endfor %}
+      {%- endunless -%}
+    {%- endunless -%}
+{%- endfor %}
+
+  
 </urlset>
