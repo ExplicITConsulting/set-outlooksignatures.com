@@ -101,7 +101,7 @@ sitemap: false
     <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ hreflang_url }}" />
           {%- endfor %}
   </url>
-        {% endunless -%}
+        {%- endunless -%}
       {%- endfor -%}
     {%- endunless -%}
   {%- endfor -%}
