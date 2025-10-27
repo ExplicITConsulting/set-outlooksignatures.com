@@ -157,8 +157,8 @@ We iterate over posts to find all variants of a conceptual post and then generat
           {%- endif -%}
         {%- endfor -%}
 
-      {%- endif -%}
-    {%- endif -%}
+      {%- endunless -%}
+    {%- endif -%} 👈 **This was the missing line causing the error.**
   {%- endunless -%}
 {%- endfor %}
 
