@@ -23,10 +23,11 @@
     {%- endfor %}
 
     {%- capture seo_raw -%}{% seo %}{%- endcapture -%}
-    {%- assign seo_normalized = seo_raw | escape | newline_to_br -%}
+    {%- assign seo_normalized = seo_raw | newline_to_br -%}
     {%- assign seo_lines = seo_normalized | split: "<br />" -%}
     {%- for line in seo_lines -%}
-        {%- unless line contains "&lt;link rel=&quot;canonical&quot; href=&quot;" -%}
+        {%- assign line_escaped = line | escape -%}
+        {%- unless line_escaped contains "&lt;link rel=&quot;canonical&quot; href=&quot;" -%}
             {{ line | strip }}
         {%- endunless -%}
     {%- endfor -%}
