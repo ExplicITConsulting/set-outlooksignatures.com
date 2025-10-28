@@ -19,6 +19,8 @@ hero_link3_style: |
   style="background-color: LimeGreen;"
 page_id: "features"
 permalink: "/features/"
+sitemap_priority: 0.9
+sitemap_changefreq: weekly
 ---
 ## Features {#features}
 With Set-OutlookSignatures, signatures and out-of-office replies can be:

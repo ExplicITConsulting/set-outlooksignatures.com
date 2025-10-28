@@ -8,6 +8,8 @@ description: "Extend Outlook with the Set-OutlookSignatures add-in. Automatic em
 hide_gh_sponsor: true
 page_id: "outlookaddin"
 permalink: "/outlookaddin/"
+sitemap_priority: 0.8
+sitemap_changefreq: weekly
 ---
 ## The Outlook add-in<!-- omit in toc -->
 - [1. Overview](#1-overview)

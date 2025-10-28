@@ -9,6 +9,8 @@ author: Markus Gruber
 tags: 
 slug: "signatures-sendas-sendonbehalf"
 permalink: "/blog/:year/:month/:day/:slug/"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
 ---
 ## Wie implementieren Sie Signaturen für Szenarien mit „Senden Als” und „Senden Im Auftrag Von”?
 

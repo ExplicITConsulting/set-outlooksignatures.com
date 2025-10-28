@@ -51,6 +51,8 @@ sitemap: false
   <url>
     <loc>{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+    <priority>{{ node.sitemap_priority | default: 0.5 }}</priority>
+    <changefreq>{{ node.sitemap_changefreq | default: weekly }}</changefreq>
 
           {%- if xDefaultUrl != "" %}
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ xDefaultUrl }}"/>
@@ -91,6 +93,8 @@ sitemap: false
   <url>
     <loc>{{ localizedUrl }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
+    <priority>{{ node.sitemap_priority | default: 0.5 }}</priority>
+    <changefreq>{{ node.sitemap_changefreq | default: weekly }}</changefreq>
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}"/>
           {%- for lang in site.languages -%}
             {%- if lang == default_lang -%}

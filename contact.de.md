@@ -7,6 +7,8 @@ subtitle: "E-Mail, Rückruf anfordern, Postadresse"
 description: "Kontaktieren Sie ExplicIT Consulting per E-Mail, Rückruf oder Post. Finden Sie auch unsere LinkedIn- und GitHub-Profile für mehr Infos."
 page_id: "contact"
 permalink: "/contact/"
+sitemap_priority: 0.5
+sitemap_changefreq: yearly
 ---
 <h2>Senden Sie uns eine E-Mail</h2>
 <p>

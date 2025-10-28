@@ -7,6 +7,8 @@ subtitle: "Impress, Privacy Notice, Terms and Conditions, etc."
 description: "Impress, Privacy Notice, Terms and Conditions, etc."
 page_id: "legal"
 permalink: "/legal/"
+sitemap_priority: 0.3
+sitemap_changefreq: yearly
 ---
 
 <!-- omit in toc -->

@@ -9,6 +9,8 @@ author: Markus Gruber
 tags: 
 slug: "roaming-signatures-macos"
 permalink: "/blog/:year/:month/:day/:slug/"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
 ---
 ## We’ve got you covered
 Do you have users accessing Exchange Online mailboxes with Outlook for Mac? Then you’ll want to hear this.

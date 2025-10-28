@@ -9,6 +9,8 @@ author: Markus Gruber
 tags: 
 slug: "learn-from-the-code"
 permalink: "/blog/:year/:month/:day/:slug/"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
 ---
 Set-OutlookSignatures is not just a tool for managing Outlook signatures and out-of-office replies. It is free and open-source because I want to give something back to the community that has helped me so often over the years.
 

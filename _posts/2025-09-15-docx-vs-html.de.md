@@ -9,6 +9,8 @@ author: Markus Gruber
 tags: 
 slug: "docs-vs-html"
 permalink: "/blog/:year/:month/:day/:slug/"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
 ---
 ## Die Wahl der Signaturvorlage, auf die es wirklich ankommt
 Die meisten Lösungen binden Sie an einen proprietären HTML-Editor. Bei Set-OutlookSignatures glauben wir jedoch daran, Ihnen die Freiheit der Wahl zu lassen.

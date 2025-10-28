@@ -9,6 +9,8 @@ author: Markus Gruber
 tags: 
 slug: "financial-benefits"
 permalink: "/blog/:year/:month/:day/:slug/"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
 ---
 ## Viele gehen davon aus, dass die Verwaltung von E-Mail-Signaturen nur für große Unternehmen sinnvoll ist.
 Die Zahlen sprechen jedoch eine andere Sprache.

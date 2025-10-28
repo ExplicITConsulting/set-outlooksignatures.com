@@ -9,6 +9,8 @@ author: Markus Gruber
 tags: 
 slug: "beware-the-forgotten-signature"
 permalink: "/blog/:year/:month/:day/:slug/"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
 ---
 ## Your email signature might seem harmless…
 …but when left unchanged, it can become a ghost of missed opportunities.

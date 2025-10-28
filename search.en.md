@@ -7,6 +7,8 @@ subtitle: "Find it here"
 description: "Find what you need quickly: explore resources, answers, and solutions tailored to your needs."
 page_id: "search"
 permalink: "/search/"
+sitemap_priority: 0.8
+sitemap_changefreq: weekly
 ---
 <div class="field has-addons">
     <div class="control is-expanded">

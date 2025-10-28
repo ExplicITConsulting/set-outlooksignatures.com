@@ -7,6 +7,8 @@ subtitle: "Deploy signatures within minutes"
 description: "Quick Start Guide. Deploy signatures within minutes."
 page_id: "quickstart"
 permalink: "/quickstart/"
+sitemap_priority: 0.8
+sitemap_changefreq: weekly
 ---
 ## Step 1: Download Set-OutlookSignatures {#step-1}
 Download Set-OutlookSignatures and extract the archive to a local folder.

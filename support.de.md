@@ -7,6 +7,8 @@ subtitle: "Wir geben unsere Erfahrung an Sie weiter"
 description: "Erhalten Sie Support für Set-OutlookSignatures: kostenlose Hilfe via GitHub oder professionelle Beratung, Workshops und Expertenwissen."
 page_id: "support"
 permalink: "/support/"
+sitemap_priority: 0.8
+sitemap_changefreq: weekly
 ---
 <h2 id="free-support">Kostenlose Unterstützung</h2>
 <p>

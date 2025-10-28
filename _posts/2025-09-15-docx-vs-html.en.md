@@ -9,6 +9,8 @@ author: Markus Gruber
 tags: 
 slug: "docs-vs-html"
 permalink: "/blog/:year/:month/:day/:slug/"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
 ---
 ## The signature template choice that actually matters
 Most solutions lock you into a proprietary HTML editor. But at Set-OutlookSignatures, we believe in giving you the freedom to choose.

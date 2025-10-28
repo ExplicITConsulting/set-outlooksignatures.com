@@ -7,6 +7,8 @@ subtitle: "Signaturen in wenigen Minuten verteilen"
 description: "Schnellstart-Anleitung. Signaturen in wenigen Minuten verteilen."
 page_id: "quickstart"
 permalink: "/quickstart/"
+sitemap_priority: 0.8
+sitemap_changefreq: weekly
 ---
 ## Schritt 1: Set-OutlookSignatures herunterladen {#step-1}
 Laden Sie Set-OutlookSignatures herunter und entpacken Sie das Archiv in einen lokalen Ordner.

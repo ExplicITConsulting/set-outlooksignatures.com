@@ -9,6 +9,8 @@ author: Markus Gruber
 tags: 
 slug: "beware-the-forgotten-signature"
 permalink: "/blog/:year/:month/:day/:slug/"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
 ---
 ## Ihre E-Mail-Signatur mag harmlos erscheinen…
 …aber wenn Sie sie unverändert lassen, kann sie zu einem Geist verpasster Gelegenheiten werden.

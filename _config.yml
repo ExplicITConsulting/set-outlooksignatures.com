@@ -57,6 +57,8 @@ defaults:
       # hero_darken: true
       lang: "en"
       locale: "en"
+      sitemap_priority: 0.5
+      sitemap_changefreq: weekly
 
 include:
   - ".well-known"

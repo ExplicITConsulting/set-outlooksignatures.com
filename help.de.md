@@ -7,6 +7,8 @@ subtitle: "Dokumentation und Support-Ressourcen"
 description: "Entdecken Sie Set-OutlookSignatures Hilfe: Dokumentation, FAQs, Einrichtungsanleitungen, technische Details und Experten-Support."
 page_id: "help"
 permalink: "/help/"
+sitemap_priority: 0.8
+sitemap_changefreq: weekly
 ---
 <h2><a href="/faq/">Häufig gestellte Fragen (FAQ)</a></h2>
 <p>Themen, die regelmäßig angesprochen werden</p>

@@ -25,6 +25,8 @@ image:
 hide_gh_sponsor: true
 page_id: "benefactorcircle"
 permalink: "/benefactorcircle/"
+sitemap_priority: 0.8
+sitemap_changefreq: weekly
 ---
 <h2 id="sustainable-value">Sustainable added value for your business</h2>
 <p>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> from <a href="https://explicitconsulting.at/">ExplicIT Consulting</a> enhances the free Set-OutlookSignatures with great additional possibilities for your company.</p>

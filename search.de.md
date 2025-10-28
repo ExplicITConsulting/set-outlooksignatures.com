@@ -7,6 +7,8 @@ subtitle: "Finden Sie es hier"
 description: "Suchen Sie nach Informationen? Finden Sie schnell die passenden Inhalte und Antworten zu unseren Lösungen und Services."
 page_id: "search"
 permalink: "/search/"
+sitemap_priority: 0.8
+sitemap_changefreq: weekly
 ---
 <div class="field has-addons">
     <div class="control is-expanded">

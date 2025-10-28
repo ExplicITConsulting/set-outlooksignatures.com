@@ -15,6 +15,8 @@ hero_link2_style: |
   style="background-color: LimeGreen;"
 page_id: "details"
 permalink: "/details/"
+sitemap_priority: 0.8
+sitemap_changefreq: weekly
 ---
 ## Technical details<!-- omit in toc -->
 - [1. Get to know Set-OutlookSignatures](#1-get-to-know-set-outlooksignatures)

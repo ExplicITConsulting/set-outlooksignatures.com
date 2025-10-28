@@ -9,6 +9,8 @@ author: Markus Gruber
 tags: 
 slug: "alternating-banners-and-other-images"
 permalink: "/blog/:year/:month/:day/:slug/"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
 ---
 ## Running a marketing campaign with multiple banners?
 Rotating them manually across your team’s signatures is nearly impossible and definitely not scalable.

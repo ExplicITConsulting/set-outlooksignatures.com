@@ -9,6 +9,8 @@ author: Markus Gruber
 tags:
 slug: "learn-from-the-code"
 permalink: "/blog/:year/:month/:day/:slug/"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
 ---
 Set-OutlookSignatures ist nicht nur ein Tool zum Verwalten von Outlook-Signaturen und Abwesenheitsnotizen. Es ist kostenlos und Open Source, weil ich der Community, die mir über die Jahre so oft geholfen hat, etwas zurückgeben möchte.
 

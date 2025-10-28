@@ -7,6 +7,8 @@ subtitle: "How to customize Set-Outlook&shy;Signatures"
 description: "Customize Set-OutlookSignatures to fit your organization's needs. Configure behavior, integrate with Microsoft 365, and tailor signature deployment workflows."
 page_id: "parameters"
 permalink: "/parameters/"
+sitemap_priority: 0.8
+sitemap_changefreq: weekly
 ---
 <!-- omit in toc -->
 ## Many roads lead to Rome

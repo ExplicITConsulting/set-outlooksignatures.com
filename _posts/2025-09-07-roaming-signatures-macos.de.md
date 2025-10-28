@@ -9,6 +9,8 @@ author: Markus Gruber
 tags: 
 slug: "roaming-signatures-macos"
 permalink: "/blog/:year/:month/:day/:slug/"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
 ---
 ## Wir haben die Lösung für Sie
 Haben Sie Benutzer, die mit Outlook für Mac auf Exchange Online-Postfächer zugreifen? Dann sollten Sie sich das anhören.

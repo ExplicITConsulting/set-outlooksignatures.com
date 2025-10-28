@@ -19,6 +19,8 @@ hero_link3_style: |
   style="background-color: LimeGreen;"
 page_id: "features"
 permalink: "/features/"
+sitemap_priority: 0.9
+sitemap_changefreq: weekly
 ---
 ## Funktionen {#features}
 Mit Set-OutlookSignatures können Signaturen und Abwesenheitsnotizen:

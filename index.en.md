@@ -15,6 +15,8 @@ hero_link2_style: |
   style="background-color: LimeGreen;"
 page_id: "index"
 permalink: "/"
+sitemap_priority: 1.0
+sitemap_changefreq: weekly
 ---
 <h2 id="outlook-signature-management">
   Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally and fully automated

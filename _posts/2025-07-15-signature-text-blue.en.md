@@ -9,6 +9,8 @@ author: Markus Gruber
 tags: 
 slug: "signature-text-blue"
 permalink: "/blog/:year/:month/:day/:slug/"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
 ---
 Ever noticed your email signature text mysteriously changing color, especially in replies or forwards?
 
