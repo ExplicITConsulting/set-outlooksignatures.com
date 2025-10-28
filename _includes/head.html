@@ -5,6 +5,7 @@
 
     <meta name="site-languages" content="{{ site.languages | join: ',' }}">
     <meta http-equiv="Content-Language" content="{{ site.active_lang }}">
+
     {%- if site.active_lang == site.default_lang -%}
         {%- assign canonicalUrl = page.url -%}
     {%- else -%}
@@ -20,6 +21,8 @@
         {%- endif %}
     <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ hreflang_url }}"{% endstatic_href %}>
     {%- endfor %}
+
+    {% seo %}
 
     <link rel="preload" href="{{ site.baseurl }}/assets/css/app.css" as="style">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
@@ -40,17 +43,6 @@
         <link rel="preload" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" as="style">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css">
     {% endunless %}
-
-
-    {%- capture seo_raw -%}{% seo %}{%- endcapture -%}
-    {%- assign seo_lines = seo_raw | newline_to_br | split: '<br/>' -%}
-
-    {%- for line in seo_lines -%}
-        {%- unless line contains '<link' and line contains ' rel="canonical"' %}
-            {{ line | strip }}
-        {%- endunless -%}
-    {%- endfor -%}
-
 
     {% if site.feed %}
         {% feed_meta %}

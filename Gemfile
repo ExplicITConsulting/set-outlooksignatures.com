@@ -9,5 +9,5 @@ group :jekyll_plugins do
     gem "nokogiri"
     gem "jekyll-paginate-v2"
     gem "jekyll-feed"
-    gem 'jekyll-seo-tag'
+    gem "jekyll-seo-tag"
 end
