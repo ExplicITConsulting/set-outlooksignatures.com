@@ -18,9 +18,11 @@ On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use 
 
 ## Step 2: One-time preparations {#step-2}
 **Client and user**  
-For a first test run, it is recommended to log on with a test user on a Windows system with Word and Outlook installed, and Outlook being configured with at least the test user's mailbox. If you use your own user, existing signatures will be overwritten in the worst case.
+For a first test run, it is recommended to log on with a test user on a Windows system with Word and Classic Outlook for Windows installed, and Classic Outlook for Windows being configured with at least the test user's mailbox. If you use your own user, existing signatures will be overwritten in the worst case.
 
-For full Linux and macOS support, the <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
+For full Linux, macOS and New Outlook support, the <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
+
+If you cannot test with Classic Outlook on Windows, or do not want your signature setup changed, you can use simulation mode, which is described in a later step.
 
 **Entra ID**  
 When some or all of your mailboxes are in Exchange Online, you need to register an Entra ID app first. This is because Set-OutlookSignatures needs permissions to access the Graph API.
@@ -52,9 +54,11 @@ Ask your endpoint security administrator to trust software signed with ExplicIT 
 
 If you are not using the public Microsoft cloud but a national cloud, add the following parameter: '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`'
 
-Set-OutlookSignatures now adds signatures based on default settings and sample templates to your Outlook.
+Set-OutlookSignatures now adds signatures based on default settings and sample templates to your Classic Outlook.
 
-Open Outlook and take a look at the newly created signatures. 'Formal', 'Informal' and the particularly comprehensive 'Test all default replacement variables'.
+Open Classic Outlook and take a look at the newly created signatures. 'Formal', 'Informal' and the particularly comprehensive 'Test all default replacement variables'.
+
+If you do not have access to Classic Outlook for Windows for your tests, or do not want your signature setup changed, you can simply use the simulation mode described in the next chapter.
 
 Congratulations, you now have a robust starting point for your own customizations!
 

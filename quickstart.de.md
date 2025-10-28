@@ -20,9 +20,11 @@ Wenn Sie AppLocker oder eine vergleichbare Lösung (Defender, CrowdStrike, Ivant
 
 ## Schritt 2: Einmalige Vorbereitungen {#step-2}
 **Client und Benutzer**  
-Für einen ersten Testlauf ist es empfehlenswert, sich mit einem Testbenutzer auf einem Windows-System anzumelden, auf dem Word und Outlook installiert sind und Outlook zumindest mit dem Postfach des Testbenutzers konfiguriert ist. Wenn Sie Ihren eigenen Benutzer verwenden, werden im schlimmsten Fall bestehende Signaturen überschrieben.
+Für einen ersten Testlauf ist es empfehlenswert, sich mit einem Testbenutzer auf einem Windows-System anzumelden, auf dem Word und Classic Outlook for Windows installiert sind und Classic Outlook for Windows zumindest mit dem Postfach des Testbenutzers konfiguriert ist. Wenn Sie Ihren eigenen Benutzer verwenden, werden im schlimmsten Fall bestehende Signaturen überschrieben.
 
-Für die vollständige Unterstützung von Linux und macOS ist das <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erforderlich und die Postfächer müssen in Exchange Online gehostet werden.
+Für die vollständige Unterstützung von Linux, macOS und New Outlook ist das <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erforderlich und die Postfächer müssen in Exchange Online gehostet werden.
+
+Falls sie nicht mit Classic Outlook on Windows testen können oder oder Ihr Signatur-Setup nicht verändert haben möchten, können Sie den Simulationsmodus verwenden, der in einem späteren Schritt beschrieben wird.
 
 **Entra ID**  
 Wenn sich einige oder alle Postfächer in Exchange Online befinden, müssen Sie zunächst eine Entra ID App registrieren, da Set-OutlookSignatures Berechtigungen für den Zugriff auf die Graph API benötigt.
@@ -54,9 +56,11 @@ Bitten Sie Ihren Endpoint Security Administrator Software zu vertrauen, die mit 
 
 Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie folgenden Parameter hinzu: '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`'
 
-Set-OutlookSignatures fügt jetzt Signaturen, basierend auf Standardeinstellungen und integrierten Beispielvorlagen, zu Ihrem Outlook hinzu.
+Set-OutlookSignatures fügt jetzt Signaturen, basierend auf Standardeinstellungen und integrierten Beispielvorlagen, zu Ihrem Classic Outlook hinzu.
 
-Öffnen Sie Outlook und werfen Sie einen Blick auf die neu erzeugten Signaturen: 'Formal', 'Informal' und die besonders umfangreiche 'Test all default replacement variables'.
+Öffnen Sie Classic Outlook und werfen Sie einen Blick auf die neu erzeugten Signaturen: 'Formal', 'Informal' und die besonders umfangreiche 'Test all default replacement variables'.
+
+Wenn Sie für Ihre Tests keinen Zugriff auf Classic Outlook for Windows haben oder Ihr Signatur-Setup nicht verändert haben möchten, können Sie einfach den im nächsten Kapitel beschriebenen Simulationsmodus nutzen.
 
 Glückwunsch, Sie haben jetzt einen soliden Ausgangspunkt für Ihre eigenen Anpassungen!
 

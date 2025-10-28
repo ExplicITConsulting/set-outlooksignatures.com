@@ -92,6 +92,8 @@ Whatever web server you choose, the requirements are low:
 
 [Static website hosting in Azure Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website) can be an uncomplicated, cheap and fast alternative.
 
+It is recommended to use use two separate dedicated hostnames, such as "https://outlookaddin.example.com" and "https://outlookaddin-test.example.com". This way, you can use one for testing and one for production. For tests, sideloading is the preferred method, while Microsoft 365 Centralized Deployment or Integrated Apps are ideal for mass deployment.
+
 
 ### 3.3. Set-OutlookSignatures
 The Outlook add-in can add existing signatures, but is not able to create them itself on the fly. The Benefactor Circle add-on prepares signature data in a way that it can be used by the Outlook add-in.
@@ -163,9 +165,13 @@ When the '`manifest.xml`' file changes, you also need to update your app deploym
 - You change a configuration option in the '`run_before_deployment.ps1`' file which is marked to require an updated deployment.
 - You modify the '`manifest.xml`' file manually.
 
+It is recommended to use use two separate dedicated hostnames, such as "https://outlookaddin.example.com" and "https://outlookaddin-test.example.com". This way, you can use one for testing and one for production. For tests, sideloading is the preferred method, while Microsoft 365 Centralized Deployment or Integrated Apps are ideal for mass deployment.
+
 
 ## 5. Deployment to mailboxes
 ### 5.1. Individual installation through users
+This method is also called sideloading. It is ideal for test scenarios.
+
 For mailboxes in Exchange Online:
 - Open 'https://outlook.cloud.microsoft/mail/inclientstore'.
 - Click on 'My add-ins'.
@@ -194,7 +200,9 @@ Centralized Deployment and deployment via Integrated Apps both provide the follo
 - When the relevant Microsoft 365 app starts, the add-in automatically downloads. If the add-in supports add-in commands, the add-in automatically appears in the ribbon within the Microsoft 365 app.
 - Add-ins no longer appear for users if the admin turns off or deletes the add-in, or if the user is removed from Microsoft Entra ID or from a group that the add-in is assigned to.
 
-The Integrated Apps feature is the recommended way to deploy Outlook add-ins for mass use in production, while sideloading is the ideal method for tests. It is not yet available for tenants in sovereign and government clouds, so in these environments you have to use Centralized Deployment instead.
+These two methods are ideal for mass deployment in production environments. They are usually too slow and too much overhead for test scenarios, in which sideloading is the preferred method.
+
+If the Integrated Apps feature is not yet available in your sovereign and government cloud tenant, you have to use Centralized Deployment instead.
 - Details about Integrated Apps: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide
 - Details about Centralized Deployment: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide
 
