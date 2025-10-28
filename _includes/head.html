@@ -22,12 +22,13 @@
     <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ hreflang_url }}"{% endstatic_href %}>
     {%- endfor %}
 
+    {% seo %}
     {%- capture seo_raw -%}{% seo %}{%- endcapture -%}
     {%- assign seo_lines = seo_raw | split: "\n" -%}
 
     {%- for line in seo_lines -%}
         {%- unless line contains '<link' and line contains ' rel="canonical"' %}
-            {{ line | strip }}
+            {{ line }}
         {%- endunless -%}
     {%- endfor -%}
 
