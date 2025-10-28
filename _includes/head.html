@@ -24,9 +24,9 @@
 
     {%- capture seo_raw -%}{% seo %}{%- endcapture -%}
     {%- assign seo_normalized = seo_raw | escape | newline_to_br -%}
-    {%- assign seo_lines = seo_normalized | split: "<br/>" -%}
+    {%- assign seo_lines = seo_normalized | split: "<br />" -%}
     {%- for line in seo_lines -%}
-        {%- unless line contains "<link rel=\"canonical\" href=\"" -%}
+        {%- unless line contains "&lt;link rel=&quot;canonical&quot; href=&quot;" -%}
             {{ line | strip }}
         {%- endunless -%}
     {%- endfor -%}
