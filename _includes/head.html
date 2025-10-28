@@ -29,7 +29,7 @@
         {%- assign line_escaped = line | escape -%}
         {%- unless line_escaped contains "&lt;link rel=&quot;canonical&quot; href=&quot;" -%}
             {{ line | strip }}
-        {%- endunless -%}
+        {% endunless -%}
     {%- endfor -%}
 
     <link rel="preload" href="{{ site.baseurl }}/assets/css/app.css" as="style">
