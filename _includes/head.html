@@ -22,14 +22,16 @@
     <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ hreflang_url }}"{% endstatic_href %}>
     {%- endfor %}
 
-{%- capture seo_raw -%}{% seo %}{%- endcapture -%}
-{%- assign seo_normalized = seo_raw | replace: "\r\n", "\n" | replace: "\r", "\n" -%}
-{%- assign seo_lines = seo_normalized | split: "\n" -%}
+    {%- capture seo_raw -%}{% seo %}{%- endcapture -%}
+    {%- assign seo_normalized = seo_raw | replace: "\r\n", "\n" | replace: "\r", "\n" -%}
+    {%- assign seo_lines = seo_normalized | split: "\n" -%}
 
-{%- for line in seo_lines -%}
-  {%- assign trimmed_line = line | strip -%}
-    {{ trimmed_line }}
-{%- endfor -%}
+    {%- for line in seo_lines -%}
+    {%- assign trimmed_line = line | strip -%}
+    {%- unless trimmed_line contains "<link rel=\"canonical\"" -%}
+        {{ trimmed_line }}
+    {%- endunless -%}
+    {%- endfor -%}
 
     <link rel="preload" href="{{ site.baseurl }}/assets/css/app.css" as="style">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
