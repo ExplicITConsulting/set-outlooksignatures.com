@@ -26,9 +26,8 @@
     {%- assign seo_normalized = seo_raw | replace: "\r\n", "\n" | replace: "\r", "\n" -%}
     {%- assign seo_lines = seo_normalized | split: "\n" -%}
     {%- for line in seo_lines -%}
-        {%- assign trimmed_line = line | strip -%}
-        {%- unless trimmed_line contains '<link rel="canonical"' -%}
-            {{ trimmed_line }}
+        {%- unless line contains "link rel=" -%}
+            {{ line | strip }}
         {%- endunless -%}
     {%- endfor -%}
 
