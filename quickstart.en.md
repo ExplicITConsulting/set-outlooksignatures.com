@@ -60,7 +60,9 @@ Set-OutlookSignatures now adds signatures based on default settings and sample t
 
 Open Classic Outlook and take a look at the newly created signatures. 'Formal', 'Informal' and the particularly comprehensive 'Test all default replacement variables'.
 
-If you do not have access to Classic Outlook for Windows for your tests, or do not want your signature setup changed, you can simply use the simulation mode described in the next chapter.
+If you do not have access to Classic Outlook for Windows for your tests, or do not want your signature setup changed, you can simply use the integrated [simulation mode](/details/#11-simulation-mode) instead:
+- Run Set-OutlookSignatures in a new PowerShell session and add the additional parameters '`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' (replace 'a@example.com’ with your own email address or any other email address from your environment).
+- Instead of modifying Outlook, your 'Documents' folder now contains new subfolder called 'Outlook Signatures', which in turn contains the signatures of the simulated user.
 
 Congratulations, you now have a robust starting point for your own customizations!
 
@@ -70,9 +72,9 @@ You can now start with your own customizations. Here are a few popular examples:
 **Simulation mode**  
 Would you like to see what the sample signatures provided look like for another user? Then simply use the integrated [simulation mode](/details/#11-simulation-mode):
 - Select the email address of any user in your system.
-- Restart Set-OutlookSignatures in a new PowerShell session, but this time with the additional parameter '`-SimulateUser a@example.com`' (replace 'a@example.com’ with the email address you selected earlier).
+- Run Set-OutlookSignatures in a new PowerShell session and add the additional parameters '`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' (replace 'a@example.com’ with the email address you selected earlier).
 
-In your 'Documents' folder, you will now find a new subfolder called 'Outlook Signatures', which contains the signatures of the simulated user.
+Your 'Documents' folder now contains new subfolder called 'Outlook Signatures', which in turn contains the signatures of the simulated user.
 
 The [simulation mode](/details/#11-simulation-mode) can do much more and is therefore very well suited for testing and analysis in production environments.
 

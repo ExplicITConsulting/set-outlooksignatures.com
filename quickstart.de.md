@@ -62,7 +62,9 @@ Set-OutlookSignatures fügt jetzt Signaturen, basierend auf Standardeinstellunge
 
 Öffnen Sie Classic Outlook und werfen Sie einen Blick auf die neu erzeugten Signaturen: 'Formal', 'Informal' und die besonders umfangreiche 'Test all default replacement variables'.
 
-Wenn Sie für Ihre Tests keinen Zugriff auf Classic Outlook for Windows haben oder Ihr Signatur-Setup nicht verändert haben möchten, können Sie einfach den im nächsten Kapitel beschriebenen Simulationsmodus nutzen.
+Wenn Sie für Ihre Tests keinen Zugriff auf Classic Outlook for Windows haben oder Ihr Signatur-Setup nicht verändern möchten, nutzen Sie stattdessen einfach den integrierten [Simulations-Modus](/details/#11-simulation-mode):
+- Führen Sie Set-OutlookSignatures in einer neuen PowerShell-Session aus und fügen Sie die Parameter'`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' hinzu ('a@example.com' ersetzen Sie durch Ihre eigene E-Mail-Adresse oder eine beliebige E-Mail-Adresse aus Ihrem System).
+- Anstatt die Outlook-Konfiguration zu ändern, enthält Ihr 'Dokumente'-Ordner nun einen neuen Unterordner 'Outlook Signatures', der wiederum die Signaturen des simulierten Benutzers enthält.
 
 Glückwunsch, Sie haben jetzt einen soliden Ausgangspunkt für Ihre eigenen Anpassungen!
 
@@ -72,9 +74,9 @@ Sie können jetzt mit Ihren eigenen Anpassungen starten. Hier ein paar beliebte 
 **Simulations-Modus**  
 Sie möchten wissen, wie die mitgelieferten Beispiel-Signaturen für einen anderen Benutzer aussehen? Dann nutzen Sie doch einfach den integrierten [Simulations-Modus](/details/#11-simulation-mode):
 - Wählen die E-Mail-Adresse eines beliebigen Benutzers in Ihrem System aus.
-- Starten Sie Set-OutlookSignatures in einer neuen PowerShell-Session erneut, dieses Mal aber zusätzlich mit dem Parameter '`-SimulateUser a@example.com`' ('a@example.com' ersetzen Sie durch die zuvor ausgewählte E-Mail-Adresse).
+- Führen Sie Set-OutlookSignatures in einer neuen PowerShell-Session aus und fügen sie die Parameter'`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' hinzu ('a@example.com' ersetzen Sie durch die zuvor ausgewählte E-Mail-Adresse).
 
-In Ihrem 'Dokumente'-Ordner finden Sie nun einen neuen Unterordner 'Outlook Signatures', in dem Sie die Signaturen des simulierten Benutzers finden.
+Ihr 'Dokumente'-Ordner enthält nun einen neuen Unterordner 'Outlook Signatures', der wiederum die Signaturen des simulierten Benutzers enthält.
 
 Der [Simulations-Modus](/details/#11-simulation-mode) kann noch viel mehr und ist dadurch sehr gut für Tests und Analysen in Produktionsumgebungen geeignet.
 
