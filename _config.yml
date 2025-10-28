@@ -112,7 +112,8 @@ pagination:
   extension: html
   # Optional, the default name of the index file for generated pages (e.g. 'index.html')
   # Without file extension
-  indexpage: 'index'
+  # indexpage: 'index'
+  indexpage: nil
 
 feed:
   path: /feed.xml

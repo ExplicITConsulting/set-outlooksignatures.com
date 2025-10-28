@@ -53,7 +53,7 @@ sitemap: false
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
 
           {%- if xDefaultUrl != "" %}
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ xDefaultUrl }}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ xDefaultUrl }}"/>
           {%- endif -%}
 
           {%- for languageCode in sorted_langs -%}
@@ -63,7 +63,7 @@ sitemap: false
               {%- else -%}
                 {%- assign languagePrefix = "/" | append: languageCode -%}
               {%- endif %}
-    <xhtml:link rel="alternate" hreflang="{{ languageCode }}" href="{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}" />
+    <xhtml:link rel="alternate" hreflang="{{ languageCode }}" href="{{ languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}"/>
             {%- endif -%}
           {%- endfor %}
   </url>
@@ -91,14 +91,14 @@ sitemap: false
   <url>
     <loc>{{ localizedUrl }}</loc>
     <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}"/>
           {%- for lang in site.languages -%}
             {%- if lang == default_lang -%}
               {%- assign hreflang_url = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
             {%- else -%}
               {%- assign hreflang_url = '/' | append: lang | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
             {%- endif %}
-    <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ hreflang_url }}" />
+    <xhtml:link rel="alternate" hreflang="{{ lang }}" href="{{ hreflang_url }}"/>
           {%- endfor %}
   </url>
         {%- endunless -%}
