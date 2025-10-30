@@ -14,7 +14,7 @@ sitemap_changefreq: monthly
 ---
 Das ist eine dieser Eigenheiten, die einen stutzig machen: Warum sagen wir OOF statt OOO?
 
-Blicken wir zurück in die 1980er Jahre. Damals hatte Microsoft ein UNIX-Betriebssystem - ja, wirklich! - namens Xenix und betrieb darauf sein E-Mail-System. Dieses System verfügte über eine Funktion, mit der andere benachrichtigt wurden, wenn jemand nicht verfügbar war, gekennzeichnet als "Out Of Facility" (OOF).
+Blicken wir zurück in die 1980er Jahre. Damals war Microsoft Xenix das führende Unix-Betriebssystem - ja, wirklich! - und Microsoft betrieb darauf sein E-Mail-System. Dieses System verfügte über eine Funktion, mit der andere benachrichtigt wurden, wenn jemand nicht verfügbar war, gekennzeichnet als "Out Of Facility" (OOF).
 
 Im Laufe der Zeit entwickelte sich "Out Of Facility" zu "Out Of Office", aber die Abkürzung OOF blieb bestehen.
 
