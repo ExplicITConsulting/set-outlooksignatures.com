@@ -21,7 +21,7 @@ Es gibt drei Möglichkeiten, dies mit Set-OutlookSignatures zu erreichen:
     Definieren Sie eine Signaturvorlage in Ihrer INI-Datei und verwenden Sie eine benutzerdefinierte Ersatzvariable, um die Bereitstellung zu steuern.
 
     Ihr benutzerdefinierter Code überprüft, ob die Signatur bereits vorhanden ist – wenn ja, setzt er die benutzerdefinierte Variable auf "false" und stoppt die Bereitstellung.
-2. **Verwenden Sie den Parameter „VirtualMailboxConfigFile”, der im Add-on „Benefactor Circle” enthalten ist**  
+2. **Verwenden Sie den Parameter "VirtualMailboxConfigFile”, der im Add-on "Benefactor Circle” enthalten ist**  
     Bei dieser erweiterten Methode wird die Signaturkonfiguration vollständig im Code und nicht in der INI-Datei definiert.
 
     Ihr benutzerdefinierter Code kann bedingte Logik basierend auf Gruppenmitgliedschaft, Benutzerattributen und mehr enthalten.

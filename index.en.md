@@ -164,7 +164,7 @@ sitemap_changefreq: weekly
 
 <p>The optional <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> extends Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.<p>
 
-<p>If desired, we’ll set up our solution together with you: Simple, tailored to your needs, and with sustainable knowledge transfer.<p>
+<p>If desired, we'll set up our solution together with you: Simple, tailored to your needs, and with sustainable knowledge transfer.<p>
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -201,7 +201,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="demo">
-  Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally. We’ll show you how!
+  Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally. We'll show you how!
 </h2>
 <p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.<p>
 

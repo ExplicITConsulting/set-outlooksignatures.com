@@ -13,7 +13,7 @@ sitemap_changefreq: monthly
 <!-- omit in toc -->
 ## Many roads lead to Rome
 <p>Set-OutlookSignatures is designed to be highly flexible and extensively configurable. Its transparent documentation reflects this versatility: Many configuration goals can be achieved in multiple ways.</p>
-<p>This FAQ highlights common topics and clarifies typical points of confusion. If your question isn’t covered or you need tailored advice, additional resources are available:</p>
+<p>This FAQ highlights common topics and clarifies typical points of confusion. If your question isn't covered or you need tailored advice, additional resources are available:</p>
 <p>
   <div class="buttons">
     <a href="/parameters/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Parameters</a>
@@ -337,7 +337,7 @@ When using a signature template with account pictures (linked and embedded), con
 The message seems to come from a new security feature of Word versions published around August 2021. You will find several discussions regarding the message in internet forums, but we are not aware of any official statement from Microsoft.
 
 The behavior can be changed in at least two ways:
-- Group Policy: Enable "User Configuration\Administrative Templates\Microsoft Word 2016\Word Options\Security\Don’t ask permission before updating IncludePicture and IncludeText fields in Word"
+- Group Policy: Enable "User Configuration\Administrative Templates\Microsoft Word 2016\Word Options\Security\Don't ask permission before updating IncludePicture and IncludeText fields in Word"
 - Registry: Set "HKCU\SOFTWARE\Microsoft\Office\16.0\Word\Security\DisableWarningOnIncludeFieldsUpdate" (DWORD_32) to 1
 
 Set-OutlookSignatures reads the registry key `HKCU\SOFTWARE\Microsoft\Office\<current Word version>\Word\Security\DisableWarningOnIncludeFieldsUpdate` at start, sets it to 1 just before a conversion to HTM or RTF takes place and restores the original state as soon as the conversion is finished.
@@ -823,9 +823,9 @@ In the words of Markus Gruber, the creator of Set-OutlookSignatures:
 >
 > Developing and testing it has taken thousands of hours of spare time and considerable financial investment in cross-platform test environments. I intend to continue developing and maintaining Set-OutlookSignatures, and to keep its core free and open-source.
 >
-> If you're an Exchange or client administrator, you're part of the community I want to support. I don’t expect or request thank-yous, as our community thrives on mutual support. Your feedback, bug reports, and shared use cases help improve the tool for everyone.
+> If you're an Exchange or client administrator, you're part of the community I want to support. I don't expect or request thank-yous, as our community thrives on mutual support. Your feedback, bug reports, and shared use cases help improve the tool for everyone.
 >
-> That said, it’s important to ensure the relationship isn’t one-sided when companies benefit significantly. The tagline added to each signature reminds organizations that they benefit from open-source software and that continued open-source availability depends on financial support, which also unlocks additional useful features.
+> That said, it's important to ensure the relationship isn't one-sided when companies benefit significantly. The tagline added to each signature reminds organizations that they benefit from open-source software and that continued open-source availability depends on financial support, which also unlocks additional useful features.
 >
 > A note to companies: Open-source software is often misunderstood. It can include closed-source components. Open source does not automatically mean free usage or even free access to the code. And it does not imply free support.
 > 
@@ -844,7 +844,7 @@ All documentation is publicly available. You can get free community support on G
 For a small annual fee per mailbox, the [Benefactor Circle add-on](/benefactorcircle/) offers additional enterprise-grade features. Companies can test all premium features at no cost during a free 14-day trial.
 
 Unsure whether the add-on will deliver value for your company?  
-The chapter '[Financial Benefits](/benefactorcircle/#financial-benefits)' shows how to calculate the value based on your company’s specific needs.  
+The chapter '[Financial Benefits](/benefactorcircle/#financial-benefits)' shows how to calculate the value based on your company's specific needs.  
 If your company concludes that the add-on does not provide sufficient value, it can still use the free and open-source version of Set-OutlookSignatures.
 
 
@@ -963,7 +963,7 @@ See the description of the parameter '`GraphClientID`' for details.
 
 ## 43. Can I change the case (uppercase/lowercase) of replacement variables in templates?
 Yes. Replacement variables can be displayed in uppercase, lowercase, or capitalized form depending on your formatting needs and the type of template you're using:
-- When using DOCX templates, you can use Word’s formatting options, such as "all caps", which is then translated to CSS 'text-transform'.
+- When using DOCX templates, you can use Word's formatting options, such as "all caps", which is then translated to CSS 'text-transform'.
 - When using HTML templates, you can use the CSS 'text-transform' property directly to control text casing.
 
 In rare cases, email clients may ignore this CSS property or render it inconsistently.
@@ -1204,4 +1204,4 @@ There are three ways to achive this with Set-OutlookSignatures:
     Your custom code can include conditional logic based on group membership, user attributes and more.
 3. **The clever alternative: Deploy a reference signature users can copy and modify**  
     This is the most popular approach among our customers. Instead of enforcing a one-time deployment, you provide an always up-to-date reference signature. Users can copy it, personalize it, and use it as their own.  
-    It’s not technically a one-time deployment, but it’s a clever, user-friendly alternative that balances consistency with flexibility.
+    It's not technically a one-time deployment, but it's a clever, user-friendly alternative that balances consistency with flexibility.

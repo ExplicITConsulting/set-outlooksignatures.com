@@ -19,7 +19,7 @@ Mit Set-OutlookSignatures und dem Add-on Benefactor Circle können Sie E-Mail-Si
 
 Der Haken dabei: Das klassische und das neue Outlook für Mac unterstützen nur lokal gespeicherte Signaturen. Das bedeutet: kein Roaming, keine Konsistenz und keine Kontrolle.
 
-Hier kommt das Add-on „Benefactor Circle“ ins Spiel:
+Hier kommt das Add-on "Benefactor Circle" ins Spiel:
 - Aktivieren Sie das Roaming von Signaturen, die im Postfach gespeichert sind.
 - Stellen Sie Konsistenz über Geräte und Plattformen hinweg sicher.
 - Schalten Sie noch mehr erweiterte Funktionen für die zentrale Signaturverwaltung frei.

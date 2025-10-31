@@ -277,7 +277,7 @@ sitemap_changefreq: weekly
 
 <div class="columns">
   <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
-    <p>If you’d like to start with the basics and appreciate a down-to-earth approach, our demo video offers a compact overview of the key features of Set-OutlookSignatures – based on a real-world example, straightforward, practical, and without much staging.</p>
+    <p>If you'd like to start with the basics and appreciate a down-to-earth approach, our demo video offers a compact overview of the key features of Set-OutlookSignatures – based on a real-world example, straightforward, practical, and without much staging.</p>
     <p>You will see: Our focus is on the functionality and quality of our software, we're neither marketing professionals nor particularly gifted actors.</p>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -346,7 +346,7 @@ Benefactor Circle add-on</span>.</p>
 <p>We keep license costs as fair and transparent as possible:</p>
 <ul>
   <li>Small companies pay the same low price as large enterprises.</li>
-  <li>No bundled maintenance or support contracts hidden in the annual price. You only pay for support if and when you need it - and thanks to our documentation, you likely won’t.</li>
+  <li>No bundled maintenance or support contracts hidden in the annual price. You only pay for support if and when you need it - and thanks to our documentation, you likely won't.</li>
   <li><strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is free - no exceptions.
   <br>
   For all other issues, you will receive the same first-class support at a fair price.

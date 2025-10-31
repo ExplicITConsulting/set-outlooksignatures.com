@@ -28,7 +28,7 @@ There are three ways to achive this with Set-OutlookSignatures:
 3. **The clever alternative: Deploy a reference signature users can copy and modify**  
     This is the most popular approach among our customers. Instead of enforcing a one-time deployment, you provide an always up-to-date reference signature. Users can copy it, personalize it, and use it as their own.
     
-    It’s not technically a one-time deployment, but it’s a clever, user-friendly alternative that balances consistency with flexibility.
+    It's not technically a one-time deployment, but it's a clever, user-friendly alternative that balances consistency with flexibility.
 
 ## Interested in learning more or seeing our solution in action?
 [Contact us](/contact/) or explore further on our [website](/). We look forward to connecting with you!

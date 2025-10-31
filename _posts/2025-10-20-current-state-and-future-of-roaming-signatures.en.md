@@ -20,9 +20,9 @@ That was the theory.
 Fast forward to mid-2024, and while most tenants now have roaming signatures enabled, the reality is more complicated:
 - There's still no public API.
 - Some persistent bugs remain unresolved.
-- Outlook doesn’t support roaming signatures on all platforms.
+- Outlook doesn't support roaming signatures on all platforms.
 
-At Set-OutlookSignatures and ExplicIT, we’re convinced that roaming signatures are the future. But Microsoft's slow rollout and limited communication have made adoption tricky. That's why we’ve invested heavily in supporting this feature within Set-OutlookSignatures - offering capabilities no other solution on the market can match.
+At Set-OutlookSignatures and ExplicIT, we're convinced that roaming signatures are the future. But Microsoft's slow rollout and limited communication have made adoption tricky. That's why we've invested heavily in supporting this feature within Set-OutlookSignatures - offering capabilities no other solution on the market can match.
 
 Our recommendation for most clients:
 - Enable roaming signatures in your tenant

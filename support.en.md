@@ -44,7 +44,7 @@ sitemap_changefreq: weekly
   <br>
   For us, support means not only delivering high-quality solutions quickly, but also sharing our knowledge so you understand the how and why.
   <br>
-  This makes our support an investment in your team’s expertise, delivering immediate value.
+  This makes our support an investment in your team's expertise, delivering immediate value.
 </p>
 <p>
   <strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is free - no exceptions.

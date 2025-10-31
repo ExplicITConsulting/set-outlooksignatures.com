@@ -435,7 +435,7 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
 <h2 id="license-groups">Funktionsweise von Lizenzgruppen</h2>
 <p>Jede <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span>-Lizenz ist an eine oder mehrere Active Directory- oder Entra ID-Gruppen gebunden, sogenannte Lizenzgruppen.</p>
 
-<p>Zur maximalen Datensicherheit und einfachen Verwaltung ist die Lizenz nicht an bestimmte Postfächer („Named Users“) gebunden, sondern nur an eine Gruppe mit einer definierten maximalen Mitgliederanzahl.</p>
+<p>Zur maximalen Datensicherheit und einfachen Verwaltung ist die Lizenz nicht an bestimmte Postfächer ("Named Users") gebunden, sondern nur an eine Gruppe mit einer definierten maximalen Mitgliederanzahl.</p>
 
 <p>Für die meisten Umgebungen reicht eine einzige Lizenzgruppe aus.<br>In On-Premises- oder hybriden Umgebungen mit mehreren Active Directory-Domänen kann für jede AD-DNS-Domäne eine eigene Lizenzgruppe definiert werden, jeweils mit einer separaten maximalen Mitgliederanzahl.<br>Wenn Sie mehrere Entra-ID-Tenants haben, können Sie pro Tenant eine Entra-ID-Gruppe definieren.</p>
 
@@ -472,7 +472,7 @@ Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen 
 
 <p>Der Benutzer, der Set-OutlookSignatures ausführt, muss in der Lage sein, alle direkten und indirekten Mitglieder aller Lizenzgruppen aufzulösen, insbesondere über AD-Vertrauensstellungen hinweg.</p>
 
-<p>Primäre Gruppenmitgliedschaften (z. B. „Domain Users“) werden nicht berücksichtigt, da sie über AD/Entra ID nicht zuverlässig abgefragt werden können.</p>
+<p>Primäre Gruppenmitgliedschaften (z. B. "Domain Users") werden nicht berücksichtigt, da sie über AD/Entra ID nicht zuverlässig abgefragt werden können.</p>
 
 <p>Dynamische Gruppen werden nur bei Entra ID-Abfragen unterstützt, nicht bei AD-Abfragen.</p>
 

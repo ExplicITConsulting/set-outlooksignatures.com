@@ -61,7 +61,7 @@ Set-OutlookSignatures now adds signatures based on default settings and sample t
 Open Classic Outlook and take a look at the newly created signatures. 'Formal', 'Informal' and the particularly comprehensive 'Test all default replacement variables'.
 
 If you do not have access to Classic Outlook for Windows for your tests, or do not want your signature setup changed, you can simply use the integrated [simulation mode](/details/#11-simulation-mode) instead:
-- Run Set-OutlookSignatures in a new PowerShell session and add the additional parameters '`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' (replace 'a@example.com’ with your own email address or any other email address from your environment).
+- Run Set-OutlookSignatures in a new PowerShell session and add the additional parameters '`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' (replace 'a@example.com' with your own email address or any other email address from your environment).
 - Instead of modifying Outlook, your 'Documents' folder now contains new subfolder called 'Outlook Signatures', which in turn contains the signatures of the simulated user.
 
 Congratulations, you now have a robust starting point for your own customizations!
@@ -72,7 +72,7 @@ You can now start with your own customizations. Here are a few popular examples:
 **Simulation mode**  
 Would you like to see what the sample signatures provided look like for another user? Then simply use the integrated [simulation mode](/details/#11-simulation-mode):
 - Select the email address of any user in your system.
-- Run Set-OutlookSignatures in a new PowerShell session and add the additional parameters '`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' (replace 'a@example.com’ with the email address you selected earlier).
+- Run Set-OutlookSignatures in a new PowerShell session and add the additional parameters '`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' (replace 'a@example.com' with the email address you selected earlier).
 
 Your 'Documents' folder now contains new subfolder called 'Outlook Signatures', which in turn contains the signatures of the simulated user.
 
@@ -86,7 +86,7 @@ No sample signature is as beautiful as your own. So let's let Set-OutlookSignatu
 - Run Set-OutlookSignatures again and specify where to find the new templates:
   - '`-SignatureTemplatePath 'c:\your_signature_template_path'`' for the folder where your signature templates are located.
   - '`-SignatureIniFile 'c:\your_signature_template_path\_Signatures.ini'`' for the path to the signature configuration file.
-  - If you have customized the HTML templates instead of the DOCX templates, also use '`-UseHtmTemplates true`’.
+  - If you have customized the HTML templates instead of the DOCX templates, also use '`-UseHtmTemplates true`'.
 
 Does your own signature look good in Outlook? With the [simulation mode](/details/#11-simulation-mode), you can quickly find out how it looks for another mailbox.
 

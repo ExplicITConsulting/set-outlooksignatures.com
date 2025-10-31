@@ -14,18 +14,18 @@ sitemap_changefreq: monthly
 ---
 Ever noticed your email signature text mysteriously changing color, especially in replies or forwards?
 
-Here’s what’s going on: By default, Outlook uses black text for new emails and blue text for replies and forwards. These defaults also apply to signatures - sometimes by design, sometimes by surprise.
+Here's what's going on: By default, Outlook uses black text for new emails and blue text for replies and forwards. These defaults also apply to signatures - sometimes by design, sometimes by surprise.
 
 There are two key factors at play:
-1️⃣ Outlook’s default formatting:
+1️⃣ Outlook's default formatting:
 You can configure default text colors for new messages and replies/forwards via Outlook settings, registry keys, or Group Policy.
 
-2️⃣ The hidden twist: ‘Automatic’ text color:
-When designing signatures in Word or Outlook, you might unknowingly apply a color called ‘Automatic’. It looks like black, but it’s not.
-- Text set to ‘Automatic’ adapts to Outlook’s default colors (black for new, blue for replies).
-- Text set to ‘Black’ stays black, always.
+2️⃣ The hidden twist: 'Automatic' text color:
+When designing signatures in Word or Outlook, you might unknowingly apply a color called 'Automatic'. It looks like black, but it's not.
+- Text set to 'Automatic' adapts to Outlook's default colors (black for new, blue for replies).
+- Text set to 'Black' stays black, always.
 
-And here’s the kicker: Some Outlook versions struggle to interpret ‘Automatic’ correctly, especially when switching signatures mid-draft or using the preview pane.
+And here's the kicker: Some Outlook versions struggle to interpret 'Automatic' correctly, especially when switching signatures mid-draft or using the preview pane.
 
 With Set-OutlookSignatures, you can standardize signature formatting across your organization. No surprises, no color shifts, just consistent branding.
 

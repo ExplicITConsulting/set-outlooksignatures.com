@@ -23,7 +23,17 @@ sitemap_priority: 0.9
 sitemap_changefreq: weekly
 ---
 ## Features {#features}
-With Set-OutlookSignatures, signatures and out-of-office replies can be:
+Set-OutlookSignatures is the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies. With the optional Benefactor Circle add-on, it unlocks even more powerful features tailored for business environments.
+
+It delivers everything you'd expect from a modern solution: Centralized management, seamless deployment, and full control over signatures and auto-replies.
+
+Thanks to its forward-thinking architecture, designed not around a commercial business model but around practical utility, data privacy, and digital sovereignty, it offers unique capabilities that set it apart.
+
+For a quick overview, check our <a href="#feature-comparison" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen"><span><b>Feature comparison </b>with peers</span></a>.
+
+If you want to know exactly what is possible, or if you are looking for inspiration for new use cases, you can find the complete list of features here. Warning: It's long!
+
+With Set-OutlookSignatures and the optional Benefactor Circle add-on, signatures and out-of-office replies can be:
 - Generated from **templates in DOCX or HTML** file format.
 - Customized with a **broad range of variables**, including **photos and images**, from Entra ID, Active Directory and other sources.
 - Variables are available for the **currently logged-on user, the current mailbox, and their managers**.
@@ -43,6 +53,8 @@ With Set-OutlookSignatures, signatures and out-of-office replies can be:
 Set-OutlookSignatures can be **run by users on Windows, Linux and macOS clients, including shared devices and terminal servers - or on a central system with a service account**¹.<br>On clients, it can run as part of the logon script, as scheduled task, or on user demand via a desktop icon, start menu entry, shortcut or any other way of starting a program - **whatever your software deployment mechanism allows**.
 
 **Sample templates** for signatures and OOF messages demonstrate many features and are provided as .docx and .htm files.
+
+**Phone numbers** and **postal addresses** can be formatted by international standards or custom requirements.
 
 **Simulation mode** allows content creators and admins to simulate the behavior of the software for a specific user at a specific point in time, and to inspect the resulting signature files before going live.
 

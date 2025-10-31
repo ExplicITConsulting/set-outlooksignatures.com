@@ -13,7 +13,7 @@ sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
 ## Running a marketing campaign with multiple banners?
-Rotating them manually across your team’s signatures is nearly impossible and definitely not scalable.
+Rotating them manually across your team's signatures is nearly impossible and definitely not scalable.
 
 With Set-OutlookSignatures, you can automate banner rotation effortlessly, using flexible conditions tailored to your needs.
 
@@ -22,7 +22,7 @@ Whether you want to:
 - Show specific banners to certain departments or locations
 - Adjust banners based on season, date, or even external data like weather or stock prices
 
-It’s all possible and easy to implement.
+It's all possible and easy to implement.
 
 1. Add all banners to your template and define an alternate text
    - Use '`$CurrentMailbox_Banner1DELETEEMPTY$`' for banner 1, '`$CurrentMailbox_Banner2DELETEEMPTY$`' for banner 2, and so on.  

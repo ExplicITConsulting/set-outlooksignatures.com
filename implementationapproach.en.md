@@ -44,7 +44,7 @@ There are also various other factors to consider:
 
 This document aims to clarify whether the desired requirements regarding signatures can be met and what a practical implementation might look like.
 
-The word “signature” in this document always refers to a textual signature and should not be confused with a digital signature, which is used to encrypt emails and authenticate the sender.
+The word "signature” in this document always refers to a textual signature and should not be confused with a digital signature, which is used to encrypt emails and authenticate the sender.
 
 
 ## 2. Options for Signature Maintenance {#signature-maintenance-options}
@@ -538,7 +538,7 @@ We offer support to all group companies in the form of workshops and training se
 ### 6.2. Testing, Pilot Operation, Rollout {#testing-pilot-rollout}
 Planning and coordination of testing, pilot operation, and rollout is handled by the client's project lead.
 
-The actual technical implementation is carried out by the client. If the client’s IT service provider also manages the client systems, the client team supports integration of the software (logon script, scheduled task, desktop shortcut).
+The actual technical implementation is carried out by the client. If the client's IT service provider also manages the client systems, the client team supports integration of the software (logon script, scheduled task, desktop shortcut).
 
 In case of fundamental technical issues, the mail product management team assists with root cause analysis, develops solution proposals, and, if necessary, establishes contact with the software vendor.
 
@@ -594,7 +594,7 @@ Templates and configuration files can also be stored on SharePoint Online.
 **Template Management and Delegation**  
 By assigning write permissions to the template folder or individual files, the creation and management of signature and out-of-office templates can be delegated to a defined group of people. Typically, templates are defined, created, and maintained by Corporate Communications and Marketing departments.
 
-The software can process templates in DOCX or HTML format. For initial use, DOCX format is recommended. The reasons for this recommendation and the pros and cons of each format are described in the software’s `README` file.
+The software can process templates in DOCX or HTML format. For initial use, DOCX format is recommended. The reasons for this recommendation and the pros and cons of each format are described in the software's `README` file.
 
 The included `README` file provides an overview of how templates should be managed so that they:
 - Apply only to specific groups or mailboxes  

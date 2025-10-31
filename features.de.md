@@ -23,6 +23,16 @@ sitemap_priority: 0.9
 sitemap_changefreq: weekly
 ---
 ## Funktionen {#features}
+Set-OutlookSignatures ist das fortschrittlichste und vielseitigste kostenlose Open-Source-Tool zur Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen. Mit dem optionalen Add-on "Benefactor Circle" stehen Ihnen noch leistungsstärkere Funktionen zur Verfügung, die speziell auf Geschäftsumgebungen zugeschnitten sind.
+
+Es bietet alles, was Sie von einer modernen Lösung erwarten: zentralisierte Verwaltung, nahtlose Bereitstellung und vollständige Kontrolle über Signaturen und automatische Antworten.
+
+Dank seiner zukunftsorientierten Architektur, die nicht auf einem kommerziellen Geschäftsmodell, sondern auf praktischer Nützlichkeit, Datenschutz und digitaler Souveränität basiert, bietet es einzigartige Funktionen, die es von anderen Lösungen abheben.
+
+Einen schnellen Überblick erhalten Sie in unserem <a href="#feature-comparison" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen"><span><b>Funktions-Vergleich </b>mit Marktbegleitern</span></a>.
+
+Wenn Sie genau wissen möchten, was alles möglich ist, oder Sie nach Inspiration für neue Anwendungsfälle suchen, finden Sie hier die vollständige Liste der Funktionen. Achtung: Sie ist lang!
+
 Mit Set-OutlookSignatures können Signaturen und Abwesenheitsnotizen:
 - Aus **Vorlagen im DOCX- oder HTML-Dateiformat** generiert werden.
 - Mit einer **Vielzahl von Variablen**, einschließlich **Fotos und Bildern**, aus Entra ID, Active Directory und anderen Quellen angepasst werden.
@@ -44,6 +54,8 @@ Set-OutlookSignatures kann von Nutzern auf **Windows-, Linux- und macOS-Clients,
 
 **Beispielvorlagen** für Signaturen und Abwesenheitsnachrichten demonstrieren viele Funktionen und stehen als DOCX- und HTM-Dateien zur Verfügung.
 
+**Telefonnummern** und **Post-Adressen** können nach internationalen Standards oder eigenen Vorgaben formatiert werden.
+
 Der **Simulationsmodus** ermöglicht es Inhaltserstellern und Administratoren, das Verhalten der Software für einen bestimmten Benutzer zu einem bestimmten Zeitpunkt zu simulieren und die resultierenden Signaturen vor der Live-Schaltung zu prüfen.
 
 **SimulateAndDeploy**¹ ermöglicht die Bereitstellung von Signaturen und Abwesenheitsantworten in Outlook Web¹/New Outlook¹ (sofern Outlook Web-basiert) **ohne Client-Bereitstellung oder Endbenutzerinteraktion**. Dies ist ideal für Nutzer, die sich nur bei Webdiensten, aber nie an einem Client anmelden (z. B. Nutzer mit einer Microsoft 365-Lizenz).
@@ -57,7 +69,7 @@ ers.
 
 Set-OutlookSignatures erfordert **keine Installation auf Servern oder Clients**. Sie benötigen lediglich eine Standard-SMB-Dateifreigabe auf einem zentralen System und optional Office auf Ihren Clients.
 
-Es gibt **keine Telemetrie** und kein „Calling Home“. E-Mails und Verzeichnisdaten werden **nicht über externe Rechenzentren oder Cloud-Dienste geleitet**, und **DNS-Einträge (MX, SPF) oder der E-Mail-Verkehr müssen nicht geändert werden**.
+Es gibt **keine Telemetrie** und kein "Calling Home". E-Mails und Verzeichnisdaten werden **nicht über externe Rechenzentren oder Cloud-Dienste geleitet**, und **DNS-Einträge (MX, SPF) oder der E-Mail-Verkehr müssen nicht geändert werden**.
 
 Ein **dokumentierter Implementierungsansatz**, der auf praktischen Erfahrungen mit der Implementierung der Software in Multiclient-Umgebungen mit einer fünfstelligen Anzahl von Postfächern basiert, enthält bewährte Vorgehensweisen und Empfehlungen für Produktmanager, Architekten, Betriebsleiter, Account Manager sowie E-Mail- und Client-Administratoren.
 
