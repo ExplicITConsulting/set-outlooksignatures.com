@@ -29,7 +29,7 @@ It delivers everything you'd expect from a modern solution: Centralized manageme
 
 Thanks to its forward-thinking architecture, designed not around a commercial business model but around practical utility, data privacy, and digital sovereignty, it offers unique capabilities that set it apart.
 
-For a quick overview, check our <a href="#feature-comparison" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen"><span><b>Feature comparison </b>with peers</span></a>.
+For a quick overview, check our <a href="#feature-comparison">feature comparison with peers</a>.
 
 If you want to know exactly what is possible, or if you are looking for inspiration for new use cases, you can find the complete list of features here. Warning: It's long!
 

@@ -29,7 +29,7 @@ Es bietet alles, was Sie von einer modernen Lösung erwarten: zentralisierte Ver
 
 Dank seiner zukunftsorientierten Architektur, die nicht auf einem kommerziellen Geschäftsmodell, sondern auf praktischer Nützlichkeit, Datenschutz und digitaler Souveränität basiert, bietet es einzigartige Funktionen, die es von anderen Lösungen abheben.
 
-Einen schnellen Überblick erhalten Sie in unserem <a href="#feature-comparison" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen"><span><b>Funktions-Vergleich </b>mit Marktbegleitern</span></a>.
+Einen schnellen Überblick erhalten Sie in unserem <a href="#feature-comparison">Funktions-Vergleich mit Marktbegleitern</a>.
 
 Wenn Sie genau wissen möchten, was alles möglich ist, oder Sie nach Inspiration für neue Anwendungsfälle suchen, finden Sie hier die vollständige Liste der Funktionen. Achtung: Sie ist lang!
 
