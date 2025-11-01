@@ -22,7 +22,7 @@ permalink: "/features/"
 sitemap_priority: 0.9
 sitemap_changefreq: weekly
 ---
-## Welcome! {#welcome}
+## Overview {#overview}
 
 Set-OutlookSignatures is the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies. With the optional Benefactor Circle add-on, it unlocks even more powerful features tailored for business environments.
 

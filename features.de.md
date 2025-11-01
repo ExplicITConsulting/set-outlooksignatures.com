@@ -22,7 +22,7 @@ permalink: "/features/"
 sitemap_priority: 0.9
 sitemap_changefreq: weekly
 ---
-## Willkommen! {#welcome}
+## Übersicht {#overview}
 
 Set-OutlookSignatures ist das fortschrittlichste und vielseitigste kostenlose Open-Source-Tool zur Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen. Mit dem optionalen Add-on "Benefactor Circle" stehen Ihnen noch leistungsstärkere Funktionen zur Verfügung, die speziell auf Geschäftsumgebungen zugeschnitten sind.
 
