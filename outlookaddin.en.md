@@ -135,6 +135,8 @@ With every new release of Set-OutlookSignatures, [Benefactor Circle](/benefactor
 
 With every new release of the Outlook add-in, you need to update your add-in deployment (sideloading M365 Centralized Deployment, M365 Integrated Apps) so that Outlook can download and use the newest code.
 
+It is recommended to use use two separate dedicated hostnames, one for testing and one for production, such as "https://outlookaddin.example.com" and "https://outlookaddin-test.example.com".
+
 To configure the add-in and deploy it to your web server:
 - Open '`run_before_deployment.ps1`' and follow the instructions in it to configure the add-in to your needs.
 - You can configure the following settings:
@@ -162,15 +164,23 @@ To configure the add-in and deploy it to your web server:
 - Run '`run_before_deployment.ps1`' in PowerShell.
 - Upload the content of the '`publish`' folder to your web server.
 
-When the '`manifest.xml`' file changes, you also need to update your app deployment in Exchange, so that your clients download the updated release. This is required when:
+
+When the '`manifest.xml`' file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded from the web server. The next chapter describes the available deployment options for add-ins.
+
+
+## 5. Deployment to mailboxes
+When the '`manifest.xml`' file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. Due to caching mechanisms, especially in Classic Outlook for Windows, this does not happen automatically.
+
+This is required when:
 - A new release of the Outlook add-in is published by <a href="https://explicitconsulting.at/">ExplicIT Consulting</a>.
 - You change a configuration option in the '`run_before_deployment.ps1`' file which is marked to require an updated deployment.
 - You modify the '`manifest.xml`' file manually.
 
-It is recommended to use use two separate dedicated hostnames, such as "https://outlookaddin.example.com" and "https://outlookaddin-test.example.com". This way, you can use one for testing and one for production. For tests, sideloading is the preferred method, while Microsoft 365 Centralized Deployment or Integrated Apps are ideal for mass deployment.
 
+You can choose from three different ways to deploy the Outlook add-in to your mailboxes.
 
-## 5. Deployment to mailboxes
+For tests, sideloading is the preferred method, while Microsoft 365 Centralized Deployment or Integrated Apps are ideal for mass deployment.
+
 ### 5.1. Individual installation through users
 This method is also called sideloading. It is ideal for test scenarios.
 
@@ -182,14 +192,14 @@ For mailboxes in Exchange Online:
 - Click on 'Install'.
 - Refresh the browser window.
 
- For mailboxes hosted on-prem:
- - Open 'https://YourMailServer.example.com/owa/#path=/options/manageapps'.
+For mailboxes hosted on-prem:
+- Open 'https://YourMailServer.example.com/owa/#path=/options/manageapps'.
 - Click on the plus sign to add an add-in, and choose 'Add from file'.
 - In the file selection dialog, enter the manifest.xml file URL as file name and click on 'Open'.
 - Click on 'Install'.
 - Refresh the browser window.
 
-Installation of add-ins may have been disabled by your administrators.
+Sideloading of add-ins may have been disabled by your administrators.
 
 Do not use the URLs mentioned above to remove custom add-ins, as this fails most times. Instead, use one of the following options:
 - Open Outlook for the web, draft a new mail, click on the 'Apps' button, right-click the Set-OutlookSignatures add-in and select 'Uninstall'.
@@ -197,16 +207,16 @@ Do not use the URLs mentioned above to remove custom add-ins, as this fails most
 
 
 ### 5.2. Microsoft 365 Centralized Deployment or Integrated Apps
-Centralized Deployment and deployment via Integrated Apps both provide the following benefits:
-- An admin can deploy and assign an add-in directly to a user, to multiple users via a group, or to everyone in the organization.
-- When the relevant Microsoft 365 app starts, the add-in automatically downloads. If the add-in supports add-in commands, the add-in automatically appears in the ribbon within the Microsoft 365 app.
-- Add-ins no longer appear for users if the admin turns off or deletes the add-in, or if the user is removed from Microsoft Entra ID or from a group that the add-in is assigned to.
+Microsoft 365 Centralized Deployment and deployment via Integrated Apps both provide the following benefits:
+- An admin can deploy and assign an Outlook add-in directly to a mailbox, to multiple mailboxes via a group, or to ever mailbox in the organization.
+- When Outlook starts, it automatically downloads the assigned add-in. If the add-in supports it, it appears in Outlooks ribbon.
+- An add-in is automatically removed from a mailbox when an admin disables or deletes the add-in assignment, or if the mailbox is removed from a group that the add-in is assigned to.
 
-These two methods are ideal for mass deployment in production environments. They are usually too slow and too much overhead for test scenarios, in which sideloading is the preferred method.
+Both methods, Microsoft 365 Centralized Deployment and deployment via Integrated Apps, are ideal for mass deployment in production environments. They are usually too slow and too much overhead for test scenarios, in which sideloading is the preferred method.
 
-If the Integrated Apps feature is not yet available in your sovereign and government cloud tenant, you have to use Centralized Deployment instead.
-- Details about Integrated Apps: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide
-- Details about Centralized Deployment: https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide
+If the Integrated Apps feature is not yet available in your sovereign and government cloud tenant, you have to use Centralized Deployment instead. see the following links for details about each method and instructions on how to use them:
+- [Integrated Apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide)
+- [Microsoft 365 Centralized Deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide)
 
 
 ## 6. Remarks
