@@ -13,12 +13,12 @@ hero_link2: "#feature-comparison"
 hero_link2_text: "<span><b>Funktions-Vergleich </b>mit Marktbegleitern</span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
-hero_link3: "/quickstart/"
+hero_link3: "/quickstart"
 hero_link3_text: "<span><b>Schnellstart-Anleitung: </b>Signaturen in wenigen Minuten verteilen</span>"
 hero_link3_style: |
   style="background-color: LimeGreen;"
 page_id: "features"
-permalink: "/features/"
+permalink: "/features"
 sitemap_priority: 0.9
 sitemap_changefreq: weekly
 ---
@@ -74,7 +74,7 @@ Ein **dokumentierter Implementierungsansatz**, der auf praktischen Erfahrungen m
 
 Der Kern der Software ist als **Freie Open-Source-Software (FOSS)** quelloffen und kostenlos. Sie wird unter der European Union Public Licnse veröffentlicht, die unter anderem von der Free Software Foundation (FSF) und der Open Source Initiative (OSI) anerkannt wird und mit der General Public License (GPL) und anderen gängigen Lizenzen kompatibel ist.
 
-Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on vorbehalten**. Das optionale <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.
+Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on vorbehalten**. Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.
 
 
 ## Funktions-Vergleich {#feature-comparison}

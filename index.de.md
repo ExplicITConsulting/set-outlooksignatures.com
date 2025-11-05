@@ -5,16 +5,16 @@ locale: "de"
 title: "Set-Outlook&shy;Signatures"
 subtitle: "E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook.<br>Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz."
 description: "E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz."
-hero_link: /quickstart/
+hero_link: /quickstart
 hero_link_text: "<span><b>Schnellstart: </b>Signaturen in wenigen Minuten verteilen</span>"
 hero_link_style: |
    style="background-color: LimeGreen;"
-hero_link2: /faq/#44-what-can-i-learn-from-the-code-of-set-outlooksignatures
+hero_link2: /faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures
 hero_link2_text: "<span><b>Hinter den Kulissen: </b>Vom Code lernen</span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
 page_id: "index"
-permalink: "/"
+permalink: ""
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
@@ -162,7 +162,7 @@ sitemap_changefreq: weekly
 <h2 id="expertise">
   Funktionalität trifft<span class="has-text-success"> Expertise</span>
 </h2>
-<p>Das optionale <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
+<p>Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
 
 <p>Auf Wunsch richten wir unsere Lösung gemeinsam mit Ihnen ein: Einfach, auf Ihre Bedürfnisse zugeschnitten und mit nachhaltigem Wissenstransfer.<p>
 
@@ -209,7 +209,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="/benefactorcircle/#demo" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">Jetzt persönliche Demo vereinbaren</a></p>
+      <p><a href="/benefactorcircle#demo" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">Jetzt persönliche Demo vereinbaren</a></p>
     </div>
   </div>
 
@@ -229,7 +229,7 @@ sitemap_changefreq: weekly
 </h2>
 <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
-<a href="/quickstart/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Schnellstart-Anleitung</a>
+<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Schnellstart-Anleitung</a>
 
 
 <h2 id="dive-deeper">
@@ -243,4 +243,4 @@ sitemap_changefreq: weekly
   <li>Wie Sie erstklassigen Support erhalten</li>
 </ul>
 
-<a href="/help/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Hilfe- und Support-Center</a>
+<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Hilfe- und Support-Center</a>

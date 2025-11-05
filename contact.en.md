@@ -6,7 +6,7 @@ title: "Let's get and stay in contact"
 subtitle: "Email, request a call-back, postal address"
 description: "Contact ExplicIT Consulting via email, request a call-back, or send mail. Connect with us on LinkedIn and GitHub for more ways to stay in touch."
 page_id: "contact"
-permalink: "/contact/"
+permalink: "/contact"
 sitemap_priority: 0.5
 sitemap_changefreq: yearly
 ---

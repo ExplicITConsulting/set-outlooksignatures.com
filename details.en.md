@@ -5,16 +5,16 @@ locale: "en"
 title: "Technical details, requirements and usage"
 subtitle: "What it needs, how it works and how to use it"
 description: "Discover Set-OutlookSignatures technical details: system requirements, supported platforms, template formats, group logic, variables, and simulation mode."
-hero_link: /quickstart/
+hero_link: /quickstart
 hero_link_text: "<span><b>Quick Start Guide</b></span>"
 hero_link_style: |
   style="background-color: LimeGreen;"
-hero_link2: /support/
+hero_link2: /support
 hero_link2_text: "<span><b>Support</b></span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
 page_id: "details"
-permalink: "/details/"
+permalink: "/details"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
@@ -53,9 +53,9 @@ sitemap_changefreq: weekly
 
 ## 1. Get to know Set-OutlookSignatures
 To get to know Set-OutlookSignatures, we recommend the following sequence:
-1. The [feature comparison](/features/#feature-comparison) gives you a quick overview of topics to consider when choosing a solution for central management and deployment of email signatures and out-of-office replies. 
-2. Learn in detail about the [feature list](/features/#features) of Set-OutlookSignatures and the Benefactor Circle add-on.
-3. Watch the [demo video](/benefactorcircle/#demo) to see how a typical real-life use case is implemented.
+1. The [feature comparison](/features#feature-comparison) gives you a quick overview of topics to consider when choosing a solution for central management and deployment of email signatures and out-of-office replies. 
+2. Learn in detail about the [feature list](/features#features) of Set-OutlookSignatures and the Benefactor Circle add-on.
+3. Watch the [demo video](/benefactorcircle#demo) to see how a typical real-life use case is implemented.
 4. Get practical: Deploy signatures within minutes with the [Quick Start Guide](/quickstart/)!
 
 You want to know more?
@@ -69,7 +69,7 @@ You want to know more?
 
 The '`sample code`' folder contains additional scripts and advanced usage examples, such as deploying signatures without user or client interaction.
 
-When facing a problem: Before creating a new issue, check the documentation, previous [issues](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=) and [discussions](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=). You can also switch to the fast lane: <a href="https://explicitconsulting.at/">ExplicIT Consulting</a> offers first-class [professional support](/support/).
+When facing a problem: Before creating a new issue, check the documentation, previous [issues](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=) and [discussions](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=). You can also switch to the fast lane: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers first-class [professional support](/support/).
 
 You are welcome to share your experiences with Set-OutlookSignatures, exchange ideas with other users or suggest new features in our [discussions board](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=).
 
@@ -100,7 +100,7 @@ On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use 
 
 If you use AppLocker or a comparable solution (Defender, CrowdStrike, Ivanti, and others), you may need to add the existing digital file signature to your allow list, or define additional settings in your security software.
 
-**Thanks to our partnership with <a href="https://explicitconsulting.at/">ExplicIT Consulting</a>, Set-OutlookSignatures and its components are digitally signed with an Extended Validation (EV) Code Signing Certificate (which is the highest code signing standard available).  
+**Thanks to our partnership with <a href="https://explicitconsulting.at">ExplicIT Consulting</a>, Set-OutlookSignatures and its components are digitally signed with an Extended Validation (EV) Code Signing Certificate (which is the highest code signing standard available).  
 This is not only available for Benefactor Circle members, but also the Free and Open Source core version is code signed.**
 
 The paths to the template and configuration files (SignatureTemplatePath, OOFTemplatePath, GraphConfigFile, etc.) must be accessible by the currently logged-in user. The files must be at least readable for the currently logged-in user.
@@ -116,7 +116,7 @@ Not all features are yet available on Linux and macOS. Every parameter contains 
 #### 2.1.1. Common restrictions and notes for Linux and macOS
 - Only mailboxes hosted in Exchange Online are supported. On-prem mailboxes usually work when addressed via Exchange Online, but this is not guaranteed.
 - Only Graph is supported, no local Active Directories.<br>The parameter `GraphOnly` is automatically set to `true` and Linux and macOS, which requires an Entra ID app - the Quick Start Guide in this document helps you implement this.
-- Signature and OOF templates must be in HTM format.<br>Microsoft Word is not available on Linux, and the file format conversion cannot be done without user impact on macOS.<br>If you do not want to manually convert your DOCX files to HTM, remove incompatible and superfluous code and restore images to their original resolution: Our partner <a href="https://explicitconsulting.at/">ExplicIT Consulting</a> offers a commercial batch conversion service.<br>The parameter `UseHtmTemplates` is automatically set to `true` on Linux and macOS.
+- Signature and OOF templates must be in HTM format.<br>Microsoft Word is not available on Linux, and the file format conversion cannot be done without user impact on macOS.<br>If you do not want to manually convert your DOCX files to HTM, remove incompatible and superfluous code and restore images to their original resolution: Our partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers a commercial batch conversion service.<br>The parameter `UseHtmTemplates` is automatically set to `true` on Linux and macOS.
 - Only existing mount points and SharePoint Online paths can be accessed.<br>Set-OutlookSignatures cannot create mount points itself, as there are just too many possibilities.<br>This is important for all parameters pointing to folders or files (`SignatureTemplatePath`, `SignatureIniFile`, `OOFTemplatePath`, `OOFIniFile`, `AdditionalSignaturePath`, `ReplacementVariableConfigFile`, `GraphConfigFile`, etc.). The default values for these parameters are automatically set correctly, so that you can follow the Quick Start Guide without additional configuration. When hosting `GraphConfigFile` on SharePoint Online make sure you also define the `GraphClientID` parameter.<br><br>If SharePoint Online is not an option for you, consider one of the following options for production use:
   - Deploy a software package that not only contains Set-OutlookSignatures, but also all required template and configuration files.
   -	Place Set-OutlookSignatures, the templates and its configuration as ZIP file in a public place (such as your website), and use Intune with a remediation script to download and extract the ZIP file (this might not need your security requirements).
@@ -125,7 +125,7 @@ Not all features are yet available on Linux and macOS. Every parameter contains 
 
 #### 2.1.2. Linux specific restrictions and notes
 - Users need to access their mailboxes via Outlook Web, as no other form of Outlook is available on Linux (use emulation tools such as Wine, CrossOver, PlayOnLinux, Proton, etc. at your own risk).
-  - Support for Outlook Web requires the Benefactor Circle add-on. See <a href="/benefactorcircle/">Benefactor Circle</a> for details.
+  - Support for Outlook Web requires the Benefactor Circle add-on. See <a href="/benefactorcircle">Benefactor Circle</a> for details.
 - When using email clients such as Mozilla Thunderbird, GNOME Evolution, KDE KMail or others, you can still use signatures created by Set-OutlookSignatures with the Benefactor Circle add-on, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
 
 
@@ -136,7 +136,7 @@ Not all features are yet available on Linux and macOS. Every parameter contains 
   - Until New Outlook supports roaming signatures (not yet announced by Microsoft), it is treated like Outlook for Windows configured not to use roaming signatures. Consider using the '-MailboxSpecificSignatureNames' parameter.
   - If New Outlook is enabled, an alternate method of account detection is used, as scripting is not yet supported by Microsoft, but already announced on the M365 roadmap. This alternate method may detect accounts that are no longer used in Outlook (see software output for details).  
   - If the alternate method does not find accounts, Outlook Web is used and existing signatures are synchronized with New Outlook for Mac.
-    - Support for Outlook Web requires the Benefactor Circle add-on. See <a href="/benefactorcircle/">Benefactor Circle</a> for details.
+    - Support for Outlook Web requires the Benefactor Circle add-on. See <a href="/benefactorcircle">Benefactor Circle</a> for details.
 - Classic Outlook for Mac and New Outlook for Mac do not allow external software to set default signatures.
 - When using email clients such as Apple Mail or others, you can still use signatures created by Set-OutlookSignatures with the Benefactor Circle add-on, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
 
@@ -807,13 +807,13 @@ Simulation mode is enabled when the parameter `SimulateUser` is passed to the so
 
 Simulation mode is useful for content creators and admins, as it allows to simulate the behavior of the software and to inspect the resulting signature files before going live. Such a dry-run is not only very helpful for running tests in the production environment without affecting anyone, it also greatly supports problem analysis.
   
-In simulation mode, Outlook registry entries are not considered and nothing is changed in Outlook and Outlook web. The template files are handled just as during a real script run, but the signatures are only saved to the folder defined by the [AdditionalSignaturePath](/parameters/#14-additionalsignaturepath) parameter.
+In simulation mode, Outlook registry entries are not considered and nothing is changed in Outlook and Outlook web. The template files are handled just as during a real script run, but the signatures are only saved to the folder defined by the [AdditionalSignaturePath](/parameters#14-additionalsignaturepath) parameter.
   
-[SimulateUser](/parameters/#16-simulateuser) is a mandatory parameter for simulation mode. This value replaces the currently logged-in user. Use a logon name in the format 'Domain\User' or a Universal Principal Name (UPN, looks like an email address, but is not neecessarily one).
+[SimulateUser](/parameters#16-simulateuser) is a mandatory parameter for simulation mode. This value replaces the currently logged-in user. Use a logon name in the format 'Domain\User' or a Universal Principal Name (UPN, looks like an email address, but is not neecessarily one).
 
-[SimulateMailboxes](/parameters/#17-simulatemailboxes) is optional for simulation mode, although highly recommended. It is a comma separated list of email addresses replacing the list of mailboxes otherwise gathered from the registry.
+[SimulateMailboxes](/parameters#17-simulatemailboxes) is optional for simulation mode, although highly recommended. It is a comma separated list of email addresses replacing the list of mailboxes otherwise gathered from the registry.
 
-[SimulateTime](/parameters/#18-simulatetime) is optional for simulation mode. Simulating a certain time is helpful when time-based templates are used.
+[SimulateTime](/parameters#18-simulatetime) is optional for simulation mode. Simulating a certain time is helpful when time-based templates are used.
 
 An example: Simulate user a@example.com with the additional mailbox x@example.com, and save the results to 'c:\test':
 

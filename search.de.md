@@ -6,7 +6,7 @@ title: "Wonach suchen Sie?"
 subtitle: "Finden Sie es hier"
 description: "Suchen Sie nach Informationen? Finden Sie schnell die passenden Inhalte und Antworten zu unseren Lösungen und Services."
 page_id: "search"
-permalink: "/search/"
+permalink: "/search"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
@@ -23,7 +23,7 @@ sitemap_changefreq: weekly
 <script>
     (function() {
         const flexsearchBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js";
-        const languagePackBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/lang/";
+        const languagePackBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/lang";
 
         const allSearchFields = ["document", "section", "content", "url", "date", "category", "tags"];
 

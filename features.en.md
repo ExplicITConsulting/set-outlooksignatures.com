@@ -13,12 +13,12 @@ hero_link2: "#feature-comparison"
 hero_link2_text: "<span><b>Feature comparison </b>with peers</span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
-hero_link3: "/quickstart/"
+hero_link3: "/quickstart"
 hero_link3_text: "<span><b>Quick Start Guide: </b>Deploy signatures within minutes</span>"
 hero_link3_style: |
   style="background-color: LimeGreen;"
 page_id: "features"
-permalink: "/features/"
+permalink: "/features"
 sitemap_priority: 0.9
 sitemap_changefreq: weekly
 ---
@@ -72,7 +72,7 @@ A **documented implementation approach**, based on real life experiences impleme
 
 The software core is **Free and Open-Source Software (FOSS)**. It is published under the European Union Public License, which is approved, among others, by the Free Software Foundation (FSF) and the Open Source Initiative (OSI), and is compatible with the General Public License (GPL) and other popular licenses.
 
-Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle/">Benefactor Circle add-on</a>.** The optional <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> extends Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve.
+Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle">Benefactor Circle add-on</a>.** The optional <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> extends Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve.
 
 
 ## Feature comparison {#feature-comparison}

@@ -6,7 +6,7 @@ title: "Parameters"
 subtitle: "How to customize Set-Outlook&shy;Signatures"
 description: "Customize Set-OutlookSignatures to fit your organization's needs. Configure behavior, integrate with Microsoft 365, and tailor signature deployment workflows."
 page_id: "parameters"
-permalink: "/parameters/"
+permalink: "/parameters"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
@@ -16,8 +16,8 @@ sitemap_changefreq: weekly
 <p>This page outlines the available parameters to help you tailor the tool to your specific needs. If you're unsure which approach best suits your scenario, additional resources are available:</p>
 <p>
   <div class="buttons">
-    <a href="/faq/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Frequently Asked Questions (FAQ)</a>
-    <a href="/support/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
+    <a href="/faq" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Frequently Asked Questions (FAQ)</a>
+    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
   </div>
 </p>
 

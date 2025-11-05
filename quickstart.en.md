@@ -6,7 +6,7 @@ title: "Quick Start Guide"
 subtitle: "Deploy signatures within minutes"
 description: "Quick Start Guide. Deploy signatures within minutes."
 page_id: "quickstart"
-permalink: "/quickstart/"
+permalink: "/quickstart"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
@@ -22,7 +22,7 @@ On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use 
 **Client and user**  
 For a first test run, it is recommended to log on with a test user on a Windows system with Word and Classic Outlook for Windows installed, and Classic Outlook for Windows being configured with at least the test user's mailbox. If you use your own user, existing signatures will be overwritten in the worst case.
 
-For full Linux, macOS and New Outlook support, the <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
+For full Linux, macOS and New Outlook support, the <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
 
 If you cannot test with Classic Outlook on Windows, or do not want your signature setup changed, you can use simulation mode, which is described in a later step.
 
@@ -60,7 +60,7 @@ Set-OutlookSignatures now adds signatures based on default settings and sample t
 
 Open Classic Outlook and take a look at the newly created signatures. 'Formal', 'Informal' and the particularly comprehensive 'Test all default replacement variables'.
 
-If you do not have access to Classic Outlook for Windows for your tests, or do not want your signature setup changed, you can simply use the integrated [simulation mode](/details/#11-simulation-mode) instead:
+If you do not have access to Classic Outlook for Windows for your tests, or do not want your signature setup changed, you can simply use the integrated [simulation mode](/details#11-simulation-mode) instead:
 - Run Set-OutlookSignatures in a new PowerShell session and add the additional parameters '`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' (replace 'a@example.com' with your own email address or any other email address from your environment).
 - Instead of modifying Outlook, your 'Documents' folder now contains new subfolder called 'Outlook Signatures', which in turn contains the signatures of the simulated user.
 
@@ -70,25 +70,25 @@ Congratulations, you now have a robust starting point for your own customization
 You can now start with your own customizations. Here are a few popular examples:
 
 **Simulation mode**  
-Would you like to see what the sample signatures provided look like for another user? Then simply use the integrated [simulation mode](/details/#11-simulation-mode):
+Would you like to see what the sample signatures provided look like for another user? Then simply use the integrated [simulation mode](/details#11-simulation-mode):
 - Select the email address of any user in your system.
 - Run Set-OutlookSignatures in a new PowerShell session and add the additional parameters '`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' (replace 'a@example.com' with the email address you selected earlier).
 
 Your 'Documents' folder now contains new subfolder called 'Outlook Signatures', which in turn contains the signatures of the simulated user.
 
-The [simulation mode](/details/#11-simulation-mode) can do much more and is therefore very well suited for testing and analysis in production environments.
+The [simulation mode](/details#11-simulation-mode) can do much more and is therefore very well suited for testing and analysis in production environments.
 
 **Use your own templates**  
 No sample signature is as beautiful as your own. So let's let Set-OutlookSignatures work with your own templates!
 
-- Create a folder with your own templates and configurations. Follow the FAQ '[What is the recommended folder structure for script, license, template and config files?](/faq/#34-what-is-the-recommended-folder-structure-for-script-license-template-and-config-files)', as separating source code and customizations makes administration and version upgrades much easier.
+- Create a folder with your own templates and configurations. Follow the FAQ '[What is the recommended folder structure for script, license, template and config files?](/faq#34-what-is-the-recommended-folder-structure-for-script-license-template-and-config-files)', as separating source code and customizations makes administration and version upgrades much easier.
   - To get started, simply copy the '.\sample templates' folder and customize the templates and the INI file it contains.
 - Run Set-OutlookSignatures again and specify where to find the new templates:
   - '`-SignatureTemplatePath 'c:\your_signature_template_path'`' for the folder where your signature templates are located.
   - '`-SignatureIniFile 'c:\your_signature_template_path\_Signatures.ini'`' for the path to the signature configuration file.
   - If you have customized the HTML templates instead of the DOCX templates, also use '`-UseHtmTemplates true`'.
 
-Does your own signature look good in Outlook? With the [simulation mode](/details/#11-simulation-mode), you can quickly find out how it looks for another mailbox.
+Does your own signature look good in Outlook? With the [simulation mode](/details#11-simulation-mode), you can quickly find out how it looks for another mailbox.
 
 **And now you!**  
 Adjust other [parameters](/parameters/) that you find useful.
@@ -112,11 +112,11 @@ Just [get in touch](/contact/) with us!
 ## Looking for help or more features? {#support}
 Set-OutlookSignatures is very well documented, which inevitably brings with it a lot of content.
 
-If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner <a href="https://explicitconsulting.at/">ExplicIT Consulting</a> offers first-class [professional support](/support/), and their <a href="/benefactorcircle/"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
+If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers first-class [professional support](/support/), and their <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
 
 <p>
   <div class="buttons">
-    <a href="/support/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
-    <a href="/benefactorcircle/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">The Benefactor Circle add-on</a>
+    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
+    <a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">The Benefactor Circle add-on</a>
   </div>
 </p>

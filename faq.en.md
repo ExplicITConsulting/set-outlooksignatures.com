@@ -6,7 +6,7 @@ title: "Frequently Asked Questions (FAQ)"
 subtitle: "Topics that are addressed regularly"
 description: "Get answers to common Set-OutlookSignatures questions: setup, templates, deployment, roaming signatures, and advanced configuration."
 page_id: "faq"
-permalink: "/faq/"
+permalink: "/faq"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -16,8 +16,8 @@ sitemap_changefreq: monthly
 <p>This FAQ highlights common topics and clarifies typical points of confusion. If your question isn't covered or you need tailored advice, additional resources are available:</p>
 <p>
   <div class="buttons">
-    <a href="/parameters/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Parameters</a>
-    <a href="/support/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
+    <a href="/parameters" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Parameters</a>
+    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
   </div>
 </p>
 
@@ -844,7 +844,7 @@ All documentation is publicly available. You can get free community support on G
 For a small annual fee per mailbox, the [Benefactor Circle add-on](/benefactorcircle/) offers additional enterprise-grade features. Companies can test all premium features at no cost during a free 14-day trial.
 
 Unsure whether the add-on will deliver value for your company?  
-The chapter '[Financial Benefits](/benefactorcircle/#financial-benefits)' shows how to calculate the value based on your company's specific needs.  
+The chapter '[Financial Benefits](/benefactorcircle#financial-benefits)' shows how to calculate the value based on your company's specific needs.  
 If your company concludes that the add-on does not provide sufficient value, it can still use the free and open-source version of Set-OutlookSignatures.
 
 

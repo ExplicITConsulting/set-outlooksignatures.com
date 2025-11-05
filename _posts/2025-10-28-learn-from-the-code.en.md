@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "learn-from-the-code"
-permalink: "/blog/:year/:month/:day/:slug/"
+permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -18,7 +18,7 @@ The code is, of course, full of stuff related to getting reliable information ab
 
 Beside the big learning topics mentioned in the [FAQ](/faq/), the main and support files of Set-OutlookSignatures are sprinkled with small code snippets and comments you may find useful. Chances are good that you will stumble across some small gems of code by just browsing through it.
 
-The following gives you an overview which other scripting techniques you can [learn from Set-OutlookSignatures](/faq/#44-what-can-i-learn-from-the-code-of-set-outlooksignatures).  
+The following gives you an overview which other scripting techniques you can [learn from Set-OutlookSignatures](/faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures).  
 - Active Directory group membership enumeration without compromises
 - Microsoft Graph authentication and re-authentication
 - Deploy and run software using desired state configuration (DSC)

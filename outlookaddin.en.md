@@ -7,7 +7,7 @@ subtitle: "Signatures for Outlook on Android and iOS, advanced features for all 
 description: "Extend Outlook with the Set-OutlookSignatures add-in. Automatic email signatures for iOS, Android, and all platforms. Self-hosted, secure, and enterprise-ready."
 hide_gh_sponsor: true
 page_id: "outlookaddin"
-permalink: "/outlookaddin/"
+permalink: "/outlookaddin"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
@@ -172,7 +172,7 @@ When the '`manifest.xml`' file, the configuration or another part of the Outlook
 When the '`manifest.xml`' file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. Due to caching mechanisms, especially in Classic Outlook for Windows, this does not happen automatically.
 
 This is required when:
-- A new release of the Outlook add-in is published by <a href="https://explicitconsulting.at/">ExplicIT Consulting</a>.
+- A new release of the Outlook add-in is published by <a href="https://explicitconsulting.at">ExplicIT Consulting</a>.
 - You change a configuration option in the '`run_before_deployment.ps1`' file which is marked to require an updated deployment.
 - You modify the '`manifest.xml`' file manually.
 

@@ -6,18 +6,18 @@ title: "Implementation approach"
 subtitle: "Implementation in a complex environment with a five-digit number of mailboxes"
 description: "Discover our implementation approach for complex multi-client environments with thousands of mailboxes—real-world experience for smooth deployment."
 page_id: "implementationapproach"
-permalink: "/implementationapproach/"
+permalink: "/implementationapproach"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <!-- omit in toc -->
 ## What approach do we recommend for implementing the software? {#recommended-approach}
-For most companies, the <a href="/quickstart/">quick start guide</a> is the most efficient way to get started. It enables you to implement Set-OutlookSignatures and the Benefactor Circle add-on on your own in no time. Full <a href="/support/#professional-support">implementation support</a> rarely takes more than half a day.
+For most companies, the <a href="/quickstart">quick start guide</a> is the most efficient way to get started. It enables you to implement Set-OutlookSignatures and the Benefactor Circle add-on on your own in no time. Full <a href="/support#professional-support">implementation support</a> rarely takes more than half a day.
 
 <p>
   <div class="buttons">
-    <a href="/quickstart/" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Quick Start Guide</a>
-    <a href="/support/#professional-support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
+    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Quick Start Guide</a>
+    <a href="/support#professional-support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
   </div>
 </p>
 
@@ -417,7 +417,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
 After gathering customer requirements and testing several server- and client-based products, we recommend using the free open-source software **Set-OutlookSignatures** with the paid **"Benefactor Circle"** extension.
 
 ### 5.1. General Description {#general-description}
-<a href="https://set-outlooksignatures.com/">Set-OutlookSignatures</a> is a free open-source product with a paid add-on for advanced enterprise features.
+<a href="https://set-outlooksignatures.com">Set-OutlookSignatures</a> is a free open-source product with a paid add-on for advanced enterprise features.
 
 It supports all variants of Outlook and Exchange as target platforms: Windows, macOS, Android, iOS, Linux, and Web. Both classic and new Outlook. On-premises, hybrid, and cloud-only. By optionally storing signatures in the mailbox, they are also available in other email clients.
 
@@ -440,7 +440,7 @@ The free part of the software is licensed under the "European Union Public Licen
 
 The Benefactor Circle add-on is licensed based on the number of mailboxes intended to use it. There is no need to name mailboxes individually.
 
-By avoiding tiered pricing and discounts, the <a href="/benefactorcircle/#financial-benefits">cost-benefit ratio</a> is already favorable even for a small number of mailboxes.
+By avoiding tiered pricing and discounts, the <a href="/benefactorcircle#financial-benefits">cost-benefit ratio</a> is already favorable even for a small number of mailboxes.
 
 
 ## 6. Support from the IT Service Provider {#support-it-service-provider}
@@ -448,9 +448,9 @@ As an IT service provider, we not only recommend Set-OutlookSignatures, but also
 
 We share our experience gained during the definition of requirements for a signature solution, the evaluation and comparison of different products, and the implementation of Set-OutlookSignatures and the Benefactor Circle add-on.
 
-For companies within the group that wish to implement the solution independently, we recommend starting with the <a href="/quickstart/">Quick Start Guide</a>. Thanks to the extensive documentation, clients can usually implement Set-OutlookSignatures and the Benefactor Circle add-on on their own in a short amount of time.
+For companies within the group that wish to implement the solution independently, we recommend starting with the <a href="/quickstart">Quick Start Guide</a>. Thanks to the extensive documentation, clients can usually implement Set-OutlookSignatures and the Benefactor Circle add-on on their own in a short amount of time.
 
-We offer support to all group companies in the form of workshops and training sessions. The following list represents the maximum scope, both in terms of content and time, within a full preparation and implementation project. **Complete <a href="/support/#professional-support">implementation support</a> in a "train the trainer" format rarely takes more than half a day.**
+We offer support to all group companies in the form of workshops and training sessions. The following list represents the maximum scope, both in terms of content and time, within a full preparation and implementation project. **Complete <a href="/support#professional-support">implementation support</a> in a "train the trainer" format rarely takes more than half a day.**
 
 ### 6.1. Consulting and Imp/lementation Phase {#consulting-implementation-phase}
 #### Initial Alignment on Textual Signatures <!-- omit in toc -->

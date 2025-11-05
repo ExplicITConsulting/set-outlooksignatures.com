@@ -6,7 +6,7 @@ title: "Get support"
 subtitle: "Passing on our experience to you"
 description: "Get Set-OutlookSignatures support: Free GitHub help or premium support, plus expert guidance, workshops, and implementation assistance."
 page_id: "support"
-permalink: "/support/"
+permalink: "/support"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
@@ -31,7 +31,7 @@ sitemap_changefreq: weekly
 
 <h2 id="professional-support">Professional support</h2>
 <p>
-  Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: <a href="https://explicitconsulting.at/">ExplicIT Consulting</a> provides first-class professional support.
+  Whether you use the free and open-source version of Set-OutlookSignatures or the Benefactor Circle add-on: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> provides first-class professional support.
 </p>
 <p>
   You prefer to be guided through the setup and customization process instead of working through the documentation yourself? You are looking for customized workshops, hands-on implementation support, training, template creation assistance and other services related to centralized email signature and out-of-office reply management?

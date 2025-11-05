@@ -8,7 +8,7 @@ published: true
 author: Markus Gruber
 tags: 
 slug: "signatures-sendas-sendonbehalf"
-permalink: "/blog/:year/:month/:day/:slug/"
+permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
