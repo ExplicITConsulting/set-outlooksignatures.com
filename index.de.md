@@ -14,7 +14,7 @@ hero_link2_text: "<span><b>Hinter den Kulissen: </b>Vom Code lernen</span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
 page_id: "index"
-permalink: ""
+permalink: "/"
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
