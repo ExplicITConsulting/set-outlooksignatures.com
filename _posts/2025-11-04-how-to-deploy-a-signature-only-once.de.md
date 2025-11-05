@@ -2,7 +2,7 @@
 layout: "post"
 lang: "de"
 locale: "de"
-title: "Nicht als Slug formatierter Titel"
+title: "Wie man eine Signatur nur einmal verteilt – und eine clevere Alternative"
 description:
 published: true
 author: Markus Gruber
