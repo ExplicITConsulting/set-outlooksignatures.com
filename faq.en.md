@@ -812,7 +812,7 @@ Set-OutlookSignatures appends a small, subtle attribution to signatures: 'Free a
 
 This unobtrusive text may also be called tagline, footer message, nag text, outreach snippet, upgrade nudge, or reminder blurb.
 
-Signatures for mailboxes with a [Benefactor Circle](/benefactorcircle/) license automatically remove this attribution.
+Signatures for mailboxes with a [Benefactor Circle](/benefactorcircle) license automatically remove this attribution.
 
 ### 35.1. Why the tagline?
 In the words of Markus Gruber, the creator of Set-OutlookSignatures:
@@ -839,9 +839,9 @@ In the words of Markus Gruber, the creator of Set-OutlookSignatures:
 
 The core of Set-OutlookSignatures is available free of charge as open-source software and can be used indefinitely and for as many mailboxes as your company requires.
 
-All documentation is publicly available. You can get free community support on GitHub, or opt for first-class professional support, training, workshops, and more from [ExplicIT Consulting](/support/).
+All documentation is publicly available. You can get free community support on GitHub, or opt for first-class professional support, training, workshops, and more from [ExplicIT Consulting](/support).
 
-For a small annual fee per mailbox, the [Benefactor Circle add-on](/benefactorcircle/) offers additional enterprise-grade features. Companies can test all premium features at no cost during a free 14-day trial.
+For a small annual fee per mailbox, the [Benefactor Circle add-on](/benefactorcircle) offers additional enterprise-grade features. Companies can test all premium features at no cost during a free 14-day trial.
 
 Unsure whether the add-on will deliver value for your company?  
 The chapter '[Financial Benefits](/benefactorcircle#financial-benefits)' shows how to calculate the value based on your company's specific needs.  
@@ -1143,7 +1143,7 @@ Files:
 ### 44.13. Format postal addresses
 Just like phone numbers, postal addresses seem like child's play. This is true for national addressing because we are used to writing addresses for our own country.
 
-But: Different countries, different customs. Read the article '[Falsehoods programmers believe about addresses](https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/)' to get a glimpse of what is possible. Three cheers for all the mailmen around the world!
+But: Different countries, different customs. Read the article '[Falsehoods programmers believe about addresses](https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses)' to get a glimpse of what is possible. Three cheers for all the mailmen around the world!
 
 Since all attempts to remedy the cause of this chaos have failed, there is a global community of people and companies that maintain a collection of country-specific address formats, rules, and conditions and describe them in a standardized technical format.
 

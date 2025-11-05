@@ -26,4 +26,4 @@ Im deutschsprachigen Raum gibt es dafür kein Gegenstück, im Englischen ist es 
 - Strg+Umschalt+R (großes R) = Allen antworten
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/contact/) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

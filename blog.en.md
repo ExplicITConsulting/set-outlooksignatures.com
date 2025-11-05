@@ -8,7 +8,7 @@ description: "Discover practical tips, tools, and trends for mastering Outlook s
 pagination: 
   enabled: true
 page_id: "blog"
-permalink: "/blog"
+permalink: "/blog/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---

@@ -94,7 +94,7 @@ module Jekyll
           # Handle rel attribute: Add noopener noreferrer if not present or append to existing.
           if full_tag =~ /rel\s*=\s*(["'])([^"']*)\1/i
             # If rel exists, append to it 
-            current_rel = $2.strip.split(/\s+/).compact.uniq
+            current_rel = $2.strip.split(/\s+).compact.uniq
             
             required_rels = %w[noopener noreferrer]
             

@@ -27,4 +27,4 @@ Hier kommt das Add-on "Benefactor Circle" ins Spiel:
 Denn E-Mail-Signaturen sind nicht nur eine Unterschrift, sondern Teil Ihrer Marke, Ihrer Compliance-Strategie und Ihrer Kommunikationskultur.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/contact/) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
