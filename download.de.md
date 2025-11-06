@@ -19,9 +19,7 @@ Set-OutlookSignatures ist der Open-Source-Standard für E-Mail-Signaturen und Ab
   <div class="buttons">
     <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal is-hovered has-text-black has-text-weight-bold mtrcs-download" style="background-color: limegreen">Software herunterladen</a>
     <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Changelog lesen</a>
-  </div>
-  <br>
-  <div>
+    <br>
     <img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=for-the-badge">
     <img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=for-the-badge">
   </div>
