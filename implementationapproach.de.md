@@ -148,7 +148,7 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
         <thead>
             <tr>
                 <th style="text-align:left">Feature</th>
-                <th style="text-align:left">Set-OutlookSignatures mit dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></th>
+                <th style="text-align:left">Set-OutlookSignatures<br>mit dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></th>
                 <th style="text-align:left">Marktbegleiter A</th>
                 <th style="text-align:left">Marktbegleiter B</th>
                 <th style="text-align:left">Marktbegleiter C</th>
@@ -415,6 +415,13 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
                 <td style="text-align:left">🔴 ca. 110.000&nbsp;€</td>
                 <td style="text-align:left">🟡 ca. 65.000&nbsp;€</td>
                 <td style="text-align:left">🟡 ca. 41.000&nbsp;€</td>
+            </tr>
+            <tr>
+                <td style="text-align:left">Direktbezug ohne öffentliche Ausschreibung</td>
+                <td style="text-align:left">🟢 Einzigartige Funktionen, exklusive Herstellerverfügbarkeit</td>
+                <td style="text-align:left">🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
+                <td style="text-align:left">🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
+                <td style="text-align:left">🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
             </tr>
         </tbody>
     </table>

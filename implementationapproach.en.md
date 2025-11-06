@@ -137,7 +137,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
         <thead>
             <tr>
                 <th style="text-align:left">Feature</th>
-                <th style="text-align:left">Set-OutlookSignatures with the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></th>
+                <th style="text-align:left">Set-OutlookSignatures<br>with the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></th>
                 <th style="text-align:left">Peer&nbsp;A</th>
                 <th style="text-align:left">Peer&nbsp;B</th>
                 <th style="text-align:left">Peer&nbsp;C</th>
@@ -408,6 +408,13 @@ Based on the required feature set, various solutions were evaluated, tested, and
                 <td style="text-align:left">🔴 ca. 110,000&nbsp;€</td>
                 <td style="text-align:left">🟡 ca. 65,000&nbsp;€</td>
                 <td style="text-align:left">🟡 ca. 41,000&nbsp;€</td>
+            </tr>
+            <tr>
+                <td style="text-align:left">Direct procurement without public tender</td>
+                <td style="text-align:left">🟢 Unique features, exclusive manufacturer availablity</td>
+                <td style="text-align:left">🔴 No unique features, no exclusive manufacturer availablity</td>
+                <td style="text-align:left">🔴 No unique features, no exclusive manufacturer availablity</td>
+                <td style="text-align:left">🔴 No unique features, no exclusive manufacturer availablity</td>
             </tr>
         </tbody>
     </table>
