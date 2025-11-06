@@ -1,11 +1,11 @@
 <nav class="pagination is-centered">
     {% if paginator.previous_page %}
-    <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="pagination-previous">&lt;</a>
+    <a href="{{ site.baseurl }}{{ paginator.previous_page_path | replace: "/index.html", "" }}" class="pagination-previous">&lt;</a>
     {% else %}
     <p class="pagination-previous" disabled>&lt;</p>
     {% endif %}
     {% if paginator.next_page %}
-    <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="pagination-next">&gt;</a>
+    <a href="{{ site.baseurl }}{{ paginator.next_page_path | replace: "/index.html", "" }}" class="pagination-next">&gt;</a>
     {% else %}
     <p class="pagination-next" disabled>&gt;</p>
     {% endif %}
@@ -14,7 +14,7 @@
         {% if paginator.page_trail %}
         {% for trail in paginator.page_trail %}
         <li>
-            <a href="{{ trail.path | prepend: site.baseurl }}"
+            <a href="{{ trail.path | prepend: site.baseurl | replace: "/index.html", ""}}"
                 class="pagination-link {% if page.url == trail.path %} is-current {% endif %}"
                 title="{{trail.title}}">{{ trail.num }}</a>
         </li>

@@ -12,7 +12,7 @@
 - name: Demo
   link: /benefactorcircle#demo
 - name: Blog
-  link: /blog
+  link: /blog/
 - name: Resources
   link: /help
   dropdown:
