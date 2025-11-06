@@ -13,7 +13,16 @@ sitemap_changefreq: weekly
 ## Step 1: Download Set-OutlookSignatures {#step-1}
 Download Set-OutlookSignatures and extract the archive to a local folder.
 
-<p><a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal is-hovered has-text-black has-text-weight-bold mtrcs-download" style="background-color: limegreen">Download software</a></p>
+<p>
+  <div class="buttons">
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal is-hovered has-text-black has-text-weight-bold mtrcs-download" style="background-color: limegreen">Download software</a>
+  </div>
+  <br>
+  <div>
+    <img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=for-the-badge">
+    <img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=for-the-badge">
+  </div>
+</p>
 
 On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'. This removes the 'mark of the web', which can prevent script execution in PowerShell.
 
