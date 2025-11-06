@@ -8,7 +8,7 @@ description: "Entdecken Sie praxisnahe Tipps, Tools und Trends rund um Outlook-S
 pagination: 
   enabled: true
 page_id: "blog"
-permalink: "/blog"
+permalink: "/blog/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
