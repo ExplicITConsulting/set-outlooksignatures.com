@@ -341,7 +341,9 @@ Benefactor Circle add-on</span>.</p>
 <p>Set-OutlookSignatures is completely free of charge. Originally developed as a technology demonstrator for scripting techniques, it has evolved into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies. You can read more about its history and the intentions behind it <a href="https://set-outlooksignatures.com/faq#351-why-the-tagline">here</a>.</p>
 <p>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> unlocks advanced features and is available for <strong>only 3.00 € per mailbox per year</strong>, which equals <strong>just 0.25 € per mailbox per month</strong>.</p>
 
-<p>This add-on is an investment that pays off from day one - certainly for you as well: <a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Cost-benefit analysis, business case</a></p>
+<p>Thanks to unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
+
+<p>The add-on is an investment that pays off from day one - certainly for you as well: <a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Cost-benefit analysis, business case</a></p>
 
 <p>We keep license costs as fair and transparent as possible:</p>
 <ul>

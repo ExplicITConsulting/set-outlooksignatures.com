@@ -352,6 +352,13 @@ Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on 
                 <td style="text-align:left">🟡 ca. 65.000&nbsp;€</td>
                 <td style="text-align:left">🟡 ca. 41.000&nbsp;€</td>
             </tr>
+            <tr>
+                <td style="text-align:left">Direktbezug ohne öffentliche Ausschreibung</td>
+                <td style="text-align:left">🟢 Einzigartige Funktionen, exklusive Herstellerverfügbarkeit</td>
+                <td style="text-align:left">🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
+                <td style="text-align:left">🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
+                <td style="text-align:left">🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
+            </tr>
         </tbody>
     </table>
 </div>

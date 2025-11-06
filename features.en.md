@@ -354,6 +354,13 @@ Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle
                 <td style="text-align:left">🟡 ca. 65,000&nbsp;€</td>
                 <td style="text-align:left">🟡 ca. 41,000&nbsp;€</td>
             </tr>
+            <tr>
+                <td style="text-align:left">Direct procurement without public tender</td>
+                <td style="text-align:left">🟢 Unique features, exclusive manufacturer availablity</td>
+                <td style="text-align:left">🔴 No unique features, no exclusive manufacturer availablity</td>
+                <td style="text-align:left">🔴 No unique features, no exclusive manufacturer availablity</td>
+                <td style="text-align:left">🔴 No unique features, no exclusive manufacturer availablity</td>
+            </tr>
         </tbody>
     </table>
 </div>
