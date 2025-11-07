@@ -37,7 +37,7 @@ sitemap_changefreq: weekly
   - [6.2. How to work with INI files](#62-how-to-work-with-ini-files)
 - [7. Signature and OOF application order](#7-signature-and-oof-application-order)
 - [8. Replacement variables](#8-replacement-variables)
-  - [8.1. Photos from Active Directory (account pictures, user image)](#81-photos-from-active-directory-account-pictures-user-image)
+  - [8.1. Photos (account pictures, user image) from Active Directory or Entra ID](#81-photos-account-pictures-user-image-from-active-directory-or-entra-id)
     - [8.1.1. When using DOCX template files](#811-when-using-docx-template-files)
     - [8.1.2. When using HTM template files](#812-when-using-htm-template-files)
     - [8.1.3. Common behavior](#813-common-behavior)
@@ -567,45 +567,14 @@ Per default, `.\config\default replacement variables.ps1` contains the following
     - Same variables as logged-in user, `$CurrentMailbox[…]$` instead of `$CurrentUser[…]$`  
 - Manager of current mailbox  
     - Same variables as logged-in user, `$CurrentMailboxManager[…]$` instead of `$CurrentMailbox[…]$`  
-### 8.1. Photos from Active Directory (account pictures, user image)
+### 8.1. Photos (account pictures, user image) from Active Directory or Entra ID
 The software supports replacing images in signature templates with photos stored in Active Directory.
 
 When using images in OOF templates, please be aware that Exchange and Outlook do not yet support images in OOF messages.
 
 As with other variables, photos can be obtained from the currently logged-in user, its manager, the currently processed mailbox and its manager.
 
-
-#### 8.1.1. When using DOCX template files
-To be able to apply Word image features such as sizing, cropping, frames, 3D effects etc, you have to exactly follow these steps:  
-1. Create a sample image file which will later be used as placeholder.  
-2. Optionally: If the sample image file name contains one of the following variable names, the software recognizes it and you do not need to add the value to the alternative text of the image in step 4:  
-    - `$CurrentUserPhoto$`  
-    - `$CurrentUserPhotoDeleteEmpty$`  
-    - `$CurrentUserManagerPhoto$`  
-    - `$CurrentUserManagerPhotoDeleteEmpty$`  
-    - `$CurrentMailboxPhoto$`  
-    - `$CurrentMailboxPhotoDeleteEmpty$`  
-    - `$CurrentMailboxManagerPhoto$`  
-    - `$CurrentMailboxManagerPhotoDeleteEmpty$`  
-3. Insert the image into the signature template. Make sure to use `Insert | Pictures | This device` (Word 2019, other versions have the same feature in different menus) and to select the option `Insert and Link` - if you forget this step, a specific Word property is not set and the software will not be able to replace the image.  
-4. If you did not follow optional step 2, please add one of the following variable names to the alternative text of the image in Word (these variables are removed from the alternative text in the final signature):  
-    - `$CurrentUserPhoto$`  
-    - `$CurrentUserPhotoDeleteEmpty$`  
-    - `$CurrentUserManagerPhoto$`  
-    - `$CurrentUserManagerPhotoDeleteEmpty$`  
-    - `$CurrentMailboxPhoto$`  
-    - `$CurrentMailboxPhotoDeleteEmpty$`  
-    - `$CurrentMailboxManagerPhoto$`  
-    - `$CurrentMailboxManagerPhotoDeleteEmpty$`  
-5. Format the image as wanted.
-
-For the software to recognize images to replace, you need to follow at least one of the steps 2 and 4. If you follow both, the software first checks for step 2 first. If you provide multiple image replacement variables, `$CurrentUser[…]$` has the highest priority, followed by `$CurrentUserManager[…]$`, `$CurrentMailbox[…]$` and `$CurrentMailboxManager[…]$`. It is recommended to use only one image replacement variable per image.  
-  
-The software will replace all images meeting the conditions described in the steps above and replace them with Active Directory photos in the background. This keeps Word image formatting option alive, just as if you would use Word's `"Change picture"` function.  
-
-
-#### 8.1.2. When using HTM template files
-Images are replaced when the `src` or `alt` property of the image tag contains one of the following strings:
+Set-Outlooksignatures comes with the following default replacement variables for handling account pictures:
 - `$CurrentUserPhoto$`  
 - `$CurrentUserPhotoDeleteEmpty$`  
 - `$CurrentUserManagerPhoto$`  
@@ -613,7 +582,35 @@ Images are replaced when the `src` or `alt` property of the image tag contains o
 - `$CurrentMailboxPhoto$`  
 - `$CurrentMailboxPhotoDeleteEmpty$`  
 - `$CurrentMailboxManagerPhoto$`  
-- `$CurrentMailboxManagerPhotoDeleteEmpty$`
+- `$CurrentMailboxManagerPhotoDeleteEmpty$`  
+
+#### 8.1.1. When using DOCX template files
+When using DOCX template files, there are two ways you can embed account pictures: The shape option or the "link and embed" option.
+
+Both ways allow to apply Word image features such as sizing, a shadow, a glow or a reflection. The shape option allows for more graphical freedom, as you can use arrows, stars and many more as container for account pictures.
+
+The crucial part for both ways is to set the text wrapping to "in line with text". If you don't, Outlook and other email clients will not place the image in the correct place as the position of floating shapes in Word cannot reliably be translated to HTML.
+
+The sample signature template '`Test all default replacement variables`' contains examples for both ways, as well as some images formatted as "floating" images.
+
+**Steps for the shape option:**
+1. Add a shape to the signature template.
+2. Apply any formatting you want to it.
+3. Add one of the default replacement variables (such as '`$CurrentUserPhoto$`') to the alternative text of the shape.
+4. Set the text wrapping of the shape to "in line with text".
+
+**Steps for the "link and embed" option:**
+1. Create a sample image file which will later be used as placeholder.  
+2. Insert the image into the signature template. Make sure to use `Insert | Pictures | This device` (Word 2019, other versions have the same feature in different menus) and to select the option `Insert and Link` - if you forget this step, a specific Word property is not set and the software will not be able to replace the image.  
+3. Apply any formatting you want to it.
+4. Add one of the default replacement variables (such as '`$CurrentUserPhoto$`') to the alternative text of the shape.
+
+When Set-OutlookSignatures finds a shape in a template file with an image replacement variable in its alternative text, it fills the shape with the account picture.
+
+When Set-Outlooksignatures finds a linked and embedded image in a template file with an image replacement variable in its alternative text, it replaces the image with the account picture (as if you would use Word's `"Change picture"` function).
+
+#### 8.1.2. When using HTM template files
+Images are replaced when the `src` or `alt` property of the image tag contains an image replacement variable.
 
 Be aware that Outlook does not support the full HTML feature set. For example:
 - Some (older) Outlook versions ignore the `width` and `height` properties for embedded images.  
