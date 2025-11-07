@@ -16,8 +16,8 @@ Laden Sie Set-OutlookSignatures herunter und entpacken Sie das Archiv in einen l
 <p>
   <div class="buttons">
     <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal is-hovered has-text-black has-text-weight-bold mtrcs-download" style="background-color: limegreen">Software herunterladen</a></p>
-    <a><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=for-the-badge" alt="Number of downloads"></a>
-    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=for-the-badge" alt="Number of open issues and link to issue list"></a>
+    <a><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=for-the-badge" alt="Number of downloads" loading="lazy"></a>
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=for-the-badge" alt="Number of open issues and link to issue list" loading="lazy"></a>
   </div>
 </p>
 
