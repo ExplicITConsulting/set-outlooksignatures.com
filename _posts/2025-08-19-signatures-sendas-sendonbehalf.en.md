@@ -20,4 +20,4 @@ With Set-OutlookSignatures, this is straightforward when you follow Microsoft's 
 - Create a signature template and assign it to that group
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](). We look forward to connecting with you!
+[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!

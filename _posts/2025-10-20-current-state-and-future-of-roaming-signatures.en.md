@@ -33,4 +33,4 @@ Our recommendation for most clients:
 Today, it's a pain point, often requiring expensive server-side rerouting just to apply a signature. But once Microsoft releases an official API, that changes. In the meantime, the Outlook add-in - part of the Benefactor Circle add-on - closes this gap.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](). We look forward to connecting with you!
+[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!

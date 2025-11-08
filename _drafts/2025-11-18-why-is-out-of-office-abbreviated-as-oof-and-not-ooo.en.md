@@ -26,4 +26,4 @@ This is a reference to the keyboard shortcuts in Outlook, which in turn were ado
 - Ctrl+Shift+R (big R) = Reply All
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](). We look forward to connecting with you!
+[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!

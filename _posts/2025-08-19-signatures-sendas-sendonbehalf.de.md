@@ -21,4 +21,4 @@ Mit Set-OutlookSignatures ist dies ganz einfach, wenn Sie die Best Practices von
 - Erstellen Sie eine Signaturvorlage und weisen Sie sie dieser Gruppe zu.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

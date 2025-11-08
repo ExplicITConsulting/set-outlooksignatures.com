@@ -26,4 +26,4 @@ With SimulateAndDeploy, you can roll out email signatures and out-of-office repl
 It's the world's first and only solution that makes this level of deployment possible.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](). We look forward to connecting with you!
+[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
