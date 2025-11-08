@@ -3,7 +3,7 @@ layout: "post"
 lang: "de"
 locale: "de"
 title: "Was kann ich aus dem Code von Set-OutlookSignatures lernen?"
-description:
+description: "Set-OutlookSignatures ist nicht nur ein Tool zum Verwalten von Outlook-Signaturen und Abwesenheitsnotizen."
 published: true
 author: Markus Gruber
 tags:

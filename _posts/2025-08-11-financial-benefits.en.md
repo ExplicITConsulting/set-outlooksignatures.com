@@ -3,7 +3,7 @@ layout: "post"
 lang: "en"
 locale: "en"
 title: "Is centralized signature management just a cost center or a hidden opportunity?"
-description:
+description: "Many assume that managing email signatures only makes sense for large enterprises"
 published: true
 author: Markus Gruber
 tags: 
@@ -12,7 +12,7 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-## Many assume that managing email signatures only makes sense for large enterprises.
+## Many assume that managing email signatures only makes sense for large enterprises
 But the numbers tell a different story.
 
 Let's break it down:

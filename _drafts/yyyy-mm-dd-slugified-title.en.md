@@ -3,7 +3,7 @@ layout: "post"
 lang: "en"
 locale: "en"
 title: "Non-slugified title"
-description:
+description: "Description, between 30 and 160 characters"
 published: true
 author: Markus Gruber
 tags: 

@@ -3,7 +3,7 @@ layout: "post"
 lang: "de"
 locale: "de"
 title: "Wie man eine Signatur nur einmal verteilt – und eine clevere Alternative"
-description:
+description: "Manchmal möchten Sie eine Signatur nur einmal bereitstellen zbd dem Benutzer die Möglichkeit geben, sie zu personalisieren."
 published: true
 author: Markus Gruber
 tags:

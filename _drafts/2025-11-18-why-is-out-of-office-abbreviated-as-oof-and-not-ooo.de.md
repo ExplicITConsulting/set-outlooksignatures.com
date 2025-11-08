@@ -3,7 +3,7 @@ layout: "post"
 lang: "de"
 locale: "de"
 title: "Warum wird Out Of Office mit OOF abgekürzt und nicht mit OOO?"
-description:
+description: "Blicken wir zurück in die 1980er Jahre. Damals war Microsoft Xenix das führende Unix-Betriebssystem."
 published: true
 author: Markus Gruber
 tags:

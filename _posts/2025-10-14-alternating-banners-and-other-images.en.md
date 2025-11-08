@@ -3,7 +3,7 @@ layout: "post"
 lang: "en"
 locale: "en"
 title: "Randomly alternate banners and other images"
-description:
+description: "Running a marketing campaign with multiple banners?"
 published: true
 author: Markus Gruber
 tags: 

@@ -3,7 +3,7 @@ layout: "post"
 lang: "en"
 locale: "en"
 title: "Current state and future of roaming signatures"
-description:
+description: "When Microsoft announced roaming signatures back in 2020, it sounded like a game-changer."
 published: true
 author: Markus Gruber
 tags: 

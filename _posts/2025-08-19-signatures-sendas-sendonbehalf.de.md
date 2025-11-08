@@ -3,7 +3,7 @@ layout: "post"
 lang: "de"
 locale: "de"
 title: "Signaturen für Senden Als und Senden Im Auftrag Von"
-description:
+description: "Sie möchten Signaturen für Postfächer oder Verteilerlisten zuweisen, die Benutzer nicht zu Outlook hinzufügen?"
 published: true
 author: Markus Gruber
 tags: 

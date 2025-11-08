@@ -3,7 +3,7 @@ layout: "post"
 lang: "en"
 locale: "en"
 title: "Roaming Signatures for Outlook for Mac?"
-description:
+description: "Do you have users accessing Exchange Online mailboxes with Outlook for Mac? "
 published: true
 author: Markus Gruber
 tags: 

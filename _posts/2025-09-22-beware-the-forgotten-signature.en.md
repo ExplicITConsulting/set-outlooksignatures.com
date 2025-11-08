@@ -3,7 +3,7 @@ layout: "post"
 lang: "en"
 locale: "en"
 title: "Beware the Forgotten Signature 👻🎃"
-description:
+description: "Your email signature might seem harmless, but when left unchanged, it can become a ghost of missed opportunities."
 published: true
 author: Markus Gruber
 tags: 

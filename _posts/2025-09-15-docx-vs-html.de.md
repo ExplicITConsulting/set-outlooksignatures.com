@@ -3,7 +3,7 @@ layout: "post"
 lang: "de"
 locale: "de"
 title: "DOCX oder HTML?"
-description:
+description: "Die Wahl der Signaturvorlage, auf die es wirklich ankommt"
 published: true
 author: Markus Gruber
 tags: 

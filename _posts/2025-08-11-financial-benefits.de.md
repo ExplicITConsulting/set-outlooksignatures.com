@@ -3,7 +3,7 @@ layout: "post"
 lang: "de"
 locale: "de"
 title: "Ist zentralisiertes Signaturmanagement nur ein Kostenfaktor oder eine versteckte Chance?"
-description:
+description: "Viele gehen davon aus, dass die Verwaltung von E-Mail-Signaturen nur für große Unternehmen sinnvoll ist"
 published: true
 author: Markus Gruber
 tags: 
@@ -12,7 +12,7 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-## Viele gehen davon aus, dass die Verwaltung von E-Mail-Signaturen nur für große Unternehmen sinnvoll ist.
+## Viele gehen davon aus, dass die Verwaltung von E-Mail-Signaturen nur für große Unternehmen sinnvoll ist
 Die Zahlen sprechen jedoch eine andere Sprache.
 
 Schauen wir uns das einmal genauer an:

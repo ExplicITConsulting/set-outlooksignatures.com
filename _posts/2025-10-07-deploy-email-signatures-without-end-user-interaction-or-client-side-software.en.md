@@ -3,7 +3,7 @@ layout: "post"
 lang: "en"
 locale: "en"
 title: "Deploy email signatures without end user interaction or client-side software"
-description:
+description: "In some environments, running client-based tools just isn't an option"
 published: true
 author: Markus Gruber
 tags: 

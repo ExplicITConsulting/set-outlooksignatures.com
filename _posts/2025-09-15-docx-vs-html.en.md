@@ -3,7 +3,7 @@ layout: "post"
 lang: "en"
 locale: "en"
 title: "DOCX or HTML?"
-description:
+description: "The signature template choice that actually matters"
 published: true
 author: Markus Gruber
 tags: 

@@ -3,7 +3,7 @@ layout: "post"
 lang: "en"
 locale: "en"
 title: "Detect and convert encodings"
-description:
+description: "ConvertEncoding enables reliable detection and conversion of encodings."
 published: true
 author: Markus Gruber
 tags: 

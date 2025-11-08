@@ -3,7 +3,7 @@ layout: "post"
 lang: "de"
 locale: "de"
 title: "Kodierungen erkennen und konvertieren"
-description:
+description: "ConvertEncoding ermöglicht die zuverlässige Erkennung und Konvertierung von Kodierungen"
 published: true
 author: Markus Gruber
 tags:
@@ -20,7 +20,9 @@ Unicode war und ist ein Meilenstein: Ein System, das (fast) alle Zeichen in alle
 
 HTML macht es noch komplizierter, indem es zwischen interner und externer Kodierung unterscheidet.
 
-Die kostenlose und quelloffene PowerShell-Funktion ConvertEncoding, Teil von Set-OutlookSignatures, macht die leistungsstarke und ebenfalls kostenlose und quelloffene Bibliothek UTF. ConvertEncoding ermöglicht die zuverlässige Erkennung von Kodierungen über BOMs, HTML-Metadaten und heuristische Analysen und konvertiert Inhalte bei Bedarf in andere Formate. Selbst HTML-Dateien werden korrekt angepasst, einschließlich Meta-Tags. Dadurch lassen sich unterschiedliche Kodierungen leicht handhaben.
+Die kostenlose und quelloffene PowerShell-Funktion ConvertEncoding, Teil von Set-OutlookSignatures, macht die leistungsstarke und ebenfalls kostenlose und quelloffene Bibliothek UTF.Unknown einfach nutzbar.
+
+ConvertEncoding ermöglicht die zuverlässige Erkennung von Kodierungen über BOMs, HTML-Metadaten und heuristische Analysen und konvertiert Inhalte bei Bedarf in andere Formate. Selbst HTML-Dateien werden korrekt angepasst, einschließlich Meta-Tags. Dadurch lassen sich unterschiedliche Kodierungen leicht handhaben.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
