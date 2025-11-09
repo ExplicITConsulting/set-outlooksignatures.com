@@ -2,7 +2,7 @@
 layout: "post"
 lang: "de"
 locale: "de"
-title: "Signaturen ohne Endbenutzer-Interaktion oder clientseitige Software verteilen"
+title: "Signaturen ohne Endbenutzer-Interaktion oder clientseitige Software"
 description: "In manchen Umgebungen ist die Ausführung clientbasierter Tools einfach keine Option"
 published: true
 author: Markus Gruber

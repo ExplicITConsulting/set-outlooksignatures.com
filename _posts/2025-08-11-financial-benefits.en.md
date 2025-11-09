@@ -2,7 +2,7 @@
 layout: "post"
 lang: "en"
 locale: "en"
-title: "Is centralized signature management just a cost center or a hidden opportunity?"
+title: "Centralized signature management: Cost center or opportunity?"
 description: "Many assume that managing email signatures only makes sense for large enterprises"
 published: true
 author: Markus Gruber

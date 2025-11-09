@@ -2,7 +2,7 @@
 layout: "post"
 lang: "de"
 locale: "de"
-title: "Nicht als Slug formatierter Titel"
+title: "Nicht als Slug formatierter Titel, max. 70 Zeichen"
 description: "Beschreibung, zwischen 30 und 160 Zeichen"
 published: true
 author: Markus Gruber
