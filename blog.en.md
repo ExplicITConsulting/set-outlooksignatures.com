@@ -8,8 +8,6 @@ description: "Discover practical tips, tools, and trends for mastering Outlook s
 pagination: 
   enabled: true
 permalink: "/blog/"
-redirect_from:
-  - "/blog"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---

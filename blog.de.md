@@ -8,8 +8,6 @@ description: "Entdecken Sie praxisnahe Tipps, Tools und Trends rund um Outlook-S
 pagination: 
   enabled: true
 permalink: "/blog/"
-redirect_from:
-  - "/blog"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
