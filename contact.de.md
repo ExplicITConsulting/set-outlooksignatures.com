@@ -5,7 +5,6 @@ locale: "de"
 title: "Bleiben wir in Kontakt"
 subtitle: "E-Mail, Rückruf anfordern, Postadresse"
 description: "Kontaktieren Sie ExplicIT Consulting per E-Mail, Rückruf oder Post. Finden Sie auch unsere LinkedIn- und GitHub-Profile für mehr Infos."
-page_id: "contact"
 permalink: "/contact"
 redirect_from:
   - "/contact/"

@@ -5,7 +5,6 @@ locale: "en"
 title: "Download Set-Outlook&shy;Signatures"
 subtitle: "Get the Free and Open-Source core version"
 description: "Email signatures and out-of-office replies for Exchange and Outlook. Full-featured, cost-effective, unsurpassed data privacy."
-page_id: "download"
 permalink: "/download"
 redirect_from:
   - "/download/"

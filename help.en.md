@@ -5,7 +5,6 @@ locale: "en"
 title: "Help"
 subtitle: "Documentation and support ressources"
 description: "Access Set-OutlookSignatures help: feature comparisons, setup guides, FAQs, technical details, and expert support resources."
-page_id: "help"
 permalink: "/help"
 redirect_from:
   - "/help/"

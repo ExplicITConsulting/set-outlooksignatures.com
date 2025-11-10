@@ -5,7 +5,6 @@ locale: "de"
 title: "Implementierungs-Ansatz"
 subtitle: "Einführung in einer komplexen Umgebung mit zehntausenden Postfächern"
 description: "Erfahren Sie unseren Implementierungs-Ansatz für komplexe Multi-Client-Umgebungen mit zehntausenden Postfächern – praxisnah und effizient."
-page_id: "implementationapproach"
 permalink: "/implementationapproach"
 redirect_from:
   - "/implementationapproach/"

@@ -5,7 +5,6 @@ locale: "de"
 title: "Schnellstart-Anleitung"
 subtitle: "Signaturen in wenigen Minuten verteilen"
 description: "Schnellstart-Anleitung. Signaturen in wenigen Minuten verteilen."
-page_id: "quickstart"
 permalink: "/quickstart"
 redirect_from:
   - "/quickstart/"

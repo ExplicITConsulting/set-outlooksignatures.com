@@ -17,7 +17,6 @@ hero_link3: "/quickstart"
 hero_link3_text: "<span><b>Quick Start Guide: </b>Deploy signatures within minutes</span>"
 hero_link3_style: |
   style="background-color: LimeGreen;"
-page_id: "features"
 permalink: "/features"
 redirect_from:
   - "/features/"

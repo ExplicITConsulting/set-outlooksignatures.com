@@ -13,7 +13,6 @@ hero_link2: /support
 hero_link2_text: "<span><b>Support</b></span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
-page_id: "details"
 permalink: "/details"
 redirect_from:
   - "/details/"

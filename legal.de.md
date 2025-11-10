@@ -5,7 +5,6 @@ locale: "de"
 title: "Rechtliche Informationen"
 subtitle: "Impressum, Datenschutzerklärung, Allgemeine Geschäftsbedingungen, etc."
 description: "Rechtliche Informationen. Impressum, Datenschutzerklärung, Allgemeine Geschäftsbedingungen, etc."
-page_id: "legal"
 permalink: "/legal"
 redirect_from:
   - "/legal/"
