@@ -7,7 +7,8 @@ subtitle: "Topics that are addressed regularly"
 description: "Get answers to common Set-OutlookSignatures questions: setup, templates, deployment, roaming signatures, and advanced configuration."
 page_id: "faq"
 permalink: "/faq"
-redirect_from: "/faq/"
+redirect_from:
+  - "/faq/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

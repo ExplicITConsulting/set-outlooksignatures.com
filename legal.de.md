@@ -7,7 +7,8 @@ subtitle: "Impressum, Datenschutzerklärung, Allgemeine Geschäftsbedingungen, e
 description: "Rechtliche Informationen. Impressum, Datenschutzerklärung, Allgemeine Geschäftsbedingungen, etc."
 page_id: "legal"
 permalink: "/legal"
-redirect_from: "/legal/"
+redirect_from:
+  - "/legal/"
 sitemap_priority: 0.3
 sitemap_changefreq: yearly
 ---

@@ -7,7 +7,8 @@ subtitle: "Passing on our experience to you"
 description: "Get Set-OutlookSignatures support: Free GitHub help or premium support, plus expert guidance, workshops, and implementation assistance."
 page_id: "support"
 permalink: "/support"
-redirect_from: "/support/"
+redirect_from:
+  - "/support/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---

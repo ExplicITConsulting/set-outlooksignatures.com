@@ -15,7 +15,8 @@ hero_link2_style: |
   style="background-color: LimeGreen;"
 page_id: "details"
 permalink: "/details"
-redirect_from: "/details/"
+redirect_from:
+  - "/details/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---

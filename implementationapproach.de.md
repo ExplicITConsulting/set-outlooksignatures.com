@@ -7,7 +7,8 @@ subtitle: "Einführung in einer komplexen Umgebung mit zehntausenden Postfächer
 description: "Erfahren Sie unseren Implementierungs-Ansatz für komplexe Multi-Client-Umgebungen mit zehntausenden Postfächern – praxisnah und effizient."
 page_id: "implementationapproach"
 permalink: "/implementationapproach"
-redirect_from: "/implementationapproach/"
+redirect_from:
+  - "/implementationapproach/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---

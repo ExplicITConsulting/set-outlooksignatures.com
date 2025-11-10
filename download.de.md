@@ -7,7 +7,8 @@ subtitle: "Holen Sie sich die kostenlose und quelloffene Kernversion"
 description: "E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz."
 page_id: "download"
 permalink: "/download"
-redirect_from: "/download/"
+redirect_from:
+  - "/download/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---

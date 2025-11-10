@@ -7,7 +7,8 @@ subtitle: "Get the Free and Open-Source core version"
 description: "Email signatures and out-of-office replies for Exchange and Outlook. Full-featured, cost-effective, unsurpassed data privacy."
 page_id: "download"
 permalink: "/download"
-redirect_from: "/download/"
+redirect_from:
+  - "/download/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
