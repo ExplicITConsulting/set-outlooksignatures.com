@@ -9,6 +9,7 @@ pagination:
   enabled: true
 page_id: "blog"
 permalink: "/blog/"
+redirect_from: "/blog"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---

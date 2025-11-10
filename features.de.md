@@ -19,6 +19,7 @@ hero_link3_style: |
   style="background-color: LimeGreen;"
 page_id: "features"
 permalink: "/features"
+redirect_from: "/features/"
 sitemap_priority: 0.9
 sitemap_changefreq: weekly
 ---

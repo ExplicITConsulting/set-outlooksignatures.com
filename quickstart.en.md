@@ -7,6 +7,7 @@ subtitle: "Deploy signatures within minutes"
 description: "Quick Start Guide. Deploy signatures within minutes."
 page_id: "quickstart"
 permalink: "/quickstart"
+redirect_from: "/quickstart/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---

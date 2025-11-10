@@ -26,6 +26,7 @@ image:
 hide_gh_sponsor: true
 page_id: "benefactorcircle"
 permalink: "/benefactorcircle"
+redirect_from: "/benefactorcircle/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
