@@ -15,6 +15,7 @@ hero_link2_style: |
   style="background-color: LimeGreen;"
 page_id: "index"
 permalink: "/"
+redirect_from:
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
