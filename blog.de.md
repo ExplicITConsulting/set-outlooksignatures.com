@@ -4,7 +4,7 @@ lang: "de"
 locale: "de"
 title: "Outlook-Signaturen meistern"
 subtitle: "Tipps, Tools und Trends für IT- und Marketing-Teams"
-description: "Entdecken Sie Tipps, Tools und Trends rund um Outlook-Signaturen – speziell für IT-Administratoren und Marketing-Teams, die Kommunikation professionell gestalten wollen"
+description: "Tipps, Tools und Trends rund um Outlook-Signaturen – speziell für IT-Administratoren und Marketing-Teams, die Kommunikation professionell gestalten wollen"
 pagination: 
   enabled: true
 permalink: "/blog/"
