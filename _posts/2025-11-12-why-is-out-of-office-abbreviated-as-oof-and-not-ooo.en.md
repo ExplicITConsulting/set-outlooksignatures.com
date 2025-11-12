@@ -2,7 +2,7 @@
 layout: "post"
 lang: "en"
 locale: "en"
-title: "Why Is Out Of Office abbreviated as OOF and not OOO?"
+title: "Why is Out Of Office abbreviated as OOF and not OOO?"
 description: "Let's rewind to the 1980s. Back then, Microsoft Xenix was the leading Unix OS..."
 published: true
 author: Markus Gruber
