@@ -25,7 +25,7 @@ sitemap_changefreq: weekly
 <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
 
 
-<div class="has-background-light">
+<div class="">
   <h2 id="less-effort">
     <span style="background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>, mehr Professionalität
   </h2>
@@ -152,7 +152,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<div class="has-background-light">
+<div class="">
   <h2 id="expertise">
     Funktionalität trifft<span class="has-text-success"> Expertise</span>
   </h2>
@@ -217,7 +217,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<div class="has-background-light">
+<div class="">
   <h2 id="quickstart">
     Signaturen<span class="has-text-success"> in wenigen Minuten </span> verteilen
   </h2>
