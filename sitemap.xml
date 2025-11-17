@@ -24,7 +24,7 @@ sitemap: false
 
 {%- for node in all_content -%}
   {%- unless node.redirect_to or node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
-    {%- assign canonicalUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
+    {%- assign canonicalUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "" -%}
 
     {%- for languageCode in sorted_langs -%}
       {%- if languageCode == default_lang -%}
