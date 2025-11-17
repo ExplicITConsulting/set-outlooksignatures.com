@@ -44,7 +44,7 @@ sitemap: false
       {%- endif -%}
 
       {%- if node.permalink_lang[languageCode] -%}
-        {%- assign current_permalink = languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://"  -%}
+        {%- assign current_permalink = languagePrefix | append: node.permalink_lang[languageCode] | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
 xxx{{ current_permalink }}xxx
         {%- unless unique_permalinks contains current_permalink -%}
           {%- assign unique_permalinks = unique_permalinks | push: current_permalink %}
