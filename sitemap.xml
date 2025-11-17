@@ -42,7 +42,8 @@ sitemap: false
       {%- else -%}
         {%- assign languagePrefix = "/" | append: languageCode -%}
       {%- endif -%}
-
+node.permalink
+node.permalink_lang[languageCode]
       {%- if node.permalink_lang[languageCode] -%}
         {%- assign current_permalink = languagePrefix | append: node.permalink_lang[languageCode] | absolute_url -%}
 xxx{{ current_permalink }}xxx
