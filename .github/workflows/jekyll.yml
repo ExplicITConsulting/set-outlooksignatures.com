@@ -47,6 +47,10 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Setup IndexNow 
+        # Generate the verification file and place it inside the _site directory, 
+        # which is the output directory Jekyll uses.
+        run: echo ${{ secrets.INDEXNOW_KEY }} > _site/${{ secrets.INDEXNOW_KEY }}.txt
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
