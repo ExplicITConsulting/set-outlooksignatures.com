@@ -70,3 +70,4 @@ jobs:
           limit: 1000
           sitemap-location: ${{ secrets.SITEMAP }}
           key: ${{ secrets.INDEXNOW_KEY }}
+          lastmod-required: false
