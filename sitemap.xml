@@ -20,7 +20,7 @@ sitemap: false
 {%- for node in site.pages -%}
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
   {%- unless node.redirect_to or node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
-
+{{ node.permalink }}
     {%- comment -%} Get the URL to be used for x-default based on the prioritized language list {%- endcomment -%}
     {%- assign xDefaultUrl = "" -%}
     {%- for languageCode in sorted_langs -%}
