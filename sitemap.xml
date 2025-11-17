@@ -37,7 +37,7 @@ sitemap: false
         {%- assign unique_permalinks = unique_permalinks | push: localizedUrl %}
   <url>
     <loc>{{ localizedUrl }}</loc>
-    <lastmod>{{ node.last_modified_at | default: node.date | default: node.last_updated_at | default: site.time | date_to_xmlschema }}</lastmod>
+    <lastmod>{{ node.last_modified_at | default: node.date | default: site.time | date_to_xmlschema }}</lastmod>
     <priority>{{ node.sitemap_priority | default: 0.5 }}</priority>
     <changefreq>{{ node.sitemap_changefreq | default: weekly }}</changefreq>
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ canonicalUrl }}"/>
