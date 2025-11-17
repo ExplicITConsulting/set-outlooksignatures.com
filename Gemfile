@@ -11,4 +11,5 @@ group :jekyll_plugins do
     gem "jekyll-feed"
     gem "jekyll-seo-tag"
     gem 'jekyll-redirect-from'
+    gem "jekyll-last-commit"
 end
