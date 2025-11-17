@@ -24,7 +24,8 @@ sitemap_changefreq: weekly
 <p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
 <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
 
-<section class="section">
+
+<div class="has-background-light">
   <h2 id="less-effort">
     <span style="background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>, mehr Professionalität
   </h2>
@@ -41,7 +42,6 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
-
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, coral, coral); background-clip: text; color: transparent;">⚫</span>
@@ -50,7 +50,6 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
-
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, coral, coral); background-clip: text; color: transparent;">⚫</span>
@@ -60,9 +59,10 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="section">
+
+<div>
   <h2 id="strengths">
     Die<span style="font-weight: bolder;"> Stärken </span>von Set-OutlookSignatures
   </h2>
@@ -76,7 +76,6 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
-
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -86,7 +85,6 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
-
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -96,7 +94,6 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
-
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -106,7 +103,6 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
-
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -116,7 +112,6 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
-
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -126,7 +121,6 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
-
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -136,7 +130,6 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
-
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -146,7 +139,6 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
-
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -157,9 +149,10 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="section">
+
+<div class="has-background-light">
   <h2 id="expertise">
     Funktionalität trifft<span class="has-text-success"> Expertise</span>
   </h2>
@@ -177,7 +170,6 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
-
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success), var(--bulma-success)); background-clip: text; color: transparent;">⚫</span>
@@ -187,7 +179,6 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
-
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success), var(--bulma-success)); background-clip: text; color: transparent;">⚫</span>
@@ -198,9 +189,10 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="section">
+
+<div>
   <h2 id="demo">
     Verwalten Sie Ihre<span style="font-weight: bolder;"> Outlook-Signaturen </span>zentral. Wir zeigen Ihnen, wie!
   </h2>
@@ -213,7 +205,6 @@ sitemap_changefreq: weekly
         <p><a href="/benefactorcircle#demo" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);">Jetzt persönliche Demo vereinbaren</a></p>
       </div>
     </div>
-
     <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <div class="scrolling-banner">
@@ -223,26 +214,30 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-</section>
+</div>
 
 
-<h2 id="quickstart">
-  Signaturen<span class="has-text-success"> in wenigen Minuten </span> verteilen
-</h2>
-<p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
+<div class="has-background-light">
+  <h2 id="quickstart">
+    Signaturen<span class="has-text-success"> in wenigen Minuten </span> verteilen
+  </h2>
+  <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
 
-<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Schnellstart-Anleitung</a>
+  <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Schnellstart-Anleitung</a>
+</div>
 
 
-<h2 id="dive-deeper">
-  <span class="has-text-link">Tiefer </span>eintauchen
-</h2>
-<p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:<p>
-<ul>
-  <li>Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern</li>
-  <li>Anforderungen und Konfigurationsmöglichkeiten</li>
-  <li>Best practices und FAQ</li>
-  <li>Wie Sie erstklassigen Support erhalten</li>
-</ul>
+<div>
+  <h2 id="dive-deeper">
+    <span class="has-text-link">Tiefer </span>eintauchen
+  </h2>
+  <p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:<p>
+  <ul>
+    <li>Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern</li>
+    <li>Anforderungen und Konfigurationsmöglichkeiten</li>
+    <li>Best practices und FAQ</li>
+    <li>Wie Sie erstklassigen Support erhalten</li>
+  </ul>
 
-<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Hilfe- und Support-Center</a>
+  <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Hilfe- und Support-Center</a>
+</div>
