@@ -19,7 +19,7 @@ sitemap: false
 
 {%- for node in site.pages -%}
   {%- comment -%} Filter stuff that should not be in the sitemap {%- endcomment -%}
-  {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
+  {%- unless node.redirect_to or node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
 
     {%- comment -%} Get the URL to be used for x-default based on the prioritized language list {%- endcomment -%}
     {%- assign xDefaultUrl = "" -%}
@@ -78,7 +78,7 @@ sitemap: false
 
 {%- for collection in site.collections -%}
   {%- for node in site[collection.label] -%}
-    {%- unless node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
+    {%- unless node.redirect_to or node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
       {%- assign canonicalUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" -%}
 
       {%- for languageCode in sorted_langs -%}
