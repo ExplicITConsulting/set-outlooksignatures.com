@@ -19,10 +19,11 @@ sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
 <style>
-  .content h2:nth-child(n + 2) {
+  .content h2:nth-of-type(n + 2) {
     margin-top: 3rem !important;
   }
 </style>
+
 
 <h2 id="outlook-signature-management">
   Verwalten Sie Ihre<span style="font-weight: bolder;"> Outlook-Signaturen </span>zentral und vollautomatisch
