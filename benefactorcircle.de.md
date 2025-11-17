@@ -327,7 +327,9 @@ sitemap_changefreq: weekly
 
 <p>Dank einzigartiger Funktionen und exklusiver Herstellerverfügbarkeit ist in der Regel ein rechtskonformer Direktbezug ohne öffentliche Ausschreibung möglich.</p>
 
-<p>Das Add-On ist eine Investition, die sich vom ersten Tag an auszahlt - sicher auch für Sie!<br><a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Kosten-Nutzen-Rechnung, Business Case</a></p>
+<p>Das Add-On ist eine Investition, die sich vom ersten Tag an auszahlt - sicher auch für Sie!</p>
+
+<p><a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Kosten-Nutzen-Rechnung, Business Case</a></p>
 
 <p>Wir gestalten die Lizenzkosten so fair und transparent wie möglich:</p>
 <ul>
