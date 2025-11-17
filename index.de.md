@@ -19,7 +19,7 @@ sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
 <style>
-  h2:not(:first-of-type) {
+  .content h2:not(:first-of-type) {
     margin-top: 3rem !important;
   }
 </style>
