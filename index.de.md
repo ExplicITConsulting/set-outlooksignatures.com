@@ -19,7 +19,7 @@ sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
 <style>
-  .content h2:not(:first-of-type) {
+  .content h2:nth-child(n + 2) {
     margin-top: 3rem !important;
   }
 </style>
