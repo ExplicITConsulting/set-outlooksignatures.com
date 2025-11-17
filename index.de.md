@@ -13,7 +13,7 @@ hero_link2: /faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures
 hero_link2_text: "<span><b>Hinter den Kulissen: </b>Vom Code lernen</span>"
 hero_link2_style: |
   style="background-color: LimeGreen;"
-permalink: "/"
+permalink: /
 redirect_from:
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
