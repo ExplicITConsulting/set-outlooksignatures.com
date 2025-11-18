@@ -18,14 +18,14 @@ redirect_from:
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
-<h2 id="outlook-signature-management">
+<h2 id="outlook-signature-management" class="">
   Verwalten Sie Ihre<span style="font-weight: bolder;"> Outlook-Signaturen </span>zentral und vollautomatisch
 </h2>
 <p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
 <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
 
 
-<h2 id="less-effort">
+<h2 id="less-effort" class="mt-6">
   <span style="background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>, mehr Professionalität
 </h2>
 <p>Die manuelle Pflege von Signaturen bindet wertvolle personelle und finanzielle Kapazitäten. Das führt schnell zu veralteten Angaben, die weder internen noch regulatorischen Vorgaben entsprechen.</p>
@@ -60,7 +60,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="strengths">
+<h2 id="strengths" class="mt-6">
   Die<span style="font-weight: bolder;"> Stärken </span>von Set-OutlookSignatures
 </h2>
 <div class="columns is-multiline">
@@ -148,7 +148,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="expertise">
+<h2 id="expertise" class="mt-6">
   Funktionalität trifft<span class="has-text-success"> Expertise</span>
 </h2>
 <p>Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
@@ -186,7 +186,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="demo">
+<h2 id="demo" class="mt-6">
   Verwalten Sie Ihre<span style="font-weight: bolder;"> Outlook-Signaturen </span>zentral. Wir zeigen Ihnen, wie!
 </h2>
 <p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p>
@@ -209,7 +209,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="quickstart">
+<h2 id="quickstart" class="mt-6">
   Signaturen<span class="has-text-success"> in wenigen Minuten </span> verteilen
 </h2>
 <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.<p>
@@ -217,7 +217,7 @@ sitemap_changefreq: weekly
 <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Schnellstart-Anleitung</a>
 
 
-<h2 id="dive-deeper">
+<h2 id="dive-deeper" class="mt-6">
   <span class="has-text-link">Tiefer </span>eintauchen
 </h2>
 <p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:<p>
