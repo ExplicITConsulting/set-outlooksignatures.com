@@ -1,0 +1,31 @@
+---
+layout: "post"
+lang: "de"
+locale: "de"
+title: "E-Mail-Signaturverwaltung auf intelligente Weise delegieren"
+description: "Wer verwaltet Ihre E-Mail-Signaturen und Abwesenheitsnotizen? In vielen Unternehmen ist dies die IT-Abteilung und nicht die Marketing- oder Kommunikationsabteilung."
+published: true
+author: Markus Gruber
+tags: 
+slug: "delegate-signature-management"
+permalink: "/blog/:year/:month/:day/:slug"
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
+---
+Wer verwaltet Ihre E-Mail-Signaturen und Abwesenheitsnotizen? In vielen Unternehmen ist dies nach wie vor die IT-Abteilung. In den meisten Fällen gehört diese Aufgabe jedoch zum Aufgabenbereich des Marketings oder der Kommunikation.
+
+Mit Set-OutlookSignatures ist die Delegierung einfach und flexibel. Vorlagen werden in regulären Ordnern auf Ihrem Dateisystem gespeichert, sodass Sie lediglich über Standardberechtigungen für Dateien und Ordner verfügen müssen.
+
+So funktioniert es:
+- Die IT-Abteilung legt fest, wann und wo Set-OutlookSignatures ausgeführt wird und wo Vorlagen und Konfigurationsdateien gespeichert werden.
+- Benutzer mit Vollzugriff auf den Vorlagenordner können Vorlagen erstellen und bearbeiten.
+- Benutzer mit Änderungsrechten können vorhandene Vorlagen oder nur bestimmte Dateien aktualisieren.
+- Benutzer mit Schreibzugriff auf die Konfigurationsdatei können Vorlagen Postfächern, Benutzern oder Gruppen zuweisen.
+
+Sie können all dies separat für Signaturen und Abwesenheitsnotizen konfigurieren. Sie können sogar mehrere Instanzen von Set-OutlookSignatures mit separaten Konfigurationen in derselben Umgebung ausführen.
+
+Und das Beste daran?
+Set-OutlookSignatures benötigt lediglich eine Dateifreigabe oder eine SharePoint-Dokumentbibliothek. Kein Admin-Client, keine Serverabhängigkeiten, keine E-Mail-Umleitung.
+
+## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
+[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
