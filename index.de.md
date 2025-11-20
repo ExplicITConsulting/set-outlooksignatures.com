@@ -21,8 +21,20 @@ sitemap_changefreq: weekly
 <h2 id="outlook-signature-management" class="">
   Verwalten Sie Ihre<span style="font-weight: bolder;"> Outlook-Signaturen </span>zentral und vollautomatisch
 </h2>
-<p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
-<p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <p>Set-OutlookSignatures nimmt Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
+    <p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <div class="signature-scrolling-banner">
+        <div class="signature-scrolling-track">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <h2 id="less-effort" class="mt-6">
@@ -209,23 +221,27 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="quickstart" class="mt-6">
-  Signaturen<span class="has-text-success"> in wenigen Minuten </span> verteilen
-</h2>
-<p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <h2 id="quickstart" class="mt-6">
+      Signaturen<span class="has-text-success"> in wenigen Minuten </span> verteilen
+    </h2>
+    <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
 
-<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Schnellstart-Anleitung</a>
+    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Schnellstart-Anleitung</a>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <h2 id="dive-deeper" class="mt-6">
+      <span class="has-text-link">Tiefer </span>eintauchen
+    </h2>
+    <p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:</p>
+    <ul>
+      <li>Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern</li>
+      <li>Anforderungen und Konfigurationsmöglichkeiten</li>
+      <li>Best practices und FAQ</li>
+      <li>Wie Sie erstklassigen Support erhalten</li>
+    </ul>
 
-
-<h2 id="dive-deeper" class="mt-6">
-  <span class="has-text-link">Tiefer </span>eintauchen
-</h2>
-<p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:</p>
-<ul>
-  <li>Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern</li>
-  <li>Anforderungen und Konfigurationsmöglichkeiten</li>
-  <li>Best practices und FAQ</li>
-  <li>Wie Sie erstklassigen Support erhalten</li>
-</ul>
-
-<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Hilfe- und Support-Center</a>
+    <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Hilfe- und Support-Center</a>
+  </div>
+</div>
