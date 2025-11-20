@@ -21,8 +21,22 @@ sitemap_changefreq: weekly
 <h2 id="outlook-signature-management" class="">
   Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally and fully automated
 </h2>
-<p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
-<p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
+<div class="columns is-multiline">
+  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
+      <p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
+    </div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <div class="signature-scrolling-banner">
+        <div class="signature-scrolling-track">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <h2 id="less-effort" class="mt-6">
@@ -215,32 +229,35 @@ sitemap_changefreq: weekly
 
   <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <div class="scrolling-banner">
-        <div class="scrolling-track">
+      <div class="customer-scrolling-banner">
+        <div class="customer-scrolling-track">
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <h2 id="quickstart" class="mt-6">
+      Deploy signatures<span class="has-text-success"> within minutes</span>
+    </h2>
+    <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
 
-<h2 id="quickstart" class="mt-6">
-  Deploy signatures<span class="has-text-success"> within minutes</span>
-</h2>
-<p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
+    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Quick Start Guide</a>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <h2 id="dive-deeper" class="mt-6">
+      Dive<span class="has-text-link"> deeper</span>
+    </h2>
+    <p>Visit our help and support center to find out more:<p>
+    <ul>
+      <li>The detailed feature set and a comparison with peers</li>
+      <li>Requirements and configuration options</li>
+      <li>Best practices and FAQ</li>
+      <li>How to get first-class support</li>
+    </ul>
 
-<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Quick Start Guide</a>
-
-
-<h2 id="dive-deeper" class="mt-6">
-  Dive<span class="has-text-link"> deeper</span>
-</h2>
-<p>Visit our help and support center to find out more:<p>
-<ul>
-  <li>The detailed feature set and a comparison with peers</li>
-  <li>Requirements and configuration options</li>
-  <li>Best practices and FAQ</li>
-  <li>How to get first-class support</li>
-</ul>
-
-<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Help and Support-Center</a>
+    <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Help and Support-Center</a>
+  </div>
+</div>

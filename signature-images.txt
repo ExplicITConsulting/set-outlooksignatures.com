@@ -1,0 +1,16 @@
+---
+layout: "none"
+sitemap: false
+---
+{%- for file in site.static_files -%}
+  {%- assign expected_dir_path = "/assets/images/signatures/" -%}
+  {%- assign file_directory_calculated = file.path | remove: file.name -%}
+
+  {%- unless file_directory_calculated | last == "/" -%}
+    {%- assign file_directory_calculated = file_directory_calculated | append: "/" -%}
+  {%- endunless -%}
+
+  {%- if file_directory_calculated == expected_dir_path %}
+    {{ file.path | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}
+  {% endif -%}
+{%- endfor -%}

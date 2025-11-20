@@ -176,7 +176,7 @@ html::after {
   animation-delay: 0s;
 }
 
-.scrolling-banner {
+.customer-scrolling-banner {
   overflow: hidden; /* This hides content outside its bounds */
   pointer-events: none;
   display: flex;
@@ -185,7 +185,7 @@ html::after {
   height: 100%;
 }
 
-.scrolling-banner .scrolling-track {
+.customer-scrolling-banner .customer-scrolling-track {
   display: flex; /* Makes images arrange horizontally */
   align-items: flex-start;
   white-space: nowrap; /* Prevents images from wrapping to the next line */
@@ -195,7 +195,7 @@ html::after {
   /* animation: scroll-full-track 60s linear infinite; */
 }
 
-.scrolling-banner .scrolling-track img {
+.customer-scrolling-banner .customer-scrolling-track img {
   max-height: 4em; /* Fixed height for consistency */
   /* max-width: 90%; */ /* This can make images of different aspect ratios have different effective widths. Consider a fixed width if you want consistent scroll speed */
   height: auto;
@@ -209,7 +209,7 @@ html::after {
 }
 
 /* Define a base keyframe name, but the exact values will be injected */
-@keyframes scroll-full-track-dynamic {
+@keyframes customer-scroll-full-track-dynamic {
   from {
     transform: translateX(0);
   }

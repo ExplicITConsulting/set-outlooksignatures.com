@@ -249,8 +249,8 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <div class="scrolling-banner">
-        <div class="scrolling-track">
+      <div class="customer-scrolling-banner">
+        <div class="customer-scrolling-track">
         </div>
       </div>
     </div>
