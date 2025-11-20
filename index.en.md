@@ -23,10 +23,8 @@ sitemap_changefreq: weekly
 </h2>
 <div class="columns is-multiline">
   <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
-      <p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
-    </div>
+    <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
+    <p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">

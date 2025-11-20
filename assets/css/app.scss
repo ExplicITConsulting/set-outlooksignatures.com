@@ -176,7 +176,6 @@ html::after {
   animation-delay: 0s;
 }
 
-/* Apply to both customer-scrolling-banner and signature-scrolling-banner */
 .customer-scrolling-banner,
 .signature-scrolling-banner {
   overflow: hidden;
@@ -187,7 +186,6 @@ html::after {
   height: 100%;
 }
 
-/* Apply to both .*-scrolling-track */
 .customer-scrolling-banner .customer-scrolling-track,
 .signature-scrolling-banner .signature-scrolling-track {
   display: flex;
@@ -198,7 +196,6 @@ html::after {
   /* animation will be set via JS */
 }
 
-/* Apply to both .*-scrolling-track img */
 .customer-scrolling-banner .customer-scrolling-track img,
 .signature-scrolling-banner .signature-scrolling-track img {
   max-height: 4em;
@@ -210,6 +207,10 @@ html::after {
   flex-grow: 0;
   flex-basis: auto;
   opacity: 1;
+}
+
+.signature-scrolling-banner .signature-scrolling-track img {
+  max-height: 8em;
 }
 
 /* Define keyframes. You might need to update your JavaScript 
