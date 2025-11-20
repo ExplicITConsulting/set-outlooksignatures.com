@@ -242,7 +242,7 @@ sitemap_changefreq: weekly
     <h2 id="quickstart" class="mt-6">
       Deploy signatures<span class="has-text-success"> within minutes</span>
     </h2>
-    <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.<p>
+    <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.</p>
 
     <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Quick Start Guide</a>
   </div>
@@ -250,7 +250,7 @@ sitemap_changefreq: weekly
     <h2 id="dive-deeper" class="mt-6">
       Dive<span class="has-text-link"> deeper</span>
     </h2>
-    <p>Visit our help and support center to find out more:<p>
+    <p>Visit our help and support center to find out more:</p>
     <ul>
       <li>The detailed feature set and a comparison with peers</li>
       <li>Requirements and configuration options</li>

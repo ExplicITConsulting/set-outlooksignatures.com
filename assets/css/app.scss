@@ -176,45 +176,50 @@ html::after {
   animation-delay: 0s;
 }
 
-.customer-scrolling-banner {
-  overflow: hidden; /* This hides content outside its bounds */
+/* Apply to both customer-scrolling-banner and signature-scrolling-banner */
+.customer-scrolling-banner,
+.signature-scrolling-banner {
+  overflow: hidden;
   pointer-events: none;
   display: flex;
   align-items: center;
-  width: 100%; /* The visible viewport width for the banner */
+  width: 100%;
   height: 100%;
 }
 
-.customer-scrolling-banner .customer-scrolling-track {
-  display: flex; /* Makes images arrange horizontally */
+/* Apply to both .*-scrolling-track */
+.customer-scrolling-banner .customer-scrolling-track,
+.signature-scrolling-banner .signature-scrolling-track {
+  display: flex;
   align-items: flex-start;
-  white-space: nowrap; /* Prevents images from wrapping to the next line */
-  gap: 1.5em; /* Spacing between images */
+  white-space: nowrap;
+  gap: 1.5em;
   box-sizing: border-box;
-  /* We'll set the animation via JS after calculating width */
-  /* animation: scroll-full-track 60s linear infinite; */
+  /* animation will be set via JS */
 }
 
-.customer-scrolling-banner .customer-scrolling-track img {
-  max-height: 4em; /* Fixed height for consistency */
-  /* max-width: 90%; */ /* This can make images of different aspect ratios have different effective widths. Consider a fixed width if you want consistent scroll speed */
+/* Apply to both .*-scrolling-track img */
+.customer-scrolling-banner .customer-scrolling-track img,
+.signature-scrolling-banner .signature-scrolling-track img {
+  max-height: 4em;
   height: auto;
-  width: auto; /* Allow natural width based on max-height, but ensure flex-shrink: 0 is important */
+  width: auto;
   object-fit: contain;
   display: block;
-  flex-shrink: 0; /* Prevents images from shrinking */
+  flex-shrink: 0;
   flex-grow: 0;
   flex-basis: auto;
   opacity: 1;
 }
 
-/* Define a base keyframe name, but the exact values will be injected */
-@keyframes customer-scroll-full-track-dynamic {
+/* Define keyframes. You might need to update your JavaScript 
+   to use this single keyframe name for both animations. */
+@keyframes scroll-full-track-dynamic {
+  /* Changed keyframe name for universality */
   from {
     transform: translateX(0);
   }
   /* 'to' value will be set by JavaScript */
-  /* to { transform: translateX(calc(var(--scroll-distance) * -1)); } */
 }
 
 p + ul,
