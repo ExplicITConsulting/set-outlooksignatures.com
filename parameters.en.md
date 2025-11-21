@@ -368,7 +368,7 @@ With this parameter, the software searches for templates with the extension .htm
 
 Templates in .htm format must be UTF-8 encoded (without BOM) and the charset must be set to UTF-8 (`<META content="text/html; charset=utf-8">`).
 
-Each format has advantages and disadvantages, please see `Should I use .docx or .htm as file format for templates? Signatures in Outlook sometimes look different than my templates.` in this document for a quick overview.
+Each format has advantages and disadvantages, please see the FAQ '[Should I use .docx or .htm as file format for templates? Signatures in Outlook sometimes look different than my templates.](https://set-outlooksignatures.com/faq#7-should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates)` for a quick overview.
 
 Only images in the first subfolder below the template file matching the Windows Connected Files naming convention (https://docs.microsoft.com/en-us/windows/win32/shell/manage#connected-files) are downloaded. Only use relative paths for the src attribute in img tags. All other paths are considered external and are not downloaded.
 
@@ -598,7 +598,7 @@ A value representing true disables roaming signatures, a value representing fals
 
 Attention:
 - When Outlook v16 and higher is allowed to sync signatures itself, it may overwrite signatures created by this software with their cloud versions. To avoid this, it is recommended to set the parameters DisableRoamingSignatures and MirrorCloudSignatures to true instead.
-- When Classic Outlook for Windows syncs roaming signatures witht its own internal engine, expect problems with character encoding (umlauts, diacritics, emojis, etc.) and more. Until Microsoft provides a sustaining solution, these Outlook-internal problems will come and go depending on the patch level of Outlook. Also see FAQ '`Roaming signatures in Classic Outlook for Windows look different`' in this document.
+- When Classic Outlook for Windows syncs roaming signatures witht its own internal engine, expect problems with character encoding (umlauts, diacritics, emojis, etc.) and more. Until Microsoft provides a sustaining solution, these Outlook-internal problems will come and go depending on the patch level of Outlook. Also see the FAQ '[Roaming signatures in Classic Outlook for Windows look different](https://set-outlooksignatures.com/faq#41-roaming-signatures-in-classic-outlook-for-windows-look-different)'.
 
 Only sets HKCU registry key, does not override configuration set by group policy.
 
@@ -630,10 +630,10 @@ Prerequisites:
 Please note:
 - As there is no Microsoft official API yet, this feature is to be used at your own risk.
 - This feature does not work in simulation mode, because the user running the simulation does not have access to the signatures stored in another mailbox.
-- For mailboxes in Exchange Online: To delete manually created signatures (signatures that have not been created by Set-OutlookSignatures) you need to use New Outlook for Windows or Classic Outlook for Windows with its own roaming signature sync mechanism enabled, or you delete the signature both locally and in Outlook Web.<br>Else, manually created signatures will be re-downloaded from the cloud or re-uploaded to the cloud because Set-OutlookSignatures technically cannot detect the deletion.
-  - When a signature exists in only one of two places, and both places can neither be permanently monitored nor provide an activity log: Has the signature been deleted in the one place, or has it been created in the other? This question cannot be answered. To avoid data loss, Set-OutlookSignatures always assumes the signature has been created.
+- For mailboxes in Exchange Online: To delete manually created signatures (signatures that have not been created by Set-OutlookSignatures) you need to use New Outlook for Windows or Classic Outlook for Windows with its own roaming signature sync mechanism enabled, or you delete the signature both locally and in Outlook Web.<br>Else, manually created signatures will be re-downloaded from the cloud or re-uploaded to the cloud because Set-OutlookSignatures and the Benefactor Circle add-on technically cannot detect the deletion.
+  - When a signature exists in only one of two places, and both places can neither be permanently monitored nor provide an activity log: Has the signature been deleted in the one place, or has it been created in the other? This question cannot be answered. To avoid data loss, it is always assumed that the signature has been created.
 
-The process is very simple and straight forward. Set-OutlookSignatures goes through the following steps for each mailbox:
+The process is very simple and straight forward. The following steps are performed for each mailbox:
 1. Check if all prerequisites are met
 2. Download all signatures stored in the Exchange Online mailbox
   - This mimics Outlook's behavior: Roaming signatures are only manipulated in the cloud and then downloaded from there.
@@ -654,7 +654,7 @@ What will not work:
 - Download from and upload to shared mailboxes. This is not possible because of Microsoft API restrictions.
 - Uploading signatures other than device specific signatures and such assigned to the mailbox of the current user. Uploading is not implemented, because until now no way could be found that does not massively impact the user experience as soon as the Outlook integrated download process starts (signatures available multiple times, etc.)
 
-Attention: When Outlook v16 and higher is allowed to sync signatures itself, it may overwrite signatures created by this software with their cloud versions. To avoid this, it is recommended to set the parameters DisableRoamingSignatures and MirrorCloudSignatures to true instead. Also see FAQ '`Roaming signatures in Classic Outlook for Windows look different`' in this document.
+Attention: When Outlook v16 and higher is allowed to sync signatures itself, it may overwrite signatures created by this software with their cloud versions. To avoid this, it is recommended to set the parameters DisableRoamingSignatures and MirrorCloudSignatures to true instead. Also see the FAQ '[Roaming signatures in Classic Outlook for Windows look different](https://set-outlooksignatures.com/faq#41-roaming-signatures-in-classic-outlook-for-windows-look-different)'.
 
 Consider combining MirrorCloudSignatures with MailboxSpecificSignatureNames.
 

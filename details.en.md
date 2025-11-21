@@ -80,7 +80,7 @@ You need Exchange Online or Exchange on-prem.
 
 Set-OutlookSignatures can run in two modes:
 - In the security context of the currently logged-in user. This is recommended for most scenarios.
-- On a central system, using a service account to push signatures into users mailboxes. This can be useful for accounts that only log on to the email service, but not to a client (such as M365 F-licenses). See 'SimulateAndDeploy' in this document for details.
+- On a central system, using a service account to push signatures into users mailboxes. This can be useful for accounts that only log on to the email service, but not to a client (such as M365 F-licenses). See the parameter '[SimulateAndDeploy](https://set-outlooksignatures.com/parameters#19-simulateanddeploy)' for details.
 
 A Linux, macOS or Windows system with PowerShell:
 - Windows: Windows PowerShell 5.1 ('powershell.exe', part of Windows) or PowerShell 7+ ('pwsh.exe')
@@ -116,7 +116,7 @@ Not all features are yet available on Linux and macOS. Every parameter contains 
 
 #### 2.1.1. Common restrictions and notes for Linux and macOS
 - Only mailboxes hosted in Exchange Online are supported. On-prem mailboxes usually work when addressed via Exchange Online, but this is not guaranteed.
-- Only Graph is supported, no local Active Directories.<br>The parameter `GraphOnly` is automatically set to `true` and Linux and macOS, which requires an Entra ID app - the Quick Start Guide in this document helps you implement this.
+- Only Graph is supported, no local Active Directories.<br>The parameter `GraphOnly` is automatically set to `true` and Linux and macOS, which requires an Entra ID app - the [Quick Start Guide](/quickstart) helps you implement this.
 - Signature and OOF templates must be in HTM format.<br>Microsoft Word is not available on Linux, and the file format conversion cannot be done without user impact on macOS.<br>If you do not want to manually convert your DOCX files to HTM, remove incompatible and superfluous code and restore images to their original resolution: Our partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers a commercial batch conversion service.<br>The parameter `UseHtmTemplates` is automatically set to `true` on Linux and macOS.
 - Only existing mount points and SharePoint Online paths can be accessed.<br>Set-OutlookSignatures cannot create mount points itself, as there are just too many possibilities.<br>This is important for all parameters pointing to folders or files (`SignatureTemplatePath`, `SignatureIniFile`, `OOFTemplatePath`, `OOFIniFile`, `AdditionalSignaturePath`, `ReplacementVariableConfigFile`, `GraphConfigFile`, etc.). The default values for these parameters are automatically set correctly, so that you can follow the Quick Start Guide without additional configuration. When hosting `GraphConfigFile` on SharePoint Online make sure you also define the `GraphClientID` parameter.<br><br>If SharePoint Online is not an option for you, consider one of the following options for production use:
   - Deploy a software package that not only contains Set-OutlookSignatures, but also all required template and configuration files.
