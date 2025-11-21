@@ -428,6 +428,8 @@ Makes only sense in combination with '.\sample code\SimulateAndDeploy.ps1', do n
 
 See '.\sample code\SimulateAndDeploy.ps1' for an example how to use this parameter
 
+This feature requires a Benefactor Circle license.
+
 Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
 
 Default value: $false
@@ -444,6 +446,8 @@ Path to file containing Graph credential which should be used as alternative to 
 Makes only sense in combination with `.\sample code\SimulateAndDeploy.ps1`, do not use this parameter for other scenarios.
 
 See `.\sample code\SimulateAndDeploy.ps1` for an example how to create and use this file.
+
+This feature requires a Benefactor Circle license.
 
 Default value: $null
 
