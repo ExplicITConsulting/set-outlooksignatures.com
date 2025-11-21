@@ -2,7 +2,7 @@
 layout: "page"
 lang: "en"
 locale: "en"
-title: "Help"
+title: "Help and support"
 subtitle: "Documentation and support ressources"
 description: "Access Set-OutlookSignatures help: feature comparisons, setup guides, FAQs, technical details, and expert support resources."
 permalink: "/help"

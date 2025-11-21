@@ -2,7 +2,7 @@
 layout: "page"
 lang: "de"
 locale: "de"
-title: "Hilfe"
+title: "Hilfe und Unterstützung"
 subtitle: "Dokumentation und Support-Ressourcen"
 description: "Entdecken Sie Set-OutlookSignatures Hilfe: Dokumentation, FAQs, Einrichtungsanleitungen, technische Details und Experten-Support."
 permalink: "/help"
