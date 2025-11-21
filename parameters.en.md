@@ -2,7 +2,7 @@
 layout: "page"
 lang: "en"
 locale: "en"
-title: "Parameters"
+title: "Parameters for customization"
 subtitle: "How to customize Set-Outlook&shy;Signatures"
 description: "Customize Set-OutlookSignatures to fit your organization's needs. Configure behavior, integrate with Microsoft 365, and tailor signature deployment workflows."
 permalink: "/parameters"
