@@ -542,7 +542,7 @@ Set-OutlookSignatures can handle roaming signatures since v4.0.0. See parameter 
 
 Set-OutlookSignatures supports romaing signatures independent from the Outlook version used. Roaming signatures are also supported in scenarios where only Outlook Web in the cloud or New Outlook is used.
 
-As there is no Microsoft official API yet, this feature is to be used at your own risk.
+As there is no Microsoft official API yet, this feature is to be used at your own risk (MirrorCloudSignatures runs stable since its introduction mid-2022).
 
 Storing signatures in the mailbox is a good idea, as this makes signatures available across devices and apps.
 
