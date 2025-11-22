@@ -5,7 +5,6 @@ locale: "de"
 title: "Änderungen an Signaturen und Abwesenheitsnotizen ohne Risiken testen"
 description: "Die Einführung von Aktualisierungen an Signatur- oder Abwesenheitsvorlagen in einer Live-Umgebung kann nervenaufreibend sein."
 published: true
-author: Markus Gruber
 tags: 
 slug: "testing-in-production"
 permalink: "/blog/:year/:month/:day/:slug"
@@ -21,7 +20,7 @@ Testumgebungen bieten selten Sicherheit. Selbst wenn sie verfügbar sind, bleibe
 - Spiegelt die Testumgebung wirklich die Produktionsumgebung wider?
 - Wie kann ich mich als anderer Benutzer ausgeben, ohne dabei große Hürden nehmen zu müssen?
 
-Set-OutlookSignatures verfügt über einen [Simulationsmodus](https://set-outlooksignatures.com/details#11-simulation-mode), der das Rätselraten überflüssig macht:
+Set-OutlookSignatures verfügt über einen [Simulationsmodus](/details#11-simulation-mode), der das Rätselraten überflüssig macht:
 - Testen Sie sicher in Ihrer Produktionsumgebung.
 - Simulieren Sie jeden Benutzer mit jeder beliebigen Postfachkonfiguration.
 - Sie müssen weder den Benutzer einbeziehen noch zusätzliche Berechtigungen anfordern.

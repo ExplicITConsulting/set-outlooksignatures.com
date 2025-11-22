@@ -10,7 +10,7 @@ sitemap: false
     {%- assign file_directory_calculated = file_directory_calculated | append: "/" -%}
   {%- endunless -%}
 
-  {%- if file_directory_calculated == expected_dir_path %}
-    {{ file.path | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}
+  {%- if file_directory_calculated == expected_dir_path -%}
+{{ file.path | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" }}
   {% endif -%}
 {%- endfor -%}

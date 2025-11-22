@@ -5,7 +5,6 @@ locale: "en"
 title: "What can I learn from the code of Set-OutlookSignatures?"
 description: "Set-OutlookSignatures is not just a tool for managing Outlook signatures and out-of-office replies."
 published: true
-author: Markus Gruber
 tags: 
 slug: "learn-from-the-code"
 permalink: "/blog/:year/:month/:day/:slug"

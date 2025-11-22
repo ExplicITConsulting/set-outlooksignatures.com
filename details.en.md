@@ -80,7 +80,7 @@ You need Exchange Online or Exchange on-prem.
 
 Set-OutlookSignatures can run in two modes:
 - In the security context of the currently logged-in user. This is recommended for most scenarios.
-- On a central system, using a service account to push signatures into users mailboxes. This can be useful for accounts that only log on to the email service, but not to a client (such as M365 F-licenses). See the parameter '[SimulateAndDeploy](https://set-outlooksignatures.com/parameters#19-simulateanddeploy)' for details.
+- On a central system, using a service account to push signatures into users mailboxes. This can be useful for accounts that only log on to the email service, but not to a client (such as M365 F-licenses). See the parameter '[SimulateAndDeploy](/parameters#19-simulateanddeploy)' for details.
 
 A Linux, macOS or Windows system with PowerShell:
 - Windows: Windows PowerShell 5.1 ('powershell.exe', part of Windows) or PowerShell 7+ ('pwsh.exe')

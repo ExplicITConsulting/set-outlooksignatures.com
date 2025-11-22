@@ -5,7 +5,6 @@ locale: "de"
 title: "Kodierungen erkennen und konvertieren"
 description: "ConvertEncoding ermöglicht die zuverlässige Erkennung und Konvertierung von Kodierungen"
 published: true
-author: Markus Gruber
 tags:
 slug: "detect-and-convert-encodings"
 permalink: "/blog/:year/:month/:day/:slug"

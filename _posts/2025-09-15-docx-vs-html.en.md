@@ -5,7 +5,6 @@ locale: "en"
 title: "DOCX or HTML?"
 description: "The signature template choice that actually matters"
 published: true
-author: Markus Gruber
 tags: 
 slug: "docs-vs-html"
 permalink: "/blog/:year/:month/:day/:slug"

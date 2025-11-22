@@ -5,7 +5,6 @@ locale: "de"
 title: "Frohe Weihnachten und ein Gutes Neues Jahr!"
 description: "Genießen Sie die stille Zeit"
 published: true
-author: Markus Gruber
 tags:
 slug: "merry-christmas-happy-new-year"
 permalink: "/blog/:year/:month/:day/:slug"

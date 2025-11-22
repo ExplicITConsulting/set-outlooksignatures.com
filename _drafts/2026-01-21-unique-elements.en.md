@@ -5,7 +5,6 @@ locale: "en"
 title: "What unique elements do you add to email signatures and OOO replies?"
 description: "The first thing that comes to mind is the visual design. But a signature can also include content-specific features and accessibility options."
 published: true
-author: Markus Gruber
 tags: 
 slug: "unique-elements"
 permalink: "/blog/:year/:month/:day/:slug"
@@ -20,7 +19,7 @@ Or something more fancy like dynamically calculated years of service in the comp
 
 Last, but not least, there is also the aspect of barrier-free accessibility. This helps not only people with visual impairments but also improves usability for everyone. Think of font sizes, color contrasts, and links or images with textual descriptions for screen readers.
 
-All this - [and more](https://set-outlooksignatures.com/features)! - is possible with Set-OutlookSignatures and the Benefactor Circle add-on.
+All this - [and more](/features)! - is possible with Set-OutlookSignatures and the Benefactor Circle add-on.
 
 ## Interested in learning more or seeing our solution in action?
 [Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!

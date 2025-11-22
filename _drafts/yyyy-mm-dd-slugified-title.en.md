@@ -5,7 +5,6 @@ locale: "en"
 title: "Non-slugified title, 70 characters max"
 description: "Description, between 30 and 160 characters"
 published: true
-author: Markus Gruber
 tags: 
 slug: "slugified-title"
 permalink: "/blog/:year/:month/:day/:slug"

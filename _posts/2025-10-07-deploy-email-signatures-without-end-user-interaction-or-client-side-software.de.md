@@ -5,7 +5,6 @@ locale: "de"
 title: "Signaturen ohne Endbenutzer-Interaktion oder clientseitige Software"
 description: "In manchen Umgebungen ist die Ausführung clientbasierter Tools einfach keine Option"
 published: true
-author: Markus Gruber
 tags: 
 slug: "deploy-email-signatures-without-end-user-interaction-or-client-side-software"
 permalink: "/blog/:year/:month/:day/:slug"

@@ -5,7 +5,6 @@ locale: "en"
 title: "Signatures for every scenario: Which signatures your company needs"
 description: "Signatures are more than just a business card; they are a vital tool for brand consistency, professionalism, and legal compliance in digital communication."
 published: true
-author: Markus Gruber
 tags: 
 slug: "which-signatures-you-need"
 permalink: "/blog/:year/:month/:day/:slug"

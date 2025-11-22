@@ -5,7 +5,6 @@ locale: "de"
 title: "Nicht als Slug formatierter Titel, max. 70 Zeichen"
 description: "Beschreibung, zwischen 30 und 160 Zeichen"
 published: true
-author: Markus Gruber
 tags:
 slug: "slugified-title"
 permalink: "/blog/:year/:month/:day/:slug"

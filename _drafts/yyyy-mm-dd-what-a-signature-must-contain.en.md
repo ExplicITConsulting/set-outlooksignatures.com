@@ -5,7 +5,6 @@ locale: "en"
 title: "What an email signature must contain"
 description: "A professional email signature is much more than just a digital business card or a marketing banner. It is a legally relevant document."
 published: true
-author: Markus Gruber
 tags: 
 slug: "what-a-signature-must-contain"
 permalink: "/blog/:year/:month/:day/:slug"

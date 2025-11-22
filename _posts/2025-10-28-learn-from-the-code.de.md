@@ -5,7 +5,6 @@ locale: "de"
 title: "Was kann ich aus dem Code von Set-OutlookSignatures lernen?"
 description: "Set-OutlookSignatures ist nicht nur ein Tool zum Verwalten von Outlook-Signaturen und Abwesenheitsnotizen."
 published: true
-author: Markus Gruber
 tags:
 slug: "learn-from-the-code"
 permalink: "/blog/:year/:month/:day/:slug"

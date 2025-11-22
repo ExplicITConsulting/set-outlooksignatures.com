@@ -5,7 +5,6 @@ locale: "en"
 title: "Merry Christmas and a Happy New Year!"
 description: "Enjoy the quiet time"
 published: true
-author: Markus Gruber
 tags: 
 slug: "merry-christmas-happy-new-year"
 permalink: "/blog/:year/:month/:day/:slug"

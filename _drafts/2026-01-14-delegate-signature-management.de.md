@@ -5,7 +5,6 @@ locale: "de"
 title: "E-Mail-Signaturverwaltung auf intelligente Weise delegieren"
 description: "Wer verwaltet Ihre E-Mail-Signaturen und Abwesenheitsnotizen? In vielen Unternehmen ist dies die IT-Abteilung und nicht die Marketing- oder Kommunikationsabteilung."
 published: true
-author: Markus Gruber
 tags: 
 slug: "delegate-signature-management"
 permalink: "/blog/:year/:month/:day/:slug"

@@ -5,7 +5,6 @@ locale: "de"
 title: "DOCX oder HTML?"
 description: "Die Wahl der Signaturvorlage, auf die es wirklich ankommt"
 published: true
-author: Markus Gruber
 tags: 
 slug: "docs-vs-html"
 permalink: "/blog/:year/:month/:day/:slug"

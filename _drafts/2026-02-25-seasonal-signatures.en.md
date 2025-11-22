@@ -5,7 +5,6 @@ locale: "en"
 title: "Seasonal, time-based, and campaign-driven email signatures"
 description: "Your email signature is more than just a sign-off. It's a powerful marketing tool. With the right timing, it can help reinforce your brand and message."
 published: true
-author: Markus Gruber
 tags: 
 slug: "seasonal-signatures"
 permalink: "/blog/:year/:month/:day/:slug"
@@ -27,8 +26,8 @@ Here are a few ways to make your signatures more impactful:
 Let your signature reflect what matters most to your business, all year round.
 
 The following links will interest you:
-- [Allowed tags](https://set-outlooksignatures.com/details#61-allowed-tags) for template assignment
-- [How do I alternate banners and other images in signatures?](https://set-outlooksignatures.com/faq#30-how-do-i-alternate-banners-and-other-images-in-signatures)
+- [Allowed tags](/details#61-allowed-tags) for template assignment
+- [How do I alternate banners and other images in signatures?](/faq#30-how-do-i-alternate-banners-and-other-images-in-signatures)
 
 ## Interested in learning more or seeing our solution in action?
 [Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!

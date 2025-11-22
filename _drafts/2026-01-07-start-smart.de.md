@@ -5,7 +5,6 @@ locale: "de"
 title: "Clever ins neue Jahr: Zahlen Sie nicht zu viel für E-Mail-Signaturen"
 description: "Zentralisierte E-Mail-Signaturlösungen sind oft überraschend teuer – aber nicht Set-OutlookSignatures und das Benefactor Circle Add-On."
 published: true
-author: Markus Gruber
 tags: 
 slug: "start-smart"
 permalink: "/blog/:year/:month/:day/:slug"
@@ -23,7 +22,7 @@ So funktioniert es:
 
 Wir konzentrieren uns auf praktische, effiziente Software. Und wir sind der Meinung, dass jedes Postfach gleich viel kosten sollte, weshalb kleine Kunden denselben fairen Preis zahlen wie große.
 
-Lesen Sie alles darüber, [warum Set-OutlookSignatures kostenlos und Open Source ist](https://set-outlooksignatures.com/faq#351-why-the-tagline) und über [die finanziellen Vorteile des Benefactor Circle-Add-ons](https://set-outlooksignatures.com/benefactorcircle#financial-benefits).
+Lesen Sie alles darüber, [warum Set-OutlookSignatures kostenlos und Open Source ist](/faq#351-why-the-tagline) und über [die finanziellen Vorteile des Benefactor Circle-Add-ons](/benefactorcircle#financial-benefits).
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

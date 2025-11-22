@@ -5,7 +5,6 @@ locale: "en"
 title: "Detect and convert encodings"
 description: "ConvertEncoding enables reliable detection and conversion of encodings."
 published: true
-author: Markus Gruber
 tags: 
 slug: "detect-and-convert-encodings"
 permalink: "/blog/:year/:month/:day/:slug"

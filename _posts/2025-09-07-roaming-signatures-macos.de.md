@@ -5,7 +5,6 @@ locale: "de"
 title: "Roaming Signatures für Outlook am Mac?"
 description: "Haben Sie Benutzer, die mit Outlook für Mac auf Exchange Online-Postfächer zugreifen?"
 published: true
-author: Markus Gruber
 tags: 
 slug: "roaming-signatures-macos"
 permalink: "/blog/:year/:month/:day/:slug"

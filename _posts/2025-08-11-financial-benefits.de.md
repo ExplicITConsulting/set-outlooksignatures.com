@@ -5,7 +5,6 @@ locale: "de"
 title: "Zentralisiertes Signaturmanagement: Kostenfaktor oder Chance?"
 description: "Viele gehen davon aus, dass die Verwaltung von E-Mail-Signaturen nur für große Unternehmen sinnvoll ist"
 published: true
-author: Markus Gruber
 tags: 
 slug: "financial-benefits"
 permalink: "/blog/:year/:month/:day/:slug"

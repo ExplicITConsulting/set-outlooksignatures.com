@@ -5,7 +5,6 @@ locale: "de"
 title: "So verwalten Sie E-Mail-Signaturen über mehrere Mandanten hinweg"
 description: "In der heutigen hybriden Arbeitsumgebung und komplexen Organisationsstrukturen ist die Verwaltung von Signaturen nicht nur eine Herausforderung für Einzelmandanten."
 published: true
-author: Markus Gruber
 tags: 
 slug: "cross-tenant-and-multitenant"
 permalink: "/blog/:year/:month/:day/:slug"
@@ -21,7 +20,7 @@ Set-OutlookSignatures hat diese Ära bereits beendet:
 - Mühelose Bereitstellung von Signaturen für Postfächer außerhalb des Heimatmandanten des Benutzers
 - Zugriff auf alle Eigenschaften, Ersatzvariablen und unsere exklusiven Benefactor Circle-Funktionen
 
-Mandantenübergreifende und mandantenübergreifende Implementierungen sind einfach zu realisieren – folgen Sie einfach den Anweisungen des Parameters „[GraphClientID](https://set-outlooksignatures.com/parameters#4-graphclientid)“.
+Mandantenübergreifende und mandantenübergreifende Implementierungen sind einfach zu realisieren – folgen Sie einfach den Anweisungen des Parameters „[GraphClientID](/parameters#4-graphclientid)“.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

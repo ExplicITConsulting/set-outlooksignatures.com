@@ -5,7 +5,6 @@ locale: "en"
 title: "Barrier-free email signatures and out-of-office replies"
 description: "Description, between 30 and 160 characters"
 published: true
-author: Markus Gruber
 tags: 
 slug: "barrier-free-email-signatures-and-out-of-office-replies"
 permalink: "/blog/:year/:month/:day/:slug"

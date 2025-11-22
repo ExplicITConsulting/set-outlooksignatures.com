@@ -5,7 +5,6 @@ locale: "en"
 title: "Start the New Year smart: Stop overpaying for email signatures"
 description: "Centralized email signature solutions are often surprisingly expensive - but not Set-OutlookSignatures and the Benefactor Circle add-on."
 published: true
-author: Markus Gruber
 tags: 
 slug: "start-smart"
 permalink: "/blog/:year/:month/:day/:slug"
@@ -23,7 +22,7 @@ Here’s how:
 
 We focus on practical, efficient software. And we believe every mailbox should cost the same, which is why small customers pay the same fair price as large ones.
 
-Read all about [why Set-OutlookSignatures is free and open-source](https://set-outlooksignatures.com/faq#351-why-the-tagline) and about [the financial benefits of the Benefactor Circle add-on](https://set-outlooksignatures.com/benefactorcircle#financial-benefits).
+Read all about [why Set-OutlookSignatures is free and open-source](/faq#351-why-the-tagline) and about [the financial benefits of the Benefactor Circle add-on](/benefactorcircle#financial-benefits).
 
 ## Interested in learning more or seeing our solution in action?
 [Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!

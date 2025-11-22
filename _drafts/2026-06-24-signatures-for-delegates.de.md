@@ -5,7 +5,6 @@ locale: "de"
 title: "Signaturen für Mailbox-Delegierte, aber nicht für den Eigentümer"
 description: "Dies ist eine häufige Anforderung in Szenarien mit Vorgesetzten und Sekretären oder Assistenten: Weisen Sie allen Personen mit Zugriff auf userA@example.com eine Signatur zu, außer Benutzer A."
 published: true
-author: Markus Gruber
 tags: 
 slug: "signatures-for-delegates"
 permalink: "/blog/:year/:month/:day/:slug"

@@ -5,7 +5,6 @@ locale: "de"
 title: "Saisonale, zeitbasierte und kampagnenorientierte E-Mail-Signaturen"
 description: "Ihre E-Mail-Signatur ist mehr als nur eine Unterschrift. Sie ist ein leistungsstarkes Marketinginstrument. Mit dem richtigen Timing kann sie dazu beitragen, Ihre Marke und Ihre Botschaft zu stärken."
 published: true
-author: Markus Gruber
 tags: 
 slug: "seasonal-signatures"
 permalink: "/blog/:year/:month/:day/:slug"
@@ -27,8 +26,8 @@ Hier sind einige Möglichkeiten, wie Sie Ihre Signaturen wirkungsvoller gestalte
 Lassen Sie Ihre Signatur das ganze Jahr über widerspiegeln, was für Ihr Unternehmen am wichtigsten ist.
 
 Die folgenden Links könnten Sie interessieren:
-- [Zulässige Tags](https://set-outlooksignatures.com/details#61-allowed-tags) für die Zuweisung von Vorlagen
-- [Wie kann ich Banner und andere Bilder in Signaturen abwechselnd anzeigen?](https://set-outlooksignatures.com/faq#30-how-do-i-alternate-banners-and-other-images-in-signatures)
+- [Zulässige Tags](/details#61-allowed-tags) für die Zuweisung von Vorlagen
+- [Wie kann ich Banner und andere Bilder in Signaturen abwechselnd anzeigen?](/faq#30-how-do-i-alternate-banners-and-other-images-in-signatures)
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

@@ -5,7 +5,6 @@ locale: "de"
 title: "Eine Signatur nur einmal verteilen – und eine clevere Alternative"
 description: "Manchmal möchten Sie eine Signatur nur einmal bereitstellen zbd dem Benutzer die Möglichkeit geben, sie zu personalisieren."
 published: true
-author: Markus Gruber
 tags:
 slug: "how-to-deploy-a-signature-only-once"
 permalink: "/blog/:year/:month/:day/:slug"

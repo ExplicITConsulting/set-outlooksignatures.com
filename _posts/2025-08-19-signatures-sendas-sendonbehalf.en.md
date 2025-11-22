@@ -5,7 +5,6 @@ locale: "en"
 title: "Signatures for Send As and Send on Behalf"
 description: "You want to assign signatures to mailboxes or distribution lists that users don't add to Outlook?"
 published: true
-author: Markus Gruber
 tags: 
 slug: "signatures-sendas-sendonbehalf"
 permalink: "/blog/:year/:month/:day/:slug"

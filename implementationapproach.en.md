@@ -425,7 +425,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
 After gathering customer requirements and testing several server- and client-based products, we recommend using the free open-source software **Set-OutlookSignatures** with the paid **"Benefactor Circle"** extension.
 
 ### 5.1. General Description {#general-description}
-<a href="https://set-outlooksignatures.com">Set-OutlookSignatures</a> is a free open-source product with a paid add-on for advanced enterprise features.
+<a href="/">Set-OutlookSignatures</a> is a free open-source product with a paid add-on for advanced enterprise features.
 
 It supports all variants of Outlook and Exchange as target platforms: Windows, macOS, Android, iOS, Linux, and Web. Both classic and new Outlook. On-premises, hybrid, and cloud-only. By optionally storing signatures in the mailbox, they are also available in other email clients.
 

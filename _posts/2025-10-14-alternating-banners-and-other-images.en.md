@@ -5,7 +5,6 @@ locale: "en"
 title: "Randomly alternate banners and other images"
 description: "Running a marketing campaign with multiple banners?"
 published: true
-author: Markus Gruber
 tags: 
 slug: "alternating-banners-and-other-images"
 permalink: "/blog/:year/:month/:day/:slug"

@@ -438,7 +438,7 @@ Caveat: The `$CurrentMailbox[…]$` replacement variables refer to the user's pe
 **Solution option B**  
 This option only works for mailboxes, not for distribution groups.
 
-Create signature templates for the mailbox m<area>@example.com and **assign them to m<area>@example.com**. Use the virtual mailbox feature of the Benefactor Circle add-on to make sure that m<area>@example.com is always treated as if it were added to Outlook, not matter if it has been added or not (see the parameter '[VirtualMailboxConfigFile](https://set-outlooksignatures.com/parameters#38-virtualmailboxconfigfile)' for details).
+Create signature templates for the mailbox m<area>@example.com and **assign them to m<area>@example.com**. Use the virtual mailbox feature of the Benefactor Circle add-on to make sure that m<area>@example.com is always treated as if it were added to Outlook, not matter if it has been added or not (see the parameter '[VirtualMailboxConfigFile](/parameters#38-virtualmailboxconfigfile)' for details).
 
 ```
 [External English formal SendAs m@example.com.docx]
@@ -449,7 +449,7 @@ m@example.com
 
 You can now use replacement variables of both the `$CurrentUser[…]$` and the `$CurrentMailbox[…]$` namespace.
 
-Hint: You can also use the VirtualMailboxConfigFile to dynamically define signature INI file entries. See '[VirtualMailboxConfigFile](https://set-outlooksignatures.com/parameters#38-virtualmailboxconfigfile)' for details.
+Hint: You can also use the VirtualMailboxConfigFile to dynamically define signature INI file entries. See '[VirtualMailboxConfigFile](/parameters#38-virtualmailboxconfigfile)' for details.
 
 
 ## 21. Can I centrally manage and deploy Outook stationery with this script?
@@ -538,11 +538,11 @@ If Outlook is not installed at all, Set-OutlookSignatures will still be useful: 
 
 
 ## 26. What about the roaming signatures feature in Exchange Online?
-Set-OutlookSignatures can handle roaming signatures since v4.0.0. See parameter '[MirrorCloudSignatures](https://set-outlooksignatures.com/parameters#38-virtualmailboxconfigfile)' for details.
+Set-OutlookSignatures can handle roaming signatures since v4.0.0. See parameter '[MirrorCloudSignatures](/parameters#38-virtualmailboxconfigfile)' for details.
 
 Set-OutlookSignatures supports romaing signatures independent from the Outlook version used. Roaming signatures are also supported in scenarios where only Outlook Web in the cloud or New Outlook is used.
 
-As there is no Microsoft official API yet, this feature is to be used at your own risk (MirrorCloudSignatures runs stable since its introduction mid-2022).
+As there is no Microsoft official API yet, this feature is to be used at your own risk (MirrorCloudSignatures has been stable since its initial release in 2022).
 
 Storing signatures in the mailbox is a good idea, as this makes signatures available across devices and apps.
 

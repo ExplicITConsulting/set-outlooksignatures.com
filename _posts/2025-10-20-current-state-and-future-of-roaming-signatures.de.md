@@ -5,7 +5,6 @@ locale: "de"
 title: "Aktueller Stand und Zukunft von Roaming-Signaturen"
 description: "Als Microsoft im Jahr 2020 Roaming-Signaturen ankündigte, klang dies wie eine bahnbrechende Neuerung."
 published: true
-author: Markus Gruber
 tags:
 slug: "current-state-and-future-of-roaming-signatures"
 permalink: "/blog/:year/:month/:day/:slug"

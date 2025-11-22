@@ -5,7 +5,6 @@ locale: "de"
 title: "Einzigartige Elemente für E-Mail-Signaturen und Abwesenheitsnotizen"
 description: "Das Erste, was mir in den Sinn kommt, ist das visuelle Design. Eine Signatur kann jedoch auch inhaltsspezifische Funktionen und Barrierefreiheitsoptionen enthalten."
 published: true
-author: Markus Gruber
 tags: 
 slug: "unique-elements"
 permalink: "/blog/:year/:month/:day/:slug"
@@ -20,7 +19,7 @@ Oder etwas Ausgefalleneres wie die dynamisch berechnete Dauer Betriebszugehörig
 
 Nicht zuletzt gibt es auch den Aspekt der barrierefreien Zugänglichkeit. Dies hilft nicht nur Menschen mit Sehbehinderungen, sondern verbessert auch die Benutzerfreundlichkeit für alle. Denken Sie an Schriftgrößen, Farbkontraste und Links oder Bilder mit Textbeschreibungen für Screenreader.
 
-All dies – [und noch mehr](https://set-outlooksignatures.com/features)! – ist mit Set-OutlookSignatures und dem Add-on Benefactor Circle möglich.
+All dies – [und noch mehr](/features)! – ist mit Set-OutlookSignatures und dem Add-on Benefactor Circle möglich.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

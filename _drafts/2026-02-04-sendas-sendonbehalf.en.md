@@ -5,7 +5,6 @@ locale: "en"
 title: "How do you deploy signatures for Send As and Send On Behalf?"
 description: "In static environments, this is usually straightforward. But in dynamic organizations, it can quickly become a challenge."
 published: true
-author: Markus Gruber
 tags: 
 slug: "sendas-sendonbehalf"
 permalink: "/blog/:year/:month/:day/:slug"
@@ -16,7 +15,7 @@ In static environments, this is usually straightforward. But in dynamic organiza
 
 Here’s how the combination of [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions) and Set-OutlookSignatures simplifies the process:
 - Export-RecipientPermissions documents and compares mailbox permissions. You can automatically notify users about permissions they've granted or received.
-- Set-OutlookSignatures uses this data to dynamically assign additional signatures to users who have Send As or Send On Behalf permissions for another mailbox. The easiest way to achieve this is to use the '[VirtualMailboxConfigFile](https://set-outlooksignatures.com/parameters#38-virtualmailboxconfigfile)' parameter.
+- Set-OutlookSignatures uses this data to dynamically assign additional signatures to users who have Send As or Send On Behalf permissions for another mailbox. The easiest way to achieve this is to use the '[VirtualMailboxConfigFile](/parameters#38-virtualmailboxconfigfile)' parameter.
 
 The result is a fully automated, up-to-date signature deployment that adapts to real-world usage. No manual tracking, no outdated configurations.
 

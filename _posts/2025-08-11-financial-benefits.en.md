@@ -5,7 +5,6 @@ locale: "en"
 title: "Centralized signature management: Cost center or opportunity?"
 description: "Many assume that managing email signatures only makes sense for large enterprises"
 published: true
-author: Markus Gruber
 tags: 
 slug: "financial-benefits"
 permalink: "/blog/:year/:month/:day/:slug"

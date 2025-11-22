@@ -5,7 +5,6 @@ locale: "de"
 title: "Barrierefreie E-Mail-Signaturen und Abwesenheitstexte"
 description: "Beschreibung, zwischen 30 und 160 Zeichen"
 published: true
-author: Markus Gruber
 tags:
 slug: "barrier-free-email-signatures-and-out-of-office-replies""
 permalink: "/blog/:year/:month/:day/:slug"

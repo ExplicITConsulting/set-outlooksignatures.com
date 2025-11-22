@@ -137,3 +137,4 @@ pagination:
 
 feed:
   path: /feed.xml
+  icon: "/assets/images/set-outlooksignatures icon.ico"
