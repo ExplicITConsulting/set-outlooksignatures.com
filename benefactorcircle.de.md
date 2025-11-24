@@ -325,9 +325,7 @@ sitemap_changefreq: weekly
 
 <p>Das <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span> schaltet erweiterte Funktionen frei und ist für <strong>nur 3.00 € pro Postfach und Jahr</strong> erhältlich, das entspricht <strong>lediglich 0.25 € pro Postfach und Monat</strong>.</p>
 
-<p>Das Add-On ist eine Investition, die sich vom ersten Tag an auszahlt - sicher auch für Sie! Dank einzigartiger Funktionen und exklusiver Herstellerverfügbarkeit ist in der Regel ein rechtskonformer Direktbezug ohne öffentliche Ausschreibung möglich.</p>
-
-<p>Einen Teil Ihrer Investition geben wir direkt an das Set-OutlookSignatures-Projekt weiter und fördern so die Weiterentwicklung der kostenlosen Open-Source-Version.</p>
+<p>Das Add-On ist eine Investition, die sich vom ersten Tag an auszahlt - sicher auch für Sie!<br>Dank einzigartiger Funktionen und exklusiver Herstellerverfügbarkeit ist in der Regel ein rechtskonformer Direktbezug ohne öffentliche Ausschreibung möglich.</p>
 
 <p><a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Kosten-Nutzen-Rechnung, Business Case</a></p>
 
@@ -341,6 +339,7 @@ sitemap_changefreq: weekly
   </li>
   <li>Keine zusätzliche Infrastruktur oder externe Datenübertragungen. Alles läuft auf Ihren bestehenden Systemen, innerhalb Ihrer eigenen Sicherheitsgrenzen.</li>
   <li>Keine künstlich überhöhten Preise, die später durch Verhandlungen "reduziert" werden.</li>
+  <li>Einen Teil Ihrer Investition geben wir direkt an das Set-OutlookSignatures-Projekt weiter und fördern so die Weiterentwicklung der kostenlosen Open-Source-Version.</li>
 </ul>
 
 <p>Lizenzen sind nur für Postfächer erforderlich, die <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span>-Funktionen nutzen. Dies gilt auch für gemeinsam genutzte Postfächer. Jedes Postfach benötigt eine eigene Lizenz, unabhängig davon, wie viele Benutzer darauf zugreifen, wie viele Signaturen bereitgestellt werden oder wie häufig diese geändert werden.</p>

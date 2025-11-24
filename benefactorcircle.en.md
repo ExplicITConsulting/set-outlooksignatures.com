@@ -324,9 +324,7 @@ sitemap_changefreq: weekly
 
 <p>The <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> unlocks advanced features and is available for <strong>only 3.00 € per mailbox per year</strong>, which equals <strong>just 0.25 € per mailbox per month</strong>.</p>
 
-<p>The add-on is an investment that pays off from day one - certainly for you as well! Thanks to unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
-
-<p>We pass on part of your investment directly to the Set-OutlookSignatures project, thereby promoting the further development of the free open-source version.</p>
+<p>The add-on is an investment that pays off from day one - certainly for you as well!<br>Thanks to unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
 
 <p><a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Cost-benefit analysis, business case</a></p>
 
@@ -340,6 +338,7 @@ sitemap_changefreq: weekly
   </li>
   <li>No additional infrastructure or external data transfers. Everything runs on your existing systems, within your own security boundaries.</li>
   <li>No inflated prices that are later "discounted" through negotiations.</li>
+  <li>We pass on part of your investment directly to the Set-OutlookSignatures project, thereby promoting the further development of the free open-source version.</li>
 </ul>
 
 <p>Licenses are required only for mailboxes that utilize <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> features. This includes shared mailboxes. Each mailbox requires one license, regardless of how many users access it, how many signatures are deployed, or how frequently those signatures are modified.</p>
