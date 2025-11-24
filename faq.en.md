@@ -820,7 +820,7 @@ In the words of Markus Gruber, the creator of Set-OutlookSignatures:
 
 > Set-OutlookSignatures is my way of giving back to the community. Since it was first released in 2021 as a demonstrator showcasing the practical use of efficient Active Directory queries, many reusable code snippets have been added: Read about them in the FAQ '[What can I learn from the code of Set-OutlookSignatures?](#44-what-can-i-learn-from-the-code-of-set-outlooksignatures)'.
 >
-> Today, Set-OutlookSignatures is more than just a vehicle for demonstrating PowerShell techniques. It has evolved into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies.
+> Today, Set-OutlookSignatures is more than just a vehicle for demonstrating PowerShell techniques. It has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies.
 >
 > If you're an Exchange or client administrator, you're part of the community I want to support. I don't expect or request thank-yous, as our community thrives on mutual help. Your feedback, bug reports, and shared use cases help improve the tool for everyone.
 >
