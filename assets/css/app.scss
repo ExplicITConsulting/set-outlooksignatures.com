@@ -176,8 +176,7 @@ html::after {
   animation-delay: 0s;
 }
 
-.customer-scrolling-banner,
-.signature-scrolling-banner {
+.customer-scrolling-banner {
   overflow: hidden;
   pointer-events: none;
   display: flex;
@@ -186,8 +185,7 @@ html::after {
   height: 100%;
 }
 
-.customer-scrolling-banner .customer-scrolling-track,
-.signature-scrolling-banner .signature-scrolling-track {
+.customer-scrolling-banner .customer-scrolling-track {
   display: flex;
   align-items: flex-start;
   white-space: nowrap;
@@ -196,8 +194,7 @@ html::after {
   /* animation will be set via JS */
 }
 
-.customer-scrolling-banner .customer-scrolling-track img,
-.signature-scrolling-banner .signature-scrolling-track img {
+.customer-scrolling-banner .customer-scrolling-track img {
   max-height: 4em;
   height: auto;
   width: auto;
@@ -209,13 +206,42 @@ html::after {
   opacity: 1;
 }
 
-.signature-scrolling-banner .signature-scrolling-track img {
+.signature-scrolling-banner {
+  overflow: hidden;
+  pointer-events: none;
+  /* Use fixed height for the viewport to show only one image */
+  height: 10em; /* Same as img max-height */
   max-height: 10em;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
-/* Define keyframes. You might need to update your JavaScript 
-   to use this single keyframe name for both animations. */
-@keyframes scroll-full-track-dynamic {
+.signature-scrolling-banner .signature-scrolling-track {
+  /* No longer a flex row, now a block container for vertical stacking */
+  display: block;
+  white-space: normal; /* Allow elements to wrap */
+  /* Remove gap for vertical scroll */
+  gap: 0;
+  box-sizing: border-box;
+  /* Animation will be handled by JS transform (not CSS keyframes) */
+  transition: transform 0.5s ease-in-out; /* Smooth transition between images */
+  will-change: transform;
+}
+
+.signature-scrolling-banner .signature-scrolling-track img {
+  max-height: 10em;
+  height: 10em; /* Ensure all images occupy the same vertical space */
+  width: 100%; /* Fill the container width */
+  object-fit: contain;
+  display: block; /* Ensures images stack vertically */
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: auto;
+  opacity: 1;
+}
+
+@keyframes customer-scroll-full-track-dynamic {
   /* Changed keyframe name for universality */
   from {
     transform: translateX(0);
