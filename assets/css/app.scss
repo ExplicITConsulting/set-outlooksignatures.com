@@ -217,21 +217,8 @@ html::after {
 
 .signature-scrolling-banner .signature-scrolling-track img {
   max-height: 10em;
-  padding-right: 1.5em;
-
-  /* 1. Define the border on the right only */
-  border-width: 0 1px 0 0; /* Top, Right, Bottom, Left widths (1px on the right) */
-  border-style: solid;
-  border-color: transparent; /* Makes the solid border invisible, allowing the gradient to show */
-
-  /* 2. Apply the vertical gradient as a border-image */
-  border-image: linear-gradient(
-    to bottom,
-    transparent 0%,      /* Start transparent */
-    var(--bulma-border, black) 25%, /* Transition to color, solid at 25% */
-    var(--bulma-border, black) 75%, /* Solid color up to 75% (50% solid section) */
-    transparent 100%     /* Transition back to transparent */
-  ) 1 0; /* The '1' slices the image, '0' ensures no horizontal repeat */
+  padding-right: 5em;
+  // border-right: 1px solid var(--bulma-border, black);
 }
 
 /* Define keyframes. You might need to update your JavaScript 
