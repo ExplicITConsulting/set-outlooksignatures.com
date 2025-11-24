@@ -28,6 +28,22 @@ sitemap_changefreq: weekly
 <p>
   You can switch to the fast lane using ExplicIT Consulting's first-class <a href="#professional-support">professional support</a>.
 </p>
+<blockquote>
+  <p>
+    Since it's first release as a 
+    <a href="/faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures">technology demonstrator</a>, Set-OutlookSignatures has evolved into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies.
+  </p>
+  <p>
+    Sustaining long-term development for such a project requires significant financial resources. Currently, we do not have enough open-source sponsors to cover these costs fully.
+  </p>
+  <p>
+    To bridge this gap, ExplicIT Consulting offers the 
+    <a href="/benefactorcircle">Benefactor Circle add-on</a> and first-class <a href="#professional-support">professional support</a>. Revenue from these options ensures continued development and quality for both open-source and paid versions.
+  </p>
+  <p>
+    By choosing Set-OutlookSignatures, your company reduces costs compared to commercial alternatives while benefiting from a powerful open-source solution. Upgrading to the Benefactor Circle add-on and professional support helps secure its future.
+  </p>
+</blockquote>
 
 
 <h2 id="professional-support">Professional support</h2>
@@ -46,6 +62,9 @@ sitemap_changefreq: weekly
   For us, support means not only delivering high-quality solutions quickly, but also sharing our knowledge so you understand the how and why.
   <br>
   This makes our support an investment in your team's expertise, delivering immediate value.
+</p>
+<p>
+  We pass on part of your investment directly to the Set-OutlookSignatures project, thereby promoting the further development of the free open-source version.
 </p>
 <p>
   <strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is free - no exceptions.

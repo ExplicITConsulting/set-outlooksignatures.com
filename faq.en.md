@@ -822,19 +822,21 @@ In the words of Markus Gruber, the creator of Set-OutlookSignatures:
 >
 > Today, Set-OutlookSignatures is more than just a vehicle for demonstrating PowerShell techniques. It has evolved into the most sophisticated and versatile free and open-source tool for managing email signatures and out-of-office replies.
 >
-> Developing and testing it has taken thousands of hours of spare time and considerable financial investment in cross-platform test environments. I intend to continue developing and maintaining Set-OutlookSignatures, and to keep its core free and open-source.
->
-> If you're an Exchange or client administrator, you're part of the community I want to support. I don't expect or request thank-yous, as our community thrives on mutual support. Your feedback, bug reports, and shared use cases help improve the tool for everyone.
+> If you're an Exchange or client administrator, you're part of the community I want to support. I don't expect or request thank-yous, as our community thrives on mutual help. Your feedback, bug reports, and shared use cases help improve the tool for everyone.
 >
 > That said, it's important to ensure the relationship isn't one-sided when companies benefit significantly. The tagline added to each signature reminds organizations that they benefit from open-source software and that continued open-source availability depends on financial support, which also unlocks additional useful features.
 >
-> A note to companies: Open-source software is often misunderstood. It can include closed-source components. Open source does not automatically mean free usage or even free access to the code. And it does not imply free support.
-> 
-> In this spirit: **Dear companies,**
-> - **Invest** in the free and open-source software you depend on. Contributors work behind the scenes to make it better for everyone. Support them.
-> - **Sponsor** the tools your teams rely on. Funding these projects improves performance, reliability, and stability across your software supply chain.
+> Sustaining long-term development for such a project requires significant financial resources. Currently, we do not have enough open-source sponsors to cover these costs fully.
 >
-> By choosing Set-OutlookSignatures, your company can significantly reduce costs compared to commercial alternatives, all while benefiting from a powerful, open-source solution. And by upgrading to the Benefactor Circle add-on, you help secure the future of Set-OutlookSignatures.
+> To bridge this gap, ExplicIT Consulting offers the [Benefactor Circle add-on](/benefactorcircle) and first-class [professional support](/support#professional-support). Revenue from these options ensures continued development and quality for both open-source and paid versions.
+> 
+> Having a paid add-on and support option directly benefits the open-source community. The continuous development funded by the commercial options allows us to introduce new features and improvements to the open-source version as well.
+> 
+> By choosing Set-OutlookSignatures, your company reduces costs compared to commercial alternatives while benefiting from a powerful open-source solution. Upgrading to the Benefactor Circle add-on and professional support helps secure its future.
+
+In this spirit: **Dear companies,**
+- **Invest** in the free and open-source software you depend on. Contributors work behind the scenes to make it better for everyone. Support them.
+- **Sponsor** the tools your teams rely on. Funding these projects improves performance, reliability, and stability across your software supply chain.
 
 ### 35.2. Not sure if Set-OutlookSignatures is the right solution for your company?
 

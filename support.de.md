@@ -28,6 +28,25 @@ sitemap_changefreq: weekly
   Mit dem erstklassigen <a href="#professional-support">professionellen Support</a> von ExplicIT Consulting können Sie auf die Überholspur wechseln.
 </p>
 
+<blockquote>
+  <p>
+    Seit seiner ersten Veröffentlichung als 
+    <a href="/faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures">Technologie-Demonstrator</a> 
+    hat sich Set-OutlookSignatures zum ausgefeiltesten und vielseitigsten kostenlosen Open-Source-Tool für die Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen entwickelt.
+  </p>
+  <p>
+    Die langfristige Weiterentwicklung eines solchen Projekts erfordert erhebliche finanzielle Ressourcen. Derzeit haben wir nicht genügend Open-Source-Sponsoren, um diese Kosten vollständig zu decken.
+  </p>
+  <p>
+    Um diese Lücke zu schließen, bietet ExplicIT Consulting das 
+    <a href="/benefactorcircle">Benefactor Circle Add-On</a> sowie erstklassigen 
+    <a href="#professional-support">professionellen Support</a> an. Die Einnahmen aus diesen Optionen sichern die kontinuierliche Entwicklung und Qualität sowohl der Open-Source- als auch der kostenpflichtigen Versionen.
+  </p>
+  <p>
+    Durch die Wahl von Set-OutlookSignatures senkt Ihr Unternehmen die Kosten im Vergleich zu kommerziellen Alternativen und profitiert gleichzeitig von einer leistungsstarken Open-Source-Lösung. Ein Upgrade auf das Benefactor Circle Add-on und professionellen Support trägt zur Sicherung der Zukunft des Projekts bei.
+  </p>
+</blockquote>
+
 
 <h2 id="professional-support">Professioneller Support</h2>
 <p>
@@ -45,6 +64,9 @@ sitemap_changefreq: weekly
   Support heißt für uns nicht nur, eine Lösung für Ihr Problem zu liefern, sondern auch unsere Erfahrung an Sie weiterzugeben, damit Sie wissen, wie und warum.
   <br>
   Unsere Unterstützung ist also eine Investition in Ihr eigenes Wissen und das Ihrer Mitarbeiter, die sich sofort auszahlt.
+</p>
+<p>
+  Einen Teil Ihrer Investition geben wir direkt an das Set-OutlookSignatures-Projekt weiter und fördern so die Weiterentwicklung der kostenlosen Open-Source-Version.
 </p>
 <p>
   <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem <span style="font-weight: bold; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme.
