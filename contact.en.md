@@ -14,9 +14,7 @@ sitemap_changefreq: yearly
 <h2>Send us an email</h2>
 <p>
   For general questions, write us at 
-  <a href="mailto:set-outlooksignatures@explicitconsulting.at">
-    set-outlooksignatures@explicitconsulting.at
-  </a>, or just click this button:
+  <a href="mailto:set-outlooksignatures@explicitconsulting.at">set-outlooksignatures@explicitconsulting.at</a>, or just click this button:
 </p>
 <p>
   <a href="mailto:set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black" style="background-color: limegreen">
