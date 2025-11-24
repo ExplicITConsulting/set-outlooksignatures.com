@@ -13,7 +13,7 @@
   link: /benefactorcircle#demo
 - name: Blog
   link: /blog/
-- name: Ressourcen
+- name: Hilfe
   link: /help
   dropdown:
   - name: Häufig gestellte Fragen (FAQ)
