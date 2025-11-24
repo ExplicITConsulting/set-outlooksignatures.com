@@ -231,6 +231,7 @@ html::after {
   height: 160px;
   width: 100%;
   object-fit: contain;
+  object-position: top left
 
   /* Stack images on top of each other */
   position: absolute;
