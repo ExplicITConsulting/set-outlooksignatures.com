@@ -211,6 +211,8 @@ html::after {
 
 .signature-scrolling-banner .signature-scrolling-track img {
   max-height: 10em;
+  border-right: 1px solid var(--bulma-border, black);
+  padding-right: 1.5em;
 }
 
 /* Define keyframes. You might need to update your JavaScript 
