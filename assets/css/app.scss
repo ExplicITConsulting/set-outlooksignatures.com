@@ -215,7 +215,7 @@ html::after {
 
 /* Define keyframes. You might need to update your JavaScript 
    to use this single keyframe name for both animations. */
-@keyframes customer-scroll-full-track-dynamic, signature-scroll-full-track-dynamic {
+@keyframes scroll-full-track-dynamic {
   /* Changed keyframe name for universality */
   from {
     transform: translateX(0);
