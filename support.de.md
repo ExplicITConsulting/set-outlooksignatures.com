@@ -32,7 +32,7 @@ sitemap_changefreq: weekly
   <p>
     Seit seiner ersten Veröffentlichung als 
     <a href="/faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures">Technologie-Demonstrator</a> 
-    hat sich Set-OutlookSignatures zum fortgeschrittensten, sichersten und vielseitigsten kostenlosen Open-Source-Tool für die Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen entwickelt.
+    hat sich Set-OutlookSignatures zum fortschrittlichsten, sichersten und vielseitigsten kostenlosen Open-Source-Tool für die Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen entwickelt.
   </p>
   <p>
     Die langfristige Weiterentwicklung eines solchen Projekts erfordert erhebliche finanzielle Ressourcen. Derzeit haben wir nicht genügend Open-Source-Sponsoren, um diese Kosten vollständig zu decken.
