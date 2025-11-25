@@ -632,7 +632,7 @@ Before going into configuration details, here is some background information:
 >- [No public API](https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/set-organizationconfig?view=exchange-ps#-postponeroamingsignaturesuntillater).
 >- [Problems with encoding conversion](/faq#41-roaming-signatures-in-classic-outlook-for-windows-look-different) occur intermittently.
 >
->To bridge these gaps, [ExplicIT Consulting](https://explicitconsulting.at) developed its own roaming signature sync engine and Outlook add-in for the [Benefactor Circle](/benefactorcircle) add-on. 
+>To bridge these gaps, [ExplicIT Consulting](https://explicitconsulting.at) collaborated with Microsoft to develop its own low-level access roaming signature sync engine and Outlook add-in for the [Benefactor Circle](/benefactorcircle) add-on. 
 >
 >The [Outlook add-in](/outlookaddin) brings roaming signatures to iOS and Android, makes a feature similar to roaming signatures available for mailboxes hosted on-prem, and more.
 >
