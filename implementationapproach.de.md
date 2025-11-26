@@ -14,9 +14,9 @@ sitemap_changefreq: weekly
 <!-- omit in toc -->
 ## Welchen organisatorischen Ansatz für die Implementierung der Software empfehlen wir? {#recommended-approach}
 
-Für die meisten Unternehmen ist die <a href="/quickstart">Schnellstart-Anleitung</a> der effizienteste Einstieg. Sie ermöglicht eine eigenständige Implementierung von Set-OutlookSignatures und dem Benefactor Circle Add-On in kürzester Zeit.
+Für die meisten Unternehmen ist die <a href="/quickstart">Schnellstart-Anleitung</a> der effizienteste Einstieg. Damit verteilen Sie Ihre ersten Signaturen innerhalb von Minuten und schaffen einen soliden Ausgangspunkt für Ihre eigenen Anpassungen.
 
-Eine vollständige <a href="/support#professional-support">Implementierungsunterstützung</a> benötigt selten mehr als einen halben Tag.
+Sie ziehen es vor, durch die organisatorischen Themen, den Einrichtungs- und Anpassungsprozess geführt zu werden, anstatt sich selbst durch die Dokumentation zu arbeiten? ExplicIT Consulting bietet <a href="/support#professional-support">Implementierungsunterstützung von A bis Z</a> an.
 
 <p>
   <div class="buttons">

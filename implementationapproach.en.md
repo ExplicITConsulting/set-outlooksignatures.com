@@ -13,9 +13,9 @@ sitemap_changefreq: weekly
 ---
 <!-- omit in toc -->
 ## What organizational approach do we recommend for implementing the software? {#recommended-approach}
-For most companies, the <a href="/quickstart">quick start guide</a> is the most efficient way to get started. It enables you to implement Set-OutlookSignatures and the Benefactor Circle add-on on your own in no time.
+For most companies, the <a href="/quickstart">quick start guide</a> is the most efficient way to get started. With it, you deploy your first signatures within minutes and create a robust starting point for your own customizations.
 
-Full <a href="/support#professional-support">implementation support</a> rarely takes more than half a day.
+You prefer to be guided through organizational topics, the setup and customization process instead of working through the documentation yourself? ExplicIT Consulting offers <a href="/support#professional-support">implementation support from A to Z</a>.
 
 <p>
   <div class="buttons">
