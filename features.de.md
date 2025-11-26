@@ -58,7 +58,7 @@ Set-OutlookSignatures kann von Nutzern auf **Windows-, Linux- und macOS-Clients,
 
 Der **Simulationsmodus** ermöglicht es Inhaltserstellern und Administratoren, das Verhalten der Software für einen bestimmten Benutzer zu einem bestimmten Zeitpunkt zu simulieren und die resultierenden Signaturen vor der Live-Schaltung zu prüfen.
 
-**SimulateAndDeploy**¹ ermöglicht die Bereitstellung von Signaturen und Abwesenheitsantworten in Outlook Web¹/New Outlook¹ (sofern Outlook Web-basiert) **ohne Client-Bereitstellung oder Endbenutzerinteraktion**. Dies ist ideal für Nutzer, die sich nur bei Webdiensten, aber nie an einem Client anmelden (z. B. Nutzer mit einer Microsoft 365-Lizenz).
+**SimulateAndDeploy**¹ ermöglicht die Bereitstellung von Signaturen und Abwesenheitsantworten **ohne Client-Bereitstellung oder Endbenutzerinteraktion**. Signaturen werden im Postfach als roaming signatures (nur für Exchange Online) gespeichert und stehen darüber hinaus dem [Outlook add-in](/outlookaddin) (Exchange Online und Exchange on-prem).
 
 Die Software funktioniert **on-premises, in hybriden und reinen Cloud-Umgebungen**. Sie ist **für große und komplexe Umgebungen konzipiert**: Exchange Resource Forests, AD-Trusts, mehrstufige AD-Subdomänen sowie mandantenübergreifende und Multitenant Szenarien.
 

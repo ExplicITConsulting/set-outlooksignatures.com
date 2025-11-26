@@ -422,9 +422,13 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 
 
 ## 19. SimulateAndDeploy
-Not only simulate, but also deploy signatures to Outlook Web/New Outlook (when based on New Outlook).
+Not only simulate, but also deploy signatures as roaming signatures (Exchange Online mailboxes only) and make them available for the [Outlook add-in](/outlookaddin) (all Exchange mailboxes).
 
-Makes only sense in combination with '.\sample code\SimulateAndDeploy.ps1', do not use this parameter for other scenarios
+SimulateAndDeploy allows to deploy signatures and out-of-office replies without any client deployment or end user interaction. Signatures are saved to the mailbox as roaming signatures (Exchange Online mailboxes only) and are also made available for the [Outlook add-in](/outlookaddin) (all Exchange mailboxes).
+
+This mode is ideal when user log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients.
+
+The SimulateAndDeploy parameter Makes only sense in combination with '.\sample code\SimulateAndDeploy.ps1', do not use this parameter for other scenarios
 
 See '.\sample code\SimulateAndDeploy.ps1' for an example how to use this parameter
 
@@ -642,7 +646,7 @@ Before going into configuration details, here is some background information:
 >- All signatures are available as roaming signatures in the mailbox of the logged-on user. Not only signatures for the user's own mailbox, but also signatures for other mailboxes the user has added (no matter the type of these mailboxes or the way they have been added).
 >- The sync is simply triggered by running Set-OutlookSignatures.
 >- Works in tandem with Outlook's own sync mechanism or standalone.
->   - Outlook's own mechanism gets disabled by default, see parameter '[DisableRoamingSignatures](/parameters#30-disableroamingsignatures)'. This is strongly recommended to avoid the issues that the built-in mechanism comes with, and that Outlook's own mechanism does not overwrite signatures created by Set-OutlookSignatures.
+>   - Outlook's own mechanism gets disabled by default, see parameter '[DisableRoamingSignatures](#30-disableroamingsignatures)'. This is strongly recommended to avoid the issues that the built-in mechanism comes with, and that Outlook's own mechanism does not overwrite signatures created by Set-OutlookSignatures.
 >- Correctly [converts encodings](/faq#41-roaming-signatures-in-classic-outlook-for-windows-look-different).
 >
 >The process behind the sync engine is simple and straight forward. The following steps are performed for each mailbox:
@@ -667,7 +671,7 @@ Prerequisites:
 
 Please note:
 - Microsoft has yet to release a public API for roaming signatures, so we teamed up to develop a reliable solution that allows you to bridge this gap at your own discretion. MirrorCloudSignatures has delivered consistent performance since its launch in 2022.
-- Do not expect this feature to work reliably in [simulation mode](/details#11-simulation-mode) because the user running the simulation usually does not have access to the signatures stored in another mailbox.<br>It does work in [SimulateAndDeploy](/parameters#19-simulateanddeploy) mode because of its different permission model.
+- Do not expect this feature to work reliably in [simulation mode](/details#11-simulation-mode) because the user running the simulation usually does not have access to the signatures stored in another mailbox.<br>It does work in [SimulateAndDeploy](#19-simulateanddeploy) mode because of its different permission model.
 - For mailboxes in Exchange Online: To delete manually created signatures (signatures that have not been created by Set-OutlookSignatures) you need to use New Outlook for Windows or Classic Outlook for Windows with its own roaming signature sync mechanism enabled, or you delete the signature both locally and in Outlook Web.
   - Else, manually created signatures will be re-downloaded from the cloud or re-uploaded to the cloud because Set-OutlookSignatures and the Benefactor Circle add-on technically cannot detect the deletion:<br>When a signature exists in only one of two places, and both places can neither be permanently monitored nor provide an activity log: Has the signature been deleted in the one place, or has it been created in the other? This question cannot be answered. To avoid potential data loss, it is always assumed that the signature has been created.
 

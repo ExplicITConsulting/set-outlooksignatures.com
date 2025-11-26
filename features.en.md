@@ -60,6 +60,8 @@ Set-OutlookSignatures can be **run by users on Windows, Linux and macOS clients,
 
 **SimulateAndDeploy**¹ allows to deploy signatures and out-of-office replies to Outlook Web¹/New Outlook¹ (when based on Outlook Web) **without any client deployment or end user interaction**, making it ideal for users that only log on to web services but never to a client (users with a Microsoft 365 F-license, for example).
 
+**SimulateAndDeploy**¹ allows to deploy signatures and out-of-office replies **without any client deployment or end user interaction**. Signatures are saved to the mailbox as roaming signatures (Exchange Online mailboxes only) and are also made available for the [Outlook add-in](/outlookaddin) (all Exchange mailboxes).
+
 It works **on premises, in hybrid and in cloud-only environments**. The software is **designed to work in big and complex environments**: Exchange resource forest scenarios, AD trusts, multi-level AD subdomains, cross-tenant and multitenant scenarios.  
 All **national clouds are supported**: Public (AzurePublic), US Government L4 (AzureUSGovernment), US Government L5 (AzureUSGovernment DoD), China (AzureChinaCloud operated by 21Vianet).
 
