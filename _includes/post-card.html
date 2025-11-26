@@ -14,7 +14,7 @@
             {% endif %}
             {% assign lines = truncated_text | split: "_NEWLINE_" %}
             {% if post.description %}
-                {% assign description = {{ post.description | markdownify | replace: "<br>", "_NEWLINE_" | replace: "</h2>", "_NEWLINE_" | replace: "</p>", "_NEWLINE_" | strip_html | split: "_NEWLINE_" }} %}
+                {% assign description = post.description | markdownify | replace: "<br>", "_NEWLINE_" | replace: "</h2>", "_NEWLINE_" | replace: "</p>", "_NEWLINE_" | strip_html | split: "_NEWLINE_" %}
                 {% for line in description %}
                     <p><strong>{{ line }}</strong></p>
                 {% endfor %}
