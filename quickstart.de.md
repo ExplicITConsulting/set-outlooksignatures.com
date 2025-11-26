@@ -117,7 +117,7 @@ Wir suchen:
 - Ausschnitte aus benutzerdefiniertem Code oder Integrationslogik
 - Eine kurze Stellungnahme zu Ihren Erfahrungen mit Set-OutlookSignatures oder dem Benefactor Circle Add-On
 
-Nehmen Sie einfach [Kontakt](/contact) mit uns auf!
+Nehmen Sie einfach [Kontakt](/support) mit uns auf!
 
 ## Benötigen Sie Hilfe oder weitere Funktionen? {#support}
 Set-OutlookSignatures ist sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.

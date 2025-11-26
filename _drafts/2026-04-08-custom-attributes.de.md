@@ -29,4 +29,4 @@ Set-OutlookSignatures erleichtert die Arbeit mit diesen Daten:
 Sie können auch bedingte Logik verwenden, um interne Abteilungsnamen öffentlichen Namen zuzuordnen, oder saisonale Regeln auf Signaturinhalte anwenden.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

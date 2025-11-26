@@ -73,4 +73,4 @@ The signature is an excellent, cost-effective advertising space. Make use of it!
 Managing this complexity manually is impossible. A centralized solution like Set-OutlookSignatures ensures that every email, regardless of scenario or sender, is consistent, up-to-date, and legally compliant. This turns your signatures into a real asset for your company.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

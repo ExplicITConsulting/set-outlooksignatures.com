@@ -2,7 +2,7 @@
 layout: "page"
 lang: "de"
 locale: "de"
-title: "Implementierungs-Ansatz"
+title: "Organisatorischer Implementierungs-Ansatz"
 subtitle: "Einführung in einer komplexen Umgebung mit zehntausenden Postfächern"
 description: "Erfahren Sie unseren Implementierungs-Ansatz für komplexe Multi-Client-Umgebungen mit zehntausenden Postfächern – praxisnah und effizient."
 permalink: "/implementationapproach"
@@ -12,9 +12,11 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <!-- omit in toc -->
-## Welchen Ansatz für die Implementierung der Software empfehlen wir? {#recommended-approach}
+## Welchen organisatorischen Ansatz für die Implementierung der Software empfehlen wir? {#recommended-approach}
 
-Für die meisten Unternehmen ist die <a href="/quickstart">Schnellstart-Anleitung</a> der effizienteste Einstieg. Sie ermöglicht eine eigenständige Implementierung von Set-OutlookSignatures und dem Benefactor Circle Add-On in kürzester Zeit. Eine vollständige <a href="/support#professional-support">Implementierungsunterstützung</a> benötigt selten mehr als einen halben Tag.
+Für die meisten Unternehmen ist die <a href="/quickstart">Schnellstart-Anleitung</a> der effizienteste Einstieg. Sie ermöglicht eine eigenständige Implementierung von Set-OutlookSignatures und dem Benefactor Circle Add-On in kürzester Zeit.
+
+Eine vollständige <a href="/support#professional-support">Implementierungsunterstützung</a> benötigt selten mehr als einen halben Tag.
 
 <p>
   <div class="buttons">
@@ -28,6 +30,9 @@ Dieses Dokument richtet sich an Organisationen, die neben Effizienz auch formell
 Der Inhalt basiert auf praktischen Erfahrungen mit der Bereitstellung der Lösung in Multi-Tenant-Umgebungen mit zehntausenden Postfächern. Das Dokument richtet sich an IT-Dienstleister, interne IT-Teams und Fachabteilungen, die für E-Mail- und Client-Systeme verantwortlich sind.
 
 Die behandelten Themen umfassen den gesamten Lebenszyklus, von der ersten Beratung und Planung über Tests, Pilotphasen und Rollout. Anschließend folgen Betrieb, Verwaltung, Support und Schulung. Das Ziel ist es, eine praktische Referenz bereitzustellen, die Unternehmen dabei hilft, die Lösung effektiv zu implementieren und gleichzeitig strenge Anforderungen zu erfüllen.
+
+Es handelt sich hierbei nicht um eine ins Detail gehende Anleitung für Techniker, sondern um ein organisatorischen Überblick. Technische Details finden Sie [hier](/details).
+
 
 ## 1. Auftrag {#task}
 

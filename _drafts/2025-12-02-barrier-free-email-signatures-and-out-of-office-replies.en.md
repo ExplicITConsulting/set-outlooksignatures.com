@@ -21,4 +21,4 @@ That’s why every sample template in Set-OutlookSignatures is designed with acc
 A simple step toward a more inclusive digital world.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

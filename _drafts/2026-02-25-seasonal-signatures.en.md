@@ -30,4 +30,4 @@ The following links will interest you:
 - [How do I alternate banners and other images in signatures?](/faq#30-how-do-i-alternate-banners-and-other-images-in-signatures)
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

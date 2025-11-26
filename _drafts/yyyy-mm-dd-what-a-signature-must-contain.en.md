@@ -89,4 +89,4 @@ To create a single signature that works worldwide, you must combine all mandator
 By consistently implementing these elements in your email signature management system, you ensure that every email leaving your company is legally secure—no matter where in the world it is sent.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

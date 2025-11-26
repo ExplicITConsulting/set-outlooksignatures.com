@@ -89,4 +89,4 @@ Um eine einzige Signatur zu erstellen, die weltweit funktioniert, müssen Sie al
 Indem Sie diese Elemente einmalig und konsistent in Ihrem E-Mail-Signatur-Management-System hinterlegen, stellen Sie sicher, dass jede E-Mail, die Ihr Unternehmen verlässt, rechtlich abgesichert ist – egal, an welchen Ort der Welt sie gesendet wird.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

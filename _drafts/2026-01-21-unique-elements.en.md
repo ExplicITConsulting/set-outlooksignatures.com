@@ -22,4 +22,4 @@ Last, but not least, there is also the aspect of barrier-free accessibility. Thi
 All this - [and more](/features)! - is possible with Set-OutlookSignatures and the Benefactor Circle add-on.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

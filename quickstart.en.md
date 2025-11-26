@@ -114,7 +114,7 @@ We're looking for:
 - A short statement about your experience with Set-OutlookSignatures or the Benefactor Circle add on
 - Your name, role, and company, along with a photo and company logo for your showcase
 
-Just [get in touch](/contact) with us!
+Just [get in touch](/support) with us!
 
 ## Looking for help or more features? {#support}
 Set-OutlookSignatures is very well documented, which inevitably brings with it a lot of content.

@@ -24,4 +24,4 @@ The free and open-source PowerShell function ConvertEncoding, part of Set-Outloo
 ConvertEncoding enables reliable detection of encodings via BOMs, HTML metadata, and heuristic analysis, and converts content to other formats as needed. Even HTML files are correctly adjusted, including meta tags. This makes different encodings easy to manage.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

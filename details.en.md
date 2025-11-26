@@ -21,7 +21,7 @@ sitemap_changefreq: weekly
 ---
 ## Technical details<!-- omit in toc -->
 - [1. Get to know Set-OutlookSignatures](#1-get-to-know-set-outlooksignatures)
-- [2. Requirements](#2-requirements)
+- [2. Requirements and usage](#2-requirements-and-usage)
   - [2.1. Linux and macOS](#21-linux-and-macos)
     - [2.1.1. Common restrictions and notes for Linux and macOS](#211-common-restrictions-and-notes-for-linux-and-macos)
     - [2.1.2. Linux specific restrictions and notes](#212-linux-specific-restrictions-and-notes)
@@ -60,7 +60,7 @@ To get to know Set-OutlookSignatures, we recommend the following sequence:
 4. Get practical: Deploy signatures within minutes with the [Quick Start Guide](/quickstart)!
 
 You want to know more?
-- [Requirements and usage](/details)
+- [Requirements and usage](#requirements-and-usage)
 - [Parameters](/parameters)
 - [Frequently Asked Questions (FAQ)](/faq)
 - [The Outlook add-in](/outlookaddin)
@@ -75,7 +75,7 @@ When facing a problem: Before creating a new issue, check the documentation, pre
 You are welcome to share your experiences with Set-OutlookSignatures, exchange ideas with other users or suggest new features in our [discussions board](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=).
 
 
-## 2. Requirements  
+## 2. Requirements and usage  
 You need Exchange Online or Exchange on-prem.
 
 Set-OutlookSignatures can run in two modes:

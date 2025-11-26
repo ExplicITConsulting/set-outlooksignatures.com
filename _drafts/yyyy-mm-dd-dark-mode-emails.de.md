@@ -86,4 +86,4 @@ Daher ist es am besten, die Signaturvorlage hauptsächlich für den Hellmodus zu
 Mit dieser Strategie liefern Sie eine Signatur, die auf allen wichtigen Plattformen konsistent professionell und lesbar ist, anstatt eine, die in einigen kompatiblen Clients technisch perfekt ist, aber in den meisten anderen nicht funktioniert.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

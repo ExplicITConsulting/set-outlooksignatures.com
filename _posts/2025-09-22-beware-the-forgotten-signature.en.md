@@ -28,4 +28,4 @@ Just create your template, assign it to selected or all mailboxes, and define wh
 
 No tricks, just treats for your brand visibility.
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

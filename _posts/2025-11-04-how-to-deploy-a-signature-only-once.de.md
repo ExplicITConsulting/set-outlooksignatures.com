@@ -30,4 +30,4 @@ Es gibt drei Möglichkeiten, dies mit Set-OutlookSignatures zu erreichen:
     Technisch gesehen handelt es sich nicht um eine einmalige Bereitstellung, aber es ist eine clevere, benutzerfreundliche Alternative, die Konsistenz und Flexibilität in Einklang bringt.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

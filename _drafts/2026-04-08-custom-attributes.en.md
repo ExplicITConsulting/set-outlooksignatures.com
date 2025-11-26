@@ -29,4 +29,4 @@ Set-OutlookSignatures makes it easy to work with this data:
 You can also use conditional logic to map internal department names to public-facing ones, or apply seasonal rules to signature content.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

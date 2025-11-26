@@ -2,18 +2,20 @@
 layout: "page"
 lang: "de"
 locale: "de"
-title: "Unterstützung erhalten"
+title: "Unterstützung erhalten und uns kontaktieren"
 subtitle: "Wir geben unsere Erfahrung an Sie weiter"
 description: "Erhalten Sie Support für Set-OutlookSignatures: kostenlose Hilfe via GitHub oder professionelle Beratung, Workshops und Expertenwissen."
 permalink: "/support"
 redirect_from:
   - "/support/"
+  - "/contact"
+  - "/contact/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <h2 id="free-support">Kostenlose Unterstützung</h2>
 <p>
-  Bevor Sie auf GitHub ein neues Problem melden, prüfen Sie die Dokumentation, früher gemeldete 
+  Bevor Sie auf GitHub ein neues Thema eröffnen, prüfen Sie die Dokumentation, früher gemeldete 
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=">Probleme</a> 
   und 
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">Diskussionen</a>.
@@ -22,7 +24,7 @@ sitemap_changefreq: weekly
   Sie sind herzlich eingeladen, Ihre Erfahrungen mit Set-OutlookSignatures zu teilen, Ideen mit anderen Benutzern auszutauschen oder neue Funktionen in unserem <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">Diskusionsforum</a> vorzuschlagen.
 </p>
 <p>
-  Auf GitHub können nur Fragen beantwortet werden, die sich direkt auf Set-OutlookSignatures beziehen.
+  Auf GitHub können nur Fragen beantwortet werden, die sich direkt auf Set-OutlookSignatures beziehen; das Benefactor Circle add-on fällt nicht in diesen Bereich.
 </p>
 <p>
   Mit dem erstklassigen <a href="#professional-support">professionellen Support</a> von ExplicIT Consulting können Sie auf die Überholspur wechseln.
@@ -79,3 +81,5 @@ sitemap_changefreq: weekly
       Professionellen Support anfordern
   </a>
 </p>
+
+Wenn Sie ExplicIT Consulting lieber per E-Mail kontaktieren möchten, verwenden Sie bitte [set-outlooksignatures@explicitconsulting.at](mailto:set-outlooksignatures@explicitconsulting.at) für technische Themen und [welcome@explicitconsulting.at](mailto:welcome@explicitconsulting.at) für alle anderen Fragen.

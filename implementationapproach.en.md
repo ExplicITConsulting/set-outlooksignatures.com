@@ -2,7 +2,7 @@
 layout: "page"
 lang: "en"
 locale: "en"
-title: "Implementation approach"
+title: "Organizational implementation approach"
 subtitle: "Implementation in a complex environment with a five-digit number of mailboxes"
 description: "Discover our implementation approach for complex multi-client environments with thousands of mailboxes—real-world experience for smooth deployment."
 permalink: "/implementationapproach"
@@ -12,8 +12,10 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <!-- omit in toc -->
-## What approach do we recommend for implementing the software? {#recommended-approach}
-For most companies, the <a href="/quickstart">quick start guide</a> is the most efficient way to get started. It enables you to implement Set-OutlookSignatures and the Benefactor Circle add-on on your own in no time. Full <a href="/support#professional-support">implementation support</a> rarely takes more than half a day.
+## What organizational approach do we recommend for implementing the software? {#recommended-approach}
+For most companies, the <a href="/quickstart">quick start guide</a> is the most efficient way to get started. It enables you to implement Set-OutlookSignatures and the Benefactor Circle add-on on your own in no time.
+
+Full <a href="/support#professional-support">implementation support</a> rarely takes more than half a day.
 
 <p>
   <div class="buttons">
@@ -27,6 +29,8 @@ This document is intended for organizations that need to ensure formal processes
 The content is based on practical experience with deploying the solution in multi-tenant environments with tens of thousands of mailboxes. The document is intended for IT service providers, internal IT teams, and business departments responsible for email and client systems.
 
 The topics covered span the entire lifecycle, from initial consultation and planning to testing, pilot phases, and rollout. This is followed by operation, administration, support, and training. The goal is to provide a practical reference that helps companies implement the solution effectively while meeting strict requirements.
+
+This is not a detailed guide for technicians, but rather an organizational overview. Technical details can be found [here](/details).
 
 
 ## 1. Task {#task}

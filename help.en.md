@@ -26,8 +26,5 @@ sitemap_changefreq: weekly
 <h2><a href="/outlookaddin">The Outlook add-in</a></h2>
 <p>Signatures for Outlook on Android and iOS, advanced features for all platforms</p>
 
-<h2><a href="/support">Support</a></h2>
+<h2><a href="/support">Support and contact</a></h2>
 <p>Passing on our experience to you</p>
-
-<h2><a href="/contact">Contact</a></h2>
-<p>Let's get and stay in contact</p>

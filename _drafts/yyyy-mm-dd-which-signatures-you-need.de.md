@@ -73,4 +73,4 @@ Die Signatur ist ein hervorragender, kostengünstiger Werbeplatz. Nutzen Sie ihn
 Die Verwaltung dieser Komplexität manuell ist unmöglich. Eine zentralisierte Lösung wie Set-OutlookSignatures stellt sicher, dass jede E-Mail, unabhängig von Szenario oder Absender, konsistent, aktuell und rechtskonform ist. So machen Sie Ihre Signaturen zu einem echten Asset für Ihr Unternehmen.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/contact) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

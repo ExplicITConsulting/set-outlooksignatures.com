@@ -27,4 +27,4 @@ And the best part?
 Set-OutlookSignatures only needs a file share or SharePoint document library. No admin client, no server dependencies, no email rerouting.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

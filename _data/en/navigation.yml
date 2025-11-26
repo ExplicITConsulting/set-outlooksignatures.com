@@ -16,17 +16,17 @@
 - name: Help
   link: /help
   dropdown:
-  - name: Frequently asked questions (FAQ)
-    link: /faq
+  - name: Organizational implementation approach
+    link: /implementationapproach
   - name: Technical details, requirements, usage
     link: /details
   - name: Parameters
     link: /parameters
-  - name: Implementation approach
-    link: /implementationapproach
+  - name: Frequently asked questions (FAQ)
+    link: /faq
   - name: The Outlook add-in
     link: /outlookaddin
   - name: Support
     link: /support
-  - name: Contact
-    link: /contact
+  - name: Support and Contact
+    link: /support

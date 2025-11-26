@@ -1,5 +1,5 @@
 # Individual footer menu items
-- name: "Kontakt"
-  link: /contact
-- name: "Rechtliches"
+- name: "Support und Kontakt"
+  link: /support
+- name: "Impressum und Rechtliches"
   link: /legal

@@ -2,18 +2,20 @@
 layout: "page"
 lang: "en"
 locale: "en"
-title: "Get support"
+title: "Get support and contact us"
 subtitle: "Passing on our experience to you"
 description: "Get Set-OutlookSignatures support: Free GitHub help or premium support, plus expert guidance, workshops, and implementation assistance."
 permalink: "/support"
 redirect_from:
   - "/support/"
+  - "/contact"
+  - "/contact/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <h2 id="free-support">Free support</h2>
 <p>
-  Before creating a new issue on GitHub, check the documentation, previous 
+  Before creating a new topic on GitHub, check the documentation, previous 
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=">issues</a> 
   and 
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">discussions</a>.
@@ -23,7 +25,7 @@ sitemap_changefreq: weekly
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">discussions board</a>.
 </p>
 <p>
-  On GitHub, only questions directly releated to Set-OutlookSignatures can be answered.
+  On GitHub, only questions directly releated to Set-OutlookSignatures can be answered; the Benefactor Circle add-on is out of scope.
 </p>
 <p>
   You can switch to the fast lane using ExplicIT Consulting's first-class <a href="#professional-support">professional support</a>.
@@ -77,3 +79,5 @@ sitemap_changefreq: weekly
       Request professional support
   </a>
 </p>
+
+If you prefer to contact ExplicIT Consulting via email, please use [set-outlooksignatures@explicitconsulting.at](mailto:set-outlooksignatures@explicitconsulting.at) for technical topics, and [welcome@explicitconsulting.at](mailto:welcome@explicitconsulting.at) for all other questions.

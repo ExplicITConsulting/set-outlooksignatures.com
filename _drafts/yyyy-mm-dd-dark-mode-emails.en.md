@@ -87,4 +87,4 @@ Therefore, the pragmatic and most effective strategy is to design the signature 
 By embracing this strategy, you deliver a signature that is consistently professional and legible across all major platforms, rather than one that is technically perfect in a few compliant clients but broken in the majority.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/contact) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!
