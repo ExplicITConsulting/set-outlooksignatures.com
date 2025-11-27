@@ -1,7 +1,5 @@
 - name: Funktionen
   link: /features
-- name: Preis
-  link: /benefactorcircle#price
 - name: Schnellstart
   link: /quickstart
 - name: Download
@@ -11,6 +9,8 @@
   link: /benefactorcircle
 - name: Demo
   link: /benefactorcircle#demo
+- name: Preis
+  link: /benefactorcircle#price
 - name: Blog
   link: /blog/
 - name: Hilfe
