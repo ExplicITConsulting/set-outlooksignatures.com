@@ -221,9 +221,15 @@ html::after {
   // border-right: 1px solid var(--bulma-border, black);
 }
 
-/* Define keyframes. You might need to update your JavaScript 
-   to use this single keyframe name for both animations. */
-@keyframes scroll-full-track-dynamic {
+@keyframes customer-scroll-full-track-dynamic {
+  /* Changed keyframe name for universality */
+  from {
+    transform: translateX(0);
+  }
+  /* 'to' value will be set by JavaScript */
+}
+
+@keyframes signature-scroll-full-track-dynamic {
   /* Changed keyframe name for universality */
   from {
     transform: translateX(0);
