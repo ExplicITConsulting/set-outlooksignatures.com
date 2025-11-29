@@ -18,18 +18,22 @@ So lautete zumindest die Theorie.
 
 Schnellvorlauf bis Mitte 2024: Obwohl die meisten Mandanten Roaming-Signaturen nun aktiviert haben, ist die Realität komplizierter:
 - Es gibt immer noch keine öffentliche API.
-- Einige hartnäckige Fehler sind nach wie vor ungelöst.
+- Einige hartnäckige Fehler sind nach wie vor ungelöst (z.B. werden [Kodierungen nicht korrekt konvertiert](/faq#41-roaming-signatures-in-classic-outlook-for-windows-look-different)).
 - Outlook unterstützt Roaming-Signaturen nicht auf allen Plattformen.
 
 Wir bei Set-OutlookSignatures und ExplicIT sind überzeugt, dass Roaming-Signaturen die Zukunft sind. Aber die langsame Einführung und die begrenzte Kommunikation seitens Microsoft haben die Einführung erschwert. Aus diesem Grund haben wir viel in die Unterstützung dieser Funktion innerhalb von Set-OutlookSignatures investiert und bieten Funktionen, die keine andere Lösung auf dem Markt bieten kann.
 
 Unsere Empfehlung für die meisten Kunden:
 - Aktivieren Sie Roaming-Signaturen in Ihrem Mandanten.
-- Deaktivieren Sie sie auf der Client-Seite
-- Überlassen Sie Set-OutlookSignatures den Rest
+- Deaktivieren Sie sie auf der Client-Seite.
+- Überlassen Sie Set-OutlookSignatures den Rest.
+
+Wenn Sie Set-OutlookSignatures nicht auf Ihren Clients laufen lassen können oder wollen, verteilen Sie Signaturen mit '[SimulateAndDeploy](/parameters#19-simulateanddeploy)' von einer zentralen Stelle aus.
 
 ## Und wie sieht es mit der mobilen Unterstützung aus?
-Derzeit ist dies ein Problem, das oft eine teure Umleitung auf der Serverseite erfordert, nur um eine Signatur anzuwenden. Sobald Microsoft jedoch eine offizielle API veröffentlicht, wird sich dies ändern. In der Zwischenzeit schließt das Outlook Add-In – Teil des Benefactor Circle-Add-ons – diese Lücke.
+Derzeit ist dies ein Problem, das oft eine teure Umleitung auf der Serverseite erfordert, nur um eine Signatur anzuwenden. Sobald Microsoft jedoch eine offizielle API veröffentlicht, wird sich dies ändern.
+
+In der Zwischenzeit schließt das [Outlook Add-In](/outlookaddin), Teil des [Benefactor Circle Add-Ons](/benefactorcircle), diese Lücke - und mehr - nicht nur auf Android und iOS, sondern auf allen von Outlook unterstützen Plattformen.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
