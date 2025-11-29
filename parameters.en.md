@@ -428,7 +428,9 @@ SimulateAndDeploy allows to deploy signatures and out-of-office replies without 
 
 This mode is ideal when users log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients.
 
-The SimulateAndDeploy parameter Makes only sense in combination with '.\sample code\SimulateAndDeploy.ps1', do not use this parameter for other scenarios
+SimulateAndDeploy considers additional mailboxes when the user added them in Outlook Web, when they are passed via the '[SimulateMailboxes'](/parameters#38-virtualmailboxconfigfile)' parameter, or when being added dynamically via the '[VirtualMailboxConfigFile](/parameters#38-virtualmailboxconfigfile)' parameter.
+
+The SimulateAndDeploy parameter makes sense only when used in combination with '.\sample code\SimulateAndDeploy.ps1'. Do not use this parameter for other scenarios.
 
 See '.\sample code\SimulateAndDeploy.ps1' for an example how to use this parameter
 
