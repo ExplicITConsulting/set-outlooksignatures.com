@@ -78,13 +78,16 @@ You are welcome to share your experiences with Set-OutlookSignatures, exchange i
 ## 2. Requirements and usage  
 You need Exchange Online or Exchange on-prem.
 
-Set-OutlookSignatures can run in two modes:
-- In the security context of the currently logged-in user. This is recommended for most scenarios.
-- On a central system, using a service account to push signatures into users mailboxes. This can be useful for accounts that only log on to the email service, but not to a client (such as M365 F-licenses). See the parameter '[SimulateAndDeploy](/parameters#19-simulateanddeploy)' for details.
-
-A Linux, macOS or Windows system with PowerShell:
+Set-Outlook can run on Linux, macOS or Windows systems with PowerShell:
 - Windows: Windows PowerShell 5.1 ('powershell.exe', part of Windows) or PowerShell 7+ ('pwsh.exe')
 - Linux, macOS: PowerShell 7+ ('pwsh')
+
+Set-OutlookSignatures can run in two modes:
+- In the security context of the currently logged-in user. This is recommended for most scenarios.  
+  In combination with the [Benefactor Circle add-on](/benefactorcircle), signatures are also made available as Exchange Online roaming signatures and can be used by the [Outlook add-in](/outlookaddin). This makes signatures available when accessing the mailbox from a client on which Set-OutlookSignatures does not run.
+- On a central system, using a service account to push signatures into users mailboxes.  
+  This mode is ideal when users log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients. See the parameter '[SimulateAndDeploy](/parameters#19-simulateanddeploy)' for details.  
+  In combination with the [Benefactor Circle add-on](/benefactorcircle), signatures are also made available as Exchange Online roaming signatures and can be used by the [Outlook add-in](/outlookaddin). This makes signatures available when accessing the mailbox from a client on which Set-OutlookSignatures does not run.
 
 On Windows, Outlook and Word are typically used, but not required in all constellations:
 - When Outlook 2010 or higher is installed and has profiles configured, Outlook is used as source for mailboxes to deploy signatures for.  
@@ -97,7 +100,8 @@ Signature templates can be in DOCX (Windows) or HTML format (Windows, Linux, mac
 
 The software must run in PowerShell Full Language mode. Constrained Language mode is not supported, as some features such as BASE64 conversions are not available in this mode or require very slow workarounds.
 
-On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'. This removes the 'mark of the web', which can prevent script execution when the PowerShell execution policy is set to RemoteSigned.
+On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'.  
+This removes the 'mark of the web', which can prevent script execution when the PowerShell execution policy is set to RemoteSigned.
 
 If you use AppLocker or a comparable solution (Defender, CrowdStrike, Ivanti, and others), you may need to add the existing digital file signature to your allow list, or define additional settings in your security software.
 
@@ -107,9 +111,6 @@ This is not only available for Benefactor Circle members, but also the Free and 
 The paths to the template and configuration files (SignatureTemplatePath, OOFTemplatePath, GraphConfigFile, etc.) must be accessible by the currently logged-in user. The files must be at least readable for the currently logged-in user.
 
 In cloud environments, you need to register Set-OutlookSignatures as Entra ID app and provide admin consent for the required permissions. See the Quick Start Guide or '.\config\default graph config.ps1' for details.
-
-Make sure that Set-OutlookSignatures is not executed more than once in the same PowerShell session. If possible, Set-OutlookSignatures should always be executed in a new PowerShell session. In addition to productive use, this applies in particular to tests, as this is the only way to prevent problems caused by .Net caching DLL files in memory.
-
 
 ### 2.1. Linux and macOS
 Not all features are yet available on Linux and macOS. Every parameter contains appropriate information, which can be summarized as follows:
