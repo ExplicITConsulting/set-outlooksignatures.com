@@ -84,10 +84,10 @@ Set-Outlook can run on Linux, macOS or Windows systems with PowerShell:
 
 Set-OutlookSignatures can run in two modes:
 - In the security context of the currently logged-in user. This is recommended for most scenarios.  
-  In combination with the [Benefactor Circle add-on](/benefactorcircle), signatures are also made available as Exchange Online roaming signatures and can be used by the [Outlook add-in](/outlookaddin). This makes signatures available when accessing the mailbox from a client on which Set-OutlookSignatures does not run.
+  In combination with the [Benefactor Circle add-on](/benefactorcircle), signatures are also made available as Exchange Online roaming signatures and can be used by the [Outlook add-in](/outlookaddin). This makes signatures available when accessing the mailbox from Outlook on a client on which Set-OutlookSignatures does not run.
 - On a central system, using a service account to push signatures into users mailboxes.  
   This mode is ideal when users log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients. See the parameter '[SimulateAndDeploy](/parameters#19-simulateanddeploy)' for details.  
-  In combination with the [Benefactor Circle add-on](/benefactorcircle), signatures are also made available as Exchange Online roaming signatures and can be used by the [Outlook add-in](/outlookaddin). This makes signatures available when accessing the mailbox from a client on which Set-OutlookSignatures does not run.
+  In combination with the [Benefactor Circle add-on](/benefactorcircle), signatures are also made available as Exchange Online roaming signatures and can be used by the [Outlook add-in](/outlookaddin). This makes signatures available when accessing the mailbox from Outlook on a client on which Set-OutlookSignatures does not run.
 
 On Windows, Outlook and Word are typically used, but not required in all constellations:
 - When Outlook 2010 or higher is installed and has profiles configured, Outlook is used as source for mailboxes to deploy signatures for.  
