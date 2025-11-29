@@ -11,17 +11,17 @@ redirect_from:
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
-<h2><a href="/faq">Frequently Asked Questions (FAQ)</a></h2>
-<p>Topics that are addressed regularly</p>
+<h2><a href="/implementationapproach">Organizational implementation approach</a></h2>
+<p>Implementation in a complex environment with a five-digit number of mailboxes</p>
 
 <h2><a href="/details">Technical details, requirements and usage</a></h2>
 <p>What it needs, how it works and how to use it</p>
 
-<h2><a href="/parameters">Parameters</a></h2>
+<h2><a href="/parameters">Configuration parameters</a></h2>
 <p>How to customize Set-OutlookSignatures</p>
 
-<h2><a href="/implementationapproach">Implementation approach</a></h2>
-<p>Real-life experience implementing the software in multi-client environments with a five-digit number of mailboxes</p>
+<h2><a href="/faq">Frequently Asked Questions (FAQ)</a></h2>
+<p>Topics that are addressed regularly</p>
 
 <h2><a href="/outlookaddin">The Outlook add-in</a></h2>
 <p>Signatures for Outlook on Android and iOS, advanced features for all platforms</p>
