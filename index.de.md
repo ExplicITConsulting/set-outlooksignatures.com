@@ -227,7 +227,6 @@ sitemap_changefreq: weekly
       Signaturen<span class="has-text-success"> in wenigen Minuten </span> verteilen
     </h2>
     <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
-
     <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Schnellstart-Anleitung</a>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
@@ -241,7 +240,6 @@ sitemap_changefreq: weekly
       <li>Best practices und FAQ</li>
       <li>Wie Sie erstklassigen Support erhalten</li>
     </ul>
-
-    <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Hilfe- und Support-Center</a>
+    <a href="/help" class="button is-link is-normal is-hovered has-text-white has-text-weight-bold has-background-link">Hilfe- und Support-Center</a>
   </div>
 </div>

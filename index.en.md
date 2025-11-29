@@ -241,7 +241,6 @@ sitemap_changefreq: weekly
       Deploy signatures<span class="has-text-success"> within minutes</span>
     </h2>
     <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.</p>
-
     <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Quick Start Guide</a>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
@@ -255,7 +254,6 @@ sitemap_changefreq: weekly
       <li>Best practices and FAQ</li>
       <li>How to get first-class support</li>
     </ul>
-
-    <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-link">Help and Support-Center</a>
+    <a href="/help" class="button is-link is-normal is-hovered has-text-white has-text-weight-bold has-background-link">Help and Support-Center</a>
   </div>
 </div>

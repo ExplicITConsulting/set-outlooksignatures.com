@@ -196,7 +196,8 @@ html::after {
   /* animation will be set via JS */
 }
 
-.customer-scrolling-banner .customer-scrolling-track img {
+.customer-scrolling-banner .customer-scrolling-track img,
+.signature-scrolling-banner .signature-scrolling-track img {
   max-height: 4em;
   padding-right: 2em;
   height: auto;
@@ -212,7 +213,6 @@ html::after {
 .signature-scrolling-banner .signature-scrolling-track img {
   max-height: 10em;
   padding-right: 3.5em;
-  // border-right: 1px solid var(--bulma-border, black);
 }
 
 @keyframes customer-scroll-full-track-dynamic {
