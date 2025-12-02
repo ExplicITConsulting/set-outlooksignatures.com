@@ -174,7 +174,7 @@ sitemap_changefreq: weekly
             
             // REGEX: Matches any character that is NOT a word character (\w) AND NOT whitespace (\s).
             // Replaces dashes, punctuation, symbols, etc., with nothing.
-            const nonPunctuationRegex = /[^\w\s]/g; 
+            const nonPunctuationRegex = /[^\w]/g; 
 
             // 1. Normalize and trim the query: remove non-alphanumeric/non-whitespace chars, then trim the ends.
             const normalizedQuery = query.toLowerCase().replace(nonPunctuationRegex, '').trim();
