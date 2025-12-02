@@ -169,170 +169,195 @@ sitemap_changefreq: weekly
 
         initializeSearch();
 
-        function performExactMatchSearch(query, lang) {
-            const rawData = searchData[lang] || [];
-            
-            // REGEX: Matches any character that is NOT a word character (\w) AND NOT whitespace (\s).
-            // Replaces dashes, punctuation, symbols, etc., with nothing.
-            const nonPunctuationRegex = /[^\w]/g; 
+        /**
+         * Searches for exact matches in the raw data across a list of languages.
+         * @param {string} query The search term.
+         * @param {string[]} langs An array of language codes to search in (e.g., ['en', 'fr', 'es']).
+         * @returns {object[]} An array of result objects with the exact match score.
+         */
+        function performExactMatchSearch(query, langs) {
+            const allExactMatches = [];
+            
+            // REGEX: Matches any character that is NOT a word character (\w).
+            const nonPunctuationRegex = /[^\w]/g; 
 
-            // 1. Normalize and trim the query: remove non-alphanumeric/non-whitespace chars, then trim the ends.
-            const normalizedQuery = query.toLowerCase().replace(nonPunctuationRegex, '').trim();
-            const exactMatches = [];
-            
-            const exactMatchScore = -2000; 
+            // 1. Normalize and trim the query once
+            const normalizedQuery = query.toLowerCase().replace(nonPunctuationRegex, '').trim();
+            
+            const exactMatchScore = -2000; 
 
-            // Skip if the query is empty after normalizing
-            if (normalizedQuery.length === 0) {
-                return exactMatches;
-            }
+            // Skip if the query is empty after normalizing
+            if (normalizedQuery.length === 0) {
+                return allExactMatches;
+            }
+            
+            // Define the search logic for a single language
+            const searchSingleLanguage = (langCode) => {
+                const rawData = searchData[langCode] || [];
+                
+                const langMatches = [];
 
-            rawData.forEach(item => {
-                // 2. Normalize data fields using the same logic.
-                const docText = item.document ? item.document.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
-                const sectionText = item.section ? item.section.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
-                const contentText = item.content ? item.content.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
+                rawData.forEach(item => {
+                    // 2. Normalize data fields using the same logic.
+                    const docText = item.document ? item.document.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
+                    const sectionText = item.section ? item.section.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
+                    const contentText = item.content ? item.content.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
 
-                // Check if the normalized data includes the normalized query
-                const isDocMatch = docText.includes(normalizedQuery);
-                const isSectionMatch = sectionText.includes(normalizedQuery);
-                const isContentMatch = contentText.includes(normalizedQuery);
+                    // Check if the normalized data includes the normalized query
+                    const isDocMatch = docText.includes(normalizedQuery);
+                    const isSectionMatch = sectionText.includes(normalizedQuery);
+                    const isContentMatch = contentText.includes(normalizedQuery);
 
-                const isExactMatch = isDocMatch || isSectionMatch || isContentMatch;
+                    const isExactMatch = isDocMatch || isSectionMatch || isContentMatch;
 
-                if (isExactMatch) {
-                    // Determine which field contained the match and extract a snippet
-                    let matchedText = '';
-                    
-                    // Priority for snippet selection: Document > Section > Content
-                    if (isDocMatch) {
-                        matchedText = item.document;
-                    } else if (isSectionMatch) {
-                        matchedText = item.section;
-                    } else { // Must be isContentMatch
-                        matchedText = item.content || '';
-                    }
+                    if (isExactMatch) {
+                        // Determine which field contained the match and extract a snippet
+                        let matchedText = '';
+                        
+                        // Priority for snippet selection: Document > Section > Content
+                        if (isDocMatch) {
+                            matchedText = item.document;
+                        } else if (isSectionMatch) {
+                            matchedText = item.section;
+                        } else { // Must be isContentMatch
+                            matchedText = item.content || '';
+                        }
 
-                    // Calculate snippet boundaries
-                    const rawMatchedText = matchedText.toLowerCase();
-                    const queryIndex = rawMatchedText.indexOf(query.toLowerCase()); 
-                    
-                    // Define boundaries for context (50 before, 50 after)
-                    const contextPadding = 50; 
-                    const maxSnippetLength = 500;
-                    
-                    let snippetStart = Math.max(0, queryIndex - contextPadding);
-                    let snippetEnd = Math.min(matchedText.length, queryIndex + query.length + contextPadding);
-                    
-                    let highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
-                    
-                    // If the match was found in content, provide a longer snippet up to 500 chars
-                    if (isContentMatch) {
-                        // Recalculate end boundary for max length
-                        snippetEnd = Math.min(matchedText.length, snippetStart + maxSnippetLength);
-                        highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
-                    }
-                    
-                    // Prepend ellipsis if snippet starts late
-                    if (snippetStart > 0) {
-                        highlightSnippet = "..." + highlightSnippet;
-                    }
-                    // Append ellipsis if content was truncated
-                    if (snippetEnd < matchedText.length && highlightSnippet.length >= maxSnippetLength) {
-                        highlightSnippet = highlightSnippet + "...";
-                    }
+                        // Calculate snippet boundaries
+                        const rawMatchedText = matchedText.toLowerCase();
+                        // Note: Using the original, un-normalized query here for better index matching, 
+                        // although a full regex search of `query` in `matchedText` might be more accurate to the user's input.
+                        // Sticking to indexOf(query.toLowerCase()) for simplicity/consistency with original logic.
+                        const queryIndex = rawMatchedText.indexOf(query.toLowerCase()); 
+                        
+                        // Define boundaries for context (50 before, 50 after)
+                        const contextPadding = 50; 
+                        const maxSnippetLength = 500;
+                        
+                        let snippetStart = Math.max(0, queryIndex - contextPadding);
+                        let snippetEnd = Math.min(matchedText.length, queryIndex + query.length + contextPadding);
+                        
+                        let highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
+                        
+                        // If the match was found in content, provide a longer snippet up to 500 chars
+                        if (isContentMatch) {
+                            // Recalculate end boundary for max length
+                            snippetEnd = Math.min(matchedText.length, snippetStart + maxSnippetLength);
+                            highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
+                        }
+                        
+                        // Prepend ellipsis if snippet starts late
+                        if (snippetStart > 0) {
+                            highlightSnippet = "..." + highlightSnippet;
+                        }
+                        // Append ellipsis if content was truncated
+                        if (snippetEnd < matchedText.length && highlightSnippet.length >= maxSnippetLength) {
+                            highlightSnippet = highlightSnippet + "...";
+                        }
 
-                    // Create a simplified result object for display
-                    exactMatches.push({
-                        id: item.url,
-                        doc: { 
-                            ...item, 
-                            highlight: highlightSnippet, 
-                            isExactMatch: true,
-                            exactQuery: query 
-                        }, 
-                        score: exactMatchScore, 
-                        lang: lang
-                    });
-                }
-            });
+                        // Create a simplified result object for display
+                        langMatches.push({
+                            id: item.url,
+                            doc: { 
+                                ...item, 
+                                highlight: highlightSnippet, 
+                                isExactMatch: true,
+                                exactQuery: query 
+                            }, 
+                            score: exactMatchScore, 
+                            lang: langCode
+                        });
+                    }
+                });
+                return langMatches;
+            };
+            
+            // Iterate over all provided languages and accumulate results
+            langs.forEach(langCode => {
+                allExactMatches.push(...searchSingleLanguage(langCode));
+            });
 
-            return exactMatches;
-        }
+            return allExactMatches;
+        }
 
 
         function performSearch() {
-            const query = searchInput.value.trim();
-            if (query.length === 0) {
-                searchResultsContainer.innerHTML = '';
-                return;
-            }
-            if (typeof query !== 'string' || query.length === 0) {
-                searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].strings.search_resultsContainer_placeholder_queryEmpty }}</p>';
-                return;
-            }
+            const query = searchInput.value.trim();
+            if (query.length === 0) {
+                searchResultsContainer.innerHTML = '';
+                return;
+            }
+            if (typeof query !== 'string' || query.length === 0) {
+                searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].strings.search_resultsContainer_placeholder_queryEmpty }}</p>';
+                return;
+            }
 
-            let allResults = [];
-            const searchOptions = {
-                limit: 99,
-                suggest: true,
-                highlight: {
-                    template: '<mark style="background-color: yellow;">$1</mark>',
-                    boundary: {
-                        before: 50,
-                        after: 50,
-                        total: 500
-                    },
-                    merge: true,
-                }
-            };
+            let allResults = [];
+            const searchOptions = {
+                limit: 99,
+                suggest: true,
+                highlight: {
+                    template: '<mark style="background-color: yellow;">$1</mark>',
+                    boundary: {
+                        before: 50,
+                        after: 50,
+                        total: 500
+                    },
+                    merge: true,
+                }
+            };
 
-            // 1. Perform Exact Match Search for the current language
-            const currentLangExactMatches = performExactMatchSearch(query, currentLang);
-            allResults.push(...currentLangExactMatches);
+            // 1. Determine the search order: current language first, then all others.
+            const availableLangs = Object.keys(indexes);
+            const otherLangs = availableLangs.filter(lang => lang !== currentLang);
+            const langsToSearch = [currentLang, ...otherLangs];
 
-            // 2. Perform FlexSearch for the current language
-            const currentLangIndex = indexes[currentLang];
-            if (currentLangIndex) {
-                const rawResults = currentLangIndex.search(query, searchOptions);
-                rawResults.forEach(fieldResult => {
-                    if (fieldResult && fieldResult.result) {
-                        fieldResult.result.forEach(r => {
-                            const originalDoc = currentLangIndex.get(r.id);
-                            if (originalDoc) {
-                                const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
-                                // Negative score for current language priority
-                                allResults.push({ id: r.id, doc: highlightedDoc, score: r.score - 1000, lang: currentLang }); 
-                            }
-                        });
-                    }
-                });
-            }
+            // 2. Perform Exact Match Search for ALL languages, prioritizing currentLang
+            // Note: The array will be searched in order, but results will be merged and sorted later.
+            const allExactMatches = performExactMatchSearch(query, langsToSearch);
+            allResults.push(...allExactMatches);
 
-            // 3. Perform FlexSearch for other languages
-            Object.keys(indexes).forEach(lang => {
-                if (lang !== currentLang) {
-                    const otherLangIndex = indexes[lang];
-                    const rawResults = otherLangIndex.search(query, searchOptions);
 
-                    rawResults.forEach(fieldResult => {
-                        if (fieldResult && fieldResult.result) {
-                            fieldResult.result.forEach(r => {
-                                const originalDoc = otherLangIndex.get(r.id);
-                                if (originalDoc) {
-                                    const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
-                                    // Positive score for other languages
-                                    allResults.push({ id: r.id, doc: highlightedDoc, score: r.score, lang: lang });
-                                }
-                            });
-                        }
-                    });
-                }
-            });
+            // 3. Perform FlexSearch for the current language
+            const currentLangIndex = indexes[currentLang];
+            if (currentLangIndex) {
+                const rawResults = currentLangIndex.search(query, searchOptions);
+                rawResults.forEach(fieldResult => {
+                    if (fieldResult && fieldResult.result) {
+                        fieldResult.result.forEach(r => {
+                            const originalDoc = currentLangIndex.get(r.id);
+                            if (originalDoc) {
+                                const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
+                                // Negative score for current language priority
+                                allResults.push({ id: r.id, doc: highlightedDoc, score: r.score - 1000, lang: currentLang }); 
+                            }
+                        });
+                    }
+                });
+            }
 
-            allResults.sort((a, b) => a.score - b.score);
-            displayResults(allResults);
-        }
+            // 4. Perform FlexSearch for other languages
+            otherLangs.forEach(lang => { // Iterate over the 'otherLangs' list
+                const otherLangIndex = indexes[lang];
+                const rawResults = otherLangIndex.search(query, searchOptions);
+
+                rawResults.forEach(fieldResult => {
+                    if (fieldResult && fieldResult.result) {
+                        fieldResult.result.forEach(r => {
+                            const originalDoc = otherLangIndex.get(r.id);
+                            if (originalDoc) {
+                                const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
+                                // Positive score for other languages
+                                allResults.push({ id: r.id, doc: highlightedDoc, score: r.score, lang: lang });
+                            }
+                        });
+                    }
+                });
+            });
+
+            allResults.sort((a, b) => a.score - b.score);
+            displayResults(allResults);
+        }
 
         function displayResults(results) {
             const uniqueResults = [];
