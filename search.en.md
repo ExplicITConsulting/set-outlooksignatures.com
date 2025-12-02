@@ -74,7 +74,12 @@ sitemap_changefreq: weekly
                 ...baseConfig,
                 tokenize: "strict",
                 encoder: false, // Explicitly set to false to disable phonetic encoding
-                lang: false     // Explicitly set to false or omitted to disable stemming/language processing
+                lang: false,     // Explicitly set to false or omitted to disable stemming/language processing
+                context: { 
+                    resolution: 5,
+                    depth: 1,
+                    bidirectional: false
+                }
             };
 
             // 1. Full Index (Flexible Search)
