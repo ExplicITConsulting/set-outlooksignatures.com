@@ -183,7 +183,7 @@ sitemap_changefreq: weekly
             }
 
             const isPhraseSearch = rawQuery.startsWith('"') && rawQuery.endsWith('"') && rawQuery.length > 1;
-            const query = isPhraseSearch ? rawQuery : rawQuery; // Remove quotes for strict search
+            const query = isPhraseSearch ? rawQuery.slice(1, -1) : rawQuery; // Remove quotes for strict search
 
             let allResults = [];
             const searchOptions = {
