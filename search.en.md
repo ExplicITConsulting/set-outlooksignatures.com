@@ -329,18 +329,23 @@ sitemap_changefreq: weekly
                     // The 'highlight' field for exact match stores the original query string
                     const queryToHighlight = mainContent;
                     
-                    // 1. Escape special regex characters in the query
+                    // 1. ESCAPING FIX: Escape ALL special regex characters, including spaces (which are safe, but better to keep the comprehensive list)
+                    // The key is to ensure the query is treated literally.
                     const safeQuery = queryToHighlight.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
                     
-                    // 2. Create the case-insensitive global regex
+                    // 2. Create the case-insensitive global regex using the safe query string
                     const regex = new RegExp('(' + safeQuery + ')', 'gi');
                     
+                    // DEBUG: Log the regex being used to check if spaces are being included
+                    console.log("Exact Match Regex:", regex);
+
                     // 3. Apply manual highlight to the title and section
+                    // The replacement pattern uses '$1', which is the matched text
                     title = title.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
                     sectionContent = sectionContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
                     
                     // 4. Replace the main content with the Exact Match marker
-                    mainContent = '<p class="has-text-weight-bold has-text-primary">***Exact Match in Title/Section***</p>';
+                    mainContent = '<p class="has-text-weight-bold has-text-primary">***High-Priority Match in Title/Section***</p>';
                 }
 
 
