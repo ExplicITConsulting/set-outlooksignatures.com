@@ -169,36 +169,31 @@ sitemap_changefreq: weekly
 
         initializeSearch();
 
-        /**
-         * REVISED: Performs a high-priority search for documents whose title or section
-         * contains the entire search query (case-insensitive and trimmed).
-         * @param {string} query The search query.
-         * @param {string} lang The language code.
-         * @returns {Array} An array of result objects with a very high priority score.
-         */
         function performExactMatchSearch(query, lang) {
             const rawData = searchData[lang] || [];
-            // Ensure the incoming query is trimmed and lowercased once
-            const lowerQuery = query.toLowerCase().trim();
+            
+            // 1. Normalize and trim the query: replace all sequences of whitespace (including newlines) with a single space, then trim the ends.
+            const normalizedQuery = query.toLowerCase().replace(/\s+/g, ' ').trim();
             const exactMatches = [];
             
-            // Using a very low (negative) score to ensure top priority
             const exactMatchScore = -2000; 
 
-            // Skip if the query is empty after trimming
-            if (lowerQuery.length === 0) {
+            // Skip if the query is empty after normalizing
+            if (normalizedQuery.length === 0) {
                 return exactMatches;
             }
 
             rawData.forEach(item => {
-                // Prepare the text fields for a case-insensitive containment check
-                const docText = item.document ? item.document.toLowerCase() : '';
-                const sectionText = item.section ? item.section.toLowerCase() : '';
+                // 2. Normalize data fields: replace all sequences of whitespace (including newlines) with a single space.
+                const docText = item.document ? item.document.toLowerCase().replace(/\s+/g, ' ') : '';
+                const sectionText = item.section ? item.section.toLowerCase().replace(/\s+/g, ' ') : '';
+                const contentText = item.content ? item.content.toLowerCase().replace(/\s+/g, ' ') : ''; // NEW: Content Field
 
-                // Check if the query is contained within the document or section text
+                // Check if the normalized data includes the normalized query
                 const isExactMatch = 
-                    (docText.includes(lowerQuery)) ||
-                    (sectionText.includes(lowerQuery));
+                    (docText.includes(normalizedQuery)) ||
+                    (sectionText.includes(normalizedQuery)) ||
+                    (contentText.includes(normalizedQuery)); // Check Content field
 
                 if (isExactMatch) {
                     // Create a simplified result object for display
@@ -206,7 +201,7 @@ sitemap_changefreq: weekly
                         id: item.url,
                         doc: { 
                             ...item, 
-                            highlight: query,
+                            highlight: query, // Store original query for highlighting
                             isExactMatch: true
                         }, 
                         score: exactMatchScore, 
