@@ -169,18 +169,15 @@ sitemap_changefreq: weekly
 
         initializeSearch();
 
-        /**
-         * FINAL REVISION: Performs a high-priority search for documents whose title, section, or content
-         * contains the entire search query (case-insensitive and whitespace-normalized).
-         * @param {string} query The search query.
-         * @param {string} lang The language code.
-         * @returns {Array} An array of result objects with a very high priority score.
-         */
         function performExactMatchSearch(query, lang) {
             const rawData = searchData[lang] || [];
             
-            // 1. Normalize and trim the query: replace all sequences of whitespace (including newlines) with a single space, then trim the ends.
-            const normalizedQuery = query.toLowerCase().replace(/\s+/g, ' ').trim();
+            // REGEX: Matches any character that is NOT a word character (\w) AND NOT whitespace (\s).
+            // Replaces dashes, punctuation, symbols, etc., with nothing.
+            const nonPunctuationRegex = /[^\w\s]/g; 
+
+            // 1. Normalize and trim the query: remove non-alphanumeric/non-whitespace chars, then trim the ends.
+            const normalizedQuery = query.toLowerCase().replace(nonPunctuationRegex, '').trim();
             const exactMatches = [];
             
             const exactMatchScore = -2000; 
@@ -191,10 +188,10 @@ sitemap_changefreq: weekly
             }
 
             rawData.forEach(item => {
-                // 2. Normalize data fields: replace all sequences of whitespace (including newlines) with a single space.
-                const docText = item.document ? item.document.toLowerCase().replace(/\s+/g, ' ') : '';
-                const sectionText = item.section ? item.section.toLowerCase().replace(/\s+/g, ' ') : '';
-                const contentText = item.content ? item.content.toLowerCase().replace(/\s+/g, ' ') : ''; 
+                // 2. Normalize data fields using the same logic.
+                const docText = item.document ? item.document.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
+                const sectionText = item.section ? item.section.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
+                const contentText = item.content ? item.content.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
 
                 // Check if the normalized data includes the normalized query
                 const isDocMatch = docText.includes(normalizedQuery);
@@ -204,7 +201,6 @@ sitemap_changefreq: weekly
                 const isExactMatch = isDocMatch || isSectionMatch || isContentMatch;
 
                 if (isExactMatch) {
-                    
                     // Determine which field contained the match and extract a snippet
                     let matchedText = '';
                     
@@ -219,15 +215,15 @@ sitemap_changefreq: weekly
 
                     // Calculate snippet boundaries
                     const rawMatchedText = matchedText.toLowerCase();
-                    const queryIndex = rawMatchedText.indexOf(normalizedQuery);
+                    const queryIndex = rawMatchedText.indexOf(query.toLowerCase()); 
                     
                     // Define boundaries for context (50 before, 50 after)
                     const contextPadding = 50; 
                     const maxSnippetLength = 500;
                     
                     let snippetStart = Math.max(0, queryIndex - contextPadding);
-                    let snippetEnd = Math.min(matchedText.length, queryIndex + normalizedQuery.length + contextPadding);
-
+                    let snippetEnd = Math.min(matchedText.length, queryIndex + query.length + contextPadding);
+                    
                     let highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
                     
                     // If the match was found in content, provide a longer snippet up to 500 chars
@@ -251,10 +247,8 @@ sitemap_changefreq: weekly
                         id: item.url,
                         doc: { 
                             ...item, 
-                            // Store the text snippet
                             highlight: highlightSnippet, 
                             isExactMatch: true,
-                            // Store the original query so we can highlight it later
                             exactQuery: query 
                         }, 
                         score: exactMatchScore, 
@@ -296,9 +290,6 @@ sitemap_changefreq: weekly
             // 1. Perform Exact Match Search for the current language
             const currentLangExactMatches = performExactMatchSearch(query, currentLang);
             allResults.push(...currentLangExactMatches);
-            // DEBUG: Log exact matches
-            console.log("Exact Match Results for Query:", query, currentLangExactMatches);
-
 
             // 2. Perform FlexSearch for the current language
             const currentLangIndex = indexes[currentLang];
@@ -392,7 +383,7 @@ sitemap_changefreq: weekly
                     mainContent = mainContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
                     
                     // Add a subtle indicator above the content
-                    mainContent = `<p class="has-text-weight-bold has-text-primary mb-1">High-Priority Match:</p>${mainContent}`;
+                    // mainContent = `<p class="has-text-weight-bold has-text-primary mb-1">High-Priority Match:</p>${mainContent}`;
                 }
 
 

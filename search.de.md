@@ -31,19 +31,23 @@ sitemap_changefreq: weekly
         const searchInput = document.getElementById('search-input');
         const searchResultsContainer = document.getElementById('search-results');
 
+        // Set initial placeholder and disable the input
         searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_loading }}";
         searchInput.disabled = true;
 
-        // Modified to store dual indexes: indexes[lang] = { full: Index, strict: Index }
         const indexes = {};
+        // Store raw JSON data for exact match search
+        const searchData = {}; 
 
-        // Get language codes (copied from your original)
+        // Get the languages string from the custom meta tag
         const languagesMeta = document.querySelector('meta[name="site-languages"]');
         const languages = {};
+
         if (languagesMeta) {
             const languageCodes = languagesMeta.content.toLowerCase().split(',');
             languageCodes.forEach(code => {
                 const trimmedCode = code.trim();
+                // Check for the English language code
                 if (trimmedCode === 'en') {
                     languages[trimmedCode] = '/search.json';
                 } else {
@@ -51,28 +55,25 @@ sitemap_changefreq: weekly
                 }
             });
         }
+
         const currentLang = document.documentElement.lang || Object.keys(languages)[0] || 'en';
 
-        // --- Dual Index Creation Function ---
-        function createDualIndices(lang, languagePack) {
-            const baseConfig = {
-                document: { id: "url", index: allSearchFields, store: allSearchFields },
+        function createIndex(lang, languagePack) {
+            return new FlexSearch.Document({
+                document: {
+                    id: "url",
+                    index: allSearchFields,
+                    store: allSearchFields
+                },
+                tokenize: "full",
                 encoder: languagePack || FlexSearch.Charset.LatinSoundex,
                 cache: true,
                 context: true,
                 lang: lang
-            };
-
-            // 1. Full Index (Flexible Search)
-            const fullIndex = new FlexSearch.Document({ ...baseConfig, tokenize: "full" });
-
-            // 2. Strict Index (Phrase Search)
-            const strictIndex = new FlexSearch.Document({ ...baseConfig, tokenize: "strict" });
-
-            return { full: fullIndex, strict: strictIndex };
+            });
         }
 
-        // Debounce function (copied from your original)
+        // Debounce function specifically for the _paq tracking
         function debounce(func, delay) {
             let timeoutId;
             return function(...args) {
@@ -89,9 +90,8 @@ sitemap_changefreq: weekly
                 const resultsCount = searchResultsContainer.querySelectorAll('li').length;
                 _paq.push(['trackSiteSearch', query, false, resultsCount]);
             }
-        }, 2000);
+        }, 2000); // 2000ms delay for _paq
 
-        // Load Script function (copied from your original)
         async function loadScript(url) {
             return new Promise((resolve, reject) => {
                 const script = document.createElement('script');
@@ -102,31 +102,38 @@ sitemap_changefreq: weekly
             });
         }
 
-        // --- Initialization ---
         async function initializeSearch() {
             try {
+                // 1. Load the main FlexSearch library.
                 await loadScript(flexsearchBaseUrl);
 
+                // 2. Loop through language codes to load language packs and search.json.
                 for (const lang of Object.keys(languages)) {
                     try {
+                        let languagePack = null;
+
+                        // Await the script load before accessing FlexSearch.lang.
                         await loadScript(`${languagePackBaseUrl}${lang}.min.js`);
-                        const languagePack = FlexSearch.Language[lang] || FlexSearch.Charset.LatinSoundex;
+                        languagePack = FlexSearch.Language[lang] || FlexSearch.Charset.LatinSoundex;
 
                         const response = await fetch(languages[lang]);
-                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
                         const data = await response.json();
 
-                        // Create AND Populate Dual Indexes
-                        const dualIndex = createDualIndices(lang, languagePack);
+                        // Store raw data
+                        searchData[lang] = data;
+
+                        const index = createIndex(lang, languagePack);
                         data.forEach(item => {
                             if (item.url) {
-                                dualIndex.full.add(item);
-                                dualIndex.strict.add(item); // Populate both
+                                index.add(item);
                             } else {
                                 console.warn(`Item missing URL in ${languages[lang]}, skipping for FlexSearch index:`, item);
                             }
                         });
-                        indexes[lang] = dualIndex;
+                        indexes[lang] = index;
                     } catch (error) {
                         console.error(`Error loading data for language "${lang}":`, error);
                         delete languages[lang];
@@ -138,11 +145,13 @@ sitemap_changefreq: weekly
                     searchInput.disabled = false;
                     searchInput.addEventListener('input', () => {
                         const query = searchInput.value.trim();
+
                         if (query.length > 0) {
                             performSearch();
                         } else {
                             searchResultsContainer.innerHTML = '';
                         }
+
                         debouncedTrackSearch();
                     });
                 } else {
@@ -160,89 +169,177 @@ sitemap_changefreq: weekly
 
         initializeSearch();
 
-        // --- Perform Merged Search ---
+        function performExactMatchSearch(query, lang) {
+            const rawData = searchData[lang] || [];
+            
+            // REGEX: Matches any character that is NOT a word character (\w) AND NOT whitespace (\s).
+            // Replaces dashes, punctuation, symbols, etc., with nothing.
+            const nonPunctuationRegex = /[^\w\s]/g; 
+
+            // 1. Normalize and trim the query: remove non-alphanumeric/non-whitespace chars, then trim the ends.
+            const normalizedQuery = query.toLowerCase().replace(nonPunctuationRegex, '').trim();
+            const exactMatches = [];
+            
+            const exactMatchScore = -2000; 
+
+            // Skip if the query is empty after normalizing
+            if (normalizedQuery.length === 0) {
+                return exactMatches;
+            }
+
+            rawData.forEach(item => {
+                // 2. Normalize data fields using the same logic.
+                const docText = item.document ? item.document.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
+                const sectionText = item.section ? item.section.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
+                const contentText = item.content ? item.content.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
+
+                // Check if the normalized data includes the normalized query
+                const isDocMatch = docText.includes(normalizedQuery);
+                const isSectionMatch = sectionText.includes(normalizedQuery);
+                const isContentMatch = contentText.includes(normalizedQuery);
+
+                const isExactMatch = isDocMatch || isSectionMatch || isContentMatch;
+
+                if (isExactMatch) {
+                    // Determine which field contained the match and extract a snippet
+                    let matchedText = '';
+                    
+                    // Priority for snippet selection: Document > Section > Content
+                    if (isDocMatch) {
+                        matchedText = item.document;
+                    } else if (isSectionMatch) {
+                        matchedText = item.section;
+                    } else { // Must be isContentMatch
+                        matchedText = item.content || '';
+                    }
+
+                    // Calculate snippet boundaries
+                    const rawMatchedText = matchedText.toLowerCase();
+                    const queryIndex = rawMatchedText.indexOf(query.toLowerCase()); 
+                    
+                    // Define boundaries for context (50 before, 50 after)
+                    const contextPadding = 50; 
+                    const maxSnippetLength = 500;
+                    
+                    let snippetStart = Math.max(0, queryIndex - contextPadding);
+                    let snippetEnd = Math.min(matchedText.length, queryIndex + query.length + contextPadding);
+                    
+                    let highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
+                    
+                    // If the match was found in content, provide a longer snippet up to 500 chars
+                    if (isContentMatch) {
+                        // Recalculate end boundary for max length
+                        snippetEnd = Math.min(matchedText.length, snippetStart + maxSnippetLength);
+                        highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
+                    }
+                    
+                    // Prepend ellipsis if snippet starts late
+                    if (snippetStart > 0) {
+                        highlightSnippet = "..." + highlightSnippet;
+                    }
+                    // Append ellipsis if content was truncated
+                    if (snippetEnd < matchedText.length && highlightSnippet.length >= maxSnippetLength) {
+                        highlightSnippet = highlightSnippet + "...";
+                    }
+
+                    // Create a simplified result object for display
+                    exactMatches.push({
+                        id: item.url,
+                        doc: { 
+                            ...item, 
+                            highlight: highlightSnippet, 
+                            isExactMatch: true,
+                            exactQuery: query 
+                        }, 
+                        score: exactMatchScore, 
+                        lang: lang
+                    });
+                }
+            });
+
+            return exactMatches;
+        }
+
+
         function performSearch() {
-            const rawQuery = searchInput.value.trim();
-            if (rawQuery.length === 0) {
+            const query = searchInput.value.trim();
+            if (query.length === 0) {
                 searchResultsContainer.innerHTML = '';
                 return;
             }
-
-            const isPhraseSearch = rawQuery.startsWith('"') && rawQuery.endsWith('"') && rawQuery.length > 1;
-            const query = isPhraseSearch ? rawQuery.slice(1, -1) : rawQuery; // Remove quotes for strict search
+            if (typeof query !== 'string' || query.length === 0) {
+                searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].strings.search_resultsContainer_placeholder_queryEmpty }}</p>';
+                return;
+            }
 
             let allResults = [];
             const searchOptions = {
                 limit: 99,
-                suggest: true, // Use suggest for the full/general search
+                suggest: true,
                 highlight: {
                     template: '<mark style="background-color: yellow;">$1</mark>',
-                    boundary: { before: 50, after: 50, total: 500 },
+                    boundary: {
+                        before: 50,
+                        after: 50,
+                        total: 500
+                    },
                     merge: true,
                 }
             };
 
-            // Helper function to process results from a specific index
-            const processResults = (index, lang, scoreAdjustment, isStrictMatch) => {
-                // Note: FlexSearch will automatically handle the phrase query in the strict index
-                // but we pass the unquoted query if isPhraseSearch is true for cleaner logic.
-                const results = index.search(isStrictMatch ? query : rawQuery, searchOptions);
-                
-                results.forEach(fieldResult => {
+            // 1. Perform Exact Match Search for the current language
+            const currentLangExactMatches = performExactMatchSearch(query, currentLang);
+            allResults.push(...currentLangExactMatches);
+
+            // 2. Perform FlexSearch for the current language
+            const currentLangIndex = indexes[currentLang];
+            if (currentLangIndex) {
+                const rawResults = currentLangIndex.search(query, searchOptions);
+                rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
-                            const originalDoc = index.get(r.id);
+                            const originalDoc = currentLangIndex.get(r.id);
                             if (originalDoc) {
                                 const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
-                                // Apply the score adjustment here to prioritize results
-                                allResults.push({ 
-                                    id: r.id, 
-                                    doc: highlightedDoc, 
-                                    score: r.score + scoreAdjustment, // Lower score is better
-                                    lang: lang 
-                                });
+                                // Negative score for current language priority
+                                allResults.push({ id: r.id, doc: highlightedDoc, score: r.score - 1000, lang: currentLang }); 
                             }
                         });
                     }
                 });
-            };
-            
-            // --- 1. SEARCH THE STRICT INDEX (Phrase Priority) ---
-            // This is necessary to find exact matches and to apply the prioritization score.
-            // We use a large negative score adjustment (e.g., -2000) to ensure these
-            // results appear before any results from the full index.
-            const PRIORITY_ADJUSTMENT = -2000;
-            
-            // Only query strict index if the query looks like a phrase or if we want to ensure exact matches are prioritized
-            if (isPhraseSearch || !isPhraseSearch) { // Always query as requested
-                processResults(indexes[currentLang].strict, currentLang, PRIORITY_ADJUSTMENT, isPhraseSearch);
             }
 
-            // --- 2. SEARCH THE FULL INDEX (General Flexibility) ---
-            // We use a score adjustment of 0 (or a small negative number) as the baseline.
-            // This captures all flexible results.
-            processResults(indexes[currentLang].full, currentLang, 0, false);
-            
-            // --- 3. SEARCH OTHER LANGUAGES (Optional - uses full index by default) ---
-            // Adjust score for non-current-language results (as done in your original code)
+            // 3. Perform FlexSearch for other languages
             Object.keys(indexes).forEach(lang => {
                 if (lang !== currentLang) {
-                    // To keep this clean, we only search the 'full' index for other languages
-                    processResults(indexes[lang].full, lang, 0, false);
+                    const otherLangIndex = indexes[lang];
+                    const rawResults = otherLangIndex.search(query, searchOptions);
+
+                    rawResults.forEach(fieldResult => {
+                        if (fieldResult && fieldResult.result) {
+                            fieldResult.result.forEach(r => {
+                                const originalDoc = otherLangIndex.get(r.id);
+                                if (originalDoc) {
+                                    const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
+                                    // Positive score for other languages
+                                    allResults.push({ id: r.id, doc: highlightedDoc, score: r.score, lang: lang });
+                                }
+                            });
+                        }
+                    });
                 }
             });
 
-            // --- 4. Sort and Display ---
             allResults.sort((a, b) => a.score - b.score);
             displayResults(allResults);
         }
 
-        // Display function (copied from your original with deduplication)
         function displayResults(results) {
             const uniqueResults = [];
             const seenUrls = new Set();
             results.forEach(result => {
-                // Deduplication: only add if we haven't seen this URL before
+                // IMPORTANT: Exact matches (score -2000) will appear before FlexSearch results (score -1000 or higher) for the same URL,
+                // so the exact match version is guaranteed to be added first due to the sort order.
                 if (result.doc && !seenUrls.has(result.doc.url)) {
                     uniqueResults.push(result);
                     seenUrls.add(result.doc.url);
@@ -257,12 +354,38 @@ sitemap_changefreq: weekly
             let html = '<ul class="search-results-list">';
             uniqueResults.forEach(result => {
                 const item = result.doc;
-                if (!item) return;
+                if (!item) {
+                    console.warn('Skipping search result with undefined document:', result);
+                    return;
+                }
 
-                const title = item.document || 'No Title';
+                let title = item.document || 'No Title';
                 const url = item.url || '#';
-                const sectionContent = item.section || '';
-                const mainContent = item.highlight || '';
+                let sectionContent = item.section || '';
+                let mainContent = item.highlight || ''; // Use the content/snippet stored here
+
+                // Logic for Exact Match (using the isExactMatch flag)
+                if (item.isExactMatch) {
+                    // Use the stored query for highlighting the snippet and titles
+                    const queryToHighlight = item.exactQuery || mainContent; 
+                    
+                    // 1. Escape special regex characters in the query
+                    const safeQuery = queryToHighlight.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                    
+                    // 2. Create the case-insensitive global regex
+                    const regex = new RegExp('(' + safeQuery + ')', 'gi');
+                    
+                    // 3. Apply manual highlight to the title, section, AND the content snippet
+                    title = title.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
+                    sectionContent = sectionContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
+                    
+                    // Highlight the content snippet itself
+                    mainContent = mainContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
+                    
+                    // Add a subtle indicator above the content
+                    // mainContent = `<p class="has-text-weight-bold has-text-primary mb-1">High-Priority Match:</p>${mainContent}`;
+                }
+
 
                 html += `
                     <li class="box mb-4">
