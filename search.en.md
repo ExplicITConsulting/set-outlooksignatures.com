@@ -22,321 +22,327 @@ sitemap_changefreq: weekly
 
 
 <script>
-    (function() {
-        const flexsearchBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js";
-        const languagePackBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/lang/";
+    (function() {
+        const flexsearchBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js";
+        const languagePackBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/lang/";
 
-        const allSearchFields = ["document", "section", "content", "url", "date", "category", "tags"];
+        const allSearchFields = ["document", "section", "content", "url", "date", "category", "tags"];
 
-        const searchInput = document.getElementById('search-input');
-        const searchResultsContainer = document.getElementById('search-results');
+        const searchInput = document.getElementById('search-input');
+        const searchResultsContainer = document.getElementById('search-results');
 
-        // Set initial placeholder and disable the input
-        searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_loading }}";
-        searchInput.disabled = true;
+        // Set initial placeholder and disable the input
+        searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_loading }}";
+        searchInput.disabled = true;
 
-        const indexes = {};
-        // NEW: Store raw JSON data for exact match search
-        const searchData = {}; 
+        const indexes = {};
+        // NEW: Store raw JSON data for exact match search
+        const searchData = {}; 
 
-        // Get the languages string from the custom meta tag
-        const languagesMeta = document.querySelector('meta[name="site-languages"]');
-        const languages = {};
+        // Get the languages string from the custom meta tag
+        const languagesMeta = document.querySelector('meta[name="site-languages"]');
+        const languages = {};
 
-        if (languagesMeta) {
-            const languageCodes = languagesMeta.content.toLowerCase().split(',');
-            languageCodes.forEach(code => {
-                const trimmedCode = code.trim();
-                // Check for the English language code
-                if (trimmedCode === 'en') {
-                    languages[trimmedCode] = '/search.json';
-                } else {
-                    languages[trimmedCode] = `/${trimmedCode}/search.json`;
-                }
-            });
-        }
+        if (languagesMeta) {
+            const languageCodes = languagesMeta.content.toLowerCase().split(',');
+            languageCodes.forEach(code => {
+                const trimmedCode = code.trim();
+                // Check for the English language code
+                if (trimmedCode === 'en') {
+                    languages[trimmedCode] = '/search.json';
+                } else {
+                    languages[trimmedCode] = `/${trimmedCode}/search.json`;
+                }
+            });
+        }
 
-        const currentLang = document.documentElement.lang || Object.keys(languages)[0] || 'en';
+        const currentLang = document.documentElement.lang || Object.keys(languages)[0] || 'en';
 
-        function createIndex(lang, languagePack) {
-            return new FlexSearch.Document({
-                document: {
-                    id: "url",
-                    index: allSearchFields,
-                    store: allSearchFields
-                },
-                tokenize: "full",
-                encoder: languagePack || FlexSearch.Charset.LatinSoundex,
-                cache: true,
-                context: true,
-                lang: lang
-            });
-        }
+        function createIndex(lang, languagePack) {
+            return new FlexSearch.Document({
+                document: {
+                    id: "url",
+                    index: allSearchFields,
+                    store: allSearchFields
+                },
+                tokenize: "full",
+                encoder: languagePack || FlexSearch.Charset.LatinSoundex,
+                cache: true,
+                context: true,
+                lang: lang
+            });
+        }
 
-        // Debounce function specifically for the _paq tracking
-        function debounce(func, delay) {
-            let timeoutId;
-            return function(...args) {
-                clearTimeout(timeoutId);
-                timeoutId = setTimeout(() => {
-                    func.apply(this, args);
-                }, delay);
-            };
-        }
+        // Debounce function specifically for the _paq tracking
+        function debounce(func, delay) {
+            let timeoutId;
+            return function(...args) {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                    func.apply(this, args);
+                }, delay);
+            };
+        }
 
-        const debouncedTrackSearch = debounce(function() {
-            if (typeof _paq !== 'undefined') {
-                const query = searchInput.value.trim();
-                const resultsCount = searchResultsContainer.querySelectorAll('li').length;
-                _paq.push(['trackSiteSearch', query, false, resultsCount]);
-            }
-        }, 2000); // 2000ms delay for _paq
+        const debouncedTrackSearch = debounce(function() {
+            if (typeof _paq !== 'undefined') {
+                const query = searchInput.value.trim();
+                const resultsCount = searchResultsContainer.querySelectorAll('li').length;
+                _paq.push(['trackSiteSearch', query, false, resultsCount]);
+            }
+        }, 2000); // 2000ms delay for _paq
 
-        async function loadScript(url) {
-            return new Promise((resolve, reject) => {
-                const script = document.createElement('script');
-                script.src = url;
-                script.onload = () => resolve();
-                script.onerror = () => reject(new Error(`Failed to load script: ${url}`));
-                document.head.appendChild(script);
-            });
-        }
+        async function loadScript(url) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = url;
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error(`Failed to load script: ${url}`));
+                document.head.appendChild(script);
+            });
+        }
 
-        async function initializeSearch() {
-            try {
-                // 1. Load the main FlexSearch library.
-                await loadScript(flexsearchBaseUrl);
+        async function initializeSearch() {
+            try {
+                // 1. Load the main FlexSearch library.
+                await loadScript(flexsearchBaseUrl);
 
-                // 2. Loop through language codes to load language packs and search.json.
-                for (const lang of Object.keys(languages)) {
-                    try {
-                        let languagePack = null;
+                // 2. Loop through language codes to load language packs and search.json.
+                for (const lang of Object.keys(languages)) {
+                    try {
+                        let languagePack = null;
 
-                        // Await the script load before accessing FlexSearch.lang.
-                        await loadScript(`${languagePackBaseUrl}${lang}.min.js`);
-                        languagePack = FlexSearch.Language[lang] || FlexSearch.Charset.LatinSoundex;
+                        // Await the script load before accessing FlexSearch.lang.
+                        await loadScript(`${languagePackBaseUrl}${lang}.min.js`);
+                        languagePack = FlexSearch.Language[lang] || FlexSearch.Charset.LatinSoundex;
 
-                        const response = await fetch(languages[lang]);
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-                        const data = await response.json();
+                        const response = await fetch(languages[lang]);
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        const data = await response.json();
 
-                        // NEW: Store raw data
-                        searchData[lang] = data;
+                        // NEW: Store raw data
+                        searchData[lang] = data;
 
-                        const index = createIndex(lang, languagePack);
-                        data.forEach(item => {
-                            if (item.url) {
-                                index.add(item);
-                            } else {
-                                console.warn(`Item missing URL in ${languages[lang]}, skipping for FlexSearch index:`, item);
-                            }
-                        });
-                        indexes[lang] = index;
-                    } catch (error) {
-                        console.error(`Error loading data for language "${lang}":`, error);
-                        delete languages[lang];
-                    }
-                }
+                        const index = createIndex(lang, languagePack);
+                        data.forEach(item => {
+                            if (item.url) {
+                                index.add(item);
+                            } else {
+                                console.warn(`Item missing URL in ${languages[lang]}, skipping for FlexSearch index:`, item);
+                            }
+                        });
+                        indexes[lang] = index;
+                    } catch (error) {
+                        console.error(`Error loading data for language "${lang}":`, error);
+                        delete languages[lang];
+                    }
+                }
 
-                if (Object.keys(indexes).length > 0) {
-                    searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_ready }}";
-                    searchInput.disabled = false;
-                    searchInput.addEventListener('input', () => {
-                        const query = searchInput.value.trim();
+                if (Object.keys(indexes).length > 0) {
+                    searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_ready }}";
+                    searchInput.disabled = false;
+                    searchInput.addEventListener('input', () => {
+                        const query = searchInput.value.trim();
 
-                        if (query.length > 0) {
-                            performSearch();
-                        } else {
-                            searchResultsContainer.innerHTML = '';
-                        }
+                        if (query.length > 0) {
+                            performSearch();
+                        } else {
+                            searchResultsContainer.innerHTML = '';
+                        }
 
-                        debouncedTrackSearch();
-                    });
-                } else {
-                    searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
-                    searchInput.disabled = true;
-                    searchResultsContainer.innerHTML = '<p>Error loading search data. Please check your network connection and reload the page.</p>';
-                }
-            } catch (error) {
-                console.error('Initialization failed:', error);
-                searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
-                searchInput.disabled = true;
-                searchResultsContainer.innerHTML = '<p>Search functionality failed to load. Please try again later.</p>';
-            }
-        }
+                        debouncedTrackSearch();
+                    });
+                } else {
+                    searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
+                    searchInput.disabled = true;
+                    searchResultsContainer.innerHTML = '<p>Error loading search data. Please check your network connection and reload the page.</p>';
+                }
+            } catch (error) {
+                console.error('Initialization failed:', error);
+                searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
+                searchInput.disabled = true;
+                searchResultsContainer.innerHTML = '<p>Search functionality failed to load. Please try again later.</p>';
+            }
+        }
 
-        initializeSearch();
+        initializeSearch();
 
-        /**
-         * NEW: Performs an exact, case-insensitive match search against the raw data.
-         * @param {string} query The search query.
-         * @param {string} lang The language code.
-         * @returns {Array} An array of result objects with a very high priority score.
-         */
-        function performExactMatchSearch(query, lang) {
-            const rawData = searchData[lang] || [];
-            const lowerQuery = query.toLowerCase();
-            const exactMatches = [];
-            
-            // Using a very low (negative) score to ensure top priority
-            const exactMatchScore = -2000; 
+        /**
+         * NEW: Performs an exact, case-insensitive match search against the raw data.
+         * @param {string} query The search query.
+         * @param {string} lang The language code.
+         * @returns {Array} An array of result objects with a very high priority score.
+         */
+        function performExactMatchSearch(query, lang) {
+            const rawData = searchData[lang] || [];
+            const lowerQuery = query.toLowerCase();
+            const exactMatches = [];
+            
+            // Using a very low (negative) score to ensure top priority
+            const exactMatchScore = -2000; 
 
-            rawData.forEach(item => {
-                const isExactMatch = 
-                    (item.document && item.document.toLowerCase() === lowerQuery) ||
-                    (item.section && item.section.toLowerCase() === lowerQuery);
+            rawData.forEach(item => {
+                const isExactMatch = 
+                    (item.document && item.document.toLowerCase() === lowerQuery) ||
+                    (item.section && item.section.toLowerCase() === lowerQuery);
 
-                if (isExactMatch) {
-                    // Create a simplified result object for display
-                    // Highlight is just the query itself, since it's an exact match
-                    exactMatches.push({
-                        id: item.url,
-                        doc: { 
-                            ...item, 
-                            highlight: query 
-                        }, 
-                        score: exactMatchScore, 
-                        lang: lang
-                    });
-                }
-            });
+                if (isExactMatch) {
+                    // Create a simplified result object for display
+                    // Highlight is just the query itself, since it's an exact match
+                    exactMatches.push({
+                        id: item.url,
+                        doc: { 
+                            ...item, 
+                            highlight: query,
+                            isExactMatch: true // 👈 ADDED FLAG
+                        }, 
+                        score: exactMatchScore, 
+                        lang: lang
+                    });
+                }
+            });
 
-            return exactMatches;
-        }
-
-
-        function performSearch() {
-            const query = searchInput.value.trim();
-            if (query.length === 0) {
-                searchResultsContainer.innerHTML = '';
-                return;
-            }
-            if (typeof query !== 'string' || query.length === 0) {
-                searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].strings.search_resultsContainer_placeholder_queryEmpty }}</p>';
-                return;
-            }
-
-            let allResults = [];
-            const searchOptions = {
-                limit: 99,
-                suggest: true,
-                highlight: {
-                    template: '<mark style="background-color: yellow;">$1</mark>',
-                    boundary: {
-                        before: 50,
-                        after: 50,
-                        total: 500
-                    },
-                    merge: true,
-                }
-            };
-
-            // NEW: 1. Perform Exact Match Search for the current language
-            const currentLangExactMatches = performExactMatchSearch(query, currentLang);
-            allResults.push(...currentLangExactMatches);
-
-            // 2. Perform FlexSearch for the current language
-            const currentLangIndex = indexes[currentLang];
-            if (currentLangIndex) {
-                const rawResults = currentLangIndex.search(query, searchOptions);
-                rawResults.forEach(fieldResult => {
-                    if (fieldResult && fieldResult.result) {
-                        fieldResult.result.forEach(r => {
-                            const originalDoc = currentLangIndex.get(r.id);
-                            if (originalDoc) {
-                                const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
-                                // Negative score for current language priority
-                                allResults.push({ id: r.id, doc: highlightedDoc, score: r.score - 1000, lang: currentLang }); 
-                            }
-                        });
-                    }
-                });
-            }
-
-            // 3. Perform FlexSearch for other languages
-            Object.keys(indexes).forEach(lang => {
-                if (lang !== currentLang) {
-                    const otherLangIndex = indexes[lang];
-                    const rawResults = otherLangIndex.search(query, searchOptions);
-
-                    rawResults.forEach(fieldResult => {
-                        if (fieldResult && fieldResult.result) {
-                            fieldResult.result.forEach(r => {
-                                const originalDoc = otherLangIndex.get(r.id);
-                                if (originalDoc) {
-                                    const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
-                                    // Positive score for other languages
-                                    allResults.push({ id: r.id, doc: highlightedDoc, score: r.score, lang: lang });
-                                }
-                            });
-                        }
-                    });
-                }
-            });
-
-            allResults.sort((a, b) => a.score - b.score);
-            displayResults(allResults);
-        }
-
-        function displayResults(results) {
-            const uniqueResults = [];
-            const seenUrls = new Set();
-            results.forEach(result => {
-                if (result.doc && !seenUrls.has(result.doc.url)) {
-                    uniqueResults.push(result);
-                    seenUrls.add(result.doc.url);
-                }
-            });
-
-            if (uniqueResults.length === 0) {
-                searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].string.search_resultsContainer_placeholder_queryNoResults }}</p>';
-                return;
-            }
-
-            let html = '<ul class="search-results-list">';
-            uniqueResults.forEach(result => {
-                const item = result.doc;
-                if (!item) {
-                    console.warn('Skipping search result with undefined document:', result);
-                    return;
-                }
-
-                const title = item.document || 'No Title';
-                const url = item.url || '#';
-                const sectionContent = item.section || '';
-                
-                // Highlight is either the FlexSearch highlight or the exact query for manual matches
-                let mainContent = item.highlight || '';
-                // Manually highlight exact matches since FlexSearch wasn't used
-                if (mainContent && !item.field && result.score <= -2000) {
-                    // This is an exact match from the custom function
-                    const regex = new RegExp('(' + mainContent.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ')', 'gi');
-                    
-                    const highlightedTitle = title.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
-                    const highlightedSection = sectionContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
-                    
-                    // Display title and section with highlight, clear mainContent for the display logic below
-                    html += `
-                        <li class="box mb-4">
-                            <p><a href="${url}"><strong>${highlightedTitle}</strong></a><br>${highlightedSection}</p>
-                            <p>***Exact Match***</p>
-                        </li>
-                    `;
-                    return; // Skip default FlexSearch rendering for this result
-                }
+            return exactMatches;
+        }
 
 
-                html += `
-                    <li class="box mb-4">
-                        <p><a href="${url}"><strong>${title}</strong></a><br>${sectionContent}</p>
-                        <p>${mainContent}</p>
-                    </li>
-                `;
-            });
-            html += '</ul>';
-            searchResultsContainer.innerHTML = html;
-        }
-    })();
+        function performSearch() {
+            const query = searchInput.value.trim();
+            if (query.length === 0) {
+                searchResultsContainer.innerHTML = '';
+                return;
+            }
+            if (typeof query !== 'string' || query.length === 0) {
+                searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].strings.search_resultsContainer_placeholder_queryEmpty }}</p>';
+                return;
+            }
+
+            let allResults = [];
+            const searchOptions = {
+                limit: 99,
+                suggest: true,
+                highlight: {
+                    template: '<mark style="background-color: yellow;">$1</mark>',
+                    boundary: {
+                        before: 50,
+                        after: 50,
+                        total: 500
+                    },
+                    merge: true,
+                }
+            };
+
+            // 1. Perform Exact Match Search for the current language
+            const currentLangExactMatches = performExactMatchSearch(query, currentLang);
+            allResults.push(...currentLangExactMatches);
+            // DEBUG: Log exact matches
+            console.log("Exact Match Results for Query:", query, currentLangExactMatches);
+
+
+            // 2. Perform FlexSearch for the current language
+            const currentLangIndex = indexes[currentLang];
+            if (currentLangIndex) {
+                const rawResults = currentLangIndex.search(query, searchOptions);
+                rawResults.forEach(fieldResult => {
+                    if (fieldResult && fieldResult.result) {
+                        fieldResult.result.forEach(r => {
+                            const originalDoc = currentLangIndex.get(r.id);
+                            if (originalDoc) {
+                                const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
+                                // Negative score for current language priority
+                                allResults.push({ id: r.id, doc: highlightedDoc, score: r.score - 1000, lang: currentLang }); 
+                            }
+                        });
+                    }
+                });
+            }
+
+            // 3. Perform FlexSearch for other languages
+            Object.keys(indexes).forEach(lang => {
+                if (lang !== currentLang) {
+                    const otherLangIndex = indexes[lang];
+                    const rawResults = otherLangIndex.search(query, searchOptions);
+
+                    rawResults.forEach(fieldResult => {
+                        if (fieldResult && fieldResult.result) {
+                            fieldResult.result.forEach(r => {
+                                const originalDoc = otherLangIndex.get(r.id);
+                                if (originalDoc) {
+                                    const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
+                                    // Positive score for other languages
+                                    allResults.push({ id: r.id, doc: highlightedDoc, score: r.score, lang: lang });
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+
+            allResults.sort((a, b) => a.score - b.score);
+            displayResults(allResults);
+        }
+
+        function displayResults(results) {
+            const uniqueResults = [];
+            const seenUrls = new Set();
+            results.forEach(result => {
+                // IMPORTANT: Exact matches (score -2000) will appear before FlexSearch results (score -1000 or higher) for the same URL,
+                // so the exact match version is guaranteed to be added first due to the sort order.
+                if (result.doc && !seenUrls.has(result.doc.url)) {
+                    uniqueResults.push(result);
+                    seenUrls.add(result.doc.url);
+                }
+            });
+
+            if (uniqueResults.length === 0) {
+                searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].string.search_resultsContainer_placeholder_queryNoResults }}</p>';
+                return;
+            }
+
+            let html = '<ul class="search-results-list">';
+            uniqueResults.forEach(result => {
+                const item = result.doc;
+                if (!item) {
+                    console.warn('Skipping search result with undefined document:', result);
+                    return;
+                }
+
+                let title = item.document || 'No Title';
+                const url = item.url || '#';
+                let sectionContent = item.section || '';
+                let mainContent = item.highlight || '';
+
+                // Logic for Exact Match (using the isExactMatch flag)
+                if (item.isExactMatch) {
+                    // The 'highlight' field for exact match stores the original query string
+                    const queryToHighlight = mainContent;
+                    
+                    // 1. Escape special regex characters in the query
+                    const safeQuery = queryToHighlight.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                    
+                    // 2. Create the case-insensitive global regex
+                    const regex = new RegExp('(' + safeQuery + ')', 'gi');
+                    
+                    // 3. Apply manual highlight to the title and section
+                    title = title.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
+                    sectionContent = sectionContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
+                    
+                    // 4. Replace the main content with the Exact Match marker
+                    mainContent = '<p class="has-text-weight-bold has-text-primary">***Exact Match in Title/Section***</p>';
+                }
+
+
+                html += `
+                    <li class="box mb-4">
+                        <p><a href="${url}"><strong>${title}</strong></a><br>${sectionContent}</p>
+                        <p>${mainContent}</p>
+                    </li>
+                `;
+            });
+            html += '</ul>';
+            searchResultsContainer.innerHTML = html;
+        }
+    })();
 </script>
