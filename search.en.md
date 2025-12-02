@@ -175,10 +175,22 @@ sitemap_changefreq: weekly
                 return;
             }
 
+            // --- START: Phrase Search Logic ---
+            let isPhraseSearch = false;
+            let searchQuery = query;
+
+            // Check for and remove surrounding double quotes to enable exact phrase search
+            if (query.startsWith('"') && query.endsWith('"') && query.length > 1) {
+                isPhraseSearch = true;
+                searchQuery = query.substring(1, query.length - 1); // Remove the quotes
+            }
+            // --- END: Phrase Search Logic ---
+
             let allResults = [];
             const searchOptions = {
                 limit: 99,
-                suggest: true,
+                // Set suggest to false for exact phrase matches
+                suggest: isPhraseSearch ? false : true, 
                 highlight: {
                     template: '<mark style="background-color: yellow;">$1</mark>',
                     boundary: {
@@ -192,7 +204,8 @@ sitemap_changefreq: weekly
 
             const currentLangIndex = indexes[currentLang];
             if (currentLangIndex) {
-                const rawResults = currentLangIndex.search(query, searchOptions);
+                // Use searchQuery
+                const rawResults = currentLangIndex.search(searchQuery, searchOptions);
                 rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
@@ -209,7 +222,8 @@ sitemap_changefreq: weekly
             Object.keys(indexes).forEach(lang => {
                 if (lang !== currentLang) {
                     const otherLangIndex = indexes[lang];
-                    const rawResults = otherLangIndex.search(query, searchOptions);
+                    // Use searchQuery
+                    const rawResults = otherLangIndex.search(searchQuery, searchOptions);
 
                     rawResults.forEach(fieldResult => {
                         if (fieldResult && fieldResult.result) {
