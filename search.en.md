@@ -22,276 +22,321 @@ sitemap_changefreq: weekly
 
 
 <script>
-    (function() {
-        const flexsearchBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js";
-        const languagePackBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/lang/";
+    (function() {
+        const flexsearchBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js";
+        const languagePackBaseUrl = "https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/lang/";
 
-        const allSearchFields = ["document", "section", "content", "url", "date", "category", "tags"];
+        const allSearchFields = ["document", "section", "content", "url", "date", "category", "tags"];
 
-        const searchInput = document.getElementById('search-input');
-        const searchResultsContainer = document.getElementById('search-results');
+        const searchInput = document.getElementById('search-input');
+        const searchResultsContainer = document.getElementById('search-results');
 
-        searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_loading }}";
-        searchInput.disabled = true;
+        // Set initial placeholder and disable the input
+        searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_loading }}";
+        searchInput.disabled = true;
 
-        // Modified to store dual indexes: indexes[lang] = { full: Index, strict: Index }
-        const indexes = {};
+        const indexes = {};
+        // NEW: Store raw JSON data for exact match search
+        const searchData = {}; 
 
-        // Get language codes (copied from your original)
-        const languagesMeta = document.querySelector('meta[name="site-languages"]');
-        const languages = {};
-        if (languagesMeta) {
-            const languageCodes = languagesMeta.content.toLowerCase().split(',');
-            languageCodes.forEach(code => {
-                const trimmedCode = code.trim();
-                if (trimmedCode === 'en') {
-                    languages[trimmedCode] = '/search.json';
-                } else {
-                    languages[trimmedCode] = `/${trimmedCode}/search.json`;
-                }
-            });
-        }
-        const currentLang = document.documentElement.lang || Object.keys(languages)[0] || 'en';
+        // Get the languages string from the custom meta tag
+        const languagesMeta = document.querySelector('meta[name="site-languages"]');
+        const languages = {};
 
-        // --- Dual Index Creation Function ---
-        function createDualIndices(lang, languagePack) {
-            const baseConfig = {
-                document: { id: "url", index: allSearchFields, store: allSearchFields },
-                cache: true,
-                context: true
-            };
+        if (languagesMeta) {
+            const languageCodes = languagesMeta.content.toLowerCase().split(',');
+            languageCodes.forEach(code => {
+                const trimmedCode = code.trim();
+                // Check for the English language code
+                if (trimmedCode === 'en') {
+                    languages[trimmedCode] = '/search.json';
+                } else {
+                    languages[trimmedCode] = `/${trimmedCode}/search.json`;
+                }
+            });
+        }
 
-            // Configuration for flexible/general search (applies stemming and encoding)
-            const fullConfig = {
-                ...baseConfig,
-                tokenize: "full",
-                encoder: languagePack || FlexSearch.Charset.LatinSoundex, // Keeps flexible encoding
-                lang: lang                                               // Keeps stemming/language rules
-            };
+        const currentLang = document.documentElement.lang || Object.keys(languages)[0] || 'en';
 
-            // Configuration for exact phrase search (disables stemming and encoding)
-            const strictConfig = {
-                ...baseConfig,
-                tokenize: "strict",
-                encoder: false, // Explicitly set to false to disable phonetic encoding
-                lang: false,     // Explicitly set to false or omitted to disable stemming/language processing
-                context: { 
-                    resolution: 5,
-                    depth: 1,
-                    bidirectional: false
-                }
-            };
+        function createIndex(lang, languagePack) {
+            return new FlexSearch.Document({
+                document: {
+                    id: "url",
+                    index: allSearchFields,
+                    store: allSearchFields
+                },
+                tokenize: "full",
+                encoder: languagePack || FlexSearch.Charset.LatinSoundex,
+                cache: true,
+                context: true,
+                lang: lang
+            });
+        }
 
-            // 1. Full Index (Flexible Search)
-            const fullIndex = new FlexSearch.Document(fullConfig);
+        // Debounce function specifically for the _paq tracking
+        function debounce(func, delay) {
+            let timeoutId;
+            return function(...args) {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                    func.apply(this, args);
+                }, delay);
+            };
+        }
 
-            // 2. Strict Index (Phrase Search)
-            const strictIndex = new FlexSearch.Document(strictConfig);
+        const debouncedTrackSearch = debounce(function() {
+            if (typeof _paq !== 'undefined') {
+                const query = searchInput.value.trim();
+                const resultsCount = searchResultsContainer.querySelectorAll('li').length;
+                _paq.push(['trackSiteSearch', query, false, resultsCount]);
+            }
+        }, 2000); // 2000ms delay for _paq
 
-            return { full: fullIndex, strict: strictIndex };
-        }
+        async function loadScript(url) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = url;
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error(`Failed to load script: ${url}`));
+                document.head.appendChild(script);
+            });
+        }
 
-        // Debounce function (copied from your original)
-        function debounce(func, delay) {
-            let timeoutId;
-            return function(...args) {
-                clearTimeout(timeoutId);
-                timeoutId = setTimeout(() => {
-                    func.apply(this, args);
-                }, delay);
-            };
-        }
+        async function initializeSearch() {
+            try {
+                // 1. Load the main FlexSearch library.
+                await loadScript(flexsearchBaseUrl);
 
-        const debouncedTrackSearch = debounce(function() {
-            if (typeof _paq !== 'undefined') {
-                const query = searchInput.value.trim();
-                const resultsCount = searchResultsContainer.querySelectorAll('li').length;
-                _paq.push(['trackSiteSearch', query, false, resultsCount]);
-            }
-        }, 2000);
+                // 2. Loop through language codes to load language packs and search.json.
+                for (const lang of Object.keys(languages)) {
+                    try {
+                        let languagePack = null;
 
-        // Load Script function (copied from your original)
-        async function loadScript(url) {
-            return new Promise((resolve, reject) => {
-                const script = document.createElement('script');
-                script.src = url;
-                script.onload = () => resolve();
-                script.onerror = () => reject(new Error(`Failed to load script: ${url}`));
-                document.head.appendChild(script);
-            });
-        }
+                        // Await the script load before accessing FlexSearch.lang.
+                        await loadScript(`${languagePackBaseUrl}${lang}.min.js`);
+                        languagePack = FlexSearch.Language[lang] || FlexSearch.Charset.LatinSoundex;
 
-        // --- Initialization ---
-        async function initializeSearch() {
-            try {
-                await loadScript(flexsearchBaseUrl);
+                        const response = await fetch(languages[lang]);
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        const data = await response.json();
 
-                for (const lang of Object.keys(languages)) {
-                    try {
-                        await loadScript(`${languagePackBaseUrl}${lang}.min.js`);
-                        const languagePack = FlexSearch.Language[lang] || FlexSearch.Charset.LatinSoundex;
+                        // NEW: Store raw data
+                        searchData[lang] = data;
 
-                        const response = await fetch(languages[lang]);
-                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                        const data = await response.json();
+                        const index = createIndex(lang, languagePack);
+                        data.forEach(item => {
+                            if (item.url) {
+                                index.add(item);
+                            } else {
+                                console.warn(`Item missing URL in ${languages[lang]}, skipping for FlexSearch index:`, item);
+                            }
+                        });
+                        indexes[lang] = index;
+                    } catch (error) {
+                        console.error(`Error loading data for language "${lang}":`, error);
+                        delete languages[lang];
+                    }
+                }
 
-                        // Create AND Populate Dual Indexes
-                        const dualIndex = createDualIndices(lang, languagePack);
-                        data.forEach(item => {
-                            if (item.url) {
-                                dualIndex.full.add(item);
-                                dualIndex.strict.add(item); // Populate both
-                            } else {
-                                console.warn(`Item missing URL in ${languages[lang]}, skipping for FlexSearch index:`, item);
-                            }
-                        });
-                        indexes[lang] = dualIndex;
-                    } catch (error) {
-                        console.error(`Error loading data for language "${lang}":`, error);
-                        delete languages[lang];
-                    }
-                }
+                if (Object.keys(indexes).length > 0) {
+                    searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_ready }}";
+                    searchInput.disabled = false;
+                    searchInput.addEventListener('input', () => {
+                        const query = searchInput.value.trim();
 
-                if (Object.keys(indexes).length > 0) {
-                    searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_ready }}";
-                    searchInput.disabled = false;
-                    searchInput.addEventListener('input', () => {
-                        const query = searchInput.value.trim();
-                        if (query.length > 0) {
-                            performSearch();
-                        } else {
-                            searchResultsContainer.innerHTML = '';
-                        }
-                        debouncedTrackSearch();
-                    });
-                } else {
-                    searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
-                    searchInput.disabled = true;
-                    searchResultsContainer.innerHTML = '<p>Error loading search data. Please check your network connection and reload the page.</p>';
-                }
-            } catch (error) {
-                console.error('Initialization failed:', error);
-                searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
-                searchInput.disabled = true;
-                searchResultsContainer.innerHTML = '<p>Search functionality failed to load. Please try again later.</p>';
-            }
-        }
+                        if (query.length > 0) {
+                            performSearch();
+                        } else {
+                            searchResultsContainer.innerHTML = '';
+                        }
 
-        initializeSearch();
+                        debouncedTrackSearch();
+                    });
+                } else {
+                    searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
+                    searchInput.disabled = true;
+                    searchResultsContainer.innerHTML = '<p>Error loading search data. Please check your network connection and reload the page.</p>';
+                }
+            } catch (error) {
+                console.error('Initialization failed:', error);
+                searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
+                searchInput.disabled = true;
+                searchResultsContainer.innerHTML = '<p>Search functionality failed to load. Please try again later.</p>';
+            }
+        }
 
-        // --- Perform Merged Search ---
-        function performSearch() {
-            const rawQuery = searchInput.value.trim();
-            if (rawQuery.length === 0) {
-                searchResultsContainer.innerHTML = '';
-                return;
-            }
+        initializeSearch();
 
-            const isPhraseSearch = rawQuery.startsWith('"') && rawQuery.endsWith('"') && rawQuery.length > 1;
-            const query = isPhraseSearch ? rawQuery.slice(1, -1) : rawQuery; // Remove quotes for strict search
+        /**
+         * NEW: Performs an exact, case-insensitive match search against the raw data.
+         * @param {string} query The search query.
+         * @param {string} lang The language code.
+         * @returns {Array} An array of result objects with a very high priority score.
+         */
+        function performExactMatchSearch(query, lang) {
+            const rawData = searchData[lang] || [];
+            const lowerQuery = query.toLowerCase();
+            const exactMatches = [];
+            
+            // Using a very low (negative) score to ensure top priority
+            const exactMatchScore = -2000; 
 
-            let allResults = [];
-            const searchOptions = {
-                limit: 99,
-                suggest: true, // Use suggest for the full/general search
-                highlight: {
-                    template: '<mark style="background-color: yellow;">$1</mark>',
-                    boundary: { before: 50, after: 50, total: 500 },
-                    merge: true,
-                }
-            };
+            rawData.forEach(item => {
+                const isExactMatch = 
+                    (item.document && item.document.toLowerCase() === lowerQuery) ||
+                    (item.section && item.section.toLowerCase() === lowerQuery);
 
-            // Helper function to process results from a specific index
-            const processResults = (index, lang, scoreAdjustment, isStrictMatch) => {
-                // Note: FlexSearch will automatically handle the phrase query in the strict index
-                // but we pass the unquoted query if isPhraseSearch is true for cleaner logic.
-                const results = index.search(isStrictMatch ? query : rawQuery, searchOptions);
-                
-                results.forEach(fieldResult => {
-                    if (fieldResult && fieldResult.result) {
-                        fieldResult.result.forEach(r => {
-                            const originalDoc = index.get(r.id);
-                            if (originalDoc) {
-                                const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
-                                // Apply the score adjustment here to prioritize results
-                                allResults.push({ 
-                                    id: r.id, 
-                                    doc: highlightedDoc, 
-                                    score: r.score + scoreAdjustment, // Lower score is better
-                                    lang: lang 
-                                });
-                            }
-                        });
-                    }
-                });
-            };
-            
-            // --- 1. SEARCH THE STRICT INDEX (Phrase Priority) ---
-            // This is necessary to find exact matches and to apply the prioritization score.
-            // We use a large negative score adjustment (e.g., -2000) to ensure these
-            // results appear before any results from the full index.
-            const PRIORITY_ADJUSTMENT = -2000;
-            
-            // Only query strict index if the query looks like a phrase or if we want to ensure exact matches are prioritized
-            if (isPhraseSearch || !isPhraseSearch) { // Always query as requested
-                processResults(indexes[currentLang].strict, currentLang, PRIORITY_ADJUSTMENT, isPhraseSearch);
-            }
+                if (isExactMatch) {
+                    // Create a simplified result object for display
+                    // Highlight is just the query itself, since it's an exact match
+                    exactMatches.push({
+                        id: item.url,
+                        doc: { 
+                            ...item, 
+                            highlight: query 
+                        }, 
+                        score: exactMatchScore, 
+                        lang: lang
+                    });
+                }
+            });
 
-            // --- 2. SEARCH THE FULL INDEX (General Flexibility) ---
-            // We use a score adjustment of 0 (or a small negative number) as the baseline.
-            // This captures all flexible results.
-            processResults(indexes[currentLang].full, currentLang, 0, false);
-            
-            // --- 3. SEARCH OTHER LANGUAGES (Optional - uses full index by default) ---
-            // Adjust score for non-current-language results (as done in your original code)
-            Object.keys(indexes).forEach(lang => {
-                if (lang !== currentLang) {
-                    // To keep this clean, we only search the 'full' index for other languages
-                    processResults(indexes[lang].full, lang, 0, false);
-                }
-            });
+            return exactMatches;
+        }
 
-            // --- 4. Sort and Display ---
-            // allResults.sort((a, b) => a.score - b.score);
-            displayResults(allResults);
-        }
 
-        // Display function (copied from your original with deduplication)
-        function displayResults(results) {
-            const uniqueResults = [];
-            const seenUrls = new Set();
-            results.forEach(result => {
-                // Deduplication: only add if we haven't seen this URL before
-                if (result.doc && !seenUrls.has(result.doc.url)) {
-                    uniqueResults.push(result);
-                    seenUrls.add(result.doc.url);
-                }
-            });
+        function performSearch() {
+            const query = searchInput.value.trim();
+            if (query.length === 0) {
+                searchResultsContainer.innerHTML = '';
+                return;
+            }
+            if (typeof query !== 'string' || query.length === 0) {
+                searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].strings.search_resultsContainer_placeholder_queryEmpty }}</p>';
+                return;
+            }
 
-            if (uniqueResults.length === 0) {
-                searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].string.search_resultsContainer_placeholder_queryNoResults }}</p>';
-                return;
-            }
+            let allResults = [];
+            const searchOptions = {
+                limit: 99,
+                suggest: true,
+                highlight: {
+                    template: '<mark style="background-color: yellow;">$1</mark>',
+                    boundary: {
+                        before: 50,
+                        after: 50,
+                        total: 500
+                    },
+                    merge: true,
+                }
+            };
 
-            let html = '<ul class="search-results-list">';
-            uniqueResults.forEach(result => {
-                const item = result.doc;
-                if (!item) return;
+            // NEW: 1. Perform Exact Match Search for the current language
+            const currentLangExactMatches = performExactMatchSearch(query, currentLang);
+            allResults.push(...currentLangExactMatches);
 
-                const title = item.document || 'No Title';
-                const url = item.url || '#';
-                const sectionContent = item.section || '';
-                const mainContent = item.highlight || '';
+            // 2. Perform FlexSearch for the current language
+            const currentLangIndex = indexes[currentLang];
+            if (currentLangIndex) {
+                const rawResults = currentLangIndex.search(query, searchOptions);
+                rawResults.forEach(fieldResult => {
+                    if (fieldResult && fieldResult.result) {
+                        fieldResult.result.forEach(r => {
+                            const originalDoc = currentLangIndex.get(r.id);
+                            if (originalDoc) {
+                                const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
+                                // Negative score for current language priority
+                                allResults.push({ id: r.id, doc: highlightedDoc, score: r.score - 1000, lang: currentLang }); 
+                            }
+                        });
+                    }
+                });
+            }
 
-                html += `
-                    <li class="box mb-4">
-                        <p><a href="${url}"><strong>${title}</strong></a><br>${sectionContent}</p>
-                        <p>${mainContent}</p>
-                    </li>
-                `;
-            });
-            html += '</ul>';
-            searchResultsContainer.innerHTML = html;
-        }
-    })();
+            // 3. Perform FlexSearch for other languages
+            Object.keys(indexes).forEach(lang => {
+                if (lang !== currentLang) {
+                    const otherLangIndex = indexes[lang];
+                    const rawResults = otherLangIndex.search(query, searchOptions);
+
+                    rawResults.forEach(fieldResult => {
+                        if (fieldResult && fieldResult.result) {
+                            fieldResult.result.forEach(r => {
+                                const originalDoc = otherLangIndex.get(r.id);
+                                if (originalDoc) {
+                                    const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
+                                    // Positive score for other languages
+                                    allResults.push({ id: r.id, doc: highlightedDoc, score: r.score, lang: lang });
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+
+            allResults.sort((a, b) => a.score - b.score);
+            displayResults(allResults);
+        }
+
+        function displayResults(results) {
+            const uniqueResults = [];
+            const seenUrls = new Set();
+            results.forEach(result => {
+                if (result.doc && !seenUrls.has(result.doc.url)) {
+                    uniqueResults.push(result);
+                    seenUrls.add(result.doc.url);
+                }
+            });
+
+            if (uniqueResults.length === 0) {
+                searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].string.search_resultsContainer_placeholder_queryNoResults }}</p>';
+                return;
+            }
+
+            let html = '<ul class="search-results-list">';
+            uniqueResults.forEach(result => {
+                const item = result.doc;
+                if (!item) {
+                    console.warn('Skipping search result with undefined document:', result);
+                    return;
+                }
+
+                const title = item.document || 'No Title';
+                const url = item.url || '#';
+                const sectionContent = item.section || '';
+                
+                // Highlight is either the FlexSearch highlight or the exact query for manual matches
+                let mainContent = item.highlight || '';
+                // Manually highlight exact matches since FlexSearch wasn't used
+                if (mainContent && !item.field && result.score <= -2000) {
+                    // This is an exact match from the custom function
+                    const regex = new RegExp('(' + mainContent.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ')', 'gi');
+                    
+                    const highlightedTitle = title.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
+                    const highlightedSection = sectionContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
+                    
+                    // Display title and section with highlight, clear mainContent for the display logic below
+                    html += `
+                        <li class="box mb-4">
+                            <p><a href="${url}"><strong>${highlightedTitle}</strong></a><br>${highlightedSection}</p>
+                            <p>***Exact Match***</p>
+                        </li>
+                    `;
+                    return; // Skip default FlexSearch rendering for this result
+                }
+
+
+                html += `
+                    <li class="box mb-4">
+                        <p><a href="${url}"><strong>${title}</strong></a><br>${sectionContent}</p>
+                        <p>${mainContent}</p>
+                    </li>
+                `;
+            });
+            html += '</ul>';
+            searchResultsContainer.innerHTML = html;
+        }
+    })();
 </script>
