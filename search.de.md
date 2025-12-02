@@ -172,60 +172,26 @@ sitemap_changefreq: weekly
         function performExactMatchSearch(query, lang) {
             const rawData = searchData[lang] || [];
             
-            // REGEX for normalization: Matches any character that is NOT a word character (\w).
-            // We include \s here to strip spaces as well for the match check, to ensure 
-            // 'open source' matches 'opensource' in the normalized strings.
-            const nonAlphaNumericRegex = /[^\w]/g; 
+            // REGEX: Matches any character that is NOT a word character (\w) AND NOT whitespace (\s).
+            // Replaces dashes, punctuation, symbols, etc., with nothing.
+            const nonPunctuationRegex = /[^\w]/g; 
 
-            // 1. Normalize the query (for the exact MATCH check)
-            const normalizedQuery = query.toLowerCase().replace(nonAlphaNumericRegex, '').trim();
+            // 1. Normalize and trim the query: remove non-alphanumeric/non-whitespace chars, then trim the ends.
+            const normalizedQuery = query.toLowerCase().replace(nonPunctuationRegex, '').trim();
             const exactMatches = [];
             
             const exactMatchScore = -2000; 
 
+            // Skip if the query is empty after normalizing
             if (normalizedQuery.length === 0) {
                 return exactMatches;
             }
 
-            // =========================================================================
-            // ⭐️ FIX: Create a highly flexible regex pattern for snippet location/highlighting
-            // =========================================================================
-            
-            // 1. Escape special regex characters in the raw query.
-            const safeQuery = query.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-            
-            // 2. Replace hyphens AND spaces with a flexible group: [\\s\\-]?
-            //    This tells the regex engine: "You can match a space or a hyphen here, or nothing at all."
-            //    This handles 'open-source' vs 'opensource' vs 'open source'.
-            const flexiblePattern = safeQuery
-                .replace(/\\-/g, '[\\s\\-]?') // Replace escaped hyphen with optional space/hyphen
-                .replace(/\\s/g, '[\\s\\-]?'); // Replace escaped space with optional space/hyphen 
-            
-            // We use '.*?' for any remaining general punctuation, though this is often not needed
-            // if we focus on hyphens/spaces for word boundaries. Let's stick to the hyphen/space fix for clarity.
-            // If the query contains other non-word characters (like a colon or comma), 
-            // they must also be replaced by '.*?'. 
-            // For robust handling, let's refine the flexible pattern creation:
-
-            const generalPunctuationRegex = /[^\w\s]/g;
-
-            // Start again:
-            const safeQueryForHighlight = query.replace(/([.\\+*?\^$()[\]{}|\/\-])/g, '\\$1');
-            
-            // Create the pattern to match either the character itself, or a space/hyphen flexibility point.
-            // The goal is to make any non-alphanumeric character in the query optionally match a space or a hyphen in the document.
-            const fixedFlexiblePattern = safeQueryForHighlight
-                .replace(/\\s/g, '[\\s\\-]?') // ' ' in query can match ' ' or '-' in document
-                .replace(/\\-/g, '[\\s\\-]?') // '-' in query can match ' ' or '-' in document
-                // This final one handles any other general punctuation mark (like a dot or colon)
-                .replace(/([^\w\s\-])/g, (match) => `.*?`); 
-
-
             rawData.forEach(item => {
-                // 2. Normalize data fields using the same logic for the match check.
-                const docText = item.document ? item.document.toLowerCase().replace(nonAlphaNumericRegex, '').trim() : '';
-                const sectionText = item.section ? item.section.toLowerCase().replace(nonAlphaNumericRegex, '').trim() : '';
-                const contentText = item.content ? item.content.toLowerCase().replace(nonAlphaNumericRegex, '').trim() : '';
+                // 2. Normalize data fields using the same logic.
+                const docText = item.document ? item.document.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
+                const sectionText = item.section ? item.section.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
+                const contentText = item.content ? item.content.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
 
                 // Check if the normalized data includes the normalized query
                 const isDocMatch = docText.includes(normalizedQuery);
@@ -235,54 +201,55 @@ sitemap_changefreq: weekly
                 const isExactMatch = isDocMatch || isSectionMatch || isContentMatch;
 
                 if (isExactMatch) {
-                    // ... (Snippet extraction logic remains the same, using the original matchedText)
+                    // Determine which field contained the match and extract a snippet
                     let matchedText = '';
                     
+                    // Priority for snippet selection: Document > Section > Content
                     if (isDocMatch) {
                         matchedText = item.document;
                     } else if (isSectionMatch) {
                         matchedText = item.section;
-                    } else {
+                    } else { // Must be isContentMatch
                         matchedText = item.content || '';
                     }
 
-                    // Calculate snippet boundaries using the fixed flexible regex
-                    const flexibleRegex = new RegExp(fixedFlexiblePattern, 'i');
-                    const match = matchedText.match(flexibleRegex);
-                    const queryIndex = match ? match.index : -1;
+                    // Calculate snippet boundaries
+                    const rawMatchedText = matchedText.toLowerCase();
+                    const queryIndex = rawMatchedText.indexOf(query.toLowerCase()); 
                     
-                    if (queryIndex === -1) {
-                        return;
-                    }
-                    
+                    // Define boundaries for context (50 before, 50 after)
                     const contextPadding = 50; 
                     const maxSnippetLength = 500;
-                    const matchLength = match[0].length; 
+                    
                     let snippetStart = Math.max(0, queryIndex - contextPadding);
-                    let snippetEnd = Math.min(matchedText.length, queryIndex + matchLength + contextPadding);
+                    let snippetEnd = Math.min(matchedText.length, queryIndex + query.length + contextPadding);
                     
                     let highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
                     
+                    // If the match was found in content, provide a longer snippet up to 500 chars
                     if (isContentMatch) {
+                        // Recalculate end boundary for max length
                         snippetEnd = Math.min(matchedText.length, snippetStart + maxSnippetLength);
                         highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
                     }
                     
+                    // Prepend ellipsis if snippet starts late
                     if (snippetStart > 0) {
                         highlightSnippet = "..." + highlightSnippet;
                     }
+                    // Append ellipsis if content was truncated
                     if (snippetEnd < matchedText.length && highlightSnippet.length >= maxSnippetLength) {
                         highlightSnippet = highlightSnippet + "...";
                     }
 
-                    // Store the fixed flexible pattern for highlighting
+                    // Create a simplified result object for display
                     exactMatches.push({
                         id: item.url,
                         doc: { 
                             ...item, 
                             highlight: highlightSnippet, 
                             isExactMatch: true,
-                            exactQueryPattern: fixedFlexiblePattern // Storing the new pattern
+                            exactQuery: query 
                         }, 
                         score: exactMatchScore, 
                         lang: lang
@@ -399,11 +366,14 @@ sitemap_changefreq: weekly
 
                 // Logic for Exact Match (using the isExactMatch flag)
                 if (item.isExactMatch) {
-                    // 1. Retrieve the stored flexible pattern
-                    const flexiblePatternToHighlight = item.exactQueryPattern; 
+                    // Use the stored query for highlighting the snippet and titles
+                    const queryToHighlight = item.exactQuery || mainContent; 
                     
-                    // 2. Create the case-insensitive global regex from the flexible pattern
-                    const regex = new RegExp('(' + flexiblePatternToHighlight + ')', 'gi');
+                    // 1. Escape special regex characters in the query
+                    const safeQuery = queryToHighlight.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                    
+                    // 2. Create the case-insensitive global regex
+                    const regex = new RegExp('(' + safeQuery + ')', 'gi');
                     
                     // 3. Apply manual highlight to the title, section, AND the content snippet
                     title = title.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
@@ -411,6 +381,9 @@ sitemap_changefreq: weekly
                     
                     // Highlight the content snippet itself
                     mainContent = mainContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
+                    
+                    // Add a subtle indicator above the content
+                    // mainContent = `<p class="has-text-weight-bold has-text-primary mb-1">High-Priority Match:</p>${mainContent}`;
                 }
 
 
