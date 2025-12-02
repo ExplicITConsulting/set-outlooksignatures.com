@@ -36,7 +36,7 @@ sitemap_changefreq: weekly
         searchInput.disabled = true;
 
         const indexes = {};
-        // NEW: Store raw JSON data for exact match search
+        // Store raw JSON data for exact match search
         const searchData = {}; 
 
         // Get the languages string from the custom meta tag
@@ -122,7 +122,7 @@ sitemap_changefreq: weekly
                         }
                         const data = await response.json();
 
-                        // NEW: Store raw data
+                        // Store raw data
                         searchData[lang] = data;
 
                         const index = createIndex(lang, languagePack);
@@ -169,6 +169,13 @@ sitemap_changefreq: weekly
 
         initializeSearch();
 
+        /**
+         * FINAL REVISION: Performs a high-priority search for documents whose title, section, or content
+         * contains the entire search query (case-insensitive and whitespace-normalized).
+         * @param {string} query The search query.
+         * @param {string} lang The language code.
+         * @returns {Array} An array of result objects with a very high priority score.
+         */
         function performExactMatchSearch(query, lang) {
             const rawData = searchData[lang] || [];
             
@@ -187,22 +194,68 @@ sitemap_changefreq: weekly
                 // 2. Normalize data fields: replace all sequences of whitespace (including newlines) with a single space.
                 const docText = item.document ? item.document.toLowerCase().replace(/\s+/g, ' ') : '';
                 const sectionText = item.section ? item.section.toLowerCase().replace(/\s+/g, ' ') : '';
-                const contentText = item.content ? item.content.toLowerCase().replace(/\s+/g, ' ') : ''; // NEW: Content Field
+                const contentText = item.content ? item.content.toLowerCase().replace(/\s+/g, ' ') : ''; 
 
                 // Check if the normalized data includes the normalized query
-                const isExactMatch = 
-                    (docText.includes(normalizedQuery)) ||
-                    (sectionText.includes(normalizedQuery)) ||
-                    (contentText.includes(normalizedQuery)); // Check Content field
+                const isDocMatch = docText.includes(normalizedQuery);
+                const isSectionMatch = sectionText.includes(normalizedQuery);
+                const isContentMatch = contentText.includes(normalizedQuery);
+
+                const isExactMatch = isDocMatch || isSectionMatch || isContentMatch;
 
                 if (isExactMatch) {
+                    
+                    // Determine which field contained the match and extract a snippet
+                    let matchedText = '';
+                    
+                    // Priority for snippet selection: Document > Section > Content
+                    if (isDocMatch) {
+                        matchedText = item.document;
+                    } else if (isSectionMatch) {
+                        matchedText = item.section;
+                    } else { // Must be isContentMatch
+                        matchedText = item.content || '';
+                    }
+
+                    // Calculate snippet boundaries
+                    const rawMatchedText = matchedText.toLowerCase();
+                    const queryIndex = rawMatchedText.indexOf(normalizedQuery);
+                    
+                    // Define boundaries for context (50 before, 50 after)
+                    const contextPadding = 50; 
+                    const maxSnippetLength = 500;
+                    
+                    let snippetStart = Math.max(0, queryIndex - contextPadding);
+                    let snippetEnd = Math.min(matchedText.length, queryIndex + normalizedQuery.length + contextPadding);
+
+                    let highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
+                    
+                    // If the match was found in content, provide a longer snippet up to 500 chars
+                    if (isContentMatch) {
+                        // Recalculate end boundary for max length
+                        snippetEnd = Math.min(matchedText.length, snippetStart + maxSnippetLength);
+                        highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
+                    }
+                    
+                    // Prepend ellipsis if snippet starts late
+                    if (snippetStart > 0) {
+                        highlightSnippet = "..." + highlightSnippet;
+                    }
+                    // Append ellipsis if content was truncated
+                    if (snippetEnd < matchedText.length && highlightSnippet.length >= maxSnippetLength) {
+                        highlightSnippet = highlightSnippet + "...";
+                    }
+
                     // Create a simplified result object for display
                     exactMatches.push({
                         id: item.url,
                         doc: { 
                             ...item, 
-                            highlight: query, // Store original query for highlighting
-                            isExactMatch: true
+                            // Store the text snippet
+                            highlight: highlightSnippet, 
+                            isExactMatch: true,
+                            // Store the original query so we can highlight it later
+                            exactQuery: query 
                         }, 
                         score: exactMatchScore, 
                         lang: lang
@@ -212,6 +265,7 @@ sitemap_changefreq: weekly
 
             return exactMatches;
         }
+
 
         function performSearch() {
             const query = searchInput.value.trim();
@@ -317,30 +371,28 @@ sitemap_changefreq: weekly
                 let title = item.document || 'No Title';
                 const url = item.url || '#';
                 let sectionContent = item.section || '';
-                let mainContent = item.highlight || '';
+                let mainContent = item.highlight || ''; // Use the content/snippet stored here
 
                 // Logic for Exact Match (using the isExactMatch flag)
                 if (item.isExactMatch) {
-                    // The 'highlight' field for exact match stores the original query string
-                    const queryToHighlight = mainContent;
+                    // Use the stored query for highlighting the snippet and titles
+                    const queryToHighlight = item.exactQuery || mainContent; 
                     
-                    // 1. ESCAPING FIX: Escape ALL special regex characters, including spaces (which are safe, but better to keep the comprehensive list)
-                    // The key is to ensure the query is treated literally.
+                    // 1. Escape special regex characters in the query
                     const safeQuery = queryToHighlight.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
                     
-                    // 2. Create the case-insensitive global regex using the safe query string
+                    // 2. Create the case-insensitive global regex
                     const regex = new RegExp('(' + safeQuery + ')', 'gi');
                     
-                    // DEBUG: Log the regex being used to check if spaces are being included
-                    console.log("Exact Match Regex:", regex);
-
-                    // 3. Apply manual highlight to the title and section
-                    // The replacement pattern uses '$1', which is the matched text
+                    // 3. Apply manual highlight to the title, section, AND the content snippet
                     title = title.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
                     sectionContent = sectionContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
                     
-                    // 4. Replace the main content with the Exact Match marker
-                    mainContent = '<p class="has-text-weight-bold has-text-primary">***High-Priority Match in Title/Section***</p>';
+                    // Highlight the content snippet itself
+                    mainContent = mainContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
+                    
+                    // Add a subtle indicator above the content
+                    mainContent = `<p class="has-text-weight-bold has-text-primary mb-1">High-Priority Match:</p>${mainContent}`;
                 }
 
 
