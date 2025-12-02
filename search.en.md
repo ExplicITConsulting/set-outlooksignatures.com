@@ -57,17 +57,31 @@ sitemap_changefreq: weekly
         function createDualIndices(lang, languagePack) {
             const baseConfig = {
                 document: { id: "url", index: allSearchFields, store: allSearchFields },
-                encoder: languagePack || FlexSearch.Charset.LatinSoundex,
                 cache: true,
-                context: true,
-                lang: lang
+                context: true
+            };
+
+            // Configuration for flexible/general search (applies stemming and encoding)
+            const fullConfig = {
+                ...baseConfig,
+                tokenize: "full",
+                encoder: languagePack || FlexSearch.Charset.LatinSoundex, // Keeps flexible encoding
+                lang: lang                                               // Keeps stemming/language rules
+            };
+
+            // Configuration for exact phrase search (disables stemming and encoding)
+            const strictConfig = {
+                ...baseConfig,
+                tokenize: "strict",
+                encoder: false, // Explicitly set to false to disable phonetic encoding
+                lang: false     // Explicitly set to false or omitted to disable stemming/language processing
             };
 
             // 1. Full Index (Flexible Search)
-            const fullIndex = new FlexSearch.Document({ ...baseConfig, tokenize: "full" });
+            const fullIndex = new FlexSearch.Document(fullConfig);
 
             // 2. Strict Index (Phrase Search)
-            const strictIndex = new FlexSearch.Document({ ...baseConfig, tokenize: "strict" });
+            const strictIndex = new FlexSearch.Document(strictConfig);
 
             return { full: fullIndex, strict: strictIndex };
         }
