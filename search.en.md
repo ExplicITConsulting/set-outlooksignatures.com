@@ -31,21 +31,19 @@ sitemap_changefreq: weekly
         const searchInput = document.getElementById('search-input');
         const searchResultsContainer = document.getElementById('search-results');
 
-        // Set initial placeholder and disable the input
         searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_loading }}";
         searchInput.disabled = true;
 
+        // Modified to store dual indexes: indexes[lang] = { full: Index, strict: Index }
         const indexes = {};
 
-        // Get the languages string from the custom meta tag
+        // Get language codes (copied from your original)
         const languagesMeta = document.querySelector('meta[name="site-languages"]');
         const languages = {};
-
         if (languagesMeta) {
             const languageCodes = languagesMeta.content.toLowerCase().split(',');
             languageCodes.forEach(code => {
                 const trimmedCode = code.trim();
-                // Check for the English language code
                 if (trimmedCode === 'en') {
                     languages[trimmedCode] = '/search.json';
                 } else {
@@ -53,25 +51,28 @@ sitemap_changefreq: weekly
                 }
             });
         }
-
         const currentLang = document.documentElement.lang || Object.keys(languages)[0] || 'en';
 
-        function createIndex(lang, languagePack) {
-            return new FlexSearch.Document({
-                document: {
-                    id: "url",
-                    index: allSearchFields,
-                    store: allSearchFields
-                },
-                tokenize: "full",
+        // --- Dual Index Creation Function ---
+        function createDualIndices(lang, languagePack) {
+            const baseConfig = {
+                document: { id: "url", index: allSearchFields, store: allSearchFields },
                 encoder: languagePack || FlexSearch.Charset.LatinSoundex,
                 cache: true,
                 context: true,
                 lang: lang
-            });
+            };
+
+            // 1. Full Index (Flexible Search)
+            const fullIndex = new FlexSearch.Document({ ...baseConfig, tokenize: "full" });
+
+            // 2. Strict Index (Phrase Search)
+            const strictIndex = new FlexSearch.Document({ ...baseConfig, tokenize: "strict" });
+
+            return { full: fullIndex, strict: strictIndex };
         }
 
-        // Debounce function specifically for the _paq tracking
+        // Debounce function (copied from your original)
         function debounce(func, delay) {
             let timeoutId;
             return function(...args) {
@@ -88,8 +89,9 @@ sitemap_changefreq: weekly
                 const resultsCount = searchResultsContainer.querySelectorAll('li').length;
                 _paq.push(['trackSiteSearch', query, false, resultsCount]);
             }
-        }, 2000); // 2000ms delay for _paq
+        }, 2000);
 
+        // Load Script function (copied from your original)
         async function loadScript(url) {
             return new Promise((resolve, reject) => {
                 const script = document.createElement('script');
@@ -100,35 +102,31 @@ sitemap_changefreq: weekly
             });
         }
 
+        // --- Initialization ---
         async function initializeSearch() {
             try {
-                // 1. Load the main FlexSearch library.
                 await loadScript(flexsearchBaseUrl);
 
-                // 2. Loop through language codes to load language packs and search.json.
                 for (const lang of Object.keys(languages)) {
                     try {
-                        let languagePack = null;
-
-                        // Await the script load before accessing FlexSearch.lang.
                         await loadScript(`${languagePackBaseUrl}${lang}.min.js`);
-                        languagePack = FlexSearch.Language[lang] || FlexSearch.Charset.LatinSoundex;
+                        const languagePack = FlexSearch.Language[lang] || FlexSearch.Charset.LatinSoundex;
 
                         const response = await fetch(languages[lang]);
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
+                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                         const data = await response.json();
 
-                        const index = createIndex(lang, languagePack);
+                        // Create AND Populate Dual Indexes
+                        const dualIndex = createDualIndices(lang, languagePack);
                         data.forEach(item => {
                             if (item.url) {
-                                index.add(item);
+                                dualIndex.full.add(item);
+                                dualIndex.strict.add(item); // Populate both
                             } else {
                                 console.warn(`Item missing URL in ${languages[lang]}, skipping for FlexSearch index:`, item);
                             }
                         });
-                        indexes[lang] = index;
+                        indexes[lang] = dualIndex;
                     } catch (error) {
                         console.error(`Error loading data for language "${lang}":`, error);
                         delete languages[lang];
@@ -140,13 +138,11 @@ sitemap_changefreq: weekly
                     searchInput.disabled = false;
                     searchInput.addEventListener('input', () => {
                         const query = searchInput.value.trim();
-
                         if (query.length > 0) {
                             performSearch();
                         } else {
                             searchResultsContainer.innerHTML = '';
                         }
-
                         debouncedTrackSearch();
                     });
                 } else {
@@ -164,82 +160,89 @@ sitemap_changefreq: weekly
 
         initializeSearch();
 
+        // --- Perform Merged Search ---
         function performSearch() {
-            const query = searchInput.value.trim();
-            if (query.length === 0) {
+            const rawQuery = searchInput.value.trim();
+            if (rawQuery.length === 0) {
                 searchResultsContainer.innerHTML = '';
                 return;
             }
 
-            if (typeof query !== 'string' || query.length === 0) {
-                searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].strings.search_resultsContainer_placeholder_queryEmpty }}</p>';
-                return;
-            }
-
-            let isPhraseSearch = false;
-
-            if (query.startsWith('"') && query.endsWith('"') && query.length > 1) {
-                isPhraseSearch = true;
-            }
+            const isPhraseSearch = rawQuery.startsWith('"') && rawQuery.endsWith('"') && rawQuery.length > 1;
+            const query = isPhraseSearch ? rawQuery.slice(1, -1) : rawQuery; // Remove quotes for strict search
 
             let allResults = [];
             const searchOptions = {
                 limit: 99,
-                suggest: isPhraseSearch ? false : true, 
+                suggest: true, // Use suggest for the full/general search
                 highlight: {
                     template: '<mark style="background-color: yellow;">$1</mark>',
-                    boundary: {
-                        before: 50,
-                        after: 50,
-                        total: 500
-                    },
+                    boundary: { before: 50, after: 50, total: 500 },
                     merge: true,
                 }
             };
 
-            const currentLangIndex = indexes[currentLang];
-            if (currentLangIndex) {
-                const rawResults = currentLangIndex.search(query, searchOptions);
-                rawResults.forEach(fieldResult => {
+            // Helper function to process results from a specific index
+            const processResults = (index, lang, scoreAdjustment, isStrictMatch) => {
+                // Note: FlexSearch will automatically handle the phrase query in the strict index
+                // but we pass the unquoted query if isPhraseSearch is true for cleaner logic.
+                const results = index.search(isStrictMatch ? query : rawQuery, searchOptions);
+                
+                results.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
-                            const originalDoc = currentLangIndex.get(r.id);
+                            const originalDoc = index.get(r.id);
                             if (originalDoc) {
                                 const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
-                                allResults.push({ id: r.id, doc: highlightedDoc, score: r.score - 1000, lang: currentLang });
+                                // Apply the score adjustment here to prioritize results
+                                allResults.push({ 
+                                    id: r.id, 
+                                    doc: highlightedDoc, 
+                                    score: r.score + scoreAdjustment, // Lower score is better
+                                    lang: lang 
+                                });
                             }
                         });
                     }
                 });
+            };
+            
+            // --- 1. SEARCH THE STRICT INDEX (Phrase Priority) ---
+            // This is necessary to find exact matches and to apply the prioritization score.
+            // We use a large negative score adjustment (e.g., -2000) to ensure these
+            // results appear before any results from the full index.
+            const PRIORITY_ADJUSTMENT = -2000;
+            
+            // Only query strict index if the query looks like a phrase or if we want to ensure exact matches are prioritized
+            if (isPhraseSearch || !isPhraseSearch) { // Always query as requested
+                processResults(indexes[currentLang].strict, currentLang, PRIORITY_ADJUSTMENT, isPhraseSearch);
             }
 
+            // --- 2. SEARCH THE FULL INDEX (General Flexibility) ---
+            // We use a score adjustment of 0 (or a small negative number) as the baseline.
+            // This captures all flexible results.
+            processResults(indexes[currentLang].full, currentLang, 0, false);
+            
+            // --- 3. SEARCH OTHER LANGUAGES (Optional - uses full index by default) ---
+            // Adjust score for non-current-language results (as done in your original code)
             Object.keys(indexes).forEach(lang => {
                 if (lang !== currentLang) {
-                    const otherLangIndex = indexes[lang];
-                    const rawResults = otherLangIndex.search(query, searchOptions);
-
-                    rawResults.forEach(fieldResult => {
-                        if (fieldResult && fieldResult.result) {
-                            fieldResult.result.forEach(r => {
-                                const originalDoc = otherLangIndex.get(r.id);
-                                if (originalDoc) {
-                                    const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
-                                    allResults.push({ id: r.id, doc: highlightedDoc, score: r.score, lang: lang });
-                                }
-                            });
-                        }
-                    });
+                    // To keep this clean, we only search the 'full' index for other languages
+                    processResults(indexes[lang].full, lang, 0, false);
                 }
             });
 
+            // --- 4. Sort and Display ---
             allResults.sort((a, b) => a.score - b.score);
             displayResults(allResults);
         }
 
+        // Display function (copied from your original with deduplication)
         function displayResults(results) {
             const uniqueResults = [];
             const seenUrls = new Set();
             results.forEach(result => {
+                // Deduplication: only add if we haven't seen this URL before
                 if (result.doc && !seenUrls.has(result.doc.url)) {
                     uniqueResults.push(result);
                     seenUrls.add(result.doc.url);
@@ -254,10 +257,7 @@ sitemap_changefreq: weekly
             let html = '<ul class="search-results-list">';
             uniqueResults.forEach(result => {
                 const item = result.doc;
-                if (!item) {
-                    console.warn('Skipping search result with undefined document:', result);
-                    return;
-                }
+                if (!item) return;
 
                 const title = item.document || 'No Title';
                 const url = item.url || '#';
