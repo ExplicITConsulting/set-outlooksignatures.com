@@ -173,10 +173,9 @@ sitemap_changefreq: weekly
             const rawData = searchData[lang] || [];
             
             // REGEX: Matches any character that is NOT a word character (\w) AND NOT whitespace (\s).
-            // Replaces dashes, punctuation, symbols, etc., with nothing.
-            const nonPunctuationRegex = /[^\w]/g; 
+            const nonPunctuationRegex = /[^\w\s]/g; 
 
-            // 1. Normalize and trim the query: remove non-alphanumeric/non-whitespace chars, then trim the ends.
+            // 1. Normalize and trim the query (for the exact MATCH check)
             const normalizedQuery = query.toLowerCase().replace(nonPunctuationRegex, '').trim();
             const exactMatches = [];
             
@@ -187,8 +186,15 @@ sitemap_changefreq: weekly
                 return exactMatches;
             }
 
+            // NEW: Create a flexible regex pattern from the query for snippet locating and highlighting.
+            // 1. Escape special regex characters in the raw query.
+            const safeQuery = query.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+            // 2. Replace a sequence of non-alphanumeric/non-whitespace characters with the '.*?' wildcard.
+            const flexiblePattern = safeQuery.replace(nonPunctuationRegex, '.*?');
+
+
             rawData.forEach(item => {
-                // 2. Normalize data fields using the same logic.
+                // 2. Normalize data fields using the same logic for the match check.
                 const docText = item.document ? item.document.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
                 const sectionText = item.section ? item.section.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
                 const contentText = item.content ? item.content.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
@@ -201,7 +207,7 @@ sitemap_changefreq: weekly
                 const isExactMatch = isDocMatch || isSectionMatch || isContentMatch;
 
                 if (isExactMatch) {
-                    // Determine which field contained the match and extract a snippet
+                    // Determine which field contained the match
                     let matchedText = '';
                     
                     // Priority for snippet selection: Document > Section > Content
@@ -213,16 +219,24 @@ sitemap_changefreq: weekly
                         matchedText = item.content || '';
                     }
 
-                    // Calculate snippet boundaries
-                    const rawMatchedText = matchedText.toLowerCase();
-                    const queryIndex = rawMatchedText.indexOf(query.toLowerCase()); 
+                    // Calculate snippet boundaries using the flexible regex
+                    const flexibleRegex = new RegExp(flexiblePattern, 'i');
+                    const match = matchedText.match(flexibleRegex);
+                    const queryIndex = match ? match.index : -1;
+                    
+                    // If no index is found (shouldn't happen if isExactMatch is true), skip.
+                    if (queryIndex === -1) {
+                        return;
+                    }
                     
                     // Define boundaries for context (50 before, 50 after)
                     const contextPadding = 50; 
                     const maxSnippetLength = 500;
                     
+                    // Use the length of the actual match found for better snippet calculation
+                    const matchLength = match[0].length; 
                     let snippetStart = Math.max(0, queryIndex - contextPadding);
-                    let snippetEnd = Math.min(matchedText.length, queryIndex + query.length + contextPadding);
+                    let snippetEnd = Math.min(matchedText.length, queryIndex + matchLength + contextPadding);
                     
                     let highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
                     
@@ -249,7 +263,8 @@ sitemap_changefreq: weekly
                             ...item, 
                             highlight: highlightSnippet, 
                             isExactMatch: true,
-                            exactQuery: query 
+                            // Store the flexible pattern for highlighting in displayResults
+                            exactQueryPattern: flexiblePattern 
                         }, 
                         score: exactMatchScore, 
                         lang: lang
@@ -366,14 +381,11 @@ sitemap_changefreq: weekly
 
                 // Logic for Exact Match (using the isExactMatch flag)
                 if (item.isExactMatch) {
-                    // Use the stored query for highlighting the snippet and titles
-                    const queryToHighlight = item.exactQuery || mainContent; 
+                    // 1. Retrieve the stored flexible pattern
+                    const flexiblePatternToHighlight = item.exactQueryPattern; 
                     
-                    // 1. Escape special regex characters in the query
-                    const safeQuery = queryToHighlight.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-                    
-                    // 2. Create the case-insensitive global regex
-                    const regex = new RegExp('(' + safeQuery + ')', 'gi');
+                    // 2. Create the case-insensitive global regex from the flexible pattern
+                    const regex = new RegExp('(' + flexiblePatternToHighlight + ')', 'gi');
                     
                     // 3. Apply manual highlight to the title, section, AND the content snippet
                     title = title.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
@@ -381,9 +393,6 @@ sitemap_changefreq: weekly
                     
                     // Highlight the content snippet itself
                     mainContent = mainContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
-                    
-                    // Add a subtle indicator above the content
-                    // mainContent = `<p class="has-text-weight-bold has-text-primary mb-1">High-Priority Match:</p>${mainContent}`;
                 }
 
 
