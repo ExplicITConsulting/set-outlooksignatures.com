@@ -178,8 +178,8 @@ sitemap_changefreq: weekly
         function performExactMatchSearch(query, langs) {
             const allExactMatches = [];
             
-            // REGEX: Matches any character that is NOT a word character (\w) AND NOT whitespace (\s).
-            const nonPunctuationRegex = /[^\w\s]/g; 
+            // REGEX: Matches any character that is NOT a word character (\w).
+            const nonPunctuationRegex = /[^\w]/g; 
 
             // 1. Normalize and trim the query once
             const normalizedQuery = query.toLowerCase().replace(nonPunctuationRegex, '').trim();
