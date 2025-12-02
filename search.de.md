@@ -170,26 +170,21 @@ sitemap_changefreq: weekly
                 searchResultsContainer.innerHTML = '';
                 return;
             }
+
             if (typeof query !== 'string' || query.length === 0) {
                 searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].strings.search_resultsContainer_placeholder_queryEmpty }}</p>';
                 return;
             }
 
-            // --- START: Phrase Search Logic ---
             let isPhraseSearch = false;
-            let searchQuery = query;
 
-            // Check for and remove surrounding double quotes to enable exact phrase search
             if (query.startsWith('"') && query.endsWith('"') && query.length > 1) {
                 isPhraseSearch = true;
-                searchQuery = query.substring(1, query.length - 1); // Remove the quotes
             }
-            // --- END: Phrase Search Logic ---
 
             let allResults = [];
             const searchOptions = {
                 limit: 99,
-                // Set suggest to false for exact phrase matches
                 suggest: isPhraseSearch ? false : true, 
                 highlight: {
                     template: '<mark style="background-color: yellow;">$1</mark>',
@@ -204,8 +199,7 @@ sitemap_changefreq: weekly
 
             const currentLangIndex = indexes[currentLang];
             if (currentLangIndex) {
-                // Use searchQuery
-                const rawResults = currentLangIndex.search(searchQuery, searchOptions);
+                const rawResults = currentLangIndex.search(query, searchOptions);
                 rawResults.forEach(fieldResult => {
                     if (fieldResult && fieldResult.result) {
                         fieldResult.result.forEach(r => {
@@ -222,8 +216,7 @@ sitemap_changefreq: weekly
             Object.keys(indexes).forEach(lang => {
                 if (lang !== currentLang) {
                     const otherLangIndex = indexes[lang];
-                    // Use searchQuery
-                    const rawResults = otherLangIndex.search(searchQuery, searchOptions);
+                    const rawResults = otherLangIndex.search(query, searchOptions);
 
                     rawResults.forEach(fieldResult => {
                         if (fieldResult && fieldResult.result) {
