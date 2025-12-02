@@ -170,33 +170,44 @@ sitemap_changefreq: weekly
         initializeSearch();
 
         /**
-         * NEW: Performs an exact, case-insensitive match search against the raw data.
+         * REVISED: Performs a high-priority search for documents whose title or section
+         * contains the entire search query (case-insensitive and trimmed).
          * @param {string} query The search query.
          * @param {string} lang The language code.
          * @returns {Array} An array of result objects with a very high priority score.
          */
         function performExactMatchSearch(query, lang) {
             const rawData = searchData[lang] || [];
-            const lowerQuery = query.toLowerCase();
+            // Ensure the incoming query is trimmed and lowercased once
+            const lowerQuery = query.toLowerCase().trim();
             const exactMatches = [];
             
             // Using a very low (negative) score to ensure top priority
             const exactMatchScore = -2000; 
 
+            // Skip if the query is empty after trimming
+            if (lowerQuery.length === 0) {
+                return exactMatches;
+            }
+
             rawData.forEach(item => {
+                // Prepare the text fields for a case-insensitive containment check
+                const docText = item.document ? item.document.toLowerCase() : '';
+                const sectionText = item.section ? item.section.toLowerCase() : '';
+
+                // Check if the query is contained within the document or section text
                 const isExactMatch = 
-                    (item.document && item.document.toLowerCase() === lowerQuery) ||
-                    (item.section && item.section.toLowerCase() === lowerQuery);
+                    (docText.includes(lowerQuery)) ||
+                    (sectionText.includes(lowerQuery));
 
                 if (isExactMatch) {
                     // Create a simplified result object for display
-                    // Highlight is just the query itself, since it's an exact match
                     exactMatches.push({
                         id: item.url,
                         doc: { 
                             ...item, 
                             highlight: query,
-                            isExactMatch: true // 👈 ADDED FLAG
+                            isExactMatch: true
                         }, 
                         score: exactMatchScore, 
                         lang: lang
@@ -206,7 +217,6 @@ sitemap_changefreq: weekly
 
             return exactMatches;
         }
-
 
         function performSearch() {
             const query = searchInput.value.trim();
