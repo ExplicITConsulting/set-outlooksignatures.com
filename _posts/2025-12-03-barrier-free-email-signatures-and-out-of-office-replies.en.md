@@ -11,7 +11,7 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-Accessibility isn’t just a trend, it’s a responsibility. More organizations are recognizing the importance of making their communication inclusive and barrier-free.
+More organizations are recognizing the importance of making their communication inclusive and barrier-free.
 
 That’s why every sample template in Set-OutlookSignatures is designed with accessibility in mind:
 - Screen reader–friendly: Every link and image includes descriptive alt text, ensuring clarity for users relying on assistive technologies.

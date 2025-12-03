@@ -11,7 +11,7 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-Barrierefreiheit ist nicht nur ein Trend, sondern eine Verantwortung. Immer mehr Unternehmen erkennen, wie wichtig es ist, ihre Kommunikation inklusiv und barrierefrei zu gestalten.
+Immer mehr Unternehmen erkennen, wie wichtig es ist, ihre Kommunikation inklusiv und barrierefrei zu gestalten.
 
 Aus diesem Grund wurde jede Mustervorlage in Set-OutlookSignatures unter Berücksichtigung der Barrierefreiheit entwickelt:
 - Bildschirmleserfreundlich: Jeder Link und jedes Bild enthält einen beschreibenden Alt-Text, der für Nutzer, die auf assistive Technologien angewiesen sind, für Klarheit sorgt.
