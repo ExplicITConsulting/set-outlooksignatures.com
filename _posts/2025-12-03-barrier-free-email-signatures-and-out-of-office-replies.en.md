@@ -3,7 +3,7 @@ layout: "post"
 lang: "en"
 locale: "en"
 title: "Barrier-free email signatures and out-of-office replies"
-description: "Description, between 30 and 160 characters"
+description: "Accessibility isn’t just a trend, it’s a responsibility."
 published: true
 tags: 
 slug: "barrier-free-email-signatures-and-out-of-office-replies"
