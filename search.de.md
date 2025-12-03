@@ -218,7 +218,6 @@ sitemap_changefreq: weekly
                     const isExactMatch = searchPattern.test(matchedText);
 
                     if (isExactMatch) {
-                        // 🛠️ FIX 1: Use .match() on the string to get index and length reliably
                         const matchResults = matchedText.match(searchPattern);
                         
                         if (!matchResults) return; // Should not happen if .test() passed, but for safety
@@ -265,9 +264,7 @@ sitemap_changefreq: weekly
                                 ...item, 
                                 highlight: highlightSnippet, 
                                 isExactMatch: true,
-                                exactQuery: query,
-                                // 🛠️ FIX 2: Store the matched substring for highlighting in displayResults
-                                matchedSubstring: matchedSubstring 
+                                exactQuery: matchedSubstring,
                             }, 
                             score: exactMatchScore, 
                             lang: langCode
