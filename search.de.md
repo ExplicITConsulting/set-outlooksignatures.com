@@ -178,7 +178,7 @@ sitemap_changefreq: weekly
         function performExactMatchSearch(query, langs) {
             const allExactMatches = [];
             
-            const normalizedQuery = query.toLowerCase().replace(/\W/g, '.?').replace(/(\w)/g, '.?').replace(/\.\?\.\?/g, '.?').replace(/(^\.\?|\.\?$)/g, '');
+            const normalizedQuery = query.toLowerCase().replace(/\W/g, '.?').replace(/(\w)/g, '$1.?').replace(/\.\?\.\?/g, '.?').replace(/(^\.\?|\.\?$)/g, '');
             const searchPattern = new RegExp(normalizedQuery, 'i');
 
             const exactMatchScore = -2000; 
