@@ -6,7 +6,7 @@ title: "Barrierefreie E-Mail-Signaturen und Abwesenheitstexte"
 description: "Barrierefreiheit ist nicht nur ein Trend, sondern eine Verantwortung."
 published: true
 tags:
-slug: "barrier-free-email-signatures-and-out-of-office-replies""
+slug: "barrier-free-email-signatures-and-out-of-office-replies"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
