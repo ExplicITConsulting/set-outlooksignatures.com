@@ -169,116 +169,118 @@ sitemap_changefreq: weekly
 
         initializeSearch();
 
-        /**
-         * Searches for exact matches in the raw data across a list of languages.
-         * @param {string} query The search term.
-         * @param {string[]} langs An array of language codes to search in (e.g., ['en', 'fr', 'es']).
-         * @returns {object[]} An array of result objects with the exact match score.
-         */
-        function performExactMatchSearch(query, langs) {
-            const allExactMatches = [];
-            
-            // REGEX: Matches any character that is NOT a word character (\w).
-            const nonPunctuationRegex = /[^\w]/g; 
+        /**
+         * Searches for exact matches without non-word characters in the raw data across a list of languages.
+         * Note: Assumes 'searchData' is available in the scope.
+         * * @param {string} query The search term.
+         * @param {string[]} langs An array of language codes to search in (e.g., ['en', 'fr', 'es']).
+         * @returns {object[]} An array of result objects with the exact match score.
+         */
+        function performExactMatchSearch(query, langs) {
+            const allExactMatches = [];
+            
+            // 1. QUERY NORMALIZATION: Creates a fuzzy pattern
+            // Example: "open-source" -> "open.?source"
+            const normalizedQuery = query.toLowerCase()
+                .replace(/\W/g, '.?')      // Replace non-word chars (space, hyphen) with '.?'
+                .replace(/(\w)/g, '$1.?')  // Replace every word char with itself + '.?' (e.g., 'f' -> 'f.?')
+                .replace(/\.\?\.\?/g, '.?') // Collapse consecutive '.?.?' into single '.?'
+                .replace(/(^\.\?|\.\?$)/g, ''); // Trim leading/trailing '.?'
+                
+            const searchPattern = new RegExp(normalizedQuery, 'i');
 
-            // 1. Normalize and trim the query once
-            const normalizedQuery = query.toLowerCase().replace(nonPunctuationRegex, '').trim();
-            
-            const exactMatchScore = -2000; 
+            const exactMatchScore = -2000; 
 
-            // Skip if the query is empty after normalizing
-            if (normalizedQuery.length === 0) {
-                return allExactMatches;
-            }
-            
-            // Define the search logic for a single language
-            const searchSingleLanguage = (langCode) => {
-                const rawData = searchData[langCode] || [];
-                
-                const langMatches = [];
+            // Skip if the query is empty after normalizing
+            if (normalizedQuery.length === 0) {
+                return allExactMatches;
+            }
+            
+            // Define the search logic for a single language
+            const searchSingleLanguage = (langCode) => {
+                const rawData = searchData[langCode] || [];
+                const langMatches = [];
 
-                rawData.forEach(item => {
-                    // 2. Normalize data fields using the same logic.
-                    const docText = item.document ? item.document.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
-                    const sectionText = item.section ? item.section.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
-                    const contentText = item.content ? item.content.toLowerCase().replace(nonPunctuationRegex, '').trim() : '';
+                rawData.forEach(item => {
+                    // Priority for which field to use for snippet/match
+                    let matchedText = item.document;
+                    let matchField = 'document';
 
-                    // Check if the normalized data includes the normalized query
-                    const isDocMatch = docText.includes(normalizedQuery);
-                    const isSectionMatch = sectionText.includes(normalizedQuery);
-                    const isContentMatch = contentText.includes(normalizedQuery);
+                    if (!searchPattern.test(item.document)) {
+                        matchedText = item.section;
+                        matchField = 'section';
+                        if (!searchPattern.test(item.section)) {
+                            matchedText = item.content || '';
+                            matchField = 'content';
+                        }
+                    }
 
-                    const isExactMatch = isDocMatch || isSectionMatch || isContentMatch;
+                    const isExactMatch = searchPattern.test(matchedText);
 
-                    if (isExactMatch) {
-                        // Determine which field contained the match and extract a snippet
-                        let matchedText = '';
-                        
-                        // Priority for snippet selection: Document > Section > Content
-                        if (isDocMatch) {
-                            matchedText = item.document;
-                        } else if (isSectionMatch) {
-                            matchedText = item.section;
-                        } else { // Must be isContentMatch
-                            matchedText = item.content || '';
-                        }
+                    if (isExactMatch) {
+                        const matchResults = matchedText.match(searchPattern);
+                        
+                        if (!matchResults) return; // Should not happen if .test() passed, but for safety
 
-                        // Calculate snippet boundaries
-                        const rawMatchedText = matchedText.toLowerCase();
-                        // Note: Using the original, un-normalized query here for better index matching, 
-                        // although a full regex search of `query` in `matchedText` might be more accurate to the user's input.
-                        // Sticking to indexOf(query.toLowerCase()) for simplicity/consistency with original logic.
-                        const queryIndex = rawMatchedText.indexOf(query.toLowerCase()); 
-                        
-                        // Define boundaries for context (50 before, 50 after)
-                        const contextPadding = 50; 
-                        const maxSnippetLength = 500;
-                        
-                        let snippetStart = Math.max(0, queryIndex - contextPadding);
-                        let snippetEnd = Math.min(matchedText.length, queryIndex + query.length + contextPadding);
-                        
-                        let highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
-                        
-                        // If the match was found in content, provide a longer snippet up to 500 chars
-                        if (isContentMatch) {
-                            // Recalculate end boundary for max length
-                            snippetEnd = Math.min(matchedText.length, snippetStart + maxSnippetLength);
-                            highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
-                        }
-                        
-                        // Prepend ellipsis if snippet starts late
-                        if (snippetStart > 0) {
-                            highlightSnippet = "..." + highlightSnippet;
-                        }
-                        // Append ellipsis if content was truncated
-                        if (snippetEnd < matchedText.length && highlightSnippet.length >= maxSnippetLength) {
-                            highlightSnippet = highlightSnippet + "...";
-                        }
+                        const queryIndex = matchResults.index;
+                        const matchedSubstring = matchResults[0]; // The actual text that satisfied the fuzzy pattern
+                        const matchLength = matchedSubstring.length;
+                        const isContentMatch = (matchField === 'content');
 
-                        // Create a simplified result object for display
-                        langMatches.push({
-                            id: item.url,
-                            doc: { 
-                                ...item, 
-                                highlight: highlightSnippet, 
-                                isExactMatch: true,
-                                exactQuery: query 
-                            }, 
-                            score: exactMatchScore, 
-                            lang: langCode
-                        });
-                    }
-                });
-                return langMatches;
-            };
-            
-            // Iterate over all provided languages and accumulate results
-            langs.forEach(langCode => {
-                allExactMatches.push(...searchSingleLanguage(langCode));
-            });
+                        // Define boundaries for context (50 before, 50 after)
+                        const contextPadding = 50; 
+                        const maxSnippetLength = 500;
+                        
+                        let snippetStart = Math.max(0, queryIndex - contextPadding);
+                        
+                        // Calculate short snippet end boundary: match end + padding
+                        let snippetEnd = queryIndex + matchLength + contextPadding;
+                        
+                        // If the match was found in content, provide a longer snippet up to 500 chars
+                        if (isContentMatch) {
+                            // Recalculate end boundary for max length
+                            snippetEnd = snippetStart + maxSnippetLength;
+                        }
+                        
+                        // Final boundary clipping
+                        snippetEnd = Math.min(matchedText.length, snippetEnd);
+                        
+                        let highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
+                        
+                        // Prepend ellipsis if snippet starts late
+                        if (snippetStart > 0) {
+                            highlightSnippet = "..." + highlightSnippet;
+                        }
+                        
+                        // Append ellipsis if content was truncated (either by padding or max length)
+                        if (snippetEnd < matchedText.length) {
+                            highlightSnippet = highlightSnippet + "...";
+                        }
 
-            return allExactMatches;
-        }
+                        // Create a simplified result object for display
+                        langMatches.push({
+                            id: item.url,
+                            doc: { 
+                                ...item, 
+                                highlight: highlightSnippet, 
+                                isExactMatch: true,
+                                exactQuery: matchedSubstring,
+                            }, 
+                            score: exactMatchScore, 
+                            lang: langCode
+                        });
+                    }
+                });
+                return langMatches;
+            };
+            
+            // Iterate over all provided languages and accumulate results
+            langs.forEach(langCode => {
+                allExactMatches.push(...searchSingleLanguage(langCode));
+            });
+
+            return allExactMatches;
+        }
 
 
         function performSearch() {
