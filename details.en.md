@@ -618,7 +618,7 @@ Images are replaced when the `src` or `alt` property of the image tag contains a
 
 Be aware that Outlook does not support the full HTML feature set. For example:
 - Some (older) Outlook versions ignore the `width` and `height` properties for embedded images.  
-  To overcome this limitation, use images in a connected folder (such as `Test all default replacement variables.files` in the sample templates folder) and additionally set the Set-OutlookSignatures parameter `EmbedImagesInHtml` to ``false`.
+  To overcome this limitation, use images in a connected folder (such as `Test all default replacement variables.files` in the sample templates folder) and additionally set the Set-OutlookSignatures parameter '[EmbedImagesInHtml](/parameters#26-embedimagesinhtml)' to ``false`.
 - Text and image formatting are limited, especially when HTML5 or CSS features are used.
 - Consider switching to DOCX templates for easier maintenance.
 

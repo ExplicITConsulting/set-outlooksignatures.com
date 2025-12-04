@@ -353,7 +353,7 @@ On Linux and macOS, only already existing mount points and SharePoint Online pat
 
 For access to SharePoint Online, the Entra ID app needs the Files.Read.All or Files.SelectedOperations.Selected permission, and you need to pass the 'GraphClientID' parameter to Set-OutlookSignatures.
 
-Also see related parameter 'EmbedImagesInHtmlAdditionalSignaturePath'.
+Also see related parameter '[EmbedImagesInHtmlAdditionalSignaturePath](/parameters#26-embedimagesinhtmladditionalsignaturepath)'.
 
 This feature requires a Benefactor Circle license (when used outside of simulation mode).
 
@@ -372,7 +372,7 @@ Each format has advantages and disadvantages, please see the FAQ '[Should I use 
 
 Only images in the first subfolder below the template file matching the Windows Connected Files naming convention (https://docs.microsoft.com/en-us/windows/win32/shell/manage#connected-files) are downloaded. Only use relative paths for the src attribute in img tags. All other paths are considered external and are not downloaded.
 
-Also see the documentation for the '`EmbedImagesInHtml`' parameter.
+Also see the documentation for the '[EmbedImagesInHtml](/parameters#26-embedimagesinhtml)' parameter.
 
 Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
 
@@ -536,7 +536,7 @@ Outlook 2016 and newer can handle images embedded directly into an HTML file as 
 
 Outlook 2013 and earlier can't handle these embedded images when composing HTML emails (there is no problem receiving such emails, or when composing RTF or TXT emails).
 
-When setting EmbedImagesInHtml to `$false`, consider setting the Outlook registry value "Send Pictures With Document" to 1 to ensure that images are sent to the recipient (see https://support.microsoft.com/en-us/topic/inline-images-may-display-as-a-red-x-in-outlook-704ae8b5-b9b6-d784-2bdf-ffd96050dfd6 for details). Set-OutlookSignatures does this automatically for the currently logged-in user, but it may be overridden by other scripts or group policies.
+When setting EmbedImagesInHtml to `$false`, consider setting the Outlook registry value '`Send Pictures With Document`' to 1 to ensure that images are sent to the recipient (see https://support.microsoft.com/en-us/topic/inline-images-may-display-as-a-red-x-in-outlook-704ae8b5-b9b6-d784-2bdf-ffd96050dfd6 for details). Set-OutlookSignatures does this automatically for the currently logged-in user, but it may be overridden by other scripts or group policies.
 
 Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
 
@@ -549,7 +549,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 
 
 ## 27. EmbedImagesInHtmlAdditionalSignaturePath
-Some feature as 'EmbedImagesInHtml' parameter, but only valid for the path defined in AdditionalSignaturePath when not in simulation mode.
+Same feature as '[EmbedImagesInHtml](/parameters#26-embedimagesinhtml)' parameter, but only valid for the path defined in AdditionalSignaturePath when not in simulation mode.
 
 Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
 
