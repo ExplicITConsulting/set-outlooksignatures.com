@@ -40,7 +40,7 @@ Wenn sich einige oder alle Postfächer in Exchange Online befinden, müssen Sie 
 
 Um die Entra ID App zu erstellen, bitten Sie Ihren Entra ID 'Global Admin' oder 'Application Administrator', folgendes auszuführen und den Anweisungen zu folgen:
 ```
-.\sample code\Create-EntraApp.ps1 -AppType 'Set-OutlookSignatures' -AppName 'Set-OutlookSignatures'
+powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
 ```
 
 Der Code in der Skriptdatei ist gut dokumentiert und enthält alle Details zu den erforderlichen Einstellungen der Entra ID App, den Berechtigungen und warum sie benötigt werden.

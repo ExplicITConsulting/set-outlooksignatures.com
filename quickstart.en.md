@@ -38,7 +38,7 @@ When some or all of your mailboxes are in Exchange Online, you need to register 
 
 To create the Entra ID app, ask your Entra ID 'Global Admin' or 'Application Administrator' to run the following and follow the instructions:
 ```
-.\sample code\Create-EntraApp.ps1 -AppType 'Set-OutlookSignatures' -AppName 'Set-OutlookSignatures'
+powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
 ```
 
 The code in the script file is well documented, containing all details about the required Entra ID app settings, permissions, and why they are needed.
