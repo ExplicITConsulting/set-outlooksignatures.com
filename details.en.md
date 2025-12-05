@@ -593,7 +593,7 @@ When using DOCX template files, there are two ways you can embed account picture
 
 Both ways allow to apply Word image features such as sizing, a shadow, a glow or a reflection. The shape option allows for more graphical freedom, as you can use arrows, stars and many more as container for account pictures.
 
-The crucial part for both ways is to set the text wrapping to "in line with text". If you don't, Outlook and other email clients will not place the image in the correct place as the position of floating shapes in Word cannot reliably be translated to HTML.
+The crucial part for both ways is to set the text wrapping to "inline with text". If you don't, Outlook and other email clients will not place the image in the correct place as the position of floating shapes in Word cannot reliably be translated to HTML.
 
 The sample signature template '`Test all default replacement variables`' contains examples for both ways, as well as some images formatted as "floating" images.
 
@@ -601,7 +601,7 @@ The sample signature template '`Test all default replacement variables`' contain
 1. Add a shape to the signature template.
 2. Apply any formatting you want to it.
 3. Add one of the default replacement variables (such as '`$CurrentUserPhoto$`') to the alternative text of the shape.
-4. Set the text wrapping of the shape to "in line with text".
+4. Set the text wrapping of the shape to "inline with text".
 
 **Steps for the "link and embed" option:**
 1. Create a sample image file which will later be used as placeholder.  

@@ -160,7 +160,7 @@ Back in the 1980s, Microsoft had a UNIX OS named Xenix… But read yourself <a h
 ## 7. Should I use .docx or .htm as file format for templates? Signatures in Outlook sometimes look different than my templates.
 The software uses DOCX as default template format, as this is the easiest way to delegate the creation and management of templates to departments such as Marketing or Corporate Communications:  
 - Not all Word formatting options are supported in HTML, which can lead to signatures looking a bit different than templates. For example:
-  - Images may be placed at a different position in the signature compared to the template - this is because the Outlook HTML component only supports the "in line with text" text wrapping option, while Word offers more options.
+  - Images may be placed at a different position in the signature compared to the template - this is because the Outlook HTML component only supports the "inline with text" text wrapping option, while Word offers more options.
   - When using a text style from the Word Styles Gallery, you still may want to set the font and its properties. Else, your fonts and formatting may adapt to identically named styles of the recipient. To avoid this, set the font manually, so that Word does not show "Calibri (Body)" or "Calibri (Heading)" in the font selection, but only "Calibri".
 - On the other hand, the Outlook HTML renderer works better with templates in the DOCX format: The Outlook HTML renderer does not respect the HTML image tags "width" and "height" and displays all images in their original size. When using DOCX as template format, the images are resized when exported to the HTM format.
   
