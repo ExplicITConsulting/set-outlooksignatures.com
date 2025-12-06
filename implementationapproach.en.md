@@ -142,7 +142,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
         <thead>
             <tr>
                 <th style="text-align:left">Feature</th>
-                <th style="text-align:left">Set-OutlookSignatures<br>with the <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></th>
+                <th style="text-align:left">Set-OutlookSignatures<br>with the <span style="font-weight: bold; color: darkgoldenrod;">Benefactor Circle add-on</span></th>
                 <th style="text-align:left">Peer&nbsp;A</th>
                 <th style="text-align:left">Peer&nbsp;B</th>
                 <th style="text-align:left">Peer&nbsp;C</th>
