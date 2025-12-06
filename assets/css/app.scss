@@ -247,8 +247,6 @@ a.mtrcs-external-link:not(.no-external-link-icon)::after {
   vertical-align: top;
 }
 
-
-
 :root {
   --benefactor-circle-color: darkgoldenrod;
 }
@@ -260,6 +258,7 @@ a.mtrcs-external-link:not(.no-external-link-icon)::after {
   }
 }
 
-[data-theme="dark"], .theme-dark {
+[data-theme="dark"],
+.theme-dark {
   --benefactor-circle-color: goldenrod;
 }
