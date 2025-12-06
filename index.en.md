@@ -174,7 +174,7 @@ sitemap_changefreq: weekly
   Functionality meets<span class="has-text-success"> expertise</span>
 </h2>
 
-<p>The optional <a href="/benefactorcircle"><span style="font-weight: bold; color: darkgoldenrod;">Benefactor Circle add-on</span></a> extends Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.<p>
+<p>The optional <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> extends Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.<p>
 
 <p>If desired, we'll set up our solution together with you: Simple, tailored to your needs, and with sustainable knowledge transfer.<p>
 

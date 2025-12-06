@@ -29,7 +29,7 @@ Set-OutlookSignatures is the open-source standard for email signatures and out-o
 
 <p><a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Quick Start Guide</a></p>
 
-<h2 id="benefactor-circle">The <span style="font-weight: bold; color: darkgoldenrod;">Benefactor Circle add-on</span></h2>
+<h2 id="benefactor-circle">The <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></h2>
 <p>The Benefactor Circle add-on from <a href="https://explicitconsulting.at">ExplicIT Consulting</a> enhances the open-source version with a great set of additional features for your enterprise.</p>
 
 <p><a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod)">The Benefactor Circle add-on</a></p>

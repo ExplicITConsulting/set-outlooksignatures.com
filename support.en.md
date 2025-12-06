@@ -69,7 +69,7 @@ sitemap_changefreq: weekly
   We pass on part of your investment directly to the Set-OutlookSignatures project, thereby promoting the further development of the free open-source version.
 </p>
 <p>
-  <strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the <span style="font-weight: bold; color: darkgoldenrod;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is free - no exceptions.
+  <strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is free - no exceptions.
   <br>
   For all other questions, you will receive the same first-class support at a fair price.
 </p>
