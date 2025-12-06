@@ -199,7 +199,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="demo" class="mt-6">
-  Verwalten Sie Ihre<span style="font-weight: bolder;"> Outlook-Signaturen </span>zentral. Wir zeigen Ihnen, wie!
+  Verwalten Sie Ihre <span style="font-weight: bolder;">Outlook-Signaturen</span> zentral. Wir zeigen Ihnen, wie!
 </h2>
 <p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p>
 
@@ -224,14 +224,14 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="quickstart" class="mt-6">
-      Signaturen<span class="has-text-success"> in wenigen Minuten </span> verteilen
+      Signaturen <span style="font-weight: bolder;">in wenigen Minuten</span> verteilen
     </h2>
     <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
-    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold has-background-success">Schnellstart-Anleitung</a>
+    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">Schnellstart-Anleitung</a>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="dive-deeper" class="mt-6">
-      <span class="has-text-link">Tiefer </span>eintauchen
+      Tiefer eintauchen
     </h2>
     <p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:</p>
     <ul>
@@ -240,6 +240,6 @@ sitemap_changefreq: weekly
       <li>Best practices und FAQ</li>
       <li>Wie Sie erstklassigen Support erhalten</li>
     </ul>
-    <a href="/help" class="button is-link is-normal is-hovered has-text-white has-text-weight-bold has-background-link">Hilfe- und Support-Center</a>
+    <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">Hilfe- und Support-Center</a>
   </div>
 </div>
