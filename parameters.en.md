@@ -17,8 +17,8 @@ sitemap_changefreq: weekly
 <p>This page outlines the available parameters to help you tailor the tool to your specific needs. If you're unsure which approach best suits your scenario, additional resources are available:</p>
 <p>
   <div class="buttons">
-    <a href="/faq" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Frequently Asked Questions (FAQ)</a>
-    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
+    <a href="/faq" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Frequently Asked Questions (FAQ)</a>
+    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Support</a>
   </div>
 </p>
 

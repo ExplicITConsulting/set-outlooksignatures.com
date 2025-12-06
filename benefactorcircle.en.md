@@ -8,15 +8,15 @@ description: "Extend Set-OutlookSignatures with mobile support, roaming sync, OO
 hero_link: "#demo"
 hero_link_text: "<span><b>Schedule your personal demo now</b></span>"
 hero_link_style: |
-   style="background-color: LimeGreen; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
+   style="background-color: LawnGreen; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
 hero_link2: "#trial"
 hero_link2_text: "<span><b>Request a 14-day trial license</b></span>"
 hero_link2_style: |
-   style="background-color: LimeGreen; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
+   style="background-color: LawnGreen; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
 hero_link3: "#order"
 hero_link3_text: "<span><b>Request a license quote</b></span>"
 hero_link3_style: |
-   style="background-color: LimeGreen; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
+   style="background-color: LawnGreen; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -477,4 +477,4 @@ If you look for help implementing the free and open-source core version of Set-O
   <li>How to get first-class support</li>
 </ul>
 
-<p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen">Help and Support-Center</a></p>
+<p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Help and Support-Center</a></p>

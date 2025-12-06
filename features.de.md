@@ -8,15 +8,15 @@ description: "Vergleichen Sie Funktionen und Vorteile unserer Lösung auf einen 
 hero_link: "#features"
 hero_link_text: "<span><b>Funktionen: </b>Was unsere Lösung kann</span>"
 hero_link_style: |
-  style="background-color: LimeGreen;"
+  style="background-color: LawnGreen;"
 hero_link2: "#feature-comparison"
 hero_link2_text: "<span><b>Funktions-Vergleich </b>mit Marktbegleitern</span>"
 hero_link2_style: |
-  style="background-color: LimeGreen;"
+  style="background-color: LawnGreen;"
 hero_link3: "/quickstart"
 hero_link3_text: "<span><b>Schnellstart-Anleitung: </b>Signaturen in wenigen Minuten verteilen</span>"
 hero_link3_style: |
-  style="background-color: LimeGreen;"
+  style="background-color: LawnGreen;"
 permalink: "/features"
 redirect_from:
   - "/features/"

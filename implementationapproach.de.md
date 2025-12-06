@@ -20,8 +20,8 @@ Sie ziehen es vor, durch die organisatorischen Themen, den Einrichtungs- und Anp
 
 <p>
   <div class="buttons">
-    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Schnellstart-Anleitung</a>
-    <a href="/support#professional-support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support</a>
+    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Schnellstart-Anleitung</a>
+    <a href="/support#professional-support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Support</a>
   </div>
 </p>
 

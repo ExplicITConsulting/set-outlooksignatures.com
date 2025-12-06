@@ -8,11 +8,11 @@ description: "Discover Set-OutlookSignatures technical details: system requireme
 hero_link: /quickstart
 hero_link_text: "<span><b>Quick Start Guide</b></span>"
 hero_link_style: |
-  style="background-color: LimeGreen;"
+  style="background-color: LawnGreen;"
 hero_link2: /support
 hero_link2_text: "<span><b>Support</b></span>"
 hero_link2_style: |
-  style="background-color: LimeGreen;"
+  style="background-color: LawnGreen;"
 permalink: "/details"
 redirect_from:
   - "/details/"

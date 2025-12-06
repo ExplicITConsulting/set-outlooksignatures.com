@@ -8,11 +8,11 @@ description: "E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outloo
 hero_link: /quickstart
 hero_link_text: "<span><b>Schnellstart: </b>Signaturen in wenigen Minuten verteilen</span>"
 hero_link_style: |
-   style="background-color: LimeGreen;"
+   style="background-color: LawnGreen;"
 hero_link2: /faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures
 hero_link2_text: "<span><b>Hinter den Kulissen: </b>Vom Code lernen</span>"
 hero_link2_style: |
-  style="background-color: LimeGreen;"
+  style="background-color: LawnGreen;"
 permalink: "/"
 redirect_from:
 sitemap_priority: 1.0
@@ -227,7 +227,7 @@ sitemap_changefreq: weekly
       Signaturen <span style="font-weight: bolder;">in wenigen Minuten</span> verteilen
     </h2>
     <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
-    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">Schnellstart-Anleitung</a>
+    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Schnellstart-Anleitung</a>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="dive-deeper" class="mt-6">
@@ -240,6 +240,6 @@ sitemap_changefreq: weekly
       <li>Best practices und FAQ</li>
       <li>Wie Sie erstklassigen Support erhalten</li>
     </ul>
-    <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">Hilfe- und Support-Center</a>
+    <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Hilfe- und Support-Center</a>
   </div>
 </div>

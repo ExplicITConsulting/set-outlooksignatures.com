@@ -8,11 +8,11 @@ description: "Email signatures and out-of-office replies for Exchange and Outloo
 hero_link: /quickstart
 hero_link_text: "<span><b>Quick Start: </b>Deploy signatures within minutes</span>"
 hero_link_style: |
-  style="background-color: LimeGreen;"
+  style="background-color: LawnGreen;"
 hero_link2: /faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures
 hero_link2_text: "<span><b>Behind the scenes: </b>Learn from the code</span>"
 hero_link2_style: |
-  style="background-color: LimeGreen;"
+  style="background-color: LawnGreen;"
 permalink: "/"
 redirect_from:
 sitemap_priority: 1.0
@@ -241,7 +241,7 @@ sitemap_changefreq: weekly
       Deploy signatures <span style="font-weight: bolder;">within minutes</span>
     </h2>
     <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.</p>
-    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">Quick Start Guide</a>
+    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Quick Start Guide</a>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="dive-deeper" class="mt-6">
@@ -254,6 +254,6 @@ sitemap_changefreq: weekly
       <li>Best practices and FAQ</li>
       <li>How to get first-class support</li>
     </ul>
-    <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen;">Help and Support-Center</a>
+    <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Help and Support-Center</a>
   </div>
 </div>

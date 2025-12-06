@@ -8,15 +8,15 @@ description: "Compare features and benefits of our solution at a glance with cle
 hero_link: "#features"
 hero_link_text: "<span><b>Features: </b>What our solution is able to do</span>"
 hero_link_style: |
-  style="background-color: LimeGreen;"
+  style="background-color: LawnGreen;"
 hero_link2: "#feature-comparison"
 hero_link2_text: "<span><b>Feature comparison </b>with peers</span>"
 hero_link2_style: |
-  style="background-color: LimeGreen;"
+  style="background-color: LawnGreen;"
 hero_link3: "/quickstart"
 hero_link3_text: "<span><b>Quick Start Guide: </b>Deploy signatures within minutes</span>"
 hero_link3_style: |
-  style="background-color: LimeGreen;"
+  style="background-color: LawnGreen;"
 permalink: "/features"
 redirect_from:
   - "/features/"

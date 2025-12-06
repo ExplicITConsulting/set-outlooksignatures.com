@@ -16,7 +16,7 @@ Laden Sie Set-OutlookSignatures herunter und entpacken Sie das Archiv in einen l
 
 <p>
   <div class="buttons">
-    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal is-hovered has-text-black has-text-weight-bold mtrcs-download" style="background-color: limegreen">Software herunterladen</a>
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal is-hovered has-text-black has-text-weight-bold mtrcs-download" style="background-color: LawnGreen">Software herunterladen</a>
     <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="sos-download-link mtrcs-download no-external-link-icon"><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=flat" alt="Number of downloads" loading="lazy"></a>
     <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Number of open issues and link to issue list" loading="lazy"></a>
   </div>
@@ -126,7 +126,7 @@ Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Eval
 
 <p>
   <div class="buttons">
-    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: limegreen">Support-Optionen ansehen</a>
+    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Support-Optionen ansehen</a>
     <a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod)">Das Benefactor Circle Add-On</a>
   </div>
 </p>

@@ -8,15 +8,15 @@ description: "Erweitern Sie Set-OutlookSignatures mit mobilen Signaturen, Roamin
 hero_link: "#demo"
 hero_link_text: "<span><b>Jetzt persönliche Demo vereinbaren</b></span>"
 hero_link_style: |
-   style="background-color: LimeGreen; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
+   style="background-color: LawnGreen; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
 hero_link2: "#trial"
 hero_link2_text: "<span><b>14-Tage-Testlizenz anfordern</b></span>"
 hero_link2_style: |
-   style="background-color: LimeGreen; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
+   style="background-color: LawnGreen; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
 hero_link3: "#order"
 hero_link3_text: "<span><b>Lizenzangebot anfordern</b></span>"
 hero_link3_style: |
-   style="background-color: LimeGreen; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
+   style="background-color: LawnGreen; background-image: linear-gradient(to right, darkgoldenrod, goldenrod, darkgoldenrod, goldenrod, darkgoldenrod);"
 
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
@@ -478,4 +478,4 @@ Die Testphase beginnt mit der Erstellung und Übermittlung der Lizenzdatei, nich
   <li>Wie Sie erstklassigen Support erhalten</li>
 </ul>
 
-<p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LimeGreen">Hilfe- und Support-Center</a></p>
+<p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Hilfe- und Support-Center</a></p>
