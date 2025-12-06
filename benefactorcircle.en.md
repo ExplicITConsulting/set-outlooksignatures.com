@@ -30,7 +30,7 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <h2 id="sustainable-value">Sustainable added value for your business</h2>
-<p>The <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> from <a href="https://explicitconsulting.at">ExplicIT Consulting</a> enhances the free Set-OutlookSignatures with great additional possibilities for your company.</p>
+<p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> from <a href="https://explicitconsulting.at">ExplicIT Consulting</a> enhances the free Set-OutlookSignatures with great additional possibilities for your company.</p>
 
 
 <h3 id="additional-features">Additional features</h3>
@@ -211,7 +211,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="demo">Demo</h2>
-<p>We show you what Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> and the included Outlook add-in can do for you - interactively and with focus on your actual needs. Experience live:</p>
+<p>We show you what Set-OutlookSignatures, the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> and the included Outlook add-in can do for you - interactively and with focus on your actual needs. Experience live:</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -280,7 +280,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="financial-benefits">Financial benefits</h2>
-<p>The <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> is an investment that pays off from day one. A cost-benefit analysis in the form of a business case must consider three aspects:</p>
+<p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> is an investment that pays off from day one. A cost-benefit analysis in the form of a business case must consider three aspects:</p>
 <ul>
   <li>How much do non-compliant signatures and out-of-office replies cost in terms of loss of reputation or in terms of fines for non-compliance?</li>
   <li>What is the added value of using email as an additional marketing channel?</li>
@@ -303,7 +303,7 @@ sitemap_changefreq: weekly
   <p>2 changes per year, 3 minutes per change, 2 signatures, 1 client: 0.55 * 2 * 3 * 2 * 1 = 6.60</p>
 </blockquote>
 
-<p>Per user and year, the costs are now 6.60&nbsp;€ in manual effort compared to 3.00&nbsp;€ for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>.</p>
+<p>Per user and year, the costs are now 6.60&nbsp;€ in manual effort compared to 3.00&nbsp;€ for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</p>
 
 <p>This calculation does not even take into account the following:</p>
 <ul>
@@ -322,7 +322,7 @@ sitemap_changefreq: weekly
 <h3 id="price">Price and general information</h3>
 <p>Set-OutlookSignatures is completely free of charge. Originally developed as a technology demonstrator for scripting techniques, it has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies. You can read more about its history and the intentions behind it <a href="https://set-outlooksignatures.com/faq#351-why-the-tagline">here</a>.</p>
 
-<p>The <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> unlocks advanced features and is available for <strong>only 3.00 € per mailbox per year</strong>, which equals <strong>just 0.25 € per mailbox per month</strong>.</p>
+<p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> unlocks advanced features and is available for <strong>only 3.00 € per mailbox per year</strong>, which equals <strong>just 0.25 € per mailbox per month</strong>.</p>
 
 <p>The add-on is an investment that pays off from day one - certainly for you as well!<br>Thanks to unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
 
@@ -332,7 +332,7 @@ sitemap_changefreq: weekly
 <ul>
   <li>Small companies pay the same low price as large enterprises.</li>
   <li>No bundled maintenance or support contracts hidden in the annual price. You only pay for support if and when you need it - and thanks to our documentation, you likely won't.</li>
-  <li><strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span>, its documentation, or the provided components, support is free - no exceptions.
+  <li><strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>, its documentation, or the provided components, support is free - no exceptions.
   <br>
   For all other issues, you will receive the same first-class support at a fair price.
   </li>
@@ -341,7 +341,7 @@ sitemap_changefreq: weekly
   <li>We pass on part of your investment directly to the Set-OutlookSignatures project, thereby promoting the further development of the free open-source version.</li>
 </ul>
 
-<p>Licenses are required only for mailboxes that utilize <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> features. This includes shared mailboxes. Each mailbox requires one license, regardless of how many users access it, how many signatures are deployed, or how frequently those signatures are modified.</p>
+<p>Licenses are required only for mailboxes that utilize <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> features. This includes shared mailboxes. Each mailbox requires one license, regardless of how many users access it, how many signatures are deployed, or how frequently those signatures are modified.</p>
 
 <p>You do not need to specify individual mailbox names. Instead, define at least one Active Directory or Entra ID group that includes the relevant mailboxes. For each group, indicate the maximum number of recursive members.<p>
 
@@ -355,7 +355,7 @@ sitemap_changefreq: weekly
 <h3 id="trial">Trial version</h3>
 <p>You may want to start with a 14-day trial license.</p>
 
-<p>The <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.<br>
+<p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> extends the feature set of the free and open-source core version of Set-OutlookSignatures, so make sure that the core version is working correctly before requesting a trial version.<br>
 If you look for help implementing the free and open-source core version of Set-OutlookSignatures, go through the Quick Start Guide in the readme file, open an issue at GitHub, or contact us: We are happy to help you implement Set-OutlookSignatures in your own environment as part of our professional support services.</p>
 
 <p>As soon as the open-source core version is running, it is time to take the next step:</p>
@@ -365,7 +365,7 @@ If you look for help implementing the free and open-source core version of Set-O
 <p>To use the license file, just add two parameters to your call of &apos;Set-OutlookSignatures.ps1&apos;:</p>
 <ul>
   <li>&apos;-BenefactorCircleLicenseFile&apos; with the path to your individualized license file</li>
-  <li>&apos;-BenefactorCircleId&apos; with your <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> ID</li>
+  <li>&apos;-BenefactorCircleId&apos; with your <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> ID</li>
 </ul>
 
 <p>Trial licenses can not be extended or re-issued. They are limited to 14 days runtime and a maximum of 20 mailboxes.</p>
@@ -385,14 +385,14 @@ If you look for help implementing the free and open-source core version of Set-O
 <p>To use the license file, just add two parameters to your call of &apos;Set-OutlookSignatures.ps1&apos;:</p>
 <ul>
   <li>&apos;-BenefactorCircleFile&apos; with the path to your individualized license file</li>
-  <li>&apos;-BenefactorCircleId&apos; with your <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> ID</li>
+  <li>&apos;-BenefactorCircleId&apos; with your <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> ID</li>
 </ul>
 
 
 <h3 id="change-license-period">Extending or reducing a license period</h3>
 <p>A license period cannot be extended. Licenses are valid for one year, starting with the date the full payment is received, and do not auto-renew.</p>
 
-<p>To continue using Set-OutlookSignatures with <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> benefits, just place a new order to receive a new license file.</p>
+<p>To continue using Set-OutlookSignatures with <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> benefits, just place a new order to receive a new license file.</p>
 
 <p>You will be informed in advance that your license is about to expire.</p>
 
@@ -416,7 +416,7 @@ If you look for help implementing the free and open-source core version of Set-O
 
 
 <h3 id="license-groups">How license groups work</h3>
-<p>Each <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> license is bound to one or more Active Directory or Entra ID groups, called a license group. For maximum data protection and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
+<p>Each <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> license is bound to one or more Active Directory or Entra ID groups, called a license group. For maximum data protection and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
 
 <p>For most environments, only one license group is needed.<br>In on-prem and hybrid environments with multiple Active Directory domains, you may define a separate license group for each AD DNS domain, each license group with a separate maximum member count.<br>If you have multiple entra ID tenants, you may define one Entra ID group per tenant.</p>
 
@@ -434,7 +434,7 @@ If you look for help implementing the free and open-source core version of Set-O
   <li>In pure on-prem environments, you can only use on-prem groups. The license group is then '<code>&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'.<br>When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.</li>
 </ul>
 
-<p>When a <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> exclusive feature is about to be used, the license is checked as follows:</p>
+<p>When a <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> exclusive feature is about to be used, the license is checked as follows:</p>
 <ol>
   <li>Determine which license group to use.
     <ol>
@@ -447,7 +447,7 @@ If you look for help implementing the free and open-source core version of Set-O
   <li>Check if the current mailbox is a member of the license group.</li>
 </ol>
 
-<p>As soon as one of these steps fails, the mailbox is not licensed and <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle</span> features can not be used for it.</p>
+<p>As soon as one of these steps fails, the mailbox is not licensed and <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> features can not be used for it.</p>
 
 <p>Please note:<p>
 <ul>
@@ -467,7 +467,7 @@ If you look for help implementing the free and open-source core version of Set-O
 
 
 <h2 id="support">Help and support</h2>
-<p>Set-OutlookSignatures and the <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span> are very well documented, which inevitably brings with it a lot of content.</p>
+<p>Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> are very well documented, which inevitably brings with it a lot of content.</p>
 
 <p>Visit our help and support center to find out more:<p>
 <ul>

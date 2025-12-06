@@ -246,3 +246,20 @@ a.mtrcs-external-link:not(.no-external-link-icon)::after {
   font-size: 0.8em;
   vertical-align: top;
 }
+
+
+
+:root {
+  --benefactor-circle-color: darkgoldenrod;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Set the text color for dark backgrounds */
+    --benefactor-circle-color: goldenrod;
+  }
+}
+
+[data-theme="dark"], .theme-dark {
+  --benefactor-circle-color: goldenrod;
+}

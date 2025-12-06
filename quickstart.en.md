@@ -29,7 +29,7 @@ On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use 
 **Client and user**  
 For a first test run, it is recommended to log on with a test user on a Windows system with Word and Classic Outlook for Windows installed, and Classic Outlook for Windows being configured with at least the test user's mailbox. If you use your own user, existing signatures will be overwritten in the worst case.
 
-For full Linux, macOS and New Outlook support, the <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
+For full Linux, macOS and New Outlook support, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
 
 If you cannot test with Classic Outlook on Windows, or do not want your signature setup changed, you can use simulation mode, which is described in a later step.
 
@@ -119,7 +119,7 @@ Just [get in touch](/support) with us!
 ## Looking for help or more features? {#support}
 Set-OutlookSignatures is very well documented, which inevitably brings with it a lot of content.
 
-If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers first-class [professional support](/support), and their <a href="/benefactorcircle"><span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
+If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers first-class [professional support](/support), and their <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
 
 <p>
   <div class="buttons">

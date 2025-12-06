@@ -154,7 +154,7 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
         <thead>
             <tr>
                 <th style="text-align:left">Feature</th>
-                <th style="text-align:left">Set-OutlookSignatures<br>mit dem <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span></th>
+                <th style="text-align:left">Set-OutlookSignatures<br>mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></th>
                 <th style="text-align:left">Marktbegleiter A</th>
                 <th style="text-align:left">Marktbegleiter B</th>
                 <th style="text-align:left">Marktbegleiter C</th>

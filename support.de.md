@@ -71,7 +71,7 @@ sitemap_changefreq: weekly
   Einen Teil Ihrer Investition geben wir direkt an das Set-OutlookSignatures-Projekt weiter und fördern so die Weiterentwicklung der kostenlosen Open-Source-Version.
 </p>
 <p>
-  <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem <span style="font-weight: bold; background-image: linear-gradient(to bottom right, darkgoldenrod, goldenrod, goldenrod, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">Benefactor Circle Add-On</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme.
+  <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme.
   <br>
   Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.
 </p>
