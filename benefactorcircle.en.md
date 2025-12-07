@@ -33,10 +33,6 @@ sitemap_changefreq: weekly
 <p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> from <a href="https://explicitconsulting.at">ExplicIT Consulting</a> enhances the free Set-OutlookSignatures with great additional possibilities for your company.</p>
 
 
-
-
-
-
 <h3 id="key-features">Key features</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -114,8 +110,16 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h3 id="support-updates">Support and updates</h3>
+<h3 id="updates-support">Updates and support</h3>
 <div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>All updates included</b><br>Regardless of whether it is a patch, new feature or new major version.
+      </div>
+    </div>
+  </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
@@ -129,14 +133,6 @@ sitemap_changefreq: weekly
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Secure data exchange</b><br>Upload log files via a secure portal instead of sending them by email or publishing them on GitHub.
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>All updates included</b><br>Regardless of whether it is a patch, new feature or new major version.
       </div>
     </div>
   </div>

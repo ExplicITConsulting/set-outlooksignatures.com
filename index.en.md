@@ -245,7 +245,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="dive-deeper" class="mt-6">
-      Dive deeper</span>
+      Dive deeper
     </h2>
     <p>Visit our help and support center to find out more:</p>
     <ul>

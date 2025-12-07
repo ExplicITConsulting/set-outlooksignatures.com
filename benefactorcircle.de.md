@@ -111,8 +111,16 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h3 id="support-updates">Support und Updates</h3>
+<h3 id="updates-support">Updates und Support</h3>
 <div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Alle Updates inklusive</b><br>Unabhängig, ob Patch, neues Feature oder neue Hauptversion.
+      </div>
+    </div>
+  </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
@@ -126,14 +134,6 @@ sitemap_changefreq: weekly
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Sicherer Datenaustausch</b><br>Logdateien über ein sicheres Portal hochladen statt Versand per E-Mail oder Veröffentlichung auf GitHub.
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Alle Updates inklusive</b><br>Unabhängig, ob Patch, neues Feature oder neue Hauptversion.
       </div>
     </div>
   </div>
