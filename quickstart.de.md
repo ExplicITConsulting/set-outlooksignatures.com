@@ -127,6 +127,6 @@ Wenn Sie jemanden mit Erfahrung suchen, der Sie schnell schulen und bei der Eval
 <p>
   <div class="buttons">
     <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Support-Optionen ansehen</a>
-    <a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom right, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">Das Benefactor Circle Add-On</a>
+    <a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">Das Benefactor Circle Add-On</a>
   </div>
 </p>

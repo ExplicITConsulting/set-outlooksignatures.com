@@ -8,15 +8,15 @@ description: "Erweitern Sie Set-OutlookSignatures mit mobilen Signaturen, Roamin
 hero_link: "#demo"
 hero_link_text: "<span><b>Jetzt persönliche Demo vereinbaren</b></span>"
 hero_link_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(to bottom right, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod);"
+   style="background-color: LawnGreen; background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod);"
 hero_link2: "#trial"
 hero_link2_text: "<span><b>14-Tage-Testlizenz anfordern</b></span>"
 hero_link2_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(to bottom right, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod);"
+   style="background-color: LawnGreen; background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod);"
 hero_link3: "#order"
 hero_link3_text: "<span><b>Lizenzangebot anfordern</b></span>"
 hero_link3_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(to bottom right, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod);"
+   style="background-color: LawnGreen; background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod);"
 
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
@@ -111,7 +111,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h3 id="prioritized-support">Priorisierter Support</h3>
+<h3 id="support-updates">Support und Updates</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -133,34 +133,13 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Vorschläge für neue Funktionen werden vorrangig auf Umsetzbarkeit geprüft</b><br>Ihr direkter Draht zu unseren Entwicklern.
+        <b>Alle Updates inklusive</b><br>Unabhängig, ob Patch, neues Feature oder neue Hauptversion.
       </div>
     </div>
   </div>
 </div>
 
-
-<h3 id="free-upgrades">Kostenlose Versions-Upgrades und Archiv</h3>
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Während der Lizenzlaufzeit sind alle neuen Versionen inklusive</b><br>Unabhängig, ob Patch, neues Feature oder neue Hauptversion.
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Release-Archiv</b><br>Mit einer aktiven Lizenz haben Sie Zugriff auf alle für Sie erfolgten Veröffentlichungen, einschließlich Lizenzdateien.
-      </div>
-    </div>
-  </div>
-</div>
-
-<a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom right, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">Testlizenz oder Angebot anfordern</a>
+<a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">Testlizenz oder Angebot anfordern</a>
 
 
 <h2 id="demo">Demo</h2>
@@ -197,7 +176,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to bottom right, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod);">Jetzt persönliche Demo vereinbaren</a></p>
+      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod);">Jetzt persönliche Demo vereinbaren</a></p>
     </div>
   </div>
   <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
@@ -279,7 +258,7 @@ sitemap_changefreq: weekly
 
 <p>Das Add-On ist eine Investition, die sich vom ersten Tag an auszahlt - sicher auch für Sie!<br>Dank einzigartiger Funktionen und exklusiver Herstellerverfügbarkeit ist in der Regel ein rechtskonformer Direktbezug ohne öffentliche Ausschreibung möglich.</p>
 
-<p><a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom right, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">Kosten-Nutzen-Rechnung, Business Case</a></p>
+<p><a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">Kosten-Nutzen-Rechnung, Business Case</a></p>
 
 <p>Wir gestalten die Lizenzkosten so fair und transparent wie möglich:</p>
 <ul>
@@ -313,7 +292,7 @@ Wenn Sie Unterstützung bei der Implementierung der kostenlosen Kernversion ben�
 
 <p>Sobald die Open-Source-Kernversion läuft, ist es Zeit für den nächsten Schritt:</p>
 
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom right, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">14-Tage-Testlizenz anfordern</a></p>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">14-Tage-Testlizenz anfordern</a></p>
 
 <p>Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:</p>
 <ul>
@@ -329,7 +308,7 @@ Die Testphase beginnt mit der Erstellung und Übermittlung der Lizenzdatei, nich
 
 
 <h3 id="order">Bestellprozess für Lizenzen</h3>
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom right, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">Lizenzangebot anfordern</a></p>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">Lizenzangebot anfordern</a></p>
 
 <p>Sie erhalten in Kürze ein Angebot. Sobald alle Details geklärt sind, erhalten Sie eine Rechnung und können den Zahlungsprozess starten.</p>
 

@@ -124,6 +124,6 @@ If you are looking for someone with experience who can quickly train you and ass
 <p>
   <div class="buttons">
     <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Support</a>
-    <a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom right, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">The Benefactor Circle add-on</a>
+    <a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">The Benefactor Circle add-on</a>
   </div>
 </p>
