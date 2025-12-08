@@ -24,5 +24,6 @@ Möglich wird dies durch eine Architektur, die aus praktischer Erfahrung für de
 
 Mit der [Schnellstart-Anleitung](/quickstart) können Sie Signaturen in nur drei einfachen Schritten innerhalb weniger Minuten bereitstellen.
 
+
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

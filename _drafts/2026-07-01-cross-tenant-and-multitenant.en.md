@@ -22,5 +22,6 @@ Set-OutlookSignatures ended that era already:
 
 Cross-tenant and multitenant is easy to implement - just follow the instructions of the '[GraphClientID](/parameters#4-graphclientid)' parameter.
 
+
 ## Interested in learning more or seeing our solution in action?
 [Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

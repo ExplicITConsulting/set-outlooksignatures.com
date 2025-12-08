@@ -27,5 +27,6 @@ Autoresponder rules, on the other hand, are often better for shared mailboxes.
 
 With Set-OutlookSignatures, you can deploy standardized out-of-office replies - internal and external - with the same flexibility as email signatures. In most cases, users only need to enter their return date before activating the assistant.
 
+
 ## Interested in learning more or seeing our solution in action?
 [Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

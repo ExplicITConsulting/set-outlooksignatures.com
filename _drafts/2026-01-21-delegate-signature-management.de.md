@@ -26,5 +26,6 @@ Sie können all dies separat für Signaturen und Abwesenheitsnotizen konfigurier
 Und das Beste daran?
 Set-OutlookSignatures benötigt lediglich eine Dateifreigabe oder eine SharePoint-Dokumentbibliothek. Kein Admin-Client, keine Serverabhängigkeiten, keine E-Mail-Umleitung.
 
+
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

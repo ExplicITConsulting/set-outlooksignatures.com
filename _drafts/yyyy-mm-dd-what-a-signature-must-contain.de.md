@@ -15,8 +15,10 @@ Eine professionelle E-Mail-Signatur ist weit mehr als nur eine digitale Visitenk
 
 Wenn Sie Ihre geschäftliche E-Mail-Kommunikation global absichern möchten, kommen Sie um eine „Ultimative Signatur“ nicht herum. Hier ist eine Aufschlüsselung, welche Pflichtangaben Sie in den wichtigsten Wirtschaftsregionen der Welt beachten müssen.
 
+
 ## Die Formalisten: Deutschland, Österreich, Schweiz und die EU
 Die strengsten Regeln für die Signatur selbst finden sich oft in Mitteleuropa. Der Fokus liegt auf der vollständigen rechtlichen Identifizierung der sendenden Gesellschaft.
+
 
 ### Deutschland (HGB & GmbHG)
 Die Signatur muss die sogenannte Impressumspflicht erfüllen und folgende Angaben enthalten, abhängig von der Rechtsform:
@@ -32,11 +34,14 @@ Die Signatur muss die sogenannte Impressumspflicht erfüllen und folgende Angabe
 
 Wichtig: Auch die Angabe einer E-Mail-Adresse und der Telefonnummer ist Pflicht, um eine schnelle Kontaktaufnahme zu gewährleisten.
 
+
 ### Österreich (UGB) und 🇨🇭 Schweiz
 Ähnlich wie in Deutschland ist die Angabe der Firmenbuchnummer (Österreich) bzw. der Handelsregisternummer (Schweiz) sowie der vollständigen Rechtsform erforderlich.
 
+
 ## Anti-Spam-Fokus: USA und Kanada
 In Nordamerika stehen weniger die Registerdaten im Vordergrund, sondern die Kontrolle über Werbe-E-Mails (Spam-Vermeidung).
+
 
 ### USA (CAN-SPAM Act)
 Dieses Gesetz gilt, sobald die E-Mail als "kommerziell" eingestuft wird. Die zentralen Anforderungen für den *Absender* sind:
@@ -44,19 +49,23 @@ Dieses Gesetz gilt, sobald die E-Mail als "kommerziell" eingestuft wird. Die zen
 2.  Opt-Out-Mechanismus: Es muss einen klaren und funktionierenden Abmeldelink ("Unsubscribe") geben. Abmeldungen müssen innerhalb von 10 Werktagen bearbeitet werden.
 3.  Identifizierung: Die E-Mail-Header und der Betreff dürfen nicht irreführend sein.
 
+
 ### Kanada (CASL – Canada’s Anti-Spam Legislation)
 CASL ist eines der strengsten Anti-Spam-Gesetze der Welt und basiert auf einem strengen Opt-In-Prinzip. Die Signatur muss:
 1.  Die Identität des Senders und der Organisation klar benennen.
 2.  Eine Postanschrift enthalten.
 3.  Einen funktionierenden Abmeldelink bieten, der Abmeldungen innerhalb von 10 Werktagen verarbeitet.
 
+
 ## APAC: Australien und China
 Diese Regionen bieten eine Mischung aus angelsächsischer Regulierung und kulturellen Notwendigkeiten.
+
 
 ### Australien (Corporations Act & Spam Act)
 Australien kombiniert die Anti-Spam-Regeln mit einer formalen Registrierungspflicht:
 1.  ABN/ACN: Die Signatur sollte die Australian Business Number (ABN) oder die Australian Company Number (ACN) des Unternehmens führen.
 2.  Unsubscribe: Ein Abmeldelink ist Pflicht, Abmeldungen müssen hier besonders schnell (innerhalb von 5 Werktagen) umgesetzt werden.
+
 
 ### China (Kulturelle Konventionen & Gesetze)
 In China sind die kulturelle Etikette und der Aufbau von Geschäftsbeziehungen oft wichtiger als der reine Gesetzestext.
@@ -67,8 +76,10 @@ In China sind die kulturelle Etikette und der Aufbau von Geschäftsbeziehungen o
 
 Achtung bei Werbung: Enthält die E-Mail Werbung, muss das Wort "AD" (oder "广告") in die Betreffzeile!
 
+
 ## Globale Checkliste
 Um eine einzige Signatur zu erstellen, die weltweit funktioniert, müssen Sie alle Pflichtangaben des strengsten Marktes (Deutschland) mit den Anti-Spam-Elementen (USA/Kanada) und den Identifikationsnummern (Australien/China) kombinieren.
+
 
 ### Must-Haves
 | Element | Zweck |
@@ -81,12 +92,14 @@ Um eine einzige Signatur zu erstellen, die weltweit funktioniert, müssen Sie al
 | ABN/ACN (falls relevant) | Registrierungspflicht (AU). |
 | Funktionierender Abmeldelink | Anti-Spam (US, CA, AU). |
 
+
 ### Empfehlungen
 * Bilinguale Angaben (Name, Titel, Adresse) für Kanada (Québec) und China.
 * WeChat ID/QR-Code für den asiatischen Markt.
 * Haftungsausschluss (Disclaimer) am Ende der E-Mail (wird in den USA und UK erwartet).
 
 Indem Sie diese Elemente einmalig und konsistent in Ihrem E-Mail-Signatur-Management-System hinterlegen, stellen Sie sicher, dass jede E-Mail, die Ihr Unternehmen verlässt, rechtlich abgesichert ist – egal, an welchen Ort der Welt sie gesendet wird.
+
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

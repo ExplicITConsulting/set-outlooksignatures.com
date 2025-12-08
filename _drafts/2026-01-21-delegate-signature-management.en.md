@@ -26,5 +26,6 @@ You can configure all of this separately for signatures and out-of-office replie
 And the best part?
 Set-OutlookSignatures only needs a file share or SharePoint document library. No admin client, no server dependencies, no email rerouting.
 
+
 ## Interested in learning more or seeing our solution in action?
 [Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

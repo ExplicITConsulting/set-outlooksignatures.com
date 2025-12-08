@@ -29,5 +29,6 @@ The following links will interest you:
 - [Allowed tags](/details#61-allowed-tags) for template assignment
 - [How do I alternate banners and other images in signatures?](/faq#30-how-do-i-alternate-banners-and-other-images-in-signatures)
 
+
 ## Interested in learning more or seeing our solution in action?
 [Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

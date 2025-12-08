@@ -15,6 +15,7 @@ The shift to Dark Mode has dramatically improved screen comfort for millions, bu
 
 If you’re managing signatures for an organization, ensuring your design looks pristine in both light and dark settings is paramount. Here is your definitive guide to designing dark mode-friendly email signatures, navigating the treacherous waters of mail client support, and implementing ingenious failsafe solutions.
 
+
 ## The client conundrum: Why email CSS is stuck in the past
 Unlike web design, which universally supports CSS media queries, email rendering is fragmented. Dark Mode support varies wildly, and even when a client supports it, how it applies Dark Mode is inconsistent:
 - No Change: The client doesn't support Dark Mode and displays the signature as designed (e.g., pure black text on a dark background, making it illegible).
@@ -26,6 +27,7 @@ Basically, no mail client besides Apple Mail supports the essential `@media (pre
 This is no surprise, as CSS is generally poorly supported across email clients - with different sets of supported features, often not only depending on the email client, but on the platform it runs on.
 
 The reason for this? For historic reasons, nearly every email client comes with its own integrated parser and renderer for HTML and CSS. Keeping on-par is hard work, and switching to the system browser would mean that all the non-standard interpretations of the own renderer would be gone and old emails might look off.
+
 
 ## Strategy 1: The ideal (but unreliable) CSS approach
 For the small percentage of clients that support it (primarily Apple Mail and some mobile apps), you can define a dedicated dark mode style.
@@ -47,8 +49,10 @@ CSS
 
 The problem: This code is ignored by the most common corporate clients (Outlook Desktop, Gmail Web). You need a more robust, failsafe plan.
 
+
 ## Strategy 2: The failsafe design approach (client-agnostic)
 When CSS fails, you must rely on smart design choices that work regardless of the client's Dark Mode settings. The goal is to design an element that looks good in both white-on-white and black-on-dark scenarios.
+
 
 ### Logo and icon protection: The white glow hack
 For logos, the biggest risk is a dark logo (e.g., black text or dark icon) disappearing against a dark background when the client swaps colors.
@@ -63,6 +67,7 @@ Result in light mode: The white glow blends perfectly into the white email backg
 
 Result in dark mode: When the client converts the white background to black/dark gray, the subtle white outline acts as a built-in contrast border, ensuring the dark logo elements are clearly visible and separated from the dark background.
 
+
 ### Text and color contrast
 Ensure maximum contrast for all text elements to survive any inversion attempts by mail clients.
 
@@ -72,8 +77,10 @@ For backgrounds/separators: If you use separator lines, define their color clear
 
 For text color: Rely on pure, contrasting colors (like `#000000` on a light background) to encourage the client's inversion logic to correctly swap it to a legible white/light color in Dark Mode.
 
+
 ### Using Borders as Spacers
 Rely on borders for spacing instead of simply blank `<td>` cells with background colors, as background colors are prone to inversion. For example, instead of a colored cell for a separator, use a `<div>` or a cell with a 1px border that is the color you want to retain.
+
 
 ## Final conclusion: The pragmatic approach
 The core challenge for email signature designers is that the most broadly used corporate mail clients (specifically Outlook and Gmail) do not allow the same grade of Dark Mode customization as modern web browsers. Their rendering quirks and aggressive inversion techniques make the pursuit of a fully Dark Mode compatible signature template an inefficient effort.
@@ -85,6 +92,7 @@ Therefore, the pragmatic and most effective strategy is to design the signature 
 - Employ the white glow Hack: This is your most powerful tool for ensuring image and logo visibility in Dark Mode without relying on fragile CSS.
 
 By embracing this strategy, you deliver a signature that is consistently professional and legible across all major platforms, rather than one that is technically perfect in a few compliant clients but broken in the majority.
+
 
 ## Interested in learning more or seeing our solution in action?
 [Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

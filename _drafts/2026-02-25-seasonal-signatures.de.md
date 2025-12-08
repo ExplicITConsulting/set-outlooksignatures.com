@@ -29,5 +29,6 @@ Die folgenden Links könnten Sie interessieren:
 - [Zulässige Tags](/details#61-allowed-tags) für die Zuweisung von Vorlagen
 - [Wie kann ich Banner und andere Bilder in Signaturen abwechselnd anzeigen?](/faq#30-how-do-i-alternate-banners-and-other-images-in-signatures)
 
+
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

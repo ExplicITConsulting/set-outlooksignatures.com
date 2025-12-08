@@ -22,5 +22,6 @@ Set-OutlookSignatures hat diese Ära bereits beendet:
 
 Mandantenübergreifende und mandantenübergreifende Implementierungen sind einfach zu realisieren – folgen Sie einfach den Anweisungen des Parameters „[GraphClientID](/parameters#4-graphclientid)“.
 
+
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

@@ -24,5 +24,6 @@ We focus on practical, efficient software. And we believe every mailbox should c
 
 Read all about [why Set-OutlookSignatures is free and open-source](/faq#351-why-the-tagline) and about [the financial benefits of the Benefactor Circle add-on](/benefactorcircle#financial-benefits).
 
+
 ## Interested in learning more or seeing our solution in action?
 [Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!

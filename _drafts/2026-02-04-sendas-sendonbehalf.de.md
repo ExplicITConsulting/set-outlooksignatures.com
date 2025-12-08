@@ -19,5 +19,6 @@ So vereinfacht die Kombination aus [Export-RecipientPermissions](https://explici
 
 Das Ergebnis ist eine vollständig automatisierte, aktuelle Signaturbereitstellung, die sich an die tatsächliche Nutzung anpasst. Keine manuelle Nachverfolgung, keine veralteten Konfigurationen.
 
+
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

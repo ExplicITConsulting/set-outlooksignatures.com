@@ -27,5 +27,6 @@ Autoresponder-Regeln hingegen eignen sich oft besser für gemeinsam genutzte Pos
 
 Mit Set-OutlookSignatures können Sie standardisierte Abwesenheitsnotizen – intern und extern – mit der gleichen Flexibilität wie E-Mail-Signaturen einsetzen. In den meisten Fällen müssen Benutzer nur ihr Rückkehrdatum eingeben, bevor sie den Assistenten aktivieren.
 
+
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!

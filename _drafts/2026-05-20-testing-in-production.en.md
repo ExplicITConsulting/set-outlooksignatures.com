@@ -27,5 +27,6 @@ Set-OutlookSignatures comes with [Simulation Mode](/details#11-simulation-mode),
 
 The confidence you need, without the risk.
 
+
 ## Interested in learning more or seeing our solution in action?
 [Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!
