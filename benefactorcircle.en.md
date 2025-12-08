@@ -55,7 +55,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Consistent signatures everywhere</b><br>Guarantee compliance and brand trust across Outlook clients on desktop, web and mobile.
+        <b>Consistent signatures everywhere</b><br>Guarantee compliance and brand trust across all Outlook clients: Desktop, web and mobile.
       </div>
     </div>
   </div>
