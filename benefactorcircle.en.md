@@ -8,15 +8,15 @@ description: "Extend Set-OutlookSignatures with mobile support, roaming sync, OO
 hero_link: "#demo"
 hero_link_text: "<span><b>Schedule your personal demo now</b></span>"
 hero_link_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod);"
+   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;"
 hero_link2: "#trial"
 hero_link2_text: "<span><b>Request a 14-day trial license</b></span>"
 hero_link2_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod);"
+   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;"
 hero_link3: "#order"
 hero_link3_text: "<span><b>Request a license quote</b></span>"
 hero_link3_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod);"
+   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -138,7 +138,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p><a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">Request a trial license or quote</a></p>
+<p><a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a trial license or quote</a></p>
 
 
 <h2 id="demo">Demo</h2>
@@ -175,7 +175,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod);">Schedule your personal demo now</a></p>
+      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Schedule your personal demo now</a></p>
     </div>
   </div>
   <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
@@ -257,7 +257,7 @@ sitemap_changefreq: weekly
 
 <p>The add-on is an investment that pays off from day one - certainly for you as well!<br>Thanks to unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
 
-<p><a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">Cost-benefit analysis, business case</a></p>
+<p><a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Cost-benefit analysis, business case</a></p>
 
 <p>We keep license costs as fair and transparent as possible:</p>
 <ul>
@@ -291,7 +291,7 @@ If you look for help implementing the free and open-source core version of Set-O
 
 <p>As soon as the open-source core version is running, it is time to take the next step:</p>
 
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">Request a 14-day trial license</a></p>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a 14-day trial license</a></p>
 
 <p>To use the license file, just add two parameters to your call of &apos;Set-OutlookSignatures.ps1&apos;:</p>
 <ul>
@@ -307,7 +307,7 @@ If you look for help implementing the free and open-source core version of Set-O
 
 
 <h3 id="order">Order process for non-trial versions</h3>
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(to bottom, darkgoldenrod, #ffd700, #fff8dc, #ffd700, darkgoldenrod)">Request a license quote</a></p>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a license quote</a></p>
 
 <p>You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.</p>
 
