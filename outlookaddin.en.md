@@ -213,7 +213,7 @@ Microsoft 365 Centralized Deployment and deployment via Integrated Apps both pro
 - When Outlook starts, it automatically downloads the assigned add-in. If the add-in supports it, it appears in Outlooks ribbon.
 - An add-in is automatically removed from a mailbox when an admin disables or deletes the add-in assignment, or if the mailbox is removed from a group that the add-in is assigned to.
 
-Both methods, Microsoft 365 Centralized Deployment and deployment via Integrated Apps, are ideal for mass deployment in production environments. They are usually too slow and too much overhead for test scenarios, in which sideloading is the preferred method.
+Both methods, Microsoft 365 Centralized Deployment and deployment via Integrated Apps, are ideal for mass deployment in production environments. They are usually too slow (up to 72 hours until clients are aware of the new configuration) for test scenarios, in which sideloading is the preferred method.
 
 If the Integrated Apps feature is not yet available in your sovereign and government cloud tenant, you have to use Centralized Deployment instead. see the following links for details about each method and instructions on how to use them:
 - [Integrated Apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide)
