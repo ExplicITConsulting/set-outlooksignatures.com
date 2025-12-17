@@ -98,6 +98,7 @@ sitemap_changefreq: monthly
   - [44.14. Bringing hidden open-source treasures to light](#4414-bringing-hidden-open-source-treasures-to-light)
   - [44.15. Detect and convert encodings](#4415-detect-and-convert-encodings)
 - [45. How to deploy a signature only once](#45-how-to-deploy-a-signature-only-once)
+- [46. How to add a calender link](#46-how-to-add-a-calender-link)
 
 
 ## 1. Where can I find the changelog?
@@ -1210,3 +1211,14 @@ There are three ways to achive this with Set-OutlookSignatures:
 3. **The clever alternative: Deploy a reference signature users can copy and modify**  
     This is the most popular approach among our customers. Instead of enforcing a one-time deployment, you provide an always up-to-date reference signature. Users can copy it, personalize it, and use it as their own.  
     It's not technically a one-time deployment, but it's a clever, user-friendly alternative that balances consistency with flexibility.
+
+## 46. How to add a calender link
+Adding a booking link to a signature can be highly useful as it allows the recipient to directly book an appointment only for the times you marked as being available.
+
+The most popular services being used are Microsoft Booking (a.k.a "Book with me"), Calendly, Google Appointment Schedules, Doodle, Acuity Scheduling, Square Appointments, HubSpot Meetings, SimplyBook.me, Setmore, and many more.
+
+These solutions all share the same problem: How to make the booking link available for use with Set-OutlookSignatures?
+
+It us usually not easy to programatically get the booking link as non-admin user. The universal approach therefore is so have an admin get all the booking links and save them to a custom attribute or a csv file for later use in Set-OutlookSignatures.
+
+Unfortunately, this approach is also the only one possible for Microsoft Booking: The website URL does not contain the SMTP address of the user, but the ExchangeGuid of its mailbox. This property is available for admins via the ExchangeOnlineManagement PowerShell module, but not for non-admin users in any way.
