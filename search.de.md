@@ -155,11 +155,17 @@ sitemap_changefreq: weekly
                     searchInput.addEventListener('input', () => {
                         const query = searchInput.value.trim();
 
+                        const newUrl = new URL(window.location);
+                        
                         if (query.length > 0) {
+                            newUrl.searchParams.set('search', query);
                             performSearch();
                         } else {
+                            newUrl.searchParams.delete('search');
                             searchResultsContainer.innerHTML = '';
                         }
+
+                        window.history.replaceState({ path: newUrl.href }, '', newUrl.href);
 
                         debouncedTrackSearch();
                     });
