@@ -104,7 +104,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Vollständiges White-Labeling</b><br>Entfernen Sie den Hinweis 'Free and open-source Set-OutlookSignatures'.
+        <b>Vollständiges White-Labeling</b><br>Entfernen des Hinweises 'Free and open-source Set-OutlookSignatures' von Sigaturen.
       </div>
     </div>
   </div>

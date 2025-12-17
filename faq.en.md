@@ -812,7 +812,7 @@ Alternative options for storing files:
 
 
 ## 35. How to disable the tagline in signatures?
-To help spread the word, we add the subtle 'Free and open-source Set-OutlookSignatures' hint to signatures.
+To help spread the word, we append the subtle 'Free and open-source Set-OutlookSignatures' hint to signatures after some time of free use.
 
 You may also call this unobtrusive text a tagline, footer message, nag text, outreach snippet, upgrade nudge, or reminder blurb.
 

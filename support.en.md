@@ -81,3 +81,5 @@ sitemap_changefreq: weekly
 </p>
 
 If you prefer to contact ExplicIT Consulting via email, please use [set-outlooksignatures@explicitconsulting.at](mailto:set-outlooksignatures@explicitconsulting.at) for technical topics, and [welcome@explicitconsulting.at](mailto:welcome@explicitconsulting.at) for all other questions.
+
+ExplicIT Consulting's [Professional Support Terms](https://explicitconsulting.at/support-terms) apply.

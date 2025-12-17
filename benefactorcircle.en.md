@@ -103,7 +103,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Full white-labeling</b><br>Remove the 'Free and open-source Set-OutlookSignatures' hint.
+        <b>Full white-labeling</b><br>Removal of the 'Free and open-source Set-OutlookSignatures' hint from signatures.
       </div>
     </div>
   </div>
