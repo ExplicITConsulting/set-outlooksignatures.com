@@ -71,10 +71,11 @@ Set-OutlookSignatures requires **no installation on servers or clients**. You on
 
 There is also **no telemetry** and no "calling home". Emails and directory data are **not routed through a 3rd party data center or cloud service**, and there is **no need to change DNS records (MX, SPF) or email flow**.
 
-A **documented implementation approach**, based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes, contains proven procedures and recommendations for product managers, architects, operations managers, account managers and email and client administrators.  
-To help spread the word, we add the subtle 'Free and open-source Set-OutlookSignatures' hint to signatures, which is [easy to remove](/faq#35-how-to-disable-the-tagline-in-signatures).
+A **documented implementation approach**, based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes, contains proven procedures and recommendations for product managers, architects, operations managers, account managers and email and client administrators.
 
 The software core is **Free and Open-Source Software (FOSS)**. It is published under the European Union Public License, which is approved, among others, by the Free Software Foundation (FSF) and the Open Source Initiative (OSI), and is compatible with the General Public License (GPL) and other popular licenses.
+
+After a certain period of use, the **subtle note 'Free and open-source Set-OutlookSignatures' is appended to signatures**. This tagline can be [easily removed](/faq#35-how-to-disable-the-tagline-in-signatures)¹.
 
 Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle">Benefactor Circle add-on</a>.** The optional <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> extends Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve.
 

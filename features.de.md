@@ -73,8 +73,9 @@ Es gibt **keine Telemetrie** und kein "Calling Home". E-Mails und Verzeichnisdat
 
 Ein **dokumentierter Implementierungsansatz**, der auf praktischen Erfahrungen mit der Implementierung der Software in Multiclient-Umgebungen mit einer fünfstelligen Anzahl von Postfächern basiert, enthält bewährte Vorgehensweisen und Empfehlungen für Produktmanager, Architekten, Betriebsleiter, Account Manager sowie E-Mail- und Client-Administratoren.
 
-Der Kern der Software ist als **Freie Open-Source-Software (FOSS)** quelloffen und kostenlos. Sie wird unter der European Union Public Licnse veröffentlicht, die unter anderem von der Free Software Foundation (FSF) und der Open Source Initiative (OSI) anerkannt wird und mit der General Public License (GPL) und anderen gängigen Lizenzen kompatibel ist.  
-Um die Verbreitung zu unterstützen, fügen wir den Signaturen den dezenten Hinweis 'Free and open-source Set-OutlookSignatures' hinzu, der [leicht zu entfernen](/faq#35-how-to-disable-the-tagline-in-signatures) ist.
+Der Kern der Software ist als **Freie Open-Source-Software (FOSS)** quelloffen und kostenlos. Sie wird unter der European Union Public Licnse veröffentlicht, die unter anderem von der Free Software Foundation (FSF) und der Open Source Initiative (OSI) anerkannt wird und mit der General Public License (GPL) und anderen gängigen Lizenzen kompatibel ist.
+
+Nach einer bestimmten Nutzungsdauer wird der **dezente Hinweis „Free and open-source Set-OutlookSignatures” an Signaturen angefügt**. Dieser Slogan kann [leicht entfernt werden](/faq#35-how-to-disable-the-tagline-in-signatures)¹.
 
 Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on vorbehalten**. Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.
 
