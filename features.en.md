@@ -77,7 +77,7 @@ The software core is **Free and Open-Source Software (FOSS)**. It is published u
 
 After a certain period of use, the **subtle note 'Free and open-source Set-OutlookSignatures' is appended to signatures**. This tagline can be [easily removed](/faq#35-how-to-disable-the-tagline-in-signatures)¹.
 
-Footnote 1 (¹): **Some features are exclusive to the <a href="/benefactorcircle">Benefactor Circle add-on</a>.** The optional <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> extends Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve.
+**Remark 1 (¹):** **Some features are exclusive to the <a href="/benefactorcircle">Benefactor Circle add-on</a>.** The optional <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> extends Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve.
 
 
 ## Feature comparison {#feature-comparison}

@@ -77,7 +77,7 @@ Der Kern der Software ist als **Freie Open-Source-Software (FOSS)** quelloffen u
 
 Nach einer bestimmten Nutzungsdauer wird der **dezente Hinweis „Free and open-source Set-OutlookSignatures” an Signaturen angefügt**. Dieser Slogan kann [leicht entfernt werden](/faq#35-how-to-disable-the-tagline-in-signatures)¹.
 
-Fußnote 1 (¹): **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on vorbehalten**. Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.
+**Anmerkung 1 (¹):** **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on vorbehalten**. Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.
 
 
 ## Funktions-Vergleich {#feature-comparison}
