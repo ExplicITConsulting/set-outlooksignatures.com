@@ -24,6 +24,7 @@ sitemap_changefreq: weekly
 - [5. Deployment to mailboxes](#5-deployment-to-mailboxes)
   - [5.1. Individual installation through users](#51-individual-installation-through-users)
   - [5.2. Microsoft 365 Centralized Deployment or Integrated Apps](#52-microsoft-365-centralized-deployment-or-integrated-apps)
+  - [5.3. Clear the Outlook add-in cache](#53-clear-the-outlook-add-in-cache)
 - [6. Remarks](#6-remarks)
   - [6.1. General](#61-general)
   - [6.2. Outlook for Android](#62-outlook-for-android)
@@ -218,6 +219,23 @@ Both methods, Microsoft 365 Centralized Deployment and deployment via Integrated
 If the Integrated Apps feature is not yet available in your sovereign and government cloud tenant, you have to use Centralized Deployment instead. see the following links for details about each method and instructions on how to use them:
 - [Integrated Apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide)
 - [Microsoft 365 Centralized Deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide)
+
+
+### 5.3. Clear the Outlook add-in cache
+When testing add-ins, especially when using the sideloading method, Outlook sometimes messes up its cache or takes too long updating it.
+
+To avoid problems of all kinds, it is a good idea to manually clear the add-in cache in test scenarios. This forces Outlook to re-download the add-in.
+- Outlook on the web: Hard Refresh the website.
+- Classic Outlook on Windows: See the [official instructions from Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows).
+- New Outlook on Windows: See the [official instructions from Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows).
+- Outlook on macOS: See the [official instructions from Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac).
+- Outlook on iOS: Open the taskpane of the Outlook add-in, scroll down to "Advanced options" and tap the "Reload add-in" button.
+- Outlook on Android:
+  - Long-press the Outlook app icon.
+  - Select "App info".
+  - Tap "Force Stop".
+  - Go to "Storage and Cache" and tap "Clear Cache" (do not tap "Clear Data").
+  - Open the Outlook app and wait a few minutes until the add-ins are reloaded.
 
 
 ## 6. Remarks
