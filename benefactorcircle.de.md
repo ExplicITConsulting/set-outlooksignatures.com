@@ -149,7 +149,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Zentrale Verwaltung</b><br>Übernehmen Sie die Kontrolle über alle E-Mail-Signaturen und Abwesenheitsnotizen unternehmensweit, von Outlook-Clients bis zu mobilen Geräten und Outlook Web.
+        <b>Zentrale Verwaltung</b><br>Übernehmen Sie die Kontrolle über alle E-Mail-Signaturen und Abwesenheitsnotizen unternehmensweit, von Outlook-Clients bis zu mobilen Geräten und Outlook on the web.
       </div>
     </div>
   </div>

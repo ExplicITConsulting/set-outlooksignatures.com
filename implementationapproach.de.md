@@ -62,7 +62,7 @@ Bei der manuellen Wartung wird dem Benutzer z. B. über das Intranet eine Vorlag
 
 Jeder Benutzer richtet sich die Signatur selbst ein. Je nach technischer Konfiguration des Clients wandern Signaturen bei einem Wechsel des verwendeten Computers mit oder sind neu einzurichten.
 
-Falls das Postfach nicht in der Cloud liegt oder "roaming signatures" deaktiviert wurden, muss der Benutzer seine Signatur zusätzlich in Outlook Web warten.
+Falls das Postfach nicht in der Cloud liegt oder "roaming signatures" deaktiviert wurden, muss der Benutzer seine Signatur zusätzlich in Outlook on the web warten.
 
 Ohne Einsatz von Dritthersteller-Software sind die Signaturen zudem auch auf Android, iOS und macOS separat manuell zu warten.
 
@@ -119,7 +119,7 @@ Signaturen und Abwesenheitsnotizen sollen:
 - Zeitgesteuert einsetzbar sein (gültig in bestimmten Zeiträumen).
 - Als Standardsignatur für neue E-Mails oder Antworten festgelegt werden können.
 - Als Standard-Abwesenheitsnotiz für interne und externe Empfänger nutzbar sein.
-- In Outlook Web und als Roaming-Signaturen synchronisiert werden können.
+- In Outlook on the web und als Roaming-Signaturen synchronisiert werden können.
 - Zentral verwaltet werden können, aber auch parallele Benutzersignaturen erlauben.
 - Automatisch in neue E-Mails, Antworten, Weiterleitungen und Termine eingefügt werden können.
 - Für andere E-Mail-Clients als Outlook wenn nicht automatisch, dann zumindest für manuelle Einbindung verfügbar gemacht werden (z. B. Apple Mail).
@@ -269,7 +269,7 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
                 <td style="text-align:left">🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Unterstützt Microsoft Roaming Signatures (mehrere Signaturen in Outlook Web und neuem Outlook)</td>
+                <td style="text-align:left">Unterstützt Microsoft Roaming Signatures (mehrere Signaturen in Outlook on the web und neuem Outlook)</td>
                 <td style="text-align:left">🟢</td>
                 <td style="text-align:left">🔴</td>
                 <td style="text-align:left">🔴</td>
@@ -694,7 +694,7 @@ Die Software ist auf schnelle Durchlaufzeit und minimale Netzwerkbelastung ausge
 - Anzahl der in Outlook konfigurierten Postfächer  
 - Anzahl der Trusted Domains  
 - Reaktionszeit der Domain Controller und File Server  
-- Reaktionszeit der Exchange-Server (Setzen von Signaturen in Outlook Web, Abwesenheits-Benachrichtigungen)  
+- Reaktionszeit der Exchange-Server (Setzen von Signaturen in Outlook on the web, Abwesenheits-Benachrichtigungen)  
 - Anzahl der Vorlagen und Komplexität der Variablen darin (z. B. Fotos)
 
 Unter folgenden Rahmenbedingungen wurde eine reproduzierbare Laufzeit von ca. 30 Sekunden gemessen:  
@@ -705,7 +705,7 @@ Unter folgenden Rahmenbedingungen wurde eine reproduzierbare Laufzeit von ca. 30
 - Abfrage aller per Trust verbundenen AD-Domains  
 - 9 zu verarbeitende Signatur-Vorlagen, alle mit Variablen und Grafiken (aber ohne Benutzerfotos), teilweise auf Gruppen und Mail-Adressen eingeschränkt  
 - 8 zu verarbeitende Abwesenheits-Vorlagen, alle mit Variablen und Grafiken (aber ohne Benutzerfotos), teilweise auf Gruppen und Mail-Adressen eingeschränkt  
-- Setzen der Signatur in Outlook Web on-prem
+- Setzen der Signatur in Outlook on the web on-prem
 - Kein Kopieren der Signaturen auf einen zusätzlichen Netzwerkpfad
   
 Da die Software keine Benutzerinteraktion erfordert, kann es über die üblichen Mechanismen minimiert oder versteckt ausgeführt werden. Die Laufzeit der Software wird dadurch nahezu irrelevant.  

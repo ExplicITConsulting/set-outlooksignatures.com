@@ -27,7 +27,7 @@ On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use 
 
 ## Step 2: One-time preparations {#step-2}
 **Client and user**  
-For a first test run, it is recommended to log on with a test user on a Windows system with Word and Classic Outlook for Windows installed, and Classic Outlook for Windows being configured with at least the test user's mailbox. If you use your own user, existing signatures will be overwritten in the worst case.
+For a first test run, it is recommended to log on with a test user on a Windows system with Word and Classic Outlook on Windows installed, and Classic Outlook on Windows being configured with at least the test user's mailbox. If you use your own user, existing signatures will be overwritten in the worst case.
 
 For full Linux, macOS and New Outlook support, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
 
@@ -67,7 +67,7 @@ Set-OutlookSignatures now adds signatures based on default settings and sample t
 
 Open Classic Outlook and take a look at the newly created signatures. 'Formal', 'Informal' and the particularly comprehensive 'Test all default replacement variables'.
 
-If you do not have access to Classic Outlook for Windows for your tests, or do not want your signature setup changed, you can simply use the integrated [simulation mode](/details#11-simulation-mode) instead:
+If you do not have access to Classic Outlook on Windows for your tests, or do not want your signature setup changed, you can simply use the integrated [simulation mode](/details#11-simulation-mode) instead:
 - Run Set-OutlookSignatures in a new PowerShell session and add the additional parameters '`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' (replace 'a@example.com' with your own email address or any other email address from your environment).
 - Instead of modifying Outlook, your 'Documents' folder now contains new subfolder called 'Outlook Signatures', which in turn contains the signatures of the simulated user.
 

@@ -58,7 +58,7 @@ With manual maintenance, a template for the textual signature is provided to the
 
 Each user sets up their own signature. Depending on the technical configuration of the client, signatures may migrate when switching computers or need to be reconfigured.
 
-If the mailbox is not in the cloud or "roaming signatures" have been disabled, the user must also maintain their signature in Outlook Web.
+If the mailbox is not in the cloud or "roaming signatures" have been disabled, the user must also maintain their signature in Outlook on the web.
 
 Without third-party software, signatures must also be manually maintained separately on Android, iOS, and macOS.
 
@@ -110,7 +110,7 @@ Based on the previously mentioned conditions and discussions with all involved p
 - Be usable on a scheduled basis (valid during specific time periods).
 - Be set as the default signature for new emails or replies.
 - Be usable as the default out-of-office message for internal and external recipients.
-- Be synchronized in Outlook Web and as roaming signatures.
+- Be synchronized in Outlook on the web and as roaming signatures.
 - Be centrally managed, but also allow parallel user signatures.
 - Be automatically inserted into new emails, replies, forwards, and calendar events.
 - Be made available for other email clients besides Outlook. If not automatically, then at least for manual integration (e.g., Apple Mail).
@@ -260,7 +260,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
                 <td style="text-align:left">🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Support for Microsoft roaming signatures (multiple signatures in Outlook Web and
+                <td style="text-align:left">Support for Microsoft roaming signatures (multiple signatures in Outlook on the web and
                     New Outlook)</td>
                 <td style="text-align:left">🟢</td>
                 <td style="text-align:left">🔴</td>
@@ -524,7 +524,7 @@ We offer support to all group companies in the form of workshops and training se
 - Integration options (logon script, scheduled task, desktop shortcut)  
 - Software parameterization, including:  
   - Template folder paths  
-  - Consider Outlook Web?  
+  - Consider Outlook on the web?  
   - Consider out-of-office messages?  
   - Which trusts to include?  
   - How to define additional variables?  
@@ -646,7 +646,7 @@ At the time of writing this document, additional parameters were available. Belo
 - ReplacementVariableConfigFile: Path to the file where custom variables deviating from the default are defined. Can be an SMB share or a SharePoint document library.
 - TrustsToCheckForGroups: By default, all trusts are queried for mailbox information. This parameter allows specific domains to be excluded and non-trusted domains to be added.
 - DeleteUserCreatedSignatures: Should user-created signatures be deleted? By default, this does not happen.
-- SetCurrentUserOutlookWebSignature: By default, a signature is set in Outlook Web for the logged-in user. This can be disabled with this parameter.
+- SetCurrentUserOutlookWebSignature: By default, a signature is set in Outlook on the web for the logged-in user. This can be disabled with this parameter.
 - SetCurrentUserOOFMessage: By default, the text of the out-of-office messages is set. This behavior can be changed with this parameter.
 - OOFTemplatePath: Path to the out-of-office templates. Can be an SMB share or a SharePoint document library.
 - AdditionalSignaturePath: Path to an additional share where all signatures should be copied, e.g., for access from a mobile device and to simplify configuration of clients not supported by the software. Can be an SMB share or a SharePoint document library.
@@ -660,7 +660,7 @@ The software is designed for fast execution and minimal network load, but its ru
 - number of mailboxes configured in Outlook
 - number of trusted domains
 - response time of domain controllers and file servers
-- response time of Exchange servers (setting signatures in Outlook Web, out-of-office messages)
+- response time of Exchange servers (setting signatures in Outlook on the web, out-of-office messages)
 - number of templates and complexity of variables (e.g., photos)
 
 Under the following conditions, a reproducible runtime of approximately 30 seconds was measured:
@@ -670,7 +670,7 @@ Under the following conditions, a reproducible runtime of approximately 30 secon
 - querying all AD domains connected via trust
 - 9 signature templates to process, all with variables and graphics (but without user photos), some restricted to groups and mail addresses
 - 8 out-of-office templates to process, all with variables and graphics (but without user photos), some restricted to groups and mail addresses
-- setting the signature in Outlook Web on-prem
+- setting the signature in Outlook on the web on-prem
 - no copying of signatures to an additional network path
 
 Since the software requires no user interaction, it can be executed minimized or hidden using standard mechanisms. This makes the runtime practically irrelevant.

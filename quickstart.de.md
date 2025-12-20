@@ -29,7 +29,7 @@ Wenn Sie AppLocker oder eine vergleichbare Lösung (Defender, CrowdStrike, Ivant
 
 ## Schritt 2: Einmalige Vorbereitungen {#step-2}
 **Client und Benutzer**  
-Für einen ersten Testlauf ist es empfehlenswert, sich mit einem Testbenutzer auf einem Windows-System anzumelden, auf dem Word und Classic Outlook for Windows installiert sind und Classic Outlook for Windows zumindest mit dem Postfach des Testbenutzers konfiguriert ist. Wenn Sie Ihren eigenen Benutzer verwenden, werden im schlimmsten Fall bestehende Signaturen überschrieben.
+Für einen ersten Testlauf ist es empfehlenswert, sich mit einem Testbenutzer auf einem Windows-System anzumelden, auf dem Word und Classic Outlook on Windows installiert sind und Classic Outlook on Windows zumindest mit dem Postfach des Testbenutzers konfiguriert ist. Wenn Sie Ihren eigenen Benutzer verwenden, werden im schlimmsten Fall bestehende Signaturen überschrieben.
 
 Für die vollständige Unterstützung von Linux, macOS und New Outlook ist das <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></a> erforderlich und die Postfächer müssen in Exchange Online gehostet werden.
 
@@ -69,7 +69,7 @@ Set-OutlookSignatures fügt jetzt Signaturen, basierend auf Standardeinstellunge
 
 Öffnen Sie Classic Outlook und werfen Sie einen Blick auf die neu erzeugten Signaturen: 'Formal', 'Informal' und die besonders umfangreiche 'Test all default replacement variables'.
 
-Wenn Sie für Ihre Tests keinen Zugriff auf Classic Outlook for Windows haben oder Ihr Signatur-Setup nicht verändern möchten, nutzen Sie stattdessen einfach den integrierten [Simulations-Modus](/details#11-simulation-mode):
+Wenn Sie für Ihre Tests keinen Zugriff auf Classic Outlook on Windows haben oder Ihr Signatur-Setup nicht verändern möchten, nutzen Sie stattdessen einfach den integrierten [Simulations-Modus](/details#11-simulation-mode):
 - Führen Sie Set-OutlookSignatures in einer neuen PowerShell-Session aus und fügen Sie die Parameter'`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' hinzu ('a@example.com' ersetzen Sie durch Ihre eigene E-Mail-Adresse oder eine beliebige E-Mail-Adresse aus Ihrem System).
 - Anstatt die Outlook-Konfiguration zu ändern, enthält Ihr 'Dokumente'-Ordner nun einen neuen Unterordner 'Outlook Signatures', der wiederum die Signaturen des simulierten Benutzers enthält.
 

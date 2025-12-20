@@ -27,23 +27,23 @@ sitemap_changefreq: weekly
   - [5.3. Clear the Outlook add-in cache](#53-clear-the-outlook-add-in-cache)
 - [6. Remarks](#6-remarks)
   - [6.1. General](#61-general)
-  - [6.2. Outlook for Android](#62-outlook-for-android)
-  - [6.3. Outlook for iOS](#63-outlook-for-ios)
-  - [6.4. Outlook for Mac](#64-outlook-for-mac)
-  - [6.5. Outlook Web on-prem](#65-outlook-web-on-prem)
-  - [6.6. Classic Outlook for Windows](#66-classic-outlook-for-windows)
+  - [6.2. Outlook on Android](#62-outlook-on-android)
+  - [6.3. Outlook on iOS](#63-outlook-on-ios)
+  - [6.4. Outlook on Mac](#64-outlook-on-mac)
+  - [6.5. Outlook on the web on-prem](#65-outlook-on-the-web-on-prem)
+  - [6.6. Classic Outlook on Windows](#66-classic-outlook-on-windows)
 
 
 ## 1. Overview
 With a [Benefactor Circle](/benefactorcircle) license, you also have access to the Set-OutlookSignatures add-in for Outlook.
 
-It makes signatures, which have been created by Set-OutlookSignatures in client or SimulateAndDeploy mode before, available on platforms where Set-OutlookSignatures itself can not be run: Outlook for iOS and Outlook for Android.
+It makes signatures, which have been created by Set-OutlookSignatures in client or SimulateAndDeploy mode before, available on platforms where Set-OutlookSignatures itself can not be run: Outlook on iOS and Outlook on Android.
 
 The add-in is also a great way to make signatures available to users on Outlook editions which do not yet support roaming signatures, and can be of great help in BYOD (bring your own device) scenarios. For mailboxes hosted on premises, this is like having your own implementation of cloud roaming signatures.
 
 The Outlook add-in has a taskpane that allows the user to preview a selected signature, and to add the signature to the email or appointment that is currently being written.
 
-The add-in can also automatically set signatures as soon as a new email or appointment is created, which is very useful on Outlook for Android and Outlook for iOS. It automatically chooses the correct signature based on sender address and if the element is a new email or appointment, or a reply email.
+The add-in can also automatically set signatures as soon as a new email or appointment is created, which is very useful on Outlook on Android and Outlook on iOS. It automatically chooses the correct signature based on sender address and if the element is a new email or appointment, or a reply email.
 
 The Outlook add-in is self-hosted by you. Compared to using a solution hosted by a 3rd party, this has several advantages:
 - Client specific configuration
@@ -64,17 +64,17 @@ In compose mode, the taskpane allows to manually choose a signature, set the sel
 In message read mode, the taskpane cannot set signatures, of course. But it is very useful to check if the add-in is deployed correctly, and if it can access signatures. This is especially useful on mobile devices, in situations where enabling the debug mode is not wanted, and for basic tests when launch events are not triggered by Outlook.
 
 The taskpane can be accessed through:
-- Outlook Web (Exchange Online), New Outlook for Windows, New Outlook for Mac:
+- Outlook on the web (Exchange Online), New Outlook on Windows, New Outlook on Mac:
   - New mail, reply mail, read mail: "Message" tab, "Apps" icon
   - New appointment: Ribbon, "…" menu
-- Outlook Web (on-prem):
+- Outlook on the web (on-prem):
   - New mail, reply mail: Lower right corner of the compose window
   - New appointment: At the right of the menu bar at the top of the compose window
   - Read mail: Left to the reply button
-- Classic Outlook for Windows, Classic Outlook for Mac:
+- Classic Outlook on Windows, Classic Outlook on Mac:
   - New mail, reply mail, read mail: "Message" tab, "All apps" icon
   - New appointment: "Appointment" or "Meeting" tab, "All apps" icon
-- Outlook for iOS, Outlook for Android
+- Outlook on iOS, Outlook on Android
   - These platforms do not support taskpanes for new mails, reply mails and appointments.
   - Read mail: Three dots ("…" or "⋮")in the email header
 
@@ -171,7 +171,7 @@ When the '`manifest.xml`' file, the configuration or another part of the Outlook
 
 
 ## 5. Deployment to mailboxes
-When the '`manifest.xml`' file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. Due to caching mechanisms, especially in Classic Outlook for Windows, this does not happen automatically.
+When the '`manifest.xml`' file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. Due to caching mechanisms, especially in Classic Outlook on Windows, this does not happen automatically.
 
 This is required when:
 - A new release of the Outlook add-in is published by <a href="https://explicitconsulting.at">ExplicIT Consulting</a>.
@@ -204,8 +204,8 @@ For mailboxes hosted on-prem:
 Sideloading of add-ins may have been disabled by your administrators.
 
 Do not use the URLs mentioned above to remove custom add-ins, as this fails most times. Instead, use one of the following options:
-- Open Outlook for the web, draft a new mail, click on the 'Apps' button, right-click the Set-OutlookSignatures add-in and select 'Uninstall'.
-- Remove the custom add-in in Outlook for Android or Outlook for iOS.
+- Open Outlook on the web, draft a new mail, click on the 'Apps' button, right-click the Set-OutlookSignatures add-in and select 'Uninstall'.
+- Remove the custom add-in in Outlook on Android or Outlook on iOS.
 
 
 ### 5.2. Microsoft 365 Centralized Deployment or Integrated Apps
@@ -246,35 +246,35 @@ To avoid problems of all kinds, it is a good idea to manually clear the add-in c
 - The add-in can run automatically when one of the following launch events is triggered by Outlook: OnNewMessageCompose, OnNewAppointmentOrganizer, OnMessageFromChanged, OnAppointmentFromChanged, OnMessageRecipientsChanged, OnAppointmentAttendeesChanged.
   - Not all these events are supported on all platforms and editions of Outlook, see [this Microsoft article](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/autolaunch#supported-events) for an up-to-date list.
   - While not publicly documented, [Outlook currently does not support add-ins on calendar invite responses](https://github.com/OfficeDev/office-js/issues/4094#issuecomment-1923444325).
-- Microsoft dynamically updates the local copy of the office.js framework, there is no 1:1 relation between the version of Outlook and the version of the framework. This may lead to problems that suddenly appear although neither Outlook nor the add-in have changed. For example, the add-in may suddenly no longer work for shared mailboxes in Classic Outlook for Windows on some devices, while it does on others and in Outlook Web.
+- Microsoft dynamically updates the local copy of the office.js framework, there is no 1:1 relation between the version of Outlook and the version of the framework. This may lead to problems that suddenly appear although neither Outlook nor the add-in have changed. For example, the add-in may suddenly no longer work for shared mailboxes in Classic Outlook on Windows on some devices, while it does on others and in Outlook on the web.
   - Where available, use the taskpane as a workaround. The taskpane is basically the same code with an additional graphical interface.
   - Use the DEBUG option in '`run_before_deployment.ps1`' to find out if the root cause is in Outlook or in the add-in. When there is no debug output, the launch event it not triggered by Outlook. When there is debug output, it will show where and with which error the add-in fails.
 
 
-### 6.2. Outlook for Android
+### 6.2. Outlook on Android
 - Only mailboxes hosted in Exchange Online are supported. This is because Microsoft's mobile APIs do not allow programmatic access to mailboxes hosted on-prem.
 - Setting the signature on new appointments is not yet supported by Microsoft.
 - The Microsoft mobile APIs do not allow an add-in to show a taskpane when a new email, reply email or an appointment is created.
 
 
-### 6.3. Outlook for iOS
+### 6.3. Outlook on iOS
 - Only mailboxes hosted in Exchange Online are supported. This is because Microsoft's mobile APIs do not allow programmatic access to mailboxes hosted on-prem.
 - Setting the signature on new appointments is not yet supported by Microsoft.
 - The Microsoft mobile APIs do not allow an add-in to show a taskpane when a new email, reply email or an appointment is created.
 - Microsoft will add support for iPads later (see [here](https://learn.microsoft.com/en-us/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets?view=common-js-preview)).
 
 
-### 6.4. Outlook for Mac
-- Use the New Outlook for Mac whenever possible, as Classic Outlook for Mac (a.k.a Legacy Outlook for Mac) is at the end of its lifecycle.
-- While the Microsoft APIs required for the Set-OutlookSignatures Outlook add-in are available in Classic Outlook for Mac, they are very unstable. Therefore, we only offer best-effort support for the add-in on Classic Outlook for Mac.
+### 6.4. Outlook on Mac
+- Use the New Outlook on Mac whenever possible, as Classic Outlook on Mac (a.k.a Legacy Outlook on Mac) is at the end of its lifecycle.
+- While the Microsoft APIs required for the Set-OutlookSignatures Outlook add-in are available in Classic Outlook on Mac, they are very unstable. Therefore, we only offer best-effort support for the add-in on Classic Outlook on Mac.
 
 
-### 6.5. Outlook Web on-prem
+### 6.5. Outlook on the web on-prem
 - Launch events are not supported by Microsoft APIs, so only the taskpane works.
 - Images are replaced with their alternate description. This will work as soon as Microsoft fixes a bug in their office.js API framework. If you are interested in a workaround, please let us know!
 
 
-### 6.6. Classic Outlook for Windows
+### 6.6. Classic Outlook on Windows
 - Things work fine for mailboxes in Exchange Online, but the same Microsoft APIs seem to be unstable for on-prem mailboxes, especially regarding launch events (adding signatures automatically). When in doubt, use the taskpane.
 - For Exchange Online mailboxes, the version used must support Nested App Authentication (see [here](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/faq-nested-app-auth-outlook-legacy-tokens#when-is-naa-generally-available-for-my-channel)).
   - Microsoft disabled legacy Exchange Online tokens, and they cannot be re-enabled since October 2025 due to security reasons.

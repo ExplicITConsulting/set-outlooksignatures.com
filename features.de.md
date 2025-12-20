@@ -38,12 +38,12 @@ Mit Set-OutlookSignatures können Signaturen und Abwesenheitsnotizen:
 - Mit einer **Vielzahl von Variablen**, einschließlich **Fotos und Bildern**, aus Entra ID, Active Directory und anderen Quellen angepasst werden.
   - Variablen stehen für den **aktuell angemeldeten Benutzer, das aktuelle Postfach und deren Manager** zur Verfügung.
 - Für **barrierefreien Zugriff** gestaltet werden, mit benutzerdefinierten Link- und Bildbeschreibungen für Screenreader und ähnliche Tools.
-- Flexibel zugewiesen werden: Für **alle Postfächer (auch shared mailboxes¹)**, **Postfach-Gruppen**, **E-Mail-Adressen** (auch Alias und sekundäre Adressen), auf Basis von **Benutzer- oder Postfach-Attributen**, für **jedes Postfach in allen Profilen (Outlook, New Outlook¹, Outlook Web¹)**, auch für **automapped und zusätzliche Postfächer**¹. 
+- Flexibel zugewiesen werden: Für **alle Postfächer (auch shared mailboxes¹)**, **Postfach-Gruppen**, **E-Mail-Adressen** (auch Alias und sekundäre Adressen), auf Basis von **Benutzer- oder Postfach-Attributen**, für **jedes Postfach in allen Profilen (Outlook, New Outlook¹, Outlook on the web¹)**, auch für **automapped und zusätzliche Postfächer**¹. 
 - Aus einer Vorlage heraus mit unterschiedlichen Namen erstellt werden, **eine Vorlage kann für viele Postfächer genutzt werden**.
 - Mit **Zeitbeschränkungen** versehen werden, innerhalb derer sie gültig sind¹.
 - Als **Standard-Signatur** für neue E-Mails oder für Antworten festgelegt werden.
 - Als **Standard-Abwesenheitsnotiz** für interne oder externe Empfänger festgelegt werden.
-- Im **Outlook Web**¹ des angemeldeten Benutzer gesetzt werden, und auch als **Roaming Signatures** mit der Cloud synchronisiert werden (Linux/macOS/Windows, klassisches and neues Outlook¹).
+- Im **Outlook on the web**¹ des angemeldeten Benutzer gesetzt werden, und auch als **Roaming Signatures** mit der Cloud synchronisiert werden (Linux/macOS/Windows, klassisches and neues Outlook¹).
 - Signaturen können rein zental verwaltet werden¹, oder **parallel zu vom Benutzer erstellten Signaturen** bestehen.
 - Mit dem **Outlook Add-In**¹ automatisch zu neuen E-Mails, Antworten und Weiterleitungen, sowie zu Terminen hinzugefügt werden.
 - In einen **zusätzlichen Ordner**¹ kopiert werden, um den einfachen Zugriff auf Signaturen auf Mobilgeräten oder zur Verwendung mit anderen E-Mail-Clients und Apps als Outlook zu ermöglichen: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und andere.
@@ -202,7 +202,7 @@ Nach einer bestimmten Nutzungsdauer wird der **dezente Hinweis „Free and open-
                 <td style="text-align:left">🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Unterstützt Microsoft Roaming Signatures (mehrere Signaturen in Outlook Web und neuem Outlook)</td>
+                <td style="text-align:left">Unterstützt Microsoft Roaming Signatures (mehrere Signaturen in Outlook on the web und neuem Outlook)</td>
                 <td style="text-align:left">🟢</td>
                 <td style="text-align:left">🔴</td>
                 <td style="text-align:left">🔴</td>

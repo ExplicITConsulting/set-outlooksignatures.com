@@ -12,7 +12,7 @@ sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
 ## Eine bahnbrechende Neuerung mit Pferdefuß
-Als Microsoft im Jahr 2020 Roaming-Signaturen ankündigte, klang dies wie eine bahnbrechende Neuerung. Keine lokale Speicherung von Signaturen mehr. Ein einheitliches Erlebnis auf allen Geräten. Und endlich eine Lösung für die Beschränkung auf eine Signatur in Outlook Web vor Ort.
+Als Microsoft im Jahr 2020 Roaming-Signaturen ankündigte, klang dies wie eine bahnbrechende Neuerung. Keine lokale Speicherung von Signaturen mehr. Ein einheitliches Erlebnis auf allen Geräten. Und endlich eine Lösung für die Beschränkung auf eine Signatur in Outlook on the web vor Ort.
 
 So lautete zumindest die Theorie.
 

@@ -148,7 +148,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Centralized Management</b><br>Take control of all email signatures and out-of-office replies company-wide, from Outlook clients to mobile devices and Outlook Web.
+        <b>Centralized Management</b><br>Take control of all email signatures and out-of-office replies company-wide, from Outlook clients to mobile devices and Outlook on the web.
       </div>
     </div>
   </div>

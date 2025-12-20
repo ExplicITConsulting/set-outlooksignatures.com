@@ -38,17 +38,17 @@ With Set-OutlookSignatures and the optional Benefactor Circle add-on, signatures
 - Customized with a **broad range of variables**, including **photos and images**, from Entra ID, Active Directory and other sources.
 - Variables are available for the **currently logged-on user, the current mailbox, and their managers**.
 - Designed for **barrier-free accessibility** with custom link and image descriptions for screen readers and comparable tools.
-- Applied to all **mailboxes (including shared mailboxes¹)**, specific **mailbox groups**, specific **email addresses** (including alias and secondary addresses), or specific **user or mailbox properties**, for **every mailbox across all Outlook profiles (Outlook, New Outlook¹, Outlook Web¹)**, including **automapped and additional mailboxes**¹.
+- Applied to all **mailboxes (including shared mailboxes¹)**, specific **mailbox groups**, specific **email addresses** (including alias and secondary addresses), or specific **user or mailbox properties**, for **every mailbox across all Outlook profiles (Outlook, New Outlook¹, Outlook on the web¹)**, including **automapped and additional mailboxes**¹.
 - Created with different names from the same template, **one template can be used for many mailboxes**.
 - Assigned **time ranges** within which they are valid¹.
 - Set as **default signature** for new emails, or for replies and forwards (signatures only).
 - Set as **default OOF message** for internal or external recipients (OOF messages only).
-- Set in **Outlook Web**¹ for the currently logged-in user, including mirroring signatures to the cloud as **roaming signatures**¹ (Linux/macOS/Windows, Classic and New Outlook¹).
+- Set in **Outlook on the web**¹ for the currently logged-in user, including mirroring signatures to the cloud as **roaming signatures**¹ (Linux/macOS/Windows, Classic and New Outlook¹).
 - Signature can be centrally managed only¹, or **exist along user-created signatures**.
 - Automatically added to new emails, reply emails and appointments with the **Outlook add-in**¹.
 - Copied to an **additional path**¹ for easy access to signatures on mobile devices or for use with email clients and apps besides Outlook: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others.
 - Create an **email draft containing all available signatures** in HTML and plain text for easy access in mail clients that do not have a signatures API.
-- **Write protected** (Outlook for Windows signatures only).
+- **Write protected** (Outlook on Windows signatures only).
 
 Set-OutlookSignatures can be **run by users on Windows, Linux and macOS clients, including shared devices and terminal servers - or on a central system with a service account**¹.<br>On clients, it can run as part of the logon script, as scheduled task, or on user demand via a desktop icon, start menu entry, shortcut or any other way of starting a program - **whatever your software deployment mechanism allows**.
 
@@ -58,7 +58,7 @@ Set-OutlookSignatures can be **run by users on Windows, Linux and macOS clients,
 
 **Simulation mode** allows content creators and admins to simulate the behavior of the software for a specific user at a specific point in time, and to inspect the resulting signature files before going live.
 
-**SimulateAndDeploy**¹ allows to deploy signatures and out-of-office replies to Outlook Web¹/New Outlook¹ (when based on Outlook Web) **without any client deployment or end user interaction**, making it ideal for users that only log on to web services but never to a client (users with a Microsoft 365 F-license, for example).
+**SimulateAndDeploy**¹ allows to deploy signatures and out-of-office replies to Outlook on the web¹/New Outlook¹ (when based on Outlook on the web) **without any client deployment or end user interaction**, making it ideal for users that only log on to web services but never to a client (users with a Microsoft 365 F-license, for example).
 
 **SimulateAndDeploy**¹ allows to deploy signatures and out-of-office replies **without any client deployment or end user interaction**. Signatures are saved to the mailbox as roaming signatures (Exchange Online mailboxes only) and are also made available for the [Outlook add-in](/outlookaddin) (all Exchange mailboxes).
 
@@ -205,7 +205,7 @@ After a certain period of use, the **subtle note 'Free and open-source Set-Outlo
                 <td style="text-align:left">🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Support for Microsoft roaming signatures (multiple signatures in Outlook Web and
+                <td style="text-align:left">Support for Microsoft roaming signatures (multiple signatures in Outlook on the web and
                     New Outlook)</td>
                 <td style="text-align:left">🟢</td>
                 <td style="text-align:left">🔴</td>

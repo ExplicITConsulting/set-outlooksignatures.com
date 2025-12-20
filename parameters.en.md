@@ -252,9 +252,9 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 
 
 ## 10. SetCurrentUserOutlookWebSignature
-Shall the software set the Outlook Web signature of the currently logged-in user?
+Shall the software set the Outlook on the web signature of the currently logged-in user?
 
-If the parameter is set to `$true` and the current user's mailbox is not configured in any Outlook profile, the current user's mailbox is considered nevertheless. If no Outlook mailboxes are configured at all, additional mailbox configured in Outlook Web are used. This way, the software can be used in environments where only Outlook Web is used. 
+If the parameter is set to `$true` and the current user's mailbox is not configured in any Outlook profile, the current user's mailbox is considered nevertheless. If no Outlook mailboxes are configured at all, additional mailbox configured in Outlook on the web are used. This way, the software can be used in environments where only Outlook on the web is used. 
 
 This feature requires a Benefactor Circle license.
 
@@ -271,7 +271,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## 11. SetCurrentUserOOFMessage
 Shall the software set the out-of-office (OOF) message of the currently logged-in user?
 
-If the parameter is set to `$true` and the current user's mailbox is not configured in any Outlook profile, the current user's mailbox is considered nevertheless. If no Outlook mailboxes are configured at all, additional mailbox configured in Outlook Web are used. This way, the software can be used in environments where only Outlook Web is used. 
+If the parameter is set to `$true` and the current user's mailbox is not configured in any Outlook profile, the current user's mailbox is considered nevertheless. If no Outlook mailboxes are configured at all, additional mailbox configured in Outlook on the web are used. This way, the software can be used in environments where only Outlook on the web is used. 
 
 This feature requires a Benefactor Circle license.
 
@@ -400,7 +400,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## 17. SimulateMailboxes
 SimulateMailboxes is optional for simulation mode, although highly recommended.
 
-It is a comma separated list of email addresses replacing the list of mailboxes otherwise gathered from the simulated user's Outlook Web.
+It is a comma separated list of email addresses replacing the list of mailboxes otherwise gathered from the simulated user's Outlook on the web.
 
 Default value: $null
 
@@ -426,7 +426,7 @@ SimulateAndDeploy allows to deploy signatures and out-of-office replies without 
 
 This mode is ideal when users log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients.
 
-SimulateAndDeploy considers additional mailboxes when the user added them in Outlook Web, when they are passed via the '[SimulateMailboxes'](/parameters#38-virtualmailboxconfigfile)' parameter, or when being added dynamically via the '[VirtualMailboxConfigFile](/parameters#38-virtualmailboxconfigfile)' parameter.
+SimulateAndDeploy considers additional mailboxes when the user added them in Outlook on the web, when they are passed via the '[SimulateMailboxes'](/parameters#38-virtualmailboxconfigfile)' parameter, or when being added dynamically via the '[VirtualMailboxConfigFile](/parameters#38-virtualmailboxconfigfile)' parameter.
 
 The SimulateAndDeploy parameter makes sense only when used in combination with '.\sample code\SimulateAndDeploy.ps1'. Do not use this parameter for other scenarios.
 
@@ -515,7 +515,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## 25. MoveCSSInline
 Move CSS to inline style attributes, for maximum email client compatibility.
 
-This parameter is enabled per default, as a workaround to Microsoft's problem with formatting in Outlook Web (M365 roaming signatures and font sizes, especially).
+This parameter is enabled per default, as a workaround to Microsoft's problem with formatting in Outlook on the web (M365 roaming signatures and font sizes, especially).
 
 Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
 
@@ -600,13 +600,13 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 
 
 ## 30. DisableRoamingSignatures
-Disable signature roaming in Classic Outlook for Windows. Has no effect on signature roaming via the MirrorCloudSignatures parameter.
+Disable signature roaming in Classic Outlook on Windows. Has no effect on signature roaming via the MirrorCloudSignatures parameter.
 
 A value representing true disables roaming signatures, a value representing false enables roaming signatures, any other value leaves the setting as-is.
 
 Attention:
 - When Outlook v16 and higher is allowed to sync signatures itself, it may overwrite signatures created by this software with their cloud versions. To avoid this, it is recommended to set the parameters DisableRoamingSignatures and MirrorCloudSignatures to true instead.
-- When Classic Outlook for Windows syncs roaming signatures witht its own internal engine, expect problems with character encoding (umlauts, diacritics, emojis, etc.) and more. Until Microsoft provides a sustaining solution, these Outlook-internal problems will come and go depending on the patch level of Outlook. Also see the FAQ '[Roaming signatures in Classic Outlook for Windows look different](faq#41-roaming-signatures-in-classic-outlook-for-windows-look-different)'.
+- When Classic Outlook on Windows syncs roaming signatures witht its own internal engine, expect problems with character encoding (umlauts, diacritics, emojis, etc.) and more. Until Microsoft provides a sustaining solution, these Outlook-internal problems will come and go depending on the patch level of Outlook. Also see the FAQ '[Roaming signatures in Classic Outlook on Windows look different](faq#41-roaming-signatures-in-classic-outlook-for-windows-look-different)'.
 
 Only sets HKCU registry key, does not override configuration set by group policy.
 
@@ -627,7 +627,7 @@ Before going into configuration details, here is some background information:
 > Microsoft announced roaming signatures in 2020. Roaming means signatures are stored in the mailbox rather than on individual devices, making them available wherever you access your mailbox.
 >
 >In practice, Microsoft’s implementation remains incomplete and has the following limitations:
->- Only supported in Classic Outlook for Windows, New Outlook for Windows, and Outlook Web. No built-in roaming signatures for Outlook on Android, iOS, or macOS.
+>- Only supported in Classic Outlook on Windows, New Outlook on Windows, and Outlook on the web. No built-in roaming signatures for Outlook on Android, iOS, or macOS.
 >- Only available for mailboxes hosted in Exchange Online.
 >- No support for shared mailboxes.
 >- One-way sync from cloud to client, no upload back to the cloud. This essentially breaks all existing client-based signature solutions.
@@ -641,7 +641,7 @@ Before going into configuration details, here is some background information:
 >The [Outlook add-in](/outlookaddin) brings roaming signatures to iOS and Android, makes a feature similar to roaming signatures available for mailboxes hosted on-prem, and more.
 >
 >The roaming signatures sync engine, controlled via the MirrorCloudSignatures parameter, addresses many of the issues mentioned:
->- Brings support for roaming signatures to Outlook editions not supporting them, such as Classic Outlook for macOS, New Outlook for macOS, and older versions of Classic Outlook for Windows.
+>- Brings support for roaming signatures to Outlook editions not supporting them, such as Classic Outlook on macOS, New Outlook on macOS, and older versions of Classic Outlook on Windows.
 >- Two-way signature sync between clients and mailboxes.
 >- All signatures are available as roaming signatures in the mailbox of the logged-on user. Not only signatures for the user's own mailbox, but also signatures for other mailboxes the user has added (no matter the type of these mailboxes or the way they have been added).
 >- The sync is simply triggered by running Set-OutlookSignatures.
@@ -672,7 +672,7 @@ Prerequisites:
 Please note:
 - Microsoft has yet to release a public API for roaming signatures, so we teamed up to develop a reliable solution that allows you to bridge this gap at your own discretion. MirrorCloudSignatures has delivered consistent performance since its launch in 2022.
 - Do not expect this feature to work reliably in [simulation mode](/details#11-simulation-mode) because the user running the simulation usually does not have access to the signatures stored in another mailbox.<br>It does work in [SimulateAndDeploy](#19-simulateanddeploy) mode because of its different permission model.
-- For mailboxes in Exchange Online: To delete manually created signatures (signatures that have not been created by Set-OutlookSignatures) you need to use New Outlook for Windows or Classic Outlook for Windows with its own roaming signature sync mechanism enabled, or you delete the signature both locally and in Outlook Web.
+- For mailboxes in Exchange Online: To delete manually created signatures (signatures that have not been created by Set-OutlookSignatures) you need to use New Outlook on Windows or Classic Outlook on Windows with its own roaming signature sync mechanism enabled, or you delete the signature both locally and in Outlook on the web.
   - Else, manually created signatures will be re-downloaded from the cloud or re-uploaded to the cloud because Set-OutlookSignatures and the Benefactor Circle add-on technically cannot detect the deletion:<br>When a signature exists in only one of two places, and both places can neither be permanently monitored nor provide an activity log: Has the signature been deleted in the one place, or has it been created in the other? This question cannot be answered. To avoid potential data loss, it is always assumed that the signature has been created.
 
 This feature requires a Benefactor Circle license.
@@ -691,7 +691,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 Should signature names be mailbox specific by adding the email address?
 
 For compatibility with Outlook storing signatures in the file system, Set-OutlookSignatures converts templates to signatures according to the following logic:
-1. Get all mailboxes and sort them: Mailbox of logged-on/simulated user, other mailboxes in default Outlook profile or Outlook Web, mailboxes from other Outlook profiles
+1. Get all mailboxes and sort them: Mailbox of logged-on/simulated user, other mailboxes in default Outlook profile or Outlook on the web, mailboxes from other Outlook profiles
 2. Get all template files, sort them by category (common, group specific, mailbox specific, replacement variable specific), and within each category by SortOrder and SortCulture defined in the INI file
 3. Loop through the mailbox list, and for each mailbox loop through the template list.
 4. If a template's conditions apply and if the template has not been used before, convert the template to a signature.
