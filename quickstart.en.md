@@ -99,12 +99,12 @@ No sample signature is as beautiful as your own. So let's let Set-OutlookSignatu
 
 Does your own signature look good in Outlook? With the [simulation mode](/details#11-simulation-mode), you can quickly find out how it looks for another mailbox.
 
-###### And now you! {#customize-and-now-you}
+## And now you! {#and-now-you}
 Adjust other [parameters](/parameters) that you find useful. The [list of features](/features) and [parameter documentation](/parameters) show what is possible.
 
 You can find answers to the most frequently asked questions on our [FAQ page](/faq). For more in-depth information, our [Help and Support Center](/help) offers excellent documentation.
 
-## Show what you've created {#show-what-you-created}
+###### Show what you've created {#show-what-you-created}
 We know that some of you have built visually stunning email signatures, crafted clever out-of-office replies, implemented custom replacement variables, and even integrated third-party systems in ways that go far beyond the basics.
 
 We're looking for:

@@ -101,12 +101,12 @@ Keine Beispiel-Signatur ist so schön wie Ihre eigene. Lassen wir Set-OutlookSig
 
 Ihr eigene Signatur in Outlook sieht gut aus? Mit dem [Simulations-Modus](/details#11-simulation-mode) finden Sie im Handumdrehen heraus, wie sie für ein anderes Postfach aussieht.
 
-###### Und jetzt Sie! {#customize-and-now-you}
+## Und jetzt Sie! {#and-now-you}
 Passen Sie andere [Parameter](/parameters) an, die Sie nützlich finden. Die [Liste der Funktionen](/features) und die [Dokumentation der Parameter](/parameters) zeigen, was möglich ist.
 
 Auf unserer [FAQ-Seite](/faq) finden Sie Antworten auf die am häufigsten gestellten Fragen. Um tiefer einzutauchen, bietet unser [Hilfe- und Support-Zentrum](/help) großartige Unterlagen.
 
-## Zeigen Sie, was Sie geschaffen haben {#show-what-you-created}
+###### Zeigen Sie, was Sie geschaffen haben {#show-what-you-created}
 Wir wissen, dass einige von Ihnen visuell beeindruckende E-Mail-Signaturen erstellt, clevere Abwesenheitsnotizen verfasst, benutzerdefinierte Ersatzvariablen implementiert und sogar Systeme von Drittanbietern auf eine Weise integriert haben, die weit über die Grundlagen hinausgeht.
 
 Jetzt haben Sie die Möglichkeit, diese mit der Community zu teilen.
