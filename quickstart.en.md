@@ -62,7 +62,7 @@ Ask your endpoint security administrator to trust software signed with ExplicIT 
   ```
   The '`-GraphOnly true`' parameter makes sure that on-prem Active Directory is ignored and only Graph/Entra ID is used to find mailboxes and their attributes.
 
-If you are not using the public Microsoft cloud but a national cloud, add the following parameter: '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`'
+If you are not using the public Microsoft cloud but a national cloud, just add the parameter '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`'.
 
 Set-OutlookSignatures now adds signatures based on default settings and sample templates to your Classic Outlook.
 

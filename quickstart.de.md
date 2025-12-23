@@ -64,7 +64,7 @@ Bitten Sie Ihren Endpoint Security Administrator, Software zu vertrauen, die mit
   ```
   Der Parameter '`-GraphOnly true`' stellt sicher, dass das on-prem Active Directory ignoriert wird und stattdessen nur Graph/Entra ID zum Finden von Postfächern und deren Attributen verwendet wird.
 
-Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie folgenden Parameter hinzu: '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`'
+Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie einfach den Parameter '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`' hinzu.
 
 Set-OutlookSignatures fügt jetzt Signaturen, basierend auf Standardeinstellungen und integrierten Beispielvorlagen, zu Ihrem Classic Outlook hinzu.
 
