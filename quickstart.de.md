@@ -102,9 +102,7 @@ Keine Beispiel-Signatur ist so schön wie Ihre eigene. Lassen wir Set-OutlookSig
 Ihr eigene Signatur in Outlook sieht gut aus? Mit dem [Simulations-Modus](/details#11-simulation-mode) finden Sie im Handumdrehen heraus, wie sie für ein anderes Postfach aussieht.
 
 ###### Und jetzt Sie! {#customize-and-now-you}
-Passen Sie andere [Parameter](/parameters) an, die Sie nützlich finden.
-
-Die [Liste der Funktionen](/features) und die [Dokumentation der Parameter](/parameters) zeigen, was möglich ist.
+Passen Sie andere [Parameter](/parameters) an, die Sie nützlich finden. Die [Liste der Funktionen](/features) und die [Dokumentation der Parameter](/parameters) zeigen, was möglich ist.
 
 Auf unserer [FAQ-Seite](/faq) finden Sie Antworten auf die am häufigsten gestellten Fragen. Um tiefer einzutauchen, bietet unser [Hilfe- und Support-Zentrum](/help) großartige Unterlagen.
 
@@ -120,21 +118,3 @@ Wir suchen:
 - Eine kurze Stellungnahme zu Ihren Erfahrungen mit Set-OutlookSignatures oder dem Benefactor Circle Add-On
 
 Nehmen Sie einfach [Kontakt](/support) mit uns auf!
-
-## Benötigen Sie Hilfe oder weitere Funktionen? {#support}
-Set-OutlookSignatures ist sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.</p>
-
-Besuchen Sie unser Hilfe- und Unterstützungs-Center, um mehr zu erfahren:
-- Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern
-- Anforderungen und Konfigurationsmöglichkeiten
-- Best practices und FAQ
-- Wie Sie erstklassigen Support erhalten
-
-Das <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></a> erweitert Set-OutlookSignatures um weitere Funktionen für Unternehmen.
-
-<p>
-  <div class="buttons">
-    <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Hilfe und Unterstützung</a>
-    <a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Das Benefactor Circle Add-On</a>
-  </div>
-</p>

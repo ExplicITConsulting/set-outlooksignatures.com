@@ -100,9 +100,7 @@ No sample signature is as beautiful as your own. So let's let Set-OutlookSignatu
 Does your own signature look good in Outlook? With the [simulation mode](/details#11-simulation-mode), you can quickly find out how it looks for another mailbox.
 
 ###### And now you! {#customize-and-now-you}
-Adjust other [parameters](/parameters) that you find useful.
-
-The [list of features](/features) and [parameter documentation](/parameters) show what is possible.
+Adjust other [parameters](/parameters) that you find useful. The [list of features](/features) and [parameter documentation](/parameters) show what is possible.
 
 You can find answers to the most frequently asked questions on our [FAQ page](/faq). For more in-depth information, our [Help and Support Center](/help) offers excellent documentation.
 
@@ -117,21 +115,3 @@ We're looking for:
 - Your name, role, and company, along with a photo and company logo for your showcase
 
 Just [get in touch](/support) with us!
-
-## Looking for help or more features? {#support}
-Set-OutlookSignatures is very well documented, which inevitably brings with it a lot of content.
-
-Visit our help and support center to find out more:
-- The detailed feature set and a comparison with peers
-- Requirements and configuration options
-- Best practices and FAQ
-- How to get first-class support
-
-The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> adds even more enterprise-grade features to Set-OutlookSignatures.
-
-<p>
-  <div class="buttons">
-    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Help and Support</a>
-    <a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">The Benefactor Circle add-on</a>
-  </div>
-</p>
