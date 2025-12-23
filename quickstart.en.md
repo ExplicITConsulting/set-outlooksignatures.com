@@ -26,25 +26,26 @@ On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use 
 
 
 ## Step 2: One-time preparations {#step-2}
-**Client and user**  
+#### Client and user {#step-2-client-and-user}
 For a first test run, it is recommended to log on with a test user on a Windows system with Word and Classic Outlook on Windows installed, and Classic Outlook on Windows being configured with at least the test user's mailbox. If you use your own user, existing signatures will be overwritten in the worst case.
 
 For full Linux, macOS and New Outlook support, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
 
 If you cannot test with Classic Outlook on Windows, or do not want your signature setup changed, you can use simulation mode, which is described in a later step.
 
-**Entra ID**  
+#### Entra ID {#step-2-entra-id}
 When some or all of your mailboxes are in Exchange Online, you need to register an Entra ID app first. This is because Set-OutlookSignatures needs permissions to access the Graph API.
 
-To create the Entra ID app, ask your Entra ID 'Global Admin' or 'Application Administrator' to run the following and follow the instructions:
+For governance and security audits, the required configurations for the Entra ID app, including its permissions and the reasons why they are necessary, are documented in '.\sample code\Create-EntraApp.ps1'.
+
+To create the Entra ID app manually, follow the instructions in '.\config\default graph config.ps1'.  
+To create the Entra ID app per script, ask your Entra ID 'Global Admin' or 'Application Administrator' to run the following script:
 ```
 powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
 ```
 
-The code in the script file is well documented, containing all details about the required Entra ID app settings, permissions, and why they are needed.
-
-**Endpoint security**  
-If you require PowerShell script to be signed with select certificates, use AppLocker or a comparable solution such as Defender, CrowdStrike, Ivanti, and others, you may need to specifically allow Set-OutlookSignatures to be run and to load libraries from the TEMP folder (which is used to not lock files in their original location).
+#### Endpoint security {#step-2-endpoint-security}
+If the environment requires PowerShell script to be signed with select certificates, or solutions such as AppLocker, Defender, CrowdStrike, Ivanti, and others are used, you may need to specifically allow Set-OutlookSignatures to be run and to load libraries from the TEMP folder (to avoid locking files in their original location).
 
 Ask your endpoint security administrator to trust software signed with ExplicIT Consulting's certificate. All PS1 and DLL files that come with the Set-OutlookSignatures download in step 2 are signed with this certificate.
 
@@ -76,7 +77,7 @@ Congratulations, you now have a robust starting point for your own customization
 ## Customize settings {#customize}
 You can now start with your own customizations. Here are a few popular examples:
 
-**Simulation mode**  
+#### Simulation mode {#customize-simulation-mode}
 Would you like to see what the sample signatures provided look like for another user? Then simply use the integrated [simulation mode](/details#11-simulation-mode):
 - Select the email address of any user in your system.
 - Run Set-OutlookSignatures in a new PowerShell session and add the additional parameters '`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' (replace 'a@example.com' with the email address you selected earlier).
@@ -85,7 +86,7 @@ Your 'Documents' folder now contains new subfolder called 'Outlook Signatures', 
 
 The [simulation mode](/details#11-simulation-mode) can do much more and is therefore very well suited for testing and analysis in production environments.
 
-**Use your own templates**  
+#### Use your own templates {#customize-use-your-own-templates}
 No sample signature is as beautiful as your own. So let's let Set-OutlookSignatures work with your own templates!
 
 - Create a folder with your own templates and configurations. Follow the FAQ '[What is the recommended folder structure for script, license, template and config files?](/faq#34-what-is-the-recommended-folder-structure-for-script-license-template-and-config-files)', as separating source code and customizations makes administration and version upgrades much easier.
@@ -97,7 +98,7 @@ No sample signature is as beautiful as your own. So let's let Set-OutlookSignatu
 
 Does your own signature look good in Outlook? With the [simulation mode](/details#11-simulation-mode), you can quickly find out how it looks for another mailbox.
 
-**And now you!**  
+#### And now you! {#customize-and-now-you}
 Adjust other [parameters](/parameters) that you find useful.
 
 The [list of features](/features) and [parameter documentation](/parameters) show what is possible.
@@ -119,11 +120,17 @@ Just [get in touch](/support) with us!
 ## Looking for help or more features? {#support}
 Set-OutlookSignatures is very well documented, which inevitably brings with it a lot of content.
 
-If you are looking for someone with experience who can quickly train you and assist with evaluation, planning, implementation and ongoing operations: Our partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers first-class [professional support](/support), and their <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> adds more enterprise-grade features.
+Visit our help and support center to find out more:
+- The detailed feature set and a comparison with peers
+- Requirements and configuration options
+- Best practices and FAQ
+- How to get first-class support
+
+The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> adds even more enterprise-grade features to Set-OutlookSignatures.
 
 <p>
   <div class="buttons">
-    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Support</a>
+    <a href="/support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Help and Support</a>
     <a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">The Benefactor Circle add-on</a>
   </div>
 </p>
