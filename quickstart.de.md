@@ -22,20 +22,20 @@ Laden Sie Set-OutlookSignatures herunter und entpacken Sie das Archiv in einen l
   </div>
 </p>
 
-Heben Sie unter Windows und macOS die Blockierung der Datei 'Set-OutlookSignatures.ps1' auf. Sie können dazu das PowerShell-Cmdlet 'Unblock-File' verwenden oder im Datei-Explorer mit der rechten Maustaste auf die Datei klicken, Eigenschaften auswählen und 'Unblock' anklicken. Dadurch wird das 'Mark of the Web' entfernt, das die Ausführung in PowerShell verhindern kann.
+Heben Sie unter Windows und macOS die Blockierung der Datei 'Set-OutlookSignatures.ps1' auf. Sie können dazu das PowerShell-Cmdlet 'Unblock-File' verwenden oder mit der rechten Maustaste auf die Datei klicken, Eigenschaften auswählen und 'Unblock' anklicken. Dadurch wird das 'Mark of the Web' entfernt, das die Ausführung in PowerShell verhindern kann.
 
 Wenn Sie AppLocker oder eine vergleichbare Lösung (Defender, CrowdStrike, Ivanti und andere) verwenden, müssen Sie möglicherweise die vorhandene digitale Signatur zu Ihrer Zulassungsliste hinzufügen oder zusätzliche Einstellungen in Ihrer Sicherheitssoftware festlegen.
 
 
 ## Schritt 2: Einmalige Vorbereitungen {#step-2}
-#### Client und Benutzer {#step-2-client-and-user}
+###### Client und Benutzer {#step-2-client-and-user}
 Für einen ersten Testlauf ist es empfehlenswert, sich mit einem Testbenutzer auf einem Windows-System anzumelden, auf dem Word und Classic Outlook on Windows installiert sind und Classic Outlook on Windows zumindest mit dem Postfach des Testbenutzers konfiguriert ist. Wenn Sie Ihren eigenen Benutzer verwenden, werden im schlimmsten Fall bestehende Signaturen überschrieben.
 
 Für die vollständige Unterstützung von Linux, macOS und New Outlook ist das <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></a> erforderlich und die Postfächer müssen in Exchange Online gehostet werden.
 
 Falls sie nicht mit Classic Outlook on Windows testen können oder oder Ihr Signatur-Setup nicht verändert haben möchten, können Sie den Simulationsmodus verwenden, der in einem späteren Schritt beschrieben wird.
 
-#### Entra ID {#step-2-entra-id}  
+###### Entra ID {#step-2-entra-id}  
 Wenn sich einige oder alle Postfächer in Exchange Online befinden, müssen Sie zunächst eine Entra ID App registrieren, da Set-OutlookSignatures Berechtigungen für den Zugriff auf die Graph API benötigt.
 
 Für Governance- und Sicherheitsaudits sind die erforderlichen Konfigurationen der Entra ID-App, einschließlich ihrer Berechtigungen und der Gründe für deren Notwendigkeit, in '.\sample code\Create-EntraApp.ps1' dokumentiert.
@@ -46,7 +46,7 @@ Um die Entra ID-App über ein Skript zu erstellen, bitten Sie Ihren Entra ID 'Gl
 powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
 ```
 
-#### Endpoint Security {#step-2-endpoint-security}
+###### Endpoint Security {#step-2-endpoint-security}
 Wenn die Umgebung verlangt, dass PowerShell-Skripte mit ausgewählten Zertifikaten signiert werden, oder Lösungen wie AppLocker, Defender, CrowdStrike, Ivanti und andere verwendet werden, müssen Sie möglicherweise die Ausführung von Set-OutlookSignatures und das Laden von Bibliotheken aus dem TEMP-Ordner (damit Dateien nicht an ihrem ursprünglichen Speicherort gesperrt werden) ausdrücklich erlauben.
 
 Bitten Sie Ihren Endpoint Security Administrator, Software zu vertrauen, die mit dem Zertifikat von ExplicIT Consulting signiert ist. Alle PS1- und DLL-Dateien, die im Download von Set-OutlookSignatures in Schritt 2 enhalten sind, sind mit diesem Zertifikat signiert.
@@ -79,7 +79,7 @@ Glückwunsch, Sie haben jetzt einen soliden Ausgangspunkt für Ihre eigenen Anpa
 ## Anpassungen vornehmen {#customize}
 Sie können jetzt mit Ihren eigenen Anpassungen starten. Hier ein paar beliebte Beispiele:
 
-#### Simulations-Modus {#customize-simulation-mode}
+###### Simulations-Modus {#customize-simulation-mode}
 Sie möchten wissen, wie die mitgelieferten Beispiel-Signaturen für einen anderen Benutzer aussehen? Dann nutzen Sie doch einfach den integrierten [Simulations-Modus](/details#11-simulation-mode):
 - Wählen die E-Mail-Adresse eines beliebigen Benutzers in Ihrem System aus.
 - Führen Sie Set-OutlookSignatures in einer neuen PowerShell-Session aus und fügen sie die Parameter'`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' hinzu ('a@example.com' ersetzen Sie durch die zuvor ausgewählte E-Mail-Adresse).
@@ -88,7 +88,7 @@ Ihr 'Dokumente'-Ordner enthält nun einen neuen Unterordner 'Outlook Signatures'
 
 Der [Simulations-Modus](/details#11-simulation-mode) kann noch viel mehr und ist dadurch sehr gut für Tests und Analysen in Produktionsumgebungen geeignet.
 
-#### Ihre eigenen Vorlagen verwenden {#customize-use-your-own-templates}
+###### Ihre eigenen Vorlagen verwenden {#customize-use-your-own-templates}
 Keine Beispiel-Signatur ist so schön wie Ihre eigene. Lassen wir Set-OutlookSignatures also mit Ihren eigenen Vorlagen arbeiten!
 
 - Erstellen Sie einen Ordner mit Ihren eigenen Vorlagen und Konfigurationen. Befolgen Sie die FAQ '[What is the recommended folder structure for script, license, template and config files?](/faq#34-what-is-the-recommended-folder-structure-for-script-license-template-and-config-files)', da die Trennung von Quellcode und Anpassungen die Verwaltung und Versions-Upgrades erheblich vereinfacht.
@@ -100,7 +100,7 @@ Keine Beispiel-Signatur ist so schön wie Ihre eigene. Lassen wir Set-OutlookSig
 
 Ihr eigene Signatur in Outlook sieht gut aus? Mit dem [Simulations-Modus](/details#11-simulation-mode) finden Sie im Handumdrehen heraus, wie sie für ein anderes Postfach aussieht.
 
-#### Und jetzt Sie! {#customize-and-now-you}
+###### Und jetzt Sie! {#customize-and-now-you}
 Passen Sie andere [Parameter](/parameters) an, die Sie nützlich finden.
 
 Die [Liste der Funktionen](/features) und die [Dokumentation der Parameter](/parameters) zeigen, was möglich ist.

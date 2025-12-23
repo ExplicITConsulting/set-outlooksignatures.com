@@ -22,18 +22,18 @@ Download Set-OutlookSignatures and extract the archive to a local folder.
   </div>
 </p>
 
-On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'. This removes the 'mark of the web', which can prevent script execution in PowerShell.
+On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file, select Properties and check 'Unblock'. This removes the 'mark of the web', which can prevent script execution in PowerShell.
 
 
 ## Step 2: One-time preparations {#step-2}
-#### Client and user {#step-2-client-and-user}
+###### Client and user {#step-2-client-and-user}
 For a first test run, it is recommended to log on with a test user on a Windows system with Word and Classic Outlook on Windows installed, and Classic Outlook on Windows being configured with at least the test user's mailbox. If you use your own user, existing signatures will be overwritten in the worst case.
 
 For full Linux, macOS and New Outlook support, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> is required and the mailboxes need to be hosted in Exchange Online.
 
 If you cannot test with Classic Outlook on Windows, or do not want your signature setup changed, you can use simulation mode, which is described in a later step.
 
-#### Entra ID {#step-2-entra-id}
+###### Entra ID {#step-2-entra-id}
 When some or all of your mailboxes are in Exchange Online, you need to register an Entra ID app first. This is because Set-OutlookSignatures needs permissions to access the Graph API.
 
 For governance and security audits, the required configurations for the Entra ID app, including its permissions and the reasons why they are necessary, are documented in '.\sample code\Create-EntraApp.ps1'.
@@ -44,7 +44,7 @@ To create the Entra ID app per script, ask your Entra ID 'Global Admin' or 'Appl
 powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
 ```
 
-#### Endpoint security {#step-2-endpoint-security}
+###### Endpoint security {#step-2-endpoint-security}
 If the environment requires PowerShell script to be signed with select certificates, or solutions such as AppLocker, Defender, CrowdStrike, Ivanti, and others are used, you may need to specifically allow Set-OutlookSignatures to be run and to load libraries from the TEMP folder (to avoid locking files in their original location).
 
 Ask your endpoint security administrator to trust software signed with ExplicIT Consulting's certificate. All PS1 and DLL files that come with the Set-OutlookSignatures download in step 2 are signed with this certificate.
@@ -77,7 +77,7 @@ Congratulations, you now have a robust starting point for your own customization
 ## Customize settings {#customize}
 You can now start with your own customizations. Here are a few popular examples:
 
-#### Simulation mode {#customize-simulation-mode}
+###### Simulation mode {#customize-simulation-mode}
 Would you like to see what the sample signatures provided look like for another user? Then simply use the integrated [simulation mode](/details#11-simulation-mode):
 - Select the email address of any user in your system.
 - Run Set-OutlookSignatures in a new PowerShell session and add the additional parameters '`-SimulateUser a@example.com -SimulateMailboxes a@example.com`' (replace 'a@example.com' with the email address you selected earlier).
@@ -86,7 +86,7 @@ Your 'Documents' folder now contains new subfolder called 'Outlook Signatures', 
 
 The [simulation mode](/details#11-simulation-mode) can do much more and is therefore very well suited for testing and analysis in production environments.
 
-#### Use your own templates {#customize-use-your-own-templates}
+###### Use your own templates {#customize-use-your-own-templates}
 No sample signature is as beautiful as your own. So let's let Set-OutlookSignatures work with your own templates!
 
 - Create a folder with your own templates and configurations. Follow the FAQ '[What is the recommended folder structure for script, license, template and config files?](/faq#34-what-is-the-recommended-folder-structure-for-script-license-template-and-config-files)', as separating source code and customizations makes administration and version upgrades much easier.
@@ -98,7 +98,7 @@ No sample signature is as beautiful as your own. So let's let Set-OutlookSignatu
 
 Does your own signature look good in Outlook? With the [simulation mode](/details#11-simulation-mode), you can quickly find out how it looks for another mailbox.
 
-#### And now you! {#customize-and-now-you}
+###### And now you! {#customize-and-now-you}
 Adjust other [parameters](/parameters) that you find useful.
 
 The [list of features](/features) and [parameter documentation](/parameters) show what is possible.
