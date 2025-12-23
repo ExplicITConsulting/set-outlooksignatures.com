@@ -45,6 +45,7 @@ Um die Entra ID-App über ein Skript zu erstellen, bitten Sie Ihren Entra ID 'Gl
 ```
 powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
 ```
+Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie einfach den Parameter '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`' hinzu.
 
 ###### Endpoint Security {#step-2-endpoint-security}
 Wenn die Umgebung verlangt, dass PowerShell-Skripte mit ausgewählten Zertifikaten signiert werden, oder Lösungen wie AppLocker, Defender, CrowdStrike, Ivanti und andere verwendet werden, müssen Sie möglicherweise die Ausführung von Set-OutlookSignatures und das Laden von Bibliotheken aus dem TEMP-Ordner (damit Dateien nicht an ihrem ursprünglichen Speicherort gesperrt werden) ausdrücklich erlauben.
