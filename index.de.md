@@ -18,7 +18,7 @@ redirect_from:
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
-<h2 id="outlook-signature-management" class="">
+<h2 id="outlook-signature-management">
   Verwalten Sie Ihre<span style="font-weight: bolder;"> Outlook-Signaturen </span>zentral und vollautomatisch
 </h2>
 <div class="columns is-multiline">
@@ -37,7 +37,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="less-effort" class="mt-6">
+<h2 id="less-effort">
   <span style="background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>, mehr Professionalität
 </h2>
 <p>Die manuelle Pflege von Signaturen bindet wertvolle personelle und finanzielle Kapazitäten. Das führt schnell zu veralteten Angaben, die weder internen noch regulatorischen Vorgaben entsprechen.</p>
@@ -72,7 +72,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="strengths" class="mt-6">
+<h2 id="strengths">
   Die<span style="font-weight: bolder;"> Stärken </span>von Set-OutlookSignatures
 </h2>
 <div class="columns is-multiline">
@@ -160,7 +160,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="expertise" class="mt-6">
+<h2 id="expertise">
   Funktionalität trifft<span class="has-text-success"> Expertise</span>
 </h2>
 <p>Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.<p>
@@ -198,7 +198,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="demo" class="mt-6">
+<h2 id="demo">
   Verwalten Sie Ihre <span style="font-weight: bolder;">Outlook-Signaturen</span> zentral. Wir zeigen Ihnen, wie!
 </h2>
 <p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.<p>
@@ -223,14 +223,14 @@ sitemap_changefreq: weekly
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <h2 id="quickstart" class="mt-6">
+    <h2 id="quickstart">
       Signaturen <span style="font-weight: bolder;">in wenigen Minuten</span> verteilen
     </h2>
     <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
     <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Schnellstart-Anleitung</a>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <h2 id="dive-deeper" class="mt-6">
+    <h2 id="dive-deeper">
       Tiefer eintauchen
     </h2>
     <p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:</p>
