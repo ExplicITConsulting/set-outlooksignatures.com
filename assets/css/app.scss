@@ -116,6 +116,10 @@ h6:hover .anchor-link {
   margin-top: 3rem;
 }
 
+.content h6 {
+  margin-bottom: 0rem;
+}
+
 .content ul:not(:first-child),
 .content ol:not(:first-child) {
   margin-top: 0;
