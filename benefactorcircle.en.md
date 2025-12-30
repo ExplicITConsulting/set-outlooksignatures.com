@@ -312,6 +312,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="support">Help and support</h2>
+    <p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Help and Support-Center</a></p>
     <p>Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> are very well documented, which inevitably brings with it a lot of content.</p>
     <p>Visit our help and support center to find out more:<p>
     <ul>
@@ -320,7 +321,6 @@ sitemap_changefreq: weekly
       <li>Best practices and FAQ</li>
       <li>How to get first-class support</li>
     </ul>
-    <p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Help and Support-Center</a></p>
 </div>
 </div>
 
