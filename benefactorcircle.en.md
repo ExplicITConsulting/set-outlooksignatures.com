@@ -211,7 +211,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="trial">Trial version</h2>
-<p>After setting up the free and open-source Set-OutlookSignatures using the <a href="/quickstart">Quick Start Guide</a> and configuring it to your needs, you are ready to take the next step:</p>
+<p>After setting up the free and open-source Set-OutlookSignatures using the Quick Start Guide and configuring it to your needs, you are ready to take the next step:</p>
 
 <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a 14-day trial license</a></p>
 
