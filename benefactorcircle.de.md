@@ -296,7 +296,7 @@ sitemap_changefreq: weekly
   <li>Den Mehrwert eines zusätzlichen Marketingkanals</li>
 </ul>
 
-<p><strong>Set-OutlookSignatures amortisiert sich sofort und hilft Ihnen sogar, mehr Umsatz zu generieren.</strong></p>
+<p><strong>Sie sehen: Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span> amortisiert sich sofort und hilft Ihnen sogar dabei, mehr Geld zu verdienen.</strong></p>
 
 
 <h2 id="order">Lizenzen kaufen</h2>

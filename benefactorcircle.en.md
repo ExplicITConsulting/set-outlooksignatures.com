@@ -295,7 +295,7 @@ sitemap_changefreq: weekly
   <li>Added value of an additional marketing channel</li>
 </ul>
 
-<p><strong>Set-OutlookSignatures pays for itself immediately and actually helps you earn more money.</strong></p>
+<p><strong>You see: The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> pays for itself immediately and actually helps you earn more money.</strong></p>
 
 
 <h2 id="order">Buy licenses</h2>
