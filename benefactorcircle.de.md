@@ -352,8 +352,7 @@ sitemap_changefreq: weekly
   <li>Der Benutzer, der Set-OutlookSignatures ausführt, muss in der Lage sein, alle direkten und indirekten Mitglieder aller Lizenzgruppen aufzulösen, insbesondere über AD-Vertrauensstellungen hinweg.</li>
   <li>Mitgliedschaften in primären Gruppen (z. B. "Domain Users") werden nicht berücksichtigt, da sie über AD/Entra ID nicht zuverlässig abgefragt werden können.</li>
   <li>Dynamische Gruppen werden nur bei Entra ID-Abfragen unterstützt, nicht bei AD-Abfragen.</li>
-  <li>Es kann nur eine reine Entra ID-Gruppe pro Tenant verwendet werden, und diese muss die Standardlizenzgruppe sein.</li>
-  <li>Die Standardlizenzgruppe ist die erste Gruppe in der Liste. Sie wird verwendet, wenn kein spezifischerer Eintrag existiert.</li>
+  <li>Es kann nur eine reine Entra ID-Gruppe pro Tenant verwendet werden.</li>
   <li>Wenn eine Verbindung zu Microsoft Graph verfügbar ist, wird diese zur Prüfung der Gruppenmitgliedschaft verwendet. Eine Graph-Verbindung ist verpflichtend, wenn die Standardlizenzgruppe eine Entra ID-Gruppe ist.</li>
 </ul>
 

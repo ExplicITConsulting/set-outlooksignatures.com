@@ -348,11 +348,10 @@ sitemap_changefreq: weekly
 
 <p>Please note:<p>
 <ul>
-  <li>You need to make sure that the user running Set-OutlookSignatures is able to resolve all direct and indirect members of all license groups, especially across on-prem AD trusts.<br>Primary group membership (such as in 'Domain Users') is not considered due to Active Directory and Entra ID query restrictions.<br>Dynamic groups are supported when Entra ID is queried, but not when Active Directory is queried.</li>
+  <li>You need to make sure that the user running Set-OutlookSignatures is able to resolve all direct and indirect members of all license groups, especially across on-prem AD trusts.</li>
   <li>Membership in primary groups (such as "Domain Users") is not considered as this cannot be queried reliably via AD/Entra ID.</li>
   <li>Dynamic Groups are only supported in Entra ID, not in Active Directory.</li>
-  <li>Only one pure Entra ID group per tenant is supported, and it must be the default license group.</li>
-  <li>The default license group is the first group in the list of license groups. The default group is used for mailboxes not being covered by more specific license groups.</li>
+  <li>Only one pure Entra ID group per tenant is supported..</li>
   <li>When a connection to Microsoft Graph is available, Graph is used to check license group membership. A connection to Graph is enforced when the default license group is an Entra ID group.</li>
 </ul>
 
