@@ -112,7 +112,8 @@ h6:hover .anchor-link {
   opacity: 1;
 }
 
-.content h2:not(:first-child) {
+.content h2 ~ h2,
+.content * ~ h2 {
   margin-top: 3rem;
 }
 
