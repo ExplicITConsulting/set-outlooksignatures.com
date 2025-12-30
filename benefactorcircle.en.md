@@ -298,19 +298,31 @@ sitemap_changefreq: weekly
 <p><strong>You see: The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> pays for itself immediately and actually helps you earn more money.</strong></p>
 
 
-<h2 id="order">Buy licenses</h2>
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a license quote</a></p>
-
-<p>You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.</p>
-
-<p>As soon as the full invoice amount is received, you will be sent an email with instructions on how to securely download your individualized license file.</p>
-
-<p>To use the license file, just add two parameters to your call of &apos;Set-OutlookSignatures.ps1&apos;:</p>
-<ul>
-  <li>&apos;-BenefactorCircleFile&apos; with the path to your individualized license file</li>
-  <li>&apos;-BenefactorCircleId&apos; with your <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> ID</li>
-</ul>
-
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <h2 id="order">Buy licenses</h2>
+    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a license quote</a></p>
+    <p>You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.</p>
+    <p>As soon as the full invoice amount is received, you will be sent an email with instructions on how to securely download your individualized license file.</p>
+    <p>To use the license file, just add two parameters to your call of &apos;Set-OutlookSignatures.ps1&apos;:</p>
+    <ul>
+      <li>&apos;-BenefactorCircleFile&apos; with the path to your individualized license file</li>
+      <li>&apos;-BenefactorCircleId&apos; with your <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> ID</li>
+    </ul>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <h2 id="support">Help and support</h2>
+    <p>Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> are very well documented, which inevitably brings with it a lot of content.</p>
+    <p>Visit our help and support center to find out more:<p>
+    <ul>
+      <li>The detailed feature set and a comparison with peers</li>
+      <li>Requirements and configuration options</li>
+      <li>Best practices and FAQ</li>
+      <li>How to get first-class support</li>
+    </ul>
+    <p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Help and Support-Center</a></p>
+  </div>
+</div>
 
 <h2 id="license-groups">How license groups work</h2>
 <p>Each <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> license is bound to one or more Active Directory or Entra ID groups, called a license group. For maximum data protection and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
@@ -380,17 +392,3 @@ sitemap_changefreq: weekly
 <p>To continue using Set-OutlookSignatures with <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> benefits, just place a new order to receive a new license file.</p>
 
 <p>You will be informed in advance that your license is about to expire.</p>
-
-
-<h2 id="support">Help and support</h2>
-<p>Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> are very well documented, which inevitably brings with it a lot of content.</p>
-
-<p>Visit our help and support center to find out more:<p>
-<ul>
-  <li>The detailed feature set and a comparison with peers</li>
-  <li>Requirements and configuration options</li>
-  <li>Best practices and FAQ</li>
-  <li>How to get first-class support</li>
-</ul>
-
-<p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Help and Support-Center</a></p>
