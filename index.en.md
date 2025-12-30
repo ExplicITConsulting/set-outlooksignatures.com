@@ -21,7 +21,7 @@ sitemap_changefreq: weekly
 <h2 id="outlook-signature-management">
   Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally and fully automated
 </h2>
-<div class="columns is-multiline is-8">
+<div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
     <p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
@@ -44,7 +44,7 @@ sitemap_changefreq: weekly
 
 <p>With Set-OutlookSignatures, you fully automate this process.</p>
 
-<div class="columns is-multiline is-8">
+<div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, coral, coral); background-clip: text; color: transparent;">⚫</span>
@@ -77,7 +77,7 @@ sitemap_changefreq: weekly
 <h2 id="strengths">
   The<span style="font-weight: bolder;"> strengths </span>of Set-OutlookSignatures
 </h2>
-<div class="columns is-multiline is-8">
+<div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -178,7 +178,7 @@ sitemap_changefreq: weekly
 
 <p>If desired, we'll set up our solution together with you: Simple, tailored to your needs, and with sustainable knowledge transfer.<p>
 
-<div class="columns is-multiline is-8">
+<div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success), var(--bulma-success)); background-clip: text; color: transparent;">⚫</span>
@@ -218,7 +218,7 @@ sitemap_changefreq: weekly
 <p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.<p>
 
 <p>Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.<p>
-<div class="columns is-multiline is-8">
+<div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <p><a href="/benefactorcircle#demo" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Schedule your personal demo now</a></p>
@@ -235,7 +235,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<div class="columns is-multiline is-8">
+<div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="quickstart">
       Deploy signatures <span style="font-weight: bolder;">within minutes</span>

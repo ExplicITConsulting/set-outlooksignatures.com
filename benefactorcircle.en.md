@@ -34,7 +34,7 @@ sitemap_changefreq: weekly
 
 
 <h3 id="key-features">Additional features</h3>
-<div class="columns is-multiline is-8">
+<div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
@@ -111,7 +111,7 @@ sitemap_changefreq: weekly
 
 
 <h3 id="updates-support">Updates and support</h3>
-<div class="columns is-multiline is-8">
+<div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
@@ -143,7 +143,7 @@ sitemap_changefreq: weekly
 
 <h2 id="demo">Demo</h2>
 <p>We show you what Set-OutlookSignatures, the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> and the included Outlook add-in can do for you - interactively and with focus on your actual needs. Experience live:</p>
-<div class="columns is-multiline is-8">
+<div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
@@ -172,7 +172,7 @@ sitemap_changefreq: weekly
 
 <p>We look forward to meeting you!</p>
 
-<div class="columns is-multiline is-8">
+<div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="min-height: 4em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Schedule your personal demo now</a></p>
@@ -298,7 +298,7 @@ sitemap_changefreq: weekly
 <p><strong>You see: The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> pays for itself immediately and actually helps you earn more money.</strong></p>
 
 
-<div class="columns is-multiline is-8">
+<div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="order">Buy licenses</h2>
     <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a license quote</a></p>
