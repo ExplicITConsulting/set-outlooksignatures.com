@@ -306,8 +306,8 @@ sitemap_changefreq: weekly
     <p>As soon as the full invoice amount is received, you will be sent an email with instructions on how to securely download your individualized license file.</p>
     <p>To use the license file, just add two parameters to your call of &apos;Set-OutlookSignatures.ps1&apos;:</p>
     <ul>
-      <li>&apos;-BenefactorCircleFile&apos; with the path to your individualized license file</li>
-      <li>&apos;-BenefactorCircleId&apos; with your <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> ID</li>
+      <li>'-BenefactorCircleFile' with the path to your individualized license file</li>
+      <li>'-BenefactorCircleId' with your <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> ID</li>
     </ul>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
@@ -320,7 +320,7 @@ sitemap_changefreq: weekly
       <li>Best practices and FAQ</li>
       <li>How to get first-class support</li>
     </ul>
-    <p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Help and Support-Center</a></p>
+    <a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Help and Support-Center</a>
   </div>
 </div>
 
