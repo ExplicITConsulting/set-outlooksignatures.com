@@ -324,14 +324,14 @@ sitemap_changefreq: weekly
   <li>The maximum number of mailboxes licensed for the group.</li>
 </ul>
 
-<p>Where should I create the license group?</p>
+<p><strong>Where should I create the license group?</strong></p>
 <ul>
   <li>When using the '-GraphOnly true' parameter, create the group in Entra ID. The license group is then '<code>EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID of your license group&gt;, &lt;NumberOfLicenses&gt;</code>'.<br>You may also use a group created in on-prem Active Directory, as long as it is synchronized to Entra ID. The license group is then '<code>&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'.</li>
   <li>In hybrid environments without using the '-GraphOnly true' parameter, create a group in your on-prem Active Directory and make sure it is synchronized with Entra ID. The license group is then '<code>&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'.<br>You can also use a group created in Entra ID ('<code>EntraID_&lt;TenantDNSDomain&gt;, &lt;Object ID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'), which would basically be equal to using the '-GraphOnly true' parameter.</li>
   <li>In pure on-prem environments, you can only use on-prem groups. The license group is then '<code>&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'.<br>When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.</li>
 </ul>
 
-<p>When a <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> exclusive feature is about to be used, the license is checked as follows:</p>
+<p><strong>When a <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> exclusive feature is about to be used, the license is checked as follows:</strong></p>
 <ol>
   <li>Determine which license group to use.
     <ol>
