@@ -383,12 +383,6 @@ sitemap_changefreq: weekly
 <p>You will be informed in advance that your license is about to expire.</p>
 
 
-<h2 id="version-match">License and software version</h2>
-<p>License and software versions go hand in hand, so every new release of Set-OutlookSignatures also means a new license release, and vice-versa.</p>
-
-<p>Using different versions of software and license file is not supported, as this leads to unexpected results. A warning message is logged when a version mismatch is detected.</p>
-
-
 <h2 id="support">Help and support</h2>
 <p>Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> are very well documented, which inevitably brings with it a lot of content.</p>
 

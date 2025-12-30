@@ -384,12 +384,6 @@ sitemap_changefreq: weekly
 <p>Sie werden rechtzeitig im Voraus darüber informiert, dass Ihre Lizenz demnächst abläuft.</p>
 
 
-<h2 id="version-match">Lizenz- und Softwareversion</h2>
-<p>Lizenz- und Softwareversionen sind untrennbar miteinander verbunden. Jede neue Version von Set-OutlookSignatures bringt auch eine neue Lizenzversion mit sich, und umgekehrt.</p>
-
-<p>Die Verwendung unterschiedlicher Versionen von Software und Lizenzdatei wird nicht unterstützt, da dies zu unerwartetem Verhalten führen kann. Wenn ein Versionskonflikt erkannt wird, wird eine Warnmeldung im Log protokolliert.</p>
-
-
 <h2 id="support">Hilfe und Support</h2>
 <p>Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span> sind sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.</p>
 
