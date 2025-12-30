@@ -300,30 +300,31 @@ sitemap_changefreq: weekly
 
 
 <div class="columns is-multiline">
-  <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <h2 id="order">Lizenzen kaufen</h2>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Lizenzangebot anfordern</a></p>
-    <p>Sie erhalten in Kürze ein Angebot. Sobald alle Details geklärt sind, erhalten Sie eine Rechnung und können den Zahlungsprozess starten.</p>
-    <p>Nach Eingang des vollständigen Rechnungsbetrags erhalten Sie eine E-Mail mit Anweisungen zum sicheren Herunterladen Ihrer individuellen Lizenzdatei.</p>
-    <p>Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:</p>
-    <ul>
-      <li>'-BenefactorCircleLicenseFile' mit dem Pfad zu Ihrer individuellen Lizenzdatei</li>
-      <li>'-BenefactorCircleId' mit Ihrer <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> ID</li>
-    </ul>
-  </div>
-  <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <h2 id="support">Hilfe und Support</h2>
-    <p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Hilfe- und Support-Center</a></p>
-    <p>Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span> sind sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.</p>
-    <p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:<p>
-    <ul>
-      <li>Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern</li>
-      <li>Anforderungen und Konfigurationsmöglichkeiten</li>
-      <li>Best practices und FAQ</li>
-      <li>Wie Sie erstklassigen Support erhalten</li>
-    </ul>
+<div class="column is-half-desktop is-half-tablet is-full-mobile">
+<h2 id="order">Lizenzen kaufen</h2>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Lizenzangebot anfordern</a></p>
+<p>Sie erhalten in Kürze ein Angebot. Sobald alle Details geklärt sind, erhalten Sie eine Rechnung und können den Zahlungsprozess starten.</p>
+<p>Nach Eingang des vollständigen Rechnungsbetrags erhalten Sie eine E-Mail mit Anweisungen zum sicheren Herunterladen Ihrer individuellen Lizenzdatei.</p>
+<p>Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:</p>
+<ul>
+<li>'-BenefactorCircleLicenseFile' mit dem Pfad zu Ihrer individuellen Lizenzdatei</li>
+<li>'-BenefactorCircleId' mit Ihrer <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> ID</li>
+</ul>
+</div>
+<div class="column is-half-desktop is-half-tablet is-full-mobile">
+<h2 id="support">Hilfe und Support</h2>
+<p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Hilfe- und Support-Center</a></p>
+<p>Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span> sind sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.</p>
+<p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:<p>
+<ul>
+<li>Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern</li>
+<li>Anforderungen und Konfigurationsmöglichkeiten</li>
+<li>Best practices und FAQ</li>
+<li>Wie Sie erstklassigen Support erhalten</li>
+</ul>
 </div>
 </div>
+
 
 <h2 id="license-groups">Funktionsweise von Lizenzgruppen</h2>
 <p>Jede <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span>-Lizenz ist an eine oder mehrere Active Directory- oder Entra ID-Gruppen gebunden, sogenannte Lizenzgruppen. Zur maximalen Datensicherheit und einfachen Verwaltung ist die Lizenz nicht an bestimmte Postfächer ("Named Users") gebunden, sondern nur an eine Gruppe mit einer definierten maximalen Mitgliederanzahl.</p>
