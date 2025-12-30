@@ -321,8 +321,8 @@ sitemap_changefreq: weekly
       <li>Best practices und FAQ</li>
       <li>Wie Sie erstklassigen Support erhalten</li>
     </ul>
-    <a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Hilfe- und Support-Center</a>
-  </div>
+    <p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Hilfe- und Support-Center</a></p>
+</div>
 </div>
 
 <h2 id="license-groups">Funktionsweise von Lizenzgruppen</h2>

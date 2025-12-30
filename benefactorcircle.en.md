@@ -320,8 +320,8 @@ sitemap_changefreq: weekly
       <li>Best practices and FAQ</li>
       <li>How to get first-class support</li>
     </ul>
-    <a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Help and Support-Center</a>
-  </div>
+    <p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Help and Support-Center</a></p>
+</div>
 </div>
 
 <h2 id="license-groups">How license groups work</h2>
