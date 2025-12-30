@@ -112,12 +112,8 @@ h6:hover .anchor-link {
   opacity: 1;
 }
 
-.content h2 {
-  margin-top: 3em; /* !important; /* Only use !important if Bulma is fighting you */
-}
-
-.content > *:first-child h2 {
-  margin-top: revert; /* !important; */
+.content h2:not(:first-child) {
+  margin-top: 2em;
 }
 
 .content h6 {
