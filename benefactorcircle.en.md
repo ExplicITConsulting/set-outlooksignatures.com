@@ -210,7 +210,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="trial">Trial version</h3>
+<h2 id="trial">Trial version</h2>
 <p>After setting up the free and open-source Set-OutlookSignatures using the <a href="/quickstart">Quick Start Guide</a> and configuring it to your needs, you are ready to take the next step:</p>
 
 <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a 14-day trial license</a></p>
@@ -226,7 +226,7 @@ sitemap_changefreq: weekly
 <p>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible, as our software does not phone home).</p>
 
 
-<h2 id="price">Price and business case</h3>
+<h2 id="price">Price and business case</h2>
 <p>Set-OutlookSignatures is free of charge.<br>Originally developed as a technology demonstrator for scripting techniques, it has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies. Read about <a href="https://set-outlooksignatures.com/faq#351-why-the-tagline">its history and what you can learn from its code</a> in our FAQ.</p>
 
 <p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> unlocks advanced features and is available for <strong>only 3.00 € per mailbox per year</strong>, which equals <strong>just 0.25 € per mailbox per month</strong>.</p>
@@ -259,7 +259,7 @@ sitemap_changefreq: weekly
 <p>While a license is active, it includes free version upgrades and prioritization of support requests.</p>
 
 
-<h3 id="financial-benefits">Financial benefits</h2>
+<h3 id="financial-benefits">Financial benefits</h3>
 <p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> is an investment that pays off from day one. A cost-benefit analysis in the form of a business case must consider three aspects:</p>
 <ul>
   <li>How much do non-compliant signatures and out-of-office replies cost in terms of loss of reputation or in terms of fines for non-compliance?</li>
@@ -298,7 +298,7 @@ sitemap_changefreq: weekly
 <p><strong>Set-OutlookSignatures pays for itself immediately and actually helps you earn more money.</strong></p>
 
 
-<h2 id="order">Order licenses</h3>
+<h2 id="order">Order licenses</h2>
 <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a license quote</a></p>
 
 <p>You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.</p>
@@ -312,7 +312,7 @@ sitemap_changefreq: weekly
 </ul>
 
 
-<h2 id="license-groups">How license groups work</h3>
+<h2 id="license-groups">How license groups work</h2>
 <p>Each <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> license is bound to one or more Active Directory or Entra ID groups, called a license group. For maximum data protection and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
 
 <p>For most environments, only one license group is needed.<br>In on-prem and hybrid environments with multiple Active Directory domains, you may define a separate license group for each AD DNS domain, each license group with a separate maximum member count.<br>If you have multiple entra ID tenants, you may define one Entra ID group per tenant.</p>
@@ -357,17 +357,17 @@ sitemap_changefreq: weekly
 </ul>
 
 
-<h6 id="add-more-mailboxes">Increasing the number of licensed mailboxes</h3>
+<h6 id="add-more-mailboxes">Increasing the number of licensed mailboxes</h6>
 <p>When adding licenses mid-term, only additional licenses are billed, for the remaining period rounded up to full months.</p>
 
 <p>The price for new licenses is the list price at the time of the new order. The payment does not extend the license period but increases the number of licensed mailboxes within it.</p>
 
 
-<h6 id="reduce-licensed-mailboxes">Reducing the number of licensed mailboxes</h3>
+<h6 id="reduce-licensed-mailboxes">Reducing the number of licensed mailboxes</h6>
 <p>The total number of licensed mailboxes can not be reduced during a license period (one year starting from the date of payment reception), as the license fees are paid in advance.</p>
 
 
-<h6 id="change-license-groups">Moving licensed mailboxes between license groups</h3>
+<h6 id="change-license-groups">Moving licensed mailboxes between license groups</h6>
 <p>Moving licenses means that the total number of licensed mailboxes does not change, but their distribution across license groups. This can, for example, be necessary due to Active Directory consolidations.</p>
 
 <p>Shifting licenses between license groups is possible once per license period.</p>
@@ -375,7 +375,7 @@ sitemap_changefreq: weekly
 <p>If more license shifts are required, additional licenses have to be acquired temporarily, the total number of licenses can then be reduced when the new license period begins.</p>
 
 
-<h6 id="change-license-period">Extending or reducing a license period</h3>
+<h6 id="change-license-period">Extending or reducing a license period</h6>
 <p>A license period cannot be extended. Licenses are valid for one year, starting with the date the full payment is received, and do not auto-renew.</p>
 
 <p>To continue using Set-OutlookSignatures with <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> benefits, just place a new order to receive a new license file.</p>
