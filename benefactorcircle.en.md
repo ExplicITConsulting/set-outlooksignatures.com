@@ -298,7 +298,7 @@ sitemap_changefreq: weekly
 <p><strong>Set-OutlookSignatures pays for itself immediately and actually helps you earn more money.</strong></p>
 
 
-<h2 id="order">Order licenses</h2>
+<h2 id="order">Buy licenses</h2>
 <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a license quote</a></p>
 
 <p>You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.</p>
