@@ -45,4 +45,4 @@ Ein einfacher Schritt hin zu einer inklusiveren digitalen Welt!
 
 
 ## Datenquellen
-Die Daten für diesen Blogbeitrag stammen von: [beaccessible.com](beaccessible.com), [allaccessible.org](allaccessible.org)
+Die Daten für diesen Blogbeitrag stammen von: [beaccessible.com](https://beaccessible.com), [allaccessible.org](https://allaccessible.org)

@@ -44,4 +44,4 @@ A simple step toward a more inclusive digital world!
 [Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!
 
 ## Data sources
-Data sources used for this post: [beaccessible.com](beaccessible.com), [allaccessible.org](allaccessible.org)
+Data sources used for this post: [beaccessible.com](https://beaccessible.com), [allaccessible.org](https://allaccessible.org)
