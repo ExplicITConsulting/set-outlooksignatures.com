@@ -116,6 +116,11 @@ h6:hover .anchor-link {
   margin-top: 2em;
 }
 
+.content * ~ h2,
+.content * ~ * h2 {
+  margin-top: 2em;
+}
+
 .content h6 {
   margin-bottom: 0em;
 }
