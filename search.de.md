@@ -377,6 +377,7 @@ sitemap_changefreq: weekly
         }
 
         function displayResults(results) {
+            const githubLinkHtml = `<div class="mb-4"><a href="${`https://github.com/search?q=repo%3ASet-OutlookSignatures%2FSet-OutlookSignatures+${encodeURIComponent(searchInput.value.trim())}&type=code`}" target="_blank">{{ site.data[site.active_lang].string.search_resultsContainer_continueOnGitHub }}</a></div>`;
             const uniqueResults = [];
             const seenUrls = new Set();
             results.forEach(result => {
@@ -389,11 +390,11 @@ sitemap_changefreq: weekly
             });
 
             if (uniqueResults.length === 0) {
-                searchResultsContainer.innerHTML = '<p>{{ site.data[site.active_lang].string.search_resultsContainer_placeholder_queryNoResults }}</p>';
+                searchResultsContainer.innerHTML = githubLinkHtml + '<p>{{ site.data[site.active_lang].string.search_resultsContainer_placeholder_queryNoResults }}</p>';
                 return;
             }
 
-            let html = '<ul class="search-results-list">';
+            let html = githubLinkHtml + '<ul class="search-results-list">';
             uniqueResults.forEach(result => {
                 const item = result.doc;
                 if (!item) {
