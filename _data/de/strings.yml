@@ -9,6 +9,6 @@ search_search-input_placeholder_loading: "Lade Daten…"
 search_search-input_placeholder_ready: "Suchbegriff eingeben"
 search_resultsContainer_placeholder_queryEmpty: "Bitte geben Sie einen gültigen Suchbegriff ein."
 search_resultsContainer_placeholder_queryNoResults: "Keine Suchergebnisse gefunden."
-search_resultsContainer_continueOnGitHub: "Suche im Set-OutlookSignatures GitHub-Repository (Quellcode, Issues, Diskussionen)"
+search_resultsContainer_continueOnGitHub: "Suche im Set-OutlookSignatures GitHub-Repository (Quellcode, Issues, Diskussionen) fortsetzen"
 
 post_read_full: "Ganzes Posting lesen"
