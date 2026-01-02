@@ -90,6 +90,31 @@ module Jekyll
       @@search_sections_data = []
     end
 
+    # Hook for static files (the source code files)
+    Jekyll::Hooks.register :static_files, :post_write do |static_file|
+      target_dir = "/assets/src_Set-OutlookSignatures"
+
+      if static_file.url.start_with?(target_dir)
+        next if is_binary?(static_file.path)
+        
+        Jekyll.logger.info "SearchDataCollector:", "Indexing source file: #{static_file.url}"
+
+        # Read the raw content of the file
+        content = File.read(static_file.path)
+        
+        # Add to the global search data
+        @@search_sections_data << {
+          "document" => File.basename(static_file.name),
+          "section"  => "Source Code",
+          "content"  => content
+          "url"      => static_file.url,
+          "date"     => static_file.mtime.to_s,
+          "category" => "Source Code",
+          "tags"     => "code, source"
+        }
+      end
+    end
+
     def self.strip_html_and_normalize(html_content)
       doc = Nokogiri::HTML.fragment(html_content)
       # Remove the anchor links specifically
@@ -98,6 +123,12 @@ module Jekyll
       doc.text
         .gsub(/\s+/, ' ')
         .strip
+    end
+
+    def self.is_binary?(path)
+      return true unless File.exist?(path)
+      bytes = File.read(path, 1024) || ""
+      bytes.include?("\x00")
     end
   end
 end
