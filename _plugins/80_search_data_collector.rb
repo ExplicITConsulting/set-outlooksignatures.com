@@ -56,7 +56,7 @@ module Jekyll
           current_node = current_node.next_sibling
         end
 
-        section_content = SearchDataCollector.strip_html_and_normalize(section_content_nodes.map(&:to_html).join(''))
+        section_content = strip_html_and_normalize(section_content_nodes.map(&:to_html).join(''))
 
         full_url = "#{base_url}##{final_id}"
 
@@ -81,35 +81,6 @@ module Jekyll
     end
 
     Jekyll::Hooks.register :site, :post_write do |site|
-      target_dir = "/assets/src_Set-OutlookSignatures"
-      
-      Jekyll.logger.info "SearchDataCollector:", "Scanning static files in #{target_dir}..."
-
-      # Scan all static files registered in the site
-      site.static_files.each do |file|
-        if file.url.start_with?(target_dir)
-          if SearchDataCollector.is_binary?(file.path)
-            Jekyll.logger.info "SearchDataCollector:", "  Skipping binary: #{file.url}"
-            next
-          end
-
-          Jekyll.logger.info "SearchDataCollector:", "  Indexing source file: #{file.url}"
-
-          # Read content with UTF-8 safety
-          content = File.read(file.path, mode: 'rb').force_encoding('UTF-8').encode('UTF-8', invalid: :replace, undef: :replace, replace: '')
-          
-          @@search_sections_data << {
-            "document" => file.name,
-            "section"  => "Source Code",
-            "content"  => content.gsub(/[ \t]+/, ' ').gsub(/\n+/, "\n").strip,
-            "url"      => file.url,
-            "date"     => file.mtime.to_s,
-            "category" => "Source Code",
-            "tags"     => "code, source, #{File.extname(file.name).delete('.')}"
-          }
-        end
-      end
-
       Jekyll.logger.info "SearchDataCollector:", "Finished processing all documents. Writing search.json..."
 
       search_json_path = File.join(site.dest, 'search.json')
@@ -127,12 +98,6 @@ module Jekyll
       doc.text
         .gsub(/\s+/, ' ')
         .strip
-    end
-
-    def self.is_binary?(path)
-      return true unless File.exist?(path)
-      bytes = File.read(path, 1024) || ""
-      bytes.include?("\x00")
     end
   end
 end
