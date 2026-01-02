@@ -37,7 +37,7 @@ sitemap_changefreq: weekly
 
         const indexes = {};
         // Store raw JSON data for exact match search
-        const searchData = {}; 
+        const searchData = {};
 
         // Get the languages string from the custom meta tag
         const languagesMeta = document.querySelector('meta[name="site-languages"]');
@@ -145,7 +145,7 @@ sitemap_changefreq: weekly
                     searchInput.disabled = false;
 
                     const urlParams = new URLSearchParams(window.location.search);
-                    const urlQuery = urlParams.get('search'); 
+                    const urlQuery = urlParams.get('search');
 
                     if (urlQuery) {
                         searchInput.value = urlQuery;
@@ -156,7 +156,7 @@ sitemap_changefreq: weekly
                         const query = searchInput.value.trim();
 
                         const newUrl = new URL(window.location);
-                        
+
                         if (query.length > 0) {
                             newUrl.searchParams.set('search', query);
                             performSearch();
@@ -193,7 +193,7 @@ sitemap_changefreq: weekly
          */
         function performExactMatchSearch(query, langs) {
             const allExactMatches = [];
-            
+
             // 1. QUERY NORMALIZATION: Creates a fuzzy pattern
             // Example: "open-source" -> "open.?source"
             const normalizedQuery = query.toLowerCase()
@@ -201,16 +201,16 @@ sitemap_changefreq: weekly
                 .replace(/(\w)/g, '$1.?')  // Replace every word char with itself + '.?' (e.g., 'f' -> 'f.?')
                 .replace(/\.\?\.\?/g, '.?') // Collapse consecutive '.?.?' into single '.?'
                 .replace(/(^\.\?|\.\?$)/g, ''); // Trim leading/trailing '.?'
-                
+
             const searchPattern = new RegExp(normalizedQuery, 'i');
 
-            const exactMatchScore = -2000; 
+            const exactMatchScore = -2000;
 
             // Skip if the query is empty after normalizing
             if (normalizedQuery.length === 0) {
                 return allExactMatches;
             }
-            
+
             // Define the search logic for a single language
             const searchSingleLanguage = (langCode) => {
                 const rawData = searchData[langCode] || [];
@@ -234,7 +234,7 @@ sitemap_changefreq: weekly
 
                     if (isExactMatch) {
                         const matchResults = matchedText.match(searchPattern);
-                        
+
                         if (!matchResults) return; // Should not happen if .test() passed, but for safety
 
                         const queryIndex = matchResults.index;
@@ -243,30 +243,30 @@ sitemap_changefreq: weekly
                         const isContentMatch = (matchField === 'content');
 
                         // Define boundaries for context (50 before, 50 after)
-                        const contextPadding = 50; 
+                        const contextPadding = 50;
                         const maxSnippetLength = 500;
-                        
+
                         let snippetStart = Math.max(0, queryIndex - contextPadding);
-                        
+
                         // Calculate short snippet end boundary: match end + padding
                         let snippetEnd = queryIndex + matchLength + contextPadding;
-                        
+
                         // If the match was found in content, provide a longer snippet up to 500 chars
                         if (isContentMatch) {
                             // Recalculate end boundary for max length
                             snippetEnd = snippetStart + maxSnippetLength;
                         }
-                        
+
                         // Final boundary clipping
                         snippetEnd = Math.min(matchedText.length, snippetEnd);
-                        
+
                         let highlightSnippet = matchedText.substring(snippetStart, snippetEnd);
-                        
+
                         // Prepend ellipsis if snippet starts late
                         if (snippetStart > 0) {
                             highlightSnippet = "..." + highlightSnippet;
                         }
-                        
+
                         // Append ellipsis if content was truncated (either by padding or max length)
                         if (snippetEnd < matchedText.length) {
                             highlightSnippet = highlightSnippet + "...";
@@ -275,20 +275,20 @@ sitemap_changefreq: weekly
                         // Create a simplified result object for display
                         langMatches.push({
                             id: item.url,
-                            doc: { 
-                                ...item, 
-                                highlight: highlightSnippet, 
+                            doc: {
+                                ...item,
+                                highlight: highlightSnippet,
                                 isExactMatch: true,
                                 exactQuery: matchedSubstring,
-                            }, 
-                            score: exactMatchScore, 
+                            },
+                            score: exactMatchScore,
                             lang: langCode
                         });
                     }
                 });
                 return langMatches;
             };
-            
+
             // Iterate over all provided languages and accumulate results
             langs.forEach(langCode => {
                 allExactMatches.push(...searchSingleLanguage(langCode));
@@ -346,7 +346,7 @@ sitemap_changefreq: weekly
                             if (originalDoc) {
                                 const highlightedDoc = { ...originalDoc, highlight: r.highlight, field: fieldResult.field };
                                 // Negative score for current language priority
-                                allResults.push({ id: r.id, doc: highlightedDoc, score: r.score - 1000, lang: currentLang }); 
+                                allResults.push({ id: r.id, doc: highlightedDoc, score: r.score - 1000, lang: currentLang });
                             }
                         });
                     }
@@ -377,7 +377,12 @@ sitemap_changefreq: weekly
         }
 
         function displayResults(results) {
-            const githubLinkHtml = `<div class="mb-4"><a href="${`https://github.com/search?q=repo%3ASet-OutlookSignatures%2FSet-OutlookSignatures+${encodeURIComponent(searchInput.value.trim())}&type=code`}" target="_blank">{{ site.data[site.active_lang].string.search_resultsContainer_continueOnGitHub }}</a></div>`;
+            let githubLinkHtml = "";
+
+            if (window.location.hostname.toLowerCase() === 'set-outlooksignatures.com') {
+                githubLinkHtml = `<div class="mb-4"><a href="${`https://github.com/search?q=repo%3ASet-OutlookSignatures%2FSet-OutlookSignatures+${encodeURIComponent(searchInput.value.trim())}&type=code`}" target="_blank">{{ site.data[site.active_lang].strings.search_resultsContainer_continueOnGitHub }}</a></div>`;
+            }
+
             const uniqueResults = [];
             const seenUrls = new Set();
             results.forEach(result => {
@@ -390,7 +395,7 @@ sitemap_changefreq: weekly
             });
 
             if (uniqueResults.length === 0) {
-                searchResultsContainer.innerHTML = githubLinkHtml + '<p>{{ site.data[site.active_lang].string.search_resultsContainer_placeholder_queryNoResults }}</p>';
+                searchResultsContainer.innerHTML = githubLinkHtml + '<p>{{ site.data[site.active_lang].strings.search_resultsContainer_placeholder_queryNoResults }}</p>';
                 return;
             }
 
@@ -410,21 +415,21 @@ sitemap_changefreq: weekly
                 // Logic for Exact Match (using the isExactMatch flag)
                 if (item.isExactMatch) {
                     // Use the stored query for highlighting the snippet and titles
-                    const queryToHighlight = item.exactQuery || mainContent; 
-                    
+                    const queryToHighlight = item.exactQuery || mainContent;
+
                     // 1. Escape special regex characters in the query
                     const safeQuery = queryToHighlight.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-                    
+
                     // 2. Create the case-insensitive global regex
                     const regex = new RegExp('(' + safeQuery + ')', 'gi');
-                    
+
                     // 3. Apply manual highlight to the title, section, AND the content snippet
                     title = title.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
                     sectionContent = sectionContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
-                    
+
                     // Highlight the content snippet itself
                     mainContent = mainContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
-                    
+
                     // Add a subtle indicator above the content
                     // mainContent = `<p class="has-text-weight-bold has-text-primary mb-1">High-Priority Match:</p>${mainContent}`;
                 }
