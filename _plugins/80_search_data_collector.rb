@@ -106,7 +106,7 @@ module Jekyll
         @@search_sections_data << {
           "document" => File.basename(static_file.name),
           "section"  => "Source Code",
-          "content"  => content
+          "content"  => content,
           "url"      => static_file.url,
           "date"     => static_file.mtime.to_s,
           "category" => "Source Code",
