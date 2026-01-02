@@ -37,21 +37,21 @@ sitemap_changefreq: weekly
 ## 1. Overview
 With a [Benefactor Circle](/benefactorcircle) license, you also have access to the Set-OutlookSignatures add-in for Outlook.
 
-It makes signatures, which have been created by Set-OutlookSignatures in client or SimulateAndDeploy mode before, available on platforms where Set-OutlookSignatures itself can not be run: Outlook on iOS and Outlook on Android.
+The add-in makes signatures - created by Set-OutlookSignatures in client or SimulateAndDeploy mode - available in Outlook on iOS and Android, while supporting all Outlook editions across platforms.
 
-The add-in is also a great way to make signatures available to users on Outlook editions which do not yet support roaming signatures, and can be of great help in BYOD (bring your own device) scenarios. For mailboxes hosted on premises, this is like having your own implementation of cloud roaming signatures.
+It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD (bring your own device) scenarios. For on-premises mailboxes, it delivers a roaming signature experience comparable to the cloud.
 
-The Outlook add-in has a taskpane that allows the user to preview a selected signature, and to add the signature to the email or appointment that is currently being written.
+The Outlook add-in includes a task pane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.
 
-The add-in can also automatically set signatures as soon as a new email or appointment is created, which is very useful on Outlook on Android and Outlook on iOS. It automatically chooses the correct signature based on sender address and if the element is a new email or appointment, or a reply email.
+It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful on Outlook for Android and iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.
 
 The Outlook add-in is self-hosted by you. Compared to using a solution hosted by a 3rd party, this has several advantages:
-- Client specific configuration
-- You have full control over the version that is used
-- Keeps license costs low
-- Is the preferred method from a data protection and privacy perspective
+- Client specific configuration.
+- You have full control over the version that is used.
+- Keeps license costs low.
+- Is the preferred method from a data protection and privacy perspective.
 
-The add-in code is downloaded by the Outlook client and executed locally, in the security context of the mailbox. There are no middleware or proxy servers involved. Data is only transferred between your Outlook client, your authentication system (Entra ID for Exchange Online) and your mailbox servers.
+Outlook downloads the add-in code and executes it locally, in the security context of the mailbox. There are no middleware or proxy servers involved. Data is only transferred between your Outlook client, your authentication system (Entra ID for Exchange Online) and your mailbox servers.
 
 
 ## 2. Usage
