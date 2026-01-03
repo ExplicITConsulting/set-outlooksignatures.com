@@ -104,6 +104,10 @@ Adjust other [parameters](/parameters) that you find useful. The [list of featur
 
 You can find answers to the most frequently asked questions on our [FAQ page](/faq). For more in-depth information, our [Help and Support Center](/help) offers excellent documentation.
 
+When planning your rollout, make sure to read the following documents first:
+- '[Organizational implementation approach](/implementationapproach)' basically covers the whole organizational product lifecycle from defining requirements to operational responsibilities.
+- '[Technical details, requirements and usage](/details)' describes what Set-OutlookSignatures needs, how it works and how to use it. Its 'Architecture options and considerations' chapter is essential for understanding its different operation modes and choosing the ideal configuration for your environment.
+
 ###### Show what you've created {#show-what-you-created}
 We know that some of you have built visually stunning email signatures, crafted clever out-of-office replies, implemented custom replacement variables, and even integrated third-party systems in ways that go far beyond the basics.
 

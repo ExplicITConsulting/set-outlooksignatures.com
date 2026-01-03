@@ -37,13 +37,13 @@ sitemap_changefreq: weekly
 ## 1. Overview
 With a [Benefactor Circle](/benefactorcircle) license, you also have access to the Set-OutlookSignatures add-in for Outlook.
 
-The add-in makes signatures - created by Set-OutlookSignatures in client or SimulateAndDeploy mode - available in Outlook on iOS and Android, while supporting all Outlook editions across platforms.
+The add-in makes signatures - created by Set-OutlookSignatures in client or SimulateAndDeploy mode - available in Outlook on iOS and Outlook on Android, while supporting all Outlook editions across platforms.
 
 It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD (bring your own device) scenarios. For on-premises mailboxes, it delivers a roaming signature experience comparable to the cloud.
 
 The Outlook add-in includes a task pane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.
 
-It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful on Outlook for Android and iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.
+It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful inn Outlook on Android and Outlook on iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.
 
 The Outlook add-in is self-hosted by you. Compared to using a solution hosted by a 3rd party, this has several advantages:
 - Client specific configuration.

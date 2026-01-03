@@ -16,7 +16,7 @@ Als Microsoft im Jahr 2020 Roaming-Signaturen ankündigte, klang dies wie eine b
 
 So lautete zumindest die Theorie.
 
-Schnellvorlauf bis Mitte 2024: Obwohl die meisten Mandanten Roaming-Signaturen nun aktiviert haben, ist die Realität komplizierter:
+Schnellvorlauf bis Mitte 2025: Obwohl die meisten Mandanten Roaming-Signaturen nun aktiviert haben, ist die Realität komplizierter:
 - Es gibt immer noch keine öffentliche API.
 - Einige hartnäckige Fehler sind nach wie vor ungelöst (z.B. werden [Kodierungen nicht korrekt konvertiert](/faq#41-roaming-signatures-in-classic-outlook-for-windows-look-different)).
 - Outlook unterstützt Roaming-Signaturen nicht auf allen Plattformen.

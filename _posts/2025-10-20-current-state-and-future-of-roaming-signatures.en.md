@@ -16,7 +16,7 @@ When Microsoft announced roaming signatures back in 2020, it sounded like a game
 
 That was the theory.
 
-Fast forward to mid-2024, and while most tenants now have roaming signatures enabled, the reality is more complicated:
+Fast forward to mid-2025, and while most tenants now have roaming signatures enabled, the reality is more complicated:
 - There's still no public API.
 - Some persistent bugs remain unresolved ([encoding conversion](/faq#41-roaming-signatures-in-classic-outlook-for-windows-look-different), for example).
 - Outlook doesn't support roaming signatures on all platforms.

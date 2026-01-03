@@ -26,30 +26,37 @@ sitemap_changefreq: weekly
     - [2.1.1. Common restrictions and notes for Linux and macOS](#211-common-restrictions-and-notes-for-linux-and-macos)
     - [2.1.2. Linux specific restrictions and notes](#212-linux-specific-restrictions-and-notes)
     - [2.1.3. macOS specific restrictions and notes](#213-macos-specific-restrictions-and-notes)
-- [3. Group membership](#3-group-membership)
-  - [3.1. Group membership in Entra ID](#31-group-membership-in-entra-id)
-  - [3.2. Group membership in Active Directory](#32-group-membership-in-active-directory)
-- [4. Run Set-OutlookSignatures while Outlook is running](#4-run-set-outlooksignatures-while-outlook-is-running)
-- [5. Signature and OOF template file format](#5-signature-and-oof-template-file-format)
-  - [5.1. Relation between template file name and Outlook signature name](#51-relation-between-template-file-name-and-outlook-signature-name)
-  - [5.2. Proposed template and signature naming convention](#52-proposed-template-and-signature-naming-convention)
-- [6. Template tags and INI files](#6-template-tags-and-ini-files)
-  - [6.1. Allowed tags](#61-allowed-tags)
-  - [6.2. How to work with INI files](#62-how-to-work-with-ini-files)
-- [7. Signature and OOF application order](#7-signature-and-oof-application-order)
-- [8. Replacement variables](#8-replacement-variables)
-  - [8.1. Photos (account pictures, user image) from Active Directory or Entra ID](#81-photos-account-pictures-user-image-from-active-directory-or-entra-id)
-    - [8.1.1. When using DOCX template files](#811-when-using-docx-template-files)
-    - [8.1.2. When using HTM template files](#812-when-using-htm-template-files)
-    - [8.1.3. Common behavior](#813-common-behavior)
-  - [8.2. Delete images when attribute is empty, variable content based on group membership](#82-delete-images-when-attribute-is-empty-variable-content-based-on-group-membership)
-  - [8.3. Custom image replacement variables](#83-custom-image-replacement-variables)
-- [9. Outlook on the web](#9-outlook-on-the-web)
-- [10. Hybrid and cloud-only support](#10-hybrid-and-cloud-only-support)
-  - [10.1. Basic Configuration](#101-basic-configuration)
-  - [10.2. Advanced Configuration](#102-advanced-configuration)
-  - [10.3. Authentication](#103-authentication)
-- [11. Simulation mode](#11-simulation-mode)
+- [3. Architecture options and considerations](#3-architecture-options-and-considerations)
+  - [3.1. Creating signatures and out-of-office replies](#31-creating-signatures-and-out-of-office-replies)
+  - [3.2. Making signatures available](#32-making-signatures-available)
+    - [3.2.1. Roaming signatures](#321-roaming-signatures)
+    - [3.2.2. Outlook add-in](#322-outlook-add-in)
+    - [3.2.3. Draft email](#323-draft-email)
+    - [3.2.4. Documents folder](#324-documents-folder)
+- [4. Group membership](#4-group-membership)
+  - [4.1. Group membership in Entra ID](#41-group-membership-in-entra-id)
+  - [4.2. Group membership in Active Directory](#42-group-membership-in-active-directory)
+- [5. Run Set-OutlookSignatures while Outlook is running](#5-run-set-outlooksignatures-while-outlook-is-running)
+- [6. Signature and OOF template file format](#6-signature-and-oof-template-file-format)
+  - [6.1. Relation between template file name and Outlook signature name](#61-relation-between-template-file-name-and-outlook-signature-name)
+  - [6.2. Proposed template and signature naming convention](#62-proposed-template-and-signature-naming-convention)
+- [7. Template tags and INI files](#7-template-tags-and-ini-files)
+  - [7.1. Allowed tags](#71-allowed-tags)
+  - [7.2. How to work with INI files](#72-how-to-work-with-ini-files)
+- [8. Signature and OOF application order](#8-signature-and-oof-application-order)
+- [9. Replacement variables](#9-replacement-variables)
+  - [9.1. Photos (account pictures, user image) from Active Directory or Entra ID](#91-photos-account-pictures-user-image-from-active-directory-or-entra-id)
+    - [9.1.1. When using DOCX template files](#911-when-using-docx-template-files)
+    - [9.1.2. When using HTM template files](#912-when-using-htm-template-files)
+    - [9.1.3. Common behavior](#913-common-behavior)
+  - [9.2. Delete images when attribute is empty, variable content based on group membership](#92-delete-images-when-attribute-is-empty-variable-content-based-on-group-membership)
+  - [9.3. Custom image replacement variables](#93-custom-image-replacement-variables)
+- [10. Outlook on the web](#10-outlook-on-the-web)
+- [11. Hybrid and cloud-only support](#11-hybrid-and-cloud-only-support)
+  - [11.1. Basic Configuration](#111-basic-configuration)
+  - [11.2. Advanced Configuration](#112-advanced-configuration)
+  - [11.3. Authentication](#113-authentication)
+- [12. Simulation mode](#12-simulation-mode)
 
 
 ## 1. Get to know Set-OutlookSignatures
@@ -82,14 +89,9 @@ Set-Outlook can run on Linux, macOS or Windows systems with PowerShell:
 - Windows: Windows PowerShell 5.1 ('powershell.exe', part of Windows) or PowerShell 7+ ('pwsh.exe')
 - Linux, macOS: PowerShell 7+ ('pwsh')
 
-Set-OutlookSignatures can run in two modes:
-- In the security context of the currently logged-in user.
-  - This mode is recommended for most scenarios as it allows Set-OutlookSignatures to read which mailboxes the user added to Outlook or Outlook on the web, and as this mode does not require central computing ressources.
-  - In combination with the [Benefactor Circle add-on](/benefactorcircle), signatures are also made available as Exchange Online roaming signatures and can be used by the [Outlook add-in](/outlookaddin). Both make signatures available when accessing the mailbox from Outlook on a client on which Set-OutlookSignatures does not run.
-- On a central system, using a service account to push signatures into users mailboxes.
-  - This mode is ideal when users log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients. See the '[SimulateAndDeploy](/parameters#19-simulateanddeploy)' parameter for details.
-  - SimulateAndDeploy considers additional mailboxes when the user added them in Outlook on the web, when they are passed via the '[SimulateMailboxes](/parameters#38-virtualmailboxconfigfile)' parameter, or when being added dynamically via the '[VirtualMailboxConfigFile](/parameters#38-virtualmailboxconfigfile)' parameter.
-  - In combination with the [Benefactor Circle add-on](/benefactorcircle), signatures are also made available as Exchange Online roaming signatures and can be used by the [Outlook add-in](/outlookaddin). Both make signatures available when accessing the mailbox from Outlook on a client on which Set-OutlookSignatures does not run.
+Set-OutlookSignatures can run in two modes. See '[2.1. Architecture options and considerations](#21-architecture-options-and-considerations)' later in this document for details. In short:
+- Client mode, in the security context of the currently logged-in user.<br>This mode is recommended for most scenarios as it allows Set-OutlookSignatures to read which mailboxes the user added to Outlook or Outlook on the web, and as this mode does not require central computing ressources.
+- SimulateAndDeploy mode, using a service account to push signatures into users mailboxes.<br>This mode is ideal when users log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients.
 
 On Windows, Outlook and Word are usually required, but not in all constellations:
 - When Outlook 2010 or higher is installed and has profiles configured, Outlook is used as source for mailboxes to deploy signatures for.  
@@ -145,8 +147,98 @@ Not all features are yet available on Linux and macOS. Every parameter contains 
 - When using email clients such as Apple Mail or others, you can still use signatures created by Set-OutlookSignatures with the Benefactor Circle add-on, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
 
 
-## 3. Group membership  
-### 3.1. Group membership in Entra ID
+## 3. Architecture options and considerations
+Most companies choose the same default setup for their environment: Each user has a main device to work on. This main device is managed, i.e. controlled by the company at software level at least.
+
+The best for this scenario is to run Set-OutlookSignatures for each user as described in the [Quick Start Guide](/quickstart): Depending on your needs and environment, you may realize this with a [logon script](/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task), a [scheduled task]/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task), a [desktop icon](/faq#446-create-desktop-icons-cross-platform), a [desired state configuration](/faq#444-deploy-and-run-software-using-desired-state-configuration-dsc), or other methods.  
+Of course, users [never see Set-OutlookSignatures](/faq#121-start-set-outlooksignatures-in-hiddeninvisible-mode) - signatures are just there and always up-to-date.
+
+You then add the [Outlook add-in](/outlookaddin) to the mix to make signatures available in Outlook on Android and Outlook on iOS. This also covers the occasional use of Outlook on devices other than the main device, no matter if they are managed or not.
+
+Sometimes, this default scenario is not possible or not wanted. Examples are:
+* Users do not have a managed main device, for example in a BYOD (bring your own device) scenario.
+* Users never log on to a device, only to services. This is often the case when Microsoft 365 F-licenses are used and users only log on to Outlook on the web, for example.
+* You want to use Set-OutlookSignatures, but you prefer running it on a central system instead of running it on your clients.
+
+Set-OutlookSignatures and the [Benefactor Circle add-on](/benefactorcircle) support all these scenarios by offering differing methods for the creation of signatures as well as for making these signatures available to end users.
+
+Contrary to other solutions, you do not have to decide for one fixed combination of these methods - you can mix and match different combinations to perfectly meet your requirements.
+
+A commonly used scenario looks like this:
+* For office workers, Set-OutlookSignatures runs on their client ([hidden/non-visible](/faq#121-start-set-outlooksignatures-in-hiddeninvisible-mode), of course). The Outlook add-in is configured to automatically add signatures only in Outlook on Android and Outlook on iOS.
+* Frontline workers (production and healthcare staff, for example) using shared devices and only logging on to Outlook on the web get their signatures centrally via SimulateAndDeploy.
+* Users working on unmanaged devices get their signatures centrally via SimulateAndDeploy. The Outlook add-in is configured to automatically add signatures on all Outlook editions on all platforms.
+
+Let's dive a bit deeper into the methods mentioned.
+
+### 3.1. Creating signatures and out-of-office replies
+Set-OutlookSignatures comes with client mode, the Benefactor Circle add-on adds [SimulateAndDeploy](/parameters#19-simulateanddeploy) mode.
+
+While building the base for SimulateAndDeploy, pure [simulation mode](/details#11-simulation-mode) is not discussed here as it is not intended to be used for mass deployment but as a quality control feature.
+
+| | **Client mode** | **SimulateAndDeploy** |
+| :-- | :-- | :-- |
+| **Advantages** | <li>Uses idle resources on end user devices (Linux, Windows, macOS).</li><li>Runs within the security context of the logged-on user.</li><li>Is typically run more often, usually every two hours or at every log-on.</li> | <li>Absolutely no interaction with end users and their devices.</li><li>The main device of each user does not need to be a managed device.</li><li>Software or at least configuration must only be deployed to involved central systems.</li> |
+| **Disadvantages** | <li>End users must log on to a device (Linux, Windows, macOS), not just to Outlook.</li><li>The main device of each user must be a managed device as you need to be able to deploy software or at least a bit of configuration to it.</li><li>Software or at least configuration must be deployed to many decentral systems.</li> | <li>Uses one or more central systems, which need according resources.</li><li>Runs within the security context of a service account requiring (temporary) full access to all user mailboxes.</li><li>Is typically run less frequent, usually once a day or less often.</li><li>Can only see and influence the configuration of Outlook on the web, reducing the feature set of Set-OutlookSignatures to what is possible in simulation mode.</li> |
+
+Both modes can set out-of-office replies, make signatures available as roaming signatures in Exchange Online, and make signatures consumable for the Outlook add-in.
+
+### 3.2. Making signatures available
+Signatures created in client mode or SimulateAndDeploy mode need to be made available to the end user.
+
+Signatures created in client mode are automatically made available to the local Outlook installation. With the Benefactor Circle add-on, client mode also makes [signatures available in the 'Documents' folder](/parameters#14-additionalsignaturepath) of the logged-on user.
+
+Due to the lack of access to end user devices, SimulateAndDeploy mode treats Outlook on the web as the local Outlook installation, and does not make signatures available in the 'Documents' folder.
+
+Per default and with the Benefactor Circle add-on active, both modes also make signatures available
+* in [Outlook on the web](/parameters#10-setcurrentuseroutlookwebsignature),
+* as [roaming signatures](/parameters#31-mirrorcloudsignatures) (cloud only),
+* for use with the [Outlook add-in](/outlookaddin),
+* and in a [draft email](/parameters#35-signaturecollectionindrafts).
+
+The following describes how each of these options can be used.
+
+#### 3.2.1. Roaming signatures
+Roaming signatures is an Exchange Online only feature. The idea is to no longer store signatures locally but in the mailbox itself.
+
+This feature is currently supported only by Outlook on the web, New Outlook on Windows and Classic Outlook on Windows.
+
+Even when Microsoft is slow in taking this feature forward and competing signature solutions boycott it because of its impact on their business model, the creators of Set-OutlookSignatures and the Benefactor Circle add-on absolutely believe that roaming signatures are the way.
+
+With the Benefactor Circle add-on, all signatures are automatically made available as roaming signatures. Roaming signatures are synchronized using our own engine with all Outlook editions on Linux, Windows and macOS. This not only overcomes platform limits, but also avoids [problems with Outlook's own sync engine](/faq#41-roaming-signatures-in-classic-outlook-on-windows-look-different).
+
+Until roaming signatures are supported by all Outlook editions on all platforms, running Set-OutlookSignatures with the Benefactor Circle add-on in client mode and using the Outlook add-in are a great alternative to make signatures available everywhere.
+
+See our blog post '[Current state and furte of roaming signatures](/blog/2025/10/20/current-state-and-future-of-roaming-signatures)' for more context.
+
+#### 3.2.2. Outlook add-in
+The [Outlook add-in](/outlookaddin), part of the Benefactor Circle add-on, is available for all Outlook editions.
+
+The add-in makes signatures - created by Set-OutlookSignatures in client or SimulateAndDeploy mode - available in Outlook on Android and Outlook on iOS, while supporting all Outlook editions across platforms.
+
+It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD (bring your own device) scenarios. For on-premises mailboxes, it delivers a roaming signature experience comparable to the cloud.
+
+The Outlook add-in includes a task pane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.
+
+It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful for Outlook on Android and Outlook on iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.
+
+#### 3.2.3. Draft email
+The [SignatureCollectionInDrafts](/parameters#35-signaturecollectionindrafts) parameter, enabled per default with the Benefactor Circle add-on, creates and updates an email message with the subject 'My signatures, powered by Set-OutlookSignatures Benefactor Circle' in the drafts folder of the current user.
+
+The draft email contains all available signatures in HTML and plain text format.
+
+This allows for easy copy-paste access to signatures in mail clients that do not have a signatures API and do not support Outlook add-ins: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others.
+
+#### 3.2.4. Documents folder
+The [AdditionalSignaturePath](/parameters#14-additionalsignaturepath) parameter, enabled per default with the Benefactor Circle add-on, copies signatures to an additional path.
+
+When this path is synchronized and made available on all user devices, for example via Microsoft OneDrive or Nextcloud, users have file-level access to signatures everywhere.
+
+The signatures can then be viewed and copied to mail clients that do not have a signatures API and do not support Outlook add-ins: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others.
+
+
+## 4. Group membership  
+### 4.1. Group membership in Entra ID
 When no Active Directory connection is available or the `GraphOnly` parameter is set to `true`, Entra ID is queried for transitive group membership via the Graph API. This query includes security and distribution groups.
 
 Transitive means that not only direct group membership is considered, but also the membership resulting of groups being members of other groups, a.k.a. nested or indirect membership.
@@ -154,7 +246,7 @@ Transitive means that not only direct group membership is considered, but also t
 In Microsoft Graph, membership in dynamic groups is automatically considered.
 
 
-### 3.2. Group membership in Active Directory
+### 4.2. Group membership in Active Directory
 When an Active Directory connection is available and the `GraphOnly` parameter ist not set to `true`, Active Directory is queried via LDAP.
 
 Per default, all static security and distribution groups of group scopes global and universal are considered.
@@ -177,7 +269,7 @@ Only static groups are considered. Please see the FAQ section for detailed infor
 Per default, the mailbox's own forest is not checked for membership in domain local groups, no matter if of type security or distribution. This is because querying for membership in domain local groups cannot be done fast, as there is no cache and every domain local group domain in the forest has to be queried for membership. Also, domain local groups are usually not used when granting permissions in Exchange. You can enable searching for domain local groups in the mailbox's forest by setting the parameter `IncludeMailboxForestDomainLocalGroups` to `$true`.
 
 
-## 4. Run Set-OutlookSignatures while Outlook is running  
+## 5. Run Set-OutlookSignatures while Outlook is running  
 Outlook and Set-OutlookSignatures can run simultaneously.
 
 On Windows, Outlook is never run or stopped by Set-OutlookSignatures. On macOS, Outlook may be started in the background, as this is a required by Outlook's engine for script access.
@@ -187,9 +279,9 @@ New and changed signatures can be used instantly in Outlook.
 Changing which signature name is to be used as default signature for new emails or for replies and forwards requires restarting Outlook.   
 
 
-## 5. Signature and OOF template file format  
+## 6. Signature and OOF template file format  
 Only Word files with the extension .docx and HTML files with the extension .htm are supported as signature and OOF template files.  
-### 5.1. Relation between template file name and Outlook signature name
+### 6.1. Relation between template file name and Outlook signature name
 The name of the signature template file without extension is the name of the signature in Outlook.
 Example: The template "Test signature.docx" will create a signature named "Test signature" in Outlook.
 
@@ -201,7 +293,7 @@ Example: The template "Test signature.htm" with the following INI file configura
 OutlookSignatureName = Test signature, do not use
 ```
 
-### 5.2. Proposed template and signature naming convention
+### 6.2. Proposed template and signature naming convention
 To make life easier for template maintainers and for users, a consistent template and signature naming convention should be used.
 
 There are multiple approaches, with the following one gaining popularity: `<Company> <internal/external> <Language> <formal/informal> <additional info>`
@@ -262,7 +354,7 @@ DefaultNew
 ```
 
 
-## 6. Template tags and INI files
+## 7. Template tags and INI files
 Tags define properties for templates, such as
 - time ranges during which a template shall be applied or not applied
 - groups whose direct or indirect members are allowed or denied application of a template
@@ -279,7 +371,7 @@ There are additional tags which are not template specific, but change the behavi
 If you want to give template creators control over the INI file, place it in the same folder as the templates.
 
 Tags are case insensitive.
-### 6.1. Allowed tags
+### 7.1. Allowed tags
 - Time range: `<yyyyMMddHHmm-yyyyMMddHHmm>`, `-:<yyyyMMddHHmm-yyyyMMddHHmm>`
   - Make this template valid only during the specific time range (`yyyy` = year, `MM` = month, `dd` = day, `HH` = hour (00-24), `mm` = minute).
   - The `-:` prefix makes this template invalid during the specified time range.
@@ -419,7 +511,7 @@ Tags are case insensitive.
 <br>Tags can be combined: A template may be assigned to several groups, email addresses and time ranges, be denied for several groups, email adresses and time ranges, be used as default signature for new emails and as default signature for replies and forwards - all at the same time. Simple add different tags below a file name, separated by line breaks (each tag needs to be on a separate line).
 
 
-### 6.2. How to work with INI files
+### 7.2. How to work with INI files
 1. Comments  
   Comment lines start with '#' or ';'  
 	Whitespace at the beginning and the end of a line is ignored  
@@ -515,7 +607,7 @@ It is recommended to create a copy of your template folder for tests.
 6. Make the software use the INI file by passing the `SignatureIniFile` and/or `OOFIniFile` parameter
 
 
-## 7. Signature and OOF application order  
+## 8. Signature and OOF application order  
 Signatures are applied mailbox for mailbox. The mailbox list is sorted as follows (from highest to lowest priority):
 - Mailbox of the currently logged-in user
 - Mailboxes from the default Outlook profile, in the sort order shown in Outlook (and not in the order they were added to the Outlook profile)
@@ -531,7 +623,7 @@ Each one of these templates groups can have one or more time range tags assigned
 OOF templates are only applied if the out-of-office assistant is currently disabled. If it is currently active or scheduled to be automatically activated in the future, OOF templates are not applied.  
 
 
-## 8. Replacement variables  
+## 9. Replacement variables  
 Replacement variables are case insensitive placeholders in templates which are replaced with actual user or mailbox values at runtime.
 
 Replacement variables are replaced everywhere, including links, QuickTips and alternative text of images.
@@ -558,8 +650,8 @@ Per default, `.\config\default replacement variables.ps1` contains the following
     - `$CurrentUserFax$`: Facsimile number  
     - `$CurrentUserMobile$`: Mobile phone  
     - `$CurrentUserMail$`: email address  
-    - `$CurrentUserPhoto$`: Photo from Active Directory, see "[12.1 Photos from Active Directory](#121-photos-from-active-directory)" for details  
-    - `$CurrentUserPhotoDeleteEmpty$`: Photo from Active Directory, see "[12.1 Photos from Active Directory](#121-photos-from-active-directory)" for details  
+    - `$CurrentUserPhoto$`: Photo from Active Directory or Entra ID, see "[9.1. Photos (account pictures, user image) from Active Directory or Entra ID](#91-photos-account-pictures-user-image-from-active-directory-or-entra-id)" for details  
+    - `$CurrentUserPhotoDeleteEmpty$`: Photo from Active Directory or Entra ID, see "[9.1. Photos (account pictures, user image) from Active Directory or Entra ID](#91-photos-account-pictures-user-image-from-active-directory-or-entra-id)" for details  
     - `$CurrentUserExtAttr1$` to `$CurrentUserExtAttr15$`: Exchange extension attributes 1 to 15  
     - `$CurrentUserOffice$`: Office room number (physicalDeliveryOfficeName)  
     - `$CurrentUserCompany$`: Company  
@@ -571,7 +663,7 @@ Per default, `.\config\default replacement variables.ps1` contains the following
     - Same variables as logged-in user, `$CurrentMailbox[…]$` instead of `$CurrentUser[…]$`  
 - Manager of current mailbox  
     - Same variables as logged-in user, `$CurrentMailboxManager[…]$` instead of `$CurrentMailbox[…]$`  
-### 8.1. Photos (account pictures, user image) from Active Directory or Entra ID
+### 9.1. Photos (account pictures, user image) from Active Directory or Entra ID
 The software supports replacing images in signature templates with photos stored in Active Directory.
 
 When using images in OOF templates, please be aware that Exchange and Outlook do not yet support images in OOF messages.
@@ -588,7 +680,7 @@ Set-Outlooksignatures comes with the following default replacement variables for
 - `$CurrentMailboxManagerPhoto$`  
 - `$CurrentMailboxManagerPhotoDeleteEmpty$`  
 
-#### 8.1.1. When using DOCX template files
+#### 9.1.1. When using DOCX template files
 When using DOCX template files, there are two ways you can embed account pictures: The shape option or the "link and embed" option.
 
 Both ways allow to apply Word image features such as sizing, a shadow, a glow or a reflection. The shape option allows for more graphical freedom, as you can use arrows, stars and many more as container for account pictures.
@@ -613,7 +705,7 @@ When Set-OutlookSignatures finds a shape in a template file with an image replac
 
 When Set-Outlooksignatures finds a linked and embedded image in a template file with an image replacement variable in its alternative text, it replaces the image with the account picture (as if you would use Word's `"Change picture"` function).
 
-#### 8.1.2. When using HTM template files
+#### 9.1.2. When using HTM template files
 Images are replaced when the `src` or `alt` property of the image tag contains an image replacement variable.
 
 Be aware that Outlook does not support the full HTML feature set. For example:
@@ -623,7 +715,7 @@ Be aware that Outlook does not support the full HTML feature set. For example:
 - Consider switching to DOCX templates for easier maintenance.
 
 
-#### 8.1.3. Common behavior
+#### 9.1.3. Common behavior
 If there is no photo available in Active Directory, there are two options:  
 - You used the `$Current[…]Photo$` variables: The sample image used as placeholder is shown in the signature.  
 - You used the `$Current[…]PhotoDeleteempty$` variables: The sample image used as placeholder is deleted from the signature, which may affect the layout of the remaining signature depending on your formatting options.
@@ -642,7 +734,7 @@ If you ran into this problem outside this script, please consider modifying the 
 If the link is not working, please visit the <a href="https://web.archive.org/web/20180827213151/https://support.microsoft.com/en-us/help/224663/document-file-size-increases-with-emf-png-gif-or-jpeg-graphics-in-word">Internet Archive Wayback Machine's snapshot of Microsoft's article</a>.  
 
 
-### 8.2. Delete images when attribute is empty, variable content based on group membership
+### 9.2. Delete images when attribute is empty, variable content based on group membership
 You can avoid creating multiple templates which only differ by the images contained by only creating one template containing all images and marking this images to be deleted when a certain replacement variable is empty.
 
 Just add the text `$<name of the replacement variable>DELETEEMPTY$` (for example: `$CurrentMailboxExtAttr10DeleteEmpty$` ) to the description or alt text of the image. Taking the example, the image is deleted when extension attribute 10 of the current mailbox is empty.
@@ -685,7 +777,7 @@ Examples:
     - When using embedded and linked pictures, you can also set the file name to '$CurrentMailbox-IsMemberOf-MarketingDeleteempty$'
 
 
-### 8.3. Custom image replacement variables
+### 9.3. Custom image replacement variables
 You can fill custom image replacement variables yourself with a byte array: '`$CurrentUserCustomImage[1..10]$'`, '`$CurrentUserManagerCustomImage[1..10]$'`, '`$CurrentMailboxCustomImage[1..10]$'`, '`$CurrentMailboxManagerCustomImage[1..10]$'`.
 
 Use cases: Account pictures from a share, QR code vCard/URL/text/Twitter/X/Facebook/App stores/geo location/email, etc.
@@ -697,7 +789,7 @@ The behavior of custom image replacement variables and the possible configuratio
 As practical as QR codes may be, they should contain as little information as possible. The more information they contain, the larger the image needs to be, which often has a negative impact on the layout and always has a negative impact on the size of the email.<br>QR codes with too much information and too small an image size become visually blurred, making them impossible to scan - for DOCX templates, `DocxHighResImageConversion` can help. Consider bigger image size, less content, less error correction, MeCard instead of vCard, and pointing to an URL containing the actual information.
 
 
-## 9. Outlook on the web  
+## 10. Outlook on the web  
 If the currently logged-in user has configured his personal mailbox in Outlook, the default signature for new emails is configured in Outlook on the web automatically.
 
 If the default signature for new mails matches the one used for replies and forwarded email, this is also set in Outlook.
@@ -711,7 +803,7 @@ If there is no default signature in Outlook, Outlook on the web settings are not
 All this happens with the credentials of the currently logged-in user, without any interaction neccessary.  
 
 
-## 10. Hybrid and cloud-only support
+## 11. Hybrid and cloud-only support
 Set-OutlookSignatures supports three directory environments:
 - Active Directory on premises. This requires direct connection to Active Directory Domain Controllers, which usually only works when you are connected to your company network.
 - Hybrid. This environment consists of an Active Directory on premises, which is synced with Microsoft Entra ID in the cloud.  
@@ -724,7 +816,7 @@ The software parameter `GraphOnly` defines which directory environment is used:
 - `-GraphOnly true`: Entra ID only, even when on-prem AD could be reached
 
 
-### 10.1. Basic Configuration
+### 11.1. Basic Configuration
 To allow communication between Microsoft Graph and Set-Outlooksignatures, both need to be configured for each other.
 
 The easiest way is to once start Set-OutlookSignatures with a cloud administrator. The administrator then gets asked for admin consent for the correct permissions:
@@ -742,7 +834,7 @@ If you prefer using own application IDs or need advanced configuration, follow t
   - Use the `GraphConfigFile` parameter to make the tool use the newly created Graph configuration file.
 
 
-### 10.2. Advanced Configuration
+### 11.2. Advanced Configuration
 The Graph configuration file allows for additional, advanced configuration:
 - `$GraphEndpointVersion`: The version of the Graph REST API to use
 - `$GraphUserProperties`: The properties to load for each graph user/mailbox. You can add custom attributes here.
@@ -750,7 +842,7 @@ The Graph configuration file allows for additional, advanced configuration:
 The virtual account is accessible as `$ADPropsCurrentUser[…]` in `.\config\default replacement variables.ps1`, and therefore has a direct impact on replacement variables.
 
 
-### 10.3. Authentication
+### 11.3. Authentication
 In hybrid and cloud-only scenarios, Set-OutlookSignatures automatically tries multiple ways to authenticate the user. Silent methods, also known as non-interactive methods, are preferred as they are invisible to the user.
 1. Silent via Integrated Windows Authentication without login hint  
 This works in hybrid scenarios when you configured your hybrid connection in Entra Connect accordingly, and when the user is logged-on to a domain- or Entra-ID-joined computer with his domain credentials. The credentials of the currently logged-in user are used to access Microsoft Graph without any further user interaction.  
@@ -803,7 +895,7 @@ If a user executes Set-OutlookSignatures on a client several times in succession
 - Ensure that the cache file or keyring/keychain entry is not deleted between separate runs of Set-OutlookSignatures for the same user on the same machine.
 
 
-## 11. Simulation mode  
+## 12. Simulation mode  
 Simulation mode is enabled when the parameter `SimulateUser` is passed to the software. It answers the question `"What will the signatures look like for user A, when Outlook is configured for the mailboxes X, Y and Z?"`.
 
 Simulation mode is useful for content creators and admins, as it allows to simulate the behavior of the software and to inspect the resulting signature files before going live. Such a dry-run is not only very helpful for running tests in the production environment without affecting anyone, it also greatly supports problem analysis.
