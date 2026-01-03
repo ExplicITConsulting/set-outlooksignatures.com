@@ -174,7 +174,7 @@ Let's dive a bit deeper into the methods mentioned.
 ### 3.1. Creating signatures and out-of-office replies
 Set-OutlookSignatures comes with client mode, the Benefactor Circle add-on adds [SimulateAndDeploy](/parameters#19-simulateanddeploy) mode.
 
-While building the base for SimulateAndDeploy, pure [simulation mode](/details#11-simulation-mode) is not discussed here as it is not intended to be used for mass deployment but as a quality control feature.
+While building the base for SimulateAndDeploy, pure [simulation mode](/details#12-simulation-mode) is not discussed here as it is not intended to be used for mass deployment but as a quality control feature.
 
 <table>
   <thead>

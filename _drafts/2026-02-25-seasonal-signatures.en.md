@@ -26,7 +26,7 @@ Here are a few ways to make your signatures more impactful:
 Let your signature reflect what matters most to your business, all year round.
 
 The following links will interest you:
-- [Allowed tags](/details#61-allowed-tags) for template assignment
+- [Allowed tags](/details#71-allowed-tags) for template assignment
 - [How do I alternate banners and other images in signatures?](/faq#30-how-do-i-alternate-banners-and-other-images-in-signatures)
 
 

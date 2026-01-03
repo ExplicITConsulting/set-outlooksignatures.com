@@ -20,7 +20,7 @@ Test environments rarely offer peace of mind. Even when available, two big issue
 - Does the test environment truly mirror production?
 - How can I impersonate another user without jumping through hoops?
 
-Set-OutlookSignatures comes with [Simulation Mode](/details#11-simulation-mode), designed to eliminate the guesswork:
+Set-OutlookSignatures comes with [Simulation Mode](/details#12-simulation-mode), designed to eliminate the guesswork:
 - Test safely within your production environment
 - Simulate any user, with any mailbox configuration
 - No need to involve the user or request extra permissions
