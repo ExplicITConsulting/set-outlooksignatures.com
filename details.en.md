@@ -227,7 +227,7 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#1
   </tbody>
 </table>
 
-Both modes can set out-of-office replies, make signatures available as roaming signatures in Exchange Online, and make signatures consumable for the Outlook add-in.
+Both modes can set out-of-office replies.
 
 ### 3.2. Making signatures available
 Signatures created in client mode or SimulateAndDeploy mode need to be made available to the end user.
