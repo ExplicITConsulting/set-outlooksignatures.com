@@ -108,7 +108,7 @@ Auf unserer [FAQ-Seite](/faq) finden Sie Antworten auf die am häufigsten gestel
 
 Bei der Planung Ihres Rollouts sollten Sie zunächst die folgenden Dokumente lesen:
 - '[Organisatorischer Implementierungs-Ansatz](/implementationapproach)' betrachtet im Wesentlichen den gesamten Produktlebenszyklus aus organisatorischer Sicht, von der Definition der Anforderungen bis hin zu den operativen Verantwortlichkeiten.
-- '[Technical details, requirements and usage](/details)' beschreibt, was Set-OutlookSignatures benötigt, wie es funktioniert und wie es verwendet wird. Das Kapitel 'Architecture options and considerations' ist essentiell, um die verschiedenen Betriebsmodi zu verstehen und die ideale Konfiguration für Ihre Umgebung auszuwählen.
+- '[Technical details, requirements and usage](/details)' beschreibt, was Set-OutlookSignatures benötigt, wie es funktioniert und wie es verwendet wird. Das Kapitel 'Architecture considerations' ist essentiell, um die verschiedenen Betriebsmodi zu verstehen und die ideale Konfiguration für Ihre Umgebung auszuwählen.
 
 ###### Zeigen Sie, was Sie geschaffen haben {#show-what-you-created}
 Wir wissen, dass einige von Ihnen visuell beeindruckende E-Mail-Signaturen erstellt, clevere Abwesenheitsnotizen verfasst, benutzerdefinierte Ersatzvariablen implementiert und sogar Systeme von Drittanbietern auf eine Weise integriert haben, die weit über die Grundlagen hinausgeht.

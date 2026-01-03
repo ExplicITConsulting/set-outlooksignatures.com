@@ -26,13 +26,14 @@ sitemap_changefreq: weekly
     - [2.1.1. Common restrictions and notes for Linux and macOS](#211-common-restrictions-and-notes-for-linux-and-macos)
     - [2.1.2. Linux specific restrictions and notes](#212-linux-specific-restrictions-and-notes)
     - [2.1.3. macOS specific restrictions and notes](#213-macos-specific-restrictions-and-notes)
-- [3. Architecture options and considerations](#3-architecture-options-and-considerations)
+- [3. Architecture considerations](#3-architecture-considerations)
   - [3.1. Creating signatures and out-of-office replies](#31-creating-signatures-and-out-of-office-replies)
   - [3.2. Making signatures available](#32-making-signatures-available)
-    - [3.2.1. Roaming signatures](#321-roaming-signatures)
-    - [3.2.2. Outlook add-in](#322-outlook-add-in)
-    - [3.2.3. Draft email](#323-draft-email)
-    - [3.2.4. Documents folder](#324-documents-folder)
+    - [3.2.1. Outlook on the web](#321-outlook-on-the-web)
+    - [3.2.2. Roaming signatures](#322-roaming-signatures)
+    - [3.2.3. Outlook add-in](#323-outlook-add-in)
+    - [3.2.4. Draft email](#324-draft-email)
+    - [3.2.5. Documents folder](#325-documents-folder)
 - [4. Group membership](#4-group-membership)
   - [4.1. Group membership in Entra ID](#41-group-membership-in-entra-id)
   - [4.2. Group membership in Active Directory](#42-group-membership-in-active-directory)
@@ -89,7 +90,7 @@ Set-Outlook can run on Linux, macOS or Windows systems with PowerShell:
 - Windows: Windows PowerShell 5.1 ('powershell.exe', part of Windows) or PowerShell 7+ ('pwsh.exe')
 - Linux, macOS: PowerShell 7+ ('pwsh')
 
-Set-OutlookSignatures can run in two modes. See '[3 Architecture options and considerations](#3-architecture-options-and-considerations)' later in this document for details. In short:
+Set-OutlookSignatures can run in two modes. See '[3 Architecture considerations](#3-architecture-considerations)' later in this document for details. In short:
 - Client mode, in the security context of the currently logged-in user.<br>This mode is recommended for most scenarios as it allows Set-OutlookSignatures to read which mailboxes the user added to Outlook or Outlook on the web, and as this mode does not require central computing ressources.
 - SimulateAndDeploy mode, using a service account to push signatures into users mailboxes.<br>This mode is ideal when users log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients.
 
@@ -147,16 +148,19 @@ Not all features are yet available on Linux and macOS. Every parameter contains 
 - When using email clients such as Apple Mail or others, you can still use signatures created by Set-OutlookSignatures with the Benefactor Circle add-on, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
 
 
-## 3. Architecture options and considerations
-Most companies choose the same default setup for their environment: Each user has a main device to work on. This main device is managed, i.e. controlled by the company at software level at least.
+## 3. Architecture considerations
+Most companies choose the same default setup for their environment:
+- Each user has a primary device running Linux, macOS or Windows.<br>On this device, the user performs the majority of his computer related tasks - from our point of view, this is working with emails.<br>This primary device is managed, i.e. controlled by the company at software level at least.
+- Users often have secondary devices, which can be essential for daily work but are used less often than the primary device (especially for our use case of working with emails).<br>Typical secondary devices are the user's company smartphone, an occasionally used laptop or virtual machine, but also non-company devices used to access company email.<br>Secondary devices are ususally only managed devices when they belong to the company.
 
-The best for this scenario is to run Set-OutlookSignatures for each user as described in the [Quick Start Guide](/quickstart): Depending on your needs and environment, you may realize this with a [logon script](/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task), a [scheduled task]/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task), a [desktop icon](/faq#446-create-desktop-icons-cross-platform), a [desired state configuration](/faq#444-deploy-and-run-software-using-desired-state-configuration-dsc), or other methods.  
+The best for this scenario is to run Set-OutlookSignatures on each user's primary device as described in the [Quick Start Guide](/quickstart): Depending on your needs and environment, you may realize this with a [logon script](/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task), a [scheduled task](/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task), a [desktop icon](/faq#446-create-desktop-icons-cross-platform), a [desired state configuration](/faq#444-deploy-and-run-software-using-desired-state-configuration-dsc), or other methods.  
 Of course, users [never see Set-OutlookSignatures](/faq#121-start-set-outlooksignatures-in-hiddeninvisible-mode) - signatures are just there and always up-to-date.
 
-You then add the [Outlook add-in](/outlookaddin) to the mix to make signatures available in Outlook on Android and Outlook on iOS. This also covers the occasional use of Outlook on devices other than the main device, no matter if they are managed or not.
+You then add the [Outlook add-in](/outlookaddin) to the mix to make signatures available in Outlook running on secondary devices (Outlook on Android, Outlook on iOS, etc.). This also covers the use of Outlook on devices that are not managed, such as accessing the company mailbox from Outlook installed on a private computer.
 
 Sometimes, this default scenario is not possible or not wanted. Examples are:
-* Users do not have a managed main device, for example in a BYOD (bring your own device) scenario.
+* Users do not have a managed primary device, for example in a BYOD (bring your own device) scenario.
+* The primary user device is managed but not running an OS on which Set-OutlookSignatures can be executed (Linux, macOS, Windows).
 * Users never log on to a device, only to services. This is often the case when Microsoft 365 F-licenses are used and users only log on to Outlook on the web, for example.
 * You want to use Set-OutlookSignatures, but you prefer running it on a central system instead of running it on your clients.
 
@@ -197,7 +201,7 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#1
       <td style="text-align: left">
         <ul>
           <li>Absolutely no interaction with end users and their devices.</li>
-          <li>The main device of each user does not need to be a managed device.</li>
+          <li>Users do not need a primary device that is managed and runs Linux, macOS or Windows.</li>
           <li>Software or at least configuration must only be deployed to involved central systems.</li>
         </ul>
       </td>
@@ -207,7 +211,7 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#1
       <td style="text-align: left">
         <ul>
           <li>End users must log on to a device (Linux, Windows, macOS), not just to Outlook.</li>
-          <li>The main device of each user must be a managed device as you need to be able to deploy software or at least a bit of configuration to it.</li>
+          <li>The primary device of each user must be a managed device running Windows, Linux or macOS, as you need to be able to deploy software or at least a bit of configuration to it.</li>
           <li>Software or at least configuration must be deployed to many decentral systems.</li>
         </ul>
       </td>
@@ -238,9 +242,14 @@ Per default and with the Benefactor Circle add-on active, both modes also make s
 * for use with the [Outlook add-in](/outlookaddin),
 * and in a [draft email](/parameters#35-signaturecollectionindrafts).
 
-The following describes how each of these options can be used.
+#### 3.2.1. Outlook on the web
+The [SetCurrentUserOutlookWebSignature](https://set-outlooksignatures.com/parameters#10-setcurrentuseroutlookwebsignature) parameter is enabled by default with the Benefactor Cicle add-on.
 
-#### 3.2.1. Roaming signatures
+Mailboxes hosted in Exchange on-prem only support one signature in Outlook on the web, so the default signature defined for new emails is preferred over the default signature defined for replies and forwards.
+
+Mailboxes hosted in Exchange Online combine the on-prem behavior described above with the roaming signature feature described in the next chapter. The on-prem behavior is only used when Outlook on the web is accessed from smartphone browsers or when administrators have disabled roaming signatures at the tenant level.
+
+#### 3.2.2. Roaming signatures
 Roaming signatures is an Exchange Online only feature. The idea is to no longer store signatures locally but in the mailbox itself.
 
 This feature is currently supported only by Outlook on the web, New Outlook on Windows and Classic Outlook on Windows.
@@ -253,7 +262,7 @@ Until roaming signatures are supported by all Outlook editions on all platforms,
 
 See our blog post '[Current state and furte of roaming signatures](/blog/2025/10/20/current-state-and-future-of-roaming-signatures)' for more context.
 
-#### 3.2.2. Outlook add-in
+#### 3.2.3. Outlook add-in
 The [Outlook add-in](/outlookaddin), part of the Benefactor Circle add-on, is available for all Outlook editions.
 
 The add-in makes signatures - created by Set-OutlookSignatures in client or SimulateAndDeploy mode - available in Outlook on Android and Outlook on iOS, while supporting all Outlook editions across platforms.
@@ -264,14 +273,14 @@ The Outlook add-in includes a task pane that lets users preview a selected signa
 
 It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful for Outlook on Android and Outlook on iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.
 
-#### 3.2.3. Draft email
+#### 3.2.4. Draft email
 The [SignatureCollectionInDrafts](/parameters#35-signaturecollectionindrafts) parameter, enabled per default with the Benefactor Circle add-on, creates and updates an email message with the subject 'My signatures, powered by Set-OutlookSignatures Benefactor Circle' in the drafts folder of the current user.
 
 The draft email contains all available signatures in HTML and plain text format.
 
 This allows for easy copy-paste access to signatures in mail clients that do not have a signatures API and do not support Outlook add-ins: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others.
 
-#### 3.2.4. Documents folder
+#### 3.2.5. Documents folder
 The [AdditionalSignaturePath](/parameters#14-additionalsignaturepath) parameter, enabled per default with the Benefactor Circle add-on, copies signatures to an additional path.
 
 When this path is synchronized and made available on all user devices, for example via Microsoft OneDrive or Nextcloud, users have file-level access to signatures everywhere.
