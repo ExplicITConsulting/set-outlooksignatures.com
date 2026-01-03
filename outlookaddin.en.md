@@ -276,5 +276,5 @@ To avoid problems of all kinds, it is a good idea to manually clear the add-in c
 
 ### 6.6. Classic Outlook on Windows
 - Things work fine for mailboxes in Exchange Online, but the same Microsoft APIs seem to be unstable for on-prem mailboxes, especially regarding launch events (adding signatures automatically). When in doubt, use the taskpane.
-- For Exchange Online mailboxes, the version used must support Nested App Authentication (see [here](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/faq-nested-app-auth-outlook-legacy-tokens#when-is-naa-generally-available-for-my-channel)).
+- For Exchange Online mailboxes, the version used must support Nested App Authentication (see [here](https://learn.microsoft.com/en-us/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets)).
   - Microsoft disabled legacy Exchange Online tokens, and they cannot be re-enabled since October 2025 due to security reasons.

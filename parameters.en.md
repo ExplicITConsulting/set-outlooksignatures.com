@@ -353,7 +353,7 @@ On Linux and macOS, only already existing mount points and SharePoint Online pat
 
 For access to SharePoint Online, the Entra ID app needs the Files.Read.All or Files.SelectedOperations.Selected permission, and you need to pass the 'GraphClientID' parameter to Set-OutlookSignatures.
 
-Also see related parameter '[EmbedImagesInHtmlAdditionalSignaturePath](/parameters#26-embedimagesinhtmladditionalsignaturepath)'.
+Also see related parameter '[EmbedImagesInHtmlAdditionalSignaturePath](#27-embedimagesinhtmladditionalsignaturepath)'.
 
 This feature requires a Benefactor Circle license (when used outside of simulation mode).
 
@@ -606,7 +606,7 @@ A value representing true disables roaming signatures, a value representing fals
 
 Attention:
 - When Outlook v16 and higher is allowed to sync signatures itself, it may overwrite signatures created by this software with their cloud versions. To avoid this, it is recommended to set the parameters DisableRoamingSignatures and MirrorCloudSignatures to true instead.
-- When Classic Outlook on Windows syncs roaming signatures witht its own internal engine, expect problems with character encoding (umlauts, diacritics, emojis, etc.) and more. Until Microsoft provides a sustaining solution, these Outlook-internal problems will come and go depending on the patch level of Outlook. Also see the FAQ '[Roaming signatures in Classic Outlook on Windows look different](faq#41-roaming-signatures-in-classic-outlook-for-windows-look-different)'.
+- When Classic Outlook on Windows syncs roaming signatures witht its own internal engine, expect problems with character encoding (umlauts, diacritics, emojis, etc.) and more. Until Microsoft provides a sustaining solution, these Outlook-internal problems will come and go depending on the patch level of Outlook. Also see the FAQ '[Roaming signatures in Classic Outlook on Windows look different](faq##41-roaming-signatures-in-classic-outlook-on-windows-look-different)'.
 
 Only sets HKCU registry key, does not override configuration set by group policy.
 
@@ -634,7 +634,7 @@ Before going into configuration details, here is some background information:
 >- Sync occurs at random intervals and cannot be triggered manually.
 >- Automatic migration is not user-friendly.
 >- [No public API](https://learn.microsoft.com/en-us/powershell/module/exchangepowershell/set-organizationconfig?view=exchange-ps#-postponeroamingsignaturesuntillater).
->- [Problems with encoding conversion](/faq#41-roaming-signatures-in-classic-outlook-for-windows-look-different) occur intermittently.
+>- [Problems with encoding conversion](/faq##41-roaming-signatures-in-classic-outlook-on-windows-look-different) occur intermittently.
 >
 >To bridge these gaps, [ExplicIT Consulting](https://explicitconsulting.at) collaborated with Microsoft to develop its own low-level access roaming signature sync engine and Outlook add-in for the [Benefactor Circle](/benefactorcircle) add-on. 
 >
@@ -647,7 +647,7 @@ Before going into configuration details, here is some background information:
 >- The sync is simply triggered by running Set-OutlookSignatures.
 >- Works in tandem with Outlook's own sync mechanism or standalone.
 >   - Outlook's own mechanism gets disabled by default, see parameter '[DisableRoamingSignatures](#30-disableroamingsignatures)'. This is strongly recommended to avoid the issues that the built-in mechanism comes with, and that Outlook's own mechanism does not overwrite signatures created by Set-OutlookSignatures.
->- Correctly [converts encodings](/faq#41-roaming-signatures-in-classic-outlook-for-windows-look-different).
+>- Correctly [converts encodings](/faq##41-roaming-signatures-in-classic-outlook-on-windows-look-different).
 >
 >The process behind the sync engine is simple and straight forward. The following steps are performed for each mailbox:
 >1. Check if all prerequisites are met.
