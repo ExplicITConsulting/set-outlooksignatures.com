@@ -782,7 +782,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 
 
 ## 38. VirtualMailboxConfigFile
-Path a PowerShell file containing the logic to define virtual mailboxes. You can also use the VirtualMailboxConfigFile to dynamically define signature INI file and out-of-office INI entries.
+Path to a PowerShell file containing the logic to define virtual mailboxes. You can also use the VirtualMailboxConfigFile to dynamically define signature INI file and out-of-office INI entries.
 
 Virtual mailboxes are mailboxes that are not available in Outlook but are treated by Set-OutlookSignatures as if they were.
 
@@ -790,7 +790,7 @@ This is an option for scenarios where you want to deploy signatures or out-of-of
 
 See '`.\sample code\VirtualMailboxConfigFile.ps1`' for sample code showing the most relevant use cases.
 
-For maximum automation, use VirtualMailboxConfigFile together with [Export-RecipientPermissions](https://github.com/Export-RecipientPermissions).
+For maximum automation, use VirtualMailboxConfigFile together with [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions).
 
 This feature requires a Benefactor Circle license.
 

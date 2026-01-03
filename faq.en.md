@@ -1008,7 +1008,7 @@ The code in Set-OutlookSignatures used to determine group membership is as featu
 
 Files:
 - '`.\Set-OutlookSignatures.ps1`'
-- '`MemberOfRecurse.ps1`' from [Export-RecipientPermissions](https://github.com/GruberMarkus/Export-RecipientPermissions)
+- '`MemberOfRecurse.ps1`' from [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions)
 
 ### 44.2. Microsoft Graph authentication and re-authentication
 Sounds easy, doesn't it? Well, it isn't: Silent authentication, integrated windows authentication, authentication brokers, managed vs federated users, browser fallback, permission scopes, refresh tokens, encrypted storage, keyrings and keychains, cross-platform compatiblity, support for public and national (GCC High, GCC DoD, China) clouds, and more don't make it easy.

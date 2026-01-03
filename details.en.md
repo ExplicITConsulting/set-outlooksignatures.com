@@ -90,7 +90,7 @@ Set-Outlook can run on Linux, macOS or Windows systems with PowerShell:
 - Windows: Windows PowerShell 5.1 ('powershell.exe', part of Windows) or PowerShell 7+ ('pwsh.exe')
 - Linux, macOS: PowerShell 7+ ('pwsh')
 
-Set-OutlookSignatures can run in two modes. See '[3 Architecture considerations](#3-architecture-considerations)' later in this document for details. In short:
+Set-OutlookSignatures can run in two modes. See '[3. Architecture considerations](#3-architecture-considerations)' later in this document for details. In short:
 - Client mode, in the security context of the currently logged-in user.<br>This mode is recommended for most scenarios as it allows Set-OutlookSignatures to read which mailboxes the user added to Outlook or Outlook on the web, and as this mode does not require central computing ressources.
 - SimulateAndDeploy mode, using a service account to push signatures into users mailboxes.<br>This mode is ideal when users log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients.
 
@@ -227,20 +227,22 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#1
   </tbody>
 </table>
 
-Both modes can set out-of-office replies.
+With the Benefactor Circle add-on, both modes can:
+- Set [out-of-office replies](/parameters#11-setcurrentuseroofmessage) for internal and external recipients.
+- Deploy signatures for mailboxes (and other Exchange recipient objects) the user has access to but not added to Outlook. See the [VirtualMailboxConfigFile](/parameters#38-virtualmailboxconfigfile) parameter for details, and combine it with [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions) for maximum automation.
 
 ### 3.2. Making signatures available
 Signatures created in client mode or SimulateAndDeploy mode need to be made available to the end user.
 
-Signatures created in client mode are automatically made available to the local Outlook installation. With the Benefactor Circle add-on, client mode also makes [signatures available in the 'Documents' folder](/parameters#14-additionalsignaturepath) of the logged-on user.
+Signatures created in client mode are automatically made available to the local Outlook installation. With the Benefactor Circle add-on, client mode also makes signatures available in the 'Documents' folder of the logged-on user.
 
-Due to the lack of access to end user devices, SimulateAndDeploy mode treats Outlook on the web as the local Outlook installation, and does not make signatures available in the 'Documents' folder.
+SimulateAndDeploy mode has no access to end user devices and therefore treats Outlook on the web as the local Outlook installation. It cannot not make signatures available in a user's 'Documents' folder.
 
-Per default and with the Benefactor Circle add-on active, both modes also make signatures available
-* in [Outlook on the web](/parameters#10-setcurrentuseroutlookwebsignature),
-* as [roaming signatures](/parameters#31-mirrorcloudsignatures) (cloud only),
-* for use with the [Outlook add-in](/outlookaddin),
-* and in a [draft email](/parameters#35-signaturecollectionindrafts).
+With the Benefactor Circle add-on active, both modes per default also make signatures available
+- in Outlook on the web,
+- as roaming signatures (cloud only),
+- for use with the Outlook add-in,
+- and in a draft email.
 
 #### 3.2.1. Outlook on the web
 The [SetCurrentUserOutlookWebSignature](https://set-outlooksignatures.com/parameters#10-setcurrentuseroutlookwebsignature) parameter is enabled by default with the Benefactor Cicle add-on.
@@ -256,7 +258,7 @@ This feature is currently supported only by Outlook on the web, New Outlook on W
 
 Even when Microsoft is slow in taking this feature forward and competing signature solutions boycott it because of its impact on their business model, the creators of Set-OutlookSignatures and the Benefactor Circle add-on absolutely believe that roaming signatures are the way.
 
-With the Benefactor Circle add-on, all signatures are automatically made available as roaming signatures. Roaming signatures are synchronized using our own engine with all Outlook editions on Linux, Windows and macOS. This not only overcomes platform limits, but also avoids [problems with Outlook's own sync engine](/faq#41-roaming-signatures-in-classic-outlook-on-windows-look-different).
+With the Benefactor Circle add-on, all signatures are [automatically made available as roaming signatures](/parameters#31-mirrorcloudsignatures). Roaming signatures are synchronized using our own engine with all Outlook editions on Linux, Windows and macOS. This not only overcomes platform limits, but also avoids [problems with Outlook's own sync engine](/faq#41-roaming-signatures-in-classic-outlook-on-windows-look-different).
 
 Until roaming signatures are supported by all Outlook editions on all platforms, running Set-OutlookSignatures with the Benefactor Circle add-on in client mode and using the Outlook add-in are a great alternative to make signatures available everywhere.
 
