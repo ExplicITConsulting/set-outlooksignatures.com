@@ -188,14 +188,14 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#1
     <tr>
       <td style="text-align: left"><strong>Advantages</strong></td>
       <td style="text-align: left">
-        <ul class="ml-0 pl-0">
+        <ul>
           <li>Uses idle resources on end user devices (Linux, Windows, macOS).</li>
           <li>Runs within the security context of the logged-on user.</li>
           <li>Is typically run more often, usually every two hours or at every log-on.</li>
         </ul>
       </td>
       <td style="text-align: left">
-        <ul class="ml-0 pl-0">
+        <ul>
           <li>Absolutely no interaction with end users and their devices.</li>
           <li>The main device of each user does not need to be a managed device.</li>
           <li>Software or at least configuration must only be deployed to involved central systems.</li>
@@ -205,14 +205,14 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#1
     <tr>
       <td style="text-align: left"><strong>Disadvantages</strong></td>
       <td style="text-align: left">
-        <ul class="ml-0 pl-0">
+        <ul>
           <li>End users must log on to a device (Linux, Windows, macOS), not just to Outlook.</li>
           <li>The main device of each user must be a managed device as you need to be able to deploy software or at least a bit of configuration to it.</li>
           <li>Software or at least configuration must be deployed to many decentral systems.</li>
         </ul>
       </td>
       <td style="text-align: left">
-        <ul class="ml-0 pl-0">
+        <ul>
           <li>Uses one or more central systems, which need according resources.</li>
           <li>Runs within the security context of a service account requiring (temporary) full access to all user mailboxes.</li>
           <li>Is typically run less frequent, usually once a day or less often.</li>
