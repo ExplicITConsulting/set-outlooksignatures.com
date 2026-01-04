@@ -788,9 +788,11 @@ The following structure is recommended, as it separates customized files from sc
 - **Root share folder**  
   For example, '\\\\server\share\folder'
   - **Config**  
-    Contains your custom config files (custom Graph config file, custom replacement variable config file, maybe template INI files)
+    Contains your custom config files, such as: Graph config file, replacement variable config file, Outlook add-in configuration, and maybe also your template INI files.
   - **License**  
     Contains the Benefactor Circle add-on
+  - **Outlook add-in**  
+    Contains the Outlook add-in
   - **Set-OutlookSignatures**  
     Contains Set-OutlookSignatures
   - **Templates**
