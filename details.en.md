@@ -185,13 +185,13 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#1
     <thead>
       <tr>
         <th></th>
-        <th><strong>Client mode</strong></th>
-        <th><strong>SimulateAndDeploy</strong></th>
+        <th class="has-text-weight-bold">Client mode</th>
+        <th class="has-text-weight-bold">SimulateAndDeploy</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><strong>Advantages</strong></td>
+        <td class="has-text-weight-bold">Advantages</td>
         <td>
           <ul>
             <li>Uses idle resources on end user devices (Linux, Windows, macOS).</li>
@@ -201,18 +201,17 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#1
         </td>
         <td>
           <ul>
-            <li>Absolutely no interaction with end users and their devices.</li>
             <li>Users do not need a primary device that is managed and runs Linux, macOS or Windows.</li>
             <li>Software or at least configuration must only be deployed to involved central systems.</li>
           </ul>
         </td>
       </tr>
       <tr>
-        <td><strong>Disadvantages</strong></td>
+        <td class="has-text-weight-bold">Disadvantages</td>
         <td>
           <ul>
             <li>End users must log on to a device (Linux, Windows, macOS), not just to Outlook.</li>
-            <li>The primary device of each user must be a managed device running Windows, Linux or macOS, as you need to be able to deploy software or at least a bit of configuration to it.</li>
+            <li>The primary device of each user must be managed und run Windows, Linux or macOS.</li>
             <li>Software or at least configuration must be deployed to many decentral systems.</li>
           </ul>
         </td>
