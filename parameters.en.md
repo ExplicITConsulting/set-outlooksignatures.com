@@ -78,6 +78,8 @@ On Linux and macOS, only already existing mount points and SharePoint Online pat
 
 For access to SharePoint Online, the Entra ID app needs the Files.Read.All or Files.SelectedOperations.Selected permission, and you need to pass the 'GraphClientID' parameter to Set-OutlookSignatures.
 
+Allowed value: A folder path as a string. Do not pass the parameter at all to use the default value.
+
 Default value: '.\sample templates\Signatures DOCX' on Windows, '.\sample templates\Signatures HTML' on Linux and macOS
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignatureTemplatePath '.\sample templates\Signatures DOCX`'  
@@ -101,6 +103,8 @@ On Linux and macOS, only already existing mount points and SharePoint Online pat
 
 For access to SharePoint Online, the Entra ID app needs the Files.Read.All or Files.SelectedOperations.Selected permission, and you need to pass the 'GraphClientID' parameter to Set-OutlookSignatures.
 
+Allowed value: A file path as a string. Do not pass the parameter at all to use the default value.
+
 Default value: '.\templates\Signatures DOCX\_Signatures.ini' on Windows, '.\templates\Signatures HTML\_Signatures.ini' on Linux and macOS
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignatureIniFile '.\templates\Signatures DOCX\_Signatures.ini`'  
@@ -121,6 +125,8 @@ Parameters and SharePoint sharing hints ('/:u:/r', etc.) are removed: 'https://Y
 On Linux and macOS, only already existing mount points and SharePoint Online paths can be accessed. Set-OutlookSignatures cannot create mount points itself, and access to SharePoint on-prem paths is a Windows-only feature.
 
 For access to SharePoint Online, the Entra ID app needs the Files.Read.All or Files.SelectedOperations.Selected permission, and you need to pass the 'GraphClientID' parameter to Set-OutlookSignatures.
+
+Allowed value: A file path as a string. Do not pass the parameter at all to use the default value.
 
 Default value: `.\config\default replacement variables.ps1`  
 
@@ -154,6 +160,8 @@ The requirements for cross-tenant access support are:
 -	Authentication will happen as soon as Graph access is required for the first time. All tenants defined by the GraphClientID parameter will be authenticated (the order does not matter).
 - To use Benefactor Circle features, each tenant must have its own license group, and the license file must contain all of these groups.
 
+Allowed value: The ID of the Entra ID app to use as a string. Do not pass the parameter at all to use the default value.
+
 Default value: $null
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 GraphClientID '3dc5f201-6c36-4b94-98ca-c66156a686a8'`
@@ -177,6 +185,8 @@ On Linux and macOS, only already existing mount points and SharePoint Online pat
 
 For access to SharePoint Online, the Entra ID app needs the Files.Read.All or Files.SelectedOperations.Selected permission, and you need to pass the 'GraphClientID' parameter to Set-OutlookSignatures.
 
+Allowed value: A file path as a string. Do not pass the parameter at all to use the default value.
+
 Default value: `.\config\default graph config.ps1`  
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -GraphConfigFile '.\config\default graph config.ps1`'  
@@ -196,6 +206,8 @@ When a cross-forest trust is detected by the '*' option, all domains belonging t
 
 On Linux and macOS, this parameter is ignored because on-prem Active Directories are not supported (only Graph is supported).
 
+Allowed value: A comma separated list of strings containing the trusts to check for groups. Do not pass the parameter at all to use the default value.
+
 Default value: '*'
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -TrustsToCheckForGroups 'corp.example.com', 'corp.example.net`'  
@@ -211,7 +223,7 @@ Domain local groups across trusts behave differently, they are always considered
 
 On Linux and macOS, this parameter is ignored because on-prem Active Directories are not supported (only Graph is supported).
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $false
 
@@ -226,7 +238,7 @@ Shall the software delete signatures which were created by the user itself?
 
 This feature requires a Benefactor Circle license.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $false
 
@@ -241,7 +253,7 @@ Shall the software delete signatures which were created by the software before b
 
 This feature requires a Benefactor Circle license.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $true
 
@@ -258,7 +270,7 @@ If the parameter is set to `$true` and the current user's mailbox is not configu
 
 This feature requires a Benefactor Circle license.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $true  
 
@@ -275,7 +287,7 @@ If the parameter is set to `$true` and the current user's mailbox is not configu
 
 This feature requires a Benefactor Circle license.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $true  
 
@@ -300,7 +312,7 @@ On Linux and macOS, only already existing mount points and SharePoint Online pat
 
 For access to SharePoint Online, the Entra ID app needs the Files.Read.All or Files.SelectedOperations.Selected permission, and you need to pass the 'GraphClientID' parameter to Set-OutlookSignatures.
 
-Default value: '.\templates\Signatures DOCX\_Signatures.ini' on Windows, '.\templates\Signatures DOCX\_Signatures.ini' on Linux and macOS
+Allowed value: A folder path as a string. Do not pass the parameter at all to use the default value.
 
 Default value: `.\templates\Out-of-Office DOCX` on Windows, `.\templates\Out-of-Office DOCX` on Linux and macOS
 
@@ -324,6 +336,8 @@ Parameters and SharePoint sharing hints ('/:u:/r', etc.) are removed: 'https://Y
 On Linux and macOS, only already existing mount points and SharePoint Online paths can be accessed. Set-OutlookSignatures cannot create mount points itself, and access to SharePoint on-prem paths is a Windows-only feature.
 
 For access to SharePoint Online, the Entra ID app needs the Files.Read.All or Files.SelectedOperations.Selected permission, and you need to pass the 'GraphClientID' parameter to Set-OutlookSignatures.
+
+Allowed value: A file path as a string. Do not pass the parameter at all to use the default value.
 
 Default value: `.\templates\Out-of-Office DOCX\_OOF.ini` on Windows, Default value: `.\templates\Out-of-Office HTML\_OOF.ini` on Linux and macOS
 
@@ -357,7 +371,7 @@ Also see related parameter '[EmbedImagesInHtmlAdditionalSignaturePath](#27-embed
 
 This feature requires a Benefactor Circle license (when used outside of simulation mode).
 
-Allowed values: A path as a string, or an empty string ('`""`' or '`''`')to disable the feature.
+Allowed value: A path as a string, or an empty string ('`""`' or '`''`') to disable the feature. Do not pass the parameter at all to use the default value.
 
 Default value: `"$(try { $([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures')) } catch {})"`  
 
@@ -376,7 +390,7 @@ Only images in the first subfolder below the template file matching the Windows 
 
 Also see the documentation for the '[EmbedImagesInHtml](/parameters#26-embedimagesinhtml)' parameter.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $false on Windows, $true on Linux and macOS
 
@@ -389,7 +403,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## 16. SimulateUser
 SimulateUser is a mandatory parameter for simulation mode. This value replaces the currently logged-in user.
 
-Use a logon name in the format 'Domain\User' or a Universal Principal Name (UPN, looks like an email address, but is not necessarily one).
+Allowed value: A logon name in the format 'Domain\User' or a Universal Principal Name (UPN, looks like an email address, but is not necessarily one). Do not pass the parameter at all to use the default value.
 
 Default value: $null
 
@@ -402,7 +416,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## 17. SimulateMailboxes
 SimulateMailboxes is optional for simulation mode, although highly recommended.
 
-It is a comma separated list of email addresses replacing the list of mailboxes otherwise gathered from the simulated user's Outlook on the web.
+Allowed value: A comma separated list of email addresses replacing the list of mailboxes otherwise gathered from the simulated user's Outlook on the web.  Do not pass the parameter at all to use the default value.
 
 Default value: $null
 
@@ -415,9 +429,9 @@ SimulateTime is optional for simulation mode.
 
 Use a certain timestamp for simulation mode. This allows you to simulate time-based templates.
 
-Format: yyyyMMddHHmm (yyyy = year, MM = two-digit month, dd = two-digit day, HH = two-digit hour (0..24), mm = two-digit minute), local time
+Allowed value: A timestamp in the format yyyyMMddHHmm (yyyy = year, MM = two-digit month, dd = two-digit day, HH = two-digit hour (0..24), mm = two-digit minute), local time. Do not pass the parameter at all to use the default value.
 
-Default value: $null
+Default value: $null (use current timestamp of the local system)
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SimulateTime "202312311859"`  
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateTime ""202312311859"""`  
@@ -436,7 +450,7 @@ See '.\sample code\SimulateAndDeploy.ps1' for an example how to use this paramet
 
 This feature requires a Benefactor Circle license.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $false
 
@@ -455,6 +469,8 @@ See `.\sample code\SimulateAndDeploy.ps1` for an example how to create and use t
 
 This feature requires a Benefactor Circle license.
 
+Allowed value: A file path as a string. Do not pass the parameter at all to use the default value.
+
 Default value: $null
 
 
@@ -463,7 +479,7 @@ Try to connect to Microsoft Graph only, ignoring any local Active Directory.
 
 The default behavior is to try Active Directory first and fall back to Graph. On Linux and macOS, only Graph is supported.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $false on Windows, $true on Linux and macOS
 
@@ -476,11 +492,12 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## 22. CloudEnvironment
 The cloud environment to connect to.
 
-Allowed values:
+Allowed value: One from:
 - 'Public' (or: 'Global', 'AzurePublic', 'AzureGlobal', 'AzureCloud', 'AzureUSGovernmentGCC', 'USGovernmentGCC')
 - 'AzureUSGovernment' (or: 'AzureUSGovernmentGCCHigh', 'AzureUSGovernmentL4', 'USGovernmentGCCHigh', 'USGovernmentL4')
 - 'AzureUSGovernmentDOD' (or: 'AzureUSGovernmentL5', 'USGovernmentDOD', 'USGovernmentL5')
 - 'China' (or: 'AzureChina', 'ChinaCloud', 'AzureChinaCloud')
+- Do not pass the parameter at all to use the default value.
 
 Default value: 'Public'
 
@@ -491,7 +508,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## 23. CreateRtfSignatures
 Should signatures be created in RTF format?
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $false
 
@@ -504,7 +521,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## 24. CreateTxtSignatures
 Should signatures be created in TXT format?
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $true
 
@@ -519,7 +536,7 @@ Move CSS to inline style attributes, for maximum email client compatibility.
 
 This parameter is enabled per default, as a workaround to Microsoft's problem with formatting in Outlook on the web (M365 roaming signatures and font sizes, especially).
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $true
 
@@ -540,7 +557,7 @@ Outlook 2013 and earlier can't handle these embedded images when composing HTML 
 
 When setting EmbedImagesInHtml to `$false`, consider setting the Outlook registry value '`Send Pictures With Document`' to 1 to ensure that images are sent to the recipient (see https://support.microsoft.com/en-us/topic/inline-images-may-display-as-a-red-x-in-outlook-704ae8b5-b9b6-d784-2bdf-ffd96050dfd6 for details). Set-OutlookSignatures does this automatically for the currently logged-in user, but it may be overridden by other scripts or group policies.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $false
 
@@ -553,7 +570,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## 27. EmbedImagesInHtmlAdditionalSignaturePath
 Same feature as '[EmbedImagesInHtml](/parameters#26-embedimagesinhtml)' parameter, but only valid for the path defined in AdditionalSignaturePath when not in simulation mode.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $true
 
@@ -574,7 +591,7 @@ Contrary to conversion to HTML, conversion to RTF always results in high resolut
 
 This feature requires a Benefactor Circle license.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $true
 
@@ -591,7 +608,7 @@ Signatures can be deployed for these mailboxes, but not set as default signature
 
 This feature requires a Benefactor Circle license.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $true
 
@@ -612,7 +629,7 @@ Attention:
 
 Only sets HKCU registry key, does not override configuration set by group policy.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no', $null, ''
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no', $null, ''. Do not pass the parameter at all to use the default value.
 
 Default value: $true
 
@@ -679,7 +696,7 @@ Please note:
 
 This feature requires a Benefactor Circle license.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no', 'CurrentUserOnly'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no', 'CurrentUserOnly'. Do not pass the parameter at all to use the default value.
 
 Default value: $true
 
@@ -704,7 +721,7 @@ With roaming signatures (signatures being stored in the Exchange Online mailbox 
 
 This naming convention intentionally matches Outlook's convention for naming roaming signatures. Before setting `MailboxSpecificSignatureNames` to `true`, consider the impact on the `DisableRoamingSignatures` and `MirrorCloudSignatures` parameters - it is recommended to set both parameters to `true` to achieve the best user experience and to avoid problems with Outlook's own roaming signature synchronisation.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $false
 
@@ -717,7 +734,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## 33. WordProcessPriority
 Define the Word process priority. With lower values, Set-OutlookSignatures runs longer but minimizes possible performance impact
 
-Allowed values (ascending priority): Idle, 64, BelowNormal, 16384, Normal, 32, AboveNormal, 32768, High, 128, RealTime, 256
+Allowed value: One from (ascending priority): Idle, 64, BelowNormal, 16384, Normal, 32, AboveNormal, 32768, High, 128, RealTime, 256. Do not pass the parameter at all to use the default value.
 
 Default value: 'Normal' ('32')
 
@@ -730,7 +747,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## 34. ScriptProcessPriority
 Define the script process priority. With lower values, Set-OutlookSignatures runs longer but minimizes possible performance impact
 
-Allowed values (ascending priority): Idle, 64, BelowNormal, 16384, Normal, 32, AboveNormal, 32768, High, 128, RealTime, 256
+Allowed value: One from (ascending priority): Idle, 64, BelowNormal, 16384, Normal, 32, AboveNormal, 32768, High, 128, RealTime, 256. Do not pass the parameter at all to use the default value.
 
 Default value: 'Normal' ('32')
 
@@ -745,7 +762,7 @@ When enabled, this creates and updates an email message with the subject 'My sig
 
 This feature requires a Benefactor Circle license.
 
-Allowed values: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'
+Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
 Default value: $true
 
@@ -758,6 +775,8 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## 36. BenefactorCircleID
 The Benefactor Circle member ID matching your license file, which unlocks exclusive features.
 
+Allowed value: The Benefactor Circle member ID as a string. Do not pass the parameter at all to use the default value.
+
 Default value: ''
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -BenefactorCircleID "00000000-0000-0000-0000-000000000000"`  
@@ -766,8 +785,6 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 
 ## 37. BenefactorCircleLicenseFile
 The Benefactor Circle license file matching your Benefactor Circle ID, which unlocks exclusive features.
-
-Default value: ''
 
 Local and remote paths are supported. Local paths can be absolute ('C:\Signature templates') or relative to the software path ('.\templates\Signatures')
 
@@ -778,6 +795,10 @@ Parameters and SharePoint sharing hints ('/:u:/r', etc.) are removed: 'https://Y
 On Linux and macOS, only already existing mount points and SharePoint Online paths can be accessed. Set-OutlookSignatures cannot create mount points itself, and access to SharePoint on-prem paths is a Windows-only feature.
 
 For access to SharePoint Online, the Entra ID app needs the Files.Read.All or Files.SelectedOperations.Selected permission, and you need to pass the 'GraphClientID' parameter to Set-OutlookSignatures.
+
+Allowed value: A file path as a string. Do not pass the parameter at all to use the default value.
+
+Default value: ''
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -BenefactorCircleLicenseFile ".\license.dll"`  
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -BenefactorCircleLicenseFile "".\license.dll"""`  
@@ -805,6 +826,8 @@ Parameters and SharePoint sharing hints ('/:u:/r', etc.) are removed: 'https://Y
 On Linux and macOS, only already existing mount points and SharePoint Online paths can be accessed. Set-OutlookSignatures cannot create mount points itself, and access to SharePoint on-prem paths is a Windows-only feature.
 
 For access to SharePoint Online, the Entra ID app needs the Files.Read.All or Files.SelectedOperations.Selected permission, and you need to pass the 'GraphClientID' parameter to Set-OutlookSignatures.
+
+Allowed value: A file path as a string. Do not pass the parameter at all to use the default value.
 
 Default value: ''
 
