@@ -86,281 +86,281 @@ Nach einer bestimmten Nutzungsdauer wird der **dezente Hinweis „Free and open-
     <table class="table is-bordered is-striped is-hoverable is-fullwidth">
         <thead>
             <tr>
-                <th style="text-align:left">Feature</th>
-                <th style="text-align:left">Set-OutlookSignatures<br>mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></th>
-                <th style="text-align:left">Marktbegleiter A</th>
-                <th style="text-align:left">Marktbegleiter B</th>
-                <th style="text-align:left">Marktbegleiter C</th>
+                <th class="has-text-weight-bold"></th>
+                <th class="has-text-weight-bold">Set-OutlookSignatures<br>mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></th>
+                <th class="has-text-weight-bold">Marktbegleiter A</th>
+                <th class="has-text-weight-bold">Marktbegleiter B</th>
+                <th class="has-text-weight-bold">Marktbegleiter C</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="text-align:left">Kostenloser und quelloffener Kern</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Kostenloser und quelloffener Kern</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">E-Mails bleiben in Ihrer Umgebung (keim Umleiten auf Drittsysteme)</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡 Optional, reduziert den Funktionsumfang</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">E-Mails bleiben in Ihrer Umgebung (keim Umleiten auf Drittsysteme)</td>
+                <td>🟢</td>
+                <td>🟡 Optional, reduziert den Funktionsumfang</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Wird in Umgebungen gehostet und ausgeführt, denen Sie bereits vertrauen und für die Sie Sicherheits- und Verwaltungsstrukturen eingerichtet haben.</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Wird in Umgebungen gehostet und ausgeführt, denen Sie bereits vertrauen und für die Sie Sicherheits- und Verwaltungsstrukturen eingerichtet haben.</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Rechte für Entra ID und Active Directory</td>
-                <td style="text-align:left">🟢 Benutzerrechte (delegated permissions), Least-Privilege-Prinzip</td>
-                <td style="text-align:left">🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten lesen (und alle E-Mails umleiten)
+                <td class="has-text-weight-bold">Rechte für Entra ID und Active Directory</td>
+                <td>🟢 Benutzerrechte (delegated permissions), Least-Privilege-Prinzip</td>
+                <td>🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten lesen (und alle E-Mails umleiten)
                 </td>
-                <td style="text-align:left">🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten lesen (und alle E-Mails umleiten)
+                <td>🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten lesen (und alle E-Mails umleiten)
                 </td>
-                <td style="text-align:left">🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten lesen (und alle E-Mails umleiten)</td>
+                <td>🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten lesen (und alle E-Mails umleiten)</td>
             </tr>
             <tr>
-                <td style="text-align:left">Daten aus Entra ID Und Active Directory bleiben in Ihrer Umgebung (kein Transfer zu Drittsystemen)</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Daten aus Entra ID Und Active Directory bleiben in Ihrer Umgebung (kein Transfer zu Drittsystemen)</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Erfordert keine Anpassung der Exchange-Konfiguration und erzeugt keine neuen Abhängigkeiten</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Erfordert keine Anpassung der Exchange-Konfiguration und erzeugt keine neuen Abhängigkeiten</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Mehrere unabhängige Instanzen können in derselben Umgebung laufen</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Mehrere unabhängige Instanzen können in derselben Umgebung laufen</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Kein Sammeln von Telemetrie- oder Nutzungsdaten, weder direkt noch indirekt</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Kein Sammeln von Telemetrie- oder Nutzungsdaten, weder direkt noch indirekt</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Kein Abo-Vertrag</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Kein Abo-Vertrag</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">IT kann die Signatur-Verwaltung delegieren, z. B. an das Marketing</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡 Nicht auf Signatur-Ebene</td>
-                <td style="text-align:left">🟡 Nicht auf Signatur-Ebene</td>
+                <td class="has-text-weight-bold">IT kann die Signatur-Verwaltung delegieren, z. B. an das Marketing</td>
+                <td>🟢</td>
+                <td>🟢</td>
+                <td>🟡 Nicht auf Signatur-Ebene</td>
+                <td>🟡 Nicht auf Signatur-Ebene</td>
             </tr>
             <tr>
-                <td style="text-align:left">Signaturen an alle E-Mails anfügen</td>
-                <td style="text-align:left">🟡 Nur für Outlook-Clients</td>
-                <td style="text-align:left">🟢 Bei Umleitung aller E-Mails auf ein Drittsystem</td>
-                <td style="text-align:left">🟢 Bei Umleitung aller E-Mails auf ein Drittsystem</td>
-                <td style="text-align:left">🟢 Bei Umleitung aller E-Mails auf ein Drittsystem</td>
+                <td class="has-text-weight-bold">Signaturen an alle E-Mails anfügen</td>
+                <td>🟡 Nur für Outlook-Clients</td>
+                <td>🟢 Bei Umleitung aller E-Mails auf ein Drittsystem</td>
+                <td>🟢 Bei Umleitung aller E-Mails auf ein Drittsystem</td>
+                <td>🟢 Bei Umleitung aller E-Mails auf ein Drittsystem</td>
             </tr>
             <tr>
-                <td style="text-align:left">Signaturen auf Basis der Empfänger</td>
-                <td style="text-align:left">🟡 Hochgradig anpassbar, 10+ Eigenschaften. Gleiche Signatur für alle Empfänger.</td>
-                <td style="text-align:left">🟡 Interne, Externe, Gruppenmitglieder, E-Mail-Adressen. Unterschiedliche Signaturen nur bei Umleitung aller E-Mails auf ein Drittsystem.</td>
-                <td style="text-align:left">🟡 Interne und Externe. Gleiche Signatur für alle Empfänger.</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Signaturen auf Basis der Empfänger</td>
+                <td>🟡 Hochgradig anpassbar, 10+ Eigenschaften. Gleiche Signatur für alle Empfänger.</td>
+                <td>🟡 Interne, Externe, Gruppenmitglieder, E-Mail-Adressen. Unterschiedliche Signaturen nur bei Umleitung aller E-Mails auf ein Drittsystem.</td>
+                <td>🟡 Interne und Externe. Gleiche Signatur für alle Empfänger.</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Zusätzliche Datenquellen neben Active Directory und Entra ID</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Zusätzliche Datenquellen neben Active Directory und Entra ID</td>
+                <td>🟢</td>
+                <td>🟡</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Unterstützt nationale Clouds von Microsoft</td>
-                <td style="text-align:left">🟢 Global/Public, US Government L4 (GCC, GCC High), US Government L5 (DOD), China operated by 21Vianet</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Unterstützt nationale Clouds von Microsoft</td>
+                <td>🟢 Global/Public, US Government L4 (GCC, GCC High), US Government L5 (DOD), China operated by 21Vianet</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Unterstützt mandantenübergreifenden Zugriff und Multitenant Organizations</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Unterstützt mandantenübergreifenden Zugriff und Multitenant Organizations</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Unterstützt Microsoft Roaming Signatures (mehrere Signaturen in Outlook on the web und neuem Outlook)</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Unterstützt Microsoft Roaming Signatures (mehrere Signaturen in Outlook on the web und neuem Outlook)</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Anzahl der Vorlagen</td>
-                <td style="text-align:left">🟢 Unlimitiert</td>
-                <td style="text-align:left">🔴 1, mehr kosten extra</td>
-                <td style="text-align:left">🟢 Unlimitiert</td>
-                <td style="text-align:left">🟢 Unlimitiert</td>
+                <td class="has-text-weight-bold">Anzahl der Vorlagen</td>
+                <td>🟢 Unlimitiert</td>
+                <td>🔴 1, mehr kosten extra</td>
+                <td>🟢 Unlimitiert</td>
+                <td>🟢 Unlimitiert</td>
             </tr>
             <tr>
-                <td style="text-align:left">Zuweisung und Ausschließen von Vorlagen</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴 Kostet extra</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟢</td>
+                <td class="has-text-weight-bold">Zuweisung und Ausschließen von Vorlagen</td>
+                <td>🟢</td>
+                <td>🔴 Kostet extra</td>
+                <td>🟢</td>
+                <td>🟢</td>
             </tr>
             <tr>
-                <td style="text-align:left">Gültigkeit von Vorlagen nach Zeiträumen</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴 Kostet extra</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟢</td>
+                <td class="has-text-weight-bold">Gültigkeit von Vorlagen nach Zeiträumen</td>
+                <td>🟢</td>
+                <td>🔴 Kostet extra</td>
+                <td>🟢</td>
+                <td>🟢</td>
             </tr>
             <tr>
-                <td style="text-align:left">Banner</td>
-                <td style="text-align:left">🟢 Unlimitiert</td>
-                <td style="text-align:left">🔴 1, mehr kosten extra</td>
-                <td style="text-align:left">🟢 Unlimitiert</td>
-                <td style="text-align:left">🟢 Unlimitiert</td>
+                <td class="has-text-weight-bold">Banner</td>
+                <td>🟢 Unlimitiert</td>
+                <td>🔴 1, mehr kosten extra</td>
+                <td>🟢 Unlimitiert</td>
+                <td>🟢 Unlimitiert</td>
             </tr>
             <tr>
-                <td style="text-align:left">QR codes und vCards</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴 Kosten extra</td>
-                <td style="text-align:left">🔴 Kosten extra</td>
-                <td style="text-align:left">🟢</td>
+                <td class="has-text-weight-bold">QR codes und vCards</td>
+                <td>🟢</td>
+                <td>🔴 Kosten extra</td>
+                <td>🔴 Kosten extra</td>
+                <td>🟢</td>
             </tr>
             <tr>
-                <td style="text-align:left">Signatur sichtbar während des Schreibens einer E-Mail</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🟡</td>
+                <td class="has-text-weight-bold">Signatur sichtbar während des Schreibens einer E-Mail</td>
+                <td>🟢</td>
+                <td>🟡</td>
+                <td>🟡</td>
+                <td>🟡</td>
             </tr>
             <tr>
-                <td style="text-align:left">Signatur sichtbar in den Gesendeten Elementen</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡 Nur Cloud-Postfächer</td>
-                <td style="text-align:left">🟡 Nur Cloud-Postfächer</td>
-                <td style="text-align:left">🟡 Nur Cloud-Postfächer</td>
+                <td class="has-text-weight-bold">Signatur sichtbar in den Gesendeten Elementen</td>
+                <td>🟢</td>
+                <td>🟡 Nur Cloud-Postfächer</td>
+                <td>🟡 Nur Cloud-Postfächer</td>
+                <td>🟡 Nur Cloud-Postfächer</td>
             </tr>
             <tr>
-                <td style="text-align:left">Abwesenheitsnotizen</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴 Kostet extra</td>
-                <td style="text-align:left">🟡 Keine Trennung nach internen und externen Empfängern</td>
-                <td style="text-align:left">🔴 Kostet extra</td>
+                <td class="has-text-weight-bold">Abwesenheitsnotizen</td>
+                <td>🟢</td>
+                <td>🔴 Kostet extra</td>
+                <td>🟡 Keine Trennung nach internen und externen Empfängern</td>
+                <td>🔴 Kostet extra</td>
             </tr>
             <tr>
-                <td style="text-align:left">Benutzer-kontrollierte Signaturen</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🟡</td>
+                <td class="has-text-weight-bold">Benutzer-kontrollierte Signaturen</td>
+                <td>🟢</td>
+                <td>🟡</td>
+                <td>🟡</td>
+                <td>🟡</td>
             </tr>
             <tr>
-                <td style="text-align:left">Signaturen für verschlüsselte E-Mails</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🟡</td>
+                <td class="has-text-weight-bold">Signaturen für verschlüsselte E-Mails</td>
+                <td>🟢</td>
+                <td>🟡</td>
+                <td>🟡</td>
+                <td>🟡</td>
             </tr>
             <tr>
-                <td style="text-align:left">Signaturen für delegierte, gemeinsam benutzte, zusätzliche und automapped Postfächer</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡 Kein Mischen von Benutzer- und Postfachattributen</td>
-                <td style="text-align:left">🟡 Kein Mischen von Benutzer- und Postfachattributen</td>
-                <td style="text-align:left">🟡 Kein Mischen von Benutzer- und Postfachattributen</td>
+                <td class="has-text-weight-bold">Signaturen für delegierte, gemeinsam benutzte, zusätzliche und automapped Postfächer</td>
+                <td>🟢</td>
+                <td>🟡 Kein Mischen von Benutzer- und Postfachattributen</td>
+                <td>🟡 Kein Mischen von Benutzer- und Postfachattributen</td>
+                <td>🟡 Kein Mischen von Benutzer- und Postfachattributen</td>
             </tr>
             <tr>
-                <td style="text-align:left">Outlook Add-In</td>
-                <td style="text-align:left">🟢 Nicht für on-prem Postfächer auf Android und iOS. Hochgrad anpassbar mit Regeln, eigenem Code und zur Laufzeit generierten Signaturen</td>
-                <td style="text-align:left">🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
-                <td style="text-align:left">🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
-                <td style="text-align:left">🔴 Nicht für on-prem Postfächer</td>
+                <td class="has-text-weight-bold">Outlook Add-In</td>
+                <td>🟢 Nicht für on-prem Postfächer auf Android und iOS. Hochgrad anpassbar mit Regeln, eigenem Code und zur Laufzeit generierten Signaturen</td>
+                <td>🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
+                <td>🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
+                <td>🔴 Nicht für on-prem Postfächer</td>
             </tr>
             <tr>
-                <td style="text-align:left">Preismodel für Support</td>
-                <td style="text-align:left">🟢 Verrechnung nach Stunden</td>
-                <td style="text-align:left">🔴 Kostet auch bei Nichtnutzung</td>
-                <td style="text-align:left">🔴 Kostet auch bei Nichtnutzung</td>
-                <td style="text-align:left">🔴 Kostet auch bei Nichtnutzung</td>
+                <td class="has-text-weight-bold">Preismodel für Support</td>
+                <td>🟢 Verrechnung nach Stunden</td>
+                <td>🔴 Kostet auch bei Nichtnutzung</td>
+                <td>🔴 Kostet auch bei Nichtnutzung</td>
+                <td>🔴 Kostet auch bei Nichtnutzung</td>
             </tr>
             <tr>
-                <td style="text-align:left">Software-Treuhand</td>
-                <td style="text-align:left">🟢 An Set-OutlookSignatures</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Software-Treuhand</td>
+                <td>🟢 An Set-OutlookSignatures</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Telefonnummern formatieren</td>
-                <td style="text-align:left">🟢 E164, International, National, RFC3966, Regex, benutzerdefiniert</td>
-                <td style="text-align:left">🟡 Regex</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🟡 RegEx</td>
+                <td class="has-text-weight-bold">Telefonnummern formatieren</td>
+                <td>🟢 E164, International, National, RFC3966, Regex, benutzerdefiniert</td>
+                <td>🟡 Regex</td>
+                <td>🔴</td>
+                <td>🟡 RegEx</td>
             </tr>
             <tr>
-                <td style="text-align:left">Postadressen formatieren</td>
-                <td style="text-align:left">🟢 Vorlagen für über 200 Länder/Regionen, benutzerdefiniert</td>
-                <td style="text-align:left">🟡 Regex</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🟡 RegEx</td>
+                <td class="has-text-weight-bold">Postadressen formatieren</td>
+                <td>🟢 Vorlagen für über 200 Länder/Regionen, benutzerdefiniert</td>
+                <td>🟡 Regex</td>
+                <td>🔴</td>
+                <td>🟡 RegEx</td>
             </tr>
             <tr>
-                <td style="text-align:left">Lizenzkosten für 100 Postfächer, 1 Jahr</td>
-                <td style="text-align:left">🟢 300&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 1.600&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 1.300&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 1.600&nbsp;€</td>
+                <td class="has-text-weight-bold">Lizenzkosten für 100 Postfächer, 1 Jahr</td>
+                <td>🟢 300&nbsp;€</td>
+                <td>🔴 ca. 1.600&nbsp;€</td>
+                <td>🟡 ca. 1.300&nbsp;€</td>
+                <td>🔴 ca. 1.600&nbsp;€</td>
             </tr>
             <tr>
-                <td style="text-align:left">Lizenzkosten für 250 Postfächer, 1 Jahr</td>
-                <td style="text-align:left">🟢 750&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 4.000&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 2.700&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 3.600&nbsp;€</td>
+                <td class="has-text-weight-bold">Lizenzkosten für 250 Postfächer, 1 Jahr</td>
+                <td>🟢 750&nbsp;€</td>
+                <td>🔴 ca. 4.000&nbsp;€</td>
+                <td>🟡 ca. 2.700&nbsp;€</td>
+                <td>🔴 ca. 3.600&nbsp;€</td>
             </tr>
             <tr>
-                <td style="text-align:left">Lizenzkosten für 500 Postfächer, 1 Jahr</td>
-                <td style="text-align:left">🟢 1.500&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 8.000&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 4.400&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 6.200&nbsp;€</td>
+                <td class="has-text-weight-bold">Lizenzkosten für 500 Postfächer, 1 Jahr</td>
+                <td>🟢 1.500&nbsp;€</td>
+                <td>🔴 ca. 8.000&nbsp;€</td>
+                <td>🟡 ca. 4.400&nbsp;€</td>
+                <td>🟡 ca. 6.200&nbsp;€</td>
             </tr>
             <tr>
-                <td style="text-align:left">Lizenzkosten für 1.000 Postfächer, 1 Jahr</td>
-                <td style="text-align:left">🟢 3.000&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 15.700&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 8.700&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 10.500&nbsp;€</td>
+                <td class="has-text-weight-bold">Lizenzkosten für 1.000 Postfächer, 1 Jahr</td>
+                <td>🟢 3.000&nbsp;€</td>
+                <td>🔴 ca. 15.700&nbsp;€</td>
+                <td>🟡 ca. 8.700&nbsp;€</td>
+                <td>🟡 ca. 10.500&nbsp;€</td>
             </tr>
             <tr>
-                <td style="text-align:left">Lizenzkosten für 10.000 Postfächer, 1 Jahr</td>
-                <td style="text-align:left">🟢 30.000&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 110.000&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 65.000&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 41.000&nbsp;€</td>
+                <td class="has-text-weight-bold">Lizenzkosten für 10.000 Postfächer, 1 Jahr</td>
+                <td>🟢 30.000&nbsp;€</td>
+                <td>🔴 ca. 110.000&nbsp;€</td>
+                <td>🟡 ca. 65.000&nbsp;€</td>
+                <td>🟡 ca. 41.000&nbsp;€</td>
             </tr>
             <tr>
-                <td style="text-align:left">Direktbezug ohne öffentliche Ausschreibung</td>
-                <td style="text-align:left">🟢 Einzigartige Funktionen, exklusive Herstellerverfügbarkeit</td>
-                <td style="text-align:left">🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
-                <td style="text-align:left">🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
-                <td style="text-align:left">🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
+                <td class="has-text-weight-bold">Direktbezug ohne öffentliche Ausschreibung</td>
+                <td>🟢 Einzigartige Funktionen, exklusive Herstellerverfügbarkeit</td>
+                <td>🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
+                <td>🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
+                <td>🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
             </tr>
         </tbody>
     </table>

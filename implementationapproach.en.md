@@ -141,285 +141,285 @@ Based on the required feature set, various solutions were evaluated, tested, and
     <table class="table is-bordered is-striped is-hoverable is-fullwidth">
         <thead>
             <tr>
-                <th style="text-align:left">Feature</th>
-                <th style="text-align:left">Set-OutlookSignatures<br>with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></th>
-                <th style="text-align:left">Peer&nbsp;A</th>
-                <th style="text-align:left">Peer&nbsp;B</th>
-                <th style="text-align:left">Peer&nbsp;C</th>
+                <th class="has-text-weight-bold"></th>
+                <th class="has-text-weight-bold">Set-OutlookSignatures<br>with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></th>
+                <th class="has-text-weight-bold">Peer&nbsp;A</th>
+                <th class="has-text-weight-bold">Peer&nbsp;B</th>
+                <th class="has-text-weight-bold">Peer&nbsp;C</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="text-align:left">Free and Open-Source core</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Free and Open-Source core</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Emails stay in your environment (no re-routing to 3rd party datacenters)</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡 Optional, causes reduced feature set</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Emails stay in your environment (no re-routing to 3rd party datacenters)</td>
+                <td>🟢</td>
+                <td>🟡 Optional, causes reduced feature set</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Is hosted and runs in environments that you already trust and for which you have
+                <td class="has-text-weight-bold">Is hosted and runs in environments that you already trust and for which you have
                     established security and management structures</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Entra ID and Active Directory permissions</td>
-                <td style="text-align:left">🟢 User (delegated) permissions, least privilege principle</td>
-                <td style="text-align:left">🔴 Application permissions, read all directory data (and transfer all emails)
+                <td class="has-text-weight-bold">Entra ID and Active Directory permissions</td>
+                <td>🟢 User (delegated) permissions, least privilege principle</td>
+                <td>🔴 Application permissions, read all directory data (and transfer all emails)
                 </td>
-                <td style="text-align:left">🔴 Application permissions, read all directory data (and transfer all emails)
+                <td>🔴 Application permissions, read all directory data (and transfer all emails)
                 </td>
-                <td style="text-align:left">🔴 Application permissions, read all directory data (and read all emails)</td>
+                <td>🔴 Application permissions, read all directory data (and read all emails)</td>
             </tr>
             <tr>
-                <td style="text-align:left">Entra ID and Active Directory data stays in your environment (no transfer to 3rd
+                <td class="has-text-weight-bold">Entra ID and Active Directory data stays in your environment (no transfer to 3rd
                     party datacenters)</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Does not require configuring Exchange adding a dependency to it</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Does not require configuring Exchange adding a dependency to it</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Multiple independent instances can be run in the same environment</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Multiple independent instances can be run in the same environment</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">No telemetry or usage data collection, direct or indirect</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">No telemetry or usage data collection, direct or indirect</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">No auto-renewing subscription</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">No auto-renewing subscription</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">IT can delegate signature management, e.g. to marketing</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡 Not at signature level</td>
-                <td style="text-align:left">🟡 Not at signature level</td>
+                <td class="has-text-weight-bold">IT can delegate signature management, e.g. to marketing</td>
+                <td>🟢</td>
+                <td>🟢</td>
+                <td>🟡 Not at signature level</td>
+                <td>🟡 Not at signature level</td>
             </tr>
             <tr>
-                <td style="text-align:left">Apply signatures to all emails</td>
-                <td style="text-align:left">🟡 Outlook clients only</td>
-                <td style="text-align:left">🟢 With email re-routing to a 3rd party datacenter</td>
-                <td style="text-align:left">🟢 With email re-routing to a 3rd party datacenter</td>
-                <td style="text-align:left">🟢 With email re-routing to a 3rd party datacenter</td>
+                <td class="has-text-weight-bold">Apply signatures to all emails</td>
+                <td>🟡 Outlook clients only</td>
+                <td>🟢 With email re-routing to a 3rd party datacenter</td>
+                <td>🟢 With email re-routing to a 3rd party datacenter</td>
+                <td>🟢 With email re-routing to a 3rd party datacenter</td>
             </tr>
             <tr>
-                <td style="text-align:left">Apply signature based on recipients</td>
-                <td style="text-align:left">🟡 Highly customizable, 10+ properties. Same signature for all recipients.</td>
-                <td style="text-align:left">🟡 Internal, external, group membership, email address. Different signature for each recipient via email re-routing to a 3rd party datacenter.</td>
-                <td style="text-align:left">🟡 Internal or external. Same signature for all recipients.</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Apply signature based on recipients</td>
+                <td>🟡 Highly customizable, 10+ properties. Same signature for all recipients.</td>
+                <td>🟡 Internal, external, group membership, email address. Different signature for each recipient via email re-routing to a 3rd party datacenter.</td>
+                <td>🟡 Internal or external. Same signature for all recipients.</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Additional data sources besides Active Directory and Entra ID</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Additional data sources besides Active Directory and Entra ID</td>
+                <td>🟢</td>
+                <td>🟡</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Supports Microsoft national clouds</td>
-                <td style="text-align:left">🟢 Global/Public, US Government L4 (GCC, GCC High), US Government L5 (DOD),
+                <td class="has-text-weight-bold">Supports Microsoft national clouds</td>
+                <td>🟢 Global/Public, US Government L4 (GCC, GCC High), US Government L5 (DOD),
                     China operated by 21Vianet</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Supports cross-tenant access and multitenant organizations</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Supports cross-tenant access and multitenant organizations</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Support for Microsoft roaming signatures (multiple signatures in Outlook on the web and
+                <td class="has-text-weight-bold">Support for Microsoft roaming signatures (multiple signatures in Outlook on the web and
                     New Outlook)</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td>🟢</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Number of templates</td>
-                <td style="text-align:left">🟢 Unlimited</td>
-                <td style="text-align:left">🔴 1, more charged extra</td>
-                <td style="text-align:left">🟢 Unlimited</td>
-                <td style="text-align:left">🟢 Unlimited</td>
+                <td class="has-text-weight-bold">Number of templates</td>
+                <td>🟢 Unlimited</td>
+                <td>🔴 1, more charged extra</td>
+                <td>🟢 Unlimited</td>
+                <td>🟢 Unlimited</td>
             </tr>
             <tr>
-                <td style="text-align:left">Targeting and exclusion</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴 Charged extra</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟢</td>
+                <td class="has-text-weight-bold">Targeting and exclusion</td>
+                <td>🟢</td>
+                <td>🔴 Charged extra</td>
+                <td>🟢</td>
+                <td>🟢</td>
             </tr>
             <tr>
-                <td style="text-align:left">Scheduling</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴 Charged extra</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟢</td>
+                <td class="has-text-weight-bold">Scheduling</td>
+                <td>🟢</td>
+                <td>🔴 Charged extra</td>
+                <td>🟢</td>
+                <td>🟢</td>
             </tr>
             <tr>
-                <td style="text-align:left">Banners</td>
-                <td style="text-align:left">🟢 Unlimited</td>
-                <td style="text-align:left">🔴 1, more charged extra</td>
-                <td style="text-align:left">🟢 Unlimited</td>
-                <td style="text-align:left">🟢 Unlimited</td>
+                <td class="has-text-weight-bold">Banners</td>
+                <td>🟢 Unlimited</td>
+                <td>🔴 1, more charged extra</td>
+                <td>🟢 Unlimited</td>
+                <td>🟢 Unlimited</td>
             </tr>
             <tr>
-                <td style="text-align:left">QR codes and vCards</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴 Charged extra</td>
-                <td style="text-align:left">🔴 Charged extra</td>
-                <td style="text-align:left">🟢</td>
+                <td class="has-text-weight-bold">QR codes and vCards</td>
+                <td>🟢</td>
+                <td>🔴 Charged extra</td>
+                <td>🔴 Charged extra</td>
+                <td>🟢</td>
             </tr>
             <tr>
-                <td style="text-align:left">Signature visible while writing</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🟡</td>
+                <td class="has-text-weight-bold">Signature visible while writing</td>
+                <td>🟢</td>
+                <td>🟡</td>
+                <td>🟡</td>
+                <td>🟡</td>
             </tr>
             <tr>
-                <td style="text-align:left">Signature visible in Sent Items</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡 Cloud mailboxes only</td>
-                <td style="text-align:left">🟡 Cloud mailboxes only</td>
-                <td style="text-align:left">🟡 Cloud mailboxes only</td>
+                <td class="has-text-weight-bold">Signature visible in Sent Items</td>
+                <td>🟢</td>
+                <td>🟡 Cloud mailboxes only</td>
+                <td>🟡 Cloud mailboxes only</td>
+                <td>🟡 Cloud mailboxes only</td>
             </tr>
             <tr>
-                <td style="text-align:left">Out-of-office reply messages</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🔴 Charged extra</td>
-                <td style="text-align:left">🟡 Same for internal and external senders</td>
-                <td style="text-align:left">🔴 Charged extra</td>
+                <td class="has-text-weight-bold">Out-of-office reply messages</td>
+                <td>🟢</td>
+                <td>🔴 Charged extra</td>
+                <td>🟡 Same for internal and external senders</td>
+                <td>🔴 Charged extra</td>
             </tr>
             <tr>
-                <td style="text-align:left">User-controlled email signatures</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🟡</td>
+                <td class="has-text-weight-bold">User-controlled email signatures</td>
+                <td>🟢</td>
+                <td>🟡</td>
+                <td>🟡</td>
+                <td>🟡</td>
             </tr>
             <tr>
-                <td style="text-align:left">Signatures for encrypted messages</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🟡</td>
-                <td style="text-align:left">🟡</td>
+                <td class="has-text-weight-bold">Signatures for encrypted messages</td>
+                <td>🟢</td>
+                <td>🟡</td>
+                <td>🟡</td>
+                <td>🟡</td>
             </tr>
             <tr>
-                <td style="text-align:left">Signatures for delegates, shared, additional and automapped mailboxes</td>
-                <td style="text-align:left">🟢</td>
-                <td style="text-align:left">🟡 No mixing of sender and delegate replacement variables</td>
-                <td style="text-align:left">🟡 No mixing of sender and delegate replacement variables</td>
-                <td style="text-align:left">🟡 No mixing of sender and delegate replacement variables</td>
+                <td class="has-text-weight-bold">Signatures for delegates, shared, additional and automapped mailboxes</td>
+                <td>🟢</td>
+                <td>🟡 No mixing of sender and delegate replacement variables</td>
+                <td>🟡 No mixing of sender and delegate replacement variables</td>
+                <td>🟡 No mixing of sender and delegate replacement variables</td>
             </tr>
             <tr>
-                <td style="text-align:left">Outlook add-in</td>
-                <td style="text-align:left">🟢 No on-prem mailboxes on mobile devices. Highly customizable with rules, own code and runtime-generated signatures.</td>
-                <td style="text-align:left">🟡 No on-prem mailboxes on mobile devices, not for appointments</td>
-                <td style="text-align:left">🟡 No on-prem mailboxes on mobile devices, not for appointments</td>
-                <td style="text-align:left">🔴 No on-prem mailboxes</td>
+                <td class="has-text-weight-bold">Outlook add-in</td>
+                <td>🟢 No on-prem mailboxes on mobile devices. Highly customizable with rules, own code and runtime-generated signatures.</td>
+                <td>🟡 No on-prem mailboxes on mobile devices, not for appointments</td>
+                <td>🟡 No on-prem mailboxes on mobile devices, not for appointments</td>
+                <td>🔴 No on-prem mailboxes</td>
             </tr>
             <tr>
-                <td style="text-align:left">Support pricing model</td>
-                <td style="text-align:left">🟢 Charged per support hour</td>
-                <td style="text-align:left">🔴 Charged if used or not</td>
-                <td style="text-align:left">🔴 Charged if used or not</td>
-                <td style="text-align:left">🔴 Charged if used or not</td>
+                <td class="has-text-weight-bold">Support pricing model</td>
+                <td>🟢 Charged per support hour</td>
+                <td>🔴 Charged if used or not</td>
+                <td>🔴 Charged if used or not</td>
+                <td>🔴 Charged if used or not</td>
             </tr>
             <tr>
-                <td style="text-align:left">Software escrow</td>
-                <td style="text-align:left">🟢 To the free and open-source Set&#8209;OutlookSignatures project</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🔴</td>
+                <td class="has-text-weight-bold">Software escrow</td>
+                <td>🟢 To the free and open-source Set&#8209;OutlookSignatures project</td>
+                <td>🔴</td>
+                <td>🔴</td>
+                <td>🔴</td>
             </tr>
             <tr>
-                <td style="text-align:left">Phone number formatting</td>
-                <td style="text-align:left">🟢 E164, international, national, RFC3966, regex, custom</td>
-                <td style="text-align:left">🟡 Regex</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🟡 RegEx</td>
+                <td class="has-text-weight-bold">Phone number formatting</td>
+                <td>🟢 E164, international, national, RFC3966, regex, custom</td>
+                <td>🟡 Regex</td>
+                <td>🔴</td>
+                <td>🟡 RegEx</td>
             </tr>
             <tr>
-                <td style="text-align:left">Postal address formatting</td>
-                <td style="text-align:left">🟢 Templates for more than 200 countries/regions, custom</td>
-                <td style="text-align:left">🟡 Regex</td>
-                <td style="text-align:left">🔴</td>
-                <td style="text-align:left">🟡 RegEx</td>
+                <td class="has-text-weight-bold">Postal address formatting</td>
+                <td>🟢 Templates for more than 200 countries/regions, custom</td>
+                <td>🟡 Regex</td>
+                <td>🔴</td>
+                <td>🟡 RegEx</td>
             </tr>
             <tr>
-                <td style="text-align:left">License cost for 100 mailboxes, 1 year</td>
-                <td style="text-align:left">🟢 300&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 1,600&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 1,300&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 1,600&nbsp;€</td>
+                <td class="has-text-weight-bold">License cost for 100 mailboxes, 1 year</td>
+                <td>🟢 300&nbsp;€</td>
+                <td>🔴 ca. 1,600&nbsp;€</td>
+                <td>🟡 ca. 1,300&nbsp;€</td>
+                <td>🔴 ca. 1,600&nbsp;€</td>
             </tr>
             <tr>
-                <td style="text-align:left">License cost for 250 mailboxes, 1 year</td>
-                <td style="text-align:left">🟢 750&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 4,000&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 2,700&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 3,600&nbsp;€</td>
+                <td class="has-text-weight-bold">License cost for 250 mailboxes, 1 year</td>
+                <td>🟢 750&nbsp;€</td>
+                <td>🔴 ca. 4,000&nbsp;€</td>
+                <td>🟡 ca. 2,700&nbsp;€</td>
+                <td>🔴 ca. 3,600&nbsp;€</td>
             </tr>
             <tr>
-                <td style="text-align:left">License cost for 500 mailboxes, 1 year</td>
-                <td style="text-align:left">🟢 1,500&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 8,000&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 4,400&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 6,200&nbsp;€</td>
+                <td class="has-text-weight-bold">License cost for 500 mailboxes, 1 year</td>
+                <td>🟢 1,500&nbsp;€</td>
+                <td>🔴 ca. 8,000&nbsp;€</td>
+                <td>🟡 ca. 4,400&nbsp;€</td>
+                <td>🟡 ca. 6,200&nbsp;€</td>
             </tr>
             <tr>
-                <td style="text-align:left">License cost for 1,000 mailboxes, 1 year</td>
-                <td style="text-align:left">🟢 3,000&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 15,700&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 8,700&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 10,500&nbsp;€</td>
+                <td class="has-text-weight-bold">License cost for 1,000 mailboxes, 1 year</td>
+                <td>🟢 3,000&nbsp;€</td>
+                <td>🔴 ca. 15,700&nbsp;€</td>
+                <td>🟡 ca. 8,700&nbsp;€</td>
+                <td>🟡 ca. 10,500&nbsp;€</td>
             </tr>
             <tr>
-                <td style="text-align:left">License cost for 10,000 mailboxes, 1 year</td>
-                <td style="text-align:left">🟢 30,000&nbsp;€</td>
-                <td style="text-align:left">🔴 ca. 110,000&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 65,000&nbsp;€</td>
-                <td style="text-align:left">🟡 ca. 41,000&nbsp;€</td>
+                <td class="has-text-weight-bold">License cost for 10,000 mailboxes, 1 year</td>
+                <td>🟢 30,000&nbsp;€</td>
+                <td>🔴 ca. 110,000&nbsp;€</td>
+                <td>🟡 ca. 65,000&nbsp;€</td>
+                <td>🟡 ca. 41,000&nbsp;€</td>
             </tr>
             <tr>
-                <td style="text-align:left">Direct procurement without public tender</td>
-                <td style="text-align:left">🟢 Unique features, exclusive manufacturer availablity</td>
-                <td style="text-align:left">🔴 No unique features, no exclusive manufacturer availablity</td>
-                <td style="text-align:left">🔴 No unique features, no exclusive manufacturer availablity</td>
-                <td style="text-align:left">🔴 No unique features, no exclusive manufacturer availablity</td>
+                <td class="has-text-weight-bold">Direct procurement without public tender</td>
+                <td>🟢 Unique features, exclusive manufacturer availablity</td>
+                <td>🔴 No unique features, no exclusive manufacturer availablity</td>
+                <td>🔴 No unique features, no exclusive manufacturer availablity</td>
+                <td>🔴 No unique features, no exclusive manufacturer availablity</td>
             </tr>
         </tbody>
     </table>
