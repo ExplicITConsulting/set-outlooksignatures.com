@@ -222,7 +222,7 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#1
             <p>Users logging on to a primary device that is managed and runs Linux, Windows or macOS.</p>
         </td>
         <td>
-          <p>Scenarios where you cannot or do not want to run Set-OutlookSignatures in the context of the logged-on user. Examples are shared devices with a master login, users with an M365 F-license, only using phones or Android/iOS tablets, and unmanaged BYOD scenarios.</p>
+          <p>Scenarios where you cannot or do not want to run Set-OutlookSignatures in the context of the logged-on user.<br>Examples are users mainly working on shared devices with a master login, only using Outlook on the web, only using phones or Android/iOS tablets, and unmanaged BYOD scenarios.</p>
         </td>
       </tr>
     </tbody>
