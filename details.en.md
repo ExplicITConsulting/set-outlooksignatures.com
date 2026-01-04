@@ -180,52 +180,54 @@ Set-OutlookSignatures comes with client mode, the Benefactor Circle add-on adds 
 
 While building the base for SimulateAndDeploy, pure [simulation mode](/details#12-simulation-mode) is not discussed here as it is not intended to be used for mass deployment but as a quality control feature.
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th style="text-align: left"><strong>Client mode</strong></th>
-      <th style="text-align: left"><strong>SimulateAndDeploy</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><strong>Advantages</strong></td>
-      <td style="text-align: left">
-        <ul>
-          <li>Uses idle resources on end user devices (Linux, Windows, macOS).</li>
-          <li>Runs within the security context of the logged-on user.</li>
-          <li>Is typically run more often, usually every two hours or at every log-on.</li>
-        </ul>
-      </td>
-      <td style="text-align: left">
-        <ul>
-          <li>Absolutely no interaction with end users and their devices.</li>
-          <li>Users do not need a primary device that is managed and runs Linux, macOS or Windows.</li>
-          <li>Software or at least configuration must only be deployed to involved central systems.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><strong>Disadvantages</strong></td>
-      <td style="text-align: left">
-        <ul>
-          <li>End users must log on to a device (Linux, Windows, macOS), not just to Outlook.</li>
-          <li>The primary device of each user must be a managed device running Windows, Linux or macOS, as you need to be able to deploy software or at least a bit of configuration to it.</li>
-          <li>Software or at least configuration must be deployed to many decentral systems.</li>
-        </ul>
-      </td>
-      <td style="text-align: left">
-        <ul>
-          <li>Uses one or more central systems, which need according resources.</li>
-          <li>Runs within the security context of a service account requiring (temporary) full access to all user mailboxes.</li>
-          <li>Is typically run less frequent, usually once a day or less often.</li>
-          <li>Can only see and influence the configuration of Outlook on the web, reducing the feature set of Set-OutlookSignatures to what is possible in simulation mode.</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th><strong>Client mode</strong></th>
+        <th><strong>SimulateAndDeploy</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Advantages</strong></td>
+        <td>
+          <ul>
+            <li>Uses idle resources on end user devices (Linux, Windows, macOS).</li>
+            <li>Runs within the security context of the logged-on user.</li>
+            <li>Is typically run more often, usually every two hours or at every log-on.</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Absolutely no interaction with end users and their devices.</li>
+            <li>Users do not need a primary device that is managed and runs Linux, macOS or Windows.</li>
+            <li>Software or at least configuration must only be deployed to involved central systems.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Disadvantages</strong></td>
+        <td>
+          <ul>
+            <li>End users must log on to a device (Linux, Windows, macOS), not just to Outlook.</li>
+            <li>The primary device of each user must be a managed device running Windows, Linux or macOS, as you need to be able to deploy software or at least a bit of configuration to it.</li>
+            <li>Software or at least configuration must be deployed to many decentral systems.</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Uses one or more central systems, which need according resources.</li>
+            <li>Runs within the security context of a service account requiring (temporary) full access to all user mailboxes.</li>
+            <li>Is typically run less frequent, usually once a day or less often.</li>
+            <li>Can only see and influence the configuration of Outlook on the web, reducing the feature set of Set-OutlookSignatures to what is possible in simulation mode.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 With the Benefactor Circle add-on, both modes can:
 - Set [out-of-office replies](/parameters#11-setcurrentuseroofmessage) for internal and external recipients.
