@@ -216,6 +216,15 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#1
             <p>Can only see and influence the configuration of Outlook on the web, reducing the feature set of Set-OutlookSignatures to what is possible in simulation mode.</p>
         </td>
       </tr>
+      <tr>
+        <td class="has-text-weight-bold">Recommended for</td>
+        <td>
+            <p>Users logging on to a primary device that is managed and runs Linux, Windows or macOS.</p>
+        </td>
+        <td>
+          <p>Scenarios where you cannot or do not want to run Set-OutlookSignatures in the context of the logged-on user. Examples are shared devices with a master login, users with an M365 F-license, only using phones or Android/iOS tablets, and unmanaged BYOD scenarios.</p>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
