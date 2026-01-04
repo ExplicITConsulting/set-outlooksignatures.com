@@ -221,7 +221,7 @@ sitemap_changefreq: weekly
   <li>'-BenefactorCircleId' with your <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> ID</li>
 </ul>
 
-<p>Trial licenses can not be extended or re-issued. They are limited to 14 days runtime and a maximum of 20 mailboxes.</p>
+<p>Trial licenses can not be extended or re-issued. They are limited to 14&nbsp;days runtime and a maximum of 20&nbsp;mailboxes.</p>
 
 <p>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible, as our software does not phone home).</p>
 

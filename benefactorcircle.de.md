@@ -222,7 +222,7 @@ sitemap_changefreq: weekly
   <li>'-BenefactorCircleId' mit Ihrer <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> ID</li>
 </ul>
 
-<p>Testlizenzen können nicht verlängert oder erneut ausgestellt werden. Sie sind auf 14 Tage Laufzeit und maximal 20 Postfächer beschränkt.</p>
+<p>Testlizenzen können nicht verlängert oder erneut ausgestellt werden. Sie sind auf 14&nbsp;Tage Laufzeit und maximal 20&nbsp;Postfächer beschränkt.</p>
 
 <p>Die Testphase beginnt mit der Erstellung und Übermittlung der Lizenzdatei, nicht mit Ihrer ersten Nutzung (das ist technisch nicht möglich, da unsere Software keine Telemetriedaten überträgt).</p>
 
