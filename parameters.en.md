@@ -357,6 +357,8 @@ Also see related parameter '[EmbedImagesInHtmlAdditionalSignaturePath](#27-embed
 
 This feature requires a Benefactor Circle license (when used outside of simulation mode).
 
+Allowed values: A path as a string, or an empty string ('`""`' or '`''`')to disable the feature.
+
 Default value: `"$(try { $([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures')) } catch {})"`  
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -AdditionalSignaturePath "$(try { $([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures')) } catch {})"`  
