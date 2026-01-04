@@ -86,11 +86,11 @@ Nach einer bestimmten Nutzungsdauer wird der **dezente Hinweis „Free and open-
     <table class="table is-bordered is-striped is-hoverable is-fullwidth">
         <thead>
             <tr>
-                <th class="has-text-weight-bold"></th>
-                <th class="has-text-weight-bold">Set-OutlookSignatures<br>mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></th>
-                <th class="has-text-weight-bold">Marktbegleiter A</th>
-                <th class="has-text-weight-bold">Marktbegleiter B</th>
-                <th class="has-text-weight-bold">Marktbegleiter C</th>
+                <th class="has-text-weight-bold" style="width: 20%;"></th>
+                <th class="has-text-weight-bold" style="width: 20%;">Set-OutlookSignatures<br>mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></th>
+                <th class="has-text-weight-bold" style="width: 20%;">Marktbegleiter A</th>
+                <th class="has-text-weight-bold" style="width: 20%;">Marktbegleiter B</th>
+                <th class="has-text-weight-bold" style="width: 20%;">Marktbegleiter C</th>
             </tr>
         </thead>
         <tbody>

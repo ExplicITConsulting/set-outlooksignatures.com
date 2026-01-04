@@ -184,9 +184,9 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#1
   <table class="table">
     <thead>
       <tr>
-        <th></th>
-        <th class="has-text-weight-bold">Client mode</th>
-        <th class="has-text-weight-bold">SimulateAndDeploy</th>
+        <th class="has-text-weight-bold" style="width: 20%;"></th>
+        <th class="has-text-weight-bold" style="width: 40%;">Client mode</th>
+        <th class="has-text-weight-bold" style="width: 40%;">SimulateAndDeploy</th>
       </tr>
     </thead>
     <tbody>
