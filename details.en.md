@@ -173,7 +173,7 @@ Contrary to other solutions, you do not have to decide for one fixed combination
 * Frontline workers (production and healthcare staff, for example) primarily using shared devices or only logging on to Outlook on the web get their signatures centrally via SimulateAndDeploy.<br>The assigned Outlook add-in instance is configured to automatically add signatures only in Outlook on Android and Outlook on iOS.
 * Users primarily working on unmanaged devices get their signatures centrally via SimulateAndDeploy.<br>The assigned Outlook add-in instance is configured to automatically add signatures on all Outlook editions on all platforms.
 
-Let's dive a bit deeper into the methods mentioned.
+The following chapters dive deeper into the differences between creating signatures and out-of-office replies, and making signatures available to end users. They also describe which options are available, what their pros and cons are, and when they are used best.
 
 ### 3.1. Creating signatures and out-of-office replies
 Set-OutlookSignatures comes with client mode, the Benefactor Circle add-on adds [SimulateAndDeploy](/parameters#19-simulateanddeploy) mode.
@@ -276,6 +276,8 @@ It's an ideal solution for Outlook editions that don't yet support roaming signa
 The Outlook add-in includes a task pane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.
 
 It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful for Outlook on Android and Outlook on iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.
+
+You can have as many add-in instances with differing configurations as you need, just follow the [technical specifications](/outlookaddin#32-web-server-and-domain) of the Outlook add-in.
 
 #### 3.2.4. Draft email
 The [SignatureCollectionInDrafts](/parameters#35-signaturecollectionindrafts) parameter, enabled per default with the Benefactor Circle add-on, creates and updates an email message with the subject 'My signatures, powered by Set-OutlookSignatures Benefactor Circle' in the drafts folder of the current user.

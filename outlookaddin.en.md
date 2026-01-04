@@ -96,7 +96,7 @@ Whatever web server you choose, the requirements are low:
 
 [Static website hosting in Azure Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website) is an uncomplicated, cheap and fast alternative. It comes with a *.web.core.windows.net hostname and a Microsoft-issued certificate, even in the free tier.
 
-We recommend to use use two separate dedicated hostnames, such as "https://outlookaddin.example.com" and "https://outlookaddin-test.example.com". This way, you can use one for testing and one for production. For tests, sideloading is the preferred method, while Microsoft 365 Centralized Deployment or Integrated Apps are ideal for mass deployment.
+We recommend to use use two separate dedicated hostnames, such as "https://outlookaddin01.example.com" and "https://outlookaddin01test.example.com". This way, you can use one for testing and one for production. For tests, sideloading is the preferred method, while Microsoft 365 Centralized Deployment or Integrated Apps are ideal for mass deployment.
 
 
 ### 3.3. Set-OutlookSignatures
@@ -118,7 +118,7 @@ If you want to create the Entra ID app manually, the required minimum settings f
 - A name of your choice.
 - A supported account type (it is strongly recommended to only allow access from users of your tenant).
 - Authentication platform '`Single-page application`' with a redirect URI of '`brk-multihub://<your_deployment_domain>`'.
-  If your DEPLOYMENT_URL is 'https://outlook-addin-01.example.com', the redirect URI must be '`brk-multihub://outlook-addin-01.example.com`'.
+  If your DEPLOYMENT_URL is 'https://outlookaddin01.example.com', the redirect URI must be '`brk-multihub://outlookaddin01.example.com`'.
 - Access to the following '`delegated`' (not application!) '`Graph API`' permissions:
   - '`Mail.Read`'  
     Allows to read emails in mailbox of the currently logged-on user (and in no other mailboxes).  
@@ -137,7 +137,9 @@ With every new release of Set-OutlookSignatures, [Benefactor Circle](/benefactor
 
 With every new release of the Outlook add-in, you need to update your add-in deployment (sideloading M365 Centralized Deployment, M365 Integrated Apps) so that Outlook can download and use the newest code.
 
-It is recommended to use use two separate dedicated hostnames, one for testing and one for production, such as "https://outlookaddin.example.com" and "https://outlookaddin-test.example.com".
+It is recommended to use use two separate dedicated hostnames at least: One for testing and one for production, such as "https://outlookaddin01.example.com" and "https://outlookaddin01test.example.com".  
+You can also have multiple different instances of the Outlook add-in in production, for example when you want to configure the add-in differently depending on how different user groups work with email - see the '[Architecture considerations](https://set-outlooksignatures.com/details#3-architecture-considerations)' chapter of the 'Technical details, requirements and usage' document for an example.  
+Each instance needs a dedicated hostname. Make sure that each mailbox only uses one instance of the add-in, never more.
 
 To configure the add-in and deploy it to your web server:
 - Open '`run_before_deployment.ps1`' and follow the instructions in it to configure the add-in to your needs.
