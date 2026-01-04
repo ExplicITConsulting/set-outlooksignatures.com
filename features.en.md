@@ -118,12 +118,12 @@ After a certain period of use, the **subtle note 'Free and open-source Set-Outlo
             </tr>
             <tr>
                 <td class="has-text-weight-bold">Entra ID and Active Directory permissions</td>
-                <td>🟢 User (delegated) permissions, least privilege principle</td>
-                <td>🔴 Application permissions, read all directory data (and transfer all emails)
+                <td>🟢 User (delegated) permissions, least privilege principle, clearly documented and justified</td>
+                <td>🔴 Application permissions, transfer all directory data, transfer all emails
                 </td>
-                <td>🔴 Application permissions, read all directory data (and transfer all emails)
+                <td>🔴 Application permissions, transfer all directory data, transfer all emails
                 </td>
-                <td>🔴 Application permissions, read all directory data (and read all emails)</td>
+                <td>🔴 Application permissions, transfer all directory data, transfer all emails</td>
             </tr>
             <tr>
                 <td class="has-text-weight-bold">Entra ID and Active Directory data stays in your environment (no transfer to 3rd

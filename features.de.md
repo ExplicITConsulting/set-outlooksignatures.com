@@ -117,12 +117,10 @@ Nach einer bestimmten Nutzungsdauer wird der **dezente Hinweis „Free and open-
             </tr>
             <tr>
                 <td class="has-text-weight-bold">Rechte für Entra ID und Active Directory</td>
-                <td>🟢 Benutzerrechte (delegated permissions), Least-Privilege-Prinzip</td>
-                <td>🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten lesen (und alle E-Mails umleiten)
-                </td>
-                <td>🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten lesen (und alle E-Mails umleiten)
-                </td>
-                <td>🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten lesen (und alle E-Mails umleiten)</td>
+                <td>🟢 Benutzerrechte (delegated permissions), Least-Privilege-Prinzip, klar dokumentiert und begründet</td>
+                <td>🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten übertragen, alle E-Mails übertragen</td>
+                <td>🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten übertragen, alle E-Mails übertragen</td>
+                <td>🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten übertragen, alle E-Mails übertragen</td>
             </tr>
             <tr>
                 <td class="has-text-weight-bold">Daten aus Entra ID Und Active Directory bleiben in Ihrer Umgebung (kein Transfer zu Drittsystemen)</td>
