@@ -154,7 +154,7 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
         <thead>
             <tr>
                 <th class="has-text-weight-bold" style="width: 20%;"></th>
-                <th class="has-text-weight-bold" style="width: 20%;">Set-OutlookSignatures<br>mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></th>
+                <th class="has-text-weight-bold" style="width: 20%;">Set-OutlookSignatures mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></th>
                 <th class="has-text-weight-bold" style="width: 20%;">Marktbegleiter A</th>
                 <th class="has-text-weight-bold" style="width: 20%;">Marktbegleiter B</th>
                 <th class="has-text-weight-bold" style="width: 20%;">Marktbegleiter C</th>

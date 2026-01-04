@@ -142,7 +142,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
         <thead>
             <tr>
                 <th class="has-text-weight-bold" style="width: 20%;"></th>
-                <th class="has-text-weight-bold" style="width: 20%;">Set-OutlookSignatures<br>with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></th>
+                <th class="has-text-weight-bold" style="width: 20%;">Set-OutlookSignatures with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></th>
                 <th class="has-text-weight-bold" style="width: 20%;">Peer A</th>
                 <th class="has-text-weight-bold" style="width: 20%;">Peer B</th>
                 <th class="has-text-weight-bold" style="width: 20%;">Peer C</th>
