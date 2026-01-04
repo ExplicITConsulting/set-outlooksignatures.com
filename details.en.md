@@ -168,10 +168,10 @@ Set-OutlookSignatures and the [Benefactor Circle add-on](/benefactorcircle) supp
 
 Contrary to other solutions, you do not have to decide for one fixed combination of these methods - you can mix and match different combinations to perfectly meet your requirements.
 
-A commonly used scenario looks like this:
-* For office workers, Set-OutlookSignatures runs on their client ([hidden/non-visible](/faq#121-start-set-outlooksignatures-in-hiddeninvisible-mode), of course). The Outlook add-in is configured to automatically add signatures only in Outlook on Android and Outlook on iOS.
-* Frontline workers (production and healthcare staff, for example) using shared devices and only logging on to Outlook on the web get their signatures centrally via SimulateAndDeploy.
-* Users working on unmanaged devices get their signatures centrally via SimulateAndDeploy. The Outlook add-in is configured to automatically add signatures on all Outlook editions on all platforms.
+Our recommendation is also the scenario used most often by our customers:
+* For users with a primary managed device running Linux, macOS or Windows, Set-OutlookSignatures runs on their client ([hidden/non-visible](/faq#121-start-set-outlooksignatures-in-hiddeninvisible-mode), of course). This primary managed device can also be a virtual desktop instance (VDI) or terminal server session.<br>The assigned Outlook add-in instance is configured to automatically add signatures only in Outlook on Android and Outlook on iOS.
+* Frontline workers (production and healthcare staff, for example) primarily using shared devices or only logging on to Outlook on the web get their signatures centrally via SimulateAndDeploy.<br>The assigned Outlook add-in instance is configured to automatically add signatures only in Outlook on Android and Outlook on iOS.
+* Users primarily working on unmanaged devices get their signatures centrally via SimulateAndDeploy.<br>The assigned Outlook add-in instance is configured to automatically add signatures on all Outlook editions on all platforms.
 
 Let's dive a bit deeper into the methods mentioned.
 
