@@ -74,8 +74,8 @@ h6 {
 
 .button {
   white-space: normal;
-  word-break: normal;
-  hyphens: manual;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .anchor-link {
