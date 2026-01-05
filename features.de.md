@@ -86,11 +86,11 @@ Nach einer bestimmten Nutzungsdauer wird der **dezente Hinweis „Free and open-
         <table class="table is-bordered is-striped is-hoverable">
             <thead>
                 <tr>
-                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em;"></th>
-                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em;">Set-OutlookSignatures mit<br><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></th>
-                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em;">Marktbegleiter A</th>
-                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em;">Marktbegleiter B</th>
-                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em;">Marktbegleiter C</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap; color: transparent !important;">Set-OutlookSignatures mit<br><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></th>
+                    <th class="has-text-weight-bold" style="min-width: 10em; white-space: nowrap;">Set-OutlookSignatures mit<br><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Marktbegleiter A</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Marktbegleiter B</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Marktbegleiter C</th>
                 </tr>
             </thead>
             <tbody>
