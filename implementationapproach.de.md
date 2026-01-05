@@ -169,7 +169,7 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
                 <td>🔴</td>
             </tr>
             <tr>
-                <td class="has-text-weight-bold">E-Mails bleiben in Ihrer Umgebung (keim Umleiten auf Drittsysteme)</td>
+                <td class="has-text-weight-bold">E-Mails bleiben in Ihrer Umgebung (kein Umleiten auf Drittsysteme)</td>
                 <td>🟢</td>
                 <td>🟡 Optional, reduziert den Funktionsumfang</td>
                 <td>🔴</td>
