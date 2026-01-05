@@ -180,53 +180,55 @@ Set-OutlookSignatures comes with client mode, the Benefactor Circle add-on adds 
 
 While building the base for SimulateAndDeploy, pure [simulation mode](/details#12-simulation-mode) is not discussed here as it is not intended to be used for mass deployment but as a quality control feature.
 
-<div class="table-container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th class="has-text-weight-bold" style="width: 15%;"></th>
-        <th class="has-text-weight-bold" style="width: 42.5%;">Client mode</th>
-        <th class="has-text-weight-bold" style="width: 42.5%;">SimulateAndDeploy</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="has-text-weight-bold">Advantages</td>
-        <td>
-            <p>Uses idle resources on end user devices (Linux, Windows, macOS).</p>
-            <p>Runs within the security context of the logged-on user.</p>
-            <p>Is typically run more often, usually every two hours or at every log-on.</p>
-        </td>
-        <td>
-            <p>Users do not need a primary device that is managed and runs Linux, macOS or Windows.</p>
-            <p>Software or at least configuration must only be deployed to involved central systems.</p>
-        </td>
-      </tr>
-      <tr>
-        <td class="has-text-weight-bold">Disadvantages</td>
-        <td>
-            <p>End users must log on to a device (Linux, Windows, macOS), not just to Outlook.</p>
-            <p>The primary device of each user must be managed und run Windows, Linux or macOS.</p>
-            <p>Software or at least configuration must be deployed to many decentral systems.</p>
-        </td>
-        <td>
-            <p>Uses one or more central systems, which need according resources.</p>
-            <p>Runs within the security context of a service account requiring (temporary) full access to all user mailboxes.</p>
-            <p>Is typically run less frequent, usually once a day or less often.</p>
-            <p>Can only see and influence the configuration of Outlook on the web, reducing the feature set of Set-OutlookSignatures to what is possible in simulation mode.</p>
-        </td>
-      </tr>
-      <tr>
-        <td class="has-text-weight-bold">Recommended for</td>
-        <td>
-            <p>Users logging on to a primary device that is managed and runs Linux, Windows or macOS.</p>
-        </td>
-        <td>
-          <p>Scenarios where you cannot or do not want to run Set-OutlookSignatures in the context of the logged-on user.<br>Examples are users mainly working on shared devices with a master login, only using Outlook on the web, only using phones or Android/iOS tablets, and unmanaged BYOD scenarios.</p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div style="display: grid;">
+  <div class="table-container" style="min-width: 50em;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="has-text-weight-bold" style="width: 15%;"></th>
+          <th class="has-text-weight-bold" style="width: 42.5%;">Client mode</th>
+          <th class="has-text-weight-bold" style="width: 42.5%;">SimulateAndDeploy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="has-text-weight-bold">Advantages</td>
+          <td>
+              <p>Uses idle resources on end user devices (Linux, Windows, macOS).</p>
+              <p>Runs within the security context of the logged-on user.</p>
+              <p>Is typically run more often, usually every two hours or at every log-on.</p>
+          </td>
+          <td>
+              <p>Users do not need a primary device that is managed and runs Linux, macOS or Windows.</p>
+              <p>Software or at least configuration must only be deployed to involved central systems.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="has-text-weight-bold">Disadvantages</td>
+          <td>
+              <p>End users must log on to a device (Linux, Windows, macOS), not just to Outlook.</p>
+              <p>The primary device of each user must be managed und run Windows, Linux or macOS.</p>
+              <p>Software or at least configuration must be deployed to many decentral systems.</p>
+          </td>
+          <td>
+              <p>Uses one or more central systems, which need according resources.</p>
+              <p>Runs within the security context of a service account requiring (temporary) full access to all user mailboxes.</p>
+              <p>Is typically run less frequent, usually once a day or less often.</p>
+              <p>Can only see and influence the configuration of Outlook on the web, reducing the feature set of Set-OutlookSignatures to what is possible in simulation mode.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="has-text-weight-bold">Recommended for</td>
+          <td>
+              <p>Users logging on to a primary device that is managed and runs Linux, Windows or macOS.</p>
+          </td>
+          <td>
+            <p>Scenarios where you cannot or do not want to run Set-OutlookSignatures in the context of the logged-on user.<br>Examples are users mainly working on shared devices with a master login, only using Outlook on the web, only using phones or Android/iOS tablets, and unmanaged BYOD scenarios.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 With the Benefactor Circle add-on, both modes can:

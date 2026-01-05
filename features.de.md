@@ -81,6 +81,7 @@ Nach einer bestimmten Nutzungsdauer wird der **dezente Hinweis „Free and open-
 
 
 ## Funktions-Vergleich {#feature-comparison}
+
 <div style="display: grid;">
     <div class="table-container">
         <table class="table is-bordered is-striped is-hoverable">
