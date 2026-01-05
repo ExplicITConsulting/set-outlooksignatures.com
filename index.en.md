@@ -249,7 +249,7 @@ sitemap_changefreq: weekly
     </h2>
     <p>Visit our help and support center to find out more:</p>
     <ul>
-      <li>The detailed feature set and a comparison with peers</li>
+      <li>The detailed feature set and a comparison with competitors</li>
       <li>Requirements and configuration options</li>
       <li>Best practices and FAQ</li>
       <li>How to get first-class support</li>

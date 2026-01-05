@@ -10,7 +10,7 @@ hero_link_text: "<span><b>Funktionen: </b>Was unsere Lösung kann</span>"
 hero_link_style: |
   style="background-color: LawnGreen;"
 hero_link2: "#feature-comparison"
-hero_link2_text: "<span><b>Funktions-Vergleich </b>mit Marktbegleitern</span>"
+hero_link2_text: "<span><b>Funktions-Vergleich </b>mit Mitbewerbern</span>"
 hero_link2_style: |
   style="background-color: LawnGreen;"
 hero_link3: "/quickstart"
@@ -29,7 +29,7 @@ Set-OutlookSignatures ist das fortschrittlichste, sicherste und vielseitigste ko
 
 Es bietet alles, was Sie von einer modernen Lösung erwarten: zentralisierte Verwaltung, nahtlose Bereitstellung und vollständige Kontrolle. Dank seiner zukunftsorientierten Architektur, die nicht auf einem kommerziellen Geschäftsmodell, sondern auf praktischer Nützlichkeit, Datenschutz und digitaler Souveränität basiert, bietet es einzigartige Funktionen, die es von anderen Lösungen abheben.
 
-Einen schnellen Überblick erhalten Sie in unserem <a href="#feature-comparison">Funktions-Vergleich mit Marktbegleitern</a>. Wenn Sie genau wissen möchten, was alles möglich ist, oder Sie nach Inspiration für neue Anwendungsfälle suchen, finden Sie hier die vollständige Liste der Funktionen. Achtung: Sie ist lang!
+Einen schnellen Überblick erhalten Sie in unserem <a href="#feature-comparison">Funktions-Vergleich mit Mitbewerbern</a>. Wenn Sie genau wissen möchten, was alles möglich ist, oder Sie nach Inspiration für neue Anwendungsfälle suchen, finden Sie hier die vollständige Liste der Funktionen. Achtung: Sie ist lang!
 
 
 ## Funktionen {#features}
@@ -89,9 +89,9 @@ Nach einer bestimmten Nutzungsdauer wird der **dezente Hinweis „Free and open-
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;"></th>
                     <th class="has-text-weight-bold" style="min-width: 10em; white-space: nowrap;">Set-OutlookSignatures mit<br><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span></th>
-                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Marktbegleiter A</th>
-                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Marktbegleiter B</th>
-                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Marktbegleiter C</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber A</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber B</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber C</th>
                 </tr>
             </thead>
             <tbody>

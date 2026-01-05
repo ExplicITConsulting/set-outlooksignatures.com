@@ -181,8 +181,8 @@ Set-OutlookSignatures comes with client mode, the Benefactor Circle add-on adds 
 While building the base for SimulateAndDeploy, pure [simulation mode](/details#12-simulation-mode) is not discussed here as it is not intended to be used for mass deployment but as a quality control feature.
 
 <div style="display: grid;">
-  <div class="table-container" style="min-width: 50em;">
-    <table class="table">
+  <div class="table-container">
+    <table class="table" style="min-width: 50em;">
       <thead>
         <tr>
           <th class="has-text-weight-bold" style="width: 15%;"></th>

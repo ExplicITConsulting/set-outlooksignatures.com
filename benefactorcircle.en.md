@@ -316,7 +316,7 @@ sitemap_changefreq: weekly
     <p>Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> are very well documented, which inevitably brings with it a lot of content.</p>
     <p>Visit our help and support center to find out more:</p>
     <ul>
-      <li>The detailed feature set and a comparison with peers</li>
+      <li>The detailed feature set and a comparison with competitors</li>
       <li>Requirements and configuration options</li>
       <li>Best practices and FAQ</li>
       <li>How to get first-class support</li>

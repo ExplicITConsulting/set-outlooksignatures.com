@@ -10,7 +10,7 @@ hero_link_text: "<span><b>Features: </b>What our solution is able to do</span>"
 hero_link_style: |
   style="background-color: LawnGreen;"
 hero_link2: "#feature-comparison"
-hero_link2_text: "<span><b>Feature comparison </b>with peers</span>"
+hero_link2_text: "<span><b>Feature comparison </b>with competitors</span>"
 hero_link2_style: |
   style="background-color: LawnGreen;"
 hero_link3: "/quickstart"
@@ -29,7 +29,7 @@ Set-OutlookSignatures is the most advanced, secure and versatile free and open-s
 
 It delivers everything you'd expect from a modern solution: Centralized management, seamless deployment, and full control. Thanks to its forward-thinking architecture, designed not around a commercial business model but around practical utility, data privacy, and digital sovereignty, it offers unique capabilities that set it apart.
 
-For a quick overview, check our <a href="#feature-comparison">feature comparison with peers</a>. If you want to know exactly what is possible, or if you are looking for inspiration for new use cases, you can find the complete list of features here. Warning: It's long!
+For a quick overview, check our <a href="#feature-comparison">feature comparison with competitors</a>. If you want to know exactly what is possible, or if you are looking for inspiration for new use cases, you can find the complete list of features here. Warning: It's long!
 
 
 ## Features {#features}
