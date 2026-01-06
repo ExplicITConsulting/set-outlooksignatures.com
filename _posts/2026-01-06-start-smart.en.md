@@ -11,14 +11,14 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-Centralized email signature solutions are often surprisingly expensive. So how can Set-OutlookSignatures and the Benefactor Circle add-on offer a comparable feature set at a much lower cost?
+Centralized email signature solutions are often surprisingly expensive. So how can Set-OutlookSignatures and the Benefactor Circle add-on be so cost-effective?
 
 Here’s how:
-- The core is free and open-source
-- No bundled "free" maintenance or support contracts that quietly inflate the price
-- No extra infrastructure that copies your directory data or reroutes your emails
-- No inflated pricing models that rely on drawn-out negotiations and artificial discounts
-- No reseller markups, you buy directly from the developer
+- The core is free and open-source.
+- No bundled "free" maintenance or support contracts that quietly inflate the price.
+- No extra infrastructure that copies your directory data or reroutes your emails.
+- No inflated pricing models that rely on drawn-out negotiations and artificial discounts.
+- No reseller markups, you buy directly from the developer.
 
 We focus on practical, efficient software. And we believe every mailbox should cost the same, which is why small customers pay the same fair price as large ones.
 

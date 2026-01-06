@@ -11,14 +11,14 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-Zentralisierte E-Mail-Signaturlösungen sind oft überraschend teuer. Wie können Set-OutlookSignatures und das Benefactor Circle Add-On also einen vergleichbaren Funktionsumfang zu deutlich geringeren Kosten bieten?
+Zentralisierte E-Mail-Signaturlösungen sind oft überraschend teuer. Wie können Set-OutlookSignatures und das Benefactor Circle Add-On so kosteneffizient sein?
 
 So funktioniert es:
-- Der Kern ist kostenlos und Open Source
-- Keine gebündelten "kostenlosen" Wartungs- oder Supportverträge, die den Preis stillschweigend in die Höhe treiben
-- Keine zusätzliche Infrastruktur, die Ihre Verzeichnisdaten kopiert oder Ihre E-Mails umleitet
-- Keine überhöhten Preismodelle, die auf langwierigen Verhandlungen und künstlichen Rabatten beruhen
-- Keine Händleraufschläge, Sie kaufen direkt beim Entwickler
+- Der Kern ist kostenlos und Open Source.
+- Keine gebündelten "kostenlosen" Wartungs- oder Supportverträge, die den Preis stillschweigend in die Höhe treiben.
+- Keine zusätzliche Infrastruktur, die Ihre Verzeichnisdaten kopiert oder Ihre E-Mails umleitet.
+- Keine überhöhten Preismodelle, die auf langwierigen Verhandlungen und künstlichen Rabatten beruhen.
+- Keine Händleraufschläge, Sie kaufen direkt beim Entwickler.
 
 Wir konzentrieren uns auf praktische, effiziente Software. Und wir sind der Meinung, dass jedes Postfach gleich viel kosten sollte, weshalb kleine Kunden denselben fairen Preis zahlen wie große.
 
