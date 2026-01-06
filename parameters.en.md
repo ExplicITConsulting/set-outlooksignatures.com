@@ -135,7 +135,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 
 
 ## 4. GraphClientID
-ID of the Entra ID app to use for Graph authentication.
+The application (client) ID of the Entra ID app to use for Graph authentication (not its object ID).
 
 GraphClientID can be defined in two places: As parameter or in a custom '`GraphConfigFile`'.
 It is recommended to use the parameter.
@@ -160,7 +160,7 @@ The requirements for cross-tenant access support are:
 -	Authentication will happen as soon as Graph access is required for the first time. All tenants defined by the GraphClientID parameter will be authenticated (the order does not matter).
 - To use Benefactor Circle features, each tenant must have its own license group, and the license file must contain all of these groups.
 
-Allowed value: The ID of the Entra ID app to use as a string. Do not pass the parameter at all to use the default value.
+Allowed value: The application (client) ID of the Entra ID app to use as a string. Do not pass the parameter at all to use the default value.
 
 Default value: $null
 

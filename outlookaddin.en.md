@@ -150,7 +150,7 @@ To configure the add-in and deploy it to your web server:
   - On which Outlook hosts and platforms signatures shall be added automatically for new emails and email replies.
   - On which Outlook hosts and platforms signatures shall be added automatically for new appointments.
   - If you want or do not want to disable client signatures configured by your users.
-  - Your cloud environment and the ID of the Entra ID app (required for Exchange Online mailboxes only).
+  - Your cloud environment and the application (client) ID of the Entra ID app (required for Exchange Online mailboxes only).
   - Enable or disable debug logging.
   - Add custom code to the add-in so you can directly influence which signature it will set.  
     For example, you can set a specific signature…
