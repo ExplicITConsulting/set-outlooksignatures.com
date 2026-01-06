@@ -2,11 +2,51 @@ $AllLinksToCheck = New-Object 'System.Collections.Generic.HashSet[string]'
 $PagesChecked = New-Object 'System.Collections.Generic.HashSet[string]'
 $Queue = New-Object 'System.Collections.Generic.Queue[string]'
 
+# Define the URL of the sitemap AND/OR a StartUrl
+$SitemapUrl = 'https://set-outlooksignatures.com/sitemap.xml'
 $StartUrl = 'https://set-outlooksignatures.com'
-$StartDomain = ([uri]$StartUrl).Host
 
-# Seed the queue with the starting URL
-$Queue.Enqueue($StartUrl)
+if ($StartUrl) {
+    $StartDomain = ([uri]$StartUrl).Host
+} elseif ($SitemapUrl) {
+    $StartDomain = ([uri]$SitemapUrl).Host
+} else {
+    Write-Error 'You must specify at least a SitemapUrl or a StartUrl.'
+    exit 1
+}
+
+if ($StartUrl) {
+    $Queue.Enqueue($StartUrl)
+}
+
+if ($SitemapUrl) {
+    try {
+        # Fetch the sitemap content from the web
+        $response = Invoke-WebRequest -Uri $SitemapUrl -UseBasicParsing
+        [xml]$Sitemap = $response.Content
+
+        # Initialize Namespace Manager to handle Sitemap and XHTML prefixes
+        $ns = New-Object System.Xml.XmlNamespaceManager($Sitemap.NameTable)
+        $ns.AddNamespace('ns', 'http://www.sitemaps.org/schemas/sitemap/0.9')
+        $ns.AddNamespace('xhtml', 'http://www.w3.org/1999/xhtml')
+
+        # 1. Extract standard <loc> links
+        $locLinks = $Sitemap.SelectNodes('//ns:loc', $ns) | Select-Object -ExpandProperty '#text'
+
+        # 2. Extract <xhtml:link> href attributes (localization links)
+        $xhtmlLinks = $Sitemap.SelectNodes('//xhtml:link', $ns) | ForEach-Object { $_.getAttribute('href') }
+
+        # Combine all links and remove duplicates
+        $allLinks = ($locLinks + $xhtmlLinks) | Select-Object -Unique
+
+        # Display the results
+        $allLinks | ForEach-Object {
+            $Queue.Enqueue($_)
+        }
+    } catch {
+        Write-Error "Failed to download or parse the sitemap: $($_.Exception.Message)"
+    }
+}
 
 # Required to access the UrlDecode method
 Add-Type -AssemblyName System.Web
