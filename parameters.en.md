@@ -551,7 +551,7 @@ Should images be embedded into HTML files?
 
 When using HTML templates: Only images in the first subfolder below the template file matching the Windows Connected Files naming convention (https://docs.microsoft.com/en-us/windows/win32/shell/manage#connected-files) are supported. Only use relative paths for the src attribute in img tags. All other paths are considered external and are not embedded.
 
-Outlook 2016 and newer can handle images embedded directly into an HTML file as BASE64 string (`<img src="data:image/[…]"`).
+Outlook 2016 and newer can handle images embedded directly into an HTML file as Base64 string (`<img src="data:image/[…]"`).
 
 Outlook 2013 and earlier can't handle these embedded images when composing HTML emails (there is no problem receiving such emails, or when composing RTF or TXT emails).
 

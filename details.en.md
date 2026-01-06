@@ -103,7 +103,7 @@ On Windows, Outlook and Word are usually required, but not in all constellations
 
 Signature templates can be in DOCX (Windows) or HTML format (Windows, Linux, macOS). Set-OutlookSignatures comes with sample templates in both formats.
 
-The software must run in PowerShell Full Language mode. Constrained Language mode is not supported, as some features such as BASE64 conversions are not available in this mode or require very slow workarounds.
+The software must run in PowerShell Full Language mode. Constrained Language mode is not supported, as some features such as Base64 conversions are not available in this mode or require very slow workarounds.
 
 On Windows and macOS, unblock the file 'Set-OutlookSignatures.ps1'. You can use the PowerShell cmdlet 'Unblock-File' for this, or right-click the file in File Explorer, select Properties and check 'Unblock'.  
 This removes the 'mark of the web', which can prevent script execution when the PowerShell execution policy is set to RemoteSigned.
