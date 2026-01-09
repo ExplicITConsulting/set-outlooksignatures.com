@@ -58,8 +58,6 @@ Set-OutlookSignatures can be **run by users on Windows, Linux and macOS clients,
 
 **Simulation mode** allows content creators and admins to simulate the behavior of the software for a specific user at a specific point in time, and to inspect the resulting signature files before going live.
 
-**SimulateAndDeploy**¹ allows to deploy signatures and out-of-office replies to Outlook on the web¹/New Outlook¹ (when based on Outlook on the web) **without any client deployment or end user interaction**, making it ideal for users that only log on to web services but never to a client (users with a Microsoft 365 F-license, for example).
-
 **SimulateAndDeploy**¹ allows to deploy signatures and out-of-office replies **without any client deployment or end user interaction**. Signatures are saved to the mailbox as roaming signatures (Exchange Online mailboxes only) and are also made available for the [Outlook add-in](/outlookaddin) (all Exchange mailboxes).
 
 It works **on premises, in hybrid and in cloud-only environments**. The software is **designed to work in big and complex environments**: Exchange resource forest scenarios, AD trusts, multi-level AD subdomains, cross-tenant and multitenant scenarios.  
@@ -71,7 +69,7 @@ Set-OutlookSignatures requires **no installation on servers or clients**. You on
 
 There is also **no telemetry** and no "calling home". Emails and directory data are **not routed through a 3rd party data center or cloud service**, and there is **no need to change DNS records (MX, SPF) or email flow**.
 
-A **documented implementation approach**, based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes, contains proven procedures and recommendations for product managers, architects, operations managers, account managers and email and client administrators.
+A **documented implementation approach**, based on real life experiences [implementing the software in multi-client environments with a five-digit number of mailboxes](/implementationapproach), contains proven procedures and recommendations for product managers, architects, operations managers, account managers and email and client administrators.
 
 The software core is **Free and Open-Source Software (FOSS)**. It is published under the European Union Public License, which is approved, among others, by the Free Software Foundation (FSF) and the Open Source Initiative (OSI), and is compatible with the General Public License (GPL) and other popular licenses.
 

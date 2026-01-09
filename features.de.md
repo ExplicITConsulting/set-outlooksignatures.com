@@ -58,7 +58,7 @@ Set-OutlookSignatures kann von Nutzern auf **Windows-, Linux- und macOS-Clients,
 
 Der **Simulationsmodus** ermöglicht es Inhaltserstellern und Administratoren, das Verhalten der Software für einen bestimmten Benutzer zu einem bestimmten Zeitpunkt zu simulieren und die resultierenden Signaturen vor der Live-Schaltung zu prüfen.
 
-**SimulateAndDeploy**¹ ermöglicht die Bereitstellung von Signaturen und Abwesenheitsantworten **ohne Client-Bereitstellung oder Endbenutzerinteraktion**. Signaturen werden im Postfach als roaming signatures (nur für Exchange Online) gespeichert und stehen darüber hinaus dem [Outlook add-in](/outlookaddin) (Exchange Online und Exchange on-prem).
+**SimulateAndDeploy**¹ ermöglicht die Bereitstellung von Signaturen und Abwesenheitsantworten **ohne Ausführung auf Endgeräten oder Endbenutzerinteraktion**. Signaturen werden im Postfach als roaming signatures (nur für Exchange Online) gespeichert und stehen darüber hinaus dem [Outlook add-in](/outlookaddin) (Exchange Online und Exchange on-prem) zur Verfügung.
 
 Die Software funktioniert **on-premises, in hybriden und reinen Cloud-Umgebungen**. Sie ist **für große und komplexe Umgebungen konzipiert**: Exchange Resource Forests, AD-Trusts, mehrstufige AD-Subdomänen sowie mandantenübergreifende und Multitenant Szenarien.
 
@@ -71,7 +71,7 @@ Set-OutlookSignatures erfordert **keine Installation auf Servern oder Clients**.
 
 Es gibt **keine Telemetrie** und kein "Calling Home". E-Mails und Verzeichnisdaten werden **nicht über externe Rechenzentren oder Cloud-Dienste geleitet**, und **DNS-Einträge (MX, SPF) oder der E-Mail-Verkehr müssen nicht geändert werden**.
 
-Ein **dokumentierter Implementierungsansatz**, der auf praktischen Erfahrungen mit der Implementierung der Software in Multiclient-Umgebungen mit einer fünfstelligen Anzahl von Postfächern basiert, enthält bewährte Vorgehensweisen und Empfehlungen für Produktmanager, Architekten, Betriebsleiter, Account Manager sowie E-Mail- und Client-Administratoren.
+Ein **dokumentierter Implementierungsansatz**, der auf [praktischen Erfahrungen mit der Implementierung der Software in Multiclient-Umgebungen mit einer fünfstelligen Anzahl von Postfächern](/implementationapproach) basiert, enthält bewährte Vorgehensweisen und Empfehlungen für Produktmanager, Architekten, Betriebsleiter, Account Manager sowie E-Mail- und Client-Administratoren.
 
 Der Kern der Software ist als **Freie Open-Source-Software (FOSS)** quelloffen und kostenlos. Sie wird unter der European Union Public Licnse veröffentlicht, die unter anderem von der Free Software Foundation (FSF) und der Open Source Initiative (OSI) anerkannt wird und mit der General Public License (GPL) und anderen gängigen Lizenzen kompatibel ist.
 
