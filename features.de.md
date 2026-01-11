@@ -48,7 +48,7 @@ Mit Set-OutlookSignatures können Signaturen und Abwesenheitsnotizen:
 - Mit dem **[Outlook Add-In](/outlookaddin)**¹ automatisch zu neuen E-Mails, Antworten und Weiterleitungen, sowie zu Terminen hinzugefügt werden.
 - In einen **[zusätzlichen Ordner](/parameters#14-additionalsignaturepath)**¹ kopiert werden, um den einfachen Zugriff auf Signaturen auf Mobilgeräten oder zur Verwendung mit anderen E-Mail-Clients und Apps als Outlook zu ermöglichen: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und andere.
 - In einem **[E-Mail-Entwurf mit allen verfügbaren Signaturen](/parameters#35-signaturecollectionindrafts)**¹ in HTML und reinem Text für den einfachen Zugriff in E-Mail-Clients ohne Signatur-API gesammelt werden.
-- **[Schreibgeschützt]((/details#71-allowed-tags))** werden (nur klassisches Outlook für Windows).
+- **[Schreibgeschützt](/details#71-allowed-tags)** werden (nur klassisches Outlook für Windows).
 
 Set-OutlookSignatures kann von Nutzern auf **[Windows-, Linux- und macOS-Clients, einschließlich gemeinsam genutzter Geräte und Terminalserver, oder auf einem zentralen System mit einem Dienstkonto](/details#3-architecture-considerations)**¹ ausgeführt werden.<br>Auf Clients kann es als Teil des Anmeldeskripts, als geplante Aufgabe oder auf Benutzeranforderung über ein Desktopsymbol, einen Startmenüeintrag, eine Verknüpfung oder einer andere Möglichkeit zum Starten eines Programms ausgeführt werden - **[was auch immer Ihre Methode zur Verteilung von Software erlaubt](/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
 
