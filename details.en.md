@@ -722,6 +722,7 @@ Per default, `.\config\default replacement variables.ps1` contains the following
     - Same variables as logged-in user, `$CurrentMailbox[…]$` instead of `$CurrentUser[…]$`  
 - Manager of current mailbox  
     - Same variables as logged-in user, `$CurrentMailboxManager[…]$` instead of `$CurrentMailbox[…]$`  
+
 ### 9.1. Photos (account pictures, user image) from Active Directory or Entra ID
 The software supports replacing images in signature templates with photos stored in Active Directory.
 
