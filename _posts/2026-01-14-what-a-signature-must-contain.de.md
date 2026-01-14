@@ -87,6 +87,7 @@ Um eine einzige Signatur zu erstellen, die weltweit funktioniert, müssen Sie al
 
 
 ### Must-Haves
+
 | Element | Zweck |
 | :--- | :--- |
 | Vollständiger Firmenname (inkl. Rechtsform) | Identifizierung (DE, AT, CH, AU). |

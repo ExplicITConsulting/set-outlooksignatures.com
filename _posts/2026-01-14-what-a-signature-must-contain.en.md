@@ -86,6 +86,7 @@ To create a single signature that works worldwide, you must combine all mandator
 
 
 ### Must-Haves
+
 | Element | Purpose |
 | :--- | :--- |
 | Full Company Name (incl. Legal Form) | Identification (DE, AT, CH, AU). |
