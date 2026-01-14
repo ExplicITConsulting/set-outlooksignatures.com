@@ -35,8 +35,13 @@ Die Signatur muss die sogenannte Impressumspflicht erfüllen und folgende Angabe
 Wichtig: Auch die Angabe einer E-Mail-Adresse und der Telefonnummer ist Pflicht, um eine schnelle Kontaktaufnahme zu gewährleisten.
 
 
-### Österreich (UGB) und 🇨🇭 Schweiz
+### Österreich (UGB) und Schweiz
 Ähnlich wie in Deutschland ist die Angabe der Firmenbuchnummer (Österreich) bzw. der Handelsregisternummer (Schweiz) sowie der vollständigen Rechtsform erforderlich.
+
+In der Schweiz sind die Anforderungen im Obligationenrecht (OR) geregelt.
+
+In Österreich sind die Vorschriften über mindestens fünf Gesetze verstreut, weshalb die Wirtschafskammer Österreich (WKO) eine [umfassende Checkliste](https://www.wko.at/internetrecht/das-korrekte-e-mail-impressum) bereitstellt.
+
 
 
 ## Anti-Spam-Fokus: USA und Kanada
@@ -44,13 +49,13 @@ In Nordamerika stehen weniger die Registerdaten im Vordergrund, sondern die Kont
 
 
 ### USA (CAN-SPAM Act)
-Dieses Gesetz gilt, sobald die E-Mail als "kommerziell" eingestuft wird. Die zentralen Anforderungen für den *Absender* sind:
+Dieses Gesetz gilt, sobald die E-Mail als "kommerziell" eingestuft wird. Die zentralen Anforderungen für den Absender sind:
 1.  Physische Adresse: Die E-Mail muss eine gültige Postanschrift des Absenders (Geschäftssitz oder Postfach) enthalten.
 2.  Opt-Out-Mechanismus: Es muss einen klaren und funktionierenden Abmeldelink ("Unsubscribe") geben. Abmeldungen müssen innerhalb von 10 Werktagen bearbeitet werden.
 3.  Identifizierung: Die E-Mail-Header und der Betreff dürfen nicht irreführend sein.
 
 
-### Kanada (CASL – Canada’s Anti-Spam Legislation)
+### Kanada (CASL – CanadaÄs Anti-Spam Legislation)
 CASL ist eines der strengsten Anti-Spam-Gesetze der Welt und basiert auf einem strengen Opt-In-Prinzip. Die Signatur muss:
 1.  Die Identität des Senders und der Organisation klar benennen.
 2.  Eine Postanschrift enthalten.

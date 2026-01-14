@@ -11,7 +11,7 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-A professional email signature is much more than just a digital business card or a marketing banner. It is a legally relevant document. Companies operating internationally must comply with a variety of different laws—ranging from Germany's legal disclosure requirements and the US CAN-SPAM Act to formal requirements in Australia and cultural specifics in China.
+A professional email signature is much more than just a digital business card or a marketing banner. It is a legally relevant document. Companies operating internationally must comply with a variety of different laws — ranging from Germany's legal disclosure requirements and the US CAN-SPAM Act to formal requirements in Australia and cultural specifics in China.
 
 If you want to secure your corporate email communication globally, an "Ultimate Signature" is essential. Here is a breakdown of the mandatory information you must consider in the world's most important economic regions.
 
@@ -38,19 +38,23 @@ Important: Providing an email address and telephone number is also mandatory to 
 ### Austria (UGB) and Switzerland
 Similar to Germany, the disclosure of the Commercial Register Number (Austria/Switzerland) and the complete legal form is required.
 
+In Switzerland, the requirements are regulated in the Swiss Code of Obligations (CO).
+
+In Austria, the regulations are scattered across at least five laws, which is why the Austrian Federal Economic Chamber (WKO) provides a [comprehensive checklist](https://www.wko.at/internetrecht/das-korrekte-e-mail-impressum).
+
 
 ## The anti-spam focus: USA and Canada
 In North America, less emphasis is placed on register data and more on controlling promotional emails (spam prevention).
 
 
 ### USA (CAN-SPAM Act)
-This law applies as soon as the email is classified as "commercial." The central requirements for the sender are:
+This law applies as soon as the email is classified as "commercial". The central requirements for the sender are:
 1.  Physical address: The email must contain a valid physical mailing address of the sender (business premises or PO Box).
 2.  Opt-out mechanism: There must be a clear and functional unsubscribe link. Opt-out requests must be processed within 10 business days.
 3.  Identification: The email headers and subject line must not be misleading.
 
 
-### Canada (CASL – Canada’s Anti-Spam Legislation)
+### Canada (CASL – Canada's Anti-Spam Legislation)
 CASL is one of the world's strictest anti-spam laws, based on a strict opt-in principle. The signature must:
 1.  Clearly state the identity of the sender and the organization.
 2.  Include a postal address.
