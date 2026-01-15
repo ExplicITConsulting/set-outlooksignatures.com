@@ -228,9 +228,9 @@ When testing add-ins, especially when using the sideloading method, Outlook some
 
 To avoid problems of all kinds, it is a good idea to manually clear the add-in cache in test scenarios. This forces Outlook to re-download the add-in.
 - Outlook on the web: Hard Refresh the website.
-- Classic Outlook on Windows: See the [official instructions from Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows).
-- New Outlook on Windows: See the [official instructions from Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows).
-- Outlook on macOS: See the [official instructions from Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac).
+- Classic Outlook on Windows: Close Outlook, then follow the [official instructions from Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows).
+- New Outlook on Windows: Close Outlook, then follow the [official instructions from Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows).
+- Outlook on macOS: Close Outlook, then follow the [official instructions from Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac).
 - Outlook on iOS: Open the taskpane of the Outlook add-in, scroll down to "Advanced options" and tap the "Reload add-in" button.
 - Outlook on Android:
   - Long-press the Outlook app icon.
