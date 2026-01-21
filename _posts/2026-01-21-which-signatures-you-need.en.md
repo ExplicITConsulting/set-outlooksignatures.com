@@ -82,6 +82,12 @@ The signature is an excellent, cost-effective advertising space. Make use of it!
 * Seasonal or Time-Limited Banners: Notices for trade fairs/events, product launches, holiday greetings, or company anniversaries.
 
 
+## The big unknown: Who has which mailbox?
+When managing signatures, it is of course important to know who is using which mailboxes. This is particularly relevant for shared mailboxes and delegates.
+
+Set-OutlookSignatures recognizes which mailboxes are integrated in Outlook and also offers an interface to [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions). This allows you to distribute signatures for mailboxes completely automatically and dynamically — even if users have not yet set them up in Outlook. Of course, the additional signatures are automatically deleted when mailbox access is revoked.
+
+
 ## Conclusion
 Managing this complexity manually is impossible. A centralized solution like Set-OutlookSignatures ensures that every email, regardless of scenario or sender, is consistent, up-to-date, and legally compliant. This turns your signatures into a real asset for your company.
 

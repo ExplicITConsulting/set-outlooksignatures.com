@@ -82,6 +82,12 @@ Die Signatur ist ein hervorragender, kostengünstiger Werbeplatz. Nutzen Sie ihn
 * Saisonale oder zeitlich begrenzte Banner: Hinweise auf Messen/Events, Produkt-Launches, Feiertagsgrüße oder Firmenjubiläen.
 
 
+## Die große Unbekannte: Wer hat welches Postfach?
+FÜr die Verwaltung von Signaturen ist es natürlich wichtig zu wissen, wer welche Postfächer nutzt. Das ist besonders bei Shared Mailboxes und Delegates relevant.
+
+Set-OutlookSignatures erkennt, welche Postfächer in Outlook eingebunden sind und bietet zusätzlich eine Schnittstelle zu [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions). Damit können Sie vollkommen automatisch und dynamisch Signaturen für Postfächer verteilen - auch wenn Benutzer diese in Outlook noch gar nicht eingerichtet haben. Selbstverständlich werden die zusätzlichen Signaturen automatisch gelöscht, wenn der Postfachzugriff entzogen wird.
+
+
 ## Fazit
 Die Verwaltung dieser Komplexität manuell ist unmöglich. Eine zentralisierte Lösung wie Set-OutlookSignatures stellt sicher, dass jede E-Mail, unabhängig von Szenario oder Absender, konsistent, aktuell und rechtskonform ist. So machen Sie Ihre Signaturen zu einem echten Asset für Ihr Unternehmen.
 
