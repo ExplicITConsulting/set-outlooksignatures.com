@@ -70,7 +70,7 @@ It is **[multi-instance capable](/faq#11-can-multiple-script-instances-run-in-pa
 
 Set-OutlookSignatures requires **[no installation on servers or clients](/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**. You only need a standard SMB file share on a central system, and optionally Office on your clients.
 
-There is also **[no telemetry](/features#feature-comparison)** and no "calling home". Emails and directory data are **[not routed through a 3rd party data center or cloud service](/features#feature-comparison)**, and there is **[no need to change DNS records (MX, SPF) or email flow](/features#feature-comparison)**.
+There is also **[no telemetry](/features#feature-comparison)** and no "calling home". Emails and directory data are **[not routed through a 3rd party data center or cloud service](/features#feature-comparison)**, and **[DNS records (MX, SPF) and email flow are not changed](/features#feature-comparison)**.
 
 A **[documented implementation approach](/implementationapproach)**, based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes, contains proven procedures and recommendations for product managers, architects, operations managers, account managers and email and client administrators.
 
