@@ -27,7 +27,7 @@ sitemap_changefreq: weekly
 
 Set-OutlookSignatures ist das fortschrittlichste, sicherste und vielseitigste kostenlose Open-Source-Tool zur Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen. Mit dem optionalen [Benefactor Circle Add-On](/benefactorcircle) stehen Ihnen noch leistungsstärkere Funktionen zur Verfügung, die speziell auf Geschäftsumgebungen zugeschnitten sind.
 
-Es bietet alles, was Sie von einer modernen Lösung erwarten: zentralisierte Verwaltung, nahtlose Bereitstellung und vollständige Kontrolle über alle Outlook-Editionen auf allen Plattformen: Classic und New, Android, iOS, Linux, macOS, Windows.
+Es bietet alles, was Sie von einer modernen Lösung erwarten: zentralisierte Verwaltung, nahtlose Bereitstellung und vollständige Kontrolle über alle Outlook-Editionen auf allen Plattformen: Classic und New, Android, iOS, Linux, macOS, Web, Windows.
 
 Dank seiner zukunftsorientierten Architektur, die nicht auf einem kommerziellen Geschäftsmodell, sondern auf praktischer Nützlichkeit, Datenschutz und digitaler Souveränität basiert, bietet es einzigartige Funktionen, die es von anderen Lösungen abheben.
 

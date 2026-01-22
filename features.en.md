@@ -27,7 +27,7 @@ sitemap_changefreq: weekly
 
 Set-OutlookSignatures is the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies. The optional [Benefactor Circle add-on](/benefactorcircle) unlocks even more powerful features tailored for business environments.
 
-It delivers everything you'd expect from a modern solution: Centralized management, seamless deployment, and full control across all Outlook editions on all platforms: Classic and New, Android, iOS, Linux, macOS, Windows.
+It delivers everything you'd expect from a modern solution: Centralized management, seamless deployment, and full control across all Outlook editions on all platforms: Classic and New, Android, iOS, Linux, macOS, Web, Windows.
 
 Thanks to its forward-thinking architecture, designed not around a commercial business model but around practical utility, data privacy, and digital sovereignty, it offers unique capabilities that set it apart.
 
