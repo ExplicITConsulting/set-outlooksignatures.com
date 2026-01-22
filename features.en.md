@@ -27,7 +27,9 @@ sitemap_changefreq: weekly
 
 Set-OutlookSignatures is the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies. The optional [Benefactor Circle add-on](/benefactorcircle) unlocks even more powerful features tailored for business environments.
 
-It delivers everything you'd expect from a modern solution: Centralized management, seamless deployment, and full control. Thanks to its forward-thinking architecture, designed not around a commercial business model but around practical utility, data privacy, and digital sovereignty, it offers unique capabilities that set it apart.
+It delivers everything you'd expect from a modern solution: Centralized management, seamless deployment, and full control across all Outlook editions on all platforms: Classic and New, Android, iOS, Linux, macOS, Windows.
+
+Thanks to its forward-thinking architecture, designed not around a commercial business model but around practical utility, data privacy, and digital sovereignty, it offers unique capabilities that set it apart.
 
 For a quick overview, check our <a href="#feature-comparison">feature comparison with competitors</a>. If you want to know exactly what is possible, or if you are looking for inspiration for new use cases, you can find the complete list of features here. Warning: It's long!
 
@@ -291,9 +293,9 @@ After a certain period of use, the **[subtle note 'Free and open-source Set-Outl
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Outlook add-in</td>
-                    <td>🟢 No on-prem mailboxes on mobile devices. Highly customizable with rules, own code and runtime-generated signatures.</td>
-                    <td>🟡 No on-prem mailboxes on mobile devices, not for appointments</td>
-                    <td>🟡 No on-prem mailboxes on mobile devices, not for appointments</td>
+                    <td>🟢 No on-prem mailboxes on Android and iOS. Highly customizable with rules, own code and runtime-generated signatures.</td>
+                    <td>🟡 No on-prem mailboxes on Android and iOS, not for appointments</td>
+                    <td>🟡 No on-prem mailboxes on Android and iOS, not for appointments</td>
                     <td>🔴 No on-prem mailboxes</td>
                 </tr>
                 <tr>
