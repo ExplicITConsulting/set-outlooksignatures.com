@@ -275,7 +275,7 @@ The add-in makes signatures - created by Set-OutlookSignatures in client or Simu
 
 It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD (bring your own device) scenarios. For on-premises mailboxes, it delivers a roaming signature experience comparable to the cloud.
 
-The Outlook add-in includes a task pane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.
+The Outlook add-in includes a taskpane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.
 
 It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful for Outlook on Android and Outlook on iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.
 

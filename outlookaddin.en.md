@@ -41,7 +41,7 @@ The add-in makes signatures - created by Set-OutlookSignatures in client or Simu
 
 It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD (bring your own device) scenarios. For on-premises mailboxes, it delivers a roaming signature experience comparable to the cloud.
 
-The Outlook add-in includes a task pane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.
+The Outlook add-in includes a taskpane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.
 
 It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful inn Outlook on Android and Outlook on iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.
 
@@ -229,6 +229,8 @@ When testing add-ins, especially when using the sideloading method, Outlook some
 To avoid problems of all kinds, it is a good idea to manually clear the add-in cache in test scenarios. This forces Outlook to re-download the add-in.
 - Outlook on the web: Hard Refresh the website.
 - Classic Outlook on Windows: Close Outlook, then follow the [official instructions from Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows).
+  - After restarting Outlook, the add-ins are available when the status bar displays "All folders are up to date." for at least one minute without interruption, or the add-ins are visible in the "All apps" button menu.
+  - After clearing the add-in cache, the taskpane of the Outlook add-in always works, but Outlook sometimes does not trigger launch events until Outlook is restarted. Microsoft is aware of this issue.
 - New Outlook on Windows: Close Outlook, then follow the [official instructions from Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows).
 - Outlook on macOS: Close Outlook, then follow the [official instructions from Microsoft](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac).
 - Outlook on iOS: Open the taskpane of the Outlook add-in, scroll down to "Advanced options" and tap the "Reload add-in" button.
