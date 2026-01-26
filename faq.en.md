@@ -99,6 +99,7 @@ sitemap_changefreq: monthly
   - [44.15. Detect and convert encodings](#4415-detect-and-convert-encodings)
 - [45. How to deploy a signature only once](#45-how-to-deploy-a-signature-only-once)
 - [46. How to add a calender link](#46-how-to-add-a-calender-link)
+- [47. Different default signatures for different mailboxes](#47-different-default-signatures-for-different-mailboxes)
 
 
 ## 1. Where can I find the changelog?
@@ -1224,3 +1225,31 @@ These solutions all share the same problem: How to make the booking link availab
 It us usually not easy to programatically get the booking link as non-admin user. The universal approach therefore is so have an admin get all the booking links and save them to a custom attribute or a csv file for later use in Set-OutlookSignatures.
 
 Unfortunately, this approach is also the only one possible for Microsoft Booking: The website URL does not contain the SMTP address of the user, but the ExchangeGuid of its mailbox. This property is available for admins via the ExchangeOnlineManagement PowerShell module, but not for non-admin users in any way.
+
+
+## 47. Different default signatures for different mailboxes
+[INI files](https://set-outlooksignatures.com/details#7-template-tags-and-ini-files) define which signature of OOF templates should be used for which mailboxes. Template are assigned to all mailboxes or based on groups, SMTP addresses or replacement variables. Among other options, you can define time ranges during which they are valid or invalid, and if the resulting signature should be set as the default signature for new emails or for replies and forwards.
+
+You can, of course, have different default signatures for different mailboxes. Let's assume you have templates "A" and "B". Both templates should be made available to all your mailboxes. "A" shall be the default signature for all, but some specific mailboxes must have set "B" as default signature.
+
+The trick is to reference a template not only once, but multiple times:
+
+```
+[A.docx]
+# "A" is the default signature for new emails for all users
+defaultNew
+
+
+[B.docx]
+# All users get the "B" template without specific configuration
+# Optional: Exclude mailboxes that are in  in the Entra ID group b-default-signature@example.com, as there is a detailed configuration for this group/template combination
+# -:EntraID b-default-signature@example.com
+
+
+[B.docx]
+# "B" is the default signature for new emails only for mailboxes in the Entra ID group b-default-signature@example.com
+EntraID b-default-signature@example.com
+defaultNew
+```
+
+Keep in mind that the INI options `SortOrder` and `SortCulture` influence the [signature and OOF application order](/details#8-signature-and-oof-application-order).
