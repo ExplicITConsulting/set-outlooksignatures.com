@@ -669,15 +669,18 @@ It is recommended to create a copy of your template folder for tests.
 ## 8. Signature and OOF application order  
 Signatures are applied mailbox for mailbox. The mailbox list is sorted as follows (from highest to lowest priority):
 - Mailbox of the currently logged-in user
-- Mailboxes from the default Outlook profile, in the sort order shown in Outlook (and not in the order they were added to the Outlook profile)
+- Mailboxes from the default Outlook profile, in the sort order shown in Outlook (not in the order they were added to the Outlook profile)
 - Mailboxes from other Outlook profiles. The profiles are sorted alphabetically. Within each profile, the mailboxes are sorted in the order they are shown in Outlook.
 
-For each mailbox, templates are applied in a specific order: Common templates first, group templates second, email address specific templates third, replacement variables last.
+For each mailbox, templates are applied in a specific order:
+1. Common templates first,
+2. Group templates second,
+3. Email address specific templates third,
+4. Replacement variable specific templates last.
 
-Each one of these templates groups can have one or more time range tags assigned. Such a template is only considered if the current system time is within at least one of these time range tags.
-- Common templates are templates with either no tag or only `[defaultNew]` and/or `[defaultReplyFwd]` (`[internal]` and/or `[external]` for OOF templates).
-- Within these template groups, templates are sorted according to the sort order and sort culture defines in the configuration file.
-- Every centrally stored signature template is only applied to the mailbox with the highest priority allowed to use it. This ensures that no mailbox with lower priority can overwrite a signature intended for a higher priority mailbox.
+Within these template groups, templates are sorted according to the `SortOrder` and `SortCulture` parameters defined in the INI file used.
+
+Every template is only applied to the mailbox with the highest priority allowed to use it. This ensures that no mailbox with lower priority can overwrite a signature intended for a higher priority mailbox. You can influence this behavior with the `[MailboxSpecificSignatureNames](/parameters#32-mailboxspecificsignaturenames)` parameter or the `[OutlookSignatureName](/details#61-relation-between-template-file-name-and-outlook-signature-name)` template option in the INI file.
 
 OOF templates are only applied if the out-of-office assistant is currently disabled. If it is currently active or scheduled to be automatically activated in the future, OOF templates are not applied.  
 
