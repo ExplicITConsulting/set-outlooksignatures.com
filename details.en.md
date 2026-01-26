@@ -680,7 +680,7 @@ For each mailbox, templates are applied in a specific order:
 
 Within these template groups, templates are sorted according to the `SortOrder` and `SortCulture` parameters defined in the INI file used.
 
-Every template is only applied to the mailbox with the highest priority allowed to use it. This ensures that no mailbox with lower priority can overwrite a signature intended for a higher priority mailbox. You can influence this behavior with the `[MailboxSpecificSignatureNames](/parameters#32-mailboxspecificsignaturenames)` parameter or the `[OutlookSignatureName](/details#61-relation-between-template-file-name-and-outlook-signature-name)` template option in the INI file.
+Every template is only applied to the mailbox with the highest priority allowed to use it. This ensures that no mailbox with lower priority can overwrite a signature intended for a higher priority mailbox. You can influence this behavior with the [MailboxSpecificSignatureNames](/parameters#32-mailboxspecificsignaturenames) parameter or the [OutlookSignatureName](/details#61-relation-between-template-file-name-and-outlook-signature-name) template option in the INI file.
 
 OOF templates are only applied if the out-of-office assistant is currently disabled. If it is currently active or scheduled to be automatically activated in the future, OOF templates are not applied.  
 
