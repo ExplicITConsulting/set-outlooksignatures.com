@@ -41,7 +41,7 @@ sitemap_changefreq: weekly
   </p>
   <p>
     Um diese Lücke zu schließen, bietet ExplicIT Consulting das 
-    <a href="/benefactorcircle">Benefactor Circle Add-On</a> sowie erstklassigen 
+    <a href="/benefactorcircle">Benefactor Circle Add-on</a> sowie erstklassigen 
     <a href="#professional-support">professionellen Support</a> an. Die Einnahmen aus diesen Optionen sichern die kontinuierliche Entwicklung und Qualität sowohl der Open-Source- als auch der kostenpflichtigen Versionen.
   </p>
   <p>
@@ -52,7 +52,7 @@ sitemap_changefreq: weekly
 
 <h2 id="professional-support">Professioneller Support</h2>
 <p>
-  Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-On: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen professionellen Support.
+  Ganz gleich, ob Sie das kostenlose und quelloffene Set-OutlookSignatures verwenden oder das Benefactor Circle Add-on: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> bietet erstklassigen professionellen Support.
 </p>
 <p>
   Sie ziehen es vor, durch den Einrichtungs- und Anpassungsprozess geführt zu werden, anstatt sich selbst durch die Dokumentation zu arbeiten? Sie sind auf der Suche nach maßgeschneiderten Workshops, praktischer Unterstützung bei der Implementierung, Schulungen, Unterstützung bei der Erstellung von Vorlagen und anderen Dienstleistungen im Zusammenhang mit der zentralen Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen?
@@ -71,7 +71,7 @@ sitemap_changefreq: weekly
   Einen Teil Ihrer Investition geben wir direkt an das Set-OutlookSignatures-Projekt weiter und fördern so die Weiterentwicklung der kostenlosen Open-Source-Version.
 </p>
 <p>
-  <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme.
+  <strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos - ohne Ausnahme.
   <br>
   Für alle anderen Fragen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.
 </p>

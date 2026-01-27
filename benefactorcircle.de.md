@@ -2,7 +2,7 @@
 layout: "page"
 lang: "de"
 locale: "de"
-title: "Das Benefactor Circle Add-On"
+title: "Das Benefactor Circle Add-on"
 subtitle: "Mehr Funktionen für Ihr Unternehmen"
 description: "Erweitern Sie Set-OutlookSignatures mit mobilen Signaturen, Roaming-Sync, OOF-Automatisierung und Profi-Funktionen für Ihr Unternehmen."
 hero_link: "#demo"
@@ -31,7 +31,7 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <h2 id="sustainable-value">Nachhaltiger Mehrwert für Ihr Unternehmen</h2>
-<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span> von <a href="https://explicitconsulting.at">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Möglichkeiten für Ihr Unternehmen.</p>
+<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> von <a href="https://explicitconsulting.at">ExplicIT Consulting</a> erweitert das kostenlose Set-OutlookSignatures um großartige zusätzliche Möglichkeiten für Ihr Unternehmen.</p>
 
 
 <h3 id="key-features">Zusätzliche Funktionen</h3>
@@ -143,7 +143,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="demo">Demo</h2>
-<p>Wir zeigen Ihnen, was Set-OutlookSignatures, das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span> und das inkludierte Outlook Add-In für Sie tun können - interaktiv und mit Fokus auf Ihre konkreten Anforderungen. Erleben Sie live:</p>
+<p>Wir zeigen Ihnen, was Set-OutlookSignatures, das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> und das inkludierte Outlook Add-In für Sie tun können - interaktiv und mit Fokus auf Ihre konkreten Anforderungen. Erleben Sie live:</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -230,9 +230,9 @@ sitemap_changefreq: weekly
 <h2 id="price">Preis und Business Case</h2>
 <p>Set-OutlookSignatures ist kostenlos.<br>Ursprünglich als Technologie-Demonstrator für Scripting-Techniken geschaffen, hat sich das Tool zur fortschrittlichsten, sichersten und vielseitigsten kostenlosen Open-Source-Lösung für die Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen entwickelt. Lesen Sie in den FAQ über <a href="https://set-outlooksignatures.com/faq#351-why-the-tagline">ihre Entstehungsgeschichte und was Sie von ihrem Code lernen können</a>.</p>
 
-<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span> schaltet erweiterte Funktionen frei und ist für <strong>nur 3.00 € pro Postfach und Jahr</strong> erhältlich, das entspricht <strong>lediglich 0.25 € pro Postfach und Monat</strong>.</p>
+<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> schaltet erweiterte Funktionen frei und ist für <strong>nur 3.00 € pro Postfach und Jahr</strong> erhältlich, das entspricht <strong>lediglich 0.25 € pro Postfach und Monat</strong>.</p>
 
-<p>Das Add-On ist eine Investition, die sich vom ersten Tag an auszahlt - sicher auch für Sie!<br>Dank einzigartiger Funktionen und exklusiver Herstellerverfügbarkeit ist in der Regel ein rechtskonformer Direktbezug ohne öffentliche Ausschreibung möglich.</p>
+<p>Das Add-on ist eine Investition, die sich vom ersten Tag an auszahlt - sicher auch für Sie!<br>Dank einzigartiger Funktionen und exklusiver Herstellerverfügbarkeit ist in der Regel ein rechtskonformer Direktbezug ohne öffentliche Ausschreibung möglich.</p>
 
 <p><a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Kosten-Nutzen-Rechnung, Business Case</a></p>
 
@@ -240,7 +240,7 @@ sitemap_changefreq: weekly
 <ul>
   <li>Kleine Unternehmen zahlen denselben günstigen Preis wie große Konzerne.</li>
   <li>Es gibt keine versteckten Wartungs- oder Supportverträge im Jahrespreis. Sie zahlen nur für den Support, den Sie tatsächlich benötigen – und dank unserer Dokumentation ist das in der Regel gar nicht nötig.</li>
-  <li><strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos – ohne Ausnahme.
+  <li><strong>Unser Support-Versprechen:</strong> Wenn Ihre Support-Anfrage auf einen Fehler in der aktuellen Version von Set-OutlookSignatures, dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span>, seiner Dokumentation oder den mitgelieferten Komponenten zurückzuführen ist, ist der Support kostenlos – ohne Ausnahme.
   <br>
   Für alle anderen Anliegen erhalten Sie den gleichen erstklassigen Support zu einem fairen Preis.
   </li>
@@ -261,7 +261,7 @@ sitemap_changefreq: weekly
 
 
 <h3 id="financial-benefits">Finanzielle Vorteile</h3>
-<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span> ist eine Investition, die sich ab dem ersten Tag rechnet. Eine Kosten-Nutzen-Rechnung in Form eines Business Cases muss drei Aspekte berücksichtigen:</p>
+<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> ist eine Investition, die sich ab dem ersten Tag rechnet. Eine Kosten-Nutzen-Rechnung in Form eines Business Cases muss drei Aspekte berücksichtigen:</p>
 <ul>
   <li>Wie hoch sind die Kosten durch nicht konforme Signaturen und Abwesenheitsnotizen – sei es durch Reputationsverlust oder Bußgelder wegen Nichteinhaltung von Vorschriften?</li>
   <li>Welchen Mehrwert bietet die Nutzung von E-Mails als zusätzlicher Marketingkanal?</li>
@@ -284,7 +284,7 @@ sitemap_changefreq: weekly
 <p>2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client: 0.55 * 2 * 3 * 2 * 1 = 6,60</p>
 </blockquote>
 
-<p>Pro Benutzer und Jahr betragen die Kosten 6,60 € für manuellen Aufwand gegenüber 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span>.</p>
+<p>Pro Benutzer und Jahr betragen die Kosten 6,60 € für manuellen Aufwand gegenüber 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span>.</p>
 
 <p>Diese Rechnung berücksichtigt noch nicht:</p>
 <ul>
@@ -296,7 +296,7 @@ sitemap_changefreq: weekly
   <li>Den Mehrwert eines zusätzlichen Marketingkanals</li>
 </ul>
 
-<p><strong>Sie sehen: Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span> amortisiert sich sofort und hilft Ihnen sogar dabei, mehr Geld zu verdienen.</strong></p>
+<p><strong>Sie sehen: Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> amortisiert sich sofort und hilft Ihnen sogar dabei, mehr Geld zu verdienen.</strong></p>
 
 
 <div class="columns is-multiline">
@@ -314,7 +314,7 @@ sitemap_changefreq: weekly
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="support">Hilfe und Support</h2>
     <p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Hilfe- und Support-Center</a></p>
-    <p>Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-On</span> sind sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.</p>
+    <p>Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> sind sehr gut dokumentiert, was unweigerlich eine Menge Inhalt mit sich bringt.</p>
     <p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:</p>
     <ul>
     <li>Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern</li>
@@ -391,6 +391,6 @@ sitemap_changefreq: weekly
 <h6 id="change-license-period">Verlängerung oder Verkürzung einer Lizenzlaufzeit</h6>
 <p>Eine Lizenzlaufzeit kann nicht verlängert werden. Lizenzen sind ein Jahr lang gültig, beginnend mit dem Datum des vollständigen Zahlungseingangs, und verlängern sich nicht automatisch.</p>
 
-<p>Wenn Sie Set-OutlookSignatures weiterhin mit den Vorteilen des <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-Ons</span> nutzen möchten, geben Sie einfach eine neue Bestellung auf, um eine neue Lizenzdatei zu erhalten.</p>
+<p>Wenn Sie Set-OutlookSignatures weiterhin mit den Vorteilen des <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-ons</span> nutzen möchten, geben Sie einfach eine neue Bestellung auf, um eine neue Lizenzdatei zu erhalten.</p>
 
 <p>Sie werden rechtzeitig im Voraus darüber informiert, dass Ihre Lizenz demnächst abläuft.</p>

@@ -18,7 +18,7 @@ Die E-Mail-Signaturen Ihres Unternehmens werden täglich tausende Male gesehen. 
 
 Set-OutlookSignatures verwandelt jede E-Mail automatisch in eine Marketingchance.
 
-All dies – [und noch mehr](/features)! – ist mit Set-OutlookSignatures und dem Benefactor Circle Add-On möglich.
+All dies – [und noch mehr](/features)! – ist mit Set-OutlookSignatures und dem Benefactor Circle Add-on möglich.
 
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?

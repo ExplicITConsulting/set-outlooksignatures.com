@@ -54,7 +54,7 @@ Auf der Empfängerseite unterstützen E-Mail-Clients, die nach 2015 veröffentli
 
 Auf der Absenderseite variiert die Unterstützung je nach Client und Plattform leicht. Aber keine Sorge: Sie müssen sich darüber keine Gedanken machen, Ihr E-Mail-Client kümmert sich um alles. Nehmen wir Outlook als Beispiel: Alle Editionen auf allen Plattformen unterstützen versteckte Anhänge, seit 2016 gilt das Gleiche auch für eingebettete Bilder.
 
-Set-OutlookSignatures und das Benefactor Circle Add-On unterstützen beide Varianten, sodass Sie eine bevorzugte Option auswählen können, während Situationen, die die Verwendung einer bestimmten Methode erfordern, automatisch gemeistert werden.
+Set-OutlookSignatures und das Benefactor Circle Add-on unterstützen beide Varianten, sodass Sie eine bevorzugte Option auswählen können, während Situationen, die die Verwendung einer bestimmten Methode erfordern, automatisch gemeistert werden.
 
 
 ## Fazit und abschließender Ratschlag
