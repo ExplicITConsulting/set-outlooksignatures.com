@@ -504,25 +504,29 @@ A possible way around this restriction is replacing dynamic groups with regularl
 
 
 ## 23. Why is no admin or user GUI available?
-From an admin perspective, Set-OutlookSignatures has been designed to work with on-board tools wherever possible and to make managing and deploying signatures intuitive.
+The short answer is: There is no GUI (graphical user interface) because it is not needed.
 
-This "easy to set up, easy to understand, easy to maintain" approach is why
-- there is no need for a dedicated server, a database or a setup program
-- Word documents are supported as templates in addition to HTML templates
-- there is the clear hierarchy of common, group specific and email address specific template application order
+But let's take a closer look at this from the perspective of all groups of people who have anything to do with Set-OutlookSignatures:
 
-For an admin, the most complicated part is bringing Set-OutlookSignatures to his users by integrating it into the logon script, deploy a desktop icon or start menu entry, or creating a scheduled task. Alternatively, an admin can use a signature deployment method without user or client involvement.  
-Both tasks are usually neccessary only once, sample code and documentation based on real life experiences are available.  
-Anyhow, a basic GUI for configuring the software is accessible via the following built-in PowerShell command:
+<!-- omit in toc -->
+###### End users
+For end users, Set-OutlookSignatures is [invisible](/faq#121-start-set-outlooksignatures-in-hiddeninvisible-mode). They typically never see the software, interact with it, or even know that it exists.
 
-```
-Show-Command '.\Set-OutlookSignatures.ps1'
-```
+The only thing end users notice is that their signatures and out-of-office replies are always up-to-date.
 
-For a template creator/maintainer, maintaining the INI files defining template application order and permissions is the main task, in combination with tests using simulation mode.  
-These tasks typically happen multiple times a year. A graphical user interface might make them more intuitive and easier; until then, documentation and examples based on real life experiences are available.
+<!-- omit in toc -->
+###### IT administrators
+IT administrators are responsible for ensuring that Set-OutlookSignatures is running on end users' [clients](/details#3-architecture-considerations) or on a [central system](/details#3-architecture-considerations). Configuration is done using [parameters](/parameters) that are usually changed very rarely.
 
-From an end user perspective, Set-OutlookSignatures should not have a GUI at all. It should run in the background or on demand, but there should be no need for any user interaction.
+The GUI for administrators is therefore the tool they use every day to distribute software and configure devices.
+
+<!-- omit in toc -->
+###### Template administrators
+For templates in DOCX format, template administrators typically choose Microsoft Word as their GUI. For templates in HTML format, every template administrator tends to have a slightly different preferred editor, ranging from plain text editors to syntax highlighters to graphical editors.
+
+Template administrators often also take care of INI files, defining [non-content properties](/details#7-template-tags-and-ini-files) such as which templates apply for which mailboxes. These definitions rarely change, and they are usually made in the same editor used to edit the templates.
+
+For [simulation mode](/details#12-simulation-mode), template administrators need to switch from their preferred editor to the command line. To make this as easy as possible, Set-OutlookSignatures comes with sample code (‘`.\sample code\SimulationModeHelper.ps1`’) - place a shortcut on your desktop and get guided through just four questions to create the desired result.
 
 
 ## 24. What if a user has no Outlook profile or is prohibited from starting Outlook?
