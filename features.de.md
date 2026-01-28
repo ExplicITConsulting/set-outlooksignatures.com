@@ -71,7 +71,7 @@ ers.
 
 Set-OutlookSignatures erfordert **[keine Installation auf Servern oder Clients](/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**. Sie benötigen lediglich eine Standard-SMB-Dateifreigabe auf einem zentralen System und optional Office auf Ihren Clients.
 
-Es gibt **[keine Telemetrie](/features#feature-comparison)** und kein "Calling Home". E-Mails und Verzeichnisdaten werden **[nicht über externe Rechenzentren oder Cloud-Dienste geleitet](/features#feature-comparison)**, und **[DNS-Einträge (MX, SPF) und E-Mail-Fluss werden nicht geändert](/features#feature-comparison)**.
+Es gibt **[keine Telemetrie](/features#feature-comparison)** und kein "Calling Home". E-Mails und Verzeichnisdaten werden **[nicht über externe Rechenzentren oder Cloud-Dienste geleitet](/features#feature-comparison)**, und **[DNS-Einträge (SPF) und Nachrichtenfluss bleiben unverändert](/features#feature-comparison)**.
 
 Ein **[dokumentierter Implementierungsansatz](/implementationapproach)**, der auf praktischen Erfahrungen mit der Implementierung der Software in Multiclient-Umgebungen mit einer fünfstelligen Anzahl von Postfächern basiert, enthält bewährte Vorgehensweisen und Empfehlungen für Produktmanager, Architekten, Betriebsleiter, Account Manager sowie E-Mail- und Client-Administratoren.
 
