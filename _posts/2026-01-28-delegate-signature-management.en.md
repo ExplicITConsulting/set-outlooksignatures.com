@@ -13,7 +13,7 @@ sitemap_changefreq: monthly
 ---
 Who manages your email signatures and out-of-office replies? In many organizations, it's still the IT department. But in most cases, this task belongs with marketing or communications.
 
-With Set-OutlookSignatures, delegation is simple and flexible. Templates are stored in regular folders on your file system, so all you need are standard file and folder permissions.
+With Set-OutlookSignatures, delegation is simple and flexible. Templates are stored in regular folders on your file system or in a SharePoint document library, so all you need are standard file and folder permissions.
 
 Here's how it works:
 - IT defines when and where Set-OutlookSignatures runs, and where templates and config files are stored

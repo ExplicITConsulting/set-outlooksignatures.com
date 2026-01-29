@@ -13,7 +13,7 @@ sitemap_changefreq: monthly
 ---
 Wer verwaltet Ihre E-Mail-Signaturen und Abwesenheitsnotizen? In vielen Unternehmen ist dies nach wie vor die IT-Abteilung. In den meisten Fällen gehört diese Aufgabe jedoch zum Aufgabenbereich des Marketings oder der Kommunikation.
 
-Mit Set-OutlookSignatures ist die Delegierung einfach und flexibel. Vorlagen werden in regulären Ordnern auf Ihrem Dateisystem gespeichert, sodass Sie lediglich über Standardberechtigungen für Dateien und Ordner verfügen müssen.
+Mit Set-OutlookSignatures ist die Delegierung einfach und flexibel. Vorlagen werden in regulären Ordnern auf Ihrem Dateisystem oder in einer SharePoint Dokumentenbibliothek gespeichert, sodass Sie lediglich über Standardberechtigungen für Dateien und Ordner verfügen müssen.
 
 So funktioniert es:
 - Die IT-Abteilung legt fest, wann und wo Set-OutlookSignatures ausgeführt wird und wo Vorlagen und Konfigurationsdateien gespeichert werden.
