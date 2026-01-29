@@ -11,7 +11,7 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-Who manages your email signatures and out-of-office replies? In many organizations, it's still the IT department. But in most cases, this task belongs with marketing or communications.
+The content management of signatures is often the responsibility of IT, but actually belongs to the remit of marketing or communications.
 
 With Set-OutlookSignatures, delegation is simple and flexible. Templates are stored in regular folders on your file system or in a SharePoint document library, so all you need are standard file and folder permissions.
 

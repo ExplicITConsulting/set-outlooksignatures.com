@@ -3,7 +3,7 @@ layout: "post"
 lang: "de"
 locale: "de"
 title: "E-Mail-Signaturverwaltung auf intelligente Weise delegieren"
-description: "Wer verwaltet Ihre E-Mail-Signaturen und Abwesenheitsnotizen? In vielen Unternehmen ist dies die IT-Abteilung und nicht die Marketing- oder Kommunikationsabteilung."
+description: "Wer verwaltet Ihre E-Mail-Signaturen und Abwesenheitsnotizen? In vielen Unternehmen ist dies die IT- und nicht die Marketing- oder Kommunikationsabteilung."
 published: true
 tags: 
 slug: "delegate-signature-management"
@@ -11,7 +11,7 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-Wer verwaltet Ihre E-Mail-Signaturen und Abwesenheitsnotizen? In vielen Unternehmen ist dies nach wie vor die IT-Abteilung. In den meisten Fällen gehört diese Aufgabe jedoch zum Aufgabenbereich des Marketings oder der Kommunikation.
+Die inhaltliche Verwaltung von Signaturen ist oft Aufgabe der IT, gehört aber eigentlich zum Aufgabenbereich des Marketings oder der Kommunikation.
 
 Mit Set-OutlookSignatures ist die Delegierung einfach und flexibel. Vorlagen werden in regulären Ordnern auf Ihrem Dateisystem oder in einer SharePoint Dokumentenbibliothek gespeichert, sodass Sie lediglich über Standardberechtigungen für Dateien und Ordner verfügen müssen.
 
