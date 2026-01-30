@@ -94,7 +94,7 @@ Whatever web server you choose, the requirements are low:
 - A valid TLS certificate.<br>Self-signed certificates can be used for development and testing, as long as the certificate is trusted by the client used for testing.<br>Certificates from [Let's Encrypt](https://letsencrypt.org/) are a good free alternative, especially when used together with an [ACME client](https://letsencrypt.org/docs/client-options/) auto-renewing them.
 - In production, the server hosting the images shouldn't return a Cache-Control header specifying no-cache, no-store, or similar options in the HTTP response.
 
-[Static website hosting in Azure Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website) is an uncomplicated, cheap and fast alternative. It comes with a *.web.core.windows.net hostname and a Microsoft-issued certificate, even in the free tier.
+[Static website hosting in Azure Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website) is an uncomplicated, affordable and fast alternative. It comes with a *.web.core.windows.net hostname and a Microsoft-issued certificate, even in the free tier.
 
 We recommend to use use two separate dedicated hostnames, such as "https://outlookaddin01.example.com" and "https://outlookaddin01test.example.com". This way, you can use one for testing and one for production. For tests, sideloading is the preferred method, while Microsoft 365 Centralized Deployment or Integrated Apps are ideal for mass deployment.
 

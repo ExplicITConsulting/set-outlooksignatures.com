@@ -229,7 +229,7 @@ sitemap_changefreq: weekly
 <h2 id="price">Price and business case</h2>
 <p>Set-OutlookSignatures is free of charge.<br>Originally developed as a technology demonstrator for scripting techniques, it has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies. Read about <a href="https://set-outlooksignatures.com/faq#351-why-the-tagline">its history and what you can learn from its code</a> in our FAQ.</p>
 
-<p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> unlocks advanced features and is available for <strong>only 3.00 € per mailbox per year</strong>, which equals <strong>just 0.25 € per mailbox per month</strong>.</p>
+<p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> unlocks advanced features and is available for <strong>affordable 3.00 € per mailbox per year</strong>, which equals <strong>just 0.25 € per mailbox per month</strong>.</p>
 
 <p>The add-on is an investment that pays off from day one - certainly for you as well!<br>Thanks to unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
 
@@ -283,7 +283,7 @@ sitemap_changefreq: weekly
   <p>2 changes per year, 3 minutes per change, 2 signatures, 1 client: 0.55 * 2 * 3 * 2 * 1 = 6.60</p>
 </blockquote>
 
-<p>Per user and year, the costs are now 6.60&nbsp;€ in manual effort compared to 3.00&nbsp;€ for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</p>
+<p>Per user and year, the costs are now 6.60&nbsp;€ in manual effort compared to affordable 3.00&nbsp;€ for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</p>
 
 <p>This calculation does not even take into account the following:</p>
 <ul>

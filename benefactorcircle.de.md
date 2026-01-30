@@ -230,7 +230,7 @@ sitemap_changefreq: weekly
 <h2 id="price">Preis und Business Case</h2>
 <p>Set-OutlookSignatures ist kostenlos.<br>Ursprünglich als Technologie-Demonstrator für Scripting-Techniken geschaffen, hat sich das Tool zur fortschrittlichsten, sichersten und vielseitigsten kostenlosen Open-Source-Lösung für die Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen entwickelt. Lesen Sie in den FAQ über <a href="https://set-outlooksignatures.com/faq#351-why-the-tagline">ihre Entstehungsgeschichte und was Sie von ihrem Code lernen können</a>.</p>
 
-<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> schaltet erweiterte Funktionen frei und ist für <strong>nur 3.00 € pro Postfach und Jahr</strong> erhältlich, das entspricht <strong>lediglich 0.25 € pro Postfach und Monat</strong>.</p>
+<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> schaltet erweiterte Funktionen frei und ist für <strong>günstige 3,00 € pro Postfach und Jahr</strong> erhältlich, das entspricht <strong>lediglich 0,25 € pro Postfach und Monat</strong>.</p>
 
 <p>Das Add-on ist eine Investition, die sich vom ersten Tag an auszahlt - sicher auch für Sie!<br>Dank einzigartiger Funktionen und exklusiver Herstellerverfügbarkeit ist in der Regel ein rechtskonformer Direktbezug ohne öffentliche Ausschreibung möglich.</p>
 
@@ -284,7 +284,7 @@ sitemap_changefreq: weekly
 <p>2 Änderungen pro Jahr, 3 Minuten pro Signatur, 2 Signaturen, 1 Client: 0.55 * 2 * 3 * 2 * 1 = 6,60</p>
 </blockquote>
 
-<p>Pro Benutzer und Jahr betragen die Kosten 6,60 € für manuellen Aufwand gegenüber 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span>.</p>
+<p>Pro Benutzer und Jahr betragen die Kosten 6,60 € für manuellen Aufwand gegenüber günstigen 3,00 € für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span>.</p>
 
 <p>Diese Rechnung berücksichtigt noch nicht:</p>
 <ul>
