@@ -37,7 +37,7 @@
                                     {% endfor %}
                                 </div>
                             </div>
-                        {% elseif item.link %}
+                        {% elsif item.link %}
                             <a href="{{ item.link | relative_url }}"
                                 class="navbar-item has-text-white {% if page.url contains item.link %}is-selected{% endif %}">{{
                                 item.name }}</a>
