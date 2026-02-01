@@ -4,7 +4,7 @@
   link: /quickstart
 - name: Download
   link: /download
-- name: ""
+- name: "∙"
 - name: |
     <span style="font-weight: bold; color: goldenrod;">Benefactor Circle Add-on</span>
   link: /benefactorcircle
@@ -12,7 +12,7 @@
   link: /benefactorcircle#demo
 - name: Preis
   link: /benefactorcircle#price
-- name: ""
+- name: "∙"
 - name: Blog
   link: /blog/
 - name: Hilfe
