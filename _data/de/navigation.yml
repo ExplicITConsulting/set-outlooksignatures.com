@@ -5,7 +5,9 @@
 - name: Download
   link: /download
 - name: ""
+  link: 
 - name: ""
+  link: 
 - name: |
     <span style="font-weight: bold; color: goldenrod;">Benefactor Circle Add-on</span>
   link: /benefactorcircle
