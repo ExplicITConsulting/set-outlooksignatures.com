@@ -18,7 +18,7 @@ So lautete zumindest die Theorie.
 
 Schnellvorlauf bis Mitte 2025: Obwohl die meisten Mandanten Roaming-Signaturen nun aktiviert haben, ist die Realität komplizierter:
 - Es gibt immer noch keine öffentliche API.
-- Einige hartnäckige Fehler sind nach wie vor ungelöst (z.B. werden [Kodierungen nicht korrekt konvertiert](/faq##41-roaming-signatures-in-classic-outlook-on-windows-look-different)).
+- Einige hartnäckige Fehler sind nach wie vor ungelöst (z.B. werden [Kodierungen nicht korrekt konvertiert](/faq#41-roaming-signatures-in-classic-outlook-on-windows-look-different)).
 - Outlook unterstützt Roaming-Signaturen nicht auf allen Plattformen.
 
 Wir bei Set-OutlookSignatures und ExplicIT sind überzeugt, dass Roaming-Signaturen die Zukunft sind. Aber die langsame Einführung und die begrenzte Kommunikation seitens Microsoft haben die Einführung erschwert. Aus diesem Grund haben wir viel in die Unterstützung dieser Funktion innerhalb von Set-OutlookSignatures investiert und bieten Funktionen, die keine andere Lösung auf dem Markt bieten kann.

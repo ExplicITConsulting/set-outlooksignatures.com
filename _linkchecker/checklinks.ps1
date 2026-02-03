@@ -1,3 +1,5 @@
+#Requires -Version 7.5
+
 $AllLinksToCheck = New-Object 'System.Collections.Generic.HashSet[string]'
 $PagesChecked = New-Object 'System.Collections.Generic.HashSet[string]'
 $Queue = New-Object 'System.Collections.Generic.Queue[string]'
@@ -92,7 +94,7 @@ while ($Queue.Count -gt 0) {
     $CurrentUrl = $Queue.Dequeue()
 
     # Normalize the current URL by removing fragments for the 'Checked' check
-    $CurrentUrlClean = @($CurrentUrl -split '#(?!/)')[0]
+    $CurrentUrlClean = @($CurrentUrl -split '#(?!/)', 2)[0]
     if ($PagesChecked.Contains($CurrentUrlClean)) { continue }
     $null = $PagesChecked.Add($CurrentUrlClean)
 
@@ -107,7 +109,7 @@ while ($Queue.Count -gt 0) {
         # 2. Determine if the base page should be crawled
         try {
             $foundUri = [uri]$link
-            $linkClean = @($link -split '#(?!/)')[0]
+            $linkClean = @($link -split '#(?!/)', 2)[0]
 
             # Domain/Subdomain check
             if ($foundUri.Host -eq $StartDomain -or $foundUri.Host.EndsWith(".$StartDomain")) {
@@ -141,7 +143,7 @@ foreach ($link in $AllLinksToCheck) {
         continue
     }
 
-    $uriParts = @($link -split '#(?!/)')
+    $uriParts = @($link -split '#(?!/)', 2)
     $baseUrl = $uriParts[0]
     $rawAnchor = $(if ($uriParts.Count -gt 1) { $uriParts[1] } else { $null })
     $decodedAnchor = [System.Web.HttpUtility]::UrlDecode($rawAnchor)
