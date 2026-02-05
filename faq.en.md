@@ -97,11 +97,12 @@ sitemap_changefreq: monthly
   - [44.13. Format postal addresses](#4413-format-postal-addresses)
   - [44.14. Bringing hidden open-source treasures to light](#4414-bringing-hidden-open-source-treasures-to-light)
   - [44.15. Detect and convert encodings](#4415-detect-and-convert-encodings)
+  - [44.16. Handling of distinguished names](#4416-handling-of-distinguished-names)
 - [45. How to deploy a signature only once](#45-how-to-deploy-a-signature-only-once)
 - [46. How to add a calender link](#46-how-to-add-a-calender-link)
 - [47. Different default signatures for different mailboxes](#47-different-default-signatures-for-different-mailboxes)
 - [48. Assign templates based on Organizational Units (OUs)](#48-assign-templates-based-on-organizational-units-ous)
-  - [Easier and advanced handling of distinguished names](#easier-and-advanced-handling-of-distinguished-names)
+  - [48.1. Easier and advanced handling of distinguished names](#481-easier-and-advanced-handling-of-distinguished-names)
 
 
 ## 1. Where can I find the changelog?
@@ -1205,6 +1206,29 @@ ConvertEncoding enables reliable detection of encodings via BOMs, HTML metadata,
 Files:
 - '`.\Set-OutlookSignatures.ps1`'
 
+### 44.16. Handling of distinguished names
+While distinguished names look like easy to handle strings, their format and some AD/LDAP specifics brings challenges.
+
+To make working with distinguished names easier, we have created the [ConvertDnToCanonicalObject](#481-easier-and-advanced-handling-of-distinguished-names) helper function.
+
+It helps answer questions such as "Is an object directly in a specific OU?", "Is an object in or below a specific OU?", and more.
+
+An example:
+```
+# Example usage
+ConvertDnToCanonicalObject 'CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com'
+
+
+# Example output
+# DistinguishedName : CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com
+# CanonicalPath     : example.com/OU A/OU B/Doe, Jane
+# CanonicalParent   : example.com/OU A/OU B
+# CanonicalOUs      : OU A/OU B
+# DomainFQDN        : example.com
+# LeafValue         : Doe, Jane
+```
+
+
 ## 45. How to deploy a signature only once
 Signature management solutions like Set-OutlookSignatures are designed to reduce user errors, simplify updates, and empower IT and marketing teams to manage signatures efficiently.
 
@@ -1297,7 +1321,7 @@ Let's assume we want all mailboxes in or below the OU 'example.com/OU A/OU B' to
 
 You now have a replacement variable specific template assignment. This has an impact on the priority of the template, see the '[Signature and OOF application order](/details#8-signature-and-oof-application-order)' chapter for details.
 
-### Easier and advanced handling of distinguished names
+### 48.1. Easier and advanced handling of distinguished names
 Distinguished names are not as easy to handle as it might look at first sight: Escape characters ('Doe, Jane' <-> 'Doe\, Jane'), different component types (DC, CN, OU, and more), etc.
 
 The canonical format ('example.com/OU A/OU B/Doe, Jane') lacks some information but is usually much easier to work with.
@@ -1336,25 +1360,22 @@ function ConvertDnToCanonicalObject {
         }
 
         $domainFqdn = $dcComponents -join '.'
+        $pathSegments.Reverse() # Flip from Leaf->Root to Root->Leaf
 
-        # Reverse from (Leaf -> Root) to (Root -> Leaf)
-        $pathSegments.Reverse()
-
-        # Build CanonicalPath
+        # 1. Full Canonical Path (FQDN/Segments/Leaf)
         $fullPathStr = $pathSegments -join '/'
         $canonicalPath = if ($fullPathStr) { "$domainFqdn/$fullPathStr" } else { $domainFqdn }
 
-        # Build CanonicalParent (All segments except the last one)
-        $parentSegments = if ($pathSegments.Count -gt 1) {
-            $pathSegments.GetRange(0, $pathSegments.Count - 1) -join '/'
-        } else { $null }
-
-        $canonicalParent = if ($parentSegments) { "$domainFqdn/$parentSegments" } else { $domainFqdn }
+        # 2. Canonical Parent (FQDN/Segments)
+        $parentSegmentsArray = if ($pathSegments.Count -gt 1) { $pathSegments.GetRange(0, $pathSegments.Count - 1) } else { @() }
+        $parentPathOnly = $parentSegmentsArray -join '/'
+        $canonicalParent = if ($parentPathOnly) { "$domainFqdn/$parentPathOnly" } else { $domainFqdn }
 
         [pscustomobject]@{
             DistinguishedName = $DistinguishedName
             CanonicalPath     = $canonicalPath
             CanonicalParent   = $canonicalParent
+            CanonicalOUs      = $parentPathOnly   # <--- The "Clean" path without FQDN
             DomainFQDN        = $domainFqdn
             LeafValue         = if ($pathSegments.Count) { $pathSegments[-1] } else { $null }
         }
@@ -1363,13 +1384,14 @@ function ConvertDnToCanonicalObject {
 
 
 # Example usage
-ConvertDnToCanonicalObject 'CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com'
+# ConvertDnToCanonicalObject 'CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com'
 
 
 # Example output
 # DistinguishedName : CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com
 # CanonicalPath     : example.com/OU A/OU B/Doe, Jane
 # CanonicalParent   : example.com/OU A/OU B
+# CanonicalOUs      : OU A/OU B
 # DomainFQDN        : example.com
 # LeafValue         : Doe, Jane
 ```
