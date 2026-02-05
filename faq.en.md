@@ -100,6 +100,7 @@ sitemap_changefreq: monthly
 - [45. How to deploy a signature only once](#45-how-to-deploy-a-signature-only-once)
 - [46. How to add a calender link](#46-how-to-add-a-calender-link)
 - [47. Different default signatures for different mailboxes](#47-different-default-signatures-for-different-mailboxes)
+- [48. Assign templates based on Organizational Units (OUs)](#48-assign-templates-based-on-organizational-units-ous)
 
 
 ## 1. Where can I find the changelog?
@@ -1257,3 +1258,37 @@ defaultNew
 ```
 
 Keep in mind that the INI options `SortOrder` and `SortCulture` influence the [signature and OOF application order](/details#8-signature-and-oof-application-order).
+
+
+## 48. Assign templates based on Organizational Units (OUs)
+Organizational units (OUs) are nestable containers in LDAP directories such as Active Directory. The idea is to create a hierarchical structure of objects based on who administers them, which is called an administrative delegation model.<br>While this is very different from the organizational hierarchy of a company depicted in an org chart, many admins design OUs this way instead of using groups.
+
+Entra ID is not an LDAP directory per se. While sharing many similarities, it does not have a concept such as Organizational Units. Instead, it heavily relies on groups.<br>Entra ID has administrative units (AUs), built for administrative delegation. AUs are not the same as OUs, and even hybrid scenarios do not offer a 1:1 relationship between OUs and AUs.
+
+Set-OutlookSignatures primarily focuses on groups to assign templates and signatures to specific mailboxes - but you can still use OUs if you want.
+
+If you want to use OUs, you need to be in a pure on-prem environment or in a hybrid scenario with users being synced between on-prem and the cloud, as there is no OU information in pure cloud environments.
+
+On prem, the AD attribute 'distinguishedName' is always available, and it is synced to the 'onPremisesDistinguishedName' attribute in Entra ID. Both attributes share the same format: 'CN=Jane Doe,OU=OU B,OU=OU A,DC=example,DC=com'.
+
+Set-OutlookSignatures makes this attribute available as a replacement variable, which you can use to assign templates.
+
+Let's assume we want all mailboxes in or below the OU 'example.com/OU A/OU B' to be assigned a certain template. Here are the steps required:
+1. Create a [custom replacement variable](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/src_Set-OutlookSignatures/config/default%20replacement%20variables.ps1) with a boolean (true or false) value, depending on the OU.
+
+```
+$ReplaceHash['$CurrentUser-IsIn-OUA-OUB$'] = $ADPropsCurrentUser.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
+
+$ReplaceHash['$CurrentUserManager-IsIn-OUA-OUB$'] = $ADPropsCurrentUserManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
+
+$ReplaceHash['$CurrentMailbox-IsIn-OUA-OUB$'] = $ADPropsCurrentMailbox.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
+
+$ReplaceHash['$CurrentMailboxManager-IsIn-OUA-OUB$'] = $ADPropsCurrentMailboxManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
+```
+2. Now use the new replacement variable [in your INI file](/details#71-allowed-tags) to assign a template to mailboxes in a specific OU:
+```
+[some template.docx]
+$CurrentUser-IsIn-OUA-OUB$
+```
+
+You now have a replacement variable specific template assignment. This has an impact on the priority of the template, see the '[Signature and OOF application order](/details#8-signature-and-oof-application-order)' chapter for details.
