@@ -1274,21 +1274,24 @@ On prem, the AD attribute 'distinguishedName' is always available, and it is syn
 Set-OutlookSignatures makes this attribute available as a replacement variable, which you can use to assign templates.
 
 Let's assume we want all mailboxes in or below the OU 'example.com/OU A/OU B' to be assigned a certain template. Here are the steps required:
+
 1. Create a [custom replacement variable](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/src_Set-OutlookSignatures/config/default%20replacement%20variables.ps1) with a boolean (true or false) value, depending on the OU.
 
-```
-$ReplaceHash['$CurrentUser-IsIn-OUA-OUB$'] = $ADPropsCurrentUser.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
+   ```
+   $ReplaceHash['$CurrentUser-IsIn-OUA-OUB$'] = $ADPropsCurrentUser.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
 
-$ReplaceHash['$CurrentUserManager-IsIn-OUA-OUB$'] = $ADPropsCurrentUserManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
+   $ReplaceHash['$CurrentUserManager-IsIn-OUA-OUB$'] = $ADPropsCurrentUserManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
 
-$ReplaceHash['$CurrentMailbox-IsIn-OUA-OUB$'] = $ADPropsCurrentMailbox.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
+   $ReplaceHash['$CurrentMailbox-IsIn-OUA-OUB$'] = $ADPropsCurrentMailbox.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
 
-$ReplaceHash['$CurrentMailboxManager-IsIn-OUA-OUB$'] = $ADPropsCurrentMailboxManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
-```
+   $ReplaceHash['$CurrentMailboxManager-IsIn-OUA-OUB$'] = $ADPropsCurrentMailboxManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
+   ```
+
 2. Now use the new replacement variable [in your INI file](/details#71-allowed-tags) to assign a template to mailboxes in a specific OU:
-```
-[some template.docx]
-$CurrentUser-IsIn-OUA-OUB$
-```
+
+   ```
+   [some template.docx]
+   $CurrentUser-IsIn-OUA-OUB$
+   ```
 
 You now have a replacement variable specific template assignment. This has an impact on the priority of the template, see the '[Signature and OOF application order](/details#8-signature-and-oof-application-order)' chapter for details.
