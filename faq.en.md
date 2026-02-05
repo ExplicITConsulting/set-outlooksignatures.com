@@ -101,6 +101,7 @@ sitemap_changefreq: monthly
 - [46. How to add a calender link](#46-how-to-add-a-calender-link)
 - [47. Different default signatures for different mailboxes](#47-different-default-signatures-for-different-mailboxes)
 - [48. Assign templates based on Organizational Units (OUs)](#48-assign-templates-based-on-organizational-units-ous)
+  - [Easier and advanced handling of distinguished names](#easier-and-advanced-handling-of-distinguished-names)
 
 
 ## 1. Where can I find the changelog?
@@ -1295,3 +1296,80 @@ Let's assume we want all mailboxes in or below the OU 'example.com/OU A/OU B' to
    ```
 
 You now have a replacement variable specific template assignment. This has an impact on the priority of the template, see the '[Signature and OOF application order](/details#8-signature-and-oof-application-order)' chapter for details.
+
+### Easier and advanced handling of distinguished names
+Distinguished names are not as easy to handle as it might look at first sight: Escape characters ('Doe, Jane' <-> 'Doe\, Jane'), different component types (DC, CN, OU, and more), etc.
+
+The canonical format ('example.com/OU A/OU B/Doe, Jane') lacks some information but is usually much easier to work with.
+
+The following sample code shows how to convert a distinguished name string to a canonical object with same very useful additional helper properties:
+
+```
+function ConvertDnToCanonicalObject {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory, ValueFromPipeline)]
+        [string]$DistinguishedName
+    )
+
+    process {
+        $rdns = [regex]::Split($DistinguishedName, '(?<!\\),')
+
+        $dcComponents = [System.Collections.Generic.List[string]]::new()
+        $pathSegments = [System.Collections.Generic.List[string]]::new()
+
+        foreach ($segment in $rdns) {
+            $rdn = $segment.Trim()
+            if (-not $rdn) { continue }
+
+            $eq = $rdn.IndexOf('=')
+            if ($eq -lt 1) { continue }
+
+            $attr = $rdn.Substring(0, $eq).Trim()
+            $val = ($rdn.Substring($eq + 1)).Trim() -replace '\\(.)', '$1' -replace '^"|"$', ''
+
+            if ($attr -match '^(?i)DC$') {
+                $dcComponents.Add($val)
+            } else {
+                $pathSegments.Add($val)
+            }
+        }
+
+        $domainFqdn = $dcComponents -join '.'
+
+        # Reverse from (Leaf -> Root) to (Root -> Leaf)
+        $pathSegments.Reverse()
+
+        # Build CanonicalPath
+        $fullPathStr = $pathSegments -join '/'
+        $canonicalPath = if ($fullPathStr) { "$domainFqdn/$fullPathStr" } else { $domainFqdn }
+
+        # Build CanonicalParent (All segments except the last one)
+        $parentSegments = if ($pathSegments.Count -gt 1) {
+            $pathSegments.GetRange(0, $pathSegments.Count - 1) -join '/'
+        } else { $null }
+
+        $canonicalParent = if ($parentSegments) { "$domainFqdn/$parentSegments" } else { $domainFqdn }
+
+        [pscustomobject]@{
+            DistinguishedName = $DistinguishedName
+            CanonicalPath     = $canonicalPath
+            CanonicalParent   = $canonicalParent
+            DomainFQDN        = $domainFqdn
+            LeafValue         = if ($pathSegments.Count) { $pathSegments[-1] } else { $null }
+        }
+    }
+}
+
+
+# Example usage
+ConvertDnToCanonicalObject 'CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com'
+
+
+# Example output
+# DistinguishedName : CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com
+# CanonicalPath     : example.com/OU A/OU B/Doe, Jane
+# CanonicalParent   : example.com/OU A/OU B
+# DomainFQDN        : example.com
+# LeafValue         : Doe, Jane
+```
