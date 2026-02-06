@@ -30,4 +30,4 @@ There are three ways to achive this with Set-OutlookSignatures:
     It's not technically a one-time deployment, but it's a clever, user-friendly alternative that balances consistency with flexibility.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to getting to know you!

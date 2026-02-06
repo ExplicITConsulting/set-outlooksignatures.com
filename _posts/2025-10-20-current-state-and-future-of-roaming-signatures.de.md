@@ -36,4 +36,4 @@ Derzeit ist dies ein Problem, das oft eine teure Umleitung auf der Serverseite e
 In der Zwischenzeit schließt das [Outlook Add-In](/outlookaddin), Teil des [Benefactor Circle Add-ons](/benefactorcircle), diese Lücke - und mehr - nicht nur auf Android und iOS, sondern auf allen von Outlook unterstützen Plattformen.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, Sie kennenzulernen!

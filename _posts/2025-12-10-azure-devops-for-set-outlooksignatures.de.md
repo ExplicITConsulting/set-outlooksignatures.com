@@ -113,4 +113,4 @@ Jiří Hrabák, ICT Senior Consultant, [AIMTEC a. s.](https://www.aimtecglobal.c
 
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen? Oder selber einen Gastbeitrag auf unserem Blog veröffentlichen?
-[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, Sie kennenzulernen!

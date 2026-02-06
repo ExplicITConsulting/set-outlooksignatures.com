@@ -41,7 +41,7 @@ And you can easily make your own signatures barrier-free, without having to sacr
 A simple step toward a more inclusive digital world!
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to getting to know you!
 
 ## Data sources
 Data sources used for this post: [beaccessible.com](https://beaccessible.com), [allaccessible.org](https://allaccessible.org)

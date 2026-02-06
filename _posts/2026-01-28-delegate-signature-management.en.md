@@ -28,4 +28,4 @@ Set-OutlookSignatures only needs a file share or SharePoint document library. No
 
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to getting to know you!

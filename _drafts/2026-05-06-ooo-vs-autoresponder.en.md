@@ -29,4 +29,4 @@ With Set-OutlookSignatures, you can deploy standardized out-of-office replies - 
 
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to getting to know you!

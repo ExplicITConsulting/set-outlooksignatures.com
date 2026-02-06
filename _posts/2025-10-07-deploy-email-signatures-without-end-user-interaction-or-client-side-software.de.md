@@ -25,4 +25,4 @@ Mit SimulateAndDeploy können Sie E-Mail-Signaturen und Abwesenheitsnotizen einf
 Es ist die weltweit erste und einzige Lösung, die eine Bereitstellung auf diesem Niveau ermöglicht.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, Sie kennenzulernen!

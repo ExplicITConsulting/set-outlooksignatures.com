@@ -24,4 +24,4 @@ So why do most of our clients choose DOCX?
 Let's be honest: Word isn't a perfect HTML editor. But with Set-OutlookSignatures, it becomes a powerful, user-friendly design tool, backed by logic that keeps your emails looking sharp everywhere.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to getting to know you!

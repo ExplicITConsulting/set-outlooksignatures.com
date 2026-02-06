@@ -36,4 +36,4 @@ Today, it's a pain point, often requiring expensive server-side rerouting just t
 In the meantime, the [Outlook add-in](/outlookaddin), part of the [Benefactor Circle add-on](/benefactorcircle), closes this gap - and more - not only for Android and iOS but for all platforms Outlook supports.
 
 ## Interested in learning more or seeing our solution in action?
-[Contact us](/support) or explore further on our [website](/). We look forward to connecting with you!
+[Contact us](/support) or explore further on our [website](/). We look forward to getting to know you!

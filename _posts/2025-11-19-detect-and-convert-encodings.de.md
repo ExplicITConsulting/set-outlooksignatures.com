@@ -24,4 +24,4 @@ Die kostenlose und quelloffene PowerShell-Funktion ConvertEncoding, Teil von Set
 ConvertEncoding ermöglicht die zuverlässige Erkennung von Kodierungen über BOMs, HTML-Metadaten und heuristische Analysen und konvertiert Inhalte bei Bedarf in andere Formate. Selbst HTML-Dateien werden korrekt angepasst, einschließlich Meta-Tags. Dadurch lassen sich unterschiedliche Kodierungen leicht handhaben.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, Sie kennenzulernen!

@@ -49,4 +49,4 @@ Sie können dies noch weiter verbessern:
 - Und vieles mehr, einschließlich beliebiger Kombinationen der oben genannten Optionen.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, Sie kennenzulernen!

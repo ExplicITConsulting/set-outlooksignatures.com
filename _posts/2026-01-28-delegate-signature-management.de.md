@@ -28,4 +28,4 @@ Set-OutlookSignatures benötigt lediglich eine Dateifreigabe oder eine SharePoin
 
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, mit Ihnen in Kontakt zu treten!
+[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, Sie kennenzulernen!
