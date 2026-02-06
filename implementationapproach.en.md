@@ -248,7 +248,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
                 <tr>
                     <td class="has-text-weight-bold">Supports Microsoft national clouds</td>
                     <td>🟢 Global/Public, US Government L4 (GCC, GCC High), US Government L5 (DOD),
-                        China operated by 21Vianet</td>
+                        China operated by 21Vianet - sovereign clouds Bleu, Delos, and GovSG coming soon</td>
                     <td>🔴</td>
                     <td>🔴</td>
                     <td>🔴</td>

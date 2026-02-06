@@ -64,7 +64,7 @@ Set-OutlookSignatures can be **[run by users on Windows, Linux and macOS clients
 
 It works **[on premises, in hybrid and in cloud-only environments](/details#11-hybrid-and-cloud-only-support)**. The software is **[designed to work in big and complex environments](/implementationapproach)**: Exchange resource forest scenarios, AD trusts, multi-level AD subdomains, cross-tenant and multitenant scenarios.  
 
-All **[national clouds are supported](/parameters#22-cloudenvironment)**: Public (AzurePublic), US Government L4 (AzureUSGovernment), US Government L5 (AzureUSGovernment DoD), China (AzureChinaCloud operated by 21Vianet).
+All **[national clouds are supported](/parameters#22-cloudenvironment)**: Public (AzurePublic), US Government L4 (AzureUSGovernment), US Government L5 (AzureUSGovernment DoD), China (AzureChinaCloud operated by 21Vianet) - sovereign clouds Bleu, Delos, and GovSG coming soon.
 
 It is **[multi-instance capable](/faq#11-can-multiple-script-instances-run-in-parallel)** by using different template paths, configuration files and script parameters.
 
@@ -194,7 +194,7 @@ After a certain period of use, the **[subtle note 'Free and open-source Set-Outl
                 <tr>
                     <td class="has-text-weight-bold">Supports Microsoft national clouds</td>
                     <td>🟢 Global/Public, US Government L4 (GCC, GCC High), US Government L5 (DOD),
-                        China operated by 21Vianet</td>
+                        China operated by 21Vianet - sovereign clouds Bleu, Delos, and GovSG coming soon</td>
                     <td>🔴</td>
                     <td>🔴</td>
                     <td>🔴</td>

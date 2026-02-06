@@ -497,6 +497,7 @@ Allowed value: One from:
 - 'AzureUSGovernment' (or: 'AzureUSGovernmentGCCHigh', 'AzureUSGovernmentL4', 'USGovernmentGCCHigh', 'USGovernmentL4')
 - 'AzureUSGovernmentDOD' (or: 'AzureUSGovernmentL5', 'USGovernmentDOD', 'USGovernmentL5')
 - 'China' (or: 'AzureChina', 'ChinaCloud', 'AzureChinaCloud')
+- Sovereign clouds Bleu, Delos, and GovSG coming soon
 - Do not pass the parameter at all to use the default value.
 
 Default value: 'Public'

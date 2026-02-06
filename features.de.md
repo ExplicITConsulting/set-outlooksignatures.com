@@ -64,7 +64,7 @@ Der **[Simulationsmodus](/details#12-simulation-mode)** ermöglicht es Inhaltser
 
 Die Software funktioniert **[on-premises, in hybriden und reinen Cloud-Umgebungen](/details#11-hybrid-and-cloud-only-support)**. Sie ist **[für große und komplexe Umgebungen konzipiert](/implementationapproach)**: Exchange Resource Forests, AD-Trusts, mehrstufige AD-Subdomänen sowie mandantenübergreifende und Multitenant Szenarien.
 
-**[Alle nationalen Clouds werden unterstützt](/parameters#22-cloudenvironment)**: Öffentlich (AzurePublic), US-Regierung L4 (AzureUSGovernment), US-Regierung L5 (AzureUSGovernment DoD), China (AzureChinaCloud, betrieben von 21Vianet).
+**[Alle nationalen Clouds werden unterstützt](/parameters#22-cloudenvironment)**: Öffentlich (AzurePublic), US-Regierung L4 (AzureUSGovernment), US-Regierung L5 (AzureUSGovernment DoD), China (AzureChinaCloud, betrieben von 21Vianet) - souveräne Clouds Bleu, Delos und GovSG folgen in Kürze.
 
 Die Software ist **[multiinstanzfähig](/faq#11-can-multiple-script-instances-run-in-parallel)** durch Verwendung verschiedener Vorlagenpfade, Konfigurationsdateien und Skriptparameter.
 ers.
@@ -190,7 +190,7 @@ Nach einer bestimmten Nutzungsdauer wird der **[dezente Hinweis 'Free and open-s
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Unterstützt nationale Clouds von Microsoft</td>
-                    <td>🟢 Global/Public, US Government L4 (GCC, GCC High), US Government L5 (DOD), China operated by 21Vianet</td>
+                    <td>🟢 Global/Public, US Government L4 (GCC, GCC High), US Government L5 (DOD), China operated by 21Vianet - souveräne Clouds Bleu, Delos und GovSG folgen in Kürze</td>
                     <td>🔴</td>
                     <td>🔴</td>
                     <td>🔴</td>

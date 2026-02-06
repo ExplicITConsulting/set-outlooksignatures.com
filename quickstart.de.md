@@ -45,7 +45,7 @@ Um die Entra ID-App über ein Skript zu erstellen, bitten Sie Ihren Entra ID 'Gl
 ```
 powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
 ```
-Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie einfach den Parameter '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`' hinzu.
+Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie einfach den Parameter '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`' hinzu (souveräne Clouds Bleu, Delos und GovSG folgen in Kürze).
 
 ###### Endpoint Security {#step-2-endpoint-security}
 Wenn die Umgebung verlangt, dass PowerShell-Skripte mit ausgewählten Zertifikaten signiert werden, oder Lösungen wie AppLocker, Defender, CrowdStrike, Ivanti und andere verwendet werden, müssen Sie möglicherweise die Ausführung von Set-OutlookSignatures und das Laden von Bibliotheken aus dem TEMP-Ordner (damit Dateien nicht an ihrem ursprünglichen Speicherort gesperrt werden) ausdrücklich erlauben.
@@ -65,7 +65,7 @@ Bitten Sie Ihren Endpoint Security Administrator, Software zu vertrauen, die mit
   ```
   Der Parameter '`-GraphOnly true`' stellt sicher, dass das on-prem Active Directory ignoriert wird und stattdessen nur Graph/Entra ID zum Finden von Postfächern und deren Attributen verwendet wird.
 
-Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie einfach den Parameter '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`' hinzu.
+Wenn Sie nicht die Public Cloud von Microsoft nutzen, sondern eine National Cloud, fügen Sie einfach den Parameter '`-CloudEnvironment [AzureUSGovernment|AzureUSGovernmentDoD|AzureChina]`' hinzu (souveräne Clouds Bleu, Delos und GovSG folgen in Kürze).
 
 Set-OutlookSignatures fügt jetzt Signaturen, basierend auf Standardeinstellungen und integrierten Beispielvorlagen, zu Ihrem Classic Outlook hinzu.
 

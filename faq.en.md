@@ -1021,7 +1021,7 @@ Files:
 - '`MemberOfRecurse.ps1`' from [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions)
 
 ### 44.2. Microsoft Graph authentication and re-authentication
-Sounds easy, doesn't it? Well, it isn't: Silent authentication, integrated windows authentication, authentication brokers, managed vs federated users, browser fallback, permission scopes, refresh tokens, encrypted storage, keyrings and keychains, cross-platform compatiblity, support for public and national (GCC High, GCC DoD, China) clouds, and more don't make it easy.
+Sounds easy, doesn't it? Well, it isn't: Silent authentication, integrated windows authentication, authentication brokers, managed vs federated users, browser fallback, permission scopes, refresh tokens, encrypted storage, keyrings and keychains, cross-platform compatiblity, support for public and national (GCC High, GCC DoD, China - sovereign clouds Bleu, Delos, and GovSG coming soon) clouds, and more don't make it easy.
 
 Set-OutlookSignatures therefore comes with an authentication module, making it easy to use the official Microsoft Authentication Library (MSAL) and covering everything mentioned above, and some more, such as cross-tenant and multi-tenant organization access. Cross-platform and up to the highest security standards, of course.
 
@@ -1034,7 +1034,7 @@ The function '`GraphDomainToTenantID`' takes a DNS domain name, an email address
 
 The function '`GraphSwitchContext`' manages the authentication tokens for different tenant IDs and allows you to easily switch between them by accepting the same input as '`GraphDomainToTenantID`'.
 
-As all code of Set-OutlookSignatures, these functions not only work with the public cloud but also with national clouds (GCC High, GCC DoD, China).
+As all code of Set-OutlookSignatures, these functions not only work with the public cloud but also with national clouds (GCC High, GCC DoD, China - sovereign clouds Bleu, Delos, and GovSG coming soon).
 
 Files:
 - '`.\Set-OutlookSignatures.ps1`'
@@ -1079,7 +1079,7 @@ Although Entra ID apps are used all the time by all products interacting with Mi
 
 Set-OutlookSignatures documents in detail which Entra ID apps it requires, how they need to be configured, and why they need to be configured this way. The required permissions are documented very well and strictly follow the "least privilege" and "need to know" principles.
 
-With this documentation, Set-OutlookSignatures has since passed every security and governance audit. And these can be tough, as Set-OutlookSignatures not only works in public M365, but also in GCC High (US government), GCC DoD (US defence and military), and China national clouds.
+With this documentation, Set-OutlookSignatures has since passed every security and governance audit. And these can be tough, as Set-OutlookSignatures not only works in public M365, but also in GCC High (US government), GCC DoD (US defence and military), and China national clouds, with sovereign clouds Bleu, Delos, and GovSG coming soon.
 
 The included code shows how to fully automate the creation and configuration of Entra ID apps, including how to automatically grant admin consent.
 
