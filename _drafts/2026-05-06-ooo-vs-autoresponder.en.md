@@ -6,7 +6,7 @@ title: "Out-of-Office replies vs. autoresponder rules: What are you using?"
 description: "At first glance, the choice seems obvious. But a closer look reveals key differences that might change your perspective."
 published: true
 tags: 
-slug: "ooo-vs-autoresponder"
+slug: "oof-vs-autoresponder"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly

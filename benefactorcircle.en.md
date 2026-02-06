@@ -87,7 +87,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Standardize out-of-office replies</b><br>Ensure professional, compliant OOO messages for internal and external contacts.
+        <b>Standardize out-of-office replies</b><br>Ensure professional, compliant out-of-office messages for internal and external contacts.
       </div>
     </div>
   </div>

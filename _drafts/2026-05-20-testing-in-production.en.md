@@ -2,7 +2,7 @@
 layout: "post"
 lang: "en"
 locale: "en"
-title: "How do you test signature and OOO changes without risking mishaps?"
+title: "How do you test signature and OOF changes without risking mishaps?"
 description: "Rolling out updates to signature or OOF templates in a live environment can be nerve-wracking."
 published: true
 tags: 

@@ -6,7 +6,7 @@ title: "Abwesenheitsnotizen vs. Autoresponder-Regeln: Was verwenden Sie?"
 description: "Auf den ersten Blick scheint die Wahl offensichtlich. Bei genauerer Betrachtung zeigen sich jedoch wichtige Unterschiede, die Ihre Sichtweise ändern könnten."
 published: true
 tags: 
-slug: "ooo-vs-autoresponder"
+slug: "oof-vs-autoresponder"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly

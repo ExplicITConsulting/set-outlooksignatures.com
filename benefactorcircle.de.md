@@ -88,7 +88,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Standardisierte Abwesenheitsnotizen</b><br>Sorgen Sie für professionelle, konforme OOO-Nachrichten für interne und externe Kontakte.
+        <b>Standardisierte Abwesenheitsnotizen</b><br>Sorgen Sie für professionelle, konforme Abwesenheitsnotizen für interne und externe Kontakte.
       </div>
     </div>
   </div>
