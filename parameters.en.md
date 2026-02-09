@@ -367,7 +367,7 @@ On Linux and macOS, only already existing mount points and SharePoint Online pat
 
 For access to SharePoint Online, the Entra ID app needs the Files.Read.All or Files.SelectedOperations.Selected permission, and you need to pass the 'GraphClientID' parameter to Set-OutlookSignatures.
 
-Also see related parameter '[EmbedImagesInHtmlAdditionalSignaturePath](#27-embedimagesinhtmladditionalsignaturepath)'.
+Also see related parameter '[EmbedImagesInHtmlAdditionalSignaturePath](#embedimagesinhtmladditionalsignaturepath)'.
 
 This feature requires a Benefactor Circle license (when used outside of simulation mode).
 
@@ -498,7 +498,7 @@ Allowed value: One from:
 - 'AzureUSGovernmentDOD' (or: 'AzureUSGovernmentL5', 'USGovernmentDOD', 'USGovernmentL5')
 - 'China' (or: 'AzureChina', 'ChinaCloud', 'AzureChinaCloud')
 - Sovereign clouds Bleu, Delos, GovSG, and more coming soon
-- Define you own values with the '`$CustomCloudEnvironment`' variable in a custom [graph config file](#5-graphconfigfile). See '`.\config\default graph config.ps1`' for an example.
+- Define you own values with the '`$CustomCloudEnvironment`' variable in a custom [graph config file](#graphconfigfile). See '`.\config\default graph config.ps1`' for an example.
 - Do not pass the parameter at all to use the default value.
 
 Default value: 'Public'
@@ -627,7 +627,7 @@ A value representing true disables roaming signatures, a value representing fals
 
 Attention:
 - When Outlook v16 and higher is allowed to sync signatures itself, it may overwrite signatures created by this software with their cloud versions. To avoid this, it is recommended to set the parameters DisableRoamingSignatures and MirrorCloudSignatures to true instead.
-- When Classic Outlook on Windows syncs roaming signatures witht its own internal engine, expect problems with character encoding (umlauts, diacritics, emojis, etc.) and more. Until Microsoft provides a sustaining solution, these Outlook-internal problems will come and go depending on the patch level of Outlook. Also see the FAQ '[Roaming signatures in Classic Outlook on Windows look different](faq#41-roaming-signatures-in-classic-outlook-on-windows-look-different)'.
+- When Classic Outlook on Windows syncs roaming signatures witht its own internal engine, expect problems with character encoding (umlauts, diacritics, emojis, etc.) and more. Until Microsoft provides a sustaining solution, these Outlook-internal problems will come and go depending on the patch level of Outlook. Also see the FAQ '[Roaming signatures in Classic Outlook on Windows look different](faq#roaming-signatures-in-classic-outlook-on-windows-look-different)'.
 
 Only sets HKCU registry key, does not override configuration set by group policy.
 
@@ -667,7 +667,7 @@ Before going into configuration details, here is some background information:
 >- All signatures are available as roaming signatures in the mailbox of the logged-on user. Not only signatures for the user's own mailbox, but also signatures for other mailboxes the user has added (no matter the type of these mailboxes or the way they have been added).
 >- The sync is simply triggered by running Set-OutlookSignatures.
 >- Works in tandem with Outlook's own sync mechanism or standalone.
->   - Outlook's own mechanism gets disabled by default, see parameter '[DisableRoamingSignatures](#30-disableroamingsignatures)'. This is strongly recommended to avoid the issues that the built-in mechanism comes with, and that Outlook's own mechanism does not overwrite signatures created by Set-OutlookSignatures.
+>   - Outlook's own mechanism gets disabled by default, see parameter '[DisableRoamingSignatures](#disableroamingsignatures)'. This is strongly recommended to avoid the issues that the built-in mechanism comes with, and that Outlook's own mechanism does not overwrite signatures created by Set-OutlookSignatures.
 >- Correctly [converts encodings](/faq#roaming-signatures-in-classic-outlook-on-windows-look-different).
 >
 >The process behind the sync engine is simple and straight forward. The following steps are performed for each mailbox:
@@ -692,7 +692,7 @@ Prerequisites:
 
 Please note:
 - Microsoft has yet to release a public API for roaming signatures, so we teamed up to develop a reliable solution that allows you to bridge this gap at your own discretion. MirrorCloudSignatures has delivered consistent performance since its launch in 2022.
-- Do not expect this feature to work reliably in [simulation mode](/details#12-simulation-mode) because the user running the simulation usually does not have access to the signatures stored in another mailbox.<br>It does work in [SimulateAndDeploy](#19-simulateanddeploy) mode because of its different permission model.
+- Do not expect this feature to work reliably in [simulation mode](/details#12-simulation-mode) because the user running the simulation usually does not have access to the signatures stored in another mailbox.<br>It does work in [SimulateAndDeploy](#simulateanddeploy) mode because of its different permission model.
 - For mailboxes in Exchange Online: To delete manually created signatures (signatures that have not been created by Set-OutlookSignatures) you need to use New Outlook on Windows or Classic Outlook on Windows with its own roaming signature sync mechanism enabled, or you delete the signature both locally and in Outlook on the web.
   - Else, manually created signatures will be re-downloaded from the cloud or re-uploaded to the cloud because Set-OutlookSignatures and the Benefactor Circle add-on technically cannot detect the deletion:<br>When a signature exists in only one of two places, and both places can neither be permanently monitored nor provide an activity log: Has the signature been deleted in the one place, or has it been created in the other? This question cannot be answered. To avoid potential data loss, it is always assumed that the signature has been created.
 
