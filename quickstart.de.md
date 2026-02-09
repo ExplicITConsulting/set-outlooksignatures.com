@@ -92,7 +92,7 @@ Der [Simulations-Modus](/details#12-simulation-mode) kann noch viel mehr und ist
 ###### Ihre eigenen Vorlagen verwenden {#customize-use-your-own-templates}
 Keine Beispiel-Signatur ist so schön wie Ihre eigene. Lassen wir Set-OutlookSignatures also mit Ihren eigenen Vorlagen arbeiten!
 
-- Erstellen Sie einen Ordner mit Ihren eigenen Vorlagen und Konfigurationen. Befolgen Sie die FAQ '[What is the recommended folder structure for script, license, template and config files?](/faq#34-what-is-the-recommended-folder-structure-for-script-license-template-and-config-files)', da die Trennung von Quellcode und Anpassungen die Verwaltung und Versions-Upgrades erheblich vereinfacht.
+- Erstellen Sie einen Ordner mit Ihren eigenen Vorlagen und Konfigurationen. Befolgen Sie die FAQ '[What is the recommended folder structure for script, license, template and config files?](/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files)', da die Trennung von Quellcode und Anpassungen die Verwaltung und Versions-Upgrades erheblich vereinfacht.
   - Kopieren Sie für den Anfang einfach den Ordner '.\sample templates' und passen Sie die enthaltenen Vorlagen und die INI-Datei an.
 - Lassen Sie Set-OutlookSignatures erneut laufen und geben Sie an, wo es die neuen Vorlagen findet:
   - '`-SignatureTemplatePath 'c:\your_signature_template_path'`' für den Ordner, in dem Ihre Signatur-Vorlagen liegen.

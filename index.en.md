@@ -9,7 +9,7 @@ hero_link: /quickstart
 hero_link_text: "<span><b>Quick Start: </b>Deploy signatures within minutes</span>"
 hero_link_style: |
   style="background-color: LawnGreen;"
-hero_link2: /faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures
+hero_link2: /faq#what-can-i-learn-from-the-code-of-set-outlooksignatures
 hero_link2_text: "<span><b>Behind the scenes: </b>Learn from the code</span>"
 hero_link2_style: |
   style="background-color: LawnGreen;"

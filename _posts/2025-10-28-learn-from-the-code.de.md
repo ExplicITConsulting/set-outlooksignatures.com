@@ -17,7 +17,7 @@ Der Code enthält natürlich viele Elemente, die damit zu tun haben, zuverlässi
 
 Neben den großen Lernthemen, die in den [FAQ](/faq) erwähnt werden, finden sich in den Haupt- und Support-Dateien von Set-OutlookSignatures zahlreiche kleine Code-Schnipsel und Kommentare, die Ihnen nützlich sein könnten. Die Chancen stehen gut, dass Sie beim Durchstöbern des Codes auf einige kleine Juwelen stoßen.
 
-Im Folgenden finden Sie eine Übersicht über weitere Skripttechniken, die Sie [aus Set-OutlookSignatures lernen können](/faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures).
+Im Folgenden finden Sie eine Übersicht über weitere Skripttechniken, die Sie [aus Set-OutlookSignatures lernen können](/faq#what-can-i-learn-from-the-code-of-set-outlooksignatures).
 - Auflisten der Active Directory-Gruppenmitgliedschaft ohne Kompromisse
 - Microsoft Graph-Authentifizierung und -Reauthentifizierung
 - Bereitstellen und Ausführen von Software mithilfe von Desired State Configuration (DSC)

@@ -52,11 +52,11 @@ Mit Set-OutlookSignatures können Signaturen und Abwesenheitsnotizen:
 - In einem **[E-Mail-Entwurf mit allen verfügbaren Signaturen](/parameters#signaturecollectionindrafts)**¹ in HTML und reinem Text für den einfachen Zugriff in E-Mail-Clients ohne Signatur-API gesammelt werden.
 - **[Schreibgeschützt](/details#71-allowed-tags)** werden (nur klassisches Outlook für Windows).
 
-Set-OutlookSignatures kann von Nutzern auf **[Windows-, Linux- und macOS-Clients, einschließlich gemeinsam genutzter Geräte und Terminalserver, oder auf einem zentralen System mit einem Dienstkonto](/details#3-architecture-considerations)**¹ ausgeführt werden.<br>Auf Clients kann es als Teil des Anmeldeskripts, als geplante Aufgabe oder auf Benutzeranforderung über ein Desktopsymbol, einen Startmenüeintrag, eine Verknüpfung oder einer andere Möglichkeit zum Starten eines Programms ausgeführt werden - **[was auch immer Ihre Methode zur Verteilung von Software erlaubt](/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
+Set-OutlookSignatures kann von Nutzern auf **[Windows-, Linux- und macOS-Clients, einschließlich gemeinsam genutzter Geräte und Terminalserver, oder auf einem zentralen System mit einem Dienstkonto](/details#3-architecture-considerations)**¹ ausgeführt werden.<br>Auf Clients kann es als Teil des Anmeldeskripts, als geplante Aufgabe oder auf Benutzeranforderung über ein Desktopsymbol, einen Startmenüeintrag, eine Verknüpfung oder einer andere Möglichkeit zum Starten eines Programms ausgeführt werden - **[was auch immer Ihre Methode zur Verteilung von Software erlaubt](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
 
 **[Beispielvorlagen](/quickstart#customize-use-your-own-templates)** für Signaturen und Abwesenheitsnachrichten demonstrieren viele Funktionen und stehen als DOCX- und HTM-Dateien zur Verfügung.
 
-**[Telefonnummern](/faq#4412-format-phone-numbers)** und **[Post-Adressen](/faq#4413-format-postal-addresses)** können nach internationalen Standards oder eigenen Vorgaben formatiert werden.
+**[Telefonnummern](/faq#format-phone-numbers)** und **[Post-Adressen](/faq#format-postal-addresses)** können nach internationalen Standards oder eigenen Vorgaben formatiert werden.
 
 Der **[Simulationsmodus](/details#12-simulation-mode)** ermöglicht es Inhaltserstellern und Administratoren, das Verhalten der Software für einen bestimmten Benutzer zu einem bestimmten Zeitpunkt zu simulieren und die resultierenden Signaturen vor der Live-Schaltung zu prüfen.
 
@@ -66,18 +66,18 @@ Die Software funktioniert **[on-premises, in hybriden und reinen Cloud-Umgebunge
 
 **[Alle nationalen Clouds werden unterstützt](/parameters#cloudenvironment)**: Öffentlich (AzurePublic), US-Regierung L4 (AzureUSGovernment), US-Regierung L5 (AzureUSGovernment DoD), China (AzureChinaCloud, betrieben von 21Vianet) - souveräne Clouds Bleu, Delos, GovSG und mehr folgen in Kürze.
 
-Die Software ist **[multiinstanzfähig](/faq#11-can-multiple-script-instances-run-in-parallel)** durch Verwendung verschiedener Vorlagenpfade, Konfigurationsdateien und Skriptparameter.
+Die Software ist **[multiinstanzfähig](/faq#can-multiple-script-instances-run-in-parallel)** durch Verwendung verschiedener Vorlagenpfade, Konfigurationsdateien und Skriptparameter.
 ers.
 
-Set-OutlookSignatures erfordert **[keine Installation auf Servern oder Clients](/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**. Sie benötigen lediglich eine Standard-SMB-Dateifreigabe auf einem zentralen System und optional Office auf Ihren Clients.
+Set-OutlookSignatures erfordert **[keine Installation auf Servern oder Clients](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**. Sie benötigen lediglich eine Standard-SMB-Dateifreigabe auf einem zentralen System und optional Office auf Ihren Clients.
 
 Es gibt **[keine Telemetrie](/features#feature-comparison)** und kein "Calling Home". E-Mails und Verzeichnisdaten werden **[nicht über externe Rechenzentren oder Cloud-Dienste geleitet](/features#feature-comparison)**, und **[DNS-Einträge (SPF) und Nachrichtenfluss bleiben unverändert](/features#feature-comparison)**.
 
 Ein **[dokumentierter Implementierungsansatz](/implementationapproach)**, der auf praktischen Erfahrungen mit der Implementierung der Software in Multiclient-Umgebungen mit einer fünfstelligen Anzahl von Postfächern basiert, enthält bewährte Vorgehensweisen und Empfehlungen für Produktmanager, Architekten, Betriebsleiter, Account Manager sowie E-Mail- und Client-Administratoren.
 
-Der Kern der Software ist als **[Freie Open-Source-Software (FOSS)](/faq#351-why-the-tagline)** quelloffen und kostenlos. Sie wird unter der European Union Public Licnse veröffentlicht, die unter anderem von der Free Software Foundation (FSF) und der Open Source Initiative (OSI) anerkannt wird und mit der General Public License (GPL) und anderen gängigen Lizenzen kompatibel ist.
+Der Kern der Software ist als **[Freie Open-Source-Software (FOSS)](/faq#why-the-tagline)** quelloffen und kostenlos. Sie wird unter der European Union Public Licnse veröffentlicht, die unter anderem von der Free Software Foundation (FSF) und der Open Source Initiative (OSI) anerkannt wird und mit der General Public License (GPL) und anderen gängigen Lizenzen kompatibel ist.
 
-Nach einer bestimmten Nutzungsdauer wird der **[dezente Hinweis 'Free and open-source Set-OutlookSignatures' an Signaturen angefügt](/faq#35-how-to-disable-the-tagline-in-signatures)**. Dieser Slogan kann leicht entfernt werden¹.
+Nach einer bestimmten Nutzungsdauer wird der **[dezente Hinweis 'Free and open-source Set-OutlookSignatures' an Signaturen angefügt](/faq#how-to-disable-the-tagline-in-signatures)**. Dieser Slogan kann leicht entfernt werden¹.
 
 **Anmerkung 1 (¹):** **Einige Funktionen sind exklusiv dem Benefactor Circle-Add-on vorbehalten**. Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.
 

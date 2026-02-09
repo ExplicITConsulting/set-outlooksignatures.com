@@ -27,7 +27,7 @@ Let your signature reflect what matters most to your business, all year round.
 
 The following links will interest you:
 - [Allowed tags](/details#71-allowed-tags) for template assignment
-- [How do I alternate banners and other images in signatures?](/faq#30-how-do-i-alternate-banners-and-other-images-in-signatures)
+- [How do I alternate banners and other images in signatures?](/faq#how-do-i-alternate-banners-and-other-images-in-signatures)
 
 
 ## Interested in learning more or seeing our solution in action?

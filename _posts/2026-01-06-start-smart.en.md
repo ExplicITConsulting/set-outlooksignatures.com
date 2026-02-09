@@ -22,7 +22,7 @@ Here’s how:
 
 We focus on practical, efficient software. And we believe every mailbox should cost the same, which is why small customers pay the same fair price as large ones.
 
-Read all about [why Set-OutlookSignatures is free and open-source](/faq#351-why-the-tagline) and about [the financial benefits of the Benefactor Circle add-on](/benefactorcircle#financial-benefits).
+Read all about [why Set-OutlookSignatures is free and open-source](/faq#why-the-tagline) and about [the financial benefits of the Benefactor Circle add-on](/benefactorcircle#financial-benefits).
 
 
 ## Interested in learning more or seeing our solution in action?

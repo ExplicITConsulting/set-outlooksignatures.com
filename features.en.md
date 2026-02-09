@@ -52,11 +52,11 @@ With Set-OutlookSignatures and the optional Benefactor Circle add-on, signatures
 - Create an **[email draft containing all available signatures](/parameters#signaturecollectionindrafts)** in HTML and plain text for easy access in mail clients that do not have a signatures API.
 - **[Write protected](/details#71-allowed-tags)** (Outlook on Windows signatures only).
 
-Set-OutlookSignatures can be **[run by users on Windows, Linux and macOS clients, including shared devices and terminal servers - or on a central system with a service account](/details#3-architecture-considerations)**¹.<br>On clients, it can run as part of the logon script, as scheduled task, or on user demand via a desktop icon, start menu entry, shortcut or any other way of starting a program - **[whatever your software deployment mechanism allows](/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
+Set-OutlookSignatures can be **[run by users on Windows, Linux and macOS clients, including shared devices and terminal servers - or on a central system with a service account](/details#3-architecture-considerations)**¹.<br>On clients, it can run as part of the logon script, as scheduled task, or on user demand via a desktop icon, start menu entry, shortcut or any other way of starting a program - **[whatever your software deployment mechanism allows](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
 
 **[Sample templates](/quickstart#customize-use-your-own-templates)** for signatures and OOF messages demonstrate many features and are provided as .docx and .htm files.
 
-**[Phone numbers](/faq#4412-format-phone-numbers)** and **[postal addresses](/faq#4413-format-postal-addresses)** can be formatted by international standards or custom requirements.
+**[Phone numbers](/faq#format-phone-numbers)** and **[postal addresses](/faq#format-postal-addresses)** can be formatted by international standards or custom requirements.
 
 **[Simulation mode](/details#12-simulation-mode)** allows content creators and admins to simulate the behavior of the software for a specific user at a specific point in time, and to inspect the resulting signature files before going live.
 
@@ -66,17 +66,17 @@ It works **[on premises, in hybrid and in cloud-only environments](/details#11-h
 
 All **[national clouds are supported](/parameters#cloudenvironment)**: Public (AzurePublic), US Government L4 (AzureUSGovernment), US Government L5 (AzureUSGovernment DoD), China (AzureChinaCloud operated by 21Vianet) - sovereign clouds Bleu, Delos, GovSG, and more coming soon.
 
-It is **[multi-instance capable](/faq#11-can-multiple-script-instances-run-in-parallel)** by using different template paths, configuration files and script parameters.
+It is **[multi-instance capable](/faq#can-multiple-script-instances-run-in-parallel)** by using different template paths, configuration files and script parameters.
 
-Set-OutlookSignatures requires **[no installation on servers or clients](/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**. You only need a standard SMB file share on a central system, and optionally Office on your clients.
+Set-OutlookSignatures requires **[no installation on servers or clients](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**. You only need a standard SMB file share on a central system, and optionally Office on your clients.
 
 There is also **[no telemetry](/features#feature-comparison)** and no "calling home". Emails and directory data are **[not routed through a 3rd party data center or cloud service](/features#feature-comparison)**, and **[DNS records (SPF) and mail flow remain unchanged](/features#feature-comparison)**.
 
 A **[documented implementation approach](/implementationapproach)**, based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes, contains proven procedures and recommendations for product managers, architects, operations managers, account managers and email and client administrators.
 
-The software core is **[Free and Open-Source Software (FOSS)](/faq#351-why-the-tagline)**. It is published under the European Union Public License, which is approved, among others, by the Free Software Foundation (FSF) and the Open Source Initiative (OSI), and is compatible with the General Public License (GPL) and other popular licenses.
+The software core is **[Free and Open-Source Software (FOSS)](/faq#why-the-tagline)**. It is published under the European Union Public License, which is approved, among others, by the Free Software Foundation (FSF) and the Open Source Initiative (OSI), and is compatible with the General Public License (GPL) and other popular licenses.
 
-After a certain period of use, the **[subtle note 'Free and open-source Set-OutlookSignatures' is appended to signatures](/faq#35-how-to-disable-the-tagline-in-signatures)**. This tagline can be easily removed¹.
+After a certain period of use, the **[subtle note 'Free and open-source Set-OutlookSignatures' is appended to signatures](/faq#how-to-disable-the-tagline-in-signatures)**. This tagline can be easily removed¹.
 
 **Remark 1 (¹):** **Some features are exclusive to the <a href="/benefactorcircle">Benefactor Circle add-on</a>.** The optional <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> extends Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities. It also ensures that the core of Set-OutlookSignatures can remain Free and Open-Source Software (FOSS) and continues to evolve.
 

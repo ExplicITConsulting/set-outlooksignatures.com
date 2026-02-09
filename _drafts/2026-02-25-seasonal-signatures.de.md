@@ -27,7 +27,7 @@ Lassen Sie Ihre Signatur das ganze Jahr über widerspiegeln, was für Ihr Untern
 
 Die folgenden Links könnten Sie interessieren:
 - [Zulässige Tags](/details#71-allowed-tags) für die Zuweisung von Vorlagen
-- [Wie kann ich Banner und andere Bilder in Signaturen abwechselnd anzeigen?](/faq#30-how-do-i-alternate-banners-and-other-images-in-signatures)
+- [Wie kann ich Banner und andere Bilder in Signaturen abwechselnd anzeigen?](/faq#how-do-i-alternate-banners-and-other-images-in-signatures)
 
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?

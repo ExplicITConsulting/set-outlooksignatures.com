@@ -33,7 +33,7 @@ sitemap_changefreq: weekly
 <blockquote>
   <p>
     Since it's first release as a 
-    <a href="/faq#44-what-can-i-learn-from-the-code-of-set-outlooksignatures">technology demonstrator</a>, Set-OutlookSignatures has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies.
+    <a href="/faq#what-can-i-learn-from-the-code-of-set-outlooksignatures">technology demonstrator</a>, Set-OutlookSignatures has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies.
   </p>
   <p>
     Sustaining long-term development for such a project requires significant financial resources. Currently, we do not have enough open-source sponsors to cover these costs fully.

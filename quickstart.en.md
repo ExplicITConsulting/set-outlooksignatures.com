@@ -90,7 +90,7 @@ The [simulation mode](/details#12-simulation-mode) can do much more and is there
 ###### Use your own templates {#customize-use-your-own-templates}
 No sample signature is as beautiful as your own. So let's let Set-OutlookSignatures work with your own templates!
 
-- Create a folder with your own templates and configurations. Follow the FAQ '[What is the recommended folder structure for script, license, template and config files?](/faq#34-what-is-the-recommended-folder-structure-for-script-license-template-and-config-files)', as separating source code and customizations makes administration and version upgrades much easier.
+- Create a folder with your own templates and configurations. Follow the FAQ '[What is the recommended folder structure for script, license, template and config files?](/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files)', as separating source code and customizations makes administration and version upgrades much easier.
   - To get started, simply copy the '.\sample templates' folder and customize the templates and the INI file it contains.
 - Run Set-OutlookSignatures again and specify where to find the new templates:
   - '`-SignatureTemplatePath 'c:\your_signature_template_path'`' for the folder where your signature templates are located.

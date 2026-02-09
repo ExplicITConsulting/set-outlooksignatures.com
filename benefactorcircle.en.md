@@ -227,7 +227,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="price">Price and business case</h2>
-<p>Set-OutlookSignatures is free of charge.<br>Originally developed as a technology demonstrator for scripting techniques, it has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies. Read about <a href="https://set-outlooksignatures.com/faq#351-why-the-tagline">its history and what you can learn from its code</a> in our FAQ.</p>
+<p>Set-OutlookSignatures is free of charge.<br>Originally developed as a technology demonstrator for scripting techniques, it has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies. Read about <a href="https://set-outlooksignatures.com/faq#why-the-tagline">its history and what you can learn from its code</a> in our FAQ.</p>
 
 <p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> unlocks advanced features and is available for <strong>affordable 3.00 € per mailbox per year</strong>, which equals <strong>just 0.25 € per mailbox per month</strong>.</p>
 

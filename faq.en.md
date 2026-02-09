@@ -513,7 +513,7 @@ But let's take a closer look at this from the perspective of all groups of peopl
 
 <!-- omit in toc -->
 ###### End users
-For end users, Set-OutlookSignatures is [invisible](/faq#121-start-set-outlooksignatures-in-hiddeninvisible-mode). They typically never see the software, interact with it, or even know that it exists.
+For end users, Set-OutlookSignatures is [invisible](/faq#start-set-outlooksignatures-in-hiddeninvisible-mode). They typically never see the software, interact with it, or even know that it exists.
 
 The only thing end users notice is that their signatures and out-of-office replies are always up-to-date.
 

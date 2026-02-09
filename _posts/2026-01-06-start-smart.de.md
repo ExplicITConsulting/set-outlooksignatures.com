@@ -22,7 +22,7 @@ So funktioniert es:
 
 Wir konzentrieren uns auf praktische, effiziente Software. Und wir sind der Meinung, dass jedes Postfach gleich viel kosten sollte, weshalb kleine Kunden denselben fairen Preis zahlen wie große.
 
-Lesen Sie alles darüber, [warum Set-OutlookSignatures kostenlos und Open Source ist](/faq#351-why-the-tagline) und über [die finanziellen Vorteile des Benefactor Circle-Add-ons](/benefactorcircle#financial-benefits).
+Lesen Sie alles darüber, [warum Set-OutlookSignatures kostenlos und Open Source ist](/faq#why-the-tagline) und über [die finanziellen Vorteile des Benefactor Circle-Add-ons](/benefactorcircle#financial-benefits).
 
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
