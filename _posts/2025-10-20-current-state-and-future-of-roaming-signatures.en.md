@@ -28,7 +28,7 @@ Our recommendation for most clients:
 - Disable them on the client side.
 - Let Set-OutlookSignatures handle the rest.
 
-If you cannot or do not want to run Set-OutlookSignatures on your clients, distribute signatures from a central location using ‘[SimulateAndDeploy](/parameters#19-simulateanddeploy)’.
+If you cannot or do not want to run Set-OutlookSignatures on your clients, distribute signatures from a central location using ‘[SimulateAndDeploy](/parameters#simulateanddeploy)’.
 
 ## And what about mobile support?
 Today, it's a pain point, often requiring expensive server-side rerouting just to apply a signature. But once Microsoft releases an official API, that changes.

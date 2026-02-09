@@ -443,7 +443,7 @@ Caveat: The `$CurrentMailbox[…]$` replacement variables refer to the user's pe
 **Solution option B**  
 This option only works for mailboxes, not for distribution groups.
 
-Create signature templates for the mailbox m<area>@example.com and **assign them to m<area>@example.com**. Use the virtual mailbox feature of the Benefactor Circle add-on to make sure that m<area>@example.com is always treated as if it were added to Outlook, not matter if it has been added or not (see the parameter '[VirtualMailboxConfigFile](/parameters#38-virtualmailboxconfigfile)' for details).
+Create signature templates for the mailbox m<area>@example.com and **assign them to m<area>@example.com**. Use the virtual mailbox feature of the Benefactor Circle add-on to make sure that m<area>@example.com is always treated as if it were added to Outlook, not matter if it has been added or not (see the parameter '[VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile)' for details).
 
 ```
 [External English formal SendAs m@example.com.docx]
@@ -454,7 +454,7 @@ m@example.com
 
 You can now use replacement variables of both the `$CurrentUser[…]$` and the `$CurrentMailbox[…]$` namespace.
 
-Hint: You can also use the VirtualMailboxConfigFile to dynamically define signature INI file entries. See '[VirtualMailboxConfigFile](/parameters#38-virtualmailboxconfigfile)' for details.
+Hint: You can also use the VirtualMailboxConfigFile to dynamically define signature INI file entries. See '[VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile)' for details.
 
 
 ## Can I centrally manage and deploy Outook stationery with this script?
@@ -547,7 +547,7 @@ If Outlook is not installed at all, Set-OutlookSignatures will still be useful: 
 
 
 ## What about the roaming signatures feature in Exchange Online?
-Set-OutlookSignatures can handle roaming signatures since v4.0.0. See parameter '[MirrorCloudSignatures](/parameters#38-virtualmailboxconfigfile)' for details.
+Set-OutlookSignatures can handle roaming signatures since v4.0.0. See parameter '[MirrorCloudSignatures](/parameters#virtualmailboxconfigfile)' for details.
 
 Set-OutlookSignatures supports romaing signatures independent from the Outlook version used. Roaming signatures are also supported in scenarios where only Outlook on the web in the cloud or New Outlook is used.
 
@@ -644,17 +644,17 @@ Two workarounds are available when you do not want to or can't find and solve th
 Starting with v4.0.0, Set-OutlookSignatures sets the '`DontUseScreenDpiOnOpen`' registry key to the recommended value. 
 
 Nonetheless, some scaling and display problems simply cannot be solved in the HTML code of the signature, because the problem is in the Word HRML rendering engine used by Outlook: For example, some Word builds ignore embedded image width and height attributes and always scale these images at 100% size, or sometimes display them with inverted colors or a black background.  
-In this case, you can influence how images are displayed and converted from DOCX to HTM with the parameters '[EmbedImagesInHtml](/parameters#26-embedimagesinhtml)' and '[DocxHighResImageConversion](/parameters#28-docxhighresimageconversion)':
+In this case, you can influence how images are displayed and converted from DOCX to HTM with the parameters '[EmbedImagesInHtml](/parameters#embedimagesinhtml)' and '[DocxHighResImageConversion](/parameters#docxhighresimageconversion)':
 
 | <br>EmbedImagesInHtml<br>DocxHighResImageConversion| Default values<br><span style="font-weight:normal">false<br>true</span>| Alternate configuration A<br><span style="font-weight:normal">true<br>false</span> | Alternate configuration B<br><span style="font-weight:normal">true<br>true</span> | Alternate configuration C<br><span style="font-weight:normal">false<br>false</span> |
 | :-- | :-- | :-- | :-- | :-- |
 | HTML signatures with images consist of multiple files as images are not embedded | Yes | No | No | Yes |
-| Hints | Make sure to set the Outlook registry value '`Send Pictures With Document`' to 1, as described in the documentation of the '[EmbedImagesInHtml](/parameters#26-embedimagesinhtml)' parameter. | Some older mail clients (Outlook 2013 and older, for example) cannot handle embedded images.<br><br>Images can look blurred and pixelated, especially on systems with high display resolution. | Some older mail clients (Outlook 2013 and older, for example) cannot handle embedded images. | Make sure to set the Outlook registry value '`Send Pictures With Document`' to 1, as described in the documentation of the '[EmbedImagesInHtml](/parameters#26-embedimagesinhtml)' parameter.<br><br>Images can look blurred and pixelated, especially on systems with high display resolution. |
+| Hints | Make sure to set the Outlook registry value '`Send Pictures With Document`' to 1, as described in the documentation of the '[EmbedImagesInHtml](/parameters#embedimagesinhtml)' parameter. | Some older mail clients (Outlook 2013 and older, for example) cannot handle embedded images.<br><br>Images can look blurred and pixelated, especially on systems with high display resolution. | Some older mail clients (Outlook 2013 and older, for example) cannot handle embedded images. | Make sure to set the Outlook registry value '`Send Pictures With Document`' to 1, as described in the documentation of the '[EmbedImagesInHtml](/parameters#embedimagesinhtml)' parameter.<br><br>Images can look blurred and pixelated, especially on systems with high display resolution. |
 | Recommendation | This configuration should be used as long as there is nothing to the contrary. | | | |
 
-The parameter '[MoveCSSInline](/parameters#25-movecssinline)' may also influence how signatures are displayed. Not all clients support the same set of CSS features, and there are clients not or not fully supporting CSS classes.  
+The parameter '[MoveCSSInline](/parameters#movecssinline)' may also influence how signatures are displayed. Not all clients support the same set of CSS features, and there are clients not or not fully supporting CSS classes.  
 The Word HTML rendering engine used by Outlook is rather conservative regarding CSS support, which is good from a sender perspective.  
-When the '[MoveCSSInline](/parameters#25-movecssinline)' parameter is enabled, which it is by default, cross-client compatibility is even more enhanced: All the formatting defined in CSS classes is intellegently moved to inline CSS formatting, which supported by a higher number of clients. This is a best practive in email marketing.
+When the '[MoveCSSInline](/parameters#movecssinline)' parameter is enabled, which it is by default, cross-client compatibility is even more enhanced: All the formatting defined in CSS classes is intellegently moved to inline CSS formatting, which supported by a higher number of clients. This is a best practive in email marketing.
 
 
 ## How do I alternate banners and other images in signatures?

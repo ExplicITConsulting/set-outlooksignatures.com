@@ -20,7 +20,7 @@ Set-OutlookSignatures ended that era already:
 - Deploy signatures to mailboxes outside the user’s home tenant effortlessly
 - Access to all properties, replacement variables, and our exclusive Benefactor Circle features
 
-Cross-tenant and multitenant is easy to implement - just follow the instructions of the '[GraphClientID](/parameters#4-graphclientid)' parameter.
+Cross-tenant and multitenant is easy to implement - just follow the instructions of the '[GraphClientID](/parameters#graphclientid)' parameter.
 
 
 ## Interested in learning more or seeing our solution in action?

@@ -388,7 +388,7 @@ Each format has advantages and disadvantages, please see the FAQ '[Should I use 
 
 Only images in the first subfolder below the template file matching the Windows Connected Files naming convention (https://docs.microsoft.com/en-us/windows/win32/shell/manage#connected-files) are downloaded. Only use relative paths for the src attribute in img tags. All other paths are considered external and are not downloaded.
 
-Also see the documentation for the '[EmbedImagesInHtml](/parameters#26-embedimagesinhtml)' parameter.
+Also see the documentation for the '[EmbedImagesInHtml](/parameters#embedimagesinhtml)' parameter.
 
 Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
@@ -442,7 +442,7 @@ SimulateAndDeploy allows to deploy signatures and out-of-office replies without 
 
 This mode is ideal when users log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients.
 
-SimulateAndDeploy considers additional mailboxes when the user added them in Outlook on the web, when they are passed via the '[SimulateMailboxes'](/parameters#38-virtualmailboxconfigfile)' parameter, or when being added dynamically via the '[VirtualMailboxConfigFile](/parameters#38-virtualmailboxconfigfile)' parameter.
+SimulateAndDeploy considers additional mailboxes when the user added them in Outlook on the web, when they are passed via the '[SimulateMailboxes'](/parameters#virtualmailboxconfigfile)' parameter, or when being added dynamically via the '[VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile)' parameter.
 
 The SimulateAndDeploy parameter makes sense only when used in combination with '.\sample code\SimulateAndDeploy.ps1'. Do not use this parameter for other scenarios.
 
@@ -570,7 +570,7 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 
 
 ## EmbedImagesInHtmlAdditionalSignaturePath
-Same feature as '[EmbedImagesInHtml](/parameters#26-embedimagesinhtml)' parameter, but only valid for the path defined in AdditionalSignaturePath when not in simulation mode.
+Same feature as '[EmbedImagesInHtml](/parameters#embedimagesinhtml)' parameter, but only valid for the path defined in AdditionalSignaturePath when not in simulation mode.
 
 Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 

@@ -28,7 +28,7 @@ Unsere Empfehlung für die meisten Kunden:
 - Deaktivieren Sie sie auf der Client-Seite.
 - Überlassen Sie Set-OutlookSignatures den Rest.
 
-Wenn Sie Set-OutlookSignatures nicht auf Ihren Clients laufen lassen können oder wollen, verteilen Sie Signaturen mit '[SimulateAndDeploy](/parameters#19-simulateanddeploy)' von einer zentralen Stelle aus.
+Wenn Sie Set-OutlookSignatures nicht auf Ihren Clients laufen lassen können oder wollen, verteilen Sie Signaturen mit '[SimulateAndDeploy](/parameters#simulateanddeploy)' von einer zentralen Stelle aus.
 
 ## Und wie sieht es mit der mobilen Unterstützung aus?
 Derzeit ist dies ein Problem, das oft eine teure Umleitung auf der Serverseite erfordert, nur um eine Signatur anzuwenden. Sobald Microsoft jedoch eine offizielle API veröffentlicht, wird sich dies ändern.

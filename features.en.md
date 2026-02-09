@@ -40,16 +40,16 @@ With Set-OutlookSignatures and the optional Benefactor Circle add-on, signatures
 - Customized with a **[broad range of variables](/details#9-replacement-variables)**, including **[photos and images](/details#91-photos-account-pictures-user-image-from-active-directory-or-entra-id)**, from Entra ID, Active Directory and other sources.
 - Variables are available for the **[currently logged-on user, the current mailbox, and their managers](/details#9-replacement-variables)**.
 - Designed for **[barrier-free accessibility](/blog/2025/12/03/barrier-free-email-signatures-and-out-of-office-replies)** with custom link and image descriptions for screen readers and comparable tools.
-- Applied to all **mailboxes (including [shared mailboxes](/benefactorcircle#key-features)¹)**, specific **[mailbox groups](/details#7-template-tags-and-ini-files)**, specific **[email addresses](/details#7-template-tags-and-ini-files)** (including alias and secondary addresses), or specific **[user and mailbox properties](/details#7-template-tags-and-ini-files)**, for **every mailbox across all Outlook profiles (Outlook, [New Outlook](/benefactorcircle#key-features)¹, [Outlook on the web](/benefactorcircle#key-features)¹)**, including **[automapped and additional mailboxes](/parameters#29-signaturesforautomappedandadditionalmailboxes)**¹.
+- Applied to all **mailboxes (including [shared mailboxes](/benefactorcircle#key-features)¹)**, specific **[mailbox groups](/details#7-template-tags-and-ini-files)**, specific **[email addresses](/details#7-template-tags-and-ini-files)** (including alias and secondary addresses), or specific **[user and mailbox properties](/details#7-template-tags-and-ini-files)**, for **every mailbox across all Outlook profiles (Outlook, [New Outlook](/benefactorcircle#key-features)¹, [Outlook on the web](/benefactorcircle#key-features)¹)**, including **[automapped and additional mailboxes](/parameters#signaturesforautomappedandadditionalmailboxes)**¹.
 - Created with different names from the same template, **[one template can be used for many mailboxes](/details#72-how-to-work-with-ini-files)**.
 - Assigned **[time ranges](/details#71-allowed-tags)**¹ within which they are valid.
 - Set as **[default signature](/details#71-allowed-tags)** for new emails, or for replies and forwards (signatures only).
 - Set as **[default OOF message](/details#71-allowed-tags)**¹ for internal or external recipients (OOF messages only).
-- Set in **[Outlook on the web](/parameters#10-setcurrentuseroutlookwebsignature)**¹ for the currently logged-in user, including mirroring signatures to the cloud as **[roaming signatures](/parameters#31-mirrorcloudsignatures)**¹ (Linux/macOS/Windows, Classic and New Outlook¹).
-- Signature can be centrally managed only¹, or **[exist along user-created signatures](/parameters#8-deleteusercreatedsignatures)**.
+- Set in **[Outlook on the web](/parameters#setcurrentuseroutlookwebsignature)**¹ for the currently logged-in user, including mirroring signatures to the cloud as **[roaming signatures](/parameters#mirrorcloudsignatures)**¹ (Linux/macOS/Windows, Classic and New Outlook¹).
+- Signature can be centrally managed only¹, or **[exist along user-created signatures](/parameters#deleteusercreatedsignatures)**.
 - Automatically added to new emails, reply emails and appointments with the **[Outlook add-in](/outlookaddin)**¹.
-- Copied to an **[additional path](/parameters#14-additionalsignaturepath)**¹ for easy access to signatures on mobile devices or for use with email clients and apps besides Outlook: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others.
-- Create an **[email draft containing all available signatures](/parameters#35-signaturecollectionindrafts)** in HTML and plain text for easy access in mail clients that do not have a signatures API.
+- Copied to an **[additional path](/parameters#additionalsignaturepath)**¹ for easy access to signatures on mobile devices or for use with email clients and apps besides Outlook: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others.
+- Create an **[email draft containing all available signatures](/parameters#signaturecollectionindrafts)** in HTML and plain text for easy access in mail clients that do not have a signatures API.
 - **[Write protected](/details#71-allowed-tags)** (Outlook on Windows signatures only).
 
 Set-OutlookSignatures can be **[run by users on Windows, Linux and macOS clients, including shared devices and terminal servers - or on a central system with a service account](/details#3-architecture-considerations)**¹.<br>On clients, it can run as part of the logon script, as scheduled task, or on user demand via a desktop icon, start menu entry, shortcut or any other way of starting a program - **[whatever your software deployment mechanism allows](/faq#12-how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
@@ -64,7 +64,7 @@ Set-OutlookSignatures can be **[run by users on Windows, Linux and macOS clients
 
 It works **[on premises, in hybrid and in cloud-only environments](/details#11-hybrid-and-cloud-only-support)**. The software is **[designed to work in big and complex environments](/implementationapproach)**: Exchange resource forest scenarios, AD trusts, multi-level AD subdomains, cross-tenant and multitenant scenarios.  
 
-All **[national clouds are supported](/parameters#22-cloudenvironment)**: Public (AzurePublic), US Government L4 (AzureUSGovernment), US Government L5 (AzureUSGovernment DoD), China (AzureChinaCloud operated by 21Vianet) - sovereign clouds Bleu, Delos, GovSG, and more coming soon.
+All **[national clouds are supported](/parameters#cloudenvironment)**: Public (AzurePublic), US Government L4 (AzureUSGovernment), US Government L5 (AzureUSGovernment DoD), China (AzureChinaCloud operated by 21Vianet) - sovereign clouds Bleu, Delos, GovSG, and more coming soon.
 
 It is **[multi-instance capable](/faq#11-can-multiple-script-instances-run-in-parallel)** by using different template paths, configuration files and script parameters.
 

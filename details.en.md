@@ -176,7 +176,7 @@ Contrary to other solutions, you do not have to decide for one fixed combination
 The following chapters dive deeper into the differences between creating signatures and out-of-office replies, and making signatures available to end users. They also describe which options are available, what their pros and cons are, and when they are used best.
 
 ### 3.1. Creating signatures and out-of-office replies
-Set-OutlookSignatures comes with client mode, the Benefactor Circle add-on adds [SimulateAndDeploy](/parameters#19-simulateanddeploy) mode.
+Set-OutlookSignatures comes with client mode, the Benefactor Circle add-on adds [SimulateAndDeploy](/parameters#simulateanddeploy) mode.
 
 While building the base for SimulateAndDeploy, pure [simulation mode](/details#12-simulation-mode) is not discussed here as it is not intended to be used for mass deployment but as a quality control feature.
 
@@ -232,8 +232,8 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#1
 </div>
 
 With the Benefactor Circle add-on, both modes can:
-- Set [out-of-office replies](/parameters#11-setcurrentuseroofmessage) for internal and external recipients.
-- Deploy signatures for mailboxes (and other Exchange recipient objects) the user has access to but not added to Outlook. See the [VirtualMailboxConfigFile](/parameters#38-virtualmailboxconfigfile) parameter for details, and combine it with [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions) for maximum automation.
+- Set [out-of-office replies](/parameters#setcurrentuseroofmessage) for internal and external recipients.
+- Deploy signatures for mailboxes (and other Exchange recipient objects) the user has access to but not added to Outlook. See the [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile) parameter for details, and combine it with [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions) for maximum automation.
 
 ### 3.2. Making signatures available
 Signatures created in client mode or SimulateAndDeploy mode need to be made available to the end user.
@@ -249,7 +249,7 @@ With the Benefactor Circle add-on active, both modes per default also make signa
 - and in a draft email.
 
 #### 3.2.1. Outlook on the web
-The [SetCurrentUserOutlookWebSignature](https://set-outlooksignatures.com/parameters#10-setcurrentuseroutlookwebsignature) parameter is enabled by default with the Benefactor Cicle add-on.
+The [SetCurrentUserOutlookWebSignature](https://set-outlooksignatures.com/parameters#setcurrentuseroutlookwebsignature) parameter is enabled by default with the Benefactor Cicle add-on.
 
 Mailboxes hosted in Exchange on-prem only support one signature in Outlook on the web, so the default signature defined for new emails is preferred over the default signature defined for replies and forwards.
 
@@ -262,7 +262,7 @@ This feature is currently supported only by Outlook on the web, New Outlook on W
 
 Even when Microsoft is slow in taking this feature forward and competing signature solutions boycott it because of its impact on their business model, the creators of Set-OutlookSignatures and the Benefactor Circle add-on absolutely believe that roaming signatures are the way.
 
-With the Benefactor Circle add-on, all signatures are [automatically made available as roaming signatures](/parameters#31-mirrorcloudsignatures). Roaming signatures are synchronized using our own engine with all Outlook editions on Linux, Windows and macOS. This not only overcomes platform limits, but also avoids [problems with Outlook's own sync engine](/faq#41-roaming-signatures-in-classic-outlook-on-windows-look-different).
+With the Benefactor Circle add-on, all signatures are [automatically made available as roaming signatures](/parameters#mirrorcloudsignatures). Roaming signatures are synchronized using our own engine with all Outlook editions on Linux, Windows and macOS. This not only overcomes platform limits, but also avoids [problems with Outlook's own sync engine](/faq#41-roaming-signatures-in-classic-outlook-on-windows-look-different).
 
 Until roaming signatures are supported by all Outlook editions on all platforms, running Set-OutlookSignatures with the Benefactor Circle add-on in client mode and using the Outlook add-in are a great alternative to make signatures available everywhere.
 
@@ -282,14 +282,14 @@ It can automatically apply the correct signature as soon as a new email or appoi
 You can have as many add-in instances with differing configurations as you need, just follow the [technical specifications](/outlookaddin#32-web-server-and-domain) of the Outlook add-in.
 
 #### 3.2.4. Draft email
-The [SignatureCollectionInDrafts](/parameters#35-signaturecollectionindrafts) parameter, enabled per default with the Benefactor Circle add-on, creates and updates an email message with the subject 'My signatures, powered by Set-OutlookSignatures Benefactor Circle' in the drafts folder of the current user.
+The [SignatureCollectionInDrafts](/parameters#signaturecollectionindrafts) parameter, enabled per default with the Benefactor Circle add-on, creates and updates an email message with the subject 'My signatures, powered by Set-OutlookSignatures Benefactor Circle' in the drafts folder of the current user.
 
 The draft email contains all available signatures in HTML and plain text format.
 
 This allows for easy copy-paste access to signatures in mail clients that do not have a signatures API and do not support Outlook add-ins: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others.
 
 #### 3.2.5. Documents folder
-The [AdditionalSignaturePath](/parameters#14-additionalsignaturepath) parameter, enabled per default with the Benefactor Circle add-on, copies signatures to an additional path.
+The [AdditionalSignaturePath](/parameters#additionalsignaturepath) parameter, enabled per default with the Benefactor Circle add-on, copies signatures to an additional path.
 
 When this path is synchronized and made available on all user devices, for example via Microsoft OneDrive or Nextcloud, users have file-level access to signatures everywhere.
 
@@ -680,7 +680,7 @@ For each mailbox, templates are applied in a specific order:
 
 Within these template groups, templates are sorted according to the `SortOrder` and `SortCulture` parameters defined in the INI file used.
 
-Every template is only applied to the mailbox with the highest priority allowed to use it. This ensures that no mailbox with lower priority can overwrite a signature intended for a higher priority mailbox. You can influence this behavior with the [MailboxSpecificSignatureNames](/parameters#32-mailboxspecificsignaturenames) parameter or the [OutlookSignatureName](/details#61-relation-between-template-file-name-and-outlook-signature-name) template option in the INI file.
+Every template is only applied to the mailbox with the highest priority allowed to use it. This ensures that no mailbox with lower priority can overwrite a signature intended for a higher priority mailbox. You can influence this behavior with the [MailboxSpecificSignatureNames](/parameters#mailboxspecificsignaturenames) parameter or the [OutlookSignatureName](/details#61-relation-between-template-file-name-and-outlook-signature-name) template option in the INI file.
 
 OOF templates are only applied if the out-of-office assistant is currently disabled. If it is currently active or scheduled to be automatically activated in the future, OOF templates are not applied.  
 
@@ -773,7 +773,7 @@ Images are replaced when the `src` or `alt` property of the image tag contains a
 
 Be aware that Outlook does not support the full HTML feature set. For example:
 - Some (older) Outlook versions ignore the `width` and `height` properties for embedded images.  
-  To overcome this limitation, use images in a connected folder (such as `Test all default replacement variables.files` in the sample templates folder) and additionally set the Set-OutlookSignatures parameter '[EmbedImagesInHtml](/parameters#26-embedimagesinhtml)' to ``false`.
+  To overcome this limitation, use images in a connected folder (such as `Test all default replacement variables.files` in the sample templates folder) and additionally set the Set-OutlookSignatures parameter '[EmbedImagesInHtml](/parameters#embedimagesinhtml)' to ``false`.
 - Text and image formatting are limited, especially when HTML5 or CSS features are used.
 - Consider switching to DOCX templates for easier maintenance.
 
@@ -963,13 +963,13 @@ Simulation mode is enabled when the parameter `SimulateUser` is passed to the so
 
 Simulation mode is useful for content creators and admins, as it allows to simulate the behavior of the software and to inspect the resulting signature files before going live. Such a dry-run is not only very helpful for running tests in the production environment without affecting anyone, it also greatly supports problem analysis.
   
-In simulation mode, Outlook registry entries are not considered and nothing is changed in Outlook and Outlook on the web. The template files are handled just as during a real script run, but the signatures are only saved to the folder defined by the [AdditionalSignaturePath](/parameters#14-additionalsignaturepath) parameter.
+In simulation mode, Outlook registry entries are not considered and nothing is changed in Outlook and Outlook on the web. The template files are handled just as during a real script run, but the signatures are only saved to the folder defined by the [AdditionalSignaturePath](/parameters#additionalsignaturepath) parameter.
   
-[SimulateUser](/parameters#16-simulateuser) is a mandatory parameter for simulation mode. This value replaces the currently logged-in user. Use a logon name in the format 'Domain\User' or a Universal Principal Name (UPN, looks like an email address, but is not neecessarily one).
+[SimulateUser](/parameters#simulateuser) is a mandatory parameter for simulation mode. This value replaces the currently logged-in user. Use a logon name in the format 'Domain\User' or a Universal Principal Name (UPN, looks like an email address, but is not neecessarily one).
 
-[SimulateMailboxes](/parameters#17-simulatemailboxes) is optional for simulation mode, although highly recommended. It is a comma separated list of email addresses replacing the list of mailboxes otherwise gathered from the registry.
+[SimulateMailboxes](/parameters#simulatemailboxes) is optional for simulation mode, although highly recommended. It is a comma separated list of email addresses replacing the list of mailboxes otherwise gathered from the registry.
 
-[SimulateTime](/parameters#18-simulatetime) is optional for simulation mode. Simulating a certain time is helpful when time-based templates are used.
+[SimulateTime](/parameters#simulatetime) is optional for simulation mode. Simulating a certain time is helpful when time-based templates are used.
 
 An example: Simulate user a@example.com with the additional mailbox x@example.com, and save the results to 'c:\test':
 

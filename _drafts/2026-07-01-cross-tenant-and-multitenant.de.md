@@ -20,7 +20,7 @@ Set-OutlookSignatures hat diese Ära bereits beendet:
 - Mühelose Bereitstellung von Signaturen für Postfächer außerhalb des Heimatmandanten des Benutzers
 - Zugriff auf alle Eigenschaften, Ersatzvariablen und unsere exklusiven Benefactor Circle-Funktionen
 
-Mandantenübergreifende und mandantenübergreifende Implementierungen sind einfach zu realisieren – folgen Sie einfach den Anweisungen des Parameters „[GraphClientID](/parameters#4-graphclientid)“.
+Mandantenübergreifende und mandantenübergreifende Implementierungen sind einfach zu realisieren – folgen Sie einfach den Anweisungen des Parameters „[GraphClientID](/parameters#graphclientid)“.
 
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
