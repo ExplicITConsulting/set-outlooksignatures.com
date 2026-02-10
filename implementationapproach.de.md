@@ -352,7 +352,7 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
                     <td>🟡 Kein Mischen von Benutzer- und Postfachattributen</td>
                 </tr>
                 <tr>
-                    <td class="has-text-weight-bold">Outlook Add-In</td>
+                    <td class="has-text-weight-bold">Outlook Add-in</td>
                     <td>🟢 Nicht für on-prem Postfächer auf Android und iOS. Hochgrad anpassbar mit Regeln, eigenem Code und zur Laufzeit generierten Signaturen</td>
                     <td>🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
                     <td>🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
@@ -449,7 +449,7 @@ Die Berechnung und Verteilung der Signaturen kann auf drei Varianten erfolgen, d
 
 - Lokal auf den Clients. Das ist die bevorzugte Variante, da auf den Clients (Windows, Linux, macOS) die meiste brachliegende Rechenleistung zur Verfügung steht.
 - Auf einem oder mehreren Servern. Signaturen werden zentral vorberechnet und in die Postfächer der Benutzer geschrieben. Diese Variante erfordert hohe zentrale Rechenleistung und kann auf dem Client gesetzte Einstellungen nicht berücksichtigen. Dies ist die bevorzugte Variante für Postfächer von Benutzern, die Outlook nur im Web, auf iOS oder Android nutzen oder nur andere E-Mail-Clients verwenden.
-- Über das Outlook Add-In. Damit ist nicht nur der Zugriff auf Signaturen möglich, die über eine der anderen Varianten erstellt wurden, sondern es können auch davon unabhängige Signaturen erstellt und angehängt werden. Dieser Modus erlaubt zudem die Erstellung granularer Regeln auf Basis vieler Eigenschaften des aktuell bearbeiteten Elements (z. B. abhängig von Empfängern, Absender, Betreff und vielen weiteren Eigenschaften).
+- Über das Outlook Add-in. Damit ist nicht nur der Zugriff auf Signaturen möglich, die über eine der anderen Varianten erstellt wurden, sondern es können auch davon unabhängige Signaturen erstellt und angehängt werden. Dieser Modus erlaubt zudem die Erstellung granularer Regeln auf Basis vieler Eigenschaften des aktuell bearbeiteten Elements (z. B. abhängig von Empfängern, Absender, Betreff und vielen weiteren Eigenschaften).
 
 Alle drei Varianten können mit allen Arten von E-Mail-Verschlüsselung umgehen, und die Einbindung in den mit Hilfe von AppLocker und anderen Mechanismen wie z. B. Microsoft Purview Information Protection abgesicherten Client ist durch etablierte Maßnahmen (wie z. B. dem digitalen Signieren von PowerShell-Scripts) technisch und organisatorisch einfach möglich.
 

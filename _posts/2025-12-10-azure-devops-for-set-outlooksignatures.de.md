@@ -92,7 +92,7 @@ Die Entscheidung für das Outlook-Add-in, das auf einer statischen Azure-Web-App
 - Plattformunterstützung (macOS): Während Set-OutlookSignatures Roaming-Signaturen und deren Herunterladen/Hochladen für macOS Outlook unterstützt, gewährleistet das Add-in eine konsistente Funktionalität auf allen Plattformen. Wir müssen uns nicht um den Client kümmern, der für den Zugriff auf das Postfach verwendet wird.
 - Effizienz durch zentralisierte Bereitstellung: Das Add-in wird in Kombination mit dem Parameter „SimulateAndDeploy” verwendet. Mit dieser Methode kann die Azure DevOps-Pipeline die Signatur direkt in der Mailbox des Benutzers bereitstellen, ohne dass ein Skript oder eine Arbeit auf dem Clientgerät ausgeführt werden muss. Dadurch entfällt die Ausführung auf der Clientseite, was als elegantere und weniger arbeitsintensive Lösung angesehen wird.
 
-Das Add-In-Manifest wird über die Pipeline in der Azure Static Web App bereitgestellt, wobei die kostenlose Stufe genutzt wird.
+Das Add-in-Manifest wird über die Pipeline in der Azure Static Web App bereitgestellt, wobei die kostenlose Stufe genutzt wird.
 ```
 - task: AzureStaticWebApp@0
   inputs:

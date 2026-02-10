@@ -587,8 +587,8 @@ If you enforce setting sensitivity labels:
   - It is recommended to use a label without encryption or watermarks, often named 'General' or 'Public':
     - Outlook signatures and out-of-office replies usually only contain information which is intended to be shared publicly by design.
     - The templates themselves usually do not contain sensitive data, only placeholder variables.
-    - Documents labeled this way can be opened without having the Information Protection Add-In for Office installed. This is useful when not all of your Set-OutlookSignatures users are also Information Protection users and have the Add-In installed.
-  - When using a template with an other sensitivity label, every client Set-OutlookSignatures runs on needs the Information Protection Add-In for Office installed, and the user running Set-OutlookSignatures needs permission to access the protected file.
+    - Documents labeled this way can be opened without having the Information Protection add-in for Office installed. This is useful when not all of your Set-OutlookSignatures users are also Information Protection users and have the add-in installed.
+  - When using a template with an other sensitivity label, every client Set-OutlookSignatures runs on needs the Information Protection add-in for Office installed, and the user running Set-OutlookSignatures needs permission to access the protected file.
   - The RTF signature file will be created with the same sensitivity label as the template. This is only relevant for the user composing a new email in RTF format, as the composing user needs to be able to open the RTF document and copy the content from it - the actual signature in the email does not have Information Protection applied.
   - The .HTM and .TXT signature files will be created without a sensitivity label, as these documents cannot be protected by Microsoft Information Protection.
   - If you do not set a sensitivity label, Word will prompt the user to choose one each time the unlabeled local copy of a template is converted to .htm, .rtf or .txt.

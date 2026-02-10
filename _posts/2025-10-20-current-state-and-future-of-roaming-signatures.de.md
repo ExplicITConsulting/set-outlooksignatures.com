@@ -33,7 +33,7 @@ Wenn Sie Set-OutlookSignatures nicht auf Ihren Clients laufen lassen können ode
 ## Und wie sieht es mit der mobilen Unterstützung aus?
 Derzeit ist dies ein Problem, das oft eine teure Umleitung auf der Serverseite erfordert, nur um eine Signatur anzuwenden. Sobald Microsoft jedoch eine offizielle API veröffentlicht, wird sich dies ändern.
 
-In der Zwischenzeit schließt das [Outlook Add-In](/outlookaddin), Teil des [Benefactor Circle Add-ons](/benefactorcircle), diese Lücke - und mehr - nicht nur auf Android und iOS, sondern auf allen von Outlook unterstützen Plattformen.
+In der Zwischenzeit schließt das [Outlook Add-in](/outlookaddin), Teil des [Benefactor Circle Add-ons](/benefactorcircle), diese Lücke - und mehr - nicht nur auf Android und iOS, sondern auf allen von Outlook unterstützen Plattformen.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, Sie kennenzulernen!

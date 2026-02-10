@@ -47,7 +47,7 @@ Mit Set-OutlookSignatures können Signaturen und Abwesenheitsnotizen:
 - Als **[Standard-Abwesenheitsnotiz](/details#71-allowed-tags)**¹ für interne oder externe Empfänger festgelegt werden.
 - Im **[Outlook on the web](/parameters#setcurrentuseroutlookwebsignature)**¹ des angemeldeten Benutzer gesetzt werden, und auch als **[Roaming Signatures](/parameters#mirrorcloudsignatures)**¹ mit der Cloud synchronisiert werden (Linux/macOS/Windows, klassisches and neues Outlook¹).
 - Signaturen können rein zental verwaltet werden¹, oder **[parallel zu vom Benutzer erstellten Signaturen](/parameters#deleteusercreatedsignatures)** bestehen.
-- Mit dem **[Outlook Add-In](/outlookaddin)**¹ automatisch zu neuen E-Mails, Antworten und Weiterleitungen, sowie zu Terminen hinzugefügt werden.
+- Mit dem **[Outlook Add-in](/outlookaddin)**¹ automatisch zu neuen E-Mails, Antworten und Weiterleitungen, sowie zu Terminen hinzugefügt werden.
 - In einen **[zusätzlichen Ordner](/parameters#additionalsignaturepath)**¹ kopiert werden, um den einfachen Zugriff auf Signaturen auf Mobilgeräten oder zur Verwendung mit anderen E-Mail-Clients und Apps als Outlook zu ermöglichen: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und andere.
 - In einem **[E-Mail-Entwurf mit allen verfügbaren Signaturen](/parameters#signaturecollectionindrafts)**¹ in HTML und reinem Text für den einfachen Zugriff in E-Mail-Clients ohne Signatur-API gesammelt werden.
 - **[Schreibgeschützt](/details#71-allowed-tags)** werden (nur klassisches Outlook für Windows).
@@ -287,7 +287,7 @@ Nach einer bestimmten Nutzungsdauer wird der **[dezente Hinweis 'Free and open-s
                     <td>🟡 Kein Mischen von Benutzer- und Postfachattributen</td>
                 </tr>
                 <tr>
-                    <td class="has-text-weight-bold">Outlook Add-In</td>
+                    <td class="has-text-weight-bold">Outlook Add-in</td>
                     <td>🟢 Nicht für on-prem Postfächer auf Android und iOS. Hochgrad anpassbar mit Regeln, eigenem Code und zur Laufzeit generierten Signaturen</td>
                     <td>🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
                     <td>🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>

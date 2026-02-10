@@ -440,7 +440,7 @@ Signature management is centralized and can be fully or partially delegated, e.g
 Signature generation and distribution can be done in three combinable ways:
 - Locally on clients: This is the preferred method, as most unused computing power is available on clients (Windows, Linux, macOS).
 - On one or more servers: Signatures are pre-generated centrally and written into users' mailboxes. This method requires high central computing power and cannot account for client-side settings. It is the preferred method for users who only use Outlook on the web, iOS, Android, or other email clients.
-- Via the Outlook Add-In: This allows access to signatures created by the other methods, and also enables independent signature creation and insertion. This mode supports granular rules based on many properties of the current item (e.g., recipients, sender, subject, and more).
+- Via the Outlook add-in: This allows access to signatures created by the other methods, and also enables independent signature creation and insertion. This mode supports granular rules based on many properties of the current item (e.g., recipients, sender, subject, and more).
 
 All three methods support all types of email encryption, and integration into clients secured with AppLocker and other mechanisms (e.g., Microsoft Purview Information Protection) is technically and organizationally straightforward using established practices such as digitally signed PowerShell scripts.
 
