@@ -1,61 +1,5 @@
 #Requires -Version 7.5
 
-# --- Configuration ---
-$SitemapUrl = 'https://set-outlooksignatures.com/sitemap.xml'
-$StartUrl = 'https://set-outlooksignatures.com'
-
-# --- Initialization ---
-# This map stores: "Link" = @("Page1", "Page2")
-$LinkSourceMap = @{}
-$PagesChecked = New-Object 'System.Collections.Generic.HashSet[string]'
-$Queue = New-Object 'System.Collections.Generic.Queue[string]'
-$PageContentCache = @{}
-
-if ($StartUrl) {
-    $StartDomain = ([uri]$StartUrl).Host
-} elseif ($SitemapUrl) {
-    $StartDomain = ([uri]$SitemapUrl).Host
-} else {
-    Write-Host 'You must specify at least a SitemapUrl or a StartUrl.' -ForegroundColor Red
-    exit 1
-}
-
-# Helper function to track which page links to what
-function Add-LinkMapping {
-    param($Link, $SourcePage)
-    if (-not $LinkSourceMap.ContainsKey($Link)) {
-        $LinkSourceMap[$Link] = New-Object 'System.Collections.Generic.HashSet[string]'
-    }
-    $null = $LinkSourceMap[$Link].Add($SourcePage)
-}
-
-if ($StartUrl) {
-    $Queue.Enqueue($StartUrl)
-}
-
-# --- Sitemap Processing ---
-if ($SitemapUrl) {
-    try {
-        $response = Invoke-WebRequest -Uri $SitemapUrl -UseBasicParsing
-        [xml]$Sitemap = $response.Content
-
-        $ns = New-Object System.Xml.XmlNamespaceManager($Sitemap.NameTable)
-        $ns.AddNamespace('ns', 'http://www.sitemaps.org/schemas/sitemap/0.9')
-        $ns.AddNamespace('xhtml', 'http://www.w3.org/1999/xhtml')
-
-        $locLinks = $Sitemap.SelectNodes('//ns:loc', $ns) | Select-Object -ExpandProperty '#text'
-        $xhtmlLinks = $Sitemap.SelectNodes('//xhtml:link', $ns) | ForEach-Object { $_.getAttribute('href') }
-
-        ($locLinks + $xhtmlLinks) | Select-Object -Unique | ForEach-Object {
-            $Queue.Enqueue($_)
-            Add-LinkMapping -Link $_ -SourcePage 'Sitemap'
-        }
-    } catch {
-        Write-Host "Failed to download or parse sitemap: $($_.Exception.Message)" -ForegroundColor Yellow
-    }
-}
-
-Add-Type -AssemblyName System.Web
 
 function GetLinksFromWebsite {
     param ([Parameter(Mandatory = $true)][string]$Url)
@@ -79,6 +23,70 @@ function GetLinksFromWebsite {
         return $null
     }
 }
+
+
+# Helper function to track which page links to what
+function Add-LinkMapping {
+    param($Link, $SourcePage)
+    if (-not $LinkSourceMap.ContainsKey($Link)) {
+        $LinkSourceMap[$Link] = New-Object 'System.Collections.Generic.HashSet[string]'
+    }
+    $null = $LinkSourceMap[$Link].Add($SourcePage)
+}
+
+
+Add-Type -AssemblyName System.Web
+
+
+# --- Configuration ---
+$SitemapUrl = 'https://set-outlooksignatures.com/sitemap.xml'
+$StartUrl = 'https://set-outlooksignatures.com'
+
+
+# --- Initialization ---
+# This map stores: "Link" = @("Page1", "Page2")
+$LinkSourceMap = @{}
+$PagesChecked = New-Object 'System.Collections.Generic.HashSet[string]'
+$Queue = New-Object 'System.Collections.Generic.Queue[string]'
+$PageContentCache = @{}
+
+if ($StartUrl) {
+    $StartDomain = ([uri]$StartUrl).Host
+} elseif ($SitemapUrl) {
+    $StartDomain = ([uri]$SitemapUrl).Host
+} else {
+    Write-Host 'You must specify at least a SitemapUrl or a StartUrl.' -ForegroundColor Red
+    exit 1
+}
+
+
+if ($StartUrl) {
+    $Queue.Enqueue($StartUrl)
+}
+
+
+# --- Sitemap Processing ---
+if ($SitemapUrl) {
+    try {
+        $response = Invoke-WebRequest -Uri $SitemapUrl -UseBasicParsing
+        [xml]$Sitemap = $response.Content
+
+        $ns = New-Object System.Xml.XmlNamespaceManager($Sitemap.NameTable)
+        $ns.AddNamespace('ns', 'http://www.sitemaps.org/schemas/sitemap/0.9')
+        $ns.AddNamespace('xhtml', 'http://www.w3.org/1999/xhtml')
+
+        $locLinks = $Sitemap.SelectNodes('//ns:loc', $ns) | Select-Object -ExpandProperty '#text'
+        $xhtmlLinks = $Sitemap.SelectNodes('//xhtml:link', $ns) | ForEach-Object { $_.getAttribute('href') }
+
+        ($locLinks + $xhtmlLinks) | Select-Object -Unique | ForEach-Object {
+            $Queue.Enqueue($_)
+            Add-LinkMapping -Link $_ -SourcePage 'Sitemap'
+        }
+    } catch {
+        Write-Host "Failed to download or parse sitemap: $($_.Exception.Message)" -ForegroundColor Yellow
+    }
+}
+
 
 # --- Crawl Loop ---
 Write-Host "Crawling $StartDomain..."
@@ -111,6 +119,7 @@ while ($Queue.Count -gt 0) {
         }
     }
 }
+
 
 # --- Validation Logic ---
 Write-Host
@@ -157,17 +166,18 @@ foreach ($link in $LinkSourceMap.Keys) {
         })
 }
 
+
 # --- Final Results ---
 Write-Host
-Write-Host 'Broken Links'
-$LinkResults | Where-Object { (-not $_.BasePageValid) -or ($_.AnchorFound -eq $false) } | ForEach-Object {
-    Write-Host "  $($_.FullLink)"
+Write-Host 'Broken links'
+$LinkResults | Where-Object { (-not $_.BasePageValid) -or ($_.AnchorFound -eq $false) } | Sort-Object -Property FullLink | ForEach-Object {
+    Write-Host "  $($_.FullLink)" -ForegroundColor Yellow
     Write-Host "    Status code: $($_.StatusCode)"
     Write-Host "    BasePageValid: $($_.BasePageValid)"
     Write-Host "    AnchorFound: $($_.AnchorFound)"
     Write-Host "    FoundOnPages: $($_.FoundOnPages.Count)"
     if ($_.FoundOnPages) {
-        $_.FoundOnPages | ForEach-Object {
+        $_.FoundOnPages | Sort-Object | ForEach-Object {
             Write-Host "      $($_)"
         }
     }
