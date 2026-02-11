@@ -26,7 +26,7 @@ Hier sind einige Möglichkeiten, wie Sie Ihre Signaturen wirkungsvoller gestalte
 Lassen Sie Ihre Signatur das ganze Jahr über widerspiegeln, was für Ihr Unternehmen am wichtigsten ist.
 
 Die folgenden Links könnten Sie interessieren:
-- [Zulässige Tags](/details#71-allowed-tags) für die Zuweisung von Vorlagen
+- [Zulässige Tags](/details#allowed-tags) für die Zuweisung von Vorlagen
 - [Wie kann ich Banner und andere Bilder in Signaturen abwechselnd anzeigen?](/faq#how-do-i-alternate-banners-and-other-images-in-signatures)
 
 

@@ -20,7 +20,7 @@ Testumgebungen bieten selten Sicherheit. Selbst wenn sie verfügbar sind, bleibe
 - Spiegelt die Testumgebung wirklich die Produktionsumgebung wider?
 - Wie kann ich mich als anderer Benutzer ausgeben, ohne dabei große Hürden nehmen zu müssen?
 
-Set-OutlookSignatures verfügt über einen [Simulationsmodus](/details#12-simulation-mode), der das Rätselraten überflüssig macht:
+Set-OutlookSignatures verfügt über einen [Simulationsmodus](/details#simulation-mode), der das Rätselraten überflüssig macht:
 - Testen Sie sicher in Ihrer Produktionsumgebung.
 - Simulieren Sie jeden Benutzer mit jeder beliebigen Postfachkonfiguration.
 - Sie müssen weder den Benutzer einbeziehen noch zusätzliche Berechtigungen anfordern.

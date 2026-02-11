@@ -138,7 +138,7 @@ With every new release of Set-OutlookSignatures, [Benefactor Circle](/benefactor
 With every new release of the Outlook add-in, you need to update your add-in deployment (sideloading M365 Centralized Deployment, M365 Integrated Apps) so that Outlook can download and use the newest code.
 
 It is recommended to use use two separate dedicated hostnames at least: One for testing and one for production, such as "https://outlookaddin01.example.com" and "https://outlookaddin01test.example.com".  
-You can also have multiple different instances of the Outlook add-in in production, for example when you want to configure the add-in differently depending on how different user groups work with email - see the '[Architecture considerations](https://set-outlooksignatures.com/details#3-architecture-considerations)' chapter of the 'Technical details, requirements and usage' document for an example.  
+You can also have multiple different instances of the Outlook add-in in production, for example when you want to configure the add-in differently depending on how different user groups work with email - see the '[Architecture considerations](https://set-outlooksignatures.com/details#architecture-considerations)' chapter of the 'Technical details, requirements and usage' document for an example.  
 Each instance needs a dedicated hostname. Make sure that each mailbox only uses one instance of the add-in, never more.
 
 To configure the add-in and deploy it to your web server:
