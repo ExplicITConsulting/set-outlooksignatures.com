@@ -36,33 +36,33 @@ For a quick overview, check our <a href="#feature-comparison">feature comparison
 
 ## Features {#features}
 With Set-OutlookSignatures and the optional Benefactor Circle add-on, signatures and out-of-office replies can be:
-- Generated from **[templates in DOCX or HTML](/details#6-signature-and-oof-template-file-format)** file format.
-- Customized with a **[broad range of variables](/details#9-replacement-variables)**, including **[photos and images](/details#91-photos-account-pictures-user-image-from-active-directory-or-entra-id)**, from Entra ID, Active Directory and other sources.
-- Variables are available for the **[currently logged-on user, the current mailbox, and their managers](/details#9-replacement-variables)**.
+- Generated from **[templates in DOCX or HTML](/details#signature-and-oof-template-file-format)** file format.
+- Customized with a **[broad range of variables](/details#replacement-variables)**, including **[photos and images](/details#photos-account-pictures-user-image-from-active-directory-or-entra-id)**, from Entra ID, Active Directory and other sources.
+- Variables are available for the **[currently logged-on user, the current mailbox, and their managers](/details#replacement-variables)**.
 - Designed for **[barrier-free accessibility](/blog/2025/12/03/barrier-free-email-signatures-and-out-of-office-replies)** with custom link and image descriptions for screen readers and comparable tools.
-- Applied to all **mailboxes (including [shared mailboxes](/benefactorcircle#key-features)¹)**, specific **[mailbox groups](/details#7-template-tags-and-ini-files)**, specific **[email addresses](/details#7-template-tags-and-ini-files)** (including alias and secondary addresses), or specific **[user and mailbox properties](/details#7-template-tags-and-ini-files)**, for **every mailbox across all Outlook profiles (Outlook, [New Outlook](/benefactorcircle#key-features)¹, [Outlook on the web](/benefactorcircle#key-features)¹)**, including **[automapped and additional mailboxes](/parameters#signaturesforautomappedandadditionalmailboxes)**¹.
-- Created with different names from the same template, **[one template can be used for many mailboxes](/details#72-how-to-work-with-ini-files)**.
-- Assigned **[time ranges](/details#71-allowed-tags)**¹ within which they are valid.
-- Set as **[default signature](/details#71-allowed-tags)** for new emails, or for replies and forwards (signatures only).
-- Set as **[default OOF message](/details#71-allowed-tags)**¹ for internal or external recipients (OOF messages only).
+- Applied to all **mailboxes (including [shared mailboxes](/benefactorcircle#key-features)¹)**, specific **[mailbox groups](/details#template-tags-and-ini-files)**, specific **[email addresses](/details#template-tags-and-ini-files)** (including alias and secondary addresses), or specific **[user and mailbox properties](/details#template-tags-and-ini-files)**, for **every mailbox across all Outlook profiles (Outlook, [New Outlook](/benefactorcircle#key-features)¹, [Outlook on the web](/benefactorcircle#key-features)¹)**, including **[automapped and additional mailboxes](/parameters#signaturesforautomappedandadditionalmailboxes)**¹.
+- Created with different names from the same template, **[one template can be used for many mailboxes](/details#how-to-work-with-ini-files)**.
+- Assigned **[time ranges](/details#allowed-tags)**¹ within which they are valid.
+- Set as **[default signature](/details#allowed-tags)** for new emails, or for replies and forwards (signatures only).
+- Set as **[default OOF message](/details#allowed-tags)**¹ for internal or external recipients (OOF messages only).
 - Set in **[Outlook on the web](/parameters#setcurrentuseroutlookwebsignature)**¹ for the currently logged-in user, including mirroring signatures to the cloud as **[roaming signatures](/parameters#mirrorcloudsignatures)**¹ (Linux/macOS/Windows, Classic and New Outlook¹).
 - Signature can be centrally managed only¹, or **[exist along user-created signatures](/parameters#deleteusercreatedsignatures)**.
 - Automatically added to new emails, reply emails and appointments with the **[Outlook add-in](/outlookaddin)**¹.
 - Copied to an **[additional path](/parameters#additionalsignaturepath)**¹ for easy access to signatures on mobile devices or for use with email clients and apps besides Outlook: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others.
 - Create an **[email draft containing all available signatures](/parameters#signaturecollectionindrafts)** in HTML and plain text for easy access in mail clients that do not have a signatures API.
-- **[Write protected](/details#71-allowed-tags)** (Outlook on Windows signatures only).
+- **[Write protected](/details#allowed-tags)** (Outlook on Windows signatures only).
 
-Set-OutlookSignatures can be **[run by users on Windows, Linux and macOS clients, including shared devices and terminal servers - or on a central system with a service account](/details#3-architecture-considerations)**¹.<br>On clients, it can run as part of the logon script, as scheduled task, or on user demand via a desktop icon, start menu entry, shortcut or any other way of starting a program - **[whatever your software deployment mechanism allows](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
+Set-OutlookSignatures can be **[run by users on Windows, Linux and macOS clients, including shared devices and terminal servers - or on a central system with a service account](/details#architecture-considerations)**¹.<br>On clients, it can run as part of the logon script, as scheduled task, or on user demand via a desktop icon, start menu entry, shortcut or any other way of starting a program - **[whatever your software deployment mechanism allows](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
 
 **[Sample templates](/quickstart#customize-use-your-own-templates)** for signatures and OOF messages demonstrate many features and are provided as .docx and .htm files.
 
 **[Phone numbers](/faq#format-phone-numbers)** and **[postal addresses](/faq#format-postal-addresses)** can be formatted by international standards or custom requirements.
 
-**[Simulation mode](/details#12-simulation-mode)** allows content creators and admins to simulate the behavior of the software for a specific user at a specific point in time, and to inspect the resulting signature files before going live.
+**[Simulation mode](/details#simulation-mode)** allows content creators and admins to simulate the behavior of the software for a specific user at a specific point in time, and to inspect the resulting signature files before going live.
 
-**[SimulateAndDeploy](/details#31-creating-signatures-and-out-of-office-replies)**¹ allows to deploy signatures and out-of-office replies **[without any client deployment or end user interaction](/details#31-creating-signatures-and-out-of-office-replies)**. Signatures are saved to the mailbox as roaming signatures (Exchange Online mailboxes only) and are also made available for the [Outlook add-in](/outlookaddin) (all Exchange mailboxes).
+**[SimulateAndDeploy](/details#creating-signatures-and-out-of-office-replies)**¹ allows to deploy signatures and out-of-office replies **[without any client deployment or end user interaction](/details#creating-signatures-and-out-of-office-replies)**. Signatures are saved to the mailbox as roaming signatures (Exchange Online mailboxes only) and are also made available for the [Outlook add-in](/outlookaddin) (all Exchange mailboxes).
 
-It works **[on premises, in hybrid and in cloud-only environments](/details#11-hybrid-and-cloud-only-support)**. The software is **[designed to work in big and complex environments](/implementationapproach)**: Exchange resource forest scenarios, AD trusts, multi-level AD subdomains, cross-tenant and multitenant scenarios.  
+It works **[on premises, in hybrid and in cloud-only environments](/details#hybrid-and-cloud-only-support)**. The software is **[designed to work in big and complex environments](/implementationapproach)**: Exchange resource forest scenarios, AD trusts, multi-level AD subdomains, cross-tenant and multitenant scenarios.  
 
 All **[national clouds are supported](/parameters#cloudenvironment)**: Public (AzurePublic), US Government L4 (AzureUSGovernment), US Government L5 (AzureUSGovernment DoD), China (AzureChinaCloud operated by 21Vianet) - sovereign clouds Bleu, Delos, GovSG, and more coming soon.
 

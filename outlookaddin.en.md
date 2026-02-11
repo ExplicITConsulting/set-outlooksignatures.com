@@ -13,28 +13,28 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 ## The Outlook add-in<!-- omit in toc -->
-- [1. Overview](#1-overview)
-- [2. Usage](#2-usage)
-- [3. Requirements](#3-requirements)
-  - [3.1. Outlook clients](#31-outlook-clients)
-  - [3.2. Web server and domain](#32-web-server-and-domain)
-  - [3.3. Set-OutlookSignatures](#33-set-outlooksignatures)
-  - [3.4. Entra ID app](#34-entra-id-app)
-- [4. Configuration and deployment to the web server](#4-configuration-and-deployment-to-the-web-server)
-- [5. Deployment to mailboxes](#5-deployment-to-mailboxes)
-  - [5.1. Individual installation through users](#51-individual-installation-through-users)
-  - [5.2. Microsoft 365 Centralized Deployment or Integrated Apps](#52-microsoft-365-centralized-deployment-or-integrated-apps)
-  - [5.3. Clear the Outlook add-in cache](#53-clear-the-outlook-add-in-cache)
-- [6. Remarks](#6-remarks)
-  - [6.1. General](#61-general)
-  - [6.2. Outlook on Android](#62-outlook-on-android)
-  - [6.3. Outlook on iOS](#63-outlook-on-ios)
-  - [6.4. Outlook on Mac](#64-outlook-on-mac)
-  - [6.5. Outlook on the web on-prem](#65-outlook-on-the-web-on-prem)
-  - [6.6. Classic Outlook on Windows](#66-classic-outlook-on-windows)
+- [Overview](#overview)
+- [Usage](#usage)
+- [Requirements](#requirements)
+  - [Outlook clients](#outlook-clients)
+  - [Web server and domain](#web-server-and-domain)
+  - [Set-OutlookSignatures](#set-outlooksignatures)
+  - [Entra ID app](#entra-id-app)
+- [Configuration and deployment to the web server](#configuration-and-deployment-to-the-web-server)
+- [Deployment to mailboxes](#deployment-to-mailboxes)
+  - [Individual installation through users](#individual-installation-through-users)
+  - [Microsoft 365 Centralized Deployment or Integrated Apps](#microsoft-365-centralized-deployment-or-integrated-apps)
+  - [Clear the Outlook add-in cache](#clear-the-outlook-add-in-cache)
+- [Remarks](#remarks)
+  - [General](#general)
+  - [Outlook on Android](#outlook-on-android)
+  - [Outlook on iOS](#outlook-on-ios)
+  - [Outlook on Mac](#outlook-on-mac)
+  - [Outlook on the web on-prem](#outlook-on-the-web-on-prem)
+  - [Classic Outlook on Windows](#classic-outlook-on-windows)
 
 
-## 1. Overview
+## Overview
 With a [Benefactor Circle](/benefactorcircle) license, you also have access to the Set-OutlookSignatures add-in for Outlook.
 
 The add-in makes signatures - created by Set-OutlookSignatures in client or SimulateAndDeploy mode - available in Outlook on iOS and Outlook on Android, while supporting all Outlook editions across platforms.
@@ -54,7 +54,7 @@ The Outlook add-in is self-hosted by you. Compared to using a solution hosted by
 Outlook downloads the add-in code and executes it locally, in the security context of the mailbox. There are no middleware or proxy servers involved. Data is only transferred between your Outlook client, your authentication system (Entra ID for Exchange Online) and your mailbox servers.
 
 
-## 2. Usage
+## Usage
 From an end user perspective, basically nothing needs to be done or configured: When writing a new email, answering an email, or creating a new appointment, the add-in automatically adds the corresponding default signature.
 
 For advanced usage and debug logging, a taskpane is available in all Outlook versions supporting this feature.
@@ -78,8 +78,8 @@ The taskpane can be accessed through:
   - These platforms do not support taskpanes for new mails, reply mails and appointments.
   - Read mail: Three dots ("…" or "⋮")in the email header
 
-## 3. Requirements
-### 3.1. Outlook clients
+## Requirements
+### Outlook clients
 The Outlook add-in works for all Outlook clients that are supported by Microsoft. See the '`Remarks`' chapter in this section for possible limitations that may apply due to platform specific Microsoft restrictions.
 
 The add-in always runs in the context of the user that is used by Outlook to access a mailbox. Delegate scenarios are supported. This means the following:
@@ -87,7 +87,7 @@ The add-in always runs in the context of the user that is used by Outlook to acc
 - When user A has added a mailbox with separate credentials, such as adding shared mailbox B using shared mailbox B's credentials, the add-in installed in user A's mailbox will not work for shared mailbox B. Shared mailbox B needs to have the add-in installed, too, and the add-in only has access to signature information that the Benefactor Circle add-on or the SimulateAndDeploy mode of Set-OutlookSignatures has written to the shared mailbox B. For shared mailbox B, delegate scenarios are supported, too.
 
 
-### 3.2. Web server and domain
+### Web server and domain
 Whatever web server you choose, the requirements are low:
 - Reachable from mobile devices via the public internet.
 - Use a dedicated host name ("https://outlookaddin01.example.com"), do not use subdirectories ("https://addins.example.com/outlook01").
@@ -99,11 +99,11 @@ Whatever web server you choose, the requirements are low:
 We recommend to use use two separate dedicated hostnames, such as "https://outlookaddin01.example.com" and "https://outlookaddin01test.example.com". This way, you can use one for testing and one for production. For tests, sideloading is the preferred method, while Microsoft 365 Centralized Deployment or Integrated Apps are ideal for mass deployment.
 
 
-### 3.3. Set-OutlookSignatures
+### Set-OutlookSignatures
 The Outlook add-in can add existing signatures, but is not able to create them itself on the fly. The Benefactor Circle add-on prepares signature data in a way that it can be used by the Outlook add-in.
 
 
-### 3.4. Entra ID app
+### Entra ID app
 When mailboxes are hosted in Exchange Online, the Outlook add-in needs an Entra ID app to access the mailbox.
 
 Creating a separate Entra ID app for the Outlook add-in is strongly recommended over modifying an existing app.
@@ -132,13 +132,13 @@ If you want to create the Entra ID app manually, the required minimum settings f
 - Grant admin consent for all permissions
 
 
-## 4. Configuration and deployment to the web server
+## Configuration and deployment to the web server
 With every new release of Set-OutlookSignatures, [Benefactor Circle](/benefactorcircle) members not only receive an updated Benefactor Circle license file, but also an updated Outlook add-in.
 
 With every new release of the Outlook add-in, you need to update your add-in deployment (sideloading M365 Centralized Deployment, M365 Integrated Apps) so that Outlook can download and use the newest code.
 
 It is recommended to use use two separate dedicated hostnames at least: One for testing and one for production, such as "https://outlookaddin01.example.com" and "https://outlookaddin01test.example.com".  
-You can also have multiple different instances of the Outlook add-in in production, for example when you want to configure the add-in differently depending on how different user groups work with email - see the '[Architecture considerations](https://set-outlooksignatures.com/details#3-architecture-considerations)' chapter of the 'Technical details, requirements and usage' document for an example.  
+You can also have multiple different instances of the Outlook add-in in production, for example when you want to configure the add-in differently depending on how different user groups work with email - see the '[Architecture considerations](https://set-outlooksignatures.com/details#architecture-considerations)' chapter of the 'Technical details, requirements and usage' document for an example.  
 Each instance needs a dedicated hostname. Make sure that each mailbox only uses one instance of the add-in, never more.
 
 To configure the add-in and deploy it to your web server:
@@ -172,7 +172,7 @@ To configure the add-in and deploy it to your web server:
 When the '`manifest.xml`' file, the configuration or another part of the Outlook add-in changes, you not only need to update the files on the web server, you also need to tell your mailboxes that an updated version or configuration is available and must be downloaded from the web server. The "[Deployment to mailboxes](#5-deployment-to-mailboxes)" chapter describes the available deployment options for add-ins.
 
 
-## 5. Deployment to mailboxes
+## Deployment to mailboxes
 When the '`manifest.xml`' file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. Due to caching mechanisms, especially in Classic Outlook on Windows, this does not happen automatically.
 
 This is required when:
@@ -185,7 +185,7 @@ You can choose from three different ways to deploy the Outlook add-in to your ma
 
 For tests, sideloading is the preferred method, while Microsoft 365 Centralized Deployment or Integrated Apps are ideal for mass deployment.
 
-### 5.1. Individual installation through users
+### Individual installation through users
 This method is also called sideloading. It is ideal for test scenarios.
 
 For mailboxes in Exchange Online:
@@ -210,7 +210,7 @@ Do not use the URLs mentioned above to remove custom add-ins, as this fails most
 - Remove the custom add-in in Outlook on Android or Outlook on iOS.
 
 
-### 5.2. Microsoft 365 Centralized Deployment or Integrated Apps
+### Microsoft 365 Centralized Deployment or Integrated Apps
 Microsoft 365 Centralized Deployment and deployment via Integrated Apps both provide the following benefits:
 - An admin can deploy and assign an Outlook add-in directly to a mailbox, to multiple mailboxes via a group, or to ever mailbox in the organization.
 - When Outlook starts, it automatically downloads the assigned add-in. If the add-in supports it, it appears in Outlooks ribbon.
@@ -223,7 +223,7 @@ If the Integrated Apps feature is not yet available in your sovereign and govern
 - [Microsoft 365 Centralized Deployment](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide)
 
 
-### 5.3. Clear the Outlook add-in cache
+### Clear the Outlook add-in cache
 When testing add-ins, especially when using the sideloading method, Outlook sometimes messes up its cache or takes too long updating it.
 
 To avoid problems of all kinds, it is a good idea to manually clear the add-in cache in test scenarios. This forces Outlook to re-download the add-in.
@@ -242,8 +242,8 @@ To avoid problems of all kinds, it is a good idea to manually clear the add-in c
   - Open the Outlook app and wait a few minutes until the add-ins are reloaded.
 
 
-## 6. Remarks
-### 6.1. General
+## Remarks
+### General
 - Microsoft is actively blocking access to roaming signatures for Outlook add-ins. The add-in will be updated when this block has been removed. In the meantime, the add-in has access to the data of the last run of Set-OutlookSignatures v4.14.0 and higher.
 - The Microsoft APIs only allow access to online content. There is no way to access offline mailbox content or the file system. This means that the Outlook add-in only works when Outlook has an online connection to the user's mailbox.
 - The easiest way to test the add-in and its basic functionality is to use the taskpane (see 'Usage' for details). For specific debugging on Android and iOS, you need to use the DEBUG option in '`run_before_deployment.ps1`'.
@@ -255,30 +255,30 @@ To avoid problems of all kinds, it is a good idea to manually clear the add-in c
   - Use the DEBUG option in '`run_before_deployment.ps1`' to find out if the root cause is in Outlook or in the add-in. When there is no debug output, the launch event it not triggered by Outlook. When there is debug output, it will show where and with which error the add-in fails.
 
 
-### 6.2. Outlook on Android
+### Outlook on Android
 - Only mailboxes hosted in Exchange Online are supported. This is because Microsoft's mobile APIs do not allow programmatic access to mailboxes hosted on-prem.
 - Setting the signature on new appointments is not yet supported by Microsoft.
 - The Microsoft mobile APIs do not allow an add-in to show a taskpane when a new email, reply email or an appointment is created.
 
 
-### 6.3. Outlook on iOS
+### Outlook on iOS
 - Only mailboxes hosted in Exchange Online are supported. This is because Microsoft's mobile APIs do not allow programmatic access to mailboxes hosted on-prem.
 - Setting the signature on new appointments is not yet supported by Microsoft.
 - The Microsoft mobile APIs do not allow an add-in to show a taskpane when a new email, reply email or an appointment is created.
 - Microsoft will add support for iPads later (see [here](https://learn.microsoft.com/en-us/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets?view=common-js-preview)).
 
 
-### 6.4. Outlook on Mac
+### Outlook on Mac
 - Use the New Outlook on Mac whenever possible, as Classic Outlook on Mac (a.k.a Legacy Outlook on Mac) is at the end of its lifecycle.
 - While the Microsoft APIs required for the Set-OutlookSignatures Outlook add-in are available in Classic Outlook on Mac, they are very unstable. Therefore, we only offer best-effort support for the add-in on Classic Outlook on Mac.
 
 
-### 6.5. Outlook on the web on-prem
+### Outlook on the web on-prem
 - Launch events are not supported by Microsoft APIs, so only the taskpane works.
 - Images are replaced with their alternate description. This will work as soon as Microsoft fixes a bug in their office.js API framework. If you are interested in a workaround, please let us know!
 
 
-### 6.6. Classic Outlook on Windows
+### Classic Outlook on Windows
 - Things work fine for mailboxes in Exchange Online, but the same Microsoft APIs seem to be unstable for on-prem mailboxes, especially regarding launch events (adding signatures automatically). When in doubt, use the taskpane.
 - For Exchange Online mailboxes, the version used must support Nested App Authentication (see [here](https://learn.microsoft.com/en-us/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets)).
   - Microsoft disabled legacy Exchange Online tokens, and they cannot be re-enabled since October 2025 due to security reasons.
