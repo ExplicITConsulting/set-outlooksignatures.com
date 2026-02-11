@@ -2,13 +2,13 @@
 
 # --- Configuration ---
 $SitemapUrl = 'https://set-outlooksignatures.com/sitemap.xml'
-$StartUrl    = 'https://set-outlooksignatures.com'
+$StartUrl = 'https://set-outlooksignatures.com'
 
 # --- Initialization ---
 # This map stores: "Link" = @("Page1", "Page2")
-$LinkSourceMap = @{} 
-$PagesChecked  = New-Object 'System.Collections.Generic.HashSet[string]'
-$Queue         = New-Object 'System.Collections.Generic.Queue[string]'
+$LinkSourceMap = @{}
+$PagesChecked = New-Object 'System.Collections.Generic.HashSet[string]'
+$Queue = New-Object 'System.Collections.Generic.Queue[string]'
 $PageContentCache = @{}
 
 if ($StartUrl) {
@@ -48,7 +48,7 @@ if ($SitemapUrl) {
 
         ($locLinks + $xhtmlLinks) | Select-Object -Unique | ForEach-Object {
             $Queue.Enqueue($_)
-            Add-LinkMapping -Link $_ -SourcePage "Sitemap"
+            Add-LinkMapping -Link $_ -SourcePage 'Sitemap'
         }
     } catch {
         Write-Host "Failed to download or parse sitemap: $($_.Exception.Message)" -ForegroundColor Yellow
@@ -149,15 +149,26 @@ foreach ($link in $LinkSourceMap.Keys) {
     }
 
     $LinkResults.Add([PSCustomObject]@{
-        FullLink      = $link
-        BasePageValid = $pageExists
-        AnchorFound   = $anchorExists
-        StatusCode    = $statusCode
-        FoundOnPages  = ($LinkSourceMap[$link] -join '; ') # All pages containing this link
-    })
+            FullLink      = $link
+            BasePageValid = $pageExists
+            AnchorFound   = $anchorExists
+            StatusCode    = $statusCode
+            FoundOnPages  = @($LinkSourceMap[$link]) # All pages containing this link
+        })
 }
 
 # --- Final Results ---
-Write-host
-Write-Host "Broken Links"
-$LinkResults | Where-Object { (-not $_.BasePageValid) -or ($_.AnchorFound -eq $false) } | Select-Object FullLink, StatusCode, BasePageValid, AnchorFound, FoundOnPages | Format-List
+Write-Host
+Write-Host 'Broken Links'
+$LinkResults | Where-Object { (-not $_.BasePageValid) -or ($_.AnchorFound -eq $false) } | ForEach-Object {
+    Write-Host "  $($_.FullLink)"
+    Write-Host "    Status code: $($_.StatusCode)"
+    Write-Host "    BasePageValid: $($_.BasePageValid)"
+    Write-Host "    AnchorFound: $($_.AnchorFound)"
+    Write-Host "    FoundOnPages: $($_.FoundOnPages.Count)"
+    if ($_.FoundOnPages) {
+        $_.FoundOnPages | ForEach-Object {
+            Write-Host "      $($_)"
+        }
+    }
+}

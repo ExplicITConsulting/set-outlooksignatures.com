@@ -68,7 +68,7 @@ To get to know Set-OutlookSignatures, we recommend the following sequence:
 4. Get practical: Deploy signatures within minutes with the [Quick Start Guide](/quickstart)!
 
 You want to know more?
-- [Requirements and usage](#2-requirements-and-usage)
+- [Requirements and usage](#requirements-and-usage)
 - [Parameters](/parameters)
 - [Frequently Asked Questions (FAQ)](/faq)
 - [The Outlook add-in](/outlookaddin)
@@ -90,7 +90,7 @@ Set-Outlook can run on Linux, macOS or Windows systems with PowerShell:
 - Windows: Windows PowerShell 5.1 ('powershell.exe', part of Windows) or PowerShell 7+ ('pwsh.exe')
 - Linux, macOS: PowerShell 7+ ('pwsh')
 
-Set-OutlookSignatures can run in two modes. See '[3. Architecture considerations](#3-architecture-considerations)' later in this document for details. In short:
+Set-OutlookSignatures can run in two modes. See '[Architecture considerations](#architecture-considerations)' later in this document for details. In short:
 - Client mode, in the security context of the currently logged-in user.<br>This mode is recommended for most scenarios as it allows Set-OutlookSignatures to read which mailboxes the user added to Outlook or Outlook on the web, and as this mode does not require central computing ressources.
 - SimulateAndDeploy mode, using a service account to push signatures into users mailboxes.<br>This mode is ideal when users log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients.
 
@@ -279,7 +279,7 @@ The Outlook add-in includes a taskpane that lets users preview a selected signat
 
 It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful for Outlook on Android and Outlook on iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.
 
-You can have as many add-in instances with differing configurations as you need, just follow the [technical specifications](/outlookaddin#32-web-server-and-domain) of the Outlook add-in.
+You can have as many add-in instances with differing configurations as you need, just follow the [technical specifications](/outlookaddin#web-server-and-domain) of the Outlook add-in.
 
 #### Draft email
 The [SignatureCollectionInDrafts](/parameters#signaturecollectionindrafts) parameter, enabled per default with the Benefactor Circle add-on, creates and updates an email message with the subject 'My signatures, powered by Set-OutlookSignatures Benefactor Circle' in the drafts folder of the current user.
@@ -712,8 +712,8 @@ Per default, `.\config\default replacement variables.ps1` contains the following
     - `$CurrentUserFax$`: Facsimile number  
     - `$CurrentUserMobile$`: Mobile phone  
     - `$CurrentUserMail$`: email address  
-    - `$CurrentUserPhoto$`: Photo from Active Directory or Entra ID, see "[9.1. Photos (account pictures, user image) from Active Directory or Entra ID](#91-photos-account-pictures-user-image-from-active-directory-or-entra-id)" for details  
-    - `$CurrentUserPhotoDeleteEmpty$`: Photo from Active Directory or Entra ID, see "[9.1. Photos (account pictures, user image) from Active Directory or Entra ID](#91-photos-account-pictures-user-image-from-active-directory-or-entra-id)" for details  
+    - `$CurrentUserPhoto$`: Photo from Active Directory or Entra ID, see "[9.1. Photos (account pictures, user image) from Active Directory or Entra ID](#photos-account-pictures-user-image-from-active-directory-or-entra-id)" for details  
+    - `$CurrentUserPhotoDeleteEmpty$`: Photo from Active Directory or Entra ID, see "[9.1. Photos (account pictures, user image) from Active Directory or Entra ID](#photos-account-pictures-user-image-from-active-directory-or-entra-id)" for details  
     - `$CurrentUserExtAttr1$` to `$CurrentUserExtAttr15$`: Exchange extension attributes 1 to 15  
     - `$CurrentUserOffice$`: Office room number (physicalDeliveryOfficeName)  
     - `$CurrentUserCompany$`: Company  

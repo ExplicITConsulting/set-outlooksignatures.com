@@ -33,7 +33,7 @@ The topics covered span the entire lifecycle, from initial consultation and plan
 This is not a detailed guide for technicians, but rather an organizational overview. Technical details can be found [here](/details).
 
 
-## 1. Task {#task}
+## Task {#task}
 As a multinational corporation, we are required to find a flexible solution for the automatic management of signatures. The requirements for this come from several areas:
 - The marketing department wants to ensure that corporate identity and corporate design are also maintained in emails. Signatures should be able to be updated quickly by the marketing department itself so that campaigns can be started and ended at short notice. This should not require any technical knowledge.
 - The legal department insists on implementing the requirement for an imprint in emails in the form of a signature, which is applicable in many countries.
@@ -52,8 +52,8 @@ This document aims to clarify whether the desired requirements regarding signatu
 The word "signature” in this document always refers to a textual signature and should not be confused with a digital signature, which is used to encrypt emails and authenticate the sender.
 
 
-## 2. Options for Signature Maintenance {#signature-maintenance-options}
-### 2.1. Manual Signature Maintenance {#manual-signature-maintenance}
+## Options for Signature Maintenance {#signature-maintenance-options}
+### Manual Signature Maintenance {#manual-signature-maintenance}
 With manual maintenance, a template for the textual signature is provided to the user, e.g., via the intranet. Only this template is centrally maintained; there is no further automation.
 
 Each user sets up their own signature. Depending on the technical configuration of the client, signatures may migrate when switching computers or need to be reconfigured.
@@ -62,11 +62,11 @@ If the mailbox is not in the cloud or "roaming signatures" have been disabled, t
 
 Without third-party software, signatures must also be manually maintained separately on Android, iOS, and macOS.
 
-### 2.2. Automatic Signature Maintenance {#automatic-signature-maintenance}
+### Automatic Signature Maintenance {#automatic-signature-maintenance}
 With automatic signature maintenance, no actions are required from the end user. All specifications are defined centrally, and signatures update automatically across all devices and systems.
 
 <!-- omit in toc -->
-#### 2.2.1. Server-Based Solutions {#server-based-signature-solutions}
+#### Server-Based Solutions {#server-based-signature-solutions}
 The biggest advantage of a server-based solution is that every email is processed based on a defined set of rules, regardless of the application or device used to send it.
 
 Since the signature is appended on the server, the user does not see which signature is used while composing the email.
@@ -84,7 +84,7 @@ Cloud-based solutions require that all internal and external emails, as well as 
 We therefore advise against server-based solutions.
 
 <!-- omit in toc -->
-#### 2.2.2. Client-Based Signatures {#client-based-signature-solutions}
+#### Client-Based Signatures {#client-based-signature-solutions}
 With client-based solutions, the definition of templates and optionally their distribution is done centrally, while the signature is added to the email on the client side.
 
 The biggest disadvantage of client-based solutions compared to server-based ones is their dependency on specific email clients. In practice, this is of little relevance, as Microsoft Outlook is usually used for reasons of maintainability and consistency. Outlook is available for Android, iOS, macOS, and Windows, and additionally as a web application on virtually all other platforms.
@@ -97,7 +97,7 @@ Unlike server-based solutions, there are alternatives here that do not require t
 
 We therefore recommend using a client-based solution.
 
-## 3. Required Feature Set {#required-feature-set}
+## Required Feature Set {#required-feature-set}
 Based on the previously mentioned conditions and discussions with all involved parties, the following catalog of required features has been derived:
 
 **Signatures and out-of-office messages should:**
@@ -134,7 +134,7 @@ Based on the previously mentioned conditions and discussions with all involved p
 - Preference for open-source options or transparent licensing terms.
 
 
-## 4. Comparison of Different Solutions {#feature-comparison}
+## Comparison of Different Solutions {#feature-comparison}
 Based on the required feature set, various solutions were evaluated, tested, and compared:
 
 <div style="display: grid;">
@@ -427,10 +427,10 @@ Based on the required feature set, various solutions were evaluated, tested, and
     </div>
 </div>
 
-## 5. Recommendation: Set-OutlookSignatures {#recommendation}
+## Recommendation: Set-OutlookSignatures {#recommendation}
 After gathering customer requirements and testing several server- and client-based products, we recommend using the free open-source software **Set-OutlookSignatures** with the paid **"Benefactor Circle"** extension.
 
-### 5.1. General Description {#general-description}
+### General Description {#general-description}
 <a href="/">Set-OutlookSignatures</a> is a free open-source product with a paid add-on for advanced enterprise features.
 
 It supports all variants of Outlook and Exchange as target platforms: Windows, macOS, Android, iOS, Linux, and Web. Both classic and new Outlook. On-premises, hybrid, and cloud-only. By optionally storing signatures in the mailbox, they are also available in other email clients.
@@ -448,7 +448,7 @@ The architecture ensures that no data leaves existing system, there is no transm
 
 Any number of independent instances can be operated, which is beneficial for phased rollouts or for companies loosely affiliated with a corporate group.
 
-### 5.2. Licensing Model and Cost-Benefit Analysis {#licensing-and-cost-benefit}
+### Licensing Model and Cost-Benefit Analysis {#licensing-and-cost-benefit}
 
 The free part of the software is licensed under the "European Union Public License (EUPL) 1.2", which is recognized by international organizations as a full open-source license and is compatible with many other comparable licenses.
 
@@ -457,7 +457,7 @@ The Benefactor Circle add-on is licensed based on the number of mailboxes intend
 By avoiding tiered pricing and discounts, the <a href="/benefactorcircle#financial-benefits">cost-benefit ratio</a> is already favorable even for a small number of mailboxes.
 
 
-## 6. Support from the IT Service Provider {#support-it-service-provider}
+## Support from the IT Service Provider {#support-it-service-provider}
 As an IT service provider, we not only recommend Set-OutlookSignatures, but also offer comprehensive support to our clients.
 
 We share our experience gained during the definition of requirements for a signature solution, the evaluation and comparison of different products, and the implementation of Set-OutlookSignatures and the Benefactor Circle add-on.
@@ -466,7 +466,7 @@ For companies within the group that wish to implement the solution independently
 
 We offer support to all group companies in the form of workshops and training sessions. The following list represents the maximum scope, both in terms of content and time, within a full preparation and implementation project. **Complete <a href="/support#professional-support">implementation support</a> in a "train the trainer" format rarely takes more than half a day.**
 
-### 6.1. Consulting and Imp/lementation Phase {#consulting-implementation-phase}
+### Consulting and Imp/lementation Phase {#consulting-implementation-phase}
 #### Initial Alignment on Textual Signatures <!-- omit in toc -->
 **Participants**  
 - Client: Corporate Communications, Marketing, Client Management, Project Coordinator  
@@ -549,7 +549,7 @@ We offer support to all group companies in the form of workshops and training se
 - Client provides at least one central SMB share or SharePoint document library for template storage  
 - Client provides a central SMB file share for storing the software and its components  
 
-### 6.2. Testing, Pilot Operation, Rollout {#testing-pilot-rollout}
+### Testing, Pilot Operation, Rollout {#testing-pilot-rollout}
 Planning and coordination of testing, pilot operation, and rollout is handled by the client's project lead.
 
 The actual technical implementation is carried out by the client. If the client's IT service provider also manages the client systems, the client team supports integration of the software (logon script, scheduled task, desktop shortcut).
@@ -688,7 +688,7 @@ Word can also be started, used, or closed at any time during the software's exec
 
 The software uses Word to replace variables in DOCX templates and to convert DOCX and HTML to RTF. Word is started as a separate invisible process. This process is practically unaffected by the user and does not interfere with Word processes started by the user.
 
-### 6.3. Ongoing Operations
+### Ongoing Operations
 As an IT service provider, we also support our group companies in the ongoing operation of Set-OutlookSignatures with our full expertise. This includes, for example, questions about:
 - Creating and maintaining templates
 - Creating and maintaining storage shares for templates and software components

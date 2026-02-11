@@ -34,7 +34,7 @@ Die behandelten Themen umfassen den gesamten Lebenszyklus, von der ersten Beratu
 Es handelt sich hierbei nicht um eine ins Detail gehende Anleitung für Techniker, sondern um ein organisatorischen Überblick. Technische Details finden Sie [hier](/details).
 
 
-## 1. Auftrag {#task}
+## Auftrag {#task}
 
 Als multinationaler Konzern sind wir gefordert, eine flexible Lösung zur automatischen Verwaltung von Signaturen zu suchen. Die Anforderungen dazu stammen aus mehreren Bereichen:
 
@@ -54,9 +54,9 @@ Dieses Dokument soll klären, ob die gewünschten Anforderungen bezüglich Signa
 
 Das Wort "Signatur" ist in diesem Dokument immer als textuelle Signatur zu verstehen und nicht mit einer digitalen Signatur zu verwechseln, die der Verschlüsselung von E-Mails und der Legitimierung des Absenders dient.
 
-## 2. Möglichkeiten zur Wartung von Signaturen {#signature-maintenance-options}
+## Möglichkeiten zur Wartung von Signaturen {#signature-maintenance-options}
 
-### 2.1. Manuelle Wartung von Signaturen {#manual-signature-maintenance}
+### Manuelle Wartung von Signaturen {#manual-signature-maintenance}
 
 Bei der manuellen Wartung wird dem Benutzer z. B. über das Intranet eine Vorlage für die textuelle Signatur zur Verfügung gestellt. Zentral gewartet wird nur diese Vorlage, es gibt keine weitere Automatisierung.
 
@@ -66,12 +66,12 @@ Falls das Postfach nicht in der Cloud liegt oder "roaming signatures" deaktivier
 
 Ohne Einsatz von Dritthersteller-Software sind die Signaturen zudem auch auf Android, iOS und macOS separat manuell zu warten.
 
-### 2.2. Automatische Wartung von Signaturen {#automatic-signature-maintenance}
+### Automatische Wartung von Signaturen {#automatic-signature-maintenance}
 
 Bei der automatischen Wartung von Signaturen fallen keine Tätigkeiten für den Endbenutzer an. Alle Vorgaben werden zentral definiert, Signaturen aktualisieren sich auf allen Geräten und Systemen automatisch.
 
 <!-- omit in toc -->
-#### 2.2.1. Serverbasierte Lösungen {#server-based-signature-solutions}
+#### Serverbasierte Lösungen {#server-based-signature-solutions}
 
 Der größte Vorteil einer serverbasierten Lösung ist, dass an Hand eines definierten Regelsatzes jedes E-Mail erfasst wird, ganz gleich, von welcher Applikation oder welchem Gerät es verschickt wurde.
 
@@ -90,7 +90,7 @@ Cloud-basierte Lösungen setzen voraus, dass alle internen und externen E-Mails 
 Wir raten daher von serverbasierten Lösungen ab.
 
 <!-- omit in toc -->
-#### 2.2.2. Clientbasierte Signaturen {#client-based-signature-solutions}
+#### Clientbasierte Signaturen {#client-based-signature-solutions}
 
 Bei clientbasierten Lösungen erfolgt die Definition der Vorlagen und optional auch deren Verteilung zentral, das Hinzufügen der Signaturen zu einer E-Mail erfolgt am Client.
 
@@ -104,7 +104,7 @@ Im Gegensatz zu serverbasierten Lösungen gibt es hier Alternativen, die keine �
 
 Wir raten daher zur Nutzung einer clientbasierten Lösung.
 
-## 3. Benötigter Funktionsumfang {#required-feature-set}
+## Benötigter Funktionsumfang {#required-feature-set}
 
 Aus den zuvor genannten Rahmenbedingungen und Gesprächen mit allen involvierten Parteien leitet sich folgender Katalog benötigter Funktionen ab:
 
@@ -145,7 +145,7 @@ Zusätzliche Anforderungen:
 - Dokumentierte Best Practices für Implementierung und Betrieb.
 - Open-Source-Option oder transparente Lizenzbedingungen bevorzugt.
 
-## 4. Vergleich unterschiedlicher Lösungen {#feature-comparison}
+## Vergleich unterschiedlicher Lösungen {#feature-comparison}
 
 Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getestet und vergleichen:
 
@@ -433,11 +433,11 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
     </div>
 </div>
 
-## 5. Empfehlung: Set-OutlookSignatures {#recommendation}
+## Empfehlung: Set-OutlookSignatures {#recommendation}
 
 Nach einer Erhebung der Kundenanforderungen und Tests mehrerer server- und clientbasierter Produkte empfehlen wir den Einsatz der kostenlosen Open-Source-Software Set-OutlookSignatures mit der kostenpflichtigen "Benefactor Circle"-Erweiterung.
 
-### 5.1. Allgemeine Beschreibung {#general-description}
+### Allgemeine Beschreibung {#general-description}
 
 <a href="/">Set-OutlookSignatures</a> ist ein kostenloses Open-Source-Produkt mit einem kostenpflichtigen Add-on für erweiterte Unternehmensfunktionen.
 
@@ -457,7 +457,7 @@ Die Architektur stellt sicher, dass keine Daten bestehende Systeme verlassen, es
 
 Es können beliebig viele voneinander unabhängige Instanzen betrieben werden, was z. B. für eine schrittweise Ausrollung oder den Betrieb in Gesellschaften, die nur lose mit dem Konzern verbunden sind, Vorteile bringt.
 
-### 5.2. Lizenzmodell, Kosten-Nutzen-Rechnung {#licensing-and-cost-benefit}
+### Lizenzmodell, Kosten-Nutzen-Rechnung {#licensing-and-cost-benefit}
 
 Das kostenlose Teil der Software ist unter der "European Union Public License (EUPL) 1.2" lizenziert, die von internationalen Organisationen als vollwertige Open-Source-Lizenz anerkannt und mit vielen anderen vergleichbaren Lizenzen kompatibel ist.
 
@@ -465,7 +465,7 @@ Das Benefactor Circle Add-on wird auf Basis der Anzahl jener Postfächer, die es
 
 Durch Verzicht auf Staffelpreise und Rabatte fällt die <a href="/benefactorcircle#financial-benefits">Kosten-Nutzen-Rechnung</a> schon bei einer kleinen Anzahl von Postfächern positiv aus.
 
-## 6. Unterstützung durch den IT-Dienstleister {#support-it-service-provider}
+## Unterstützung durch den IT-Dienstleister {#support-it-service-provider}
 
 Als IT-Dienstleister empfehlen wir Set-OutlookSignatures nicht nur, sondern bieten unseren Kunden auch umfassende Unterstützung an.
 
@@ -475,7 +475,7 @@ Den Gesellschaften im Konzern, die die Lösung ohne weitere Unterstützung selbs
 
 Allen Gesellschaften im Konzern bieten wir Unterstützung in Form von Workshops und Schulungen an. Die folgende Liste ist als maximale inhaltliche und zeitliche Ausprägung im Rahmen eines vollständigen Vorbereitungs- und Einführungsprojekts zu verstehen - **vollständige <a href="/support#professional-support">Implementierungsunterstützung</a> in Form von "train the trainer" benötigt selten mehr als einen halben Tag**.
 
-### 6.1. Beratungs- und Einführungsphase {#consulting-implementation-phase}
+### Beratungs- und Einführungsphase {#consulting-implementation-phase}
 
 #### Erstabstimmung zu textuellen Signaturen <!-- omit in toc -->
 
@@ -573,7 +573,7 @@ Allen Gesellschaften im Konzern bieten wir Unterstützung in Form von Workshops 
 - Der Kunde stellt mindestens einen zentralen SMB-Share oder eine SharePoint Dokumentbibliothek für die Ablage der Vorlagen zur Verfügung.  
 - Der Kunde stellt einen zentralen SMB-File-Share für die Ablage der Software und seiner Komponenten zur Verfügung.  
 
-### 6.2. Test, Pilotbetrieb, Rollout {#testing-pilot-rollout}
+### Test, Pilotbetrieb, Rollout {#testing-pilot-rollout}
 
 Die Planung und Koordination von Tests, Pilotbetrieb und Rollout erfolgt durch den Vorhabens-Verantwortlichen des Kunden.
 
@@ -721,7 +721,7 @@ Word kann während der Ausführung der Software nach Belieben gestartet, verwend
 
 Die Software nutzt Word zum Ersatz von Variablen in DOCX-Vorlagen und zum Konvertieren von DOCX und HTML nach RTF. Word wird dabei als eigener unsichtbarer Prozess gestartet. Dieser Prozess kann vom Benutzer praktisch nicht beeinflusst werden und beeinflusst vom Benutzer gestartete Word-Prozesse nicht.
 
-### 6.3. Laufender Betrieb  
+### Laufender Betrieb  
 
 Als IT-Dienstleister unterstützen wir unsere Konzerngesellschaften auch im laufenden Betrieb von Set-OutlookSignatures mit unserer gesamten Erfahrung. Darunter fallen beispielsweise Fragen zu:
 
