@@ -169,7 +169,7 @@ To configure the add-in and deploy it to your web server:
 - Upload the content of the '`publish`' folder to your web server.
 
 
-When the '`manifest.xml`' file, the configuration or another part of the Outlook add-in changes, you not only need to update the files on the web server, you also need to tell your mailboxes that an updated version or configuration is available and must be downloaded from the web server. The "[Deployment to mailboxes](#5-deployment-to-mailboxes)" chapter describes the available deployment options for add-ins.
+When the '`manifest.xml`' file, the configuration or another part of the Outlook add-in changes, you not only need to update the files on the web server, you also need to tell your mailboxes that an updated version or configuration is available and must be downloaded from the web server. The "[Deployment to mailboxes](#deployment-to-mailboxes)" chapter describes the available deployment options for add-ins.
 
 
 ## Deployment to mailboxes
