@@ -13,7 +13,7 @@ sitemap_changefreq: monthly
 ---
 In small and static environments, signatures for "Send As" and "Send on Behalf Of" are usually straightforward. However, in dynamic environments, this can quickly become a challenge: delegation scenarios change frequently, especially when users grant temporary permissions during holiday or sick leave.
 
-The combination of Export-RecipientPermissions and Set-OutlookSignatures automates the process:
+The combination of [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions) and Set-OutlookSignatures automates the process:
 - Export-RecipientPermissions documents and compares mailbox permissions. You can automatically notify users about the permissions they have granted or received.
 - Set-OutlookSignatures can use this data via the parameter "[VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile)". This allows users to receive signatures for authorised mailboxes even if they have not added them as mailboxes in Outlook. Of course, the signatures are also removed again when authorisation is no longer granted.
 
