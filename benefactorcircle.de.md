@@ -189,6 +189,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
+<!--
 <p>&nbsp;</p>
 
 <div class="columns">
@@ -209,6 +210,7 @@ sitemap_changefreq: weekly
     </figure>
   </div>
 </div>
+-->
 
 
 <h2 id="trial">Kostenlose Testversion</h2>
