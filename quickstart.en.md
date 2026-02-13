@@ -59,7 +59,7 @@ Ask your endpoint security administrator to trust software signed with ExplicIT 
 
 - **If some or all mailboxes are in Exchange Online**
   ```
-  powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from step 1 Entra ID>"
+  powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from step 2 Entra ID>"
   ```
   The '`-GraphOnly true`' parameter makes sure that on-prem Active Directory is ignored and only Graph/Entra ID is used to find mailboxes and their attributes.
 

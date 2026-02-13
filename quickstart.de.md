@@ -61,7 +61,7 @@ Bitten Sie Ihren Endpoint Security Administrator, Software zu vertrauen, die mit
 
 - **Wenn einige oder alle Postfächer in Exchange Online gehalten werden**
   ```
-  powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId aus Schritt 1 Entra ID>"
+  powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId aus Schritt 2 Entra ID>"
   ```
   Der Parameter '`-GraphOnly true`' stellt sicher, dass das on-prem Active Directory ignoriert wird und stattdessen nur Graph/Entra ID zum Finden von Postfächern und deren Attributen verwendet wird.
 
