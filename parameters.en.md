@@ -28,7 +28,6 @@ One parameter can be assigned to multiple topics.
 
 | Topic | Parameters |
 | - | - |
-| Benefactor Circle | [AdditionalSignaturePath](#additionalsignaturepath) \| [BenefactorCircleID](#benefactorcircleid) \| [BenefactorCircleLicenseFile](#benefactorcirclelicensefile) \| [DeleteScriptCreatedSignaturesWithoutTemplate](#deletescriptcreatedsignatureswithouttemplate) \| [DeleteUserCreatedSignatures](#deleteusercreatedsignatures) \| [DocxHighResImageConversion](#docxhighresimageconversion) \| [MirrorCloudSignatures](#mirrorcloudsignatures) \| [SetCurrentUserOOFMessage](#setcurrentuseroofmessage) \| [SetCurrentUserOutlookWebSignature](#setcurrentuseroutlookwebsignature) \| [SignatureCollectionInDrafts](#signaturecollectionindrafts) \| [SignaturesForAutomappedAndAdditionalMailboxes](#signaturesforautomappedandadditionalmailboxes) |
 | Signatures | [AdditionalSignaturePath](#additionalsignaturepath) \| [CreateRtfSignatures](#creatertfsignatures) \| [DeleteScriptCreatedSignaturesWithoutTemplate](#deletescriptcreatedsignatureswithouttemplate) \| [DeleteUserCreatedSignatures](#deleteusercreatedsignatures) \| [DocxHighResImageConversion](#docxhighresimageconversion) \| [EmbedImagesInHtml](#embedimagesinhtml) \| [EmbedImagesInHtmlAdditionalSignaturePath](#embedimagesinhtmladditionalsignaturepath) \| [MailboxSpecificSignatureNames](#mailboxspecificsignaturenames) \| [MoveCSSInline](#movecssinline) \| [SetCurrentUserOutlookWebSignature](#setcurrentuseroutlookwebsignature) \| [SignatureCollectionInDrafts](#signaturecollectionindrafts) \| [SignatureIniFile](#signatureinifile) \| [SignaturesForAutomappedAndAdditionalMailboxes](#signaturesforautomappedandadditionalmailboxes) \| [SignatureTemplatePath](#signaturetemplatepath) \| [UseHtmTemplates](#usehtmtemplates) |
 | OOF messages | [MoveCSSInline](#movecssinline) \| [OOFIniFile](#oofinifile) \| [OOFTemplatePath](#ooftemplatepath) \| [SetCurrentUserOOFMessage](#setcurrentuseroofmessage) \| [UseHtmTemplates](#usehtmtemplates) |
 | Replacement variables | [ReplacementVariableConfigFile](#replacementvariableconfigfile) \| [VirtualMailboxConfigFile](#virtualmailboxconfigfile) |
@@ -37,7 +36,7 @@ One parameter can be assigned to multiple topics.
 | Outlook | [DisableRoamingSignatures](#disableroamingsignatures) \| [MirrorCloudSignatures](#mirrorcloudsignatures) \| [SignatureCollectionInDrafts](#signaturecollectionindrafts) \| [VirtualMailboxConfigFile](#virtualmailboxconfigfile) |
 | Word | [WordProcessPriority](#wordprocesspriority) |
 | Script | [ScriptProcessPriority](#scriptprocesspriority) |
-
+| Benefactor Circle | [BenefactorCircleID](#benefactorcircleid) \| [BenefactorCircleLicenseFile](#benefactorcirclelicensefile) |
 
 
 ## AdditionalSignaturePath
