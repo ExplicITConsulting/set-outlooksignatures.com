@@ -84,11 +84,10 @@ sitemap_changefreq: weekly
             };
         }
 
-        const debouncedTrackSearch = debounce(function() {
+        const debouncedTrackSearch = debounce(function(count) {
             if (typeof _paq !== 'undefined') {
                 const query = searchInput.value.trim();
-                const resultsCount = searchResultsContainer.querySelectorAll('li').length;
-                _paq.push(['trackSiteSearch', query, false, resultsCount]);
+                _paq.push(['trackSiteSearch', query, false, count]);
             }
         }, 2000); // 2000ms delay for _paq
 
@@ -154,12 +153,12 @@ sitemap_changefreq: weekly
 
                     searchInput.addEventListener('input', () => {
                         const query = searchInput.value.trim();
-
                         const newUrl = new URL(window.location);
+                        let currentResultsCount = 0;
 
                         if (query.length > 0) {
                             newUrl.searchParams.set('search', query);
-                            performSearch();
+                            currentResultsCount = performSearch();
                         } else {
                             newUrl.searchParams.delete('search');
                             searchResultsContainer.innerHTML = '';
@@ -167,7 +166,7 @@ sitemap_changefreq: weekly
 
                         window.history.replaceState({ path: newUrl.href }, '', newUrl.href);
 
-                        debouncedTrackSearch();
+                        debouncedTrackSearch(currentResultsCount);
                     });
                 } else {
                     searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
@@ -374,6 +373,8 @@ sitemap_changefreq: weekly
 
             allResults.sort((a, b) => a.score - b.score);
             displayResults(allResults);
+
+            return new Set(allResults.map(r => r.doc.url)).size;
         }
 
         function displayResults(results) {
