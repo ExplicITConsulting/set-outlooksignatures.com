@@ -444,6 +444,7 @@ sitemap_changefreq: weekly
                     const query = searchInput.value.trim();
                     // Ensure we don't track empty searches if the user cleared the input
                     if (query.length > 0) {
+                        console.log(`Search result count: ${uniqueResults.length}`);
                         _paq.push(['trackSiteSearch', query, false, uniqueResults.length]);
                     }
                 }
