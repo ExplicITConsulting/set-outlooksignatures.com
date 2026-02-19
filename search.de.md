@@ -84,13 +84,6 @@ sitemap_changefreq: weekly
             };
         }
 
-        const debouncedTrackSearch = debounce(function(count) {
-            if (typeof _paq !== 'undefined') {
-                const query = searchInput.value.trim();
-                _paq.push(['trackSiteSearch', query, false, count]);
-            }
-        }, 2000); // 2000ms delay for _paq
-
         async function loadScript(url) {
             return new Promise((resolve, reject) => {
                 const script = document.createElement('script');
@@ -154,19 +147,16 @@ sitemap_changefreq: weekly
                     searchInput.addEventListener('input', () => {
                         const query = searchInput.value.trim();
                         const newUrl = new URL(window.location);
-                        let currentResultsCount = 0;
 
                         if (query.length > 0) {
                             newUrl.searchParams.set('search', query);
-                            currentResultsCount = performSearch();
+                            performSearch();
                         } else {
                             newUrl.searchParams.delete('search');
                             searchResultsContainer.innerHTML = '';
                         }
 
                         window.history.replaceState({ path: newUrl.href }, '', newUrl.href);
-
-                        debouncedTrackSearch(currentResultsCount);
                     });
                 } else {
                     searchInput.placeholder = "{{ site.data[site.active_lang].strings.search_search-input_placeholder_error }}";
@@ -373,8 +363,6 @@ sitemap_changefreq: weekly
 
             allResults.sort((a, b) => a.score - b.score);
             displayResults(allResults);
-
-            return new Set(allResults.map(r => r.doc.url)).size;
         }
 
         function displayResults(results) {
@@ -443,8 +431,23 @@ sitemap_changefreq: weekly
                     </li>
                 `;
             });
+
             html += '</ul>';
+
             searchResultsContainer.innerHTML = html;
+
+            clearTimeout(window.searchTrackingTimer);
+
+            window.searchTrackingTimer = setTimeout(() => {
+                // Check if _paq exists AND if there's actually a query to track
+                if (typeof _paq !== 'undefined') {
+                    const query = searchInput.value.trim();
+                    // Ensure we don't track empty searches if the user cleared the input
+                    if (query.length > 0) {
+                        _paq.push(['trackSiteSearch', query, false, uniqueResults.length]);
+                    }
+                }
+            }, 1000); // Wait 1 second after last result render before tracking
         }
     })();
 </script>
