@@ -426,7 +426,10 @@ sitemap_changefreq: weekly
 
                 html += `
                     <li class="box mb-4">
-                        <p><a href="${url}"><strong>${title}</strong></a><br>${sectionContent}</p>
+                        <p>
+                            <a href="${url}"><strong>${title}</strong></a>
+                            ${sectionContent ? ` | <a href="${url}"><strong>${sectionContent}</strong></a>` : ''}
+                        </p>
                         <p>${mainContent}</p>
                     </li>
                 `;
