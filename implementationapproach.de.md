@@ -638,16 +638,16 @@ Vorlagen und Konfigurationsdateien können auch auf SharePoint Online abgelegt w
 **Verwaltung der Vorlagen, Delegation**  
 Durch simple Vergabe von Schreibrechten auf den Vorlagen-Ordner oder auf einzelne Dateien darin wird die Erstellung und Verwaltung von Signatur- und Abwesenheits-Vorlagen an eine definierte Gruppe von Personen delegiert. Üblicherweise werden die Vorlagen von den Abteilungen Unternehmenskommunikation und Marketing definiert, erstellt und gewartet.
 
-Die Software kann Vorlagen im DOCX- oder im HTML-Format verarbeiten. Für den Anfang wird die Verwendung des DOCX-Formats empfohlen; die Gründe für diese Empfehlung und die Vor- und Nachteile des jeweiligen Formats werden in der `README`-Datei der Software beschrieben.
+Die Software kann Vorlagen im DOCX- oder im HTML-Format verarbeiten. Für den Anfang wird die Verwendung des DOCX-Formats empfohlen; die Gründe für diese Empfehlung und die Vor- und Nachteile des jeweiligen Formats werden [in den FAQ der Software](/faq#should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates) beschrieben.
 
-Die mit der Software mitgelieferte `README`-Datei bietet eine Übersicht, wie Vorlagen zu administrieren sind, damit sie  
+Die [Online-Dokumentation der Software](/details) bietet eine Übersicht, wie Vorlagen zu administrieren sind, damit sie  
 
 - nur für bestimmte Gruppen oder Postfächer gelten  
 - als Standard-Signatur für neue Mails oder Antworten und Weiterleitungen gesetzt werden  
 - als interne oder externe Abwesenheits-Nachricht gesetzt werden
 - und vieles mehr
 
-In `README` und den Beispiel-Vorlagen werden zudem die ersetzbaren Variablen, die Erweiterung um benutzerdefinierte Variablen und der Umgang mit Fotos aus dem Active Directory beschrieben.
+In der [Online-Dokumentation](/details) und den Beispiel-Vorlagen werden zudem die ersetzbaren Variablen, die Erweiterung um benutzerdefinierte Variablen und der Umgang mit Fotos aus dem Active Directory beschrieben.
 
 In der mitgelieferten Beispiel-Datei "Test all signature replacement variables.docx" sind alle standardmäßig verfügbaren Variablen enthalten; zusätzlich können eigene Variablen definiert werden.
 
@@ -674,7 +674,7 @@ Folgend ein Beispiel, bei dem die Signatur-Vorlagen auf einem SMB-File-Share und
 powershell.exe -file "\\example.com\netlogon\set-outlooksignatures\set-outlooksignatures.ps1" –SignatureTemplatePath "\\example.com\DFS-Share\Common\Templates\Signatures Outlook" –OOFTemplatePath "https://sharepoint.example.com/CorporateCommunications/Templates/Out-of-office templates"  
 ```
 
-Zum Zeitpunkt der Erstellung dieses Dokuments waren noch weitere Parameter verfügbar. Folgend eine kurze Übersicht der Möglichkeit, für Details sei auf die Dokumentation der Software in der `README`-Datei verwiesen:  
+Zum Zeitpunkt der Erstellung dieses Dokuments waren noch weitere Parameter verfügbar. Folgend eine kurze Übersicht der Möglichkeit, für Details sei auf die [Online-Dokumentation der Software](/parameters) verwiesen:  
 
 - SignatureTemplatePath: Pfad zu den Signatur-Vorlagen. Kann ein SMB-Share oder eine SharePoint Dokumentbibliothek sein.  
 - ReplacementVariableConfigFile: Pfad zur Datei, in der vom Standard abweichende Variablen definiert werden. Kann ein SMB-Share oder eine SharePoint Dokumentbibliothek sein.  
@@ -685,7 +685,7 @@ Zum Zeitpunkt der Erstellung dieses Dokuments waren noch weitere Parameter verf�
 - OOFTemplatePath: Pfad zu den Abwesenheits-Vorlagen. Kann ein SMB-Share oder eine SharePoint Dokumentbibliothek sein.  
 - AdditionalSignaturePath: Pfad zu einem zusätzlichen Share, in den alle Signaturen kopiert werden sollen, z. B. für den Zugriff von einem mobilen Gerät aus und zur vereinfachten Konfiguration nicht von der Software unterstützter Clients. Kann ein SMB-Share oder eine SharePoint Dokumentbibliothek sein.  
 - UseHtmTemplates: Standardmäßig werden Vorlagen im DOCX-Format verarbeitet. Über diesen Schalter kann auf HTML (.htm) umgeschaltet werden.  
-Die `README`-Datei enthält weitere Parameter.
+Die [Online-Dokumentation der Software](/parameters) enthält weitere Parameter.
 
 **Laufzeit und Sichtbarkeit der Software**  
 Die Software ist auf schnelle Durchlaufzeit und minimale Netzwerkbelastung ausgelegt, die Laufzeit der Software hängt dennoch von vielen Parametern ab:  

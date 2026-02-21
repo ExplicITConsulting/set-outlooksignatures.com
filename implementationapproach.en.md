@@ -608,15 +608,15 @@ Templates and configuration files can also be stored on SharePoint Online.
 **Template Management and Delegation**  
 By assigning write permissions to the template folder or individual files, the creation and management of signature and out-of-office templates can be delegated to a defined group of people. Typically, templates are defined, created, and maintained by Corporate Communications and Marketing departments.
 
-The software can process templates in DOCX or HTML format. For initial use, DOCX format is recommended. The reasons for this recommendation and the pros and cons of each format are described in the software's `README` file.
+The software can process templates in DOCX or HTML format. For initial use, DOCX format is recommended. The reasons for this recommendation and the pros and cons of each format are described [in the software's FAQ](/faq#should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates).
 
-The included `README` file provides an overview of how templates should be managed so that they:
+The [online documentation of the software](/details) provides an overview of how templates should be managed so that they:
 - Apply only to specific groups or mailboxes  
 - Are set as default signatures for new emails or replies and forwards  
 - Are used as internal or external out-of-office messages  
 - And much more  
 
-The `README` and sample templates also describe:
+The [online documentation of the software](/details) and sample templates also describe:
 - Replaceable variables  
 - Extension with custom variables  
 - Handling of photos from Active Directory  
@@ -643,7 +643,7 @@ Below is an example where the signature templates are located on an SMB file sha
 ```
 powershell.exe -file "\\example.com\netlogon\set-outlooksignatures\set-outlooksignatures.ps1" –SignatureTemplatePath "\\example.com\DFS-Share\Common\Templates\Signatures Outlook" –OOFTemplatePath "https://sharepoint.example.com/CorporateCommunications/Templates/Out-of-office templates"
 ```
-At the time of writing this document, additional parameters were available. Below is a brief overview of the options; for details, refer to the software documentation in the README file:
+At the time of writing this document, additional parameters were available. Below is a brief overview of the options; for details, refer to the [online documentation of the software](/parameters):
 - SignatureTemplatePath: Path to the signature templates. Can be an SMB share or a SharePoint document library.
 - ReplacementVariableConfigFile: Path to the file where custom variables deviating from the default are defined. Can be an SMB share or a SharePoint document library.
 - TrustsToCheckForGroups: By default, all trusts are queried for mailbox information. This parameter allows specific domains to be excluded and non-trusted domains to be added.
@@ -654,7 +654,7 @@ At the time of writing this document, additional parameters were available. Belo
 - AdditionalSignaturePath: Path to an additional share where all signatures should be copied, e.g., for access from a mobile device and to simplify configuration of clients not supported by the software. Can be an SMB share or a SharePoint document library.
 - UseHtmTemplates: By default, templates in DOCX format are processed. This switch allows switching to HTML (.htm).
 
-The README file contains additional parameters.
+The [online documentation of the software](/parameters) contains additional parameters.
 
 **Runtime and visibility of the software**  
 The software is designed for fast execution and minimal network load, but its runtime still depends on many parameters:

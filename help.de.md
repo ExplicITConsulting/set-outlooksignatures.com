@@ -26,5 +26,8 @@ sitemap_changefreq: weekly
 <h2><a href="/outlookaddin">Das Outlook-Add-in</a></h2>
 <p>Signaturen für Outlook unter Android und iOS, erweiterte Funktionen für alle Plattformen</p>
 
+<h2><a href="/search">Suche</a></h2>
+<p>Volltextsuche für die Website und den Quellcode.</p>
+
 <h2><a href="/support">Unterstützung erhalten und uns kontaktieren</a></h2>
 <p>Wir geben unsere Erfahrung an Sie weiter</p>
