@@ -262,12 +262,12 @@ Please see `.\sample code\Set-OutlookSignatures.cmd` for an example. Don't forge
 ### Start Set-OutlookSignatures in hidden/invisible mode
 Even when the `hidden` parameter is passed to PowerShell, a window is created and minimized. Although this only takes some tenths of a second, it is not only optically disturbing, but the new window may also steal the keyboard focus.
 
-The only workaround is to start PowerShell from another program, which does not need an own console window. Some examples for such programs are:
-- Rob van der Woude's <a href="https://www.robvanderwoude.com/csharpexamples.php#RunNHide">RunNHide</a>
-- NTWind Software's <a href="https://www.ntwind.com/software/hstart.html">HStart</a>
-- wenshui2008's <a href="https://github.com/wenshui2008/RunHiddenConsole">RunHiddenConsole</a>
-- stax76's <a href="https://github.com/stax76/run-hidden">run-hidden</a>
-- Nir Sofer's <a href="https://www.nirsoft.net/utils/nircmd.html">NirCmd</a>
+Windows provides at least two built-in ways to start PowerShell absolutely hidden:
+- Reasonably up-to-date versions of Windows come with the '`conhost.exe`' console host, which comes with the 'headless' parameter:
+
+  ```
+  conhost.exe --headless powershell.exe -File "\\server\share\directory\Set-OutlookSignatures.ps1" -SignatureTemplatePath "\\server\share\directory\templates\Signatures DOCX" -OOFTemplatePath "\\server\share\directory\templates\Out-of-Office DOCX" -ReplacementVariableConfigFile "\\server\share\directory\config\default replacement variables.ps1"
+  ```
 - As Microsoft has marked Visual Basic Script (VBS) as deprecated and will remove it completely from future Windows releases, the use of Windows Script Host (WSH) is not recommended. If you want to try it anyway, here is a working example:
   - Create a .vbs (Visual Basic Script) file, paste and adapt the following code into it:
 
@@ -280,11 +280,15 @@ The only workaround is to start PowerShell from another program, which does not 
     ```
 
   - Then, run the .vbs file directly, without specifying cscript.exe as host (just execute `start.vbs` or `wscript.exe start.vbs`, but not `cscript.exe start.vbs`).
-- If your Windows installation comes with the '`conhost.exe`' console host, you may want to try one of its undocumented parameters:
 
-  ```
-  conhost.exe --headless powershell.exe -File "\\server\share\directory\Set-OutlookSignatures.ps1" -SignatureTemplatePath "\\server\share\directory\templates\Signatures DOCX" -OOFTemplatePath "\\server\share\directory\templates\Out-of-Office DOCX" -ReplacementVariableConfigFile "\\server\share\directory\config\default replacement variables.ps1"
-  ```
+When you use Microsoft Intune, Desired State Configuration (DSC) with a detect-and-remediate script is another option to run software hidden and on a schedule. Set-OutlookSignatures contains [sample code for this scenario](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune).
+
+You can also use external software to start console based application like PowerShell in a hidden way. Some examples are:
+- Rob van der Woude's <a href="https://www.robvanderwoude.com/csharpexamples.php#RunNHide">RunNHide</a>
+- NTWind Software's <a href="https://www.ntwind.com/software/hstart.html">HStart</a>
+- wenshui2008's <a href="https://github.com/wenshui2008/RunHiddenConsole">RunHiddenConsole</a>
+- stax76's <a href="https://github.com/stax76/run-hidden">run-hidden</a>
+- Nir Sofer's <a href="https://www.nirsoft.net/utils/nircmd.html">NirCmd</a>
 
 
 ## How to create a shortcut to the software with parameters?
