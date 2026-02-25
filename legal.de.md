@@ -175,7 +175,7 @@ Die Vermutung der Mangelhaftigkeit gem. § 924 ABGB gilt als ausgeschlossen.
 
 9.4. Sofern der Auftragnehmer das Werk unter Zuhilfenahme Dritter erbringt und in diesem Zusammenhang Gewährleistungs- und/oder Haftungsansprüche gegenüber diesen Dritten entstehen, tritt der Auftragnehmer diese Ansprüche an den Auftraggeber ab. Der Auftraggeber wird sich in diesem Fall vorrangig an diese Dritten halten.
 
-9.5. Ist die Datensicherung ausdrücklich als Leistung vereinbart, so ist die Haftung für den Verlust von Daten abweichend von Punkt 9.2 nicht ausgeschlossen, jedoch für die Wiederherstellung der Daten begrenzt bis maximal 10 % der Auftragssumme je Schadensfall, maximal jedoch 15.000 €. Weitergehende als die in diesem Vertrag genannten Gewährleistungs- und Schadenersatzansprüche des AG -gleich aus welchem Rechtsgrund- sind ausgeschlossen. 
+9.5. Ist die Datensicherung ausdrücklich als Leistung vereinbart, so ist die Haftung für den Verlust von Daten abweichend von Punkt 9.2 nicht ausgeschlossen, jedoch für die Wiederherstellung der Daten begrenzt bis maximal 10 % der Auftragssumme je Schadensfall, maximal jedoch 15.000 EUR. Weitergehende als die in diesem Vertrag genannten Gewährleistungs- und Schadenersatzansprüche des AG -gleich aus welchem Rechtsgrund- sind ausgeschlossen. 
 
 10 Loyalität
 

@@ -173,7 +173,7 @@ Section 924 of the Austrian Civil Code 'Assumption of Deficiency' shall be exclu
 
 9.4. Should the Contractor fulfil work with the assistance of a third party and any guarantee and/or liability claims arise against this third party therefrom, the Contractor shall cede those claims to the Client. In such cases, the Client shall focus on this third party.
 
-9.5. Should data backup be expressly agreed upon as a service, liability for the loss of data shall not be excluded, deviating from Clause 9.2, however, restoration of the data shall be limited to a maximum of 10% of the total order sum per case of damage, however, with an overall maximum of 15,000 €. Further claims for damages and guarantees of the Client than those stipulated in this Contract shall be excluded, regardless of legal basis. 
+9.5. Should data backup be expressly agreed upon as a service, liability for the loss of data shall not be excluded, deviating from Clause 9.2, however, restoration of the data shall be limited to a maximum of 10% of the total order sum per case of damage, however, with an overall maximum of 15,000 EUR. Further claims for damages and guarantees of the Client than those stipulated in this Contract shall be excluded, regardless of legal basis. 
 
 10 Loyalty
 

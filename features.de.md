@@ -323,38 +323,38 @@ Nach einer bestimmten Nutzungsdauer wird der **[dezente Hinweis 'Free and open-s
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Lizenzkosten für 100&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 300&nbsp;€</td>
-                    <td>🔴 ca. 1.600&nbsp;€</td>
-                    <td>🟡 ca. 1.300&nbsp;€</td>
-                    <td>🔴 ca. 1.600&nbsp;€</td>
+                    <td>🟢 300&nbsp;EUR</td>
+                    <td>🔴 ca. 1.600&nbsp;EUR</td>
+                    <td>🟡 ca. 1.300&nbsp;EUR</td>
+                    <td>🔴 ca. 1.600&nbsp;EUR</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Lizenzkosten für 250&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 750&nbsp;€</td>
-                    <td>🔴 ca. 4.000&nbsp;€</td>
-                    <td>🟡 ca. 2.700&nbsp;€</td>
-                    <td>🔴 ca. 3.600&nbsp;€</td>
+                    <td>🟢 750&nbsp;EUR</td>
+                    <td>🔴 ca. 4.000&nbsp;EUR</td>
+                    <td>🟡 ca. 2.700&nbsp;EUR</td>
+                    <td>🔴 ca. 3.600&nbsp;EUR</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Lizenzkosten für 500&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 1.500&nbsp;€</td>
-                    <td>🔴 ca. 8.000&nbsp;€</td>
-                    <td>🟡 ca. 4.400&nbsp;€</td>
-                    <td>🟡 ca. 6.200&nbsp;€</td>
+                    <td>🟢 1.500&nbsp;EUR</td>
+                    <td>🔴 ca. 8.000&nbsp;EUR</td>
+                    <td>🟡 ca. 4.400&nbsp;EUR</td>
+                    <td>🟡 ca. 6.200&nbsp;EUR</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Lizenzkosten für 1.000&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 3.000&nbsp;€</td>
-                    <td>🔴 ca. 15.700&nbsp;€</td>
-                    <td>🟡 ca. 8.700&nbsp;€</td>
-                    <td>🟡 ca. 10.500&nbsp;€</td>
+                    <td>🟢 3.000&nbsp;EUR</td>
+                    <td>🔴 ca. 15.700&nbsp;EUR</td>
+                    <td>🟡 ca. 8.700&nbsp;EUR</td>
+                    <td>🟡 ca. 10.500&nbsp;EUR</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Lizenzkosten für 10.000&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 30.000&nbsp;€</td>
-                    <td>🔴 ca. 110.000&nbsp;€</td>
-                    <td>🟡 ca. 65.000&nbsp;€</td>
-                    <td>🟡 ca. 41.000&nbsp;€</td>
+                    <td>🟢 30.000&nbsp;EUR</td>
+                    <td>🔴 ca. 110.000&nbsp;EUR</td>
+                    <td>🟡 ca. 65.000&nbsp;EUR</td>
+                    <td>🟡 ca. 41.000&nbsp;EUR</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Direktbezug ohne öffentliche Ausschreibung</td>
