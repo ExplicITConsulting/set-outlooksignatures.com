@@ -15,15 +15,15 @@ sitemap_changefreq: monthly
 But the numbers tell a different story.
 
 Let's break it down:
-- Average employee cost: €0.55 per minute (based on €60,000 per year for 1,800 hours)
+- Average employee cost: EUR 0.55 per minute (based on EUR 60,000 per year for 1,800 hours)
 - 1 device, 2 signatures
 - 2 updates per year
 - 3 minutes per update
 
-That's €6.60 per user per year spent on manual signature updates alone.
+That's EUR 6.60 per user per year spent on manual signature updates alone.
 
 Now compare that to Set-OutlookSignatures:
-- Affordable €3.00 per mailbox per year
+- Affordable EUR 3.00 per mailbox per year
 - Fully automated
 - Always compliant with CI/CD and legal standards
 

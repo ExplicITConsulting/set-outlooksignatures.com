@@ -382,38 +382,38 @@ Based on the required feature set, various solutions were evaluated, tested, and
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">License cost for 100&nbsp;mailboxes, 1&nbsp;year</td>
-                    <td>🟢 300&nbsp;€</td>
-                    <td>🔴 ca. 1,600&nbsp;€</td>
-                    <td>🟡 ca. 1,300&nbsp;€</td>
-                    <td>🔴 ca. 1,600&nbsp;€</td>
+                    <td>🟢 EUR 300</td>
+                    <td>🔴 approx. EUR 1,600</td>
+                    <td>🟡 approx. EUR 1,300</td>
+                    <td>🔴 approx. EUR 1,600</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">License cost for 250&nbsp;mailboxes, 1&nbsp;year</td>
-                    <td>🟢 750&nbsp;€</td>
-                    <td>🔴 ca. 4,000&nbsp;€</td>
-                    <td>🟡 ca. 2,700&nbsp;€</td>
-                    <td>🔴 ca. 3,600&nbsp;€</td>
+                    <td>🟢 EUR 750</td>
+                    <td>🔴 approx. EUR 4,000</td>
+                    <td>🟡 approx. EUR 2,700</td>
+                    <td>🔴 approx. EUR 3,600</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">License cost for 500&nbsp;mailboxes, 1&nbsp;year</td>
-                    <td>🟢 1,500&nbsp;€</td>
-                    <td>🔴 ca. 8,000&nbsp;€</td>
-                    <td>🟡 ca. 4,400&nbsp;€</td>
-                    <td>🟡 ca. 6,200&nbsp;€</td>
+                    <td>🟢 EUR 1,500</td>
+                    <td>🔴 approx. EUR 8,000</td>
+                    <td>🟡 approx. EUR 4,400</td>
+                    <td>🟡 approx. EUR 6,200</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">License cost for 1,000&nbsp;mailboxes, 1&nbsp;year</td>
-                    <td>🟢 3,000&nbsp;€</td>
-                    <td>🔴 ca. 15,700&nbsp;€</td>
-                    <td>🟡 ca. 8,700&nbsp;€</td>
-                    <td>🟡 ca. 10,500&nbsp;€</td>
+                    <td>🟢 EUR 3,000</td>
+                    <td>🔴 approx. EUR 15,700</td>
+                    <td>🟡 approx. EUR 8,700</td>
+                    <td>🟡 approx. EUR 10,500</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">License cost for 10,000&nbsp;mailboxes, 1&nbsp;year</td>
-                    <td>🟢 30,000&nbsp;€</td>
-                    <td>🔴 ca. 110,000&nbsp;€</td>
-                    <td>🟡 ca. 65,000&nbsp;€</td>
-                    <td>🟡 ca. 41,000&nbsp;€</td>
+                    <td>🟢 EUR 30,000</td>
+                    <td>🔴 approx. EUR 110,000</td>
+                    <td>🟡 approx. EUR 65,000</td>
+                    <td>🟡 approx. EUR 41,000</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Direct procurement without public tender</td>
