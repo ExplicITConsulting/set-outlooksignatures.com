@@ -839,7 +839,7 @@ In the words of Markus Gruber, the creator of Set-OutlookSignatures:
 >
 > Today, Set-OutlookSignatures is more than just a vehicle for demonstrating PowerShell techniques. It has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies.
 >
-> If you're an Exchange or client administrator, you're part of the community I want to support. I don't expect or request thank-yous, as our community thrives on mutual help. Your feedback, bug reports, and shared use cases help improve the tool for everyone.
+> If you're an Exchange or client administrator, you're part of the community I want to support. I don't expect thank-yous, as our community thrives on mutual help. Your feedback, bug reports, and shared use cases help improve the tool for everyone.
 >
 > That said, it's important to ensure the relationship isn't one-sided when companies benefit significantly. The tagline added to each signature reminds organizations that they benefit from open-source software and that continued open-source availability depends on financial support, which also unlocks additional useful features.
 >
@@ -998,7 +998,7 @@ The code is, of course, full of stuff related to getting reliable information ab
 The following gives you an overview which other scripting techniques you can learn from Set-OutlookSignatures.  
 Beside the big learning topics mentioned in this FAQ, main and supporting files of Set-OutlookSignatures are sprinkled with small code snippets and comments you may find useful. Chances are good that you will stumble across some small gems of code by just browsing through it.
 
-You have found some lines of code that you can use for yourself? Great, that's exactly how it's meant to be. My pleasure!<br>One small request: If you have a minute, please <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">let me know</a> which part of the code you were able to reuse.
+You have found some lines of code that you can use for yourself? Great, that's exactly how it's meant to be. My pleasure!<br>One small ask: If you have a minute, please <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">let me know</a> which part of the code you were able to reuse.
 
 ### Active Directory group membership enumeration without compromises
 That's how it all started, so I'll back up a bit. In 2021, two software companies competing in a product evaluation blamed a complicated but perfectly fine Active Directory setup for the non-functioning and 20-minute-timeouts of their software, until they were shown that a hundred lines of PowerShell code with the correct LDAP queries can do the job in 1.2 seconds.

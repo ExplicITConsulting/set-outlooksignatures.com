@@ -10,7 +10,7 @@ hero_link_text: "<span><b>Buchen Sie Ihre persönliche Demo</b></span>"
 hero_link_style: |
    style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;"
 hero_link2: "#trial"
-hero_link2_text: "<span><b>14-Tage-Testlizenz anfordern</b></span>"
+hero_link2_text: "<span><b>14-Tage-Testlizenz holen</b></span>"
 hero_link2_style: |
    style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;"
 hero_link3: "#order"
@@ -139,7 +139,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Testlizenz oder Angebot anfordern</a>
+<a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Testlizenz holen, Lizenzangebot anfordern</a>
 
 
 <h2 id="demo">Demo</h2>
@@ -216,7 +216,7 @@ sitemap_changefreq: weekly
 <h2 id="trial">Kostenlose Testversion</h2>
 <p>Nachdem Sie das kostenlose und quelloffene Set-OutlookSignatures mithilfe der Schnellstart-Anleitung eingerichtet und an Ihre Bedürfnisse angepasst haben, sind Sie bereit für den nächsten Schritt:</p>
 
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">14-Tage-Testlizenz anfordern</a></p>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">14-Tage-Testlizenz holen</a></p>
 
 <p>Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:</p>
 <ul>

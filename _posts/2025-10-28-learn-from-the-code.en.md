@@ -32,7 +32,7 @@ The following gives you an overview which other scripting techniques you can [le
 - Format postal addresses
 - Detect and convert string and file encodings, including HTML
 
-You have found some lines of code that you can use for yourself? Great, that's exactly how it's meant to be. My pleasure!<br>One small request: If you have a minute, please <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions\_q=">let me know</a> which part of the code you were able to reuse.
+You have found some lines of code that you can use for yourself? Great, that's exactly how it's meant to be. My pleasure!<br>One small ask: If you have a minute, please <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions\_q=">let me know</a> which part of the code you were able to reuse.
 
 ## Interested in learning more or seeing our solution in action?
 [Contact us](/support) or explore further on our [website](/). We look forward to getting to know you!

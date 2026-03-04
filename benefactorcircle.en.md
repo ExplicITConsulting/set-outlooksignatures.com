@@ -10,7 +10,7 @@ hero_link_text: "<span><b>Schedule your personal demo now</b></span>"
 hero_link_style: |
    style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;"
 hero_link2: "#trial"
-hero_link2_text: "<span><b>Request a 14-day trial license</b></span>"
+hero_link2_text: "<span><b>Get a 14-day trial license</b></span>"
 hero_link2_style: |
    style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;"
 hero_link3: "#order"
@@ -138,7 +138,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p><a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a trial license or quote</a></p>
+<p><a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Get a trial license, request a quote</a></p>
 
 
 <h2 id="demo">Demo</h2>
@@ -215,7 +215,7 @@ sitemap_changefreq: weekly
 <h2 id="trial">Free trial</h2>
 <p>After setting up the free and open-source Set-OutlookSignatures using the Quick Start Guide and configuring it to your needs, you are ready to take the next step:</p>
 
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a 14-day trial license</a></p>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Get a 14-day trial license</a></p>
 
 <p>To use the license file, just add two parameters to your call of Set-OutlookSignatures.ps1:</p>
 <ul>
