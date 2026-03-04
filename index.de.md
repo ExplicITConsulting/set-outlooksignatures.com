@@ -240,8 +240,8 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <div class="customer-scrolling-banner">
-        <div class="customer-scrolling-track">
+      <div class="signature-scrolling-banner">
+        <div class="signature-scrolling-track">
         </div>
       </div>
     </div>
