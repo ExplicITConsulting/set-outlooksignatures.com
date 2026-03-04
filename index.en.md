@@ -36,7 +36,7 @@ sitemap_changefreq: weekly
       </div>
     </div>
 </div>
-<p>Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.<p>
+<p>Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -233,9 +233,9 @@ sitemap_changefreq: weekly
 <h2 id="demo">
   Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally. We'll show you how!
 </h2>
-<p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.<p>
+<p>Set-OutlookSignatures is your simple, powerful, and GDPR-compliant solution for automated signature management.</p>
 
-<p>Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.<p>
+<p>Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
