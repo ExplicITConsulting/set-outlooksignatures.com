@@ -362,7 +362,7 @@ sitemap_changefreq: weekly
 
 <p>Wenn einer dieser Schritte fehlschlägt, gilt das Postfach als nicht lizenziert und <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span>-Funktionen können nicht verwendet werden.</p>
 
-<p>Beachten Sie:<p>
+<p>Beachten Sie:</p>
 <ul>
   <li>Der Benutzer, der Set-OutlookSignatures ausführt, muss in der Lage sein, alle direkten und indirekten Mitglieder aller Lizenzgruppen aufzulösen, insbesondere über AD-Vertrauensstellungen hinweg.</li>
   <li>Mitgliedschaften in primären Gruppen (z. B. "Domain Users") werden nicht berücksichtigt, da sie über AD/Entra ID nicht zuverlässig abgefragt werden können.</li>
