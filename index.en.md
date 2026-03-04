@@ -36,6 +36,7 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
+    <p>&nbsp;</p>
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <div class="customer-scrolling-banner">
         <div class="customer-scrolling-track">
