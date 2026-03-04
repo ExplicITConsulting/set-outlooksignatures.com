@@ -163,33 +163,33 @@ Back in the 1980s, Microsoft had a UNIX OS named Xenix… But read yourself <a h
 
 
 ## Should I use .docx or .htm as file format for templates? Signatures in Outlook sometimes look different than my templates.
-The software uses DOCX as default template format, as this is the easiest way to delegate the creation and management of templates to departments such as Marketing or Corporate Communications:  
-- Not all Word formatting options are supported in HTML, which can lead to signatures looking a bit different than templates. For example:
-  - Images may be placed at a different position in the signature compared to the template - this is because the Outlook HTML component only supports the "inline with text" text wrapping option, while Word offers more options.
-  - When using a text style from the Word Styles Gallery, you still may want to set the font and its properties. Else, your fonts and formatting may adapt to identically named styles of the recipient. To avoid this, set the font manually, so that Word does not show "Calibri (Body)" or "Calibri (Heading)" in the font selection, but only "Calibri".
-- On the other hand, the Outlook HTML renderer works better with templates in the DOCX format: The Outlook HTML renderer does not respect the HTML image tags "width" and "height" and displays all images in their original size. When using DOCX as template format, the images are resized when exported to the HTM format.
+Use DOCX templates by default. Only opt for HTML/CSS if you have the technical expertise to manage the complex compatibility issues across different email platforms.
+
+Set-OutlookSignatures uses DOCX as default template format, as this is the easiest way to delegate the creation and management of templates to departments such as Marketing or Corporate Communications. Not only is it easier to design signatures in Word, Word is also the HTML renderer used by Classic Outlook for Windows.Signatures created from DOCX templates are highly compatible across different email clients.
+
+DOCX templates only have few disadvantages:
+- Always use the "inline with text" wrapping option for images, as Outlook does not correctly support other wrapping options correctly.
+- DOCX templates can not be used when Set-OutlookSignatures is running on Linux or macOS, as Word is not available at all or not scriptable on these platforms. You can still design your templates in Word and then convert them to HTML with some tweaks - ExplicIT Consulting's [support](/support) can help you with this if needed.
   
-It is recommended to start with .docx as template format and to only use .htm when the template maintainers have really good HTML knowledge.
+If you opt to use HTM templates, the parameter '`-UseHtmTemplates $true`' makes Set-OutlookSignatures search for .htm template files instead of .docx.
 
-With the parameter `UseHtmTemplates`, the software searches for .htm template files instead of DOCX.
-
-The requirements for .htm files these files are harder to fulfill as it is the case with DOCX files:  
-- The template must have the file extension .htm, .html is not supported
-- The template must be UTF-8 encoded (without BOM), or at least only contain UTF-8 compatible characters
-- The character set must be set to UTF-8 with a meta tag: '`<meta http-equiv=Content-Type content="text/html; charset=utf-8">`'
-- The template should be a single file, additional files and folders are not recommended (but possible, see below)
-- Images can either reference a public URL, a relative local path (preferred) or be part of the template as Base64 encoded string
+The requirements for .htm files are:  
+- The file must have the file extension .htm, .html is not supported.
+- The file must be UTF-8 encoded (without BOM), or at least only contain UTF-8 compatible characters.
+- The character set must be set to UTF-8 with a meta tag: '`<meta http-equiv=Content-Type content="text/html; charset=utf-8">`'.
+- The template should be a single file, additional files and folders are not recommended (but possible, see below).
+- Images can either reference a public URL, a relative local path or be part of the template as Base64 encoded string.
 - When storing images in a relative local path:
-  - Only one subfolder is allowed
-  - The subfolder must be named '\<name of the HTM file without extension>\<suffix>'
-    - The suffix must be one from the following list (as defined by Microsoft Office): '.files', '_archivos', '_arquivos', '_bestanden', '_bylos', '_datoteke', '_dosyalar', '_elemei', '_failid', '_fails', '_fajlovi', '_ficheiros', '_fichiers', '_file', '_files', '_fitxategiak', '_fitxers', '_pliki', '_soubory', '_tiedostot', '-Dateien', '-filer'
+  - Only one subfolder is allowed.
+  - The subfolder must be named '\<name of the HTM file without extension>\<suffix>'.
+    - The suffix must be one from the following list: '.files', '_archivos', '_arquivos', '_bestanden', '_bylos', '_datoteke', '_dosyalar', '_elemei', '_failid', '_fails', '_fajlovi', '_ficheiros', '_fichiers', '_file', '_files', '_fitxategiak', '_fitxers', '_pliki', '_soubory', '_tiedostot', '-Dateien', '-filer'
   - Example: The file 'My signature.htm' has images in the subfolder 'My signature.files'
   
 Possible approaches for fulfilling these requirements are:  
-- Design the template in a HTML editor that supports all features required  
-- Design the template in Outlook  
+- Design the template in a HTML editor that supports all features required.  
+- Design the template in Outlook (Outlook's editor is basicall an embedded Word document).  
   - Paste it into Word and save it as `"Website, filtered"`. The `"filtered"` is important here, as any other web format will not work.  
-  - Run the resulting file through a script that converts the Word output to a single UTF-8 encoded (without BOM) HTML file. Alternatively, but not recommended, you can copy the .htm file and the associated folder containing images and other HTML information into the template folder.
+  - Run the resulting file through a script that converts the Word output to a single UTF-8 encoded (without BOM) HTML file (ExplicIT Consulting's [support](/support) can help you with this if needed.). Alternatively, but not recommended, you can copy the .htm file and the associated folder containing images and other HTML information into the template folder.
 
 The sample templates delivered with this script represent all possible formats:  
 - `.\sample templates\Out-of-Office DOCX` and `.\sample templates\Signatures DOCX` contain templates in the DOCX format  
