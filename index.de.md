@@ -35,6 +35,7 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
+  </div>
 </div>
 <p>Erleben Sie live, wie schnell und intuitiv Sie Ihre Outlook-Signaturen und Abwesenheitsnotizen zentral verwalten und optimieren können.</p>
 <div class="columns is-multiline">

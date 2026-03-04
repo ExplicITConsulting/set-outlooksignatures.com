@@ -35,6 +35,7 @@ sitemap_changefreq: weekly
         </div>
       </div>
     </div>
+  </div>
 </div>
 <p>Experience live how quickly and intuitively you can centrally manage and optimize your Outlook signatures and out-of-office replies.</p>
 <div class="columns is-multiline">
