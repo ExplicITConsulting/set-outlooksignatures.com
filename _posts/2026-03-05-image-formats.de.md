@@ -25,16 +25,16 @@ Dieser Leitfaden führt Sie durch die Formate, auf die Sie sich verlassen könne
 
 
 ## Bildformate, die Sie vermeiden sollten
-- SVG (.svg): SVG-Dateien eignen sich zwar hervorragend für das Web, werden jedoch aufgrund von Sicherheitsbedenken (Cross-Site-Scripting und andere) von den meisten E-Mail-Clients nicht vollständig unterstützt.
-- WebP (.webp), HEIF (.heif), AVIF (.avif), APNG (.apng) und andere: Zu neu für E-Mail-Clients und deren integrierte Renderer. Einige dieser Formate werden noch nicht einmal von allen Browsern unterstützt.
+- SVG (.svg): SVG-Dateien eignen sich zwar hervorragend für das Web, werden jedoch aufgrund von Sicherheitsbedenken (Cross-Site-Scripting und andere) von immer mehr E-Mail-Clients nicht unterstützt.
+- WebP (.webp), HEIF (.heif), AVIF (.avif), APNG (.apng) und andere: Zu neu für die meisten E-Mail-Clients und deren integrierte Renderer. Einige dieser Formate werden noch nicht einmal von allen Browsern unterstützt.
 - TIFF (.tiff), PSD (.psd): Völlig vermeiden. Hierbei handelt es sich um hochwertige, oft unkomprimierte Dateiformate, die für den professionellen Druck oder die Bearbeitung gedacht sind, nicht für die Anzeige im Web oder in E-Mails. Ihre Dateigrößen sind unzumutbar groß, was ein langsames Laden und keine Unterstützung durch E-Mail-Clients garantiert.
-- BMP (.bmp): Völlig vermeiden. Ein sehr altes, unkomprimiertes Bitmap-Format, das hauptsächlich von Windows verwendet wird. Obwohl es gelegentlich von einigen Clients unterstützt wird, ist die Dateigröße im Vergleich zu einem optimierten JPEG oder PNG bei gleicher Qualität enorm. Halten Sie sich an die moderneren Standards.
+- BMP (.bmp): Völlig vermeiden. Ein sehr altes, unkomprimiertes Bitmap-Format, das hauptsächlich von Windows verwendet wird. Obwohl es von den meisten Clients unterstützt wird, ist die Dateigröße im Vergleich zu einem optimierten JPEG oder PNG bei gleicher Qualität enorm. Halten Sie sich an die moderneren Standards.
 - MP4 (.mp4, .m4*) und andere Animations- und Videoformate: Vollständig vermeiden. E-Mail-Clients können Videodateien in der Regel nicht direkt abspielen. Wenn Sie sie einfügen, werden oft Spam-Filter ausgelöst oder das Symbol für den Anhang wird nicht angezeigt. Um ein Video zu teilen, verwenden Sie ein statisches Bild, das auf eine externe Video-Hosting-Website verlinkt.
 
 
 ## Verlinkte Bilddateien
 Verlinkte Bilder sind theoretisch eine großartige Sache, führen in der Praxis jedoch häufig zu Problemen.
-- Aus Sicherheitsgründen zeigen die meisten E-Mail-Clients verlinkte Bilder erst dann an, wenn der Empfänger den Download genehmigt hat. In der Zwischenzeit wird in der Regel ein Platzhalterbild mit einer Fehlermeldung angezeigt.
+- Aus Sicherheitsgründen zeigen die meisten E-Mail-Clients verlinkte Bilder erst dann an, wenn der Empfänger deren Download genehmigt hat. In der Zwischenzeit wird in der Regel ein Platzhalterbild mit einer Fehlermeldung angezeigt.
 - Sie können die Datei auf Ihrem Webserver nicht verschieben.
 - Am Webserver aktualisierte Bilder werden je nach Client in älteren E-Mails angezeigt oder auch nicht.
 - Wenn sich die Breite oder Höhe des Bildes ändert, kann dies unerwünschte visuelle Auswirkungen auf Ihre Signaturen haben.
@@ -58,9 +58,9 @@ Set-OutlookSignatures und das Benefactor Circle Add-on unterstützen beide Varia
 
 
 ## Fazit und abschließender Ratschlag
-Die goldene Regel für E-Mail-Signaturen lautet: Kompatibilität geht vor modernster Technologie. Neue, hocheffiziente Bildformate wie WebP und AVIF sind zwar für das Web spannend, aber für die fragmentierte und eher traditionelle Welt der E-Mails einfach noch nicht bereit.
+Die goldene Regel für E-Mail-Signaturen lautet: Kompatibilität geht vor modernster Technologie. Neue, hocheffiziente Bildformate wie WebP und AVIF sind zwar für das Web spannend, aber die fragmentierte und eher traditionelle Welt der E-Mails ist dafür einfach noch nicht bereit.
 
-Um sicherzustellen, dass Ihre professionelle Signatur jedes Mal perfekt dargestellt wird, sollten Sie PNG für scharfe Logos und JPEG für fotografische Elemente verwenden.
+Um sicherzustellen, dass Ihre professionelle Signatur jedes Mal perfekt dargestellt wird, sollten Sie JPEG oder PNG verwenden.
 
 Und denken Sie daran: Einbetten statt verlinken! So bleiben Ihre Bilder angehängt und sind vom Moment des E-Mail-Eingangs an sichtbar.
 
