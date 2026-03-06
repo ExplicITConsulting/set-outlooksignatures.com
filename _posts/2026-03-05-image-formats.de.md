@@ -67,5 +67,5 @@ Und denken Sie daran: Einbetten statt verlinken! So bleiben Ihre Bilder angehän
 Wenn Sie diese einfachen Richtlinien befolgen, wird Ihr Markenimage stets makellos präsentiert.
 
 
-## Interested in learning more or seeing our solution in action?
-[Contact us](/support) or explore further on our [website](/). We look forward to getting to know you!
+## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
+[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, Sie kennenzulernen!
