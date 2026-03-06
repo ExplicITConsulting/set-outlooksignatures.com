@@ -1,6 +1,11 @@
 #Requires -Version 7.5
 
 
+# --- Configuration ---
+$SitemapUrl = 'https://set-outlooksignatures.com/sitemap.xml'
+$StartUrl = 'https://set-outlooksignatures.com'
+
+
 function GetLinksFromWebsite {
     param ([Parameter(Mandatory = $true)][string]$Url)
     try {
@@ -35,15 +40,9 @@ function Add-LinkMapping {
 }
 
 
+# --- Initialization ---
 Add-Type -AssemblyName System.Web
 
-
-# --- Configuration ---
-$SitemapUrl = 'https://set-outlooksignatures.com/sitemap.xml'
-$StartUrl = 'https://set-outlooksignatures.com'
-
-
-# --- Initialization ---
 # This map stores: "Link" = @("Page1", "Page2")
 $LinkSourceMap = @{}
 $PagesChecked = New-Object 'System.Collections.Generic.HashSet[string]'
