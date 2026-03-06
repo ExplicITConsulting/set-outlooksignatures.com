@@ -1,183 +1,189 @@
 #Requires -Version 7.5
 
-
-# --- Configuration ---
+# --- 1. Configuration ---
 $SitemapUrl = 'https://set-outlooksignatures.com/sitemap.xml'
 $StartUrl = 'https://set-outlooksignatures.com'
+$ParallelThreads = $env:NUMBER_OF_PROCESSORS
+$userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0'
 
+# --- 2. Setup ---
+$SeleniumDir = Join-Path $env:TEMP "Selenium_$(Get-Random)"
+New-Item -ItemType Directory -Path $SeleniumDir -Force | Out-Null
 
-function GetLinksFromWebsite {
-    param ([Parameter(Mandatory = $true)][string]$Url)
-    try {
-        $absoluteLinks = New-Object 'System.Collections.Generic.HashSet[string]'
-        $baseUri = [System.Uri]$Url
-        $response = Invoke-WebRequest -Uri $Url -ErrorAction Stop -TimeoutSec 15
+$edgeFiles = @('C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe', 'C:\Program Files\Microsoft\Edge\Application\msedge.exe')
+$EdgePath = ($edgeFiles | Where-Object { Test-Path $_ } | Select-Object -First 1)
+$EdgeVersion = (Get-Item $EdgePath).VersionInfo.ProductVersion
+$DriverUrl = "https://msedgedriver.microsoft.com/$EdgeVersion/edgedriver_win64.zip"
+Invoke-WebRequest -Uri $DriverUrl -OutFile "$SeleniumDir\driver.zip" -UseBasicParsing
+Expand-Archive -Path "$SeleniumDir\driver.zip" -DestinationPath $SeleniumDir -Force
 
-        foreach ($link in $response.Links.href) {
-            if ([string]::IsNullOrWhiteSpace($link)) { continue }
-            try {
-                $transformedUri = [System.Uri]::new($baseUri, $link)
-                if ($transformedUri.Scheme -iin @('http', 'https')) {
-                    $null = $absoluteLinks.Add($transformedUri.AbsoluteUri)
-                }
-            } catch { continue }
-        }
-        return $absoluteLinks
-    } catch {
-        Write-Host "    Failed to retrieve links from $Url" -ForegroundColor Yellow
-        return $null
-    }
-}
+$NugetUrl = 'https://www.nuget.org/api/v2/package/Selenium.WebDriver'
+Invoke-WebRequest -Uri $NugetUrl -OutFile "$SeleniumDir\selenium.zip" -UseBasicParsing
+Expand-Archive -Path "$SeleniumDir\selenium.zip" -DestinationPath "$SeleniumDir\Package" -Force
 
-
-# Helper function to track which page links to what
-function Add-LinkMapping {
-    param($Link, $SourcePage)
-    if (-not $LinkSourceMap.ContainsKey($Link)) {
-        $LinkSourceMap[$Link] = New-Object 'System.Collections.Generic.HashSet[string]'
-    }
-    $null = $LinkSourceMap[$Link].Add($SourcePage)
-}
-
-
-# --- Initialization ---
+$DllPath = Get-ChildItem -Path "$SeleniumDir\Package" -Filter 'WebDriver.dll' -Recurse | Where-Object { $_.FullName -match 'netstandard2.0|net6.0' } | Select-Object -First 1
+Add-Type -Path $DllPath.FullName
 Add-Type -AssemblyName System.Web
 
-# This map stores: "Link" = @("Page1", "Page2")
-$LinkSourceMap = @{}
-$PagesChecked = New-Object 'System.Collections.Generic.HashSet[string]'
-$Queue = New-Object 'System.Collections.Generic.Queue[string]'
-$PageContentCache = @{}
+# --- 3. Shared State ---
+$LinkSourceMap = [System.Collections.Concurrent.ConcurrentDictionary[string, System.Collections.Generic.HashSet[string]]]::new()
+$PagesChecked = [System.Collections.Concurrent.ConcurrentDictionary[string, byte]]::new()
+$Queue = [System.Collections.Concurrent.ConcurrentQueue[string]]::new()
+$AnchorCache = [System.Collections.Concurrent.ConcurrentDictionary[string, string[]]]::new()
+$StartDomain = ([uri]$StartUrl).Host
 
-if ($StartUrl) {
-    $StartDomain = ([uri]$StartUrl).Host
-} elseif ($SitemapUrl) {
-    $StartDomain = ([uri]$SitemapUrl).Host
-} else {
-    Write-Host 'You must specify at least a SitemapUrl or a StartUrl.' -ForegroundColor Red
-    exit 1
+function Add-LinkMapping {
+    param($Link, $SourcePage)
+    $set = $LinkSourceMap.GetOrAdd($Link, { New-Object 'System.Collections.Generic.HashSet[string]' })
+    $null = $set.Add($SourcePage)
 }
 
-
-if ($StartUrl) {
-    $Queue.Enqueue($StartUrl)
-}
-
-
-# --- Sitemap Processing ---
+# --- 4. Sitemap ---
 if ($SitemapUrl) {
     try {
         $response = Invoke-WebRequest -Uri $SitemapUrl -UseBasicParsing
         [xml]$Sitemap = $response.Content
-
         $ns = New-Object System.Xml.XmlNamespaceManager($Sitemap.NameTable)
         $ns.AddNamespace('ns', 'http://www.sitemaps.org/schemas/sitemap/0.9')
-        $ns.AddNamespace('xhtml', 'http://www.w3.org/1999/xhtml')
-
         $locLinks = $Sitemap.SelectNodes('//ns:loc', $ns) | Select-Object -ExpandProperty '#text'
-        $xhtmlLinks = $Sitemap.SelectNodes('//xhtml:link', $ns) | ForEach-Object { $_.getAttribute('href') }
-
-        ($locLinks + $xhtmlLinks) | Select-Object -Unique | ForEach-Object {
-            $Queue.Enqueue($_)
-            Add-LinkMapping -Link $_ -SourcePage 'Sitemap'
-        }
-    } catch {
-        Write-Host "Failed to download or parse sitemap: $($_.Exception.Message)" -ForegroundColor Yellow
-    }
+        $locLinks | Select-Object -Unique | ForEach-Object { $Queue.Enqueue($_); Add-LinkMapping -Link $_ -SourcePage 'Sitemap' }
+    } catch { }
 }
+if ($StartUrl -and $Queue.IsEmpty) { $Queue.Enqueue($StartUrl) }
 
+# --- 5. Optimized Crawl ---
+Write-Host "Scanning $StartDomain with $ParallelThreads threads..."
 
-# --- Crawl Loop ---
-Write-Host "Crawling $StartDomain..."
-while ($Queue.Count -gt 0) {
-    $CurrentUrl = $Queue.Dequeue()
-    $CurrentUrlClean = @($CurrentUrl -split '#(?!/)', 2)[0]
+$LinkResults = 1..$ParallelThreads | ForEach-Object -Parallel {
+    Add-Type -Path ($using:DllPath).FullName
 
-    if ($PagesChecked.Contains($CurrentUrlClean)) { continue }
-    $null = $PagesChecked.Add($CurrentUrlClean)
+    $options = [OpenQA.Selenium.Edge.EdgeOptions]::new()
+    $options.AddArgument('--headless=new')
+    $options.AddArgument('--disable-gpu')
+    $options.AddArgument('--no-sandbox')
+    $options.AddArgument("--user-agent=$userAgent")
 
-    Write-Host "  $CurrentUrlClean"
-    $LinksOnPage = GetLinksFromWebsite -Url $CurrentUrl
+    $Service = [OpenQA.Selenium.Edge.EdgeDriverService]::CreateDefaultService($using:SeleniumDir)
+    $Service.HideCommandPromptWindow = $true
+    $Driver = [OpenQA.Selenium.Edge.EdgeDriver]::new($Service, $options)
 
-    if ($null -ne $LinksOnPage) {
-        foreach ($link in $LinksOnPage) {
-            # Map the link to the current page
-            Add-LinkMapping -Link $link -SourcePage $CurrentUrlClean
+    $CurrentUrl = $null
+    try {
+        while (($using:Queue).TryDequeue([ref]$CurrentUrl)) {
+            $uriParts = @($CurrentUrl -split '#(?!/)', 2)
+            $baseUrl = $uriParts[0]
+            $targetAnchor = if ($uriParts.Count -gt 1) { [System.Web.HttpUtility]::UrlDecode($uriParts[1]) } else { $null }
+
+            # Leak-proof check
+            if (-not ($using:PagesChecked).TryAdd($CurrentUrl, 0)) { continue }
+
+            if ($null -eq $targetAnchor) {
+                Write-Host "  Page $($CurrentUrl)"
+            }else{
+                Write-Host "  Anchor $($CurrentUrl)"
+            }
+
+            $finalStatus = 'Unknown'
+            $isPageValid = $false
+            $anchorFound = $null
 
             try {
-                $foundUri = [uri]$link
-                $linkClean = @($link -split '#(?!/)', 2)[0]
+                # --- PRE-FLIGHT STATUS CHECK ---
+                try {
+                    $req = Invoke-WebRequest -Uri $baseUrl -Method Get -ErrorAction Stop -UserAgent $userAgent
+                    $finalStatus = [int]$req.StatusCode
+                    $isPageValid = ($finalStatus -ge 200 -and $finalStatus -lt 400)
+                } catch {
+                    if ($_.Exception.Response.StatusCode.value__) {
+                        $finalStatus = [int]$_.Exception.Response.StatusCode.value__
+                    } else {
+                        $finalStatus = $_.Exception.Message
+                    }
+                    $isPageValid = $false
+                }
 
-                # If link is internal, add to queue for further crawling
-                if ($foundUri.Host -eq $StartDomain -or $foundUri.Host.EndsWith(".$StartDomain")) {
-                    if (-not $PagesChecked.Contains($linkClean)) {
-                        $Queue.Enqueue($linkClean)
+                # --- SELENIUM PROCESSING (Only if page is valid) ---
+                if ($isPageValid) {
+                    if (-not ($using:AnchorCache).ContainsKey($baseUrl)) {
+                        $Driver.Navigate().GoToUrl($baseUrl)
+
+                        $timeout = [DateTime]::Now.AddSeconds(10)
+                        while ($Driver.ExecuteScript('return document.readyState') -ne 'complete') {
+                            if ([DateTime]::Now -gt $timeout) { break }
+                            Start-Sleep -Milliseconds 100
+                        }
+
+                        $jsCode = @'
+                        return {
+                            anchors: Array.from(document.querySelectorAll('[id], [name]'))
+                                          .map(el => el.id || el.name)
+                                          .filter(Boolean)
+                                          .map(val => String(val).toLowerCase()),
+                            links: Array.from(document.querySelectorAll('a[href]'))
+                                        .map(a => a.href)
+                        };
+'@
+                        $pageData = $Driver.ExecuteScript($jsCode)
+                        ($using:AnchorCache).TryAdd($baseUrl, [string[]]$pageData.anchors)
+
+                        # Only scrape links if we are on the internal domain
+                        if ($baseUrl.Contains($using:StartDomain)) {
+                            foreach ($href in $pageData.links) {
+                                if ([string]::IsNullOrWhiteSpace($href) -or $href -notmatch '^https?://') { continue }
+
+                                # Map everything found (including microsoft.com)
+                                $set = ($using:LinkSourceMap).GetOrAdd($href, { New-Object 'System.Collections.Generic.HashSet[string]' })
+                                [void]$set.Add($baseUrl)
+
+                                # Enqueue if not checked, regardless of domain
+                                if (-not ($using:PagesChecked).ContainsKey($href)) {
+                                    ($using:Queue).Enqueue($href)
+                                }
+                            }
+                        }
+                    }
+
+                    if ($targetAnchor) {
+                        $cachedIds = ($using:AnchorCache)[$baseUrl]
+                        $anchorFound = $cachedIds -contains $targetAnchor.ToLower()
                     }
                 }
-            } catch { continue }
+            } catch {
+                $isPageValid = $false
+                $finalStatus = "Error: $($_.Exception.Message)"
+            }
+
+            [PSCustomObject]@{
+                FullLink      = $CurrentUrl
+                BasePageValid = $isPageValid
+                AnchorFound   = $anchorFound
+                StatusCode    = $finalStatus
+                FoundOnPages  = ($using:LinkSourceMap)[$CurrentUrl]
+            }
         }
-    }
-}
+    } finally { $Driver.Quit(); $Service.Dispose() }
+} -ThrottleLimit $ParallelThreads
 
+# Clean the result stream
+$LinkResults = $LinkResults | Where-Object { $_ -is [PSCustomObject] }
 
-# --- Validation Logic ---
+# --- 6. Results ---
 Write-Host
-Write-Host "Verifying $($LinkSourceMap.Count) unique links found"
-$LinkResults = New-Object 'System.Collections.Generic.List[PSObject]'
+Write-Host "Total unique links checked: $($LinkResults.Count)"
 
-foreach ($link in $LinkSourceMap.Keys) {
-    $uriParts = @($link -split '#(?!/)', 2)
-    $baseUrl = $uriParts[0]
-    $rawAnchor = if ($uriParts.Count -gt 1) { $uriParts[1] } else { $null }
-    $decodedAnchor = [System.Web.HttpUtility]::UrlDecode($rawAnchor)
-
-    $pageExists = $false
-    $anchorExists = $null
-    $statusCode = 0
-
-    if (-not $PageContentCache.ContainsKey($baseUrl)) {
-        try {
-            $response = Invoke-WebRequest -Uri $baseUrl -Method Get -TimeoutSec 10 -ErrorAction Stop
-            $PageContentCache[$baseUrl] = $response.Content
-            $pageExists = $true
-            $statusCode = [int]$response.StatusCode
-        } catch {
-            $PageContentCache[$baseUrl] = $null
-            $statusCode = if ($_.Exception.Response) { [int]$_.Exception.Response.StatusCode } else { 0 }
-        }
-    } else {
-        $pageExists = $null -ne $PageContentCache[$baseUrl]
-        $statusCode = 200
-    }
-
-    if ($pageExists -and -not [string]::IsNullOrEmpty($rawAnchor)) {
-        $html = $PageContentCache[$baseUrl]
-        $pattern = "(id|name)=['""]$([regex]::Escape($decodedAnchor))['""]"
-        $anchorExists = $html -match $pattern
-    }
-
-    $LinkResults.Add([PSCustomObject]@{
-            FullLink      = $link
-            BasePageValid = $pageExists
-            AnchorFound   = $anchorExists
-            StatusCode    = $statusCode
-            FoundOnPages  = @($LinkSourceMap[$link]) # All pages containing this link
-        })
-}
-
-
-# --- Final Results ---
 Write-Host
 Write-Host 'Broken links'
-$LinkResults | Where-Object { (-not $_.BasePageValid) -or ($_.AnchorFound -eq $false) } | Sort-Object -Property FullLink | ForEach-Object {
-    Write-Host "  $($_.FullLink)" -ForegroundColor Yellow
-    Write-Host "    Status code: $($_.StatusCode)"
-    Write-Host "    BasePageValid: $($_.BasePageValid)"
-    Write-Host "    AnchorFound: $($_.AnchorFound)"
-    Write-Host "    FoundOnPages: $($_.FoundOnPages.Count)"
-    if ($_.FoundOnPages) {
-        $_.FoundOnPages | Sort-Object | ForEach-Object {
-            Write-Host "      $($_)"
-        }
+$Broken = $LinkResults | Where-Object { $_.BasePageValid -eq $false -or $_.AnchorFound -eq $false }
+
+if ($Broken.Count -eq 0) {
+    Write-Host '  None'
+} else {
+    $Broken | Sort-Object FullLink | ForEach-Object {
+        Write-Host "  $($_.FullLink)" -ForegroundColor Yellow
+        Write-Host "    Status code: $($_.StatusCode)"
+        Write-Host "    BasePageValid: $($_.BasePageValid)"
+        Write-Host "    AnchorFound: $(if($null -eq $_.AnchorFound){'N/A'}else{$_.AnchorFound})"
+        Write-Host "    FoundOnPages: $($_.FoundOnPages.Count)"
+        $_.FoundOnPages | Sort-Object | ForEach-Object { Write-Host "      $($_)" }
     }
 }

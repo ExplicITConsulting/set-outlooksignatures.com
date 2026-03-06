@@ -32,7 +32,7 @@ Im Folgenden finden Sie eine Übersicht über weitere Skripttechniken, die Sie [
 - Formatieren von Postadressen
 - Erkennen und Konvertieren von Zeichenfolgen- und Dateikodierungen, einschließlich HTML
 
-Haben Sie einige Codezeilen gefunden, die Sie für sich selbst verwenden können? Großartig, genau so soll es sein. Gern geschehen!<br>Eine kleine Bitte: Wenn Sie einen Moment Zeit haben, lassen Sie mich bitte <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions\_q=">wissen</a>, welchen Teil des Codes Sie wiederverwenden konnten.
+Haben Sie einige Codezeilen gefunden, die Sie für sich selbst verwenden können? Großartig, genau so soll es sein. Gern geschehen!<br>Eine kleine Bitte: Wenn Sie einen Moment Zeit haben, lassen Sie mich bitte <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">wissen</a>, welchen Teil des Codes Sie wiederverwenden konnten.
 
 ## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
 [Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, Sie kennenzulernen!
