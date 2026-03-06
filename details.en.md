@@ -118,7 +118,9 @@ The paths to the template and configuration files (SignatureTemplatePath, OOFTem
 In cloud environments, you need to register Set-OutlookSignatures as Entra ID app and provide admin consent for the required permissions. See the Quick Start Guide or '.\config\default graph config.ps1' for details.
 
 ### Linux and macOS
-Not all features are yet available on Linux and macOS. Every parameter contains appropriate information, which can be summarized as follows:
+Not all features of Set-OutlookSignatures and the Benefactor Circle add-on are yet available or possible on Linux and macOS. Every parameter contains appropriate information, which are summarized below.
+
+These restrictions only apply to Set-OutlookSignatures and the Benefactor Circle add-on, the [Outlook add-in ](/outlookaddin) is not affected.
 
 #### Common restrictions and notes for Linux and macOS
 - Only mailboxes hosted in Exchange Online are supported. On-prem mailboxes usually work when addressed via Exchange Online, but this is not guaranteed.
@@ -128,6 +130,8 @@ Not all features are yet available on Linux and macOS. Every parameter contains 
   - Deploy a software package that not only contains Set-OutlookSignatures, but also all required template and configuration files.
   -	Place Set-OutlookSignatures, the templates and its configuration as ZIP file in a public place (such as your website), and use Intune with a remediation script to download and extract the ZIP file. This sort of hosting might not meet your security requirements.
   - Change your execution script or task, so that all required paths are mounted before Set-OutlookSignatures is run.
+
+As mentioned before: These restrictions only apply to Set-OutlookSignatures and the Benefactor Circle add-on, the [Outlook add-in ](/outlookaddin) is not affected.
 
 
 #### Linux specific restrictions and notes
