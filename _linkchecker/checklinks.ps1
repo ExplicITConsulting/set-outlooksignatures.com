@@ -4,8 +4,8 @@
 $SitemapUrl = 'https://set-outlooksignatures.com/sitemap.xml'
 $StartUrl = 'https://set-outlooksignatures.com'
 $SeleniumBrowser = 'Edge' # Firefox, Edge
-$SeleniumBrowserHeadless = $false
-$SeleniumBrowserMinimize = $true
+$SeleniumBrowserHeadless = $true
+$SeleniumBrowserMinimize = $false
 
 
 function GetLinksAndContent {
