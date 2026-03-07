@@ -482,7 +482,7 @@ try {
     $BrokenLinks = @($LinkResults | Where-Object { (-not $_.BasePageValid) -or ($_.AnchorFound -eq $false) } | Sort-Object -Property FullLink)
 
     if ($BrokenLinks.Count -eq 0) {
-        Write-Host "  No broken links found! All $($LinkResults.Count) links are valid." -ForegroundColor Green
+        Write-Host "  No broken links found! All $($LinkResults.Count) links are valid."
     } else {
         Write-Host "  $($BrokenLinks.Count) broken link(s) found" -ForegroundColor Red
         $BrokenLinks | ForEach-Object {
