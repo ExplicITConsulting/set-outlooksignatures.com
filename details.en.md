@@ -797,8 +797,7 @@ The signature template `.\templates\Signatures DOCX\Test all signature replaceme
   
 The software uses a workaround, but the resulting RTF files are still huge compared to other file types and especially for use in emails. If this is a problem, please either do not use embedded images in the signature template (including photos from Active Directory), or switch to HTML formatted emails.
 
-If you ran into this problem outside this script, please consider modifying the ExportPictureWithMetafile setting as described in  <a href="https://support.microsoft.com/kb/224663">this Microsoft article</a>.  
-If the link is not working, please visit the <a href="https://web.archive.org/web/20180827213151/https://support.microsoft.com/en-us/help/224663/document-file-size-increases-with-emf-png-gif-or-jpeg-graphics-in-word">Internet Archive Wayback Machine's snapshot of Microsoft's article</a>.  
+If you ran into this problem outside this script, consider modifying the '`ExportPictureWithMetafile`' registry key as described in the Microsoft Knowledge Base article 224663. This is one of many articles that have not been migrated to the new learn.microsoft.com platform and are no longer available on microsoft.com, but you can give <a href="https://www.betaarchive.com/wiki/index.php?title=Microsoft_KB_Archive/224663">Beta Archive's snapshot of the article</a> a try.  
 
 
 ### Delete images when attribute is empty, variable content based on group membership
