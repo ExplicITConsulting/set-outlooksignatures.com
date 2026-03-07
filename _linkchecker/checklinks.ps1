@@ -22,7 +22,7 @@ function GetLinksAndContent {
             $response = Invoke-WebRequest -Method Head -Uri $Url -UseBasicParsing -Timeout 10 -UserAgent $userAgent -ErrorAction Stop
         } catch {
             # Check if this specific error is a Throttling (429) error
-            if ($_.Exception.Response.StatusCode -eq 429 -or $_.ToString() -like '*Too many requests*') {
+            if ($_.Exception.Response.StatusCode -eq 429 -or $_.ToString() -ilike '*Too many requests*') {
                 $isThrottled = $true
             } else {
                 # If not throttled, try the GET fallback
@@ -30,7 +30,9 @@ function GetLinksAndContent {
                     $response = Invoke-WebRequest -Method Get -Uri $Url -UseBasicParsing -Timeout 10 -UserAgent $userAgent -ErrorAction Stop
                 } catch {
                     # Final check: if GET is also throttled, we don't throw; we let Selenium handle it
-                    if ($_.Exception.Response.StatusCode -eq 429 -or $_.ToString() -like '*Too many requests*') {
+                    if ($_.Exception.Response.StatusCode -eq 429 -or $_.ToString() -ilike '*Too many requests*') {
+                        $isThrottled = $true
+                    } elseif (($_.Exception.Response.StatusCode -ieq 'forbidden') -or [string]::IsNullOrWhitespace($_.Exception.Response.StatusCode)) {
                         $isThrottled = $true
                     } else {
                         # Real error (404, DNS, etc.) - we still throw here
@@ -51,13 +53,86 @@ function GetLinksAndContent {
         # If throttled or it IS HTML, Selenium takes over with the logged-in profile
         $Driver.Navigate().GoToUrl($Url)
 
+        <#
         $timeout = [DateTime]::Now.AddSeconds(10)
         while ($Driver.ExecuteScript('return document.readyState') -ine 'complete') {
             if ([DateTime]::Now -gt $timeout) { break }
             Start-Sleep -Milliseconds 100
         }
+        #>
 
-        $PageContentCache[$Url] = $Driver.PageSource
+
+        # Navigate
+        $Driver.Navigate().GoToUrl($Url)
+
+        # Generic Stability Wait
+        $MaxWait = 10
+        $CheckIntervalMs = 500
+        $startTime = [DateTime]::Now
+        $lastCount = 0
+        $stableRounds = 0
+
+        while (([DateTime]::Now - $startTime).TotalSeconds -lt $MaxWait) {
+            # Count all elements in Light DOM + any accessible Shadow DOMs
+            $currentCount = $Driver.ExecuteScript(@'
+function countNodes(root) {
+    let count = root.querySelectorAll('*').length;
+    root.querySelectorAll('*').forEach(el => {
+        if (el.shadowRoot) {
+            count += countNodes(el.shadowRoot);
+        }
+    });
+    return count;
+}
+
+return countNodes(document);
+'@)
+
+            if ($currentCount -eq $lastCount -and $currentCount -gt 0) {
+                $stableRounds++
+            } else {
+                $stableRounds = 0 # Reset if page is still growing/changing
+            }
+
+            # If the element count is the same for 2 consecutive checks, it's likely ready
+            if ($stableRounds -ge 2) { break }
+
+            $lastCount = $currentCount
+            Start-Sleep -Milliseconds $CheckIntervalMs
+        }
+
+
+
+
+        # Updated JavaScript to return the main HTML + all Shadow content as one giant string
+        $jsScript = @'
+    function getFullPageContent(root) {
+        let combinedContent = root.outerHTML || "";
+
+        // Find all elements with a shadowRoot
+        const allElements = root.querySelectorAll('*');
+        allElements.forEach(el => {
+            if (el.shadowRoot) {
+                // Append the shadow content to our search string
+                combinedContent += "\n\n";
+                combinedContent += el.shadowRoot.innerHTML;
+
+                // Recurse to find nested shadows
+                combinedContent += getFullPageContent(el.shadowRoot);
+            }
+        });
+        return combinedContent;
+    }
+    return getFullPageContent(document.documentElement);
+'@
+
+        # Cache the full content (Main DOM + Shadow DOMs)
+        $PageContentCache[$Url] = $Driver.ExecuteScript($jsScript)
+
+        #$PageContentCache[$Url] = $Driver.PageSource
+
+
+
 
         if (([uri]$Url).Host -ieq $StartDomain -or ([uri]$Url).Host.EndsWith(".$($StartDomain)", [StringComparison]::InvariantCultureIgnoreCase)) {
             #foreach ($link in $response.Links.href) {
@@ -82,7 +157,7 @@ function GetLinksAndContent {
 
         return $absoluteLinks
     } catch {
-        Write-Host "    Failed to retrieve links from $($Url)" -ForegroundColor Yellow
+        Write-Host "    Failed to retrieve links from $($Url): $($_)" -ForegroundColor Yellow
 
         $PageContentCache[$Url] = $null
 
@@ -129,7 +204,7 @@ try {
         $RepoApiUrl = 'https://api.github.com/repos/mozilla/geckodriver/releases/latest'
         $ReleaseInfo = Invoke-RestMethod -Uri $RepoApiUrl -UseBasicParsing
         $GeckoUrl = $ReleaseInfo.assets |
-            Where-Object { $_.name -like '*win64.zip' } |
+            Where-Object { $_.name -ilike '*win64.zip' } |
             Select-Object -ExpandProperty browser_download_url
 
         Write-Host "  Downloading: $GeckoUrl"
@@ -168,6 +243,14 @@ try {
         $options = [OpenQA.Selenium.Firefox.FirefoxOptions]::new()
         $options.AddArgument('-profile')
         $options.AddArgument($DefaultProfilePath)
+        $options.AddArgument('--width=1920')
+        $options.AddArgument('--height=1080')
+
+        $options.SetPreference('dom.webdriver.enabled', $false)
+        $options.SetPreference('useAutomationExtension', $false)
+        $options.SetPreference('general.buildID.override', '20100101')
+        $options.SetPreference('browser.link.open_newwindow', 3)
+
         if ($SeleniumBrowserHeadless) {
             $options.AddArgument('--headless') # Standard headless flag for Firefox
         }
@@ -245,6 +328,11 @@ try {
         $options = [OpenQA.Selenium.Edge.EdgeOptions]::new()
         $options.AddArgument("--user-data-dir=$UserDataDir")
         $options.AddArgument("--profile-directory=$ProfileDirName")
+        $options.AddArgument('--disable-blink-features=AutomationControlled')
+        $options.AddArgument('--window-size=1920,1080')
+        $options.AddExcludedArgument('enable-automation')
+        $options.AddAdditionalEdgeOption('useAutomationExtension', $false)
+
         if ($SeleniumBrowserHeadless) {
             $options.AddArgument('--headless=new')
         }
@@ -391,14 +479,21 @@ try {
     # --- Final Results ---
     Write-Host
     Write-Host 'Broken links'
-    $LinkResults | Where-Object { (-not $_.BasePageValid) -or ($_.AnchorFound -eq $false) } | Sort-Object -Property FullLink | ForEach-Object {
-        Write-Host "  $($_.FullLink)" -ForegroundColor Yellow
-        Write-Host "    BasePageValid: $($_.BasePageValid)"
-        Write-Host "    AnchorFound: $($_.AnchorFound)"
-        Write-Host "    FoundOnPages: $($_.FoundOnPages.Count)"
-        if ($_.FoundOnPages) {
-            $_.FoundOnPages | Sort-Object | ForEach-Object {
-                Write-Host "      $($_)"
+    $BrokenLinks = @($LinkResults | Where-Object { (-not $_.BasePageValid) -or ($_.AnchorFound -eq $false) } | Sort-Object -Property FullLink)
+
+    if ($BrokenLinks.Count -eq 0) {
+        Write-Host "  No broken links found! All $($LinkResults.Count) links are valid." -ForegroundColor Green
+    } else {
+        Write-Host "  $($BrokenLinks.Count) broken link(s) found" -ForegroundColor Red
+        $BrokenLinks | ForEach-Object {
+            Write-Host "    $($_.FullLink)" -ForegroundColor Yellow
+            Write-Host "      BasePageValid: $($_.BasePageValid)"
+            Write-Host "      AnchorFound: $($_.AnchorFound)"
+            Write-Host "      FoundOnPages: $($_.FoundOnPages.Count)"
+            if ($_.FoundOnPages) {
+                $_.FoundOnPages | Sort-Object | ForEach-Object {
+                    Write-Host "        $($_)"
+                }
             }
         }
     }
