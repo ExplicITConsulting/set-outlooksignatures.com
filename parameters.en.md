@@ -113,7 +113,9 @@ Allowed value: One from:
 - 'AzureUSGovernment' (or: 'AzureUSGovernmentGCCHigh', 'AzureUSGovernmentL4', 'USGovernmentGCCHigh', 'USGovernmentL4')
 - 'AzureUSGovernmentDOD' (or: 'AzureUSGovernmentL5', 'USGovernmentDOD', 'USGovernmentL5')
 - 'China' (or: 'AzureChina', 'ChinaCloud', 'AzureChinaCloud')
-- Sovereign clouds Bleu, Delos, GovSG, and more coming soon
+- 'AzureBleu'(or: 'Bleu', 'BleuCloud', 'AzureBleuCloud')
+- 'AzureDelos'(or: 'Delos', 'DelosCloud', 'AzureDelosCloud')
+- 'AzureGovSG'(or: 'GovSG', 'GovSGCloud', 'AzureGovSGCloud')
 - Define you own values with the '`$CustomCloudEnvironment`' variable in a custom [graph config file](#graphconfigfile). See '`.\config\default graph config.ps1`' for an example.
 - Do not pass the parameter at all to use the default value.
 
