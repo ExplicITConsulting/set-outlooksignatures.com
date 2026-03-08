@@ -21,11 +21,12 @@ sitemap_changefreq: weekly
 <h2 id="outlook-signature-management">
   Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally and fully automated
 </h2>
+<p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
+<p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
-    <p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
     <p>Centralized management, seamless deployment, and full control across all Outlook editions on all platforms: Classic and New, Android, iOS, Linux, macOS, Web, Windows.</p>
+    <p>Supports on-prem and all M365 clouds: Global, US Government (GCC, GCC High, DOD), China, sovereign clouds Bleu, Delos, GovSG, and more.</p>
     <p>No telemetry, no "calling home". Emails and directory data are not routed through a 3rd party data center or cloud service. DNS records (SPF) and mail flow remain unchanged.</p>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
