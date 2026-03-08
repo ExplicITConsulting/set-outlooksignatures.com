@@ -111,7 +111,7 @@ The cloud environment to connect to.
 Allowed value: One from:
 - 'Public' (or: 'Global', 'AzurePublic', 'AzureGlobal', 'AzureCloud', 'AzureUSGovernmentGCC', 'USGovernmentGCC')
 - 'AzureUSGovernment' (or: 'AzureUSGovernmentGCCHigh', 'AzureUSGovernmentL4', 'USGovernmentGCCHigh', 'USGovernmentL4')
-- 'AzureUSGovernmentDOD' (or: 'AzureUSGovernmentL5', 'USGovernmentDOD', 'USGovernmentL5')
+- 'AzureUSGovernmentDoD' (or: 'AzureUSGovernmentL5', 'USGovernmentDoD', 'USGovernmentL5')
 - 'China' (or: 'AzureChina', 'ChinaCloud', 'AzureChinaCloud')
 - 'AzureBleu'(or: 'Bleu', 'BleuCloud', 'AzureBleuCloud')
 - 'AzureDelos'(or: 'Delos', 'DelosCloud', 'AzureDelosCloud')

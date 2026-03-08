@@ -255,7 +255,7 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Unterstützt on-prem und alle M365 Clouds (öffentlich, national, souverän, hybrid)</td>
-                    <td>🟢 Global/Public, US Government L4 (GCC, GCC High), US Government L5 (DOD), China operated by 21Vianet, souveräne Clouds Bleu, Delos, GovSG und mehr</td>
+                    <td>🟢 Public, US Government (GCC, GCC High, DoD), China, souveräne Clouds Bleu, Delos, GovSG und mehr</td>
                     <td>🔴</td>
                     <td>🔴</td>
                     <td>🔴</td>

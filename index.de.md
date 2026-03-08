@@ -26,7 +26,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <p>Zentralisierte Verwaltung, nahtlose Bereitstellung und vollständige Kontrolle über alle Outlook-Editionen auf allen Plattformen: Classic und New, Android, iOS, Linux, macOS, Web, Windows.</p>
-    <p>Unterstützt on-prem und alle M365 Clouds: Global, US Government (GCC, GCC High, DOD), China, souveräne Clouds Bleu, Delos, GovSG und mehr.</p>
+    <p>Unterstützt on-prem und alle M365 Clouds: Public, US Government (GCC, GCC High, DoD), China, souveräne Clouds Bleu, Delos, GovSG und mehr.</p>
     <p>Keine Telemetrie, kein "Calling Home". E-Mails und Verzeichnisdaten werden nicht über externe Rechenzentren oder Cloud-Dienste geleitet. DNS-Einträge (SPF) und Nachrichtenfluss bleiben unverändert.</p>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
