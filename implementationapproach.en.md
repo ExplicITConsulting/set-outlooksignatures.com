@@ -246,7 +246,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
                     <td>🔴</td>
                 </tr>
                 <tr>
-                    <td class="has-text-weight-bold">Supports all M365 clouds (public, national, sovereign)</td>
+                    <td class="has-text-weight-bold">Supports on-prem and all M365 clouds (public, national, sovereign, hybrid)</td>
                     <td>🟢 Global/Public, US Government L4 (GCC, GCC High), US Government L5 (DOD),
                         China operated by 21Vianet, sovereign clouds Bleu, Delos, GovSG, and more</td>
                     <td>🔴</td>
