@@ -252,7 +252,7 @@ To avoid problems of all kinds, it is a good idea to manually clear the add-in c
   - While not publicly documented, [Outlook currently does not support add-ins on calendar invite responses](https://github.com/OfficeDev/office-js/issues/4094#issuecomment-1923444325).
 - Microsoft dynamically updates the local copy of the office.js framework, there is no 1:1 relation between the version of Outlook and the version of the framework. This may lead to problems that suddenly appear although neither Outlook nor the add-in have changed. For example, the add-in may suddenly no longer work for shared mailboxes in Classic Outlook on Windows on some devices, while it does on others and in Outlook on the web.
   - Where available, use the taskpane as a workaround. The taskpane is basically the same code with an additional graphical interface.
-  - Use the DEBUG option in '`run_before_deployment.ps1`' to find out if the root cause is in Outlook or in the add-in. When there is no debug output, the launch event it not triggered by Outlook. When there is debug output, it will show where and with which error the add-in fails.
+  - Use the DEBUG option in '`run_before_deployment.ps1`' to find out if the root cause is in Outlook or in the add-in. When there is no debug output, the launch event is not triggered by Outlook. When there is debug output, it will show where and with which error the add-in fails.
 
 
 ### Outlook on Android
