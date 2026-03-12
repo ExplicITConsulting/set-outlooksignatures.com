@@ -243,7 +243,7 @@ sitemap_changefreq: weekly
 <h2 id="price">Preis und Business Case</h2>
 <p>Set-OutlookSignatures ist kostenlos.<br>Ursprünglich als Technologie-Demonstrator für Scripting-Techniken geschaffen, hat sich das Tool zur fortschrittlichsten, sichersten und vielseitigsten kostenlosen Open-Source-Lösung für die Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen entwickelt. Lesen Sie in den FAQ über <a href="https://set-outlooksignatures.com/faq#why-the-tagline">ihre Entstehungsgeschichte und was Sie von ihrem Code lernen können</a>.</p>
 
-<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> schaltet erweiterte Funktionen frei - für <strong>nur 0,25 EUR pro Postfach und Monat</strong>. Die Abrechnung erfolgt jährlich, ohne Abo.</p>
+<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> schaltet erweiterte Funktionen frei — für <strong>nur 0,25 EUR pro Postfach/Monat</strong> (3,00 EUR pro Jahr). Jährliche Abrechnung, keine automatische Verlängerung.</p>
 
 <p>Das Add-on ist eine Investition, die sich vom ersten Tag an auszahlt - sicher auch für Sie!<br>Dank einzigartiger Funktionen und exklusiver Herstellerverfügbarkeit ist in der Regel ein rechtskonformer Direktbezug ohne öffentliche Ausschreibung möglich.</p>
 
