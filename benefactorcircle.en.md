@@ -163,7 +163,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p><strong>This is more than a demo — it's a blueprint for your company's email compliance and brand security. We look forward to meeting you!</strong></p>
+<blockquote><strong>This is more than a demo — it's a blueprint for your company's email compliance and brand security. We look forward to meeting you!</strong></blockquote>
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -260,43 +260,45 @@ sitemap_changefreq: weekly
   </div>
 </details>
 
+
 <h3 id="financial-benefits">Financial benefits</h3>
-<p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> is an investment that pays off from day one. A cost-benefit analysis in the form of a business case must consider three aspects:</p>
+<p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> is not a "nice to have" — it is a small investment that pays for itself immediately.</p>
+<p>Any realistic business case for email signature management comes down to three questions:</p>
 <ul>
-  <li>How much do non-compliant signatures and out-of-office replies cost in terms of loss of reputation or in terms of fines for non-compliance?</li>
-  <li>What is the added value of using email as an additional marketing channel?</li>
-  <li>Does the new software cost less than the effort we want to save users?</li>
+  <li>What do incorrect or non-compliant signatures and out-of-office replies cost us — in reputation, brand trust, or regulatory risk?</li>
+  <li>What is the value of using every outgoing email as a consistent, compliant marketing channel?</li>
+  <li>Is the software cheaper than the manual effort it replaces?</li>
+</ul>
+<p>The first two points depend heavily on your organization and are hard to quantify precisely. The third one, however, is very easy to calculate.</p>
+
+<p>Let’s assume a realistic average cost of <strong>EUR 60,000 per employee per year</strong> (including taxes, social security, and overhead) for about <strong>1,800 working hours</strong>. That equals roughly <strong>EUR 0.55 per minute</strong> of employee time.</p>
+<p>Now consider the effort required to keep signatures up to date:</p>
+<ul>
+  <li>How often do signature parameters change each year (job titles, logos, banners, legal text)?</li>
+  <li>How many minutes does it take a user to correctly update one signature?</li>
+  <li>How many signatures does each user maintain (internal, external, languages, shared mailboxes)?</li>
+  <li>On how many devices or email clients does this need to be done?</li>
 </ul>
 
-<p>While the first two are difficult to calculate and very individual, the last question is easier to answer. Let's assume that an average employee costs EUR 60,000 per year from the employer's point of view (including all taxes, social security, etc.) for 1,800 hours of work. This gives costs of EUR 0.55 for each minute of employee work.</p>
-
-<p>Other parameters we need are:</p>
-<ul>
-  <li>How many times a year do parameters relevant to signatures change (corporate design, job title, logos, marketing banners, etc.)?</li>
-  <li>How many minutes does it take a user to correctly update a single signature (including reading the instructions)?</li>
-  <li>How many signatures does a user typically need to keep up to date (internal and external, language, tone, signatures for shared mailboxes)?</li>
-  <li>On how many clients does a user need to update the signatures?</li>
-</ul>
-
-<p><strong>Formula and example calculation:</strong></p>
+<p><strong>Example calculation:</strong></p>
 <blockquote>
-  <p>CostPerMinute * NumberOfChanges * NumberOfMinutes * NumberOfSignatures * NumberOfClients = Cost per user and year</p>
-  <p>2 changes per year, 3 minutes per change, 2 signatures, 1 client: 0.55 * 2 * 3 * 2 * 1 = 6.60</p>
+  <p>Cost per minute × changes per year × minutes per change × number of signatures × number of clients</p>
+  <p><strong>0.55 × 2 × 3 × 2 × 1 = EUR 6.60 per user and year</strong></p>
 </blockquote>
 
-<p><strong>Per user and year, the costs are now EUR 6.60 in manual effort compared to just EUR 3.00 for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</strong></p>
+<p><strong>That means: manual signature management already costs EUR 6.60 per user and year — compared to just EUR 3.00 for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</strong></p>
 
-<p>This calculation does not even take into account the following:</p>
+<p>And this calculation still ignores the biggest cost drivers:</p>
 <ul>
-  <li>Manual effort required for signature management in shared mailboxes</li>
-  <li>Manual effort required for management of out-of-office replies</li>
-  <li>Loss in reputation because of outdated or incorrect data entered manually</li>
-  <li>Damage to the image of the brand due to non-compliance with CI/CD guidelines</li>
-  <li>Cost of non-compliance with regulations</li>
-  <li>Added value of an additional marketing channel</li>
+  <li>Signature maintenance for shared mailboxes</li>
+  <li>Manual updates of out-of-office replies</li>
+  <li>Incorrect or outdated contact data</li>
+  <li>Brand damage caused by CI/CD violations</li>
+  <li>Regulatory and compliance risks</li>
+  <li>The marketing value of every outgoing email</li>
 </ul>
 
-<p><strong>You see: The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> pays for itself immediately and actually helps you earn more money.</strong></p>
+<p><strong>In short: The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> pays for itself immediately — and then continues to save money, reduce risk, and strengthen your brand with every email sent.</strong></p>
 
 
 <h2 id="license-groups">How license groups work</h2>
