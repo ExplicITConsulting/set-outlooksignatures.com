@@ -58,7 +58,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Cross-Platform Sovereignty</b><br>Seamless across Windows, macOS, iOS, Android, and Web. Keep your data within your own environment while maintaining enterprise-grade security - even for BYOD scenarios and users with M365 F licenses.
+        <b>Cross-Platform Sovereignty</b><br>Seamless across Windows, Linux, macOS, iOS, Android, and Web. Keep your data within your own environment while maintaining enterprise-grade security - even for BYOD scenarios and users with M365 F licenses.
       </div>
     </div>
   </div>
@@ -119,7 +119,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Frictionless adoption</b><br>
+        <b>Frictionless Adoption</b><br>
         Intuitive for IT and marketing, invisible to your employees.
       </div>
     </div>
@@ -128,7 +128,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Dynamic content</b><br>
+        <b>Dynamic Content</b><br>
         Predefined and custom attributes at user, mailbox, and manager level.
       </div>
     </div>
@@ -137,7 +137,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Out-of-office replies</b><br>
+        <b>Out-Of-Office Replies</b><br>
         Manage out-of-office messages centrally, for internal and external recipients.
       </div>
     </div>
@@ -146,8 +146,8 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Cross-platform</b><br>
-        Signatures anytime, anywhere: Windows, macOS, Android, iOS, Linux, Web. Classic and New Outlook. On-prem, hybrid and cloud-only.
+        <b>Cross-Platform</b><br>
+        Windows, Linux, macOS, iOS, Android, and Web. Classic and New Outlook. On-prem, hybrid, and all M365 clouds (public, national, sovereign, local).
       </div>
     </div>
   </div>
@@ -164,7 +164,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Flexible assignment</b><br>
+        <b>Flexible Assignment</b><br>
         Control signatures by department, location, language, role, time and many other properties from different data sources.
       </div>
     </div>
@@ -173,8 +173,8 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Zero-footprint integration</b><br>
-        Set-OutlookSignatures runs on your existing systems and creates no new dependencies.
+        <b>Zero-Footprint Integration</b><br>
+        Everything runs on your existing systems and creates no new dependencies.
       </div>
     </div>
   </div>
@@ -182,7 +182,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Unsurpassed data privacy</b><br>
+        <b>Unsurpassed Data Privacy</b><br>
         All data remains in your trusted environment, within your existing security and governance structures.
       </div>
     </div>
@@ -191,7 +191,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Additional marketing channel</b><br>
+        <b>Additional Marketing Channel</b><br>
         Design templates freely in Word or HTML. Use signatures for campaigns and brand messaging, free and effectively.
       </div>
     </div>
