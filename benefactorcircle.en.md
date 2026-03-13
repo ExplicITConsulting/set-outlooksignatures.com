@@ -240,18 +240,21 @@ sitemap_changefreq: weekly
 
 <p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> unlocks advanced features — for <strong>just EUR 0.25 per mailbox/month</strong> (EUR 3.00 per year). Billed annually, no auto-renewal.</p>
 
-<p><strong>The add-on is an investment that pays off from day one - certainly for you as well!</strong><br>By the way: Thanks to its unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
+<p><strong>The add-on is an investment that pays off from day one - certainly for you as well!</strong></p>
+<p><strong>By the way: Thanks to its unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</strong></p>
 
-<p>Licenses are required only for mailboxes that utilize Benefactor Circle features. This includes shared mailboxes. Each mailbox requires one license, regardless of how many users access it, how many signatures are deployed, or how frequently those signatures are modified.</p>
-
-<p>You do not need to specify individual mailbox names. Instead, you define an Active Directory or Entra ID group containing the relevant mailboxes and specify the maximum number of recursive members.</p>
-
-<p>There is no minimum number of mailboxes required. However, each invoice must meet a minimum net amount of EUR 210.00. Licenses are paid in advance and are valid for one year from the date full payment is received. There is no automatic renewal or subscription.</p>
-
-<p>If you add mailboxes during an active license period, you will only be charged the current license price for the remaining months of your license term. The minimum invoice amount applies.</p>
-
-<p>While a license is active, it includes free version upgrades and prioritization of support requests.</p>
-
+<details class="box p-0">
+  <summary class="has-text-weight-bold" style="cursor: pointer;">
+    Licensing details
+  </summary>
+  <div>
+    <p>Licenses are required only for mailboxes that utilize Benefactor Circle features. This includes shared mailboxes. Each mailbox requires one license, regardless of how many users access it, how many signatures are deployed, or how frequently those signatures are modified.</p>
+    <p>You do not need to specify individual mailbox names. Instead, you define an Active Directory or Entra ID group containing the relevant mailboxes and specify the maximum number of recursive members.</p>
+    <p>There is no minimum number of mailboxes required. However, each invoice must meet a minimum net amount of EUR 210.00. Licenses are paid in advance and are valid for one year from the date full payment is received. There is no automatic renewal or subscription.</p>
+    <p>If you add mailboxes during an active license period, you will only be charged the current license price for the remaining months of your license term. The minimum invoice amount applies.</p>
+    <p>While a license is active, it includes free version upgrades and all your support requests are prioritized.</p>
+  </div>
+</details>
 
 <h3 id="financial-benefits">Financial benefits</h3>
 <p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> is an investment that pays off from day one. A cost-benefit analysis in the form of a business case must consider three aspects:</p>
