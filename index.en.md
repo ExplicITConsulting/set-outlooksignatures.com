@@ -51,7 +51,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="demo">Experience it<span style="font-weight: bolder;"> in action!</span></h2>
-<p>Stop fighting with inconsistent signatures and out-of-office replies. See how Set-OutlookSignatures and the Benefactor Circle add-on automate the complexity of enterprise-wide signature management so you can focus on what matters. Experience live:</p>
+<p>Stop fighting with inconsistent signatures and out-of-office replies. See how combining the free and open-source Set-OutlookSignatures with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> automates the complexity of enterprise-wide signature management so you can focus on what matters. Experience live:</p>
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -117,7 +117,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Frictionless adoption</b><br>
         Intuitive for IT and marketing, invisible to your employees.
@@ -126,7 +126,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Dynamic content</b><br>
         Predefined and custom attributes at user, mailbox, and manager level.
@@ -135,7 +135,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Out-of-office replies</b><br>
         Manage out-of-office messages centrally, for internal and external recipients.
@@ -144,7 +144,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Cross-platform</b><br>
         Signatures anytime, anywhere: Windows, macOS, Android, iOS, Linux, Web. Classic and New Outlook. On-prem, hybrid and cloud-only.
@@ -153,7 +153,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Enterprise Versatility</b><br>
         Supports personal and shared mailboxes, "Send As", "Send on Behalf", simulation mode, roaming signatures, and many more features for maximum flexibility.
@@ -162,7 +162,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Flexible assignment</b><br>
         Control signatures by department, location, language, role, time and many other properties from different data sources.
@@ -171,7 +171,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Zero-footprint integration</b><br>
         Set-OutlookSignatures runs on your existing systems and creates no new dependencies.
@@ -180,7 +180,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Unsurpassed data privacy</b><br>
         All data remains in your trusted environment, within your existing security and governance structures.
@@ -189,7 +189,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Additional marketing channel</b><br>
         Design templates freely in Word or HTML. Use signatures for campaigns and brand messaging, free and effectively.
@@ -210,22 +210,39 @@ sitemap_changefreq: weekly
   Dive deeper
 </h2>
 <p>Visit our help and support center to find out more:</p>
-<ul style="list-style: none; padding-left: 0;">
-  <li style="display: flex; gap: 0.75em; margin-bottom: 0.5em;">
-    <span>📊</span>
-    <span>The detailed feature set and a comparison with competitors</span>
-  </li>
-  <li style="display: flex; gap: 0.75em; margin-bottom: 0.5em;">
-    <span>⚙️</span>
-    <span>Requirements and configuration options</span>
-  </li>
-  <li style="display: flex; gap: 0.75em; margin-bottom: 0.5em;">
-    <span>💡</span>
-    <span>Best practices and FAQ</span>
-  </li>
-  <li style="display: flex; gap: 0.75em; margin-bottom: 0.5em;">
-    <span>🤝</span>
-    <span>How to get first-class support</span>
-  </li>
-</ul>
+<div class="columns is-multiline">
+  <div class="column is-full">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      📊
+      <div style="hyphens: manual;">
+        The detailed feature set and a comparison with competitors
+      </div>
+    </div>
+  </div>
+  <div class="column is-full">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      ⚙️
+      <div style="hyphens: manual;">
+        Requirements and configuration options
+      </div>
+    </div>
+  </div>
+  <div class="column is-full">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      💡
+      <div style="hyphens: manual;">
+        Best practices and FAQ
+      </div>
+    </div>
+  </div>
+  <div class="column is-full">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      🤝
+      <div style="hyphens: manual;">
+        How to get first-class support
+      </div>
+    </div>
+  </div>
+</div>
+
 <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Help and Support center</a>
