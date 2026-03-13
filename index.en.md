@@ -96,6 +96,9 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
+</div>
+<p>&nbsp;</p>
+<div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <div class="signature-scrolling-banner">
@@ -120,7 +123,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, coral, coral); background-clip: text; color: transparent;">⚫</span>
@@ -129,7 +131,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, coral, coral); background-clip: text; color: transparent;">⚫</span>
@@ -154,7 +155,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -164,7 +164,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -174,7 +173,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -184,7 +182,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -194,7 +191,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -204,7 +200,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -214,7 +209,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -224,7 +218,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
@@ -255,7 +248,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success), var(--bulma-success)); background-clip: text; color: transparent;">⚫</span>
@@ -265,7 +257,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success), var(--bulma-success)); background-clip: text; color: transparent;">⚫</span>
