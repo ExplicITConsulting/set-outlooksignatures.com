@@ -35,7 +35,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🛠️
       <div style="hyphens: manual;">
-        <b>Zero Manual Effort</b><br>Invisible to employees, automated for IT, and centrally controlled for Marketing.
+        <b>Frictionless Adoption</b><br>Intuitive for IT and Marketing, invisible to your employees.
       </div>
     </div>
   </div>
