@@ -236,34 +236,21 @@ sitemap_changefreq: weekly
 
 
 <h2 id="price">Price and business case</h2>
-<p>Set-OutlookSignatures is free of charge.<br>Originally developed as a technology demonstrator for scripting techniques, it has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies. Read about <a href="https://set-outlooksignatures.com/faq#why-the-tagline">its history and what you can learn from its code</a> in our FAQ.</p>
+<p>Set-OutlookSignatures is free of charge. Originally developed as a technology demonstrator for scripting techniques, it has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures. Read about <a href="https://set-outlooksignatures.com/faq#why-the-tagline">its history and what you can learn from its code</a> in our FAQ.</p>
 
 <p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> unlocks advanced features — for <strong>just EUR 0.25 per mailbox/month</strong> (EUR 3.00 per year). Billed annually, no auto-renewal.</p>
 
-<p>The add-on is an investment that pays off from day one - certainly for you as well!<br>Thanks to unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
+<p><strong>The add-on is an investment that pays off from day one - certainly for you as well!<strong><br>By the way: Thanks to its unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
 
 <p><a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Cost-benefit analysis, business case</a></p>
 
-<p>We keep license costs as fair and transparent as possible:</p>
-<ul>
-  <li>Small companies pay the same low price as large enterprises.</li>
-  <li>No bundled maintenance or support contracts hidden in the annual price. You only pay for support if and when you need it - and thanks to our documentation, you likely won't.</li>
-  <li><strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the Benefactor Circle add-on, its documentation, or the provided components, support is free - no exceptions.
-  <br>
-  For all other issues, you will receive the same first-class support at a fair price.
-  </li>
-  <li>No additional infrastructure or external data transfers. Everything runs on your existing systems, within your own security boundaries.</li>
-  <li>No inflated prices that are later "discounted" through negotiations.</li>
-  <li>We pass on part of your investment directly to the Set-OutlookSignatures project, thereby promoting the further development of the free open-source version.</li>
-</ul>
-
 <p>Licenses are required only for mailboxes that utilize Benefactor Circle features. This includes shared mailboxes. Each mailbox requires one license, regardless of how many users access it, how many signatures are deployed, or how frequently those signatures are modified.</p>
 
-<p>You do not need to specify individual mailbox names. Instead, define at least one Active Directory or Entra ID group that includes the relevant mailboxes. For each group, indicate the maximum number of recursive members.</p>
+<p>You do not need to specify individual mailbox names. Instead, you define an Active Directory or Entra ID group containing the relevant mailboxes and specify the maximum number of recursive members.</p>
 
 <p>There is no minimum number of mailboxes required. However, each invoice must meet a minimum net amount of EUR 210.00. Licenses are paid in advance and are valid for one year from the date full payment is received. There is no automatic renewal or subscription.</p>
 
-<p>If you add mailboxes during an active license period, you will be charged the current license price for those additional mailboxes, calculated for the remaining months of your license term. The minimum invoice amount applies.</p>
+<p>If you add mailboxes during an active license period, you will only be charged the current license price for the remaining months of your license term. The minimum invoice amount applies.</p>
 
 <p>While a license is active, it includes free version upgrades and prioritization of support requests.</p>
 
