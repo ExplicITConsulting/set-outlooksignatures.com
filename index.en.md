@@ -3,8 +3,8 @@ layout: "page"
 lang: "en"
 locale: "en"
 title: "Set-Outlook&shy;Signatures"
-subtitle: "Automated email signatures and out-of-office replies with total data sovereignty."
-description: "Automated email signatures and out-of-office replies with total data sovereignty."
+subtitle: "Automated email signatures and out-of-office replies with total data sovereignty"
+description: "Automated email signatures and out-of-office replies with total data sovereignty"
 hero_link: /quickstart
 hero_link_text: "<span><b>Quick Start: </b>Deploy signatures within minutes</span>"
 hero_link_style: |
@@ -58,7 +58,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Cross-Platform Sovereignty</b><br>Deploy seamlessly across Windows, macOS, iOS, Android, and Web. Full data sovereignty: Keep your data within your own environment while maintaining enterprise-grade security - even for BYOD scenarios and users with M365 F licenses.
+        <b>Cross-Platform Sovereignty</b><br>Seamless across Windows, macOS, iOS, Android, and Web. Keep your data within your own environment while maintaining enterprise-grade security - even for BYOD scenarios and users with M365 F licenses.
       </div>
     </div>
   </div>
@@ -96,12 +96,7 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-</div>
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <p>&nbsp;</p>
-  </div>
-  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
+  <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <div class="signature-scrolling-banner">
         <div class="signature-scrolling-track">
@@ -144,7 +139,6 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
--->
 
 
 <h2 id="strengths">
