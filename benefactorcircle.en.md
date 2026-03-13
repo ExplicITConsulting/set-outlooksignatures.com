@@ -245,15 +245,18 @@ sitemap_changefreq: weekly
 
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
-    Licensing details
+    Licensing details – the fine print in plain language
   </summary>
   <div>
-    <p>Licenses are required only for mailboxes that utilize Benefactor Circle features. This includes shared mailboxes. Each mailbox requires one license, regardless of how many users access it, how many signatures are deployed, or how frequently those signatures are modified.</p>
-    <p>You do not need to specify individual mailbox names. Instead, you define an Active Directory or Entra ID group containing the relevant mailboxes and specify the maximum number of recursive members.</p>
-    <p>There is no minimum number of mailboxes required. However, each invoice must meet a minimum net amount of EUR 210.00. Licenses are paid in advance and are valid for one year from the date full payment is received. There is no automatic renewal or subscription.</p>
-    <p>If you add mailboxes during an active license period, you will only be charged the current license price for the remaining months of your license term. The minimum invoice amount applies.</p>
-    <p>While a license is active, it includes free version upgrades and all your support requests are prioritized.</p>
-    <p>Billed annually, without auto-renewal. We will remind and send a renewal quote around six weeks before your license is about to expire.</p>
+    <p>Each mailbox using Benefactor Circle features requires a license, regardless of the mailbox type (user, shared, etc.).</p>
+    <ul>
+      <li><strong>What’s unlimited: </strong>Number of users per mailbox, templates used, signatures deployed, and frequency of updates.</li>
+      <li><strong>How it works: </strong>You don't name mailboxes individually. Just define an Active Directory or Entra ID group containing the relevant mailboxes and specify the maximum number of recursive members. See '<a href="#license-groups">How license groups work</a>' for details.</li>
+      <li><strong>Terms: </strong>Licenses are billed annually in advance. There is no minimum mailbox count, though each invoice must meet a minimum net amount of EUR 210.00.</li>
+      <li><strong>No Traps: </strong>No auto-renewals. We’ll send a quote six weeks before expiry.</li>
+      <li><strong>Scaling: </strong>Adding mailboxes mid-term is pro-rated for the remaining months (minimum invoice amount applies).</li>
+    </ul>
+    <p>Active licenses include free version upgrades and prioritizing your support requests. Support is available separately, see '<a href="/support">Get support and contact us</a>' for details.</p>
   </div>
 </details>
 
