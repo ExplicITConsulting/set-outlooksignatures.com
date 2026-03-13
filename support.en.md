@@ -75,7 +75,7 @@ sitemap_changefreq: weekly
 </p>
 
 <p>
-  <a href="https://forms.cloud.microsoft/r/CnwjH98vSs" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);">
+  <a href="https://forms.cloud.microsoft/r/CnwjH98vSs" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">
       Order professional support
   </a>
 </p>
