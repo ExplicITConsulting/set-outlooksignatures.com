@@ -188,26 +188,30 @@ html::after {
   /* No delay, so all buttons animate at the same time */
   animation-delay: 0s;
 }
-/* The container that hides the overflow */
+
+/* Container logic */
 .customer-scrolling-banner,
 .signature-scrolling-banner {
   overflow: hidden;
   width: 100%;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-/* The moving track */
 .customer-scrolling-track,
 .signature-scrolling-track {
   display: flex;
-  width: max-content; /* Vital for Firefox to calculate full width */
+  width: max-content;
   gap: 2rem;
-  animation: scroll-left 40s linear infinite;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
+  pointer-events: auto;
 }
 
-/* Smoothness fix for Firefox: Force GPU layer */
-@keyframes scroll-left {
+/* The Animation */
+.is-animating {
+  animation: scroll-linear var(--duration) linear infinite;
+}
+
+@keyframes scroll-linear {
   0% {
     transform: translate3d(0, 0, 0);
   }
@@ -216,18 +220,11 @@ html::after {
   }
 }
 
-/* Pause on hover (Optional, but adds a nice touch) */
-.customer-scrolling-track:hover,
-.signature-scrolling-track:hover {
-  animation-play-state: paused;
-}
-
-/* Image scaling */
-.customer-scrolling-track img {
-  height: 4rem;
-}
+/* Firefox Rendering Fixes */
+.customer-scrolling-track img,
 .signature-scrolling-track img {
-  height: 10rem;
+  flex-shrink: 0;
+  backface-visibility: hidden; /* Prevents tiny shakes */
 }
 
 p + ul,

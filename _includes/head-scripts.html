@@ -126,32 +126,44 @@
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const startBanner = async (selector, trackSelector, endpoint) => {
+    const initBanner = async (trackSelector, endpoint, pixelsPerSecond) => {
       const track = document.querySelector(trackSelector);
       if (!track) return;
 
       try {
         const response = await fetch(endpoint);
         const text = await response.text();
-        const urls = text.split('\n').filter(l => l.trim());
+        const urls = text.split('\n').map(l => l.trim()).filter(Boolean);
 
-        // Create one set of images
-        const nodes = urls.map(url => {
+        // 1. Double the images for a seamless loop
+        const allUrls = [...urls, ...urls];
+        allUrls.forEach(url => {
           const img = new Image();
-          img.src = url.trim();
-          img.loading = "lazy"; 
-          return img;
+          img.src = url;
+          img.loading = "lazy";
+          track.appendChild(img);
         });
 
-        // Inject TWO sets (the 2nd set creates the seamless loop)
-        const fullSet = [...nodes, ...nodes.map(n => n.cloneNode())];
-        fullSet.forEach(node => track.appendChild(node));
+        // 2. Use ResizeObserver to calculate duration once images exist
+        const observer = new ResizeObserver(() => {
+          const halfWidth = track.scrollWidth / 2;
+          if (halfWidth > 0) {
+            // Calculation: Time = Distance / Speed
+            const duration = halfWidth / pixelsPerSecond;
+            track.style.setProperty('--duration', `${duration}s`);
+            track.classList.add('is-animating');
+            observer.disconnect(); 
+          }
+        });
         
-      } catch (e) { console.error("Banner error", e); }
+        observer.observe(track);
+      } catch (e) { console.error("Banner error:", e); }
     };
 
-    startBanner('.customer-scrolling-banner', '.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt');
-    startBanner('.signature-scrolling-banner', '.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt');
+    // --- CONFIGURATION ---
+    // Speed is in Pixels Per Second
+    initBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 60); 
+    initBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 35); 
   });
 </script>
 
