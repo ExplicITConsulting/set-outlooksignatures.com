@@ -197,11 +197,11 @@ html::after {
   display: flex;
   align-items: center;
   width: 100%;
-  /* Performance (when offscreen) */
+  /* Performance when offscreen */
   content-visibility: auto;
 }
 
-/* Reserve intrinsic sizes (only used when content is skipped) */
+/* Reserve intrinsic sizes (used only when the element is skipped) */
 .customer-scrolling-banner {
   contain-intrinsic-size: 1000px 4rem;
 }
@@ -209,11 +209,11 @@ html::after {
   contain-intrinsic-size: 1000px 10em;
 }
 
-/* Tracks (marquee) */
+/* Track (the thing that moves) */
 .customer-scrolling-track,
 .signature-scrolling-track {
   display: flex;
-  width: max-content; /* exactly as wide as content (A+B) */
+  width: max-content; /* width = content width (A + B) */
   gap: 2em;
   will-change: transform;
   transform: translate3d(0, 0, 0);
@@ -221,15 +221,16 @@ html::after {
   transform-style: preserve-3d;
   contain: content;
 
-  /* CSS animation controlled via variables from JS */
+  /* Endless, constant-speed animation; duration & delay set from JS */
   animation-name: marquee-x;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-play-state: paused; /* start when ready */
   animation-duration: var(--loop-duration, 40s);
+  animation-delay: var(--neg-delay, 0s);
 }
 
-/* Rows A & B */
+/* Rows A & B inside the track */
 .customer-scrolling-track .row,
 .signature-scrolling-track .row {
   display: flex;
@@ -251,7 +252,7 @@ html::after {
   object-fit: contain;
 }
 
-/* Specific heights (as you had) */
+/* Specific heights (as in your setup) */
 .customer-scrolling-track img {
   height: 4rem;
 }
@@ -259,26 +260,19 @@ html::after {
   height: 10em;
 }
 
-/* Ready to play */
+/* When ready, let it run */
 .customer-scrolling-track.is-ready,
 .signature-scrolling-track.is-ready {
   animation-play-state: running;
 }
 
-/* Keyframes to a PIXEL distance (Row A width) */
+/* Move by exactly the width of Row A, then repeat */
 @keyframes marquee-x {
   from {
     transform: translate3d(0, 0, 0);
   }
   to {
     transform: translate3d(calc(-1 * var(--rowA-width, 1000px)), 0, 0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .customer-scrolling-track.is-ready,
-  .signature-scrolling-track.is-ready {
-    animation: none !important;
   }
 }
 

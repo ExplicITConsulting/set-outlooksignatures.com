@@ -126,17 +126,28 @@
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Desired speeds (px/s)
+  // Desired constant speeds (px per second)
   const SPEEDS = {
-    customer: 60,
+    customer: 60,    // adjust to taste
     signature: 80
   };
 
-  setupMarquee('.customer-scrolling-banner', '.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', SPEEDS.customer);
-  setupMarquee('.signature-scrolling-banner', '.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', SPEEDS.signature);
+  initMarquee(
+    '.customer-scrolling-banner',
+    '.customer-scrolling-track',
+    'https://set-outlooksignatures.com/customer-images.txt',
+    SPEEDS.customer
+  );
 
-  async function setupMarquee(selectorBanner, selectorTrack, endpoint, speedPxPerSec) {
-    const banners = document.querySelectorAll(selectorBanner);
+  initMarquee(
+    '.signature-scrolling-banner',
+    '.signature-scrolling-track',
+    'https://set-outlooksignatures.com/signature-images.txt',
+    SPEEDS.signature
+  );
+
+  async function initMarquee(bannerSel, trackSel, endpoint, speedPxPerSec) {
+    const banners = document.querySelectorAll(bannerSel);
     if (!banners.length) return;
 
     let urls = [];
@@ -146,14 +157,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const text = await res.text();
       urls = [...new Set(text.split('\n').map(l => l.trim()).filter(Boolean))];
     } catch (e) {
-      console.error(`Error loading ${selectorTrack}:`, e);
+      console.error(`Error loading ${endpoint}:`, e);
       return;
     }
 
+    // Slightly shuffle to avoid always same start
     urls.sort(() => Math.random() - 0.5);
 
     banners.forEach(banner => {
-      const track = banner.querySelector(selectorTrack);
+      const track = banner.querySelector(trackSel);
       if (!track) return;
 
       track.textContent = '';
@@ -167,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.src = url;
         img.alt = 'Logo/Template';
         img.decoding = 'async';
-        img.loading = 'lazy';       // lazy required
+        img.loading = 'lazy';          // lazy required
         img.fetchPriority = 'low';
         img.referrerPolicy = 'no-referrer';
         img.draggable = false;
@@ -175,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return img;
       });
 
-      // Row B = clone
+      // Row B = exact clone of A
       const rowB = rowA.cloneNode(true);
       rowB.className = 'row B';
       rowB.setAttribute('aria-hidden', 'true');
@@ -185,57 +197,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const imgsB = rowB.querySelectorAll('img');
 
-      // Measure + lock widths + (re)start animation
-      const recalc = () => {
-        // Lock per-image widths from Row A into Row B (even if B images are not decoded)
-        imgsA.forEach((imgA, i) => {
-          const w = imgA.getBoundingClientRect().width;
-          if (w > 0 && imgsB[i]) {
-            // Lock both A and B widths so future loads cannot shift layout
-            imgA.style.width = `${w}px`;
-            imgsB[i].style.width = `${w}px`;
+      // Visibility gate: only (re)calc when visible to avoid width=0
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            recalcSeamless(track, rowA, imgsA, imgsB, speedPxPerSec);
+          } else {
+            // optional: pause when off-screen to save energy
+            track.classList.remove('is-ready');
           }
         });
+      }, { root: null, threshold: 0.01 });
+      io.observe(banner);
 
-        // Now compute row A width in px
-        const rowAWidth = rowA.getBoundingClientRect().width;
-        if (rowAWidth <= 0) return;
-
-        // Set CSS variables for distance and duration
-        const pxPerSec = Math.max(1, speedPxPerSec || 60);
-        const seconds = rowAWidth / pxPerSec;
-
-        track.style.setProperty('--rowA-width', `${rowAWidth.toFixed(3)}px`);
-        track.style.setProperty('--loop-duration', `${seconds.toFixed(3)}s`);
-
-        // Restart animation cleanly to avoid mid-cycle tearing
-        // Pause -> force reflow -> run
-        track.classList.remove('is-ready');
-        track.style.animation = 'none';
-        // force reflow
-        // eslint-disable-next-line no-unused-expressions
-        track.offsetWidth;
-        track.style.animation = '';
-        track.classList.add('is-ready');
-      };
-
-      // Initial recalc (in case some images are cached)
-      recalc();
-
-      // Recalc on each A-image load (lazy images will arrive over time)
+      // Recalc on each A-image load (lazy images will decode over time)
       imgsA.forEach(img => {
         img.addEventListener('load', () => {
-          // Use rAF to batch layouts if multiple images load together
-          requestAnimationFrame(recalc);
+          // batch with rAF to avoid multiple layouts
+          requestAnimationFrame(() => recalcSeamless(track, rowA, imgsA, imgsB, speedPxPerSec));
         });
       });
 
-      // Recalc on resize (height changes -> widths change)
+      // Recalc on container resize (heights change -> widths change)
       const ro = new ResizeObserver(() => {
-        requestAnimationFrame(recalc);
+        requestAnimationFrame(() => recalcSeamless(track, rowA, imgsA, imgsB, speedPxPerSec));
       });
       ro.observe(banner);
     });
+  }
+
+  function recalcSeamless(track, rowA, imgsA, imgsB, speedPxPerSec) {
+    // 1) Read current translateX (to resume seamlessly)
+    let tx = 0;
+    const t = getComputedStyle(track).transform;
+    if (t && t !== 'none') {
+      try { tx = new DOMMatrix(t).m41; } catch {}
+    }
+
+    // 2) Lock per-image widths from A into B (keeps A == B even if B is lazy)
+    imgsA.forEach((imgA, i) => {
+      const w = imgA.getBoundingClientRect().width;
+      if (w > 0 && imgsB[i]) {
+        imgA.style.width = `${w}px`;
+        imgsB[i].style.width = `${w}px`;
+      }
+    });
+
+    // 3) Measure width of A (distance per loop)
+    const rowAWidth = rowA.getBoundingClientRect().width;
+    if (rowAWidth <= 0) return; // not yet measurable
+
+    // 4) Constant speed: duration = distance / pxPerSec
+    const pxPerSec = Math.max(1, speedPxPerSec || 60);
+    const durationSec = rowAWidth / pxPerSec;
+
+    // 5) Compute progress based on current transform to keep position on update
+    let progressPx = (-tx) % rowAWidth;
+    if (progressPx < 0) progressPx += rowAWidth;
+    const progressFraction = progressPx / rowAWidth;
+    const negativeDelaySec = -progressFraction * durationSec;
+
+    // 6) Apply variables and seamless restart
+    track.style.setProperty('--rowA-width', `${rowAWidth.toFixed(3)}px`);
+    track.style.setProperty('--loop-duration', `${durationSec.toFixed(3)}s`);
+    track.style.setProperty('--neg-delay', `${negativeDelaySec.toFixed(3)}s`);
+
+    // Re-arm the animation without dropping infinite
+    // (avoid using the 'animation' shorthand to prevent resetting sub-properties)
+    track.classList.add('is-ready');
   }
 });
 </script>
