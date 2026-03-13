@@ -8,15 +8,15 @@ description: "Erweitern Sie Set-OutlookSignatures mit mobilen Signaturen, Roamin
 hero_link: "#demo"
 hero_link_text: "<span><b>Buchen Sie Ihre persönliche Demo</b></span>"
 hero_link_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;"
+   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);"
 hero_link2: "#trial"
 hero_link2_text: "<span><b>14-Tage-Testlizenz holen</b></span>"
 hero_link2_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;"
+   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);"
 hero_link3: "#order"
 hero_link3_text: "<span><b>Lizenzangebot anfordern</b></span>"
 hero_link3_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;"
+   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);"
 
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
@@ -131,7 +131,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;">Testlizenz holen, Lizenzangebot anfordern</a>
+<a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);">Testlizenz holen, Lizenzangebot anfordern</a>
 
 
 <h2 id="demo">Demo</h2>
@@ -168,7 +168,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4em; min-height: 4em; max-height: 4em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;">Jetzt persönliche Demo vereinbaren</a></p>
+      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4rem; font-size: 1.25em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);">Jetzt persönliche Demo vereinbaren</a></p>
     </div>
   </div>
   <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
@@ -209,7 +209,7 @@ sitemap_changefreq: weekly
 <h2 id="trial">Kostenlose Testversion</h2>
 <p>Nachdem Sie das kostenlose und quelloffene Set-OutlookSignatures mithilfe der Schnellstart-Anleitung eingerichtet und an Ihre Bedürfnisse angepasst haben, sind Sie bereit für den nächsten Schritt:</p>
 
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;">14-Tage-Testlizenz holen</a></p>
+<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);">14-Tage-Testlizenz holen</a></p>
 
 <p>Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:</p>
 <ul>
@@ -229,7 +229,7 @@ sitemap_changefreq: weekly
 
 <p>Das Add-on ist eine Investition, die sich vom ersten Tag an auszahlt - sicher auch für Sie!<br>Dank einzigartiger Funktionen und exklusiver Herstellerverfügbarkeit ist in der Regel ein rechtskonformer Direktbezug ohne öffentliche Ausschreibung möglich.</p>
 
-<p><a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;">Kosten-Nutzen-Rechnung, Business Case</a></p>
+<p><a href="#financial-benefits" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);">Kosten-Nutzen-Rechnung, Business Case</a></p>
 
 <p>Wir gestalten die Lizenzkosten so fair und transparent wie möglich:</p>
 <ul>
@@ -297,7 +297,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="order">Lizenzen kaufen</h2>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;">Lizenzangebot anfordern</a></p>
+    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);">Lizenzangebot anfordern</a></p>
     <p>Sie erhalten in Kürze ein Angebot. Sobald alle Details geklärt sind, erhalten Sie eine Rechnung und können den Zahlungsprozess starten.</p>
     <p>Nach Eingang des vollständigen Rechnungsbetrags erhalten Sie eine E-Mail mit Anweisungen zum sicheren Herunterladen Ihrer individuellen Lizenzdatei.</p>
     <p>Zum Verwenden der Lizenzdatei fügen Sie einfach zwei Parameter beim Aufruf von Set-OutlookSignatures.ps1 hinzu:</p>
