@@ -226,9 +226,10 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="order">Buy licenses</h2>
+    <p>Upgrading to the full version, adding more mailboxes and renewing a license is quick and straightforward.</p>
     <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a license quote</a></p>
-    <p>You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.</p>
-    <p>As soon as the full invoice amount is received, you will be sent an email with instructions on how to securely download your individualized license file.</p>
+    <p>You will receive a quote shortly. You double-check it, we send the invoice and you can start the payment process.</p>
+    <p>We send you the download and usage instructions for your new license as soon as we receive the full invoice amount.</p>
   </div>
 </div>
 
