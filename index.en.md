@@ -21,7 +21,7 @@ sitemap_changefreq: weekly
 <h2 id="outlook-signature-management">
   Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally and fully automated
 </h2>
-<p>Set-OutlookSignatures takes the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
+<p>Set-OutlookSignatures and the Benefactor Circle add-on take the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
 <p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">

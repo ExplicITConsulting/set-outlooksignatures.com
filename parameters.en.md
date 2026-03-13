@@ -28,16 +28,18 @@ One parameter can be assigned to multiple topics.
 
 | Topic | Parameters |
 | - | - |
-| Signatures | [AdditionalSignaturePath](#additionalsignaturepath) \| [CreateRtfSignatures](#creatertfsignatures) \| [DeleteScriptCreatedSignaturesWithoutTemplate](#deletescriptcreatedsignatureswithouttemplate) \| [DeleteUserCreatedSignatures](#deleteusercreatedsignatures) \| [DocxHighResImageConversion](#docxhighresimageconversion) \| [EmbedImagesInHtml](#embedimagesinhtml) \| [EmbedImagesInHtmlAdditionalSignaturePath](#embedimagesinhtmladditionalsignaturepath) \| [MailboxSpecificSignatureNames](#mailboxspecificsignaturenames) \| [MoveCSSInline](#movecssinline) \| [SetCurrentUserOutlookWebSignature](#setcurrentuseroutlookwebsignature) \| [SignatureCollectionInDrafts](#signaturecollectionindrafts) \| [SignatureIniFile](#signatureinifile) \| [SignaturesForAutomappedAndAdditionalMailboxes](#signaturesforautomappedandadditionalmailboxes) \| [SignatureTemplatePath](#signaturetemplatepath) \| [UseHtmTemplates](#usehtmtemplates) |
-| OOF messages | [MoveCSSInline](#movecssinline) \| [OOFIniFile](#oofinifile) \| [OOFTemplatePath](#ooftemplatepath) \| [SetCurrentUserOOFMessage](#setcurrentuseroofmessage) \| [UseHtmTemplates](#usehtmtemplates) |
+| Signatures | [AdditionalSignaturePath](#additionalsignaturepath)¹ \| [CreateRtfSignatures](#creatertfsignatures) \| [DeleteScriptCreatedSignaturesWithoutTemplate](#deletescriptcreatedsignatureswithouttemplate)¹ \| [DeleteUserCreatedSignatures](#deleteusercreatedsignatures)¹ \| [DocxHighResImageConversion](#docxhighresimageconversion)¹ \| [EmbedImagesInHtml](#embedimagesinhtml) \| [EmbedImagesInHtmlAdditionalSignaturePath](#embedimagesinhtmladditionalsignaturepath) \| [MailboxSpecificSignatureNames](#mailboxspecificsignaturenames) \| [MoveCSSInline](#movecssinline) \| [SetCurrentUserOutlookWebSignature](#setcurrentuseroutlookwebsignature)¹ \| [SignatureCollectionInDrafts](#signaturecollectionindrafts)¹ \| [SignatureIniFile](#signatureinifile) \| [SignaturesForAutomappedAndAdditionalMailboxes](#signaturesforautomappedandadditionalmailboxes)¹ \| [SignatureTemplatePath](#signaturetemplatepath) \| [UseHtmTemplates](#usehtmtemplates) |
+| OOF messages | [MoveCSSInline](#movecssinline) \| [OOFIniFile](#oofinifile) \| [OOFTemplatePath](#ooftemplatepath) \| [SetCurrentUserOOFMessage](#setcurrentuseroofmessage)¹ \| [UseHtmTemplates](#usehtmtemplates) |
 | Replacement variables | [ReplacementVariableConfigFile](#replacementvariableconfigfile) \| [VirtualMailboxConfigFile](#virtualmailboxconfigfile) |
 | Graph and Active Directory | [CloudEnvironment](#cloudenvironment) \| [GraphClientID](#graphclientid) \| [GraphConfigFile](#graphconfigfile) \| [GraphOnly](#graphonly) \| [IncludeMailboxForestDomainLocalGroups](#includemailboxforestdomainlocalgroups) \| [TrustsToCheckForGroups](#truststocheckforgroups) |
-| Simulation mode | [AdditionalSignaturePath](#additionalsignaturepath) \| [SimulateAndDeploy](#simulateanddeploy) \| [SimulateAndDeployGraphCredentialFile](#simulateanddeploygraphcredentialfile) \| [SimulateMailboxes](#simulatemailboxes) \| [SimulateTime](#simulatetime) \| [SimulateUser](#simulateuser) |
-| Outlook | [DisableRoamingSignatures](#disableroamingsignatures) \| [MirrorCloudSignatures](#mirrorcloudsignatures) \| [SignatureCollectionInDrafts](#signaturecollectionindrafts) \| [VirtualMailboxConfigFile](#virtualmailboxconfigfile) |
+| Simulation mode | [AdditionalSignaturePath](#additionalsignaturepath)¹ \| [SimulateAndDeploy](#simulateanddeploy)¹ \| [SimulateMailboxes](#simulatemailboxes) \| [SimulateTime](#simulatetime) \| [SimulateUser](#simulateuser) |
+| Outlook | [DisableRoamingSignatures](#disableroamingsignatures) \| [MirrorCloudSignatures](#mirrorcloudsignatures)¹ \| [SignatureCollectionInDrafts](#signaturecollectionindrafts)¹ \| [VirtualMailboxConfigFile](#virtualmailboxconfigfile) |
 | Word | [WordProcessPriority](#wordprocesspriority) |
 | Script | [ScriptProcessPriority](#scriptprocesspriority) |
-| Benefactor Circle | [BenefactorCircleID](#benefactorcircleid) \| [BenefactorCircleLicenseFile](#benefactorcirclelicensefile) |
+| Benefactor Circle | [BenefactorCircleID](#benefactorcircleid)¹ \| [BenefactorCircleLicenseFile](#benefactorcirclelicensefile)¹ |
 
+
+Remark 1 (¹): Some features are exclusive to the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a>.
 
 ## AdditionalSignaturePath
 An additional path that the signatures shall be copied to.  
