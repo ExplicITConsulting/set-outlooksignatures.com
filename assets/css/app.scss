@@ -189,7 +189,7 @@ html::after {
   animation-delay: 0s;
 }
 
-/* Container logic */
+/* Container Logic */
 .customer-scrolling-banner,
 .signature-scrolling-banner {
   overflow: hidden;
@@ -200,15 +200,29 @@ html::after {
 .signature-scrolling-track {
   display: flex;
   width: max-content;
+  flex-wrap: nowrap; /* CRITICAL: Keeps images in a single line */
   gap: 2rem;
   will-change: transform;
   transform: translate3d(0, 0, 0);
-  pointer-events: auto;
+  visibility: hidden; /* Hidden until JS calculates the speed */
 }
 
-/* The Animation */
 .is-animating {
+  visibility: visible;
   animation: scroll-linear var(--duration) linear infinite;
+}
+
+/* RESTORED HEIGHTS */
+.customer-scrolling-track img {
+  height: 4rem;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.signature-scrolling-track img {
+  height: 10em;
+  width: auto;
+  flex-shrink: 0;
 }
 
 @keyframes scroll-linear {
@@ -218,13 +232,6 @@ html::after {
   100% {
     transform: translate3d(-50%, 0, 0);
   }
-}
-
-/* Firefox Rendering Fixes */
-.customer-scrolling-track img,
-.signature-scrolling-track img {
-  flex-shrink: 0;
-  backface-visibility: hidden; /* Prevents tiny shakes */
 }
 
 p + ul,
