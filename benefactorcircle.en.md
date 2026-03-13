@@ -39,7 +39,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Cross-platform Automation</b><br>Signatures are automatically deployed across all versions of Outlook (Windows, macOS, web) and mobile apps for iOS and Android.
+        <b>Cross-Platform Automation</b><br>Signatures are automatically deployed across all versions of Outlook (Windows, macOS, web) and mobile apps for iOS and Android.
       </div>
     </div>
   </div>
@@ -108,7 +108,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>All updates included</b><br>Regardless of whether it is a patch, new feature or new major version.
+        <b>All Updates Cncluded</b><br>Regardless of whether it is a patch, new feature or even a new major version.
       </div>
     </div>
   </div>
@@ -116,7 +116,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Prioritized processing of support requests</b><br>24/5 on Austrian working days, by email and with callback option.
+        <b>Prioritized Support Requests</b><br>24/5 on Austrian working days, by email and with callback option.
       </div>
     </div>
   </div>
@@ -124,7 +124,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Secure data exchange</b><br>Upload log files via a secure portal instead of sending them by email or publishing them on GitHub.
+        <b>Secure Data Exchange</b><br>Upload log files via a secure portal instead of sending them by email or publishing them on GitHub.
       </div>
     </div>
   </div>
