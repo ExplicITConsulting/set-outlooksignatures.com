@@ -216,13 +216,12 @@ html::after {
   height: auto;
   flex-shrink: 0;
   padding-right: 0 !important;
-  transform: translateZ(0); 
+  transform: translateZ(0);
 }
 
 .signature-scrolling-banner .signature-scrolling-track img {
   max-height: 10em;
 }
-
 
 p + ul,
 p + ol {

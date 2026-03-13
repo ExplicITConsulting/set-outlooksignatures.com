@@ -42,47 +42,48 @@
 </noscript>
 
 
-<!-- mtrcs youtube code -->
-<script>
-  document.addEventListener('DOMContentLoaded', async () => {
-    const playerElement = document.getElementById('youtube-video-player');
-    if (playerElement) {
-      // Define the onYouTubeIframeAPIReady function before loading the script.
-      // The YouTube API will call this function automatically once it's loaded.
-      window.onYouTubeIframeAPIReady = () => {
-        // Create a new YT.Player object for the iframe with id="youtube-video-player"
-        window.player = new YT.Player('youtube-video-player', {
-          events: {
-            'onStateChange': onPlayerStateChange
+<!-- mtrcs youtube code (disabled)
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const playerElement = document.getElementById('youtube-video-player');
+      if (playerElement) {
+        // Define the onYouTubeIframeAPIReady function before loading the script.
+        // The YouTube API will call this function automatically once it's loaded.
+        window.onYouTubeIframeAPIReady = () => {
+          // Create a new YT.Player object for the iframe with id="youtube-video-player"
+          window.player = new YT.Player('youtube-video-player', {
+            events: {
+              'onStateChange': onPlayerStateChange
+            }
+          });
+        };
+
+        // This function is called by the YouTube API whenever the player's state changes.
+        function onPlayerStateChange(event) {
+          const videoTitle = "Set-OutlookSignatures Demo"; // Customize this
+          const currentTime = window.player.getCurrentTime();
+
+          if (event.data === YT.PlayerState.PLAYING) {
+            // Track when the video starts playing
+            _paq.push(['trackEvent', 'Video', 'Play', videoTitle, Math.round(currentTime)]);
+          } else if (event.data === YT.PlayerState.PAUSED) {
+            // Track when the video is paused
+            _paq.push(['trackEvent', 'Video', 'Pause', videoTitle, Math.round(currentTime)]);
+          } else if (event.data === YT.PlayerState.ENDED) {
+            // Track when the video ends
+            _paq.push(['trackEvent', 'Video', 'Ended', videoTitle, Math.round(currentTime)]);
           }
-        });
-      };
-
-      // This function is called by the YouTube API whenever the player's state changes.
-      function onPlayerStateChange(event) {
-        const videoTitle = "Set-OutlookSignatures Demo"; // Customize this
-        const currentTime = window.player.getCurrentTime();
-
-        if (event.data === YT.PlayerState.PLAYING) {
-          // Track when the video starts playing
-          _paq.push(['trackEvent', 'Video', 'Play', videoTitle, Math.round(currentTime)]);
-        } else if (event.data === YT.PlayerState.PAUSED) {
-          // Track when the video is paused
-          _paq.push(['trackEvent', 'Video', 'Pause', videoTitle, Math.round(currentTime)]);
-        } else if (event.data === YT.PlayerState.ENDED) {
-          // Track when the video ends
-          _paq.push(['trackEvent', 'Video', 'Ended', videoTitle, Math.round(currentTime)]);
         }
-      }
 
-      // Dynamically create and append the script tag to the body.
-      // This is the key step that loads the script only when needed.
-      const script = document.createElement('script');
-      script.src = 'https://www.youtube.com/iframe_api';
-      document.body.appendChild(script);
-    }
-  });
-</script>
+        // Dynamically create and append the script tag to the body.
+        // This is the key step that loads the script only when needed.
+        const script = document.createElement('script');
+        script.src = 'https://www.youtube.com/iframe_api';
+        document.body.appendChild(script);
+      }
+    });
+  </script>
+-->
 
 
 <!-- Add html hash to language switcher links -->
