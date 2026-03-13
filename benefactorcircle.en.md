@@ -241,7 +241,7 @@ sitemap_changefreq: weekly
 <p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> unlocks advanced features — for <strong>just EUR 0.25 per mailbox/month</strong> (EUR 3.00 per year). Billed annually, no auto-renewal.</p>
 
 <p><strong>The add-on is an investment that pays off from day one - certainly for you as well!</strong></p>
-<p><strong>By the way: Thanks to its unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</strong></p>
+<p>Thanks to its unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
 
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
