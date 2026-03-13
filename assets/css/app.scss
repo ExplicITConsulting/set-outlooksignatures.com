@@ -189,42 +189,41 @@ html::after {
   animation-delay: 0s;
 }
 
-/* Container: Keeps your Bulma layout intact */
+/* 1. The Banner stays inside your Bulma column */
 .customer-scrolling-banner,
 .signature-scrolling-banner {
   width: 100%;
   overflow: hidden;
-  white-space: nowrap;
+  display: block;
   position: relative;
-  line-height: 0; /* Removes bottom whitespace from inline images */
 }
 
-/* The Track: Using inline-block is more stable for layout than flex */
+/* 2. The Track is the only thing that is wide */
 .customer-scrolling-track,
 .signature-scrolling-track {
-  display: inline-block;
+  display: flex;
+  width: max-content; /* Only the inner track expands */
+  flex-wrap: nowrap;
+  gap: 2rem;
   will-change: transform;
+  filter: drop-shadow(0 0 0 transparent);
   transform: translate3d(0, 0, 0);
 }
 
-/* Restoring your exact heights */
+/* 3. Placeholders prevent the "0px width" speed bug */
 .customer-scrolling-track img {
   height: 4rem;
   width: auto;
-  margin-right: 2rem; /* The 'gap' replacement */
-  display: inline-block;
-  vertical-align: middle;
+  min-width: 50px; /* Estimate to start animation immediately */
 }
 
 .signature-scrolling-track img {
   height: 10em;
   width: auto;
-  margin-right: 2rem;
-  display: inline-block;
-  vertical-align: middle;
+  min-width: 150px; /* Estimate to start animation immediately */
 }
 
-/* The Animation Engine */
+/* 4. The Animation */
 .is-animating {
   animation: marquee-scroll var(--duration) linear infinite;
 }
@@ -238,11 +237,11 @@ html::after {
   }
 }
 
-/* Firefox Smoothing Hack */
+/* 5. Firefox "Butter" Hack */
 @-moz-document url-prefix() {
   .is-animating {
     filter: blur(0);
-    outline: 1px solid transparent; /* Forces sub-pixel anti-aliasing */
+    transform: translate3d(0, 0, 0) rotate(0.0001deg);
   }
 }
 

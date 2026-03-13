@@ -135,7 +135,7 @@
         const text = await response.text();
         const urls = text.split('\n').map(l => l.trim()).filter(Boolean);
 
-        // Create fragment and duplicate images
+        // Inject images twice for the seamless loop
         const fragment = document.createDocumentFragment();
         [...urls, ...urls].forEach(url => {
           const img = new Image();
@@ -145,25 +145,23 @@
         });
         track.appendChild(fragment);
 
-        // Simple check for width once images start loading
-        const checkWidth = () => {
-          const halfWidth = track.offsetWidth / 2;
-          if (halfWidth > 0) {
+        // Update speed dynamically as images load
+        const observer = new ResizeObserver(entries => {
+          const halfWidth = entries[0].contentRect.width / 2;
+          if (halfWidth > 10) {
             const duration = halfWidth / pxPerSec;
             track.style.setProperty('--duration', `${duration}s`);
             track.classList.add('is-animating');
-          } else {
-            requestAnimationFrame(checkWidth);
           }
-        };
-        
-        requestAnimationFrame(checkWidth);
-      } catch (e) { console.error(e); }
+        });
+
+        observer.observe(track);
+      } catch (e) { console.error("Banner error:", e); }
     };
 
-    // Speed 72px/s = your original 1.2px/frame
-    initSafeBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 72);
-    initSafeBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 72);
+    // 72px/s matches your original 1.2px per frame speed
+    initSafeBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 84);
+    initSafeBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 105);
   });
 </script>
 
