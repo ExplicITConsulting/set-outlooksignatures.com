@@ -126,68 +126,56 @@
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Wunschgeschwindigkeiten in px/s
+  // Desired speeds (px/s)
   const SPEEDS = {
-    customer: 60,    // z.B. 60 Pixel pro Sekunde
-    signature: 80    // z.B. 80 Pixel pro Sekunde
+    customer: 60,
+    signature: 80
   };
 
-  buildMarquee({
-    selector: '.customer-scrolling-banner',
-    trackSelector: '.customer-scrolling-track',
-    endpoint: 'https://set-outlooksignatures.com/customer-images.txt',
-    speedPxPerSec: SPEEDS.customer
-  });
+  setupMarquee('.customer-scrolling-banner', '.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', SPEEDS.customer);
+  setupMarquee('.signature-scrolling-banner', '.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', SPEEDS.signature);
 
-  buildMarquee({
-    selector: '.signature-scrolling-banner',
-    trackSelector: '.signature-scrolling-track',
-    endpoint: 'https://set-outlooksignatures.com/signature-images.txt',
-    speedPxPerSec: SPEEDS.signature
-  });
-
-  async function buildMarquee(config) {
-    const banners = document.querySelectorAll(config.selector);
+  async function setupMarquee(selectorBanner, selectorTrack, endpoint, speedPxPerSec) {
+    const banners = document.querySelectorAll(selectorBanner);
     if (!banners.length) return;
 
     let urls = [];
     try {
-      const res = await fetch(config.endpoint, { cache: 'no-store' }); // immer frisch
+      const res = await fetch(endpoint, { cache: 'no-store' });
       if (!res.ok) return;
       const text = await res.text();
       urls = [...new Set(text.split('\n').map(l => l.trim()).filter(Boolean))];
     } catch (e) {
-      console.error(`Error loading ${config.selector}:`, e);
+      console.error(`Error loading ${selectorTrack}:`, e);
       return;
     }
 
-    // Leicht mischen, damit nicht immer dasselbe vorne ist
     urls.sort(() => Math.random() - 0.5);
 
     banners.forEach(banner => {
-      const track = banner.querySelector(config.trackSelector);
+      const track = banner.querySelector(selectorTrack);
       if (!track) return;
 
-      // Track reset (bei Refresh)
       track.textContent = '';
 
-      // Reihe A aufbauen
+      // Build Row A
       const rowA = document.createElement('div');
       rowA.className = 'row A';
 
-      urls.forEach(url => {
+      const imgsA = urls.map(url => {
         const img = document.createElement('img');
         img.src = url;
         img.alt = 'Logo/Template';
         img.decoding = 'async';
-        img.loading = 'lazy';           // Lazy Pflicht
+        img.loading = 'lazy';       // lazy required
         img.fetchPriority = 'low';
-        img.referrerPolicy = 'no-referrer'; // optional
+        img.referrerPolicy = 'no-referrer';
         img.draggable = false;
         rowA.appendChild(img);
+        return img;
       });
 
-      // Reihe B = exakter Klon → identische Breite
+      // Row B = clone
       const rowB = rowA.cloneNode(true);
       rowB.className = 'row B';
       rowB.setAttribute('aria-hidden', 'true');
@@ -195,43 +183,58 @@ document.addEventListener('DOMContentLoaded', () => {
       track.appendChild(rowA);
       track.appendChild(rowB);
 
-      // Dauer berechnen & setzen
-      const recalcDuration = () => {
-        // WICHTIG: Wir messen NUR die Breite von Reihe A
-        // => Dauer = Breite(A) / pxPerSec
-        const rowAWidth = rowA.getBoundingClientRect().width; // kann durch Lazy wachsen
-        const speed = Math.max(1, config.speedPxPerSec || 60); // Schutz
+      const imgsB = rowB.querySelectorAll('img');
 
-        // Falls noch 0 (Bilder nicht geladen), setze eine minimale Dauer
-        const seconds = rowAWidth > 0 ? (rowAWidth / speed) : 40;
+      // Measure + lock widths + (re)start animation
+      const recalc = () => {
+        // Lock per-image widths from Row A into Row B (even if B images are not decoded)
+        imgsA.forEach((imgA, i) => {
+          const w = imgA.getBoundingClientRect().width;
+          if (w > 0 && imgsB[i]) {
+            // Lock both A and B widths so future loads cannot shift layout
+            imgA.style.width = `${w}px`;
+            imgsB[i].style.width = `${w}px`;
+          }
+        });
 
-        // CSS-Variable setzen, CSS zieht sie für animation-duration
+        // Now compute row A width in px
+        const rowAWidth = rowA.getBoundingClientRect().width;
+        if (rowAWidth <= 0) return;
+
+        // Set CSS variables for distance and duration
+        const pxPerSec = Math.max(1, speedPxPerSec || 60);
+        const seconds = rowAWidth / pxPerSec;
+
+        track.style.setProperty('--rowA-width', `${rowAWidth.toFixed(3)}px`);
         track.style.setProperty('--loop-duration', `${seconds.toFixed(3)}s`);
 
-        // Animation aktivieren
+        // Restart animation cleanly to avoid mid-cycle tearing
+        // Pause -> force reflow -> run
+        track.classList.remove('is-ready');
+        track.style.animation = 'none';
+        // force reflow
+        // eslint-disable-next-line no-unused-expressions
+        track.offsetWidth;
+        track.style.animation = '';
         track.classList.add('is-ready');
       };
 
-      // Initial rechnen (falls schon Caches/Dimensionen vorhanden)
-      recalcDuration();
+      // Initial recalc (in case some images are cached)
+      recalc();
 
-      // Bei jedem IMG-Load erneut rechnen (Dauer bleibt konstant in px/s)
-      const imgs = rowA.querySelectorAll('img');
-      imgs.forEach(img => {
+      // Recalc on each A-image load (lazy images will arrive over time)
+      imgsA.forEach(img => {
         img.addEventListener('load', () => {
-          // kleine Entzerrung via rAF, um Layout-Ticks zu bündeln
-          requestAnimationFrame(recalcDuration);
-        }, { once: false });
+          // Use rAF to batch layouts if multiple images load together
+          requestAnimationFrame(recalc);
+        });
       });
 
-      // Resize-Änderungen berücksichtigen (responsive Höhen → andere Breiten)
+      // Recalc on resize (height changes -> widths change)
       const ro = new ResizeObserver(() => {
-        requestAnimationFrame(recalcDuration);
+        requestAnimationFrame(recalc);
       });
       ro.observe(banner);
-
-      // Optional: Wiederaufbau nach X Minuten (falls Datei oft wechselt)
-      // -> erneut buildMarquee(...) aufrufen; der Track wird neu befüllt.
     });
   }
 });

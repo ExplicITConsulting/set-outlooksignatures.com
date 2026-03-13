@@ -189,7 +189,7 @@ html::after {
   animation-delay: 0s;
 }
 
-/* Banner-Container */
+/* Banner containers */
 .customer-scrolling-banner,
 .signature-scrolling-banner {
   overflow: hidden;
@@ -197,69 +197,11 @@ html::after {
   display: flex;
   align-items: center;
   width: 100%;
-
-  /* Performance: nur rendern, wenn nötig */
+  /* Performance (when offscreen) */
   content-visibility: auto;
-
-  /* Reservierte Größe, falls "skipped" (LC-Schutz) */
-  /* Breite großzügig, Höhe passend pro Banner */
 }
 
-/* Tracks (Marquee) */
-.customer-scrolling-track,
-.signature-scrolling-track {
-  display: flex;
-  width: max-content; /* so breit wie der Inhalt */
-  gap: 2em;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  contain: content; /* begrenzt Reflow-Kaskaden */
-
-  /* CSS-Animation, Dauer kommt als Variable von JS */
-  animation-name: marquee-x;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-play-state: paused; /* Start erst, wenn JS Inhalte gesetzt hat */
-  animation-duration: var(--loop-duration, 40s);
-}
-
-/* Reihen A & B (identischer Inhalt) */
-.customer-scrolling-track .row,
-.signature-scrolling-track .row {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  gap: 2em;
-}
-
-/* Bilder */
-.customer-scrolling-track img,
-.signature-scrolling-track img {
-  flex-shrink: 0;
-  height: auto;
-  transform: translateZ(0);
-  image-rendering: auto;
-  user-drag: none;
-  -webkit-user-drag: none;
-}
-
-/* Spezifische Höhen – wie bei dir */
-.customer-scrolling-track img {
-  height: 4rem;
-}
-.signature-scrolling-track img {
-  height: 10em;
-}
-
-/* Wenn bereit, Animation abspielen */
-.customer-scrolling-track.is-ready,
-.signature-scrolling-track.is-ready {
-  animation-play-state: running;
-}
-
-/* contain-intrinsic-size für die Banner (bei content-visibility:auto) */
+/* Reserve intrinsic sizes (only used when content is skipped) */
 .customer-scrolling-banner {
   contain-intrinsic-size: 1000px 4rem;
 }
@@ -267,21 +209,76 @@ html::after {
   contain-intrinsic-size: 1000px 10em;
 }
 
-/* Motion-Preference respektieren */
-@media (prefers-reduced-motion: reduce) {
-  .customer-scrolling-track.is-ready,
-  .signature-scrolling-track.is-ready {
-    animation: none !important;
-  }
+/* Tracks (marquee) */
+.customer-scrolling-track,
+.signature-scrolling-track {
+  display: flex;
+  width: max-content; /* exactly as wide as content (A+B) */
+  gap: 2em;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  contain: content;
+
+  /* CSS animation controlled via variables from JS */
+  animation-name: marquee-x;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused; /* start when ready */
+  animation-duration: var(--loop-duration, 40s);
 }
 
-/* Keyframes: A+B → -50% ist exakt Breite von A */
+/* Rows A & B */
+.customer-scrolling-track .row,
+.signature-scrolling-track .row {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 2em;
+  flex: 0 0 auto; /* no shrink, no wrap */
+}
+
+/* Images */
+.customer-scrolling-track img,
+.signature-scrolling-track img {
+  flex: 0 0 auto; /* critical: no shrink */
+  height: auto;
+  transform: translateZ(0);
+  image-rendering: auto;
+  user-drag: none;
+  -webkit-user-drag: none;
+  object-fit: contain;
+}
+
+/* Specific heights (as you had) */
+.customer-scrolling-track img {
+  height: 4rem;
+}
+.signature-scrolling-track img {
+  height: 10em;
+}
+
+/* Ready to play */
+.customer-scrolling-track.is-ready,
+.signature-scrolling-track.is-ready {
+  animation-play-state: running;
+}
+
+/* Keyframes to a PIXEL distance (Row A width) */
 @keyframes marquee-x {
   from {
     transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(calc(-1 * var(--rowA-width, 1000px)), 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .customer-scrolling-track.is-ready,
+  .signature-scrolling-track.is-ready {
+    animation: none !important;
   }
 }
 
