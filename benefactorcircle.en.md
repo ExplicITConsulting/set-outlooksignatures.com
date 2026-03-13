@@ -8,15 +8,15 @@ description: "Extend Set-OutlookSignatures with mobile support, roaming sync, OO
 hero_link: "#demo"
 hero_link_text: "<span><b>Schedule your personal demo now</b></span>"
 hero_link_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);"
+   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;"
 hero_link2: "#trial"
 hero_link2_text: "<span><b>Get a 14-day trial license</b></span>"
 hero_link2_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);"
+   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;"
 hero_link3: "#order"
 hero_link3_text: "<span><b>Request a license quote</b></span>"
 hero_link3_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);"
+   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   height: 1200
@@ -130,7 +130,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p><a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);">Get a trial license, request a quote</a></p>
+<p><a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;">Get a trial license, request a quote</a></p>
 
 
 <h2 id="demo">Demo</h2>
@@ -168,7 +168,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);">Schedule your personal demo now</a></p>
+      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;">Schedule your personal demo now</a></p>
     </div>
   </div>
   <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
@@ -221,14 +221,14 @@ sitemap_changefreq: weekly
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="trial">Free trial</h2>
     <p>After setting up the free and open-source Set-OutlookSignatures using the Quick Start Guide and configuring it to your needs, you are ready to take the next step:</p>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);">Get a 14-day trial license</a></p>
+    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;">Get a 14-day trial license</a></p>
     <p>Trial licenses are limited to 14&nbsp;days runtime, a maximum of 20&nbsp;mailboxes, and can not be extended or re-issued.</p>
     <p>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible as our software does not phone home).</p>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="order">Buy licenses</h2>
     <p>Upgrading to the full version, adding more mailboxes and renewing a license is quick and straightforward:</p>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4);">Request a license quote</a></p>
+    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;">Request a license quote</a></p>
     <p>You will receive a quote shortly. You double-check it, we send the invoice and you can start the payment process.</p>
     <p>We send you the download and usage instructions for your new license as soon as we receive the full invoice amount.</p>
   </div>
