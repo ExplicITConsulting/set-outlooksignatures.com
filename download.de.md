@@ -4,7 +4,7 @@ lang: "de"
 locale: "de"
 title: "Set-Outlook&shy;Signatures herunterladen"
 subtitle: "Holen Sie sich die kostenlose und quelloffene Kernversion"
-description: "E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz."
+description: "Automatisierte E-Mail-Signaturen und Abwesenheitsnotizen mit vollständiger Datensouveränität"
 permalink: "/download"
 redirect_from:
   - "/download/"
@@ -13,7 +13,7 @@ sitemap_changefreq: weekly
 ---
 <h2 id="set-outlooksignatures">Set-OutlookSignatures</h2>
 <p>
-Set-OutlookSignatures ist der Open-Source-Standard für E-Mail-Signaturen und Abwesenheitsnotizen für Exchange und Outlook. Voller Funktionsumfang, kosteneffizient, unübertroffener Datenschutz.
+Set-OutlookSignatures ist der Open-Source-Standard für automatisierte E-Mail-Signaturen und Abwesenheitsnotizen mit vollständiger Datensouveränität.
 </p>
 
 <p>
