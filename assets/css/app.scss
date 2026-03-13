@@ -208,6 +208,8 @@ html::after {
   will-change: transform;
   filter: drop-shadow(0 0 0 transparent);
   transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+  backface-visibility: hidden;
 }
 
 /* 3. Placeholders prevent the "0px width" speed bug */
@@ -240,8 +242,8 @@ html::after {
 /* 5. Firefox "Butter" Hack */
 @-moz-document url-prefix() {
   .is-animating {
-    filter: blur(0);
-    transform: translate3d(0, 0, 0) rotate(0.0001deg);
+    transform: rotate(0.0001deg);
+    filter: drop-shadow(0 0 0 transparent);
   }
 }
 
