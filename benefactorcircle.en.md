@@ -253,6 +253,7 @@ sitemap_changefreq: weekly
     <p>There is no minimum number of mailboxes required. However, each invoice must meet a minimum net amount of EUR 210.00. Licenses are paid in advance and are valid for one year from the date full payment is received. There is no automatic renewal or subscription.</p>
     <p>If you add mailboxes during an active license period, you will only be charged the current license price for the remaining months of your license term. The minimum invoice amount applies.</p>
     <p>While a license is active, it includes free version upgrades and all your support requests are prioritized.</p>
+    <p>Billed annually, without auto-renewal. We will remind and send a renewal quote around six weeks before your license is about to expire.</p>
   </div>
 </details>
 
@@ -296,15 +297,20 @@ sitemap_changefreq: weekly
 
 
 <h2 id="license-groups">How license groups work</h2>
-<p>Each <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> license is bound to one or more Active Directory or Entra ID groups, called a license group. For maximum data protection and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
+<p>Each Benefactor Circle license is bound to an Active Directory or Entra ID groups, called a license group, with a defined maximum number of members. For data protection reasons and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
 
-<p>For most environments, only one license group is needed.<br>In on-prem and hybrid environments with multiple Active Directory domains, you may define a separate license group for each AD DNS domain, each license group with a separate maximum member count.<br>If you have multiple entra ID tenants, you may define one Entra ID group per tenant.</p>
+<p>For most environments, only one license group is needed. If you want to define multiplge groups, one license group Active Directory DNS domain or Entra ID tenant is allowed.</p>
 
 <p>A license group definition consists of three components:</p>
 <ul>
-  <li>The DNS domain name of the on-premises Active Directory domain the license group is located in. For cloud-only groups, use '<code>EntraID_&lt;TenantID&gt;</code>' or '<code>EntraID_&lt;TenantDNSDomain&gt;</code>'.</li>
-  <li>The SID (security identifier) or the Entra ID object ID of the license group.</li>
-  <li>The maximum number of mailboxes licensed for the group.</li>
+  <li>The <bold>Active Directory DNS domain name or the Entra ID tenant</bold> of the license group's home.<br>For cloud-only groups, use '<code>EntraID_&lt;TenantID&gt;</code>' or '<code>EntraID_&lt;TenantDNSDomain&gt;</code>'.<br>Examples: 'corp.example.com', 'EntraID_example.com'</li>
+  <li>The <bold>Active Directory SID (security identifier) or the Entra ID object ID</bold> of the license group, depending on the license group's home.<br>Examples: 'S-1-5-21-2998092229-1459889137-3613942852-2617', 'f3f0611a-7bbe-4717-89c3-b967caf6922a'</li>
+  <li>The maximum number of mailboxes licensed for the group.<br>Examples: '478', '16000'</li>
+</ul>
+<p>The example values given above result in the following license groups:</p>
+<ul>
+  <li>The Active Directory group 'corp.example.com, S-1-5-21-2998092229-1459889137-3613942852-2617, 478'</li>
+  <li>The Entra ID group 'EntraID_example.net, f3f0611a-7bbe-4717-89c3-b967caf6922a, 16000'</li>
 </ul>
 
 <p><strong>Where should I create the license group?</strong></p>
@@ -314,7 +320,7 @@ sitemap_changefreq: weekly
   <li>In pure on-prem environments, you can only use on-prem groups. The license group is then '<code>&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'.<br>When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.</li>
 </ul>
 
-<p><strong>When a <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> exclusive feature is about to be used, the license is checked as follows:</strong></p>
+<p><strong>When a Benefactor Circle exclusive feature is about to be used, the license is checked as follows:</strong></p>
 <ol>
   <li>Determine which license group to use.
     <ol>
@@ -327,39 +333,12 @@ sitemap_changefreq: weekly
   <li>Check if the current mailbox is a member of the license group.</li>
 </ol>
 
-<p>As soon as one of these steps fails, the mailbox is not licensed and <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> features can not be used for it.</p>
-
-<p>Please note:</p>
-<ul>
-  <li>You need to make sure that the user running Set-OutlookSignatures is able to resolve all direct and indirect members of all license groups, especially across on-prem AD trusts.</li>
-  <li>Membership in primary groups (such as "Domain Users") is not considered as this cannot be queried reliably via AD/Entra ID.</li>
-  <li>Dynamic Groups are only supported in Entra ID, not in Active Directory.</li>
-  <li>Only one pure Entra ID group per tenant is supported..</li>
-  <li>When a connection to Microsoft Graph is available, Graph is used to check license group membership. A connection to Graph is enforced when the default license group is an Entra ID group.</li>
-</ul>
-
+<p>As soon as one of these steps fails, the mailbox is not licensed and Benefactor Circle features can not be used for it.</p>
 
 <h6 id="add-more-mailboxes">Increasing the number of licensed mailboxes</h6>
 <p>When adding licenses mid-term, only additional licenses are billed, for the remaining period rounded up to full months.</p>
-
 <p>The price for new licenses is the list price at the time of the new order. The payment does not extend the license period but increases the number of licensed mailboxes within it.</p>
-
-
-<h6 id="reduce-licensed-mailboxes">Reducing the number of licensed mailboxes</h6>
-<p>The total number of licensed mailboxes can not be reduced during a license period (one year starting from the date of payment reception), as the license fees are paid in advance.</p>
-
 
 <h6 id="change-license-groups">Moving licensed mailboxes between license groups</h6>
 <p>Moving licenses means that the total number of licensed mailboxes does not change, but their distribution across license groups. This can, for example, be necessary due to Active Directory consolidations.</p>
-
-<p>Shifting licenses between license groups is possible once per license period.</p>
-
-<p>If more license shifts are required, additional licenses have to be acquired temporarily, the total number of licenses can then be reduced when the new license period begins.</p>
-
-
-<h6 id="change-license-period">Extending or reducing a license period</h6>
-<p>A license period cannot be extended. Licenses are valid for one year, starting with the date the full payment is received, and do not auto-renew.</p>
-
-<p>To continue using Set-OutlookSignatures with <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> benefits, just place a new order to receive a new license file.</p>
-
-<p>You will be informed in advance that your license is about to expire.</p>
+<p>Shifting licenses between license groups is possible once per license period. If more license shifts are required, additional licenses have to be acquired temporarily, the total number of licenses can then be reduced when the new license period begins.</p>
