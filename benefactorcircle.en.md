@@ -347,7 +347,7 @@ sitemap_changefreq: weekly
       <li>Check if the number of direct and indirect (a.k.a nested, recursive, transitive) members is less or equal than the number of mailboxes licensed for this group.</li>
       <li>Check if the current mailbox is a member of the license group.</li>
     </ol>
-    <p>If one of these steps fails, the mailbox is not licensed and Benefactor Circle features can not be used for it.</p>
+    <p>If any of these steps fails, the mailbox is not licensed and Benefactor Circle features can not be used for it.</p>
   </div>
 </details>
 
