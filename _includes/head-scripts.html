@@ -126,88 +126,32 @@
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const initCSSBanner = async (config) => {
-      const banners = document.querySelectorAll(config.selector);
-      if (banners.length === 0) return;
+    const startBanner = async (selector, trackSelector, endpoint) => {
+      const track = document.querySelector(trackSelector);
+      if (!track) return;
 
       try {
-        const response = await fetch(config.endpoint);
-        if (!response.ok) return;
+        const response = await fetch(endpoint);
         const text = await response.text();
-        const baseUrls = [...new Set(text.split('\n').map(l => l.trim()).filter(Boolean))];
+        const urls = text.split('\n').filter(l => l.trim());
 
-        banners.forEach(banner => {
-          const track = banner.querySelector(config.trackSelector);
-          if (!track) return;
-
-          // 1. Create the content (Fragment for performance)
-          const fragment = document.createDocumentFragment();
-          
-          // Helper to create image elements
-          const createImg = (url) => {
-            const img = new Image();
-            img.src = url;
-            img.alt = "Logo";
-            img.loading = "lazy"; // Native Lazy Loading
-            img.decoding = "async";
-            return img;
-          };
-
-          // Add the original set
-          baseUrls.forEach(url => fragment.appendChild(createImg(url)));
-          
-          // Clone the set immediately for the seamless loop
-          baseUrls.forEach(url => fragment.appendChild(createImg(url)));
-
-          track.appendChild(fragment);
-
-          // 2. Wait for the track to have layout, then calculate width
-          // We use a ResizeObserver to handle images loading in and changing width
-          const updateAnimation = () => {
-            const images = track.querySelectorAll('img');
-            const totalWidth = track.scrollWidth / 2; // Since we doubled the set
-            const duration = totalWidth / (config.speed * 40); // Tweak divisor for speed
-
-            const animName = `scroll-${Math.random().toString(36).substr(2, 9)}`;
-            const styleSheet = document.createElement("style");
-            
-            styleSheet.textContent = `
-              @keyframes ${animName} {
-                from { transform: translate3d(0, 0, 0); }
-                to { transform: translate3d(-${totalWidth}px, 0, 0); }
-              }
-              .${config.animClass} {
-                animation: ${animName} ${duration}s linear infinite;
-              }
-            `;
-            document.head.appendChild(styleSheet);
-            track.classList.add(config.animClass);
-          };
-
-          // Call update once images start taking up space
-          // Using a small timeout or ResizeObserver ensures offsetWidth isn't 0
-          setTimeout(updateAnimation, 500); 
+        // Create one set of images
+        const nodes = urls.map(url => {
+          const img = new Image();
+          img.src = url.trim();
+          img.loading = "lazy"; 
+          return img;
         });
-      } catch (e) {
-        console.error(`Error:`, e);
-      }
+
+        // Inject TWO sets (the 2nd set creates the seamless loop)
+        const fullSet = [...nodes, ...nodes.map(n => n.cloneNode())];
+        fullSet.forEach(node => track.appendChild(node));
+        
+      } catch (e) { console.error("Banner error", e); }
     };
 
-    initCSSBanner({
-      selector: '.customer-scrolling-banner',
-      trackSelector: '.customer-scrolling-track',
-      animClass: 'customer-anim',
-      endpoint: 'https://set-outlooksignatures.com/customer-images.txt',
-      speed: 1.2
-    });
-
-    initCSSBanner({
-      selector: '.signature-scrolling-banner',
-      trackSelector: '.signature-scrolling-track',
-      animClass: 'signature-anim',
-      endpoint: 'https://set-outlooksignatures.com/signature-images.txt',
-      speed: 1.2
-    });
+    startBanner('.customer-scrolling-banner', '.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt');
+    startBanner('.signature-scrolling-banner', '.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt');
   });
 </script>
 
