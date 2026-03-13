@@ -245,7 +245,7 @@ sitemap_changefreq: weekly
 
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
-    Licensing details – the fine print in plain language
+    <strong>Licensing details – the fine print in plain language</strong>
   </summary>
   <div style="padding-left: 1.25rem; margin-top: 0.5rem;">
     <p>Each mailbox using Benefactor Circle features requires a license, regardless of the mailbox type (user, shared, etc.).</p>
@@ -318,32 +318,55 @@ sitemap_changefreq: weekly
   <li>The Entra ID group 'EntraID_example.net, f3f0611a-7bbe-4717-89c3-b967caf6922a, 16000'</li>
 </ul>
 
-<p><strong>Where should I create the license group?</strong></p>
-<ul>
-  <li>When using the '-GraphOnly true' parameter, create the group in Entra ID. The license group is then '<code>EntraID_&lt;TenantDNSDomain&gt;, &lt;object ID of your license group&gt;, &lt;NumberOfLicenses&gt;</code>'.<br>You may also use a group created in on-prem Active Directory, as long as it is synchronized to Entra ID. The license group is then '<code>&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'.</li>
-  <li>In hybrid environments without using the '-GraphOnly true' parameter, create a group in your on-prem Active Directory and make sure it is synchronized with Entra ID. The license group is then '<code>&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'.<br>You can also use a group created in Entra ID ('<code>EntraID_&lt;TenantDNSDomain&gt;, &lt;object ID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'), which would basically be equal to using the '-GraphOnly true' parameter.</li>
-  <li>In pure on-prem environments, you can only use on-prem groups. The license group is then '<code>&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'.<br>When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.</li>
-</ul>
+<details class="box p-0">
+  <summary class="has-text-weight-bold" style="cursor: pointer;">
+    <strong>Where should I create the license group?</strong>
+  </summary>
+  <div style="padding-left: 1.25rem; margin-top: 0.5rem;">
+    <ul>
+      <li>When using the '-GraphOnly true' parameter, create the group in Entra ID. The license group is then '<code>EntraID_&lt;TenantDNSDomain&gt;, &lt;object ID of your license group&gt;, &lt;NumberOfLicenses&gt;</code>'.<br>You may also use a group created in on-prem Active Directory, as long as it is synchronized to Entra ID. The license group is then '<code>&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'.</li>
+      <li>In hybrid environments without using the '-GraphOnly true' parameter, create a group in your on-prem Active Directory and make sure it is synchronized with Entra ID. The license group is then '<code>&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'.<br>You can also use a group created in Entra ID ('<code>EntraID_&lt;TenantDNSDomain&gt;, &lt;object ID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'), which would basically be equal to using the '-GraphOnly true' parameter.</li>
+      <li>In pure on-prem environments, you can only use on-prem groups. The license group is then '<code>&lt;On-prem Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;</code>'.<br>When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.</li>
+    </ul>
+  </div>
+</details>
 
-<p><strong>When a Benefactor Circle exclusive feature is about to be used, the license is checked as follows:</strong></p>
-<ol>
-  <li>Determine which license group to use.
+<details class="box p-0">
+  <summary class="has-text-weight-bold" style="cursor: pointer;">
+    <strong>When a Benefactor Circle exclusive feature is about to be used, the license is checked as follows:</strong>
+  </summary>
+  <div style="padding-left: 1.25rem; margin-top: 0.5rem;">
     <ol>
-      <li>Extract the AD DNS domain name from the mailbox' distinguishedName or dnsDomainName property.</li>
-      <li>Use the first license group associated with this AD DNS domain name.<br>If no license group for this AD DNS domain is defined and the Mailbox is in Exchange Online, use the first Entra ID license group associated with the tenant of the mailbox.<br>Finally, if no matching license group is defined, use the first license group in the list.</li>
+      <li>Determine which license group to use.
+        <ol>
+          <li>Extract the AD DNS domain name from the mailbox' distinguishedName or dnsDomainName property.</li>
+          <li>Use the first license group associated with this AD DNS domain name.<br>If no license group for this AD DNS domain is defined and the Mailbox is in Exchange Online, use the first Entra ID license group associated with the tenant of the mailbox.<br>Finally, if no matching license group is defined, use the first license group in the list.</li>
+        </ol>
+      </li>
+      <li>Find the license group via a Graph or Active Directory query.</li>
+      <li>Check if the number of direct and indirect (a.k.a nested, recursive, transitive) members is less or equal than the number of mailboxes licensed for this group.</li>
+      <li>Check if the current mailbox is a member of the license group.</li>
     </ol>
-  </li>
-  <li>Find the license group via a Graph or Active Directory query.</li>
-  <li>Check if the number of direct and indirect (a.k.a nested, recursive, transitive) members is less or equal than the number of mailboxes licensed for this group.</li>
-  <li>Check if the current mailbox is a member of the license group.</li>
-</ol>
+    <p>As soon as one of these steps fails, the mailbox is not licensed and Benefactor Circle features can not be used for it.</p>
+  </div>
+</details>
 
-<p>As soon as one of these steps fails, the mailbox is not licensed and Benefactor Circle features can not be used for it.</p>
+<details class="box p-0">
+  <summary class="has-text-weight-bold" style="cursor: pointer;">
+    <strong>Increasing the number of licensed mailboxes</strong>
+  </summary>
+  <div style="padding-left: 1.25rem; margin-top: 0.5rem;">
+    <p>When adding licenses mid-term, only additional licenses are billed, for the remaining period rounded up to full months.</p>
+    <p>The price for new licenses is the list price at the time of the new order. The payment does not extend the license period but increases the number of licensed mailboxes within it.</p>
+  </div>
+</details>
 
-<h6 id="add-more-mailboxes">Increasing the number of licensed mailboxes</h6>
-<p>When adding licenses mid-term, only additional licenses are billed, for the remaining period rounded up to full months.</p>
-<p>The price for new licenses is the list price at the time of the new order. The payment does not extend the license period but increases the number of licensed mailboxes within it.</p>
-
-<h6 id="change-license-groups">Moving licensed mailboxes between license groups</h6>
-<p>Moving licenses means that the total number of licensed mailboxes does not change, but their distribution across license groups. This can, for example, be necessary due to Active Directory consolidations.</p>
-<p>Shifting licenses between license groups is possible once per license period. If more license shifts are required, additional licenses have to be acquired temporarily, the total number of licenses can then be reduced when the new license period begins.</p>
+<details class="box p-0">
+  <summary class="has-text-weight-bold" style="cursor: pointer;">
+    <strong>Moving licensed mailboxes between license groups</strong>
+  </summary>
+  <div style="padding-left: 1.25rem; margin-top: 0.5rem;">
+    <p>Moving licenses means that the total number of licensed mailboxes does not change, but their distribution across license groups. This can, for example, be necessary due to Active Directory consolidations.</p>
+    <p>Shifting licenses between license groups is possible once per license period. If more license shifts are required, additional licenses have to be acquired temporarily, the total number of licenses can then be reduced when the new license period begins.</p>
+  </div>
+</details>
