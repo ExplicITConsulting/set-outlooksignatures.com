@@ -247,9 +247,9 @@ sitemap_changefreq: weekly
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     Licensing details – the fine print in plain language
   </summary>
-  <div>
+  <div style="padding-left: 1.25rem; margin-top: 0.5rem;">
     <p>Each mailbox using Benefactor Circle features requires a license, regardless of the mailbox type (user, shared, etc.).</p>
-    <ul>
+    <ul style="padding-left: 1.25rem;">
       <li><strong>What’s unlimited: </strong>Number of users per mailbox, templates used, signatures deployed, and frequency of updates.</li>
       <li><strong>How it works: </strong>You don't name mailboxes individually. Just define an Active Directory or Entra ID group containing the relevant mailboxes and specify the maximum number of recursive members. See '<a href="#license-groups">How license groups work</a>' for details.</li>
       <li><strong>Terms: </strong>Licenses are billed annually in advance. There is no minimum mailbox count, though each invoice must meet a minimum net amount of EUR 210.00.</li>
