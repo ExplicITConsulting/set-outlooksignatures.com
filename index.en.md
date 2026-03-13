@@ -21,7 +21,7 @@ sitemap_changefreq: weekly
 <h2 id="outlook-signature-management">
   <span style="font-weight: bolder;">Stop fighting </span>with inconsistent signatures and out-of-office replies
 </h2>
-<p>Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> automate the complexity of enterprise-wide signature management so you can focus on what matters.</p>
+<p>The free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> automate the complexity of enterprise-wide signature management so you can focus on what matters.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -109,42 +109,11 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<h2 id="less-effort">
-  <span style="background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span>, more professionalism
-</h2>
-<p>Manual signature management drains IT resources and risks non-compliance. Fully automate your deployment to ensure every employee represents your brand perfectly, every time.</p>
-
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, coral, coral); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Always up-to-date contact details and company information</b>
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, coral, coral); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Consistent and convincing appearance in every email</b>
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, coral, coral); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>No manual updating by your employees</b>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 <h2 id="strengths">
-  The<span style="font-weight: bolder;"> strengths </span>of Set-OutlookSignatures
+  The<span style="font-weight: bolder;"> strengths </span>of the ecosystem
 </h2>
+<p>Combining the free and open-source Set-OutlookSignatures with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> gives you enterprise-grade governance with total data sovereignty and zero-footprint integration.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -230,45 +199,6 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="expertise">
-  Functionality meets<span class="has-text-success"> expertise</span>
-</h2>
-
-<p>The optional <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> extends Set-OutlookSignatures with powerful enterprise features, prioritized support, and direct access to new capabilities.</p>
-
-<p>If desired, we'll set up our solution together with you: Simple, tailored to your needs, and with sustainable knowledge transfer.</p>
-
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success), var(--bulma-success)); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Cost-efficient and transparent</b><br>
-        Fair prices. No subscriptions. No maintenance contracts.
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success), var(--bulma-success)); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Support with handshake quality</b><br>
-        Solution-driven. At eye level. Accountable.
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success), var(--bulma-success)); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Tangible added value</b><br>
-        Your investment pays off. From day one.
-      </div>
-    </div>
-  </div>
-</div>
-
-
 <h2 id="quickstart">
   Deploy signatures <span style="font-weight: bolder;">within minutes</span>
 </h2>
@@ -281,9 +211,9 @@ sitemap_changefreq: weekly
 </h2>
 <p>Visit our help and support center to find out more:</p>
 <ul>
-  <li>The detailed feature set and a comparison with competitors</li>
-  <li>Requirements and configuration options</li>
-  <li>Best practices and FAQ</li>
-  <li>How to get first-class support</li>
+  <li>📊 The detailed feature set and a comparison with competitors</li>
+  <li>⚙️ Requirements and configuration options</li>
+  <li>💡 Best practices and FAQ</li>
+  <li>🤝 How to get first-class support</li>
 </ul>
 <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Help and Support center</a>
