@@ -188,50 +188,61 @@ html::after {
   /* No delay, so all buttons animate at the same time */
   animation-delay: 0s;
 }
-:root {
-  --speed-px: 72; /* Your 1.2px/frame @ 60fps */
+
+/* Container: Keeps your Bulma layout intact */
+.customer-scrolling-banner,
+.signature-scrolling-banner {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  line-height: 0; /* Removes bottom whitespace from inline images */
 }
 
+/* The Track: Using inline-block is more stable for layout than flex */
 .customer-scrolling-track,
 .signature-scrolling-track {
-  display: flex;
-  width: max-content;
-  gap: 2rem;
+  display: inline-block;
   will-change: transform;
-  /* The Firefox smoothness "Holy Grail" */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000;
+  transform: translate3d(0, 0, 0);
 }
 
-/* CUSTOMER SETTINGS */
-.customer-scrolling-track {
+/* Restoring your exact heights */
+.customer-scrolling-track img {
   height: 4rem;
-  /* Duration = (TotalWidth / 2) / Speed */
-  animation: marquee-horizontal var(--duration, 30s) linear infinite;
-}
-
-/* SIGNATURE SETTINGS */
-.signature-scrolling-track {
-  height: 10em;
-  animation: marquee-horizontal var(--duration, 60s) linear infinite;
-}
-
-.customer-scrolling-track img,
-.signature-scrolling-track img {
-  height: 100%;
   width: auto;
-  flex-shrink: 0;
-  /* Forces Firefox to use high-quality sub-pixel interpolation */
-  transform: rotate(0.0001deg);
+  margin-right: 2rem; /* The 'gap' replacement */
+  display: inline-block;
+  vertical-align: middle;
 }
 
-@keyframes marquee-horizontal {
-  0% {
+.signature-scrolling-track img {
+  height: 10em;
+  width: auto;
+  margin-right: 2rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* The Animation Engine */
+.is-animating {
+  animation: marquee-scroll var(--duration) linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
+  }
+}
+
+/* Firefox Smoothing Hack */
+@-moz-document url-prefix() {
+  .is-animating {
+    filter: blur(0);
+    outline: 1px solid transparent; /* Forces sub-pixel anti-aliasing */
   }
 }
 

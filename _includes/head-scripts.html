@@ -126,7 +126,7 @@
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const setupMarquee = async (trackSelector, endpoint, pxPerSec) => {
+    const initSafeBanner = async (trackSelector, endpoint, pxPerSec) => {
       const track = document.querySelector(trackSelector);
       if (!track) return;
 
@@ -135,34 +135,35 @@
         const text = await response.text();
         const urls = text.split('\n').map(l => l.trim()).filter(Boolean);
 
-        // Add images twice for the seamless loop
-        const content = [...urls, ...urls].map(url => {
+        // Create fragment and duplicate images
+        const fragment = document.createDocumentFragment();
+        [...urls, ...urls].forEach(url => {
           const img = new Image();
           img.src = url;
           img.loading = "lazy";
-          return img;
+          fragment.appendChild(img);
         });
-        
-        content.forEach(img => track.appendChild(img));
+        track.appendChild(fragment);
 
-        // Use ResizeObserver to set the duration once images have widths
-        const obs = new ResizeObserver(() => {
-          const fullWidth = track.scrollWidth;
-          const halfWidth = fullWidth / 2;
+        // Simple check for width once images start loading
+        const checkWidth = () => {
+          const halfWidth = track.offsetWidth / 2;
           if (halfWidth > 0) {
             const duration = halfWidth / pxPerSec;
             track.style.setProperty('--duration', `${duration}s`);
-            obs.disconnect(); // Only need to set it once
+            track.classList.add('is-animating');
+          } else {
+            requestAnimationFrame(checkWidth);
           }
-        });
-        obs.observe(track);
+        };
         
+        requestAnimationFrame(checkWidth);
       } catch (e) { console.error(e); }
     };
 
-    // Speed 72 = your original 1.2px per frame
-    setupMarquee('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 75);
-    setupMarquee('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 90);
+    // Speed 72px/s = your original 1.2px/frame
+    initSafeBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 72);
+    initSafeBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 72);
   });
 </script>
 
