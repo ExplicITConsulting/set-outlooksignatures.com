@@ -22,30 +22,35 @@ sitemap_changefreq: weekly
   Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally and fully automated
 </h2>
 <p>Stop fighting with inconsistent signatures and out-of-office replies. Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> automate the complexity of enterprise-wide signature management so you can focus on what matters.</p>
-
-<div class="columns is-multiline mt-4">
-  <div class="column is-one-third">
-    <div class="cell">
-      <b>🚀 Instant Professionalism</b><br>
-      Automated contact details and consistent branding across every single message.
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      🚀
+      <div style="hyphens: manual;">
+        <b>Instant Professionalism</b><br>Automated contact details and consistent branding across every single message.
+      </div>
     </div>
   </div>
-  <div class="column is-one-third">
-    <div class="cell">
-      <b>🛠️ Zero Manual Effort</b><br>
-      Invisible to employees, automated for IT, and centrally controlled for Marketing.
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      🛠️
+      <div style="hyphens: manual;">
+        <b>Zero Manual Effort</b><br>Invisible to employees, automated for IT, and centrally controlled for Marketing.
+      </div>
     </div>
   </div>
-  <div class="column is-one-third">
-    <div class="cell">
-      <b>🔒 Unsurpassed Privacy</b><br>
-      Total data sovereignty. Your data stays in your environment, no third-party transits.
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      🔒
+      <div style="hyphens: manual;">
+        <b>Unsurpassed Privacy</b><br>Total data sovereignty. Your data stays in your environment, no third-party transits.
+      </div>
     </div>
   </div>
 </div>
 
 
-<h2 id="demo">Experience it in action!</h2>
+<h2 id="demo">Experience it<span style="font-weight: bolder;"> in action!</span></h2>
 <p>Stop fighting with inconsistent signatures and out-of-office replies. See how Set-OutlookSignatures and the Benefactor Circle add-on automate the complexity of enterprise-wide signature management so you can focus on what matters. Experience live:</p>
 
 <div class="columns is-multiline">
@@ -53,7 +58,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Cross-platform sovereignty</b><br>Deploy seamlessly across Windows, macOS, iOS, Android, and Web. Full data sovereignty: Keep your data within your own environment while maintaining enterprise-grade security - even for BYOD scenarios and users with M365 F licenses.
+        <b>Cross-Platform Sovereignty</b><br>Deploy seamlessly across Windows, macOS, iOS, Android, and Web. Full data sovereignty: Keep your data within your own environment while maintaining enterprise-grade security - even for BYOD scenarios and users with M365 F licenses.
       </div>
     </div>
   </div>
@@ -61,7 +66,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Dynamic branding and marketing</b><br>Turn every email into a marketing asset with scheduled campaigns and automated cleanup. Maintain a flawless, compliant corporate identity in every interaction.
+        <b>Dynamic Branding and Marketing</b><br>Turn every email into a marketing asset with scheduled campaigns and automated cleanup. Maintain a flawless, compliant corporate identity in every interaction.
       </div>
     </div>
   </div>
@@ -69,7 +74,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Administrative governance</b><br>Manage complex delegation scenarios, shared mailboxes, and company-wide out-of-office replies centrally. Deploy organization-wide updates in minutes.
+        <b>Administrative Governance</b><br>Manage complex delegation scenarios, shared mailboxes, and company-wide out-of-office replies centrally. Deploy organization-wide updates in minutes.
       </div>
     </div>
   </div>
@@ -94,8 +99,6 @@ sitemap_changefreq: weekly
 </div>
 
 
-
-<!--
 <h2 id="less-effort">
   <span style="background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span>, more professionalism
 </h2>
@@ -269,25 +272,21 @@ sitemap_changefreq: weekly
 </div>
 
 
-<div class="columns is-multiline">
-  <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <h2 id="quickstart">
-      Deploy signatures <span style="font-weight: bolder;">within minutes</span>
-    </h2>
-    <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.</p>
-    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Quick Start Guide</a>
-  </div>
-  <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <h2 id="dive-deeper">
-      Dive deeper
-    </h2>
-    <p>Visit our help and support center to find out more:</p>
-    <ul>
-      <li>The detailed feature set and a comparison with competitors</li>
-      <li>Requirements and configuration options</li>
-      <li>Best practices and FAQ</li>
-      <li>How to get first-class support</li>
-    </ul>
-    <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Help and Support center</a>
-  </div>
-</div>
+<h2 id="quickstart">
+  Deploy signatures <span style="font-weight: bolder;">within minutes</span>
+</h2>
+<p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.</p>
+<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Quick Start Guide</a>
+
+
+<h2 id="dive-deeper">
+  Dive deeper
+</h2>
+<p>Visit our help and support center to find out more:</p>
+<ul>
+  <li>The detailed feature set and a comparison with competitors</li>
+  <li>Requirements and configuration options</li>
+  <li>Best practices and FAQ</li>
+  <li>How to get first-class support</li>
+</ul>
+<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Help and Support center</a>
