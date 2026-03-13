@@ -207,7 +207,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="dive-deeper">
-  Dive deeper
+  Dive<span style="font-weight: bolder;"> deeper</span>
 </h2>
 <p>Visit our help and support center to find out more:</p>
 <ul style="list-style: none; padding-left: 0;">
