@@ -193,6 +193,8 @@ html::after {
 .signature-scrolling-banner {
   overflow: hidden;
   width: 100%;
+  /* Creates a layer for the GPU */
+  transform: translateZ(0);
 }
 
 .customer-scrolling-track,
@@ -200,41 +202,45 @@ html::after {
   display: flex;
   width: max-content;
   gap: 2rem;
-  /* Hardware acceleration fix for Firefox */
+  /* Crucial: prevents Firefox from recalculating layout during animation */
   will-change: transform;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
+  /* Force sub-pixel antialiasing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Restored Heights */
 .customer-scrolling-track img {
   height: 4rem;
   width: auto;
+  flex-shrink: 0;
 }
 .signature-scrolling-track img {
   height: 10em;
   width: auto;
+  flex-shrink: 0;
 }
 
-/* The Dynamic Animation */
 .is-animating {
-  animation: scroll-left var(--duration) linear infinite;
+  animation: scroll-linear var(--duration) linear infinite;
 }
 
-@keyframes scroll-left {
+@keyframes scroll-linear {
   0% {
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(-50%, 0, 0);
-  }
+    transform: translate3d(-50.05%, 0, 0);
+  } /* Tiny offset prevents the 'reset' flicker */
 }
 
-/* Final Firefox smoothness "Magic" */
+/* FIREFOX-ONLY ENGINE FIX */
 @-moz-document url-prefix() {
   .is-animating {
-    /* Slight rotation tricks Firefox into smoother sub-pixel rendering */
-    transform: rotate(0.0001deg);
+    /* The "Ghost" Filter: This forces Firefox to treat the element 
+       as a texture, which enables smooth sub-pixel interpolation. */
+    filter: blur(0);
+    /* Force 3D context */
+    transform: translate3d(0, 0, 0) rotate(0.02deg);
   }
 }
 
