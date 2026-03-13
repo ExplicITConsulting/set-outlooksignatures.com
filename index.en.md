@@ -58,7 +58,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Cross-Platform Sovereignty</b><br>Seamless across Windows, Linux, macOS, iOS, Android, and Web. Keep your data within your own environment while maintaining enterprise-grade security - even for BYOD scenarios and users with M365 F licenses.
+        <b>Cross-Platform Sovereignty</b><br>Seamless across Windows, Linux, macOS, iOS, Android, and Web. Keep your data within your own environment, even for BYOD scenarios and users with M365 F licenses.
       </div>
     </div>
   </div>
