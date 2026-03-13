@@ -39,7 +39,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Cross-platform automation</b><br>Signatures are automatically deployed across all versions of Outlook (Windows, macOS, web) and mobile apps for iOS and Android.
+        <b>Cross-platform Automation</b><br>Signatures are automatically deployed across all versions of Outlook (Windows, macOS, web) and mobile apps for iOS and Android.
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Time-controlled marketing campaigns</b><br>Schedule signatures to start, change, and expire automatically - with crisp banners and images directly from Word templates.
+        <b>Time-Controlled Marketing Campaigns</b><br>Schedule signatures to start, change, and expire automatically - with crisp banners and images directly from Word templates.
       </div>
     </div>
   </div>
@@ -55,7 +55,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Centralized deployment</b><br>Set signatures from a central location without software on each individual device. Ideal for BYOD scenarios and users with M365 F licenses.
+        <b>Centralized Deployment</b><br>Set signatures from a central location without software on each individual device. Ideal for BYOD scenarios and users with M365 F licenses.
       </div>
     </div>
   </div>
@@ -63,7 +63,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Shared mailboxes and delegation scenarios</b><br>Full control over signatures for shared mailboxes and in delegation scenarios (e.g., secretarial or substitute staff).
+        <b>Shared Mailboxes and Delegation Scenarios</b><br>Full control over signatures for shared mailboxes and in delegation scenarios (e.g., secretarial or substitute staff).
       </div>
     </div>
   </div>
@@ -71,7 +71,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Central management of out-of-office messages</b><br>Manage and distribute out-of-office messages consistently and centrally from one location.
+        <b>Central Management of Out-Of-Office Replies</b><br>Manage and distribute out-of-office messages consistently and centrally from one location.
       </div>
     </div>
   </div>
@@ -79,7 +79,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Automated signature cleanup</b><br>Outdated or manually created signatures are automatically removed to ensure a consistent corporate design.
+        <b>Automated Signature Cleanup</b><br>Outdated or manually created signatures are automatically removed to ensure a consistent corporate design.
       </div>
     </div>
   </div>
@@ -87,7 +87,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Support for third-party clients</b><br>Signatures are also available in alternative email programs such as Apple Mail, Gmail, or Thunderbird via a draft email that is always up to date.
+        <b>Support for Third-Party Clients</b><br>Signatures are also available in alternative email programs such as Apple Mail, Gmail, or Thunderbird via a draft email that is always up to date.
       </div>
     </div>
   </div>
@@ -95,7 +95,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Complete white labeling</b><br>Exclusive brand appearance by removing the 'Free and open-source Set-OutlookSignatures' tagline from your signatures.
+        <b>Complete White Labeling</b><br>Exclusive brand appearance by removing the 'Free and open-source Set-OutlookSignatures' tagline from your signatures.
       </div>
     </div>
   </div>
@@ -134,13 +134,14 @@ sitemap_changefreq: weekly
 
 
 <h2 id="demo">Demo</h2>
-<p>We show you what Set-OutlookSignatures, the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> and the included Outlook add-in can do for you - interactively and with focus on your actual needs. Experience live:</p>
+<p>Stop fighting with inconsistent signatures and out-of-office replies. See how combining the free and open-source Set-OutlookSignatures with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> automates the complexity of enterprise-wide signature management so you can focus on what matters. Experience live:</p>
+
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Centralized Management</b><br>Take control of all email signatures and out-of-office replies company-wide, from Outlook clients to mobile devices and Outlook on the web.
+        <b>Cross-Platform Sovereignty</b><br>Across Windows, Linux, macOS, iOS, Android, and Web. All data stays within your own environment, even for BYOD scenarios and with M365 F licenses.
       </div>
     </div>
   </div>
@@ -148,7 +149,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Efficiency and Time Savings</b><br>Reduce manual effort through automated provision of consistent and legally compliant signatures.
+        <b>Dynamic Branding and Marketing</b><br>Turn every email into a marketing asset with scheduled campaigns and automated cleanup. Maintain a flawless, compliant corporate identity in every interaction.
       </div>
     </div>
   </div>
@@ -156,13 +157,13 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Brand Compliance and Legal Certainty</b><br>Ensure your corporate identity and legal requirements in every email.
+        <b>Administrative Governance</b><br>Manage complex delegation scenarios, shared mailboxes, and company-wide out-of-office replies centrally. Deploy organization-wide updates in minutes.
       </div>
     </div>
   </div>
 </div>
 
-<p>We look forward to meeting you!</p>
+<p class="has-text-weight-bold">This is more than a demo — it's a blueprint for your company's email compliance and brand security. We look forward to meeting you!</p>
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -174,6 +175,17 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <div class="customer-scrolling-banner">
         <div class="customer-scrolling-track">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p>&nbsp;</p>
+<div class="columns is-multiline">
+  <div class="column is-full-desktop is-full-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <div class="signature-scrolling-banner">
+        <div class="signature-scrolling-track">
         </div>
       </div>
     </div>
