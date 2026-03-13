@@ -189,6 +189,7 @@ html::after {
   animation-delay: 0s;
 }
 
+/* Banner-Container */
 .customer-scrolling-banner,
 .signature-scrolling-banner {
   overflow: hidden;
@@ -196,34 +197,92 @@ html::after {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 100%;
+
+  /* Performance: nur rendern, wenn nötig */
+  content-visibility: auto;
+
+  /* Reservierte Größe, falls "skipped" (LC-Schutz) */
+  /* Breite großzügig, Höhe passend pro Banner */
 }
 
+/* Tracks (Marquee) */
 .customer-scrolling-track,
 .signature-scrolling-track {
   display: flex;
-  align-items: center;
-  white-space: nowrap;
+  width: max-content; /* so breit wie der Inhalt */
   gap: 2em;
   will-change: transform;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
-  image-rendering: auto;
+  transform-style: preserve-3d;
+  contain: content; /* begrenzt Reflow-Kaskaden */
+
+  /* CSS-Animation, Dauer kommt als Variable von JS */
+  animation-name: marquee-x;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused; /* Start erst, wenn JS Inhalte gesetzt hat */
+  animation-duration: var(--loop-duration, 40s);
 }
 
+/* Reihen A & B (identischer Inhalt) */
+.customer-scrolling-track .row,
+.signature-scrolling-track .row {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 2em;
+}
+
+/* Bilder */
 .customer-scrolling-track img,
 .signature-scrolling-track img {
   flex-shrink: 0;
-  padding-right: 0 !important;
+  height: auto;
   transform: translateZ(0);
+  image-rendering: auto;
+  user-drag: none;
+  -webkit-user-drag: none;
 }
 
-.customer-scrolling-banner .customer-scrolling-track img {
+/* Spezifische Höhen – wie bei dir */
+.customer-scrolling-track img {
   height: 4rem;
 }
-
-.signature-scrolling-banner .signature-scrolling-track img {
+.signature-scrolling-track img {
   height: 10em;
+}
+
+/* Wenn bereit, Animation abspielen */
+.customer-scrolling-track.is-ready,
+.signature-scrolling-track.is-ready {
+  animation-play-state: running;
+}
+
+/* contain-intrinsic-size für die Banner (bei content-visibility:auto) */
+.customer-scrolling-banner {
+  contain-intrinsic-size: 1000px 4rem;
+}
+.signature-scrolling-banner {
+  contain-intrinsic-size: 1000px 10em;
+}
+
+/* Motion-Preference respektieren */
+@media (prefers-reduced-motion: reduce) {
+  .customer-scrolling-track.is-ready,
+  .signature-scrolling-track.is-ready {
+    animation: none !important;
+  }
+}
+
+/* Keyframes: A+B → -50% ist exakt Breite von A */
+@keyframes marquee-x {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 p + ul,

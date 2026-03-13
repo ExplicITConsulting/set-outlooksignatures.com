@@ -125,87 +125,116 @@
 
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const initBannerType = async (config) => {
-      const banners = document.querySelectorAll(config.selector);
-      if (banners.length === 0) return;
+document.addEventListener('DOMContentLoaded', () => {
+  // Wunschgeschwindigkeiten in px/s
+  const SPEEDS = {
+    customer: 60,    // z.B. 60 Pixel pro Sekunde
+    signature: 80    // z.B. 80 Pixel pro Sekunde
+  };
 
-      try {
-        const response = await fetch(config.endpoint);
-        if (!response.ok) return;
-        const text = await response.text();
-        const baseUrls = [...new Set(text.split('\n').map(l => l.trim()).filter(Boolean))];
-
-        banners.forEach(banner => {
-          const track = banner.querySelector(config.trackSelector);
-          if (!track) return;
-
-          // 1. Shuffle and add images immediately
-          const shuffled = [...baseUrls].sort(() => Math.random() - 0.5);
-          shuffled.forEach(url => {
-            const img = new Image();
-            img.src = url;
-            img.alt = "Logo/Template";
-            img.decoding = "async";
-            track.appendChild(img);
-          });
-
-          // 2. Initial Animation State
-          // Start the track at the right edge of the banner container
-          let scrollPos = 0; // banner.offsetWidth;
-          const speed = config.speed || 1.2;
-
-          // Cache the gap value outside the loop to improve performance
-          const computedStyle = getComputedStyle(track);
-          const gap = parseFloat(computedStyle.gap) || 0;
-
-          const animate = () => {
-            scrollPos -= speed;
-
-            const firstImg = track.firstElementChild;
-
-            // Only perform looping logic if the first image is loaded and measurable
-            if (firstImg && firstImg.complete && firstImg.naturalWidth > 0) {
-              const rect = firstImg.getBoundingClientRect();
-              const itemWidth = rect.width + gap;
-
-              // Looping Logic: Move to end only when the first image 
-              // has completely exited the LEFT side (position < -width)
-              if (scrollPos <= -itemWidth) {
-                track.appendChild(firstImg);
-                // Offset the scroll position by the width of the moved element
-                scrollPos += itemWidth;
-              }
-            }
-
-            // Use translate3d for GPU acceleration
-            track.style.transform = `translate3d(${scrollPos}px, 0, 0)`;
-            requestAnimationFrame(animate);
-          };
-
-          // Kick off the animation
-          requestAnimationFrame(animate);
-        });
-      } catch (e) {
-        console.error(`Error loading ${config.selector}:`, e);
-      }
-    };
-
-    // Run for both configurations
-    initBannerType({
-      selector: '.customer-scrolling-banner',
-      trackSelector: '.customer-scrolling-track',
-      endpoint: 'https://set-outlooksignatures.com/customer-images.txt',
-      speed: 1.2
-    });
-
-    initBannerType({
-      selector: '.signature-scrolling-banner',
-      trackSelector: '.signature-scrolling-track',
-      endpoint: 'https://set-outlooksignatures.com/signature-images.txt',
-      speed: 1.2
-    });
+  buildMarquee({
+    selector: '.customer-scrolling-banner',
+    trackSelector: '.customer-scrolling-track',
+    endpoint: 'https://set-outlooksignatures.com/customer-images.txt',
+    speedPxPerSec: SPEEDS.customer
   });
+
+  buildMarquee({
+    selector: '.signature-scrolling-banner',
+    trackSelector: '.signature-scrolling-track',
+    endpoint: 'https://set-outlooksignatures.com/signature-images.txt',
+    speedPxPerSec: SPEEDS.signature
+  });
+
+  async function buildMarquee(config) {
+    const banners = document.querySelectorAll(config.selector);
+    if (!banners.length) return;
+
+    let urls = [];
+    try {
+      const res = await fetch(config.endpoint, { cache: 'no-store' }); // immer frisch
+      if (!res.ok) return;
+      const text = await res.text();
+      urls = [...new Set(text.split('\n').map(l => l.trim()).filter(Boolean))];
+    } catch (e) {
+      console.error(`Error loading ${config.selector}:`, e);
+      return;
+    }
+
+    // Leicht mischen, damit nicht immer dasselbe vorne ist
+    urls.sort(() => Math.random() - 0.5);
+
+    banners.forEach(banner => {
+      const track = banner.querySelector(config.trackSelector);
+      if (!track) return;
+
+      // Track reset (bei Refresh)
+      track.textContent = '';
+
+      // Reihe A aufbauen
+      const rowA = document.createElement('div');
+      rowA.className = 'row A';
+
+      urls.forEach(url => {
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = 'Logo/Template';
+        img.decoding = 'async';
+        img.loading = 'lazy';           // Lazy Pflicht
+        img.fetchPriority = 'low';
+        img.referrerPolicy = 'no-referrer'; // optional
+        img.draggable = false;
+        rowA.appendChild(img);
+      });
+
+      // Reihe B = exakter Klon → identische Breite
+      const rowB = rowA.cloneNode(true);
+      rowB.className = 'row B';
+      rowB.setAttribute('aria-hidden', 'true');
+
+      track.appendChild(rowA);
+      track.appendChild(rowB);
+
+      // Dauer berechnen & setzen
+      const recalcDuration = () => {
+        // WICHTIG: Wir messen NUR die Breite von Reihe A
+        // => Dauer = Breite(A) / pxPerSec
+        const rowAWidth = rowA.getBoundingClientRect().width; // kann durch Lazy wachsen
+        const speed = Math.max(1, config.speedPxPerSec || 60); // Schutz
+
+        // Falls noch 0 (Bilder nicht geladen), setze eine minimale Dauer
+        const seconds = rowAWidth > 0 ? (rowAWidth / speed) : 40;
+
+        // CSS-Variable setzen, CSS zieht sie für animation-duration
+        track.style.setProperty('--loop-duration', `${seconds.toFixed(3)}s`);
+
+        // Animation aktivieren
+        track.classList.add('is-ready');
+      };
+
+      // Initial rechnen (falls schon Caches/Dimensionen vorhanden)
+      recalcDuration();
+
+      // Bei jedem IMG-Load erneut rechnen (Dauer bleibt konstant in px/s)
+      const imgs = rowA.querySelectorAll('img');
+      imgs.forEach(img => {
+        img.addEventListener('load', () => {
+          // kleine Entzerrung via rAF, um Layout-Ticks zu bündeln
+          requestAnimationFrame(recalcDuration);
+        }, { once: false });
+      });
+
+      // Resize-Änderungen berücksichtigen (responsive Höhen → andere Breiten)
+      const ro = new ResizeObserver(() => {
+        requestAnimationFrame(recalcDuration);
+      });
+      ro.observe(banner);
+
+      // Optional: Wiederaufbau nach X Minuten (falls Datei oft wechselt)
+      // -> erneut buildMarquee(...) aufrufen; der Track wird neu befüllt.
+    });
+  }
+});
 </script>
 
 
@@ -246,7 +275,7 @@
 </script>
 
 
-<!-- Add and lazy load background image -->
+<!--
 <style>
   html::before {
     content: "";
@@ -278,17 +307,16 @@
     filter: var(--bg-filter, none);
   }
 
-  /*
   html.loaded::before {
     background-image: url("/assets/images/set-outlooksignatures logo background compressed.png");
   }
-  */
 
   /* Define a new class for dark mode background. This class will be added and removed by JavaScript. */
   html.dark-mode-bg::before {
     --bg-filter: invert(1) hue-rotate(180deg);
   }
 </style>
+-->
 
 <script>
   /**
