@@ -209,14 +209,6 @@ html::after {
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   image-rendering: auto;
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
 }
 
 .customer-scrolling-track img,
