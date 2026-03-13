@@ -168,7 +168,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;">Schedule your personal demo now</a></p>
+      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4em; min-height: 4em; max-height: 4em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 2px rgba(255,255,255,0.4); font-size: 1.2em;">Schedule your personal demo now</a></p>
     </div>
   </div>
   <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
