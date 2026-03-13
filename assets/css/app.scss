@@ -199,50 +199,29 @@ html::after {
   height: 100%;
 }
 
-.customer-scrolling-banner .customer-scrolling-track,
-.signature-scrolling-banner .signature-scrolling-track {
+.customer-scrolling-track,
+.signature-scrolling-track {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   white-space: nowrap;
-  gap: 1.5em;
-  box-sizing: border-box;
-  /* animation will be set via JS */
+  gap: 2em;
+  will-change: transform;
 }
 
-.customer-scrolling-banner .customer-scrolling-track img,
-.signature-scrolling-banner .signature-scrolling-track img {
+.customer-scrolling-track img,
+.signature-scrolling-track img {
   max-height: 4em;
-  padding-right: 2em;
+  padding-right: 0 !important;
   height: auto;
   width: auto;
   object-fit: contain;
-  display: block;
   flex-shrink: 0;
-  flex-grow: 0;
-  flex-basis: auto;
-  opacity: 1;
 }
 
 .signature-scrolling-banner .signature-scrolling-track img {
   max-height: 10em;
-  padding-right: 3.5em;
 }
 
-@keyframes customer-scroll-full-track-dynamic {
-  /* Changed keyframe name for universality */
-  from {
-    transform: translateX(0);
-  }
-  /* 'to' value will be set by JavaScript */
-}
-
-@keyframes signature-scroll-full-track-dynamic {
-  /* Changed keyframe name for universality */
-  from {
-    transform: translateX(0);
-  }
-  /* 'to' value will be set by JavaScript */
-}
 
 p + ul,
 p + ol {
