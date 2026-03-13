@@ -206,16 +206,17 @@ html::after {
   white-space: nowrap;
   gap: 2em;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  image-rendering: auto;
 }
 
 .customer-scrolling-track img,
 .signature-scrolling-track img {
-  max-height: 4em;
-  padding-right: 0 !important;
   height: auto;
-  width: auto;
-  object-fit: contain;
   flex-shrink: 0;
+  padding-right: 0 !important;
+  transform: translateZ(0); 
 }
 
 .signature-scrolling-banner .signature-scrolling-track img {
