@@ -199,35 +199,42 @@ html::after {
 .signature-scrolling-track {
   display: flex;
   width: max-content;
-  flex-wrap: nowrap;
   gap: 2rem;
+  /* Hardware acceleration fix for Firefox */
   will-change: transform;
   transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 /* Restored Heights */
 .customer-scrolling-track img {
   height: 4rem;
-  width: auto; /* Width starts at 0 and grows as it loads */
-  min-width: 10px; /* Gives the observer something to grab initially */
+  width: auto;
 }
-
 .signature-scrolling-track img {
   height: 10em;
   width: auto;
-  min-width: 10px;
 }
 
+/* The Dynamic Animation */
 .is-animating {
-  animation: scroll-linear var(--duration) linear infinite;
+  animation: scroll-left var(--duration) linear infinite;
 }
 
-@keyframes scroll-linear {
+@keyframes scroll-left {
   0% {
     transform: translate3d(0, 0, 0);
   }
   100% {
     transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Final Firefox smoothness "Magic" */
+@-moz-document url-prefix() {
+  .is-animating {
+    /* Slight rotation tricks Firefox into smoother sub-pixel rendering */
+    transform: rotate(0.0001deg);
   }
 }
 

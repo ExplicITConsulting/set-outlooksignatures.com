@@ -126,17 +126,16 @@
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const initBanner = async (trackSelector, endpoint, pixelsPerSecond) => {
+    const initConstantSpeedBanner = async (trackSelector, endpoint, speedPxPerSec) => {
       const track = document.querySelector(trackSelector);
       if (!track) return;
 
-      // 1. Fetch and inject images immediately
       try {
         const response = await fetch(endpoint);
         const text = await response.text();
         const urls = text.split('\n').map(l => l.trim()).filter(Boolean);
 
-        // Create fragment to avoid multiple reflows during initial injection
+        // 1. Inject images twice for seamless loop
         const fragment = document.createDocumentFragment();
         [...urls, ...urls].forEach(url => {
           const img = new Image();
@@ -146,30 +145,27 @@
         });
         track.appendChild(fragment);
 
-        // 2. The "Real-Time" Speed Correction
-        // This runs every time an image finishes loading and changes the track width
-        const observer = new ResizeObserver(entries => {
-          for (let entry of entries) {
-            const currentFullWidth = entry.contentRect.width;
-            const halfWidth = currentFullWidth / 2;
-
-            if (halfWidth > 50) { // Only start if we have some content
-              const duration = halfWidth / pixelsPerSecond;
-              
-              // Update the CSS variable live. 
-              // Browser smoothly adjusts the animation timing.
-              track.style.setProperty('--duration', `${duration}s`);
-              track.classList.add('is-animating');
-            }
+        // 2. The Math: Calculate duration based on speed
+        const updateSpeed = () => {
+          const halfWidth = track.scrollWidth / 2;
+          if (halfWidth > 0) {
+            // Calculation: Seconds = Pixels / (Pixels per Second)
+            const duration = halfWidth / speedPxPerSec;
+            track.style.setProperty('--duration', `${duration}s`);
+            track.classList.add('is-animating');
           }
-        });
+        };
 
+        // Recalculate as images load to ensure width is accurate
+        const observer = new ResizeObserver(updateSpeed);
         observer.observe(track);
-      } catch (e) { console.error("Banner error:", e); }
+
+      } catch (e) { console.error("Banner error", e); }
     };
 
-    initBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 60); 
-    initBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 75); 
+    // Define Speed in Pixels Per Second here:
+    initConstantSpeedBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 70); 
+    initConstantSpeedBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 90); 
   });
 </script>
 
