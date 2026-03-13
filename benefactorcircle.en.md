@@ -33,13 +33,13 @@ sitemap_changefreq: weekly
 <p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> enhances the free and open-source Set-OutlookSignatures with great additional possibilities for your company.</p>
 
 
-<h3 id="key-features">Exclusive business benefits</h3>
+<h3 id="key-features">Exclusive additional business benefits</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Cross-Platform Automation</b><br>Signatures are automatically deployed across all versions of Outlook (Windows, macOS, web) and mobile apps for iOS and Android.
+        <b>Cross-Platform Automation</b><br>Signatures are automatically deployed across all Classic and New editions of Outlook: Windows, macOS, iOS, Android, and Web.
       </div>
     </div>
   </div>
