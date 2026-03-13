@@ -210,10 +210,22 @@ sitemap_changefreq: weekly
   Dive deeper
 </h2>
 <p>Visit our help and support center to find out more:</p>
-<ul>
-  <li>📊 The detailed feature set and a comparison with competitors</li>
-  <li>⚙️ Requirements and configuration options</li>
-  <li>💡 Best practices and FAQ</li>
-  <li>🤝 How to get first-class support</li>
+<ul style="list-style: none; padding-left: 0;">
+  <li style="display: flex; gap: 0.75em; margin-bottom: 0.5em;">
+    <span>📊</span>
+    <span>The detailed feature set and a comparison with competitors</span>
+  </li>
+  <li style="display: flex; gap: 0.75em; margin-bottom: 0.5em;">
+    <span>⚙️</span>
+    <span>Requirements and configuration options</span>
+  </li>
+  <li style="display: flex; gap: 0.75em; margin-bottom: 0.5em;">
+    <span>💡</span>
+    <span>Best practices and FAQ</span>
+  </li>
+  <li style="display: flex; gap: 0.75em; margin-bottom: 0.5em;">
+    <span>🤝</span>
+    <span>How to get first-class support</span>
+  </li>
 </ul>
 <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Help and Support center</a>

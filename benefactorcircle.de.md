@@ -72,7 +72,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Zentrales Management von Abwesenheitsnotizen</b><br>Verwalten und verteilen Sie Abwesenheitsnotizen für das gesamte Team konsistent und zentral von einer Stelle aus.
+        <b>Zentrales Management von Abwesenheitsnotizen</b><br>Verwalten und verteilen Sie Abwesenheitsnotizen konsistent und zentral von einer Stelle aus.
       </div>
     </div>
   </div>

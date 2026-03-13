@@ -71,7 +71,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Central management of out-of-office messages</b><br>Manage and distribute out-of-office messages for the entire team consistently and centrally from one location.
+        <b>Central management of out-of-office messages</b><br>Manage and distribute out-of-office messages consistently and centrally from one location.
       </div>
     </div>
   </div>
