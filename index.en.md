@@ -80,7 +80,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p class="has-text-weight-bold">This is more than a demo — it's a <strong>45-minute blueprint</strong> for your company's email compliance and brand security. We look forward to meeting you!</p>
+<p class="has-text-weight-bold">This is more than a demo — it's a blueprint for your company's email compliance and brand security. We look forward to meeting you!</p>
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
