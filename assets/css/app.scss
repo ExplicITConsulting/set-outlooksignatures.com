@@ -202,20 +202,15 @@ html::after {
 .customer-scrolling-track,
 .signature-scrolling-track {
   display: flex;
-  align-items: center;
-  white-space: nowrap;
-  gap: 2em;
+  width: max-content; /* Critical: allows track to extend beyond parent */
   will-change: transform;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  image-rendering: auto;
+  gap: 2em;
 }
 
 .customer-scrolling-track img,
 .signature-scrolling-track img {
-  flex-shrink: 0;
-  padding-right: 0 !important;
-  transform: translateZ(0);
+  min-width: 50px;
+  display: block;
 }
 
 .customer-scrolling-banner .customer-scrolling-track img {

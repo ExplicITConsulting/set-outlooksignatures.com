@@ -126,7 +126,7 @@
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const initBannerType = async (config) => {
+    const initCSSBanner = async (config) => {
       const banners = document.querySelectorAll(config.selector);
       if (banners.length === 0) return;
 
@@ -140,68 +140,71 @@
           const track = banner.querySelector(config.trackSelector);
           if (!track) return;
 
-          // 1. Shuffle and add images immediately
-          const shuffled = [...baseUrls].sort(() => Math.random() - 0.5);
-          shuffled.forEach(url => {
+          // 1. Create the content (Fragment for performance)
+          const fragment = document.createDocumentFragment();
+          
+          // Helper to create image elements
+          const createImg = (url) => {
             const img = new Image();
             img.src = url;
-            img.alt = "Logo/Template";
+            img.alt = "Logo";
+            img.loading = "lazy"; // Native Lazy Loading
             img.decoding = "async";
-            track.appendChild(img);
-          });
-
-          // 2. Initial Animation State
-          // Start the track at the right edge of the banner container
-          let scrollPos = 0; // banner.offsetWidth;
-          const speed = config.speed || 1.2;
-
-          // Cache the gap value outside the loop to improve performance
-          const computedStyle = getComputedStyle(track);
-          const gap = parseFloat(computedStyle.gap) || 0;
-
-          const animate = () => {
-            scrollPos -= speed;
-
-            const firstImg = track.firstElementChild;
-
-            // Only perform looping logic if the first image is loaded and measurable
-            if (firstImg && firstImg.complete && firstImg.naturalWidth > 0) {
-              const rect = firstImg.getBoundingClientRect();
-              const itemWidth = rect.width + gap;
-
-              // Looping Logic: Move to end only when the first image 
-              // has completely exited the LEFT side (position < -width)
-              if (scrollPos <= -itemWidth) {
-                track.appendChild(firstImg);
-                // Offset the scroll position by the width of the moved element
-                scrollPos += itemWidth;
-              }
-            }
-
-            // Use translate3d for GPU acceleration
-            track.style.transform = `translate3d(${scrollPos}px, 0, 0)`;
-            requestAnimationFrame(animate);
+            return img;
           };
 
-          // Kick off the animation
-          requestAnimationFrame(animate);
+          // Add the original set
+          baseUrls.forEach(url => fragment.appendChild(createImg(url)));
+          
+          // Clone the set immediately for the seamless loop
+          baseUrls.forEach(url => fragment.appendChild(createImg(url)));
+
+          track.appendChild(fragment);
+
+          // 2. Wait for the track to have layout, then calculate width
+          // We use a ResizeObserver to handle images loading in and changing width
+          const updateAnimation = () => {
+            const images = track.querySelectorAll('img');
+            const totalWidth = track.scrollWidth / 2; // Since we doubled the set
+            const duration = totalWidth / (config.speed * 40); // Tweak divisor for speed
+
+            const animName = `scroll-${Math.random().toString(36).substr(2, 9)}`;
+            const styleSheet = document.createElement("style");
+            
+            styleSheet.textContent = `
+              @keyframes ${animName} {
+                from { transform: translate3d(0, 0, 0); }
+                to { transform: translate3d(-${totalWidth}px, 0, 0); }
+              }
+              .${config.animClass} {
+                animation: ${animName} ${duration}s linear infinite;
+              }
+            `;
+            document.head.appendChild(styleSheet);
+            track.classList.add(config.animClass);
+          };
+
+          // Call update once images start taking up space
+          // Using a small timeout or ResizeObserver ensures offsetWidth isn't 0
+          setTimeout(updateAnimation, 500); 
         });
       } catch (e) {
-        console.error(`Error loading ${config.selector}:`, e);
+        console.error(`Error:`, e);
       }
     };
 
-    // Run for both configurations
-    initBannerType({
+    initCSSBanner({
       selector: '.customer-scrolling-banner',
       trackSelector: '.customer-scrolling-track',
+      animClass: 'customer-anim',
       endpoint: 'https://set-outlooksignatures.com/customer-images.txt',
       speed: 1.2
     });
 
-    initBannerType({
+    initCSSBanner({
       selector: '.signature-scrolling-banner',
       trackSelector: '.signature-scrolling-track',
+      animClass: 'signature-anim',
       endpoint: 'https://set-outlooksignatures.com/signature-images.txt',
       speed: 1.2
     });
@@ -246,7 +249,7 @@
 </script>
 
 
-<!-- Add and lazy load background image -->
+<!-- Add and lazy load background image
 <style>
   html::before {
     content: "";
@@ -278,18 +281,17 @@
     filter: var(--bg-filter, none);
   }
 
-  /*
   html.loaded::before {
     background-image: url("/assets/images/set-outlooksignatures logo background compressed.png");
   }
-  */
+
 
   /* Define a new class for dark mode background. This class will be added and removed by JavaScript. */
   html.dark-mode-bg::before {
     --bg-filter: invert(1) hue-rotate(180deg);
   }
 </style>
-
+-->
 <script>
   /**
    * Standalone script for lazy loading the background image and applying
