@@ -21,10 +21,81 @@ sitemap_changefreq: weekly
 <h2 id="outlook-signature-management">
   Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally and fully automated
 </h2>
-<p>Set-OutlookSignatures and the Benefactor Circle add-on take the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
-<p>Thanks to centrally managed templates that automatically pull in your company data, every email gets the professional look your business deserves: Up-to-date, consistent, and on-brand.</p>
+<p>Stop fighting with inconsistent signatures and out-of-office replies. Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> automate the complexity of enterprise-wide signature management so you can focus on what matters.</p>
+
+<div class="columns is-multiline mt-4">
+  <div class="column is-one-third">
+    <div class="cell">
+      <b>🚀 Instant Professionalism</b><br>
+      Automated contact details and consistent branding across every single message.
+    </div>
+  </div>
+  <div class="column is-one-third">
+    <div class="cell">
+      <b>🛠️ Zero Manual Effort</b><br>
+      Invisible to employees, automated for IT, and centrally controlled for Marketing.
+    </div>
+  </div>
+  <div class="column is-one-third">
+    <div class="cell">
+      <b>🔒 Unsurpassed Privacy</b><br>
+      Total data sovereignty. Your data stays in your environment, no third-party transits.
+    </div>
+  </div>
+</div>
 
 
+<h2 id="demo">Experience it in action!</h2>
+<p>Stop fighting with inconsistent signatures and out-of-office replies. See how Set-OutlookSignatures and the Benefactor Circle add-on automate the complexity of enterprise-wide signature management so you can focus on what matters. Experience live:</p>
+
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Cross-platform sovereignty</b><br>Deploy seamlessly across Windows, macOS, iOS, Android, and Web. Full data sovereignty: Keep your data within your own environment while maintaining enterprise-grade security - even for BYOD scenarios and users with M365 F licenses.
+      </div>
+    </div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Dynamic branding and marketing</b><br>Turn every email into a marketing asset with scheduled campaigns and automated cleanup. Maintain a flawless, compliant corporate identity in every interaction.
+      </div>
+    </div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Administrative governance</b><br>Manage complex delegation scenarios, shared mailboxes, and company-wide out-of-office replies centrally. Deploy organization-wide updates in minutes.
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="has-text-weight-bold">This is more than a demo — it's a <strong>45-minute blueprint</strong> for your company's email compliance and brand security. We look forward to meeting you!</p>
+
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Schedule your personal demo now</a></p>
+    </div>
+  </div>
+  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <div class="customer-scrolling-banner">
+        <div class="customer-scrolling-track">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--
 <h2 id="less-effort">
   <span style="background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span>, more professionalism
 </h2>
@@ -58,6 +129,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
+-->
 
 
 <h2 id="strengths">
@@ -191,55 +263,6 @@ sitemap_changefreq: weekly
       <div style="hyphens: manual;">
         <b>Tangible added value</b><br>
         Your investment pays off. From day one.
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<h2 id="demo">Experience it in action!</h2>
-<p>Stop fighting with inconsistent signatures. See how Set-OutlookSignatures and the Benefactor Circle add-on automate the complexity of enterprise-wide signature management so you can focus on what matters. Experience live:</p>
-
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Cross-platform sovereignty</b><br>Deploy seamlessly across Windows, macOS, iOS, Android, and Web. Full data sovereignty: Keep your data within your own environment while maintaining enterprise-grade security - even for BYOD scenarios and users with M365 F licenses.
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Dynamic branding and marketing</b><br>Turn every email into a marketing asset with scheduled campaigns and automated cleanup. Maintain a flawless, compliant corporate identity in every interaction.
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Administrative governance</b><br>Manage complex delegation scenarios, shared mailboxes, and company-wide out-of-office replies centrally. Deploy organization-wide updates in minutes.
-      </div>
-    </div>
-  </div>
-</div>
-
-<p class="has-text-weight-bold">This is more than a demo — it's a <strong>45-minute blueprint</strong> for your company's email compliance and brand security. We look forward to meeting you!</p>
-
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Schedule your personal demo now</a></p>
-    </div>
-  </div>
-  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <div class="customer-scrolling-banner">
-        <div class="customer-scrolling-track">
-        </div>
       </div>
     </div>
   </div>
