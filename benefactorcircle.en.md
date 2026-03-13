@@ -108,7 +108,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>All Updates Cncluded</b><br>Regardless of whether it is a patch, new feature or even a new major version.
+        <b>All Updates Included</b><br>Regardless of whether it is a patch, new feature or even a new major version.
       </div>
     </div>
   </div>
