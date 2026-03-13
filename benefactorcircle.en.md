@@ -217,20 +217,20 @@ sitemap_changefreq: weekly
 -->
 
 
-<h2 id="trial">Free trial</h2>
-<p>After setting up the free and open-source Set-OutlookSignatures using the Quick Start Guide and configuring it to your needs, you are ready to take the next step:</p>
-
-<p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Get a 14-day trial license</a></p>
-
-<p>To use the license file, just add two parameters to your call of Set-OutlookSignatures.ps1:</p>
-<ul>
-  <li>'-BenefactorCircleLicenseFile' with the path to your individualized license file</li>
-  <li>'-BenefactorCircleId' with your <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> ID</li>
-</ul>
-
-<p>Trial licenses can not be extended or re-issued. They are limited to 14&nbsp;days runtime and a maximum of 20&nbsp;mailboxes.</p>
-
-<p>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible, as our software does not phone home).</p>
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <h2 id="trial">Free trial</h2>
+    <p>After setting up the free and open-source Set-OutlookSignatures using the Quick Start Guide and configuring it to your needs, you are ready to take the next step:</p>
+    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Get a 14-day trial license</a></p>
+    <p>Trial licenses are limited to 14&nbsp;days runtime, a maximum of 20&nbsp;mailboxes, and can not be extended or re-issued. The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible as our software does not phone home).</p>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <h2 id="order">Buy licenses</h2>
+    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a license quote</a></p>
+    <p>You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.</p>
+    <p>As soon as the full invoice amount is received, you will be sent an email with instructions on how to securely download your individualized license file.</p>
+  </div>
+</div>
 
 
 <h2 id="price">Price and business case</h2>
@@ -246,7 +246,7 @@ sitemap_changefreq: weekly
 <ul>
   <li>Small companies pay the same low price as large enterprises.</li>
   <li>No bundled maintenance or support contracts hidden in the annual price. You only pay for support if and when you need it - and thanks to our documentation, you likely won't.</li>
-  <li><strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>, its documentation, or the provided components, support is free - no exceptions.
+  <li><strong>Our support promise: </strong>If your support request is due to a bug in the latest version of Set-OutlookSignatures, the Benefactor Circle add-on, its documentation, or the provided components, support is free - no exceptions.
   <br>
   For all other issues, you will receive the same first-class support at a fair price.
   </li>
@@ -255,7 +255,7 @@ sitemap_changefreq: weekly
   <li>We pass on part of your investment directly to the Set-OutlookSignatures project, thereby promoting the further development of the free open-source version.</li>
 </ul>
 
-<p>Licenses are required only for mailboxes that utilize <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> features. This includes shared mailboxes. Each mailbox requires one license, regardless of how many users access it, how many signatures are deployed, or how frequently those signatures are modified.</p>
+<p>Licenses are required only for mailboxes that utilize Benefactor Circle features. This includes shared mailboxes. Each mailbox requires one license, regardless of how many users access it, how many signatures are deployed, or how frequently those signatures are modified.</p>
 
 <p>You do not need to specify individual mailbox names. Instead, define at least one Active Directory or Entra ID group that includes the relevant mailboxes. For each group, indicate the maximum number of recursive members.</p>
 
@@ -290,7 +290,7 @@ sitemap_changefreq: weekly
   <p>2 changes per year, 3 minutes per change, 2 signatures, 1 client: 0.55 * 2 * 3 * 2 * 1 = 6.60</p>
 </blockquote>
 
-<p>Per user and year, the costs are now EUR 6.60 in manual effort compared to affordable EUR 3.00 for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</p>
+<p><strong>Per user and year, the costs are now EUR 6.60 in manual effort compared to affordable EUR 3.00 for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.<strong></p>
 
 <p>This calculation does not even take into account the following:</p>
 <ul>
@@ -303,33 +303,6 @@ sitemap_changefreq: weekly
 </ul>
 
 <p><strong>You see: The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> pays for itself immediately and actually helps you earn more money.</strong></p>
-
-
-<div class="columns is-multiline">
-  <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <h2 id="order">Buy licenses</h2>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); text-shadow: 0 2px 2px palegoldenrod;">Request a license quote</a></p>
-    <p>You will receive a quote shortly. As soon as all details are ironed out, you will receive an invoice and can start the payment process.</p>
-    <p>As soon as the full invoice amount is received, you will be sent an email with instructions on how to securely download your individualized license file.</p>
-    <p>To use the license file, just add two parameters to your call of &apos;Set-OutlookSignatures.ps1&apos;:</p>
-    <ul>
-      <li>'-BenefactorCircleFile' with the path to your individualized license file</li>
-      <li>'-BenefactorCircleId' with your <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> ID</li>
-    </ul>
-  </div>
-  <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <h2 id="support">Help and support</h2>
-    <p><a href="https://set-outlooksignatures.com/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Help and Support center</a></p>
-    <p>Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> are very well documented, which inevitably brings with it a lot of content.</p>
-    <p>Visit our help and support center to find out more:</p>
-    <ul>
-      <li>The detailed feature set and a comparison with competitors</li>
-      <li>Requirements and configuration options</li>
-      <li>Best practices and FAQ</li>
-      <li>How to get first-class support</li>
-    </ul>
-  </div>
-</div>
 
 
 <h2 id="license-groups">How license groups work</h2>
