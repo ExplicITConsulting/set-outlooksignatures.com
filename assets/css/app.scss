@@ -189,7 +189,6 @@ html::after {
   animation-delay: 0s;
 }
 
-/* Banner containers */
 .customer-scrolling-banner,
 .signature-scrolling-banner {
   overflow: hidden;
@@ -197,83 +196,34 @@ html::after {
   display: flex;
   align-items: center;
   width: 100%;
-  /* Performance when offscreen */
-  content-visibility: auto;
+  height: 100%;
 }
 
-/* Reserve intrinsic sizes (used only when the element is skipped) */
-.customer-scrolling-banner {
-  contain-intrinsic-size: 1000px 4rem;
-}
-.signature-scrolling-banner {
-  contain-intrinsic-size: 1000px 10em;
-}
-
-/* Track (the thing that moves) */
 .customer-scrolling-track,
 .signature-scrolling-track {
-  display: flex;
-  width: max-content; /* width = content width (A + B) */
-  gap: 2em;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  contain: content;
-
-  /* Endless, constant-speed animation; duration & delay set from JS */
-  animation-name: marquee-x;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-play-state: paused; /* start when ready */
-  animation-duration: var(--loop-duration, 40s);
-  animation-delay: var(--neg-delay, 0s);
-}
-
-/* Rows A & B inside the track */
-.customer-scrolling-track .row,
-.signature-scrolling-track .row {
   display: flex;
   align-items: center;
   white-space: nowrap;
   gap: 2em;
-  flex: 0 0 auto; /* no shrink, no wrap */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  image-rendering: auto;
 }
 
-/* Images */
 .customer-scrolling-track img,
 .signature-scrolling-track img {
-  flex: 0 0 auto; /* critical: no shrink */
-  height: auto;
+  flex-shrink: 0;
+  padding-right: 0 !important;
   transform: translateZ(0);
-  image-rendering: auto;
-  user-drag: none;
-  -webkit-user-drag: none;
-  object-fit: contain;
 }
 
-/* Specific heights (as in your setup) */
-.customer-scrolling-track img {
+.customer-scrolling-banner .customer-scrolling-track img {
   height: 4rem;
 }
-.signature-scrolling-track img {
+
+.signature-scrolling-banner .signature-scrolling-track img {
   height: 10em;
-}
-
-/* When ready, let it run */
-.customer-scrolling-track.is-ready,
-.signature-scrolling-track.is-ready {
-  animation-play-state: running;
-}
-
-/* Move by exactly the width of Row A, then repeat */
-@keyframes marquee-x {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(calc(-1 * var(--rowA-width, 1000px)), 0, 0);
-  }
 }
 
 p + ul,
