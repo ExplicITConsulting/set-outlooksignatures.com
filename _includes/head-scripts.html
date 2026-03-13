@@ -140,7 +140,7 @@
           const track = banner.querySelector(config.trackSelector);
           if (!track) return;
 
-          // 1. Shuffle and add images immediately (background loading)
+          // 1. Shuffle and add images immediately
           const shuffled = [...baseUrls].sort(() => Math.random() - 0.5);
           shuffled.forEach(url => {
             const img = new Image();
@@ -150,25 +150,30 @@
             track.appendChild(img);
           });
 
-          // 2. Animation State
-          let scrollPos = 0;
+          // 2. Initial Animation State
+          // Start the track at the right edge of the banner container
+          let scrollPos = banner.offsetWidth;
           const speed = config.speed || 1.2;
+
+          // Cache the gap value outside the loop to improve performance
+          const computedStyle = getComputedStyle(track);
+          const gap = parseFloat(computedStyle.gap) || 0;
 
           const animate = () => {
             scrollPos -= speed;
 
             const firstImg = track.firstElementChild;
-            if (firstImg && firstImg.complete && firstImg.naturalWidth > 0) {
-              const computedStyle = getComputedStyle(track);
-              const gap = parseFloat(computedStyle.gap) || 0;
 
-              // Use getBoundingClientRect for sub-pixel accuracy
+            // Only perform looping logic if the first image is loaded and measurable
+            if (firstImg && firstImg.complete && firstImg.naturalWidth > 0) {
               const rect = firstImg.getBoundingClientRect();
               const itemWidth = rect.width + gap;
 
-              if (Math.abs(scrollPos) >= itemWidth) {
+              // Looping Logic: Move to end only when the first image 
+              // has completely exited the LEFT side (position < -width)
+              if (scrollPos <= -itemWidth) {
                 track.appendChild(firstImg);
-                // Adjust scrollPos with precision
+                // Offset the scroll position by the width of the moved element
                 scrollPos += itemWidth;
               }
             }
@@ -178,6 +183,7 @@
             requestAnimationFrame(animate);
           };
 
+          // Kick off the animation
           requestAnimationFrame(animate);
         });
       } catch (e) {
