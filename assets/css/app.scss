@@ -247,6 +247,12 @@ html::after {
   }
 }
 
+.customer-scrolling-banner:hover .is-animating,
+.signature-scrolling-banner:hover .is-animating {
+  animation-play-state: paused;
+  /* cursor: pointer; /* Optional: indicates it's interactive */
+}
+
 p + ul,
 p + ol {
   margin-top: 0 !important;
