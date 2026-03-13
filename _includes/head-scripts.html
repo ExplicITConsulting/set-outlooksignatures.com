@@ -126,7 +126,7 @@
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const initBanner = async (trackSelector, endpoint, pxPerSec) => {
+    const setupMarquee = async (trackSelector, endpoint, pxPerSec) => {
       const track = document.querySelector(trackSelector);
       if (!track) return;
 
@@ -135,45 +135,34 @@
         const text = await response.text();
         const urls = text.split('\n').map(l => l.trim()).filter(Boolean);
 
-        // 1. Clear track and add images twice
-        track.innerHTML = ''; 
-        const fragment = document.createDocumentFragment();
-        [...urls, ...urls].forEach(url => {
+        // Add images twice for the seamless loop
+        const content = [...urls, ...urls].map(url => {
           const img = new Image();
           img.src = url;
           img.loading = "lazy";
-          fragment.appendChild(img);
+          return img;
         });
-        track.appendChild(fragment);
+        
+        content.forEach(img => track.appendChild(img));
 
-        // 2. Precise Measurement
-        const updateDuration = () => {
-          // Use getBoundingClientRect for sub-pixel accuracy of the whole track
-          const totalWidth = track.getBoundingClientRect().width;
-          const halfWidth = totalWidth / 2;
-
+        // Use ResizeObserver to set the duration once images have widths
+        const obs = new ResizeObserver(() => {
+          const fullWidth = track.scrollWidth;
+          const halfWidth = fullWidth / 2;
           if (halfWidth > 0) {
             const duration = halfWidth / pxPerSec;
             track.style.setProperty('--duration', `${duration}s`);
-            
-            // Force a reflow before adding the class
-            track.offsetHeight; 
-            track.classList.add('is-animating');
+            obs.disconnect(); // Only need to set it once
           }
-        };
-
-        // Wait for the browser to be ready
-        const observer = new ResizeObserver(() => {
-          requestAnimationFrame(updateDuration);
         });
-        observer.observe(track);
-
+        obs.observe(track);
+        
       } catch (e) { console.error(e); }
     };
 
-    // 72px/s is the direct conversion of your original 1.2 speed
-    initBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 72); 
-    initBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 72); 
+    // Speed 72 = your original 1.2px per frame
+    setupMarquee('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 75);
+    setupMarquee('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 90);
   });
 </script>
 

@@ -188,13 +188,8 @@ html::after {
   /* No delay, so all buttons animate at the same time */
   animation-delay: 0s;
 }
-
-.customer-scrolling-banner,
-.signature-scrolling-banner {
-  overflow: hidden;
-  width: 100%;
-  /* Creates a layer for the GPU */
-  transform: translateZ(0);
+:root {
+  --speed-px: 72; /* Your 1.2px/frame @ 60fps */
 }
 
 .customer-scrolling-track,
@@ -202,45 +197,41 @@ html::after {
   display: flex;
   width: max-content;
   gap: 2rem;
-  /* Crucial: prevents Firefox from recalculating layout during animation */
   will-change: transform;
-  /* Force sub-pixel antialiasing */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* The Firefox smoothness "Holy Grail" */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
 }
 
-.customer-scrolling-track img {
+/* CUSTOMER SETTINGS */
+.customer-scrolling-track {
   height: 4rem;
-  width: auto;
-  flex-shrink: 0;
+  /* Duration = (TotalWidth / 2) / Speed */
+  animation: marquee-horizontal var(--duration, 30s) linear infinite;
 }
-.signature-scrolling-track img {
+
+/* SIGNATURE SETTINGS */
+.signature-scrolling-track {
   height: 10em;
+  animation: marquee-horizontal var(--duration, 60s) linear infinite;
+}
+
+.customer-scrolling-track img,
+.signature-scrolling-track img {
+  height: 100%;
   width: auto;
   flex-shrink: 0;
+  /* Forces Firefox to use high-quality sub-pixel interpolation */
+  transform: rotate(0.0001deg);
 }
 
-.is-animating {
-  animation: scroll-linear var(--duration) linear infinite;
-}
-
-@keyframes scroll-linear {
+@keyframes marquee-horizontal {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
   }
   100% {
-    transform: translate3d(-50.05%, 0, 0);
-  } /* Tiny offset prevents the 'reset' flicker */
-}
-
-/* FIREFOX-ONLY ENGINE FIX */
-@-moz-document url-prefix() {
-  .is-animating {
-    /* The "Ghost" Filter: This forces Firefox to treat the element 
-       as a texture, which enables smooth sub-pixel interpolation. */
-    filter: blur(0);
-    /* Force 3D context */
-    transform: translate3d(0, 0, 0) rotate(0.02deg);
+    transform: translateX(-50%);
   }
 }
 
