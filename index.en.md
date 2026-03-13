@@ -50,7 +50,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="demo">Experience it<span style="font-weight: bolder;"> in action!</span></h2>
+<h2 id="demo">Experience it<span style="font-weight: bolder;"> in action</span></h2>
 <p>Stop fighting with inconsistent signatures and out-of-office replies. See how combining the free and open-source Set-OutlookSignatures with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> automates the complexity of enterprise-wide signature management so you can focus on what matters. Experience live:</p>
 
 <div class="columns is-multiline">
