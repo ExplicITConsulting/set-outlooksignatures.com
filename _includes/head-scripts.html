@@ -130,58 +130,45 @@
       const track = document.querySelector(trackSelector);
       if (!track) return;
 
+      // 1. Fetch and inject images immediately
       try {
         const response = await fetch(endpoint);
         const text = await response.text();
         const urls = text.split('\n').map(l => l.trim()).filter(Boolean);
 
-        // 1. Create images and wait for the first few to load to get dimensions
-        const promises = urls.map(url => {
-          return new Promise((resolve) => {
-            const img = new Image();
-            img.src = url;
-            img.loading = "lazy";
-            img.onload = () => resolve(img);
-            img.onerror = () => resolve(null); // Don't block if one fails
-            track.appendChild(img);
-          });
-        });
-
-        // 2. Clone once to make it endless
-        urls.forEach(url => {
+        // Create fragment to avoid multiple reflows during initial injection
+        const fragment = document.createDocumentFragment();
+        [...urls, ...urls].forEach(url => {
           const img = new Image();
           img.src = url;
           img.loading = "lazy";
-          track.appendChild(img);
+          fragment.appendChild(img);
         });
+        track.appendChild(fragment);
 
-        // 3. The "Truth" Calculation
-        // We wait for all images to at least attempt to load so scrollWidth is correct
-        Promise.all(promises).then(() => {
-          const calculate = () => {
-            const totalWidth = track.scrollWidth;
-            const halfWidth = totalWidth / 2;
-            
-            if (halfWidth > 0) {
+        // 2. The "Real-Time" Speed Correction
+        // This runs every time an image finishes loading and changes the track width
+        const observer = new ResizeObserver(entries => {
+          for (let entry of entries) {
+            const currentFullWidth = entry.contentRect.width;
+            const halfWidth = currentFullWidth / 2;
+
+            if (halfWidth > 50) { // Only start if we have some content
               const duration = halfWidth / pixelsPerSecond;
+              
+              // Update the CSS variable live. 
+              // Browser smoothly adjusts the animation timing.
               track.style.setProperty('--duration', `${duration}s`);
               track.classList.add('is-animating');
             }
-          };
-
-          // Double check after a frame to ensure layout is painted
-          requestAnimationFrame(() => {
-            setTimeout(calculate, 100);
-          });
+          }
         });
 
+        observer.observe(track);
       } catch (e) { console.error("Banner error:", e); }
     };
 
-    // Customer: 60px per second
     initBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 60); 
-
-    // Signatures: 35px per second
     initBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 35); 
   });
 </script>
