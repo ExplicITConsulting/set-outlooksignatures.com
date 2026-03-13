@@ -356,8 +356,7 @@ sitemap_changefreq: weekly
     <strong>Increasing the number of licensed mailboxes</strong>
   </summary>
   <div style="padding-left: 1.25rem; margin-top: 0.5rem;">
-    <p>When adding licenses mid-term, only additional licenses are billed, for the remaining period rounded up to full months.</p>
-    <p>The price for new licenses is the list price at the time of the new order. The payment does not extend the license period but increases the number of licensed mailboxes within it.</p>
+    <p>Adding mailboxes mid-term is pro-rated for the remaining months (minimum invoice amount applies).</p>
   </div>
 </details>
 
