@@ -30,7 +30,7 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <h2 id="sustainable-value">Sustainable added value for your business</h2>
-<p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> from <a href="https://explicitconsulting.at">ExplicIT Consulting</a> enhances the free Set-OutlookSignatures with great additional possibilities for your company.</p>
+<p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> enhances the free and open-source Set-OutlookSignatures with great additional possibilities for your company.</p>
 
 
 <h3 id="key-features">Exclusive business benefits</h3>
