@@ -3,8 +3,8 @@ layout: "page"
 lang: "en"
 locale: "en"
 title: "Set-Outlook&shy;Signatures"
-subtitle: "Automated email signatures and out-of-office replies for the modern enterprise.<br>Enterprise-grade control with total data sovereignty."
-description: "Automated email signatures and out-of-office replies for the modern enterprise. Enterprise-grade control with total data sovereignty."
+subtitle: "Automated email signatures and out-of-office replies with total data sovereignty."
+description: "Automated email signatures and out-of-office replies with total data sovereignty."
 hero_link: /quickstart
 hero_link_text: "<span><b>Quick Start: </b>Deploy signatures within minutes</span>"
 hero_link_style: |
@@ -19,9 +19,9 @@ sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
 <h2 id="outlook-signature-management">
-  Manage your<span style="font-weight: bolder;"> Outlook signatures </span>centrally and fully automated
+  <span style="font-weight: bolder;">Stop fighting </span>with inconsistent signatures and out-of-office replies
 </h2>
-<p>Stop fighting with inconsistent signatures and out-of-office replies. Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> automate the complexity of enterprise-wide signature management so you can focus on what matters.</p>
+<p>Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> automate the complexity of enterprise-wide signature management so you can focus on what matters.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -97,7 +97,19 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <p>&nbsp;</p>
+  </div>
+  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <div class="signature-scrolling-banner">
+        <div class="signature-scrolling-track">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <h2 id="less-effort">
   <span style="background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Less effort</span>, more professionalism
