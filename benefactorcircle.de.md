@@ -134,7 +134,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="demo">Erleben Sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
-<p>Schluss mit inkonsistenten Signaturen und Abwesenheitsnotizen. Erfahren Sie, wie die Kombination aus dem freien und quelloffenen Set-OutlookSignatures mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> die Komplexität der unternehmensweiten Signaturverwaltung automatisiert, damit Sie sich auf das Wesentliche konzentrieren können. Erleben Sie live:</p>
+<p>Schluss mit inkonsistenten Signaturen und Abwesenheitsnotizen. Erfahren Sie, wie die Kombination des freien und quelloffenen Set-OutlookSignatures mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> die Komplexität der unternehmensweiten Signaturverwaltung automatisiert, damit Sie sich auf das Wesentliche konzentrieren können. Erleben Sie live:</p>
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -203,7 +203,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="order">Lizenzen kaufen</h2>
-    <p>Der Wechsel auf die Vollversion, mehr Postfächer hinzufügen und das Erneuern der Lizenz ist schnell und unkompliziert:</p>
+    <p>Der Wechsel auf die Vollversion, mehr Postfächer hinzufügen und das Erneuern der Lizenz sind schnell und unkompliziert:</p>
     <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Lizenzangebot anfordern</a></p>
     <p>Sie erhalten in Kürze ein Angebot. Nach Ihrer Prüfung senden wir die Rechnung und Sie können den Zahlungsvorgang starten.</p>
     <p>Sobald der vollständige Rechnungsbetrag bei uns eingegangen ist, senden wir Ihnen umgehend die Download‑ und Gebrauchsanleitung für Ihre neue Lizenz.</p>
@@ -212,7 +212,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="price">Preis und Business Case</h2>
-<p>Set-OutlookSignatures ist kostenlos. Ursprünglich als Technologiedemonstrator für Scripting‑Techniken entwickelt, hat es sich zu dem fortschrittlichsten,  sichersten und vielseitigsten freien und quelloffenen Tool zur Verwaltung von E-Mail-Signaturen entwickelt. Lesen Sie in unseren FAQ mehr über <a href="https://set-outlooksignatures.com/faq#why-the-tagline">>seine Geschichte und was Sie aus dem Code lernen können</a>.</p>
+<p>Set-OutlookSignatures ist kostenlos. Ursprünglich als Technologiedemonstrator für Scripting‑Techniken entwickelt, hat es sich zu dem fortschrittlichsten,  sichersten und vielseitigsten freien und quelloffenen Tool zur Verwaltung von E-Mail-Signaturen entwickelt. Lesen Sie in unseren FAQ mehr über <a href="https://set-outlooksignatures.com/faq#why-the-tagline">seine Geschichte und was Sie aus dem Code lernen können</a>.</p>
 
 <p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> schaltet erweiterte Funktionen frei — für <strong>nur 0.25  EUR pro Postfach/Monat</strong> (EUR 3.00 pro Jahr). Jährliche Abrechnung, keine automatische Verlängerung.</p>
 
@@ -232,7 +232,7 @@ sitemap_changefreq: weekly
       <li><strong>Keine Fallen: </strong>Keine automatische Verlängerung. Sechs Wochen vor Ablauf erhalten Sie ein Angebot.</li>
       <li><strong>Skalierung: </strong>Das Hinzufügen von Postfächern während der Laufzeit wird aliquot für die verbleibenden Monate verrechnet (Mindestbetrag pro Rechnung gilt).</li>
     </ul>
-    <p>Aktive Lizenzen beinhalten kostenlose Versions‑Upgrades sowie eine priorisierte Bearbeitung Ihrer Support‑Anfragen. Support ist separat verfügbar – Details unter '<a href="/support">Support erhalten und Kontakt aufnehmen</a>'.</p>
+    <p>Aktive Lizenzen beinhalten kostenlose Versions‑Upgrades sowie eine priorisierte Bearbeitung Ihrer Support‑Anfragen. Support ist separat verfügbar – Details unter '<a href="/support">Unterstützung erhalten und uns kontaktieren</a>'.</p>
   </div>
 </details>
 
@@ -283,7 +283,7 @@ sitemap_changefreq: weekly
 
 <p>Die Definition einer Lizenzgruppe besteht aus drei Komponenten:</p>
 <ul>
-  <li>Der <bold>Active‑Directory‑DNS‑Domänenname oder der Entra‑ID‑Tenant</bold> der Lizenzgruppe.<br>Für reine Cloud‑Gruppen verwenden Sie "EntraID_&lt;TenantID&gt;" oder "EntraID_&lt;TenantDNSDomain&gt;".<br>Beispiele: 'corp.example.com', 'EntraID_example.com'</li>
+  <li>Der <bold>Active‑Directory‑DNS‑Domänenname oder der Entra‑ID‑Tenant</bold> der Lizenzgruppe.<br>Für reine Cloud‑Gruppen verwenden Sie 'EntraID_&lt;TenantID&gt;' oder 'EntraID_&lt;TenantDNSDomain&gt;'.<br>Beispiele: 'corp.example.com', 'EntraID_example.com'</li>
   <li>Die <bold>Active‑Directory‑SID (Security Identifier) oder die Entra‑ID‑Objekt‑ID</bold> der Lizenzgruppe, abhängig davon, wo sich die Gruppe befindet.<br>Beispiele: 'S-1-5-21-2998092229-1459889137-3613942852-2617','f3f0611a-7bbe-4717-89c3-b967caf6922a'</li>
   <li>Die maximale Anzahl der für diese Gruppe lizenzierten Postfächer.<br>Beispiele: '478', '16000'</li>
 </ul>
@@ -300,8 +300,8 @@ sitemap_changefreq: weekly
   </summary>
   <div style="padding-left: 1.25rem; margin-top: 0.5rem;">
     <ul>
-      <li>Bei Verwendung des Parameters '-GraphOnly true' erstellen Sie die Gruppe in Entra ID:'EntraID_&lt;TenantDNSDomain&gt;, &lt;Entra‑ID‑Objekt‑ID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>Alternativ können Sie auch eine Active‑Directory‑Gruppe verwenden, sofern diese nach Entra ID synchronisiert wird: '&lt;AD‑DNS‑Domänenname&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'</li>
-      <li>In Hybridumgebungen ohne Verwendung von '-GraphOnly true' erstellen Sie die Gruppe im Active Directory und stellen sicher, dass sie mit Entra ID synchronisiert wird: '&lt;AD‑DNS‑Domänenname&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>Alternativ können Sie auch eine Entra‑ID‑Gruppe verwenden: 'EntraID_&lt;TenantDNSDomain&gt;, &lt;Entra‑ID‑Objekt‑ID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;' (entspricht der Verwendung von „-GraphOnly true“).</li>
+      <li>Bei Verwendung des Parameters '-GraphOnly true' erstellen Sie die Gruppe in Entra ID: 'EntraID_&lt;TenantDNSDomain&gt;, &lt;Entra‑ID‑Objekt‑ID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>Alternativ können Sie auch eine Active‑Directory‑Gruppe verwenden, sofern diese nach Entra ID synchronisiert wird: '&lt;AD‑DNS‑Domänenname&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'</li>
+      <li>In Hybridumgebungen ohne Verwendung von '-GraphOnly true' erstellen Sie die Gruppe im Active Directory und stellen sicher, dass sie mit Entra ID synchronisiert wird: '&lt;AD‑DNS‑Domänenname&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>Alternativ können Sie auch eine Entra‑ID‑Gruppe verwenden: 'EntraID_&lt;TenantDNSDomain&gt;, &lt;Entra‑ID‑Objekt‑ID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;' (entspricht der Verwendung von '-GraphOnly true')</li>
       <li>In reinen On‑Prem‑Umgebungen können ausschließlich On‑Prem‑Gruppen verwendet werden: '&lt;AD‑DNS‑Domänenname&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>Beim späteren Wechsel in eine Hybridumgebung ist keine Anpassung der Konfiguration erforderlich, sofern die On‑Prem‑Gruppen nach Entra ID synchronisiert werden.</li>
     </ul>
   </div>
