@@ -282,11 +282,11 @@ a.mtrcs-external-link:not(.no-external-link-icon)::after {
 /* Targets screens 768px and below */
 @media screen and (max-width: 768px) {
   html {
-    font-size: 14px; /* Default is usually 16px */
+    font-size: 12px;
   }
 
   .title {
-    font-size: 1.5rem !important; /* Scaled down from default */
+    font-size: 1.5rem !important;
   }
 
   .subtitle {
