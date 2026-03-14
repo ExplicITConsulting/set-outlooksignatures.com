@@ -52,7 +52,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="demo">Erleben Sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
-<p>Schluss mit inkonsistenten Signaturen und Abwesenheitsnotizen. Erleben Sie, wie die Kombination aus dem freien und quelloffenen Set-OutlookSignatures mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> die Komplexität der unternehmensweiten Signaturverwaltung automatisiert – damit Sie sich auf das Wesentliche konzentrieren können. Erleben Sie live:</p>
+<p>Schluss mit inkonsistenten Signaturen und Abwesenheitsnotizen. Erfahren Sie, wie die Kombination aus dem freien und quelloffenen Set-OutlookSignatures mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> die Komplexität der unternehmensweiten Signaturverwaltung automatisiert, damit Sie sich auf das Wesentliche konzentrieren können. Erleben Sie live:</p>
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -81,7 +81,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p><strong>Das ist mehr als eine Demo – es ist eine Vorlage für die E-Mail-Compliance und Markensicherheit Ihres Unternehmens. Wir freuen uns darauf, Sie kennenzulernen!</strong></p>
+<p><strong>Das ist mehr als eine Demo — es ist eine Anleitung für die E-Mail-Compliance und Markensicherheit Ihres Unternehmens. Wir freuen uns darauf, Sie kennenzulernen!</strong></p>
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
