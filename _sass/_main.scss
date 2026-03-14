@@ -18,3 +18,22 @@ $hero-darken: $dark !default;
 @import "block-list";
 @import "promo-page";
 @import "category";
+
+@include mobile {
+  html {
+    font-size: 14px; // Shrinks all REM-based sizes globally
+  }
+
+  .title {
+    font-size: 1.5rem !important;
+  }
+
+  .subtitle {
+    font-size: 1.25rem !important;
+  }
+
+  // Adjust content body text specifically if needed
+  .content {
+    font-size: 0.95rem;
+  }
+}
