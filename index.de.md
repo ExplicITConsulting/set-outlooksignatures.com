@@ -19,17 +19,88 @@ sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
 <h2 id="outlook-signature-management">
-  Verwalten Sie Ihre<span style="font-weight: bolder;"> Outlook-Signaturen </span>zentral und vollautomatisch
+  <span style="font-weight: bolder;">Machen Sie Schluss </span>mit inkonsistenten Signaturen und Abwesenheitsnotizen
 </h2>
-<p>Set-OutlookSignatures und das Benefactor Circle Add-on nehmen Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnachrichten manuell zu pflegen.</p>
-<p>Dank zentral verwalteter Vorlagen, die sich automatisch mit Ihren Unternehmensdaten füllen, erhält jede E-Mail den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
+<p>Das freie und quelloffene Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> automatisieren die Komplexität der unternehmensweiten Signaturverwaltung, damit Sie sich auf das Wesentliche konzentrieren können.
+</p>
 <div class="columns is-multiline">
-  <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <p>Zentralisierte Verwaltung, nahtlose Bereitstellung und vollständige Kontrolle über alle Outlook-Editionen auf allen Plattformen: Classic und New, Android, iOS, Linux, macOS, Web, Windows.</p>
-    <p>Unterstützt on-prem und alle M365 Clouds: Public, US Government (GCC, GCC High, DoD), China, souveräne Clouds Bleu, Delos, GovSG und mehr.</p>
-    <p>Keine Telemetrie, kein "Calling Home". E-Mails und Verzeichnisdaten werden nicht über externe Rechenzentren oder Cloud-Dienste geleitet. DNS-Einträge (SPF) und Nachrichtenfluss bleiben unverändert.</p>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      🚀
+      <div style="hyphens: manual;">
+        <b>ofortige Professionalität</b><br>Automatisierte Kontaktdaten und konsistentes Branding in jeder einzelnen Nachricht.
+      </div>
+    </div>
   </div>
-  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      🛠️
+      <div style="hyphens: manual;">
+        <b>Reibungslose Einführung</b><br>Intuitiv für IT und Marketing, unsichtbar für Ihre Mitarbeiter.
+      </div>
+    </div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      🔒
+      <div style="hyphens: manual;">
+        <b>Unübertroffener Datenschutz</b><br>Volle Datensouveränität. Ihre Daten bleiben in Ihrer Umgebung, ohne Übertragung an Dritte.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2 id="demo">Erleben sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
+<p>Schluss mit inkonsistenten Signaturen und Abwesenheitsnotizen. Erleben Sie, wie die Kombination aus dem freien und quelloffenen Set-OutlookSignatures mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> die Komplexität der unternehmensweiten Signaturverwaltung automatisiert – damit Sie sich auf das Wesentliche konzentrieren können. Erleben Sie live:</p>
+
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Plattformübergreifende Datensouveränität</b><br>Auf Windows, Linux, macOS, iOS, Android und im Web. Sämtliche Daten verbleiben in Ihrer eigenen Umgebung, auch in BYOD-Szenarien und mit M365‑F‑Lizenzen.
+      </div>
+    </div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Dynamisches Branding und Marketing</b><br>Machen Sie jede E-Mail zu einem Marketing‑Asset, mit zeitgesteuerten Kampagnen und automatischer Bereinigung. Bewahren Sie eine konsistente, regelkonforme Unternehmensidentität in jeder Kommunikation.
+      </div>
+    </div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      <div style="hyphens: manual;">
+        <b>Administrative Governance</b><br>Zentrale Verwaltung komplexer Delegationsszenarien, freigegebener Postfächer und unternehmensweiter Abwesenheitsnotizen. Organisationweite Änderungen in wenigen Minuten ausrollen.
+      </div>
+    </div>
+  </div>
+</div>
+
+<p><strong>Das ist mehr als eine Demo – es ist ein Blueprint für die E-Mail-Compliance und Markensicherheit Ihres Unternehmens. Wir freuen uns darauf, Sie kennenzulernen!</strong></p>
+
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4rem; font-size: 1.25em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Persönliche Demo jetzt buchen</a></p>
+    </div>
+  </div>
+  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <div class="customer-scrolling-banner">
+        <div class="customer-scrolling-track">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p>&nbsp;</p>
+<div class="columns is-multiline">
+  <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <div class="signature-scrolling-banner">
         <div class="signature-scrolling-track">
@@ -38,227 +109,125 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p>Erleben Sie live, wie schnell und intuitiv Sie Ihre Outlook-Signaturen und Abwesenheitsnotizen zentral verwalten und optimieren können.</p>
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="/benefactorcircle#demo" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4rem; font-size: 1.25em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Jetzt persönliche Demo vereinbaren</a></p>
-    </div>
-  </div>
-  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <div class="customer-scrolling-banner">
-        <div class="customer-scrolling-track">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<h2 id="less-effort">
-  <span style="background-image: linear-gradient(to right, #FF7F50 0%, #FF7F5050 100%); background-clip: text; color: transparent;">Weniger Aufwand</span>, mehr Professionalität
-</h2>
-<p>Die manuelle Pflege von Signaturen bindet wertvolle personelle und finanzielle Kapazitäten. Das führt schnell zu veralteten Angaben, die weder internen noch regulatorischen Vorgaben entsprechen.</p>
-
-<p>Mit Set-OutlookSignatures automatisieren Sie diesen Prozess vollständig.</p>
-
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, coral, coral); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Immer aktuelle Kontaktdaten und Unternehmensinformationen</b>
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, coral, coral); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Einheitlicher und überzeugender Auftritt in jeder E-Mail</b>
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, coral, coral); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Kein Nachpflegen durch Ihre Mitarbeiter</b>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <h2 id="strengths">
-  Die<span style="font-weight: bolder;"> Stärken </span>von Set-OutlookSignatures
+  Die <span style="font-weight: bolder;">Stärken</span> des Ökosystems
 </h2>
+<p>Die Kombination aus dem freien und quelloffenen Set-OutlookSignatures mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> bietet Enterprise-Governance auf höchstem Niveau mit vollständiger Datensouveränität und nahtloser Zero-Footprint-Integration.
+</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Einfach für alle</b><br>
+        <b>Reibungslose Einführung</b><br>
         Intuitiv für IT und Marketing, unsichtbar für Ihre Mitarbeiter.
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Dynamische Inhalte</b><br>
-        Vordefinierte und eigene Attribute auf Benutzer-, Postfach- und Manager-Ebene.
+        ordefinierte und individuelle Attribute auf Benutzer‑, Postfach‑ und Vorgesetztenebene.
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Abwesenheitsnotizen</b><br>
-        Verwalten Sie Abwesenheitsmeldungen zentral, für interne und externe Empfänger.
+        <b>Abwesenheitsnotzien</b><br>
+        Zentrale Verwaltung von Abwesenheitsnachrichten für interne und externe Empfänger.
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Plattformübergreifend</b><br>
-        Signaturen immer und überall: Windows, macOS, Android, iOS, Linux, Web. Klassisches und neues Outlook. On-prem, hybrid und cloud-only.
+        Windows, Linux, macOS, iOS, Android und Web. Klassisches und neues Outlook. On‑Premises, Hybrid sowie alle M365-Clouds (öffentlich, national, souverän, lokal).
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Innovative Funktionen</b><br>
-        Unterstützt persönliche und gemeinsame Postfächer, "Senden Als", "Senden im Auftrag von", Simulationsmodus, Roaming Signatures, sowie zahlreiche weitere Funktionen für maximale Flexibilität.
+        <b>Enterprise‑Vielseitigkeit</b><br>
+        Unterstützung für persönliche und freigegebene Postfächer, "Senden als", "Senden im Auftrag von", Simulationsmodus, Roaming-Signaturen und viele weitere Funktionen für maximale Flexibilität.
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Flexible Zuweisung</b><br>
-        Steuern Sie Signaturen nach Abteilung, Standort, Sprache, Rolle, Zeit und vielen weiteren Eigenschaften aus unterschiedlichen Datenquellen.
+        <b>Flexible Zuordnung</b><br>
+        Steuerung von Signaturen nach Abteilung, Standort, Sprache, Rolle, Zeit und vielen weiteren Eigenschaften aus unterschiedlichen Datenquellen.
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Keine neue Infrastruktur nötig</b><br>
-        Set-OutlookSignatures läuft auf Ihren bestehenden Systemen und erzeugt keine neuen Abhängigkeiten.
+        <b>Zero-Footprint Integration</b><br>
+        Alles läuft auf Ihren bestehenden Systemen und erzeugt keinerlei neue Abhängigkeiten.
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Unübertroffener Datenschutz</b><br>
-        Alle Daten bleiben in Ihrer vertrauten Umgebung, innerhalb Ihrer bestehenden Sicherheits- und Verwaltungsstrukturen.
+        Sämtliche Daten verbleiben in Ihrer vertrauenswürdigen Umgebung und innerhalb Ihrer bestehenden Sicherheits- und Governance-Strukturen.
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, silver, silver); background-clip: text; color: transparent;">⚫</span>
+      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Zusätzlicher Marketingkanal</b><br>
-        Gestalten Sie Vorlagen frei in Word oder HTML. Nutzen Sie Signaturen für Kampagnen und Markenbotschaften, kostenlos und effektiv.
+        Vorlagen frei in Word oder HTML gestalten. Signaturen für Kampagnen und Markenkommunikation nutzen, kostenfrei und wirkungsvoll.
       </div>
     </div>
   </div>
 </div>
 
 
-<h2 id="expertise">
-  Funktionalität trifft<span class="has-text-success"> Expertise</span>
+<h2 id="quickstart">
+  Signaturen <span style="font-weight: bolder;">in wenigen Minuten</span> verteilen
 </h2>
-<p>Das optionale <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> erweitert das quelloffene und kostenlose Set-OutlookSignatures um leistungsstarke Unternehmensfunktionen, priorisierten Support und direkten Zugang zu neuen Leistungsmerkmalen.</p>
-
-<p>Auf Wunsch richten wir unsere Lösung gemeinsam mit Ihnen ein: Einfach, auf Ihre Bedürfnisse zugeschnitten und mit nachhaltigem Wissenstransfer.</p>
-
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success), var(--bulma-success)); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Kosteneffizient und transparent</b><br>
-        Faire Preise. Keine Abos. Keine Wartungsverträge.
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success), var(--bulma-success)); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Support mit Handschlagqualität</b><br>
-        Lösungsstark. Auf Augenhöhe. Verantwortungsbewusst.
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #00000000, var(--bulma-success), var(--bulma-success)); background-clip: text; color: transparent;">⚫</span>
-      <div style="hyphens: manual;">
-        <b>Spürbarer Mehrwert</b><br>
-        Ihre Investition entlastet. Vom ersten Tag an.
-      </div>
-    </div>
-  </div>
-</div>
+<p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
+<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Quick Start Guide</a>
 
 
-<h2 id="demo">
-  Verwalten Sie Ihre <span style="font-weight: bolder;">Outlook-Signaturen</span> zentral. Wir zeigen Ihnen, wie!
+<h2 id="dive-deeper">
+  Tiefer<span style="font-weight: bolder;"> eintauchen</span>
 </h2>
-<p>Set-OutlookSignatures ist Ihre einfache, leistungsstarke und DSGVO-konforme Lösung für automatische Signaturverwaltung.</p>
-
-<p>Erleben Sie live, wie schnell und intuitiv Sie Ihre Outlook-Signaturen und Abwesenheitsnotizen zentral verwalten und optimieren können.</p>
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="/benefactorcircle#demo" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4rem; font-size: 1.25em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Jetzt persönliche Demo vereinbaren</a></p>
-    </div>
-  </div>
-  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <div class="customer-scrolling-banner">
-        <div class="customer-scrolling-track">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="columns is-multiline">
-  <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <h2 id="quickstart">
-      Signaturen <span style="font-weight: bolder;">in wenigen Minuten</span> verteilen
-    </h2>
-    <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
-    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Schnellstart-Anleitung</a>
-  </div>
-  <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <h2 id="dive-deeper">
-      Tiefer eintauchen
-    </h2>
-    <p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:</p>
-    <ul>
-      <li>Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern</li>
-      <li>Anforderungen und Konfigurationsmöglichkeiten</li>
-      <li>Best practices und FAQ</li>
-      <li>Wie Sie erstklassigen Support erhalten</li>
-    </ul>
-    <a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Hilfe- und Support-Center</a>
-  </div>
-</div>
+<p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:</p>
+<ul style="list-style: none; padding-left: 0;">
+  <li style="display: flex; gap: 0.5em; margin-bottom: 0.5em;">
+    <span>📊</span>
+    <span>Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern</span>
+  </li>
+  <li style="display: flex; gap: 0.5em; margin-bottom: 0.5em;">
+    <span>⚙️</span>
+    <span>Anforderungen und Konfigurationsmöglichkeiten</span>
+  </li>
+  <li style="display: flex; gap: 0.5em; margin-bottom: 0.5em;">
+    <span>💡</span>
+    <span>Best practices und FAQ</span>
+  </li>
+  <li style="display: flex; gap: 0.5em; margin-bottom: 0.5em;">
+    <span>🤝</span>
+    <span>Wie Sie erstklassigen Support erhalten</span>
+  </li>
+</ul>
+<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Help and Support center</a>
