@@ -101,7 +101,6 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-
 <h3 id="updates-support">Updates and support</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -192,7 +191,6 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-
 <!--
 <p>&nbsp;</p>
 
@@ -215,7 +213,6 @@ sitemap_changefreq: weekly
   </div>
 </div>
 -->
-
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">

@@ -101,7 +101,6 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-
 <h3 id="updates-support">Updates und Support</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -192,6 +191,28 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
+<!--
+<p>&nbsp;</p>
+
+<div class="columns">
+  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
+    <p>Wenn Sie zunächst mit den Grundlagen starten möchten und einen bodenständigen Ansatz schätzen, bietet unser Demo‑Video einen kompakten Überblick über die wichtigsten Funktionen von Set-OutlookSignatures – anhand eines realistischen Praxisbeispiels, direkt, pragmatisch und ohne große Inszenierung.</p>
+    <p>Sie werden sehen: Unser Fokus liegt auf der Funktionalität und Qualität unserer Software, wir sind weder Marketingprofis noch besonders talentierte Schauspieler.</p>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <figure class="image is-16by9">
+      <iframe class="has-ratio" width="560" height="315"
+        id="youtube-video-player"
+        src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI?enablejsapi=1"
+        title="Set-OutlookSignatures Benefactor Circle demo video"
+        frameborder="0"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </figure>
+  </div>
+</div>
+-->
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
