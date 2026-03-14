@@ -6,7 +6,11 @@
                 <img src="{{ site.navbar_logo }}" alt="{{ site.navbar_logo_alt }}">
             </a>
 
-            <div class="navbar-item ml-auto mr-0 has-text-white is-hidden-desktop is-hidden-tablet" x-on:click="openNav = !openNav">
+            <a class="navbar-item ml-auto mr-0 has-text-white is-hidden-desktop is-hidden-tablet" href="#demo" aria-label="Demo">
+                <span style="font-weight: bold; color: var(--benefactor-circle-color);">{{ site.data[site.active_lang].strings.navbar_demo }}</span>
+            </a>
+
+            <div class="navbar-item ml-0 has-text-white is-hidden-desktop is-hidden-tablet" x-on:click="openNav = !openNav">
                 <span>🔍︎&nbsp;🌐</span>
             </div>
 
@@ -47,10 +51,6 @@
             </div>
 
             <div class="navbar-end">
-                <a class="navbar-item has-text-white is-hidden-desktop is-hidden-tablet" href="#demo" aria-label="Demo">
-                    <span style="font-weight: bold; color: var(--benefactor-circle-color);">{{ site.data[site.active_lang].strings.navbar_demo }}</span>
-                </a>
-
                 <a class="navbar-item has-text-white" href="/search" aria-label="Search">
                     <span>🔍︎&nbsp;{{ site.data[site.active_lang].strings.search }}</span>
                 </a>
