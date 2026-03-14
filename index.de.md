@@ -21,8 +21,8 @@ sitemap_changefreq: weekly
 <h2 id="outlook-signature-management">
   <span style="font-weight: bolder;">Machen Sie Schluss </span>mit inkonsistenten Signaturen und Abwesenheitsnotizen
 </h2>
-<p>Das freie und quelloffene Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> automatisieren die Komplexität der unternehmensweiten Signaturverwaltung, damit Sie sich auf das Wesentliche konzentrieren können.
-</p>
+<p>Das freie und quelloffene Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> nehmen Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnotizen manuell zu pflegen.</p>
+<p>Jede E-Mail erhält den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -67,7 +67,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Dynamisches Branding und Marketing</b><br>Machen Sie jedes E-Mail zu einem Marketing‑Asset, mit zeitgesteuerten Kampagnen und automatischer Bereinigung. Konsistente, regelkonforme Unternehmensidentität in jeder Nachricht.
+        <b>Dynamisches Branding und Marketing</b><br>Machen Sie jede E-Mail zu einem Marketing‑Asset, mit zeitgesteuerten Kampagnen und automatischer Bereinigung. Konsistente, regelkonforme Unternehmensidentität in jeder Nachricht.
       </div>
     </div>
   </div>

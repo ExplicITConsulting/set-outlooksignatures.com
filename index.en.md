@@ -21,7 +21,8 @@ sitemap_changefreq: weekly
 <h2 id="outlook-signature-management">
   <span style="font-weight: bolder;">Stop fighting </span>with inconsistent signatures and out-of-office replies
 </h2>
-<p>The free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> automate the complexity of enterprise-wide signature management so you can focus on what matters.</p>
+<p>The free and open-source Set-OutlookSignatures, together with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>, take the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
+<p>Every email delivers the professional appearance your company deserves: Up to date, consistent, and fully aligned with your brand.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
