@@ -21,7 +21,7 @@ $hero-darken: $dark !default;
 
 @include mobile {
   html {
-    font-size: 12px; // Shrinks all REM-based sizes globally
+    font-size: 14px; // Shrinks all REM-based sizes globally
   }
 
   .title {
