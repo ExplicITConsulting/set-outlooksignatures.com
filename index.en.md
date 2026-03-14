@@ -3,8 +3,8 @@ layout: "page"
 lang: "en"
 locale: "en"
 title: "Set-Outlook&shy;Signatures"
-subtitle: "Automated email signatures and out-of-office replies with total data sovereignty"
-description: "Automated email signatures and out-of-office replies with total data sovereignty"
+subtitle: "Email signatures and out-of-office replies with data sovereignty"
+description: "Email signatures and out-of-office replies with data sovereignty"
 hero_link: /quickstart
 hero_link_text: "<span><b>Quick Start: </b>Deploy signatures within minutes</span>"
 hero_link_style: |

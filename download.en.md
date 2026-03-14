@@ -4,7 +4,7 @@ lang: "en"
 locale: "en"
 title: "Download Set-Outlook&shy;Signatures"
 subtitle: "Get the Free and Open-Source core version"
-description: "Automated email signatures and out-of-office replies with total data sovereignty"
+description: "Email signatures and out-of-office replies with data sovereignty"
 permalink: "/download"
 redirect_from:
   - "/download/"
@@ -13,7 +13,7 @@ sitemap_changefreq: weekly
 ---
 <h2 id="set-outlooksignatures">Set-OutlookSignatures</h2>
 <p>
-Set-OutlookSignatures is the open-source standard for automated email signatures and out-of-office replies with total data sovereignty.
+Set-OutlookSignatures is the open-source standard for Email signatures and out-of-office replies with data sovereignty.
 </p>
 
 <p>

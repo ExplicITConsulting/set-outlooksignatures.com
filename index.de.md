@@ -3,8 +3,8 @@ layout: "page"
 lang: "de"
 locale: "de"
 title: "Set-Outlook&shy;Signatures"
-subtitle: "Automatisierte E-Mail-Signaturen und Abwesenheitsnotizen mit vollständiger Datensouveränität"
-description: "Automatisierte E-Mail-Signaturen und Abwesenheitsnotizen mit vollständiger Datensouveränität"
+subtitle: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
+description: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
 hero_link: /quickstart
 hero_link_text: "<span><b>Schnellstart: </b>Signaturen in wenigen Minuten verteilen</span>"
 hero_link_style: |
