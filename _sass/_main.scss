@@ -23,4 +23,17 @@ $hero-darken: $dark !default;
   html {
     font-size: 12px; // Shrinks all REM-based sizes globally
   }
+
+  .title {
+    font-size: 1.2rem !important;
+  }
+
+  .subtitle {
+    font-size: 1rem !important;
+  }
+
+  // Adjust content body text specifically if needed
+  .content {
+    font-size: 0.95rem;
+  }
 }
