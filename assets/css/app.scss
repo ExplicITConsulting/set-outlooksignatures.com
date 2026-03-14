@@ -278,3 +278,22 @@ a.mtrcs-external-link:not(.no-external-link-icon)::after {
 .theme-dark {
   --benefactor-circle-color: goldenrod;
 }
+
+/* Targets screens 768px and below */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px; /* Default is usually 16px */
+  }
+
+  .title {
+    font-size: 1.5rem !important; /* Scaled down from default */
+  }
+
+  .subtitle {
+    font-size: 1.2rem !important;
+  }
+
+  .content p {
+    font-size: 0.95rem;
+  }
+}
