@@ -109,6 +109,7 @@ sitemap_changefreq: weekly
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Alle Updates inklusive</b><br>Unabhängig davon, ob es sich um einen Patch, ein neues Feature oder sogar eine neue Hauptversion handelt.
+      </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
