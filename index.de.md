@@ -57,7 +57,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🧭      
       <div style="hyphens: manual;">
         <b>Plattformübergreifende Datensouveränität</b><br>Auf Windows, Linux, macOS, iOS, Android und im Web. Sämtliche Daten verbleiben in Ihrer eigenen Umgebung, auch in BYOD-Szenarien und mit M365‑F‑Lizenzen.
       </div>
@@ -65,7 +65,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      📣
       <div style="hyphens: manual;">
         <b>Dynamisches Branding und Marketing</b><br>Machen Sie jede E-Mail zu einem Marketing‑Asset, mit zeitgesteuerten Kampagnen und automatischer Bereinigung. Konsistente, regelkonforme Unternehmensidentität in jeder Nachricht.
       </div>
@@ -73,7 +73,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🏛️
       <div style="hyphens: manual;">
         <b>Administrative Governance</b><br>Zentrale Verwaltung komplexer Delegationsszenarien, freigegebener Postfächer und unternehmensweiter Abwesenheitsnotizen. Organisationweite Änderungen in wenigen Minuten ausrollen.
       </div>

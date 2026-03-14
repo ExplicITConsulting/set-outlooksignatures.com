@@ -57,7 +57,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🧭
       <div style="hyphens: manual;">
         <b>Cross-Platform Sovereignty</b><br>Across Windows, Linux, macOS, iOS, Android, and Web. All data stays within your own environment, even for BYOD scenarios and with M365 F licenses.
       </div>
@@ -65,7 +65,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      📣
       <div style="hyphens: manual;">
         <b>Dynamic Branding and Marketing</b><br>Turn every email into a marketing asset with scheduled campaigns and automated cleanup. Maintain a flawless, compliant corporate identity in every interaction.
       </div>
@@ -73,7 +73,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🏛️
       <div style="hyphens: manual;">
         <b>Administrative Governance</b><br>Manage complex delegation scenarios, shared mailboxes, and company-wide out-of-office replies centrally. Deploy organization-wide updates in minutes.
       </div>
