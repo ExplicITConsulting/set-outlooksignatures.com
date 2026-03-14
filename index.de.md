@@ -28,7 +28,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🚀
       <div style="hyphens: manual;">
-        <b>ofortige Professionalität</b><br>Automatisierte Kontaktdaten und konsistentes Branding in jeder einzelnen Nachricht.
+        <b>Sofortige Professionalität</b><br>Automatisierte Kontaktdaten und konsistentes Branding in jeder einzelnen Nachricht.
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="demo">Erleben sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
+<h2 id="demo">Erleben Sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
 <p>Schluss mit inkonsistenten Signaturen und Abwesenheitsnotizen. Erleben Sie, wie die Kombination aus dem freien und quelloffenen Set-OutlookSignatures mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> die Komplexität der unternehmensweiten Signaturverwaltung automatisiert – damit Sie sich auf das Wesentliche konzentrieren können. Erleben Sie live:</p>
 
 <div class="columns is-multiline">
@@ -67,7 +67,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Dynamisches Branding und Marketing</b><br>Machen Sie jede E-Mail zu einem Marketing‑Asset, mit zeitgesteuerten Kampagnen und automatischer Bereinigung. Bewahren Sie eine konsistente, regelkonforme Unternehmensidentität in jeder Kommunikation.
+        <b>Dynamisches Branding und Marketing</b><br>Machen Sie jedes E-Mail zu einem Marketing‑Asset, mit zeitgesteuerten Kampagnen und automatischer Bereinigung. Konsistente, regelkonforme Unternehmensidentität in jeder Nachricht.
       </div>
     </div>
   </div>
@@ -81,7 +81,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p><strong>Das ist mehr als eine Demo – es ist ein Blueprint für die E-Mail-Compliance und Markensicherheit Ihres Unternehmens. Wir freuen uns darauf, Sie kennenzulernen!</strong></p>
+<p><strong>Das ist mehr als eine Demo – es ist eine Vorlage für die E-Mail-Compliance und Markensicherheit Ihres Unternehmens. Wir freuen uns darauf, Sie kennenzulernen!</strong></p>
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -114,7 +114,7 @@ sitemap_changefreq: weekly
 <h2 id="strengths">
   Die <span style="font-weight: bolder;">Stärken</span> des Ökosystems
 </h2>
-<p>Die Kombination aus dem freien und quelloffenen Set-OutlookSignatures mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> bietet Enterprise-Governance auf höchstem Niveau mit vollständiger Datensouveränität und nahtloser Zero-Footprint-Integration.
+<p>Die Kombination aus dem freien und quelloffenen Set-OutlookSignatures und dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> bietet Enterprise-Governance auf höchstem Niveau mit vollständiger Datensouveränität und nahtloser Zero-Footprint-Integration.
 </p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -139,7 +139,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Abwesenheitsnotzien</b><br>
+        <b>Abwesenheitsnotizen</b><br>
         Zentrale Verwaltung von Abwesenheitsnachrichten für interne und externe Empfänger.
       </div>
     </div>
