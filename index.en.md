@@ -2,7 +2,8 @@
 layout: "page"
 lang: "en"
 locale: "en"
-title: "Set-Outlook&shy;Signatures"
+title: |
+  Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>
 subtitle: "Email signatures and out-of-office replies with data sovereignty"
 description: "Email signatures and out-of-office replies with data sovereignty"
 hero_link: /quickstart
@@ -13,6 +14,10 @@ hero_link2: /faq#what-can-i-learn-from-the-code-of-set-outlooksignatures
 hero_link2_text: "<span><b>Behind the scenes: </b>Learn from the code</span>"
 hero_link2_style: |
   style="background-color: LawnGreen;"
+hero_link3: "#demo"
+hero_link3_text: "<span><b>Schedule your personal demo now</b></span>"
+hero_link3_style: |
+   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 permalink: "/"
 redirect_from:
 sitemap_priority: 1.0

@@ -2,7 +2,7 @@
 layout: "page"
 lang: "en"
 locale: "en"
-title: "Download Set-Outlook&shy;Signatures"
+title: "Download Set-OutlookSignatures"
 subtitle: "Get the Free and Open-Source core version"
 description: "Email signatures and out-of-office replies with data sovereignty"
 permalink: "/download"

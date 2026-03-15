@@ -2,7 +2,7 @@
 layout: "page"
 lang: "de"
 locale: "de"
-title: "Set-Outlook&shy;Signatures herunterladen"
+title: "Set-OutlookSignatures herunterladen"
 subtitle: "Holen Sie sich die kostenlose und quelloffene Kernversion"
 description: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
 permalink: "/download"
