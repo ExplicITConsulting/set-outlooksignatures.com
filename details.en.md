@@ -91,7 +91,7 @@ Set-Outlook can run on Linux, macOS or Windows systems with PowerShell:
 - Linux, macOS: PowerShell 7+ ('pwsh')
 
 Set-OutlookSignatures can run in two modes. See '[Architecture considerations](#architecture-considerations)' later in this document for details. In short:
-- Client mode, in the security context of the currently logged-in user.<br>This mode is recommended for most scenarios as it allows Set-OutlookSignatures to read which mailboxes the user added to Outlook or Outlook on the web, and as this mode does not require central computing ressources.
+- Client mode, in the security context of the currently logged-in user.<br>This mode is recommended for most scenarios as it allows Set-OutlookSignatures to read which mailboxes the user added to Outlook or Outlook on the web, and as this mode does not require central computing resources.
 - SimulateAndDeploy mode, using a service account to push signatures into users mailboxes.<br>This mode is ideal when users log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients.
 
 On Windows, Outlook and Word are usually required, but not in all constellations:
