@@ -114,8 +114,10 @@ sitemap_changefreq: weekly
 <h2 id="strengths">
   Die <span style="font-weight: bolder;">Stärken</span> des Ökosystems
 </h2>
-<p>Die Kombination aus dem freien und quelloffenen Set-OutlookSignatures und dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> bietet Enterprise-Governance auf höchstem Niveau mit vollständiger Datensouveränität und nahtloser Zero-Footprint-Integration.
-</p>
+<p>Die Kombination aus dem freien und quelloffenen Set-OutlookSignatures und dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> bietet Enterprise-Governance auf höchstem Niveau mit vollständiger Datensouveränität und nahtloser Zero-Footprint-Integration.</p>
+<p>Diese Kombination bietet bereits Funktionen, die keine andere Lösung bereitstellen kann – ermöglicht durch ihre fortschrittliche, modulare Architektur. Sie geht weit über statische Verzeichnisattribute hinaus: Sie können sie erweitern, um Daten aus praktisch jeder Quelle zu integrieren – darunter Webservices, LDAP-Verzeichnisse, Datenbanken und Dateien – und vollständig benutzerdefinierte Variablen zu definieren, die exakt auf Ihre Organisation zugeschnitten sind.</p>
+<p>Durch die Ergänzung um das ebenfalls freie und quelloffene <a href="https://github.com/GruberMarkus/Export-RecipientPermissions">Export-RecipientPermissions</a> erschließen Sie ein am Markt einzigartiges Bereitstellungsmodell: Signaturen können auf Basis tatsächlicher Exchange-Postfachberechtigungen bereitgestellt (und entfernt) werden. Dadurch erhalten Benutzer in Delegationsszenarien Zugriff auf Signaturen, noch bevor sie das Postfach in Outlook hinzufügen – und es ermöglicht eine zuverlässige Signaturbereitstellung in reinen „Send As“-Szenarien, die andere Lösungen schlicht nicht abbilden können.</p>
+<p>Diese architektonischen Grundlagen spiegeln sich in den folgenden Stärken wider.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -131,7 +133,7 @@ sitemap_changefreq: weekly
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Dynamische Inhalte</b><br>
-        ordefinierte und individuelle Attribute auf Benutzer‑, Postfach‑ und Vorgesetztenebene.
+        Vordefinierte und individuelle Attribute auf Benutzer‑, Postfach‑ und Vorgesetztenebene.
       </div>
     </div>
   </div>
@@ -230,4 +232,4 @@ sitemap_changefreq: weekly
     <span>Wie Sie erstklassigen Support erhalten</span>
   </li>
 </ul>
-<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Help and Support center</a>
+<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Hilfe- und Supportcenter</a>

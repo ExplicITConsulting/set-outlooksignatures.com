@@ -115,6 +115,9 @@ sitemap_changefreq: weekly
   The<span style="font-weight: bolder;"> strengths </span>of the ecosystem
 </h2>
 <p>Combining the free and open-source Set-OutlookSignatures with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> gives you enterprise-grade governance with total data sovereignty and zero-footprint integration.</p>
+<p>This combination already delivers capabilities no other solution offers, made possible by its advanced, modular architecture. It goes far beyond static directory attributes: you can extend it to ingest data from virtually any source — including web services, LDAP directories, databases, and files — and define fully custom variables tailored to your organization.</p>
+<p>By adding the also free and open-source <a href="https://github.com/GruberMarkus/Export-RecipientPermissions">Export-RecipientPermissions</a> to the ecosystem, you unlock a deployment model that is unique on the market: Signatures can be deployed (and removed) based on actual Exchange mailbox permissions. This means users can access delegate signatures even before they add a mailbox in Outlook — and it enables reliable signature deployment in pure "Send As" scenarios that other solutions simply cannot handle.</p>
+<p>These architectural foundations are reflected in the strengths below.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
