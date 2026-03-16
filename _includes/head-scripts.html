@@ -126,6 +126,15 @@
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Helper function to shuffle an array
+    const shuffleArray = (array) => {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    };
+
     const initSafeBanner = async (trackSelector, endpoint, pxPerSec) => {
       const track = document.querySelector(trackSelector);
       if (!track) return;
@@ -133,11 +142,17 @@
       try {
         const response = await fetch(endpoint);
         const text = await response.text();
-        const urls = text.split('\n').map(l => l.trim()).filter(Boolean);
+        let urls = text.split('\n').map(l => l.trim()).filter(Boolean);
 
-        // Inject images twice for the seamless loop
+        // 1. Shuffle the original list first
+        urls = shuffleArray(urls);
+
+        // 2. Inject images twice for the seamless loop
+        // (The second set will match the shuffled order of the first)
         const fragment = document.createDocumentFragment();
-        [...urls, ...urls].forEach(url => {
+        const doubledUrls = [...urls, ...urls];
+
+        doubledUrls.forEach(url => {
           const img = new Image();
           img.src = url;
           img.loading = "lazy";
@@ -145,7 +160,7 @@
         });
         track.appendChild(fragment);
 
-        // Update speed dynamically as images load
+        // Update speed dynamically
         const observer = new ResizeObserver(entries => {
           const halfWidth = entries[0].contentRect.width / 2;
           if (halfWidth > 10) {
@@ -159,7 +174,6 @@
       } catch (e) { console.error("Banner error:", e); }
     };
 
-    // 72px/s matches your original 1.2px per frame speed
     initSafeBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 75);
     initSafeBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 90);
   });
