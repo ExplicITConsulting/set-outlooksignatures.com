@@ -3,7 +3,7 @@ layout: "page"
 lang: "de"
 locale: "de"
 title: "Schnellstart-Anleitung"
-subtitle: "Signaturen in wenigen Minuten verteilen"
+subtitle: "Signaturen in Minuten"
 description: "Schnellstart-Anleitung. Signaturen in wenigen Minuten verteilen."
 permalink: "/quickstart"
 redirect_from:

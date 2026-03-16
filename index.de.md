@@ -7,7 +7,7 @@ title: |
 subtitle: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
 description: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
 hero_link: /quickstart
-hero_link_text: "<span><b>Schnellstart: </b>Signaturen in wenigen Minuten verteilen</span>"
+hero_link_text: "<span><b>Schnellstart: </b>Signaturen in  Minuten</span>"
 hero_link_style: |
    style="background-color: LawnGreen;"
 hero_link2: /faq#what-can-i-learn-from-the-code-of-set-outlooksignatures
@@ -209,7 +209,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="quickstart">
-  Signaturen <span style="font-weight: bolder;">in wenigen Minuten</span> verteilen
+  Signaturen <span style="font-weight: bolder;">in Minuten</span>
 </h2>
 <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
 <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Quick Start Guide</a>

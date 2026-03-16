@@ -7,7 +7,7 @@ title: |
 subtitle: "Email signatures and out-of-office replies with data sovereignty"
 description: "Email signatures and out-of-office replies with data sovereignty"
 hero_link: /quickstart
-hero_link_text: "<span><b>Quick Start: </b>Deploy signatures within minutes</span>"
+hero_link_text: "<span><b>Quick Start: </b>Signatures in minutes</span>"
 hero_link_style: |
   style="background-color: LawnGreen;"
 hero_link2: /faq#what-can-i-learn-from-the-code-of-set-outlooksignatures
@@ -209,7 +209,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="quickstart">
-  Deploy signatures <span style="font-weight: bolder;">within minutes</span>
+  Signatures <span style="font-weight: bolder;">in minutes</span>
 </h2>
 <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.</p>
 <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Quick Start Guide</a>
