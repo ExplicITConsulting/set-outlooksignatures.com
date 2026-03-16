@@ -24,7 +24,7 @@ sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
 <h2 id="outlook-signature-management">
-  <span style="font-weight: bolder; font-style: italic;">Machen Sie Schluss </span>mit inkonsistenten Signaturen und Abwesenheitsnotizen
+  <span style="font-weight: bolder;">Machen Sie Schluss </span>mit inkonsistenten Signaturen und Abwesenheitsnotizen
 </h2>
 <p>Das freie und quelloffene Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> nehmen Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnotizen manuell zu pflegen.</p>
 <p>Jede E-Mail erhält den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
@@ -56,7 +56,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="demo">Erleben Sie es<span style="font-weight: bolder; font-style: italic;"> in Aktion</span></h2>
+<h2 id="demo">Erleben Sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
 <p>Schluss mit inkonsistenten Signaturen und Abwesenheitsnotizen. Erfahren Sie, wie die Kombination aus dem freien und quelloffenen Set-OutlookSignatures mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> die Komplexität der unternehmensweiten Signaturverwaltung automatisiert, damit Sie sich auf das Wesentliche konzentrieren können.</p>
 <p>Überzeugen Sie sich in unserer interaktiven Demo selbst:</p>
 <div class="columns is-multiline">
@@ -117,7 +117,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="strengths">
-  Die <span style="font-weight: bolder; font-style: italic;">Stärken</span> des Ökosystems
+  Die <span style="font-weight: bolder;">Stärken</span> des Ökosystems
 </h2>
 <p>Die Kombination aus dem freien und quelloffenen Set-OutlookSignatures und dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> bietet Enterprise-Governance auf höchstem Niveau mit vollständiger Datensouveränität und nahtloser Zero-Footprint-Integration.</p>
 <p>Diese Kombination bietet bereits Funktionen, die keine andere Lösung bereitstellen kann – ermöglicht durch ihre fortschrittliche, modulare Architektur. Sie geht weit über statische Verzeichnisattribute hinaus: Sie können sie erweitern, um Daten aus praktisch jeder Quelle zu integrieren – darunter Webservices, LDAP-Verzeichnisse, Datenbanken und Dateien – und vollständig benutzerdefinierte Variablen zu definieren, die exakt auf Ihre Organisation zugeschnitten sind.</p>
@@ -209,14 +209,14 @@ sitemap_changefreq: weekly
 
 
 <h2 id="quickstart">
-  Signaturen <span style="font-weight: bolder; font-style: italic;">in Minuten</span>
+  Signaturen <span style="font-weight: bolder;">in Minuten</span>
 </h2>
 <p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
 <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Quickstart guide</a>
 
 
 <h2 id="dive-deeper">
-  Tiefer<span style="font-weight: bolder; font-style: italic;"> eintauchen</span>
+  Tiefer<span style="font-weight: bolder;"> eintauchen</span>
 </h2>
 <p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:</p>
 <ul style="list-style: none; padding-left: 0;">
