@@ -24,7 +24,7 @@ sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
 <h2 id="outlook-signature-management">
-  <span style="font-weight: bolder;">Stop fighting </span>with inconsistent signatures and out-of-office replies
+  <span style="font-weight: bolder; font-style: italic;">Stop fighting </span>with inconsistent signatures and out-of-office replies
 </h2>
 <p>The free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> take the hassle out of manually maintaining Outlook signatures and out-of-office replies.</p>
 <p>Every email delivers the professional appearance your company deserves: Up to date, consistent, and fully aligned with your brand.</p>
@@ -56,7 +56,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="demo">Experience it<span style="font-weight: bolder;"> in action</span></h2>
+<h2 id="demo">Experience it<span style="font-weight: bolder; font-style: italic;"> in action</span></h2>
 <p>Stop fighting with inconsistent signatures and out-of-office replies. See how combining the free and open-source Set-OutlookSignatures with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> automates the complexity of enterprise-wide signature management so you can focus on what matters.</p>
 <p>See how we handle it all in our interactive demo:</p>
 <div class="columns is-multiline">
@@ -117,7 +117,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="strengths">
-  The<span style="font-weight: bolder;"> strengths </span>of the ecosystem
+  The<span style="font-weight: bolder; font-style: italic;"> strengths </span>of the ecosystem
 </h2>
 <p>Combining the free and open-source Set-OutlookSignatures with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> gives you enterprise-grade governance with total data sovereignty and zero-footprint integration.</p>
 <p>This combination already delivers capabilities no other solution offers, made possible by its advanced, modular architecture. It goes far beyond static directory attributes: You can extend it to ingest data from virtually any source — including web services, LDAP directories, databases, and files — and define fully custom variables tailored to your organization.</p>
@@ -209,14 +209,14 @@ sitemap_changefreq: weekly
 
 
 <h2 id="quickstart">
-  Signatures <span style="font-weight: bolder;">in minutes</span>
+  Signatures <span style="font-weight: bolder; font-style: italic;">in minutes</span>
 </h2>
 <p>Follow the easy 3-step-process to deploy first signatures, get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.</p>
 <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Quick Start Guide</a>
 
 
 <h2 id="dive-deeper">
-  Dive<span style="font-weight: bolder;"> deeper</span>
+  Dive<span style="font-weight: bolder; font-style: italic;"> deeper</span>
 </h2>
 <p>Visit our help and support center to find out more:</p>
 <ul style="list-style: none; padding-left: 0;">
