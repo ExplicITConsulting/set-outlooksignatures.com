@@ -22,7 +22,7 @@ Simple, secure, and scalable - without the overhead.
 
 This is made possible by architecture developed from practical experience for practical use, with a focus on work simplification and data protection rather than profit.
 
-With the [Quick Start Guide](/quickstart), you can deploy signatures within minutes, in just three easy steps.
+With the [Quickstart guide](/quickstart), you can deploy signatures within minutes, in just three easy steps.
 
 
 ## Interested in learning more or seeing our solution in action?

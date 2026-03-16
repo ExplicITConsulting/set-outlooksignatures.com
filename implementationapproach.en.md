@@ -13,13 +13,13 @@ sitemap_changefreq: weekly
 ---
 <!-- omit in toc -->
 ## What organizational approach do we recommend for implementing the software? {#recommended-approach}
-For most companies, the <a href="/quickstart">quick start guide</a> is the most efficient way to get started. With it, you deploy your first signatures within minutes and create a robust starting point for your own customizations.
+For most companies, the <a href="/quickstart">Quickstart guide</a> is the most efficient way to get started. With it, you deploy your first signatures within minutes and create a robust starting point for your own customizations.
 
 You prefer to be guided through organizational topics, the setup and customization process instead of working through the documentation yourself? ExplicIT Consulting offers <a href="/support#professional-support">implementation support from A to Z</a>.
 
 <p>
   <div class="buttons">
-    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Quick Start Guide</a>
+    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Quickstart guide</a>
     <a href="/support#professional-support" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen">Support</a>
   </div>
 </p>
@@ -461,7 +461,7 @@ As an IT service provider, we not only recommend Set-OutlookSignatures, but also
 
 We share our experience gained during the definition of requirements for a signature solution, the evaluation and comparison of different products, and the implementation of Set-OutlookSignatures and the Benefactor Circle add-on.
 
-For companies within the group that wish to implement the solution independently, we recommend starting with the <a href="/quickstart">Quick Start Guide</a>. Thanks to the extensive documentation, clients can usually implement Set-OutlookSignatures and the Benefactor Circle add-on on their own in a short amount of time.
+For companies within the group that wish to implement the solution independently, we recommend starting with the <a href="/quickstart">Quickstart guide</a>. Thanks to the extensive documentation, clients can usually implement Set-OutlookSignatures and the Benefactor Circle add-on on their own in a short amount of time.
 
 We offer support to all group companies in the form of workshops and training sessions. The following list represents the maximum scope, both in terms of content and time, within a full preparation and implementation project. **Complete <a href="/support#professional-support">implementation support</a> in a "train the trainer" format rarely takes more than half a day.**
 

@@ -217,7 +217,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="trial">Free trial</h2>
-    <p>After setting up the free and open-source Set-OutlookSignatures using the Quick Start Guide and configuring it to your needs, you are ready to take the next step:</p>
+    <p>After setting up the free and open-source Set-OutlookSignatures using the Quickstart guide and configuring it to your needs, you are ready to take the next step:</p>
     <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Get a 14-day trial license</a></p>
     <p>Trial licenses are limited to 14&nbsp;days runtime, a maximum of 20&nbsp;mailboxes, and can not be extended or re-issued.</p>
     <p>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible as our software does not phone home).</p>

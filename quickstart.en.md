@@ -2,9 +2,9 @@
 layout: "page"
 lang: "en"
 locale: "en"
-title: "Quick Start Guide"
+title: "Quickstart guide"
 subtitle: "Signatures in minutes"
-description: "Quick Start Guide. Deploy signatures within minutes."
+description: "Quickstart guide. Deploy signatures within minutes."
 permalink: "/quickstart"
 redirect_from:
   - "/quickstart/"

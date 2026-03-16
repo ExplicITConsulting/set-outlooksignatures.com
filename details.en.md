@@ -6,7 +6,7 @@ title: "Technical details, requirements and usage"
 subtitle: "What it needs, how it works and how to use it"
 description: "Discover Set-OutlookSignatures technical details: system requirements, supported platforms, template formats, group logic, variables, and simulation mode."
 hero_link: /quickstart
-hero_link_text: "<span><b>Quick Start Guide</b></span>"
+hero_link_text: "<span><b>Quickstart guide</b></span>"
 hero_link_style: |
   style="background-color: LawnGreen;"
 hero_link2: /support
@@ -65,7 +65,7 @@ To get to know Set-OutlookSignatures, we recommend the following sequence:
 1. The [feature comparison](/features#feature-comparison) gives you a quick overview of topics to consider when choosing a solution for central management and deployment of email signatures and out-of-office replies. 
 2. Learn in detail about the [feature list](/features#features) of Set-OutlookSignatures and the Benefactor Circle add-on.
 3. Watch the [demo video](/benefactorcircle#demo) to see how a typical real-life use case is implemented.
-4. Get practical: Deploy signatures within minutes with the [Quick Start Guide](/quickstart)!
+4. Get practical: Deploy signatures within minutes with the [Quickstart guide](/quickstart)!
 
 You want to know more?
 - [Requirements and usage](#requirements-and-usage)
@@ -115,7 +115,7 @@ This is not only available for Benefactor Circle members, but also the Free and 
 
 The paths to the template and configuration files (SignatureTemplatePath, OOFTemplatePath, GraphConfigFile, etc.) must be accessible by the currently logged-in user. The files must be at least readable for the currently logged-in user.
 
-In cloud environments, you need to register Set-OutlookSignatures as Entra ID app and provide admin consent for the required permissions. See the Quick Start Guide or '.\config\default graph config.ps1' for details.
+In cloud environments, you need to register Set-OutlookSignatures as Entra ID app and provide admin consent for the required permissions. See the Quickstart guide or '.\config\default graph config.ps1' for details.
 
 ### Linux and macOS
 Not all features of Set-OutlookSignatures and the Benefactor Circle add-on are yet available or possible on Linux and macOS. Every parameter contains appropriate information, which are summarized below.
@@ -124,9 +124,9 @@ These restrictions only apply to Set-OutlookSignatures and the Benefactor Circle
 
 #### Common restrictions and notes for Linux and macOS
 - Only mailboxes hosted in Exchange Online are supported. On-prem mailboxes usually work when addressed via Exchange Online, but this is not guaranteed.
-- Only Graph is supported, no local Active Directories.<br>The parameter `GraphOnly` is automatically set to `true` and Linux and macOS, which requires an Entra ID app - the [Quick Start Guide](/quickstart) helps you implement this.
+- Only Graph is supported, no local Active Directories.<br>The parameter `GraphOnly` is automatically set to `true` and Linux and macOS, which requires an Entra ID app - the [Quickstart guide](/quickstart) helps you implement this.
 - Signature and OOF templates must be in HTM format.<br>Microsoft Word is not available on Linux, and the file format conversion cannot be done without user impact on macOS.<br>If you do not want to manually convert your DOCX files to HTM, remove incompatible and superfluous code and restore images to their original resolution: Our partner <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers a commercial batch conversion service.<br>The parameter `UseHtmTemplates` is automatically set to `true` on Linux and macOS.
-- Only existing mount points and SharePoint Online paths can be accessed.<br>Set-OutlookSignatures cannot create mount points itself, as there are just too many possibilities.<br>This is important for all parameters pointing to folders or files (`SignatureTemplatePath`, `SignatureIniFile`, `OOFTemplatePath`, `OOFIniFile`, `AdditionalSignaturePath`, `ReplacementVariableConfigFile`, `GraphConfigFile`, etc.). The default values for these parameters are automatically set correctly, so that you can follow the Quick Start Guide without additional configuration. When hosting `GraphConfigFile` on SharePoint Online make sure you also define the `GraphClientID` parameter.<br><br>If SharePoint Online is not an option for you, consider one of the following options for production use:
+- Only existing mount points and SharePoint Online paths can be accessed.<br>Set-OutlookSignatures cannot create mount points itself, as there are just too many possibilities.<br>This is important for all parameters pointing to folders or files (`SignatureTemplatePath`, `SignatureIniFile`, `OOFTemplatePath`, `OOFIniFile`, `AdditionalSignaturePath`, `ReplacementVariableConfigFile`, `GraphConfigFile`, etc.). The default values for these parameters are automatically set correctly, so that you can follow the Quickstart guide without additional configuration. When hosting `GraphConfigFile` on SharePoint Online make sure you also define the `GraphClientID` parameter.<br><br>If SharePoint Online is not an option for you, consider one of the following options for production use:
   - Deploy a software package that not only contains Set-OutlookSignatures, but also all required template and configuration files.
   -	Place Set-OutlookSignatures, the templates and its configuration as ZIP file in a public place (such as your website), and use Intune with a remediation script to download and extract the ZIP file. This sort of hosting might not meet your security requirements.
   - Change your execution script or task, so that all required paths are mounted before Set-OutlookSignatures is run.
@@ -157,7 +157,7 @@ Most companies choose the same default setup for their environment:
 - Each user has a primary device running Linux, macOS or Windows.<br>On this device, the user performs the majority of his computer related tasks - from our point of view, this is working with emails.<br>This primary device is managed, i.e. controlled by the company at software level at least.
 - Users often have secondary devices, which can be essential for daily work but are used less often than the primary device (especially for our use case of working with emails).<br>Typical secondary devices are the user's company smartphone, an occasionally used laptop or virtual machine, but also non-company devices used to access company email.<br>Secondary devices are ususally only managed devices when they belong to the company.
 
-The best for this scenario is to run Set-OutlookSignatures on each user's primary device as described in the [Quick Start Guide](/quickstart): Depending on your needs and environment, you may realize this with a [logon script](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task), a [scheduled task](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task), a [desktop icon](/faq#create-desktop-icons-cross-platform), a [desired state configuration](/faq#deploy-and-run-software-using-desired-state-configuration-dsc), or other methods.  
+The best for this scenario is to run Set-OutlookSignatures on each user's primary device as described in the [Quickstart guide](/quickstart): Depending on your needs and environment, you may realize this with a [logon script](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task), a [scheduled task](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task), a [desktop icon](/faq#create-desktop-icons-cross-platform), a [desired state configuration](/faq#deploy-and-run-software-using-desired-state-configuration-dsc), or other methods.  
 Of course, users [never see Set-OutlookSignatures](/faq#start-set-outlooksignatures-in-hiddeninvisible-mode) - signatures are just there and always up-to-date.
 
 You then add the [Outlook add-in](/outlookaddin) to the mix to make signatures available in Outlook running on secondary devices (Outlook on Android, Outlook on iOS, etc.). This also covers the use of Outlook on devices that are not managed, such as accessing the company mailbox from Outlook installed on a private computer.
