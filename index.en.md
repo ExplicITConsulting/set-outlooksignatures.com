@@ -62,7 +62,6 @@ sitemap_changefreq: weekly
 
 <h2 id="demo">Experience it<span style="font-weight: bolder;"> in action</span></h2>
 <p>See how organizations use Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> to enforce brand consistency, governance, and data sovereignty without changing how users work.</p>
-
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -89,7 +88,6 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
 <div class="box" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
   <div class="columns is-vcentered">
     <div class="column is-half">
@@ -104,7 +102,6 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
 <div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -115,7 +112,6 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
 <div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
