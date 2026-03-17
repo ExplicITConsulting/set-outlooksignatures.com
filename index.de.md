@@ -78,12 +78,12 @@ sitemap_changefreq: weekly
     <div class="column is-half">
       <h3>Persönliche Demo</h3>
       <p>Vereinbaren Sie eine persönliche Präsentation, um zu sehen, wie die Lösung in Ihre spezifische Infrastruktur und Compliance-Anforderungen passt.</p>
-      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Jetzt persönliche Demo buchen</a>
+      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Experten-Demo: Datensouveränität in Aktion erleben</a>
     </div>
     <div class="column is-half">
       <h3>Quickstart</h3>
       <p>Folgen Sie unserer 3-Schritte-Anleitung, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen und eine solide Basis zu schaffen.</p>
-      <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black is-info has-text-weight-bold" style="height: 3.5rem; width: 100%;">Quickstart: Signaturen in Minuten</a>
+      <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black is-info has-text-weight-bold" style="height: 3.5rem; width: 100%;">In 3 Schritten zur ersten Signatur</a>
     </div>
   </div>
 </div>
