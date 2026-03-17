@@ -132,45 +132,50 @@ sitemap_changefreq: weekly
 <p><a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Get a trial license, request a quote</a></p>
 
 
-<h2 id="demo">Demo</h2>
-<p>Stop fighting with inconsistent signatures and out-of-office replies. See how combining the free and open-source Set-OutlookSignatures with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> automates the complexity of enterprise-wide signature management so you can focus on what matters. Experience live:</p>
-
+<h2 id="demo">Experience it<span style="font-weight: bolder;"> in action</span></h2>
+<p>See how organizations use Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> to enforce brand consistency, governance, and data sovereignty without changing how users work.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🧭
       <div style="hyphens: manual;">
-        <b>Cross-Platform Sovereignty</b><br>Across Windows, Linux, macOS, iOS, Android, and Web. All data stays within your own environment, even for BYOD scenarios and with M365 F licenses.
+        <b>Cross-Platform Sovereignty</b>
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      📣
       <div style="hyphens: manual;">
-        <b>Dynamic Branding and Marketing</b><br>Turn every email into a marketing asset with scheduled campaigns and automated cleanup. Maintain a flawless, compliant corporate identity in every interaction.
+        <b>Dynamic Branding and Marketing</b>
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🏛️
       <div style="hyphens: manual;">
-        <b>Administrative Governance</b><br>Manage complex delegation scenarios, shared mailboxes, and company-wide out-of-office replies centrally. Deploy organization-wide updates in minutes.
+        <b>Administrative Governance</b>
       </div>
     </div>
   </div>
 </div>
-
-<p><strong>This is more than a demo — it's a blueprint for your company's email compliance and brand security. We look forward to meeting you!</strong></p>
-
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4rem; font-size: 1.25em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Schedule your personal demo now</a></p>
+<div class="box" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
+  <div class="columns">
+    <div class="column is-half">
+      <h3>Personal demo</h3>
+      <p>Schedule a personal walkthrough to see how this fits your specific infrastructure and compliance needs.</p>
+      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Expert Demo: See Data Sovereignty in Action</a>
+    </div>
+    <div class="column is-half">
+      <h3>Quickstart</h3>
+      <p>Follow our 3-step process to deploy your first signatures in minutes and create a robust starting point.</p>
+      <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black is-info has-text-weight-bold" style="height: 3.5rem; width: 100%;">Deploy Your First Signatures in 3 Steps</a>
     </div>
   </div>
-  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
+</div>
+<div class="columns is-multiline">
+  <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <div class="customer-scrolling-banner">
         <div class="customer-scrolling-track">
@@ -179,7 +184,6 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p>&nbsp;</p>
 <div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">

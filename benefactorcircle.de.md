@@ -133,44 +133,49 @@ sitemap_changefreq: weekly
 
 
 <h2 id="demo">Erleben Sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
-<p>Schluss mit inkonsistenten Signaturen und Abwesenheitsnotizen. Erfahren Sie, wie die Kombination des freien und quelloffenen Set-OutlookSignatures mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> die Komplexität der unternehmensweiten Signaturverwaltung automatisiert, damit Sie sich auf das Wesentliche konzentrieren können. Erleben Sie live:</p>
-
+<p>Sehen Sie selbst, wie Organisationen Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> nutzen, um Markenidentität, Governance und Datensouveränität sicherzustellen – ohne die Arbeitsweise der Anwender zu verändern.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🧭
       <div style="hyphens: manual;">
-        <b>Plattformübergreifende Datensouveränität</b><br>Auf Windows, Linux, macOS, iOS, Android und im Web. Sämtliche Daten verbleiben in Ihrer eigenen Umgebung, auch in BYOD-Szenarien und mit M365‑F‑Lizenzen.
+        <b>Plattformübergreifende Datensouveränität</b>
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      📣
       <div style="hyphens: manual;">
-        <b>Dynamisches Branding und Marketing</b><br>Machen Sie jede E-Mail zu einem Marketing‑Asset, mit zeitgesteuerten Kampagnen und automatischer Bereinigung. Konsistente, regelkonforme Unternehmensidentität in jeder Nachricht.
+        <b>Dynamisches Branding und Marketing</b>
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🏛️
       <div style="hyphens: manual;">
-        <b>Administrative Governance</b><br>Zentrale Verwaltung komplexer Delegationsszenarien, freigegebener Postfächer und unternehmensweiter Abwesenheitsnotizen. Organisationweite Änderungen in wenigen Minuten ausrollen.
+        <b>Administrative Governance</b>
       </div>
     </div>
   </div>
 </div>
-
-<p><strong>Das ist mehr als eine Demo — es ist eine Anleitung für die E-Mail-Compliance und Markensicherheit Ihres Unternehmens. Wir freuen uns darauf, Sie kennenzulernen!</strong></p>
-
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4rem; font-size: 1.25em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Jetzt persönliche Demo buchen</a></p>
+<div class="box" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
+  <div class="columns">
+    <div class="column is-half">
+      <h3>Persönliche Demo</h3>
+      <p>Vereinbaren Sie eine persönliche Präsentation, um zu sehen, wie die Lösung in Ihre spezifische Infrastruktur und Compliance-Anforderungen passt.</p>
+      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Experten-Demo: Datensouveränität in Aktion erleben</a>
+    </div>
+    <div class="column is-half">
+      <h3>Quickstart</h3>
+      <p>Folgen Sie unserer 3-Schritte-Anleitung, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen und eine solide Basis zu schaffen.</p>
+      <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black is-info has-text-weight-bold" style="height: 3.5rem; width: 100%;">In 3 Schritten zu den ersten Signaturen</a>
     </div>
   </div>
-  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
+</div>
+<div class="columns is-multiline">
+  <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <div class="customer-scrolling-banner">
         <div class="customer-scrolling-track">
@@ -179,7 +184,6 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p>&nbsp;</p>
 <div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
