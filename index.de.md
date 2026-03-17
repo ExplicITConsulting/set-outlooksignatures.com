@@ -29,7 +29,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🛠️
       <div style="hyphens: manual;">
-        <b>IT: Reibungslose Automatisierung</b><br>Automatisieren Sie das Signatur-Deployment und zentralisieren Sie das OOF-Management in Minuten. Unsichtbar für Mitarbeiter, ohne Client-Footprint.
+        <b>IT: Reibungslose Automatisierung</b><br>Automatisieren Sie das Signatur-Deployment und zentralisieren Sie das OOF-Management in Minuten, ohne neue Konsolen lernen zu müssen. Unsichtbar für Mitarbeiter, ohne Client-Footprint.
       </div>
     </div>
   </div>

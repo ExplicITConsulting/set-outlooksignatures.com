@@ -29,7 +29,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🛠️
       <div style="hyphens: manual;">
-        <b>IT: Painless Automation</b><br>Automate signature deployment and centralize OOF management within minutes. Invisible to employees, zero footprint on clients.
+        <b>IT: Painless Automation</b><br>Automate signature deployment and centralize OOF management within minutes, no new consoles to learn. Invisible to employees, zero footprint on clients.
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🔒
       <div style="hyphens: manual;">
-        <b>Legal: Total Data Soverignty</b><br>Remove compliance risks from third-party processors. Total sovereignty, your data never leaves your controlled environment.
+        <b>Legal: Total Data Sovereignty</b><br>Remove compliance risks from third-party processors. Total sovereignty, your data never leaves your controlled environment.
       </div>
     </div>
   </div>
