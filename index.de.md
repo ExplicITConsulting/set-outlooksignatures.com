@@ -21,7 +21,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       📣
       <div style="hyphens: manual;">
-        <b>Einheitliche Markenführung</b><br>Erzwingen Sie konsistentes Branding, dynamische Marketingkampagnen und aktuelle Kontaktdaten in jeder Nachricht.
+        <b>Marketing: Einheitliche Markenführung</b><br>Erzwingen Sie konsistentes Branding, dynamische Marketingkampagnen und aktuelle Kontaktdaten in jeder Nachricht.
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🛠️
       <div style="hyphens: manual;">
-        <b>Reibungslose Automatisierung</b><br>Automatisieren Sie das Signatur-Deployment und zentralisieren Sie das OOF-Management in Minuten. Unsichtbar für Mitarbeiter, ohne Client-Footprint.
+        <b>IT: Reibungslose Automatisierung</b><br>Automatisieren Sie das Signatur-Deployment und zentralisieren Sie das OOF-Management in Minuten. Unsichtbar für Mitarbeiter, ohne Client-Footprint.
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🔒
       <div style="hyphens: manual;">
-        <b>Volle Datensouveränität</b><br>Eliminieren Sie Compliance-Risiken durch Drittanbieter. Maximale Souveränität – Ihre Daten verlassen niemals Ihre kontrollierte Umgebung.
+        <b>Legal: Volle Datensouveränität</b><br>Eliminieren Sie Compliance-Risiken durch Drittanbieter. Maximale Souveränität – Ihre Daten verlassen niemals Ihre kontrollierte Umgebung.
       </div>
     </div>
   </div>
@@ -52,7 +52,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🧭
       <div style="hyphens: manual;">
-        <b>Plattformübergreifende Datensouveränität</b><br>Auf Windows, Linux, macOS, iOS, Android und im Web. Sämtliche Daten verbleiben in Ihrer eigenen Umgebung, auch in BYOD-Szenarien und mit M365‑F‑Lizenzen.
+        <b>Plattformübergreifende Datensouveränität</b>
       </div>
     </div>
   </div>
@@ -60,7 +60,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       📣
       <div style="hyphens: manual;">
-        <b>Dynamisches Branding und Marketing</b><br>Machen Sie jede E-Mail zu einem Marketing‑Asset, mit zeitgesteuerten Kampagnen und automatischer Bereinigung. Konsistente, regelkonforme Unternehmensidentität in jeder Nachricht.
+        <b>Dynamisches Branding und Marketing</b>
       </div>
     </div>
   </div>
@@ -68,7 +68,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🏛️
       <div style="hyphens: manual;">
-        <b>Administrative Governance</b><br>Zentrale Verwaltung komplexer Delegationsszenarien, freigegebener Postfächer und unternehmensweiter Abwesenheitsnotizen. Organisationweite Änderungen in wenigen Minuten ausrollen.
+        <b>Administrative Governance</b>
       </div>
     </div>
   </div>
