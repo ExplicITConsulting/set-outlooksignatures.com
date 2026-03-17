@@ -83,7 +83,7 @@ sitemap_changefreq: weekly
     <div class="column is-half">
       <h3>Quickstart</h3>
       <p>Folgen Sie unserer 3-Schritte-Anleitung, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen und eine solide Basis zu schaffen.</p>
-      <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-color: LawnGreen;">Quickstart: Signaturen in Minuten</a>
+      <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black is-success has-text-weight-bold" style="height: 3.5rem; width: 100%;">Quickstart: Signaturen in Minuten</a>
     </div>
   </div>
 </div>
