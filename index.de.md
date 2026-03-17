@@ -15,7 +15,7 @@ hero_link2_text: "<span><b>Hinter den Kulissen: </b>Vom Code lernen</span>"
 hero_link2_style: |
   style="background-color: LawnGreen;"
 hero_link3: "#demo"
-hero_link3_text: "<span><b>Persönliche Demo jetzt buchen</b></span>"
+hero_link3_text: "<span><b>Jetzt Persönliche Demo buchen</b></span>"
 hero_link3_style: |
    style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 permalink: "/"
