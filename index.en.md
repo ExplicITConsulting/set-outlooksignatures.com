@@ -83,7 +83,7 @@ sitemap_changefreq: weekly
     <div class="column is-half">
       <h3>Quickstart</h3>
       <p>Follow our 3-step process to deploy your first signatures in minutes and create a robust starting point.</p>
-      <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black is-info has-text-weight-bold" style="height: 3.5rem; width: 100%;">Deploy Your First Signature in 3 Steps</a>
+      <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black is-info has-text-weight-bold" style="height: 3.5rem; width: 100%;">Deploy Your First Signatures in 3 Steps</a>
     </div>
   </div>
 </div>
