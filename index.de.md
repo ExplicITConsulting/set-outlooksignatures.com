@@ -6,18 +6,6 @@ title: |
   <span style="font-weight: bolder;">Set-OutlookSignatures </span>und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span>
 subtitle: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
 description: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
-hero_link: /quickstart
-hero_link_text: "<span><b>Schnellstart: </b>Signaturen in  Minuten</span>"
-hero_link_style: |
-   style="background-color: LawnGreen;"
-hero_link2: /faq#what-can-i-learn-from-the-code-of-set-outlooksignatures
-hero_link2_text: "<span><b>Hinter den Kulissen: </b>Vom Code lernen</span>"
-hero_link2_style: |
-  style="background-color: LawnGreen;"
-hero_link3: "#demo"
-hero_link3_text: "<span><b>Jetzt Persönliche Demo buchen</b></span>"
-hero_link3_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 permalink: "/"
 redirect_from:
 sitemap_priority: 1.0
