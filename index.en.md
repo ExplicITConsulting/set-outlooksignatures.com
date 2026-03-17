@@ -104,7 +104,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p>&nbsp;</p>
+
 <div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -115,7 +115,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p>&nbsp;</p>
+
 <div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
