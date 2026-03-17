@@ -85,18 +85,16 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<div class="box" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
-  <div class="columns is-vcentered">
-    <div class="column is-half">
-      <h3>Personal demo</h3>
-      <p>Schedule a personal walkthrough to see how this fits your specific infrastructure and compliance needs.</p>
-      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Schedule your personal demo now</a>
-    </div>
-    <div class="column is-half" style="border-left: 1px solid #ccc;">
-      <h3>Quickstart</h3>
-      <p>Follow our 3-step process to deploy your first signatures in minutes and create a robust starting point.</p>
-      <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-color: LawnGreen;">Quickstart: Signatures in minutes</a>
-    </div>
+<div class="columns is-multiline">
+  <div class="column is-half-deskop is-half-tablet is-full-mobile">
+    <h3>Personal demo</h3>
+    <p>Schedule a personal walkthrough to see how this fits your specific infrastructure and compliance needs.</p>
+    <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Schedule your personal demo now</a>
+  </div>
+  <div class="column is-half-deskop is-half-tablet is-full-mobile">
+    <h3>Quickstart</h3>
+    <p>Follow our 3-step process to deploy your first signatures in minutes and create a robust starting point.</p>
+    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-color: LawnGreen;">Quickstart: Signatures in minutes</a>
   </div>
 </div>
 <div class="columns is-multiline">
