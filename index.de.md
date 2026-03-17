@@ -2,9 +2,9 @@
 layout: "page"
 lang: "de"
 locale: "de"
-title: |
+subtitle: |
   <span style="font-weight: bolder;">Set-OutlookSignatures </span>und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span>
-subtitle: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
+title: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
 description: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
 permalink: "/"
 redirect_from:
