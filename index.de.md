@@ -42,7 +42,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p>Keine versteckten Kosten, keine Überraschungen — weltweit bewährt in Hochsicherheitsumgebungen. Überzeugen Sie sich von unserer <a href="/benefactorcircle#price">transparenten Preisgestaltung</a> und sehen Sie, wie wir uns <a href="/features#feature-comparison">gegen den Wettbewerb behaupten</a>.</p>
+<p>Keine versteckten Kosten, keine Überraschungen — weltweit bewährt in Hochsicherheitsumgebungen. Überzeugen Sie sich von unserer <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparenten Preisgestaltung</a> und sehen Sie, wie wir uns <a href="https://set-outlooksignatures.com/features#feature-comparison">gegen den Wettbewerb behaupten</a>.</p>
 
 
 <h2 id="demo">Erleben Sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
@@ -83,7 +83,7 @@ sitemap_changefreq: weekly
     <div class="column is-half">
       <h3>Quickstart</h3>
       <p>Folgen Sie unserer 3-Schritte-Anleitung, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen und eine solide Basis zu schaffen.</p>
-      <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black is-info has-text-weight-bold" style="height: 3.5rem; width: 100%;">In 3 Schritten zu den ersten Signaturen</a>
+      <a href="https://set-outlooksignatures.com/quickstart" class="button is-link is-normal is-hovered has-text-black is-info has-text-weight-bold" style="height: 3.5rem; width: 100%;">In 3 Schritten zu den ersten Signaturen</a>
     </div>
   </div>
 </div>
