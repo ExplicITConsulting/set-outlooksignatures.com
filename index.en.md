@@ -27,9 +27,7 @@ sitemap_changefreq: weekly
   <span style="font-weight: bolder;">Create value </span>without giving up data sovereignty
 </h2>
 <p>The free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed, reusable business asset — without external dependencies.</p>
-
 <p>Every email becomes a controlled touchpoint for your brand: up to date, consistent, and fully aligned across the organization.</p>
-
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -56,7 +54,6 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
 <p>Looking for concrete numbers and a clear cost perspective? <a href="/benefactorcircle#price">See pricing and the full business case.</a></p>
 
 
@@ -127,13 +124,9 @@ sitemap_changefreq: weekly
 <h2 id="power">
   The <span style="font-weight: bolder;">power</span> of the ecosystem
 </h2>
-
-<p><b>Set-OutlookSignatures</b> and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> form a unique ecosystem for centrally managed email signatures and out-of-office replies fully under your control.</p>
-
+<p>Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> form a unique ecosystem for centrally managed email signatures and out-of-office replies fully under your control.</p>
 <p>You get enterprise-grade governance, full data sovereignty, and seamless integration into your existing Microsoft 365 and Exchange environment.</p>
-
 <p>This combination delivers capabilities no other solution offers, made possible by its advanced, modular architecture.<br>It goes far beyond static directory attributes: You can easily extend it to ingest data from virtually any source — including web services, LDAP directories, databases, and files — and define fully custom variables tailored to your organization.</p>
-
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">

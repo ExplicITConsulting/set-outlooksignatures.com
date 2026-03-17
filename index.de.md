@@ -24,16 +24,16 @@ sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
 <h2 id="outlook-signature-management">
-  <span style="font-weight: bolder;">Machen Sie Schluss </span>mit inkonsistenten Signaturen und Abwesenheitsnotizen
+  <span style="font-weight: bolder;">Mehrwert schaffen, </span>ohne die Datensouveränität aufzugeben
 </h2>
-<p>Das freie und quelloffene Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> nehmen Ihnen den Aufwand ab, Outlook-Signaturen und Abwesenheitsnotizen manuell zu pflegen.</p>
-<p>Jede E-Mail erhält den professionellen Auftritt, den Ihr Unternehmen verdient: Aktuell, einheitlich und markenkonform.</p>
+<p>Das kostenlose Open-Source-Tool Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> machen E-Mail-Signaturen und Abwesenheitsnotizen zu einem zentral verwalteten, wiederverwendbaren Business-Asset – ganz ohne externe Abhängigkeiten.</p>
+<p>Jede E-Mail wird zu einem kontrollierten Touchpoint für Ihre Marke: aktuell, konsistent und unternehmensweit einheitlich ausgerichtet.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🚀
       <div style="hyphens: manual;">
-        <b>Sofortige Professionalität</b><br>Automatisierte Kontaktdaten und konsistentes Branding in jeder einzelnen Nachricht.
+        <b>Sofortige Professionalität</b><br>Automatisierte Kontaktdaten und konsistentes Branding in jeder Nachricht.
       </div>
     </div>
   </div>
@@ -54,15 +54,15 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
+<p>Suchen Sie nach konkreten Zahlen und einer klaren Kostenperspektive? <a href="/benefactorcircle#price">Hier finden Sie die Preise und den vollständigen Business Case.</a></p>
 
 
 <h2 id="demo">Erleben Sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
-<p>Schluss mit inkonsistenten Signaturen und Abwesenheitsnotizen. Erfahren Sie, wie die Kombination aus dem freien und quelloffenen Set-OutlookSignatures mit dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> die Komplexität der unternehmensweiten Signaturverwaltung automatisiert, damit Sie sich auf das Wesentliche konzentrieren können.</p>
-<p>Überzeugen Sie sich in unserer interaktiven Demo selbst:</p>
+<p>Sehen Sie selbst, wie Organisationen Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> nutzen, um Markenidentität, Governance und Datensouveränität sicherzustellen – ohne die Arbeitsweise der Anwender zu verändern.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      🧭      
+      🧭
       <div style="hyphens: manual;">
         <b>Plattformübergreifende Datensouveränität</b><br>Auf Windows, Linux, macOS, iOS, Android und im Web. Sämtliche Daten verbleiben in Ihrer eigenen Umgebung, auch in BYOD-Szenarien und mit M365‑F‑Lizenzen.
       </div>
@@ -85,16 +85,22 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
-<p><strong>Das ist mehr als eine Demo — es ist eine Anleitung für die E-Mail-Compliance und Markensicherheit Ihres Unternehmens. Wir freuen uns darauf, Sie kennenzulernen!</strong></p>
-
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <p><a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 4rem; font-size: 1.25em; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Persönliche Demo jetzt buchen</a></p>
+<div class="box" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
+  <div class="columns is-vcentered">
+    <div class="column is-half">
+      <h3>Persönliche Demo</h3>
+      <p>Vereinbaren Sie eine persönliche Präsentation, um zu sehen, wie die Lösung in Ihre spezifische Infrastruktur und Compliance-Anforderungen passt.</p>
+      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Jetzt persönliche Demo buchen</a>
+    </div>
+    <div class="column is-half" style="border-left: 1px solid #ccc;">
+      <h3>Quickstart</h3>
+      <p>Folgen Sie unserer 3-Schritte-Anleitung, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen und eine solide Basis zu schaffen.</p>
+      <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-color: LawnGreen;">Quickstart: Signaturen in Minuten</a>
     </div>
   </div>
-  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
+</div>
+<div class="columns is-multiline">
+  <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <div class="customer-scrolling-banner">
         <div class="customer-scrolling-track">
@@ -103,7 +109,6 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p>&nbsp;</p>
 <div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -116,20 +121,19 @@ sitemap_changefreq: weekly
 </div>
 
 
-<h2 id="strengths">
-  Die <span style="font-weight: bolder;">Stärken</span> des Ökosystems
+<h2 id="power">
+  Die <span style="font-weight: bolder;">Stärke</span> des Ökosystems
 </h2>
-<p>Die Kombination aus dem freien und quelloffenen Set-OutlookSignatures und dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> bietet Enterprise-Governance auf höchstem Niveau mit vollständiger Datensouveränität und nahtloser Zero-Footprint-Integration.</p>
-<p>Diese Kombination bietet bereits Funktionen, die keine andere Lösung bereitstellen kann – ermöglicht durch ihre fortschrittliche, modulare Architektur. Sie geht weit über statische Verzeichnisattribute hinaus: Sie können sie erweitern, um Daten aus praktisch jeder Quelle zu integrieren – darunter Webservices, LDAP-Verzeichnisse, Datenbanken und Dateien – und vollständig benutzerdefinierte Variablen zu definieren, die exakt auf Ihre Organisation zugeschnitten sind.</p>
-<p>Durch die Ergänzung um das ebenfalls freie und quelloffene <a href="https://explicitconsulting.at/open-source/export-recipientpermissions">Export-RecipientPermissions</a> erschließen Sie ein am Markt einzigartiges Bereitstellungsmodell: Signaturen können auf Basis tatsächlicher Exchange-Postfachberechtigungen bereitgestellt (und entfernt) werden. Dadurch erhalten Benutzer in Delegationsszenarien Zugriff auf Signaturen, noch bevor sie das Postfach in Outlook hinzufügen – und es ermöglicht eine zuverlässige Signaturbereitstellung in reinen „Send As“-Szenarien, die andere Lösungen schlicht nicht abbilden können.</p>
-<p>Diese architektonischen Grundlagen spiegeln sich in den folgenden Stärken wider.</p>
+<p>Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> bilden ein einzigartiges Ökosystem für zentral verwaltete E-Mail-Signaturen und Abwesenheitsnotizen unter Ihrer vollen Kontrolle.</p>
+<p>Sie erhalten Governance auf Enterprise-Niveau, volle Datensouveränität und eine nahtlose Integration in Ihre bestehende Microsoft 365- und Exchange-Umgebung.</p>
+<p>Diese Kombination bietet Funktionen, die keine andere Lösung ermöglicht – ermöglicht durch eine fortschrittliche, modulare Architektur.<br>Es geht weit über statische Verzeichnisattribute hinaus: Sie können die Lösung problemlos erweitern, um Daten aus nahezu jeder Quelle zu beziehen – einschließlich Web-Services, LDAP-Verzeichnissen, Datenbanken und Dateien – und vollständig benutzerdefinierte Variablen definieren, die exakt auf Ihre Organisation zugeschnitten sind.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Reibungslose Einführung</b><br>
-        Intuitiv für IT und Marketing, unsichtbar für Ihre Mitarbeiter.
+        Einfach für IT und Marketing zu verwalten, unsichtbar für die Endanwender.
       </div>
     </div>
   </div>
@@ -138,7 +142,7 @@ sitemap_changefreq: weekly
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Dynamische Inhalte</b><br>
-        Vordefinierte und individuelle Attribute auf Benutzer‑, Postfach‑ und Vorgesetztenebene.
+        Nutzen Sie dynamische Daten von Benutzern, Postfächern, Vorgesetzten und aus eigenen Quellen.
       </div>
     </div>
   </div>
@@ -147,7 +151,7 @@ sitemap_changefreq: weekly
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Abwesenheitsnotizen</b><br>
-        Zentrale Verwaltung von Abwesenheitsnachrichten für interne und externe Empfänger.
+        Zentrale Steuerung von Abwesenheitsnotizen für interne und externe Empfänger.
       </div>
     </div>
   </div>
@@ -156,7 +160,7 @@ sitemap_changefreq: weekly
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Plattformübergreifend</b><br>
-        Windows, Linux, macOS, iOS, Android und Web. Klassisches und neues Outlook. On‑Premises, Hybrid sowie alle M365-Clouds (öffentlich, national, souverän, lokal).
+        Läuft überall: Alle Outlook-Editionen auf jeder Plattform, On‑Premise und in jeder M365-Cloud.
       </div>
     </div>
   </div>
@@ -164,8 +168,8 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Enterprise‑Vielseitigkeit</b><br>
-        Unterstützung für persönliche und freigegebene Postfächer, "Senden als", "Senden im Auftrag von", Simulationsmodus, Roaming-Signaturen und viele weitere Funktionen für maximale Flexibilität.
+        <b>Enterprise-Vielseitigkeit</b><br>
+        Entwickelt für echtes Exchange: Shared Mailboxes, Stellvertreter, Roaming-Signaturen und mehr.
       </div>
     </div>
   </div>
@@ -173,8 +177,8 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Flexible Zuordnung</b><br>
-        Steuerung von Signaturen nach Abteilung, Standort, Sprache, Rolle, Zeit und vielen weiteren Eigenschaften aus unterschiedlichen Datenquellen.
+        <b>Flexible Zuweisung</b><br>
+        Zuweisung nach Abteilung, Rolle, Sprache, Standort, Zeit oder beliebigen benutzerdefinierten Regeln.
       </div>
     </div>
   </div>
@@ -182,8 +186,8 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Zero-Footprint Integration</b><br>
-        Alles läuft auf Ihren bestehenden Systemen und erzeugt keinerlei neue Abhängigkeiten.
+        <b>Zero-Footprint-Integration</b><br>
+        Alles läuft auf Ihren bestehenden Systemen und schafft keine neuen Abhängigkeiten.
       </div>
     </div>
   </div>
@@ -191,8 +195,8 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Unübertroffener Datenschutz</b><br>
-        Sämtliche Daten verbleiben in Ihrer vertrauenswürdigen Umgebung und innerhalb Ihrer bestehenden Sicherheits- und Governance-Strukturen.
+        <b>Höchster Datenschutz</b><br>
+        Ihre Daten verlassen nie Ihre Umgebung und bleiben innerhalb Ihrer Sicherheits- und Governance-Strukturen.
       </div>
     </div>
   </div>
@@ -201,40 +205,8 @@ sitemap_changefreq: weekly
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Zusätzlicher Marketingkanal</b><br>
-        Vorlagen frei in Word oder HTML gestalten. Signaturen für Kampagnen und Markenkommunikation nutzen, kostenfrei und wirkungsvoll.
+        Machen Sie E-Mail-Signaturen zu einem leistungsstarken, kostenlosen Marketingkanal.
       </div>
     </div>
   </div>
 </div>
-
-
-<h2 id="quickstart">
-  Signaturen <span style="font-weight: bolder;">in Minuten</span>
-</h2>
-<p>Folgen Sie der einfachen 3-Schritte-Anleitung, um erste Signaturen einzurichten, einen Einblick in die Möglichkeiten von Set-OutlookSignatures zu bekommen und einen soliden Ausgangspunkt für Ihre eigenen Anpassungen zu schaffen.</p>
-<a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Quickstart guide</a>
-
-
-<h2 id="dive-deeper">
-  Tiefer<span style="font-weight: bolder;"> eintauchen</span>
-</h2>
-<p>Besuchen Sie unser Hilfe- und Supportcenter, um mehr zu erfahren:</p>
-<ul style="list-style: none; padding-left: 0;">
-  <li style="display: flex; gap: 0.5em; margin-bottom: 0.5em;">
-    <span>📊</span>
-    <span>Detaillierter Funktionsumfang und Vergleich mit Mitbewerbern</span>
-  </li>
-  <li style="display: flex; gap: 0.5em; margin-bottom: 0.5em;">
-    <span>⚙️</span>
-    <span>Anforderungen und Konfigurationsmöglichkeiten</span>
-  </li>
-  <li style="display: flex; gap: 0.5em; margin-bottom: 0.5em;">
-    <span>💡</span>
-    <span>Best practices und FAQ</span>
-  </li>
-  <li style="display: flex; gap: 0.5em; margin-bottom: 0.5em;">
-    <span>🤝</span>
-    <span>Wie Sie erstklassigen Support erhalten</span>
-  </li>
-</ul>
-<a href="/help" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-color: LawnGreen;">Hilfe- und Supportcenter</a>
