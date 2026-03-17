@@ -42,7 +42,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p>Looking for concrete numbers and a clear cost perspective? <a href="/benefactorcircle#price">See pricing and the full business case.</a></p>
+<p>No hidden fees, no surprises — trusted worldwide in the most hardened environments. Review our <a href="/benefactorcircle#price">transparent pricing</a> and see how we <a href="/features#feature-comparison">beat the competition</a>.</p>
 
 
 <h2 id="demo">Experience it<span style="font-weight: bolder;"> in action</span></h2>

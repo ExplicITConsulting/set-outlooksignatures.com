@@ -42,7 +42,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p>Sie suchen nach konkreten Zahlen und einer klaren Kostenperspektive? <a href="/benefactorcircle#price">Hier finden Sie die Preise und den vollständigen Business Case.</a></p>
+<p>Keine versteckten Kosten, keine Überraschungen — weltweit bewährt in Hochsicherheitsumgebungen. Überzeugen Sie sich von unserer <a href="/benefactorcircle#price">transparenten Preisgestaltung</a> und sehen Sie, wie wir uns <a href="/features#feature-comparison">gegen den Wettbewerb behaupten</a>.</p>
 
 
 <h2 id="demo">Erleben Sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
