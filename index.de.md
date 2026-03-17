@@ -19,9 +19,9 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      🚀
+      📣
       <div style="hyphens: manual;">
-        <b>Sofortige Professionalität</b><br>Automatisierte Kontaktdaten und konsistentes Branding in jeder Nachricht.
+        <b>Einheitliche Markenführung</b><br>Erzwingen Sie konsistentes Branding, dynamische Marketingkampagnen und aktuelle Kontaktdaten in jeder Nachricht.
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🛠️
       <div style="hyphens: manual;">
-        <b>Reibungslose Einführung</b><br>Intuitiv für IT und Marketing, unsichtbar für Ihre Mitarbeiter.
+        <b>Reibungslose Automatisierung</b><br>Automatisieren Sie das Signatur-Deployment und zentralisieren Sie das OOF-Management in Minuten. Unsichtbar für Mitarbeiter, ohne Client-Footprint.
       </div>
     </div>
   </div>
@@ -37,12 +37,12 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🔒
       <div style="hyphens: manual;">
-        <b>Unübertroffener Datenschutz</b><br>Volle Datensouveränität. Ihre Daten bleiben in Ihrer Umgebung, ohne Übertragung an Dritte.
+        <b>Volle Datensouveränität</b><br>Eliminieren Sie Compliance-Risiken durch Drittanbieter. Maximale Souveränität – Ihre Daten verlassen niemals Ihre kontrollierte Umgebung.
       </div>
     </div>
   </div>
 </div>
-<p>Suchen Sie nach konkreten Zahlen und einer klaren Kostenperspektive? <a href="/benefactorcircle#price">Hier finden Sie die Preise und den vollständigen Business Case.</a></p>
+<p>Sie suchen nach konkreten Zahlen und einer klaren Kostenperspektive? <a href="/benefactorcircle#price">Hier finden Sie die Preise und den vollständigen Business Case.</a></p>
 
 
 <h2 id="demo">Erleben Sie es<span style="font-weight: bolder;"> in Aktion</span></h2>

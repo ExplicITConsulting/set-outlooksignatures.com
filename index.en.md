@@ -19,9 +19,9 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      🚀
+      📣
       <div style="hyphens: manual;">
-        <b>Instant Professionalism</b><br>Automated contact details and consistent branding across every message.
+        <b>Unified Brand Control</b><br>Enforce consistent branding, dynamic marketing campaigns, and up-to-date contact details on every message.
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🛠️
       <div style="hyphens: manual;">
-        <b>Frictionless Adoption</b><br>Intuitive for IT and Marketing, invisible to your employees.
+        <b>Painless Automation</b><br>Automate signature deployment and centralize OOF management within minutes. Invisible to employees, zero footprint on clients.
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🔒
       <div style="hyphens: manual;">
-        <b>Unsurpassed Privacy</b><br>Total data sovereignty. Your data stays in your environment, no third-party transits.
+        <b>Total Data Soverignty</b><br>Remove compliance risks from third-party processors. Total sovereignty, your data never leaves your controlled environment.
       </div>
     </div>
   </div>
