@@ -85,16 +85,18 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<div class="columns is-multiline">
-  <div class="column is-half-deskop is-half-tablet is-full-mobile">
-    <h3>Persönliche Demo</h3>
-    <p>Vereinbaren Sie eine persönliche Präsentation, um zu sehen, wie die Lösung in Ihre spezifische Infrastruktur und Compliance-Anforderungen passt.</p>
-    <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Jetzt persönliche Demo buchen</a>
-  </div>
-  <div class="column is-half-deskop is-half-tablet is-full-mobile">
-    <h3>Quickstart</h3>
-    <p>Folgen Sie unserer 3-Schritte-Anleitung, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen und eine solide Basis zu schaffen.</p>
-    <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-color: LawnGreen;">Quickstart: Signaturen in Minuten</a>
+<div class="box" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
+  <div class="columns">
+    <div class="column is-half">
+      <h3>Persönliche Demo</h3>
+      <p>Vereinbaren Sie eine persönliche Präsentation, um zu sehen, wie die Lösung in Ihre spezifische Infrastruktur und Compliance-Anforderungen passt.</p>
+      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Jetzt persönliche Demo buchen</a>
+    </div>
+    <div class="column is-half">
+      <h3>Quickstart</h3>
+      <p>Folgen Sie unserer 3-Schritte-Anleitung, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen und eine solide Basis zu schaffen.</p>
+      <a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-color: LawnGreen;">Quickstart: Signaturen in Minuten</a>
+    </div>
   </div>
 </div>
 <div class="columns is-multiline">
