@@ -78,12 +78,12 @@ sitemap_changefreq: weekly
     <div class="column is-half">
       <h3>Persönliche Demo</h3>
       <p>Vereinbaren Sie eine persönliche Präsentation, um zu sehen, wie die Lösung in Ihre spezifische Infrastruktur und Compliance-Anforderungen passt.</p>
-      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Experten-Demo: Datensouveränität in Aktion erleben</a>
+      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"><span>>Experten-Demo</span><span class="mtrcs-external-link">Datensouveränität in Aktion erleben</span></a>
     </div>
     <div class="column is-half">
       <h3>Quickstart</h3>
       <p>Folgen Sie unserer 3-Schritte-Anleitung, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen und eine solide Basis zu schaffen.</p>
-      <a href="https://set-outlooksignatures.com/quickstart" class="button is-link is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: auto; min-height: 3.5rem; width: 100%; padding: 0.5rem 1rem;"><span>Ihre Signaturen testen – direkt und risikofrei</span><span class="has-text-weight-normal">Kostenlos, Open Source und Peer-Review-fähig</span></a>
+      <a href="https://set-outlooksignatures.com/quickstart" class="button is-link is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; padding: 0.5rem 1rem;"><span>Ihre Signaturen testen – direkt und risikofrei</span><span class="has-text-weight-normal">Kostenlos, Open Source und Peer-Review-fähig</span></a>
     </div>
   </div>
 </div>
