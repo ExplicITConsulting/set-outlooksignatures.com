@@ -78,7 +78,7 @@ sitemap_changefreq: weekly
     <div class="column is-half">
       <h3>Personal demo</h3>
       <p>Schedule a personal walkthrough to see how this fits your specific infrastructure and compliance needs.</p>
-      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="no-external-link-icon button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"><span>Expert Demo</span><span>See data sovereignty in action</span></a>
+      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="no-external-link-icon button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);" target="_blank"><span>Expert Demo</span><span>See data sovereignty in action</span></a>
     </div>
     <div class="column is-half">
       <h3>Quickstart</h3>
