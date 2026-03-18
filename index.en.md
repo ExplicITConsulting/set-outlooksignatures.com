@@ -83,7 +83,7 @@ sitemap_changefreq: weekly
     <div class="column is-half">
       <h3>Quickstart</h3>
       <p>Follow our 3-step process to deploy your first signatures in minutes and create a robust starting point.</p>
-      <a href="https://set-outlooksignatures.com/quickstart" class="button is-link is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: auto; min-height: 3.5rem; width: 100%; padding: 0.5rem 1rem;"><span>Test your signatures – directly and risk-free</span><span class="is-size-7 has-text-weight-normal">Free, Open Source and peer reviewable</span></a>
+      <a href="https://set-outlooksignatures.com/quickstart" class="button is-link is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: auto; min-height: 3.5rem; width: 100%; padding: 0.5rem 1rem;"><span>Test your signatures – directly and risk-free</span><span class="has-text-weight-normal">Free, Open Source and peer reviewable</span></a>
     </div>
   </div>
 </div>
