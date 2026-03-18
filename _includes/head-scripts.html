@@ -153,32 +153,40 @@
           img.src = urlPath;
           img.loading = "lazy";
 
-          // 1. Get basename: "itsv.at.jpg" or "google.com logo.png"
+          // 1. Get basename: "google.com logo.png"
           const baseName = urlPath.split('/').pop();
 
-          // 2. Remove the extension (last period + right side)
-          // "itsv.at.jpg" -> "itsv.at" | "customer logo.png" -> "customer logo"
+          // 2. Remove extension: "google.com logo"
           const nameWithoutExt = baseName.replace(/\.[^.]+$/, "");
 
-          // 3. Split by space and take first part for domain check
+          // 3. Extract domain from first part
           const firstPart = nameWithoutExt.split(' ')[0];
           const hasDomain = firstPart.includes('.');
 
+          let finalDomain = "";
+          let finalAlt = "";
+
           if (hasDomain) {
-            img.alt = baseName;
-
-            const link = document.createElement('a');
-            link.href = `https://www.${firstPart}`;
-            link.target = "_blank";
-            link.rel = "noopener noreferrer";
-            link.className = "no-external-link-icon banner-link";
-
-            link.appendChild(img);
-            fragment.appendChild(link);
+            // Found a domain in the filename
+            finalDomain = firstPart;
+            finalAlt = nameWithoutExt;
           } else {
-            img.alt = "Anonymous customer";
-            fragment.appendChild(img);
+            // No domain found: use your fallback values
+            finalDomain = "explicitconsulting.at";
+            finalAlt = "explicitconsulting.at anonymous customer";
           }
+
+          // Apply data to elements
+          img.alt = finalAlt;
+
+          const link = document.createElement('a');
+          link.href = `https://www.${finalDomain}`;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.className = "no-external-link-icon banner-link";
+
+          link.appendChild(img);
+          fragment.appendChild(link);
         });
 
         track.appendChild(fragment);
