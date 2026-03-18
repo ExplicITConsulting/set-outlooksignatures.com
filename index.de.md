@@ -78,7 +78,7 @@ sitemap_changefreq: weekly
     <div class="column is-half">
       <h3>Persönliche Demo</h3>
       <p>Vereinbaren Sie eine persönliche Präsentation, um zu sehen, wie die Lösung in Ihre spezifische Infrastruktur und Compliance-Anforderungen passt.</p>
-      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: auto; min-height: 3.5rem; width: 100%; padding: 0.5rem 1rem; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"><span>Experten-Demo</span><span>Datensouveränität in Aktion erleben</span></a>
+      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="height: 3.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Experten-Demo: Datensouveränität in Aktion erleben</a>
     </div>
     <div class="column is-half">
       <h3>Quickstart</h3>
