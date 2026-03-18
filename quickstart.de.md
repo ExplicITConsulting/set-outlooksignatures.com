@@ -23,11 +23,11 @@ permalink: "/quickstart"
 
 
 ## Schritt 2: Einmalige Vorbereitungen {#step-2}
-###### Client und Benutzer
+##### Client und Benutzer
 * **Erster Test:** Melden Sie sich mit einem **Testbenutzer** an einem Windows-System mit Classic Outlook und Word an. Wenn Sie Ihren eigenen Benutzer verwenden, könnten bestehende Signaturen überschrieben werden, sofern Sie nicht den Simulationsmodus nutzen.
 * **Plattform-Unterstützung:** Linux, macOS und das neue Outlook erfordern das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> sowie Postfächer in Exchange Online.
 
-###### Entra ID (für Exchange Online)
+##### Entra ID (für Exchange Online)
 Für den Zugriff auf die Graph API müssen Sie eine Entra ID App registrieren.
 * **Dokumentation:** In `.\sample code\Create-EntraApp.ps1` finden Sie Details zu Berechtigungen und für Sicherheits-Audits.
 * **Manuelle Einrichtung:** Folgen Sie den Anweisungen in `.\config\default graph config.ps1`.
@@ -37,7 +37,7 @@ Für den Zugriff auf die Graph API müssen Sie eine Entra ID App registrieren.
     ```
     *Für Sovereign Clouds (z. B. AzureChina) fügen Sie den Parameter `-CloudEnvironment [Name]` hinzu.*
 
-###### Endpoint Security
+##### Endpoint Security
 Falls AppLocker, Defender, CrowdStrike… aktiv sind:
 * Erlauben Sie die Ausführung und das Laden von Bibliotheken aus dem **TEMP-Ordner**.
 * Vertrauen Sie Software, die mit dem Zertifikat von **ExplicIT Consulting** signiert ist (alle PS1- und DLL-Dateien im Download sind damit signiert).
@@ -54,7 +54,7 @@ Falls AppLocker, Defender, CrowdStrike… aktiv sind:
     ```
     *Hinweis: `-GraphOnly true` ignoriert das lokale Active Directory. Nutzen Sie `-CloudEnvironment` für Sovereign Clouds.*
 
-###### 🛡️ Ihre Signaturen testen – direkt und risikofrei {#simulation-mode}
+##### 🛡️ Ihre Signaturen testen – direkt und risikofrei {#simulation-mode}
 Falls Sie keinen Zugriff auf das klassische Outlook haben oder einen Test ohne Auswirkungen durchführen möchten:
 1. Führen Sie das Skript mit diesen Parametern aus: `-SimulateUser a@example.com -SimulateMailboxes a@example.com`
 2. **Ergebnisse ansehen:** Öffnen Sie Ihren Ordner **'Dokumente\Outlook Signatures'**. 
@@ -63,7 +63,7 @@ Dieser **"[Simulationsmodus](/details#simulation-mode)"** erstellt die exakten S
 
 
 ## Einstellungen anpassen {#customize}
-###### Eigene Vorlagen verwenden
+##### Eigene Vorlagen verwenden
 * **Ordnerstruktur:** Kopieren Sie den Ordner `.\sample templates` an einen neuen Ort. Beachten Sie unsere [FAQ zur empfohlenen Ordnerstruktur](/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files), um spätere Updates zu erleichtern.
 * **Ausführung:** Verweisen Sie auf Ihre eigenen Dateien:
     * `-SignatureTemplatePath 'c:\ihr_pfad'`
@@ -71,7 +71,7 @@ Dieser **"[Simulationsmodus](/details#simulation-mode)"** erstellt die exakten S
     * *Fügen Sie `-UseHtmTemplates true` hinzu, falls Sie HTML- statt DOCX-Vorlagen verwenden.*
 
 
-###### Nächste Schritte
+##### Nächste Schritte
 * **Parameter & Funktionen:** Prüfen Sie die [Funktionsliste](/features) und die [Parameter-Dokumentation](/parameters).
 * **Rollout-Planung:** Lesen Sie den [Ansatz zur organisatorischen Implementierung](/implementationapproach) und die [technischen Details](/details) (insbesondere das Kapitel zu Architektur-Überlegungen).
 * **Präsentieren Sie Ihre Arbeit:** Haben Sie eine beeindruckende Signatur erstellt? [Kontaktieren Sie uns](/support), um Ihre Vorlagen oder ein Statement in unserem Showcase zu teilen!

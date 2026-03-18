@@ -23,11 +23,11 @@ permalink: "/quickstart"
 
 
 ## Step 2: One-time Preparations {#step-2}
-###### Client and User
+##### Client and User
 * **Initial Test:** Log on with a **test user** on Windows with Classic Outlook and Word. Using your own account may overwrite existing signatures if you do not use simulation mode.
 * **Platform Support:** Linux, macOS, and New Outlook require the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> and Exchange Online hosting.
 
-###### Entra ID (for Exchange Online)
+##### Entra ID (for Exchange Online)
 To access the Graph API, you must register an Entra ID app.
 * **Documentation:** Review `.\sample code\Create-EntraApp.ps1` for permissions and security audit details.
 * **Manual Setup:** Follow instructions in `.\config\default graph config.ps1`.
@@ -37,7 +37,7 @@ To access the Graph API, you must register an Entra ID app.
     ```
     *For sovereign clouds (e.g., AzureChina), add: `-CloudEnvironment [EnvironmentName]`*
 
-###### Endpoint Security
+##### Endpoint Security
 If using AppLocker, Defender, CrowdStrike…:
 * Allow execution and library loading from the **TEMP** folder.
 * Trust software signed with **ExplicIT Consulting's** certificate (all included PS1 and DLL files are signed).
@@ -54,7 +54,7 @@ If using AppLocker, Defender, CrowdStrike…:
     ```
     *Note: `-GraphOnly true` ensures on-prem AD is ignored. Add `-CloudEnvironment` if using a sovereign cloud.*
 
-###### 🛡️ Test your signatures – directly and risk-free {#simulation-mode}
+##### 🛡️ Test your signatures – directly and risk-free {#simulation-mode}
 If you lack Classic Outlook or want a zero-impact trial of the software:
 1. Run the script with: `-SimulateUser a@example.com -SimulateMailboxes a@example.com`
 2. **See the results:** Open your **'Documents\Outlook Signatures'** folder. 
@@ -63,7 +63,7 @@ This **"[Simulation Mode](/details#simulation-mode)"** creates the exact signatu
 
 
 ## Customize Settings {#customize}
-###### Use Your Own Templates
+##### Use Your Own Templates
 * **Folder Structure:** Copy `.\sample templates` to a new folder. Follow our [recommended structure FAQ](/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files) to simplify future upgrades.
 * **Execution:** Point the script to your custom files:
     * `-SignatureTemplatePath 'c:\your_path'`
@@ -71,7 +71,7 @@ This **"[Simulation Mode](/details#simulation-mode)"** creates the exact signatu
     * *Add `-UseHtmTemplates true` if using HTML instead of DOCX.*
 
 
-###### Next Steps
+##### Next Steps
 * **Parameters & Features:** Check the [Feature List](/features) and [Parameter Docs](/parameters).
 * **Rollout Planning:** Read the [Organizational implementation approach](/implementationapproach) and [Technical details](/details) (specifically the *Architecture considerations* chapter).
 * **Showcase Your Work:** Build something stunning? [Get in touch](/support) to share your templates or a statement for our showcase!
