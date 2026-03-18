@@ -2,9 +2,9 @@
 layout: "page"
 lang: "de"
 locale: "de"
-title: "Quickstart-Anleitung"
+title: "Schnellstart-Anleitung"
 subtitle: "Signaturen in wenigen Minuten"
-description: "Quickstart-Anleitung. Signaturen innerhalb von Minuten bereitstellen."
+description: "Schnellstart-Anleitung. Signaturen innerhalb von Minuten bereitstellen."
 permalink: "/quickstart"
 ---
 
