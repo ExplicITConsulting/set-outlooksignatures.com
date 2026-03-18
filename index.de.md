@@ -83,7 +83,7 @@ sitemap_changefreq: weekly
     <div class="column is-half">
       <h3>Quickstart</h3>
       <p>Folgen Sie unserer 3-Schritte-Anleitung, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen und eine solide Basis zu schaffen.</p>
-      <a href="https://set-outlooksignatures.com/quickstart" class="button is-link is-normal is-hovered has-text-black is-info has-text-weight-bold" style="height: 3.5rem; width: 100%;">Ihre Signaturen testen – direkt und risikofrei<br><sub>Open Source und von Experten überprüfbar</sub></a>
+      <a href="https://set-outlooksignatures.com/quickstart" class="button is-link is-normal is-hovered has-text-black is-info has-text-weight-bold" style="height: 3.5rem; width: 100%;">Ihre Signaturen testen – direkt und risikofrei<br><sub>Kostenlos, Open Source und Peer-Review-fähig</sub></a>
     </div>
   </div>
 </div>
