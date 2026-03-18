@@ -126,7 +126,6 @@
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Helper function to shuffle an array
     const shuffleArray = (array) => {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -154,11 +153,15 @@
           img.src = urlPath;
           img.loading = "lazy";
 
-          // Extract filename (e.g., "google.com logo.png")
+          // 1. Get basename: "itsv.at.jpg" or "google.com logo.png"
           const baseName = urlPath.split('/').pop();
 
-          // Logic: Split by space, check first part for a period
-          const firstPart = baseName.split(' ')[0];
+          // 2. Remove the extension (last period + right side)
+          // "itsv.at.jpg" -> "itsv.at" | "customer logo.png" -> "customer logo"
+          const nameWithoutExt = baseName.replace(/\.[^.]+$/, "");
+
+          // 3. Split by space and take first part for domain check
+          const firstPart = nameWithoutExt.split(' ')[0];
           const hasDomain = firstPart.includes('.');
 
           if (hasDomain) {
@@ -168,7 +171,6 @@
             link.href = `https://www.${firstPart}`;
             link.target = "_blank";
             link.rel = "noopener noreferrer";
-            // Added class to opt-out of global "external link" icons (↗)
             link.className = "no-external-link-icon banner-link";
 
             link.appendChild(img);
@@ -194,7 +196,6 @@
       } catch (e) { console.error("Banner error:", e); }
     };
 
-    // Initialize both banners
     initSafeBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 75);
     initSafeBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 90);
   });
