@@ -25,20 +25,20 @@ permalink: "/quickstart"
 ## Step 2: One-time Preparations {#step-2}
 ### Client and User
 * **Initial Test:** Log on with a **test user** on Windows (Classic Outlook + Word). Using your own account may overwrite existing signatures if you do not use simulation mode.
-* **Platform Support:** Linux, macOS, and New Outlook require the [**Benefactor Circle add-on**](/benefactorcircle) and Exchange Online hosting.
+* **Platform Support:** Linux, macOS, and New Outlook require the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> and Exchange Online hosting.
 
-### Entra ID (For Exchange Online)
+### Entra ID (for Exchange Online)
 To access the Graph API, you must register an Entra ID app.
 * **Documentation:** Review `.\sample code\Create-EntraApp.ps1` for permissions and security audit details.
 * **Manual Setup:** Follow instructions in `.\config\default graph config.ps1`.
-* **Scripted Setup:** Have a 'Global Administrator' or 'ApplicationAdministrator' run:
+* **Scripted Setup:** Have a 'Global Administrator' or 'Application Administrator' run:
     ```powershell
     powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
     ```
     *For sovereign clouds (e.g., AzureChina), add: `-CloudEnvironment [EnvironmentName]`*
 
 ### Endpoint Security
-If using AppLocker, Defender, or CrowdStrike:
+If using AppLocker, Defender, CrowdStrike…:
 * Allow execution and library loading from the **TEMP** folder.
 * Trust software signed with **ExplicIT Consulting's** certificate (all included PS1 and DLL files are signed).
 
@@ -59,12 +59,12 @@ If you lack Classic Outlook or want a zero-impact trial of the software:
 1. Run the script with: `-SimulateUser a@example.com -SimulateMailboxes a@example.com`
 2. **See the results:** Open your **'Documents\Outlook Signatures'** folder. 
 
-This **"Simulation Mode"** creates the exact signatures for the simulated user as files on your disk. Instead of modifying Outlook, it generates a complete preview—the perfect way to verify your configuration without changing any system settings.
+This **"[Simulation Mode](/details#simulation-mode)"** creates the exact signatures for the simulated user as files on your disk. Instead of modifying Outlook, it generates a complete preview — the perfect way to verify your configuration without changing any system settings.
 
 
 ## Customize Settings {#customize}
 ### Use Your Own Templates
-* **Folder Structure:** Copy `.\sample templates` to a new folder. Follow our [recommended structure FAQ](/faq) to simplify future upgrades.
+* **Folder Structure:** Copy `.\sample templates` to a new folder. Follow our [recommended structure FAQ](/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files) to simplify future upgrades.
 * **Execution:** Point the script to your custom files:
     * `-SignatureTemplatePath 'c:\your_path'`
     * `-SignatureIniFile 'c:\your_path\_Signatures.ini'`
