@@ -108,7 +108,7 @@ When mailboxes are hosted in Exchange Online, the Outlook add-in needs an Entra 
 
 Creating a separate Entra ID app for the Outlook add-in is strongly recommended over modifying an existing app.
 
-You can run the following command to automatically create the Entra ID app. You need an Entra ID account with 'Application Administrator' or 'Global Admin' permissions.
+You can run the following command to automatically create the Entra ID app. You need an Entra ID account with 'Application Administrator' or 'Global Administrator' permissions.
 
 ```
 & '.\sample code\Create-EntraApp.ps1' -AppType 'OutlookAddIn' -AppName 'Set-OutlookSignatures Outlook add-in' -OutlookAddInUrl '<https address to your web server>'

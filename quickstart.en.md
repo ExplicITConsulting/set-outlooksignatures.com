@@ -24,7 +24,7 @@ permalink: "/quickstart"
 
 ## Step 2: One-time Preparations {#step-2}
 ### Client and User
-* **Initial Test:** Log on with a **test user** on Windows (Classic Outlook + Word). Using your own account may overwrite existing signatures if you do not use simulation mode.
+* **Initial Test:** Log on with a **test user** on Windows with Classic Outlook and Word. Using your own account may overwrite existing signatures if you do not use simulation mode.
 * **Platform Support:** Linux, macOS, and New Outlook require the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> and Exchange Online hosting.
 
 ### Entra ID (for Exchange Online)
