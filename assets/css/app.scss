@@ -7,11 +7,20 @@ $family-primary: Arial, sans-serif;
 $primary: black;
 $text: black;
 
-// Import Main CSS file from theme
 @import "main";
 
+// --- Global Typography & Layout ---
 html {
   scroll-padding-top: $navbar-height;
+}
+body {
+  hyphens: auto;
+}
+pre code {
+  color: black;
+}
+.footer {
+  padding-bottom: 0 !important;
 }
 
 h1,
@@ -21,28 +30,14 @@ h4,
 h5,
 h6 {
   scroll-margin-top: $navbar-height;
-}
-
-.title {
+  position: relative;
   font-weight: bold;
 }
 
 .title,
-.subtitle {
-  hyphens: manual;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: bold;
-    hyphens: manual;
-  }
-}
-
+.subtitle,
 .content {
+  hyphens: manual;
   h1,
   h2,
   h3,
@@ -54,142 +49,82 @@ h6 {
   }
 }
 
-body {
+// --- Specific Content Spacing ---
+.content {
+  h2:not(:first-child),
+  * ~ h2 {
+    margin-top: 1em;
+  }
+  h6 {
+    margin-bottom: 0;
+  }
+  ul,
+  ol {
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+  }
+}
+
+p {
+  &:has(+ ul),
+  &:has(+ ol) {
+    margin-bottom: 0 !important;
+  }
+  + ul,
+  + ol {
+    margin-top: 0 !important;
+  }
+}
+
+// --- Buttons & Links ---
+.button {
+  white-space: normal;
+  word-break: break-word;
   hyphens: auto;
+  cursor: pointer;
+  animation: pulse 5s ease-in-out infinite;
+
+  &:hover {
+    filter: brightness(125%);
+  }
 }
 
-pre code {
-  color: black;
+// Global External Link Icon
+a.mtrcs-external-link:not(.no-external-link-icon)::after {
+  content: "\00A0↗";
+  font-size: 0.8em;
+  vertical-align: top;
 }
 
-/* Make headings the positioning containers. */
+// --- Heading Anchors ---
+.anchor-link {
+  position: absolute;
+  left: -2em;
+  top: 50%;
+  transform: translateY(-50%);
+  text-decoration: none;
+  font-size: 0.5em;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  position: relative;
-}
-
-.button {
-  white-space: normal;
-  word-break: break-word;
-  hyphens: auto;
-}
-
-.anchor-link {
-  position: absolute;
-
-  /* Position to the left of the heading text. */
-  /* This moves the link outside the heading's content box. */
-  /* You can adjust this value (e.g., -1.2em) as needed. */
-  left: -2em;
-
-  /* Use transform ONLY for vertical centering. */
-  top: 50%;
-  transform: translateY(-50%);
-
-  /* Styling */
-  text-decoration: none;
-  font-size: 0.5em;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-
-/* Show the anchor link on heading hover */
-h1:hover .anchor-link,
-h2:hover .anchor-link,
-h3:hover .anchor-link,
-h4:hover .anchor-link,
-h5:hover .anchor-link,
-h6:hover .anchor-link {
-  opacity: 1;
-}
-
-/* Link-specific hover */
-.anchor-link:hover {
-  opacity: 1;
-}
-
-.content h2:not(:first-child) {
-  margin-top: 1em;
-}
-
-.content * ~ h2,
-.content * ~ * h2 {
-  margin-top: 1em;
-}
-
-.content h6 {
-  margin-bottom: 0em;
-}
-
-.content ul:not(:first-child),
-.content ol:not(:first-child) {
-  margin-top: 0;
-}
-
-.footer {
-  padding-bottom: 0 !important; // Or just 0 if not needed
-}
-
-html::after {
-  content: "";
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 25vw;
-  height: 33vh;
-  background-image: url("/assets/images/visitenkarten-hochkant.png");
-  background-repeat: no-repeat; /* Prevents the background image from repeating */
-  background-size: contain; /* Scales the background image to fit within the pseudo-element's dimensions (33.3vw x 50vh) while maintaining its aspect ratio. This ensures it's never taller than 50vh and respects the width preference. */
-  background-position: bottom right; /* Positions the background image at the bottom right corner of the pseudo-element */
-  pointer-events: none; /* Ensures the pseudo-element does not interfere with mouse events on content below it */
-  z-index: -1; /* Places the pseudo-element behind other content */
-  opacity: 0.5; /* Sets the transparency of the pseudo-element */
-}
-
-.button:hover {
-  /* Using filter() to make the button brighter on hover */
-  filter: brightness(125%);
-}
-
-@keyframes pulse {
-  0%,
-  75%,
-  100% {
-    /* Idle state: 0% (start), 75% (end of waiting), and 100% (end of cycle) */
-    transform: scale(1);
-    box-shadow: none;
-    filter: brightness(100%);
-  }
-  87.5% {
-    /* Peak of the pulse: Happens between 75% and 100% */
-    transform: scale(0.95);
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-    filter: brightness(90%);
+  &:hover .anchor-link {
+    opacity: 1;
   }
 }
 
-.button {
-  cursor: pointer;
-
-  /* Reset optimization hints since stagger is gone */
-  will-change: auto;
-  animation-play-state: running;
-
-  /* Set the animation back to 5 seconds to repeat the cycle every 5s */
-  animation-name: pulse;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-
-  /* No delay, so all buttons animate at the same time */
-  animation-delay: 0s;
-}
-
-/* 1. The Banner stays inside your Bulma column */
+// --- Scrolling Banners ---
 .customer-scrolling-banner,
 .signature-scrolling-banner {
   width: 100%;
@@ -198,36 +133,60 @@ html::after {
   position: relative;
 }
 
-/* 2. The Track is the only thing that is wide */
 .customer-scrolling-track,
 .signature-scrolling-track {
   display: flex;
-  width: max-content; /* Only the inner track expands */
+  width: max-content;
   flex-wrap: nowrap;
   gap: 2rem;
   will-change: transform;
-  filter: drop-shadow(0 0 0 transparent);
   transform: translate3d(0, 0, 0);
-  perspective: 1000px;
   backface-visibility: hidden;
+
+  // Shared Link/Image behavior
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    &.no-external-link-icon::after {
+      content: none !important;
+    }
+    &:hover {
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+    }
+  }
 }
 
-/* 3. Placeholders prevent the "0px width" speed bug */
-.customer-scrolling-track img {
-  height: 4rem;
-  width: auto;
-  min-width: 50px; /* Estimate to start animation immediately */
+// Unique Track Heights
+.customer-scrolling-track {
+  img,
+  a img {
+    height: 4rem;
+    width: auto;
+    min-width: 50px;
+  }
 }
 
-.signature-scrolling-track img {
-  height: 10em;
-  width: auto;
-  min-width: 150px; /* Estimate to start animation immediately */
+.signature-scrolling-track {
+  img,
+  a img {
+    height: 10em;
+    width: auto;
+    min-width: 150px;
+  }
 }
 
-/* 4. The Animation */
+// --- Animations ---
 .is-animating {
   animation: marquee-scroll var(--duration) linear infinite;
+
+  // Firefox "Butter" Hack
+  @-moz-document url-prefix() {
+    transform: rotate(0.0001deg);
+    filter: drop-shadow(0 0 0 transparent);
+  }
 }
 
 @keyframes marquee-scroll {
@@ -239,42 +198,43 @@ html::after {
   }
 }
 
-/* 5. Firefox "Butter" Hack */
-@-moz-document url-prefix() {
-  .is-animating {
-    transform: rotate(0.0001deg);
-    filter: drop-shadow(0 0 0 transparent);
+@keyframes pulse {
+  0%,
+  75%,
+  100% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  87.5% {
+    transform: scale(0.95);
+    filter: brightness(90%);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
   }
 }
 
-p + ul,
-p + ol {
-  margin-top: 0 !important;
-}
-
-p:has(+ ul),
-p:has(+ ol) {
-  margin-bottom: 0 !important;
-}
-
-a.mtrcs-external-link:not(.no-external-link-icon)::after {
-  content: "\00A0↗";
-  font-size: 0.8em;
-  vertical-align: top;
+// --- Visual Extras ---
+html::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 25vw;
+  height: 33vh;
+  background: url("/assets/images/visitenkarten-hochkant.png") no-repeat bottom right / contain;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 :root {
   --benefactor-circle-color: darkgoldenrod;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Set the text color for dark backgrounds */
-    --benefactor-circle-color: goldenrod;
-  }
-}
-
 [data-theme="dark"],
 .theme-dark {
   --benefactor-circle-color: goldenrod;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --benefactor-circle-color: goldenrod;
+  }
 }
