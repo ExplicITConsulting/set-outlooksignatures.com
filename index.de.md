@@ -2,10 +2,9 @@
 layout: "page"
 lang: "de"
 locale: "de"
-subtitle: |
-  Set-OutlookSignatures und das Benefactor Circle Add-on
 title: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
-description: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
+subtitle: "Outlook-Branding zentral steuern, ohne dass Ihre Daten Ihre vertrauten Systeme verlassen."
+description: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität. Outlook-Branding zentral steuern, ohne dass Ihre Daten Ihre vertrauten Systeme verlassen."
 permalink: "/"
 redirect_from:
 sitemap_priority: 1.0
