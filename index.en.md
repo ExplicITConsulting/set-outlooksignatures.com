@@ -11,7 +11,19 @@ redirect_from:
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
-<p>The free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed, reusable business asset — without external dependencies. Every email becomes a controlled touchpoint for your brand: up to date, consistent, and fully aligned across the organization.</p>
+<p><strong>Trusted worldwide and proven in high-security environments. Review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent pricing</a> and see how we <a href="https://set-outlooksignatures.com/features#feature-comparison">compare to cloud-hosted alternatives</a>.</strong></p>
+<div class="columns is-multiline">
+  <div class="column is-full-desktop is-full-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <div class="customer-scrolling-banner">
+        <div class="customer-scrolling-track">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p>The free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed, reusable business asset — without external dependencies.</p>
+<p>Every email becomes a controlled touchpoint for your brand: up to date, consistent, and fully aligned across the organization.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -37,17 +49,6 @@ sitemap_changefreq: weekly
       <div style="hyphens: manual;">
         <b>CISO: Total Sovereignty</b><br>
         Eliminate third-party risks. All your data stays 100% within your trusted systems.
-      </div>
-    </div>
-  </div>
-</div>
-<p><strong>Trusted worldwide and proven in high-security environments. Review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent pricing</a> and see how we <a href="https://set-outlooksignatures.com/features#feature-comparison">beat the competition</a>.</strong></p>
-<div class="columns is-multiline">
-  <div class="column is-full-desktop is-full-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <div class="customer-scrolling-banner">
-        <div class="customer-scrolling-track">
-        </div>
       </div>
     </div>
   </div>

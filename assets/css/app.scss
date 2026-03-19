@@ -131,6 +131,10 @@ h6 {
   overflow: hidden;
   display: block;
   position: relative;
+
+  &:hover .is-animating {
+    animation-play-state: paused;
+  }
 }
 
 .customer-scrolling-track,
@@ -169,12 +173,39 @@ h6 {
   }
 }
 
+// --- Grayscale Customer Logos ---
+.customer-scrolling-track {
+  img {
+    filter: grayscale(100%);
+    opacity: 0.6; // Slightly fade them to keep focus on your headline
+    transition:
+      filter 0.3s ease,
+      opacity 0.3s ease;
+
+    &:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+  }
+
+  img,
+  a img {
+    height: 2em;
+    width: auto;
+    min-width: 50px;
+  }
+}
+
 .signature-scrolling-track {
   img,
   a img {
     height: 10em;
     width: auto;
     min-width: 150px;
+
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 }
 
