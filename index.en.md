@@ -56,26 +56,39 @@ sitemap_changefreq: weekly
 
 <h2 id="demo">Experience it<span style="font-weight: bolder;"> in action</span></h2>
 <p>See how organizations use Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> to enforce 📣 dynamic branding and brand consistency, 🏛️ administrative governance, and 🧭 cross-platform data sovereignty — all without changing how users work.</p>
-<div class="box pt-0" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem;">
+
+<div class="box pt-0" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
   <div class="columns">
     <div class="column is-half">
-      <h3>Personal demo</h3>
-      <p>Schedule a personal walkthrough to see how this fits your specific infrastructure and compliance needs.</p>
-      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="no-external-link-icon button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);" target="_blank"><span>Expert Demo</span><span>See data sovereignty in action</span></a>
+      <h3>Personal Demo</h3>
+      <p>Book a live, interactive session with our team to see how the solution adapts to your specific infrastructure and compliance requirements.</p>
+      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" 
+         class="no-external-link-icon button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
+         style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center; text-align: center;" 
+         target="_blank">
+        <span>Schedule Interactive Demo</span>
+        <span><small>Explore your specific use cases live</small></span>
+      </a>
     </div>
     <div class="column is-half">
       <h3>Quickstart</h3>
-      <p>Follow our 3-step process to deploy your first signatures in minutes and create a robust starting point.</p>
-      <a href="https://set-outlooksignatures.com/quickstart" class="button is-link is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; padding: 0.5rem 1rem;"><span>Test Your Signatures – Directly and Risk-Free</span><span>Free, open-source, peer reviewable</span></a>
+      <p>Follow our 3-step process to deploy your first signatures in minutes and create a robust, production-ready starting point.</p>
+      <a href="https://set-outlooksignatures.com/quickstart" 
+         class="button is-link is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
+         style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <span>Start Technical Deployment</span>
+        <span><small>Free, open-source, and peer-reviewable</small></span>
+      </a>
     </div>
   </div>
 </div>
+
 <div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <div class="signature-scrolling-banner">
         <div class="signature-scrolling-track">
-        </div>
+          </div>
       </div>
     </div>
   </div>

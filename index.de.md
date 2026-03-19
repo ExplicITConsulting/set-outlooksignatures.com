@@ -4,7 +4,7 @@ lang: "de"
 locale: "de"
 title: |
   <span class="title is-3">E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität</span>
-subtitle: "Steuern Sie ihr Outlook-Branding zentral, ohne dass Ihre Daten Ihre vertrauten Systeme verlassen"
+subtitle: "Steuern Sie Ihr Outlook-Branding zentral, ohne dass Ihre Daten Ihre vertrauten Systeme verlassen"
 description: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität. Outlook-Branding zentral steuern, ohne dass Ihre Daten Ihre vertrauten Systeme verlassen."
 permalink: "/"
 redirect_from:

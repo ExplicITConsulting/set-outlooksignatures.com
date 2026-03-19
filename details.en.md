@@ -7,12 +7,10 @@ subtitle: "What it needs, how it works and how to use it"
 description: "Discover Set-OutlookSignatures technical details: system requirements, supported platforms, template formats, group logic, variables, and simulation mode."
 hero_link: /quickstart
 hero_link_text: "<span><b>Quickstart guide</b></span>"
-hero_link_style: |
-  style="background-color: LawnGreen;"
+hero_link_style: 
 hero_link2: /support
 hero_link2_text: "<span><b>Support</b></span>"
-hero_link2_style: |
-  style="background-color: LawnGreen;"
+hero_link2_style: 
 permalink: "/details"
 redirect_from:
   - "/details/"

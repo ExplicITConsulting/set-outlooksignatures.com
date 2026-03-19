@@ -7,16 +7,13 @@ subtitle: "Our solution at a glance and in benchmark"
 description: "Compare features and benefits of our solution at a glance with clear benchmarks for informed decisions."
 hero_link: "#features"
 hero_link_text: "<span><b>Features: </b>What our solution is able to do</span>"
-hero_link_style: |
-  style="background-color: LawnGreen;"
+hero_link_style:
 hero_link2: "#feature-comparison"
 hero_link2_text: "<span><b>Feature comparison </b>with competitors</span>"
-hero_link2_style: |
-  style="background-color: LawnGreen;"
+hero_link2_style:
 hero_link3: "/quickstart"
 hero_link3_text: "<span><b>Quickstart: </b>Signatures in minutes</span>"
-hero_link3_style: |
-  style="background-color: LawnGreen;"
+hero_link3_style:
 permalink: "/features"
 redirect_from:
   - "/features/"

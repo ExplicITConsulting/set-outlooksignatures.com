@@ -8,15 +8,15 @@ description: "Extend Set-OutlookSignatures with mobile support, roaming sync, OO
 hero_link: "#demo"
 hero_link_text: "<span><b>Schedule your personal demo now</b></span>"
 hero_link_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
+   style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 hero_link2: "#trial"
 hero_link2_text: "<span><b>Get a 14-day trial license</b></span>"
 hero_link2_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
+   style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 hero_link3: "#order"
 hero_link3_text: "<span><b>Request a license quote</b></span>"
 hero_link3_style: |
-   style="background-color: LawnGreen; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
+   style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   width: 1200
