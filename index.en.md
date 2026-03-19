@@ -60,7 +60,7 @@ sitemap_changefreq: weekly
 </div>
 
 <p class="has-text-centered mb-5">
-  See how we <a href="https://set-outlooksignatures.com/features#feature-comparison">compare to cloud-hosted alternatives</a> and review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent, non-renewing pricing</a>.
+  See how we <a href="https://set-outlooksignatures.com/features#feature-comparison">compare to alternatives</a> and review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent, non-renewing pricing</a>.
 </p>
 
 <div class="columns is-multiline mb-6">
