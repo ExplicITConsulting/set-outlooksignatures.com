@@ -47,6 +47,16 @@ sitemap_changefreq: weekly
   </div>
 </div>
 <p>No hidden fees, no surprises — trusted worldwide in the most hardened environments. Review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent pricing</a> and see how we <a href="https://set-outlooksignatures.com/features#feature-comparison">beat the competition</a>.</p>
+<div class="columns is-multiline">
+  <div class="column is-full-desktop is-full-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <div class="customer-scrolling-banner">
+        <div class="customer-scrolling-track">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <h2 id="demo">Experience it<span style="font-weight: bolder;"> in action</span></h2>
@@ -88,16 +98,6 @@ sitemap_changefreq: weekly
       <h3>Quickstart</h3>
       <p>Follow our 3-step process to deploy your first signatures in minutes and create a robust starting point.</p>
       <a href="https://set-outlooksignatures.com/quickstart" class="button is-link is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; padding: 0.5rem 1rem;"><span>Test your signatures – directly and risk-free</span><span>Free, Open Source and peer reviewable</span></a>
-    </div>
-  </div>
-</div>
-<div class="columns is-multiline">
-  <div class="column is-full-desktop is-full-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <div class="customer-scrolling-banner">
-        <div class="customer-scrolling-track">
-        </div>
-      </div>
     </div>
   </div>
 </div>
