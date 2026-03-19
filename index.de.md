@@ -10,8 +10,7 @@ redirect_from:
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
-<p>Das kostenlose Open-Source-Tool Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> machen E-Mail-Signaturen und Abwesenheitsnotizen zu einem zentral verwalteten, wiederverwendbaren Business-Asset – ganz ohne externe Abhängigkeiten.</p>
-<p>Jede E-Mail wird zu einem kontrollierten Touchpoint für Ihre Marke: aktuell, konsistent und unternehmensweit einheitlich ausgerichtet.</p>
+<p>Das kostenlose Open-Source-Tool Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> machen E-Mail-Signaturen und Abwesenheitsnotizen zu einem zentral verwalteten, wiederverwendbaren Business-Asset – ganz ohne externe Abhängigkeiten. Jede E-Mail wird zu einem kontrollierten Touchpoint für Ihre Marke: aktuell, konsistent und unternehmensweit einheitlich ausgerichtet.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
