@@ -77,7 +77,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<div class="box" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem;">
+<div class="box pt-0" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem;">
   <div class="columns">
     <div class="column is-half">
       <h3>Personal demo</h3>
