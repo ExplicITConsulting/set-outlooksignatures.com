@@ -132,6 +132,13 @@ h6 {
   display: block;
   position: relative;
 
+  // Slight background for signatures in light mode (is cleared for dark mode later)
+  &.signature-scrolling-banner {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    padding: 1rem 0;
+  }
+
   // Pause the movement when the user interacts
   &:hover .is-animating {
     animation-play-state: paused;
@@ -182,6 +189,7 @@ h6 {
   img:hover {
     filter: grayscale(0%);
     opacity: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -204,6 +212,7 @@ h6 {
     transform: scale(1.05);
     z-index: 10;
     opacity: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
 
   // Subtle focus effect: dim other signatures when one is being inspected
@@ -271,4 +280,9 @@ html::after {
   :root {
     --benefactor-circle-color: goldenrod;
   }
+}
+
+[data-theme="dark"] .signature-scrolling-banner,
+.theme-dark .signature-scrolling-banner {
+  background: transparent;
 }
