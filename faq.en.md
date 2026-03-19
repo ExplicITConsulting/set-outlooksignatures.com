@@ -17,8 +17,8 @@ sitemap_changefreq: monthly
 <p>This FAQ highlights common topics and clarifies typical points of confusion. If your question isn't covered or you need tailored advice, additional resources are available:</p>
 <p>
   <div class="buttons">
-    <a href="/parameters" class="button is-info is-normal is-hovered has-text-black  has-text-weight-bold">Parameters</a>
-    <a href="/support" class="button is-info is-normal is-hovered has-text-black  has-text-weight-bold">Support</a>
+    <a href="/parameters" class="button is-info is-normal is-hovered  has-text-weight-bold">Parameters</a>
+    <a href="/support" class="button is-info is-normal is-hovered  has-text-weight-bold">Support</a>
   </div>
 </p>
 
