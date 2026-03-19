@@ -91,7 +91,7 @@ sitemap_changefreq: weekly
       <h3>Self-Service Quickstart</h3>
       <p>Follow our 3-step process to deploy your first signatures in 15 minutes. Peer-reviewable and production-ready.</p>
       <a href="https://set-outlooksignatures.com/quickstart" 
-         class="button is-info is-outlined is-normal has-text-black has-text-weight-bold is-flex-direction-column" 
+         class="button is-info is-outlined is-normal has-text-weight-bold is-flex-direction-column" 
          style="height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center; background-color: white !important;">
         <span>Try it Yourself</span>
         <span><small>100% Free & Open Source Core</small></span>
