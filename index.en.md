@@ -10,9 +10,11 @@ redirect_from:
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
+<!--
 <h2 id="outlook-signature-management">
   <span style="font-weight: bolder;">Create value </span>without giving up data sovereignty
 </h2>
+-->
 <p>The free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed, reusable business asset — without external dependencies.</p>
 <p>Every email becomes a controlled touchpoint for your brand: up to date, consistent, and fully aligned across the organization.</p>
 <div class="columns is-multiline">
@@ -54,7 +56,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🧭
       <div style="hyphens: manual;">
-        <b>Cross-Platform Sovereignty</b>
+        Cross-Platform Sovereignty
       </div>
     </div>
   </div>
@@ -62,7 +64,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       📣
       <div style="hyphens: manual;">
-        <b>Dynamic Branding and Marketing</b>
+        Dynamic Branding and Marketing
       </div>
     </div>
   </div>
@@ -70,12 +72,12 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🏛️
       <div style="hyphens: manual;">
-        <b>Administrative Governance</b>
+        Administrative Governance
       </div>
     </div>
   </div>
 </div>
-<div class="box" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
+<div class="box" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem;">
   <div class="columns">
     <div class="column is-half">
       <h3>Personal demo</h3>
