@@ -19,13 +19,13 @@ sitemap_changefreq: weekly
   <span class="tag is-dark">Sovereign Cloud Ready</span>
 </div>
 
-<p><strong>Trusted worldwide and proven in high-security environments,</strong> the free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed business asset—without external dependencies.</p>
+<p><strong>Trusted worldwide and proven in high-security environments,</strong> the free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed business asset — without external dependencies.</p>
 
-<p>By leveraging <strong>Microsoft Roaming Signatures</strong> and the Graph API, we provide the world’s only sovereign, native-sync experience that works across all Outlook editions and platforms—including <strong>Exchange Online, Hybrid, and On-Premises</strong>—silently in the background.</p>
+<p>By leveraging <strong>Microsoft Roaming Signatures</strong>, we provide the world’s only sovereign, native-sync experience that works across all Outlook editions and platforms — including <strong>Exchange Online, Hybrid, and On-Premises</strong> — silently in the background.</p>
 
 <div class="columns is-multiline mb-6">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid blue;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         📣
         <div style="hyphens: manual;">
@@ -36,23 +36,23 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid yellow;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         🛠️
         <div style="hyphens: manual;">
           <b>IT: Hybrid & On-Prem Support</b><br>
-          No agents, no "man-in-the-middle" routing. Sync signatures natively across Cloud, Hybrid, and On-Premises environments via PowerShell or Graph.
+          Central or decentral deployment, no "man-in-the-middle" routing. Sync signatures natively across Cloud, Hybrid, and On-Premises environments.
         </div>
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid green;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         🛡️
         <div style="hyphens: manual;">
           <b>Security: Total Sovereignty</b><br>
-          Zero third-party data processing. Your PII and email traffic never leave your trusted boundary. Fully audit-ready and air-gap compatible.
+          Zero third-party data processing. Your data and email traffic never leave your trusted boundary. Fully audit-ready.
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@ sitemap_changefreq: weekly
 </div>
 
 <h2 id="demo">Experience it <span style="font-weight: bolder;">in action</span></h2>
-<p>Organizations use our ecosystem to enforce 📣 dynamic branding, 🏛️ administrative governance, and 🧭 cross-platform data sovereignty—all without changing how users work.</p>
+<p>Organizations use our ecosystem to enforce 📣 dynamic branding, 🏛️ administrative governance, and 🧭 cross-platform data sovereignty — all without changing how users work.</p>
 
 <div class="box pt-0" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid goldenrod; border-right: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
   <div class="columns">
@@ -92,8 +92,8 @@ sitemap_changefreq: weekly
       <h3>Self-Service Quickstart</h3>
       <p>Follow our 3-step process to deploy your first signatures in 15 minutes. Peer-reviewable and production-ready.</p>
       <a href="https://set-outlooksignatures.com/quickstart" 
-         class="button is-info is-outlined is-normal has-text-black has-text-weight-bold is-flex-direction-column" 
-         style="height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center; background-color: #fff !important; color: #000 !important;">
+         class="button is-info is-outlined is-normal is-outlined has-text-weight-bold is-flex-direction-column" 
+         style="height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
         <span>Try it Yourself</span>
         <span><small>100% Free & Open Source Core</small></span>
       </a>
@@ -111,7 +111,7 @@ sitemap_changefreq: weekly
 </div>
 
 <h2 id="power">The <span style="font-weight: bolder;">power</span> of the ecosystem</h2>
-<p>Our modular architecture delivers capabilities no cloud relay solution can match. Go beyond static directory attributes by ingesting data from any source—APIs, LDAP, On-Prem AD—and tailoring it with unlimited custom logic.</p>
+<p>Our modular architecture delivers capabilities no cloud relay solution can match. Go beyond static directory attributes by ingesting data from any source — APIs, LDAP, databases, files — and tailoring it with unlimited custom logic.</p>
 
 <style>
   .ecosystem-cell { transition: all 0.2s ease; border-radius: 6px; padding: 1.25rem; }
@@ -159,7 +159,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🧩</span>
-      <div><b>Native Integration</b><br><small>Direct Graph API or Local injection; no mail flow changes.</small></div>
+      <div><b>Native Integration</b><br><small>Direct-to-mailbox synchronization; no mail flow changes required.</small></div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
