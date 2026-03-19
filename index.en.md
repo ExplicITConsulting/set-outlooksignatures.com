@@ -118,19 +118,7 @@ sitemap_changefreq: weekly
 </h2>
 <p>Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> form a unique ecosystem for centrally managed email signatures and out-of-office replies fully under your control.</p>
 <p>You get enterprise-grade governance, full data sovereignty, and seamless integration into your existing Microsoft 365 and Exchange environment.</p>
-
-<p>Our modular architecture delivers capabilities no other solution can match. Go beyond static directory attributes by ingesting data from any source within your trusted environment:</p>
-
-<div class="columns is-multiline is-mobile mb-6">
-  <div class="column is-6-tablet is-12-mobile">
-    <p class="mb-2"><strong>🌐 Web Services & APIs</strong></p>
-    <p class="mb-0"><strong>🗄️ LDAP & Active Directory</strong></p>
-  </div>
-  <div class="column is-6-tablet is-12-mobile">
-    <p class="mb-2"><strong>📊 SQL Databases & Local Files</strong></p>
-    <p class="mb-0"><strong>🛠️ Unlimited Custom Logic & Variables</strong></p>
-  </div>
-</div>
+<p>Our modular architecture delivers capabilities no other solution can match. Go beyond static directory attributes by ingesting data from any source - web services, APIs, LDAP directories, databases, files - and tailoring it to your needs with unlimited custom logic and variables.</p>
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
