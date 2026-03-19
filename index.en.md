@@ -19,7 +19,7 @@ sitemap_changefreq: weekly
       📣
       <div style="hyphens: manual;">
         <b>Marketing: Brand Consistency</b><br>
-        Enforce unified branding and dynamic campaigns across every outgoing message.
+        Enforce unified branding and dynamic campaigns across every outgoing message, regardless of device.
       </div>
     </div>
   </div>
@@ -27,8 +27,8 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🛠️
       <div style="hyphens: manual;">
-        <b>IT: Automated Presence</b><br>
-        Centralize signatures and OOF management with zero client footprint or new agents.
+        <b>IT: Zero-Footprint Deployment</b><br>
+        No new agents, no additional servers, and no "man-in-the-middle" mail routing. Use your existing infra.
       </div>
     </div>
   </div>
@@ -36,8 +36,8 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🛡️
       <div style="hyphens: manual;">
-        <b>CISO: Total Sovereignty</b><br>
-        Eliminate third-party risks. All your data stays 100% within your trusted systems.
+        <b>CISO & Compliance: Total Sovereignty</b><br>
+        Eliminate third-party data processing risks. All your data stays 100% within your trusted systems.
       </div>
     </div>
   </div>
@@ -106,7 +106,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      ✨
       <div style="hyphens: manual;">
         <b>Frictionless Adoption</b><br>
         Easy for IT and marketing to manage, invisible to end users.
@@ -115,7 +115,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🧬
       <div style="hyphens: manual;">
         <b>Dynamic Content</b><br>
         Use dynamic data from users, mailboxes, managers, and your own sources.
@@ -124,7 +124,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      📅
       <div style="hyphens: manual;">
         <b>Centralized OOF Control</b><br>
         Control out-of-office replies centrally, for internal and external recipients.
@@ -133,7 +133,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      📱
       <div style="hyphens: manual;">
         <b>Cross-Platform</b><br>
         Works everywhere: All Outlook editions on any platform, on‑prem and in every M365 cloud.
@@ -142,7 +142,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🏢
       <div style="hyphens: manual;">
         <b>Enterprise Versatility</b><br>
         Built for real-world Exchange: Shared mailboxes, delegates, and roaming signatures.
@@ -151,7 +151,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🎯
       <div style="hyphens: manual;">
         <b>Flexible Assignment</b><br>
         Assign signatures by department, role, language, or any custom rule.
@@ -160,7 +160,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🧩
       <div style="hyphens: manual;">
         <b>Native Integration</b><br>
         Runs on your existing systems with zero new third-party dependencies.
@@ -169,7 +169,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🔒
       <div style="hyphens: manual;">
         <b>Sovereign by Design</b><br>
         Data stays within your established security and governance structures.
@@ -178,7 +178,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🚀
       <div style="hyphens: manual;">
         <b>Marketing Impact</b><br>
         Turn every email into a powerful, cost-free, and brand-safe marketing channel.
