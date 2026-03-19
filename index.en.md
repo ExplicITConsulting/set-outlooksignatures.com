@@ -2,9 +2,9 @@
 layout: "page"
 lang: "en"
 locale: "en"
-subtitle: |
-  Set-OutlookSignatures and the Benefactor Circle add-on
 title: "Email signatures and out-of-office replies with data sovereignty"
+title: "Unified Signatures & OOF. Total Data Sovereignty."
+subtitle: "Centrally manage Outlook branding and presence without your data ever leaving your trusted systems."
 description: "Email signatures and out-of-office replies with data sovereignty"
 permalink: "/"
 redirect_from:
@@ -21,7 +21,8 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       📣
       <div style="hyphens: manual;">
-        <b>Marketing: Unified Brand Control</b><br>Enforce consistent branding, dynamic marketing campaigns, and up-to-date contact details on every message.
+        <b>Marketing: Brand Consistency</b><br>
+        Enforce unified branding and dynamic campaigns across every outgoing message.
       </div>
     </div>
   </div>
@@ -29,15 +30,17 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🛠️
       <div style="hyphens: manual;">
-        <b>IT: Painless Automation</b><br>Automate signature deployment and centralize OOF management within minutes, no new consoles to learn. Invisible to employees, zero footprint on clients.
+        <b>IT: Automated Presence</b><br>
+        Centralize signatures and OOF management with zero client footprint or new agents.
       </div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      🔒
+      🛡️
       <div style="hyphens: manual;">
-        <b>Legal: Total Data Sovereignty</b><br>Remove compliance risks from third-party processors. Total sovereignty, your data never leaves your controlled environment.
+        <b>CISO: Total Sovereignty</b><br>
+        Eliminate third-party risks. Employee data stays 100% within your trusted systems.
       </div>
     </div>
   </div>
@@ -114,7 +117,20 @@ sitemap_changefreq: weekly
 </h2>
 <p>Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> form a unique ecosystem for centrally managed email signatures and out-of-office replies fully under your control.</p>
 <p>You get enterprise-grade governance, full data sovereignty, and seamless integration into your existing Microsoft 365 and Exchange environment.</p>
-<p>This combination delivers capabilities no other solution offers, made possible by its advanced, modular architecture.<br>It goes far beyond static directory attributes: You can easily extend it to ingest data from virtually any source — including web services, LDAP directories, databases, and files — and define fully custom variables tailored to your organization.</p>
+
+<p>Our modular architecture delivers capabilities no other solution can match. Go beyond static directory attributes by ingesting data from any source within your trusted environment:</p>
+
+<div class="columns is-multiline is-mobile mb-6">
+  <div class="column is-6-tablet is-12-mobile">
+    <p class="mb-2"><strong>🌐 Web Services & APIs</strong></p>
+    <p class="mb-0"><strong>🗄️ LDAP & Active Directory</strong></p>
+  </div>
+  <div class="column is-6-tablet is-12-mobile">
+    <p class="mb-2"><strong>📊 SQL Databases & Local Files</strong></p>
+    <p class="mb-0"><strong>🛠️ Unlimited Custom Logic & Variables</strong></p>
+  </div>
+</div>
+
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -138,7 +154,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Out-Of-Office Replies</b><br>
+        <b>Centralized OOF Control</b><br>
         Control out-of-office replies centrally, for internal and external recipients.
       </div>
     </div>
@@ -157,7 +173,7 @@ sitemap_changefreq: weekly
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Enterprise Versatility</b><br>
-        Built for real-world Exchange: Shared mailboxes, delegates, roaming signatures, and more.
+        Built for real-world Exchange: Shared mailboxes, delegates, and roaming signatures.
       </div>
     </div>
   </div>
@@ -166,7 +182,7 @@ sitemap_changefreq: weekly
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Flexible Assignment</b><br>
-        Assign signatures by department, role, language, location, time, or any custom rule.
+        Assign signatures by department, role, language, or any custom rule.
       </div>
     </div>
   </div>
@@ -174,8 +190,8 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Zero-Footprint Integration</b><br>
-        Everything runs on your existing systems and creates no new dependencies.
+        <b>Native Integration</b><br>
+        Runs on your existing systems with zero new third-party dependencies.
       </div>
     </div>
   </div>
@@ -183,8 +199,8 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Unsurpassed Data Privacy</b><br>
-        Your data never leaves your environment and stays within your established security and governance structures.
+        <b>Sovereign by Design</b><br>
+        Data stays within your established security and governance structures.
       </div>
     </div>
   </div>
@@ -192,8 +208,8 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
-        <b>Additional Marketing Channel</b><br>
-        Turn email signatures into a powerful, cost-free marketing channel.
+        <b>Marketing Impact</b><br>
+        Turn every email into a powerful, cost-free, and brand-safe marketing channel.
       </div>
     </div>
   </div>
