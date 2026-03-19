@@ -10,11 +10,6 @@ redirect_from:
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
-<!--
-<h2 id="outlook-signature-management">
-  <span style="font-weight: bolder;">Create value </span>without giving up data sovereignty
-</h2>
--->
 <p>The free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed, reusable business asset — without external dependencies.</p>
 <p>Every email becomes a controlled touchpoint for your brand: up to date, consistent, and fully aligned across the organization.</p>
 <div class="columns is-multiline">

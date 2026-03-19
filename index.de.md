@@ -10,9 +10,6 @@ redirect_from:
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
-<h2 id="outlook-signature-management">
-  <span style="font-weight: bolder;">Mehrwert schaffen, </span>ohne die Datensouveränität aufzugeben
-</h2>
 <p>Das kostenlose Open-Source-Tool Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> machen E-Mail-Signaturen und Abwesenheitsnotizen zu einem zentral verwalteten, wiederverwendbaren Business-Asset – ganz ohne externe Abhängigkeiten.</p>
 <p>Jede E-Mail wird zu einem kontrollierten Touchpoint für Ihre Marke: aktuell, konsistent und unternehmensweit einheitlich ausgerichtet.</p>
 <div class="columns is-multiline">
@@ -42,6 +39,16 @@ sitemap_changefreq: weekly
   </div>
 </div>
 <p>Keine versteckten Kosten, keine Überraschungen — weltweit bewährt in Hochsicherheitsumgebungen. Überzeugen Sie sich von unserer <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparenten Preisgestaltung</a> und sehen Sie, wie wir uns <a href="https://set-outlooksignatures.com/features#feature-comparison">gegen den Wettbewerb behaupten</a>.</p>
+<div class="columns is-multiline">
+  <div class="column is-full-desktop is-full-tablet is-full-mobile">
+    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+      <div class="customer-scrolling-banner">
+        <div class="customer-scrolling-track">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <h2 id="demo">Erleben Sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
@@ -83,16 +90,6 @@ sitemap_changefreq: weekly
       <h3>Quickstart</h3>
       <p>Folgen Sie unserer 3-Schritte-Anleitung, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen und eine solide Basis zu schaffen.</p>
       <a href="https://set-outlooksignatures.com/quickstart" class="button is-link is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; padding: 0.5rem 1rem;"><span>Ihre Signaturen testen – direkt und risikofrei</span><span>Kostenlos, Open Source und Peer-Review-fähig</span></a>
-    </div>
-  </div>
-</div>
-<div class="columns is-multiline">
-  <div class="column is-full-desktop is-full-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <div class="customer-scrolling-banner">
-        <div class="customer-scrolling-track">
-        </div>
-      </div>
     </div>
   </div>
 </div>
