@@ -18,8 +18,8 @@ Set-OutlookSignatures is the open-source standard for Email signatures and out-o
 
 <p>
   <div class="buttons">
-    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-info is-normal is-hoveredhas-text-weight-bold mtrcs-download">Download software</a>
-    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md" class="button is-info is-normal is-hoveredhas-text-weight-bold">Read the changelog</a>
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal is-hovered has-text-black has-text-weight-bold mtrcs-download">Download software</a>
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold">Read the changelog</a>
     <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="sos-download-link mtrcs-download no-external-link-icon"><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=flat" alt="Number of downloads" loading="lazy"></a>
     <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Number of open issues and link to issue list" loading="lazy"></a>
   </div>
@@ -27,9 +27,9 @@ Set-OutlookSignatures is the open-source standard for Email signatures and out-o
 
 <p>You can deploy signatures within minutes. Just follow the easy 3-step-process to get a glimpse of what Set-OutlookSignatures can do, and create a robust starting point for your own customizations.</p>
 
-<p><a href="/quickstart" class="button is-info is-normal is-hoveredhas-text-weight-bold">Quickstart guide</a></p>
+<p><a href="/quickstart" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold">Quickstart guide</a></p>
 
 <h2 id="benefactor-circle">The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></h2>
 <p>The Benefactor Circle add-on from <a href="https://explicitconsulting.at">ExplicIT Consulting</a> enhances the open-source version with a great set of additional features for your enterprise.</p>
 
-<p><a href="/benefactorcircle" class="button is-info is-normal is-hoveredhas-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">The Benefactor Circle add-on</a></p>
+<p><a href="/benefactorcircle" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">The Benefactor Circle add-on</a></p>
