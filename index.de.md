@@ -37,7 +37,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p class="has-text-centered has-text-weight-bold">Weltweit geschätzt und in hochsicheren Umgebungen bewährt. Überzeugen Sie sich von unserer <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparenten Preisgestaltung</a> und sehen Sie, wie wir uns <a href="https://set-outlooksignatures.com/features#feature-comparison">gegen den Wettbewerb behaupten</a>.</p>
+<p class="has-text-weight-bold">Weltweit geschätzt und in hochsicheren Umgebungen bewährt. Überzeugen Sie sich von unserer <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparenten Preisgestaltung</a> und sehen Sie, wie wir uns <a href="https://set-outlooksignatures.com/features#feature-comparison">gegen den Wettbewerb behaupten</a>.</p>
 <div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
