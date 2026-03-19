@@ -85,7 +85,7 @@ sitemap_changefreq: weekly
          style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
          target="_blank">
         <span>Schedule Interactive Demo</span>
-        <span><small>Ideal for IT & Marketing leadership</small></span>
+        <span><small>Ideal for Security, IT, and Marketing leadership</small></span>
       </a>
     </div>
     <div class="column is-half">
@@ -122,13 +122,13 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>✨</span>
-      <div><b>Frictionless Adoption</b><br>Invisible to end users; silent background sync.</div>
+      <div><b>Frictionless Adoption</b><br>Invisible to end users, silent background sync.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🧬</span>
-      <div><b>Dynamic Content</b><br>Collapses empty lines automatically; logic-based banners.</div>
+      <div><b>Dynamic Content</b><br>Collapses empty lines automatically, logic-based banners.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
@@ -152,13 +152,13 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🏢</span>
-      <div><b>Enterprise Versatility</b><br>Supports shared mailboxes, delegates, and complex AD logic.</div>
+      <div><b>Enterprise Versatility</b><br>Supports shared mailboxes, delegates, and custom logic.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🧩</span>
-      <div><b>Native Integration</b><br>Direct-to-mailbox synchronization; no mail flow changes required.</div>
+      <div><b>Native Integration</b><br>Direct-to-mailbox synchronization, no mail flow changes required.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
@@ -170,7 +170,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🚀</span>
-      <div><b>Marketing Impact</b><br>Design in Word; deploy brand-safe campaigns globally.</div>
+      <div><b>Marketing Impact</b><br>Design in Word, deploy brand-safe campaigns globally.</div>
     </div>
   </div>
 </div>
