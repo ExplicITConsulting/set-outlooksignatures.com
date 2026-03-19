@@ -2,7 +2,6 @@
 layout: "page"
 lang: "en"
 locale: "en"
-title: "Email signatures and out-of-office replies with data sovereignty"
 title: "Unified Signatures & OOF. Total Data Sovereignty."
 subtitle: "Centrally manage Outlook branding and presence without your data ever leaving your trusted systems."
 description: "Email signatures and out-of-office replies with data sovereignty"
