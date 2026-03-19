@@ -25,7 +25,7 @@ sitemap_changefreq: weekly
 
 <div class="columns is-multiline mb-6">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid blue;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         📣
         <div style="hyphens: manual;">
@@ -36,7 +36,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid yellow;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         🛠️
         <div style="hyphens: manual;">
@@ -47,7 +47,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid green;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         🛡️
         <div style="hyphens: manual;">
@@ -176,6 +176,6 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p class="mt-6 is-italic has-text-centered has-text-grey-light">
-  The <strong>Benefactor Circle</strong> license funds the open-source mission, ensuring the core engine remains free and peer-reviewable for the global community.
+<p class="mt-6 is-italic has-text-centered">
+  The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> license funds the open-source mission, ensuring the core engine remains free and peer-reviewable for the global community.
 </p>
