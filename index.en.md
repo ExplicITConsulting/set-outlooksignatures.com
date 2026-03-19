@@ -57,7 +57,7 @@ sitemap_changefreq: weekly
 <h2 id="demo">Experience it<span style="font-weight: bolder;"> in action</span></h2>
 <p>See how organizations use Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> to enforce 📣 dynamic branding and brand consistency, 🏛️ administrative governance, and 🧭 cross-platform data sovereignty — all without changing how users work.</p>
 
-<div class="box pt-0" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
+<div class="box pt-0" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; border-right 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
   <div class="columns">
     <div class="column is-half">
       <h3>Guided Walkthrough</h3>
