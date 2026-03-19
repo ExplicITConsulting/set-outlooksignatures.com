@@ -25,7 +25,7 @@ sitemap_changefreq: weekly
 
 <div class="columns is-multiline mb-6">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         📣
         <div style="hyphens: manual;">
@@ -36,7 +36,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         🛠️
         <div style="hyphens: manual;">
@@ -47,7 +47,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         🛡️
         <div style="hyphens: manual;">
@@ -59,11 +59,11 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p class="has-text-centered">
+<p class="has-text-centered mb-5">
   See how we <a href="https://set-outlooksignatures.com/features#feature-comparison">compare to cloud-hosted alternatives</a> and review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent, non-renewing pricing</a>.
 </p>
 
-<div class="columns is-multiline mb-5">
+<div class="columns is-multiline mb-6">
   <div class="column is-full">
     <div class="customer-scrolling-banner">
       <div class="customer-scrolling-track">
@@ -72,7 +72,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<h2 id="demo">Experience it<span style="font-weight: bolder;"> in action</span></h2>
+<h2 id="demo">Experience it <span style="font-weight: bolder;">in action</span></h2>
 <p>Organizations use our ecosystem to enforce 📣 dynamic branding, 🏛️ administrative governance, and 🧭 cross-platform data sovereignty—all without changing how users work.</p>
 
 <div class="box pt-0" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid goldenrod; border-right: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
@@ -114,67 +114,68 @@ sitemap_changefreq: weekly
 <p>Our modular architecture delivers capabilities no cloud relay solution can match. Go beyond static directory attributes by ingesting data from any source—APIs, LDAP, On-Prem AD—and tailoring it with unlimited custom logic.</p>
 
 <style>
-  .ecosystem-cell { transition: all 0.2s ease; border-radius: 6px; padding: 1rem; }
+  .ecosystem-cell { transition: all 0.2s ease; border-radius: 6px; padding: 1.25rem; }
   .ecosystem-cell:hover { background-color: rgba(218, 165, 32, 0.15); transform: translateY(-3px); }
+  .ecosystem-cell b { color: var(--benefactor-circle-color, goldenrod); }
 </style>
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
-    <div style="display: flex; gap: 0.5em;">
+    <div style="display: flex; gap: 0.75em;">
       <span>✨</span>
       <div><b>Frictionless Adoption</b><br><small>Invisible to end users; silent background sync.</small></div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
-    <div style="display: flex; gap: 0.5em;">
+    <div style="display: flex; gap: 0.75em;">
       <span>🧬</span>
       <div><b>Dynamic Content</b><br><small>Collapses empty lines automatically; logic-based banners.</small></div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
-    <div style="display: flex; gap: 0.5em;">
+    <div style="display: flex; gap: 0.75em;">
       <span>🔍</span>
       <div><b>Simulation Mode</b><br><small>Dry-run your deployment logic centrally or locally before going live.</small></div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
-    <div style="display: flex; gap: 0.5em;">
+    <div style="display: flex; gap: 0.75em;">
       <span>📅</span>
       <div><b>Centralized OOF Control</b><br><small>Standardize and reset out-of-office replies centrally.</small></div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
-    <div style="display: flex; gap: 0.5em;">
+    <div style="display: flex; gap: 0.75em;">
       <span>📱</span>
       <div><b>Outlook Everywhere</b><br><small>Windows, Mac, iOS, Android, and OWA in perfect sync.</small></div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
-    <div style="display: flex; gap: 0.5em;">
+    <div style="display: flex; gap: 0.75em;">
       <span>🏢</span>
       <div><b>Enterprise Versatility</b><br><small>Supports shared mailboxes, delegates, and complex AD logic.</small></div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
-    <div style="display: flex; gap: 0.5em;">
+    <div style="display: flex; gap: 0.75em;">
       <span>🧩</span>
       <div><b>Native Integration</b><br><small>Direct Graph API or Local injection; no mail flow changes.</small></div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
-    <div style="display: flex; gap: 0.5em;">
+    <div style="display: flex; gap: 0.75em;">
       <span>🔒</span>
       <div><b>Sovereign by Design</b><br><small>No subscription, no auto-renewal, no third-party data access.</small></div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
-    <div style="display: flex; gap: 0.5em;">
+    <div style="display: flex; gap: 0.75em;">
       <span>🚀</span>
       <div><b>Marketing Impact</b><br><small>Design in Word; deploy brand-safe campaigns globally.</small></div>
     </div>
   </div>
 </div>
 
-<p class="mt-5 is-italic has-text-centered">
+<p class="mt-6 is-italic has-text-centered has-text-grey-light">
   The <strong>Benefactor Circle</strong> license funds the open-source mission, ensuring the core engine remains free and peer-reviewable for the global community.
 </p>
