@@ -116,7 +116,6 @@ sitemap_changefreq: weekly
 <style>
   .ecosystem-cell { transition: all 0.2s ease; border-radius: 6px; padding: 1.25rem; }
   .ecosystem-cell:hover { background-color: rgba(218, 165, 32, 0.15); transform: translateY(-3px); }
-  .ecosystem-cell b { color: var(--benefactor-circle-color, goldenrod); }
 </style>
 
 <div class="columns is-multiline">
