@@ -132,20 +132,19 @@ h6 {
   display: block;
   position: relative;
 
-  // Slight background for signatures in light mode (is cleared for dark mode later)
+  // Background only for signatures in light mode
   &.signature-scrolling-banner {
     background: rgba(0, 0, 0, 0.03);
     border-radius: 4px;
     padding: 1rem 0;
   }
 
-  // Pause the movement when the user interacts
   &:hover .is-animating {
     animation-play-state: paused;
   }
 }
 
-// --- Scrolling Tracks (Behavior shared by Logos and Signatures) ---
+// --- UNIVERSAL TRACK BEHAVIOR (Mirror-Image Logic) ---
 .customer-scrolling-track,
 .signature-scrolling-track {
   display: flex;
@@ -161,23 +160,27 @@ h6 {
     width: auto;
     transition:
       transform 0.3s ease,
-      opacity 0.3s ease;
+      opacity 0.3s ease,
+      box-shadow 0.3s ease;
     transform: scale(1);
-    opacity: 0.8; // Subtle idle state
+    opacity: 0.7;
+    filter: none; // No grayscale
   }
 
-  // Shared Hover Logic: Pop-out and Shadow
+  // Hover: Proportional scale and shadow
   a:hover img,
   img:hover {
     transform: scale(1.05);
     z-index: 10;
     opacity: 1;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    // Uses 'em' to ensure shadow size scales with image height
+    box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.15);
   }
 
-  // Subtle focus effect: dim others when one is being inspected
-  &:hover a:not(:hover) img {
-    opacity: 0.5;
+  // Focus: Shared dimming logic
+  &:hover a:not(:hover) img,
+  &:hover img:not(:hover) {
+    opacity: 0.4;
   }
 
   a {
@@ -185,14 +188,13 @@ h6 {
     align-items: center;
     text-decoration: none;
     border: none;
-
     &.no-external-link-icon::after {
       content: none !important;
     }
   }
 }
 
-// --- Unique Heights ---
+// --- UNIQUE ATTRIBUTES (Height Only) ---
 .customer-scrolling-track img,
 .customer-scrolling-track a img {
   height: 2em;
@@ -205,11 +207,27 @@ h6 {
   min-width: 150px;
 }
 
+// --- DARK MODE OVERRIDES ---
+[data-theme="dark"],
+.theme-dark {
+  .signature-scrolling-banner {
+    background: transparent;
+  }
+
+  // Correcting shadows for dark backgrounds
+  .customer-scrolling-track,
+  .signature-scrolling-track {
+    a:hover img,
+    img:hover {
+      box-shadow: 0 0.3em 0.8em rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+
 // --- Animations ---
 .is-animating {
   animation: marquee-scroll var(--duration) linear infinite;
 
-  // Firefox "Butter" Hack
   @-moz-document url-prefix() {
     transform: rotate(0.0001deg);
     filter: drop-shadow(0 0 0 transparent);
@@ -264,9 +282,4 @@ html::after {
   :root {
     --benefactor-circle-color: goldenrod;
   }
-}
-
-[data-theme="dark"] .signature-scrolling-banner,
-.theme-dark .signature-scrolling-banner {
-  background: transparent;
 }
