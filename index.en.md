@@ -21,7 +21,7 @@ sitemap_changefreq: weekly
 
 <p><strong>Trusted worldwide and proven in high-security environments,</strong> the free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed business asset—without external dependencies.</p>
 
-<p>By leveraging <strong>Microsoft Roaming Signatures</strong> and the Graph API, we provide the world’s only sovereign, native-sync experience that works across all Outlook editions and platforms silently in the background—whether you are on <strong>Exchange Online, Hybrid, or On-Premises.</strong></p>
+<p>By leveraging <strong>Microsoft Roaming Signatures</strong> and the Graph API, we provide the world’s only sovereign, native-sync experience that works across all Outlook editions and platforms silently in the background — whether you are on <strong>Exchange Online, Hybrid, or On-Premises.</strong></p>
 
 <div class="columns is-multiline mb-6">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
