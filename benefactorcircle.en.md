@@ -129,7 +129,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p><a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Get a trial license, request a quote</a></p>
+<p><a href="#trial" class="button is-info is-normal is-hoveredhas-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Get a trial license, request a quote</a></p>
 
 
 <h2 id="demo">Experience it<span style="font-weight: bolder;"> in action</span></h2>
@@ -165,12 +165,12 @@ sitemap_changefreq: weekly
     <div class="column is-half">
       <h3>Personal demo</h3>
       <p>Schedule a personal walkthrough to see how this fits your specific infrastructure and compliance needs.</p>
-      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="no-external-link-icon button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);" target="_blank"><span>Expert Demo</span><span>See data sovereignty in action</span></a>
+      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="no-external-link-icon button is-info is-normal is-hoveredhas-text-weight-bold is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);" target="_blank"><span>Expert Demo</span><span>See data sovereignty in action</span></a>
     </div>
     <div class="column is-half">
       <h3>Quickstart</h3>
       <p>Follow our 3-step process to deploy your first signatures in minutes and create a robust starting point.</p>
-      <a href="https://set-outlooksignatures.com/quickstart" class="button is-link is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; padding: 0.5rem 1rem;"><span>Test your signatures – directly and risk-free</span><span>Free, Open Source and peer reviewable</span></a>
+      <a href="https://set-outlooksignatures.com/quickstart" class="button is-info is-normal is-hoveredhas-text-weight-bold is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; padding: 0.5rem 1rem;"><span>Test your signatures – directly and risk-free</span><span>Free, Open Source and peer reviewable</span></a>
     </div>
   </div>
 </div>
@@ -222,14 +222,14 @@ sitemap_changefreq: weekly
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="trial">Free trial</h2>
     <p>After setting up the free and open-source Set-OutlookSignatures using the Quickstart guide and configuring it to your needs, you are ready to take the next step:</p>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Get a 14-day trial license</a></p>
+    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-info is-normal is-hoveredhas-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Get a 14-day trial license</a></p>
     <p>Trial licenses are limited to 14&nbsp;days runtime, a maximum of 20&nbsp;mailboxes, and can not be extended or re-issued.</p>
     <p>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible as our software does not phone home).</p>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="order">Buy licenses</h2>
     <p>Upgrading to the full version, adding more mailboxes and renewing a license is quick and straightforward:</p>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Request a license quote</a></p>
+    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-info is-normal is-hoveredhas-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Request a license quote</a></p>
     <p>You will receive a quote shortly. You double-check it, we send the invoice and you can start the payment process.</p>
     <p>We send you the download and usage instructions for your new license as soon as we receive the full invoice amount.</p>
   </div>
