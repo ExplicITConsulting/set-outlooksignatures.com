@@ -41,7 +41,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p class="has-text-centered  has-text-weight-bold">No hidden fees, no surprises — trusted worldwide in the most hardened environments. Review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent pricing</a> and see how we <a href="https://set-outlooksignatures.com/features#feature-comparison">beat the competition</a>.</p>
+<p class="has-text-centered  has-text-weight-bold">Trusted worldwide and proven in high-security environments. Review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent pricing</a> and see how we <a href="https://set-outlooksignatures.com/features#feature-comparison">beat the competition</a>.</p>
 <div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
