@@ -40,7 +40,7 @@ sitemap_changefreq: weekly
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         🛠️
         <div style="hyphens: manual;">
-          <b>IT: Hybrid & On-Prem Support</b><br>
+          <b>IT: Full Automation</b><br>
           Central or decentral deployment, no "man-in-the-middle" routing. Sync signatures natively across Cloud, Hybrid, and On-Premises environments.
         </div>
       </div>
@@ -85,7 +85,7 @@ sitemap_changefreq: weekly
          style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
          target="_blank">
         <span>Schedule Interactive Demo</span>
-        <span><small>Ideal for CISO & Marketing leadership</small></span>
+        <span><small>Ideal for IT & Marketing leadership</small></span>
       </a>
     </div>
     <div class="column is-half">
@@ -122,55 +122,55 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>✨</span>
-      <div><b>Frictionless Adoption</b><br><small>Invisible to end users; silent background sync.</small></div>
+      <div><b>Frictionless Adoption</b><br>Invisible to end users; silent background sync.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🧬</span>
-      <div><b>Dynamic Content</b><br><small>Collapses empty lines automatically; logic-based banners.</small></div>
+      <div><b>Dynamic Content</b><br>Collapses empty lines automatically; logic-based banners.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🔍</span>
-      <div><b>Simulation Mode</b><br><small>Dry-run your deployment logic centrally or locally before going live.</small></div>
+      <div><b>Simulation Mode</b><br>Dry-run your deployment logic centrally or locally before going live.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>📅</span>
-      <div><b>Centralized OOF Control</b><br><small>Standardize and reset out-of-office replies centrally.</small></div>
+      <div><b>Centralized OOF Control</b><br>Standardize and reset out-of-office replies centrally.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>📱</span>
-      <div><b>Outlook Everywhere</b><br><small>Windows, Mac, iOS, Android, and OWA in perfect sync.</small></div>
+      <div><b>Outlook Everywhere</b><br>Windows, Mac, iOS, Android, and OWA in perfect sync.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🏢</span>
-      <div><b>Enterprise Versatility</b><br><small>Supports shared mailboxes, delegates, and complex AD logic.</small></div>
+      <div><b>Enterprise Versatility</b><br>Supports shared mailboxes, delegates, and complex AD logic.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🧩</span>
-      <div><b>Native Integration</b><br><small>Direct-to-mailbox synchronization; no mail flow changes required.</small></div>
+      <div><b>Native Integration</b><br>Direct-to-mailbox synchronization; no mail flow changes required.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🔒</span>
-      <div><b>Sovereign by Design</b><br><small>No subscription, no auto-renewal, no third-party data access.</small></div>
+      <div><b>Sovereign by Design</b><br>No subscription, no auto-renewal, no third-party data access.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🚀</span>
-      <div><b>Marketing Impact</b><br><small>Design in Word; deploy brand-safe campaigns globally.</small></div>
+      <div><b>Marketing Impact</b><br>Design in Word; deploy brand-safe campaigns globally.</div>
     </div>
   </div>
 </div>
