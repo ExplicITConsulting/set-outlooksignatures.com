@@ -21,7 +21,7 @@ favicon: "/assets/images/set-outlooksignatures icon.ico"
 navbar_logo: "/assets/images/set-outlooksignatures logo 500px.png"
 navbar_logo_alt: "Set-OutlookSignatures"
 hide_share_buttons: true
-force_theme: #light
+force_theme: dark # dark, light, or empty value
 gh_sponsor: 
 
 # SEO Related
