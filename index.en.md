@@ -35,7 +35,7 @@ sitemap_changefreq: weekly
       🛡️
       <div style="hyphens: manual;">
         <b>CISO: Total Sovereignty</b><br>
-        Eliminate third-party risks. Employee data stays 100% within your trusted systems.
+        Eliminate third-party risks. All your data stays 100% within your trusted systems.
       </div>
     </div>
   </div>

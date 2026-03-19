@@ -54,7 +54,7 @@ With Set-OutlookSignatures and the optional Benefactor Circle add-on, signatures
 
 Set-OutlookSignatures can be **[run by users on Windows, Linux and macOS clients, including shared devices and terminal servers - or on a central system with a service account](/details#architecture-considerations)**¹.<br>On clients, it can run as part of the logon script, as scheduled task, or on user demand via a desktop icon, start menu entry, shortcut or any other way of starting a program - **[whatever your software deployment mechanism allows](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
 
-**[Sample templates](/quickstart#customize-use-your-own-templates)** for signatures and OOF messages demonstrate many features and are provided as .docx and .htm files.
+**[Sample templates](/quickstart#customize)** for signatures and OOF messages demonstrate many features and are provided as .docx and .htm files.
 
 **[Phone numbers](/faq#format-phone-numbers)** and **[postal addresses](/faq#format-postal-addresses)** can be formatted by international standards or custom requirements.
 

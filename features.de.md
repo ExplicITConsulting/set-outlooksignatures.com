@@ -54,7 +54,7 @@ Mit Set-OutlookSignatures können Signaturen und Abwesenheitsnotizen:
 
 Set-OutlookSignatures kann von Nutzern auf **[Windows-, Linux- und macOS-Clients, einschließlich gemeinsam genutzter Geräte und Terminalserver, oder auf einem zentralen System mit einem Dienstkonto](/details#architecture-considerations)**¹ ausgeführt werden.<br>Auf Clients kann es als Teil des Anmeldeskripts, als geplante Aufgabe oder auf Benutzeranforderung über ein Desktopsymbol, einen Startmenüeintrag, eine Verknüpfung oder einer andere Möglichkeit zum Starten eines Programms ausgeführt werden - **[was auch immer Ihre Methode zur Verteilung von Software erlaubt](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
 
-**[Beispielvorlagen](/quickstart#customize-use-your-own-templates)** für Signaturen und Abwesenheitsnachrichten demonstrieren viele Funktionen und stehen als DOCX- und HTM-Dateien zur Verfügung.
+**[Beispielvorlagen](/quickstart#customize)** für Signaturen und Abwesenheitsnachrichten demonstrieren viele Funktionen und stehen als DOCX- und HTM-Dateien zur Verfügung.
 
 **[Telefonnummern](/faq#format-phone-numbers)** und **[Post-Adressen](/faq#format-postal-addresses)** können nach internationalen Standards oder eigenen Vorgaben formatiert werden.
 
