@@ -145,7 +145,7 @@ h6 {
   }
 }
 
-// --- Scrolling Tracks (Shared behavior) ---
+// --- Scrolling Tracks (Behavior shared by Logos and Signatures) ---
 .customer-scrolling-track,
 .signature-scrolling-track {
   display: flex;
@@ -156,57 +156,17 @@ h6 {
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
 
-  a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    border: none;
-    transition: opacity 0.3s ease;
-
-    &.no-external-link-icon::after {
-      content: none !important;
-    }
-  }
-}
-
-// --- Customer Logos (Trust Bar Logic) ---
-.customer-scrolling-track {
   img,
   a img {
-    height: 2em;
     width: auto;
-    min-width: 50px;
-    // Initial Grayscale State
-    filter: grayscale(100%);
-    opacity: 0.6;
-    transition:
-      filter 0.3s ease,
-      opacity 0.3s ease;
-  }
-
-  // FIXED: Trigger color when the LINK or the IMAGE is hovered
-  a:hover img,
-  img:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  }
-}
-
-// --- Signature Showcase (Feature Gallery Logic) ---
-.signature-scrolling-track {
-  img,
-  a img {
-    height: 10em;
-    width: auto;
-    min-width: 150px;
     transition:
       transform 0.3s ease,
       opacity 0.3s ease;
     transform: scale(1);
+    opacity: 0.8; // Subtle idle state
   }
 
-  // Individual image pop-out effect
+  // Shared Hover Logic: Pop-out and Shadow
   a:hover img,
   img:hover {
     transform: scale(1.05);
@@ -215,10 +175,34 @@ h6 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
 
-  // Subtle focus effect: dim other signatures when one is being inspected
+  // Subtle focus effect: dim others when one is being inspected
   &:hover a:not(:hover) img {
-    opacity: 0.7;
+    opacity: 0.5;
   }
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+
+    &.no-external-link-icon::after {
+      content: none !important;
+    }
+  }
+}
+
+// --- Unique Heights ---
+.customer-scrolling-track img,
+.customer-scrolling-track a img {
+  height: 2em;
+  min-width: 50px;
+}
+
+.signature-scrolling-track img,
+.signature-scrolling-track a img {
+  height: 10em;
+  min-width: 150px;
 }
 
 // --- Animations ---
