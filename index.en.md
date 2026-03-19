@@ -41,7 +41,7 @@ sitemap_changefreq: weekly
         🛠️
         <div style="hyphens: manual;">
           <b>IT: Full Automation</b><br>
-          Central or decentral deployment, no "man-in-the-middle" routing. Sync signatures natively across all M365 clouds, Hybrid, and On-Premises environments.
+          Centralized or decentralized deployment, no "man-in-the-middle" routing. Sync signatures natively across all M365 clouds, Hybrid, and On-Premises environments.
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@ sitemap_changefreq: weekly
 </div>
 
 <p class="has-text-centered mb-5">
-  See how we <a href="https://set-outlooksignatures.com/features#feature-comparison">compare to alternatives</a> and review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent, non-renewing pricing</a>.
+  Used by security‑conscious and brand-aware organizations worldwide. See how we <a href="https://set-outlooksignatures.com/features#feature-comparison">compare to alternatives</a> and review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent, non-renewing pricing</a>.
 </p>
 
 <div class="columns is-multiline mb-6">
