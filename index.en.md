@@ -25,7 +25,7 @@ sitemap_changefreq: weekly
 
 <div class="columns is-multiline mb-6">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis" style="height: 100%;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         📣
         <div style="hyphens: manual;">
@@ -36,7 +36,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis" style="height: 100%;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         🛠️
         <div style="hyphens: manual;">
@@ -47,7 +47,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis" style="height: 100%;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         🛡️
         <div style="hyphens: manual;">
