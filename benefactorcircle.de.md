@@ -129,7 +129,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p><a href="#trial" class="button is-link is-normal is-hovered has-text-black  has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Testlizenz holen, Lizenzangebot anfordern</a></p>
+<p><a href="#trial" class="button is-info is-normal is-hovered has-text-black  has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Testlizenz holen, Lizenzangebot anfordern</a></p>
 
 
 <h2 id="demo">Erleben Sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
@@ -165,12 +165,12 @@ sitemap_changefreq: weekly
     <div class="column is-half">
       <h3>Persönliche Demo</h3>
       <p>Vereinbaren Sie eine persönliche Präsentation, um zu sehen, wie die Lösung in Ihre spezifische Infrastruktur und Compliance-Anforderungen passt.</p>
-      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="no-external-link-icon button is-link is-normal is-hovered has-text-black  has-text-weight-bold  is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);" target="_blank"><span>Experten-Demo</span><span>Datensouveränität in Aktion erleben</span></a>
+      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="no-external-link-icon button is-info is-normal is-hovered has-text-black  has-text-weight-bold  is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);" target="_blank"><span>Experten-Demo</span><span>Datensouveränität in Aktion erleben</span></a>
     </div>
     <div class="column is-half">
       <h3>Quickstart</h3>
       <p>Folgen Sie unserer 3-Schritte-Anleitung, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen und eine solide Basis zu schaffen.</p>
-      <a href="https://set-outlooksignatures.com/quickstart" class="button is-link is-info is-normal is-hovered has-text-black  has-text-weight-bold  is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; padding: 0.5rem 1rem;"><span>Ihre Signaturen testen – direkt und risikofrei</span><span>Kostenlos, Open Source und Peer-Review-fähig</span></a>
+      <a href="https://set-outlooksignatures.com/quickstart" class="button is-info is-normal is-hovered has-text-black  has-text-weight-bold  is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; padding: 0.5rem 1rem;"><span>Ihre Signaturen testen – direkt und risikofrei</span><span>Kostenlos, Open Source und Peer-Review-fähig</span></a>
     </div>
   </div>
 </div>
@@ -223,14 +223,14 @@ sitemap_changefreq: weekly
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="trial">Kostenlose Testlizenz</h2>
     <p>Nachdem Sie das freie und quelloffene Set-OutlookSignatures mithilfe der Schnellstart-Anleitung eingerichtet und an Ihre Anforderungen angepasst haben, sind Sie bereit für den nächsten Schritt:</p>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black  has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">14-Tage-Testlizenz holen</a></p>
+    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-info is-normal is-hovered has-text-black  has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">14-Tage-Testlizenz holen</a></p>
     <p>Testlizenzen sind auf eine Laufzeit von 14&nbsp;Tagen sowie maximal 20&nbsp;Postfächer begrenzt und können nicht verlängert oder erneut ausgestellt werden.</p>
     <p>Die Testphase beginnt mit der Erstellung und Bereitstellung der Testlizenz durch uns, nicht mit der ersten Nutzung (dies ist auch nicht anders möglich, da unsere Software nicht nach Hause telefoniert).</p>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="order">Lizenzen kaufen</h2>
     <p>Der Wechsel auf die Vollversion, mehr Postfächer hinzufügen und das Erneuern der Lizenz sind schnell und unkompliziert:</p>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black  has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Lizenzangebot anfordern</a></p>
+    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-info is-normal is-hovered has-text-black  has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Lizenzangebot anfordern</a></p>
     <p>Sie erhalten in Kürze ein Angebot. Nach Ihrer Prüfung senden wir die Rechnung und Sie können den Zahlungsvorgang starten.</p>
     <p>Sobald der vollständige Rechnungsbetrag bei uns eingegangen ist, senden wir Ihnen umgehend die Download‑ und Gebrauchsanleitung für Ihre neue Lizenz.</p>
   </div>

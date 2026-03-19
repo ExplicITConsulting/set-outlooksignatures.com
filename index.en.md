@@ -63,7 +63,7 @@ sitemap_changefreq: weekly
       <h3>Personal Demo</h3>
       <p>Book a live, interactive session with our team to see how the solution adapts to your specific infrastructure and compliance requirements.</p>
       <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" 
-         class="no-external-link-icon button is-link is-normal is-hovered has-text-black  has-text-weight-bold  is-flex-direction-column" 
+         class="no-external-link-icon button is-info is-normal is-hovered has-text-black  has-text-weight-bold  is-flex-direction-column" 
          style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center; text-align: center;" 
          target="_blank">
         <span>Schedule Interactive Demo</span>
@@ -74,7 +74,7 @@ sitemap_changefreq: weekly
       <h3>Quickstart</h3>
       <p>Follow our 3-step process to deploy your first signatures in minutes and create a robust, production-ready starting point.</p>
       <a href="https://set-outlooksignatures.com/quickstart" 
-         class="button is-link is-info is-normal is-hovered has-text-black  has-text-weight-bold  is-flex-direction-column" 
+         class="button is-info is-normal is-hovered has-text-black  has-text-weight-bold  is-flex-direction-column" 
          style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: center; text-align: center;">
         <span>Start Technical Deployment</span>
         <span><small>Free, open-source, and peer-reviewable</small></span>
