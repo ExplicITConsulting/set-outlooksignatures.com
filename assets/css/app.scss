@@ -124,7 +124,7 @@ h6 {
   }
 }
 
-// --- Scrolling Banners ---
+// --- Scrolling Banners (Containers) ---
 .customer-scrolling-banner,
 .signature-scrolling-banner {
   width: 100%;
@@ -132,11 +132,13 @@ h6 {
   display: block;
   position: relative;
 
+  // Pause the movement when the user interacts
   &:hover .is-animating {
     animation-play-state: paused;
   }
 }
 
+// --- Scrolling Tracks (Shared behavior) ---
 .customer-scrolling-track,
 .signature-scrolling-track {
   display: flex;
@@ -147,65 +149,66 @@ h6 {
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
 
-  // Shared Link/Image behavior
   a {
     display: flex;
     align-items: center;
     text-decoration: none;
     border: none;
+    transition: opacity 0.3s ease;
+
     &.no-external-link-icon::after {
       content: none !important;
     }
-    &:hover {
-      opacity: 0.7;
-      transition: opacity 0.2s ease;
-    }
   }
 }
 
-// Unique Track Heights
+// --- Customer Logos (Trust Bar Logic) ---
 .customer-scrolling-track {
   img,
   a img {
     height: 2em;
     width: auto;
     min-width: 50px;
-  }
-}
-
-// --- Grayscale Customer Logos ---
-.customer-scrolling-track {
-  img {
+    // Initial Grayscale State
     filter: grayscale(100%);
-    opacity: 0.6; // Slightly fade them to keep focus on your headline
+    opacity: 0.6;
     transition:
       filter 0.3s ease,
       opacity 0.3s ease;
-
-    &:hover {
-      filter: grayscale(0%);
-      opacity: 1;
-    }
   }
 
-  img,
-  a img {
-    height: 2em;
-    width: auto;
-    min-width: 50px;
+  // FIXED: Trigger color when the LINK or the IMAGE is hovered
+  a:hover img,
+  img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
   }
 }
 
+// --- Signature Showcase (Feature Gallery Logic) ---
 .signature-scrolling-track {
   img,
   a img {
     height: 10em;
     width: auto;
     min-width: 150px;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+    transform: scale(1);
+  }
 
-    &:hover {
-      transform: scale(1.02);
-    }
+  // Individual image pop-out effect
+  a:hover img,
+  img:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    opacity: 1;
+  }
+
+  // Subtle focus effect: dim other signatures when one is being inspected
+  &:hover a:not(:hover) img {
+    opacity: 0.7;
   }
 }
 

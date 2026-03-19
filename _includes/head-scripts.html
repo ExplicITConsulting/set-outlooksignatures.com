@@ -1,332 +1,268 @@
-<!-- mtrcs js code -->
-<script>
-  var _paq = window._paq = window._paq || [];
-  _paq.push(["setRequestMethod", "POST"]);
-  _paq.push(["disableCookies"]);
-  _paq.push(["disableAlwaysUseSendBeacon"]);
-  _paq.push(["disableQueueRequest"]);
-  _paq.push(["setDocumentTitle", document.domain + ": " + document.title]);
-  _paq.push(["setDomains", ["*.set-outlooksignatures.com"]]);
-  _paq.push(['enableHeartBeatTimer']);
-  _paq.push(['setLinkClasses', ["mtrcs-external-link"]]);
-  _paq.push(['setDownloadClasses', ["mtrcs-download"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['trackVisibleContentImpressions', true]);
-  _paq.push(['enableLinkTracking']);
+---
+layout: "none"
+sitemap: false
+---
 
+$family-primary: Arial, sans-serif;
+$primary: black;
+$text: black;
 
-  (
-    function () {
-      var u = "https://mtrcs.set-outlooksignatures.com/";
-      _paq.push(["setTrackerUrl", u + "mtrcs.php"]);
-      _paq.push(["setSiteId", "1"]);
-      var d = document;
-      g = d.createElement("script");
-      s = d.getElementsByTagName("script")[0];
-      g.type = "text/javascript";
-      g.async = true;
-      g.src = u + "mtrcs.js";
-      s.parentNode.insertBefore(g, s);
-    }
-  )();
-</script>
+@import "main";
 
+// --- Global Typography & Layout ---
+html {
+  scroll-padding-top: $navbar-height;
+}
+body {
+  hyphens: auto;
+}
+pre code {
+  color: black;
+}
+.footer {
+  padding-bottom: 0 !important;
+}
 
-<!-- mtrcs no js code -->
-<noscript>
-  <p>
-    <img referrerpolicy="no-referrer-when-downgrade"
-      src='//mtrcs.set-outlooksignatures.com/mtrcs.php?idsite=1&rec=1&recMode=2&action_name=page_view&url={{ site.url }}{{ page.url | relative_url }}&rand={{ "now" | date: "%s" }}&apiv=1'
-      style="border:0;" alt="" />
-  </p>
-</noscript>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  scroll-margin-top: $navbar-height;
+  position: relative;
+  font-weight: bold;
+}
 
+.title,
+.subtitle,
+.content {
+  hyphens: manual;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    hyphens: manual;
+  }
+}
 
-<!-- mtrcs youtube code (disabled)
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      const playerElement = document.getElementById('youtube-video-player');
-      if (playerElement) {
-        // Define the onYouTubeIframeAPIReady function before loading the script.
-        // The YouTube API will call this function automatically once it's loaded.
-        window.onYouTubeIframeAPIReady = () => {
-          // Create a new YT.Player object for the iframe with id="youtube-video-player"
-          window.player = new YT.Player('youtube-video-player', {
-            events: {
-              'onStateChange': onPlayerStateChange
-            }
-          });
-        };
-
-        // This function is called by the YouTube API whenever the player's state changes.
-        function onPlayerStateChange(event) {
-          const videoTitle = "Set-OutlookSignatures Demo"; // Customize this
-          const currentTime = window.player.getCurrentTime();
-
-          if (event.data === YT.PlayerState.PLAYING) {
-            // Track when the video starts playing
-            _paq.push(['trackEvent', 'Video', 'Play', videoTitle, Math.round(currentTime)]);
-          } else if (event.data === YT.PlayerState.PAUSED) {
-            // Track when the video is paused
-            _paq.push(['trackEvent', 'Video', 'Pause', videoTitle, Math.round(currentTime)]);
-          } else if (event.data === YT.PlayerState.ENDED) {
-            // Track when the video ends
-            _paq.push(['trackEvent', 'Video', 'Ended', videoTitle, Math.round(currentTime)]);
-          }
-        }
-
-        // Dynamically create and append the script tag to the body.
-        // This is the key step that loads the script only when needed.
-        const script = document.createElement('script');
-        script.src = 'https://www.youtube.com/iframe_api';
-        document.body.appendChild(script);
-      }
-    });
-  </script>
--->
-
-
-<!-- Add html hash to language switcher links -->
-<script>
-  document.addEventListener('DOMContentLoaded', async () => {
-    // Define a function to handle the link updates
-    const updateLanguageLinks = () => {
-      const currentHash = window.location.hash;
-      const languageLinks = document.querySelectorAll('a[data-base-url]');
-
-      languageLinks.forEach(link => {
-        const baseHref = link.getAttribute('data-base-url');
-        link.href = baseHref + currentHash;
-      });
-    };
-
-    // Initial call when the DOM is ready
-    updateLanguageLinks();
-
-    // Listen for hash changes and update the links again
-    window.addEventListener('hashchange', updateLanguageLinks);
-  });
-</script>
-
-
-<!-- Code for delete button in notifications -->
-<script>
-  document.addEventListener('DOMContentLoaded', async () => {
-    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-      const $notification = $delete.parentNode;
-
-      $delete.addEventListener('click', () => {
-        $notification.parentNode.removeChild($notification);
-      });
-    });
-  });
-</script>
-
-
-<!-- Scrolling banner for signature images and customer imageshtml  -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const shuffleArray = (array) => {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    };
-
-    const initSafeBanner = async (trackSelector, endpoint, pxPerSec) => {
-      const track = document.querySelector(trackSelector);
-      if (!track) return;
-
-      try {
-        const response = await fetch(endpoint);
-        const text = await response.text();
-        let urls = text.split('\n').map(l => l.trim()).filter(Boolean);
-
-        urls = shuffleArray(urls);
-
-        const fragment = document.createDocumentFragment();
-        const doubledUrls = [...urls, ...urls];
-
-        doubledUrls.forEach(urlPath => {
-          const img = new Image();
-          img.src = urlPath;
-          img.loading = "lazy";
-
-          // 1. Get basename: "google.com logo.png"
-          const baseName = urlPath.split('/').pop();
-
-          // 2. Remove extension: "google.com logo"
-          const nameWithoutExt = baseName.replace(/\.[^.]+$/, "");
-
-          // 3. Extract domain from first part
-          const firstPart = nameWithoutExt.split(' ')[0];
-          const hasDomain = firstPart.includes('.');
-
-          let finalDomain = "";
-          let finalAlt = "";
-
-          if (hasDomain) {
-            // Found a domain in the filename
-            finalDomain = firstPart;
-            finalAlt = nameWithoutExt;
-          } else {
-            // No domain found: use your fallback values
-            finalDomain = "explicitconsulting.at";
-            finalAlt = "explicitconsulting.at anonymous customer";
-          }
-
-          // Apply data to elements
-          img.alt = finalAlt;
-
-          const link = document.createElement('a');
-          link.href = `https://www.${finalDomain}`;
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-          link.className = "no-external-link-icon banner-link";
-
-          link.appendChild(img);
-          fragment.appendChild(link);
-        });
-
-        track.appendChild(fragment);
-
-        const observer = new ResizeObserver(entries => {
-          const halfWidth = entries[0].contentRect.width / 2;
-          if (halfWidth > 10) {
-            const duration = halfWidth / pxPerSec;
-            track.style.setProperty('--duration', `${duration}s`);
-            track.classList.add('is-animating');
-          }
-        });
-
-        observer.observe(track);
-      } catch (e) { console.error("Banner error:", e); }
-    };
-
-    initSafeBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 75);
-    initSafeBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 90);
-  });
-</script>
-
-
-<!-- Update download links to latest release of Set-OutlookSignatures -->
-<script>
-  async function updateDownloadLink() {
-    const owner = 'Set-OutlookSignatures';
-    const repo = 'Set-OutlookSignatures';
-    const repoURL = `https://api.github.com/repos/${owner}/${repo}/releases/latest`;
-
-    try {
-      const response = await fetch(repoURL);
-      if (!response.ok) {
-        throw new Error(`GitHub API request failed with status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      const firstAsset = data.assets[0];
-
-      if (firstAsset && firstAsset.browser_download_url) {
-        const downloadLinks = document.querySelectorAll('.sos-download-link');
-        if (downloadLinks.length > 0) {
-          downloadLinks.forEach(link => {
-            link.href = firstAsset.browser_download_url;
-          });
-        } else {
-          // console.warn('No elements with class "sos-download-link" found.');
-        }
-      } else {
-        console.error('No assets found for the latest release.');
-      }
-    } catch (error) {
-      console.error('Error fetching latest release:', error);
+// --- Specific Content Spacing ---
+.content {
+  h2:not(:first-child),
+  * ~ h2 {
+    margin-top: 1em;
+  }
+  h6 {
+    margin-bottom: 0;
+  }
+  ul,
+  ol {
+    &:not(:first-child) {
+      margin-top: 0;
     }
   }
+}
 
-  document.addEventListener('DOMContentLoaded', updateDownloadLink);
-</script>
-
-
-<!-- Add and lazy load background image
-<style>
-  html::before {
-    content: "";
-    position: fixed;
-
-    /* 1. POSITIONING FOR CENTERING */
-    /* Move the top edge to the vertical center */
-    top: 50%;
-    /* Move the left edge to the horizontal center */
-    left: 50%;
-
-    /* 2. RESIZING TO 33% */
-    /* Set the width to 33% of the viewport width */
-    width: 33vw;
-    /* Set the height to 33% of the viewport height */
-    height: 33vh;
-
-    /* 3. FINAL ALIGNMENT */
-    /* Shifts the element back by half its own width/height to center it */
-    transform: translate(-50%, -50%) rotate(-20deg);
-
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
-
-    pointer-events: none;
-    z-index: -2;
-    opacity: 0.2;
-    filter: var(--bg-filter, none);
+p {
+  &:has(+ ul),
+  &:has(+ ol) {
+    margin-bottom: 0 !important;
   }
-
-  html.loaded::before {
-    background-image: url("/assets/images/set-outlooksignatures logo background compressed.png");
+  + ul,
+  + ol {
+    margin-top: 0 !important;
   }
+}
 
+// --- Buttons & Links ---
+.button {
+  white-space: normal;
+  word-break: break-word;
+  hyphens: auto;
+  cursor: pointer;
+  animation: pulse 5s ease-in-out infinite;
 
-  /* Define a new class for dark mode background. This class will be added and removed by JavaScript. */
-  html.dark-mode-bg::before {
-    --bg-filter: invert(1) hue-rotate(180deg);
+  &:hover {
+    filter: brightness(125%);
   }
-</style>
--->
-<script>
-  /**
-   * Standalone script for lazy loading the background image and applying
-   * a dark mode filter based on system preference.
-   */
-  (function () {
-    // Use DOMContentLoaded check if you place the script in the <head>
-    // If placed before the closing </body> tag, a simple check is usually sufficient.
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initBackgroundLogic);
-    } else {
-      initBackgroundLogic();
+}
+
+// Global External Link Icon
+a.mtrcs-external-link:not(.no-external-link-icon)::after {
+  content: "\00A0↗";
+  font-size: 0.8em;
+  vertical-align: top;
+}
+
+// --- Heading Anchors ---
+.anchor-link {
+  position: absolute;
+  left: -2em;
+  top: 50%;
+  transform: translateY(-50%);
+  text-decoration: none;
+  font-size: 0.5em;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:hover .anchor-link {
+    opacity: 1;
+  }
+}
+
+// --- Scrolling Banners (Containers) ---
+.customer-scrolling-banner,
+.signature-scrolling-banner {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  position: relative;
+
+  // Pause the movement when the user interacts
+  &:hover .is-animating {
+    animation-play-state: paused;
+  }
+}
+
+// --- Scrolling Tracks (Shared behavior) ---
+.customer-scrolling-track,
+.signature-scrolling-track {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    transition: opacity 0.3s ease;
+    
+    &.no-external-link-icon::after {
+      content: none !important;
     }
+  }
+}
 
-    function initBackgroundLogic() {
-      const html = document.documentElement;
+// --- Customer Logos (Trust Bar Logic) ---
+.customer-scrolling-track {
+  img, a img {
+    height: 2em;
+    width: auto;
+    min-width: 50px;
+    // Initial Grayscale State
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+  }
 
-      // 1. Lazy Load: Add the 'loaded' class to trigger background-image loading via CSS.
-      html.classList.add('loaded');
+  // FIXED: Trigger color when the LINK or the IMAGE is hovered
+  a:hover img,
+  img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+}
 
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+// --- Signature Showcase (Feature Gallery Logic) ---
+.signature-scrolling-track {
+  img, a img {
+    height: 10em;
+    width: auto;
+    min-width: 150px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scale(1);
+  }
 
-      const updateDarkMode = (event) => {
-        // event.matches is true if dark mode is preferred
-        if (event.matches) {
-          html.classList.add('dark-mode-bg');
-        } else {
-          html.classList.remove('dark-mode-bg');
-        }
-      };
+  // Individual image pop-out effect
+  a:hover img,
+  img:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    opacity: 1;
+  }
 
-      // 2. Initial check: Apply the correct state immediately on load.
-      updateDarkMode(mediaQuery);
+  // Subtle focus effect: dim other signatures when one is being inspected
+  &:hover a:not(:hover) img {
+    opacity: 0.7;
+  }
+}
 
-      // 3. Watch for changes in system preference.
-      // This is more efficient than polling or unnecessary timers.
-      mediaQuery.addEventListener('change', updateDarkMode);
-    }
-  })();
-</script>
+// --- Animations ---
+.is-animating {
+  animation: marquee-scroll var(--duration) linear infinite;
+
+  // Firefox "Butter" Hack
+  @-moz-document url-prefix() {
+    transform: rotate(0.0001deg);
+    filter: drop-shadow(0 0 0 transparent);
+  }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  75%,
+  100% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  87.5% {
+    transform: scale(0.95);
+    filter: brightness(90%);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// --- Visual Extras ---
+html::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 25vw;
+  height: 33vh;
+  background: url("/assets/images/visitenkarten-hochkant.png") no-repeat bottom right / contain;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+:root {
+  --benefactor-circle-color: darkgoldenrod;
+}
+[data-theme="dark"],
+.theme-dark {
+  --benefactor-circle-color: goldenrod;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --benefactor-circle-color: goldenrod;
+  }
+}
