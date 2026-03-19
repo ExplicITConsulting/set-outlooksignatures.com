@@ -23,27 +23,15 @@ pre code {
   padding-bottom: 0 !important;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: $navbar-height;
   position: relative;
   font-weight: bold;
 }
 
-.title,
-.subtitle,
-.content {
+.title, .subtitle, .content {
   hyphens: manual;
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     hyphens: manual;
   }
@@ -58,8 +46,7 @@ h6 {
   h6 {
     margin-bottom: 0;
   }
-  ul,
-  ol {
+  ul, ol {
     &:not(:first-child) {
       margin-top: 0;
     }
@@ -67,12 +54,10 @@ h6 {
 }
 
 p {
-  &:has(+ ul),
-  &:has(+ ol) {
+  &:has(+ ul), &:has(+ ol) {
     margin-bottom: 0 !important;
   }
-  + ul,
-  + ol {
+  + ul, + ol {
     margin-top: 0 !important;
   }
 }
@@ -113,12 +98,7 @@ a.mtrcs-external-link:not(.no-external-link-icon)::after {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   &:hover .anchor-link {
     opacity: 1;
   }
@@ -128,15 +108,15 @@ h6 {
 .customer-scrolling-banner,
 .signature-scrolling-banner {
   width: 100%;
-  overflow: hidden;
+  // 'clip' prevents scrollbars but allows the 1.5x scale 
+  // to expand into the track's padding area without being cut.
+  overflow: clip; 
   display: block;
   position: relative;
 
-  // Background only for signatures in light mode
   &.signature-scrolling-banner {
     background: rgba(0, 0, 0, 0.03);
     border-radius: 4px;
-    padding: 1rem 0;
   }
 
   &:hover .is-animating {
@@ -144,40 +124,43 @@ h6 {
   }
 }
 
-// --- UNIVERSAL TRACK BEHAVIOR (Mirror-Image Logic) ---
+// --- UNIVERSAL TRACK BEHAVIOR ---
 .customer-scrolling-track,
 .signature-scrolling-track {
   display: flex;
   width: max-content;
   flex-wrap: nowrap;
-  gap: 2rem;
+  gap: 3rem; // Increased gap to prevent overlap at 1.5x scale
   will-change: transform;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
+  align-items: center; 
+
+  // Padding provides the 'growth zone'. 
+  // At 1.5x, a 10em image needs 2.5em extra space top and bottom.
+  // 3rem offers a safe margin.
+  padding: 3rem 0; 
 
   img,
   a img {
     width: auto;
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease,
-      box-shadow 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
     transform: scale(1);
-    opacity: 0.7;
-    filter: none; // No grayscale
+    opacity: 0.7; 
+    filter: none;
+    transform-origin: center center;
   }
 
-  // Hover: Proportional scale and shadow
+  // Hover Effect: 1.5 sizing with proportional shadow
   a:hover img,
   img:hover {
     transform: scale(1.5);
     z-index: 10;
     opacity: 1;
-    // Uses 'em' to ensure shadow size scales with image height
-    box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.15); 
   }
 
-  // Focus: Shared dimming logic
+  // Focus effect: dim non-hovered items
   &:hover a:not(:hover) img,
   &:hover img:not(:hover) {
     opacity: 0.4;
@@ -188,13 +171,11 @@ h6 {
     align-items: center;
     text-decoration: none;
     border: none;
-    &.no-external-link-icon::after {
-      content: none !important;
-    }
+    &.no-external-link-icon::after { content: none !important; }
   }
 }
 
-// --- UNIQUE ATTRIBUTES (Height Only) ---
+// --- UNIQUE HEIGHTS ---
 .customer-scrolling-track img,
 .customer-scrolling-track a img {
   height: 2em;
@@ -214,12 +195,11 @@ h6 {
     background: transparent;
   }
 
-  // Correcting shadows for dark backgrounds
   .customer-scrolling-track,
   .signature-scrolling-track {
     a:hover img,
     img:hover {
-      box-shadow: 0 0.3em 0.8em rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.6);
     }
   }
 }
@@ -235,18 +215,12 @@ h6 {
 }
 
 @keyframes marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 @keyframes pulse {
-  0%,
-  75%,
-  100% {
+  0%, 75%, 100% {
     transform: scale(1);
     filter: brightness(100%);
   }
