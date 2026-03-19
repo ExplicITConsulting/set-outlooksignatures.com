@@ -56,7 +56,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🧭
       <div style="hyphens: manual;">
-        Cross-Platform Sovereignty
+        <b>Cross-Platform Sovereignty</b>
       </div>
     </div>
   </div>
@@ -64,7 +64,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       📣
       <div style="hyphens: manual;">
-        Dynamic Branding and Marketing
+        <b>Dynamic Branding and Marketing</b>
       </div>
     </div>
   </div>
@@ -72,7 +72,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       🏛️
       <div style="hyphens: manual;">
-        Administrative Governance
+        <b>Administrative Governance</b>
       </div>
     </div>
   </div>
