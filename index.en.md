@@ -2,6 +2,7 @@
 layout: "page"
 lang: "en"
 locale: "en"
+title: "Email signatures and out-of-office replies with data sovereignty"
 title: "Unified Signatures & OOF. Total Data Sovereignty."
 subtitle: "Centrally manage Outlook branding and presence without your data ever leaving your trusted systems."
 description: "Email signatures and out-of-office replies with data sovereignty"
@@ -15,7 +16,6 @@ sitemap_changefreq: weekly
 </h2>
 <p>The free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed, reusable business asset — without external dependencies.</p>
 <p>Every email becomes a controlled touchpoint for your brand: up to date, consistent, and fully aligned across the organization.</p>
-
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -45,13 +45,8 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
+<p>No hidden fees, no surprises — trusted worldwide in the most hardened environments. Review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent pricing</a> and see how we <a href="https://set-outlooksignatures.com/features#feature-comparison">beat the competition</a>.</p>
 
-<div class="notification is-light is-info mt-5">
-    <button class="delete"></button>
-    No hidden fees, no surprises. Trusted worldwide in the most hardened environments. 
-    <a href="https://set-outlooksignatures.com/benefactorcircle#price" class="has-text-weight-bold">Review transparent pricing</a> or 
-    <a href="https://set-outlooksignatures.com/features#feature-comparison" class="has-text-weight-bold">see how we beat the competition</a>.
-</div>
 
 <h2 id="demo">Experience it<span style="font-weight: bolder;"> in action</span></h2>
 <p>See how organizations use Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> to enforce brand consistency, governance, and data sovereignty without changing how users work.</p>
@@ -151,7 +146,7 @@ sitemap_changefreq: weekly
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Dynamic Content</b><br>
-        User personalization (titles, social links, local contacts) via live data sources.
+        Use dynamic data from users, mailboxes, managers, and your own sources.
       </div>
     </div>
   </div>
@@ -160,7 +155,7 @@ sitemap_changefreq: weekly
       <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
       <div style="hyphens: manual;">
         <b>Centralized OOF Control</b><br>
-        Manage OOF messages centrally for any mailbox.
+        Control out-of-office replies centrally, for internal and external recipients.
       </div>
     </div>
   </div>
