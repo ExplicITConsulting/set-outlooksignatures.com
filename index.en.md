@@ -11,7 +11,6 @@ redirect_from:
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
-<p><strong>Trusted worldwide and proven in high-security environments. Review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent pricing</a> and see how we <a href="https://set-outlooksignatures.com/features#feature-comparison">compare to cloud-hosted alternatives</a>.</strong></p>
 <div class="columns is-multiline">
   <div class="column is-full-desktop is-full-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -22,7 +21,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p>The free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed, reusable business asset — without external dependencies.</p>
+<p><bold>Trusted worldwide and proven in high-security environments, </bold>the free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed, reusable business asset — without external dependencies.</p>
 <p>Every email becomes a controlled touchpoint for your brand: up to date, consistent, and fully aligned across the organization.</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -53,6 +52,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
+<p>See how we <a href="https://set-outlooksignatures.com/features#feature-comparison">compare to cloud-hosted alternatives</a> and review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent pricing</a>.</p>
 
 
 <h2 id="demo">Experience it<span style="font-weight: bolder;"> in action</span></h2>
