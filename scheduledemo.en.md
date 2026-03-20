@@ -28,10 +28,6 @@ permalink: "/scheduledemo"
 </style>
 
 <section id="booking-section" class="section">
-  <p class="has-text-centered is-size-7 mb-2 has-text-grey">
-    Trouble viewing the calendar? <a href="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at" target="_blank">Open in a new window.</a>
-  </p>
-
   <div id="booking-container">
     <iframe 
       id="booking-iframe"
