@@ -131,6 +131,18 @@ sitemap_changefreq: weekly
 
 <p><a href="#trial" class="button is-info is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Testlizenz holen, Lizenzangebot anfordern</a></p>
 
+<p class="has-text-centered mb-5">
+  Genutzt von sicherheitsbewussten und markenorientierten Organisationen weltweit. Sehen Sie uns im <a href="https://set-outlooksignatures.com/features#feature-comparison">Vergleich zu Alternativen</a> und prüfen Sie unsere <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparenten Preise ohne automatische Verlängerung</a>.
+</p>
+<div class="columns is-multiline mb-6">
+  <div class="column is-full">
+    <div class="customer-scrolling-banner">
+      <div class="customer-scrolling-track">
+        </div>
+    </div>
+  </div>
+</div>
+
 
 <h2 id="demo">Erleben Sie es <span style="font-weight: bolder;">in Aktion</span></h2>
 <p>Organisationen nutzen unser Ökosystem für 📣 dynamisches Branding, 🏛️ administrative Governance und 🧭 plattformübergreifende Datensouveränität – ohne die Arbeitsweise der Anwender zu ändern.</p>
