@@ -12,4 +12,16 @@ sitemap: false
 sitemap_priority: 0.8
 sitemap_changefreq: monthly
 ---
-<iframe src='https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at/' width='100%' height='100%' scrolling='yes' style='border:0'></iframe>
+<div class="is-fullwidth" style="margin-top: -2rem;"> 
+  <div id="booking-wrapper" style="position: relative; width: 100%; height: 85vh; overflow: hidden;-webkit-overflow-scrolling: touch;">
+    <iframe 
+      src="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at/" 
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<p class="has-text-centered is-size-7 mt-4 has-text-grey">
+  Trouble viewing the calendar? <a href="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at/" target="_blank">Open in a new window ↗</a>
+</p>

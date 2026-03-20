@@ -122,7 +122,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>✨</span>
-      <div><b>Frictionless Adoption</b><br>Invisible to end users, silent background sync.</div>
+      <div><b>Frictionless Adoption</b><br>Invisible to end users, silent background sync. Intuitive for Marketing and IT.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
@@ -140,7 +140,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>📅</span>
-      <div><b>Centralized OOF Control</b><br>Standardize and reset out-of-office replies centrally.</div>
+      <div><b>Centralized OOF Control</b><br>Standardize and reset out-of-office replies centrally, for internal and external recipients.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
@@ -170,7 +170,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🚀</span>
-      <div><b>Marketing Impact</b><br>Design in Word, deploy brand-safe campaigns globally.</div>
+      <div><b>Marketing Impact</b><br>Design in Word, test-drive from your desk, deploy brand-safe campaigns globally.</div>
     </div>
   </div>
 </div>
