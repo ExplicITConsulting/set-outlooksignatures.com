@@ -80,8 +80,8 @@ sitemap_changefreq: weekly
     <div class="column is-half">
       <h3>Guided Walkthrough</h3>
       <p>Schedule a session with our team to see how the solution adapts to your specific organizational structure, technical setup, and compliance requirements.</p>
-      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" 
-         class="no-external-link-icon button is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
+      <a href="https://set-outlooksignatures.com/scheduledemo" 
+         class="is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
          style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
          target="_blank">
         <span>Schedule Interactive Demo</span>

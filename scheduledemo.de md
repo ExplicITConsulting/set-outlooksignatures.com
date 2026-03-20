@@ -1,12 +1,11 @@
 ---
 layout: "page"
-lang: "en"
-locale: "en"
+lang: "de"
+locale: "de"
 title: "Schedule Interactive Demo"
 subtitle: "Ideal for Security, IT, and Marketing leadership"
 description: "Guided Walkthrough. Schedule a session with our team to see how the solution adapts to your specific organizational structure, technical setup, and compliance requirements."
-permalink: "/schedule"
-sitemap: false
+permalink: "/scheduledemo"
 ---
 
 <style>
@@ -33,12 +32,15 @@ sitemap: false
   <div id="booking-container">
     <iframe 
       id="booking-iframe"
-      src="{{ site.data[site.active_lang].strings.microsoft_bookings_link }}"
+      src="{{ site.data[site.active_lang].strings.microsoft_bookings_link_demo }}"
       width="100%" 
       height="100%" 
       style="border:0; display: block;"
       allowfullscreen>
     </iframe>
+    <p class="has-text-centered is-size-7 mt-4 has-text-grey">
+      Trouble viewing the calendar? <a href="{{ site.data[site.active_lang].strings.microsoft_bookings_link_demo }}" target="_blank">Open in a new window ↗</a>
+    </p>
   </div>
 </section>
 
@@ -66,7 +68,7 @@ sitemap: false
 </script>
 
 <noscript>
-  <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" 
+  <a href="{{ site.data[site.active_lang].strings.microsoft_bookings_link_demo }}" 
       class="button is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
       style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
       target="_blank">
