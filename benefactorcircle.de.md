@@ -31,8 +31,7 @@ sitemap_changefreq: weekly
 ---
 <h2 id="sustainable-value">Nachhaltiger Mehrwert für Ihr Unternehmen</h2>
 <p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> erweitert das freie und quelloffene Set-OutlookSignatures um leistungsstarke zusätzliche Möglichkeiten für Ihr Unternehmen.</p>
-<p class="has-text-centered mb-5">
-  Genutzt von sicherheitsbewussten und markenorientierten Organisationen weltweit. Sehen Sie uns im <a href="https://set-outlooksignatures.com/features#feature-comparison">Vergleich zu Alternativen</a> und prüfen Sie unsere <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparenten Preise ohne automatische Verlängerung</a>.
+<p>Genutzt von sicherheitsbewussten und markenorientierten Organisationen weltweit. Sehen Sie uns im <a href="https://set-outlooksignatures.com/features#feature-comparison">Vergleich zu Alternativen</a> und prüfen Sie unsere <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparenten Preise ohne automatische Verlängerung</a>.
 </p>
 <div class="columns is-multiline mb-6">
   <div class="column is-full">
