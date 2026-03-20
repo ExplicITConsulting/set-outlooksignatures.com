@@ -2,9 +2,9 @@
 layout: "page"
 lang: "de"
 locale: "de"
-title: "Schedule Interactive Demo"
-subtitle: "Ideal for Security, IT, and Marketing leadership"
-description: "Guided Walkthrough. Schedule a session with our team to see how the solution adapts to your specific organizational structure, technical setup, and compliance requirements."
+title: "Interaktive Demo vereinbaren"
+subtitle: "Ideal für Führungskräfte in den Bereichen Security, IT und Marketing"
+description: "Geführte Tour. Vereinbaren Sie einen Termin mit unserem Team, um zu sehen, wie sich die Lösung an Ihre spezifische Organisationsstruktur, Ihr technisches Setup und Ihre Compliance-Anforderungen anpasst."
 permalink: "/scheduledemo"
 ---
 <style>
@@ -68,7 +68,7 @@ permalink: "/scheduledemo"
       class="button is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
       style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
       target="_blank">
-    <span>Schedule Interactive Demo</span>
-    <span><small>Ideal for Security, IT, and Marketing leadership</small></span>
+    <span>Interaktive Demo vereinbaren</span>
+    <span><small>Ideal für Führungskräfte in den Bereichen Security, IT und Marketing</small></span>
   </a>
 </noscript>

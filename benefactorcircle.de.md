@@ -132,92 +132,44 @@ sitemap_changefreq: weekly
 <p><a href="#trial" class="button is-info is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Testlizenz holen, Lizenzangebot anfordern</a></p>
 
 
-<h2 id="demo">Erleben Sie es<span style="font-weight: bolder;"> in Aktion</span></h2>
-<p>Sehen Sie selbst, wie Organisationen Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> nutzen, um Markenidentität, Governance und Datensouveränität sicherzustellen – ohne die Arbeitsweise der Anwender zu verändern.</p>
-<div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      🧭
-      <div style="hyphens: manual;">
-        <b>Plattformübergreifende Datensouveränität</b>
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      📣
-      <div style="hyphens: manual;">
-        <b>Dynamisches Branding und Marketing</b>
-      </div>
-    </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      🏛️
-      <div style="hyphens: manual;">
-        <b>Administrative Governance</b>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="box" style="background-color: rgba(0,0,0,0.02); border-left: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
+<h2 id="demo">Erleben Sie es <span style="font-weight: bolder;">in Aktion</span></h2>
+<p>Organisationen nutzen unser Ökosystem für 📣 dynamisches Branding, 🏛️ administrative Governance und 🧭 plattformübergreifende Datensouveränität – ohne die Arbeitsweise der Anwender zu ändern.</p>
+
+<div class="box pt-0" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid goldenrod; border-right: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
   <div class="columns">
     <div class="column is-half">
-      <h3>Persönliche Demo</h3>
-      <p>Vereinbaren Sie eine persönliche Präsentation, um zu sehen, wie die Lösung in Ihre spezifische Infrastruktur und Compliance-Anforderungen passt.</p>
-      <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" class="no-external-link-icon button is-info is-normal is-hovered has-text-black has-text-weight-bold  is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);" target="_blank"><span>Experten-Demo</span><span>Datensouveränität in Aktion erleben</span></a>
+      <h3>Geführte Tour</h3>
+      <p>Vereinbaren Sie einen Termin mit unserem Team, um zu sehen, wie sich die Lösung an Ihre spezifische Organisationsstruktur, Ihr technisches Setup und Ihre Compliance-Anforderungen anpasst.</p>
+      <a href="https://set-outlooksignatures.com/scheduledemo" 
+         class="is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
+         style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
+         target="_blank">
+        <span>Interaktive Demo vereinbaren</span>
+        <span><small>Ideal für Führungskräfte in den Bereichen Security, IT und Marketing</small></span>
+      </a>
     </div>
     <div class="column is-half">
-      <h3>Quickstart</h3>
-      <p>Folgen Sie unserer 3-Schritte-Anleitung, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen und eine solide Basis zu schaffen.</p>
-      <a href="https://set-outlooksignatures.com/quickstart" class="button is-info is-normal is-hovered has-text-black has-text-weight-bold  is-flex-direction-column" style="height: 4rem; min-height: 4rem; max-height: 4rem; width: 100%; padding: 0.5rem 1rem;"><span>Ihre Signaturen testen – direkt und risikofrei</span><span>Kostenlos, Open Source und Peer-Review-fähig</span></a>
+      <h3>Self-Service Schnellstart</h3>
+      <p>Folgen Sie unserem 3-Schritte-Prozess, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen. Peer-Review-fähig und bereit für den Produktiveinsatz.</p>
+      <a href="https://set-outlooksignatures.com/quickstart" 
+         class="button is-info is-normal has-text-weight-bold is-flex-direction-column" 
+         style="height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
+        <span>Selbst ausprobieren</span>
+        <span><small>100% Free & Open Source Kern</small></span>
+      </a>
     </div>
   </div>
 </div>
-<div class="columns is-multiline">
-  <div class="column is-full-desktop is-full-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <div class="customer-scrolling-banner">
-        <div class="customer-scrolling-track">
+
+<div class="columns is-multiline my-6">
+  <div class="column is-full">
+    <div class="signature-scrolling-banner">
+      <div class="signature-scrolling-track">
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="columns is-multiline">
-  <div class="column is-full-desktop is-full-tablet is-full-mobile">
-    <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <div class="signature-scrolling-banner">
-        <div class="signature-scrolling-track">
-        </div>
-      </div>
     </div>
   </div>
 </div>
 
-
-<!--
-<p>&nbsp;</p>
-
-<div class="columns">
-  <div class="column is-two-thirds-desktop is-half-tablet is-full-mobile">
-    <p>Wenn Sie zunächst mit den Grundlagen starten möchten und einen bodenständigen Ansatz schätzen, bietet unser Demo‑Video einen kompakten Überblick über die wichtigsten Funktionen von Set-OutlookSignatures – anhand eines realistischen Praxisbeispiels, direkt, pragmatisch und ohne große Inszenierung.</p>
-    <p>Sie werden sehen: Unser Fokus liegt auf der Funktionalität und Qualität unserer Software, wir sind weder Marketingprofis noch besonders talentierte Schauspieler.</p>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <figure class="image is-16by9">
-      <iframe class="has-ratio" width="560" height="315"
-        id="youtube-video-player"
-        src="https://www.youtube-nocookie.com/embed/K9TrCjTdRUI?enablejsapi=1"
-        title="Set-OutlookSignatures Benefactor Circle demo video"
-        frameborder="0"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-    </figure>
-  </div>
-</div>
--->
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
