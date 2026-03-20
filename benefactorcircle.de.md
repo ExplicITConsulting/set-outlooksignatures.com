@@ -142,8 +142,7 @@ sitemap_changefreq: weekly
       <p>Vereinbaren Sie einen Termin mit unserem Team, um zu sehen, wie sich die Lösung an Ihre spezifische Organisationsstruktur, Ihr technisches Setup und Ihre Compliance-Anforderungen anpasst.</p>
       <a href="https://set-outlooksignatures.com/scheduledemo" 
          class="is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
-         style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
-         target="_blank">
+         style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;">
         <span>Interaktive Demo vereinbaren</span>
         <span><small>Ideal für Führungskräfte in den Bereichen Security, IT und Marketing</small></span>
       </a>

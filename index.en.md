@@ -77,23 +77,22 @@ sitemap_changefreq: weekly
 
 <div class="box pt-0" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid goldenrod; border-right: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
   <div class="columns">
-    <div class="column is-half">
+    <div class="column is-half" style="display: flex; flex-direction: column;">
       <h3>Guided Walkthrough</h3>
       <p>Schedule a session with our team to see how the solution adapts to your specific organizational structure, technical setup, and compliance requirements.</p>
       <a href="https://set-outlooksignatures.com/scheduledemo" 
          class="is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
-         style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
-         target="_blank">
+         style="margin-top: auto; height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;">
         <span>Schedule Interactive Demo</span>
         <span><small>Ideal for Security, IT, and Marketing leadership</small></span>
       </a>
     </div>
-    <div class="column is-half">
+    <div class="column is-half" style="display: flex; flex-direction: column;">
       <h3>Self-Service Quickstart</h3>
       <p>Follow our 3-step process to deploy your first signatures in minutes. Peer-reviewable and production-ready.</p>
       <a href="https://set-outlooksignatures.com/quickstart" 
          class="button is-info is-normal has-text-weight-bold is-flex-direction-column" 
-         style="height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
+         style="margin-top: auto; height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
         <span>Try it Yourself</span>
         <span><small>100% Free & Open Source Core</small></span>
       </a>
