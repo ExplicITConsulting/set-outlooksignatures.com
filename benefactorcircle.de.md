@@ -42,7 +42,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<h3 id="key-features">Exklusive zusätzliche Business-Vorteil</h3>
+<h3 id="key-features">Exklusive zusätzliche Business-Vorteile</h3>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
