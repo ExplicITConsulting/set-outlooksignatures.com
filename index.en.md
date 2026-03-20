@@ -11,7 +11,6 @@ redirect_from:
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
-
 <div class="tags are-medium is-justify-content-center mb-5">
   <span class="tag is-dark">Peer-Reviewable Core</span>
   <span class="tag is-dark">Agentless Sync</span>
@@ -72,6 +71,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
+
 <h2 id="demo">Experience it <span style="font-weight: bolder;">in action</span></h2>
 <p>Organizations use our ecosystem to enforce 📣 dynamic branding, 🏛️ administrative governance, and 🧭 cross-platform data sovereignty — all without changing how users work.</p>
 
@@ -109,6 +109,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
+
 
 <h2 id="power">The <span style="font-weight: bolder;">power</span> of the ecosystem</h2>
 <p>Our modular architecture delivers capabilities no cloud relay solution can match. Go beyond static directory attributes by ingesting data from any source — APIs, LDAP, databases, files — and tailoring it with unlimited custom logic.</p>
