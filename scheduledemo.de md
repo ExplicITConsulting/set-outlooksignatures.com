@@ -32,14 +32,14 @@ permalink: "/scheduledemo"
   <div id="booking-container">
     <iframe 
       id="booking-iframe"
-      src="{{ site.data[site.active_lang].strings.microsoft_bookings_link_demo }}"
+      src="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at"
       width="100%" 
       height="100%" 
       style="border:0; display: block;"
       allowfullscreen>
     </iframe>
     <p class="has-text-centered is-size-7 mt-4 has-text-grey">
-      Trouble viewing the calendar? <a href="{{ site.data[site.active_lang].strings.microsoft_bookings_link_demo }}" target="_blank">Open in a new window ↗</a>
+      Trouble viewing the calendar? <a href="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at" target="_blank">Open in a new window ↗</a>
     </p>
   </div>
 </section>
@@ -68,7 +68,7 @@ permalink: "/scheduledemo"
 </script>
 
 <noscript>
-  <a href="{{ site.data[site.active_lang].strings.microsoft_bookings_link_demo }}" 
+  <a href="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at" 
       class="button is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
       style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
       target="_blank">
