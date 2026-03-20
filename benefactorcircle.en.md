@@ -31,7 +31,17 @@ sitemap_changefreq: weekly
 ---
 <h2 id="sustainable-value">Sustainable added value for your business</h2>
 <p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> enhances the free and open-source Set-OutlookSignatures with great additional possibilities for your company.</p>
-
+<p class="has-text-centered mb-5">
+  Used by security‑conscious and brand-aware organizations worldwide. See how we <a href="https://set-outlooksignatures.com/features#feature-comparison">compare to alternatives</a> and review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent, non-renewing pricing</a>.
+</p>
+<div class="columns is-multiline mb-6">
+  <div class="column is-full">
+    <div class="customer-scrolling-banner">
+      <div class="customer-scrolling-track">
+        </div>
+    </div>
+  </div>
+</div>
 
 <h3 id="key-features">Exclusive additional business benefits</h3>
 <div class="columns is-multiline">
@@ -130,18 +140,6 @@ sitemap_changefreq: weekly
 </div>
 
 <p><a href="#trial" class="button is-info is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Get a trial license, request a quote</a></p>
-
-<p class="has-text-centered mb-5">
-  Used by security‑conscious and brand-aware organizations worldwide. See how we <a href="https://set-outlooksignatures.com/features#feature-comparison">compare to alternatives</a> and review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent, non-renewing pricing</a>.
-</p>
-<div class="columns is-multiline mb-6">
-  <div class="column is-full">
-    <div class="customer-scrolling-banner">
-      <div class="customer-scrolling-track">
-        </div>
-    </div>
-  </div>
-</div>
 
 
 <h2 id="demo">Experience it <span style="font-weight: bolder;">in action</span></h2>
