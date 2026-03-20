@@ -7,7 +7,6 @@ subtitle: "Ideal for Security, IT, and Marketing leadership"
 description: "Guided Walkthrough. Schedule a session with our team to see how the solution adapts to your specific organizational structure, technical setup, and compliance requirements."
 permalink: "/scheduledemo"
 ---
-
 <style>
   /* 1. Prevent global page scrolling */
   html, body { 
@@ -29,6 +28,10 @@ permalink: "/scheduledemo"
 </style>
 
 <section id="booking-section" class="section">
+  <p class="has-text-centered is-size-7 mb-2 has-text-grey">
+    Trouble viewing the calendar? <a href="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at" target="_blank">Open in a new window ↗</a>
+  </p>
+
   <div id="booking-container">
     <iframe 
       id="booking-iframe"
@@ -38,9 +41,6 @@ permalink: "/scheduledemo"
       style="border:0; display: block;"
       allowfullscreen>
     </iframe>
-    <p class="has-text-centered is-size-7 mt-4 has-text-grey">
-      Trouble viewing the calendar? <a href="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at" target="_blank">Open in a new window ↗</a>
-    </p>
   </div>
 </section>
 
