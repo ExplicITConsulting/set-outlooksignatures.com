@@ -18,7 +18,7 @@ sitemap_changefreq: weekly
   <span class="tag is-dark">Sovereign Cloud Ready</span>
 </div>
 
-<p><strong>Trusted worldwide and proven in high-security environments,</strong> the free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed business asset — without external data transfer.</p>
+<p><strong>Trusted worldwide and proven in high-security environments:</strong> The free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed business asset — without external data transfer.</p>
 
 <p>By leveraging <strong>Microsoft Roaming Signatures</strong> and our own direct-to-mailbox technology, we provide the world’s only sovereign, native-sync experience that works across all Outlook editions and platforms — including <strong>Exchange Online, Hybrid, and On-Premises</strong> — silently in the background.</p>
 
