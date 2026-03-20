@@ -18,9 +18,10 @@ sitemap_changefreq: weekly
   <span class="tag is-dark">Sovereign Cloud Ready</span>
 </div>
 
-<p><strong>Trusted worldwide and proven in high-security environments:</strong> The free and open-source Set-OutlookSignatures and the <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> turn email signatures and out-of-office replies into a centrally managed business asset — without external data transfer.</p>
 
+<p><strong>Trusted worldwide and proven in high-security environments:</strong> The free and open-source Set-OutlookSignatures and the <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> turn email signatures and out-of-office replies into a centrally managed business asset — without external data transfer.</p>
 <p>By leveraging <strong>Microsoft Roaming Signatures</strong> and our own direct-to-mailbox technology, we provide the world’s only sovereign, native-sync experience that works across all Outlook editions and platforms — including <strong>Exchange Online, Hybrid, and On-Premises</strong> — silently in the background.</p>
+
 
 <div class="columns is-multiline mb-6">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -57,11 +58,9 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
 <p class="has-text-centered mb-5">
   Used by security‑conscious and brand-aware organizations worldwide. See how we <a href="https://set-outlooksignatures.com/features#feature-comparison">compare to alternatives</a> and review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent, non-renewing pricing</a>.
 </p>
-
 <div class="columns is-multiline mb-6">
   <div class="column is-full">
     <div class="customer-scrolling-banner">
@@ -74,7 +73,6 @@ sitemap_changefreq: weekly
 
 <h2 id="demo">Experience it <span style="font-weight: bolder;">in action</span></h2>
 <p>Organizations use our ecosystem to enforce 📣 dynamic branding, 🏛️ administrative governance, and 🧭 cross-platform data sovereignty — all without changing how users work.</p>
-
 <div class="box pt-0" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid goldenrod; border-right: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
   <div class="columns">
     <div class="column is-half" style="display: flex; flex-direction: column;">
@@ -99,7 +97,6 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
 <div class="columns is-multiline my-6">
   <div class="column is-full">
     <div class="signature-scrolling-banner">
@@ -112,12 +109,10 @@ sitemap_changefreq: weekly
 
 <h2 id="power">The <span style="font-weight: bolder;">power</span> of the ecosystem</h2>
 <p>Our modular architecture delivers capabilities no cloud relay solution can match. Go beyond static directory attributes by ingesting data from any source — APIs, LDAP, databases, files — and tailoring it with unlimited custom logic.</p>
-
 <style>
   .ecosystem-cell { transition: all 0.2s ease; border-radius: 6px; padding: 1.25rem; }
   .ecosystem-cell:hover { background-color: rgba(218, 165, 32, 0.15); transform: translateY(-3px); }
 </style>
-
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
@@ -174,6 +169,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
+
 
 <p class="mt-6 is-italic has-text-centered">
   The <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> license funds the open-source mission, ensuring the core engine remains free and peer-reviewable for the global community.

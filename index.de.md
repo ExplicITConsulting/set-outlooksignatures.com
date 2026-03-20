@@ -18,9 +18,10 @@ sitemap_changefreq: weekly
   <span class="tag is-dark">Bereit für die Sovereign Cloud</span>
 </div>
 
-<p><strong>Weltweit geschätzt und in Hochsicherheitsumgebungen bewährt:</strong> Das freie Open-Source-Tool Set-OutlookSignatures und das <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> machen E-Mail-Signaturen und Abwesenheitsnotizen zu einem zentral verwalteten Unternehmenswert – ganz ohne externen Datentransfer.</p>
 
+<p><strong>Weltweit geschätzt und in Hochsicherheitsumgebungen bewährt:</strong> Das freie Open-Source-Tool Set-OutlookSignatures und das <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> machen E-Mail-Signaturen und Abwesenheitsnotizen zu einem zentral verwalteten Unternehmenswert – ganz ohne externen Datentransfer.</p>
 <p>Durch die Nutzung von <strong>Microsoft Roaming Signatures</strong> und unserer eigenen Direct-to-Mailbox-Technologie bieten wir die weltweit einzige souveräne Native-Sync-Lösung. Diese funktioniert nahtlos im Hintergrund über alle Outlook-Editionen und Plattformen hinweg – einschließlich <strong>Exchange Online, Hybrid, und On-Premises</strong>.</p>
+
 
 <div class="columns is-multiline mb-6">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -57,11 +58,9 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
 <p class="has-text-centered mb-5">
   Genutzt von sicherheitsbewussten und markenorientierten Organisationen weltweit. Sehen Sie uns im <a href="https://set-outlooksignatures.com/features#feature-comparison">Vergleich zu Alternativen</a> und prüfen Sie unsere <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparenten Preise ohne automatische Verlängerung</a>.
 </p>
-
 <div class="columns is-multiline mb-6">
   <div class="column is-full">
     <div class="customer-scrolling-banner">
@@ -74,7 +73,6 @@ sitemap_changefreq: weekly
 
 <h2 id="demo">Erleben Sie es <span style="font-weight: bolder;">in Aktion</span></h2>
 <p>Organisationen nutzen unser Ökosystem für 📣 dynamisches Branding, 🏛️ administrative Governance und 🧭 plattformübergreifende Datensouveränität – ohne die Arbeitsweise der Anwender zu ändern.</p>
-
 <div class="box pt-0" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid goldenrod; border-right: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
   <div class="columns">
     <div class="column is-half" style="display: flex; flex-direction: column;">
@@ -99,7 +97,6 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
 <div class="columns is-multiline my-6">
   <div class="column is-full">
     <div class="signature-scrolling-banner">
@@ -112,12 +109,10 @@ sitemap_changefreq: weekly
 
 <h2 id="power">Die <span style="font-weight: bolder;">Stärke</span> des Ökosystems</h2>
 <p>Unsere modulare Architektur bietet Funktionen, die keine Cloud-Relay-Lösung erreichen kann. Gehen Sie über statische Verzeichnisattribute hinaus, indem Sie Daten aus beliebigen Quellen importieren – APIs, LDAP, Datenbanken, Dateien – und diese mit unbegrenzter Logik anpassen.</p>
-
 <style>
   .ecosystem-cell { transition: all 0.2s ease; border-radius: 6px; padding: 1.25rem; }
   .ecosystem-cell:hover { background-color: rgba(218, 165, 32, 0.15); transform: translateY(-3px); }
 </style>
-
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
@@ -174,6 +169,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
+
 
 <p class="mt-6 is-italic has-text-centered">
   Die <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> Lizenz finanziert die Open-Source-Mission und stellt sicher, dass die Core-Engine für die weltweite Community kostenlos und Peer-Review-fähig bleibt.

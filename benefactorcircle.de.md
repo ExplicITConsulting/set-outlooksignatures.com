@@ -134,32 +134,30 @@ sitemap_changefreq: weekly
 
 <h2 id="demo">Erleben Sie es <span style="font-weight: bolder;">in Aktion</span></h2>
 <p>Organisationen nutzen unser Ökosystem für 📣 dynamisches Branding, 🏛️ administrative Governance und 🧭 plattformübergreifende Datensouveränität – ohne die Arbeitsweise der Anwender zu ändern.</p>
-
 <div class="box pt-0" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid goldenrod; border-right: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
   <div class="columns">
-    <div class="column is-half">
+    <div class="column is-half" style="display: flex; flex-direction: column;">
       <h3>Geführte Tour</h3>
       <p>Vereinbaren Sie einen Termin mit unserem Team, um zu sehen, wie sich die Lösung an Ihre spezifische Organisationsstruktur, Ihr technisches Setup und Ihre Compliance-Anforderungen anpasst.</p>
       <a href="https://set-outlooksignatures.com/scheduledemo" 
-         class="is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
-         style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;">
+         class="button is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
+         style="margin-top: auto; height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;">
         <span>Interaktive Demo vereinbaren</span>
         <span><small>Ideal für Führungskräfte in den Bereichen Security, IT und Marketing</small></span>
       </a>
     </div>
-    <div class="column is-half">
+    <div class="column is-half" style="display: flex; flex-direction: column;">
       <h3>Self-Service Schnellstart</h3>
       <p>Folgen Sie unserem 3-Schritte-Prozess, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen. Peer-Review-fähig und bereit für den Produktiveinsatz.</p>
       <a href="https://set-outlooksignatures.com/quickstart" 
          class="button is-info is-normal has-text-weight-bold is-flex-direction-column" 
-         style="height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
+         style="margin-top: auto; height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
         <span>Selbst ausprobieren</span>
         <span><small>100% Free & Open Source Kern</small></span>
       </a>
     </div>
   </div>
 </div>
-
 <div class="columns is-multiline my-6">
   <div class="column is-full">
     <div class="signature-scrolling-banner">
