@@ -116,55 +116,55 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>✨</span>
+      ✨
       <div><b>Reibungslose Einführung</b><br>Unsichtbar für Endbenutzer, unsichtbare Hintergrund-Synchronisation. Intuitiv für Marketing und IT.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>🧬</span>
+      🧬
       <div><b>Dynamische Inhalte</b><br>Zeitbasierte Kampagnen, Ausblenden leerer Zeilen, regelbasierte Banner.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>🔍</span>
+      🔍
       <div><b>Simulationsmodus</b><br>Testen Sie Ihre Deployment-Logik zentral oder lokal, bevor Sie live gehen.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>📅</span>
+      🏝️
       <div><b>Zentrale OOF-Steuerung</b><br>Standardisieren und verwalten Sie Abwesenheitsnotizen für interne und externe Empfänger.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>📱</span>
+      📱
       <div><b>Signaturen Überall</b><br>Windows, Mac, iOS, Android, OWA, New und Classic Outlook in perfekter Synchronisation.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>🏢</span>
+      🏢
       <div><b>Enterprise-Vielseitigkeit</b><br>Unterstützung für freigegebene Postfächer, Stellvertreter und benutzerdefinierte Logik.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>🧩</span>
+      🧩
       <div><b>Native Integration</b><br>Direct-to-Mailbox-Synchronisation, keine Änderungen am Mailflow erforderlich.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>🔒</span>
+      🔒
       <div><b>Souverän per Design</b><br>Kein Abonnement, keine automatische Verlängerung, kein externer Datentransfer.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>🚀</span>
+      🚀
       <div><b>Marketing-Impact</b><br>Design in Word, Testlauf direkt vom Schreibtisch, markensichere Kampagnen global ausrollen.</div>
     </div>
   </div>

@@ -116,55 +116,55 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>✨</span>
+      ✨
       <div><b>Frictionless Adoption</b><br>Invisible to end users, silent background sync. Intuitive for Marketing and IT.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>🧬</span>
+      🧬
       <div><b>Dynamic Content</b><br>Time-based campaigns, collapse empty lines, rule-based banners.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>🔍</span>
+      🔍
       <div><b>Simulation Mode</b><br>Dry-run your deployment logic centrally or locally before going live.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>📅</span>
+      🏝️
       <div><b>Centralized OOF Control</b><br>Standardize and reset out-of-office replies centrally, for internal and external recipients.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>📱</span>
+      📱
       <div><b>Signatures Everywhere</b><br>Windows, Mac, iOS, Android, OWA, New and Classic Outlook in perfect sync.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>🏢</span>
+      🏢
       <div><b>Enterprise Versatility</b><br>Supports shared mailboxes, delegates, and custom logic.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>🧩</span>
+      🧩
       <div><b>Native Integration</b><br>Direct-to-mailbox synchronization, no mail flow changes required.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>🔒</span>
+      🔒
       <div><b>Sovereign by Design</b><br>No subscription, no auto-renewal, no external data transfer.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
-      <span>🚀</span>
+      🚀
       <div><b>Marketing Impact</b><br>Design in Word, test-drive from your desk, deploy brand-safe campaigns globally.</div>
     </div>
   </div>

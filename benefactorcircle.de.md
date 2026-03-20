@@ -37,7 +37,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      📱
       <div style="hyphens: manual;">
         <b>Plattformübergreifende Automatisierung</b><br>Signaturen werden automatisch in allen klassischen und neuen Outlook-Versionen ausgerollt: Windows, macOS, iOS, Android und Web.
       </div>
@@ -45,7 +45,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      📅
       <div style="hyphens: manual;">
         <b>Zeitgesteuerte Marketingkampagnen</b><br>Signaturen zeitlich planen, automatisch starten, ändern und beenden; mit hochauflösenden Bannern und Bildern direkt aus Word-Vorlagen.
       </div>
@@ -53,7 +53,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🎯
       <div style="hyphens: manual;">
         <b>Zentrale Bereitstellung</b><br>Signaturen zentral verteilen, ohne Software auf einzelnen Endgeräten. Ideal für BYOD-Szenarien und Nutzer mit M365‑F‑Lizenzen.
       </div>
@@ -61,7 +61,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      👥
       <div style="hyphens: manual;">
         <b>Freigegebene Postfächer und Delegationsszenarien</b><br>Volle Kontrolle über Signaturen für Shared Mailboxes und Delegationen (z. B. Assistenz‑ oder Vertretungsszenarien).
       </div>
@@ -69,7 +69,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🏝️
       <div style="hyphens: manual;">
         <b>Zentrale Verwaltung von Abwesenheitsnotizen</b><br>Einheitliche Abwesenheitsnachrichten zentral verwalten und ausrollen.
       </div>
@@ -77,7 +77,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🧹
       <div style="hyphens: manual;">
         <b>Automatische Signaturbereinigung</b><br>Veraltete oder manuell erstellte Signaturen werden automatisch entfernt, für ein durchgehend konsistentes Corporate Design.
       </div>
@@ -85,7 +85,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🧩
       <div style="hyphens: manual;">
         <b>Unterstützung für Drittanbieter‑Clients</b><br>Signaturen stehen über eine stets aktuelle Entwurfs‑E-Mail auch in alternativen E-Mail-Programmen wie Apple Mail, Gmail oder Thunderbird zur Verfügung.
       </div>
@@ -93,7 +93,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      💎
       <div style="hyphens: manual;">
         <b>Vollständiges White‑Labeling</b><br>Exklusiver Markenauftritt durch Entfernen des Hinweises "Free and open-source Set-OutlookSignatures" aus Ihren Signaturen.
       </div>
@@ -105,7 +105,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🔄
       <div style="hyphens: manual;">
         <b>Alle Updates inklusive</b><br>Unabhängig davon, ob es sich um einen Patch, ein neues Feature oder sogar eine neue Hauptversion handelt.
       </div>
@@ -113,7 +113,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🎧
       <div style="hyphens: manual;">
         <b>Priorisierte Support-Anfragen</b><br>24/5 an österreichischen Arbeitstagen, per E-Mail und mit Rückrufoption.
       </div>
@@ -121,7 +121,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-      <span style="font-weight: bold; background-image: linear-gradient(to right, #DAA52000, goldenrod, darkgoldenrod); background-clip: text; color: transparent;">⚫</span>
+      🛡️
       <div style="hyphens: manual;">
         <b>Sicherer Datenaustausch</b><br>Protokolldateien über ein sicheres Portal hochladen, statt sie per E-Mail zu versenden oder auf GitHub zu veröffentlichen.
       </div>
