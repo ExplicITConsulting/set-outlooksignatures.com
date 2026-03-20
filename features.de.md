@@ -87,7 +87,7 @@ Nach einer bestimmten Nutzungsdauer wird der **[dezente Hinweis 'Free and open-s
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;"></th>
-                    <th class="has-text-weight-bold" style="min-width: 10em; white-space: nowrap;">Set-OutlookSignatures mit<br><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></th>
+                    <th class="has-text-weight-bold" style="min-width: 10em; white-space: nowrap;">Set-OutlookSignatures mit<br><a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a></th>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber A</th>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber B</th>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber C</th>

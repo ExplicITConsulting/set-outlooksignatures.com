@@ -25,7 +25,7 @@ permalink: "/quickstart"
 ## Schritt 2: Einmalige Vorbereitungen {#step-2}
 ##### Client und Benutzer
 * **Erster Test:** Melden Sie sich mit einem **Testbenutzer** an einem Windows-System mit Classic Outlook und Word an. Wenn Sie Ihren eigenen Benutzer verwenden, könnten bestehende Signaturen überschrieben werden, sofern Sie nicht den Simulationsmodus nutzen.
-* **Plattform-Unterstützung:** Linux, macOS und das neue Outlook erfordern das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> sowie Postfächer in Exchange Online.
+* **Plattform-Unterstützung:** Linux, macOS und das neue Outlook erfordern das <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> sowie Postfächer in Exchange Online.
 
 ##### Entra ID (für Exchange Online)
 Für den Zugriff auf die Graph API müssen Sie eine Entra ID App registrieren.

@@ -25,7 +25,7 @@ permalink: "/quickstart"
 ## Step 2: One-time Preparations {#step-2}
 ##### Client and User
 * **Initial Test:** Log on with a **test user** on Windows with Classic Outlook and Word. Using your own account may overwrite existing signatures if you do not use simulation mode.
-* **Platform Support:** Linux, macOS, and New Outlook require the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> and Exchange Online hosting.
+* **Platform Support:** Linux, macOS, and New Outlook require the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and Exchange Online hosting.
 
 ##### Entra ID (for Exchange Online)
 To access the Graph API, you must register an Entra ID app.

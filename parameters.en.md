@@ -39,7 +39,7 @@ One parameter can be assigned to multiple topics.
 | Benefactor Circle | [BenefactorCircleID](#benefactorcircleid)¹ \| [BenefactorCircleLicenseFile](#benefactorcirclelicensefile)¹ |
 
 
-Remark 1 (¹): Some features are exclusive to the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a>.
+Remark 1 (¹): Some features are exclusive to the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>.
 
 ## AdditionalSignaturePath
 An additional path that the signatures shall be copied to.  
