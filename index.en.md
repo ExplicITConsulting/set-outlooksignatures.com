@@ -18,7 +18,7 @@ sitemap_changefreq: weekly
   <span class="tag is-dark">Sovereign Cloud Ready</span>
 </div>
 
-<p><strong>Trusted worldwide and proven in high-security environments:</strong> The free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed business asset — without external data transfer.</p>
+<p><strong>Trusted worldwide and proven in high-security environments:</strong> The free and open-source Set-OutlookSignatures and the <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> turn email signatures and out-of-office replies into a centrally managed business asset — without external data transfer.</p>
 
 <p>By leveraging <strong>Microsoft Roaming Signatures</strong> and our own direct-to-mailbox technology, we provide the world’s only sovereign, native-sync experience that works across all Outlook editions and platforms — including <strong>Exchange Online, Hybrid, and On-Premises</strong> — silently in the background.</p>
 
@@ -128,7 +128,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🧬</span>
-      <div><b>Dynamic Content</b><br>Time-based campaigns, collapse empty lines, logic-based banners.</div>
+      <div><b>Dynamic Content</b><br>Time-based campaigns, collapse empty lines, rule-based banners.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
@@ -176,5 +176,5 @@ sitemap_changefreq: weekly
 </div>
 
 <p class="mt-6 is-italic has-text-centered">
-  The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> license funds the open-source mission, ensuring the core engine remains free and peer-reviewable for the global community.
+  The <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> license funds the open-source mission, ensuring the core engine remains free and peer-reviewable for the global community.
 </p>

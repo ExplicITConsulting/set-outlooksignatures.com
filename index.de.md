@@ -18,7 +18,7 @@ sitemap_changefreq: weekly
   <span class="tag is-dark">Bereit für die Sovereign Cloud</span>
 </div>
 
-<p><strong>Weltweit geschätzt und in Hochsicherheitsumgebungen bewährt:</strong> Das freie Open-Source-Tool Set-OutlookSignatures und das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> machen E-Mail-Signaturen und Abwesenheitsnotizen zu einem zentral verwalteten Unternehmenswert – ganz ohne externen Datentransfer.</p>
+<p><strong>Weltweit geschätzt und in Hochsicherheitsumgebungen bewährt:</strong> Das freie Open-Source-Tool Set-OutlookSignatures und das <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> machen E-Mail-Signaturen und Abwesenheitsnotizen zu einem zentral verwalteten Unternehmenswert – ganz ohne externen Datentransfer.</p>
 
 <p>Durch die Nutzung von <strong>Microsoft Roaming Signatures</strong> und unserer eigenen Direct-to-Mailbox-Technologie bieten wir die weltweit einzige souveräne Native-Sync-Lösung. Diese funktioniert nahtlos im Hintergrund über alle Outlook-Editionen und Plattformen hinweg – einschließlich <strong>Exchange Online, Hybrid, und On-Premises</strong>.</p>
 
@@ -122,13 +122,13 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>✨</span>
-      <div><b>Reibungslose Einführung</b><br>Unsichtbar für Endbenutzer, lautlose Hintergrund-Synchronisation. Intuitiv für Marketing und IT.</div>
+      <div><b>Reibungslose Einführung</b><br>Unsichtbar für Endbenutzer, unsichtbare Hintergrund-Synchronisation. Intuitiv für Marketing und IT.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🧬</span>
-      <div><b>Dynamische Inhalte</b><br>Zeitbasierte Kampagnen, Ausblenden leerer Zeilen, logikbasierte Banner.</div>
+      <div><b>Dynamische Inhalte</b><br>Zeitbasierte Kampagnen, Ausblenden leerer Zeilen, regelbasierte Banner.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
@@ -176,5 +176,5 @@ sitemap_changefreq: weekly
 </div>
 
 <p class="mt-6 is-italic has-text-centered">
-  Die <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span> Lizenz finanziert die Open-Source-Mission und stellt sicher, dass die Core-Engine für die weltweite Community kostenlos und Peer-Review-fähig bleibt.
+  Die <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> Lizenz finanziert die Open-Source-Mission und stellt sicher, dass die Core-Engine für die weltweite Community kostenlos und Peer-Review-fähig bleibt.
 </p>
