@@ -10,49 +10,67 @@ sitemap: false
 ---
 
 <style>
-  /* Force the main html/body not to scroll so only the iframe scrolls */
+  /* 1. Prevent global page scrolling */
   html, body { 
-    overflow: hidden; 
-    height: 100%; 
+    overflow: hidden !important; 
+    height: 100% !important; 
   }
-  /* Ensure the Bulma section/container doesn't add extra height */
-  .section, .container { 
-    padding: 0 !important; 
-    max-width: 100% !important; 
+
+  /* 2. Remove ONLY the bottom padding so the iframe hits the bottom of the screen */
+  #booking-section {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* 3. This ensures the iframe starts with high visibility on the JS calculation */
+  #booking-container {
+    width: 100%;
+    visibility: hidden; 
   }
 </style>
 
-<div id="booking-container" style="width: 100%; visibility: hidden;">
-  <iframe 
-    id="booking-iframe"
-    src="{{ site.data[site.active_lang].strings.microsoft_bookings_link }}"
-    width="100%" 
-    height="100%" 
-    style="border:0; display: block;"
-    allowfullscreen>
-  </iframe>
-</div>
+<section id="booking-section" class="section">
+  <div id="booking-container">
+    <iframe 
+      id="booking-iframe"
+      src="{{ site.data[site.active_lang].strings.microsoft_bookings_link }}"
+      width="100%" 
+      height="100%" 
+      style="border:0; display: block;"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
 
 <script>
-  function scaleBooking() {
+  function fitBookingToWindow() {
     const container = document.getElementById('booking-container');
-    const iframe = document.getElementById('booking-iframe');
     
-    // Calculate distance from top of the container to bottom of viewport
+    // Get the distance from the top of the viewport to the start of the container
+    // This respects the Hero/Header height automatically.
     const rect = container.getBoundingClientRect();
-    const availableHeight = window.innerHeight - rect.top;
+    const viewportHeight = window.innerHeight;
     
-    container.style.height = availableHeight + "px";
+    // Calculate space remaining from the bottom of the Hero to the bottom of the screen
+    const remainingHeight = viewportHeight - rect.top;
+    
+    // Set the height. We subtract a few pixels (4-5) to ensure 
+    // no rounding errors trigger a browser scrollbar.
+    container.style.height = (remainingHeight - 4) + "px";
     container.style.visibility = "visible";
   }
 
-  // Run on load and whenever window is resized
-  window.addEventListener('load', scaleBooking);
-  window.addEventListener('resize', scaleBooking);
+  // Run on load and resize
+  window.addEventListener('load', fitBookingToWindow);
+  window.addEventListener('resize', fitBookingToWindow);
 </script>
 
 <noscript>
-  <div class="notification is-warning has-text-centered">
-    Please <a href="{{ site.data[site.active_lang].strings.microsoft_bookings_link }}">click here to open the booking calendar</a> directly.
-  </div>
+  <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" 
+      class="button is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
+      style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
+      target="_blank">
+    <span>Schedule Interactive Demo</span>
+    <span><small>Ideal for Security, IT, and Marketing leadership</small></span>
+  </a>
 </noscript>
