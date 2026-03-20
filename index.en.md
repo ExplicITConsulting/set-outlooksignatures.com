@@ -19,9 +19,9 @@ sitemap_changefreq: weekly
   <span class="tag is-dark">Sovereign Cloud Ready</span>
 </div>
 
-<p><strong>Trusted worldwide and proven in high-security environments,</strong> the free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed business asset — without external dependencies.</p>
+<p><strong>Trusted worldwide and proven in high-security environments,</strong> the free and open-source Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> turn email signatures and out-of-office replies into a centrally managed business asset — without external data transfer.</p>
 
-<p>By leveraging <strong>Microsoft Roaming Signatures</strong>, we provide the world’s only sovereign, native-sync experience that works across all Outlook editions and platforms — including <strong>Exchange Online, Hybrid, and On-Premises</strong> — silently in the background.</p>
+<p>By leveraging <strong>Microsoft Roaming Signatures</strong> and our own direct-to-mailbox technology, we provide the world’s only sovereign, native-sync experience that works across all Outlook editions and platforms — including <strong>Exchange Online, Hybrid, and On-Premises</strong> — silently in the background.</p>
 
 <div class="columns is-multiline mb-6">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
@@ -30,7 +30,7 @@ sitemap_changefreq: weekly
         📣
         <div style="hyphens: manual;">
           <b>Marketing: Design Autonomy</b><br>
-          Design in Word. Deploy in seconds. Use familiar placeholders and logic to drive consistent branding without waiting for IT tickets.
+          Design in Word, save, done. Use familiar placeholders and logic to drive consistent branding without waiting for IT tickets. Test-drive using simulation mode.
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@ sitemap_changefreq: weekly
         🛠️
         <div style="hyphens: manual;">
           <b>IT: Full Automation</b><br>
-          Centralized or decentralized deployment, no "man-in-the-middle" routing. Sync signatures natively across all M365 clouds, Hybrid, and On-Premises environments.
+          Centralized or decentralized architecture, no "man-in-the-middle" routing. Sync signatures natively across all M365 clouds, Hybrid, and On-Premises environments.
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@ sitemap_changefreq: weekly
         🛡️
         <div style="hyphens: manual;">
           <b>Security: Total Sovereignty</b><br>
-          Zero third-party data processing. Your data and email traffic never leave your trusted boundary. Fully audit-ready.
+          Zero external data processing. Your data and email traffic never leave your trusted boundary. Fully audit-ready.
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@ sitemap_changefreq: weekly
   <div class="columns">
     <div class="column is-half">
       <h3>Guided Walkthrough</h3>
-      <p>Schedule a session with our team to see how the solution adapts to your specific infrastructure, hybrid setup, and compliance requirements.</p>
+      <p>Schedule a session with our team to see how the solution adapts to your specific organizational structure, technical setup, and compliance requirements.</p>
       <a href="https://outlook.cloud.microsoft/book/demo.set-outlooksignatures@explicitconsulting.at" 
          class="no-external-link-icon button is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
          style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
@@ -90,7 +90,7 @@ sitemap_changefreq: weekly
     </div>
     <div class="column is-half">
       <h3>Self-Service Quickstart</h3>
-      <p>Follow our 3-step process to deploy your first signatures in 15 minutes. Peer-reviewable and production-ready.</p>
+      <p>Follow our 3-step process to deploy your first signatures in minutes. Peer-reviewable and production-ready.</p>
       <a href="https://set-outlooksignatures.com/quickstart" 
          class="button is-info is-normal has-text-weight-bold is-flex-direction-column" 
          style="height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
@@ -128,7 +128,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🧬</span>
-      <div><b>Dynamic Content</b><br>Collapses empty lines automatically, logic-based banners.</div>
+      <div><b>Dynamic Content</b><br>Time-based campaigns, collapse empty lines, logic-based banners.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
@@ -146,7 +146,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>📱</span>
-      <div><b>Outlook Everywhere</b><br>Windows, Mac, iOS, Android, and OWA in perfect sync.</div>
+      <div><b>Signatures Everywhere</b><br>Windows, Mac, iOS, Android, OWA, New and Classic Outlook in perfect sync.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
@@ -164,7 +164,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       <span>🔒</span>
-      <div><b>Sovereign by Design</b><br>No subscription, no auto-renewal, no third-party data access.</div>
+      <div><b>Sovereign by Design</b><br>No subscription, no auto-renewal, no external data transfer.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
