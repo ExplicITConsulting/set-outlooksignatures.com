@@ -3,9 +3,9 @@ layout: "page"
 lang: "en"
 locale: "en"
 title: |
-  <span class="title is-3">Email Signatures and Out-of-Office Replies with Data Sovereignty</span>
-subtitle: "Professional Outlook branding everywhere, without external data transfer"
-description: "Email signatures and out-of-office replies with data sovereignty. Centrally manage Outlook branding across all platforms without your data ever leaving your trusted systems."
+  <span class="title is-3">Data Sovereign Email Signatures and Out-of-Office Replies</span>
+subtitle: "Unified Outlook branding everywhere – with zero external data exposure"
+description: "Data Sovereign Email Signatures and Out-of-Office Replies. Centrally manage Outlook branding across all platforms without your data ever leaving your trusted systems."
 permalink: "/"
 redirect_from:
 sitemap_priority: 1.0

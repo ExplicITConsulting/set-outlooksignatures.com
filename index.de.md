@@ -3,8 +3,8 @@ layout: "page"
 lang: "de"
 locale: "de"
 title: |
-  <span class="title is-3">E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität </span>
-subtitle: "Professionelles Outlook-Branding überall, ohne externen Datentransfer"
+  <span class="title is-3">Datensouveräne E-Mail-Signaturen und Abwesenheitsnotizen</span>
+subtitle: "Einheitliches Outlook-Branding überall – ohne externen Datenabfluss"
 description: "E-Mail-Signatur- und Abwesenheitsmanagement mit Datensouveränität. Verwalten Sie Outlook-Branding zentral über alle Plattformen hinweg, ohne dass Ihre Daten Ihre vertrauenswürdigen Systeme verlassen."
 permalink: "/"
 redirect_from:

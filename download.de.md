@@ -4,7 +4,7 @@ lang: "de"
 locale: "de"
 title: "Set-OutlookSignatures herunterladen"
 subtitle: "Holen Sie sich die kostenlose und quelloffene Kernversion"
-description: "E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität"
+description: "Datensouveräne E-Mail-Signaturen"
 permalink: "/download"
 redirect_from:
   - "/download/"
@@ -13,7 +13,7 @@ sitemap_changefreq: weekly
 ---
 <h2 id="set-outlooksignatures">Set-OutlookSignatures</h2>
 <p>
-Set-OutlookSignatures ist der Open-Source-Standard für E-Mail-Signaturen und Abwesenheitsnotizen mit Datensouveränität.
+Set-OutlookSignatures ist der Open-Source-Standard für datensouveräne E-Mail-Signaturen.
 </p>
 
 <p>
