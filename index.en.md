@@ -2,8 +2,7 @@
 layout: "page"
 lang: "en"
 locale: "en"
-title: |
-  <span class="title is-3">Data Sovereign Email Signatures and Out-of-Office Replies</span>
+title: "Data Sovereign Email Signatures and Out-of-Office Replies"
 subtitle: "Unified Outlook branding everywhere – with zero external data exposure"
 description: "Data Sovereign Email Signatures and Out-of-Office Replies. Centrally manage Outlook branding across all platforms without your data ever leaving your trusted systems."
 permalink: "/"
