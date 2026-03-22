@@ -295,6 +295,7 @@ html::after {
 [data-theme="dark"],
 .theme-dark {
   :not(pre) > code {
+    background-color: darkgrey; // Consistent light grey
     color: white;
   }
 }
@@ -302,6 +303,7 @@ html::after {
 // Dark mode text color (System Preference)
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) :not(pre) > code {
+    background-color: darkgrey; // Consistent light grey
     color: white;
   }
 }
