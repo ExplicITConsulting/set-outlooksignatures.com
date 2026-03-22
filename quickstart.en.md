@@ -24,23 +24,33 @@ permalink: "/quickstart"
 
 ## Step 2: One-time Preparations {#step-2}
 <div class="columns is-multiline">
-  <div class="column is-half">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
       <p><b>💻 Client and User</b></p>
       <ul>
-        <li><strong>Initial Test:</strong> Log on with a <strong>test user</strong> on Windows with Classic Outlook and Word. Using your own account may overwrite existing signatures if you do not use simulation mode.</li>
-        <li><strong>Platform Support:</strong> Linux, macOS, and New Outlook require the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and Exchange Online hosting.</li>
+        <li><b>Initial Test:</b> Log on with a test user on Windows with Classic Outlook and Word. Using your own account may overwrite existing signatures if you do not use simulation mode.</li>
+        <li><b>Platform Support:</b> Linux, macOS, and New Outlook require the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and Exchange Online hosting.</li>
       </ul>
     </div>
   </div>
-  <div class="column is-half">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #ffdd57;">
+      <p><b>🛡️ Endpoint Security</b></p>
+      <p>If using AppLocker, Defender, CrowdStrike…:</p>
+      <ul style="margin-left: 1.5rem; list-style-type: disc;">
+        <li>Allow execution and library loading from the <b>TEMP</b> folder.</li>
+        <li>Trust software signed with <b>ExplicIT Consulting's</b> certificate (all included PS1 and DLL files are signed).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="column is-full">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <p><b>☁️ Entra ID (for Exchange Online)</b></p>
       <p class="is-size-7 mb-2">To access the Graph API, you must register an Entra ID app.</p>
       <ul style="margin-left: 1.5rem; list-style-type: disc; font-size: 0.9rem;">
-        <li><strong>Documentation:</strong> Review <code>.\sample code\Create-EntraApp.ps1</code> for permissions and security audit details.</li>
-        <li><strong>Manual Setup:</strong> Follow instructions in <code>.\config\default graph config.ps1</code>.</li>
-        <li><strong>Scripted Setup:</strong> Have a 'Global Administrator' or 'Application Administrator' run the provided PowerShell command.
+        <li><b>Documentation:</b> Review <code>.\sample code\Create-EntraApp.ps1</code> for permissions and security audit details.</li>
+        <li><b>Manual Setup:</b> Follow instructions in <code>.\config\default graph config.ps1</code>.</li>
+        <li><b>Scripted Setup:</b> Have a 'Global Administrator' or 'Application Administrator' run the provided PowerShell command.
             <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative;">
                 <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
                 <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
@@ -51,16 +61,6 @@ permalink: "/quickstart"
             </div>
             <p class="is-size-7"><em>For sovereign clouds (e.g., AzureChina), add the [CloudEnvironment](/parameters#cloudenvironment) parameter.</em></p>
         </li>
-      </ul>
-    </div>
-  </div>
-  <div class="column is-full">
-    <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #ffdd57;">
-      </p><b>🛡️ Endpoint Security</b></p>
-      <p>If using AppLocker, Defender, CrowdStrike…:</p>
-      <ul style="margin-left: 1.5rem; list-style-type: disc;">
-        <li>Allow execution and library loading from the <strong>TEMP</strong> folder.</li>
-        <li>Trust software signed with <strong>ExplicIT Consulting's</strong> certificate (all included PS1 and DLL files are signed).</li>
       </ul>
     </div>
   </div>
@@ -99,9 +99,9 @@ permalink: "/quickstart"
     <p>If you lack Classic Outlook or want a zero-impact trial of the software:</p>
     <ol class="mt-2 mb-3" style="margin-left: 1.5rem;">
       <li>Run the script with: <code>-SimulateUser a@example.com -SimulateMailboxes a@example.com</code></li>
-      <li><strong>See the results:</strong> Open your <strong>'Documents\Outlook Signatures'</strong> folder.</li>
+      <li><b>See the results:</b> Open your <b>'Documents\Outlook Signatures'</b> folder.</li>
     </ol>
-    <p>This <strong>"[Simulation Mode](/details#simulation-mode)"</strong> creates the exact signatures for the simulated user as files on your disk. Instead of modifying Outlook, it generates a complete preview — the perfect way to verify your configuration without changing any system settings.</p>
+    <p>This <b>"[Simulation Mode](/details#simulation-mode)"</b> creates the exact signatures for the simulated user as files on your disk. Instead of modifying Outlook, it generates a complete preview — the perfect way to verify your configuration without changing any system settings.</p>
   </div>
 </div>
 
