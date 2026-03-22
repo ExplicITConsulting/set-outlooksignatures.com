@@ -7,17 +7,31 @@ subtitle: "Signatures in minutes"
 description: "Quickstart guide. Deploy signatures within minutes."
 permalink: "/quickstart"
 ---
-## Step 1: Download {#step-1}
-**Download** and extract the archive to a local folder.
-<p>
-  <div class="buttons">
-    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-info is-normal is-hovered  has-text-weight-bold  mtrcs-download">Download software</a>
-    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="sos-download-link mtrcs-download no-external-link-icon"><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=flat" alt="Downloads" loading="lazy"></a>
-    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Open issues" loading="lazy"></a>
-  </div>
-</p>
-To remove the 'mark of the web' from 'Set-OutlookSignatures.ps1' and allow execution, right-click the file > Properties > check Unblock - or use the 'Unblock-File' cmdlet.
+## Step 1: Download & Unblock {#step-1}
 
+<div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #3273dc;">
+  <div class="columns is-vcentered">
+    <div class="column is-5">
+      <p><b>1. Download software</b></p>
+      <p class="is-size-7 mb-3">Extract the archive to a local folder to begin.</p>
+      <div class="buttons">
+        <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-info is-normal is-hovered has-text-weight-bold mtrcs-download">Download latest release</a>
+      </div>
+      <div class="is-flex is-align-items-center" style="gap: 10px;">
+         <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="no-external-link-icon"><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=flat" alt="Downloads"></a>
+         <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Issues"></a>
+      </div>
+    </div>
+    <div class="column is-divider-vertical" style="border-left: 1px solid #dbdbdb; padding-left: 2rem;">
+      <p><b>2. Unblock files</b></p>
+      <p class="is-size-7 mb-2">Remove the 'mark of the web' to allow execution:</p>
+      <ul style="margin-left: 1.25rem; list-style-type: disc; font-size: 0.85rem;">
+        <li><b>Right-click</b> <code>Set-OutlookSignatures.ps1</code> > <b>Properties</b> > check <b>Unblock</b>.</li>
+        <li><i>Or</i> use PowerShell: <code style="word-break: break-all;">Unblock-File 'Set-OutlookSignatures.ps1'</code></li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 ## Step 2: One-time Preparations {#step-2}
 <div class="columns is-multiline">
