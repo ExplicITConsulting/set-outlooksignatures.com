@@ -32,7 +32,7 @@ To access the Graph API, you must register an Entra ID app.
 * **Documentation:** Review `.\sample code\Create-EntraApp.ps1` for permissions and security audit details.
 * **Manual Setup:** Follow instructions in `.\config\default graph config.ps1`.
 * **Scripted Setup:** Have a 'Global Administrator' or 'Application Administrator' run:
-    ```powershell
+    ```
     powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
     ```
     *For sovereign clouds (e.g., AzureChina), add: `-CloudEnvironment [EnvironmentName]`*
@@ -45,11 +45,11 @@ If using AppLocker, Defender, CrowdStrike…:
 
 ## Step 3: Run Set-OutlookSignatures {#step-3}
 * **Exchange On-Prem:**
-    ```powershell
+    ```
     powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"
     ```
 * **Exchange Online / Hybrid:**
-    ```powershell
+    ```
     powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"
     ```
     *Note: `-GraphOnly true` ensures on-prem AD is ignored. Add `-CloudEnvironment` if using a sovereign cloud.*
