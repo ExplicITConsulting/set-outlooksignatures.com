@@ -22,7 +22,7 @@ Download and unzip the archive to a local folder:
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>💻</span>
-        <div style="hyphens: manual;">
+        <div">
           <p><b>Client and User</b></p>
           <p>Log on with a test user on Windows with Classic Outlook and Word. Running this on your primary account will overwrite signatures named '<code>Formal</code>' or '<code>Informal</code>' unless you use simulation mode, which is described later.</p>
           <p>Linux, macOS, and New Outlook require the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and Exchange Online hosting.</p>
@@ -34,7 +34,7 @@ Download and unzip the archive to a local folder:
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🛡️</span>
-        <div style="hyphens: manual;">
+        <div>
           <p><b>Endpoint Security (AppLocker, Defender, CrowdStrike…)</b></p>
           <p>Trust software signed with ExplicIT Consulting's certificate - all included PS1 and DLL files are signed with this certificate.</p>
           <p>If needed, allow execution and library loading from the TEMP folder.</p>
@@ -49,7 +49,7 @@ Download and unzip the archive to a local folder:
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>☁️</span>
-        <div style="hyphens: manual;">
+        <div>
           <p><b>Create Entra ID app for Exchange Online</b></p>
           <p>Follow the instructions in '<code>.\config\default graph config.ps1</code>' for manual setup or have a "Global Administrator" or "Application Administrator" run the provided PowerShell command.</p>
           <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
@@ -122,7 +122,7 @@ Download and unzip the archive to a local folder:
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>💡</span>
-        <div style="hyphens: manual;">
+        <div>
           <p><b>Pro-tip: Start risk-free with Simulation Mode</b></p>
           <p>If you lack Classic Outlook or want a zero-impact trial of the software, use <a href="/details#simulation-mode">Simulation Mode</a>: This mode creates the exact signatures for the simulated user as files on your disk, without modifying Outlook — the perfect way to verify your configuration without changing any system settings.</p>
           <p>Just add the parameter '<code>-SimulateUser a@example.com -SimulateMailboxes a@example.com</code>' and see the results in your '<code>Documents\Outlook Signatures</code>' folder.</p>
@@ -139,7 +139,7 @@ Download and unzip the archive to a local folder:
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🎨</span>
-        <div style="hyphens: manual;">
+        <div>
           <p><b>Deploy Your Own Templates</b></p>
           <p>Ready to move beyond samples? Copy '<code>.\sample templates</code>' to a new folder and start editing. We recommend following our <a href="/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files">folder structure guide</a> to make future updates a breeze.</p>
           <p>Point the script to your new files using:</p>
@@ -156,7 +156,7 @@ Download and unzip the archive to a local folder:
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🚀</span>
-        <div style="hyphens: manual;">
+        <div>
           <p><b>Scale Your Rollout</b></p>
           <p>Once your templates are ready, explore the <a href="/features">Full Feature List</a> and <a href="/parameters">Parameter Docs</a> to automate the deployment across your organization.</p>
           <p>Review the <a href="/implementationapproach">Implementation Approach</a> for best practices on technical architecture and user communication.</p>
@@ -168,7 +168,7 @@ Download and unzip the archive to a local folder:
     <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #ff3860;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>⭐</span>
-        <div style="hyphens: manual;">
+        <div">
           <p><b>Share Your Success!</b></p>
           <p>Did you build something stunning? <a href="/support">Get in touch</a> to share your templates or a testimonial for our showcase and inspire others in the community!</p>
         </div>
