@@ -44,9 +44,8 @@ To remove the 'mark of the web' from 'Set-OutlookSignatures.ps1' and allow execu
       <p><b>☁️ Entra ID (for Exchange Online)</b></p>
       <p>To access the Graph API, you must register an Entra ID app.</p>
       <ul>
-        <li><b>Documentation:</b> Review '.\sample code\Create-EntraApp.ps1' for permissions and security audit details.</li>
-        <li><b>Manual Setup:</b> Follow instructions in '.\config\default graph config.ps1'.</li>
-        <li><b>Scripted Setup:</b> Have a "Global Administrator" or "Application Administrator" run the provided PowerShell command.
+        <li>Review '.\sample code\Create-EntraApp.ps1' for permissions and security audit details.</li>
+        <li>Follow the instructions in '.\config\default graph config.ps1'for manual setup or have a "Global Administrator" or "Application Administrator" run the provided PowerShell command.
             <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative;">
                 <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
                 <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
