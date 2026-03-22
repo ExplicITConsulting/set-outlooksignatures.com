@@ -112,7 +112,7 @@ Download and extract the archive to a local folder:
     </div>
   </div>
 </div>
-<p>You will now find three new signatures in Outlook, based on the integrated sample templates and the attributes of your own user:</p>
+<p><b>You now find three new signatures in Outlook, based on the integrated sample templates and the attributes of your own user:</b></p>
 <ul>
   <li><b>'Formal'</b> is ideal for new emails to external recipients.</li>
   <li><b>'Informal'</b> is great for replies and forwards and for internal emails..</li>
