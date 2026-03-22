@@ -57,7 +57,7 @@ permalink: "/quickstart"
                 <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
                 <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
             </div>
-            <pre style="font-color: white; background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
+            <pre style="background: transparent; padding: 0; color: white; overflow-x: auto; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
             </div>
             <p><em>For sovereign clouds (e.g., AzureChina), add the [CloudEnvironment](/parameters#cloudenvironment) parameter.</em></p>
         </li>
@@ -76,7 +76,7 @@ permalink: "/quickstart"
     <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
     <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
   </div>
-  <pre style="font-color: white; background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
+  <pre style="background: transparent; padding: 0; color: white; overflow-x: auto; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
 </div>
 
 * **Exchange Online / Hybrid:**
@@ -86,14 +86,14 @@ permalink: "/quickstart"
     <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
     <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
   </div>
-  <pre style="font-color: white; background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
+  <pre style="background: transparent; padding: 0; color: white; overflow-x: auto; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
 </div>
 
 *Note: `-GraphOnly true` ensures on-prem AD is ignored. Add the [CloudEnvironment](/parameters#cloudenvironment) parameter if using a sovereign cloud.*
 
 <div class="message is-info mt-6" style="border-left: 5px solid goldenrod;">
   <div class="message-header" style="background-color: goldenrod; color: #000;">
-    <p>🛡️ Test your signatures – directly and risk-free {#simulation-mode}</p>
+    <p id="simulation-mode">🛡️ Test your signatures – directly and risk-free</p>
   </div>
   <div class="message-body">
     <p>If you lack Classic Outlook or want a zero-impact trial of the software:</p>
