@@ -87,8 +87,8 @@ Download and extract the archive to a local folder:
         </div>
         <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
       </div>
+      <p><em>'-GraphOnly true' ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter if using a sovereign cloud.</em></p>
     </div>
-    <p><em>'-GraphOnly true' ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter if using a sovereign cloud.</em></p>
   </div>
 </div>
 
