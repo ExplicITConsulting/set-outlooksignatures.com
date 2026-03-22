@@ -7,31 +7,16 @@ subtitle: "Signatures in minutes"
 description: "Quickstart guide. Deploy signatures within minutes."
 permalink: "/quickstart"
 ---
-## Step 1: Download & Unblock {#step-1}
-
-<div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #3273dc;">
-  <div class="columns is-vcentered">
-    <div class="column is-5">
-      <p><b>1. Download software</b></p>
-      <p class="is-size-7 mb-3">Extract the archive to a local folder to begin.</p>
-      <div class="buttons">
-        <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-info is-normal is-hovered has-text-weight-bold mtrcs-download">Download latest release</a>
-      </div>
-      <div class="is-flex is-align-items-center" style="gap: 10px;">
-         <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="no-external-link-icon"><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=flat" alt="Downloads"></a>
-         <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Issues"></a>
-      </div>
-    </div>
-    <div class="column is-divider-vertical" style="border-left: 1px solid #dbdbdb; padding-left: 2rem;">
-      <p><b>2. Unblock files</b></p>
-      <p class="is-size-7 mb-2">Remove the 'mark of the web' to allow execution:</p>
-      <ul style="margin-left: 1.25rem; list-style-type: disc; font-size: 0.85rem;">
-        <li><b>Right-click</b> <code>Set-OutlookSignatures.ps1</code> > <b>Properties</b> > check <b>Unblock</b>.</li>
-        <li><i>Or</i> use PowerShell: <code style="word-break: break-all;">Unblock-File 'Set-OutlookSignatures.ps1'</code></li>
-      </ul>
-    </div>
-  </div>
+## Step 1: Download {#step-1}
+<div class="buttons">
+Download and extract the archive to a local folder: 
+  <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-info is-normal is-hovered  has-text-weight-bold  mtrcs-download">Download software</a>
+  <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="sos-download-link mtrcs-download no-external-link-icon"><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=flat" alt="Downloads" loading="lazy"></a>
+  <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Open issues" loading="lazy"></a>
 </div>
+To remove the 'mark of the web' from 'Set-OutlookSignatures.ps1' and allow execution, right-click the file > Properties > check Unblock - or use the 'Unblock-File' cmdlet.
+    * *Or* use the PowerShell cmdlet: `Unblock-File 'Set-OutlookSignatures.ps1'`.
+
 
 ## Step 2: One-time Preparations {#step-2}
 <div class="columns is-multiline">
@@ -130,53 +115,15 @@ permalink: "/quickstart"
 
 
 ## Customize Settings {#customize}
-
-<div class="columns">
-  <div class="column is-7">
-    <div class="notification is-light">
-      <p><b>Use Your Own Templates</b></p>
-      <p class="is-size-7 mt-2"><b>Folder Structure:</b> Copy <code>.\sample templates</code> to a new folder. Follow our <a href="/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files">recommended structure FAQ</a> to simplify future upgrades.</p>
-    </div>
-  </div>
-  <div class="column">
-    <p class="is-size-7"><b>Execution:</b> Point the script to your custom files:</p>
-    <ul class="is-size-7" style="margin-left: 1rem;">
-      <li><code>-SignatureTemplatePath 'c:\path'</code></li>
-      <li><code>-SignatureIniFile 'c:\path\_Signatures.ini'</code></li>
-      <li><i>Add <code>-UseHtmTemplates true</code> if using HTML.</i></li>
-    </ul>
-  </div>
-</div>
+##### Use Your Own Templates
+* **Folder Structure:** Copy `.\sample templates` to a new folder. Follow our [recommended structure FAQ](/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files) to simplify future upgrades.
+* **Execution:** Point the script to your custom files:
+    * `-SignatureTemplatePath 'c:\your_path'`
+    * `-SignatureIniFile 'c:\your_path\_Signatures.ini'`
+    * *Add `-UseHtmTemplates true` if using HTML instead of DOCX.*
 
 
-<hr>
-
-<div class="columns has-text-centered mt-6">
-  <div class="column">
-    <div class="box has-background-light" style="height: 100%;">
-      <p class="title is-5">📖 Documentation</p>
-      <p class="is-size-7 mb-4">Deep dive into every feature and configuration toggle.</p>
-      <div class="buttons is-centered">
-        <a href="/features" class="button is-small is-light">Feature List</a>
-        <a href="/parameters" class="button is-small is-light">Parameters</a>
-      </div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="box has-background-light" style="height: 100%;">
-      <p class="title is-5">🏢 Enterprise</p>
-      <p class="is-size-7 mb-4">Learn about rollout planning and architecture considerations.</p>
-      <div class="buttons is-centered">
-        <a href="/implementationapproach" class="button is-small is-light">Rollout Plan</a>
-        <a href="/details" class="button is-small is-light">Technical Details</a>
-      </div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="box has-background-info-light" style="height: 100%;">
-      <p class="title is-5">✨ Showcase</p>
-      <p class="is-size-7 mb-4">Build something stunning? Share your work with the community.</p>
-      <a href="/support" class="button is-small is-info is-outlined">Get in touch</a>
-    </div>
-  </div>
-</div>
+##### Next Steps
+* **Parameters & Features:** Check the [Feature List](/features) and [Parameter Docs](/parameters).
+* **Rollout Planning:** Read the [Organizational implementation approach](/implementationapproach) and [Technical details](/details) (specifically the *Architecture considerations* chapter).
+* **Showcase Your Work:** Build something stunning? [Get in touch](/support) to share your templates or a statement for our showcase!
