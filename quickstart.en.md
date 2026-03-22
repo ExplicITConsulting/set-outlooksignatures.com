@@ -53,7 +53,7 @@ Download and extract the archive to a local folder:
             </div>
             <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: break-all; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
             </div>
-            <p><em>For sovereign clouds (e.g., AzureChina), add the [CloudEnvironment](/parameters#cloudenvironment) parameter.</em></p>
+            <p><em>For sovereign clouds (e.g., AzureChina), add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter.</em></p>
         </li>
       </ul>
     </div>
@@ -93,7 +93,7 @@ Download and extract the archive to a local folder:
   </div>
 
   <div class="column is-full">
-    <p><em>*Note: <code>-GraphOnly true</code> ensures on-prem AD is ignored. Add the [CloudEnvironment](/parameters#cloudenvironment) parameter if using a sovereign cloud.</em></p>
+    <p><em>*Note: <code>-GraphOnly true</code> ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter if using a sovereign cloud.</em></p>
   </div>
 </div>
 
