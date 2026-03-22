@@ -38,19 +38,19 @@ permalink: "/quickstart"
       <p><b>🛡️ Endpoint Security</b></p>
       <p>If using AppLocker, Defender, CrowdStrike…:</p>
       <ul style="margin-left: 1.5rem; list-style-type: disc;">
-        <li>Allow execution and library loading from the <b>TEMP</b> folder.</li>
-        <li>Trust software signed with <b>ExplicIT Consulting's</b> certificate (all included PS1 and DLL files are signed).</li>
+        <li>Allow execution and library loading from the TEMP folder.</li>
+        <li>Trust software signed with ExplicIT Consulting's certificate (all included PS1 and DLL files are signed).</li>
       </ul>
     </div>
   </div>
   <div class="column is-full">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <p><b>☁️ Entra ID (for Exchange Online)</b></p>
-      <p class="is-size-7 mb-2">To access the Graph API, you must register an Entra ID app.</p>
-      <ul style="margin-left: 1.5rem; list-style-type: disc; font-size: 0.9rem;">
-        <li><b>Documentation:</b> Review <code>.\sample code\Create-EntraApp.ps1</code> for permissions and security audit details.</li>
-        <li><b>Manual Setup:</b> Follow instructions in <code>.\config\default graph config.ps1</code>.</li>
-        <li><b>Scripted Setup:</b> Have a 'Global Administrator' or 'Application Administrator' run the provided PowerShell command.
+      <p>To access the Graph API, you must register an Entra ID app.</p>
+      <ul>
+        <li><b>Documentation:</b> Review '.\sample code\Create-EntraApp.ps1' for permissions and security audit details.</li>
+        <li><b>Manual Setup:</b> Follow instructions in '.\config\default graph config.ps1'.</li>
+        <li><b>Scripted Setup:</b> Have a "Global Administrator" or "Application Administrator" run the provided PowerShell command.
             <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative;">
                 <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
                 <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
@@ -59,7 +59,7 @@ permalink: "/quickstart"
             </div>
             <pre style="font-color: white; background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
             </div>
-            <p class="is-size-7"><em>For sovereign clouds (e.g., AzureChina), add the [CloudEnvironment](/parameters#cloudenvironment) parameter.</em></p>
+            <p><em>For sovereign clouds (e.g., AzureChina), add the [CloudEnvironment](/parameters#cloudenvironment) parameter.</em></p>
         </li>
       </ul>
     </div>
