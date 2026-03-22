@@ -25,17 +25,17 @@ permalink: "/quickstart"
 ## Step 2: One-time Preparations {#step-2}
 <div class="columns is-multiline">
   <div class="column is-half">
-    <div class="box has-background-white-bis" style="height: 100%; border-top: 4px solid #48c774;">
-      <h5 class="title is-5">💻 Client and User</h5>
-      <ul style="margin-left: 1.5rem; list-style-type: disc;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+      <p><b>💻 Client and User</b></p>
+      <ul>
         <li><strong>Initial Test:</strong> Log on with a <strong>test user</strong> on Windows with Classic Outlook and Word. Using your own account may overwrite existing signatures if you do not use simulation mode.</li>
         <li><strong>Platform Support:</strong> Linux, macOS, and New Outlook require the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and Exchange Online hosting.</li>
       </ul>
     </div>
   </div>
   <div class="column is-half">
-    <div class="box has-background-white-bis" style="height: 100%; border-top: 4px solid #3273dc;">
-      <h5 class="title is-5">☁️ Entra ID (for Exchange Online)</h5>
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+      <p><b>☁️ Entra ID (for Exchange Online)</b></p>
       <p class="is-size-7 mb-2">To access the Graph API, you must register an Entra ID app.</p>
       <ul style="margin-left: 1.5rem; list-style-type: disc; font-size: 0.9rem;">
         <li><strong>Documentation:</strong> Review <code>.\sample code\Create-EntraApp.ps1</code> for permissions and security audit details.</li>
@@ -47,7 +47,7 @@ permalink: "/quickstart"
                 <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
                 <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
             </div>
-            <pre style="background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
+            <pre style="font-color: white; background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
             </div>
             <p class="is-size-7"><em>For sovereign clouds (e.g., AzureChina), add the [CloudEnvironment](/parameters#cloudenvironment) parameter.</em></p>
         </li>
@@ -55,8 +55,8 @@ permalink: "/quickstart"
     </div>
   </div>
   <div class="column is-full">
-    <div class="box has-background-white-bis" style="border-top: 4px solid #ffdd57;">
-      <h5 class="title is-5">🛡️ Endpoint Security</h5>
+    <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #ffdd57;">
+      </p><b>🛡️ Endpoint Security</b></p>
       <p>If using AppLocker, Defender, CrowdStrike…:</p>
       <ul style="margin-left: 1.5rem; list-style-type: disc;">
         <li>Allow execution and library loading from the <strong>TEMP</strong> folder.</li>
@@ -76,7 +76,7 @@ permalink: "/quickstart"
     <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
     <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
   </div>
-  <pre style="background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
+  <pre style="font-color: white; background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
 </div>
 
 * **Exchange Online / Hybrid:**
@@ -86,7 +86,7 @@ permalink: "/quickstart"
     <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
     <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
   </div>
-  <pre style="background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
+  <pre style="font-color: white; background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
 </div>
 
 *Note: `-GraphOnly true` ensures on-prem AD is ignored. Add the [CloudEnvironment](/parameters#cloudenvironment) parameter if using a sovereign cloud.*
