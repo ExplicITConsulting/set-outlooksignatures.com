@@ -8,15 +8,15 @@ description: "Extend Set-OutlookSignatures with mobile support, roaming sync, OO
 hero_link: "#demo"
 hero_link_text: "<span><b>Schedule your personal demo now</b></span>"
 hero_link_style: |
-   style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
+   style="color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 hero_link2: "#trial"
 hero_link2_text: "<span><b>Get a 14-day trial license</b></span>"
 hero_link2_style: |
-   style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
+   style="color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 hero_link3: "#order"
 hero_link3_text: "<span><b>Request a license quote</b></span>"
 hero_link3_style: |
-   style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
+   style="color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   width: 1200
@@ -104,7 +104,7 @@ sitemap_changefreq: weekly
     <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
       💎
       <div style="hyphens: manual;">
-        <b>Complete White Labeling</b><br>Exclusive brand appearance by removing the 'Free and open-source Set-OutlookSignatures' tagline from your signatures.
+        <b>Complete White Labeling</b><br>Exclusive brand appearance by removing the "Free and open-source Set-OutlookSignatures" tagline from your signatures.
       </div>
     </div>
   </div>
@@ -268,14 +268,14 @@ sitemap_changefreq: weekly
 
 <p>A license group definition consists of three components:</p>
 <ul>
-  <li>The <bold>Active Directory DNS domain name or the Entra ID tenant</bold> of the license group's home.<br>For cloud-only groups, use 'EntraID_&lt;TenantID&gt;' or 'EntraID_&lt;TenantDNSDomain&gt;'.<br>Examples: 'corp.example.com', 'EntraID_example.com'</li>
-  <li>The <bold>Active Directory SID (security identifier) or the Entra ID object ID</bold> of the license group, depending on the license group's home.<br>Examples: 'S-1-5-21-2998092229-1459889137-3613942852-2617', 'f3f0611a-7bbe-4717-89c3-b967caf6922a'</li>
-  <li>The maximum number of mailboxes licensed for the group.<br>Examples: '478', '16000'</li>
+  <li>The <bold>Active Directory DNS domain name or the Entra ID tenant</bold> of the license group's home.<br>For cloud-only groups, use <code>EntraID_&lt;Tenant ID&gt;</code> or <code>EntraID_&lt;Tenant DNS Domain&gt;</code>.<br>Examples: <code>corp.example.com</code>, <code>EntraID_example.com</code></li>
+  <li>The <bold>Active Directory SID (security identifier) or the Entra ID object ID</bold> of the license group, depending on the license group's home.<br>Examples: <code>S-1-5-21-2998092229-1459889137-3613942852-2617</code>, <code>f3f0611a-7bbe-4717-89c3-b967caf6922a</code></li>
+  <li>The maximum number of mailboxes licensed for the group.<br>Examples: <code>478</code>, <code>16000</code></li>
 </ul>
 <p>The example values given above result in the following license groups:</p>
 <ul>
-  <li>The Active Directory group 'corp.example.com, S-1-5-21-2998092229-1459889137-3613942852-2617, 478'</li>
-  <li>The Entra ID group 'EntraID_example.net, f3f0611a-7bbe-4717-89c3-b967caf6922a, 16000'</li>
+  <li>The Active Directory group <code>corp.example.com, S-1-5-21-2998092229-1459889137-3613942852-2617, 478</code></li>
+  <li>The Entra ID group <code>EntraID_example.net, f3f0611a-7bbe-4717-89c3-b967caf6922a, 16000</code></li>
 </ul>
 
 <details class="box p-0">
@@ -284,9 +284,9 @@ sitemap_changefreq: weekly
   </summary>
   <div style="padding-left: 1.25rem; margin-top: 0.5rem;">
     <ul>
-      <li>When using the '-GraphOnly true' parameter, create the group in Entra ID: 'EntraID_&lt;TenantDNSDomain&gt;, &lt;Entra ID object ID of the license group&gt;, &lt;NumberOfLicenses&gt;'<br>You may also use a group created in on-prem Active Directory, as long as it is synchronized to Entra ID: '&lt;Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;'</li>
-      <li>In hybrid environments without using the '-GraphOnly true' parameter, create a group in your Active Directory and make sure it is synchronized with Entra ID: '&lt;Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;'<br>You can also use a group created in Entra ID: 'EntraID_&lt;TenantDNSDomain&gt;, &lt;Entra ID object ID of the license group&gt;, &lt;NumberOfLicenses&gt;' (which equals using the '-GraphOnly true' parameter)</li>
-      <li>In pure on-prem environments, you can only use on-prem groups: '&lt;Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;NumberOfLicenses&gt;'<br>When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.</li>
+      <li>When using the <code>-GraphOnly true</code> parameter, create the group in Entra ID: <code>EntraID_&lt;Tenant DNS Domain&gt;, &lt;Entra ID object ID of the license group&gt;, &lt;Number Of Licenses&gt;</code><br>You may also use a group created in on-prem Active Directory, as long as it is synchronized to Entra ID: <code>&lt;Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;Number Of Licenses&gt;</code></li>
+      <li>In hybrid environments without using the <code>-GraphOnly true</code> parameter, create a group in your Active Directory and make sure it is synchronized with Entra ID: <code>&lt;Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;Number Of Licenses&gt;</code><br>You can also use a group created in Entra ID: <code>EntraID_&lt;Tenant DNS Domain&gt;, &lt;Entra ID object ID of the license group&gt;, &lt;Number Of Licenses&gt;</code> (which equals using the <code>-GraphOnly true</code> parameter)</li>
+      <li>In pure on-prem environments, you can only use on-prem groups: <code>&lt;Active Directory DNS domain name&gt;, &lt;SID of the license group&gt;, &lt;Number Of Licenses&gt;</code><br>When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.</li>
     </ul>
   </div>
 </details>
@@ -299,7 +299,7 @@ sitemap_changefreq: weekly
     <ol>
       <li>Determine which license group to use.
         <ol>
-          <li>Extract the AD DNS domain name from the mailbox' distinguishedName or dnsDomainName property.</li>
+          <li>Extract the AD DNS domain name from the mailbox' <code>distinguishedName</code> or <code>dnsDomainName</code> property.</li>
           <li>Use the first license group associated with this AD DNS domain name.<br>If no license group for this AD DNS domain is defined and the Mailbox is in Exchange Online, use the first Entra ID license group associated with the tenant of the mailbox.<br>Finally, if no matching license group is defined, use the first license group in the list.</li>
         </ol>
       </li>

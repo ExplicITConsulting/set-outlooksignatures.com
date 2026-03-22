@@ -8,15 +8,15 @@ description: "Erweitern Sie Set-OutlookSignatures mit mobilen Signaturen, Roamin
 hero_link: "#demo"
 hero_link_text: "<span><b>Jetzt persönliche Demo buchen</b></span>"
 hero_link_style: |
-   style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
+   style="color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 hero_link2: "#trial"
 hero_link2_text: "<span><b>14-Tage-Testlizenz holen</b></span>"
 hero_link2_style: |
-   style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
+   style="color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 hero_link3: "#order"
 hero_link3_text: "<span><b>Lizenzangebot anfordern</b></span>"
 hero_link3_style: |
-   style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
+   style="color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 image:
   path: "/assets/images/set-outlooksignatures benefactor circle opengraph1200x630.png"
   width: 1200
@@ -267,15 +267,15 @@ sitemap_changefreq: weekly
 
 <p>Die Definition einer Lizenzgruppe besteht aus drei Komponenten:</p>
 <ul>
-  <li>Der <bold>Active‑Directory‑DNS‑Domänenname oder der Entra‑ID‑Tenant</bold> der Lizenzgruppe.<br>Für reine Cloud‑Gruppen verwenden Sie 'EntraID_&lt;TenantID&gt;' oder 'EntraID_&lt;TenantDNSDomain&gt;'.<br>Beispiele: 'corp.example.com', 'EntraID_example.com'</li>
-  <li>Die <bold>Active‑Directory‑SID (Security Identifier) oder die Entra‑ID‑Objekt‑ID</bold> der Lizenzgruppe, abhängig davon, wo sich die Gruppe befindet.<br>Beispiele: 'S-1-5-21-2998092229-1459889137-3613942852-2617','f3f0611a-7bbe-4717-89c3-b967caf6922a'</li>
-  <li>Die maximale Anzahl der für diese Gruppe lizenzierten Postfächer.<br>Beispiele: '478', '16000'</li>
+  <li>Der <bold>Active‑Directory‑DNS‑Domänenname oder der Entra‑ID‑Tenant</bold> der Lizenzgruppe.<br>Für reine Cloud‑Gruppen verwenden Sie <code>EntraID_&lt;Tenant ID&gt;</code> oder <code>EntraID_&lt;Tenant DNS Domain&gt;</code>.<br>Beispiele: <code>corp.example.com</code>, <code>EntraID_example.com</code></li>
+  <li>Die <bold>Active‑Directory‑SID (Security Identifier) oder die Entra‑ID‑Objekt‑ID</bold> der Lizenzgruppe, abhängig davon, wo sich die Gruppe befindet.<br>Beispiele: <code>S-1-5-21-2998092229-1459889137-3613942852-2617</code>, <code>f3f0611a-7bbe-4717-89c3-b967caf6922a</code></li>
+  <li>Die maximale Anzahl der für diese Gruppe lizenzierten Postfächer.<br>Beispiele: <code>478</code>, <code>16000</code></li>
 </ul>
 
 <p>Die oben genannten Beispielwerte ergeben folgende Lizenzgruppen:</p>
 <ul>
-  <li>Die Active‑Directory‑Gruppe 'corp.example.com, S-1-5-21-2998092229-1459889137-3613942852-2617, 478'</li>
-  <li>Die Entra‑ID‑Gruppe 'EntraID_example.net, f3f0611a-7bbe-4717-89c3-b967caf6922a, 16000'</li>
+  <li>Die Active‑Directory‑Gruppe <code>corp.example.com, S-1-5-21-2998092229-1459889137-3613942852-2617, 478</code></li>
+  <li>Die Entra‑ID‑Gruppe <code>EntraID_example.net, f3f0611a-7bbe-4717-89c3-b967caf6922a, 16000</code></li>
 </ul>
 
 <details class="box p-0">
@@ -284,9 +284,9 @@ sitemap_changefreq: weekly
   </summary>
   <div style="padding-left: 1.25rem; margin-top: 0.5rem;">
     <ul>
-      <li>Bei Verwendung des Parameters '-GraphOnly true' erstellen Sie die Gruppe in Entra ID: 'EntraID_&lt;TenantDNSDomain&gt;, &lt;Entra‑ID‑Objekt‑ID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>Alternativ können Sie auch eine Active‑Directory‑Gruppe verwenden, sofern diese nach Entra ID synchronisiert wird: '&lt;AD‑DNS‑Domänenname&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'</li>
-      <li>In Hybridumgebungen ohne Verwendung von '-GraphOnly true' erstellen Sie die Gruppe im Active Directory und stellen sicher, dass sie mit Entra ID synchronisiert wird: '&lt;AD‑DNS‑Domänenname&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>Alternativ können Sie auch eine Entra‑ID‑Gruppe verwenden: 'EntraID_&lt;TenantDNSDomain&gt;, &lt;Entra‑ID‑Objekt‑ID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;' (entspricht der Verwendung von '-GraphOnly true')</li>
-      <li>In reinen On‑Prem‑Umgebungen können ausschließlich On‑Prem‑Gruppen verwendet werden: '&lt;AD‑DNS‑Domänenname&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;AnzahlLizenzen&gt;'<br>Beim späteren Wechsel in eine Hybridumgebung ist keine Anpassung der Konfiguration erforderlich, sofern die On‑Prem‑Gruppen nach Entra ID synchronisiert werden.</li>
+      <li>Bei Verwendung des Parameters <code>-GraphOnly true</code> erstellen Sie die Gruppe in Entra ID: <code>EntraID_&lt;Tenant DNS Domain&gt;, &lt;Entra‑ID‑Objekt‑ID der Lizenzgruppe&gt;, &lt;Anzahl Lizenzen&gt;</code><br>Alternativ können Sie auch eine Active‑Directory‑Gruppe verwenden, sofern diese nach Entra ID synchronisiert wird: <code>&lt;AD‑DNS‑Domänenname&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;Anzahl Lizenzen&gt;</code></li>
+      <li>In Hybridumgebungen ohne Verwendung von <code>-GraphOnly true</code> erstellen Sie die Gruppe im Active Directory und stellen sicher, dass sie mit Entra ID synchronisiert wird: <code>&lt;AD‑DNS‑Domänenname&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;Anzahl Lizenzen&gt;</code><br>Alternativ können Sie auch eine Entra‑ID‑Gruppe verwenden: <code>EntraID_&lt;Tenant DNS Domain&gt;, &lt;Entra‑ID‑Objekt‑ID der Lizenzgruppe&gt;, &lt;Anzahl Lizenzen&gt;</code> (entspricht der Verwendung von <code>-GraphOnly true</code>)</li>
+      <li>In reinen On‑Prem‑Umgebungen können ausschließlich On‑Prem‑Gruppen verwendet werden: <code>&lt;AD‑DNS‑Domänenname&gt;, &lt;SID der Lizenzgruppe&gt;, &lt;Anzahl Lizenzen&gt;</code><br>Beim späteren Wechsel in eine Hybridumgebung ist keine Anpassung der Konfiguration erforderlich, sofern die On‑Prem‑Gruppen nach Entra ID synchronisiert werden.</li>
     </ul>
   </div>
 </details>
@@ -299,7 +299,7 @@ sitemap_changefreq: weekly
     <ol>
       <li>Ermitteln der zu verwendenden Lizenzgruppe.
         <ol>
-          <li>Extraktion des AD‑DNS‑Domänennamens aus der Eigenschaft 'distinguishedName' oder 'dnsDomainName' des Postfachs.</li>
+          <li>Extraktion des AD‑DNS‑Domänennamens aus der Eigenschaft <code>distinguishedName</code> oder <code>dnsDomainName</code> des Postfachs.</li>
           <li>Verwendung der ersten Lizenzgruppe, die dieser AD‑DNS‑Domäne zugeordnet ist.<br>Ist keine passende Lizenzgruppe definiert und befindet sich das Postfach in Exchange Online, wird die erste Entra‑ID‑Lizenzgruppe des Tenants verwendet.<br>Ist auch dies nicht der Fall, wird die erste Lizenzgruppe in der Liste verwendet.</li>
         </ol>
       </li>
