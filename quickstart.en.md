@@ -37,6 +37,8 @@ Download and extract the archive to a local folder:
       </ul>
     </div>
   </div>
+</div>
+<div class="columns is-multiline">
   <div class="column is-full">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <p><b>☁️ Entra ID app (for Exchange Online only)</b></p>
@@ -75,7 +77,6 @@ Download and extract the archive to a local folder:
       </div>
     </div>
   </div>
-
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <p><b>Exchange Online / Hybrid</b></p>
