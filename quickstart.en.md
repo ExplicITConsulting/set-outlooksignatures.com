@@ -69,27 +69,39 @@ permalink: "/quickstart"
 
 ## Step 3: Run Set-OutlookSignatures {#step-3}
 
-* **Exchange On-Prem:**
-<div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-  <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
-    <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
-    <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
-    <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #7957d5;">
+      <p><b>Exchange On-Prem</b></p>
+      <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+        <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+          <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+          <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+          <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+        </div>
+        <pre style="background: transparent; padding: 0; color: white; overflow-x: auto; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
+      </div>
+    </div>
   </div>
-  <pre style="background: transparent; padding: 0; color: white; overflow-x: auto; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
-</div>
 
-* **Exchange Online / Hybrid:**
-<div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-  <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
-    <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
-    <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
-    <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+      <p><b>Exchange Online / Hybrid</b></p>
+      <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+        <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+          <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+          <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+          <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+        </div>
+        <pre style="background: transparent; padding: 0; color: white; overflow-x: auto; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
+      </div>
+    </div>
   </div>
-  <pre style="background: transparent; padding: 0; color: white; overflow-x: auto; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
-</div>
 
-*Note: `-GraphOnly true` ensures on-prem AD is ignored. Add the [CloudEnvironment](/parameters#cloudenvironment) parameter if using a sovereign cloud.*
+  <div class="column is-full">
+    <p><em>*Note: <code>-GraphOnly true</code> ensures on-prem AD is ignored. Add the [CloudEnvironment](/parameters#cloudenvironment) parameter if using a sovereign cloud.</em></p>
+  </div>
+</div>
 
 <div class="message is-info mt-6" style="border-left: 5px solid goldenrod;">
   <div class="message-header" style="background-color: goldenrod; color: #000;">
