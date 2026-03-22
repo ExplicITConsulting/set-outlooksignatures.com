@@ -141,7 +141,7 @@ Download and unzip the archive to a local folder:
         <span>🎨</span>
         <div style="hyphens: manual;">
           <p><b>Deploy Your Own Templates</b></p>
-          <p>Ready to move beyond samples? Copy '.\sample templates' to a new folder and start editing. We recommend following our <a href="/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files">folder structure guide</a> to make future updates a breeze.</p>
+          <p>Ready to move beyond samples? Copy '<code>.\sample templates</code>' to a new folder and start editing. We recommend following our <a href="/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files">folder structure guide</a> to make future updates a breeze.</p>
           <p>Point the script to your new files using:</p>
           <ul>
             <li><code>-SignatureTemplatePath "C:\Signatures\Templates"</code></li>

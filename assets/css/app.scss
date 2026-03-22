@@ -279,3 +279,13 @@ html::after {
     --benefactor-circle-color: goldenrod;
   }
 }
+
+:not(pre) > code {
+  color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) :not(pre) > code {
+    color: white;
+  }
+}
