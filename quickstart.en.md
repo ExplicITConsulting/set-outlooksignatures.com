@@ -14,7 +14,7 @@ Download and extract the archive to a local folder:
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="sos-download-link mtrcs-download no-external-link-icon"><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=flat" alt="Downloads" loading="lazy"></a>
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Open issues" loading="lazy"></a>
 </div>
-<p>To remove the 'mark of the web' from 'Set-OutlookSignatures.ps1' and allow execution, right-click the file > Properties > check Unblock - or use the 'Unblock-File' cmdlet.</p>
+<p><em>To remove the 'mark of the web' from 'Set-OutlookSignatures.ps1' and allow execution, right-click the file > Properties > check Unblock - or use the 'Unblock-File' cmdlet.</em></p>
 
 
 ## Step 2: One-time Preparations {#step-2}
@@ -37,8 +37,8 @@ Download and extract the archive to a local folder:
         🛡️
         <div style="hyphens: manual;">
           <p><b>Endpoint Security (AppLocker, Defender, CrowdStrike…)</b></p>
-          <p>Allow execution and library loading from the TEMP folder.</p>
           <p>Trust software signed with ExplicIT Consulting's certificate -  all included PS1 and DLL files are signed with this certificate.</p>
+          <p>If needed, allow execution and library loading from the TEMP folder.</p>
         </div>
       </div>
     </div>
@@ -52,16 +52,17 @@ Download and extract the archive to a local folder:
         <div style="hyphens: manual;">
           <p><b>Exchange Online Entra ID app</b></p>
           <p>Review '.\sample code\Create-EntraApp.ps1' for permissions and security audit details.</p>
-          <p>Follow the instructions in '.\config\default graph config.ps1'for manual setup or have a "Global Administrator" or "Application Administrator" run the provided PowerShell command.</p>
-          <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative;">
-              <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
-                <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
-                <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
-                <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
-            </div>
-            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere;. margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
-          </div>
-          <p><em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter.</em></p>
+          <p>Follow the instructions in '.\config\default graph config.ps1' for manual setup or have a "Global Administrator" or "Application Administrator" run the provided PowerShell command.<br>
+            <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative;">
+                <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+                  <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+                  <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+                  <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+              </div>
+              <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere;. margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
+            </div><br>
+            <em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter.</em>
+          </p>
         </div>
       </div>
     </div>
@@ -70,48 +71,57 @@ Download and extract the archive to a local folder:
 
 
 ## Step 3: Run Set-OutlookSignatures {#step-3}
-
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
-      <p><b>Exchange On-Prem</b></p>
-      <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-        <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
-          <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
-          <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
-          <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        🏢
+        <p><b>Exchange On-Prem</b></p>
+        <p>
+          <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+            <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+              <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+              <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+              <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+            </div>
+            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere;. margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
+          </p>
         </div>
-        <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere;. margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
       </div>
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
-      <p><b>Exchange Online / Hybrid</b></p>
-      <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-        <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
-          <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
-          <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
-          <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
-        </div>
-        <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere;. margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        ☁️
+        <p><b>Exchange Online / Hybrid</b></p>
+        <p>
+          <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+            <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+              <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+              <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+              <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+            </div>
+            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere;. margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
+          </div><br>
+          <em>'-GraphOnly true' ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter if using a national or sovereign cloud.</em>
+        </p>
       </div>
-      <p><em>'-GraphOnly true' ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter if using a national or sovereign cloud.</em></p>
     </div>
   </div>
 </div>
-
-<div class="message" style="border-left: 5px solid goldenrod;">
-  <div class="message-header" style="background-color: goldenrod; color: #000;">
-    <p id="simulation-mode">🛡️ Test your signatures – directly and risk-free with <a href="/details#simulation-mode">Simulation Mode</a></p>
-  </div>
-  <div class="message-body">
-    <p>If you lack Classic Outlook or want a zero-impact trial of the software:</p>
-    <ol>
-      <li>Run the script with: '-SimulateUser a@example.com -SimulateMailboxes a@example.com'</li>
-      <li>See the results in your 'Documents\Outlook Signatures' folder.</li>
-    </ol>
-    <p><a href="/details#simulation-mode">Simulation Mode</a> creates the exact signatures for the simulated user as files on your disk. Instead of modifying Outlook, it generates a complete preview — the perfect way to verify your configuration without changing any system settings.</p>
+<div class="columns is-multiline">
+  <div class="column is-full">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        💡
+        <div style="hyphens: manual;">
+          <p><b>Pro-tip: Start risk-free with Simulation Mode</b></p>
+          <p>If you lack Classic Outlook or want a zero-impact trial of the software, use <a href="/details#simulation-mode">Simulation Mode</a>: This mode creates the exact signatures for the simulated user as files on your disk, without modifying Outlook — the perfect way to verify your configuration without changing any system settings.</p>
+          <p>Just add the parameter '-SimulateUser a@example.com -SimulateMailboxes a@example.com' and see the results in your 'Documents\Outlook Signatures' folder.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
