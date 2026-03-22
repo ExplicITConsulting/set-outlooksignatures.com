@@ -29,7 +29,7 @@ Download and extract the archive to a local folder:
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
       <p><b>🛡️ Endpoint Security (AppLocker, Defender, CrowdStrike…)</b></p>
       <ul style="margin-left: 1.5rem; list-style-type: disc;">
         <li>Allow execution and library loading from the TEMP folder.</li>
