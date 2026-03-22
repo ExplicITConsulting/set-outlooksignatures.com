@@ -23,43 +23,87 @@ permalink: "/quickstart"
 
 
 ## Step 2: One-time Preparations {#step-2}
-##### Client and User
-* **Initial Test:** Log on with a **test user** on Windows with Classic Outlook and Word. Using your own account may overwrite existing signatures if you do not use simulation mode.
-* **Platform Support:** Linux, macOS, and New Outlook require the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and Exchange Online hosting.
-
-##### Entra ID (for Exchange Online)
-To access the Graph API, you must register an Entra ID app.
-* **Documentation:** Review `.\sample code\Create-EntraApp.ps1` for permissions and security audit details.
-* **Manual Setup:** Follow instructions in `.\config\default graph config.ps1`.
-* **Scripted Setup:** Have a 'Global Administrator' or 'Application Administrator' run:
-    ```
-    powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
-    ```
-    *For sovereign clouds (e.g., AzureChina), add: `-CloudEnvironment [EnvironmentName]`*
-
-##### Endpoint Security
-If using AppLocker, Defender, CrowdStrike…:
-* Allow execution and library loading from the **TEMP** folder.
-* Trust software signed with **ExplicIT Consulting's** certificate (all included PS1 and DLL files are signed).
+<div class="columns is-multiline">
+  <div class="column is-half">
+    <div class="box has-background-white-bis" style="height: 100%; border-top: 4px solid #48c774;">
+      <h5 class="title is-5">💻 Client and User</h5>
+      <ul style="margin-left: 1.5rem; list-style-type: disc;">
+        <li><strong>Initial Test:</strong> Log on with a <strong>test user</strong> on Windows with Classic Outlook and Word. Using your own account may overwrite existing signatures if you do not use simulation mode.</li>
+        <li><strong>Platform Support:</strong> Linux, macOS, and New Outlook require the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and Exchange Online hosting.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="column is-half">
+    <div class="box has-background-white-bis" style="height: 100%; border-top: 4px solid #3273dc;">
+      <h5 class="title is-5">☁️ Entra ID (for Exchange Online)</h5>
+      <p class="is-size-7 mb-2">To access the Graph API, you must register an Entra ID app.</p>
+      <ul style="margin-left: 1.5rem; list-style-type: disc; font-size: 0.9rem;">
+        <li><strong>Documentation:</strong> Review <code>.\sample code\Create-EntraApp.ps1</code> for permissions and security audit details.</li>
+        <li><strong>Manual Setup:</strong> Follow instructions in <code>.\config\default graph config.ps1</code>.</li>
+        <li><strong>Scripted Setup:</strong> Have a 'Global Administrator' or 'Application Administrator' run the provided PowerShell command.
+            <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative;">
+                <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+                <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+                <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+                <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+            </div>
+            <pre style="background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
+            </div>
+            <p class="is-size-7"><em>For sovereign clouds (e.g., AzureChina), add the [CloudEnvironment](/parameters#cloudenvironment) parameter.</em></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="column is-full">
+    <div class="box has-background-white-bis" style="border-top: 4px solid #ffdd57;">
+      <h5 class="title is-5">🛡️ Endpoint Security</h5>
+      <p>If using AppLocker, Defender, CrowdStrike…:</p>
+      <ul style="margin-left: 1.5rem; list-style-type: disc;">
+        <li>Allow execution and library loading from the <strong>TEMP</strong> folder.</li>
+        <li>Trust software signed with <strong>ExplicIT Consulting's</strong> certificate (all included PS1 and DLL files are signed).</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 
 ## Step 3: Run Set-OutlookSignatures {#step-3}
+
 * **Exchange On-Prem:**
-    ```
-    powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"
-    ```
+<div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+  <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+    <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+    <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+    <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+  </div>
+  <pre style="background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
+</div>
+
 * **Exchange Online / Hybrid:**
-    ```
-    powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"
-    ```
-    *Note: `-GraphOnly true` ensures on-prem AD is ignored. Add `-CloudEnvironment` if using a sovereign cloud.*
+<div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+  <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+    <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+    <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+    <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+  </div>
+  <pre style="background: transparent; padding: 0; color: #fab1a0; overflow-x: auto; margin-top: 0.5rem;"><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
+</div>
 
-##### 🛡️ Test your signatures – directly and risk-free {#simulation-mode}
-If you lack Classic Outlook or want a zero-impact trial of the software:
-1. Run the script with: `-SimulateUser a@example.com -SimulateMailboxes a@example.com`
-2. **See the results:** Open your **'Documents\Outlook Signatures'** folder. 
+*Note: `-GraphOnly true` ensures on-prem AD is ignored. Add the [CloudEnvironment](/parameters#cloudenvironment) parameter if using a sovereign cloud.*
 
-This **"[Simulation Mode](/details#simulation-mode)"** creates the exact signatures for the simulated user as files on your disk. Instead of modifying Outlook, it generates a complete preview — the perfect way to verify your configuration without changing any system settings.
+<div class="message is-info mt-6" style="border-left: 5px solid goldenrod;">
+  <div class="message-header" style="background-color: goldenrod; color: #000;">
+    <p>🛡️ Test your signatures – directly and risk-free {#simulation-mode}</p>
+  </div>
+  <div class="message-body">
+    <p>If you lack Classic Outlook or want a zero-impact trial of the software:</p>
+    <ol class="mt-2 mb-3" style="margin-left: 1.5rem;">
+      <li>Run the script with: <code>-SimulateUser a@example.com -SimulateMailboxes a@example.com</code></li>
+      <li><strong>See the results:</strong> Open your <strong>'Documents\Outlook Signatures'</strong> folder.</li>
+    </ol>
+    <p>This <strong>"[Simulation Mode](/details#simulation-mode)"</strong> creates the exact signatures for the simulated user as files on your disk. Instead of modifying Outlook, it generates a complete preview — the perfect way to verify your configuration without changing any system settings.</p>
+  </div>
+</div>
 
 
 ## Customize Settings {#customize}
