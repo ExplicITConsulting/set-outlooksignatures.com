@@ -51,7 +51,7 @@ Download and extract the archive to a local folder:
                 <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
                 <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
             </div>
-            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: break-all; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
+            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
             </div>
             <p><em>For sovereign clouds (e.g., AzureChina), add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter.</em></p>
         </li>
@@ -73,7 +73,7 @@ Download and extract the archive to a local folder:
           <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
           <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
         </div>
-        <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: break-all; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
+        <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
       </div>
     </div>
   </div>
@@ -87,7 +87,7 @@ Download and extract the archive to a local folder:
           <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
           <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
         </div>
-        <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: break-all; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
+        <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
       </div>
     </div>
   </div>
