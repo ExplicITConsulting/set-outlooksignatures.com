@@ -7,19 +7,16 @@ subtitle: "Signatures in minutes"
 description: "Quickstart guide. Deploy signatures within minutes."
 permalink: "/quickstart"
 ---
-
-## Step 1: Download & Unblock {#step-1}
-1.  **Download:** Extract the archive to a local folder.
-    <p>
-      <div class="buttons">
-        <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-info is-normal is-hovered  has-text-weight-bold  mtrcs-download">Download software</a>
-        <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="sos-download-link mtrcs-download no-external-link-icon"><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=flat" alt="Downloads" loading="lazy"></a>
-        <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Open issues" loading="lazy"></a>
-      </div>
-    </p>
-2.  **Unblock:** To remove the 'mark of the web' and allow execution:
-    * **Right-click** `Set-OutlookSignatures.ps1` > **Properties** > check **Unblock**.
-    * *Or* use the PowerShell cmdlet: `Unblock-File 'Set-OutlookSignatures.ps1'`.
+## Step 1: Download {#step-1}
+**Download** and extract the archive to a local folder.
+<p>
+  <div class="buttons">
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-info is-normal is-hovered  has-text-weight-bold  mtrcs-download">Download software</a>
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="sos-download-link mtrcs-download no-external-link-icon"><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=flat" alt="Downloads" loading="lazy"></a>
+    <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Open issues" loading="lazy"></a>
+  </div>
+</p>
+To remove the 'mark of the web' from 'Set-OutlookSignatures.ps1' and allow execution, right-click the file > Properties > check Unblock - or use the 'Unblock-File' cmdlet.
 
 
 ## Step 2: One-time Preparations {#step-2}
@@ -28,8 +25,8 @@ permalink: "/quickstart"
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
       <p><b>💻 Client and User</b></p>
       <ul>
-        <li><b>Initial Test:</b> Log on with a test user on Windows with Classic Outlook and Word. Using your own account may overwrite existing signatures if you do not use simulation mode.</li>
-        <li><b>Platform Support:</b> Linux, macOS, and New Outlook require the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and Exchange Online hosting.</li>
+        <li>Log on with a test user on Windows with Classic Outlook and Word. Using your own account may overwrite existing signatures if you do not use simulation mode.</li>
+        <li>Linux, macOS, and New Outlook require the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and Exchange Online hosting.</li>
       </ul>
     </div>
   </div>
@@ -57,7 +54,7 @@ permalink: "/quickstart"
                 <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
                 <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
             </div>
-            <pre style="background: transparent; padding: 0; color: white; overflow-x: auto; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
+            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: break-all; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
             </div>
             <p><em>For sovereign clouds (e.g., AzureChina), add the [CloudEnvironment](/parameters#cloudenvironment) parameter.</em></p>
         </li>
@@ -79,7 +76,7 @@ permalink: "/quickstart"
           <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
           <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
         </div>
-        <pre style="background: transparent; padding: 0; color: white; overflow-x: auto; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
+        <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: break-all; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
       </div>
     </div>
   </div>
@@ -93,7 +90,7 @@ permalink: "/quickstart"
           <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
           <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
         </div>
-        <pre style="background: transparent; padding: 0; color: white; overflow-x: auto; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
+        <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: break-all; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
       </div>
     </div>
   </div>
