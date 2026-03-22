@@ -5,7 +5,7 @@ locale: "en"
 title: |
   <p class="title is-2 has-text-centered">Data Sovereign Email Signatures and Out-of-Office Replies</p>
 subtitle: |
-  <p class="subtitle is-4 has-text-centered">Unified Outlook branding everywhere – with zero external data exposure</p>
+  <p class="subtitle is-4 has-text-centered mb-0">Unified Outlook branding everywhere – with zero external data exposure</p>
 description: "Data Sovereign Email Signatures and Out-of-Office Replies. Centrally manage Outlook branding across all platforms without your data ever leaving your trusted systems."
 permalink: "/"
 redirect_from:
@@ -20,7 +20,7 @@ sitemap_changefreq: weekly
 </div>
 
 
-<p><strong>Trusted worldwide and proven in high-security environments:</strong> The free and open-source Set-OutlookSignatures and the <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> turn email signatures and out-of-office replies into a centrally managed business asset — without external data transfer.</p>
+<p cla><strong>Trusted worldwide and proven in high-security environments:</strong> The free and open-source Set-OutlookSignatures and the <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> turn email signatures and out-of-office replies into a centrally managed business asset — without external data transfer.</p>
 <p>By leveraging <strong>Microsoft Roaming Signatures</strong> and our own direct-to-mailbox technology, we provide the world’s only sovereign, native-sync experience that works across all Outlook editions and platforms — including <strong>Exchange Online, Hybrid, and On-Premises</strong> — silently in the background.</p>
 
 

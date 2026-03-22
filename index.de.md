@@ -5,7 +5,7 @@ locale: "de"
 title: |
   <p class="title is-2 has-text-centered">Datensouveräne E-Mail-Signaturen und Abwesenheitsnotizen</p>
 subtitle: |
-  <p class="subtitle is-4 has-text-centered">Einheitliches Outlook-Branding überall – ohne externen Datenabfluss</p>
+  <p class="subtitle is-4 has-text-centered mb-0">Einheitliches Outlook-Branding überall – ohne externen Datenabfluss</p>
 description: "E-Mail-Signatur- und Abwesenheitsmanagement mit Datensouveränität. Verwalten Sie Outlook-Branding zentral über alle Plattformen hinweg, ohne dass Ihre Daten Ihre vertrauenswürdigen Systeme verlassen."
 permalink: "/"
 redirect_from:
