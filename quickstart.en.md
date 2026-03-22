@@ -134,16 +134,36 @@ Download and extract the archive to a local folder:
 </div>
 
 
-## Customize Settings {#customize}
-##### Use Your Own Templates
-* **Folder Structure:** Copy `.\sample templates` to a new folder. Follow our [recommended structure FAQ](/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files) to simplify future upgrades.
-* **Execution:** Point the script to your custom files:
-    * `-SignatureTemplatePath 'c:\your_path'`
-    * `-SignatureIniFile 'c:\your_path\_Signatures.ini'`
-    * *Add `-UseHtmTemplates true` if using HTML instead of DOCX.*
-
-
-##### Next Steps
-* **Parameters & Features:** Check the [Feature List](/features) and [Parameter Docs](/parameters).
-* **Rollout Planning:** Read the [Organizational implementation approach](/implementationapproach) and [Technical details](/details) (specifically the *Architecture considerations* chapter).
-* **Showcase Your Work:** Build something stunning? [Get in touch](/support) to share your templates or a statement for our showcase!
+## Step 4: Customize Settings {#customize}
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>🎨</span>
+        <div style="hyphens: manual;">
+          <p><b>Use Your Own Templates</b></p>
+          <p>Copy <code>.\sample templates</code> to a new folder. Follow our <a href="/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files">recommended structure FAQ</a> to simplify future upgrades.</p>
+          <p>Point the script to your custom files using these parameters:</p>
+          <ul>
+            <li><code>-SignatureTemplatePath 'c:\path'</code></li>
+            <li><code>-SignatureIniFile 'c:\path\_Signatures.ini'</code></li>
+          </ul>
+          <p><small><em>Add <code>-UseHtmTemplates true</code> if using HTML instead of DOCX.</em></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>🚀</span>
+        <div style="hyphens: manual;">
+          <p><b>Next Steps</b></p>
+          <p>Explore the <a href="/features">Feature List</a> and <a href="/parameters">Parameter Docs</a> to fine-tune your deployment.</p>
+          <p>Read the <a href="/implementationapproach">Organizational implementation approach</a> and <a href="/details">Technical details</a> for architecture considerations.</p>
+          <p>Build something stunning? <a href="/support">Get in touch</a> to share your templates or a statement for our showcase!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
