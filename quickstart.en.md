@@ -14,7 +14,7 @@ Download and extract the archive to a local folder:
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="sos-download-link mtrcs-download no-external-link-icon"><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=flat" alt="Downloads" loading="lazy"></a>
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Open issues" loading="lazy"></a>
 </div>
-<p class="mt-0"><small><em>To remove the 'mark of the web' from 'Set-OutlookSignatures.ps1' and allow execution, right-click the file > Properties > check Unblock - or use the 'Unblock-File' cmdlet.</em></small></p>
+<p><small><em>To remove the 'mark of the web' from 'Set-OutlookSignatures.ps1' and allow execution, right-click the file > Properties > check Unblock - or use the 'Unblock-File' cmdlet.</em></small></p>
 
 
 ## Step 2: One-time Preparations {#step-2}
@@ -62,7 +62,7 @@ Download and extract the archive to a local folder:
             </div>
             <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
           </div>
-          <p class="mt-0"><small><em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter.</em></small>
+          <p><small><em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter.</em></small>
           </p>
         </div>
       </div>
@@ -105,13 +105,19 @@ Download and extract the archive to a local folder:
             </div>
             <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
           </div>
-          <p class="mt-0"><small><em>'-GraphOnly true' ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter if using a national or sovereign cloud.</em></small>
+          <p><small><em>'-GraphOnly true' ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter if using a national or sovereign cloud.</em></small>
           </p>
         </div>
       </div>
     </div>
   </div>
 </div>
+<p>You will now find three new signatures in Outlook, based on the integrated sample templates and the attributes of your own user:</p>
+<ul>
+  <li><b>'Formal'</b> is ideal for new emails to external recipients.</li>
+  <li><b>'Informal'</b> is great for replies and forwards and for internal emails..</li>
+  <li><b>'Test all default replacement variables'</b> gives you a on overview of the integrated placeholders and a glimpse of what is possible for images and banners, phone number and address formatting.</li>
+</ul>
 <div class="columns is-multiline">
   <div class="column is-full">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
