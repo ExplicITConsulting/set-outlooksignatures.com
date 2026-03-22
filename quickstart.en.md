@@ -93,9 +93,9 @@ Download and extract the archive to a local folder:
   </div>
 </div>
 
-<div class="message is-info" style="border-left: 5px solid goldenrod;">
+<div class="message" style="border-left: 5px solid goldenrod;">
   <div class="message-header" style="background-color: goldenrod; color: #000;">
-    <p id="simulation-mode">🛡️ Test your signatures – directly and risk-free</p>
+    <p id="simulation-mode">🛡️ Test your signatures – directly and risk-free with <a href="/details#simulation-mode">Simulation Mode</a></p>
   </div>
   <div class="message-body">
     <p>If you lack Classic Outlook or want a zero-impact trial of the software:</p>
@@ -103,7 +103,7 @@ Download and extract the archive to a local folder:
       <li>Run the script with: '-SimulateUser a@example.com -SimulateMailboxes a@example.com'</li>
       <li>See the results in your 'Documents\Outlook Signatures' folder.</li>
     </ol>
-    <p>This <a href="/details#simulation-mode">Simulation Mode</a> creates the exact signatures for the simulated user as files on your disk. Instead of modifying Outlook, it generates a complete preview — the perfect way to verify your configuration without changing any system settings.</p>
+    <p><a href="/details#simulation-mode">Simulation Mode</a> creates the exact signatures for the simulated user as files on your disk. Instead of modifying Outlook, it generates a complete preview — the perfect way to verify your configuration without changing any system settings.</p>
   </div>
 </div>
 
