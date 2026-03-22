@@ -283,7 +283,7 @@ html::after {
 // --- Inline Code Styling ---
 :not(pre) > code {
   // Shared properties
-  background-color: #f5f5f5; // Consistent light grey
+  background-color: lightgrey; // Consistent light grey
   border-radius: 0; // Force square corners
   padding: 0.2em 0.4em; // Maintain readability
 
