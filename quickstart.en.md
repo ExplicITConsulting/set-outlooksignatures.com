@@ -20,42 +20,49 @@ Download and extract the archive to a local folder:
 ## Step 2: One-time Preparations {#step-2}
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
-      <p><b>💻 Client and User</b></p>
-      <ul>
-        <li>Log on with a test user on Windows with Classic Outlook and Word. Using your own account may overwrite existing signatures if you do not use simulation mode.</li>
-        <li>Linux, macOS, and New Outlook require the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and Exchange Online hosting.</li>
-      </ul>
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        💻
+        <div style="hyphens: manual;">
+          <b>Client and User</b><br>
+          <p>Log on with a test user on Windows with Classic Outlook and Word. Using your own account may overwrite existing signatures if you do not use simulation mode.</p>
+          <p>Linux, macOS, and New Outlook require the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and Exchange Online hosting.</p>
+        </div>
+      </div>
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
-      <p><b>🛡️ Endpoint Security (AppLocker, Defender, CrowdStrike…)</b></p>
-      <ul style="margin-left: 1.5rem; list-style-type: disc;">
-        <li>Allow execution and library loading from the TEMP folder.</li>
-        <li>Trust software signed with ExplicIT Consulting's certificate -  all included PS1 and DLL files are signed with this certificate.</li>
-      </ul>
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        🛡️
+        <div style="hyphens: manual;">
+          <b>Endpoint Security (AppLocker, Defender, CrowdStrike…)</b><br>
+          <p>Allow execution and library loading from the TEMP folder.</p>
+          <p>Trust software signed with ExplicIT Consulting's certificate -  all included PS1 and DLL files are signed with this certificate.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="columns is-multiline">
   <div class="column is-full">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
-      <p><b>☁️ Entra ID app (for Exchange Online only)</b></p>
-      <ul>
-        <li>Review '.\sample code\Create-EntraApp.ps1' for permissions and security audit details.</li>
-        <li>Follow the instructions in '.\config\default graph config.ps1'for manual setup or have a "Global Administrator" or "Application Administrator" run the provided PowerShell command.
-            <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative;">
-                <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
-                <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
-                <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
-                <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
-            </div>
-            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
-            </div>
-            <p><em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter.</em></p>
-        </li>
-      </ul>
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        ☁️
+        <div style="hyphens: manual;">
+          <b>Exchange Online Entra ID app</b><br>
+          <p>Review '.\sample code\Create-EntraApp.ps1' for permissions and security audit details.</p>
+          <p>Follow the instructions in '.\config\default graph config.ps1'for manual setup or have a "Global Administrator" or "Application Administrator" run the provided PowerShell command.
+          <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative;">
+              <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+              <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+              <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+              <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+          </div>
+          <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere;. margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
+          </div>
+          <p><em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter.</em></p>        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -65,7 +72,7 @@ Download and extract the archive to a local folder:
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #7957d5;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <p><b>Exchange On-Prem</b></p>
       <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
         <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
@@ -73,7 +80,7 @@ Download and extract the archive to a local folder:
           <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
           <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
         </div>
-        <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
+        <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere;. margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
       </div>
     </div>
   </div>
@@ -86,7 +93,7 @@ Download and extract the archive to a local folder:
           <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
           <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
         </div>
-        <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
+        <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere;. margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
       </div>
       <p><em>'-GraphOnly true' ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter if using a national or sovereign cloud.</em></p>
     </div>
