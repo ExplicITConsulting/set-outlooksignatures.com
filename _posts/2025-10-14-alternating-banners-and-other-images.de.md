@@ -25,7 +25,7 @@ Ob Sie nun:
 All das ist möglich und einfach zu implementieren.
 
 1. Fügen Sie alle Banner zu Ihrer Vorlage hinzu und definieren Sie einen alternativen Text  
-   - Verwenden Sie '`$CurrentMailbox_Banner1DELETEEMPTY$`' für Banner 1, '`$CurrentMailbox_Banner2DELETEEMPTY$`' für Banner 2 usw.  
+   - Verwenden Sie `$CurrentMailbox_Banner1DELETEEMPTY$` für Banner 1, `$CurrentMailbox_Banner2DELETEEMPTY$` für Banner 2 usw.  
    - Der Teil 'DELETEEMPTY' löscht ein Bild, wenn die entsprechende Ersatzvariable keinen Wert enthält.
 2. Erstellen Sie eine benutzerdefinierte Ersatzvariable für jedes Banner in Ihrer Konfigurationsdatei für Ersatzvariablen und weisen Sie nur einer dieser Variablen zufällig einen Wert zu:
     ```
@@ -40,7 +40,7 @@ All das ist möglich und einfach zu implementieren.
 Jetzt wird bei jedem Ausführen von Set-OutlookSignatures ein anderes zufälliges Banner aus der Vorlage ausgewählt und die anderen Banner werden gelöscht.
 
 Sie können dies noch weiter verbessern:  
-- Verwenden Sie Banner 1 doppelt so oft wie die anderen. Fügen Sie es einfach mehrmals zum Code hinzu: '`$tempBannerIdentifiers = @(1, 1, 2, 3)`'  
+- Verwenden Sie Banner 1 doppelt so oft wie die anderen. Fügen Sie es einfach mehrmals zum Code hinzu: `$tempBannerIdentifiers = @(1, 1, 2, 3)`  
 - Weisen Sie Banner bestimmten Benutzern, Abteilungen, Standorten oder anderen Attributen zu.  
 - Beschränken Sie die Verwendung von Bannern nach Datum oder Jahreszeit.  
 - Sie können Banner basierend auf Ihrem Aktienkurs oder dem von einem Webdienst abgefragten Wetter zuweisen.  

@@ -136,7 +136,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       🏝️
-      <div><b>Zentrale OOF-Steuerung</b><br>Standardisieren und verwalten Sie Abwesenheitsnotizen für interne und externe Empfänger.</div>
+      <div><b>Zentrale Verwaltung von Abwesenheitsnotizen</b><br>Einheitliche OOF-Nachrichten zentral verwalten und ausrollen.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">

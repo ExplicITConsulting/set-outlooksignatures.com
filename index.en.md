@@ -136,7 +136,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       🏝️
-      <div><b>Centralized OOF Control</b><br>Standardize and reset out-of-office replies centrally, for internal and external recipients.</div>
+      <div><b>Central Management of Out-Of-Office Replies</b><br>Manage and distribute OOF messages consistently and centrally from one location.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">

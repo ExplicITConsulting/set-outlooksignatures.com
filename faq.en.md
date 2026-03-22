@@ -171,12 +171,12 @@ DOCX templates only have few disadvantages:
 - Always use the "inline with text" wrapping option for images, as Outlook does not correctly support other wrapping options correctly.
 - DOCX templates can not be used when Set-OutlookSignatures is running on Linux or macOS, as Word is not available at all or not scriptable on these platforms. You can still design your templates in Word and then convert them to HTML with some tweaks - ExplicIT Consulting's [support](/support) can help you with this if needed.
   
-If you opt to use HTM templates, the parameter '`-UseHtmTemplates $true`' makes Set-OutlookSignatures search for .htm template files instead of .docx.
+If you opt to use HTM templates, the parameter `-UseHtmTemplates $true` makes Set-OutlookSignatures search for .htm template files instead of .docx.
 
 The requirements for .htm files are:  
 - The file must have the file extension .htm, .html is not supported.
 - The file must be UTF-8 encoded (without BOM), or at least only contain UTF-8 compatible characters.
-- The character set must be set to UTF-8 with a meta tag: '`<meta http-equiv=Content-Type content="text/html; charset=utf-8">`'.
+- The character set must be set to UTF-8 with a meta tag: `<meta http-equiv=Content-Type content="text/html; charset=utf-8">`.
 - The template should be a single file, additional files and folders are not recommended (but possible, see below).
 - Images can either reference a public URL, a relative local path or be part of the template as Base64 encoded string.
 - When storing images in a relative local path:
@@ -197,7 +197,7 @@ The sample templates delivered with this script represent all possible formats:
 
 
 ## How can I log the software output?
-The software has a built-in logging option. Logs are saved in the folder '`$(Join-Path -Path ([Environment]::GetFolderPath([Environment+SpecialFolder]::LocalApplicationData)) -ChildPath '\Set-OutlookSignatures\Logs')`', the files follow the naming scheme '`$("Set-OutlookSignatures_Log_yyyyMMddTHHmmssffff.txt")`', and files older than 14 days are deleted with every run.
+The software has a built-in logging option. Logs are saved in the folder `$(Join-Path -Path ([Environment]::GetFolderPath([Environment+SpecialFolder]::LocalApplicationData)) -ChildPath '\Set-OutlookSignatures\Logs')`, the files follow the naming scheme `$("Set-OutlookSignatures_Log_yyyyMMddTHHmmssffff.txt")`, and files older than 14 days are deleted with every run.
 
 To centrally define for which users or computers verbose logging should be enabled, you can use the following simple approach:
 
@@ -223,11 +223,11 @@ Start the software with the '-verbose' parameter to get the maximum output for t
 ## How can I start the software only when there is a connection to Active Directory?
 Per default, Set-OutlookSignatures tries to get the required information from Active Directory. When no Active Directory server can be reached, the Graph API is used to get the required information from Entra ID.
 
-To use only Entra ID, you set the '`GraphOnly`' parameter to '`true`'.
+To use only Entra ID, you set the `GraphOnly` parameter to `true`.
 
 There is no direct way to disable the use of Entra ID. When you do not have Entra ID but run Set-OutlookSignatures when there is (yet) no connection to Active Directory, this can lead to users complaining about pop-up windows regarding authentication because no Entra ID app has been set-up yet. This can also be required when Set-OutlookSignatures is run every time a VPN connection is established, but the client firewall is too slow opening the required ports.
 
-With the code from '`.\sample code\Start-IfADAvailable.ps1`', you can make sure that Set-OutlookSignatures is only run when a connection to Active Directory is available.
+With the code from `.\sample code\Start-IfADAvailable.ps1`, you can make sure that Set-OutlookSignatures is only run when a connection to Active Directory is available.
 
 
 ## Can multiple script instances run in parallel?
@@ -263,7 +263,7 @@ Please see `.\sample code\Set-OutlookSignatures.cmd` for an example. Don't forge
 Even when the `hidden` parameter is passed to PowerShell, a window is created and minimized. Although this only takes some tenths of a second, it is not only optically disturbing, but the new window may also steal the keyboard focus.
 
 Windows provides at least two built-in ways to start PowerShell absolutely hidden:
-- Reasonably up-to-date versions of Windows come with the '`conhost.exe`' console host, which comes with the 'headless' parameter:
+- Reasonably up-to-date versions of Windows come with the `conhost.exe` console host, which comes with the 'headless' parameter:
 
   ```
   conhost.exe --headless powershell.exe -File "\\server\share\directory\Set-OutlookSignatures.ps1" -SignatureTemplatePath "\\server\share\directory\templates\Signatures DOCX" -OOFTemplatePath "\\server\share\directory\templates\Out-of-Office DOCX" -ReplacementVariableConfigFile "\\server\share\directory\config\default replacement variables.ps1"
@@ -296,7 +296,7 @@ You may want to provide a link on the desktop or in the start menu, so they can 
 
 The Windows user interface does not allow you to create a shortcut with a combined length of full target path and arguments greater than 259 characters.
 
-You can overcome this user interface limitation by using PowerShell to create a shortcut (.lnk file). See '`.\sample code\Create-DesktopIcon.ps1`' for a cross-platform example.
+You can overcome this user interface limitation by using PowerShell to create a shortcut (.lnk file). See `.\sample code\Create-DesktopIcon.ps1` for a cross-platform example.
 
 **Attention**: When editing the shortcut created with the code above in the Windows user interface, the command to be executed is shortened to 259 characters without further notice. This already happens when just opening the properties of the created .lnk file, changing nothing and clicking OK.
 
@@ -645,7 +645,7 @@ To find the root cause:
 Two workarounds are available when you do not want to or can't find and solve the root cause of the problem:
 - Do not scale images in templates (by resizing them in Word, or using HTML width and height attributes), but use the original size of the image. It may be neccessary to resize the images with tools like GIMP before using them in templates.
 - The problem may only appear when templates are converted to signatures on computers configured with a display scaling higher than 100 %. In this case, the problem is in the Word conversion module or the HTML rendering engine of Word (which is used by Outlook). The registry key described in <a href="https://learn.microsoft.com/en-US/outlook/troubleshoot/user-interface/graphics-file-attachment-grows-larger-in-recipient-email">this Microsoft article</a> may help here. After setting the registry key according to the article, Outlook and Word need to be restarted and Set-OutlookSignatures needs to run again.  
-Starting with v4.0.0, Set-OutlookSignatures sets the '`DontUseScreenDpiOnOpen`' registry key to the recommended value. 
+Starting with v4.0.0, Set-OutlookSignatures sets the `DontUseScreenDpiOnOpen` registry key to the recommended value. 
 
 Nonetheless, some scaling and display problems simply cannot be solved in the HTML code of the signature, because the problem is in the Word HRML rendering engine used by Outlook: For example, some Word builds ignore embedded image width and height attributes and always scale these images at 100% size, or sometimes display them with inverted colors or a black background.  
 In this case, you can influence how images are displayed and converted from DOCX to HTM with the parameters '[EmbedImagesInHtml](/parameters#embedimagesinhtml)' and '[DocxHighResImageConversion](/parameters#docxhighresimageconversion)':
@@ -653,7 +653,7 @@ In this case, you can influence how images are displayed and converted from DOCX
 | <br>EmbedImagesInHtml<br>DocxHighResImageConversion| Default values<br><span style="font-weight:normal">false<br>true</span>| Alternate configuration A<br><span style="font-weight:normal">true<br>false</span> | Alternate configuration B<br><span style="font-weight:normal">true<br>true</span> | Alternate configuration C<br><span style="font-weight:normal">false<br>false</span> |
 | :-- | :-- | :-- | :-- | :-- |
 | HTML signatures with images consist of multiple files as images are not embedded | Yes | No | No | Yes |
-| Hints | Make sure to set the Outlook registry value '`Send Pictures With Document`' to 1, as described in the documentation of the '[EmbedImagesInHtml](/parameters#embedimagesinhtml)' parameter. | Some older mail clients (Outlook 2013 and older, for example) cannot handle embedded images.<br><br>Images can look blurred and pixelated, especially on systems with high display resolution. | Some older mail clients (Outlook 2013 and older, for example) cannot handle embedded images. | Make sure to set the Outlook registry value '`Send Pictures With Document`' to 1, as described in the documentation of the '[EmbedImagesInHtml](/parameters#embedimagesinhtml)' parameter.<br><br>Images can look blurred and pixelated, especially on systems with high display resolution. |
+| Hints | Make sure to set the Outlook registry value `Send Pictures With Document` to 1, as described in the documentation of the '[EmbedImagesInHtml](/parameters#embedimagesinhtml)' parameter. | Some older mail clients (Outlook 2013 and older, for example) cannot handle embedded images.<br><br>Images can look blurred and pixelated, especially on systems with high display resolution. | Some older mail clients (Outlook 2013 and older, for example) cannot handle embedded images. | Make sure to set the Outlook registry value `Send Pictures With Document` to 1, as described in the documentation of the '[EmbedImagesInHtml](/parameters#embedimagesinhtml)' parameter.<br><br>Images can look blurred and pixelated, especially on systems with high display resolution. |
 | Recommendation | This configuration should be used as long as there is nothing to the contrary. | | | |
 
 The parameter '[MoveCSSInline](/parameters#movecssinline)' may also influence how signatures are displayed. Not all clients support the same set of CSS features, and there are clients not or not fully supporting CSS classes.  
@@ -911,7 +911,7 @@ This usually happens when the text before the empty line ends with a hyperlink.
 
 To avoid this, add a non-breaking space character to the empty line in your template and to the end of the preceeding line:
 - Word: Insert, Symbol, More Symbols, Special Character, Nonbreaking Space
-- HTML: '`&nbsp;`'
+- HTML: `&nbsp;`
 
 This trick also helps when text separating two hyperlinks is underlined:
 
@@ -978,7 +978,7 @@ Yes, Set-OutlookSignatures and the Benefactor Circle add-on support cross-tenant
 
 Cross-tenant access is not limited to what Microsoft calls [Multitenant Organization](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/overview), it can be established between any two tenants allowing cross-tenant access for the other.
 
-See the description of the parameter '`GraphClientID`' for details.
+See the description of the parameter `GraphClientID` for details.
 
 
 ## Can I change the case (uppercase/lowercase) of replacement variables in templates?
@@ -988,7 +988,7 @@ Yes. Replacement variables can be displayed in uppercase, lowercase, or capitali
 
 In rare cases, email clients may ignore this CSS property or render it inconsistently.
 
-To ensure consistent results across all platforms, use a custom replacement variable config file ('`ReplacementVariableConfigFile`' parameter) to create a new replacement variable or modify an existing one to your needs. This ensures the same appearance across all mail clients and often is more flexible than a pure formatting option.
+To ensure consistent results across all platforms, use a custom replacement variable config file (`ReplacementVariableConfigFile` parameter) to create a new replacement variable or modify an existing one to your needs. This ensures the same appearance across all mail clients and often is more flexible than a pure formatting option.
 
 ## What can I learn from the code of Set-OutlookSignatures?
 Set-OutlookSignatures is not just a tool for managing Outlook signatures and out-of-office replies. It is free and open-source because I want to give something back to the community that has helped me so often over the years.
@@ -1021,8 +1021,8 @@ Enumerating direct and indirect (a.k.a nested, recursive, transitive) group memb
 The code in Set-OutlookSignatures used to determine group membership is as feature complete and efficient as Active Directory allows, making it the go-to code for this purpose.
 
 Files:
-- '`.\Set-OutlookSignatures.ps1`'
-- '`MemberOfRecurse.ps1`' from [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions)
+- `.\Set-OutlookSignatures.ps1`
+- `MemberOfRecurse.ps1` from [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions)
 
 ### Microsoft Graph authentication and re-authentication
 Sounds easy, doesn't it? Well, it isn't: Silent authentication, integrated windows authentication, authentication brokers, managed vs federated users, browser fallback, permission scopes, refresh tokens, encrypted storage, keyrings and keychains, cross-platform compatiblity, support for public, national, and sovereign clouds (GCC, GCC High, GCC DoD, China, Bleu, Delos, GovSG, and more), don't make it easy.
@@ -1030,18 +1030,18 @@ Sounds easy, doesn't it? Well, it isn't: Silent authentication, integrated windo
 Set-OutlookSignatures therefore comes with an authentication module, making it easy to use the official Microsoft Authentication Library (MSAL) and covering everything mentioned above, and some more, such as cross-tenant and multi-tenant organization access. Cross-platform and up to the highest security standards, of course.
 
 Files:
-- '`.\Set-OutlookSignatures.ps1`'
-- '`.\bin\MSAL.PS`'
+- `.\Set-OutlookSignatures.ps1`
+- `.\bin\MSAL.PS`
 
 ### Graph cross-tenant and multitenant-organization access
-The function '`GraphDomainToTenantID`' takes a DNS domain name, an email address, a URL or a tenant ID and tells you the tenant ID and the cloud it belongs to. It keeps a cache for fast lookups.
+The function `GraphDomainToTenantID` takes a DNS domain name, an email address, a URL or a tenant ID and tells you the tenant ID and the cloud it belongs to. It keeps a cache for fast lookups.
 
-The function '`GraphSwitchContext`' manages the authentication tokens for different tenant IDs and allows you to easily switch between them by accepting the same input as '`GraphDomainToTenantID`'.
+The function `GraphSwitchContext` manages the authentication tokens for different tenant IDs and allows you to easily switch between them by accepting the same input as `GraphDomainToTenantID`.
 
 As all code of Set-OutlookSignatures, these functions not only work with the public cloud but also with national and sovereign clouds (GCC, GCC High, GCC DoD, China, Bleu, Delos, GovSG, and more).
 
 Files:
-- '`.\Set-OutlookSignatures.ps1`'
+- `.\Set-OutlookSignatures.ps1`
 
 ### Deploy and run software using desired state configuration (DSC)
 Deploy software without having to create a software package, and run it on a schedule without having to work with scheduled tasks?
@@ -1051,20 +1051,20 @@ More and more Enterprise Mobility Management (EMM) products, such as Microsoft I
 Set-OutlookSignatures includes code that shows how to use this feature to deploy Set-OutlookSignatures and schedule its execution without having to package it. The scripts are tailored for Microsoft Intune, but they work in other EMM systems with no or only little changes.
 
 Files:
-- '`.\sample code\Intune-SetOutlookSignatures-Detect.ps1`'
-- '`.\sample code\Intune-SetOutlookSignatures-Remediate.ps1`'
+- `.\sample code\Intune-SetOutlookSignatures-Detect.ps1`
+- `.\sample code\Intune-SetOutlookSignatures-Remediate.ps1`
 
 ### Parallel code execution
-PowerShell 7 has made parallel code execution much easier with '`Foreach-Object -Parallel`' and background jobs, but they lack some features and are not available at all or only with a reduced feature set for PowerShell 5.
+PowerShell 7 has made parallel code execution much easier with `Foreach-Object -Parallel` and background jobs, but they lack some features and are not available at all or only with a reduced feature set for PowerShell 5.
 
 Set-OutlookSignatures uses parallel code execution in multiple places to speed up operations and to solve DLL/module dependency problems. For maximum comfort and compatibility, runspaces are used for this.
 
 The code teaches you how to create and use runspaces, how to share data between different runspaces, how to report progress, and much more.
 
 Files:
-- '`.\Set-OutlookSignatures.ps1`'
-- '`.\sample code\SimulateAndDeploy.ps1`'
-- '`.\sample code\Test-ADTrust.ps1`'
+- `.\Set-OutlookSignatures.ps1`
+- `.\sample code\SimulateAndDeploy.ps1`
+- `.\sample code\Test-ADTrust.ps1`
 
 ### Create desktop icons cross-platform
 Creating desktop icons seems to be a trivial task: Create the shortcut on a sample client and then deploy it.
@@ -1074,7 +1074,7 @@ It gets more of a challenge when you want to create the shortcut based on parame
 Set-OutlookSignatures not only includes code showing how it is done on Windows, but also for Linux and macOS.
 
 Files:
-- '`.\sample code\Create-DesktopIcon.ps1`'
+- `.\sample code\Create-DesktopIcon.ps1`
 
 ### Create and configure apps in Entra ID, grant admin consent
 Basically every interaction with Microsoft 365, Microsoft Azure, and Entra ID requires an Entra ID app in the background. This is an integral part of the design of the Graph API, providing higher security as permissions have to be defined in detail and, in many cases, must be granted use by administrators.
@@ -1088,7 +1088,7 @@ With this documentation, Set-OutlookSignatures has since passed every security a
 The included code shows how to fully automate the creation and configuration of Entra ID apps, including how to automatically grant admin consent.
 
 Files:
-- '`.\sample code\Create-EntraApp.ps1`'
+- `.\sample code\Create-EntraApp.ps1`
 
 ### Test Active Directory trusts
 Active Directory has been introduced nearly 30 years ago, but one still comes across environments with misconfigured DNS servers and firewalls. It becomes even more problematic when trusts are involved - although the requirements are well documented and firewalls typically have built-in filters.
@@ -1105,10 +1105,10 @@ Cross-forest trusts are supported, too.
 This code is also a good example for parallel code execution in PowerShell.
 
 Files:
-- '`.\sample code\Test-ADTrust.ps1`'
+- `.\sample code\Test-ADTrust.ps1`
 
 ### Start only if working Active Directory connection is available
-This a much simpler and faster variant of '`.\sample code\Test-ADTrust.ps1`', intenden for a simpler use case: Quickly check if a working connection to Active Directory can be established, and only run Set-OutlookSignatures when Active Directory answers.
+This a much simpler and faster variant of `.\sample code\Test-ADTrust.ps1`, intenden for a simpler use case: Quickly check if a working connection to Active Directory can be established, and only run Set-OutlookSignatures when Active Directory answers.
 
 This is useful when, for example, you use a VPN connection event trigger to start Set-OutlookSignatures, but your client firewall takes some time to update its dynamic ruleset.
 
@@ -1117,20 +1117,20 @@ This code would not be worth nothing if it did not consider some typical caveats
 Sounds complicated, but is straightforward and highly reusable for any software with similar requirements.
 
 Files:
-- '`.\sample code\Start-IfADAvailable.ps1`'
+- `.\sample code\Start-IfADAvailable.ps1`
 
 ### Prohibit system sleep
 Blocking a system from going to sleep is not a big challenge, making it configurable on Windows, and work cross-platform on Linux and macOS is already a bit harder.
 
-The '`BlockSleep`' function of Set-OutlookSignatures makes it easy to block and allow system sleep as you wish.
+The `BlockSleep` function of Set-OutlookSignatures makes it easy to block and allow system sleep as you wish.
 
 Files:
-- '`.\Set-OutlookSignatures.ps1`'
+- `.\Set-OutlookSignatures.ps1`
 
 ### Detect exit signals
 It is hard for long-running scripts to detect exit signals and even harder to react with a graceful exit in-time.
 
-The '`WatchCatchableExitSignal`' family of functions makes this much easier. They detect
+The `WatchCatchableExitSignal` family of functions makes this much easier. They detect
 - logoff, reboot and shutdown messages on Windows
 - catchable POSIX signals (SIGINT, SIGTERM, SIGQUIT, SIGHUP) on Linux and macOS
 via a separate parallel thread and make them available to the whole PowerShell session.
@@ -1138,7 +1138,7 @@ via a separate parallel thread and make them available to the whole PowerShell s
 A long-running script can then check regularly for these signals, and react accordingly. Set-OutlookSignatures and the Benefactor Circle add-on perform these checks more than 500 times throughout their code.
 
 Files:
-- '`.\Set-OutlookSignatures.ps1`'
+- `.\Set-OutlookSignatures.ps1`
 
 ### Format phone numbers
 Just like postal addresses, phone numbers seem like child's play: You simply type them into your phone and - voilà - it rings at the other end.
@@ -1152,13 +1152,13 @@ If you still think phone number formatting is an easy task, reading the article 
 
 Google has created probably the best phone number formatter, made it free and open-source, and maintains it regularly. It covers all countries and regions, includes all the public data that is available about country codes, and all the experience from the Android number dialer.
 
-Set-OutlookSignatures makes the .Net port of this library available. The function '`FormatPhoneNumber`' allows any given phone number with optional or indirect country information to be formatted in the four relevant technical formats, as well as in a fully customizable format.
+Set-OutlookSignatures makes the .Net port of this library available. The function `FormatPhoneNumber` allows any given phone number with optional or indirect country information to be formatted in the four relevant technical formats, as well as in a fully customizable format.
 
-With only one input, you get a perfectly formatted number for national dialing, international dialing, `'tel:'`-links and more. Extensions are supported, too, when being made technically distinguishable.
+With only one input, you get a perfectly formatted number for national dialing, international dialing, `tel:`-links and more. Extensions are supported, too, when being made technically distinguishable.
 
 Files:
-- '`.\Set-OutlookSignatures.ps1`'
-- '`.\config\default replacement variables.ps1`'
+- `.\Set-OutlookSignatures.ps1`
+- `.\config\default replacement variables.ps1`
 
 ### Format postal addresses
 Just like phone numbers, postal addresses seem like child's play. This is true for national addressing because we are used to writing addresses for our own country.
@@ -1169,14 +1169,14 @@ Since all attempts to remedy the cause of this chaos have failed, there is a glo
 
 These address formatting templates are then made accessible by free and open-source software implementations. As there has been none for .Net or PowerShell, I created one.
 
-The '`AddressFormatter`' module comes with the '`Format-PostalAddress`' cmdlet. The cmdlet takes named standard address components - there are more than 20 of them! - and the coutry code as input, and returns the correctly formatted address string.
+The `AddressFormatter` module comes with the `Format-PostalAddress` cmdlet. The cmdlet takes named standard address components - there are more than 20 of them! - and the coutry code as input, and returns the correctly formatted address string.
 
 A real relief for any multinational company or when sending letters to recipients in different countries!
 
 Files:
-- '`.\Set-OutlookSignatures.ps1`'
-- '`.\config\default replacement variables.ps1`'
-- '`https://github.com/GruberMarkus/AddressFormatter`'
+- `.\Set-OutlookSignatures.ps1`
+- `.\config\default replacement variables.ps1`
+- `https://github.com/GruberMarkus/AddressFormatter`
 
 ### Bringing hidden open-source treasures to light
 As a member of the .Net platform, PowerShell has access to a lot of great software published by other open-source enthusiasts.
@@ -1208,7 +1208,7 @@ The free and open-source PowerShell function ConvertEncoding, part of Set-Outloo
 ConvertEncoding enables reliable detection of encodings via BOMs, HTML metadata, and heuristic analysis, and converts content to other formats as needed. Even HTML files are correctly adjusted, including meta tags. This makes different encodings easy to manage.
 
 Files:
-- '`.\Set-OutlookSignatures.ps1`'
+- `.\Set-OutlookSignatures.ps1`
 
 ### Handling of distinguished names
 While distinguished names look like easy to handle strings, their format and some AD/LDAP specifics brings challenges.

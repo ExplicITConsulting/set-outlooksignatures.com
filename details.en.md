@@ -74,7 +74,7 @@ You want to know more?
 - An [organizational implementation approach](/implementationapproach)
 - Features available exclusively to [Benefactor Circle](/benefactorcircle) members
 
-The '`sample code`' folder contains additional scripts and advanced usage examples, such as deploying signatures without user or client interaction.
+The `sample code` folder contains additional scripts and advanced usage examples, such as deploying signatures without user or client interaction.
 
 When facing a problem: Before creating a new issue, check the documentation, previous [issues](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=) and [discussions](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=). You can also switch to the fast lane: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers first-class [professional support](/support).
 
@@ -447,17 +447,17 @@ Tags are case insensitive.
   - Groups must be available in Active Directory and/or Entra ID. Groups like `Everyone` and `Authenticated Users` only exist locally, not in Active Directory or Entra ID.
   - This tag supports alternative formats, which are of special interest if you are in a cloud only or hybrid environmonent:
     - `<DNS or NetBIOS name of AD domain> <SamAccountName of group>` and `<DNS or NetBIOS name of AD domain> <Display name of group>` can be queried from Microsoft Graph if the groups are synced between on-prem and the cloud. SamAccountName is queried before DisplayName. Use these formats when your environment is hybrid or on premises.
-    - `EntraID <Object ID of group>`, `EntraID <securityIdenfifier of group>`, `EntraID <email-address-of-group@example.com>`, `EntraID <mailNickname of group>`, `EntraID <DisplayName of group>` do not work with a local Active Directory, only with Microsoft Graph. They are queried in the order given. You can use 'AzureAD' instead of 'EntraID'. 'EntraID' and 'AzureAD' are the literal, case-insensitive strings 'EntraID' and 'AzureAD', not a variable. Use these formats when you are in a hybrid or cloud only environment.<br>'`EntraID`' and '`AzureAD`' always refer to the home tenant of the currently logged-in user. To address a specific tenant in cross-tenant scenarios (see '`GraphClientID`' for details), use one of the following formats: '`EntraID_<a registered DNS domain>`' ('`EntraID_example.onmicrosoft.com`'), or '`EntraID_<Tenant ID>`' ('`EntraID_00000000-0000-0000-0000-000000000000`').
-  - '`<DNS or NetBIOS name of AD domain>`' and '`<EXAMPLE>`' are just examples. You need to replace them with the actual NetBios domain name of the Active Directory domain containing the group.
+    - `EntraID <Object ID of group>`, `EntraID <securityIdenfifier of group>`, `EntraID <email-address-of-group@example.com>`, `EntraID <mailNickname of group>`, `EntraID <DisplayName of group>` do not work with a local Active Directory, only with Microsoft Graph. They are queried in the order given. You can use 'AzureAD' instead of 'EntraID'. 'EntraID' and 'AzureAD' are the literal, case-insensitive strings 'EntraID' and 'AzureAD', not a variable. Use these formats when you are in a hybrid or cloud only environment.<br>`EntraID` and `AzureAD` always refer to the home tenant of the currently logged-in user. To address a specific tenant in cross-tenant scenarios (see `GraphClientID` for details), use one of the following formats: `EntraID_<a registered DNS domain>` (`EntraID_example.onmicrosoft.com`), or `EntraID_<Tenant ID>` (`EntraID_00000000-0000-0000-0000-000000000000`).
+  - `<DNS or NetBIOS name of AD domain>` and `<EXAMPLE>` are just examples. You need to replace them with the actual NetBios domain name of the Active Directory domain containing the group.
   - 'EntraID' and 'AzureAD' are not examples. If you want to assign a template to a group stored in Entra ID, you have to use 'EntraID' or 'AzureAD' as domain name.
   - When multiple groups are defined, membership in a single group is sufficient to be assigned the template - it is not required to be a member of all the defined groups.  
   - Which group naming format should I choose?
-    - When using the '`<DNS or NetBIOS name of AD domain> <…>`' format, use the SamAccountName whenever possible. The combination of domain name and SamAccountName is unique, while a display name may exist multiple times in a domain.
-    - When using the '`EntraID <…>`' format, prefer Object ID and securityIdentifier whenever possible. Object ID and securityIdentifier are always unique, email address and mailNickname can wrongly exist on multiple objects, and the uniqueness of displayName is in your hands.
+    - When using the `<DNS or NetBIOS name of AD domain> <…>` format, use the SamAccountName whenever possible. The combination of domain name and SamAccountName is unique, while a display name may exist multiple times in a domain.
+    - When using the `EntraID <…>` format, prefer Object ID and securityIdentifier whenever possible. Object ID and securityIdentifier are always unique, email address and mailNickname can wrongly exist on multiple objects, and the uniqueness of displayName is in your hands.
   - When should I refer on-prem groups and when Entra ID groups?
-    - When using the '`-GraphOnly true`' parameter, prefer Entra ID groups ('`EntraID <…>`'). You may also use on-prem groups ('`<DNS or NetBIOS name of AD domain> <…>`') as long as they are synchronized to Entra ID.
-    - In hybrid environments without using the '`-GraphOnly true`' parameter, prefer on-prem groups ('`<DNS or NetBIOS name of AD domain> <…>`') synchronized to Entra ID. Pure entra ID groups ('`EntraID <…>`') only make sense when all mailboxes covered by Set-OutlookSignatures are hosted in Exchange Online.
-    - Pure on-prem environments: You can only use on-prem groups ('`<DNS or NetBIOS name of AD domain> <…>`'). When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.
+    - When using the `-GraphOnly true` parameter, prefer Entra ID groups (`EntraID <…>`). You may also use on-prem groups (`<DNS or NetBIOS name of AD domain> <…>`) as long as they are synchronized to Entra ID.
+    - In hybrid environments without using the `-GraphOnly true` parameter, prefer on-prem groups (`<DNS or NetBIOS name of AD domain> <…>`) synchronized to Entra ID. Pure entra ID groups (`EntraID <…>`) only make sense when all mailboxes covered by Set-OutlookSignatures are hosted in Exchange Online.
+    - Pure on-prem environments: You can only use on-prem groups (`<DNS or NetBIOS name of AD domain> <…>`). When moving to a hybrid environment, you do not need to adapt the configuration as long as you synchronize your on-prem groups to Entra ID.
 - Group membership of current user: `CURRENTUSER:<syntax of "Assign template to group">`
   - Make this template specific for the logged on user if his _personal_ mailbox (which does not need to be in Outlook) is a direct or indirect member of this group or distribution list
   - Example: Assign template to every mailbox, but not if the mailbox of the current user is member of the group EXAMPLE\Group
@@ -752,19 +752,19 @@ Both ways allow to apply Word image features such as sizing, a shadow, a glow or
 
 The crucial part for both ways is to set the text wrapping to "inline with text". If you don't, Outlook and other email clients will not place the image in the correct place as the position of floating shapes in Word cannot reliably be translated to HTML.
 
-The sample signature template '`Test all default replacement variables`' contains examples for both ways, as well as some images formatted as "floating" images.
+The sample signature template `Test all default replacement variables` contains examples for both ways, as well as some images formatted as "floating" images.
 
 **Steps for the shape option:**
 1. Add a shape to the signature template.
 2. Apply any formatting you want to it.
-3. Add one of the default replacement variables (such as '`$CurrentUserPhoto$`') to the alternative text of the shape.
+3. Add one of the default replacement variables (such as `$CurrentUserPhoto$`) to the alternative text of the shape.
 4. Set the text wrapping of the shape to "inline with text".
 
 **Steps for the "link and embed" option:**
 1. Create a sample image file which will later be used as placeholder.  
 2. Insert the image into the signature template. Make sure to use `Insert | Pictures | This device` (Word 2019, other versions have the same feature in different menus) and to select the option `Insert and Link` - if you forget this step, a specific Word property is not set and the software will not be able to replace the image.  
 3. Apply any formatting you want to it.
-4. Add one of the default replacement variables (such as '`$CurrentUserPhoto$`') to the alternative text of the shape.
+4. Add one of the default replacement variables (such as `$CurrentUserPhoto$`) to the alternative text of the shape.
 
 When Set-OutlookSignatures finds a shape in a template file with an image replacement variable in its alternative text, it fills the shape with the account picture.
 
@@ -795,7 +795,7 @@ The signature template `.\templates\Signatures DOCX\Test all signature replaceme
   
 The software uses a workaround, but the resulting RTF files are still huge compared to other file types and especially for use in emails. If this is a problem, please either do not use embedded images in the signature template (including photos from Active Directory), or switch to HTML formatted emails.
 
-If you ran into this problem outside this script, consider modifying the '`ExportPictureWithMetafile`' registry key as described in the Microsoft Knowledge Base article 224663. This is one of many articles that have not been migrated to the new learn.microsoft.com platform and are no longer available on microsoft.com, but you can give <a href="https://www.betaarchive.com/wiki/index.php?title=Microsoft_KB_Archive/224663">Beta Archive's snapshot of the article</a> a try.  
+If you ran into this problem outside this script, consider modifying the `ExportPictureWithMetafile` registry key as described in the Microsoft Knowledge Base article 224663. This is one of many articles that have not been migrated to the new learn.microsoft.com platform and are no longer available on microsoft.com, but you can give <a href="https://www.betaarchive.com/wiki/index.php?title=Microsoft_KB_Archive/224663">Beta Archive's snapshot of the article</a> a try.  
 
 
 ### Delete images when attribute is empty, variable content based on group membership
@@ -842,11 +842,11 @@ Examples:
 
 
 ### Custom image replacement variables
-You can fill custom image replacement variables yourself with a byte array: '`$CurrentUserCustomImage[1..10]$'`, '`$CurrentUserManagerCustomImage[1..10]$'`, '`$CurrentMailboxCustomImage[1..10]$'`, '`$CurrentMailboxManagerCustomImage[1..10]$'`.
+You can fill custom image replacement variables yourself with a byte array: `$CurrentUserCustomImage[1..10]$`, `$CurrentUserManagerCustomImage[1..10]$`, `$CurrentMailboxCustomImage[1..10]$`, `$CurrentMailboxManagerCustomImage[1..10]$`.
 
 Use cases: Account pictures from a share, QR code vCard/URL/text/Twitter/X/Facebook/App stores/geo location/email, etc.
 
-Per default, '`$Current[..]CustomImage1$`' is a QR code containing a vCard (in MeCard format) - see file '`.\config\default replacement variables.ps1`' for the code behind it.
+Per default, `$Current[..]CustomImage1$` is a QR code containing a vCard (in MeCard format) - see file `.\config\default replacement variables.ps1` for the code behind it.
 
 The behavior of custom image replacement variables and the possible configuration options are the same as with replacement variables for account pictures from Active Directory/Entra ID.
 
@@ -892,9 +892,9 @@ The easiest way is to once start Set-OutlookSignatures with a cloud administrato
 If you don't want to use custom Graph attributes or other advanced configurations, no more configuration in Microsoft Graph or Set-OutlookSignatures is required.
 
 If you prefer using own application IDs or need advanced configuration, follow these steps:  
-- In Entra ID, create a new application with the settings described in '`.\config\default graph config.ps1`'.
-- In Set-OutlookSignatures, use '`.\config\default graph config.ps1`' as a template for a custom Graph configuration file
-  - Set '`$GraphClientID`' to the application ID created by the Graph administrator before, or pass this value using the '`GraphClientID`' parameter.
+- In Entra ID, create a new application with the settings described in `.\config\default graph config.ps1`.
+- In Set-OutlookSignatures, use `.\config\default graph config.ps1` as a template for a custom Graph configuration file
+  - Set `$GraphClientID` to the application ID created by the Graph administrator before, or pass this value using the `GraphClientID` parameter.
   - Use the `GraphConfigFile` parameter to make the tool use the newly created Graph configuration file.
 
 
@@ -911,8 +911,8 @@ In hybrid and cloud-only scenarios, Set-OutlookSignatures automatically tries mu
 1. Silent via Integrated Windows Authentication without login hint  
 This works in hybrid scenarios when you configured your hybrid connection in Entra Connect accordingly, and when the user is logged-on to a domain- or Entra-ID-joined computer with his domain credentials. The credentials of the currently logged-in user are used to access Microsoft Graph without any further user interaction.  
 Integrated Windows Authentication only works for federated users (users created in Active Directory and then synced to Entra ID), not for managed users (users created in Entra ID and then synced to Entra ID).  
-Integrated Windows Authentication only works for domains with the authentication type "federated". You can check the authentication type for your domains with the '`Get-MgDomain`' cmdlet from the Microsoft.Graph.Identity.DirectoryManagement PowerShell module.  
-See '`https://aka.ms/msal-net-iwa`' for details.
+Integrated Windows Authentication only works for domains with the authentication type "federated". You can check the authentication type for your domains with the `Get-MgDomain` cmdlet from the Microsoft.Graph.Identity.DirectoryManagement PowerShell module.  
+See `https://aka.ms/msal-net-iwa` for details.
 2. Silent via Integrated Windows Authentication with login hint  
 This is the same as the option before, but with a login hint taken from the last known successful authentication. Windows requires this in some scenarios.
 3. Silent via Authentication Broker without login hint  
@@ -927,28 +927,28 @@ The authentication broker of the operating system opens, asks which account to u
 7. Interactive via browser  
 Authentication via browser. A default browser window with an "Authentication successful" message may open, it can be closed anytime. You can modify the browser message shown, see '.\config\default graph config.ps1' for details.
 
-When all silent authentication methods fail, a dialog informs the user that Set-OutlookSignatures requires interactive authentication. You can change the text displayed in the dialog or disable the dialog using a custom graph configuration file. See '`.\config\default graph config.ps1`' for details and more options related to authentication against the Graph API.
+When all silent authentication methods fail, a dialog informs the user that Set-OutlookSignatures requires interactive authentication. You can change the text displayed in the dialog or disable the dialog using a custom graph configuration file. See `.\config\default graph config.ps1` for details and more options related to authentication against the Graph API.
 
 No custom components are used, only the official Microsoft 365 authentication site, the user's default browser and the official Microsoft Authentication Library for .Net (MSAL.Net).
 
 After successful authentication the refresh token is stored for later use by the silent authentication steps described above.
-- On Windows, the file is encrypted using the system's Data Protection API (DPAPI) and saved in the file '`$(Join-Path -Path ([Environment]::GetFolderPath([Environment+SpecialFolder]::LocalApplicationData)) -ChildPath '\Set-OutlookSignatures\MSAL.PS\MSAL.PS.msalcache.bin3')`'.
+- On Windows, the file is encrypted using the system's Data Protection API (DPAPI) and saved in the file `$(Join-Path -Path ([Environment]::GetFolderPath([Environment+SpecialFolder]::LocalApplicationData)) -ChildPath '\Set-OutlookSignatures\MSAL.PS\MSAL.PS.msalcache.bin3')`.
   - In the rare case that DPAPI is not available, Set-OutlookSignatures informs you and MSAL.Net saves the file unencrypted.
 - On Linux, the refresh token is stored in the default keyring in the entry named 'Set-OutlookSignatures Microsoft Graph token via MSAL.Net'. If the default keyring is locked, the user is asked to unlock it (the message can be customized in 'default graph config.ps1').
-  - Should the default keyring not be available, Set-OutlookSignatures informs you and MSAL.Net saves the refresh token in the file '`$(Join-Path -Path ([Environment]::GetFolderPath([Environment+SpecialFolder]::LocalApplicationData)) -ChildPath '\Set-OutlookSignatures\MSAL.PS\MSAL.PS.msalcache.bin3')`'.
+  - Should the default keyring not be available, Set-OutlookSignatures informs you and MSAL.Net saves the refresh token in the file `$(Join-Path -Path ([Environment]::GetFolderPath([Environment+SpecialFolder]::LocalApplicationData)) -ChildPath '\Set-OutlookSignatures\MSAL.PS\MSAL.PS.msalcache.bin3')`.
 - On macOS, the refresh token is stored in the default keychain in the entry named 'Set-OutlookSignatures Microsoft Graph token via MSAL.Net'. If the default keychain is locked, the user is asked to unlock it (the message can be customized in 'default graph config.ps1').
-  - Should the default keychain not be available, Set-OutlookSignatures informs you and MSAL.Net saves the refresh token in the file '`$(Join-Path -Path ([Environment]::GetFolderPath([Environment+SpecialFolder]::LocalApplicationData)) -ChildPath '\Set-OutlookSignatures\MSAL.PS\MSAL.PS.msalcache.bin3')`'.
+  - Should the default keychain not be available, Set-OutlookSignatures informs you and MSAL.Net saves the refresh token in the file `$(Join-Path -Path ([Environment]::GetFolderPath([Environment+SpecialFolder]::LocalApplicationData)) -ChildPath '\Set-OutlookSignatures\MSAL.PS\MSAL.PS.msalcache.bin3')`.
 
 Set-OutlookSignatures always keeps you informed about where and how the token is stored, and how you can delete it to force re-authentication without using the cached refresh token:
 - Windows
-  - '`Encrypted file '$($cacheFilePath)', delete file to remove cached token`'
-  - '`Unencrypted file '$($cacheFilePath)', delete file to remove cached token`'
+  - `Encrypted file '$($cacheFilePath)', delete file to remove cached token`
+  - `Unencrypted file '$($cacheFilePath)', delete file to remove cached token`
 - Linux
-  - '`Encrypted default keyring entry 'Set-OutlookSignatures Microsoft Graph token via MSAL.Net', use keychain app to remove cached token`'
-  - '`Unencrypted file '$($cacheFilePath)', delete file to remove cached token`'
+  - `Encrypted default keyring entry 'Set-OutlookSignatures Microsoft Graph token via MSAL.Net', use keychain app to remove cached token`
+  - `Unencrypted file '$($cacheFilePath)', delete file to remove cached token`
 - macOS
-  - '`Encrypted default keychain entry 'Set-OutlookSignatures Microsoft Graph token via MSAL.Net', use 'security delete-generic-password "Set-OutlookSignatures Microsoft Graph token via MSAL.Net"' to remove cached token`'
-  - '`Unencrypted file '$($cacheFilePath)', delete file to remove cached token`'
+  - `Encrypted default keychain entry 'Set-OutlookSignatures Microsoft Graph token via MSAL.Net', use 'security delete-generic-password "Set-OutlookSignatures Microsoft Graph token via MSAL.Net"' to remove cached token`
+  - `Unencrypted file '$($cacheFilePath)', delete file to remove cached token`
 
 If you want to see more information around authentication, run Set-OutlookSignatures with the "-verbose" parameter.
 
@@ -978,4 +978,4 @@ An example: Simulate user a@example.com with the additional mailbox x@example.co
 & .\Set-OutlookSignatures.ps1 -SimulateUser 'a@example.com' -SimulateMailboxes 'a@example.com', 'x@example.com' -AdditionalSignaturePath 'c:\test'
 ```
 
-Also see '`.\sample code\SimulationModeHelper.ps1`' for sample code showing how to use simulation mode.
+Also see `.\sample code\SimulationModeHelper.ps1` for sample code showing how to use simulation mode.

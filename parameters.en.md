@@ -67,7 +67,7 @@ Also see related parameter '[EmbedImagesInHtmlAdditionalSignaturePath](#embedima
 
 This feature requires a Benefactor Circle license (when used outside of simulation mode).
 
-Allowed value: A path as a string, or an empty string ('`""`' or '`''`') to disable the feature. Do not pass the parameter at all to use the default value.
+Allowed value: A path as a string, or an empty string (`""` or ``) to disable the feature. Do not pass the parameter at all to use the default value.
 
 Default value: `"$(try { $([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures')) } catch {})"`  
 
@@ -118,7 +118,7 @@ Allowed value: One from:
 - 'AzureBleu'(or: 'Bleu', 'BleuCloud', 'AzureBleuCloud')
 - 'AzureDelos'(or: 'Delos', 'DelosCloud', 'AzureDelosCloud')
 - 'AzureGovSG'(or: 'GovSG', 'GovSGCloud', 'AzureGovSGCloud')
-- Define you own values with the '`$CustomCloudEnvironment`' variable in a custom [graph config file](#graphconfigfile). See '`.\config\default graph config.ps1`' for an example.
+- Define you own values with the `$CustomCloudEnvironment` variable in a custom [graph config file](#graphconfigfile). See `.\config\default graph config.ps1` for an example.
 - Do not pass the parameter at all to use the default value.
 
 Default value: 'Public'
@@ -234,7 +234,7 @@ Outlook 2016 and newer can handle images embedded directly into an HTML file as 
 
 Outlook 2013 and earlier can't handle these embedded images when composing HTML emails (there is no problem receiving such emails, or when composing RTF or TXT emails).
 
-When setting EmbedImagesInHtml to `$false`, consider setting the Outlook registry value '`Send Pictures With Document`' to 1 to ensure that images are sent to the recipient (see https://support.microsoft.com/en-us/topic/inline-images-may-display-as-a-red-x-in-outlook-704ae8b5-b9b6-d784-2bdf-ffd96050dfd6 for details). Set-OutlookSignatures does this automatically for the currently logged-in user, but it may be overridden by other scripts or group policies.
+When setting EmbedImagesInHtml to `$false`, consider setting the Outlook registry value `Send Pictures With Document` to 1 to ensure that images are sent to the recipient (see https://support.microsoft.com/en-us/topic/inline-images-may-display-as-a-red-x-in-outlook-704ae8b5-b9b6-d784-2bdf-ffd96050dfd6 for details). Set-OutlookSignatures does this automatically for the currently logged-in user, but it may be overridden by other scripts or group policies.
 
 Allowed value: One from: 1, 'true', '$true', 'yes', 0, 'false', '$false', 'no'. Do not pass the parameter at all to use the default value.
 
@@ -262,9 +262,9 @@ Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignature
 ## GraphClientID
 The application (client) ID of the Entra ID app to use for Graph authentication (not its object ID).
 
-GraphClientID can be defined in two places: As parameter or in a custom '`GraphConfigFile`'.
+GraphClientID can be defined in two places: As parameter or in a custom `GraphConfigFile`.
 It is recommended to use the parameter.
-The parameter must be used when the parameter '`GraphConfigFile`' points to a SharePoint Online location.
+The parameter must be used when the parameter `GraphConfigFile` points to a SharePoint Online location.
 
 Per default, GraphClientID is not overwritten by the configuration defined in GraphConfigFile, but you can change this in the Graph config file itself.
 
@@ -281,7 +281,7 @@ The requirements for cross-tenant access support are:
 -	These external identities must be of type 'Member', not of type 'Guest'.to ensure that the required Graph API queries can be executed.
 -	Make sure that '[Automatic redemption](https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-settings-b2b-collaboration)' is enabled in both the source and the target tenants. Else, users will be asked for interactive consent the first time they use cross-tenant access. An app like Set-OutlookSignatures can neither check this setting nor inform the user beforehand.
 -	Make sure that authentication can happen silently. This means that the target tenants must trust MFA, compliant devices and Entra hybrid joined devices of the source tenant. If this is not the case, users might be required to authenticate themselves interactively when Set-OutlookSignatures runs.
--	Each tenant must have its own Entra ID app for Set-OutlookSignatures, with identical permissions across tenants. You need to pass the combination of target tenant ID and App ID using the GraphClientID parameter as nested array, including the home tenant of the user. As a tenant identifier, you can use the tenant ID or any of its registered domains ('`-GraphClientID @(@('tenant-a.onmicrosoft.com', '<Tenant-A-App-ID>'), @('tenant-b.example.com', '<Tenant-B-App-ID>'), @('00000000-0000-0000-0000-000000000000', '<Tenant-C-App-ID>'))`')
+-	Each tenant must have its own Entra ID app for Set-OutlookSignatures, with identical permissions across tenants. You need to pass the combination of target tenant ID and App ID using the GraphClientID parameter as nested array, including the home tenant of the user. As a tenant identifier, you can use the tenant ID or any of its registered domains (`-GraphClientID @(@('tenant-a.onmicrosoft.com', '<Tenant-A-App-ID>'), @('tenant-b.example.com', '<Tenant-B-App-ID>'), @('00000000-0000-0000-0000-000000000000', '<Tenant-C-App-ID>'))`)
 -	Authentication will happen as soon as Graph access is required for the first time. All tenants defined by the GraphClientID parameter will be authenticated (the order does not matter).
 - To use Benefactor Circle features, each tenant must have its own license group, and the license file must contain all of these groups.
 
@@ -289,7 +289,7 @@ Allowed value: The application (client) ID of the Entra ID app to use as a strin
 
 Default value: $null
 
-Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 GraphClientID '3dc5f201-6c36-4b94-98ca-c66156a686a8'`
+Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 GraphClientID '3dc5f201-6c36-4b94-98ca-c66156a686a8`
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 GraphClientID '3dc5f201-6c36-4b94-98ca-c66156a686a8'"`
 
 
@@ -314,7 +314,7 @@ Allowed value: A file path as a string. Do not pass the parameter at all to use 
 
 Default value: `.\config\default graph config.ps1`  
 
-Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -GraphConfigFile '.\config\default graph config.ps1`'  
+Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -GraphConfigFile '.\config\default graph config.ps1`  
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 GraphConfigFile '.\config\default graph config.ps1'"`
 
 
@@ -421,9 +421,9 @@ Before going into configuration details, here is some background information:
 Prerequisites:
 - For downloading roaming signatures:
   - Current user has full access to the mailbox.
-  - When the parameter value is set to '`CurrentUserOnly`': Mailbox is the mailbox of the currently logged-in user and is hosted in Exchange Online.
+  - When the parameter value is set to `CurrentUserOnly`: Mailbox is the mailbox of the currently logged-in user and is hosted in Exchange Online.
 - For uploading roaming signatures and to set default signatures:
-  - Script parameter '`SetCurrentUserOutlookWebSignature`' must be set to true.
+  - Script parameter `SetCurrentUserOutlookWebSignature` must be set to true.
   - Signatures are uploaded to the Exchange Online mailbox of the logged-in user.
 
 Please note:
@@ -464,7 +464,7 @@ Template tags are placed in an INI file.
 
 The file must be UTF-8 encoded (without BOM).
 
-See '`.\templates\Out-of-Office DOCX\_OOF.ini`' for a sample file with further explanations.
+See `.\templates\Out-of-Office DOCX\_OOF.ini` for a sample file with further explanations.
 
 Local and remote paths are supported. Local paths can be absolute ('C:\Signature templates') or relative to the software path ('.\templates\Signatures')
 
@@ -480,7 +480,7 @@ Allowed value: A file path as a string. Do not pass the parameter at all to use 
 
 Default value: `.\templates\Out-of-Office DOCX\_OOF.ini` on Windows, Default value: `.\templates\Out-of-Office HTML\_OOF.ini` on Linux and macOS
 
-Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -OOFIniFile '.\templates\Out-of-Office DOCX\_OOF.ini`'  
+Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -OOFIniFile '.\templates\Out-of-Office DOCX\_OOF.ini`  
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -OOFIniFile '.\templates\Out-of-Office DOCX\_OOF.ini'"`
 
 
@@ -503,7 +503,7 @@ Allowed value: A folder path as a string. Do not pass the parameter at all to us
 
 Default value: `.\templates\Out-of-Office DOCX` on Windows, `.\templates\Out-of-Office DOCX` on Linux and macOS
 
-Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -OOFTemplatePath '.\templates\Out-of-Office DOCX`'  
+Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -OOFTemplatePath '.\templates\Out-of-Office DOCX`  
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -OOFTemplatePath '.\templates\Out-of-Office DOCX'"`
 
 
@@ -526,7 +526,7 @@ Allowed value: A file path as a string. Do not pass the parameter at all to use 
 
 Default value: `.\config\default replacement variables.ps1`  
 
-Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -ReplacementVariableConfigFile '.\config\default replacement variables.ps1`'  
+Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -ReplacementVariableConfigFile '.\config\default replacement variables.ps1`  
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -ReplacementVariableConfigFile '.\config\default replacement variables.ps1'"`
 
 
@@ -613,7 +613,7 @@ Allowed value: A file path as a string. Do not pass the parameter at all to use 
 
 Default value: '.\templates\Signatures DOCX\_Signatures.ini' on Windows, '.\templates\Signatures HTML\_Signatures.ini' on Linux and macOS
 
-Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignatureIniFile '.\templates\Signatures DOCX\_Signatures.ini`'  
+Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignatureIniFile '.\templates\Signatures DOCX\_Signatures.ini`  
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SignatureIniFile '.\templates\Signatures DOCX\_Signatures.ini'"`
 
 
@@ -651,7 +651,7 @@ Allowed value: A folder path as a string. Do not pass the parameter at all to us
 
 Default value: '.\sample templates\Signatures DOCX' on Windows, '.\sample templates\Signatures HTML' on Linux and macOS
 
-Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignatureTemplatePath '.\sample templates\Signatures DOCX`'  
+Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignatureTemplatePath '.\sample templates\Signatures DOCX`  
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SignatureTemplatePath '.\sample templates\Signatures DOCX'"`
 
 
@@ -699,7 +699,7 @@ Allowed value: A comma separated list of email addresses replacing the list of m
 
 Default value: $null
 
-Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SimulateMailboxes 'user.b@example.com', 'user.b@example.net`'  
+Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SimulateMailboxes 'user.b@example.com', 'user.b@example.net`  
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateMailboxes 'user.a@example.com', 'user.b@example.net'"`
 
 
@@ -746,7 +746,7 @@ Allowed value: A comma separated list of strings containing the trusts to check 
 
 Default value: '*'
 
-Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -TrustsToCheckForGroups 'corp.example.com', 'corp.example.net`'  
+Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -TrustsToCheckForGroups 'corp.example.com', 'corp.example.net`  
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -TrustsToCheckForGroups 'corp.example.com', 'corp.example.net'"`
 
 
@@ -776,9 +776,9 @@ Path to a PowerShell file containing the logic to define virtual mailboxes. You 
 
 Virtual mailboxes are mailboxes that are not available in Outlook but are treated by Set-OutlookSignatures as if they were.
 
-This is an option for scenarios where you want to deploy signatures or out-of-office replies with not only the '`$CurrentUser…$`' but also '`$CurrentMailbox…$`' replacement variables for mailboxes that have not been added to Outlook, such as in Send As or Send On Behalf scenarios, where users often only change the from address but do not add the mailbox to Outlook.
+This is an option for scenarios where you want to deploy signatures or out-of-office replies with not only the `$CurrentUser…$` but also `$CurrentMailbox…$` replacement variables for mailboxes that have not been added to Outlook, such as in Send As or Send On Behalf scenarios, where users often only change the from address but do not add the mailbox to Outlook.
 
-See '`.\sample code\VirtualMailboxConfigFile.ps1`' for sample code showing the most relevant use cases.
+See `.\sample code\VirtualMailboxConfigFile.ps1` for sample code showing the most relevant use cases.
 
 For maximum automation, use VirtualMailboxConfigFile together with [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions).
 
@@ -798,7 +798,7 @@ Allowed value: A file path as a string. Do not pass the parameter at all to use 
 
 Default value: ''
 
-Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -VirtualMailboxConfigFile '.\sample code\VirtualMailboxConfigFile.ps1'`
+Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -VirtualMailboxConfigFile '.\sample code\VirtualMailboxConfigFile.ps1`
 Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -VirtualMailboxConfigFile '.\sample code\VirtualMailboxConfigFile.ps1'"`
 
 

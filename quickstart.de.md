@@ -19,7 +19,7 @@ permalink: "/quickstart"
     </p>
 2. **Entsperren:** Um den "Mark of the Web"-Schutz zu entfernen und die Ausführung zu ermöglichen:
     * **Rechtsklick** auf `Set-OutlookSignatures.ps1` > **Eigenschaften** > Haken bei **Zulassen** (Unblock) setzen.
-    * *Oder* nutzen Sie das PowerShell-Cmdlet: `Unblock-File 'Set-OutlookSignatures.ps1'`.
+    * *Oder* nutzen Sie das PowerShell-Cmdlet: `Unblock-File 'Set-OutlookSignatures.ps1`.
 
 
 ## Schritt 2: Einmalige Vorbereitungen {#step-2}
@@ -66,8 +66,8 @@ Dieser **"[Simulationsmodus](/details#simulation-mode)"** erstellt die exakten S
 ##### Eigene Vorlagen verwenden
 * **Ordnerstruktur:** Kopieren Sie den Ordner `.\sample templates` an einen neuen Ort. Beachten Sie unsere [FAQ zur empfohlenen Ordnerstruktur](/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files), um spätere Updates zu erleichtern.
 * **Ausführung:** Verweisen Sie auf Ihre eigenen Dateien:
-    * `-SignatureTemplatePath 'c:\ihr_pfad'`
-    * `-SignatureIniFile 'c:\ihr_pfad\_Signatures.ini'`
+    * `-SignatureTemplatePath 'c:\ihr_pfad`
+    * `-SignatureIniFile 'c:\ihr_pfad\_Signatures.ini`
     * *Fügen Sie `-UseHtmTemplates true` hinzu, falls Sie HTML- statt DOCX-Vorlagen verwenden.*
 
 

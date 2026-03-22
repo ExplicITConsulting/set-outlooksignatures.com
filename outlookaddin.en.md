@@ -80,7 +80,7 @@ The taskpane can be accessed through:
 
 ## Requirements
 ### Outlook clients
-The Outlook add-in works for all Outlook clients that are supported by Microsoft. See the '`Remarks`' chapter in this section for possible limitations that may apply due to platform specific Microsoft restrictions.
+The Outlook add-in works for all Outlook clients that are supported by Microsoft. See the `Remarks` chapter in this section for possible limitations that may apply due to platform specific Microsoft restrictions.
 
 The add-in always runs in the context of the user that is used by Outlook to access a mailbox. Delegate scenarios are supported. This means the following:
 - User A has the Outlook add-in installed. The Outlook add-in can access all signature information that the Benefactor Circle add-on or the SimulateAndDeploy mode of Set-OutlookSignatures has written to the mailbox of user A. The add-in can be used in the mailbox of user A and in all other mailboxes that user A accesses with his own credentials.
@@ -117,16 +117,16 @@ You can run the following command to automatically create the Entra ID app. You 
 If you want to create the Entra ID app manually, the required minimum settings for the Entra ID app are:
 - A name of your choice.
 - A supported account type (it is strongly recommended to only allow access from users of your tenant).
-- Authentication platform '`Single-page application`' with a redirect URI of '`brk-multihub://<your_deployment_domain>`'.
-  If your DEPLOYMENT_URL is 'https://outlookaddin01.example.com', the redirect URI must be '`brk-multihub://outlookaddin01.example.com`'.
-- Access to the following '`delegated`' (not application!) '`Graph API`' permissions:
-  - '`Mail.Read`'  
+- Authentication platform `Single-page application` with a redirect URI of `brk-multihub://<your_deployment_domain>`.
+  If your DEPLOYMENT_URL is 'https://outlookaddin01.example.com', the redirect URI must be `brk-multihub://outlookaddin01.example.com`.
+- Access to the following `delegated` (not application!) `Graph API` permissions:
+  - `Mail.Read`  
     Allows to read emails in mailbox of the currently logged-on user (and in no other mailboxes).  
     Required because of Microsoft restrictions accessing roaming signatures.
-  - '`GroupMember.Read.All`'  
+  - `GroupMember.Read.All`  
     Allows the app to list groups, read basic group properties and read membership of all groups the signed-in user has access to.  
     Required to find and check license groups.
-  - '`User.Read.All`'  
+  - `User.Read.All`  
     Allows the app to read the full set of profile properties, reports, and managers of other users in your organization, on behalf of the signed-in user.  
     Required to get the UPN for a given SMTP email address.
 - Grant admin consent for all permissions
@@ -142,7 +142,7 @@ You can also have multiple different instances of the Outlook add-in in producti
 Each instance needs a dedicated hostname. Make sure that each mailbox only uses one instance of the add-in, never more.
 
 To configure the add-in and deploy it to your web server:
-- Open '`run_before_deployment.ps1`' and follow the instructions in it to configure the add-in to your needs.
+- Open `run_before_deployment.ps1` and follow the instructions in it to configure the add-in to your needs.
 - You can configure the following settings:
   - The version number.
     Outlook add-ins have four version number parts. The first three parts match the version number of Set-OutlookSignatures, the last part is up to you.
@@ -164,21 +164,21 @@ To configure the add-in and deploy it to your web server:
 
       You can even create your own signature at runtime, without choosing one previously deployed with Set-OutlookSignatures.
 
-      See '`.\sample code\CustomRulesCode.js`' in the Outlook add-in folder for details.
-- Run '`run_before_deployment.ps1`' in PowerShell.
-- Upload the content of the '`publish`' folder to your web server.
+      See `.\sample code\CustomRulesCode.js` in the Outlook add-in folder for details.
+- Run `run_before_deployment.ps1` in PowerShell.
+- Upload the content of the `publish` folder to your web server.
 
 
-When the '`manifest.xml`' file, the configuration or another part of the Outlook add-in changes, you not only need to update the files on the web server, you also need to tell your mailboxes that an updated version or configuration is available and must be downloaded from the web server. The "[Deployment to mailboxes](#deployment-to-mailboxes)" chapter describes the available deployment options for add-ins.
+When the `manifest.xml` file, the configuration or another part of the Outlook add-in changes, you not only need to update the files on the web server, you also need to tell your mailboxes that an updated version or configuration is available and must be downloaded from the web server. The "[Deployment to mailboxes](#deployment-to-mailboxes)" chapter describes the available deployment options for add-ins.
 
 
 ## Deployment to mailboxes
-When the '`manifest.xml`' file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. Due to caching mechanisms, especially in Classic Outlook on Windows, this does not happen automatically.
+When the `manifest.xml` file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. Due to caching mechanisms, especially in Classic Outlook on Windows, this does not happen automatically.
 
 This is required when:
 - A new release of the Outlook add-in is published by <a href="https://explicitconsulting.at">ExplicIT Consulting</a>.
-- You change a configuration option in the '`run_before_deployment.ps1`' file which is marked to require an updated deployment.
-- You modify the '`manifest.xml`' file manually.
+- You change a configuration option in the `run_before_deployment.ps1` file which is marked to require an updated deployment.
+- You modify the `manifest.xml` file manually.
 
 
 You can choose from three different ways to deploy the Outlook add-in to your mailboxes.
@@ -246,13 +246,13 @@ To avoid problems of all kinds, it is a good idea to manually clear the add-in c
 ### General
 - Microsoft is actively blocking access to roaming signatures for Outlook add-ins. The add-in will be updated when this block has been removed. In the meantime, the add-in has access to the data of the last run of Set-OutlookSignatures v4.14.0 and higher.
 - The Microsoft APIs only allow access to online content. There is no way to access offline mailbox content or the file system. This means that the Outlook add-in only works when Outlook has an online connection to the user's mailbox.
-- The easiest way to test the add-in and its basic functionality is to use the taskpane (see 'Usage' for details). For specific debugging on Android and iOS, you need to use the DEBUG option in '`run_before_deployment.ps1`'.
+- The easiest way to test the add-in and its basic functionality is to use the taskpane (see 'Usage' for details). For specific debugging on Android and iOS, you need to use the DEBUG option in `run_before_deployment.ps1`.
 - The add-in can run automatically when one of the following launch events is triggered by Outlook: OnNewMessageCompose, OnNewAppointmentOrganizer, OnMessageFromChanged, OnAppointmentFromChanged, OnMessageRecipientsChanged, OnAppointmentAttendeesChanged.
   - Not all these events are supported on all platforms and editions of Outlook, see [this Microsoft article](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/autolaunch#supported-events) for an up-to-date list.
   - While not publicly documented, [Outlook currently does not support add-ins on calendar invite responses](https://github.com/OfficeDev/office-js/issues/4094#issuecomment-1923444325).
 - Microsoft dynamically updates the local copy of the office.js framework, there is no 1:1 relation between the version of Outlook and the version of the framework. This may lead to problems that suddenly appear although neither Outlook nor the add-in have changed. For example, the add-in may suddenly no longer work for shared mailboxes in Classic Outlook on Windows on some devices, while it does on others and in Outlook on the web.
   - Where available, use the taskpane as a workaround. The taskpane is basically the same code with an additional graphical interface.
-  - Use the DEBUG option in '`run_before_deployment.ps1`' to find out if the root cause is in Outlook or in the add-in. When there is no debug output, the launch event is not triggered by Outlook. When there is debug output, it will show where and with which error the add-in fails.
+  - Use the DEBUG option in `run_before_deployment.ps1` to find out if the root cause is in Outlook or in the add-in. When there is no debug output, the launch event is not triggered by Outlook. When there is debug output, it will show where and with which error the add-in fails.
 
 
 ### Outlook on Android
