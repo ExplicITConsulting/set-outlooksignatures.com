@@ -290,20 +290,3 @@ html::after {
   // Light mode default text
   color: black;
 }
-
-// Dark mode text color (Manual Theme Switcher)
-[data-theme="dark"],
-.theme-dark {
-  :not(pre) > code {
-    background-color: darkgrey; // Consistent light grey
-    color: white;
-  }
-}
-
-// Dark mode text color (System Preference)
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) :not(pre) > code {
-    background-color: darkgrey; // Consistent light grey
-    color: white;
-  }
-}

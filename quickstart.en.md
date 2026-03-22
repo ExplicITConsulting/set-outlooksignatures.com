@@ -22,7 +22,7 @@ Download and unzip the archive to a local folder:
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>💻</span>
-        <div">
+        <div>
           <p><b>Client and User</b></p>
           <p>Log on with a test user on Windows with Classic Outlook and Word. Running this on your primary account will overwrite signatures named '<code>Formal</code>' or '<code>Informal</code>' unless you use simulation mode, which is described later.</p>
           <p>Linux, macOS, and New Outlook require the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and Exchange Online hosting.</p>
@@ -43,7 +43,6 @@ Download and unzip the archive to a local folder:
     </div>
   </div>
 </div>
-
 <div class="columns is-multiline">
   <div class="column is-full">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
@@ -60,8 +59,7 @@ Download and unzip the archive to a local folder:
             </div>
             <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
           </div>
-          <p><small><em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment">'<code>-CloudEnvironment</code>'</a> parameter.</em></small>
-          </p>
+          <p><small><em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment">'<code>-CloudEnvironment</code>'</a> parameter.</em></small></p>
         </div>
       </div>
     </div>
