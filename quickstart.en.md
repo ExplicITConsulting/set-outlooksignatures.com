@@ -147,7 +147,7 @@ Download and unzip the archive to a local folder:
             <li><code>-SignatureTemplatePath "C:\Signatures\Templates"</code></li>
             <li><code>-SignatureIniFile "C:\Signatures\Templates\_Signatures.ini"</code></li>
           </ul>
-          <p><small><em>Using HTML? Just add <code>-UseHtmTemplates true</code>.</em></small></p>
+          <p><small><em>Using HTML? Just add '<code>-UseHtmTemplates true</code>'.</em></small></p>
         </div>
       </div>
     </div>
