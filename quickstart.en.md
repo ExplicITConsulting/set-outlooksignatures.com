@@ -55,11 +55,12 @@ Download and extract the archive to a local folder:
           <p>Follow the instructions in '.\config\default graph config.ps1'for manual setup or have a "Global Administrator" or "Application Administrator" run the provided PowerShell command.</p>
           <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative;">
               <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
-              <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
-              <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
-              <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+                <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+                <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+                <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+            </div>
+            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere;. margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
           </div>
-          <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere;. margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
           <p><em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter.</em></p>
         </div>
       </div>
