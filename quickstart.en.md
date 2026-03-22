@@ -116,15 +116,53 @@ To remove the 'mark of the web' from 'Set-OutlookSignatures.ps1' and allow execu
 
 
 ## Customize Settings {#customize}
-##### Use Your Own Templates
-* **Folder Structure:** Copy `.\sample templates` to a new folder. Follow our [recommended structure FAQ](/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files) to simplify future upgrades.
-* **Execution:** Point the script to your custom files:
-    * `-SignatureTemplatePath 'c:\your_path'`
-    * `-SignatureIniFile 'c:\your_path\_Signatures.ini'`
-    * *Add `-UseHtmTemplates true` if using HTML instead of DOCX.*
+
+<div class="columns">
+  <div class="column is-7">
+    <div class="notification is-light">
+      <p><b>Use Your Own Templates</b></p>
+      <p class="is-size-7 mt-2"><b>Folder Structure:</b> Copy <code>.\sample templates</code> to a new folder. Follow our <a href="/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files">recommended structure FAQ</a> to simplify future upgrades.</p>
+    </div>
+  </div>
+  <div class="column">
+    <p class="is-size-7"><b>Execution:</b> Point the script to your custom files:</p>
+    <ul class="is-size-7" style="margin-left: 1rem;">
+      <li><code>-SignatureTemplatePath 'c:\path'</code></li>
+      <li><code>-SignatureIniFile 'c:\path\_Signatures.ini'</code></li>
+      <li><i>Add <code>-UseHtmTemplates true</code> if using HTML.</i></li>
+    </ul>
+  </div>
+</div>
 
 
-##### Next Steps
-* **Parameters & Features:** Check the [Feature List](/features) and [Parameter Docs](/parameters).
-* **Rollout Planning:** Read the [Organizational implementation approach](/implementationapproach) and [Technical details](/details) (specifically the *Architecture considerations* chapter).
-* **Showcase Your Work:** Build something stunning? [Get in touch](/support) to share your templates or a statement for our showcase!
+<hr>
+
+<div class="columns has-text-centered mt-6">
+  <div class="column">
+    <div class="box has-background-light" style="height: 100%;">
+      <p class="title is-5">📖 Documentation</p>
+      <p class="is-size-7 mb-4">Deep dive into every feature and configuration toggle.</p>
+      <div class="buttons is-centered">
+        <a href="/features" class="button is-small is-light">Feature List</a>
+        <a href="/parameters" class="button is-small is-light">Parameters</a>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="box has-background-light" style="height: 100%;">
+      <p class="title is-5">🏢 Enterprise</p>
+      <p class="is-size-7 mb-4">Learn about rollout planning and architecture considerations.</p>
+      <div class="buttons is-centered">
+        <a href="/implementationapproach" class="button is-small is-light">Rollout Plan</a>
+        <a href="/details" class="button is-small is-light">Technical Details</a>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="box has-background-info-light" style="height: 100%;">
+      <p class="title is-5">✨ Showcase</p>
+      <p class="is-size-7 mb-4">Build something stunning? Share your work with the community.</p>
+      <a href="/support" class="button is-small is-info is-outlined">Get in touch</a>
+    </div>
+  </div>
+</div>
