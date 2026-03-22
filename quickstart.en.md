@@ -30,8 +30,7 @@ Download and extract the archive to a local folder:
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #ffdd57;">
-      <p><b>🛡️ Endpoint Security</b></p>
-      <p>If using AppLocker, Defender, CrowdStrike…:</p>
+      <p><b>🛡️ Endpoint Security (AppLocker, Defender, CrowdStrike…)</b></p>
       <ul style="margin-left: 1.5rem; list-style-type: disc;">
         <li>Allow execution and library loading from the TEMP folder.</li>
         <li>Trust software signed with ExplicIT Consulting's certificate (all included PS1 and DLL files are signed).</li>
@@ -40,8 +39,7 @@ Download and extract the archive to a local folder:
   </div>
   <div class="column is-full">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
-      <p><b>☁️ Entra ID (for Exchange Online)</b></p>
-      <p>To access the Graph API, you must register an Entra ID app.</p>
+      <p><b>☁️ Entra ID app (for Exchange Online only)</b></p>
       <ul>
         <li>Review '.\sample code\Create-EntraApp.ps1' for permissions and security audit details.</li>
         <li>Follow the instructions in '.\config\default graph config.ps1'for manual setup or have a "Global Administrator" or "Application Administrator" run the provided PowerShell command.
