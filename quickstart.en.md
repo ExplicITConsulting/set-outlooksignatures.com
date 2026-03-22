@@ -33,7 +33,7 @@ Download and extract the archive to a local folder:
       <p><b>🛡️ Endpoint Security (AppLocker, Defender, CrowdStrike…)</b></p>
       <ul style="margin-left: 1.5rem; list-style-type: disc;">
         <li>Allow execution and library loading from the TEMP folder.</li>
-        <li>Trust software signed with ExplicIT Consulting's certificate (all included PS1 and DLL files are signed).</li>
+        <li>Trust software signed with ExplicIT Consulting's certificate -  all included PS1 and DLL files are signed with this certificate.</li>
       </ul>
     </div>
   </div>
