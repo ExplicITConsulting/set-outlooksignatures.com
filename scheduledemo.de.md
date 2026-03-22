@@ -65,7 +65,7 @@ permalink: "/scheduledemo"
 
 <noscript>
   <a href="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at" 
-      class="button is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
+      class="button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
       style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
       target="_blank">
     <span>Interaktive Demo vereinbaren</span>

@@ -138,7 +138,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p><a href="#trial" class="button is-info is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Get a trial license, request a quote</a></p>
+<p><a href="#trial" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Get a trial license, request a quote</a></p>
 
 
 <h2 id="demo">Experience it <span style="font-weight: bolder;">in action</span></h2>
@@ -149,7 +149,7 @@ sitemap_changefreq: weekly
       <h3>Guided Walkthrough</h3>
       <p>Schedule a session with our team to see how the solution adapts to your specific organizational structure, technical setup, and compliance requirements.</p>
       <a href="https://set-outlooksignatures.com/scheduledemo" 
-         class="button is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
+         class="button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
          style="margin-top: auto; height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;">
         <span>Schedule Interactive Demo</span>
         <span><small>Ideal for Security, IT, and Marketing leadership</small></span>
@@ -159,7 +159,7 @@ sitemap_changefreq: weekly
       <h3>Self-Service Quickstart</h3>
       <p>Follow our 3-step process to deploy your first signatures in minutes. Peer-reviewable and production-ready.</p>
       <a href="https://set-outlooksignatures.com/quickstart" 
-         class="button is-info is-normal has-text-weight-bold is-flex-direction-column" 
+         class="button is-link is-normal has-text-weight-bold is-flex-direction-column" 
          style="margin-top: auto; height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
         <span>Try it Yourself</span>
         <span><small>100% Free & Open Source Core</small></span>
@@ -181,14 +181,14 @@ sitemap_changefreq: weekly
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="trial">Free trial</h2>
     <p>After setting up the free and open-source Set-OutlookSignatures using the Quickstart guide and configuring it to your needs, you are ready to take the next step:</p>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-info is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Get a 14-day trial license</a></p>
+    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Get a 14-day trial license</a></p>
     <p>Trial licenses are limited to 14&nbsp;days runtime, a maximum of 20&nbsp;mailboxes, and can not be extended or re-issued.</p>
     <p>The trial period starts when we create and submit the trial version, not with you using it for the first time (that's not possible as our software does not phone home).</p>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="order">Buy licenses</h2>
     <p>Upgrading to the full version, adding more mailboxes and renewing a license is quick and straightforward:</p>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-info is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Request a license quote</a></p>
+    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Request a license quote</a></p>
     <p>You will receive a quote shortly. You double-check it, we send the invoice and you can start the payment process.</p>
     <p>We send you the download and usage instructions for your new license as soon as we receive the full invoice amount.</p>
   </div>

@@ -80,7 +80,7 @@ sitemap_changefreq: weekly
       <h3>Geführte Tour</h3>
       <p>Vereinbaren Sie einen Termin mit unserem Team, um zu sehen, wie sich die Lösung an Ihre spezifische Organisationsstruktur, Ihr technisches Setup und Ihre Compliance-Anforderungen anpasst.</p>
       <a href="https://set-outlooksignatures.com/scheduledemo" 
-         class="button is-info is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
+         class="button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
          style="margin-top: auto; height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;">
         <span>Interaktive Demo vereinbaren</span>
         <span><small>Ideal für Führungskräfte in den Bereichen Security, IT und Marketing</small></span>
@@ -90,7 +90,7 @@ sitemap_changefreq: weekly
       <h3>Self-Service Schnellstart</h3>
       <p>Folgen Sie unserem 3-Schritte-Prozess, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen. Peer-Review-fähig und bereit für den Produktiveinsatz.</p>
       <a href="https://set-outlooksignatures.com/quickstart" 
-         class="button is-info is-normal has-text-weight-bold is-flex-direction-column" 
+         class="button is-link is-normal has-text-weight-bold is-flex-direction-column" 
          style="margin-top: auto; height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
         <span>Selbst ausprobieren</span>
         <span><small>100% Free & Open Source Kern</small></span>

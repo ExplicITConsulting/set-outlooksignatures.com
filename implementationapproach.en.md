@@ -19,8 +19,8 @@ You prefer to be guided through organizational topics, the setup and customizati
 
 <p>
   <div class="buttons">
-    <a href="/quickstart" class="button is-info is-normal is-hovered  has-text-weight-bold">Quickstart guide</a>
-    <a href="/support#professional-support" class="button is-info is-normal is-hovered  has-text-weight-bold">Support</a>
+    <a href="/quickstart" class="button is-link is-normal is-hovered  has-text-weight-bold">Quickstart guide</a>
+    <a href="/support#professional-support" class="button is-link is-normal is-hovered  has-text-weight-bold">Support</a>
   </div>
 </p>
 
