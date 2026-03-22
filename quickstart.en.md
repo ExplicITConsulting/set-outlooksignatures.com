@@ -88,24 +88,21 @@ Download and extract the archive to a local folder:
         <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
       </div>
     </div>
-  </div>
-
-  <div class="column is-full">
-    <p><em>*Note: <code>-GraphOnly true</code> ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter if using a sovereign cloud.</em></p>
+    <p><em>'-GraphOnly true' ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment">'-CloudEnvironment'</a> parameter if using a sovereign cloud.</em></p>
   </div>
 </div>
 
-<div class="message is-info mt-6" style="border-left: 5px solid goldenrod;">
+<div class="message is-info" style="border-left: 5px solid goldenrod;">
   <div class="message-header" style="background-color: goldenrod; color: #000;">
     <p id="simulation-mode">🛡️ Test your signatures – directly and risk-free</p>
   </div>
   <div class="message-body">
     <p>If you lack Classic Outlook or want a zero-impact trial of the software:</p>
-    <ol class="mt-2 mb-3" style="margin-left: 1.5rem;">
-      <li>Run the script with: <code>-SimulateUser a@example.com -SimulateMailboxes a@example.com</code></li>
-      <li><b>See the results:</b> Open your <b>'Documents\Outlook Signatures'</b> folder.</li>
+    <ol>
+      <li>Run the script with: '-SimulateUser a@example.com -SimulateMailboxes a@example.com'</li>
+      <li>See the results in your 'Documents\Outlook Signatures' folder.</li>
     </ol>
-    <p>This <b>"[Simulation Mode](/details#simulation-mode)"</b> creates the exact signatures for the simulated user as files on your disk. Instead of modifying Outlook, it generates a complete preview — the perfect way to verify your configuration without changing any system settings.</p>
+    <p>This <a href="/details#simulation-mode">Simulation Mode</a> creates the exact signatures for the simulated user as files on your disk. Instead of modifying Outlook, it generates a complete preview — the perfect way to verify your configuration without changing any system settings.</p>
   </div>
 </div>
 
