@@ -7,7 +7,7 @@ subtitle: "Unsere Lösung auf einen Blick und im Vergleich"
 description: "Vergleichen Sie Funktionen und Vorteile unserer Lösung auf einen Blick – klare Übersicht für den besten Funktions-Vergleich."
 hero_link: "#features"
 hero_link_text: "<span><b>Funktionen: </b>Was unsere Lösung kann</span>"
-hero_link_style: 
+hero_link_style:
 hero_link2: "#feature-comparison"
 hero_link2_text: "<span><b>Funktions-Vergleich </b>mit Mitbewerbern</span>"
 hero_link2_style:
@@ -21,66 +21,107 @@ sitemap_priority: 0.9
 sitemap_changefreq: weekly
 ---
 ## Übersicht {#overview}
-
-Set-OutlookSignatures ist das fortschrittlichste, sicherste und vielseitigste kostenlose Open-Source-Tool zur Verwaltung von E-Mail-Signaturen und Abwesenheitsnotizen. Mit dem optionalen [Benefactor Circle Add-on](/benefactorcircle) stehen Ihnen noch leistungsstärkere Funktionen zur Verfügung, die speziell auf Geschäftsumgebungen zugeschnitten sind.
+Set-OutlookSignatures ist das fortschrittlichste, sicherste und vielseitigste kostenlose Open-Source-Tool zur Verwaltung von E-Mail-Signaturen. Mit dem optionalen [Benefactor Circle Add-on](/benefactorcircle) stehen Ihnen noch leistungsstärkere Funktionen zur Verfügung, die speziell auf Geschäftsumgebungen zugeschnitten sind.
 
 Es bietet alles, was Sie von einer modernen Lösung erwarten: Zentralisierte Verwaltung, nahtlose Bereitstellung und vollständige Kontrolle über alle Outlook-Editionen auf allen Plattformen: Classic und New, Android, iOS, Linux, macOS, Web, Windows.
 
 Dank seiner zukunftsorientierten Architektur, die nicht auf einem kommerziellen Geschäftsmodell, sondern auf praktischer Nützlichkeit, Datenschutz und digitaler Souveränität basiert, bietet es einzigartige Funktionen, die es von anderen Lösungen abheben.
 
-Einen schnellen Überblick erhalten Sie in unserem <a href="#feature-comparison">Funktions-Vergleich mit Mitbewerbern</a>. Wenn Sie genau wissen möchten, was alles möglich ist, oder Sie nach Inspiration für neue Anwendungsfälle suchen, finden Sie hier die vollständige Liste der Funktionen. Achtung: Sie ist lang!
-
 
 ## Funktionen {#features}
-Mit Set-OutlookSignatures können Signaturen und Abwesenheitsnotizen:
-- Aus **[Vorlagen im DOCX- oder HTML-Dateiformat](/details#signature-and-oof-template-file-format)** generiert werden.
-- Mit einer **[Vielzahl von Variablen](/details#replacement-variables)**, einschließlich **[Fotos und Bildern](/details#photos-account-pictures-user-image-from-active-directory-or-entra-id)**, aus Entra ID, Active Directory und anderen Quellen angepasst werden.
-  - Variablen stehen für den **[aktuell angemeldeten Benutzer, das aktuelle Postfach und deren Manager](/details#replacement-variables)** zur Verfügung.
-- Für **[barrierefreien Zugriff](/blog/2025/12/03/barrier-free-email-signatures-and-out-of-office-replies)** gestaltet werden, mit benutzerdefinierten Link- und Bildbeschreibungen für Screenreader und ähnliche Tools.
-- Flexibel zugewiesen werden: Für **alle Postfächer (auch [Shared Mailboxes](/benefactorcircle#key-features)¹)**, **[Gruppen](/details#template-tags-and-ini-files)**, **[E-Mail-Adressen](/details#template-tags-and-ini-files)** (auch Alias und sekundäre Adressen), auf Basis von **[Benutzer- und Postfach-Attributen](/details#template-tags-and-ini-files)**, für **jedes Postfach in allen Profilen (Outlook, [New Outlook](/benefactorcircle#key-features)¹, [Outlook on the web](/benefactorcircle#key-features)¹)**, auch für **[automapped und zusätzliche Postfächer](/parameters#signaturesforautomappedandadditionalmailboxes)**¹. 
-- Aus einer Vorlage heraus mit unterschiedlichen Namen erstellt werden, **[eine Vorlage kann für viele Postfächer genutzt werden](/details#how-to-work-with-ini-files)**.
-- Mit **[Zeitbeschränkungen](/details#allowed-tags)**¹ versehen werden, innerhalb derer sie gültig sind.
-- Als **[Standard-Signatur](/details#allowed-tags)** für neue E-Mails oder für Antworten festgelegt werden.
-- Als **[Standard-Abwesenheitsnotiz](/details#allowed-tags)**¹ für interne oder externe Empfänger festgelegt werden.
-- Im **[Outlook on the web](/parameters#setcurrentuseroutlookwebsignature)**¹ des angemeldeten Benutzer gesetzt werden, und auch als **[Roaming Signatures](/parameters#mirrorcloudsignatures)**¹ mit der Cloud synchronisiert werden (Linux/macOS/Windows, klassisches and neues Outlook¹).
-- Signaturen können rein zental verwaltet werden¹, oder **[parallel zu vom Benutzer erstellten Signaturen](/parameters#deleteusercreatedsignatures)** bestehen.
-- Mit dem **[Outlook Add-in](/outlookaddin)**¹ automatisch zu neuen E-Mails, Antworten und Weiterleitungen, sowie zu Terminen hinzugefügt werden.
-- In einen **[zusätzlichen Ordner](/parameters#additionalsignaturepath)**¹ kopiert werden, um den einfachen Zugriff auf Signaturen auf Mobilgeräten oder zur Verwendung mit anderen E-Mail-Clients und Apps als Outlook zu ermöglichen: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und andere.
-- In einem **[E-Mail-Entwurf mit allen verfügbaren Signaturen](/parameters#signaturecollectionindrafts)**¹ in HTML und reinem Text für den einfachen Zugriff in E-Mail-Clients ohne Signatur-API gesammelt werden.
-- **[Schreibgeschützt](/details#allowed-tags)** werden (nur klassisches Outlook für Windows).
+Mit Set-OutlookSignatures und dem optionalen Benefactor Circle Add-on können Signaturen und Abwesenheitsnotizen:
+### 📝 Design & Inhalt
+* **Vorlagen-Vielfalt:** Aus **[Vorlagen im DOCX- oder HTML-Dateiformat](/details#signature-and-oof-template-file-format)** generiert werden.
+* **Vielzahl von Variablen:** Mit einer **[Vielzahl von Variablen](/details#replacement-variables)**, einschließlich **[Fotos und Bildern](/details#photos-account-pictures-user-image-from-active-directory-or-entra-id)**, aus Entra ID, Active Directory und anderen Quellen angepasst werden.
+* **Datenumfang:** Variablen stehen für den **[aktuell angemeldeten Benutzer, das aktuelle Postfach und deren Manager](/details#replacement-variables)** zur Verfügung.
+* **Barrierefreiheit:** Für **[barrierefreien Zugriff](/blog/2025/12/03/barrier-free-email-signatures-and-out-of-office-replies)** gestaltet werden, mit benutzerdefinierten Link- und Bildbeschreibungen für Screenreader und ähnliche Tools.
+* **Standardisierte Formatierung:** **[Telefonnummern](/faq#format-phone-numbers)** und **[Post-Adressen](/faq#format-postal-addresses)** können nach internationalen Standards oder eigenen Vorgaben formatiert werden.
+* **Inklusive Vorlagen:** **[Beispielvorlagen](/quickstart#customize)** für Signaturen und Abwesenheitsnachrichten demonstrieren viele Funktionen und stehen als .docx- und .htm-Dateien zur Verfügung.
 
-Set-OutlookSignatures kann von Nutzern auf **[Windows-, Linux- und macOS-Clients, einschließlich gemeinsam genutzter Geräte und Terminalserver, oder auf einem zentralen System mit einem Dienstkonto](/details#architecture-considerations)**¹ ausgeführt werden.<br>Auf Clients kann es als Teil des Anmeldeskripts, als geplante Aufgabe oder auf Benutzeranforderung über ein Desktopsymbol, einen Startmenüeintrag, eine Verknüpfung oder einer andere Möglichkeit zum Starten eines Programms ausgeführt werden - **[was auch immer Ihre Methode zur Verteilung von Software erlaubt](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
+### 🚀 Bereitstellung & Postfach-Unterstützung
+* **Zielsteuerung:** Für **alle Postfächer (auch [Shared Mailboxes](/benefactorcircle#key-features)¹)**, **[Gruppen](/details#template-tags-and-ini-files)**, **[E-Mail-Adressen](/details#template-tags-and-ini-files)** (auch Alias und sekundäre Adressen) oder auf Basis von **[Benutzer- und Postfach-Attributen](/details#template-tags-and-ini-files)** zugewiesen werden.
+* **Outlook-Unterstützung:** Für **jedes Postfach in allen Profilen (Outlook, [New Outlook](/benefactorcircle#key-features)¹, [Outlook on the web](/benefactorcircle#key-features)¹)** funktionieren, auch für **[automapped und zusätzliche Postfächer](/parameters#signaturesforautomappedandadditionalmailboxes)**¹.
+* **Vorlagen-Logik:** Aus einer Vorlage heraus mit unterschiedlichen Namen erstellt werden; **[eine Vorlage kann für viele Postfächer genutzt werden](/details#how-to-work-with-ini-files)**.
+* **Zeitplanung:** Mit **[Zeitbeschränkungen](/details#allowed-tags)**¹ versehen werden, innerhalb derer sie gültig sind.
+* **Standardwerte:** Als **[Standard-Signatur](/details#allowed-tags)** für neue E-Mails oder für Antworten festgelegt werden, oder als **[Standard-Abwesenheitsnotiz](/details#allowed-tags)**¹ für interne oder externe Empfänger.
 
-**[Beispielvorlagen](/quickstart#customize)** für Signaturen und Abwesenheitsnachrichten demonstrieren viele Funktionen und stehen als DOCX- und HTM-Dateien zur Verfügung.
+### 💻 Plattform & Ausführung
+* **Cloud-Spiegelung:** Im **[Outlook on the web](/parameters#setcurrentuseroutlookwebsignature)**¹ des angemeldeten Benutzers gesetzt werden, und auch als **[Roaming Signatures](/parameters#mirrorcloudsignatures)**¹ mit der Cloud synchronisiert werden (Linux/macOS/Windows, klassisches und neues Outlook¹).
+* **Benutzerkontrolle:** Rein zentral verwaltet werden¹, oder **[parallel zu vom Benutzer erstellten Signaturen](/parameters#deleteusercreatedsignatures)** bestehen.
+* **Add-in Integration:** Mit dem **[Outlook Add-in](/outlookaddin)**¹ automatisch zu neuen E-Mails, Antworten und Weiterleitungen sowie zu Terminen hinzugefügt werden.
+* **Mobile & Drittanbieter:** In einen **[zusätzlichen Ordner](/parameters#additionalsignaturepath)**¹ kopiert werden, um den einfachen Zugriff auf Signaturen auf Mobilgeräten oder zur Verwendung mit Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und anderen zu ermöglichen.
+* **Entwurfs-Sammlung:** In einem **[E-Mail-Entwurf mit allen verfügbaren Signaturen](/parameters#signaturecollectionindrafts)**¹ in HTML und reinem Text für den einfachen Zugriff in E-Mail-Clients ohne Signatur-API gesammelt werden.
+* **Sicherheit:** **[Schreibgeschützt](/details#allowed-tags)** werden (nur klassisches Outlook für Windows).
 
-**[Telefonnummern](/faq#format-phone-numbers)** und **[Post-Adressen](/faq#format-postal-addresses)** können nach internationalen Standards oder eigenen Vorgaben formatiert werden.
-
-Der **[Simulationsmodus](/details#simulation-mode)** ermöglicht es Inhaltserstellern und Administratoren, das Verhalten der Software für einen bestimmten Benutzer zu einem bestimmten Zeitpunkt zu simulieren und die resultierenden Signaturen vor der Live-Schaltung zu prüfen.
-
-**[SimulateAndDeploy](/details#creating-signatures-and-out-of-office-replies)**¹ ermöglicht die Bereitstellung von Signaturen und Abwesenheitsantworten **[ohne Ausführung auf Endgeräten oder Endbenutzerinteraktion](/details#creating-signatures-and-out-of-office-replies)**. Signaturen werden im Postfach als roaming signatures (nur für Exchange Online) gespeichert und stehen darüber hinaus dem [Outlook add-in](/outlookaddin) (Exchange Online und Exchange on-prem) zur Verfügung.
-
-Die Software funktioniert **[on-premises, in hybriden und reinen Cloud-Umgebungen](/details#hybrid-and-cloud-only-support)**. Sie ist **[für große und komplexe Umgebungen konzipiert](/implementationapproach)**: Exchange Resource Forests, AD-Trusts, mehrstufige AD-Subdomänen sowie mandantenübergreifende und Multitenant Szenarien.
-
-**[Alle öffentlichen, nationalen und souveränen Clouds werden unterstützt](/parameters#cloudenvironment)**: Öffentlich, US-Regierung (GCC, GCC High, DoD), China, souveräne Clouds Bleu, Delos, GovSG und mehr.
-
-Die Software ist **[multiinstanzfähig](/faq#can-multiple-script-instances-run-in-parallel)** durch Verwendung verschiedener Vorlagenpfade, Konfigurationsdateien und Skriptparameter.
-ers.
-
-Set-OutlookSignatures erfordert **[keine Installation auf Servern oder Clients](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**. Sie benötigen lediglich eine Standard-SMB-Dateifreigabe auf einem zentralen System und optional Office auf Ihren Clients.
-
-Es gibt **[keine Telemetrie](/features#feature-comparison)** und kein "Calling Home". E-Mails und Verzeichnisdaten werden **[nicht über externe Rechenzentren oder Cloud-Dienste geleitet](/features#feature-comparison)**, und **[DNS-Einträge (SPF) und Nachrichtenfluss bleiben unverändert](/features#feature-comparison)**.
-
-Ein **[dokumentierter Implementierungsansatz](/implementationapproach)**, der auf praktischen Erfahrungen mit der Implementierung der Software in Multiclient-Umgebungen mit einer fünfstelligen Anzahl von Postfächern basiert, enthält bewährte Vorgehensweisen und Empfehlungen für Produktmanager, Architekten, Betriebsleiter, Account Manager sowie E-Mail- und Client-Administratoren.
-
-Der Kern der Software ist als **[Freie Open-Source-Software (FOSS)](/faq#why-the-tagline)** quelloffen und kostenlos. Sie wird unter der European Union Public Licnse veröffentlicht, die unter anderem von der Free Software Foundation (FSF) und der Open Source Initiative (OSI) anerkannt wird und mit der General Public License (GPL) und anderen gängigen Lizenzen kompatibel ist.
-
-Nach einer bestimmten Nutzungsdauer wird der **[dezente Hinweis 'Free and open-source Set-OutlookSignatures' an Signaturen angefügt](/faq#how-to-disable-the-tagline-in-signatures)**. Dieser Slogan kann leicht entfernt werden¹.
-
-**Anmerkung 1 (¹):** Einige Funktionen sind exklusiv dem <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> vorbehalten.
+### 🛡️ Architektur & Infrastruktur
+* **Flexible Ausführung:** Von Nutzern auf **[Windows-, Linux- und macOS-Clients (einschließlich gemeinsam genutzter Geräte und Terminalserver) oder auf einem zentralen System mit einem Dienstkonto ausgeführt werden](/details#architecture-considerations)**¹.
+* **Vielseitige Bereitstellung:** Als Teil des Anmeldeskripts, als geplante Aufgabe oder auf Benutzeranforderung ausgeführt werden – **[was auch immer Ihre Methode zur Verteilung von Software erlaubt](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
+* **Tests:** Der **[Simulationsmodus](/details#simulation-mode)** ermöglicht es Inhaltserstellern und Administratoren, die resultierenden Signaturen vor der Live-Schaltung zu prüfen.
+* **Zero-Touch:** **[SimulateAndDeploy](/details#creating-signatures-and-out-of-office-replies)**¹ ermöglicht die Bereitstellung **[ohne Ausführung auf Endgeräten oder Endbenutzerinteraktion](/details#creating-signatures-and-out-of-office-replies)** (Roaming Signatures für Exchange Online).
+* **Umgebungs-Unterstützung:** Funktioniert **[on-premises, in hybriden und reinen Cloud-Umgebungen](/details#hybrid-and-cloud-only-support)**; konzipiert für **[große und komplexe Umgebungen](/implementationapproach)** (AD-Trusts, mehrstufige AD-Subdomänen, mandantenübergreifend/Multitenant).
+* **Globale Clouds:** **[Alle öffentlichen, nationalen und souveränen Clouds werden unterstützt](/parameters#cloudenvironment)**: Öffentlich, US-Regierung (GCC, GCC High, DoD), China, Bleu, Delos, GovSG und mehr.
+* **Keine Installation:** Erfordert **keine Installation auf Servern oder Clients**; lediglich eine Standard-SMB-Dateifreigabe und optional Office auf den Clients.
+* **Digitale Souveränität:** **Keine Telemetrie**, kein „Calling Home“ und Daten werden **nicht über externe Rechenzentren geleitet**; **DNS-Einträge (SPF) und Nachrichtenfluss bleiben unverändert**.
+* **Enterprise-Skalierung:** **[Multiinstanzfähig](/faq#can-multiple-script-instances-run-in-parallel)** und umfasst einen **[dokumentierten Implementierungsansatz](/implementationapproach)** für fünfstellige Postfachzahlen.
+* **Open Source:** **[Freie Open-Source-Software (FOSS)](/faq#why-the-tagline)** unter der European Union Public License (EUPL). Nach einer gewissen Zeit wird ein dezenten Hinweis angefügt, der leicht entfernt werden kann¹.
 
 
 ## Funktions-Vergleich {#feature-comparison}
+### Preis-Benchmark {#pricing}
+<div style="display: grid;">
+    <div class="table-container">
+        <table class="table is-bordered is-striped is-hoverable">
+            <thead>
+                <tr>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Postfächer (1 Jahr)</th>
+                    <th class="has-text-weight-bold" style="min-width: 10em; white-space: nowrap;">Set-OutlookSignatures mit<br><a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a></th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber A</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber B</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber C</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="has-text-weight-bold">100 Postfächer</td>
+                    <td>🟢 <b>300 EUR</b></td>
+                    <td>🔴 ca. 1.600 EUR</td>
+                    <td>🟡 ca. 1.300 EUR</td>
+                    <td>🔴 ca. 1.600 EUR</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">250 Postfächer</td>
+                    <td>🟢 <b>750 EUR</b></td>
+                    <td>🔴 ca. 4.000 EUR</td>
+                    <td>🟡 ca. 2.700 EUR</td>
+                    <td>🔴 ca. 3.600 EUR</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">500 Postfächer</td>
+                    <td>🟢 <b>1.500 EUR</b></td>
+                    <td>🔴 ca. 8.000 EUR</td>
+                    <td>🟡 ca. 4.400 EUR</td>
+                    <td>🟡 ca. 6.200 EUR</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">1.000 Postfächer</td>
+                    <td>🟢 <b>3.000 EUR</b></td>
+                    <td>🔴 ca. 15.700 EUR</td>
+                    <td>🟡 ca. 8.700 EUR</td>
+                    <td>🟡 ca. 10.500 EUR</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">10.000 Postfächer</td>
+                    <td>🟢 <b>30.000 EUR</b></td>
+                    <td>🔴 ca. 110.000 EUR</td>
+                    <td>🟡 ca. 65.000 EUR</td>
+                    <td>🟡 ca. 41.000 EUR</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
+### Detaillierter Vergleichs-Benchmark {#detailed-benchmark}
 <div style="display: grid;">
     <div class="table-container">
         <table class="table is-bordered is-striped is-hoverable">
@@ -123,7 +164,7 @@ Nach einer bestimmten Nutzungsdauer wird der **[dezente Hinweis 'Free and open-s
                     <td>🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten übertragen, alle E-Mails übertragen</td>
                 </tr>
                 <tr>
-                    <td class="has-text-weight-bold">Daten aus Entra ID Und Active Directory bleiben in Ihrer Umgebung (kein Transfer zu Drittsystemen)</td>
+                    <td class="has-text-weight-bold">Daten aus Entra ID und Active Directory bleiben in Ihrer Umgebung (kein Transfer zu Drittsystemen)</td>
                     <td>🟢</td>
                     <td>🔴</td>
                     <td>🔴</td>
@@ -285,7 +326,7 @@ Nach einer bestimmten Nutzungsdauer wird der **[dezente Hinweis 'Free and open-s
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Outlook Add-in</td>
-                    <td>🟢 Nicht für on-prem Postfächer auf Android und iOS. Hochgrad anpassbar mit Regeln, eigenem Code und zur Laufzeit generierten Signaturen</td>
+                    <td>🟢 Nicht für on-prem Postfächer auf Android und iOS. Hochgradig anpassbar mit Regeln, eigenem Code und zur Laufzeit generierten Signaturen.</td>
                     <td>🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
                     <td>🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
                     <td>🔴 Nicht für on-prem Postfächer</td>
@@ -319,41 +360,6 @@ Nach einer bestimmten Nutzungsdauer wird der **[dezente Hinweis 'Free and open-s
                     <td>🟡 RegEx</td>
                 </tr>
                 <tr>
-                    <td class="has-text-weight-bold">Lizenzkosten für 100&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 300&nbsp;EUR</td>
-                    <td>🔴 ca. 1.600&nbsp;EUR</td>
-                    <td>🟡 ca. 1.300&nbsp;EUR</td>
-                    <td>🔴 ca. 1.600&nbsp;EUR</td>
-                </tr>
-                <tr>
-                    <td class="has-text-weight-bold">Lizenzkosten für 250&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 750&nbsp;EUR</td>
-                    <td>🔴 ca. 4.000&nbsp;EUR</td>
-                    <td>🟡 ca. 2.700&nbsp;EUR</td>
-                    <td>🔴 ca. 3.600&nbsp;EUR</td>
-                </tr>
-                <tr>
-                    <td class="has-text-weight-bold">Lizenzkosten für 500&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 1.500&nbsp;EUR</td>
-                    <td>🔴 ca. 8.000&nbsp;EUR</td>
-                    <td>🟡 ca. 4.400&nbsp;EUR</td>
-                    <td>🟡 ca. 6.200&nbsp;EUR</td>
-                </tr>
-                <tr>
-                    <td class="has-text-weight-bold">Lizenzkosten für 1.000&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 3.000&nbsp;EUR</td>
-                    <td>🔴 ca. 15.700&nbsp;EUR</td>
-                    <td>🟡 ca. 8.700&nbsp;EUR</td>
-                    <td>🟡 ca. 10.500&nbsp;EUR</td>
-                </tr>
-                <tr>
-                    <td class="has-text-weight-bold">Lizenzkosten für 10.000&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 30.000&nbsp;EUR</td>
-                    <td>🔴 ca. 110.000&nbsp;EUR</td>
-                    <td>🟡 ca. 65.000&nbsp;EUR</td>
-                    <td>🟡 ca. 41.000&nbsp;EUR</td>
-                </tr>
-                <tr>
                     <td class="has-text-weight-bold">Direktbezug ohne öffentliche Ausschreibung</td>
                     <td>🟢 Einzigartige Funktionen, exklusive Herstellerverfügbarkeit</td>
                     <td>🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
@@ -364,3 +370,6 @@ Nach einer bestimmten Nutzungsdauer wird der **[dezente Hinweis 'Free and open-s
         </table>
     </div>
 </div>
+
+
+**Anmerkung 1 (¹):** Einige Funktionen sind exklusiv dem <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> vorbehalten.
