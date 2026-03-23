@@ -138,7 +138,7 @@ Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner:
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🎨</span>
         <div>
-          <p><b>Deploy Your Own Templates</b></p>
+          <p><b>Eigene Vorlagen verwenden</b></p>
           <p>Bereit für mehr als nur Beispiele? Kopieren Sie <code>.\sample templates</code> in einen neuen Ordner und beginnen Sie mit der Bearbeitung. Wir empfehlen, unserer <a href="/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files">Anleitung zur Ordnerstruktur</a> zu folgen, um zukünftige Updates zu erleichtern.</p>
           <p>Verweisen Sie das Skript auf Ihre neuen Dateien mit:</p>
           <ul>
