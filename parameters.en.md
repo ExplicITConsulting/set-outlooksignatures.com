@@ -39,12 +39,12 @@ One parameter can be assigned to multiple topics.
 | Benefactor Circle | [BenefactorCircleID](#benefactorcircleid)<a href="#remark-1">¹</a> \| [BenefactorCircleLicenseFile](#benefactorcirclelicensefile)<a href="#remark-1">¹</a> |
 
 
-<p class="mt-6 is-italic has-text-centered">
-    <b>Remark 1:</b> Some features are exclusive to the <a href="/benefactorcircle"><span style="font-weight: bold; color: var<p>(--benefactor-circle-color);">Benefactor Circle add-on</span></a>.
+<p id="remark-1" class="is-italic has-text-centered">
+    ¹ Some features are exclusive to the <a href="/benefactorcircle"><span style="font-weight: bold; color: var<p>(--benefactor-circle-color);">Benefactor Circle add-on</span></a>.
 </p>
 
 
-<p class="mt-6 is-italic has-text-centered">
+<p class="is-italic has-text-centered">
   The <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> license funds the open-source mission, ensuring the core engine remains free and peer-reviewable for the global community.
 </p>
 
