@@ -1262,7 +1262,7 @@ Unfortunately, this approach is also the only one possible for Microsoft Booking
 
 
 ## Different default signatures for different mailboxes
-[INI files](https://set-outlooksignatures.com/details#template-tags-and-ini-files) define which signature of OOF templates should be used for which mailboxes. Template are assigned to all mailboxes or based on groups, SMTP addresses or replacement variables. Among other options, you can define time ranges during which they are valid or invalid, and if the resulting signature should be set as the default signature for new emails or for replies and forwards.
+[INI files](/details#template-tags-and-ini-files) define which signature of OOF templates should be used for which mailboxes. Template are assigned to all mailboxes or based on groups, SMTP addresses or replacement variables. Among other options, you can define time ranges during which they are valid or invalid, and if the resulting signature should be set as the default signature for new emails or for replies and forwards.
 
 You can, of course, have different default signatures for different mailboxes. Let's assume you have templates "A" and "B". Both templates should be made available to all your mailboxes. "A" shall be the default signature for all, but some specific mailboxes must have set "B" as default signature.
 

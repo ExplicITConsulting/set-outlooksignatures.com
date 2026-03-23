@@ -6,6 +6,10 @@ title: "Schedule Interactive Demo"
 subtitle: "Ideal for Security, IT, and Marketing leadership"
 description: "Guided Walkthrough. Schedule a session with our team to see how the solution adapts to your specific organizational structure, technical setup, and compliance requirements."
 permalink: "/scheduledemo"
+redirect-from:
+  - "/scheduledemo/"
+  - "/schedule-demo"
+  - "/schedule-demo/"
 ---
 <style>
   /* 1. Prevent global page scrolling */

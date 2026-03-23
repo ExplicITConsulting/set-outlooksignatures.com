@@ -251,7 +251,7 @@ With the Benefactor Circle add-on active, both modes per default also make signa
 - and in a draft email.
 
 #### Outlook on the web
-The [SetCurrentUserOutlookWebSignature](https://set-outlooksignatures.com/parameters#setcurrentuseroutlookwebsignature) parameter is enabled by default with the Benefactor Cicle add-on.
+The [SetCurrentUserOutlookWebSignature](/parameters#setcurrentuseroutlookwebsignature) parameter is enabled by default with the Benefactor Cicle add-on.
 
 Mailboxes hosted in Exchange on-prem only support one signature in Outlook on the web, so the default signature defined for new emails is preferred over the default signature defined for replies and forwards.
 

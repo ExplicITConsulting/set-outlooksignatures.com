@@ -2,14 +2,14 @@
 layout: "page"
 lang: "de"
 locale: "de"
-title: "Interaktive Demo vereinbaren"
-subtitle: "Ideal für Führungskräfte in den Bereichen Security, IT und Marketing"
-description: "Geführte Tour. Vereinbaren Sie einen Termin mit unserem Team, um zu sehen, wie sich die Lösung an Ihre spezifische Organisationsstruktur, Ihr technisches Setup und Ihre Compliance-Anforderungen anpasst."
-permalink: "/scheduledemo"
+title: "Professionellen Support bestellen"
+subtitle: "Erstklassige Unterstützung von ExplicIT Consulting"
+description: "Professionellen Support bestellen. Erstklassige Unterstützung von ExplicIT Consulting."
+permalink: "/ordersupport"
 redirect-from:
-  - "/scheduledemo/"
-  - "/schedule-demo"
-  - "/schedule-demo/"
+  - "/ordersupport/"
+  - "/order-support"
+  - "/order-support/"
 ---
 <style>
   /* 1. Prevent global page scrolling */
@@ -35,7 +35,7 @@ redirect-from:
   <div id="booking-container">
     <iframe 
       id="booking-iframe"
-      src="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at"
+      src="https://forms.cloud.microsoft/r/CnwjH98vSs?embed=true"
       width="100%" 
       height="100%" 
       style="border:0; display: block;"
@@ -68,11 +68,11 @@ redirect-from:
 </script>
 
 <noscript>
-  <a href="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at" 
+  <a href="https://forms.cloud.microsoft/r/CnwjH98vSs" 
       class="button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
       style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
       target="_blank">
-    <span>Interaktive Demo vereinbaren</span>
-    <span><small>Ideal für Führungskräfte in den Bereichen Security, IT und Marketing</small></span>
+    <span>Professionellen Support bestellen</span>
+    <!-- <span><small>Ideal für Führungskräfte in den Bereichen Security, IT und Marketing</small></span> -->
   </a>
 </noscript>

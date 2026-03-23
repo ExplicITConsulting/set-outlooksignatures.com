@@ -31,7 +31,7 @@ sitemap_changefreq: weekly
 ---
 <h2 id="sustainable-value">Nachhaltiger Mehrwert für Ihr Unternehmen</h2>
 <p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> erweitert das freie und quelloffene Set-OutlookSignatures um leistungsstarke zusätzliche Möglichkeiten für Ihr Unternehmen.</p>
-<p>Genutzt von sicherheitsbewussten und markenorientierten Organisationen weltweit. Sehen Sie uns im <a href="https://set-outlooksignatures.com/features#feature-comparison">Vergleich zu Alternativen</a> und prüfen Sie unsere <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparenten Preise ohne automatische Verlängerung</a>.
+<p>Genutzt von sicherheitsbewussten und markenorientierten Organisationen weltweit. Sehen Sie uns im <a href="/features#feature-comparison">Vergleich zu Alternativen</a> und prüfen Sie unsere <a href="/benefactorcircle#price">transparenten Preise ohne automatische Verlängerung</a>.
 </p>
 <div class="columns is-multiline mb-6">
   <div class="column is-full">
@@ -148,7 +148,7 @@ sitemap_changefreq: weekly
     <div class="column is-half" style="display: flex; flex-direction: column;">
       <h3>Geführte Tour</h3>
       <p>Vereinbaren Sie einen Termin mit unserem Team, um zu sehen, wie sich die Lösung an Ihre spezifische Organisationsstruktur, Ihr technisches Setup und Ihre Compliance-Anforderungen anpasst.</p>
-      <a href="https://set-outlooksignatures.com/scheduledemo" 
+      <a href="/scheduledemo" 
          class="button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
          style="margin-top: auto; height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;">
         <span>Interaktive Demo vereinbaren</span>
@@ -158,7 +158,7 @@ sitemap_changefreq: weekly
     <div class="column is-half" style="display: flex; flex-direction: column;">
       <h3>Self-Service Schnellstart</h3>
       <p>Folgen Sie unserem 3-Schritte-Prozess, um Ihre ersten Signaturen in wenigen Minuten bereitzustellen. Peer-Review-fähig und bereit für den Produktiveinsatz.</p>
-      <a href="https://set-outlooksignatures.com/quickstart" 
+      <a href="/quickstart" 
          class="button is-link is-normal has-text-weight-bold is-flex-direction-column" 
          style="margin-top: auto; height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
         <span>Selbst ausprobieren</span>
@@ -181,14 +181,14 @@ sitemap_changefreq: weekly
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="trial">Kostenlose Testlizenz</h2>
     <p>Nachdem Sie das freie und quelloffene Set-OutlookSignatures mithilfe der Schnellstart-Anleitung eingerichtet und an Ihre Anforderungen angepasst haben, sind Sie bereit für den nächsten Schritt:</p>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">14-Tage-Testlizenz holen</a></p>
+    <p><a href="/getlicense" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">14-Tage-Testlizenz holen</a></p>
     <p>Testlizenzen sind auf eine Laufzeit von 14&nbsp;Tagen sowie maximal 20&nbsp;Postfächer begrenzt und können nicht verlängert oder erneut ausgestellt werden.</p>
     <p>Die Testphase beginnt mit der Erstellung und Bereitstellung der Testlizenz durch uns, nicht mit der ersten Nutzung (dies ist auch nicht anders möglich, da unsere Software nicht nach Hause telefoniert).</p>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="order">Lizenzen kaufen</h2>
     <p>Der Wechsel auf die Vollversion, mehr Postfächer hinzufügen und das Erneuern der Lizenz sind schnell und unkompliziert:</p>
-    <p><a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Lizenzangebot anfordern</a></p>
+    <p><a href="/getlicense" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Lizenzangebot anfordern</a></p>
     <p>Sie erhalten in Kürze ein Angebot. Nach Ihrer Prüfung senden wir die Rechnung und Sie können den Zahlungsvorgang starten.</p>
     <p>Sobald der vollständige Rechnungsbetrag bei uns eingegangen ist, senden wir Ihnen umgehend die Download‑ und Gebrauchsanleitung für Ihre neue Lizenz.</p>
   </div>
@@ -196,7 +196,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="price">Preis und Business Case</h2>
-<p>Set-OutlookSignatures ist kostenlos. Ursprünglich als Technologiedemonstrator für Scripting‑Techniken entwickelt, hat es sich zu dem fortschrittlichsten,  sichersten und vielseitigsten freien und quelloffenen Tool zur Verwaltung von E-Mail-Signaturen entwickelt. Lesen Sie in unseren FAQ mehr über <a href="https://set-outlooksignatures.com/faq#why-the-tagline">seine Geschichte und was Sie aus dem Code lernen können</a>.</p>
+<p>Set-OutlookSignatures ist kostenlos. Ursprünglich als Technologiedemonstrator für Scripting‑Techniken entwickelt, hat es sich zu dem fortschrittlichsten,  sichersten und vielseitigsten freien und quelloffenen Tool zur Verwaltung von E-Mail-Signaturen entwickelt. Lesen Sie in unseren FAQ mehr über <a href="/faq#why-the-tagline">seine Geschichte und was Sie aus dem Code lernen können</a>.</p>
 
 <p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> schaltet erweiterte Funktionen frei — für <strong>nur 0.25  EUR pro Postfach/Monat</strong> (EUR 3.00 pro Jahr). Jährliche Abrechnung, keine automatische Verlängerung.</p>
 
