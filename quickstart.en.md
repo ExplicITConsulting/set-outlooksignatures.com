@@ -186,3 +186,8 @@ Download and unzip the archive to a local folder:
     </div>
   </div>
 </div>
+
+
+<p class="mt-6 is-italic has-text-centered">
+  The <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> license funds the open-source mission, ensuring the core engine remains free and peer-reviewable for the global community.
+</p>
