@@ -104,7 +104,7 @@ With Set-OutlookSignatures and the optional Benefactor Circle add-on, signatures
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">1,000 Mailboxes</td>
-                    <td>🟢 **EUR 3,000*</b></td>
+                    <td>🟢 <b>EUR 3,000</b></td>
                     <td>🔴 approx. EUR 15,700</td>
                     <td>🟡 approx. EUR 8,700</td>
                     <td>🟡 approx. EUR 10,500</td>
