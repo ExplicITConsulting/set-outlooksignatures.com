@@ -11,7 +11,7 @@ redirect-from:
   - "/get-license"
   - "/get-license/"
   - "/getlicence"
-  - "/getlicence/
+  - "/getlicence/"
   - "/get-licence"
   - "/get-licence/"
 ---
