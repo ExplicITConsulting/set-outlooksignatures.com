@@ -7,71 +7,182 @@ subtitle: "Signaturen in wenigen Minuten"
 description: "Schnellstart-Anleitung. Signaturen innerhalb von Minuten bereitstellen."
 permalink: "/quickstart"
 ---
-
-## Schritt 1: Herunterladen & Entsperren {#step-1}
-1. **Download:** Entpacken Sie das Archiv in einen lokalen Ordner.
-    <p>
-      <div class="buttons">
-        <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal is-hovered  has-text-weight-bold  mtrcs-download">Software herunterladen</a>
-        <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="sos-download-link mtrcs-download no-external-link-icon"><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=flat" alt="Downloads" loading="lazy"></a>
-        <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Offene Issues" loading="lazy"></a>
-      </div>
-    </p>
-2. **Entsperren:** Um den "Mark of the Web"-Schutz zu entfernen und die Ausführung zu ermöglichen:
-    * **Rechtsklick** auf `Set-OutlookSignatures.ps1` > **Eigenschaften** > Haken bei **Zulassen** (Unblock) setzen.
-    * *Oder* nutzen Sie das PowerShell-Cmdlet: `Unblock-File 'Set-OutlookSignatures.ps1`.
+## Schritt 1: Herunterladen {#step-1}
+<div class="buttons">
+Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner: 
+  <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal is-hovered  has-text-weight-bold  mtrcs-download">Software herunterladen</a>
+  <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="sos-download-link mtrcs-download no-external-link-icon"><img src="https://img.shields.io/github/downloads/Set-OutlookSignatures/Set-OutlookSignatures/total?style=flat" alt="Downloads" loading="lazy"></a>
+  <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Open issues" loading="lazy"></a>
+</div>
 
 
 ## Schritt 2: Einmalige Vorbereitungen {#step-2}
-##### Client und Benutzer
-* **Erster Test:** Melden Sie sich mit einem **Testbenutzer** an einem Windows-System mit Classic Outlook und Word an. Wenn Sie Ihren eigenen Benutzer verwenden, könnten bestehende Signaturen überschrieben werden, sofern Sie nicht den Simulationsmodus nutzen.
-* **Plattform-Unterstützung:** Linux, macOS und das neue Outlook erfordern das <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> sowie Postfächer in Exchange Online.
-
-##### Entra ID (für Exchange Online)
-Für den Zugriff auf die Graph API müssen Sie eine Entra ID App registrieren.
-* **Dokumentation:** In `.\sample code\Create-EntraApp.ps1` finden Sie Details zu Berechtigungen und für Sicherheits-Audits.
-* **Manuelle Einrichtung:** Folgen Sie den Anweisungen in `.\config\default graph config.ps1`.
-* **Skriptbasierte Einrichtung:** Lassen Sie einen "Global Administrator" oder "Application Administrator" folgendes ausführen:
-    ```
-    powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
-    ```
-    *Für Sovereign Clouds (z. B. AzureChina) fügen Sie den Parameter `-CloudEnvironment [Name]` hinzu.*
-
-##### Endpoint Security
-Falls AppLocker, Defender, CrowdStrike… aktiv sind:
-* Erlauben Sie die Ausführung und das Laden von Bibliotheken aus dem **TEMP-Ordner**.
-* Vertrauen Sie Software, die mit dem Zertifikat von **ExplicIT Consulting** signiert ist (alle PS1- und DLL-Dateien im Download sind damit signiert).
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>💻</span>
+        <div>
+          <p><b>Client und Benutzer</b></p>
+          <p>Melden Sie sich mit einem Testbenutzer unter Windows mit Classic Outlook und Word an. Wenn Sie dies mit Ihrem Hauptkonto ausführen, werden Signaturen mit den Namen <code>Formal</code> oder <code>Informal</code> überschrieben, sofern Sie nicht den später beschriebenen Simulationsmodus verwenden.</p>
+          <p>Linux, macOS und das neue Outlook erfordern das <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> und Hosting in Exchange Online.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>🛡️</span>
+        <div>
+          <p><b>Endpoint Security (AppLocker, Defender, CrowdStrike…)</b></p>
+          <p>Vertrauen Sie der Software, die mit dem Zertifikat von ExplicIT Consulting signiert ist – alle enthaltenen PS1- und DLL-Dateien sind mit diesem Zertifikat signiert.</p>
+          <p>Erlaufen Sie bei Bedarf die Ausführung und das Laden von Bibliotheken aus dem TEMP-Ordner.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="columns is-multiline">
+  <div class="column is-full">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>☁️</span>
+        <div>
+          <p><b>Entra ID App für Exchange Online erstellen</b></p>
+          <p>Folgen Sie den Anweisungen in <code>.\config\default graph config.ps1</code> für die manuelle Einrichtung oder lassen Sie einen "Globalen Administrator" oder "Anwendungsadministrator" den bereitgestellten PowerShell-Befehl ausführen.</p>
+          <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+            <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+              <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+              <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+              <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+            </div>
+            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
+          </div>
+          <p><small><em>Für nationale oder Sovereign Clouds fügen Sie den Parameter <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> hinzu.</em></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 ## Schritt 3: Set-OutlookSignatures ausführen {#step-3}
-* **Exchange On-Premises:**
-    ```
-    powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"
-    ```
-* **Exchange Online / Hybrid:**
-    ```
-    powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId aus Schritt 2>"
-    ```
-    *Hinweis: `-GraphOnly true` ignoriert das lokale Active Directory. Nutzen Sie `-CloudEnvironment` für Sovereign Clouds.*
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>☁️</span>
+        <div>
+          <p><b>Exchange Online / Hybrid</b></p>
+          <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+            <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+              <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+              <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+              <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+            </div>
+            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
+          </div>
+          <p><small><em><code>-GraphOnly true</code> stellt sicher, dass das lokale AD ignoriert wird. Fügen Sie den Parameter <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> hinzu, wenn Sie eine nationale oder Sovereign Cloud nutzen.</em></small></p>
+          <p><small><em>Falls das Skript nicht startet: Rechtsklick auf Set-OutlookSignatures.ps1 > Eigenschaften > "Zulassen" (Unblock) anhaken.</em></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>🏢</span>
+        <div>
+          <p><b>Exchange On-Prem</b></p>
+          <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+            <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+              <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+              <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+              <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+            </div>
+            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
+          </div>
+          <p><small><em>Falls das Skript nicht startet: Rechtsklick auf Set-OutlookSignatures.ps1 > Eigenschaften > "Zulassen" (Unblock) anhaken.</em></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p><b>Sie finden nun drei neue Signaturen in Outlook, die auf den integrierten Beispielvorlagen und den Attributen Ihres eigenen Benutzers basieren:</b></p>
+<ul>
+  <li><b><code>Formal</code></b> ist ideal für neue E-Mails an externe Empfänger.</li>
+  <li><b><code>Informal</code></b> eignet sich hervorragend für Antworten, Weiterleitungen und interne E-Mails.</li>
+  <li><b><code>Test all default replacement variables</code></b> gibt Ihnen einen Überblick über die integrierten Platzhalter und einen Einblick in die Möglichkeiten für Bilder, Banner sowie Telefonnummern- und Adressformatierung.</li>
+</ul>
+<div class="columns is-multiline">
+  <div class="column is-full">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>💡</span>
+        <div>
+          <p><b>Profi-Tipp: Risikofrei starten mit dem Simulationsmodus</b></p>
+          <p>Wenn Sie kein Classic Outlook installiert haben oder die Software ohne Auswirkungen testen möchten, nutzen Sie den <a href="/details#simulation-mode">Simulationsmodus</a>: Dieser Modus erstellt die exakten Signaturen für den simulierten Benutzer als Dateien auf Ihrer Festplatte, ohne Outlook zu verändern – der perfekte Weg, um Ihre Konfiguration zu prüfen, ohne Systemeinstellungen zu ändern.</p>
+          <p>Fügen Sie einfach den Parameter <code>-SimulateUser a@example.com -SimulateMailboxes a@example.com</code> hinzu und sehen Sie sich die Ergebnisse in Ihrem Ordner <code>Dokumente\Outlook Signatures</code> an.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-##### 🛡️ Ihre Signaturen testen – direkt und risikofrei {#simulation-mode}
-Falls Sie keinen Zugriff auf das klassische Outlook haben oder einen Test ohne Auswirkungen durchführen möchten:
-1. Führen Sie das Skript mit diesen Parametern aus: `-SimulateUser a@example.com -SimulateMailboxes a@example.com`
-2. **Ergebnisse ansehen:** Öffnen Sie Ihren Ordner **'Dokumente\Outlook Signatures'**. 
 
-Dieser **"[Simulationsmodus](/details#simulation-mode)"** erstellt die exakten Signaturen für den simulierten Benutzer als Dateien auf Ihrer Festplatte. Statt Outlook zu verändern, wird eine vollständige Vorschau generiert – der perfekte Weg, um Ihre Konfiguration zu verifizieren, ohne Systemeinstellungen zu ändern.
-
-
-## Einstellungen anpassen {#customize}
-##### Eigene Vorlagen verwenden
-* **Ordnerstruktur:** Kopieren Sie den Ordner `.\sample templates` an einen neuen Ort. Beachten Sie unsere [FAQ zur empfohlenen Ordnerstruktur](/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files), um spätere Updates zu erleichtern.
-* **Ausführung:** Verweisen Sie auf Ihre eigenen Dateien:
-    * `-SignatureTemplatePath 'c:\ihr_pfad`
-    * `-SignatureIniFile 'c:\ihr_pfad\_Signatures.ini`
-    * *Fügen Sie `-UseHtmTemplates true` hinzu, falls Sie HTML- statt DOCX-Vorlagen verwenden.*
-
-
-##### Nächste Schritte
-* **Parameter & Funktionen:** Prüfen Sie die [Funktionsliste](/features) und die [Parameter-Dokumentation](/parameters).
-* **Rollout-Planung:** Lesen Sie den [Ansatz zur organisatorischen Implementierung](/implementationapproach) und die [technischen Details](/details) (insbesondere das Kapitel zu Architektur-Überlegungen).
-* **Präsentieren Sie Ihre Arbeit:** Haben Sie eine beeindruckende Signatur erstellt? [Kontaktieren Sie uns](/support), um Ihre Vorlagen oder ein Statement in unserem Showcase zu teilen!
+## Anpassen {#customize}
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>🎨</span>
+        <div>
+          <p><b>Deploy Your Own Templates</b></p>
+          <p>Bereit für mehr als nur Beispiele? Kopieren Sie <code>.\sample templates</code> in einen neuen Ordner und beginnen Sie mit der Bearbeitung. Wir empfehlen, unserer <a href="/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files">Anleitung zur Ordnerstruktur</a> zu folgen, um zukünftige Updates zu erleichtern.</p>
+          <p>Verweisen Sie das Skript auf Ihre neuen Dateien mit:</p>
+          <ul>
+            <li><code>-SignatureTemplatePath "C:\Signatures\Templates"</code></li>
+            <li><code>-SignatureIniFile "C:\Signatures\Templates\_Signatures.ini"</code></li>
+          </ul>
+          <p><small><em>Bei Verwendung von HTML fügen Sie einfach <code>-UseHtmTemplates true</code> hinzu.</em></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>🚀</span>
+        <div>
+          <p><b>Rollout skalieren</b></p>
+          <p>Sobald Ihre Vorlagen bereit sind, erkunden Sie die <a href="/features">vollständige Funktionsliste</a>, die <a href="/details">technischen Details</a> und die <a href="/parameters">Parameter-Dokumentation</a>, um die Bereitstellung zu automatisieren und an Ihre Organisation anzupassen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="columns is-multiline">
+  <div class="column is-full">
+    <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #ff3860;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.75em;">
+        <span style="font-size: 1.5rem;">⭐</span>
+        <div>
+          <p class="title is-4 has-text-black">Teilen Sie Ihren Erfolg!</p>
+          <p>Haben Sie etwas Großartiges erstellt? Ob es eine optisch beeindruckende E-Mail-Signatur, clevere Abwesenheitsnotizen, benutzerdefinierte Ersetzungsvariablen oder eine einzigartige Drittanbieter-Integration ist — <b>wir wollen es sehen.</b></p>
+          <div>
+            <p>Wir freuen uns über:</p>
+            <ul>
+              <li>Fertige Vorlagen oder einzigartige Design-Layouts.</li>
+              <li>Kreative Beispiele für Abwesenheitsnotizen (OOF).</li>
+              <li>Snippets von benutzerdefinierter Logik oder Integrationsskripten.</li>
+              <li>Einen kurzen Erfahrungsbericht über Set-OutlookSignatures oder das Benefactor Circle Add-on.</li>
+            </ul>
+          </div>
+          <p><small><em>Optional: Geben Sie Ihren Namen, Ihre Rolle, Ihr Firmenlogo oder ein Foto an, um in unserem Community-Showcase vorgestellt zu werden!</em></small></p>
+          <a href="/support" class="button is-danger is-outlined has-text-weight-bold">Kontakt aufnehmen & andere inspirieren!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

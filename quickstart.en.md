@@ -156,8 +156,7 @@ Download and unzip the archive to a local folder:
         <span>🚀</span>
         <div>
           <p><b>Scale Your Rollout</b></p>
-          <p>Once your templates are ready, explore the <a href="/features">Full Feature List</a> and <a href="/parameters">Parameter Docs</a> to automate the deployment across your organization.</p>
-          <p>Review the <a href="/implementationapproach">Implementation Approach</a> for best practices on technical architecture and user communication.</p>
+          <p>Once your templates are ready, explore the <a href="/features">Full Feature List</a>, the <a href="/details">Technical Details</a> and the <a href="/parameters">Parameter Docs</a> to automate the deployment and tailor it to your organization.</p>
         </div>
       </div>
     </div>
