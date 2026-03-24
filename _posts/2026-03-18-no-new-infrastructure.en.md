@@ -11,14 +11,12 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-Many solutions require new servers, connectors, or email rerouting.
-
-Set-OutlookSignatures doesn’t.
+Many solutions require new servers, connectors, or email rerouting. Set-OutlookSignatures doesn’t:
 - Runs on your existing systems
 - No new dependencies
 - No external data transfers
 
-Simple, secure, and scalable - without the overhead.
+Simple, secure, and scalable, without the overhead.
 
 This is made possible by architecture developed from practical experience for practical use, with a focus on work simplification and data protection rather than profit.
 

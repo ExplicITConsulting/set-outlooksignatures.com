@@ -41,7 +41,7 @@ Mit Set-OutlookSignatures und dem optionalen <a href="/benefactorcircle"><span s
                     <p class="mb-2"><b>Vielzahl von Variablen:</b> Mit einer <a href="/details#replacement-variables">Vielzahl von Variablen</a>, einschließlich <a href="/details#photos-account-pictures-user-image-from-active-directory-or-entra-id">Fotos und Bildern</a>, aus Entra ID, Active Directory und anderen Quellen angepasst werden.</p>
                     <p class="mb-2"><b>Datenumfang:</b> Variablen stehen für den <a href="/details#replacement-variables">aktuell angemeldeten Benutzer, das aktuelle Postfach und deren Manager</a> zur Verfügung.</p>
                     <p class="mb-2"><b>Barrierefreiheit:</b> Für <a href="/blog/2025/12/03/barrier-free-email-signatures-and-out-of-office-replies">barrierefreien Zugriff</a> gestaltet werden, mit benutzerdefinierten Link- und Bildbeschreibungen für Screenreader und ähnliche Tools.</p>
-                    <p class="mb-2"><b>Standardisierte Formatierung:</b> <a href="/faq#format-phone-numbers">Telefonnummern</a> und <a href="/faq#post-addresses">Post-Adressen</a> können nach internationalen Standards oder eigenen Vorgaben formatiert werden.</p>
+                    <p class="mb-2"><b>Standardisierte Formatierung:</b> <a href="/faq#format-phone-numbers">Telefonnummern</a> und <a href="/faq#format-postal-addresses">Post-Adressen</a> können nach internationalen Standards oder eigenen Vorgaben formatiert werden.</p>
                     <p class="mb-2"><b>Inklusive Vorlagen:</b> <a href="/quickstart#customize">Beispielvorlagen</a> für Signaturen und Abwesenheitsnachrichten demonstrieren viele Funktionen und stehen als .docx- und .htm-Dateien zur Verfügung.</p>
                 </div>
             </div>
