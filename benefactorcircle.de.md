@@ -196,10 +196,10 @@ sitemap_changefreq: weekly
 
 
 <h2 id="price">Preis und Business Case</h2>
-<p>Set-OutlookSignatures ist und bleibt kostenlos. Was als Technologiedemonstrator begann, ist heute das sicherste und vielseitigste Open-Source-Tool für E-Mail-Signaturen. Erfahren Sie mehr über die <a href="/faq#why-the-tagline">Geschichte hinter dem Code</a>.</p>
+<p><strong>Set-OutlookSignatures ist und bleibt kostenlos.</strong> Was als Technologiedemonstrator begann, ist heute das sicherste und vielseitigste Open-Source-Tool für E-Mail-Signaturen. Erfahren Sie mehr über die <a href="/faq#why-the-tagline">Geschichte hinter dem Code</a>.</p>
 <p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> schaltet erweiterte Funktionen frei — für <strong>nur 0.25  EUR pro Postfach/Monat</strong> (EUR 3.00 pro Jahr). Jährliche Abrechnung, keine automatische Verlängerung.</p>
-<p><strong>Das Add-on ist eine Investition, die sich vom ersten Tag an rechnet – ganz sicher auch für Sie!</strong> Fakten statt Vermutungen: Ermitteln Sie in nur fünf Minuten Ihre konkrete Ersparnis mit unserem <a href="/benefactorcircle#financial-benefits">Business Case</a>.</p>
-<p>Dank seiner einzigartigen Funktionen und der exklusiven Herstellerverfügbarkeit ist eine rechtskonforme Direktbeschaffung in der Regel auch ohne öffentliche Ausschreibung möglich.</p>
+<p><strong>Das Add-on ist eine Investition, die sich vom ersten Tag an rechnet – ganz sicher auch für Sie!</strong> Fakten statt Vermutungen: Ermitteln Sie in nur fünf Minuten Ihre konkrete Ersparnis mit unserem <a href="/benefactorcircle#financial-benefits">Business Case</a>.<br>
+Dank seiner einzigartigen Funktionen und der exklusiven Herstellerverfügbarkeit ist eine rechtskonforme Direktbeschaffung in der Regel auch ohne öffentliche Ausschreibung möglich.</p>
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Lizenzdetails – das Kleingedruckte in verständlicher Sprache</strong>
