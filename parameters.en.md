@@ -40,7 +40,7 @@ One parameter can be assigned to multiple topics.
 
 
 <p id="remark-1" class="is-italic has-text-centered">
-    ¹ Some features are exclusive to the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>.
+    <span style="color: var(--benefactor-circle-color);"><sup>(1)</sup></span> Some features are exclusive to the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>.
 </p>
 
 
