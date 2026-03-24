@@ -61,7 +61,7 @@ Contrary to other solutions, you do not have to decide for one fixed combination
 
 The following chapters dive deeper into the differences between creating signatures and out-of-office replies, and making signatures available to end users. They also describe which options are available, what their pros and cons are, and when they are used best.
 
-### Step 1: Creating signatures and out-of-office replies<!-- omit in toc -->
+### Step 1: Create signatures and out-of-office replies<!-- omit in toc -->
 Set-OutlookSignatures comes with client mode, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> adds [SimulateAndDeploy](/parameters#simulateanddeploy) mode.
 
 While building the base for SimulateAndDeploy, pure [simulation mode](/details#simulation-mode) is not discussed here as it is not intended to be used for mass deployment but as a quality control feature.
@@ -119,9 +119,7 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#s
 
 With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, both modes can set [out-of-office replies](/parameters#setcurrentuseroofmessage) for internal and external recipients, and also deploy signatures for mailboxes (and other Exchange recipient objects) the user has access to but not added to Outlook (see [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile) for details, and combine it with [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions) for maximum automation).
 
-### Step 2: Making signatures available<!-- omit in toc -->
-Signatures created in client mode or SimulateAndDeploy mode need to be made available to the end user.
-
+### Step 2: Make signatures available<!-- omit in toc -->
 In client mode, signatures are automatically made available to the local Outlook installation. With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, client mode also makes signatures available in the 'Documents' folder of the logged-on user.
 
 SimulateAndDeploy mode has no access to end user devices and therefore treats Outlook on the web as the local Outlook installation. It cannot not make signatures available in a user's 'Documents' folder.
