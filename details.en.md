@@ -61,7 +61,7 @@ Contrary to other solutions, you do not have to decide for one fixed combination
 
 The following chapters dive deeper into the differences between creating signatures and out-of-office replies, and making signatures available to end users. They also describe which options are available, what their pros and cons are, and when they are used best.
 
-### Creating signatures and out-of-office replies<!-- omit in toc -->
+### Step 1: Creating signatures and out-of-office replies<!-- omit in toc -->
 Set-OutlookSignatures comes with client mode, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> adds [SimulateAndDeploy](/parameters#simulateanddeploy) mode.
 
 While building the base for SimulateAndDeploy, pure [simulation mode](/details#simulation-mode) is not discussed here as it is not intended to be used for mass deployment but as a quality control feature.
@@ -121,19 +121,14 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
 - Set [out-of-office replies](/parameters#setcurrentuseroofmessage) for internal and external recipients.
 - Deploy signatures for mailboxes (and other Exchange recipient objects) the user has access to but not added to Outlook. See the [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile) parameter for details, and combine it with [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions) for maximum automation.
 
-### Making signatures available<!-- omit in toc -->
+### Step 2: Making signatures available<!-- omit in toc -->
 Signatures created in client mode or SimulateAndDeploy mode need to be made available to the end user.
 
-Signatures created in client mode are automatically made available to the local Outlook installation. With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, client mode also makes signatures available in the 'Documents' folder of the logged-on user.
+In client mode, signatures are automatically made available to the local Outlook installation. With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, client mode also makes signatures available in the 'Documents' folder of the logged-on user.
 
 SimulateAndDeploy mode has no access to end user devices and therefore treats Outlook on the web as the local Outlook installation. It cannot not make signatures available in a user's 'Documents' folder.
 
-With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> active, both modes per default also make signatures available
-- in Outlook on the web,
-- as roaming signatures (cloud only),
-- for use with the Outlook add-in,
-- and in a draft email.
-
+With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> active, both modes per default also make signatures available in Outlook on the web, as roaming signatures (cloud only), for use with the Outlook add-in, and in a draft email:
 <div class="columns is-multiline">
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
         <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
@@ -141,13 +136,8 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
                 <span>🌐</span>
                 <div>
                     <p><b>Outlook on the web</b></p>
-                    <p class="mb-2">Enabled by default with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</p>
-                    <div>
-                      <ul>
-                        <li><b>On-prem:</b> Supports one signature (New Email preferred).</li>
-                        <li><b>Cloud:</b> Combines with Roaming Signatures for mobile browser access.</li>
-                      </ul>
-                    </div>
+                    <p class="mb-2"><b>On-prem:</b> Supports one signature (New Email preferred).</p>
+                    <p class="mb-2"><b>Cloud:</b> Combines with Roaming Signatures for mobile browser access.</p>
                 </div>
             </div>
         </div>
@@ -159,7 +149,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
                 <div>
                     <p><b>Roaming Signatures</b></p>
                     <p class="mb-2">Exchange Online feature; stores signatures in the mailbox.</p>
-                    <p class="mb-2">Synchronized via our engine across Linux, Windows, and macOS to avoid native sync issues. <a href="/blog/2025/10/20/current-state-and-future-of-roaming-signatures">Learn more.</a></p>
+                    <p class="mb-2">Synchronized via our engine across Linux, Windows, and macOS to avoid <a href="/blog/2025/10/20/current-state-and-future-of-roaming-signatures">native sync issues</a>.</p>
                 </div>
             </div>
         </div>
@@ -171,10 +161,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
                 <div>
                     <p><b>Outlook Add-in</b></p>
                     <p class="mb-2">Perfect for Android, iOS, and unmanaged BYOD devices.</p>
-                    <ul>
-                      <li>Automatic signature selection based on sender.</li>
-                      <li>Interactive taskpane for manual insertion.</li>
-                    </ul>
+                    <p class="mb-2">Automatic signature selection based on sender and many other properties, interactive taskpane for manual insertion.</p>
                 </div>
             </div>
         </div>
@@ -186,7 +173,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
                 <div>
                     <p><b>Draft Email</b></p>
                     <p class="mb-2">Universal compatibility via copy-paste.</p>
-                    <p class="mb-2">Creates a hidden draft containing all signatures in HTML and plain text for clients like Apple Mail, Gmail, and Thunderbird.</p>
+                    <p class="mb-2">Creates a draft email containing all signatures in HTML and plain text for clients like Apple Mail, Gmail, and Thunderbird.</p>
                 </div>
             </div>
         </div>
@@ -198,7 +185,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
                 <div>
                     <p><b>Documents Folder</b></p>
                     <p class="mb-2">File-level access across all synchronized devices.</p>
-                    <p class="mb-2">Exports signatures to a local path (OneDrive/Nextcloud) for easy access in non-Outlook clients.</p>
+                    <p class="mb-2">Exports signatures to a local path (e.g. synced OneDrive) for easy access in non-Outlook clients.</p>
                 </div>
             </div>
         </div>
