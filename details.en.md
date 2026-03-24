@@ -117,9 +117,7 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#s
   </div>
 </div>
 
-With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, both modes can:
-- Set [out-of-office replies](/parameters#setcurrentuseroofmessage) for internal and external recipients.
-- Deploy signatures for mailboxes (and other Exchange recipient objects) the user has access to but not added to Outlook. See the [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile) parameter for details, and combine it with [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions) for maximum automation.
+With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, both modes can set [out-of-office replies](/parameters#setcurrentuseroofmessage) for internal and external recipients, and also deploy signatures for mailboxes (and other Exchange recipient objects) the user has access to but not added to Outlook (see [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile) for details, and combine it with [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions) for maximum automation).
 
 ### Step 2: Making signatures available<!-- omit in toc -->
 Signatures created in client mode or SimulateAndDeploy mode need to be made available to the end user.
@@ -129,7 +127,7 @@ In client mode, signatures are automatically made available to the local Outlook
 SimulateAndDeploy mode has no access to end user devices and therefore treats Outlook on the web as the local Outlook installation. It cannot not make signatures available in a user's 'Documents' folder.
 
 With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> active, both modes per default also make signatures available in Outlook on the web, as roaming signatures (cloud only), for use with the Outlook add-in, and in a draft email:
-<div class="columns is-multiline">
+<div class="columns is-multiline is-centered">
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
         <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
