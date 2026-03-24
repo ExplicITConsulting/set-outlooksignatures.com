@@ -29,41 +29,60 @@ Dank seiner zukunftsorientierten Architektur, die nicht auf einem kommerziellen 
 
 
 ## Funktionen {#features}
-Mit Set-OutlookSignatures und dem optionalen Benefactor Circle Add-on können Signaturen und Abwesenheitsnotizen:
-### 📝 Design & Inhalt
-* **Vorlagen-Vielfalt:** Aus **[Vorlagen im DOCX- oder HTML-Dateiformat](/details#signature-and-oof-template-file-format)** generiert werden.
-* **Vielzahl von Variablen:** Mit einer **[Vielzahl von Variablen](/details#replacement-variables)**, einschließlich **[Fotos und Bildern](/details#photos-account-pictures-user-image-from-active-directory-or-entra-id)**, aus Entra ID, Active Directory und anderen Quellen angepasst werden.
-* **Datenumfang:** Variablen stehen für den **[aktuell angemeldeten Benutzer, das aktuelle Postfach und deren Manager](/details#replacement-variables)** zur Verfügung.
-* **Barrierefreiheit:** Für **[barrierefreien Zugriff](/blog/2025/12/03/barrier-free-email-signatures-and-out-of-office-replies)** gestaltet werden, mit benutzerdefinierten Link- und Bildbeschreibungen für Screenreader und ähnliche Tools.
-* **Standardisierte Formatierung:** **[Telefonnummern](/faq#format-phone-numbers)** und **[Post-Adressen](/faq#format-postal-addresses)** können nach internationalen Standards oder eigenen Vorgaben formatiert werden.
-* **Inklusive Vorlagen:** **[Beispielvorlagen](/quickstart#customize)** für Signaturen und Abwesenheitsnachrichten demonstrieren viele Funktionen und stehen als .docx- und .htm-Dateien zur Verfügung.
-
-### 🚀 Bereitstellung & Postfach-Unterstützung
-* **Zielsteuerung:** Für **alle Postfächer (auch [Shared Mailboxes](/benefactorcircle#key-features)<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>)**, **[Gruppen](/details#template-tags-and-ini-files)**, **[E-Mail-Adressen](/details#template-tags-and-ini-files)** (auch Alias und sekundäre Adressen) oder auf Basis von **[Benutzer- und Postfach-Attributen](/details#template-tags-and-ini-files)** zugewiesen werden.
-* **Outlook-Unterstützung:** Für **jedes Postfach in allen Profilen (Outlook, [New Outlook](/benefactorcircle#key-features)<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>, [Outlook on the web](/benefactorcircle#key-features)<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>)** funktionieren, auch für **[automapped und zusätzliche Postfächer](/parameters#signaturesforautomappedandadditionalmailboxes)**<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.
-* **Vorlagen-Logik:** Aus einer Vorlage heraus mit unterschiedlichen Namen erstellt werden; **[eine Vorlage kann für viele Postfächer genutzt werden](/details#how-to-work-with-ini-files)**.
-* **Zeitplanung:** Mit **[Zeitbeschränkungen](/details#allowed-tags)**<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> versehen werden, innerhalb derer sie gültig sind.
-* **Standardwerte:** Als **[Standard-Signatur](/details#allowed-tags)** für neue E-Mails oder für Antworten festgelegt werden, oder als **[Standard-Abwesenheitsnotiz](/details#allowed-tags)**<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> für interne oder externe Empfänger.
-
-### 💻 Plattform & Ausführung
-* **Cloud-Spiegelung:** Im **[Outlook on the web](/parameters#setcurrentuseroutlookwebsignature)**<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> des angemeldeten Benutzers gesetzt werden, und auch als **[Roaming Signatures](/parameters#mirrorcloudsignatures)**<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> mit der Cloud synchronisiert werden (Linux/macOS/Windows, klassisches und neues Outlook<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>).
-* **Benutzerkontrolle:** Rein zentral verwaltet werden<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>, oder **[parallel zu vom Benutzer erstellten Signaturen](/parameters#deleteusercreatedsignatures)** bestehen.
-* **Add-in Integration:** Mit dem **[Outlook Add-in](/outlookaddin)**<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> automatisch zu neuen E-Mails, Antworten und Weiterleitungen sowie zu Terminen hinzugefügt werden.
-* **Mobile & Drittanbieter:** In einen **[zusätzlichen Ordner](/parameters#additionalsignaturepath)**<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> kopiert werden, um den einfachen Zugriff auf Signaturen auf Mobilgeräten oder zur Verwendung mit Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail und anderen zu ermöglichen.
-* **Entwurfs-Sammlung:** In einem **[E-Mail-Entwurf mit allen verfügbaren Signaturen](/parameters#signaturecollectionindrafts)**<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> in HTML und reinem Text für den einfachen Zugriff in E-Mail-Clients ohne Signatur-API gesammelt werden.
-* **Sicherheit:** **[Schreibgeschützt](/details#allowed-tags)** werden (nur klassisches Outlook für Windows).
-
-### 🛡️ Architektur & Infrastruktur
-* **Flexible Ausführung:** Von Nutzern auf **[Windows-, Linux- und macOS-Clients (einschließlich gemeinsam genutzter Geräte und Terminalserver) oder auf einem zentralen System mit einem Dienstkonto ausgeführt werden](/details#architecture-considerations)**<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.
-* **Vielseitige Bereitstellung:** Als Teil des Anmeldeskripts, als geplante Aufgabe oder auf Benutzeranforderung ausgeführt werden – **[was auch immer Ihre Methode zur Verteilung von Software erlaubt](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)**.
-* **Tests:** Der **[Simulationsmodus](/details#simulation-mode)** ermöglicht es Inhaltserstellern und Administratoren, die resultierenden Signaturen vor der Live-Schaltung zu prüfen.
-* **Zero-Touch:** **[SimulateAndDeploy](/details#creating-signatures-and-out-of-office-replies)**<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> ermöglicht die Bereitstellung **[ohne Ausführung auf Endgeräten oder Endbenutzerinteraktion](/details#creating-signatures-and-out-of-office-replies)** (Roaming Signatures für Exchange Online).
-* **Umgebungs-Unterstützung:** Funktioniert **[on-premises, in hybriden und reinen Cloud-Umgebungen](/details#hybrid-and-cloud-only-support)**; konzipiert für **[große und komplexe Umgebungen](/implementationapproach)** (AD-Trusts, mehrstufige AD-Subdomänen, mandantenübergreifend/Multitenant).
-* **Globale Clouds:** **[Alle öffentlichen, nationalen und souveränen Clouds werden unterstützt](/parameters#cloudenvironment)**: Öffentlich, US-Regierung (GCC, GCC High, DoD), China, Bleu, Delos, GovSG und mehr.
-* **Keine Installation:** Erfordert **keine Installation auf Servern oder Clients**; lediglich eine Standard-SMB-Dateifreigabe und optional Office auf den Clients.
-* **Digitale Souveränität:** **Keine Telemetrie**, kein „Calling Home“ und Daten werden **nicht über externe Rechenzentren geleitet**; **DNS-Einträge (SPF) und Nachrichtenfluss bleiben unverändert**.
-* **Enterprise-Skalierung:** **[Multiinstanzfähig](/faq#can-multiple-script-instances-run-in-parallel)** und umfasst einen **[dokumentierten Implementierungsansatz](/implementationapproach)** für fünfstellige Postfachzahlen.
-* **Open Source:** **[Freie Open-Source-Software (FOSS)](/faq#why-the-tagline)** unter der European Union Public License (EUPL). Nach einer gewissen Zeit wird ein dezenten Hinweis angefügt, der leicht entfernt werden kann<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.
+Mit Set-OutlookSignatures und dem optionalen <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> können Signaturen und Abwesenheitsnotizen:
+<div class="columns is-multiline">
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+            <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+                <span>📝</span>
+                <div>
+                    <p><b>Design & Inhalt</b></p>
+                    <p class="mb-2"><b>Vorlagen-Vielfalt:</b> Aus <a href="/details#signature-and-oof-template-file-format">Vorlagen im DOCX- oder HTML-Dateiformat</a> generiert werden.</p>
+                    <p class="mb-2"><b>Vielzahl von Variablen:</b> Mit einer <a href="/details#replacement-variables">Vielzahl von Variablen</a>, einschließlich <a href="/details#photos-account-pictures-user-image-from-active-directory-or-entra-id">Fotos und Bildern</a>, aus Entra ID, Active Directory und anderen Quellen angepasst werden.</p>
+                    <p class="mb-2"><b>Datenumfang:</b> Variablen stehen für den <a href="/details#replacement-variables">aktuell angemeldeten Benutzer, das aktuelle Postfach und deren Manager</a> zur Verfügung.</p>
+                    <p class="mb-2"><b>Barrierefreiheit:</b> Für <a href="/blog/2025/12/03/barrier-free-email-signatures-and-out-of-office-replies">barrierefreien Zugriff</a> gestaltet werden, mit benutzerdefinierten Link- und Bildbeschreibungen für Screenreader und ähnliche Tools.</p>
+                    <p class="mb-2"><b>Standardisierte Formatierung:</b> <a href="/faq#format-phone-numbers">Telefonnummern</a> und <a href="/faq#post-addresses">Post-Adressen</a> können nach internationalen Standards oder eigenen Vorgaben formatiert werden.</p>
+                    <p class="mb-2"><b>Inklusive Vorlagen:</b> <a href="/quickstart#customize">Beispielvorlagen</a> für Signaturen und Abwesenheitsnachrichten demonstrieren viele Funktionen und stehen als .docx- und .htm-Dateien zur Verfügung.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+            <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+                <span>🚀</span>
+                <div>
+                    <p><b>Bereitstellung & Postfach-Unterstützung</b></p>
+                    <p class="mb-2"><b>Zielsteuerung:</b> Für alle Postfächer (auch <a href="/benefactorcircle#key-features">Shared Mailboxes</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>), spezifische <a href="/details#template-tags-and-ini-files">Gruppen</a>, spezifische <a href="/details#template-tags-and-ini-files">E-Mail-Adressen</a> (auch Alias und sekundäre Adressen) oder auf Basis von <a href="/details#template-tags-and-ini-files">Benutzer- und Postfach-Attributen</a> zugewiesen werden.</p>
+                    <p class="mb-2"><b>Outlook-Unterstützung:</b> Für jedes Postfach in allen Profilen (<a href="/benefactorcircle#key-features">Outlook, New Outlook</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>, <a href="/benefactorcircle#key-features">Outlook on the web</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>) funktionieren, auch für <a href="/parameters#signaturesforautomappedandadditionalmailboxes">automapped und zusätzliche Postfächer</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.</p>
+                    <p class="mb-2"><b>Vorlagen-Logik:</b> Aus einer Vorlage heraus mit unterschiedlichen Namen erstellt werden; <a href="/details#how-to-work-with-ini-files">eine Vorlage kann für viele Postfächer genutzt werden</a>.</p>
+                    <p class="mb-2"><b>Zeitplanung:</b> Mit <a href="/details#allowed-tags">Zeitbeschränkungen</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> versehen werden, innerhalb derer sie gültig sind.</p>
+                    <p class="mb-2"><b>Standardwerte:</b> Als <a href="/details#allowed-tags">Standard-Signatur</a> für neue E-Mails oder für Antworten festgelegt werden, oder als <a href="/details#allowed-tags">Standard-Abwesenheitsnotiz</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> für interne oder externe Empfänger.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-full">
+        <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #48c774;">
+            <div style="display: flex; align-items: flex-start; gap: 0.75em;">
+                <span>🛡️</span>
+                <div>
+                    <p><b>Plattform, Architektur & Sicherheit</b></p>
+                    <p class="mb-2"><b>Cloud-Spiegelung:</b> Im <a href="/parameters#setcurrentuseroutlookwebsignature">Outlook on the web</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> des angemeldeten Benutzers gesetzt werden, und auch als <a href="/parameters#mirrorcloudsignatures">Roaming Signatures</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> mit der Cloud synchronisiert werden (Linux/macOS/Windows).</p>
+                    <p class="mb-2"><b>Flexible Ausführung:</b> Von Nutzern auf Clients oder auf einem <a href="/details#architecture-considerations">zentralen System mit einem Dienstkonto ausgeführt werden</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>—keine Installation auf Endgeräten oder Endbenutzerinteraktion erforderlich.</p>
+                    <p class="mb-2"><b>Umgebungs-Unterstützung:</b> Funktioniert nativ <a href="/details#hybrid-and-cloud-only-support">on-premises, in hybriden und reinen Cloud-Umgebungen</a> (Public, GCC High, China, Bleu usw.).</p>
+                    <p class="mb-2"><b>Add-in & Mobile:</b> Integration für Termine mit dem <a href="/outlookaddin">Outlook Add-in</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> und Zugriff auf Signaturen auf Mobilgeräten über <a href="/parameters#additionalsignaturepath">zusätzliche Pfade</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.</p>
+                    <p class="mb-2"><b>Zero-Touch Deployment:</b> <a href="/details#creating-signatures-and-out-of-office-replies">SimulateAndDeploy</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> ermöglicht die Bereitstellung ohne Ausführung auf Endgeräten oder Endbenutzerinteraktion.</p>
+                    <p class="mb-2"><b>Digitale Souveränität:</b> Keine Telemetrie, kein „Calling Home“ und keine Datenweiterleitung über Drittsysteme; DNS-Einträge und Nachrichtenfluss bleiben unverändert.</p>
+                    <p class="mb-2"><b>Enterprise-Skalierung:</b> <a href="/faq#can-multiple-script-instances-run-in-parallel">Multiinstanzfähig</a> und optimiert für komplexe Umgebungen mit fünfstelligen Postfachzahlen.</p>
+                    <p class="mb-2"><b>Sicherheit & Tests:</b> Beinhaltet einen <a href="/details#simulation-mode">Simulationsmodus</a> für sichere Tests und <a href="/details#allowed-tags">Schreibschutz</a> für Signaturen im klassischen Outlook für Windows.</p>
+                    <p class="mb-2"><b>Open Source (FOSS):</b> Set-OutlookSignature ist unter der European Union Public License (EUPL) lizenziert. Der Core-Engine ist Peer-Review-fähig, was Transparenz und digitale Souveränität gewährleistet.</p>
+                    <p class="mb-0"><b>Entwurfs-Sammlung:</b> Unterstützt Clients ohne Signatur-API durch Erstellung einer <a href="/parameters#signaturecollectionindrafts">zentralen Entwurfs-E-Mail mit allen Signaturen</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 ## Funktions-Vergleich {#feature-comparison}
