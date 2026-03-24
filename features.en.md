@@ -48,7 +48,7 @@ With Set-OutlookSignatures and the optional Benefactor Circle add-on, signatures
         </div>
     </div>
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>🚀</span>
                 <div>
@@ -63,7 +63,7 @@ With Set-OutlookSignatures and the optional Benefactor Circle add-on, signatures
         </div>
     </div>
     <div class="column is-full">
-        <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #3273dc;">
+        <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #48c774;">
             <div style="display: flex; align-items: flex-start; gap: 0.75em;">
                 <span>🛡️</span>
                 <div>
