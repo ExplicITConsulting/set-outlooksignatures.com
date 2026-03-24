@@ -21,7 +21,6 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 ## Technical details<!-- omit in toc -->
-- [Get to know Set-OutlookSignatures](#get-to-know-set-outlooksignatures)
 - [Architecture considerations](#architecture-considerations)
 - [Requirements and usage](#requirements-and-usage)
 - [Group membership](#group-membership)
@@ -33,28 +32,6 @@ sitemap_changefreq: weekly
 - [Outlook on the web](#outlook-on-the-web)
 - [Hybrid and cloud-only support](#hybrid-and-cloud-only-support)
 - [Simulation mode](#simulation-mode)
-
-
-## Get to know Set-OutlookSignatures
-To get to know Set-OutlookSignatures, we recommend the following sequence:
-1. The [feature comparison](/features#feature-comparison) gives you a quick overview of topics to consider when choosing a solution for central management and deployment of email signatures and out-of-office replies. 
-2. Learn in detail about the [feature list](/features#features) of Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>.
-3. Get practical: Deploy signatures within minutes with the [Quickstart guide](/quickstart)!
-
-You want to know more?
-- [Requirements and usage](#requirements-and-usage)
-- [Parameters](/parameters)
-- [Frequently Asked Questions (FAQ)](/faq)
-- [The Outlook add-in](/outlookaddin)
-- The [Changelog](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md)
-- An [organizational implementation approach](/implementationapproach)
-- Features available exclusively to the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>
-
-The `sample code` folder contains additional scripts and advanced usage examples, such as deploying signatures without user or client interaction.
-
-When facing a problem: Before creating a new issue, check the documentation, previous [issues](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=) and [discussions](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=). You can also switch to the fast lane: <a href="https://explicitconsulting.at">ExplicIT Consulting</a> offers first-class [professional support](/support).
-
-You are welcome to share your experiences with Set-OutlookSignatures, exchange ideas with other users or suggest new features in our [discussions board](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=).
 
 
 ## Architecture considerations
