@@ -11,6 +11,9 @@ hero_link_style:
 hero_link2: /support
 hero_link2_text: "<span><b>Support</b></span>"
 hero_link2_style: 
+hero_link3: "/parameters"
+hero_link3_text: "<span><b>Parameters: </b>Full configuration reference</span>"
+hero_link3_style: 
 permalink: "/details"
 redirect_from:
   - "/details/"
@@ -27,7 +30,7 @@ sitemap_changefreq: weekly
 - [Template tags and INI files](#template-tags-and-ini-files)
 - [Signature and OOF application order](#signature-and-oof-application-order)
 - [Replacement variables](#replacement-variables)
-- [Outlook on the web](#outlook-on-the-web-1)
+- [Outlook on the web](#outlook-on-the-web)
 - [Hybrid and cloud-only support](#hybrid-and-cloud-only-support)
 - [Simulation mode](#simulation-mode)
 
@@ -35,7 +38,7 @@ sitemap_changefreq: weekly
 ## Get to know Set-OutlookSignatures
 To get to know Set-OutlookSignatures, we recommend the following sequence:
 1. The [feature comparison](/features#feature-comparison) gives you a quick overview of topics to consider when choosing a solution for central management and deployment of email signatures and out-of-office replies. 
-2. Learn in detail about the [feature list](/features#features) of Set-OutlookSignatures and the Benefactor Circle add-on.
+2. Learn in detail about the [feature list](/features#features) of Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>.
 3. Get practical: Deploy signatures within minutes with the [Quickstart guide](/quickstart)!
 
 You want to know more?
@@ -45,7 +48,7 @@ You want to know more?
 - [The Outlook add-in](/outlookaddin)
 - The [Changelog](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md)
 - An [organizational implementation approach](/implementationapproach)
-- Features available exclusively to [Benefactor Circle](/benefactorcircle) members
+- Features available exclusively to the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>
 
 The `sample code` folder contains additional scripts and advanced usage examples, such as deploying signatures without user or client interaction.
 
@@ -70,7 +73,7 @@ Sometimes, this default scenario is not possible or not wanted. Examples are:
 * Users never log on to a device, only to services. This is often the case when Microsoft 365 F-licenses are used and users only log on to Outlook on the web, for example.
 * You want to use Set-OutlookSignatures, but you prefer running it on a central system instead of running it on your clients.
 
-Set-OutlookSignatures and the [Benefactor Circle add-on](/benefactorcircle) support all these scenarios by offering differing methods for the creation of signatures as well as for making these signatures available to end users.
+Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> support all these scenarios by offering differing methods for the creation of signatures as well as for making these signatures available to end users.
 
 Contrary to other solutions, you do not have to decide for one fixed combination of these methods - you can mix and match different combinations to perfectly meet your requirements.
 
@@ -82,7 +85,7 @@ Contrary to other solutions, you do not have to decide for one fixed combination
 The following chapters dive deeper into the differences between creating signatures and out-of-office replies, and making signatures available to end users. They also describe which options are available, what their pros and cons are, and when they are used best.
 
 ### Creating signatures and out-of-office replies<!-- omit in toc -->
-Set-OutlookSignatures comes with client mode, the Benefactor Circle add-on adds [SimulateAndDeploy](/parameters#simulateanddeploy) mode.
+Set-OutlookSignatures comes with client mode, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> adds [SimulateAndDeploy](/parameters#simulateanddeploy) mode.
 
 While building the base for SimulateAndDeploy, pure [simulation mode](/details#simulation-mode) is not discussed here as it is not intended to be used for mass deployment but as a quality control feature.
 
@@ -137,69 +140,93 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#s
   </div>
 </div>
 
-With the Benefactor Circle add-on, both modes can:
+With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, both modes can:
 - Set [out-of-office replies](/parameters#setcurrentuseroofmessage) for internal and external recipients.
 - Deploy signatures for mailboxes (and other Exchange recipient objects) the user has access to but not added to Outlook. See the [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile) parameter for details, and combine it with [Export-RecipientPermissions](https://explicitconsulting.at/open-source/export-recipientpermissions) for maximum automation.
 
 ### Making signatures available<!-- omit in toc -->
 Signatures created in client mode or SimulateAndDeploy mode need to be made available to the end user.
 
-Signatures created in client mode are automatically made available to the local Outlook installation. With the Benefactor Circle add-on, client mode also makes signatures available in the 'Documents' folder of the logged-on user.
+Signatures created in client mode are automatically made available to the local Outlook installation. With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, client mode also makes signatures available in the 'Documents' folder of the logged-on user.
 
 SimulateAndDeploy mode has no access to end user devices and therefore treats Outlook on the web as the local Outlook installation. It cannot not make signatures available in a user's 'Documents' folder.
 
-With the Benefactor Circle add-on active, both modes per default also make signatures available
+With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> active, both modes per default also make signatures available
 - in Outlook on the web,
 - as roaming signatures (cloud only),
 - for use with the Outlook add-in,
 - and in a draft email.
 
-#### Outlook on the web<!-- omit in toc -->
-The [SetCurrentUserOutlookWebSignature](/parameters#setcurrentuseroutlookwebsignature) parameter is enabled by default with the Benefactor Cicle add-on.
-
-Mailboxes hosted in Exchange on-prem only support one signature in Outlook on the web, so the default signature defined for new emails is preferred over the default signature defined for replies and forwards.
-
-Mailboxes hosted in Exchange Online combine the on-prem behavior described above with the roaming signature feature described in the next chapter. The on-prem behavior is only used when Outlook on the web is accessed from smartphone browsers or when administrators have disabled roaming signatures at the tenant level.
-
-#### Roaming signatures<!-- omit in toc -->
-Roaming signatures is an Exchange Online only feature. The idea is to no longer store signatures locally but in the mailbox itself.
-
-This feature is currently supported only by Outlook on the web, New Outlook on Windows and Classic Outlook on Windows.
-
-Even when Microsoft is slow in taking this feature forward and competing signature solutions boycott it because of its impact on their business model, the creators of Set-OutlookSignatures and the Benefactor Circle add-on absolutely believe that roaming signatures are the way.
-
-With the Benefactor Circle add-on, all signatures are [automatically made available as roaming signatures](/parameters#mirrorcloudsignatures). Roaming signatures are synchronized using our own engine with all Outlook editions on Linux, Windows and macOS. This not only overcomes platform limits, but also avoids [problems with Outlook's own sync engine](/faq#roaming-signatures-in-classic-outlook-on-windows-look-different).
-
-Until roaming signatures are supported by all Outlook editions on all platforms, running Set-OutlookSignatures with the Benefactor Circle add-on in client mode and using the Outlook add-in are a great alternative to make signatures available everywhere.
-
-See our blog post '[Current state and furte of roaming signatures](/blog/2025/10/20/current-state-and-future-of-roaming-signatures)' for more context.
-
-#### Outlook add-in<!-- omit in toc -->
-The [Outlook add-in](/outlookaddin), part of the Benefactor Circle add-on, is available for all Outlook editions.
-
-The add-in makes signatures - created by Set-OutlookSignatures in client or SimulateAndDeploy mode - available in Outlook on Android and Outlook on iOS, while supporting all Outlook editions across platforms.
-
-It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD (bring your own device) scenarios. For on-premises mailboxes, it delivers a roaming signature experience comparable to the cloud.
-
-The Outlook add-in includes a taskpane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.
-
-It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful for Outlook on Android and Outlook on iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.
-
-You can have as many add-in instances with differing configurations as you need, just follow the [technical specifications](/outlookaddin#web-server-and-domain) of the Outlook add-in.
-
-#### Draft email<!-- omit in toc -->
-The [SignatureCollectionInDrafts](/parameters#signaturecollectionindrafts) parameter, enabled per default with the Benefactor Circle add-on, creates and updates an email message with the subject 'My signatures, powered by Set-OutlookSignatures Benefactor Circle' in the drafts folder of the current user.
-
-The draft email contains all available signatures in HTML and plain text format.
-
-This allows for easy copy-paste access to signatures in mail clients that do not have a signatures API and do not support Outlook add-ins: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others.
-
-#### Documents folder<!-- omit in toc -->
-The [AdditionalSignaturePath](/parameters#additionalsignaturepath) parameter, enabled per default with the Benefactor Circle add-on, copies signatures to an additional path.
-
-When this path is synchronized and made available on all user devices, for example via Microsoft OneDrive or Nextcloud, users have file-level access to signatures everywhere.
-
-The signatures can then be viewed and copied to mail clients that do not have a signatures API and do not support Outlook add-ins: Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others.
+<div class="columns is-multiline">
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+            <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+                <span>🌐</span>
+                <div>
+                    <p><b>Outlook on the web</b></p>
+                    <p class="mb-2">Enabled by default with the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</p>
+                    <div>
+                      <ul>
+                        <li><b>On-prem:</b> Supports one signature (New Email preferred).</li>
+                        <li><b>Cloud:</b> Combines with Roaming Signatures for mobile browser access.</li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+            <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+                <span>☁️</span>
+                <div>
+                    <p><b>Roaming Signatures</b></p>
+                    <p class="mb-2">Exchange Online feature; stores signatures in the mailbox.</p>
+                    <p class="mb-2">Synchronized via our engine across Linux, Windows, and macOS to avoid native sync issues. <a href="/blog/2025/10/20/current-state-and-future-of-roaming-signatures">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+            <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+                <span>🧩</span>
+                <div>
+                    <p><b>Outlook Add-in</b></p>
+                    <p class="mb-2">Perfect for Android, iOS, and unmanaged BYOD devices.</p>
+                    <ul>
+                      <li>Automatic signature selection based on sender.</li>
+                      <li>Interactive taskpane for manual insertion.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+            <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+                <span>📝</span>
+                <div>
+                    <p><b>Draft Email</b></p>
+                    <p class="mb-2">Universal compatibility via copy-paste.</p>
+                    <p class="mb-2">Creates a hidden draft containing all signatures in HTML and plain text for clients like Apple Mail, Gmail, and Thunderbird.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+            <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+                <span>📂</span>
+                <div>
+                    <p><b>Documents Folder</b></p>
+                    <p class="mb-2">File-level access across all synchronized devices.</p>
+                    <p class="mb-2">Exports signatures to a local path (OneDrive/Nextcloud) for easy access in non-Outlook clients.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 ## Requirements and usage  
@@ -237,9 +264,9 @@ The paths to the template and configuration files (SignatureTemplatePath, OOFTem
 In cloud environments, you need to register Set-OutlookSignatures as Entra ID app and provide admin consent for the required permissions. See the Quickstart guide or '.\config\default graph config.ps1' for details.
 
 ### Linux and macOS<!-- omit in toc -->
-Not all features of Set-OutlookSignatures and the Benefactor Circle add-on are yet available or possible on Linux and macOS. Every parameter contains appropriate information, which are summarized below.
+Not all features of Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> are yet available or possible on Linux and macOS. Every parameter contains appropriate information, which are summarized below.
 
-These restrictions only apply to Set-OutlookSignatures and the Benefactor Circle add-on, the [Outlook add-in ](/outlookaddin) is not affected.
+These restrictions only apply to Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, the [Outlook add-in ](/outlookaddin) is not affected.
 
 #### Common restrictions and notes for Linux and macOS<!-- omit in toc -->
 - Only mailboxes hosted in Exchange Online are supported. On-prem mailboxes usually work when addressed via Exchange Online, but this is not guaranteed.
@@ -250,13 +277,13 @@ These restrictions only apply to Set-OutlookSignatures and the Benefactor Circle
   -	Place Set-OutlookSignatures, the templates and its configuration as ZIP file in a public place (such as your website), and use Intune with a remediation script to download and extract the ZIP file. This sort of hosting might not meet your security requirements.
   - Change your execution script or task, so that all required paths are mounted before Set-OutlookSignatures is run.
 
-As mentioned before: These restrictions only apply to Set-OutlookSignatures and the Benefactor Circle add-on, the [Outlook add-in ](/outlookaddin) is not affected.
+As mentioned before: These restrictions only apply to Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, the [Outlook add-in ](/outlookaddin) is not affected.
 
 
 #### Linux specific restrictions and notes<!-- omit in toc -->
 - Users need to access their mailboxes via Outlook on the web, as no other form of Outlook is available on Linux (use emulation tools such as Wine, CrossOver, PlayOnLinux, Proton, etc. at your own risk).
-  - Support for Outlook on the web requires the Benefactor Circle add-on. See <a href="/benefactorcircle">Benefactor Circle</a> for details.
-- When using email clients such as Mozilla Thunderbird, GNOME Evolution, KDE KMail or others, you can still use signatures created by Set-OutlookSignatures with the Benefactor Circle add-on, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
+  - Support for Outlook on the web requires the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>. See <a href="/benefactorcircle">Benefactor Circle</a> for details.
+- When using email clients such as Mozilla Thunderbird, GNOME Evolution, KDE KMail or others, you can still use signatures created by Set-OutlookSignatures with the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
 
 
 #### macOS specific restrictions and notes<!-- omit in toc -->
@@ -266,9 +293,9 @@ As mentioned before: These restrictions only apply to Set-OutlookSignatures and 
   - Until New Outlook supports roaming signatures (not yet announced by Microsoft), it is treated like Outlook on Windows configured not to use roaming signatures. Consider using the '-MailboxSpecificSignatureNames' parameter.
   - If New Outlook is enabled, an alternate method of account detection is used, as scripting is not yet supported by Microsoft, but already announced on the M365 roadmap. This alternate method may detect accounts that are no longer used in Outlook (see software output for details).  
   - If the alternate method does not find accounts, Outlook on the web is used and existing signatures are synchronized with New Outlook on Mac.
-    - Support for Outlook on the web requires the Benefactor Circle add-on. See <a href="/benefactorcircle">Benefactor Circle</a> for details.
+    - Support for Outlook on the web requires the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>. See <a href="/benefactorcircle">Benefactor Circle</a> for details.
 - Classic Outlook on Mac and New Outlook on Mac do not allow external software to set default signatures.
-- When using email clients such as Apple Mail or others, you can still use signatures created by Set-OutlookSignatures with the Benefactor Circle add-on, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
+- When using email clients such as Apple Mail or others, you can still use signatures created by Set-OutlookSignatures with the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
 
 
 ## Group membership  
@@ -412,7 +439,7 @@ Tags are case insensitive.
   - Examples: `202112150000-202112262359` for the 2021 Christmas season, `-:202202010000-202202282359` for a deny in February 2022
   - If the software does not run after a template has expired, the template is still available on the client and can be used.
   - Time ranges are interpreted as local time per default, which means times depend on the user or client configuration. If you do not want to use local times, but global times just add 'Z' as time zone. For example: `202112150000Z-202112262359Z`
-  - This feature requires a Benefactor Circle license
+  - This feature requires a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> license
 - Assign template to group: `<DNS or NetBIOS name of AD domain> <SamAccountName of group>`, `<DNS or NetBIOS name of AD domain> <Display name of group>`, `-:<DNS or NetBIOS name of AD domain> <SamAccountName of group>`, `-:<DNS or NetBIOS name of AD domain> <Display name of group>`
   - Make this template specific for an Outlook mailbox being a direct or indirect member of this group or distribution list
   - The `-:` prefix makes this template invalid for the specified group.
