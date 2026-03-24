@@ -62,40 +62,22 @@ With Set-OutlookSignatures and the optional Benefactor Circle add-on, signatures
             </div>
         </div>
     </div>
-</div>
-<div class="columns is-multiline">
-    <div class="column is-half-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
-            <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-                <span>💻</span>
-                <div>
-                    <p><b>Platform & Execution</b></p>
-                    <p class="mb-2"><b>Cloud Mirroring:</b> Set in <a href="/parameters#setcurrentuseroutlookwebsignature">Outlook on the web</a><a href="#remark-1">¹</a> for the currently logged-in user, including mirroring signatures to the cloud as <a href="/parameters#mirrorcloudsignatures">roaming signatures</a><a href="#remark-1">¹</a> (Linux/macOS/Windows, Classic and New Outlook<a href="#remark-1">¹</a>).</p>
-                    <p class="mb-2"><b>User Control:</b> Signatures can be centrally managed only<a href="#remark-1">¹</a>, or <a href="/parameters#deleteusercreatedsignatures">exist along user-created signatures</a>.</p>
-                    <p class="mb-2"><b>Add-in Integration:</b> Automatically added to new emails, reply emails and appointments with the <a href="/outlookaddin">Outlook add-in</a><a href="#remark-1">¹</a>.</p>
-                    <p class="mb-2"><b>Mobile & Third-Party:</b> Copied to an <a href="/parameters#additionalsignaturepath">additional path</a><a href="#remark-1">¹</a> for easy access on mobile devices or use with Apple Mail, Google Gmail, Samsung Mail, Mozilla Thunderbird, GNOME Evolution, KDE KMail, and others.</p>
-                    <p class="mb-2"><b>Drafts API Fallback:</b> Create an <a href="/parameters#signaturecollectionindrafts">email draft containing all available signatures</a><a href="#remark-1">¹</a> in HTML and plain text for mail clients without a signatures API.</p>
-                    <p class="mb-2"><b>Security:</b> <a href="/details#allowed-tags">Write protected</a> (Outlook on Windows signatures only).</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="column is-half-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
-            <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+    <div class="column is-full">
+        <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #3273dc;">
+            <div style="display: flex; align-items: flex-start; gap: 0.75em;">
                 <span>🛡️</span>
                 <div>
-                    <p><b>Architecture & Infrastructure</b></p>
-                    <p class="mb-2"><b>Execution Flexibility:</b> <a href="/details#architecture-considerations">Run by users on Windows, Linux and macOS clients (including shared devices/terminal servers) — or on a central system with a service account</a><a href="#remark-1">¹</a>.</p>
-                    <p class="mb-2"><b>Deployment Versatility:</b> Run via logon script, scheduled task, or user demand—<a href="/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task">whatever your software deployment mechanism allows</a>.</p>
-                    <p class="mb-2"><b>Testing:</b> <a href="/details#simulation-mode">Simulation mode</a> allows content creators and admins to inspect resulting files before going live.</p>
-                    <p class="mb-2"><b>Zero-Touch:</b> <a href="/details#creating-signatures-and-out-of-office-replies">SimulateAndDeploy</a><a href="#remark-1">¹</a> allows deployment <a href="/details#creating-signatures-and-out-of-office-replies">without any client deployment or end user interaction</a> (roaming signatures for Exchange Online).</p>
-                    <p class="mb-2"><b>Environment Support:</b> Works <a href="/details#hybrid-and-cloud-only-support">on-prem, hybrid, and cloud-only</a>; designed for <a href="/implementationapproach">big and complex environments</a> (AD trusts, multi-level subdomains, cross-tenant/multitenant).</p>
-                    <p class="mb-2"><b>Global Clouds:</b> All <a href="/parameters#cloudenvironment">public, national, and sovereign clouds are supported</a>: Public, US Gov (GCC, GCC High, DoD), China, Bleu, Delos, GovSG, and more.</p>
-                    <p class="mb-2"><b>No Installation:</b> Requires no installation on servers or clients; only a standard SMB file share and optionally Office on clients.</p>
-                    <p class="mb-2"><b>Data Sovereignty:</b> No telemetry, no "calling home", and data is not routed through 3rd party data centers; DNS records (SPF) and mail flow remain unchanged.</p>
-                    <p class="mb-2"><b>Enterprise Scaling:</b> <a href="/faq#can-multiple-script-instances-run-in-parallel">Multi-instance capable</a> and includes a <a href="/implementationapproach">documented implementation approach</a> for 5-digit mailbox counts.</p>
-                    <p class="mb-2"><b>Open Source:</b> <a href="/faq#why-the-tagline">Free and Open-Source (FOSS)</a> under the European Union Public License (EUPL). After a certain period, a tagline is appended which can be easily removed<a href="#remark-1">¹</a>.</p>
+                    <p><b>Platform, Architecture & Security</b></p>
+                    <p class="mb-2"><b>Multi-Platform Sync:</b> Set signatures in <a href="/parameters#setcurrentuseroutlookwebsignature">Outlook Web</a><a href="#remark-1">¹</a> and mirror them as <a href="/parameters#mirrorcloudsignatures">roaming signatures</a><a href="#remark-1">¹</a> across Windows, macOS, and Linux.</p>
+                    <p class="mb-2"><b>Flexible Execution:</b> Run via logon script, scheduled task, or as a <a href="/details#architecture-considerations">central service</a><a href="#remark-1">¹</a>—no client installation or end-user interaction required.</p>
+                    <p class="mb-2"><b>Hybrid Support:</b> Works natively <a href="/details#hybrid-and-cloud-only-support">on-prem, hybrid, and in all M365 clouds</a> (Public, GCC High, China, Bleu, etc.).</p>
+                    <p class="mb-2"><b>Add-in & Mobile:</b> Integration for appointments via <a href="/outlookaddin">Outlook add-in</a><a href="#remark-1">¹</a> and access for mobile/third-party clients via <a href="/parameters#additionalsignaturepath">additional paths</a><a href="#remark-1">¹</a>.</p>
+                    <p class="mb-2"><b>Zero-Touch Deployment:</b> <a href="/details#creating-signatures-and-out-of-office-replies">SimulateAndDeploy</a><a href="#remark-1">¹</a> enables full automation without touching the end-user's device.</p>
+                    <p class="mb-2"><b>Data Sovereignty:</b> No telemetry, no "calling home," and no 3rd party data routing; your DNS records and mail flow remain untouched.</p>
+                    <p class="mb-2"><b>Enterprise Scaling:</b> <a href="/faq#can-multiple-script-instances-run-in-parallel">Multi-instance capable</a> and optimized for complex environments with 5-digit mailbox counts.</p>
+                    <p class="mb-2"><b>Security & Testing:</b> Includes <a href="/details#simulation-mode">simulation mode</a> for safe testing and <a href="/details#allowed-tags">write protection</a> for Outlook on Windows signatures.</p>
+                    <p class="mb-2"><b>Open Source (FOSS):</b> Licensed under the EUPL. The core engine is peer-reviewable, ensuring transparency and digital sovereignty.</p>
+                    <p class="mb-0"><b>Drafts API Fallback:</b> Supports clients without a signature API by creating <a href="/parameters#signaturecollectionindrafts">centralized HTML/Plain Text drafts</a><a href="#remark-1">¹</a>.</p>
                 </div>
             </div>
         </div>
