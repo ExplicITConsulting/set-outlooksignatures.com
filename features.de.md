@@ -392,7 +392,7 @@ Mit Set-OutlookSignatures und dem optionalen <a href="/benefactorcircle"><span s
 
 
 <p id="remark-1" class="mt-6 is-italic has-text-centered">
-    ¹ Einige Funktionen sind exklusiv dem <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> vorbehalten.
+    <span style="color: var(--benefactor-circle-color);"><sup>(1)</sup></span> Einige Funktionen sind exklusiv dem <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> vorbehalten.
 </p>
 
 
