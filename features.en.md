@@ -21,7 +21,7 @@ sitemap_priority: 0.9
 sitemap_changefreq: weekly
 ---
 ## Overview {#overview}
-Set-OutlookSignatures is the most advanced, secure and versatile free and open-source tool for managing email signatures. The optional [Benefactor Circle add-on](/benefactorcircle) unlocks even more powerful features tailored for business environments.
+Set-OutlookSignatures is the most advanced, secure and versatile free and open-source tool for managing email signatures. The optional <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> unlocks even more powerful features tailored for business environments.
 
 It delivers everything you'd expect from a modern solution: Centralized management, seamless deployment, and full control across all Outlook editions on all platforms: Classic and New, Android, iOS, Linux, macOS, Web, Windows.
 

@@ -21,7 +21,7 @@ sitemap_priority: 0.9
 sitemap_changefreq: weekly
 ---
 ## Übersicht {#overview}
-Set-OutlookSignatures ist das fortschrittlichste, sicherste und vielseitigste kostenlose Open-Source-Tool zur Verwaltung von E-Mail-Signaturen. Mit dem optionalen [Benefactor Circle Add-on](/benefactorcircle) stehen Ihnen noch leistungsstärkere Funktionen zur Verfügung, die speziell auf Geschäftsumgebungen zugeschnitten sind.
+Set-OutlookSignatures ist das fortschrittlichste, sicherste und vielseitigste kostenlose Open-Source-Tool zur Verwaltung von E-Mail-Signaturen. Mit dem optionalen <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> stehen Ihnen noch leistungsstärkere Funktionen zur Verfügung, die speziell auf Geschäftsumgebungen zugeschnitten sind.
 
 Es bietet alles, was Sie von einer modernen Lösung erwarten: Zentralisierte Verwaltung, nahtlose Bereitstellung und vollständige Kontrolle über alle Outlook-Editionen auf allen Plattformen: Classic und New, Android, iOS, Linux, macOS, Web, Windows.
 
@@ -88,7 +88,7 @@ Mit Set-OutlookSignatures und dem optionalen <a href="/benefactorcircle"><span s
 ## Funktions-Vergleich {#feature-comparison}
 ### Preis-Benchmark {#pricing}
 <p><strong>Set-OutlookSignatures ist und bleibt kostenlos.</strong> Was als Technologiedemonstrator begann, ist heute das sicherste und vielseitigste Open-Source-Tool für E-Mail-Signaturen. Erfahren Sie mehr über die <a href="/faq#why-the-tagline">Geschichte hinter dem Code</a>.</p>
-<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> schaltet erweiterte Funktionen frei — für <strong>nur 0.25  EUR pro Postfach/Monat</strong> (EUR 3.00 pro Jahr). Jährliche Abrechnung, keine automatische Verlängerung.</p>
+<p>Das <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> schaltet erweiterte Funktionen frei — für <strong>nur 0.25  EUR pro Postfach/Monat</strong> (EUR 3.00 pro Jahr). Jährliche Abrechnung, keine automatische Verlängerung.</p>
 <p><strong>Das Add-on ist eine Investition, die sich vom ersten Tag an rechnet, ganz sicher auch für Sie!</strong> Fakten statt Vermutungen: Ermitteln Sie in nur fünf Minuten Ihre konkrete Ersparnis mit unserem <a href="/benefactorcircle#financial-benefits">Business Case</a>.<br>
 Dank seiner einzigartigen Funktionen und der exklusiven Herstellerverfügbarkeit ist eine rechtskonforme Direktbeschaffung in der Regel auch ohne öffentliche Ausschreibung möglich.</p>
 <div style="display: grid;">
