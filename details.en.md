@@ -199,27 +199,27 @@ When running in **client mode for on-premises mailboxes**, no additional permiss
 
 In **Exchange Online**, the security posture is even tighter. The delegated permissions requested by the application are actually a subset of the user's total permissions — the script can only access the specific Graph endpoints required for signature and OOF management, rather than having the full range of actions the logged-on user could manually perform.
 
-| Permission | Client mode | SimulateAndDeploy | Outlook add-in | Required for |
+| Permission | Client&nbsp;mode | SimulateAndDeploy | Outlook&nbsp;add-in | Required&nbsp;for |
 | :--- | :--- | :--- | :--- | :--- |
-| **All environments:** Full access to mailboxes | | ● Required | | Access to roaming signatures in Exchange Online. Direct-to-mailbox sync on-prem. |
-| **All environments:** Outlook add-in manifest, [ReadWriteMailbox](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/understanding-outlook-add-in-permissions) | | | ● Required | Set signature. |
-| **Cloud Only:** Graph API, delegated, [email](https://learn.microsoft.com/en-us/graph/permissions-reference#email) | ● Required | ● Required | | Log on the current user. |
-| **Cloud Only:** Graph API, delegated, [Files.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall) | ○ Optional | ○ Optional | | Access templates and config stored in SharePoint Online. Use [Files.SelectedOperations.Selected](https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected) as fine-grained alternative. |
-| **Cloud Only:** Graph API, delegated, [GroupMember.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall) | ● Required | ● Required | ● Required | Find groups, get SIDs, and check license groups. |
-| **Cloud Only:** Graph API, delegated, [Mail.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#mailread) | | | ● Required | Required because of Microsoft restrictions accessing roaming signatures. |
-| **Cloud Only:** Graph API, delegated, [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite) | ● Required | ● Required | | Connect to Outlook on the web. Set Outlook signatures. |
-| **Cloud Only:** Graph API, delegated, [MailboxConfigItem.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite) | ● Required | ● Required | | Connect to Outlook on the web. Set Outlook signatures. |
-| **Cloud Only:** Graph API, delegated, [MailboxSettings.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite) | ● Required | ● Required | | Detect OOF state and set OOF replies. |
-| **Cloud Only:** Graph API, delegated, [offline_access](https://learn.microsoft.com/en-us/graph/permissions-reference#offline_access) | ● Required | ● Required | | Get a refresh token from Graph. |
-| **Cloud Only:** Graph API, delegated, [openid](https://learn.microsoft.com/en-us/graph/permissions-reference#openid) | ● Required | ● Required | | Log on the current user. |
-| **Cloud Only:** Graph API, delegated, [profile](https://learn.microsoft.com/en-us/graph/permissions-reference#profile) | ● Required | ● Required | | Log on the current user and get basic properties. |
-| **Cloud Only:** Graph API, delegated, [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall) | ● Required | ● Required | ● Required | Get values for replacement variables. UPN lookup. |
-| **Cloud Only:** Graph API, application, [Files.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall) | | ○ Optional | | Access templates and config stored in SharePoint Online. Use [Files.SelectedOperations.Selected](https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected) as fine-grained alternative. |
-| **Cloud Only:** Graph API, application, [GroupMember.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall) | | ● Required | | Find groups, get SIDs, and check license groups. |
-| **Cloud Only:** Graph API, application, [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite) | | ● Required | | Connect to Outlook on the web. Set Outlook signatures. |
-| **Cloud Only:** Graph API, application, [MailboxConfigItem.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite) | | ● Required | | Connect to Outlook on the web. Set Outlook signatures. |
-| **Cloud Only:** Graph API, application, [MailboxSettings.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite) | | ● Required | | Detect OOF state and set OOF replies. |
-| **Cloud Only:** Graph API, application, [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall) | | ● Required | | Get values for replacement variables. UPN lookup. |
+| **All environments:** Full access to mailboxes | | ●&nbsp;Required | | Access to roaming signatures in Exchange Online. Direct-to-mailbox sync on-prem. |
+| **All environments:** Outlook add-in manifest, [ReadWriteMailbox](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/understanding-outlook-add-in-permissions) | | | ●&nbsp;Required | Set signature. |
+| **Cloud Only:** Graph API, delegated, [email](https://learn.microsoft.com/en-us/graph/permissions-reference#email) | ●&nbsp;Required | ●&nbsp;Required | | Log on the current user. |
+| **Cloud Only:** Graph API, delegated, [Files.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall) | ○&nbsp;Optional | ○&nbsp;Optional | | Access templates and config stored in SharePoint Online. Use [Files.SelectedOperations.Selected](https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected) as fine-grained alternative. |
+| **Cloud Only:** Graph API, delegated, [GroupMember.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall) | ●&nbsp;Required | ●&nbsp;Required | ●&nbsp;Required | Find groups, get SIDs, and check license groups. |
+| **Cloud Only:** Graph API, delegated, [Mail.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#mailread) | | | ●&nbsp;Required | Required because of Microsoft restrictions accessing roaming signatures. |
+| **Cloud Only:** Graph API, delegated, [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite) | ●&nbsp;Required | ●&nbsp;Required | | Connect to Outlook on the web. Set Outlook signatures. |
+| **Cloud Only:** Graph API, delegated, [MailboxConfigItem.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite) | ●&nbsp;Required | ●&nbsp;Required | | Connect to Outlook on the web. Set Outlook signatures. |
+| **Cloud Only:** Graph API, delegated, [MailboxSettings.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite) | ●&nbsp;Required | ●&nbsp;Required | | Detect OOF state and set OOF replies. |
+| **Cloud Only:** Graph API, delegated, [offline_access](https://learn.microsoft.com/en-us/graph/permissions-reference#offline_access) | ●&nbsp;Required | ●&nbsp;Required | | Get a refresh token from Graph. |
+| **Cloud Only:** Graph API, delegated, [openid](https://learn.microsoft.com/en-us/graph/permissions-reference#openid) | ●&nbsp;Required | ●&nbsp;Required | | Log on the current user. |
+| **Cloud Only:** Graph API, delegated, [profile](https://learn.microsoft.com/en-us/graph/permissions-reference#profile) | ●&nbsp;Required | ●&nbsp;Required | | Log on the current user and get basic properties. |
+| **Cloud Only:** Graph API, delegated, [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall) | ●&nbsp;Required | ●&nbsp;Required | ●&nbsp;Required | Get values for replacement variables. UPN lookup. |
+| **Cloud Only:** Graph API, application, [Files.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall) | | ○&nbsp;Optional | | Access templates and config stored in SharePoint Online. Use [Files.SelectedOperations.Selected](https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected) as fine-grained alternative. |
+| **Cloud Only:** Graph API, application, [GroupMember.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall) | | ●&nbsp;Required | | Find groups, get SIDs, and check license groups. |
+| **Cloud Only:** Graph API, application, [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite) | | ●&nbsp;Required | | Connect to Outlook on the web. Set Outlook signatures. |
+| **Cloud Only:** Graph API, application, [MailboxConfigItem.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite) | | ●&nbsp;Required | | Connect to Outlook on the web. Set Outlook signatures. |
+| **Cloud Only:** Graph API, application, [MailboxSettings.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite) | | ●&nbsp;Required | | Detect OOF state and set OOF replies. |
+| **Cloud Only:** Graph API, application, [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall) | | ●&nbsp;Required | | Get values for replacement variables. UPN lookup. |
 
 
 ## Requirements and usage  
