@@ -22,6 +22,7 @@ sitemap_changefreq: weekly
 ---
 ## Technical details<!-- omit in toc -->
 - [Architecture considerations](#architecture-considerations)
+- [Security considerations](#security-considerations)
 - [Requirements and usage](#requirements-and-usage)
 - [Group membership](#group-membership)
 - [Run Set-OutlookSignatures while Outlook is running](#run-set-outlooksignatures-while-outlook-is-running)
@@ -187,6 +188,38 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
         </div>
     </div>
 </div>
+
+
+## Security considerations
+The security model of Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> is built on the principles of **Digital Sovereignty**, **Least Privilege**, and **Need to Know**. 
+
+Unlike many competitors who bury their permission requirements deep within technical documentation (often to obscure the extent of data access required), we provide a transparent, granular matrix of exactly what is needed and why. 
+
+When running in **client mode for on-premises mailboxes**, no additional permissions or Graph API registrations are required. The script runs in the context of the logged-on user, who already possesses all the necessary permissions required to manage its signatures and out-of-office replies.
+
+In **Exchange Online**, the security posture is even tighter. The delegated permissions requested by the application are actually a subset of the user's total permissions — the script can only access the specific Graph endpoints required for signature and OOF management, rather than having the full range of actions the logged-on user could manually perform.
+
+| Permission | Client mode | SimulateAndDeploy | Outlook add-in | Required for |
+| :--- | :--- | :--- | :--- | :--- |
+| **All environments:** Full access to mailboxes | | ● Required | | Access to roaming signatures in Exchange Online. Direct-to-mailbox sync on-prem. |
+| **All environments:** Outlook add-in manifest, [ReadWriteMailbox](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/understanding-outlook-add-in-permissions) | | | ● Required | Set signature. |
+| **Cloud Only:** Graph API, delegated, [email](https://learn.microsoft.com/en-us/graph/permissions-reference#email) | ● Required | ● Required | | Log on the current user. |
+| **Cloud Only:** Graph API, delegated, [Files.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall) | ○ Optional | ○ Optional | | Access templates and config stored in SharePoint Online. Use [Files.SelectedOperations.Selected](https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected) as fine-grained alternative. |
+| **Cloud Only:** Graph API, delegated, [GroupMember.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall) | ● Required | ● Required | ● Required | Find groups, get SIDs, and check license groups. |
+| **Cloud Only:** Graph API, delegated, [Mail.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#mailread) | | | ● Required | Required because of Microsoft restrictions accessing roaming signatures. |
+| **Cloud Only:** Graph API, delegated, [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite) | ● Required | ● Required | | Connect to Outlook on the web. Set Outlook signatures. |
+| **Cloud Only:** Graph API, delegated, [MailboxConfigItem.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite) | ● Required | ● Required | | Connect to Outlook on the web. Set Outlook signatures. |
+| **Cloud Only:** Graph API, delegated, [MailboxSettings.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite) | ● Required | ● Required | | Detect OOF state and set OOF replies. |
+| **Cloud Only:** Graph API, delegated, [offline_access](https://learn.microsoft.com/en-us/graph/permissions-reference#offline_access) | ● Required | ● Required | | Get a refresh token from Graph. |
+| **Cloud Only:** Graph API, delegated, [openid](https://learn.microsoft.com/en-us/graph/permissions-reference#openid) | ● Required | ● Required | | Log on the current user. |
+| **Cloud Only:** Graph API, delegated, [profile](https://learn.microsoft.com/en-us/graph/permissions-reference#profile) | ● Required | ● Required | | Log on the current user and get basic properties. |
+| **Cloud Only:** Graph API, delegated, [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall) | ● Required | ● Required | ● Required | Get values for replacement variables. UPN lookup. |
+| **Cloud Only:** Graph API, application, [Files.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall) | | ○ Optional | | Access templates and config stored in SharePoint Online. Use [Files.SelectedOperations.Selected](https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected) as fine-grained alternative. |
+| **Cloud Only:** Graph API, application, [GroupMember.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall) | | ● Required | | Find groups, get SIDs, and check license groups. |
+| **Cloud Only:** Graph API, application, [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite) | | ● Required | | Connect to Outlook on the web. Set Outlook signatures. |
+| **Cloud Only:** Graph API, application, [MailboxConfigItem.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite) | | ● Required | | Connect to Outlook on the web. Set Outlook signatures. |
+| **Cloud Only:** Graph API, application, [MailboxSettings.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite) | | ● Required | | Detect OOF state and set OOF replies. |
+| **Cloud Only:** Graph API, application, [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall) | | ● Required | | Get values for replacement variables. UPN lookup. |
 
 
 ## Requirements and usage  
