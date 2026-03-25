@@ -199,7 +199,7 @@ When running in **client mode for on-premises mailboxes**, no additional permiss
 
 In **Exchange Online**, the security posture is even tighter. The delegated permissions requested by the application are actually a subset of the user's total permissions — the script can only access the specific Graph endpoints required for signature and OOF management, rather than having the full range of actions the logged-on user could manually perform.
 
-| Permission | Client&nbsp;mode | SimulateAndDeploy | Outlook&nbsp;add-in | Required&nbsp;for |
+| Permission | Client&nbsp;mode | SimulateAndDeploy | Outlook&nbsp;add&#8209;in | Required&nbsp;for |
 | :--- | :--- | :--- | :--- | :--- |
 | **All environments:** Full access to mailboxes | | ●&nbsp;Required | | Access to roaming signatures in Exchange Online. Direct-to-mailbox sync on-prem. |
 | **All environments:** Outlook add-in manifest, [ReadWriteMailbox](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/understanding-outlook-add-in-permissions) | | | ●&nbsp;Required | Set signature. |
