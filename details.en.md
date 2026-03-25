@@ -201,6 +201,7 @@ In **Exchange Online**, the security posture is even tighter. The delegated perm
 
 | Permission | Client&nbsp;mode | SimulateAndDeploy | Outlook&nbsp;add&#8209;in | Required&nbsp;for |
 | :--- | :--- | :--- | :--- | :--- |
+| Detailed setup instructions | `.\config\default graph config.ps1`<br>Scripted setup via `.\sample code\Create-EntraApp.ps1` | `.\sample code\SimulateAndDeploy.ps1`<br>Scripted setup via `.\sample code\Create-EntraApp.ps1` | [Add-in documentation](/outlookaddin#entra-id-app)<br>Scripted setup via `.\sample code\Create-EntraApp.ps1` | |
 | **All environments:** Full access to mailboxes | | ●&nbsp;Required | | Access to roaming signatures in Exchange Online. Direct-to-mailbox sync on-prem. |
 | **All environments:** Outlook add-in manifest, [ReadWriteMailbox](https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/understanding-outlook-add-in-permissions) | | | ●&nbsp;Required | Set signature. |
 | **Cloud Only:** Graph API, delegated, [email](https://learn.microsoft.com/en-us/graph/permissions-reference#email) | ●&nbsp;Required | ●&nbsp;Required | | Log on the current user. |
