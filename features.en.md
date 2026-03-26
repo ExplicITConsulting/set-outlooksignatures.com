@@ -93,7 +93,7 @@ With Set-OutlookSignatures and the optional <a href="/benefactorcircle"><span st
 Thanks to its unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
 <div style="display: grid;">
     <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable">
+        <table class="table is-bordered is-striped is-hoverable mx-auto">
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mailboxes (1 year)</th>
@@ -147,7 +147,7 @@ Thanks to its unique features and exclusive manufacturer availability, direct pr
 ### Detailed Comparison Benchmark {#detailed-benchmark}
 <div style="display: grid;">
     <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable">
+        <table class="table is-bordered is-striped is-hoverable mx-auto">
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;"></th>

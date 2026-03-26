@@ -93,7 +93,7 @@ Mit Set-OutlookSignatures und dem optionalen <a href="/benefactorcircle"><span s
 Dank seiner einzigartigen Funktionen und der exklusiven Herstellerverfügbarkeit ist eine rechtskonforme Direktbeschaffung in der Regel auch ohne öffentliche Ausschreibung möglich.</p>
 <div style="display: grid;">
     <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable">
+        <table class="table is-bordered is-striped is-hoverable mx-auto">
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Postfächer (1 Jahr)</th>
@@ -147,7 +147,7 @@ Dank seiner einzigartigen Funktionen und der exklusiven Herstellerverfügbarkeit
 ### Detaillierter Vergleichs-Benchmark {#detailed-benchmark}
 <div style="display: grid;">
     <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable">
+        <table class="table is-bordered is-striped is-hoverable mx-auto">
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;"></th>

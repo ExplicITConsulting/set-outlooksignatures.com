@@ -202,7 +202,7 @@ sitemap_changefreq: weekly
 Thanks to its unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
 <div style="display: grid;">
     <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable">
+        <table class="table is-bordered is-striped is-hoverable mx-auto">
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mailboxes (1 year)</th>
@@ -252,6 +252,7 @@ Thanks to its unique features and exclusive manufacturer availability, direct pr
         </table>
     </div>
 </div>
+<p>&nbsp;</p>
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Licensing details – the fine print in plain language</strong>

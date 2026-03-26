@@ -135,11 +135,64 @@ Based on the previously mentioned conditions and discussions with all involved p
 
 
 ## Comparison of Different Solutions {#feature-comparison}
-Based on the required feature set, various solutions were evaluated, tested, and compared:
-
+### Pricing Benchmark {#pricing}
 <div style="display: grid;">
     <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable">
+        <table class="table is-bordered is-striped is-hoverable mx-auto">
+            <thead>
+                <tr>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mailboxes (1 year)</th>
+                    <th class="has-text-weight-bold" style="min-width: 10em; white-space: nowrap;">Set-OutlookSignatures with<br><a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a></th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Competitor A</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Competitor B</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Competitor C</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="has-text-weight-bold">100 Mailboxes</td>
+                    <td>🟢 <b>EUR 300</b></td>
+                    <td>🔴 approx. EUR 1,600</td>
+                    <td>🟡 approx. EUR 1,300</td>
+                    <td>🔴 approx. EUR 1,600</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">250 Mailboxes</td>
+                    <td>🟢 <b>EUR 750</b></td>
+                    <td>🔴 approx. EUR 4,000</td>
+                    <td>🟡 approx. EUR 2,700</td>
+                    <td>🔴 approx. EUR 3,600</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">500 Mailboxes</td>
+                    <td>🟢 <b>EUR 1,500</b></td>
+                    <td>🔴 approx. EUR 8,000</td>
+                    <td>🟡 approx. EUR 4,400</td>
+                    <td>🟡 approx. EUR 6,200</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">1,000 Mailboxes</td>
+                    <td>🟢 <b>EUR 3,000</b></td>
+                    <td>🔴 approx. EUR 15,700</td>
+                    <td>🟡 approx. EUR 8,700</td>
+                    <td>🟡 approx. EUR 10,500</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">10,000 Mailboxes</td>
+                    <td>🟢 <b>EUR 30,000</b></td>
+                    <td>🔴 approx. EUR 110,000</td>
+                    <td>🟡 approx. EUR 65,000</td>
+                    <td>🟡 approx. EUR 41,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+### Detailed Comparison Benchmark {#detailed-benchmark}
+<div style="display: grid;">
+    <div class="table-container">
+        <table class="table is-bordered is-striped is-hoverable mx-auto">
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;"></th>
@@ -165,8 +218,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
                     <td>🔴</td>
                 </tr>
                 <tr>
-                    <td class="has-text-weight-bold">Is hosted and runs in environments that you already trust and for which you have
-                        established security and management structures</td>
+                    <td class="has-text-weight-bold">Is hosted and runs in environments that you already trust and for which you have established security and management structures</td>
                     <td>🟢</td>
                     <td>🔴</td>
                     <td>🔴</td>
@@ -175,15 +227,12 @@ Based on the required feature set, various solutions were evaluated, tested, and
                 <tr>
                     <td class="has-text-weight-bold">Entra ID and Active Directory permissions</td>
                     <td>🟢 User (delegated) permissions, least privilege principle, clearly documented and justified</td>
-                    <td>🔴 Application permissions, transfer all directory data, transfer all emails
-                    </td>
-                    <td>🔴 Application permissions, transfer all directory data, transfer all emails
-                    </td>
+                    <td>🔴 Application permissions, transfer all directory data, transfer all emails</td>
+                    <td>🔴 Application permissions, transfer all directory data, transfer all emails</td>
                     <td>🔴 Application permissions, transfer all directory data, transfer all emails</td>
                 </tr>
                 <tr>
-                    <td class="has-text-weight-bold">Entra ID and Active Directory data stays in your environment (no transfer to 3rd
-                        party datacenters)</td>
+                    <td class="has-text-weight-bold">Entra ID and Active Directory data stays in your environment (no transfer to 3rd party datacenters)</td>
                     <td>🟢</td>
                     <td>🔴</td>
                     <td>🔴</td>
@@ -260,8 +309,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
                     <td>🔴</td>
                 </tr>
                 <tr>
-                    <td class="has-text-weight-bold">Support for Microsoft roaming signatures (multiple signatures in Outlook on the web and
-                        New Outlook)</td>
+                    <td class="has-text-weight-bold">Support for Microsoft roaming signatures (multiple signatures in Outlook on the web and New Outlook)</td>
                     <td>🟢</td>
                     <td>🔴</td>
                     <td>🔴</td>
@@ -346,9 +394,9 @@ Based on the required feature set, various solutions were evaluated, tested, and
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Outlook add-in</td>
-                    <td>🟢 No on-prem mailboxes on mobile devices. Highly customizable with rules, own code and runtime-generated signatures.</td>
-                    <td>🟡 No on-prem mailboxes on mobile devices, not for appointments</td>
-                    <td>🟡 No on-prem mailboxes on mobile devices, not for appointments</td>
+                    <td>🟢 No on-prem mailboxes on Android and iOS. Highly customizable with rules, own code and runtime-generated signatures.</td>
+                    <td>🟡 No on-prem mailboxes on Android and iOS, not for appointments</td>
+                    <td>🟡 No on-prem mailboxes on Android and iOS, not for appointments</td>
                     <td>🔴 No on-prem mailboxes</td>
                 </tr>
                 <tr>
@@ -360,7 +408,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Software escrow</td>
-                    <td>🟢 To the free and open-source Set&#8209;OutlookSignatures project</td>
+                    <td>🟢 To the free and open-source Set-OutlookSignatures project</td>
                     <td>🔴</td>
                     <td>🔴</td>
                     <td>🔴</td>
@@ -380,41 +428,6 @@ Based on the required feature set, various solutions were evaluated, tested, and
                     <td>🟡 RegEx</td>
                 </tr>
                 <tr>
-                    <td class="has-text-weight-bold">License cost for 100&nbsp;mailboxes, 1&nbsp;year</td>
-                    <td>🟢 EUR 300</td>
-                    <td>🔴 approx. EUR 1,600</td>
-                    <td>🟡 approx. EUR 1,300</td>
-                    <td>🔴 approx. EUR 1,600</td>
-                </tr>
-                <tr>
-                    <td class="has-text-weight-bold">License cost for 250&nbsp;mailboxes, 1&nbsp;year</td>
-                    <td>🟢 EUR 750</td>
-                    <td>🔴 approx. EUR 4,000</td>
-                    <td>🟡 approx. EUR 2,700</td>
-                    <td>🔴 approx. EUR 3,600</td>
-                </tr>
-                <tr>
-                    <td class="has-text-weight-bold">License cost for 500&nbsp;mailboxes, 1&nbsp;year</td>
-                    <td>🟢 EUR 1,500</td>
-                    <td>🔴 approx. EUR 8,000</td>
-                    <td>🟡 approx. EUR 4,400</td>
-                    <td>🟡 approx. EUR 6,200</td>
-                </tr>
-                <tr>
-                    <td class="has-text-weight-bold">License cost for 1,000&nbsp;mailboxes, 1&nbsp;year</td>
-                    <td>🟢 EUR 3,000</td>
-                    <td>🔴 approx. EUR 15,700</td>
-                    <td>🟡 approx. EUR 8,700</td>
-                    <td>🟡 approx. EUR 10,500</td>
-                </tr>
-                <tr>
-                    <td class="has-text-weight-bold">License cost for 10,000&nbsp;mailboxes, 1&nbsp;year</td>
-                    <td>🟢 EUR 30,000</td>
-                    <td>🔴 approx. EUR 110,000</td>
-                    <td>🟡 approx. EUR 65,000</td>
-                    <td>🟡 approx. EUR 41,000</td>
-                </tr>
-                <tr>
                     <td class="has-text-weight-bold">Direct procurement without public tender</td>
                     <td>🟢 Unique features, exclusive manufacturer availablity</td>
                     <td>🔴 No unique features, no exclusive manufacturer availablity</td>
@@ -425,6 +438,7 @@ Based on the required feature set, various solutions were evaluated, tested, and
         </table>
     </div>
 </div>
+
 
 ## Recommendation: Set-OutlookSignatures {#recommendation}
 After gathering customer requirements and testing several server- and client-based products, we recommend using the free open-source software **Set-OutlookSignatures** with the paid **"Benefactor Circle"** extension.

@@ -202,7 +202,7 @@ sitemap_changefreq: weekly
 Dank seiner einzigartigen Funktionen und der exklusiven Herstellerverfügbarkeit ist eine rechtskonforme Direktbeschaffung in der Regel auch ohne öffentliche Ausschreibung möglich.</p>
 <div style="display: grid;">
     <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable">
+        <table class="table is-bordered is-striped is-hoverable mx-auto">
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Postfächer (1 Jahr)</th>
@@ -252,6 +252,7 @@ Dank seiner einzigartigen Funktionen und der exklusiven Herstellerverfügbarkeit
         </table>
     </div>
 </div>
+<p>&nbsp;</p>
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Lizenzdetails – das Kleingedruckte in verständlicher Sprache</strong>

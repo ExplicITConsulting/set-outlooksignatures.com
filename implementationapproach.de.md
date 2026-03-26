@@ -146,12 +146,64 @@ Zusätzliche Anforderungen:
 - Open-Source-Option oder transparente Lizenzbedingungen bevorzugt.
 
 ## Vergleich unterschiedlicher Lösungen {#feature-comparison}
-
-Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getestet und vergleichen:
-
+### Preis-Benchmark {#pricing}
 <div style="display: grid;">
     <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable">
+        <table class="table is-bordered is-striped is-hoverable mx-auto">
+            <thead>
+                <tr>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Postfächer (1 Jahr)</th>
+                    <th class="has-text-weight-bold" style="min-width: 10em; white-space: nowrap;">Set-OutlookSignatures mit<br><a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a></th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber A</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber B</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber C</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="has-text-weight-bold">100 Postfächer</td>
+                    <td>🟢 <b>300 EUR</b></td>
+                    <td>🔴 ca. 1.600 EUR</td>
+                    <td>🟡 ca. 1.300 EUR</td>
+                    <td>🔴 ca. 1.600 EUR</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">250 Postfächer</td>
+                    <td>🟢 <b>750 EUR</b></td>
+                    <td>🔴 ca. 4.000 EUR</td>
+                    <td>🟡 ca. 2.700 EUR</td>
+                    <td>🔴 ca. 3.600 EUR</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">500 Postfächer</td>
+                    <td>🟢 <b>1.500 EUR</b></td>
+                    <td>🔴 ca. 8.000 EUR</td>
+                    <td>🟡 ca. 4.400 EUR</td>
+                    <td>🟡 ca. 6.200 EUR</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">1.000 Postfächer</td>
+                    <td>🟢 <b>3.000 EUR</b></td>
+                    <td>🔴 ca. 15.700 EUR</td>
+                    <td>🟡 ca. 8.700 EUR</td>
+                    <td>🟡 ca. 10.500 EUR</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">10.000 Postfächer</td>
+                    <td>🟢 <b>30.000 EUR</b></td>
+                    <td>🔴 ca. 110.000 EUR</td>
+                    <td>🟡 ca. 65.000 EUR</td>
+                    <td>🟡 ca. 41.000 EUR</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+### Detaillierter Vergleichs-Benchmark {#detailed-benchmark}
+<div style="display: grid;">
+    <div class="table-container">
+        <table class="table is-bordered is-striped is-hoverable mx-auto">
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;"></th>
@@ -191,7 +243,7 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
                     <td>🔴 Applikationsrechte (application permissions), alle Verzeichnisdaten übertragen, alle E-Mails übertragen</td>
                 </tr>
                 <tr>
-                    <td class="has-text-weight-bold">Daten aus Entra ID Und Active Directory bleiben in Ihrer Umgebung (kein Transfer zu Drittsystemen)</td>
+                    <td class="has-text-weight-bold">Daten aus Entra ID und Active Directory bleiben in Ihrer Umgebung (kein Transfer zu Drittsystemen)</td>
                     <td>🟢</td>
                     <td>🔴</td>
                     <td>🔴</td>
@@ -353,7 +405,7 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Outlook Add-in</td>
-                    <td>🟢 Nicht für on-prem Postfächer auf Android und iOS. Hochgrad anpassbar mit Regeln, eigenem Code und zur Laufzeit generierten Signaturen</td>
+                    <td>🟢 Nicht für on-prem Postfächer auf Android und iOS. Hochgradig anpassbar mit Regeln, eigenem Code und zur Laufzeit generierten Signaturen.</td>
                     <td>🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
                     <td>🟡 Nicht für on-prem Postfächer auf Android und iOS, nicht für Termine</td>
                     <td>🔴 Nicht für on-prem Postfächer</td>
@@ -387,41 +439,6 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
                     <td>🟡 RegEx</td>
                 </tr>
                 <tr>
-                    <td class="has-text-weight-bold">Lizenzkosten für 100&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 300&nbsp;EUR</td>
-                    <td>🔴 ca. 1.600&nbsp;EUR</td>
-                    <td>🟡 ca. 1.300&nbsp;EUR</td>
-                    <td>🔴 ca. 1.600&nbsp;EUR</td>
-                </tr>
-                <tr>
-                    <td class="has-text-weight-bold">Lizenzkosten für 250&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 750&nbsp;EUR</td>
-                    <td>🔴 ca. 4.000&nbsp;EUR</td>
-                    <td>🟡 ca. 2.700&nbsp;EUR</td>
-                    <td>🔴 ca. 3.600&nbsp;EUR</td>
-                </tr>
-                <tr>
-                    <td class="has-text-weight-bold">Lizenzkosten für 500&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 1.500&nbsp;EUR</td>
-                    <td>🔴 ca. 8.000&nbsp;EUR</td>
-                    <td>🟡 ca. 4.400&nbsp;EUR</td>
-                    <td>🟡 ca. 6.200&nbsp;EUR</td>
-                </tr>
-                <tr>
-                    <td class="has-text-weight-bold">Lizenzkosten für 1.000&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 3.000&nbsp;EUR</td>
-                    <td>🔴 ca. 15.700&nbsp;EUR</td>
-                    <td>🟡 ca. 8.700&nbsp;EUR</td>
-                    <td>🟡 ca. 10.500&nbsp;EUR</td>
-                </tr>
-                <tr>
-                    <td class="has-text-weight-bold">Lizenzkosten für 10.000&nbsp;Postfächer, 1&nbsp;Jahr</td>
-                    <td>🟢 30.000&nbsp;EUR</td>
-                    <td>🔴 ca. 110.000&nbsp;EUR</td>
-                    <td>🟡 ca. 65.000&nbsp;EUR</td>
-                    <td>🟡 ca. 41.000&nbsp;EUR</td>
-                </tr>
-                <tr>
                     <td class="has-text-weight-bold">Direktbezug ohne öffentliche Ausschreibung</td>
                     <td>🟢 Einzigartige Funktionen, exklusive Herstellerverfügbarkeit</td>
                     <td>🔴 Keine einzigartigen Funktionen, keine exklusive Herstellerverfügbarkeit</td>
@@ -432,6 +449,7 @@ Auf Basis des Funktionsumfang wurden unterschiedliche Lösungen evaluiert, getes
         </table>
     </div>
 </div>
+
 
 ## Empfehlung: Set-OutlookSignatures {#recommendation}
 
