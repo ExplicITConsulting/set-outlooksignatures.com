@@ -181,16 +181,16 @@ sitemap_changefreq: weekly
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="trial">Kostenlose Testlizenz</h2>
     <p>Nachdem Sie das freie und quelloffene Set-OutlookSignatures mithilfe der Schnellstart-Anleitung eingerichtet und an Ihre Anforderungen angepasst haben, sind Sie bereit für den nächsten Schritt:</p>
-    <p><a href="/getlicense" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">14-Tage-Testlizenz holen</a></p>
     <p>Testlizenzen sind auf eine Laufzeit von 14&nbsp;Tagen sowie maximal 20&nbsp;Postfächer begrenzt und können nicht verlängert oder erneut ausgestellt werden.</p>
     <p>Die Testphase beginnt mit der Erstellung und Bereitstellung der Testlizenz durch uns, nicht mit der ersten Nutzung (dies ist auch nicht anders möglich, da unsere Software nicht nach Hause telefoniert).</p>
+    <p><a href="/getlicense" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">14-Tage-Testlizenz holen</a></p>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <h2 id="order">Lizenzen kaufen</h2>
     <p>Der Wechsel auf die Vollversion, mehr Postfächer hinzufügen und das Erneuern der Lizenz sind schnell und unkompliziert:</p>
-    <p><a href="/getlicense" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Lizenzangebot anfordern</a></p>
     <p>Sie erhalten in Kürze ein Angebot. Nach Ihrer Prüfung senden wir die Rechnung und Sie können den Zahlungsvorgang starten.</p>
     <p>Sobald der vollständige Rechnungsbetrag bei uns eingegangen ist, senden wir Ihnen umgehend die Download‑ und Gebrauchsanleitung für Ihre neue Lizenz.</p>
+    <p><a href="/getlicense" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">Lizenzangebot anfordern</a></p>
   </div>
 </div>
 
