@@ -200,6 +200,58 @@ sitemap_changefreq: weekly
 <p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> unlocks advanced features — for <strong>just EUR 0.25 per mailbox/month</strong> (EUR 3.00 per year). Billed annually, no auto-renewal.</p>
 <p><strong>The add-on is an investment that pays off from day one, certainly for you as well!</strong> Facts, not guesswork: Calculate your specific savings in just five minutes with our <a href="/benefactorcircle#financial-benefits">business case</a>.<br>
 Thanks to its unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
+<div style="display: grid;">
+    <div class="table-container">
+        <table class="table is-bordered is-striped is-hoverable">
+            <thead>
+                <tr>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mailboxes (1 year)</th>
+                    <th class="has-text-weight-bold" style="min-width: 10em; white-space: nowrap;">Set-OutlookSignatures with<br><a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a></th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Competitor A</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Competitor B</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Competitor C</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="has-text-weight-bold">100 Mailboxes</td>
+                    <td>🟢 <b>EUR 300</b></td>
+                    <td>🔴 approx. EUR 1,600</td>
+                    <td>🟡 approx. EUR 1,300</td>
+                    <td>🔴 approx. EUR 1,600</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">250 Mailboxes</td>
+                    <td>🟢 <b>EUR 750</b></td>
+                    <td>🔴 approx. EUR 4,000</td>
+                    <td>🟡 approx. EUR 2,700</td>
+                    <td>🔴 approx. EUR 3,600</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">500 Mailboxes</td>
+                    <td>🟢 <b>EUR 1,500</b></td>
+                    <td>🔴 approx. EUR 8,000</td>
+                    <td>🟡 approx. EUR 4,400</td>
+                    <td>🟡 approx. EUR 6,200</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">1,000 Mailboxes</td>
+                    <td>🟢 <b>EUR 3,000</b></td>
+                    <td>🔴 approx. EUR 15,700</td>
+                    <td>🟡 approx. EUR 8,700</td>
+                    <td>🟡 approx. EUR 10,500</td>
+                </tr>
+                <tr>
+                    <td class="has-text-weight-bold">10,000 Mailboxes</td>
+                    <td>🟢 <b>EUR 30,000</b></td>
+                    <td>🔴 approx. EUR 110,000</td>
+                    <td>🟡 approx. EUR 65,000</td>
+                    <td>🟡 approx. EUR 41,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Licensing details – the fine print in plain language</strong>
