@@ -231,10 +231,8 @@ sitemap_changefreq: weekly
 <p><b>Deployment:</b> Run <code>run_before_deployment.ps1</code> and upload the content of the <code>publish</code> folder to your web server.</p>
 
 
-
 <h2 id="deployment-to-mailboxes">Deployment to mailboxes</h2>
 <p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. This is because Outlook caches the code of the add-in and reads the manifest file only once.</p>
-
 <div class="columns is-multiline">
   <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
@@ -247,7 +245,6 @@ sitemap_changefreq: weekly
       </ul>
     </div>
   </div>
-
   <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Enterprise Deployment (Production)</b></p>
@@ -259,42 +256,26 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
 <div class="box has-background-white-bis has-text-black mt-5">
   <p><b>Clear the Outlook add-in cache</b></p>
   <p>When testing, Outlook sometimes takes too long updating its cache. Follow these official Microsoft instructions to manually clear it:</p>
   <div class="columns mt-2">
     <div class="column is-6">
-      <div style="display: flex; gap: 0.75em;">
-        🌐
-        <div><b>Web:</b> Hard Refresh the browser window.</div>
-      </div>
-      <div style="display: flex; gap: 0.75em;" class="mt-2">
-        💻
-        <div><b>Classic Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">Official instructions</a>.</div>
-      </div>
-      <div style="display: flex; gap: 0.75em;" class="mt-2">
-        🖥️
-        <div><b>New Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">Official instructions</a>.</div>
-      </div>
+      <ul>
+        <li><b>Web:</b> Hard Refresh the browser window.</li>
+        <li><b>Classic Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">Official instructions from Microsoft</a>.</li>
+        <li><b>New Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">Official instructions from Microsoft</a>.</li>
+      </ul>
     </div>
     <div class="column is-6">
-      <div style="display: flex; gap: 0.75em;">
-        🍎
-        <div><b>macOS:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">Official instructions</a>.</div>
-      </div>
-      <div style="display: flex; gap: 0.75em;" class="mt-2">
-        📱
-        <div><b>iOS:</b> Taskpane > Advanced options > <b>Reload add-in</b>.</div>
-      </div>
-      <div style="display: flex; gap: 0.75em;" class="mt-2">
-        🤖
-        <div><b>Android:</b> App info > Force Stop > Clear Cache (not Clear Data).</div>
-      </div>
+      <ul>
+        <li><b>macOS:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">Official instructions from Microsoft</a>.</li>
+        <li><b>iOS:</b> Taskpane > Advanced options > <b>Reload add-in</b>.</li>
+        <li><b>Android:</b> App info > Force Stop > Clear Cache (do not tap Clear Data).</li>
+      </ul>
     </div>
   </div>
 </div>
-
 
 
 <h2 id="remarks">Remarks</h2>
