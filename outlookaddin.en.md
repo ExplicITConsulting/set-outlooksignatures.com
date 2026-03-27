@@ -19,19 +19,39 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <h2 id="overview">Overview</h2>
-<p>With a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle license</span></a>, you also have access to the Set-OutlookSignatures add-in for Outlook.</p>
-<p>The add-in makes signatures — created by Set-OutlookSignatures in client or SimulateAndDeploy mode — available in <strong>Outlook for iOS and Outlook for Android</strong>, while supporting all Outlook editions across platforms.</p>
-<p>It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD (bring your own device) scenarios. For on-premises mailboxes, it delivers a roaming signature experience comparable to the cloud.</p>
-<p>The Outlook add-in includes a taskpane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.</p>
-<p>It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful in Outlook for Android and Outlook for iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
-<p>The Outlook add-in is self-hosted by you. Compared to using a solution hosted by a 3rd party, this has several advantages:</p>
-<ul>
-  <li>Client specific configuration.</li>
-  <li>You have full control over the version that is used.</li>
-  <li>Keeps license costs low.</li>
-  <li>Is the preferred method from a data protection and privacy perspective.</li>
-</ul>
-<p>Outlook downloads the add-in code and executes it locally, in the security context of the mailbox. There are no middleware or proxy servers involved. Data is only transferred between your Outlook client, your authentication system (Entra ID for Exchange Online) and your mailbox servers.</p>
+<p>With a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle license</span></a>, you gain access to the Set-OutlookSignatures add-in.</p>
+
+<div class="columns">
+  <div class="column">
+    <p>The add-in makes signatures available in <strong>Outlook for iOS and Android</strong>, while supporting all Outlook editions across platforms. It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD scenarios.</p>
+    <p>It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
+  </div>
+  <div class="column">
+    <div class="box has-background-white-bis" style="border-top: 4px solid var(--benefactor-circle-color);">
+      <p><b>Key Functionality</b></p>
+      <ul>
+        <li><strong>Automatic Selection:</strong> Applies correct sigs on item creation.</li>
+        <li><strong>Taskpane Preview:</strong> Users can manually select or preview.</li>
+        <li><strong>On-Prem Roaming:</strong> Cloud-like experience for on-prem mailboxes.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="columns mt-5">
+  <div class="column">
+    <p>🛡️ <b>Privacy First</b><br><small>No middleware or proxy servers. Local execution.</small></p>
+  </div>
+  <div class="column">
+    <p>⚙️ <b>Full Control</b><br><small>You control the version and configuration.</small></p>
+  </div>
+  <div class="column">
+    <p>💎 <b>Low Cost</b><br><small>Self-hosting keeps license costs minimal.</small></p>
+  </div>
+  <div class="column">
+    <p>🚀 <b>Enterprise Ready</b><br><small>Exchange Online and On-Premises support.</small></p>
+  </div>
+</div>
+<hr>
 
 
 <h2 id="usage">Usage</h2>
