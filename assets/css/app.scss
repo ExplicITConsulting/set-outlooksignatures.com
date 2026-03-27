@@ -222,11 +222,6 @@ h6 {
 }
 
 // --- Animations ---
-.is-animating {
-  // linear ist entscheidend für kontinuierlichen Flow
-  animation: marquee-scroll var(--duration) linear infinite;
-}
-
 // Standard: Right to Left (Customers)
 @keyframes marquee-scroll {
   from {
