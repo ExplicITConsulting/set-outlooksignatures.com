@@ -39,16 +39,16 @@ sitemap_changefreq: weekly
 </div>
 <div class="columns mt-5">
   <div class="column">
-    <p>🛡️ <b>Privacy First</b><br><small>No middleware or proxy servers. Local execution.</small></p>
+    <p>🛡️ <b>Privacy First</b><br>No middleware or proxy servers. Local execution.</p>
   </div>
   <div class="column">
-    <p>⚙️ <b>Full Control</b><br><small>You control the version and configuration.</small></p>
+    <p>⚙️ <b>Full Control</b><br>You control the version and configuration.</p>
   </div>
   <div class="column">
-    <p>💎 <b>Low Cost</b><br><small>Self-hosting keeps license costs minimal.</small></p>
+    <p>💎 <b>Low Cost</b><br>Self-hosting keeps license costs minimal.</p>
   </div>
   <div class="column">
-    <p>🚀 <b>Enterprise Ready</b><br><small>Exchange Online and On-Premises support.</small></p>
+    <p>🚀 <b>Enterprise Ready</b><br>Exchange Online and On-Premises support.</p>
   </div>
 </div>
 
