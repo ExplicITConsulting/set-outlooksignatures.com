@@ -45,25 +45,25 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="columns is-multiline mt-2">
-    <div class="column is-3-desktop is-6-tablet is-full-mobile">
+    <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
       <div style="display: flex; gap: 0.75em;">
         🛡️
         <div><b>Privacy First</b><br>No middleware or proxy servers. Local execution.</div>
       </div>
     </div>
-    <div class="column is-3-desktop is-6-tablet is-full-mobile">
+    <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
       <div style="display: flex; gap: 0.75em;">
         ⚙️
         <div><b>Full Control</b><br>You control the version and configuration.</div>
       </div>
     </div>
-    <div class="column is-3-desktop is-6-tablet is-full-mobile">
+    <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
       <div style="display: flex; gap: 0.75em;">
         💎
         <div><b>Low Cost</b><br>Self-hosting keeps license costs minimal.</div>
       </div>
     </div>
-    <div class="column is-3-desktop is-6-tablet is-full-mobile">
+    <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
       <div style="display: flex; gap: 0.75em;">
         🚀
         <div><b>Enterprise Ready</b><br>Exchange Online and On-Premises support.</div>
