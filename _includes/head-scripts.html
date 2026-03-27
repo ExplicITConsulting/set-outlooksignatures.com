@@ -154,7 +154,6 @@
           img.src = urlPath;
           img.loading = "lazy";
 
-          // --- Metadata Extraction Logic ---
           const baseName = urlPath.split('/').pop();
           const nameWithoutExt = baseName.replace(/\.[^.]+$/, "");
           const firstPart = nameWithoutExt.split(' ')[0];
@@ -177,7 +176,7 @@
 
         track.appendChild(fragment);
 
-        // --- Animation Logic ---
+        // --- Animation Logic with Jump-Fix ---
         const startAnimation = () => {
           const totalWidth = track.scrollWidth;
           if (totalWidth <= 0) {
@@ -190,41 +189,44 @@
           const duration = halfWidth / pxPerSec;
           track.style.setProperty('--duration', `${duration}s`);
 
-          // JUMP-FIX: Pre-position the signature track at -50% 
-          // because its animation flows from -50% to 0 (Left-to-Right).
+          // JUMP-FIX: Set explicit starting position before adding the animation class
           if (trackSelector.includes('signature')) {
+            // Signatures flow from -50% to 0
             track.style.transform = "translate3d(-50%, 0, 0)";
           } else {
+            // Customers flow from 0 to -50%
             track.style.transform = "translate3d(0, 0, 0)";
           }
 
-          // Trigger a reflow to ensure the transform is applied 
-          // before the 'is-animating' class kicks in.
-          track.offsetHeight; 
+          // Force a reflow to ensure the transform is applied immediately
+          void track.offsetWidth;
 
-          track.classList.add('is-animating');
+          // Trigger the animation in the next frame to avoid visual glitches
+          requestAnimationFrame(() => {
+            track.classList.add('is-animating');
+          });
         };
 
-        // Delay slightly to allow the browser to start loading images
+        // Small delay to let images start loading so scrollWidth is more accurate
         setTimeout(startAnimation, 500);
 
-      } catch (e) { 
-        console.error("Banner error:", e); 
+      } catch (e) {
+        console.error("Banner error:", e);
       }
     };
 
     // --- Configuration ---
     // Customers: Right to Left (Standard) @ 50px/sec
     initSafeBanner(
-      '.customer-scrolling-track', 
-      'https://set-outlooksignatures.com/customer-images.txt', 
+      '.customer-scrolling-track',
+      'https://set-outlooksignatures.com/customer-images.txt',
       50
     );
 
     // Signatures: Left to Right (Reverse) @ 40px/sec
     initSafeBanner(
-      '.signature-scrolling-track', 
-      'https://set-outlooksignatures.com/signature-images.txt', 
+      '.signature-scrolling-track',
+      'https://set-outlooksignatures.com/signature-images.txt',
       40
     );
   });
