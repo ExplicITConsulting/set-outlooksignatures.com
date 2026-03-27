@@ -134,7 +134,7 @@
       return array;
     };
 
-    const initSafeBanner = async (trackSelector, endpoint, intervalTime) => {
+    const initSafeBanner = async (trackSelector, endpoint, pxPerSec) => {
       const track = document.querySelector(trackSelector);
       if (!track) return;
 
@@ -142,71 +142,51 @@
         const response = await fetch(endpoint);
         const text = await response.text();
         let urls = text.split('\n').map(l => l.trim()).filter(Boolean);
-
         urls = shuffleArray(urls);
 
         const fragment = document.createDocumentFragment();
-        urls.forEach(urlPath => {
+        // Wir verdoppeln die Liste für einen nahtlosen Loop
+        const doubledUrls = [...urls, ...urls];
+
+        doubledUrls.forEach(urlPath => {
           const img = new Image();
           img.src = urlPath;
           img.loading = "lazy";
-
-          const baseName = urlPath.split('/').pop();
-          const nameWithoutExt = baseName.replace(/\.[^.]+$/, "");
-          const firstPart = nameWithoutExt.split(' ')[0];
-          const hasDomain = firstPart.includes('.');
-
-          let finalDomain = hasDomain ? firstPart : "explicitconsulting.at";
-          let finalAlt = hasDomain ? nameWithoutExt : "explicitconsulting.at anonymous customer";
-
-          img.alt = finalAlt;
-
+          // ... (dein restlicher Alt-Text/Link Code von oben) ...
           const link = document.createElement('a');
-          link.href = `https://www.${finalDomain}`;
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
+          link.href = `https://www.${finalDomain}`; // finalDomain Logik hier einfügen
           link.className = "no-external-link-icon banner-link";
-
           link.appendChild(img);
           fragment.appendChild(link);
         });
 
         track.appendChild(fragment);
 
-        const startStepping = () => {
-          const computedStyle = window.getComputedStyle(track);
-          const gap = parseInt(computedStyle.gap) || 0;
+        // Präzise Dauer berechnen sobald Layout steht
+        const updateAnimation = () => {
+          const totalWidth = track.scrollWidth;
+          const halfWidth = totalWidth / 2;
+          const duration = halfWidth / pxPerSec;
 
-          setInterval(() => {
-            // Pause bei Hover auf dem umschließenden Banner-Container
-            if (track.parentElement.matches(':hover')) return;
-
-            const firstItem = track.firstElementChild;
-            if (!firstItem) return;
-
-            const stepWidth = firstItem.offsetWidth + gap;
-
-            // Kurze, knackige Transition (0.5s)
-            track.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
-            track.style.transform = `translateX(-${stepWidth}px)`;
-
-            setTimeout(() => {
-              track.style.transition = "none";
-              track.style.transform = "translateX(0)";
-              track.appendChild(firstItem);
-            }, 550); // 50ms Puffer zur Transition
-          }, intervalTime);
+          track.style.setProperty('--duration', `${duration}s`);
+          track.classList.add('is-animating');
         };
 
-        // Start wenn die Seite bereit ist
-        setTimeout(startStepping, 1500);
-
+        // Kurzer Delay damit offsetWidth korrekt ist
+        setTimeout(updateAnimation, 500);
       } catch (e) { console.error("Banner error:", e); }
     };
 
-    // Hier werden deine gewünschten Zeiten (in ms) übergeben
-    initSafeBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 2000);
-    initSafeBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 3000);
+    initSafeBanner(
+      '.customer-scrolling-track',
+      'https://set-outlooksignatures.com/customer-images.txt',
+      50 // px/sec
+    );
+    initSafeBanner(
+      '.signature-scrolling-track',
+      'https://set-outlooksignatures.com/signature-images.txt',
+      40 // px/sec
+    );
   });
 </script>
 

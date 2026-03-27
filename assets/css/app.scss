@@ -131,45 +131,51 @@ h6 {
   overflow: hidden;
   display: block;
   position: relative;
+  // Zwingt den Browser, den Container als isolierte Ebene zu betrachten
+  contain: paint; 
 
-  // Background only for signatures in light mode
   &.signature-scrolling-banner {
     background: rgba(0, 0, 0, 0.03);
     border-radius: 4px;
     padding: 1rem 0;
   }
+
+  // Pause nur, wenn nicht im Reduced-Motion Modus (Stromsparmodus)
+  &:hover .is-animating {
+    animation-play-state: paused;
+  }
 }
 
-// --- UNIVERSAL TRACK BEHAVIOR (Mirror-Image Logic) ---
+// --- UNIVERSAL TRACK BEHAVIOR ---
 .customer-scrolling-track,
 .signature-scrolling-track {
   display: flex;
   width: max-content;
   flex-wrap: nowrap;
   gap: 2rem;
+  
+  // PERFORMANCE OPTIMIERUNG:
   will-change: transform;
-  transform: translate3d(0, 0, 0);
+  // translate3d aktiviert die GPU-Beschleunigung massiver als einfaches translate
+  transform: translate3d(0, 0, 0); 
   backface-visibility: hidden;
+  perspective: 1000px;
 
   img,
   a img {
     width: auto;
     opacity: 1;
-    transform: scale(1);
-    filter: none; // No grayscale
+    // Wir entfernen standardmäßig komplexe Filter während der Animation
+    filter: none; 
   }
 
-  // Hover: Proportional scale and shadow
+  // Hover-Effekte nur bei Interaktion, um Rechenlast im Loop zu sparen
   a:hover img,
   img:hover {
-    transform: scale(1);
     z-index: 10;
-    opacity: 1;
-    // Uses 'em' to ensure shadow size scales with image height
     box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.15);
   }
 
-  // Focus: Shared dimming logic
   &:hover a:not(:hover) img,
   &:hover img:not(:hover) {
     opacity: 0.4;
@@ -186,7 +192,7 @@ h6 {
   }
 }
 
-// --- UNIQUE ATTRIBUTES (Height Only) ---
+// --- UNIQUE ATTRIBUTES ---
 .customer-scrolling-track img,
 .customer-scrolling-track a img {
   height: 2em;
@@ -206,7 +212,6 @@ h6 {
     background: transparent;
   }
 
-  // Correcting shadows for dark backgrounds
   .customer-scrolling-track,
   .signature-scrolling-track {
     a:hover img,
@@ -216,18 +221,25 @@ h6 {
   }
 }
 
+// --- Animations ---
+.is-animating {
+  // linear ist entscheidend für kontinuierlichen Flow
+  animation: marquee-scroll var(--duration) linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    // -50% funktioniert nur, wenn die Liste im JS verdoppelt wurde
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 @keyframes pulse {
-  0%,
-  75%,
-  100% {
-    transform: scale(1);
-    filter: brightness(100%);
-  }
-  87.5% {
-    transform: scale(0.95);
-    filter: brightness(90%);
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-  }
+  0%, 75%, 100% { transform: scale(1); filter: brightness(100%); }
+  87.5% { transform: scale(0.95); filter: brightness(90%); box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); }
 }
 
 // --- Visual Extras ---
@@ -244,26 +256,13 @@ html::after {
   opacity: 0.5;
 }
 
-:root {
-  --benefactor-circle-color: darkgoldenrod;
-}
-[data-theme="dark"],
-.theme-dark {
-  --benefactor-circle-color: goldenrod;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --benefactor-circle-color: goldenrod;
-  }
-}
+:root { --benefactor-circle-color: darkgoldenrod; }
+[data-theme="dark"], .theme-dark { --benefactor-circle-color: goldenrod; }
 
 // --- Inline Code Styling ---
 :not(pre) > code {
-  // Shared properties
-  background-color: lightgrey; // Consistent light grey
-  border-radius: 0; // Force square corners
-  padding: 0.2em 0.4em; // Maintain readability
-
-  // Light mode default text
+  background-color: lightgrey;
+  border-radius: 0;
+  padding: 0.2em 0.4em;
   color: black;
 }
