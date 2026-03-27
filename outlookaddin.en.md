@@ -279,66 +279,59 @@ sitemap_changefreq: weekly
 
 
 <h2 id="remarks">Remarks</h2>
-<h3>General</h3>
-<ul>
-  <li>Microsoft is actively blocking access to roaming signatures for Outlook add-ins. The add-in will be updated when this block has been removed. In the meantime, the add-in has access to the data of the last run of Set-OutlookSignatures v4.14.0 and higher.</li>
-  <li>The Microsoft APIs only allow access to online content. There is no way to access offline mailbox content or the file system. This means that the Outlook add-in only works when Outlook has an online connection to the user's mailbox.</li>
-  <li>The easiest way to test the add-in and its basic functionality is to use the taskpane. For specific debugging on Android and iOS, you need to use the DEBUG option in <code>run_before_deployment.ps1</code>.</li>
-  <li>The add-in can run automatically when one of the following launch events is triggered by Outlook: <code>OnNewMessageCompose</code>, <code>OnNewAppointmentOrganizer</code>, <code>OnMessageFromChanged</code>, <code>OnAppointmentFromChanged</code>, <code>OnMessageRecipientsChanged</code>, <code>OnAppointmentAttendeesChanged</code>.
-    <ul>
-      <li>Not all these events are supported on all platforms, see <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/autolaunch#supported-events">this Microsoft article</a>.</li>
-      <li>Outlook currently does not support add-ins on calendar invite responses.</li>
-    </ul>
-  </li>
-  <li>Microsoft dynamically updates the local copy of the office.js framework. This may lead to problems that suddenly appear although neither Outlook nor the add-in have changed. Where available, use the taskpane as a workaround.</li>
-</ul>
+<div class="box has-background-white-bis has-text-black">
+  <p><b>General Platform Notes</b></p>
+  <ul>
+    <li><b>Roaming Signatures:</b> Microsoft currently limits add-in access to roaming signatures. The add-in uses data from the last run of Set-OutlookSignatures (v4.14.0+) as a workaround until this is resolved.</li>
+    <li><b>Online Connection:</b> Microsoft APIs only allow access to online content. The add-in requires an active connection to the mailbox and cannot access offline cache or the local file system.</li>
+    <li><b>Event Support:</b> Automation relies on Outlook "Launch Events" (e.g., OnNewMessageCompose). Note that Microsoft does not currently support add-ins for calendar invite responses.</li>
+    <li><b>Office.js:</b> Microsoft dynamically updates the underlying framework. If automation behaves unexpectedly, the taskpane remains the reliable manual fallback.</li>
+  </ul>
+</div>
+
 <div class="columns is-multiline">
-  <div class="column is-half">
+  <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook for Android</b></p>
+      <p><b>Outlook for iOS & Android</b></p>
       <ul>
-        <li>Only mailboxes hosted in Exchange Online are supported.</li>
-        <li>Setting the signature on new appointments is not yet supported by Microsoft.</li>
-        <li>Taskpanes are not allowed during compose mode.</li>
+        <li>Only Exchange Online mailboxes are supported.</li>
+        <li>Taskpanes are not permitted by Microsoft during compose mode; signatures are applied automatically via events.</li>
+        <li>Automated signatures for new appointments are not yet supported by the mobile APIs.</li>
       </ul>
     </div>
   </div>
-  <div class="column is-half">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook for iOS</b></p>
-      <ul>
-        <li>Only mailboxes hosted in Exchange Online are supported.</li>
-        <li>Setting the signature on new appointments is not yet supported by Microsoft.</li>
-        <li>Taskpanes are not allowed during compose mode.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="column is-half">
+
+  <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Outlook for Mac</b></p>
       <ul>
-        <li>Use the New Outlook for Mac whenever possible; Classic Outlook for Mac is out of support.</li>
-        <li>Support for Classic Outlook for Mac is best-effort due to API instability.</li>
+        <li><b>New Outlook for Mac:</b> Fully supported and recommended.</li>
+        <li><b>Classic Outlook for Mac:</b> Out of support by Microsoft. Support is provided on a best-effort basis due to API instability on this legacy platform.</li>
       </ul>
     </div>
   </div>
-  <div class="column is-half">
+
+  <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook for the web on-prem</b></p>
+      <p><b>Outlook for the web (On-Prem)</b></p>
       <ul>
-        <li>Launch events are not supported; only the taskpane works.</li>
-        <li>Images are replaced with alternate descriptions due to a Microsoft office.js bug.</li>
+        <li>Launch events are not supported by the on-premises APIs; signature selection must be done via the taskpane.</li>
+        <li>Images may be replaced with alternate descriptions due to a known bug in the Microsoft office.js framework for on-prem hosts.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="column is-6">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <p><b>Classic Outlook for Windows</b></p>
+      <ul>
+        <li>Launch events can be unstable for on-prem mailboxes; use the taskpane if signatures do not appear automatically.</li>
+        <li>Exchange Online mailboxes must use a version supporting Nested App Authentication, as legacy EWS tokens are deprecated.</li>
       </ul>
     </div>
   </div>
 </div>
-<div class="box has-background-white-bis has-text-black" style="height: 100%;">
-  <p><b>Classic Outlook for Windows</b></p>
-  <ul>
-    <li>Launch event APIs are sometimes unstable for on-prem mailboxes. Use the taskpane when in doubt.</li>
-    <li>For mailboxes in Exchange Online, the Outlook version version used must support Nested App Authentication. Microsoft disabled legacy EWS Exchange Online tokens; they cannot be re-enabled since October 2025 due to security reasons.</li>
-  </ul>
-</div>
+
 
 <p class="is-italic has-text-centered">
   The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> license funds the open-source mission, ensuring the core engine remains free and peer-reviewable for the global community.
