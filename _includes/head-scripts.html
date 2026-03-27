@@ -142,50 +142,68 @@
         const response = await fetch(endpoint);
         const text = await response.text();
         let urls = text.split('\n').map(l => l.trim()).filter(Boolean);
+
         urls = shuffleArray(urls);
 
         const fragment = document.createDocumentFragment();
-        // Wir verdoppeln die Liste für einen nahtlosen Loop
+        // Doubling for seamless infinite scroll
         const doubledUrls = [...urls, ...urls];
 
         doubledUrls.forEach(urlPath => {
           const img = new Image();
           img.src = urlPath;
           img.loading = "lazy";
-          // ... (dein restlicher Alt-Text/Link Code von oben) ...
+
+          const baseName = urlPath.split('/').pop();
+          const nameWithoutExt = baseName.replace(/\.[^.]+$/, "");
+          const firstPart = nameWithoutExt.split(' ')[0];
+          const hasDomain = firstPart.includes('.');
+
+          let finalDomain = hasDomain ? firstPart : "explicitconsulting.at";
+          let finalAlt = hasDomain ? nameWithoutExt : "explicitconsulting.at anonymous customer";
+
+          img.alt = finalAlt;
+
           const link = document.createElement('a');
-          link.href = `https://www.${finalDomain}`; // finalDomain Logik hier einfügen
+          link.href = `https://www.${finalDomain}`;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
           link.className = "no-external-link-icon banner-link";
+
           link.appendChild(img);
           fragment.appendChild(link);
         });
 
         track.appendChild(fragment);
 
-        // Präzise Dauer berechnen sobald Layout steht
-        const updateAnimation = () => {
+        const startContinuousScroll = () => {
           const totalWidth = track.scrollWidth;
           const halfWidth = totalWidth / 2;
+          // Duration = Distance (px) / Speed (px/s)
           const duration = halfWidth / pxPerSec;
 
           track.style.setProperty('--duration', `${duration}s`);
           track.classList.add('is-animating');
         };
 
-        // Kurzer Delay damit offsetWidth korrekt ist
-        setTimeout(updateAnimation, 500);
+        // Delay to ensure images start loading so scrollWidth is somewhat reliable
+        setTimeout(startContinuousScroll, 500);
+
       } catch (e) { console.error("Banner error:", e); }
     };
 
+    // Customer images: 50px per second
     initSafeBanner(
-      '.customer-scrolling-track',
-      'https://set-outlooksignatures.com/customer-images.txt',
-      50 // px/sec
+      '.customer-scrolling-track', 
+      'https://set-outlooksignatures.com/customer-images.txt', 
+      50
     );
+    
+    // Signature images: 40px per second
     initSafeBanner(
-      '.signature-scrolling-track',
-      'https://set-outlooksignatures.com/signature-images.txt',
-      40 // px/sec
+      '.signature-scrolling-track', 
+      'https://set-outlooksignatures.com/signature-images.txt', 
+      40
     );
   });
 </script>
