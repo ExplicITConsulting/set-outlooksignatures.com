@@ -124,7 +124,6 @@ sitemap_changefreq: weekly
 <h2 id="requirements">Requirements</h2>
 <h3>Outlook clients</h3>
 <p>The add-in works for all Microsoft-supported Outlook clients. It runs in the security context of the user and supports delegate scenarios.</p>
-
 <div class="columns">
   <div class="column">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
@@ -148,12 +147,10 @@ sitemap_changefreq: weekly
   <li>A valid TLS certificate. <a href="https://letsencrypt.org/">Let's Encrypt</a> is a good free alternative, especially when used with an <a href="https://letsencrypt.org/docs/client-options/">ACME client</a> for auto-renewal.</li>
   <li>Production servers should not return <code>Cache-Control</code> headers like <code>no-cache</code> or <code>no-store</code> for images.</li>
 </ul>
-
 <p><a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website">Static website hosting in Azure Storage</a> is an uncomplicated, affordable and fast alternative. It includes a Microsoft-issued certificate, even in the free tier.</p>
 
 <h3>Entra ID app</h3>
 <p>When mailboxes are hosted in Exchange Online, the add-in needs an Entra ID app to access the mailbox. Creating a separate app is strongly recommended.</p>
-
 <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
   <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
     <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
@@ -162,7 +159,6 @@ sitemap_changefreq: weekly
   </div>
   <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "OutlookAddIn" -AppName "Set-OutlookSignatures Outlook add-in" -OutlookAddInUrl "https://yourhost.yourdomain.com"</code></pre>
 </div>
-
 <p>For manual configuration, the following <b>Delegated Graph API</b> permissions must be granted with admin consent:</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-deskop is-one-third-tablet is-full-mobile">
@@ -181,46 +177,58 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
 <p><b>Authentication:</b> Use <code>Single-page application</code> with a redirect URI of <code>brk-multihub://yourhost.yourdomain.com</code>.</p>
 
 
-<h2 id="configuration-and-deployment-to-the-web-server">Configuration and deployment to the web server</h2>
-<p>With every new release of Set-OutlookSignatures, <a href="/benefactorcircle">Benefactor Circle</a> members not only receive an updated Benefactor Circle license file, but also an updated Outlook add-in.</p>
-<p>With every new release of the Outlook add-in, you need to update your add-in deployment (sideloading M365 Centralized Deployment, M365 Integrated Apps) so that Outlook can download and use the newest code.</p>
-<p>It is recommended to use use two separate dedicated hostnames at least: One for testing and one for production, such as "https://outlookaddin01.example.com" and "https://outlookaddin01test.example.com".</p>
-<p>You can also have multiple different instances of the Outlook add-in in production, for example when you want to configure the add-in differently depending on how different user groups work with email - see the <a href="/details#architecture-considerations">Architecture considerations</a> chapter of the "Technical details, requirements and usage" document for an example. Each instance needs a dedicated hostname. Make sure that each mailbox only uses one instance of the add-in, never more.</p>
-<p>To configure the add-in and deploy it to your web server:</p>
-<ul>
-  <li>Open <code>run_before_deployment.ps1</code> and follow the instructions in it to configure the add-in to your needs.</li>
-  <li>You can configure the following settings:
-    <ul>
-      <li>The version number. Outlook add-ins have four version number parts. The first three parts match the version number of Set-OutlookSignatures, the last part is up to you.</li>
-      <li>The URL you deploy the add-in to.</li>
-      <li>On which Outlook hosts and platforms signatures shall be added automatically for new emails and email replies.</li>
-      <li>On which Outlook hosts and platforms signatures shall be added automatically for new appointments.</li>
-      <li>If you want or do not want to disable client signatures configured by your users.</li>
-      <li>Your cloud environment and the application (client) ID of the Entra ID app (required for Exchange Online mailboxes only).</li>
-      <li>Enable or disable debug logging.</li>
-      <li>Add custom code to the add-in so you can directly influence which signature it will set. For example, you can set a specific signature…
-        <ul>
-          <li>…when there are only internal recipients, or another signature when there are external recipients</li>
-          <li>…depending on the from email address</li>
-          <li>…when a specific customer is in the To field</li>
-          <li>…when the current item is a mail or an appointment</li>
-          <li>…when the current item is a new mail, or another signature when it is a reply or a forward</li>
-          <li>…depending on the subject</li>
-          <li>…or any other condition derived from the information available in the customRulesProperties object</li>
-        </ul>
-        <p>You can even create your own signature at runtime, without choosing one previously deployed with Set-OutlookSignatures.</p>
-        <p>See <code>.\sample code\CustomRulesCode.js</code> in the Outlook add-in folder for details.</p>
-      </li>
-    </ul>
-  </li>
-  <li>Run <code>run_before_deployment.ps1</code> in PowerShell.</li>
-  <li>Upload the content of the <code>publish</code> folder to your web server.</li>
-</ul>
-<p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you not only need to update the files on the web server, you also need to tell your mailboxes that an updated version or configuration is available and must be downloaded from the web server. The "<a href="#deployment-to-mailboxes">Deployment to mailboxes</a>" chapter describes the available deployment options for add-ins.</p>
+<h2 id="configuration-and-deployment-to-the-web-server">Configuration and deployment</h2>
+<p>With every new release of Set-OutlookSignatures, <a href="/benefactorcircle">Benefactor Circle</a> members receive an updated Outlook add-in. You must update your deployment whenever the add-in code or your configuration changes.</p>
+<p>It is recommended to use at least two separate dedicated hostnames: one for testing and one for production (e.g., <code>https://outlookaddin01test.example.com</code> and <code>https://outlookaddin01.example.com</code>).</p>
+<p>The add-in is configured via the <code>run_before_deployment.ps1</code> script:</p>
+<div class="columns is-multiline">
+  <div class="column is-6">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <p><b>General Settings</b></p>
+      <ul>
+        <li><b>Versioning:</b> Sync the add-in version with Set-OutlookSignatures.</li>
+        <li><b>Deployment URL:</b> Define your dedicated hosting domain.</li>
+        <li><b>Cloud Environment:</b> Set your environment and Entra ID Client ID.</li>
+        <li><b>Debug Logging:</b> Enable or disable detailed execution logs.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="column is-6">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <p><b>Automation Rules</b></p>
+      <ul>
+        <li><b>Platform Targeting:</b> Choose which hosts add signatures automatically.</li>
+        <li><b>Item Types:</b> Enable automation for emails, appointments, or both.</li>
+        <li><b>Client Signatures:</b> Optionally disable signatures configured by users.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="box has-background-white-bis has-text-black">
+  <p><b>Custom Rules Logic</b></p>
+  <p>Modify <code>CustomRulesCode.js</code> to influence signature selection at runtime based on:</p>
+  <div class="columns mt-2">
+    <div class="column is-6">
+      <ul>
+        <li>Internal vs. external recipients</li>
+        <li>The sender's email address</li>
+        <li>Specific customers in the To field</li>
+      </ul>
+    </div>
+    <div class="column is-6">
+      <ul>
+        <li>Mail vs. Appointment types</li>
+        <li>Subject line keywords</li>
+        <li>Item status (New, Reply, or Forward)</li>
+      </ul>
+    </div>
+  </div>
+  <p class="mt-2">You can even generate unique signatures at runtime without choosing a pre-deployed template. See <code>.\sample code\CustomRulesCode.js</code> for details.</p>
+</div>
+<p><b>Deployment:</b> Run <code>run_before_deployment.ps1</code> and upload the content of the <code>publish</code> folder to your web server.</p>
 
 
 
