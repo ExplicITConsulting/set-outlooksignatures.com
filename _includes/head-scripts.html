@@ -1,34 +1,28 @@
 <!-- mtrcs js code -->
 <script>
   var _paq = window._paq = window._paq || [];
-  _paq.push(["setRequestMethod", "POST"]);
-  _paq.push(["disableCookies"]);
-  _paq.push(["disableAlwaysUseSendBeacon"]);
-  _paq.push(["disableQueueRequest"]);
+  _paq.push(["setRequestMethod", "POST"]); // Use POST to hide query params from ad-blockers
+  _paq.push(["disableCookies"]); // Privacy-first/No-cookie tracking
+  _paq.push(["disableAlwaysUseSendBeacon"]); // Avoid beacon-based ad-blocker rules
   _paq.push(["setDocumentTitle", document.domain + ": " + document.title]);
   _paq.push(["setDomains", ["*.set-outlooksignatures.com"]]);
-  _paq.push(['enableHeartBeatTimer']);
+  _paq.push(['enableHeartBeatTimer']); // Keeps the session alive for "time on page"
+  _paq.push(['trackPageView']); // This ensures the "Visit" is created before "Content Impressions" are recorded.
+  _paq.push(['trackVisibleContentImpressions', true]); // Now that the Page View is queued, we scan for visible content
+  _paq.push(['enableLinkTracking']); // Track clicks
   _paq.push(['setLinkClasses', ["mtrcs-external-link"]]);
   _paq.push(['setDownloadClasses', ["mtrcs-download"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['trackVisibleContentImpressions', true]);
-  _paq.push(['enableLinkTracking']);
 
-
-  (
-    function () {
-      var u = "https://mtrcs.set-outlooksignatures.com/";
-      _paq.push(["setTrackerUrl", u + "mtrcs.php"]);
-      _paq.push(["setSiteId", "1"]);
-      var d = document;
-      g = d.createElement("script");
-      s = d.getElementsByTagName("script")[0];
-      g.type = "text/javascript";
-      g.async = true;
-      g.src = u + "mtrcs.js";
-      s.parentNode.insertBefore(g, s);
-    }
-  )();
+  (function () {
+    var u = "https://mtrcs.set-outlooksignatures.com/";
+    _paq.push(["setTrackerUrl", u + "mtrcs.php"]); // Using your custom aliasF
+    _paq.push(["setSiteId", "1"]);
+    var d = document, g = d.createElement("script"), s = d.getElementsByTagName("script")[0];
+    g.type = "text/javascript";
+    g.async = true;
+    g.src = u + "mtrcs.js"; // Using your custom alias
+    s.parentNode.insertBefore(g, s);
+  })();
 </script>
 
 
@@ -125,132 +119,132 @@
 
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const shuffleArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  };
-
-  const waitForImages = async (root) => {
-    const imgs = Array.from(root.querySelectorAll('img'));
-    await Promise.all(imgs.map(img => {
-      // If already complete, decode might still help stabilize layout
-      if (img.decode) {
-        return img.decode().catch(() => {});
+  document.addEventListener('DOMContentLoaded', () => {
+    const shuffleArray = (array) => {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
       }
-      if (img.complete) return Promise.resolve();
-      return new Promise(resolve => {
-        img.addEventListener('load', resolve, { once: true });
-        img.addEventListener('error', resolve, { once: true });
-      });
-    }));
-  };
+      return array;
+    };
 
-  const initSafeBanner = async (trackSelector, endpoint, pxPerSec) => {
-    const track = document.querySelector(trackSelector);
-    if (!track) return;
+    const waitForImages = async (root) => {
+      const imgs = Array.from(root.querySelectorAll('img'));
+      await Promise.all(imgs.map(img => {
+        // If already complete, decode might still help stabilize layout
+        if (img.decode) {
+          return img.decode().catch(() => { });
+        }
+        if (img.complete) return Promise.resolve();
+        return new Promise(resolve => {
+          img.addEventListener('load', resolve, { once: true });
+          img.addEventListener('error', resolve, { once: true });
+        });
+      }));
+    };
 
-    try {
-      const response = await fetch(endpoint);
-      const text = await response.text();
-      let urls = text.split('\n').map(l => l.trim()).filter(Boolean);
-      urls = shuffleArray(urls);
+    const initSafeBanner = async (trackSelector, endpoint, pxPerSec) => {
+      const track = document.querySelector(trackSelector);
+      if (!track) return;
 
-      const fragment = document.createDocumentFragment();
-      const doubledUrls = [...urls, ...urls];
+      try {
+        const response = await fetch(endpoint);
+        const text = await response.text();
+        let urls = text.split('\n').map(l => l.trim()).filter(Boolean);
+        urls = shuffleArray(urls);
 
-      doubledUrls.forEach(urlPath => {
-        const img = new Image();
-        img.src = urlPath;
+        const fragment = document.createDocumentFragment();
+        const doubledUrls = [...urls, ...urls];
 
-        // IMPORTANT: avoid lazy here; lazy-loading changes scrollWidth later => visible jumps
-        img.loading = "eager";
-        img.decoding = "async";
+        doubledUrls.forEach(urlPath => {
+          const img = new Image();
+          img.src = urlPath;
 
-        const baseName = urlPath.split('/').pop();
-        const nameWithoutExt = baseName.replace(/\.[^.]+$/, "");
-        const firstPart = nameWithoutExt.split(' ')[0];
-        const hasDomain = firstPart.includes('.');
+          // IMPORTANT: avoid lazy here; lazy-loading changes scrollWidth later => visible jumps
+          img.loading = "eager";
+          img.decoding = "async";
 
-        const finalDomain = hasDomain ? firstPart : "explicitconsulting.at";
-        const finalAlt = hasDomain ? nameWithoutExt : "explicitconsulting.at anonymous customer";
-        img.alt = finalAlt;
+          const baseName = urlPath.split('/').pop();
+          const nameWithoutExt = baseName.replace(/\.[^.]+$/, "");
+          const firstPart = nameWithoutExt.split(' ')[0];
+          const hasDomain = firstPart.includes('.');
 
-        const link = document.createElement('a');
-        link.href = `https://www.${finalDomain}`;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        link.className = "no-external-link-icon banner-link";
+          const finalDomain = hasDomain ? firstPart : "explicitconsulting.at";
+          const finalAlt = hasDomain ? nameWithoutExt : "explicitconsulting.at anonymous customer";
+          img.alt = finalAlt;
 
-        link.appendChild(img);
-        fragment.appendChild(link);
-      });
+          const link = document.createElement('a');
+          link.href = `https://www.${finalDomain}`;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.className = "no-external-link-icon banner-link";
 
-      track.appendChild(fragment);
+          link.appendChild(img);
+          fragment.appendChild(link);
+        });
 
-      const applyAnimationVars = () => {
-        // Remove + re-add class to restart cleanly if recalculated
-        track.classList.remove('is-animating');
+        track.appendChild(fragment);
 
-        // Force layout
-        const totalWidth = track.scrollWidth;
-        if (!totalWidth || totalWidth <= 0) return false;
+        const applyAnimationVars = () => {
+          // Remove + re-add class to restart cleanly if recalculated
+          track.classList.remove('is-animating');
 
-        const halfWidth = totalWidth / 2;
+          // Force layout
+          const totalWidth = track.scrollWidth;
+          if (!totalWidth || totalWidth <= 0) return false;
 
-        // Lock pixel distance (rounded helps subpixel drift)
-        track.style.setProperty('--track-width', `${Math.round(halfWidth)}px`);
+          const halfWidth = totalWidth / 2;
 
-        const duration = halfWidth / pxPerSec;
-        track.style.setProperty('--duration', `${duration}s`);
+          // Lock pixel distance (rounded helps subpixel drift)
+          track.style.setProperty('--track-width', `${Math.round(halfWidth)}px`);
 
-        // Ensure CSS variables are applied before starting animation
-        void track.offsetWidth;
-        requestAnimationFrame(() => track.classList.add('is-animating'));
-        return true;
-      };
+          const duration = halfWidth / pxPerSec;
+          track.style.setProperty('--duration', `${duration}s`);
 
-      // Wait until images are decoded/loaded so width is stable
-      await waitForImages(track);
+          // Ensure CSS variables are applied before starting animation
+          void track.offsetWidth;
+          requestAnimationFrame(() => track.classList.add('is-animating'));
+          return true;
+        };
 
-      // Start animation once stable
-      if (!applyAnimationVars()) {
-        // fallback retry if something still not measurable
-        setTimeout(() => applyAnimationVars(), 100);
+        // Wait until images are decoded/loaded so width is stable
+        await waitForImages(track);
+
+        // Start animation once stable
+        if (!applyAnimationVars()) {
+          // fallback retry if something still not measurable
+          setTimeout(() => applyAnimationVars(), 100);
+        }
+
+        // Optional but recommended: keep stable on resize / zoom / font swap
+        const ro = new ResizeObserver(() => {
+          // Debounce via rAF
+          requestAnimationFrame(() => applyAnimationVars());
+        });
+        ro.observe(track);
+
+        // If fonts can affect layout (less likely here, but safe):
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => applyAnimationVars()).catch(() => { });
+        }
+
+      } catch (e) {
+        console.error("Banner error:", e);
       }
+    };
 
-      // Optional but recommended: keep stable on resize / zoom / font swap
-      const ro = new ResizeObserver(() => {
-        // Debounce via rAF
-        requestAnimationFrame(() => applyAnimationVars());
-      });
-      ro.observe(track);
+    initSafeBanner(
+      '.customer-scrolling-track',
+      'https://set-outlooksignatures.com/customer-images.txt',
+      60
+    );
 
-      // If fonts can affect layout (less likely here, but safe):
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(() => applyAnimationVars()).catch(() => {});
-      }
-
-    } catch (e) {
-      console.error("Banner error:", e);
-    }
-  };
-
-  initSafeBanner(
-    '.customer-scrolling-track',
-    'https://set-outlooksignatures.com/customer-images.txt',
-    60
-  );
-
-  initSafeBanner(
-    '.signature-scrolling-track',
-    'https://set-outlooksignatures.com/signature-images.txt',
-    60
-  );
-});
+    initSafeBanner(
+      '.signature-scrolling-track',
+      'https://set-outlooksignatures.com/signature-images.txt',
+      60
+    );
+  });
 </script>
 
 
