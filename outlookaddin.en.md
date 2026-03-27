@@ -39,7 +39,6 @@ sitemap_changefreq: weekly
 <p>For advanced usage and debug logging, a taskpane is available in all Outlook versions supporting this feature.</p>
 <p>In compose mode, the taskpane allows to manually choose a signature, set the selected signature, and to temporarily override admin-defined settings for debug logging and Outlook host restrictions.</p>
 <p>In message read mode, the taskpane cannot set signatures, of course. But it is very useful to check if the add-in is deployed correctly, and if it can access signatures. This is especially useful on mobile devices, in situations where enabling the debug mode is not wanted, and for basic tests when launch events are not triggered by Outlook.</p>
-
 <div class="columns is-multiline">
   <div class="column is-6-desktop is-12-tablet">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
@@ -50,7 +49,6 @@ sitemap_changefreq: weekly
       </ul>
     </div>
   </div>
-
   <div class="column is-6-desktop is-12-tablet">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Outlook for the web (on-prem)</b></p>
@@ -61,7 +59,6 @@ sitemap_changefreq: weekly
       </ul>
     </div>
   </div>
-
   <div class="column is-6-desktop is-12-tablet">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Classic Outlook for Windows, Classic Outlook for Mac</b></p>
@@ -71,7 +68,6 @@ sitemap_changefreq: weekly
       </ul>
     </div>
   </div>
-
   <div class="column is-6-desktop is-12-tablet">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Outlook for iOS, Outlook for Android</b></p>
@@ -110,7 +106,7 @@ sitemap_changefreq: weekly
 <h3>Entra ID app</h3>
 <p>When mailboxes are hosted in Exchange Online, the Outlook add-in needs an Entra ID app to access the mailbox.</p>
 <p>Creating a separate Entra ID app for the Outlook add-in is strongly recommended over modifying an existing app.</p>
-<p>You can run the following command to automatically create the Entra ID app. You need an Entra ID account with 'Application Administrator' or 'Global Administrator' permissions.</p>
+<p>You can run the following command to automatically create the Entra ID app. You need an Entra ID account with "Application Administrator" or "Global Administrator" permissions.</p>
 <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
   <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
     <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
@@ -124,7 +120,7 @@ sitemap_changefreq: weekly
 <ul>
   <li>A name of your choice.</li>
   <li>A supported account type (it is strongly recommended to only allow access from users of your tenant).</li>
-  <li>Authentication platform <code>Single-page application</code> with a redirect URI of <code>brk-multihub://&lt;your_deployment_domain&gt;</code>. If your DEPLOYMENT_URL is 'https://outlookaddin01.example.com', the redirect URI must be <code>brk-multihub://outlookaddin01.example.com</code>.</li>
+  <li>Authentication platform <code>Single-page application</code> with a redirect URI of <code>brk-multihub://&lt;your_deployment_domain&gt;</code>. If your DEPLOYMENT_URL is <code>https://outlookaddin01.example.com</code>, the redirect URI must be <code>brk-multihub://outlookaddin01.example.com</code>.</li>
   <li>Access to the following <code>delegated</code> (not application!) <code>Graph API</code> permissions:
     <ul>
       <li><code>Mail.Read</code>: Allows to read emails in mailbox of the currently logged-on user (and in no other mailboxes). Required because of Microsoft restrictions accessing roaming signatures.</li>
@@ -141,7 +137,7 @@ sitemap_changefreq: weekly
 <p>With every new release of Set-OutlookSignatures, <a href="/benefactorcircle">Benefactor Circle</a> members not only receive an updated Benefactor Circle license file, but also an updated Outlook add-in.</p>
 <p>With every new release of the Outlook add-in, you need to update your add-in deployment (sideloading M365 Centralized Deployment, M365 Integrated Apps) so that Outlook can download and use the newest code.</p>
 <p>It is recommended to use use two separate dedicated hostnames at least: One for testing and one for production, such as "https://outlookaddin01.example.com" and "https://outlookaddin01test.example.com".</p>
-<p>You can also have multiple different instances of the Outlook add-in in production, for example when you want to configure the add-in differently depending on how different user groups work with email - see the '<a href="/details#architecture-considerations">Architecture considerations</a>' chapter of the 'Technical details, requirements and usage' document for an example. Each instance needs a dedicated hostname. Make sure that each mailbox only uses one instance of the add-in, never more.</p>
+<p>You can also have multiple different instances of the Outlook add-in in production, for example when you want to configure the add-in differently depending on how different user groups work with email - see the <a href="/details#architecture-considerations">Architecture considerations</a> chapter of the "Technical details, requirements and usage" document for an example. Each instance needs a dedicated hostname. Make sure that each mailbox only uses one instance of the add-in, never more.</p>
 <p>To configure the add-in and deploy it to your web server:</p>
 <ul>
   <li>Open <code>run_before_deployment.ps1</code> and follow the instructions in it to configure the add-in to your needs.</li>
@@ -190,24 +186,24 @@ sitemap_changefreq: weekly
 <p>This method is also called sideloading. It is ideal for test scenarios.</p>
 <p>For mailboxes in Exchange Online:</p>
 <ul>
-  <li>Open 'https://outlook.cloud.microsoft/mail/inclientstore'.</li>
-  <li>Click on 'My add-ins'.</li>
-  <li>Below 'Custom Addins', click on 'Add a custom add-in' and on 'Add from file'.</li>
-  <li>In the file selection dialog, enter the manifest.xml file URL as file name and click on 'Open'.</li>
-  <li>Click on 'Install'.</li>
+  <li>Open <code>https://outlook.cloud.microsoft/mail/inclientstore</code>.</li>
+  <li>Click on <code>My add-ins</code>.</li>
+  <li>Below <code>Custom Addins</code>, click on <code>Add a custom add-in</code> and on <code>Add from file</code>.</li>
+  <li>In the file selection dialog, enter the manifest.xml file URL as file name and click on <code>Open</code>.</li>
+  <li>Click on <code>Install</>code>.</li>
   <li>Refresh the browser window.</li>
 </ul>
 <p>For mailboxes hosted on-prem:</p>
 <ul>
-  <li>Open 'https://YourMailServer.example.com/owa/#path=/options/manageapps'.</li>
-  <li>Click on the plus sign to add an add-in, and choose 'Add from file'.</li>
-  <li>In the file selection dialog, enter the manifest.xml file URL as file name and click on 'Open'.</li>
-  <li>Click on 'Install'.</li>
+  <li>Open <code>https://YourMailServer.example.com/owa/#path=/options/manageapps</code>.</li>
+  <li>Click on the plus sign to add an add-in, and choose <code>Add from file</code>.</li>
+  <li>In the file selection dialog, enter the manifest.xml file URL as file name and click on <code>Open</code>.</li>
+  <li>Click on </code>Install</code>.</li>
   <li>Refresh the browser window.</li>
 </ul>
 <p>Sideloading of add-ins may have been disabled by your administrators. Do not use the URLs mentioned above to remove custom add-ins, as this fails most times. Instead, use one of the following options:</p>
 <ul>
-  <li>Open Outlook for the web, draft a new mail, click on the 'Apps' button, right-click the Set-OutlookSignatures add-in and select 'Uninstall'.</li>
+  <li>Open Outlook for the web, draft a new mail, click on the <code>Apps</code> button, right-click the Set-OutlookSignatures add-in and select <code>Uninstall</code>.</li>
   <li>Remove the custom add-in in Outlook for Android or Outlook for iOS.</li>
 </ul>
 
@@ -244,7 +240,7 @@ sitemap_changefreq: weekly
   <li>Microsoft is actively blocking access to roaming signatures for Outlook add-ins. The add-in will be updated when this block has been removed. In the meantime, the add-in has access to the data of the last run of Set-OutlookSignatures v4.14.0 and higher.</li>
   <li>The Microsoft APIs only allow access to online content. There is no way to access offline mailbox content or the file system. This means that the Outlook add-in only works when Outlook has an online connection to the user's mailbox.</li>
   <li>The easiest way to test the add-in and its basic functionality is to use the taskpane. For specific debugging on Android and iOS, you need to use the DEBUG option in <code>run_before_deployment.ps1</code>.</li>
-  <li>The add-in can run automatically when one of the following launch events is triggered by Outlook: OnNewMessageCompose, OnNewAppointmentOrganizer, OnMessageFromChanged, OnAppointmentFromChanged, OnMessageRecipientsChanged, OnAppointmentAttendeesChanged.
+  <li>The add-in can run automatically when one of the following launch events is triggered by Outlook: <code>OnNewMessageCompose</code>, <code>OnNewAppointmentOrganizer</code>, <code>OnMessageFromChanged</code>, <code>OnAppointmentFromChanged</code>, <code>OnMessageRecipientsChanged</code>, <code>OnAppointmentAttendeesChanged</code>.
     <ul>
       <li>Not all these events are supported on all platforms, see <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/autolaunch#supported-events">this Microsoft article</a>.</li>
       <li>Outlook currently does not support add-ins on calendar invite responses.</li>
@@ -270,7 +266,6 @@ sitemap_changefreq: weekly
         <li>Only mailboxes hosted in Exchange Online are supported.</li>
         <li>Setting the signature on new appointments is not yet supported by Microsoft.</li>
         <li>Taskpanes are not allowed during compose mode.</li>
-        <li>iPad support coming later via Microsoft.</li>
       </ul>
     </div>
   </div>
@@ -278,7 +273,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Outlook for Mac</b></p>
       <ul>
-        <li>Use the New Outlook for Mac whenever possible; Classic Mac is at end of lifecycle.</li>
+        <li>Use the New Outlook for Mac whenever possible; Classic Outlook for Mac is out of support.</li>
         <li>Support for Classic Outlook for Mac is best-effort due to API instability.</li>
       </ul>
     </div>
@@ -296,9 +291,8 @@ sitemap_changefreq: weekly
 <div class="box has-background-white-bis has-text-black" style="height: 100%;">
   <p><b>Classic Outlook for Windows</b></p>
   <ul>
-    <li>Things work fine for EXO, but APIs seem unstable for on-prem mailboxes regarding launch events. Use the taskpane when in doubt.</li>
-    <li>For EXO mailboxes, the version must support Nested App Authentication.</li>
-    <li>Microsoft disabled legacy Exchange Online tokens; they cannot be re-enabled since October 2025 due to security reasons.</li>
+    <li>Launch event APIs are sometimes unstable for on-prem mailboxes. Use the taskpane when in doubt.</li>
+    <li>For mailboxes in Exchange Online, the Outlook version version used must support Nested App Authentication. Microsoft disabled legacy EWS Exchange Online tokens; they cannot be re-enabled since October 2025 due to security reasons.</li>
   </ul>
 </div>
 
