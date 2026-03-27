@@ -128,11 +128,48 @@
   document.addEventListener('DOMContentLoaded', () => {
     // Utility to randomize the image order
     const shuffleArray = (array) => {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+      // 1. In zwei Töpfe trennen
+      const gifs = array.filter(url => url.toLowerCase().endsWith('.gif'));
+      const others = array.filter(url => !url.toLowerCase().endsWith('.gif'));
+
+      // 2. Hilfsfunktion zum Mischen der einzelnen Töpfe
+      const internalShuffle = (arr) => {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      };
+
+      const shuffledGifs = internalShuffle(gifs);
+      const shuffledOthers = internalShuffle(others);
+
+      const result = [];
+      let gifIndex = 0;
+      let otherIndex = 0;
+
+      // 3. Webe-Logik: 2x Normal, dann 1x GIF (solange GIFs da sind)
+      while (otherIndex < shuffledOthers.length || gifIndex < shuffledGifs.length) {
+
+        // Füge bis zu 2 normale Bilder hinzu
+        for (let i = 0; i < 2; i++) {
+          if (otherIndex < shuffledOthers.length) {
+            result.push(shuffledOthers[otherIndex]);
+            otherIndex++;
+          }
+        }
+
+        // Füge 1 GIF hinzu (wenn noch welche im Topf sind)
+        if (gifIndex < shuffledGifs.length) {
+          result.push(shuffledGifs[gifIndex]);
+          gifIndex++;
+        }
+
+        // Falls keine "Others" mehr da sind, aber noch GIFs, 
+        // füllt die Schleife den Rest einfach mit GIFs auf.
       }
-      return array;
+
+      return result;
     };
 
     const initSafeBanner = async (trackSelector, endpoint, pxPerSec) => {
@@ -200,7 +237,7 @@
 
           // Trigger a reflow to ensure the transform is applied 
           // before the 'is-animating' class kicks in.
-          track.offsetHeight; 
+          track.offsetHeight;
 
           track.classList.add('is-animating');
         };
@@ -208,23 +245,23 @@
         // Delay slightly to allow the browser to start loading images
         setTimeout(startAnimation, 500);
 
-      } catch (e) { 
-        console.error("Banner error:", e); 
+      } catch (e) {
+        console.error("Banner error:", e);
       }
     };
 
     // --- Configuration ---
     // Customers: Right to Left (Standard) @ 50px/sec
     initSafeBanner(
-      '.customer-scrolling-track', 
-      'https://set-outlooksignatures.com/customer-images.txt', 
+      '.customer-scrolling-track',
+      'https://set-outlooksignatures.com/customer-images.txt',
       50
     );
 
     // Signatures: Left to Right (Reverse) @ 40px/sec
     initSafeBanner(
-      '.signature-scrolling-track', 
-      'https://set-outlooksignatures.com/signature-images.txt', 
+      '.signature-scrolling-track',
+      'https://set-outlooksignatures.com/signature-images.txt',
       40
     );
   });
