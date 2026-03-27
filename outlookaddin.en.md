@@ -130,7 +130,6 @@ sitemap_changefreq: weekly
   <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "OutlookAddIn" -AppName "Set-OutlookSignatures Outlook add-in" -OutlookAddInUrl "https://yourhost.yourdomain.com"</code></pre>
 </div>
 <p><small><em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> parameter.</em></small></p>
-</div>
 <p>If you want to create the Entra ID app manually, the required minimum settings for the Entra ID app are:</p>
 <ul>
   <li>A name of your choice.</li>
