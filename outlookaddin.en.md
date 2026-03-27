@@ -27,7 +27,7 @@ sitemap_changefreq: weekly
     <p>It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
   </div>
   <div class="column">
-    <div class="box has-background-white-bis" style="border-top: 4px solid var(--benefactor-circle-color);">
+    <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid var(--benefactor-circle-color);">
       <p><b>Key Functionality</b></p>
       <ul>
         <li><strong>Automatic Selection:</strong> Applies correct sigs on item creation.</li>
