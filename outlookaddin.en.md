@@ -77,7 +77,7 @@ sitemap_changefreq: weekly
 <p>From an end user perspective, basically nothing needs to be done: When writing a new email, answering an email, or creating a new appointment, the add-in automatically adds the corresponding default signature.</p>
 <p>For advanced usage, a taskpane is available to manually choose signatures, preview items, or override settings for debug logging.</p>
 <div class="columns is-multiline">
-  <div class="column is-6">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <div style="display: flex; gap: 0.75em;">
         🌐
@@ -89,7 +89,7 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-  <div class="column is-6">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <div style="display: flex; gap: 0.75em;">
         💻
@@ -101,7 +101,7 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-  <div class="column is-6">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <div style="display: flex; gap: 0.75em;">
         🏢
@@ -114,7 +114,7 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-  <div class="column is-6">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <div style="display: flex; gap: 0.75em;">
         📱
@@ -194,7 +194,7 @@ sitemap_changefreq: weekly
 <p>It is recommended to use at least two separate dedicated hostnames: one for testing and one for production (e.g., <code>https://outlookaddin01test.example.com</code> and <code>https://outlookaddin01.example.com</code>).</p>
 <p>The add-in is configured via the <code>run_before_deployment.ps1</code> script:</p>
 <div class="columns is-multiline">
-  <div class="column is-6">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>General Settings</b></p>
       <ul>
@@ -205,7 +205,7 @@ sitemap_changefreq: weekly
       </ul>
     </div>
   </div>
-  <div class="column is-6">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Automation Rules</b></p>
       <ul>
@@ -220,14 +220,14 @@ sitemap_changefreq: weekly
   <p><b>Custom Rules Logic</b></p>
   <p>Modify <code>CustomRulesCode.js</code> to influence signature selection at runtime based on:</p>
   <div class="columns mt-2">
-    <div class="column is-6">
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <ul>
         <li>Internal vs. external recipients</li>
         <li>The sender's email address</li>
         <li>Specific customers in the To field</li>
       </ul>
     </div>
-    <div class="column is-6">
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <ul>
         <li>Mail vs. Appointment types</li>
         <li>Subject line keywords</li>
@@ -243,7 +243,7 @@ sitemap_changefreq: weekly
 <h2 id="deployment-to-mailboxes">Deployment to mailboxes</h2>
 <p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. This is because Outlook caches the code of the add-in and reads the manifest file only once.</p>
 <div class="columns is-multiline">
-  <div class="column is-6">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Individual Installation (Sideloading)</b></p>
       <p>Ideal for test scenarios. Sideloading of add-ins may have been disabled by your administrators.</p>
@@ -254,7 +254,7 @@ sitemap_changefreq: weekly
       </ul>
     </div>
   </div>
-  <div class="column is-6">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Enterprise Deployment (Production)</b></p>
       <p>Ideal for mass deployment. These methods are usually too slow (up to 72 hours) for test scenarios.</p>
@@ -269,14 +269,14 @@ sitemap_changefreq: weekly
   <p><b>Clear the Outlook add-in cache</b></p>
   <p>When testing, Outlook sometimes takes too long updating its cache. Follow these official Microsoft instructions to manually clear it:</p>
   <div class="columns mt-2">
-    <div class="column is-6">
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <ul>
         <li><b>Web:</b> Hard Refresh the browser window.</li>
         <li><b>Classic Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">Official instructions from Microsoft</a>.</li>
         <li><b>New Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">Official instructions from Microsoft</a>.</li>
       </ul>
     </div>
-    <div class="column is-6">
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <ul>
         <li><b>macOS:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">Official instructions from Microsoft</a>.</li>
         <li><b>iOS:</b> Taskpane > Advanced options > <b>Reload add-in</b>.</li>
@@ -299,7 +299,7 @@ sitemap_changefreq: weekly
 </div>
 
 <div class="columns is-multiline">
-  <div class="column is-6">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Outlook for iOS & Android</b></p>
       <ul>
@@ -310,7 +310,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 
-  <div class="column is-6">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Outlook for Mac</b></p>
       <ul>
@@ -320,7 +320,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 
-  <div class="column is-6">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Outlook for the web (On-Prem)</b></p>
       <ul>
@@ -330,7 +330,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 
-  <div class="column is-6">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Classic Outlook for Windows</b></p>
       <ul>
