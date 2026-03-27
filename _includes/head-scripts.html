@@ -179,10 +179,15 @@
         const startContinuousScroll = () => {
           const totalWidth = track.scrollWidth;
           const halfWidth = totalWidth / 2;
-          // Duration = Distance (px) / Speed (px/s)
           const duration = halfWidth / pxPerSec;
 
           track.style.setProperty('--duration', `${duration}s`);
+
+          // If it's the signature track, we might want it to start offset
+          if (trackSelector.includes('signature')) {
+            track.style.transform = "translate3d(-50%, 0, 0)";
+          }
+
           track.classList.add('is-animating');
         };
 
@@ -194,15 +199,15 @@
 
     // Customer images: 50px per second
     initSafeBanner(
-      '.customer-scrolling-track', 
-      'https://set-outlooksignatures.com/customer-images.txt', 
+      '.customer-scrolling-track',
+      'https://set-outlooksignatures.com/customer-images.txt',
       50
     );
-    
+
     // Signature images: 40px per second
     initSafeBanner(
-      '.signature-scrolling-track', 
-      'https://set-outlooksignatures.com/signature-images.txt', 
+      '.signature-scrolling-track',
+      'https://set-outlooksignatures.com/signature-images.txt',
       40
     );
   });

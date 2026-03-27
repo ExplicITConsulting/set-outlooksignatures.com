@@ -132,7 +132,7 @@ h6 {
   display: block;
   position: relative;
   // Zwingt den Browser, den Container als isolierte Ebene zu betrachten
-  contain: paint; 
+  contain: paint;
 
   &.signature-scrolling-banner {
     background: rgba(0, 0, 0, 0.03);
@@ -153,11 +153,11 @@ h6 {
   width: max-content;
   flex-wrap: nowrap;
   gap: 2rem;
-  
+
   // PERFORMANCE OPTIMIERUNG:
   will-change: transform;
   // translate3d aktiviert die GPU-Beschleunigung massiver als einfaches translate
-  transform: translate3d(0, 0, 0); 
+  transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
 
@@ -166,7 +166,7 @@ h6 {
     width: auto;
     opacity: 1;
     // Wir entfernen standardmäßig komplexe Filter während der Animation
-    filter: none; 
+    filter: none;
   }
 
   // Hover-Effekte nur bei Interaktion, um Rechenlast im Loop zu sparen
@@ -227,19 +227,43 @@ h6 {
   animation: marquee-scroll var(--duration) linear infinite;
 }
 
+// Default (Right-to-Left)
 @keyframes marquee-scroll {
   from {
     transform: translate3d(0, 0, 0);
   }
   to {
-    // -50% funktioniert nur, wenn die Liste im JS verdoppelt wurde
     transform: translate3d(-50%, 0, 0);
   }
 }
 
+// Reverse (Left-to-Right)
+@keyframes marquee-scroll-reverse {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// Apply the reverse animation to the signature track
+.signature-scrolling-track.is-animating {
+  animation-name: marquee-scroll-reverse;
+}
+
 @keyframes pulse {
-  0%, 75%, 100% { transform: scale(1); filter: brightness(100%); }
-  87.5% { transform: scale(0.95); filter: brightness(90%); box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); }
+  0%,
+  75%,
+  100% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  87.5% {
+    transform: scale(0.95);
+    filter: brightness(90%);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  }
 }
 
 // --- Visual Extras ---
@@ -256,8 +280,13 @@ html::after {
   opacity: 0.5;
 }
 
-:root { --benefactor-circle-color: darkgoldenrod; }
-[data-theme="dark"], .theme-dark { --benefactor-circle-color: goldenrod; }
+:root {
+  --benefactor-circle-color: darkgoldenrod;
+}
+[data-theme="dark"],
+.theme-dark {
+  --benefactor-circle-color: goldenrod;
+}
 
 // --- Inline Code Styling ---
 :not(pre) > code {
