@@ -80,9 +80,7 @@ sitemap_changefreq: weekly
       <div style="display: flex; gap: 0.75em;">
         🌐
         <div>
-          <p><b>Web (Exchange Online), New Outlook for Windows/Mac</b></p>
-          <p><b>Emails:</b> "Message" tab > "Apps" icon<br>
-          <b>Appointments:</b> Ribbon > "…" menu</p>
+          <p><b>Web (Exchange Online), New Outlook for Windows/Mac</b><br><b>Emails:</b> "Message" tab > "Apps" icon<br><b>Appointments:</b> Ribbon > "…" menu</p>
         </div>
       </div>
     </div>
@@ -92,9 +90,7 @@ sitemap_changefreq: weekly
       <div style="display: flex; gap: 0.75em;">
         💻
         <div>
-          <p><b>Classic Outlook for Windows and Mac</b></p>
-          <p><b>Emails:</b> "Message" tab > "All apps" icon<br>
-          <b>Appointments:</b> "Meeting" tab > "All apps" icon</p>
+          <p><b>Classic Outlook for Windows and Mac</b><br><b>Emails:</b> "Message" tab > "All apps" icon<br><b>Appointments:</b> "Meeting" tab > "All apps" icon</p>
         </div>
       </div>
     </div>
@@ -104,10 +100,7 @@ sitemap_changefreq: weekly
       <div style="display: flex; gap: 0.75em;">
         🏢
         <div>
-          <p><b>Outlook for the web (on-prem)</b></p>
-          <p><b>Compose:</b> Lower right corner of the window<br>
-          <b>Appointments:</b> Right side of the top menu bar<br>
-          <b>Read mode:</b> Left of the reply button</p>
+          <p><b>Outlook for the web (on-prem)</b><br><b>Compose:</b> Lower right corner of the window<br><b>Appointments:</b> Right side of the top menu bar<br><b>Read mode:</b> Left of the reply button</p>
         </div>
       </div>
     </div>
@@ -118,9 +111,7 @@ sitemap_changefreq: weekly
         📱
         <div>
           <p><b>Mobile (iOS & Android)</b></p>
-          <p><b>Read mode:</b> Three dots ("…" or "⋮") in the header<br>
-          <b>Compose:</b> Signatures are added automatically</p>
-          <p><small>Note: Taskpanes are only supported in Read mode on mobile.</small></p>
+          <p><b>Read mode:</b> Three dots ("…" or "⋮") in the header<br><b>Compose:</b> Signatures are added automatically<br><b>Note:</b> Taskpanes are only supported in Read mode on mobile.</small></p>
         </div>
       </div>
     </div>
@@ -215,7 +206,7 @@ sitemap_changefreq: weekly
 <div class="box has-background-white-bis has-text-black">
   <p><b>Custom Rules Logic</b></p>
   <p>Modify <code>CustomRulesCode.js</code> to influence signature selection at runtime based on:</p>
-  <div class="columns mt-2">
+  <div class="columns mt-0">
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <ul>
         <li>Internal vs. external recipients</li>
