@@ -13,12 +13,15 @@ $text: black;
 html {
   scroll-padding-top: $navbar-height;
 }
+
 body {
   hyphens: auto;
 }
+
 pre code {
   color: black;
 }
+
 .footer {
   padding-bottom: 0 !important;
 }
@@ -38,6 +41,7 @@ h6 {
 .subtitle,
 .content {
   hyphens: manual;
+
   h1,
   h2,
   h3,
@@ -55,9 +59,11 @@ h6 {
   * ~ h2 {
     margin-top: 1em;
   }
+
   h6 {
     margin-bottom: 0;
   }
+
   ul,
   ol {
     &:not(:first-child) {
@@ -71,6 +77,7 @@ p {
   &:has(+ ol) {
     margin-bottom: 0 !important;
   }
+
   + ul,
   + ol {
     margin-top: 0 !important;
@@ -131,7 +138,8 @@ h6 {
   overflow: hidden;
   display: block;
   position: relative;
-  // Zwingt den Browser, den Container als isolierte Ebene zu betrachten
+
+  // isolate paint & layout
   contain: paint;
 
   &.signature-scrolling-banner {
@@ -140,7 +148,7 @@ h6 {
     padding: 1rem 0;
   }
 
-  // Pause nur, wenn nicht im Reduced-Motion Modus (Stromsparmodus)
+  // pause animation on hover
   &:hover .is-animating {
     animation-play-state: paused;
   }
@@ -154,10 +162,8 @@ h6 {
   flex-wrap: nowrap;
   gap: 2rem;
 
-  // PERFORMANCE OPTIMIERUNG:
+  // GPU & animation stability
   will-change: transform;
-  // translate3d aktiviert die GPU-Beschleunigung massiver als einfaches translate
-  transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
 
@@ -165,11 +171,10 @@ h6 {
   a img {
     width: auto;
     opacity: 1;
-    // Wir entfernen standardmäßig komplexe Filter während der Animation
     filter: none;
   }
 
-  // Hover-Effekte nur bei Interaktion, um Rechenlast im Loop zu sparen
+  // Hover effects
   a:hover img,
   img:hover {
     z-index: 10;
@@ -186,6 +191,7 @@ h6 {
     align-items: center;
     text-decoration: none;
     border: none;
+
     &.no-external-link-icon::after {
       content: none !important;
     }
@@ -222,7 +228,7 @@ h6 {
 }
 
 // --- Animations ---
-// Standard: Right to Left (Customers)
+// Unified marquee animation (stable both directions)
 @keyframes marquee-scroll {
   from {
     transform: translate3d(0, 0, 0);
@@ -232,28 +238,16 @@ h6 {
   }
 }
 
-// Reverse: Left to Right (Signatures)
-@keyframes marquee-scroll-reverse {
-  from {
-    transform: translate3d(-50%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 .customer-scrolling-track.is-animating {
-  // WICHTIG: Muss bei 0 starten
-  transform: translate3d(0, 0, 0);
   animation: marquee-scroll var(--duration) linear infinite;
 }
 
 .signature-scrolling-track.is-animating {
-  // WICHTIG: Muss bei -50% starten
-  transform: translate3d(-50%, 0, 0);
-  animation: marquee-scroll-reverse var(--duration) linear infinite;
+  animation: marquee-scroll var(--duration) linear infinite;
+  animation-direction: reverse;
 }
 
+// Button pulse animation
 @keyframes pulse {
   0%,
   75%,
@@ -261,6 +255,7 @@ h6 {
     transform: scale(1);
     filter: brightness(100%);
   }
+
   87.5% {
     transform: scale(0.95);
     filter: brightness(90%);
@@ -285,6 +280,7 @@ html::after {
 :root {
   --benefactor-circle-color: darkgoldenrod;
 }
+
 [data-theme="dark"],
 .theme-dark {
   --benefactor-circle-color: goldenrod;
