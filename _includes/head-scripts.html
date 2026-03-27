@@ -134,7 +134,7 @@
       return array;
     };
 
-    const initSafeBanner = async (trackSelector, endpoint, pxPerSec) => {
+    const initSafeBanner = async (trackSelector, endpoint) => {
       const track = document.querySelector(trackSelector);
       if (!track) return;
 
@@ -146,37 +146,19 @@
         urls = shuffleArray(urls);
 
         const fragment = document.createDocumentFragment();
-        const doubledUrls = [...urls, ...urls];
-
-        doubledUrls.forEach(urlPath => {
+        urls.forEach(urlPath => {
           const img = new Image();
           img.src = urlPath;
           img.loading = "lazy";
 
-          // 1. Get basename: "google.com logo.png"
           const baseName = urlPath.split('/').pop();
-
-          // 2. Remove extension: "google.com logo"
           const nameWithoutExt = baseName.replace(/\.[^.]+$/, "");
-
-          // 3. Extract domain from first part
           const firstPart = nameWithoutExt.split(' ')[0];
           const hasDomain = firstPart.includes('.');
 
-          let finalDomain = "";
-          let finalAlt = "";
+          let finalDomain = hasDomain ? firstPart : "explicitconsulting.at";
+          let finalAlt = hasDomain ? nameWithoutExt : "explicitconsulting.at anonymous customer";
 
-          if (hasDomain) {
-            // Found a domain in the filename
-            finalDomain = firstPart;
-            finalAlt = nameWithoutExt;
-          } else {
-            // No domain found: use your fallback values
-            finalDomain = "explicitconsulting.at";
-            finalAlt = "explicitconsulting.at anonymous customer";
-          }
-
-          // Apply data to elements
           img.alt = finalAlt;
 
           const link = document.createElement('a');
@@ -191,21 +173,42 @@
 
         track.appendChild(fragment);
 
-        const observer = new ResizeObserver(entries => {
-          const halfWidth = entries[0].contentRect.width / 2;
-          if (halfWidth > 10) {
-            const duration = halfWidth / pxPerSec;
-            track.style.setProperty('--duration', `${duration}s`);
-            track.classList.add('is-animating');
-          }
-        });
+        const startStepping = () => {
+          // Wir lesen die Gap einmal aus dem CSS aus (z.B. "32px")
+          const computedStyle = window.getComputedStyle(track);
+          const gap = parseInt(computedStyle.gap) || 0;
 
-        observer.observe(track);
+          setInterval(() => {
+            // Pause bei Hover auf dem Container (Banner)
+            if (track.parentElement.matches(':hover')) return;
+
+            const firstItem = track.firstElementChild;
+            if (!firstItem) return;
+
+            // Dynamische Berechnung: Bildbreite + CSS Gap
+            const stepWidth = firstItem.offsetWidth + gap;
+
+            // Sanftes Gleiten (1.2s Dauer)
+            track.style.transition = "transform 1.2s cubic-bezier(0.45, 0.05, 0.55, 0.95)";
+            track.style.transform = `translateX(-${stepWidth}px)`;
+
+            // Reset nach der Animation
+            setTimeout(() => {
+              track.style.transition = "none";
+              track.style.transform = "translateX(0)";
+              track.appendChild(firstItem); // Schiebt das erste Element nach hinten
+            }, 1250); 
+          }, 5000); // Alle 5 Sekunden ein Schritt
+        };
+
+        // Startverzögerung, damit die Bilder Zeit zum Laden haben
+        setTimeout(startStepping, 2000);
+
       } catch (e) { console.error("Banner error:", e); }
     };
 
-    initSafeBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 75);
-    initSafeBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 90);
+    initSafeBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt');
+    initSafeBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt');
   });
 </script>
 

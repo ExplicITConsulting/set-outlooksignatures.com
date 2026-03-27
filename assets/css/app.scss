@@ -138,10 +138,6 @@ h6 {
     border-radius: 4px;
     padding: 1rem 0;
   }
-
-  &:hover .is-animating {
-    animation-play-state: paused;
-  }
 }
 
 // --- UNIVERSAL TRACK BEHAVIOR (Mirror-Image Logic) ---
@@ -217,25 +213,6 @@ h6 {
     img:hover {
       box-shadow: 0 0.3em 0.8em rgba(0, 0, 0, 0.6);
     }
-  }
-}
-
-// --- Animations ---
-.is-animating {
-  animation: marquee-scroll var(--duration) linear infinite;
-
-  @-moz-document url-prefix() {
-    transform: rotate(0.0001deg);
-    filter: drop-shadow(0 0 0 transparent);
-  }
-}
-
-@keyframes marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
   }
 }
 
