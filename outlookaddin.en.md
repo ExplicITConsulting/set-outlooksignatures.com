@@ -18,27 +18,21 @@ redirect_from:
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
+<h2 id="overview">Overview</h2>
+<p>With a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle license</span></a>, you also have access to the Set-OutlookSignatures add-in for Outlook.</p>
+<p>The add-in makes signatures — created by Set-OutlookSignatures in client or SimulateAndDeploy mode — available in <strong>Outlook on iOS and Outlook on Android</strong>, while supporting all Outlook editions across platforms.</p>
+<p>It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD (bring your own device) scenarios. For on-premises mailboxes, it delivers a roaming signature experience comparable to the cloud.</p>
+<p>The Outlook add-in includes a taskpane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.</p>
+<p>It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful in Outlook on Android and Outlook on iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
+<p>The Outlook add-in is self-hosted by you. Compared to using a solution hosted by a 3rd party, this has several advantages:</p>
+<ul>
+  <li>Client specific configuration.</li>
+  <li>You have full control over the version that is used.</li>
+  <li>Keeps license costs low.</li>
+  <li>Is the preferred method from a data protection and privacy perspective.</li>
+</ul>
+<p>Outlook downloads the add-in code and executes it locally, in the security context of the mailbox. There are no middleware or proxy servers involved. Data is only transferred between your Outlook client, your authentication system (Entra ID for Exchange Online) and your mailbox servers.</p>
 
-<div class="columns is-multiline mb-6">
-  <div class="column is-full">
-    <h2 id="overview">Overview</h2>
-    <p>With a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle license</span></a>, you also have access to the Set-OutlookSignatures add-in for Outlook.</p>
-    <p>The add-in makes signatures — created by Set-OutlookSignatures in client or SimulateAndDeploy mode — available in <strong>Outlook on iOS and Outlook on Android</strong>, while supporting all Outlook editions across platforms.</p>
-    <p>It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD (bring your own device) scenarios. For on-premises mailboxes, it delivers a roaming signature experience comparable to the cloud.</p>
-    <p>The Outlook add-in includes a taskpane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.</p>
-    <p>It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful in Outlook on Android and Outlook on iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
-    <p>The Outlook add-in is self-hosted by you. Compared to using a solution hosted by a 3rd party, this has several advantages:</p>
-    <ul>
-      <li>Client specific configuration.</li>
-      <li>You have full control over the version that is used.</li>
-      <li>Keeps license costs low.</li>
-      <li>Is the preferred method from a data protection and privacy perspective.</li>
-    </ul>
-    <p>Outlook downloads the add-in code and executes it locally, in the security context of the mailbox. There are no middleware or proxy servers involved. Data is only transferred between your Outlook client, your authentication system (Entra ID for Exchange Online) and your mailbox servers.</p>
-  </div>
-</div>
-
-<hr class="my-6">
 
 <h2 id="usage">Usage</h2>
 <p>From an end user perspective, basically nothing needs to be done or configured: When writing a new email, answering an email, or creating a new appointment, the add-in automatically adds the corresponding default signature.</p>
@@ -46,41 +40,61 @@ sitemap_changefreq: weekly
 <p>In compose mode, the taskpane allows to manually choose a signature, set the selected signature, and to temporarily override admin-defined settings for debug logging and Outlook host restrictions.</p>
 <p>In message read mode, the taskpane cannot set signatures, of course. But it is very useful to check if the add-in is deployed correctly, and if it can access signatures. This is especially useful on mobile devices, in situations where enabling the debug mode is not wanted, and for basic tests when launch events are not triggered by Outlook.</p>
 
-<div class="box has-background-white-bis">
-  <p class="has-text-weight-bold">The taskpane can be accessed through:</p>
-  <ul>
-    <li><strong>Outlook on the web (Exchange Online), New Outlook on Windows, New Outlook on Mac:</strong>
-      <ul>
-        <li>New mail, reply mail, read mail: "Message" tab, "Apps" icon</li>
-        <li>New appointment: Ribbon, "…" menu</li>
-      </ul>
-    </li>
-    <li><strong>Outlook on the web (on-prem):</strong>
-      <ul>
-        <li>New mail, reply mail: Lower right corner of the compose window</li>
-        <li>New appointment: At the right of the menu bar at the top of the compose window</li>
-        <li>Read mail: Left to the reply button</li>
-      </ul>
-    </li>
-    <li><strong>Classic Outlook on Windows, Classic Outlook on Mac:</strong>
-      <ul>
-        <li>New mail, reply mail, read mail: "Message" tab, "All apps" icon</li>
-        <li>New appointment: "Appointment" or "Meeting" tab, "All apps" icon</li>
-      </ul>
-    </li>
-    <li><strong>Outlook on iOS, Outlook on Android:</strong>
-      <ul>
-        <li>These platforms do not support taskpanes for new mails, reply mails and appointments.</li>
-        <li>Read mail: Three dots ("…" or "⋮") in the email header</li>
-      </ul>
-    </li>
-  </ul>
+<p class="has-text-weight-bold mb-4">The taskpane can be accessed through:</p>
+
+<div class="columns is-multiline">
+  <div class="column is-6-desktop is-12-tablet">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <strong>Outlook on the web (Exchange Online), New Outlook on Windows, New Outlook on Mac:</strong>
+      <div class="content mt-2">
+        <ul>
+          <li>New mail, reply mail, read mail: "Message" tab, "Apps" icon</li>
+          <li>New appointment: Ribbon, "…" menu</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-6-desktop is-12-tablet">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <strong>Outlook on the web (on-prem):</strong>
+      <div class="content mt-2">
+        <ul>
+          <li>New mail, reply mail: Lower right corner of the compose window</li>
+          <li>New appointment: At the right of the menu bar at the top of the compose window</li>
+          <li>Read mail: Left to the reply button</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-6-desktop is-12-tablet">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <strong>Classic Outlook on Windows, Classic Outlook on Mac:</strong>
+      <div class="content mt-2">
+        <ul>
+          <li>New mail, reply mail, read mail: "Message" tab, "All apps" icon</li>
+          <li>New appointment: "Appointment" or "Meeting" tab, "All apps" icon</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-6-desktop is-12-tablet">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <strong>Outlook on iOS, Outlook on Android:</strong>
+      <div class="content mt-2">
+        <ul>
+          <li>These platforms do not support taskpanes for new mails, reply mails and appointments.</li>
+          <li>Read mail: Three dots ("…" or "⋮") in the email header</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
-<hr class="my-6">
 
 <h2 id="requirements">Requirements</h2>
-
 <h3>Outlook clients</h3>
 <p>The Outlook add-in works for all Outlook clients that are supported by Microsoft. See the <code>Remarks</code> chapter in this section for possible limitations that may apply due to platform specific Microsoft restrictions.</p>
 <p>The add-in always runs in the context of the user that is used by Outlook to access a mailbox. Delegate scenarios are supported. This means the following:</p>
@@ -107,11 +121,16 @@ sitemap_changefreq: weekly
 <p>When mailboxes are hosted in Exchange Online, the Outlook add-in needs an Entra ID app to access the mailbox.</p>
 <p>Creating a separate Entra ID app for the Outlook add-in is strongly recommended over modifying an existing app.</p>
 <p>You can run the following command to automatically create the Entra ID app. You need an Entra ID account with 'Application Administrator' or 'Global Administrator' permissions.</p>
-
-{% highlight powershell %}
-& '.\sample code\Create-EntraApp.ps1' -AppType 'OutlookAddIn' -AppName 'Set-OutlookSignatures Outlook add-in' -OutlookAddInUrl '<https address to your web server>'
-{% endhighlight %}
-
+<div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+  <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
+    <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
+    <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
+    <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
+  </div>
+  <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "OutlookAddIn" -AppName "Set-OutlookSignatures Outlook add-in" -OutlookAddInUrl "https://yourhost.yourdomain.com"</code></pre>
+</div>
+<p><small><em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> parameter.</em></small></p>
+</div>
 <p>If you want to create the Entra ID app manually, the required minimum settings for the Entra ID app are:</p>
 <ul>
   <li>A name of your choice.</li>
@@ -127,7 +146,7 @@ sitemap_changefreq: weekly
   <li>Grant admin consent for all permissions</li>
 </ul>
 
-<hr class="my-6">
+
 
 <h2 id="configuration-and-deployment-to-the-web-server">Configuration and deployment to the web server</h2>
 <p>With every new release of Set-OutlookSignatures, <a href="/benefactorcircle">Benefactor Circle</a> members not only receive an updated Benefactor Circle license file, but also an updated Outlook add-in.</p>
@@ -166,7 +185,7 @@ sitemap_changefreq: weekly
 </ul>
 <p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you not only need to update the files on the web server, you also need to tell your mailboxes that an updated version or configuration is available and must be downloaded from the web server. The "<a href="#deployment-to-mailboxes">Deployment to mailboxes</a>" chapter describes the available deployment options for add-ins.</p>
 
-<hr class="my-6">
+
 
 <h2 id="deployment-to-mailboxes">Deployment to mailboxes</h2>
 <p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. Due to caching mechanisms, especially in Classic Outlook on Windows, this does not happen automatically.</p>
@@ -228,10 +247,9 @@ sitemap_changefreq: weekly
   <li><strong>Outlook on Android:</strong> Long-press the icon > App info > Force Stop > Storage and Cache > Clear Cache (do not tap Clear Data).</li>
 </ul>
 
-<hr class="my-6">
+
 
 <h2 id="remarks">Remarks</h2>
-
 <h3>General</h3>
 <ul>
   <li>Microsoft is actively blocking access to roaming signatures for Outlook add-ins. The add-in will be updated when this block has been removed. In the meantime, the add-in has access to the data of the last run of Set-OutlookSignatures v4.14.0 and higher.</li>
@@ -248,7 +266,7 @@ sitemap_changefreq: weekly
 
 <div class="columns is-multiline">
   <div class="column is-half">
-    <div class="box">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <h4>Outlook on Android</h4>
       <ul>
         <li>Only mailboxes hosted in Exchange Online are supported.</li>
@@ -258,7 +276,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half">
-    <div class="box">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <h4>Outlook on iOS</h4>
       <ul>
         <li>Only mailboxes hosted in Exchange Online are supported.</li>
@@ -269,7 +287,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half">
-    <div class="box">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <h4>Outlook on Mac</h4>
       <ul>
         <li>Use the New Outlook on Mac whenever possible; Classic Mac is at end of lifecycle.</li>
@@ -278,7 +296,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half">
-    <div class="box">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <h4>Outlook on the web on-prem</h4>
       <ul>
         <li>Launch events are not supported; only the taskpane works.</li>
@@ -288,7 +306,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<div class="box">
+<div class="box has-background-white-bis has-text-black" style="height: 100%;">
   <h4>Classic Outlook on Windows</h4>
   <ul>
     <li>Things work fine for EXO, but APIs seem unstable for on-prem mailboxes regarding launch events. Use the taskpane when in doubt.</li>
