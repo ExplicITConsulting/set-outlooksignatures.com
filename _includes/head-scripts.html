@@ -132,13 +132,14 @@
       const gifs = array.filter(url => url.toLowerCase().endsWith('.gif'));
       const others = array.filter(url => !url.toLowerCase().endsWith('.gif'));
 
-      // 2. Hilfsfunktion zum Mischen der einzelnen Töpfe
+      // 2. Hilfsfunktion zum Mischen (Fisher-Yates)
       const internalShuffle = (arr) => {
-        for (let i = arr.length - 1; i > 0; i--) {
+        const newArr = [...arr]; // Kopie erstellen, um das Original nicht zu mutieren
+        for (let i = newArr.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
-          [arr[i], arr[j]] = [arr[j], arr[i]];
+          [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
         }
-        return arr;
+        return newArr;
       };
 
       const shuffledGifs = internalShuffle(gifs);
@@ -148,10 +149,10 @@
       let gifIndex = 0;
       let otherIndex = 0;
 
-      // 3. Webe-Logik: 2x Normal, dann 1x GIF (solange GIFs da sind)
+      // 3. Webe-Logik: Solange noch IRGENDWAS in einem der Töpfe ist
       while (otherIndex < shuffledOthers.length || gifIndex < shuffledGifs.length) {
 
-        // Füge bis zu 2 normale Bilder hinzu
+        // Versuche, bis zu 2 "Others" einzufügen
         for (let i = 0; i < 2; i++) {
           if (otherIndex < shuffledOthers.length) {
             result.push(shuffledOthers[otherIndex]);
@@ -159,14 +160,17 @@
           }
         }
 
-        // Füge 1 GIF hinzu (wenn noch welche im Topf sind)
+        // Versuche, genau 1 GIF einzufügen
         if (gifIndex < shuffledGifs.length) {
           result.push(shuffledGifs[gifIndex]);
           gifIndex++;
         }
 
-        // Falls keine "Others" mehr da sind, aber noch GIFs, 
-        // füllt die Schleife den Rest einfach mit GIFs auf.
+        // Sicherheitscheck: Wenn in einem Durchlauf gar nichts mehr hinzugefügt wurde, 
+        // müssen wir abbrechen, um eine Endlosschleife zu verhindern.
+        if (otherIndex >= shuffledOthers.length && gifIndex >= shuffledGifs.length) {
+          break;
+        }
       }
 
       return result;
