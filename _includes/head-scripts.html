@@ -36,8 +36,8 @@
 <noscript>
   <p>
     <img referrerpolicy="no-referrer-when-downgrade"
-      src='//mtrcs.set-outlooksignatures.com/mtrcs.php?idsite=1&rec=1&recMode=2&action_name=page_view&url={{ site.url }}{{ page.url | relative_url }}&rand={{ "now" | date: "%s" }}&apiv=1&send_image=0'
-      style="border:0;" alt="" />
+      src='https://mtrcs.set-outlooksignatures.com/mtrcs.php?idsite=1&rec=1&recMode=2&action_name=page_view&url={{ page.url | absolute_url | url_encode }}&rand={{ "now" | date: "%s" }}&apiv=1'
+      style="border:0; display:none;" alt="" />
   </p>
 </noscript>
 
