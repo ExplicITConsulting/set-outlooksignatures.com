@@ -39,16 +39,28 @@ sitemap_changefreq: weekly
 </div>
 <div class="columns mt-5">
   <div class="column">
-    <p>🛡️ <b>Privacy First</b><br>No middleware or proxy servers. Local execution.</p>
+    <div style="display: flex; gap: 0.75em;">
+      🛡️
+      <div><b>Privacy First</b><br>No middleware or proxy servers. Local execution.</div>
+    </div>
   </div>
   <div class="column">
-    <p>⚙️ <b>Full Control</b><br>You control the version and configuration.</p>
+    <div style="display: flex; gap: 0.75em;">
+      ⚙️
+      <div><b>Full Control</b><br>You control the version and configuration.</div>
+    </div>
   </div>
   <div class="column">
-    <p>💎 <b>Low Cost</b><br>Self-hosting keeps license costs minimal.</p>
+    <div style="display: flex; gap: 0.75em;">
+      💎
+      <div><b>Low Cost</b><br>Self-hosting keeps license costs minimal.</div>
+    </div>
   </div>
   <div class="column">
-    <p>🚀 <b>Enterprise Ready</b><br>Exchange Online and On-Premises support.</p>
+    <div style="display: flex; gap: 0.75em;">
+      🚀
+      <div><b>Enterprise Ready</b><br>Exchange Online and On-Premises support.</div>
+    </div>
   </div>
 </div>
 
