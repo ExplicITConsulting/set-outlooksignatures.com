@@ -233,64 +233,53 @@ sitemap_changefreq: weekly
 
 
 <h2 id="deployment-to-mailboxes">Deployment to mailboxes</h2>
-<p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. Due to caching mechanisms, especially in Classic Outlook for Windows, this does not happen automatically.</p>
-<p>This is required when:</p>
-<ul>
-  <li>A new release of the Outlook add-in is published by <a href="https://explicitconsulting.at">ExplicIT Consulting</a>.</li>
-  <li>You change a configuration option in the <code>run_before_deployment.ps1</code> file which is marked to require an updated deployment.</li>
-  <li>You modify the <code>manifest.xml</code> file manually.</li>
-</ul>
-<p>You can choose from three different ways to deploy the Outlook add-in to your mailboxes. For tests, sideloading is the preferred method, while Microsoft 365 Centralized Deployment or Integrated Apps are ideal for mass deployment.</p>
+<p>When the <code>manifest.xml</code> or the configuration changes, you must notify mailboxes that an updated version is available. This is because Outlook caches the code of the add-in and reads the manifest file only once.</p>
+<div class="columns is-multiline">
+  <div class="column is-6">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <p><b>Individual Installation (Sideloading)</b></p>
+      <p>Ideal for rapid testing. Sideloading skips the long propagation delays of enterprise deployment.</p>
+      <ul>
+        <li><b>Exchange Online:</b> Open <code>outlook.cloud.microsoft/mail/inclientstore</code> > My add-ins > Add from file.</li>
+        <li><b>On-Prem:</b> Open OWA > Options > Manage Add-ins > Add from file.</li>
+        <li><b>Removal:</b> Right-click the add-in in the "Apps" menu of a new draft and select Uninstall.</li>
+      </ul>
+    </div>
+  </div>
 
-<h3>Individual installation through users</h3>
-<p>This method is also called sideloading. It is ideal for test scenarios.</p>
-<p>For mailboxes in Exchange Online:</p>
-<ul>
-  <li>Open <code>https://outlook.cloud.microsoft/mail/inclientstore</code>.</li>
-  <li>Click on <code>My add-ins</code>.</li>
-  <li>Below <code>Custom Addins</code>, click on <code>Add a custom add-in</code> and on <code>Add from file</code>.</li>
-  <li>In the file selection dialog, enter the manifest.xml file URL as file name and click on <code>Open</code>.</li>
-  <li>Click on <code>Install</code>.</li>
-  <li>Refresh the browser window.</li>
-</ul>
-<p>For mailboxes hosted on-prem:</p>
-<ul>
-  <li>Open <code>https://YourMailServer.example.com/owa/#path=/options/manageapps</code>.</li>
-  <li>Click on the plus sign to add an add-in, and choose <code>Add from file</code>.</li>
-  <li>In the file selection dialog, enter the manifest.xml file URL as file name and click on <code>Open</code>.</li>
-  <li>Click on </code>Install</code>.</li>
-  <li>Refresh the browser window.</li>
-</ul>
-<p>Sideloading of add-ins may have been disabled by your administrators. Do not use the URLs mentioned above to remove custom add-ins, as this fails most times. Instead, use one of the following options:</p>
-<ul>
-  <li>Open Outlook for the web, draft a new mail, click on the <code>Apps</code> button, right-click the Set-OutlookSignatures add-in and select <code>Uninstall</code>.</li>
-  <li>Remove the custom add-in in Outlook for Android or Outlook for iOS.</li>
-</ul>
+  <div class="column is-6">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <p><b>Enterprise Deployment (Production)</b></p>
+      <p>Ideal for mass rollout. Note that changes can take up to 72 hours to propagate.</p>
+      <ul>
+        <li><b>Microsoft 365 Integrated Apps:</b> Centralized management via the M365 Admin Center.</li>
+        <li><b>Centralized Deployment:</b> Use this for sovereign or government clouds where Integrated Apps may be unavailable.</li>
+        <li><b>Benefit:</b> Automatic assignment to groups and automatic removal when users leave.</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<h3>Microsoft 365 Centralized Deployment or Integrated Apps</h3>
-<p>Microsoft 365 Centralized Deployment and deployment via Integrated Apps both provide the following benefits:</p>
-<ul>
-  <li>An admin can deploy and assign an Outlook add-in directly to a mailbox, to multiple mailboxes via a group, or to ever mailbox in the organization.</li>
-  <li>When Outlook starts, it automatically downloads the assigned add-in. If the add-in supports it, it appears in Outlooks ribbon.</li>
-  <li>An add-in is automatically removed from a mailbox when an admin disables or deletes the add-in assignment, or if the mailbox is removed from a group that the add-in is assigned to.</li>
-</ul>
-<p>Both methods are ideal for mass deployment in production environments. They are usually too slow (up to 72 hours) for test scenarios.</p>
-<p>If the Integrated Apps feature is not yet available in your sovereign and government cloud tenant, you have to use Centralized Deployment instead. See the following links for instructions:</p>
-<ul>
-  <li><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide">Integrated Apps</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide">Microsoft 365 Centralized Deployment</a></li>
-</ul>
-
-<h3>Clear the Outlook add-in cache</h3>
-<p>When testing add-ins, especially when using the sideloading method, Outlook sometimes messes up its cache or takes too long updating it. To avoid problems, it is a good idea to manually clear the add-in cache in test scenarios.</p>
-<ul>
-  <li><strong>Outlook for the web:</strong> Hard Refresh the website.</li>
-  <li><strong>Classic Outlook for Windows:</strong> Close Outlook, then follow the <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">official instructions from Microsoft</a>. Note: launch events may not trigger until a restart even if the taskpane works.</li>
-  <li><strong>New Outlook for Windows:</strong> Close Outlook, then follow the <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">official instructions from Microsoft</a>.</li>
-  <li><strong>Outlook for macOS:</strong> Close Outlook, then follow the <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">official instructions from Microsoft</a>.</li>
-  <li><strong>Outlook for iOS:</strong> Open the taskpane of the Outlook add-in, scroll down to "Advanced options" and tap the "Reload add-in" button.</li>
-  <li><strong>Outlook for Android:</strong> Long-press the icon > App info > Force Stop > Storage and Cache > Clear Cache (do not tap Clear Data).</li>
-</ul>
+<div class="box has-background-white-bis has-text-black mt-5">
+  <p><b>Clear the Outlook add-in cache</b></p>
+  <p>If the add-in does not update after deployment, use these methods to clear the local cache:</p>
+  <div class="columns mt-2">
+    <div class="column is-6">
+      <ul>
+        <li><b>Web:</b> Hard refresh the browser window.</li>
+        <li><b>Classic Windows:</b> Close Outlook and clear the Office folder in %LOCALAPPDATA%.</li>
+        <li><b>New Windows:</b> Close Outlook and reset the app via Windows Settings.</li>
+      </ul>
+    </div>
+    <div class="column is-6">
+      <ul>
+        <li><b>macOS:</b> Close Outlook and clear the Office cache via Terminal or Finder.</li>
+        <li><b>iOS:</b> Taskpane > Advanced options > Reload add-in.</li>
+        <li><b>Android:</b> Long-press icon > App info > Force Stop > Clear Cache.</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 
 
