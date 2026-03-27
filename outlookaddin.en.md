@@ -96,7 +96,7 @@ sitemap_changefreq: weekly
 
 <h2 id="requirements">Requirements</h2>
 <h3>Outlook clients</h3>
-<p>The Outlook add-in works for all Outlook clients that are supported by Microsoft. See the <code>Remarks</code> chapter in this section for possible limitations that may apply due to platform specific Microsoft restrictions.</p>
+<p>The Outlook add-in works for all Outlook clients that are supported by Microsoft. See the <a href="#remarks">Remarks</a> chapter in this section for possible limitations that may apply due to platform specific Microsoft restrictions.</p>
 <p>The add-in always runs in the context of the user that is used by Outlook to access a mailbox. Delegate scenarios are supported. This means the following:</p>
 <ul>
   <li>User A has the Outlook add-in installed. The Outlook add-in can access all signature information that the Benefactor Circle add-on or the SimulateAndDeploy mode of Set-OutlookSignatures has written to the mailbox of user A. The add-in can be used in the mailbox of user A and in all other mailboxes that user A accesses with his own credentials.</li>
