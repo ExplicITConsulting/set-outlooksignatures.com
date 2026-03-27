@@ -45,7 +45,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-6-desktop is-12-tablet">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <strong>Outlook on the web (Exchange Online), New Outlook on Windows, New Outlook on Mac:</strong>
+      <p><b>Outlook on the web (Exchange Online), New Outlook on Windows, New Outlook on Mac</b></p>
       <div class="content mt-2">
         <ul>
           <li>New mail, reply mail, read mail: "Message" tab, "Apps" icon</li>
@@ -57,7 +57,7 @@ sitemap_changefreq: weekly
 
   <div class="column is-6-desktop is-12-tablet">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <strong>Outlook on the web (on-prem):</strong>
+      <p><b>Outlook on the web (on-prem)</b></p>
       <div class="content mt-2">
         <ul>
           <li>New mail, reply mail: Lower right corner of the compose window</li>
@@ -70,7 +70,7 @@ sitemap_changefreq: weekly
 
   <div class="column is-6-desktop is-12-tablet">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <strong>Classic Outlook on Windows, Classic Outlook on Mac:</strong>
+      <p><b>Classic Outlook on Windows, Classic Outlook on Mac</b></p>
       <div class="content mt-2">
         <ul>
           <li>New mail, reply mail, read mail: "Message" tab, "All apps" icon</li>
@@ -82,7 +82,7 @@ sitemap_changefreq: weekly
 
   <div class="column is-6-desktop is-12-tablet">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <strong>Outlook on iOS, Outlook on Android:</strong>
+      <p><b>Outlook on iOS, Outlook on Android</b></p>
       <div class="content mt-2">
         <ul>
           <li>These platforms do not support taskpanes for new mails, reply mails and appointments.</li>
