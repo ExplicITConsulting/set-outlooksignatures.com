@@ -125,111 +125,132 @@
 
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Utility to randomize the image order
-    const shuffleArray = (array) => {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+document.addEventListener('DOMContentLoaded', () => {
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
+  const waitForImages = async (root) => {
+    const imgs = Array.from(root.querySelectorAll('img'));
+    await Promise.all(imgs.map(img => {
+      // If already complete, decode might still help stabilize layout
+      if (img.decode) {
+        return img.decode().catch(() => {});
       }
-      return array;
-    };
+      if (img.complete) return Promise.resolve();
+      return new Promise(resolve => {
+        img.addEventListener('load', resolve, { once: true });
+        img.addEventListener('error', resolve, { once: true });
+      });
+    }));
+  };
 
-    const initSafeBanner = async (trackSelector, endpoint, pxPerSec) => {
-      const track = document.querySelector(trackSelector);
-      if (!track) return;
+  const initSafeBanner = async (trackSelector, endpoint, pxPerSec) => {
+    const track = document.querySelector(trackSelector);
+    if (!track) return;
 
-      try {
-        const response = await fetch(endpoint);
-        const text = await response.text();
-        let urls = text.split('\n').map(l => l.trim()).filter(Boolean);
-        urls = shuffleArray(urls);
+    try {
+      const response = await fetch(endpoint);
+      const text = await response.text();
+      let urls = text.split('\n').map(l => l.trim()).filter(Boolean);
+      urls = shuffleArray(urls);
 
-        const fragment = document.createDocumentFragment();
-        // Doubling the URLs for a seamless infinite loop at -50%
-        const doubledUrls = [...urls, ...urls];
+      const fragment = document.createDocumentFragment();
+      const doubledUrls = [...urls, ...urls];
 
-        doubledUrls.forEach(urlPath => {
-          const img = new Image();
-          img.src = urlPath;
-          img.loading = "lazy";
+      doubledUrls.forEach(urlPath => {
+        const img = new Image();
+        img.src = urlPath;
 
-          const baseName = urlPath.split('/').pop();
-          const nameWithoutExt = baseName.replace(/\.[^.]+$/, "");
-          const firstPart = nameWithoutExt.split(' ')[0];
-          const hasDomain = firstPart.includes('.');
+        // IMPORTANT: avoid lazy here; lazy-loading changes scrollWidth later => visible jumps
+        img.loading = "eager";
+        img.decoding = "async";
 
-          let finalDomain = hasDomain ? firstPart : "explicitconsulting.at";
-          let finalAlt = hasDomain ? nameWithoutExt : "explicitconsulting.at anonymous customer";
+        const baseName = urlPath.split('/').pop();
+        const nameWithoutExt = baseName.replace(/\.[^.]+$/, "");
+        const firstPart = nameWithoutExt.split(' ')[0];
+        const hasDomain = firstPart.includes('.');
 
-          img.alt = finalAlt;
+        const finalDomain = hasDomain ? firstPart : "explicitconsulting.at";
+        const finalAlt = hasDomain ? nameWithoutExt : "explicitconsulting.at anonymous customer";
+        img.alt = finalAlt;
 
-          const link = document.createElement('a');
-          link.href = `https://www.${finalDomain}`;
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-          link.className = "no-external-link-icon banner-link";
+        const link = document.createElement('a');
+        link.href = `https://www.${finalDomain}`;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.className = "no-external-link-icon banner-link";
 
-          link.appendChild(img);
-          fragment.appendChild(link);
-        });
+        link.appendChild(img);
+        fragment.appendChild(link);
+      });
 
-        track.appendChild(fragment);
+      track.appendChild(fragment);
 
-        // --- Animation Logic with Jump-Fix ---
-        const startAnimation = () => {
-          const totalWidth = track.scrollWidth;
-          if (totalWidth <= 0) {
-            // Retry if the browser hasn't calculated dimensions yet
-            setTimeout(startAnimation, 100);
-            return;
-          }
+      const applyAnimationVars = () => {
+        // Remove + re-add class to restart cleanly if recalculated
+        track.classList.remove('is-animating');
 
-          const halfWidth = totalWidth / 2;
-          const duration = halfWidth / pxPerSec;
-          track.style.setProperty('--duration', `${duration}s`);
+        // Force layout
+        const totalWidth = track.scrollWidth;
+        if (!totalWidth || totalWidth <= 0) return false;
 
-          // JUMP-FIX: Set explicit starting position before adding the animation class
-          if (trackSelector.includes('signature')) {
-            // Signatures flow from -50% to 0
-            track.style.transform = "translate3d(-50%, 0, 0)";
-          } else {
-            // Customers flow from 0 to -50%
-            track.style.transform = "translate3d(0, 0, 0)";
-          }
+        const halfWidth = totalWidth / 2;
 
-          // Force a reflow to ensure the transform is applied immediately
-          void track.offsetWidth;
+        // Lock pixel distance (rounded helps subpixel drift)
+        track.style.setProperty('--track-width', `${Math.round(halfWidth)}px`);
 
-          // Trigger the animation in the next frame to avoid visual glitches
-          requestAnimationFrame(() => {
-            track.classList.add('is-animating');
-          });
-        };
+        const duration = halfWidth / pxPerSec;
+        track.style.setProperty('--duration', `${duration}s`);
 
-        // Small delay to let images start loading so scrollWidth is more accurate
-        setTimeout(startAnimation, 500);
+        // Ensure CSS variables are applied before starting animation
+        void track.offsetWidth;
+        requestAnimationFrame(() => track.classList.add('is-animating'));
+        return true;
+      };
 
-      } catch (e) {
-        console.error("Banner error:", e);
+      // Wait until images are decoded/loaded so width is stable
+      await waitForImages(track);
+
+      // Start animation once stable
+      if (!applyAnimationVars()) {
+        // fallback retry if something still not measurable
+        setTimeout(() => applyAnimationVars(), 100);
       }
-    };
 
-    // --- Configuration ---
-    // Customers: Right to Left (Standard) @ 50px/sec
-    initSafeBanner(
-      '.customer-scrolling-track',
-      'https://set-outlooksignatures.com/customer-images.txt',
-      60
-    );
+      // Optional but recommended: keep stable on resize / zoom / font swap
+      const ro = new ResizeObserver(() => {
+        // Debounce via rAF
+        requestAnimationFrame(() => applyAnimationVars());
+      });
+      ro.observe(track);
 
-    // Signatures: Left to Right (Reverse) @ 40px/sec
-    initSafeBanner(
-      '.signature-scrolling-track',
-      'https://set-outlooksignatures.com/signature-images.txt',
-      60
-    );
-  });
+      // If fonts can affect layout (less likely here, but safe):
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => applyAnimationVars()).catch(() => {});
+      }
+
+    } catch (e) {
+      console.error("Banner error:", e);
+    }
+  };
+
+  initSafeBanner(
+    '.customer-scrolling-track',
+    'https://set-outlooksignatures.com/customer-images.txt',
+    60
+  );
+
+  initSafeBanner(
+    '.signature-scrolling-track',
+    'https://set-outlooksignatures.com/signature-images.txt',
+    60
+  );
+});
 </script>
 
 

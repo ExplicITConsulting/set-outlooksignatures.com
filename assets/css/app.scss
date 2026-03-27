@@ -242,9 +242,17 @@ h6 {
   animation: marquee-scroll var(--duration) linear infinite;
 }
 
+@keyframes marquee-scroll-px {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-1 * var(--track-width)), 0, 0);
+  }
+}
+
 .signature-scrolling-track.is-animating {
-  animation: marquee-scroll var(--duration) linear infinite;
-  animation-direction: reverse;
+  animation: marquee-scroll-px var(--duration) linear infinite;
 }
 
 // Button pulse animation
