@@ -134,7 +134,7 @@
       return array;
     };
 
-    const initSafeBanner = async (trackSelector, endpoint) => {
+    const initSafeBanner = async (trackSelector, endpoint, intervalTime) => {
       const track = document.querySelector(trackSelector);
       if (!track) return;
 
@@ -174,41 +174,39 @@
         track.appendChild(fragment);
 
         const startStepping = () => {
-          // Wir lesen die Gap einmal aus dem CSS aus (z.B. "32px")
           const computedStyle = window.getComputedStyle(track);
           const gap = parseInt(computedStyle.gap) || 0;
 
           setInterval(() => {
-            // Pause bei Hover auf dem Container (Banner)
+            // Pause bei Hover auf dem umschließenden Banner-Container
             if (track.parentElement.matches(':hover')) return;
 
             const firstItem = track.firstElementChild;
             if (!firstItem) return;
 
-            // Dynamische Berechnung: Bildbreite + CSS Gap
             const stepWidth = firstItem.offsetWidth + gap;
 
-            // Sanftes Gleiten (1.2s Dauer)
-            track.style.transition = "transform 1.2s cubic-bezier(0.45, 0.05, 0.55, 0.95)";
+            // Kurze, knackige Transition (0.5s)
+            track.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
             track.style.transform = `translateX(-${stepWidth}px)`;
 
-            // Reset nach der Animation
             setTimeout(() => {
               track.style.transition = "none";
               track.style.transform = "translateX(0)";
-              track.appendChild(firstItem); // Schiebt das erste Element nach hinten
-            }, 1250); 
-          }, 2000); // Alle 5 Sekunden ein Schritt
+              track.appendChild(firstItem);
+            }, 550); // 50ms Puffer zur Transition
+          }, intervalTime);
         };
 
-        // Startverzögerung, damit die Bilder Zeit zum Laden haben
-        setTimeout(startStepping, 2000);
+        // Start wenn die Seite bereit ist
+        setTimeout(startStepping, 1500);
 
       } catch (e) { console.error("Banner error:", e); }
     };
 
-    initSafeBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt');
-    initSafeBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt');
+    // Hier werden deine gewünschten Zeiten (in ms) übergeben
+    initSafeBanner('.customer-scrolling-track', 'https://set-outlooksignatures.com/customer-images.txt', 2000);
+    initSafeBanner('.signature-scrolling-track', 'https://set-outlooksignatures.com/signature-images.txt', 3000);
   });
 </script>
 
