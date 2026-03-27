@@ -121,11 +121,11 @@ sitemap_changefreq: weekly
   <li>A name of your choice.</li>
   <li>A supported account type (it is strongly recommended to only allow access from users of your tenant).</li>
   <li>Authentication platform <code>Single-page application</code> with a redirect URI of <code>brk-multihub://&lt;your_deployment_domain&gt;</code>. If your DEPLOYMENT_URL is <code>https://outlookaddin01.example.com</code>, the redirect URI must be <code>brk-multihub://outlookaddin01.example.com</code>.</li>
-  <li>Access to the following <code>delegated</code> (not application!) <code>Graph API</code> permissions:
+  <li>Access to the following delegated (not application!) <code>Graph API</code> permissions:
     <ul>
-      <li><code>Mail.Read</code>: Allows to read emails in mailbox of the currently logged-on user (and in no other mailboxes). Required because of Microsoft restrictions accessing roaming signatures.</li>
-      <li><code>GroupMember.Read.All</code>: Allows the app to list groups, read basic group properties and read membership of all groups the signed-in user has access to. Required to find and check license groups.</li>
-      <li><code>User.Read.All</code>: Allows the app to read the full set of profile properties, reports, and managers of other users in your organization, on behalf of the signed-in user. Required to get the UPN for a given SMTP email address.</li>
+      <li>Mail.Read: Allows to read emails in mailbox of the currently logged-on user (and in no other mailboxes). Required because of Microsoft restrictions accessing roaming signatures.</li>
+      <li>GroupMember.Read.All: Allows the app to list groups, read basic group properties and read membership of all groups the signed-in user has access to. Required to find and check license groups.</li>
+      <li>User.Read.All: Allows the app to read the full set of profile properties, reports, and managers of other users in your organization, on behalf of the signed-in user. Required to get the UPN for a given SMTP email address.</li>
     </ul>
   </li>
   <li>Grant admin consent for all permissions</li>
@@ -190,7 +190,7 @@ sitemap_changefreq: weekly
   <li>Click on <code>My add-ins</code>.</li>
   <li>Below <code>Custom Addins</code>, click on <code>Add a custom add-in</code> and on <code>Add from file</code>.</li>
   <li>In the file selection dialog, enter the manifest.xml file URL as file name and click on <code>Open</code>.</li>
-  <li>Click on <code>Install</>code>.</li>
+  <li>Click on <code>Install</code>.</li>
   <li>Refresh the browser window.</li>
 </ul>
 <p>For mailboxes hosted on-prem:</p>
