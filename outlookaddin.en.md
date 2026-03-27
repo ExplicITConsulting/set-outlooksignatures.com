@@ -267,7 +267,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-half">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <h4>Outlook on Android</h4>
+      <p><b>Outlook on Android</b></p>
       <ul>
         <li>Only mailboxes hosted in Exchange Online are supported.</li>
         <li>Setting the signature on new appointments is not yet supported by Microsoft.</li>
@@ -277,7 +277,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-half">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <h4>Outlook on iOS</h4>
+      <p><b>Outlook on iOS</b></p>
       <ul>
         <li>Only mailboxes hosted in Exchange Online are supported.</li>
         <li>Setting the signature on new appointments is not yet supported by Microsoft.</li>
@@ -288,7 +288,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-half">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <h4>Outlook on Mac</h4>
+      <p><b>Outlook on Mac</b></p>
       <ul>
         <li>Use the New Outlook on Mac whenever possible; Classic Mac is at end of lifecycle.</li>
         <li>Support for Classic Outlook on Mac is best-effort due to API instability.</li>
@@ -297,7 +297,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-half">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <h4>Outlook on the web on-prem</h4>
+      <p><b>Outlook on the web on-prem</b></p>
       <ul>
         <li>Launch events are not supported; only the taskpane works.</li>
         <li>Images are replaced with alternate descriptions due to a Microsoft office.js bug.</li>
@@ -307,7 +307,7 @@ sitemap_changefreq: weekly
 </div>
 
 <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-  <h4>Classic Outlook on Windows</h4>
+  <p><b>Classic Outlook on Windows</b></p>
   <ul>
     <li>Things work fine for EXO, but APIs seem unstable for on-prem mailboxes regarding launch events. Use the taskpane when in doubt.</li>
     <li>For EXO mailboxes, the version must support Nested App Authentication.</li>
