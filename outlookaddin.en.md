@@ -67,7 +67,6 @@ sitemap_changefreq: weekly
 <h2 id="usage">Usage</h2>
 <p>From an end user perspective, basically nothing needs to be done: When writing a new email, answering an email, or creating a new appointment, the add-in automatically adds the corresponding default signature.</p>
 <p>For advanced usage, a taskpane is available to manually choose signatures, preview items, or override settings for debug logging.</p>
-
 <div class="columns is-multiline">
   <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
@@ -81,7 +80,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <div style="display: flex; gap: 0.75em;">
@@ -94,7 +92,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <div style="display: flex; gap: 0.75em;">
@@ -108,7 +105,6 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-
   <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <div style="display: flex; gap: 0.75em;">
@@ -127,31 +123,37 @@ sitemap_changefreq: weekly
 
 <h2 id="requirements">Requirements</h2>
 <h3>Outlook clients</h3>
-<p>The Outlook add-in works for all Outlook clients that are supported by Microsoft. See the <a href="#remarks">Remarks</a> chapter in this section for possible limitations that may apply due to platform specific Microsoft restrictions.</p>
-<p>The add-in always runs in the context of the user that is used by Outlook to access a mailbox. Delegate scenarios are supported. This means the following:</p>
-<ul>
-  <li>User A has the Outlook add-in installed. The Outlook add-in can access all signature information that the Benefactor Circle add-on or the SimulateAndDeploy mode of Set-OutlookSignatures has written to the mailbox of user A. The add-in can be used in the mailbox of user A and in all other mailboxes that user A accesses with his own credentials.</li>
-  <li>When user A has added a mailbox with separate credentials, such as adding shared mailbox B using shared mailbox B's credentials, the add-in installed in user A's mailbox will not work for shared mailbox B. Shared mailbox B needs to have the add-in installed, too, and the add-in only has access to signature information that the Benefactor Circle add-on or the SimulateAndDeploy mode of Set-OutlookSignatures has written to the shared mailbox B. For shared mailbox B, delegate scenarios are supported, too.</li>
-</ul>
+<p>The add-in works for all Microsoft-supported Outlook clients. It runs in the security context of the user and supports delegate scenarios.</p>
+
+<div class="columns">
+  <div class="column">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <p><b>Standard Mailboxes</b></p>
+      <p>The add-in accesses signature information that the Benefactor Circle add-on or the SimulateAndDeploy mode has written to the user's mailbox.</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <p><b>Shared Mailboxes</b></p>
+      <p>For shared mailboxes added with separate credentials, the add-in must be installed for that specific identity to access its signature data.</p>
+    </div>
+  </div>
+</div>
 
 <h3>Web server and domain</h3>
-<p>Whatever web server you choose, the requirements are low:</p>
+<p>The requirements for your web server are straightforward:</p>
 <ul>
   <li>Reachable from mobile devices via the public internet.</li>
-  <li>Use a dedicated host name ("https://outlookaddin01.example.com"), do not use subdirectories ("https://addins.example.com/outlook01").</li>
-  <li>A valid TLS certificate.<br>Self-signed certificates can be used for development and testing, as long as the certificate is trusted by the client used for testing.<br>Certificates from <a href="https://letsencrypt.org/">Let's Encrypt</a> are a good free alternative, especially when used together with an <a href="https://letsencrypt.org/docs/client-options/">ACME client</a> auto-renewing them.</li>
-  <li>In production, the server hosting the images shouldn't return a Cache-Control header specifying no-cache, no-store, or similar options in the HTTP response.</li>
+  <li>Use a dedicated host name (e.g., <code>https://outlookaddin01.example.com</code>). Do not use subdirectories.</li>
+  <li>A valid TLS certificate. <a href="https://letsencrypt.org/">Let's Encrypt</a> is a good free alternative, especially when used with an <a href="https://letsencrypt.org/docs/client-options/">ACME client</a> for auto-renewal.</li>
+  <li>Production servers should not return <code>Cache-Control</code> headers like <code>no-cache</code> or <code>no-store</code> for images.</li>
 </ul>
-<p><a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website">Static website hosting in Azure Storage</a> is an uncomplicated, affordable and fast alternative. It comes with a *.web.core.windows.net hostname and a Microsoft-issued certificate, even in the free tier.</p>
-<p>We recommend to use use two separate dedicated hostnames, such as "https://outlookaddin01.example.com" and "https://outlookaddin01test.example.com". This way, you can use one for testing and one for production. For tests, sideloading is the preferred method, while Microsoft 365 Centralized Deployment or Integrated Apps are ideal for mass deployment.</p>
 
-<h3>Set-OutlookSignatures</h3>
-<p>The Outlook add-in can add existing signatures, but is not able to create them itself on the fly. The Benefactor Circle add-on prepares signature data in a way that it can be used by the Outlook add-in.</p>
+<p><a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website">Static website hosting in Azure Storage</a> is an uncomplicated, affordable and fast alternative. It includes a Microsoft-issued certificate, even in the free tier.</p>
 
 <h3>Entra ID app</h3>
-<p>When mailboxes are hosted in Exchange Online, the Outlook add-in needs an Entra ID app to access the mailbox.</p>
-<p>Creating a separate Entra ID app for the Outlook add-in is strongly recommended over modifying an existing app.</p>
-<p>You can run the following command to automatically create the Entra ID app. You need an Entra ID account with "Application Administrator" or "Global Administrator" permissions.</p>
+<p>When mailboxes are hosted in Exchange Online, the add-in needs an Entra ID app to access the mailbox. Creating a separate app is strongly recommended.</p>
+
 <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
   <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
     <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
@@ -160,22 +162,27 @@ sitemap_changefreq: weekly
   </div>
   <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "OutlookAddIn" -AppName "Set-OutlookSignatures Outlook add-in" -OutlookAddInUrl "https://yourhost.yourdomain.com"</code></pre>
 </div>
-<p><small><em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> parameter.</em></small></p>
-<p>If you want to create the Entra ID app manually, the required minimum settings for the Entra ID app are:</p>
-<ul>
-  <li>A name of your choice.</li>
-  <li>A supported account type (it is strongly recommended to only allow access from users of your tenant).</li>
-  <li>Authentication platform <code>Single-page application</code> with a redirect URI of <code>brk-multihub://&lt;your_deployment_domain&gt;</code>. If your DEPLOYMENT_URL is <code>https://outlookaddin01.example.com</code>, the redirect URI must be <code>brk-multihub://outlookaddin01.example.com</code>.</li>
-  <li>Access to the following delegated (not application!) <code>Graph API</code> permissions:
-    <ul>
-      <li>Mail.Read: Allows to read emails in mailbox of the currently logged-on user (and in no other mailboxes). Required because of Microsoft restrictions accessing roaming signatures.</li>
-      <li>GroupMember.Read.All: Allows the app to list groups, read basic group properties and read membership of all groups the signed-in user has access to. Required to find and check license groups.</li>
-      <li>User.Read.All: Allows the app to read the full set of profile properties, reports, and managers of other users in your organization, on behalf of the signed-in user. Required to get the UPN for a given SMTP email address.</li>
-    </ul>
-  </li>
-  <li>Grant admin consent for all permissions</li>
-</ul>
 
+<p>For manual configuration, the following <b>Delegated Graph API</b> permissions must be granted with admin consent:</p>
+<div class="columns is-multiline">
+  <div class="column is-one-third-deskop is-one-third-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <p><b>Mail.Read</b><br>Allows reading emails in the current user's mailbox. Required due to Microsoft restrictions accessing roaming signatures.</p>
+    </div>
+  </div>
+  <div class="column is-one-third-deskop is-one-third-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <p><b>GroupMember.Read.All</b><br>Allows the app to check group memberships to verify license groups for the signed-in user.</p>
+    </div>
+  </div>
+  <div class="column is-one-third-deskop is-one-third-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%;">
+      <p><b>User.Read.All</b><br>Required to retrieve the User Principal Name (UPN) for a given SMTP email address.</p>
+    </div>
+  </div>
+</div>
+
+<p><b>Authentication:</b> Use <code>Single-page application</code> with a redirect URI of <code>brk-multihub://&lt;your_deployment_domain&gt;</code>.</p>
 
 
 <h2 id="configuration-and-deployment-to-the-web-server">Configuration and deployment to the web server</h2>
