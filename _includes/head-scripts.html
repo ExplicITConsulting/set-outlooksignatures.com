@@ -128,52 +128,11 @@
   document.addEventListener('DOMContentLoaded', () => {
     // Utility to randomize the image order
     const shuffleArray = (array) => {
-      // 1. In zwei Töpfe trennen
-      const gifs = array.filter(url => url.toLowerCase().endsWith('.gif'));
-      const others = array.filter(url => !url.toLowerCase().endsWith('.gif'));
-
-      // 2. Hilfsfunktion zum Mischen (Fisher-Yates)
-      const internalShuffle = (arr) => {
-        const newArr = [...arr]; // Kopie erstellen, um das Original nicht zu mutieren
-        for (let i = newArr.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
-        }
-        return newArr;
-      };
-
-      const shuffledGifs = internalShuffle(gifs);
-      const shuffledOthers = internalShuffle(others);
-
-      const result = [];
-      let gifIndex = 0;
-      let otherIndex = 0;
-
-      // 3. Webe-Logik: Solange noch IRGENDWAS in einem der Töpfe ist
-      while (otherIndex < shuffledOthers.length || gifIndex < shuffledGifs.length) {
-
-        // Versuche, bis zu 2 "Others" einzufügen
-        for (let i = 0; i < 2; i++) {
-          if (otherIndex < shuffledOthers.length) {
-            result.push(shuffledOthers[otherIndex]);
-            otherIndex++;
-          }
-        }
-
-        // Versuche, genau 1 GIF einzufügen
-        if (gifIndex < shuffledGifs.length) {
-          result.push(shuffledGifs[gifIndex]);
-          gifIndex++;
-        }
-
-        // Sicherheitscheck: Wenn in einem Durchlauf gar nichts mehr hinzugefügt wurde, 
-        // müssen wir abbrechen, um eine Endlosschleife zu verhindern.
-        if (otherIndex >= shuffledOthers.length && gifIndex >= shuffledGifs.length) {
-          break;
-        }
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
       }
-
-      return result;
+      return array;
     };
 
     const initSafeBanner = async (trackSelector, endpoint, pxPerSec) => {
@@ -241,7 +200,7 @@
 
           // Trigger a reflow to ensure the transform is applied 
           // before the 'is-animating' class kicks in.
-          track.offsetHeight;
+          track.offsetHeight; 
 
           track.classList.add('is-animating');
         };
@@ -249,23 +208,23 @@
         // Delay slightly to allow the browser to start loading images
         setTimeout(startAnimation, 500);
 
-      } catch (e) {
-        console.error("Banner error:", e);
+      } catch (e) { 
+        console.error("Banner error:", e); 
       }
     };
 
     // --- Configuration ---
     // Customers: Right to Left (Standard) @ 50px/sec
     initSafeBanner(
-      '.customer-scrolling-track',
-      'https://set-outlooksignatures.com/customer-images.txt',
+      '.customer-scrolling-track', 
+      'https://set-outlooksignatures.com/customer-images.txt', 
       50
     );
 
     // Signatures: Left to Right (Reverse) @ 40px/sec
     initSafeBanner(
-      '.signature-scrolling-track',
-      'https://set-outlooksignatures.com/signature-images.txt',
+      '.signature-scrolling-track', 
+      'https://set-outlooksignatures.com/signature-images.txt', 
       40
     );
   });
