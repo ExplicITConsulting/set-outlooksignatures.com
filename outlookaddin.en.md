@@ -233,16 +233,17 @@ sitemap_changefreq: weekly
 
 
 <h2 id="deployment-to-mailboxes">Deployment to mailboxes</h2>
-<p>When the <code>manifest.xml</code> or the configuration changes, you must notify mailboxes that an updated version is available. This is because Outlook caches the code of the add-in and reads the manifest file only once.</p>
+<p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. This is because Outlook caches the code of the add-in and reads the manifest file only once.</p>
+
 <div class="columns is-multiline">
   <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Individual Installation (Sideloading)</b></p>
-      <p>Ideal for rapid testing. Sideloading skips the long propagation delays of enterprise deployment.</p>
+      <p>Ideal for test scenarios. Sideloading of add-ins may have been disabled by your administrators.</p>
       <ul>
-        <li><b>Exchange Online:</b> Open <code>outlook.cloud.microsoft/mail/inclientstore</code> > My add-ins > Add from file.</li>
-        <li><b>On-Prem:</b> Open OWA > Options > Manage Add-ins > Add from file.</li>
-        <li><b>Removal:</b> Right-click the add-in in the "Apps" menu of a new draft and select Uninstall.</li>
+        <li><b>Exchange Online:</b> Open <code>https://outlook.cloud.microsoft/mail/inclientstore</code> > My add-ins > Add from file.</li>
+        <li><b>On-prem:</b> Open <code>https://YourMailServer.example.com/owa/#path=/options/manageapps</code> > Add from file.</li>
+        <li><b>Removal:</b> Draft a new mail, click the <b>Apps</b> button, right-click the add-in and select <b>Uninstall</b>.</li>
       </ul>
     </div>
   </div>
@@ -250,11 +251,10 @@ sitemap_changefreq: weekly
   <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Enterprise Deployment (Production)</b></p>
-      <p>Ideal for mass rollout. Note that changes can take up to 72 hours to propagate.</p>
+      <p>Ideal for mass deployment. These methods are usually too slow (up to 72 hours) for test scenarios.</p>
       <ul>
-        <li><b>Microsoft 365 Integrated Apps:</b> Centralized management via the M365 Admin Center.</li>
-        <li><b>Centralized Deployment:</b> Use this for sovereign or government clouds where Integrated Apps may be unavailable.</li>
-        <li><b>Benefit:</b> Automatic assignment to groups and automatic removal when users leave.</li>
+        <li><b><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide">Integrated Apps</a>:</b> The modern method for Microsoft 365 environments.</li>
+        <li><b><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide">Centralized Deployment</a>:</b> Use this if Integrated Apps is not yet available in your cloud tenant.</li>
       </ul>
     </div>
   </div>
@@ -262,21 +262,35 @@ sitemap_changefreq: weekly
 
 <div class="box has-background-white-bis has-text-black mt-5">
   <p><b>Clear the Outlook add-in cache</b></p>
-  <p>If the add-in does not update after deployment, use these methods to clear the local cache:</p>
+  <p>When testing, Outlook sometimes takes too long updating its cache. Follow these official Microsoft instructions to manually clear it:</p>
   <div class="columns mt-2">
     <div class="column is-6">
-      <ul>
-        <li><b>Web:</b> Hard refresh the browser window.</li>
-        <li><b>Classic Windows:</b> Close Outlook and clear the Office folder in %LOCALAPPDATA%.</li>
-        <li><b>New Windows:</b> Close Outlook and reset the app via Windows Settings.</li>
-      </ul>
+      <div style="display: flex; gap: 0.75em;">
+        🌐
+        <div><b>Web:</b> Hard Refresh the browser window.</div>
+      </div>
+      <div style="display: flex; gap: 0.75em;" class="mt-2">
+        💻
+        <div><b>Classic Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">Official instructions</a>.</div>
+      </div>
+      <div style="display: flex; gap: 0.75em;" class="mt-2">
+        🖥️
+        <div><b>New Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">Official instructions</a>.</div>
+      </div>
     </div>
     <div class="column is-6">
-      <ul>
-        <li><b>macOS:</b> Close Outlook and clear the Office cache via Terminal or Finder.</li>
-        <li><b>iOS:</b> Taskpane > Advanced options > Reload add-in.</li>
-        <li><b>Android:</b> Long-press icon > App info > Force Stop > Clear Cache.</li>
-      </ul>
+      <div style="display: flex; gap: 0.75em;">
+        🍎
+        <div><b>macOS:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">Official instructions</a>.</div>
+      </div>
+      <div style="display: flex; gap: 0.75em;" class="mt-2">
+        📱
+        <div><b>iOS:</b> Taskpane > Advanced options > <b>Reload add-in</b>.</div>
+      </div>
+      <div style="display: flex; gap: 0.75em;" class="mt-2">
+        🤖
+        <div><b>Android:</b> App info > Force Stop > Clear Cache (not Clear Data).</div>
+      </div>
     </div>
   </div>
 </div>
