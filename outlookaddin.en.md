@@ -30,9 +30,9 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid var(--benefactor-circle-color);">
       <p><b>Key Functionality</b></p>
       <ul>
-        <li><strong>Automatic Selection:</strong> Applies correct sigs on item creation.</li>
-        <li><strong>Taskpane Preview:</strong> Users can manually select or preview.</li>
-        <li><strong>On-Prem Roaming:</strong> Cloud-like experience for on-prem mailboxes.</li>
+        <li><b>Automatic Selection:</b> Applies correct signatures on item creation.</li>
+        <li><b>Taskpane Preview:</b> Users can manually select or preview.</li>
+        <li><b>On-Prem Roaming:</b> Cloud-like experience for on-prem mailboxes.</li>
       </ul>
     </div>
   </div>
@@ -51,7 +51,6 @@ sitemap_changefreq: weekly
     <p>🚀 <b>Enterprise Ready</b><br><small>Exchange Online and On-Premises support.</small></p>
   </div>
 </div>
-<hr>
 
 
 <h2 id="usage">Usage</h2>
