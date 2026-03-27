@@ -3,7 +3,7 @@ layout: "page"
 lang: "en"
 locale: "en"
 title: "The Outlook add-in"
-subtitle: "Signatures for Outlook on Android and iOS, advanced features for all platforms"
+subtitle: "Signatures for Outlook for Android and iOS, advanced features for all platforms"
 description: "Extend Outlook with the Set-OutlookSignatures add-in. Automatic email signatures for iOS, Android, and all platforms. Self-hosted, secure, and enterprise-ready."
 hero_link: "#overview"
 hero_link_text: "<span><b>Overview: </b>What the add-in does</span>"
@@ -20,10 +20,10 @@ sitemap_changefreq: weekly
 ---
 <h2 id="overview">Overview</h2>
 <p>With a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle license</span></a>, you also have access to the Set-OutlookSignatures add-in for Outlook.</p>
-<p>The add-in makes signatures — created by Set-OutlookSignatures in client or SimulateAndDeploy mode — available in <strong>Outlook on iOS and Outlook on Android</strong>, while supporting all Outlook editions across platforms.</p>
+<p>The add-in makes signatures — created by Set-OutlookSignatures in client or SimulateAndDeploy mode — available in <strong>Outlook for iOS and Outlook for Android</strong>, while supporting all Outlook editions across platforms.</p>
 <p>It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD (bring your own device) scenarios. For on-premises mailboxes, it delivers a roaming signature experience comparable to the cloud.</p>
 <p>The Outlook add-in includes a taskpane that lets users preview a selected signature and insert it into the email or appointment they are currently composing.</p>
-<p>It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful in Outlook on Android and Outlook on iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
+<p>It can automatically apply the correct signature as soon as a new email or appointment is created, which is especially useful in Outlook for Android and Outlook for iOS. It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
 <p>The Outlook add-in is self-hosted by you. Compared to using a solution hosted by a 3rd party, this has several advantages:</p>
 <ul>
   <li>Client specific configuration.</li>
@@ -40,55 +40,45 @@ sitemap_changefreq: weekly
 <p>In compose mode, the taskpane allows to manually choose a signature, set the selected signature, and to temporarily override admin-defined settings for debug logging and Outlook host restrictions.</p>
 <p>In message read mode, the taskpane cannot set signatures, of course. But it is very useful to check if the add-in is deployed correctly, and if it can access signatures. This is especially useful on mobile devices, in situations where enabling the debug mode is not wanted, and for basic tests when launch events are not triggered by Outlook.</p>
 
-<p class="has-text-weight-bold mb-4">The taskpane can be accessed through:</p>
-
 <div class="columns is-multiline">
   <div class="column is-6-desktop is-12-tablet">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook on the web (Exchange Online), New Outlook on Windows, New Outlook on Mac</b></p>
-      <div class="content mt-2">
-        <ul>
-          <li>New mail, reply mail, read mail: "Message" tab, "Apps" icon</li>
-          <li>New appointment: Ribbon, "…" menu</li>
-        </ul>
-      </div>
+      <p><b>Outlook for the web (Exchange Online), New Outlook for Windows, New Outlook for Mac</b></p>
+      <ul>
+        <li>New mail, reply mail, read mail: "Message" tab, "Apps" icon</li>
+        <li>New appointment: Ribbon, "…" menu</li>
+      </ul>
     </div>
   </div>
 
   <div class="column is-6-desktop is-12-tablet">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook on the web (on-prem)</b></p>
-      <div class="content mt-2">
-        <ul>
-          <li>New mail, reply mail: Lower right corner of the compose window</li>
-          <li>New appointment: At the right of the menu bar at the top of the compose window</li>
-          <li>Read mail: Left to the reply button</li>
-        </ul>
-      </div>
+      <p><b>Outlook for the web (on-prem)</b></p>
+      <ul>
+        <li>New mail, reply mail: Lower right corner of the compose window</li>
+        <li>New appointment: At the right of the menu bar at the top of the compose window</li>
+        <li>Read mail: Left to the reply button</li>
+      </ul>
     </div>
   </div>
 
   <div class="column is-6-desktop is-12-tablet">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Classic Outlook on Windows, Classic Outlook on Mac</b></p>
-      <div class="content mt-2">
-        <ul>
-          <li>New mail, reply mail, read mail: "Message" tab, "All apps" icon</li>
-          <li>New appointment: "Appointment" or "Meeting" tab, "All apps" icon</li>
-        </ul>
-      </div>
+      <p><b>Classic Outlook for Windows, Classic Outlook for Mac</b></p>
+      <ul>
+        <li>New mail, reply mail, read mail: "Message" tab, "All apps" icon</li>
+        <li>New appointment: "Appointment" or "Meeting" tab, "All apps" icon</li>
+      </ul>
     </div>
   </div>
 
   <div class="column is-6-desktop is-12-tablet">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook on iOS, Outlook on Android</b></p>
-      <div class="content mt-2">
-        <ul>
-          <li>These platforms do not support taskpanes for new mails, reply mails and appointments.</li>
-          <li>Read mail: Three dots ("…" or "⋮") in the email header</li>
-        </ul>
-      </div>
+      <p><b>Outlook for iOS, Outlook for Android</b></p>
+      <ul>
+        <li>These platforms do not support taskpanes for new mails, reply mails and appointments.</li>
+        <li>Read mail: Three dots ("…" or "⋮") in the email header</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -187,7 +177,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="deployment-to-mailboxes">Deployment to mailboxes</h2>
-<p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. Due to caching mechanisms, especially in Classic Outlook on Windows, this does not happen automatically.</p>
+<p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. Due to caching mechanisms, especially in Classic Outlook for Windows, this does not happen automatically.</p>
 <p>This is required when:</p>
 <ul>
   <li>A new release of the Outlook add-in is published by <a href="https://explicitconsulting.at">ExplicIT Consulting</a>.</li>
@@ -217,8 +207,8 @@ sitemap_changefreq: weekly
 </ul>
 <p>Sideloading of add-ins may have been disabled by your administrators. Do not use the URLs mentioned above to remove custom add-ins, as this fails most times. Instead, use one of the following options:</p>
 <ul>
-  <li>Open Outlook on the web, draft a new mail, click on the 'Apps' button, right-click the Set-OutlookSignatures add-in and select 'Uninstall'.</li>
-  <li>Remove the custom add-in in Outlook on Android or Outlook on iOS.</li>
+  <li>Open Outlook for the web, draft a new mail, click on the 'Apps' button, right-click the Set-OutlookSignatures add-in and select 'Uninstall'.</li>
+  <li>Remove the custom add-in in Outlook for Android or Outlook for iOS.</li>
 </ul>
 
 <h3>Microsoft 365 Centralized Deployment or Integrated Apps</h3>
@@ -238,12 +228,12 @@ sitemap_changefreq: weekly
 <h3>Clear the Outlook add-in cache</h3>
 <p>When testing add-ins, especially when using the sideloading method, Outlook sometimes messes up its cache or takes too long updating it. To avoid problems, it is a good idea to manually clear the add-in cache in test scenarios.</p>
 <ul>
-  <li><strong>Outlook on the web:</strong> Hard Refresh the website.</li>
-  <li><strong>Classic Outlook on Windows:</strong> Close Outlook, then follow the <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">official instructions from Microsoft</a>. Note: launch events may not trigger until a restart even if the taskpane works.</li>
-  <li><strong>New Outlook on Windows:</strong> Close Outlook, then follow the <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">official instructions from Microsoft</a>.</li>
-  <li><strong>Outlook on macOS:</strong> Close Outlook, then follow the <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">official instructions from Microsoft</a>.</li>
-  <li><strong>Outlook on iOS:</strong> Open the taskpane of the Outlook add-in, scroll down to "Advanced options" and tap the "Reload add-in" button.</li>
-  <li><strong>Outlook on Android:</strong> Long-press the icon > App info > Force Stop > Storage and Cache > Clear Cache (do not tap Clear Data).</li>
+  <li><strong>Outlook for the web:</strong> Hard Refresh the website.</li>
+  <li><strong>Classic Outlook for Windows:</strong> Close Outlook, then follow the <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">official instructions from Microsoft</a>. Note: launch events may not trigger until a restart even if the taskpane works.</li>
+  <li><strong>New Outlook for Windows:</strong> Close Outlook, then follow the <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">official instructions from Microsoft</a>.</li>
+  <li><strong>Outlook for macOS:</strong> Close Outlook, then follow the <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">official instructions from Microsoft</a>.</li>
+  <li><strong>Outlook for iOS:</strong> Open the taskpane of the Outlook add-in, scroll down to "Advanced options" and tap the "Reload add-in" button.</li>
+  <li><strong>Outlook for Android:</strong> Long-press the icon > App info > Force Stop > Storage and Cache > Clear Cache (do not tap Clear Data).</li>
 </ul>
 
 
@@ -262,11 +252,10 @@ sitemap_changefreq: weekly
   </li>
   <li>Microsoft dynamically updates the local copy of the office.js framework. This may lead to problems that suddenly appear although neither Outlook nor the add-in have changed. Where available, use the taskpane as a workaround.</li>
 </ul>
-
 <div class="columns is-multiline">
   <div class="column is-half">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook on Android</b></p>
+      <p><b>Outlook for Android</b></p>
       <ul>
         <li>Only mailboxes hosted in Exchange Online are supported.</li>
         <li>Setting the signature on new appointments is not yet supported by Microsoft.</li>
@@ -276,7 +265,7 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-half">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook on iOS</b></p>
+      <p><b>Outlook for iOS</b></p>
       <ul>
         <li>Only mailboxes hosted in Exchange Online are supported.</li>
         <li>Setting the signature on new appointments is not yet supported by Microsoft.</li>
@@ -287,16 +276,16 @@ sitemap_changefreq: weekly
   </div>
   <div class="column is-half">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook on Mac</b></p>
+      <p><b>Outlook for Mac</b></p>
       <ul>
-        <li>Use the New Outlook on Mac whenever possible; Classic Mac is at end of lifecycle.</li>
-        <li>Support for Classic Outlook on Mac is best-effort due to API instability.</li>
+        <li>Use the New Outlook for Mac whenever possible; Classic Mac is at end of lifecycle.</li>
+        <li>Support for Classic Outlook for Mac is best-effort due to API instability.</li>
       </ul>
     </div>
   </div>
   <div class="column is-half">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook on the web on-prem</b></p>
+      <p><b>Outlook for the web on-prem</b></p>
       <ul>
         <li>Launch events are not supported; only the taskpane works.</li>
         <li>Images are replaced with alternate descriptions due to a Microsoft office.js bug.</li>
@@ -304,9 +293,8 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-
 <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-  <p><b>Classic Outlook on Windows</b></p>
+  <p><b>Classic Outlook for Windows</b></p>
   <ul>
     <li>Things work fine for EXO, but APIs seem unstable for on-prem mailboxes regarding launch events. Use the taskpane when in doubt.</li>
     <li>For EXO mailboxes, the version must support Nested App Authentication.</li>

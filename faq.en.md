@@ -68,7 +68,7 @@ sitemap_changefreq: monthly
   - [Script and Word process priority](#script-and-word-process-priority)
 - [Keep users from adding, editing and removing signatures](#keep-users-from-adding-editing-and-removing-signatures)
   - [Outlook](#outlook)
-  - [Outlook on the web](#outlook-on-the-web)
+  - [Outlook for the web](#outlook-on-the-web)
 - [What is the recommended folder structure for script, license, template and config files?](#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files)
 - [How to disable the tagline in signatures?](#how-to-disable-the-tagline-in-signatures)
   - [Why the tagline?](#why-the-tagline)
@@ -78,7 +78,7 @@ sitemap_changefreq: monthly
 - [Why are signatures and out-of-office replies recreated even when their content has not changed?](#why-are-signatures-and-out-of-office-replies-recreated-even-when-their-content-has-not-changed)
 - [Empty lines contain an underlined space character](#empty-lines-contain-an-underlined-space-character)
 - [What about Microsoft turning off Exchange Web Services for Exchange Online?](#what-about-microsoft-turning-off-exchange-web-services-for-exchange-online)
-- [Roaming signatures in Classic Outlook on Windows look different](#roaming-signatures-in-classic-outlook-on-windows-look-different)
+- [Roaming signatures in Classic Outlook for Windows look different](#roaming-signatures-in-classic-outlook-on-windows-look-different)
 - [Does it support cross-tenant access and Multitenant Organizations?](#does-it-support-cross-tenant-access-and-multitenant-organizations)
 - [Can I change the case (uppercase/lowercase) of replacement variables in templates?](#can-i-change-the-case-uppercaselowercase-of-replacement-variables-in-templates)
 - [What can I learn from the code of Set-OutlookSignatures?](#what-can-i-learn-from-the-code-of-set-outlooksignatures)
@@ -129,7 +129,7 @@ If the account behind a mailbox is not found, group membership cannot be retriev
 
 
 ## How is the personal mailbox of the currently logged-in user identified?
-The personal mailbox of the currently logged-in user is preferred to other mailboxes, as it receives signatures first and is the only mailbox where the Outlook on the web signature can be set.
+The personal mailbox of the currently logged-in user is preferred to other mailboxes, as it receives signatures first and is the only mailbox where the Outlook for the web signature can be set.
 
 The personal mailbox is found by simply checking if the Active Directory mail attribute of the currently logged-in user matches an SMTP address of one of the mailboxes connected in Outlook.
 
@@ -541,31 +541,31 @@ Mailboxes are taken from the first matching source:
   1. Simulation mode is enabled: Mailboxes defined in SimulateMailboxes
   2. Outlook is installed and has profiles, and New Outlook is not set as default: Mailboxes from Outlook profiles
   3. New Outlook is installed: Mailboxes from New Outlook (including manually added and automapped mailboxes for the currently logged-in user)
-  4. If none of the above matches: Mailboxes from Outlook on the web (including manually added mailboxes, automapped mailboxes follow when Microsoft updates Outlook on the web to match the New Outlook experience)
+  4. If none of the above matches: Mailboxes from Outlook for the web (including manually added mailboxes, automapped mailboxes follow when Microsoft updates Outlook for the web to match the New Outlook experience)
 
-Default signatures cannot be set locally or in Outlook on the web until an Outlook profile has been configured, as the corresponding settings are stored in registry paths containing random numbers, which need to be created by Outlook.
+Default signatures cannot be set locally or in Outlook for the web until an Outlook profile has been configured, as the corresponding settings are stored in registry paths containing random numbers, which need to be created by Outlook.
 
 
 ## What if Outlook is not installed at all?
-If Outlook is not installed at all, Set-OutlookSignatures will still be useful: It determine the logged-in users email address, create the signatures for his personal mailbox in a temporary location, set a default signature in Outlook on the web as well as the out-of-office replies.
+If Outlook is not installed at all, Set-OutlookSignatures will still be useful: It determine the logged-in users email address, create the signatures for his personal mailbox in a temporary location, set a default signature in Outlook for the web as well as the out-of-office replies.
 
 
 ## What about the roaming signatures feature in Exchange Online?
 Set-OutlookSignatures can handle roaming signatures since v4.0.0. See parameter '[MirrorCloudSignatures](/parameters#virtualmailboxconfigfile)' for details.
 
-Set-OutlookSignatures supports romaing signatures independent from the Outlook version used. Roaming signatures are also supported in scenarios where only Outlook on the web in the cloud or New Outlook is used.
+Set-OutlookSignatures supports romaing signatures independent from the Outlook version used. Roaming signatures are also supported in scenarios where only Outlook for the web in the cloud or New Outlook is used.
 
 As there is no Microsoft official API yet, this feature is to be used at your own risk (MirrorCloudSignatures has been stable since its initial release in 2022).
 
 Storing signatures in the mailbox is a good idea, as this makes signatures available across devices and apps.
 
-As soon as Microsoft makes available a public API, more email clients will get support for this feature - which will close a gap, Set-OutlookSignatures cannot fill because it is not running on exchange servers: Adding signatures to mails sent from apss besides Outlook on Windows, Outlook on the web and New Outlook.
+As soon as Microsoft makes available a public API, more email clients will get support for this feature - which will close a gap, Set-OutlookSignatures cannot fill because it is not running on exchange servers: Adding signatures to mails sent from apss besides Outlook for Windows, Outlook for the web and New Outlook.
 
 Roaming signatures will very likely never be available for mailboxes on-prem, and it seems that it also will not be available for shared mailboxes in the cloud.
 
-Until an API is available, you can disable the feature with a registry key - you can still use the feature via Set-OutlookSignatures. This key forces Outlook on Windows to use the well-known file based approach and ensure full compatibility with Set-OutlookSignatures, until a public API is released and incorporated into the software. For details, please see <a href="https://support.microsoft.com/en-us/office/outlook-roaming-signatures-420c2995-1f57-4291-9004-8f6f97c54d15?ui=en-us&rs=en-us&ad=us">this Microsoft article</a>.
+Until an API is available, you can disable the feature with a registry key - you can still use the feature via Set-OutlookSignatures. This key forces Outlook for Windows to use the well-known file based approach and ensure full compatibility with Set-OutlookSignatures, until a public API is released and incorporated into the software. For details, please see <a href="https://support.microsoft.com/en-us/office/outlook-roaming-signatures-420c2995-1f57-4291-9004-8f6f97c54d15?ui=en-us&rs=en-us&ad=us">this Microsoft article</a>.
 
-Microsoft is already supporting the feature in Outlook on the web for more and more Exchange Online tenants. Currently, this breaks PowerShell commands such as Set-MailboxMessageConfiguration. If you want to temporarily disable the feature for Outlook on the web in your Exchange Online, you can do this with the command `Set-OrganizationConfig -PostponeRoamingSignaturesUntilLater $false`.
+Microsoft is already supporting the feature in Outlook for the web for more and more Exchange Online tenants. Currently, this breaks PowerShell commands such as Set-MailboxMessageConfiguration. If you want to temporarily disable the feature for Outlook for the web in your Exchange Online, you can do this with the command `Set-OrganizationConfig -PostponeRoamingSignaturesUntilLater $false`.
 
 
 ## Why does the text color of my signature change sometimes?
@@ -785,8 +785,8 @@ As an alternative, you may consider one or both of the following alternatives:
 
 There is one thing you cannot disable: Outlook always allows users to edit the copy of the signature after it was added to an email.
 
-### Outlook on the web
-Unfortunately, Outlook on the web cannot be configured as granularly as Outlook. In Exchange Online as well as in Exchange on-prem, the `Set-OwaMailboxPolicy` cmdlet does not allow you to configure signature settings in detail, but only to disable or enable signature features via the `SignaturesEnabled` parameter for specific groups of mailboxes.
+### Outlook for the web
+Unfortunately, Outlook for the web cannot be configured as granularly as Outlook. In Exchange Online as well as in Exchange on-prem, the `Set-OwaMailboxPolicy` cmdlet does not allow you to configure signature settings in detail, but only to disable or enable signature features via the `SignaturesEnabled` parameter for specific groups of mailboxes.
 
 There is no option to write protect signatures, or to keep users from from adding, editing and removing signatures without disabling all signature-related features.
 
@@ -925,7 +925,7 @@ instead of
 <a hyperlink> <another hyperlink>
 ```
 
-The root cause is unknown, but it seems to be related to the HTML parser of the office.js framework, which is used by Outlook on all platforms to perform specific tasks.
+The root cause is unknown, but it seems to be related to the HTML parser of the office.js framework, which is used by Outlook for all platforms to perform specific tasks.
 
 
 ## What about Microsoft turning off Exchange Web Services for Exchange Online?
@@ -934,19 +934,19 @@ Microsoft will turn of Exchange Web Services (EWS) for Exchange Online. This is 
 Set-OutlookSignatures, the Benefactor Circle add-on and the Outlook add-in are prepared for this since the end of 2023, when Microsoft made their first announcement about this.
 
 Unfortunately, the Graph API does not yet offer the same feature set as EWS. This affects the following features for mailboxes hosted in Exchange Online (and only in Exchange Online):
-- Setting the classic Outlook on the web signature<br>The classic Outlook on the web signature can only be seen when using Outlook on the web on a browser in mobile view. This only affects a vanishingly small number of users, the trend is downwards, and it is not yet clear if Microsoft will ever bring this feature to the Graph API.<br>Roaming signatures are not affected. Exchange on-prem is not affected.
-- Getting additional mailboxes from Outlook on the web<br>This affects all editions of Outlook which are not the Classic Outlook on Windows - in other words: New Outlook on Windows, any Outlook on macOS, and running Set-OutlookSignatures on Linux.<br>It is very likely that Microsoft will update the Graph API to support this feature. The timeline is unknown.<br>Detecting automapped mailboxes is not affected. Exchange on-prem is not affected.
+- Setting the classic Outlook for the web signature<br>The classic Outlook for the web signature can only be seen when using Outlook for the web on a browser in mobile view. This only affects a vanishingly small number of users, the trend is downwards, and it is not yet clear if Microsoft will ever bring this feature to the Graph API.<br>Roaming signatures are not affected. Exchange on-prem is not affected.
+- Getting additional mailboxes from Outlook for the web<br>This affects all editions of Outlook which are not the Classic Outlook for Windows - in other words: New Outlook for Windows, any Outlook for macOS, and running Set-OutlookSignatures on Linux.<br>It is very likely that Microsoft will update the Graph API to support this feature. The timeline is unknown.<br>Detecting automapped mailboxes is not affected. Exchange on-prem is not affected.
 
 
-## Roaming signatures in Classic Outlook on Windows look different
-When letting Classic Outlook on Windows sync roaming signatures itself, you very likely run into multiple problems.
+## Roaming signatures in Classic Outlook for Windows look different
+When letting Classic Outlook for Windows sync roaming signatures itself, you very likely run into multiple problems.
 
 The most disturbing one is that the encoding of characters within the signatures is wrong.
 
-Here is how you can test if the current patch level of Classic Outlook on Windows is affected:
+Here is how you can test if the current patch level of Classic Outlook for Windows is affected:
 1. Ensure that the system codepage of your Windows client is not set to UTF-8, but to a local codepage as Windows does per default (such as Windows-1252 in Western Europe). Setting the codepage to UTF-8 is possible, but it is still an optional beta feature. 
-2. Ensure that Classic Outlook on Windows is configured to use roaming signatures.
-3. Create a new signature in Outlook on the web (not in any other Outlook) with the following content:
+2. Ensure that Classic Outlook for Windows is configured to use roaming signatures.
+3. Create a new signature in Outlook for the web (not in any other Outlook) with the following content:
 
     ```
     Test signature with UTF-8 characters
@@ -960,17 +960,17 @@ Here is how you can test if the current patch level of Classic Outlook on Window
     ⭐ (star)
     ```
 
-4. Wait until Classic Outlook on Windows has downloaded the signature locally.
-5. Add the freshly downloaded signature to a new email in Classic Outlook on Windows or open the downloaded file directly in a browser.
+4. Wait until Classic Outlook for Windows has downloaded the signature locally.
+5. Add the freshly downloaded signature to a new email in Classic Outlook for Windows or open the downloaded file directly in a browser.
 6. You will notice that the UTF-8 characters are not displayed correctly.
 
-This is because Classic Outlook on Windows performs a wrong codepage conversion. Microsoft knows about this error since roaming signatures have been introduced multiple years ago, but it has not yet been fixed.
+This is because Classic Outlook for Windows performs a wrong codepage conversion. Microsoft knows about this error since roaming signatures have been introduced multiple years ago, but it has not yet been fixed.
 
-Some other problems with the internal roaming signature sync mechanism of classic Outlook on Windows are that you cannot reliably trigger the sync and that it can take hours until a changed or new signature is downloaded.
+Some other problems with the internal roaming signature sync mechanism of classic Outlook for Windows are that you cannot reliably trigger the sync and that it can take hours until a changed or new signature is downloaded.
 
 The sync mechanism included in the Benefactor Circle add-on does not have these problems.
 
-This can be a problem, especially when using Set-OutlookSignatures in SimulateAndDeploy mode. If you really cannot switch to running Set-OutlookSignatures on the clients of your users, the Outlook add-in that comes with the Benefactor Circle license may be an alternative to the erronous internal roaming signature sync mechanism of Classic Outlook on Windows.
+This can be a problem, especially when using Set-OutlookSignatures in SimulateAndDeploy mode. If you really cannot switch to running Set-OutlookSignatures on the clients of your users, the Outlook add-in that comes with the Benefactor Circle license may be an alternative to the erronous internal roaming signature sync mechanism of Classic Outlook for Windows.
 
 
 ## Does it support cross-tenant access and Multitenant Organizations?

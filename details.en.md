@@ -30,7 +30,7 @@ sitemap_changefreq: weekly
 - [Template tags and INI files](#template-tags-and-ini-files)
 - [Signature and OOF application order](#signature-and-oof-application-order)
 - [Replacement variables](#replacement-variables)
-- [Outlook on the web](#outlook-on-the-web)
+- [Outlook for the web](#outlook-on-the-web)
 - [Hybrid and cloud-only support](#hybrid-and-cloud-only-support)
 - [Simulation mode](#simulation-mode)
 
@@ -43,12 +43,12 @@ Most companies choose the same default setup for their environment:
 The best for this scenario is to run Set-OutlookSignatures on each user's primary device as described in the [Quickstart guide](/quickstart): Depending on your needs and environment, you may realize this with a [logon script](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task), a [scheduled task](/faq#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task), a [desktop icon](/faq#create-desktop-icons-cross-platform), a [desired state configuration](/faq#deploy-and-run-software-using-desired-state-configuration-dsc), or other methods.  
 Of course, users [never see Set-OutlookSignatures](/faq#start-set-outlooksignatures-in-hiddeninvisible-mode) - signatures are just there and always up-to-date.
 
-You then add the [Outlook add-in](/outlookaddin) to the mix to make signatures available in Outlook running on secondary devices (Outlook on Android, Outlook on iOS, etc.). This also covers the use of Outlook on devices that are not managed, such as accessing the company mailbox from Outlook installed on a private computer.
+You then add the [Outlook add-in](/outlookaddin) to the mix to make signatures available in Outlook running on secondary devices (Outlook for Android, Outlook for iOS, etc.). This also covers the use of Outlook for devices that are not managed, such as accessing the company mailbox from Outlook installed on a private computer.
 
 Sometimes, this default scenario is not possible or not wanted. Examples are:
 * Users do not have a managed primary device, for example in a BYOD (bring your own device) scenario.
 * The primary user device is managed but not running an OS on which Set-OutlookSignatures can be executed (Linux, macOS, Windows).
-* Users never log on to a device, only to services. This is often the case when Microsoft 365 F-licenses are used and users only log on to Outlook on the web, for example.
+* Users never log on to a device, only to services. This is often the case when Microsoft 365 F-licenses are used and users only log on to Outlook for the web, for example.
 * You want to use Set-OutlookSignatures, but you prefer running it on a central system instead of running it on your clients.
 
 Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> support all these scenarios by offering differing methods for the creation of signatures as well as for making these signatures available to end users.
@@ -56,8 +56,8 @@ Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weig
 Contrary to other solutions, you do not have to decide for one fixed combination of these methods - you can mix and match different combinations to perfectly meet your requirements.
 
 **Our recommendation is also the scenario used most often by our customers:**
-* For users with a primary managed device running Linux, macOS or Windows, Set-OutlookSignatures runs on their client ([hidden/non-visible](/faq#start-set-outlooksignatures-in-hiddeninvisible-mode), of course). This primary managed device can also be a virtual desktop instance (VDI) or a terminal server session.<br>The assigned Outlook add-in instance is configured to automatically add signatures only in Outlook on Android and Outlook on iOS.
-* Frontline workers (production and healthcare staff, for example) primarily using shared devices or only logging on to Outlook on the web get their signatures centrally via SimulateAndDeploy.<br>The assigned Outlook add-in instance is configured to automatically add signatures only in Outlook on Android and Outlook on iOS.
+* For users with a primary managed device running Linux, macOS or Windows, Set-OutlookSignatures runs on their client ([hidden/non-visible](/faq#start-set-outlooksignatures-in-hiddeninvisible-mode), of course). This primary managed device can also be a virtual desktop instance (VDI) or a terminal server session.<br>The assigned Outlook add-in instance is configured to automatically add signatures only in Outlook for Android and Outlook for iOS.
+* Frontline workers (production and healthcare staff, for example) primarily using shared devices or only logging on to Outlook for the web get their signatures centrally via SimulateAndDeploy.<br>The assigned Outlook add-in instance is configured to automatically add signatures only in Outlook for Android and Outlook for iOS.
 * Users primarily working on unmanaged devices get their signatures centrally via SimulateAndDeploy.<br>The assigned Outlook add-in instance is configured to automatically add signatures on all Outlook editions on all platforms.
 
 The following chapters dive deeper into the differences between creating signatures and out-of-office replies, and making signatures available to end users. They also describe which options are available, what their pros and cons are, and when they are used best.
@@ -101,7 +101,7 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#s
               <p>Uses one or more central systems, which need according resources.</p>
               <p>Runs within the security context of a service account requiring (temporary) full access to all user mailboxes.</p>
               <p>Is typically run less frequent, usually once a day or less often.</p>
-              <p>Can only see and influence the configuration of Outlook on the web, reducing the feature set of Set-OutlookSignatures to what is possible in simulation mode.</p>
+              <p>Can only see and influence the configuration of Outlook for the web, reducing the feature set of Set-OutlookSignatures to what is possible in simulation mode.</p>
           </td>
         </tr>
         <tr>
@@ -110,7 +110,7 @@ While building the base for SimulateAndDeploy, pure [simulation mode](/details#s
               <p>Users logging on to a primary device that is managed and runs Linux, Windows or macOS.</p>
           </td>
           <td>
-            <p>Scenarios where you cannot or do not want to run Set-OutlookSignatures in the context of the logged-on user.<br>Examples are users mainly working on shared devices with a master login, only using Outlook on the web, only using phones or Android/iOS tablets, and unmanaged BYOD scenarios.</p>
+            <p>Scenarios where you cannot or do not want to run Set-OutlookSignatures in the context of the logged-on user.<br>Examples are users mainly working on shared devices with a master login, only using Outlook for the web, only using phones or Android/iOS tablets, and unmanaged BYOD scenarios.</p>
           </td>
         </tr>
       </tbody>
@@ -123,16 +123,16 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
 ### Step 2: Make signatures available<!-- omit in toc -->
 In client mode, signatures are automatically made available to the local Outlook installation. With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, client mode also makes signatures available in the 'Documents' folder of the logged-on user.
 
-SimulateAndDeploy mode has no access to end user devices and therefore treats Outlook on the web as the local Outlook installation. It cannot not make signatures available in a user's 'Documents' folder.
+SimulateAndDeploy mode has no access to end user devices and therefore treats Outlook for the web as the local Outlook installation. It cannot not make signatures available in a user's 'Documents' folder.
 
-With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> active, both modes per default also make signatures available in Outlook on the web, as roaming signatures (cloud only), for use with the Outlook add-in, and in a draft email:
+With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> active, both modes per default also make signatures available in Outlook for the web, as roaming signatures (cloud only), for use with the Outlook add-in, and in a draft email:
 <div class="columns is-multiline is-centered">
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
         <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>🌐</span>
                 <div>
-                    <p><b>Outlook on the web</b></p>
+                    <p><b>Outlook for the web</b></p>
                     <p class="mb-2"><b>On-prem:</b> Supports one signature (New Email preferred).</p>
                     <p class="mb-2"><b>Cloud:</b> Combines with Roaming Signatures for mobile browser access.</p>
                 </div>
@@ -208,8 +208,8 @@ In **Exchange Online**, the security posture is even tighter. The delegated perm
 | **Cloud Only:** Graph API, delegated, [Files.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall) | ○&nbsp;Optional | ○&nbsp;Optional | | Access templates and config stored in SharePoint Online. Use [Files.SelectedOperations.Selected](https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected) as fine-grained alternative. |
 | **Cloud Only:** Graph API, delegated, [GroupMember.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall) | ●&nbsp;Required | ●&nbsp;Required | ●&nbsp;Required | Find groups, get SIDs, and check license groups. |
 | **Cloud Only:** Graph API, delegated, [Mail.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#mailread) | | | ●&nbsp;Required | Required because of Microsoft restrictions accessing roaming signatures. |
-| **Cloud Only:** Graph API, delegated, [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite) | ●&nbsp;Required | ●&nbsp;Required | | Connect to Outlook on the web. Set Outlook signatures. |
-| **Cloud Only:** Graph API, delegated, [MailboxConfigItem.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite) | ●&nbsp;Required | ●&nbsp;Required | | Connect to Outlook on the web. Set Outlook signatures. |
+| **Cloud Only:** Graph API, delegated, [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite) | ●&nbsp;Required | ●&nbsp;Required | | Connect to Outlook for the web. Set Outlook signatures. |
+| **Cloud Only:** Graph API, delegated, [MailboxConfigItem.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite) | ●&nbsp;Required | ●&nbsp;Required | | Connect to Outlook for the web. Set Outlook signatures. |
 | **Cloud Only:** Graph API, delegated, [MailboxSettings.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite) | ●&nbsp;Required | ●&nbsp;Required | | Detect OOF state and set OOF replies. |
 | **Cloud Only:** Graph API, delegated, [offline_access](https://learn.microsoft.com/en-us/graph/permissions-reference#offline_access) | ●&nbsp;Required | ●&nbsp;Required | | Get a refresh token from Graph. |
 | **Cloud Only:** Graph API, delegated, [openid](https://learn.microsoft.com/en-us/graph/permissions-reference#openid) | ●&nbsp;Required | ●&nbsp;Required | | Log on the current user. |
@@ -217,8 +217,8 @@ In **Exchange Online**, the security posture is even tighter. The delegated perm
 | **Cloud Only:** Graph API, delegated, [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall) | ●&nbsp;Required | ●&nbsp;Required | ●&nbsp;Required | Get values for replacement variables. UPN lookup. |
 | **Cloud Only:** Graph API, application, [Files.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall) | | ○&nbsp;Optional | | Access templates and config stored in SharePoint Online. Use [Files.SelectedOperations.Selected](https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected) as fine-grained alternative. |
 | **Cloud Only:** Graph API, application, [GroupMember.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall) | | ●&nbsp;Required | | Find groups, get SIDs, and check license groups. |
-| **Cloud Only:** Graph API, application, [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite) | | ●&nbsp;Required | | Connect to Outlook on the web. Set Outlook signatures. |
-| **Cloud Only:** Graph API, application, [MailboxConfigItem.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite) | | ●&nbsp;Required | | Connect to Outlook on the web. Set Outlook signatures. |
+| **Cloud Only:** Graph API, application, [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite) | | ●&nbsp;Required | | Connect to Outlook for the web. Set Outlook signatures. |
+| **Cloud Only:** Graph API, application, [MailboxConfigItem.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite) | | ●&nbsp;Required | | Connect to Outlook for the web. Set Outlook signatures. |
 | **Cloud Only:** Graph API, application, [MailboxSettings.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite) | | ●&nbsp;Required | | Detect OOF state and set OOF replies. |
 | **Cloud Only:** Graph API, application, [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall) | | ●&nbsp;Required | | Get values for replacement variables. UPN lookup. |
 
@@ -231,14 +231,14 @@ Set-Outlook can run on Linux, macOS or Windows systems with PowerShell:
 - Linux, macOS: PowerShell 7+ ('pwsh')
 
 Set-OutlookSignatures can run in two modes. See '[Architecture considerations](#architecture-considerations)' later in this document for details. In short:
-- Client mode, in the security context of the currently logged-in user.<br>This mode is recommended for most scenarios as it allows Set-OutlookSignatures to read which mailboxes the user added to Outlook or Outlook on the web, and as this mode does not require central computing resources.
+- Client mode, in the security context of the currently logged-in user.<br>This mode is recommended for most scenarios as it allows Set-OutlookSignatures to read which mailboxes the user added to Outlook or Outlook for the web, and as this mode does not require central computing resources.
 - SimulateAndDeploy mode, using a service account to push signatures into users mailboxes.<br>This mode is ideal when users log on to clients where Set-OutlookSignatures can not be run in their security context (shared devices with a master login, users with a Microsoft 365 F-license, users only using phones or Android/iOS tablets), in BYOD scenarios, or when your simply want do not want to run Set-OutlookSignatures on any of your clients.
 
 On Windows, Outlook and Word are usually required, but not in all constellations:
 - When Outlook 2010 or higher is installed and has profiles configured, Outlook is used as source for mailboxes to deploy signatures for.  
   - If Outlook is not installed or configured, New Outlook is used if available.
   - If New Outlook is configured as default application in Outlook, New Outlook is used.
-  - In any other cases, Outlook on the web is used as source for mailboxes.
+  - In any other cases, Outlook for the web is used as source for mailboxes.
 - Word 2010 or higher is required when templates in DOCX format are used, or when RTF signatures need to be created.
 
 Signature templates can be in DOCX (Windows) or HTML format (Windows, Linux, macOS). Set-OutlookSignatures comes with sample templates in both formats.
@@ -275,20 +275,20 @@ As mentioned before: These restrictions only apply to Set-OutlookSignatures and 
 
 
 #### Linux specific restrictions and notes<!-- omit in toc -->
-- Users need to access their mailboxes via Outlook on the web, as no other form of Outlook is available on Linux (use emulation tools such as Wine, CrossOver, PlayOnLinux, Proton, etc. at your own risk).
-  - Support for Outlook on the web requires the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>. See <a href="/benefactorcircle">Benefactor Circle</a> for details.
+- Users need to access their mailboxes via Outlook for the web, as no other form of Outlook is available on Linux (use emulation tools such as Wine, CrossOver, PlayOnLinux, Proton, etc. at your own risk).
+  - Support for Outlook for the web requires the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>. See <a href="/benefactorcircle">Benefactor Circle</a> for details.
 - When using email clients such as Mozilla Thunderbird, GNOME Evolution, KDE KMail or others, you can still use signatures created by Set-OutlookSignatures with the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
 
 
 #### macOS specific restrictions and notes<!-- omit in toc -->
-- Classic Outlook on Mac is supported
-  - Until Classic Outlook supports roaming signatures (which is very likely to never happen), it is treated like Outlook on Windows configured not to use roaming signatures. Consider using the '-MailboxSpecificSignatureNames' parameter.
-- New Outlook on Mac is supported
-  - Until New Outlook supports roaming signatures (not yet announced by Microsoft), it is treated like Outlook on Windows configured not to use roaming signatures. Consider using the '-MailboxSpecificSignatureNames' parameter.
+- Classic Outlook for Mac is supported
+  - Until Classic Outlook supports roaming signatures (which is very likely to never happen), it is treated like Outlook for Windows configured not to use roaming signatures. Consider using the '-MailboxSpecificSignatureNames' parameter.
+- New Outlook for Mac is supported
+  - Until New Outlook supports roaming signatures (not yet announced by Microsoft), it is treated like Outlook for Windows configured not to use roaming signatures. Consider using the '-MailboxSpecificSignatureNames' parameter.
   - If New Outlook is enabled, an alternate method of account detection is used, as scripting is not yet supported by Microsoft, but already announced on the M365 roadmap. This alternate method may detect accounts that are no longer used in Outlook (see software output for details).  
-  - If the alternate method does not find accounts, Outlook on the web is used and existing signatures are synchronized with New Outlook on Mac.
-    - Support for Outlook on the web requires the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>. See <a href="/benefactorcircle">Benefactor Circle</a> for details.
-- Classic Outlook on Mac and New Outlook on Mac do not allow external software to set default signatures.
+  - If the alternate method does not find accounts, Outlook for the web is used and existing signatures are synchronized with New Outlook for Mac.
+    - Support for Outlook for the web requires the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>. See <a href="/benefactorcircle">Benefactor Circle</a> for details.
+- Classic Outlook for Mac and New Outlook for Mac do not allow external software to set default signatures.
 - When using email clients such as Apple Mail or others, you can still use signatures created by Set-OutlookSignatures with the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, as they are stored in the folder `$([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures'))` per default (parameter `AdditionalSignaturePath`).
 
 
@@ -551,7 +551,7 @@ Tags are case insensitive.
         ```
 
 - Write protect: `writeProtect`
-    - Write protects the signature files. Works only in Classic Outlook on Windows. Modifying the signature in Outlook's signature editor leads to an error on saving, but the signature can still be changed after it has been added to an email.  
+    - Write protects the signature files. Works only in Classic Outlook for Windows. Modifying the signature in Outlook's signature editor leads to an error on saving, but the signature can still be changed after it has been added to an email.  
 - Set signature as default for new emails: `defaultNew` (signature template files only)  
     - Set signature as default signature for new mails  
 - Set signature as default for replies and forwarded emails: `defaultReplyFwd` (signature template files only)  
@@ -847,16 +847,16 @@ The behavior of custom image replacement variables and the possible configuratio
 As practical as QR codes may be, they should contain as little information as possible. The more information they contain, the larger the image needs to be, which often has a negative impact on the layout and always has a negative impact on the size of the email.<br>QR codes with too much information and too small an image size become visually blurred, making them impossible to scan - for DOCX templates, `DocxHighResImageConversion` can help. Consider bigger image size, less content, less error correction, MeCard instead of vCard, and pointing to an URL containing the actual information.
 
 
-## Outlook on the web  
-If the currently logged-in user has configured his personal mailbox in Outlook, the default signature for new emails is configured in Outlook on the web automatically.
+## Outlook for the web  
+If the currently logged-in user has configured his personal mailbox in Outlook, the default signature for new emails is configured in Outlook for the web automatically.
 
 If the default signature for new mails matches the one used for replies and forwarded email, this is also set in Outlook.
 
-If different signatures for new and reply/forward are set, only the new signature is copied to Outlook on the web.
+If different signatures for new and reply/forward are set, only the new signature is copied to Outlook for the web.
 
-If only a default signature for replies and forwards is set, only this new signature is copied to Outlook on the web.
+If only a default signature for replies and forwards is set, only this new signature is copied to Outlook for the web.
 
-If there is no default signature in Outlook, Outlook on the web settings are not changed.
+If there is no default signature in Outlook, Outlook for the web settings are not changed.
 
 All this happens with the credentials of the currently logged-in user, without any interaction neccessary.  
 
@@ -958,7 +958,7 @@ Simulation mode is enabled when the parameter `SimulateUser` is passed to the so
 
 Simulation mode is useful for content creators and admins, as it allows to simulate the behavior of the software and to inspect the resulting signature files before going live. Such a dry-run is not only very helpful for running tests in the production environment without affecting anyone, it also greatly supports problem analysis.
   
-In simulation mode, Outlook registry entries are not considered and nothing is changed in Outlook and Outlook on the web. The template files are handled just as during a real script run, but the signatures are only saved to the folder defined by the [AdditionalSignaturePath](/parameters#additionalsignaturepath) parameter.
+In simulation mode, Outlook registry entries are not considered and nothing is changed in Outlook and Outlook for the web. The template files are handled just as during a real script run, but the signatures are only saved to the folder defined by the [AdditionalSignaturePath](/parameters#additionalsignaturepath) parameter.
   
 [SimulateUser](/parameters#simulateuser) is a mandatory parameter for simulation mode. This value replaces the currently logged-in user. Use a logon name in the format 'Domain\User' or a Universal Principal Name (UPN, looks like an email address, but is not neecessarily one).
 

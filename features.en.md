@@ -54,7 +54,7 @@ With Set-OutlookSignatures and the optional <a href="/benefactorcircle"><span st
                 <div>
                     <p><b>Deployment & Mailbox Support</b></p>
                     <p class="mb-2"><b>Targeting:</b> Applied to all mailboxes (including <a href="/benefactorcircle#key-features">shared mailboxes</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>), specific <a href="/details#template-tags-and-ini-files">mailbox groups</a>, specific <a href="/details#template-tags-and-ini-files">email addresses</a> (including alias and secondary addresses), or specific <a href="/details#template-tags-and-ini-files">user and mailbox properties</a>.</p>
-                    <p class="mb-2"><b>Outlook Support:</b> Works for every mailbox across all Outlook profiles (<a href="/benefactorcircle#key-features">Outlook, New Outlook</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>, <a href="/benefactorcircle#key-features">Outlook on the web</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>), including <a href="/parameters#signaturesforautomappedandadditionalmailboxes">automapped and additional mailboxes</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.</p>
+                    <p class="mb-2"><b>Outlook Support:</b> Works for every mailbox across all Outlook profiles (<a href="/benefactorcircle#key-features">Outlook, New Outlook</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>, <a href="/benefactorcircle#key-features">Outlook for the web</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>), including <a href="/parameters#signaturesforautomappedandadditionalmailboxes">automapped and additional mailboxes</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.</p>
                     <p class="mb-2"><b>Template Logic:</b> Created with different names from the same template; <a href="/details#how-to-work-with-ini-files">one template can be used for many mailboxes</a>.</p>
                     <p class="mb-2"><b>Scheduling:</b> Assigned <a href="/details#allowed-tags">time ranges</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> within which they are valid.</p>
                     <p class="mb-2"><b>Defaults:</b> Set as <a href="/details#allowed-tags">default signature</a> for new emails, replies, and forwards, or as <a href="/details#allowed-tags">default OOF message</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> for internal/external recipients.</p>
@@ -75,7 +75,7 @@ With Set-OutlookSignatures and the optional <a href="/benefactorcircle"><span st
                     <p class="mb-2"><b>Zero-Touch Deployment:</b> <a href="/details#step-1-create-signatures-and-out-of-office-replies">SimulateAndDeploy</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a> enables full automation without touching the end-user's device.</p>
                     <p class="mb-2"><b>Data Sovereignty:</b> No telemetry, no "calling home," and no 3rd party data routing; your DNS records and mail flow remain untouched.</p>
                     <p class="mb-2"><b>Enterprise Scaling:</b> <a href="/faq#can-multiple-script-instances-run-in-parallel">Multi-instance capable</a> and optimized for complex environments with 5-digit mailbox counts.</p>
-                    <p class="mb-2"><b>Security & Testing:</b> Includes <a href="/details#simulation-mode">simulation mode</a> for safe testing and <a href="/details#allowed-tags">write protection</a> for Outlook on Windows signatures.</p>
+                    <p class="mb-2"><b>Security & Testing:</b> Includes <a href="/details#simulation-mode">simulation mode</a> for safe testing and <a href="/details#allowed-tags">write protection</a> for Outlook for Windows signatures.</p>
                     <p class="mb-2"><b>Open Source (FOSS):</b> Set-OutlookSignatures is licenses under the European Union Public License (EUPL). The core engine is peer-reviewable, ensuring transparency and digital sovereignty.</p>
                     <p class="mb-0"><b>Drafts API Fallback:</b> Supports clients without a signature API by creating <a href="/parameters#signaturecollectionindrafts">centralized HTML/Plain Text drafts</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.</p>
                 </div>
@@ -264,7 +264,7 @@ Thanks to its unique features and exclusive manufacturer availability, direct pr
                     <td>🔴</td>
                 </tr>
                 <tr>
-                    <td class="has-text-weight-bold">Support for Microsoft roaming signatures (multiple signatures in Outlook on the web and New Outlook)</td>
+                    <td class="has-text-weight-bold">Support for Microsoft roaming signatures (multiple signatures in Outlook for the web and New Outlook)</td>
                     <td>🟢</td>
                     <td>🔴</td>
                     <td>🔴</td>
