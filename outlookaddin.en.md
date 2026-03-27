@@ -20,7 +20,6 @@ sitemap_changefreq: weekly
 ---
 <h2 id="overview">Overview</h2>
 <p>With a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle license</span></a>, you gain access to the Set-OutlookSignatures add-in.</p>
-
 <div class="columns">
   <div class="column">
     <p>The add-in makes signatures available in <strong>Outlook for iOS and Android</strong>, while supporting all Outlook editions across platforms. It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD scenarios.</p>
@@ -66,46 +65,61 @@ sitemap_changefreq: weekly
 
 
 <h2 id="usage">Usage</h2>
-<p>From an end user perspective, basically nothing needs to be done or configured: When writing a new email, answering an email, or creating a new appointment, the add-in automatically adds the corresponding default signature.</p>
-<p>For advanced usage and debug logging, a taskpane is available in all Outlook versions supporting this feature.</p>
-<p>In compose mode, the taskpane allows to manually choose a signature, set the selected signature, and to temporarily override admin-defined settings for debug logging and Outlook host restrictions.</p>
-<p>In message read mode, the taskpane cannot set signatures, of course. But it is very useful to check if the add-in is deployed correctly, and if it can access signatures. This is especially useful on mobile devices, in situations where enabling the debug mode is not wanted, and for basic tests when launch events are not triggered by Outlook.</p>
+<p>From an end user perspective, basically nothing needs to be done: When writing a new email, answering an email, or creating a new appointment, the add-in automatically adds the corresponding default signature.</p>
+<p>For advanced usage, a taskpane is available to manually choose signatures, preview items, or override settings for debug logging.</p>
+
 <div class="columns is-multiline">
-  <div class="column is-6-desktop is-12-tablet">
+  <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook for the web (Exchange Online), New Outlook for Windows, New Outlook for Mac</b></p>
-      <ul>
-        <li>New mail, reply mail, read mail: "Message" tab, "Apps" icon</li>
-        <li>New appointment: Ribbon, "…" menu</li>
-      </ul>
+      <div style="display: flex; gap: 0.75em;">
+        🌐
+        <div>
+          <p><b>Web (Exchange Online), New Outlook for Windows/Mac</b></p>
+          <p><b>Emails:</b> "Message" tab > "Apps" icon<br>
+          <b>Appointments:</b> Ribbon > "…" menu</p>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="column is-6-desktop is-12-tablet">
+
+  <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook for the web (on-prem)</b></p>
-      <ul>
-        <li>New mail, reply mail: Lower right corner of the compose window</li>
-        <li>New appointment: At the right of the menu bar at the top of the compose window</li>
-        <li>Read mail: Left to the reply button</li>
-      </ul>
+      <div style="display: flex; gap: 0.75em;">
+        💻
+        <div>
+          <p><b>Classic Outlook for Windows and Mac</b></p>
+          <p><b>Emails:</b> "Message" tab > "All apps" icon<br>
+          <b>Appointments:</b> "Meeting" tab > "All apps" icon</p>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="column is-6-desktop is-12-tablet">
+
+  <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Classic Outlook for Windows, Classic Outlook for Mac</b></p>
-      <ul>
-        <li>New mail, reply mail, read mail: "Message" tab, "All apps" icon</li>
-        <li>New appointment: "Appointment" or "Meeting" tab, "All apps" icon</li>
-      </ul>
+      <div style="display: flex; gap: 0.75em;">
+        🏢
+        <div>
+          <p><b>Outlook for the web (on-prem)</b></p>
+          <p><b>Compose:</b> Lower right corner of the window<br>
+          <b>Appointments:</b> Right side of the top menu bar<br>
+          <b>Read mode:</b> Left of the reply button</p>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="column is-6-desktop is-12-tablet">
+
+  <div class="column is-6">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Outlook for iOS, Outlook for Android</b></p>
-      <ul>
-        <li>These platforms do not support taskpanes for new mails, reply mails and appointments.</li>
-        <li>Read mail: Three dots ("…" or "⋮") in the email header</li>
-      </ul>
+      <div style="display: flex; gap: 0.75em;">
+        📱
+        <div>
+          <p><b>Mobile (iOS & Android)</b></p>
+          <p><b>Read mode:</b> Three dots ("…" or "⋮") in the header<br>
+          <b>Compose:</b> Signatures are added automatically</p>
+          <p><small>Note: Taskpanes are only supported in Read mode on mobile.</small></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
