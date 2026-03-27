@@ -20,43 +20,53 @@ sitemap_changefreq: weekly
 ---
 <h2 id="overview">Overview</h2>
 <p>With a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle license</span></a>, you gain access to the Set-OutlookSignatures add-in.</p>
-<p>The add-in makes signatures available in <strong>Outlook for iOS and Android</strong>, while supporting all Outlook editions across platforms. It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD scenarios.</p>
+<p class="mt-4">The add-in makes signatures available in <b>Outlook for iOS and Android</b>, while supporting all Outlook editions across platforms. It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD scenarios.</p>
 <p>It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
-
-<div class="columns">
-  <div class="column">
-    <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid var(--benefactor-circle-color);">
-      <p><b>Key Functionality</b></p>
-      <ul>
-        <li><b>Automatic Selection:</b> Applies correct signatures on item creation.</li>
-        <li><b>Taskpane Preview:</b> Users can manually select or preview.</li>
-        <li><b>On-Prem Roaming:</b> Cloud-like experience for on-prem mailboxes.</li>
-      </ul>
+<div class="box has-background-white-bis has-text-black" style="border-top: 4px solid var(--benefactor-circle-color);">
+  <p><b>Key Functionality</b></p>
+  <div class="columns is-multiline mt-2">
+    <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
+      <div style="display: flex; gap: 0.75em;">
+        ✨
+        <div><b>Automatic Selection</b><br>Applies correct signatures on item creation.</div>
+      </div>
     </div>
-    <div class="columns mt-5">
-      <div class="column">
-        <div style="display: flex; gap: 0.75em;">
-          🛡️
-          <div><b>Privacy First</b><br>No middleware or proxy servers. Local execution.</div>
-        </div>
+    <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
+      <div style="display: flex; gap: 0.75em;">
+        👁️
+        <div><b>Taskpane Preview</b><br>Users can manually select or preview signatures.</div>
       </div>
-      <div class="column">
-        <div style="display: flex; gap: 0.75em;">
-          ⚙️
-          <div><b>Full Control</b><br>You control the version and configuration.</div>
-        </div>
+    </div>
+    <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
+      <div style="display: flex; gap: 0.75em;">
+        ☁️
+        <div><b>On-Prem Roaming</b><br>Cloud-like experience for on-premises mailboxes.</div>
       </div>
-      <div class="column">
-        <div style="display: flex; gap: 0.75em;">
-          💎
-          <div><b>Low Cost</b><br>Self-hosting keeps license costs minimal.</div>
-        </div>
+    </div>
+  </div>
+  <div class="columns is-multiline mt-2">
+    <div class="column is-3-desktop is-6-tablet is-full-mobile">
+      <div style="display: flex; gap: 0.75em;">
+        🛡️
+        <div><b>Privacy First</b><br>No middleware or proxy servers. Local execution.</div>
       </div>
-      <div class="column">
-        <div style="display: flex; gap: 0.75em;">
-          🚀
-          <div><b>Enterprise Ready</b><br>Exchange Online and On-Premises support.</div>
-        </div>
+    </div>
+    <div class="column is-3-desktop is-6-tablet is-full-mobile">
+      <div style="display: flex; gap: 0.75em;">
+        ⚙️
+        <div><b>Full Control</b><br>You control the version and configuration.</div>
+      </div>
+    </div>
+    <div class="column is-3-desktop is-6-tablet is-full-mobile">
+      <div style="display: flex; gap: 0.75em;">
+        💎
+        <div><b>Low Cost</b><br>Self-hosting keeps license costs minimal.</div>
+      </div>
+    </div>
+    <div class="column is-3-desktop is-6-tablet is-full-mobile">
+      <div style="display: flex; gap: 0.75em;">
+        🚀
+        <div><b>Enterprise Ready</b><br>Exchange Online and On-Premises support.</div>
       </div>
     </div>
   </div>
