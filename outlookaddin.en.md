@@ -24,7 +24,7 @@ sitemap_changefreq: weekly
 <p>It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
 <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid var(--benefactor-circle-color);">
   <p><b>Key Functionality</b></p>
-  <div class="columns is-multiline mt-2">
+  <div class="columns is-multiline mt-0">
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
       <div style="display: flex; gap: 0.75em;">
         ✨
@@ -134,14 +134,12 @@ sitemap_changefreq: weekly
 <div class="columns">
   <div class="column">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Standard Mailboxes</b></p>
-      <p>The add-in accesses signature information that the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> or the SimulateAndDeploy mode has written to the user's mailbox.</p>
+      <p><b>Standard Mailboxes</b><br>The add-in accesses signature information that the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> has written to the user's mailbox in <a href="/details#step-1-create-signatures-and-out-of-office-replies">client or SimulateAndDeploy mode</a>.</p>
     </div>
   </div>
   <div class="column">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
-      <p><b>Shared Mailboxes</b></p>
-      <p>For shared mailboxes added with separate credentials, the add-in must be installed for that specific identity to access its signature data.</p>
+      <p><b>Shared Mailboxes</b><br>For shared mailboxes added with separate credentials, the add-in must be installed for that specific identity to access its signature data.</p>
     </div>
   </div>
 </div>
@@ -266,7 +264,7 @@ sitemap_changefreq: weekly
 <div class="box has-background-white-bis has-text-black mt-5">
   <p><b>Clear the Outlook add-in cache</b></p>
   <p>When testing, Outlook sometimes takes too long updating its cache. Follow these official Microsoft instructions to manually clear it:</p>
-  <div class="columns mt-2">
+  <div class="columns mt-0">
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <ul>
         <li><b>Web:</b> Hard Refresh the browser window.</li>
