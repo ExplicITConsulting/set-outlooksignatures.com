@@ -182,7 +182,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p><b>Authentication:</b> Use <code>Single-page application</code> with a redirect URI of <code>brk-multihub://&lt;your_deployment_domain&gt;</code>.</p>
+<p><b>Authentication:</b> Use <code>Single-page application</code> with a redirect URI of <code>brk-multihub://yourhost.yourdomain.com</code>.</p>
 
 
 <h2 id="configuration-and-deployment-to-the-web-server">Configuration and deployment to the web server</h2>
