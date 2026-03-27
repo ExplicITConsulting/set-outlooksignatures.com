@@ -227,7 +227,7 @@ h6 {
   animation: marquee-scroll var(--duration) linear infinite;
 }
 
-// Default (Right-to-Left)
+// Standard: Right to Left (Customers)
 @keyframes marquee-scroll {
   from {
     transform: translate3d(0, 0, 0);
@@ -237,7 +237,7 @@ h6 {
   }
 }
 
-// Reverse (Left-to-Right)
+// Reverse: Left to Right (Signatures)
 @keyframes marquee-scroll-reverse {
   from {
     transform: translate3d(-50%, 0, 0);
@@ -247,9 +247,14 @@ h6 {
   }
 }
 
-// Apply the reverse animation to the signature track
+.customer-scrolling-track.is-animating {
+  animation: marquee-scroll var(--duration) linear infinite;
+}
+
 .signature-scrolling-track.is-animating {
-  animation-name: marquee-scroll-reverse;
+  // Pre-positioning to prevent the "jump" before animation starts
+  transform: translate3d(-50%, 0, 0);
+  animation: marquee-scroll-reverse var(--duration) linear infinite;
 }
 
 @keyframes pulse {

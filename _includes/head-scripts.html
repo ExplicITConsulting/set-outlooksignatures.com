@@ -126,6 +126,7 @@
 <!-- Scrolling banner for signature images and customer imageshtml  -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Utility to randomize the image order
     const shuffleArray = (array) => {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -142,11 +143,10 @@
         const response = await fetch(endpoint);
         const text = await response.text();
         let urls = text.split('\n').map(l => l.trim()).filter(Boolean);
-
         urls = shuffleArray(urls);
 
         const fragment = document.createDocumentFragment();
-        // Doubling for seamless infinite scroll
+        // Doubling the URLs for a seamless infinite loop at -50%
         const doubledUrls = [...urls, ...urls];
 
         doubledUrls.forEach(urlPath => {
@@ -154,6 +154,7 @@
           img.src = urlPath;
           img.loading = "lazy";
 
+          // --- Metadata Extraction Logic ---
           const baseName = urlPath.split('/').pop();
           const nameWithoutExt = baseName.replace(/\.[^.]+$/, "");
           const firstPart = nameWithoutExt.split(' ')[0];
@@ -176,38 +177,54 @@
 
         track.appendChild(fragment);
 
-        const startContinuousScroll = () => {
+        // --- Animation Logic ---
+        const startAnimation = () => {
           const totalWidth = track.scrollWidth;
+          if (totalWidth <= 0) {
+            // Retry if the browser hasn't calculated dimensions yet
+            setTimeout(startAnimation, 100);
+            return;
+          }
+
           const halfWidth = totalWidth / 2;
           const duration = halfWidth / pxPerSec;
-
           track.style.setProperty('--duration', `${duration}s`);
 
-          // If it's the signature track, we might want it to start offset
+          // JUMP-FIX: Pre-position the signature track at -50% 
+          // because its animation flows from -50% to 0 (Left-to-Right).
           if (trackSelector.includes('signature')) {
             track.style.transform = "translate3d(-50%, 0, 0)";
+          } else {
+            track.style.transform = "translate3d(0, 0, 0)";
           }
+
+          // Trigger a reflow to ensure the transform is applied 
+          // before the 'is-animating' class kicks in.
+          track.offsetHeight; 
 
           track.classList.add('is-animating');
         };
 
-        // Delay to ensure images start loading so scrollWidth is somewhat reliable
-        setTimeout(startContinuousScroll, 500);
+        // Delay slightly to allow the browser to start loading images
+        setTimeout(startAnimation, 500);
 
-      } catch (e) { console.error("Banner error:", e); }
+      } catch (e) { 
+        console.error("Banner error:", e); 
+      }
     };
 
-    // Customer images: 50px per second
+    // --- Configuration ---
+    // Customers: Right to Left (Standard) @ 50px/sec
     initSafeBanner(
-      '.customer-scrolling-track',
-      'https://set-outlooksignatures.com/customer-images.txt',
+      '.customer-scrolling-track', 
+      'https://set-outlooksignatures.com/customer-images.txt', 
       50
     );
 
-    // Signature images: 40px per second
+    // Signatures: Left to Right (Reverse) @ 40px/sec
     initSafeBanner(
-      '.signature-scrolling-track',
-      'https://set-outlooksignatures.com/signature-images.txt',
+      '.signature-scrolling-track', 
+      'https://set-outlooksignatures.com/signature-images.txt', 
       40
     );
   });
