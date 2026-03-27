@@ -20,11 +20,10 @@ sitemap_changefreq: weekly
 ---
 <h2 id="overview">Overview</h2>
 <p>With a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle license</span></a>, you gain access to the Set-OutlookSignatures add-in.</p>
+<p>The add-in makes signatures available in <strong>Outlook for iOS and Android</strong>, while supporting all Outlook editions across platforms. It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD scenarios.</p>
+<p>It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
+
 <div class="columns">
-  <div class="column">
-    <p>The add-in makes signatures available in <strong>Outlook for iOS and Android</strong>, while supporting all Outlook editions across platforms. It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD scenarios.</p>
-    <p>It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
-  </div>
   <div class="column">
     <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid var(--benefactor-circle-color);">
       <p><b>Key Functionality</b></p>
@@ -34,31 +33,31 @@ sitemap_changefreq: weekly
         <li><b>On-Prem Roaming:</b> Cloud-like experience for on-prem mailboxes.</li>
       </ul>
     </div>
-  </div>
-</div>
-<div class="columns mt-5">
-  <div class="column">
-    <div style="display: flex; gap: 0.75em;">
-      🛡️
-      <div><b>Privacy First</b><br>No middleware or proxy servers. Local execution.</div>
-    </div>
-  </div>
-  <div class="column">
-    <div style="display: flex; gap: 0.75em;">
-      ⚙️
-      <div><b>Full Control</b><br>You control the version and configuration.</div>
-    </div>
-  </div>
-  <div class="column">
-    <div style="display: flex; gap: 0.75em;">
-      💎
-      <div><b>Low Cost</b><br>Self-hosting keeps license costs minimal.</div>
-    </div>
-  </div>
-  <div class="column">
-    <div style="display: flex; gap: 0.75em;">
-      🚀
-      <div><b>Enterprise Ready</b><br>Exchange Online and On-Premises support.</div>
+    <div class="columns mt-5">
+      <div class="column">
+        <div style="display: flex; gap: 0.75em;">
+          🛡️
+          <div><b>Privacy First</b><br>No middleware or proxy servers. Local execution.</div>
+        </div>
+      </div>
+      <div class="column">
+        <div style="display: flex; gap: 0.75em;">
+          ⚙️
+          <div><b>Full Control</b><br>You control the version and configuration.</div>
+        </div>
+      </div>
+      <div class="column">
+        <div style="display: flex; gap: 0.75em;">
+          💎
+          <div><b>Low Cost</b><br>Self-hosting keeps license costs minimal.</div>
+        </div>
+      </div>
+      <div class="column">
+        <div style="display: flex; gap: 0.75em;">
+          🚀
+          <div><b>Enterprise Ready</b><br>Exchange Online and On-Premises support.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -128,7 +127,7 @@ sitemap_changefreq: weekly
   <div class="column">
     <div class="box has-background-white-bis has-text-black" style="height: 100%;">
       <p><b>Standard Mailboxes</b></p>
-      <p>The add-in accesses signature information that the Benefactor Circle add-on or the SimulateAndDeploy mode has written to the user's mailbox.</p>
+      <p>The add-in accesses signature information that the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> or the SimulateAndDeploy mode has written to the user's mailbox.</p>
     </div>
   </div>
   <div class="column">
@@ -181,7 +180,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="configuration-and-deployment-to-the-web-server">Configuration and deployment</h2>
-<p>With every new release of Set-OutlookSignatures, <a href="/benefactorcircle">Benefactor Circle</a> members receive an updated Outlook add-in. You must update your deployment whenever the add-in code or your configuration changes.</p>
+<p>With every new release of Set-OutlookSignatures, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> comes with an updated Outlook add-in. You must update your deployment whenever the add-in code or your configuration changes.</p>
 <p>It is recommended to use at least two separate dedicated hostnames: one for testing and one for production (e.g., <code>https://outlookaddin01test.example.com</code> and <code>https://outlookaddin01.example.com</code>).</p>
 <p>The add-in is configured via the <code>run_before_deployment.ps1</code> script:</p>
 <div class="columns is-multiline">
