@@ -51,13 +51,8 @@ Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner:
         <div>
           <p><b>Entra ID App für Exchange Online erstellen</b></p>
           <p>Folgen Sie den Anweisungen in <code>.\config\default graph config.ps1</code> für die manuelle Einrichtung oder lassen Sie einen "Globalen Administrator" oder "Anwendungsadministrator" den bereitgestellten PowerShell-Befehl ausführen.</p>
-          <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-            <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
-              <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
-              <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
-              <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
-            </div>
-            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
+          <div class="highlighter-rouge">
+            <pre><code>powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
           </div>
           <p><small><em>Für nationale oder Sovereign Clouds fügen Sie den Parameter <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> hinzu.</em></small></p>
         </div>
@@ -75,13 +70,8 @@ Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner:
         <span>☁️</span>
         <div>
           <p><b>Exchange Online / Hybrid</b></p>
-          <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-            <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
-              <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
-              <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
-              <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
-            </div>
-            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<GraphClientId from Step 2>"</code></pre>
+          <div class="highlighter-rouge">
+            <pre><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "&lt;GraphClientId from Step 2&gt;"</code></pre>
           </div>
           <p><small><em><code>-GraphOnly true</code> stellt sicher, dass das lokale AD ignoriert wird. Fügen Sie den Parameter <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> hinzu, wenn Sie eine nationale oder Sovereign Cloud nutzen.</em></small></p>
           <p><small><em>Falls das Skript nicht startet: Rechtsklick auf Set-OutlookSignatures.ps1 > Eigenschaften > "Zulassen" (Unblock) anhaken.</em></small></p>
@@ -95,13 +85,8 @@ Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner:
         <span>🏢</span>
         <div>
           <p><b>Exchange On-Prem</b></p>
-          <div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-            <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
-              <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
-              <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
-              <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
-            </div>
-            <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
+          <div class="highlighter-rouge">
+            <pre><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
           </div>
           <p><small><em>Falls das Skript nicht startet: Rechtsklick auf Set-OutlookSignatures.ps1 > Eigenschaften > "Zulassen" (Unblock) anhaken.</em></small></p>
         </div>

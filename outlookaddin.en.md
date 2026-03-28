@@ -147,14 +147,10 @@ sitemap_changefreq: weekly
 
 <h3>Entra ID app</h3>
 <p>When mailboxes are hosted in Exchange Online, the add-in needs an Entra ID app to access the mailbox. Creating a separate app is strongly recommended.</p>
-<div class="terminal-ui mt-2 mb-4" style="background: #2d3436; border-radius: 6px; padding: 1.5rem; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-  <div style="position: absolute; top: 10px; left: 15px; display: flex; gap: 6px;">
-    <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%;"></span>
-    <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%;"></span>
-    <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%;"></span>
-  </div>
-  <pre style="background: transparent; padding: 0; color: white; white-space: pre-wrap; word-break: keep-all; overflow-wrap: anywhere; margin-top: 0.5rem;"><code style="color: white !important;">powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "OutlookAddIn" -AppName "Set-OutlookSignatures Outlook add-in" -OutlookAddInUrl "https://yourhost.yourdomain.com"</code></pre>
+<div class="highlighter-rouge">
+  <pre><code>powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "OutlookAddIn" -AppName "Set-OutlookSignatures Outlook add-in" -OutlookAddInUrl "https://yourhost.yourdomain.com"</code></pre>
 </div>
+
 <p>For manual configuration, the following <b>Delegated Graph API</b> permissions must be granted with admin consent:</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-deskop is-one-third-tablet is-full-mobile">
