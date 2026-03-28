@@ -1,14 +1,6 @@
 ---
 layout: default
 ---
-{%- comment -%}
-    1. Synchronize page.lang with site.active_lang to stop the 
-       "page not translated" warning in default.html.
-{%- endcomment -%}
-{% assign active_lang = site.active_lang | default: site.lang %}
-{% capture lang %}{{ active_lang }}{% endcapture %}
-{% assign page = page | combine: "lang", lang %}
-
 <div class="content">
     <h1 class="title is-2">
         {% if page.type == 'tag' %}
