@@ -20,7 +20,7 @@ sitemap_changefreq: weekly
 ---
 <h2 id="overview">Overview</h2>
 <p>With a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle </span></a>license, you gain access to the Set-OutlookSignatures add-in.</p>
-<p class="mt-4">The add-in makes signatures available in <b>Outlook for iOS and Android</b>, while supporting all Outlook editions across platforms. It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD scenarios.</p>
+<p>The add-in makes signatures available in <b>Outlook for iOS and Android</b>, while supporting all Outlook editions across platforms. It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD scenarios.</p>
 <p>It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
 <div class="box has-background-white-bis has-text-black" style=" border-left: 5px solid goldenrod; border-right: 5px solid goldenrod; ">
   <div class="columns is-multiline mt-0">
@@ -113,7 +113,7 @@ sitemap_changefreq: weekly
         📱
         <div>
           <p><b>Mobile (iOS & Android)</b></p>
-          <p><b>Read mode:</b> Three dots ("…" or "⋮") in the header<br><b>Compose:</b> Signatures are added automatically<br><b>Note:</b> Taskpanes are only supported in Read mode on mobile.</small></p>
+          <p><b>Read mode:</b> Three dots ("…" or "⋮") in the header<br><b>Compose:</b> Signatures are added automatically<br><b>Note:</b> Taskpanes are only supported in Read mode on mobile.</p>
         </div>
       </div>
     </div>
@@ -158,22 +158,22 @@ sitemap_changefreq: weekly
 
 <p>For manual configuration, the following <b>Delegated Graph API</b> permissions must be granted with admin consent:</p>
 <div class="columns is-multiline">
-  <div class="column is-one-third-deskop is-one-third-tablet is-full-mobile">
+  <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
       <p><b>Mail.Read</b></p>
       <p>Allows reading emails in the current user's mailbox. Required due to Microsoft restrictions accessing roaming signatures.</p>
     </div>
   </div>
-  <div class="column is-one-third-deskop is-one-third-tablet is-full-mobile">
+  <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
       <p><b>GroupMember.Read.All</b></p>
       <p>Allows the app to check group memberships to verify license groups for the signed-in user.</p>
     </div>
   </div>
-  <div class="column is-one-third-deskop is-one-third-tablet is-full-mobile">
+  <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
       <p><b>User.Read.All</b></p>
-      <p>>Required to retrieve the User Principal Name (UPN) for a given SMTP email address.</p>
+      <p>Required to retrieve the User Principal Name (UPN) for a given SMTP email address.</p>
     </div>
   </div>
 </div>
@@ -188,25 +188,26 @@ sitemap_changefreq: weekly
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
       <p><b>General Settings</b></p>
-      <p><b>Versioning:</b> Sync the add-in version with Set-OutlookSignatures.<br>
-        <b>Deployment URL:</b> Define your dedicated hosting domain.<br>
-        <b>Cloud Environment:</b> Set your environment and Entra ID Client ID.<br>
-        <b>Debug Logging:</b> Enable or disable detailed execution logs.
-      </p>
+      <ul>
+        <li><b>Versioning:</b> Sync the add-in version with Set-OutlookSignatures.</li>
+        <li><b>Deployment URL:</b> Define your dedicated hosting domain.</li>
+        <li><b>Cloud Environment:</b> Set your environment and Entra ID Client ID.</li>
+        <li><b>Debug Logging:</b> Enable or disable detailed execution logs.</li>
+      </ul>
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
       <p><b>Automation Rules</b></p>
-      <p>
-        <b>Platform Targeting:</b> Choose which hosts add signatures automatically.<br>
-        <b>Item Types:</b> Enable automation for emails, appointments, or both.<br>
-        <b>Client Signatures:</b> Optionally disable signatures configured by users.<br>
-      </p>
+      <ul>
+        <li><b>Platform Targeting:</b> Choose which hosts add signatures automatically.</li>
+        <li><b>Item Types:</b> Enable automation for emails, appointments, or both.</li>
+        <li><b>Client Signatures:</b> Optionally disable signatures configured by users.</li>
+      </ul>
     </div>
   </div>
 </div>
-<div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+<div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #ffdd57;">
   <p><b>Custom Rules Logic</b></p>
   <p>Modify <code>CustomRulesCode.js</code> to influence signature selection at runtime based on:</p>
   <div class="columns mt-0">
@@ -234,39 +235,45 @@ sitemap_changefreq: weekly
 <p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. This is because Outlook caches the code of the add-in and reads the manifest file only once.</p>
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
       <p><b>Individual Installation (Sideloading)</b></p>
       <p>Ideal for test scenarios. Sideloading of add-ins may have been disabled by your administrators.</p>
-      <p>
-        <b>Exchange Online:</b> Open <code>https://outlook.cloud.microsoft/mail/inclientstore</code> > My add-ins > Add from file.<br>
-        <b>On-prem:</b> Open <code>https://YourMailServer.example.com/owa/#path=/options/manageapps</code> > Add from file.<br>
-        <b>Removal:</b> Draft a new mail, click the <b>Apps</b> button, right-click the add-in and select <b>Uninstall</b>.
-      </p>
+      <ul>
+        <li><b>Exchange Online:</b> Open <code>https://outlook.cloud.microsoft/mail/inclientstore</code> > My add-ins > Add from file.</li>
+        <li><b>On-prem:</b> Open <code>https://YourMailServer.example.com/owa/#path=/options/manageapps</code> > Add from file.</li>
+        <li><b>Removal:</b> Draft a new mail, click the <b>Apps</b> button, right-click the add-in and select <b>Uninstall</b>.</li>
+      </ul>
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
       <p><b>Enterprise Deployment (Production)</b></p>
       <p>Ideal for mass deployment. These methods are usually too slow (up to 72 hours) for test scenarios.</p>
-      <p>
-        <b><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide">Integrated Apps</a>:</b> The modern method for Microsoft 365 environments.<br>
-        <b><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide">Centralized Deployment</a>:</b> Use this if Integrated Apps is not yet available in your cloud tenant.
-      </p>
+      <ul>
+        <li><b><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide">Integrated Apps</a>:</b> The modern method for Microsoft 365 environments.</li>
+        <li><b><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide">Centralized Deployment</a>:</b> Use this if Integrated Apps is not yet available in your cloud tenant.</li>
+      </ul>
     </div>
   </div>
 </div>
 <div class="box has-background-white-bis has-text-black mt-5" style="height: 100%; border-top: 4px solid #3273dc;">
   <p><b>Clear the Outlook add-in cache</b></p>
   <p>When testing, Outlook sometimes takes too long updating its cache. Follow these official Microsoft instructions to manually clear it:</p>
-  <div class="content is-columns-2-tablet is-columns-2-desktop mt-0">
-    <p class="mb-0">
-      <b>Web:</b> Hard Refresh the browser window.<br>
-      <b>Classic Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">Official instructions from Microsoft</a>.<br>
-      <b>New Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">Official instructions from Microsoft</a>.<br>
-      <b>macOS:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">Official instructions from Microsoft</a>.<br>
-      <b>iOS:</b> Taskpane > Advanced options > <b>Reload add-in</b>.<br>
-      <b>Android:</b> App info > Force Stop > Clear Cache (do not tap Clear Data).
-    </p>
+  <div class="columns mt-0">
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+      <ul>
+        <li><b>Web:</b> Hard Refresh the browser window.</li>
+        <li><b>Classic Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">Official instructions from Microsoft</a>.</li>
+        <li><b>New Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">Official instructions from Microsoft</a>.</li>
+      </ul>
+    </div>
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+      <ul>
+        <li><b>macOS:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">Official instructions from Microsoft</a>.</li>
+        <li><b>iOS:</b> Taskpane > Advanced options > <b>Reload add-in</b>.</li>
+        <li><b>Android:</b> App info > Force Stop > Clear Cache (do not tap Clear Data).</li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -274,40 +281,50 @@ sitemap_changefreq: weekly
 <h2 id="remarks">Remarks</h2>
 <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
   <p><b>General Platform Notes</b></p>
-  <p><b>Roaming Signatures:</b> Microsoft currently limits add-in access to roaming signatures. The add-in uses data from the last run of Set-OutlookSignatures (v4.14.0+) as a workaround until this is resolved.</p>
-  <p><b>Online Connection:</b> Microsoft APIs only allow access to online content. The add-in requires an active connection to the mailbox and cannot access offline cache or the local file system.</p>
-  <p><b>Event Support:</b> Automation relies on Outlook "Launch Events" (e.g., OnNewMessageCompose). Note that Microsoft does not currently support add-ins for calendar invite responses.</p>
-  <p><b>Office.js:</b> Microsoft dynamically updates the underlying framework. If automation behaves unexpectedly, the taskpane remains the reliable manual fallback.</p>
+  <ul>
+    <li><b>Roaming Signatures:</b> Microsoft currently limits add-in access to roaming signatures. The add-in uses data from the last run of Set-OutlookSignatures (v4.14.0+) as a workaround until this is resolved.</li>
+    <li><b>Online Connection:</b> Microsoft APIs only allow access to online content. The add-in requires an active connection to the mailbox and cannot access offline cache or the local file system.</li>
+    <li><b>Event Support:</b> Automation relies on Outlook "Launch Events" (e.g., OnNewMessageCompose). Note that Microsoft does not currently support add-ins for calendar invite responses.</li>
+    <li><b>Office.js:</b> Microsoft dynamically updates the underlying framework. If automation behaves unexpectedly, the taskpane remains the reliable manual fallback.</li>
+  </ul>
 </div>
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <p><b>Outlook for iOS & Android</b></p>
-      <p>Only Exchange Online mailboxes are supported.</p>
-      <p>Taskpanes are not permitted by Microsoft during compose mode; signatures are applied automatically via events.</p>
-      <p>Automated signatures for new appointments are not yet supported by the mobile APIs.</p>
+      <ul>
+        <li>Only Exchange Online mailboxes are supported.</li>
+        <li>Taskpanes are not permitted by Microsoft during compose mode; signatures are applied automatically via events.</li>
+        <li>Automated signatures for new appointments are not yet supported by the mobile APIs.</li>
+      </ul>
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <p><b>Outlook for Mac</b></p>
-      <p><b>New Outlook for Mac:</b> Fully supported and recommended.</p>
-      <p><b>Classic Outlook for Mac:</b> Out of support by Microsoft. Support is provided on a best-effort basis due to API instability on this legacy platform.</p>
+      <ul>
+        <li><b>New Outlook for Mac:</b> Fully supported and recommended.</li>
+        <li><b>Classic Outlook for Mac:</b> Out of support by Microsoft. Support is provided on a best-effort basis due to API instability on this legacy platform.</li>
+      </ul>
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <p><b>Outlook for the web (On-Prem)</b></p>
-      <p>Launch events are not supported by the on-premises APIs; signature selection must be done via the taskpane.</p>
-      <p>Images may be replaced with alternate descriptions due to a known bug in the Microsoft office.js framework for on-prem hosts.</p>
+      <ul>
+        <li>Launch events are not supported by the on-premises APIs; signature selection must be done via the taskpane.</li>
+        <li>Images may be replaced with alternate descriptions due to a known bug in the Microsoft office.js framework for on-prem hosts.</li>
+      </ul>
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
       <p><b>Classic Outlook for Windows</b></p>
-      <p>Launch events can be unstable for on-prem mailboxes; use the taskpane if signatures do not appear automatically.</p>
-      <p>Exchange Online mailboxes must use a version supporting Nested App Authentication, as legacy EWS tokens are deprecated.</p>
+      <ul>
+        <li>Launch events can be unstable for on-prem mailboxes; use the taskpane if signatures do not appear automatically.</li>
+        <li>Exchange Online mailboxes must use a version supporting Nested App Authentication, as legacy EWS tokens are deprecated.</li>
+      </ul>
     </div>
   </div>
 </div>
