@@ -223,16 +223,16 @@ sitemap_changefreq: weekly
 </div>
 <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #ffdd57;">
   <p><b>Custom Rules Logic</b></p>
-  <p>Modify <code>CustomRulesCode.js</code> to influence signature selection at runtime based on:</p>
+  <p class="mb-0">Modify <code>CustomRulesCode.js</code> to influence signature selection at runtime based on:</p>
   <div class="columns mt-0">
-    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="column is-half-desktop is-half-tablet is-full-mobile pt-0">
       <ul>
         <li>Internal vs. external recipients</li>
         <li>The sender's email address</li>
         <li>Specific customers in the To field</li>
       </ul>
     </div>
-    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="column is-half-desktop is-half-tablet is-full-mobile pt-0">
       <ul>
         <li>Mail vs. Appointment types</li>
         <li>Subject line keywords</li>
