@@ -80,7 +80,10 @@ sitemap_changefreq: weekly
         🌐
         <div>
           <p><b>Web (Exchange Online), New Outlook for Windows/Mac</b></p>
-          <p><b>Emails:</b> "Message" tab > "Apps" icon<br><b>Appointments:</b> Ribbon > "…" menu</p>
+          <ul>
+            <li><b>Emails:</b> "Message" tab > "Apps" icon</li>
+            <li><b>Appointments:</b> Ribbon > "…" menu</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -91,7 +94,10 @@ sitemap_changefreq: weekly
         💻
         <div>
           <p><b>Classic Outlook for Windows and Mac</b></p>
-          <p><b>Emails:</b> "Message" tab > "All apps" icon<br><b>Appointments:</b> "Meeting" tab > "All apps" icon</p>
+          <ul>
+            <li><b>Emails:</b> "Message" tab > "All apps" icon</li>
+            <li><b>Appointments:</b> "Meeting" tab > "All apps" icon</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -102,7 +108,11 @@ sitemap_changefreq: weekly
         🏢
         <div>
           <p><b>Outlook for the web (on-prem)</b></p>
-          <p><b>Compose:</b> Lower right corner of the window<br><b>Appointments:</b> Right side of the top menu bar<br><b>Read mode:</b> Left of the reply button</p>
+          <ul>
+            <li><b>Compose:</b> Lower right corner of the window</li>
+            <li><b>Appointments:</b> Right side of the top menu bar</li>
+            <li><b>Read mode:</b> Left of the reply button</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -113,7 +123,11 @@ sitemap_changefreq: weekly
         📱
         <div>
           <p><b>Mobile (iOS & Android)</b></p>
-          <p><b>Read mode:</b> Three dots ("…" or "⋮") in the header<br><b>Compose:</b> Signatures are added automatically<br><b>Note:</b> Taskpanes are only supported in Read mode on mobile.</p>
+          <ul>
+            <li><b>Read mode:</b> Three dots ("…" or "⋮") in the header</li>
+            <li><b>Compose:</b> Signatures are added automatically</li>
+            <li><b>Note:</b> Taskpanes are only supported in Read mode on mobile</li>
+          </ul>
         </div>
       </div>
     </div>
