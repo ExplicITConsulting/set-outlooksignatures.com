@@ -13,97 +13,24 @@ sitemap_changefreq: monthly
 ---
 <!-- omit in toc -->
 ## Many roads lead to Rome
-<p>Set-OutlookSignatures is designed to be highly flexible and extensively configurable. Its transparent documentation reflects this versatility: Many configuration goals can be achieved in multiple ways.</p>
-<p>This FAQ highlights common topics and clarifies typical points of confusion. If your question isn't covered or you need tailored advice, additional resources are available:</p>
-<p>
-  <div class="buttons">
-    <a href="/parameters" class="button is-link is-normal is-hovered  has-text-weight-bold">Parameters</a>
-    <a href="/support" class="button is-link is-normal is-hovered  has-text-weight-bold">Support</a>
-  </div>
-</p>
+Set-OutlookSignatures is designed to be highly flexible and extensively configurable. Its transparent documentation reflects this versatility: Many configuration goals can be achieved in multiple ways.
 
+This FAQ highlights common topics and clarifies typical points of confusion.
 
-<!-- omit in toc -->
-## Frequently Asked Questions (FAQ)
-- [Where can I find the changelog?](#where-can-i-find-the-changelog)
-- [How can I contribute, propose a new feature or file a bug?](#how-can-i-contribute-propose-a-new-feature-or-file-a-bug)
-- [How is the account of a mailbox identified?](#how-is-the-account-of-a-mailbox-identified)
-- [How is the personal mailbox of the currently logged-in user identified?](#how-is-the-personal-mailbox-of-the-currently-logged-in-user-identified)
-- [Which ports are required?](#which-ports-are-required)
-- [Why is out-of-office abbreviated OOF and not OOO?](#why-is-out-of-office-abbreviated-oof-and-not-ooo)
-- [Should I use .docx or .htm as file format for templates? Signatures in Outlook sometimes look different than my templates.](#should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates)
-- [How can I log the software output?](#how-can-i-log-the-software-output)
-- [How can I get more script output for troubleshooting?](#how-can-i-get-more-script-output-for-troubleshooting)
-- [How can I start the software only when there is a connection to Active Directory?](#how-can-i-start-the-software-only-when-there-is-a-connection-to-active-directory)
-- [Can multiple script instances run in parallel?](#can-multiple-script-instances-run-in-parallel)
-- [How do I start the software from the command line or a scheduled task?](#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task)
-  - [Start Set-OutlookSignatures in hidden/invisible mode](#start-set-outlooksignatures-in-hiddeninvisible-mode)
-- [How to create a shortcut to the software with parameters?](#how-to-create-a-shortcut-to-the-software-with-parameters)
-- [What is the recommended approach for implementing the software?](#what-is-the-recommended-approach-for-implementing-the-software)
-- [What is the recommended approach for custom configuration files?](#what-is-the-recommended-approach-for-custom-configuration-files)
-- [Isn't a plural noun in the software name against PowerShell best practices?](#isnt-a-plural-noun-in-the-software-name-against-powershell-best-practices)
-- [The software hangs at HTM/RTF export, Word shows a security warning!?](#the-software-hangs-at-htmrtf-export-word-shows-a-security-warning)
-- [How to avoid blank lines when replacement variables return an empty string?](#how-to-avoid-blank-lines-when-replacement-variables-return-an-empty-string)
-- [Is there a roadmap for future versions?](#is-there-a-roadmap-for-future-versions)
-- [How to deploy signatures for "Send As", "Send On Behalf" etc.?](#how-to-deploy-signatures-for-send-as-send-on-behalf-etc)
-- [Can I centrally manage and deploy Outook stationery with this script?](#can-i-centrally-manage-and-deploy-outook-stationery-with-this-script)
-- [Why is dynamic group membership not considered on premises?](#why-is-dynamic-group-membership-not-considered-on-premises)
-  - [Entra ID](#entra-id)
-  - [Active Directory on premises](#active-directory-on-premises)
-- [Why is no admin or user GUI available?](#why-is-no-admin-or-user-gui-available)
-- [What if a user has no Outlook profile or is prohibited from starting Outlook?](#what-if-a-user-has-no-outlook-profile-or-is-prohibited-from-starting-outlook)
-- [What if Outlook is not installed at all?](#what-if-outlook-is-not-installed-at-all)
-- [What about the roaming signatures feature in Exchange Online?](#what-about-the-roaming-signatures-feature-in-exchange-online)
-- [Why does the text color of my signature change sometimes?](#why-does-the-text-color-of-my-signature-change-sometimes)
-- [How to make Set-OutlookSignatures work with Microsoft Purview Information Protection?](#how-to-make-set-outlooksignatures-work-with-microsoft-purview-information-protection)
-- [Images in signatures have a different size than in templates, or a black background](#images-in-signatures-have-a-different-size-than-in-templates-or-a-black-background)
-- [How do I alternate banners and other images in signatures?](#how-do-i-alternate-banners-and-other-images-in-signatures)
-- [How can I deploy and run Set-OutlookSignatures using Microsoft Intune?](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune)
-  - [Application package](#application-package)
-  - [Remediation script](#remediation-script)
-- [Why does Set-OutlookSignatures run slower sometimes?](#why-does-set-outlooksignatures-run-slower-sometimes)
-  - [Windows power mode](#windows-power-mode)
-  - [Malware protection](#malware-protection)
-  - [Time of execution](#time-of-execution)
-  - [Script and Word process priority](#script-and-word-process-priority)
-- [Keep users from adding, editing and removing signatures](#keep-users-from-adding-editing-and-removing-signatures)
-  - [Outlook](#outlook)
-  - [Outlook for the web](#outlook-for-the-web)
-- [What is the recommended folder structure for script, license, template and config files?](#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files)
-- [How to disable the tagline in signatures?](#how-to-disable-the-tagline-in-signatures)
-  - [Why the tagline?](#why-the-tagline)
-  - [Not sure if Set-OutlookSignatures is the right solution for your company?](#not-sure-if-set-outlooksignatures-is-the-right-solution-for-your-company)
-- [Why is the out-of-office assistant not activated automatically?](#why-is-the-out-of-office-assistant-not-activated-automatically)
-- [When should I refer on-prem groups and when Entra ID groups?](#when-should-i-refer-on-prem-groups-and-when-entra-id-groups)
-- [Why are signatures and out-of-office replies recreated even when their content has not changed?](#why-are-signatures-and-out-of-office-replies-recreated-even-when-their-content-has-not-changed)
-- [Empty lines contain an underlined space character](#empty-lines-contain-an-underlined-space-character)
-- [What about Microsoft turning off Exchange Web Services for Exchange Online?](#what-about-microsoft-turning-off-exchange-web-services-for-exchange-online)
-- [Roaming signatures in Classic Outlook for Windows look different](#roaming-signatures-in-classic-outlook-for-windows-look-different)
-- [Does it support cross-tenant access and Multitenant Organizations?](#does-it-support-cross-tenant-access-and-multitenant-organizations)
-- [Can I change the case (uppercase/lowercase) of replacement variables in templates?](#can-i-change-the-case-uppercaselowercase-of-replacement-variables-in-templates)
-- [What can I learn from the code of Set-OutlookSignatures?](#what-can-i-learn-from-the-code-of-set-outlooksignatures)
-  - [Active Directory group membership enumeration without compromises](#active-directory-group-membership-enumeration-without-compromises)
-  - [Microsoft Graph authentication and re-authentication](#microsoft-graph-authentication-and-re-authentication)
-  - [Graph cross-tenant and multitenant-organization access](#graph-cross-tenant-and-multitenant-organization-access)
-  - [Deploy and run software using desired state configuration (DSC)](#deploy-and-run-software-using-desired-state-configuration-dsc)
-  - [Parallel code execution](#parallel-code-execution)
-  - [Create desktop icons cross-platform](#create-desktop-icons-cross-platform)
-  - [Create and configure apps in Entra ID, grant admin consent](#create-and-configure-apps-in-entra-id-grant-admin-consent)
-  - [Test Active Directory trusts](#test-active-directory-trusts)
-  - [Start only if working Active Directory connection is available](#start-only-if-working-active-directory-connection-is-available)
-  - [Prohibit system sleep](#prohibit-system-sleep)
-  - [Detect exit signals](#detect-exit-signals)
-  - [Format phone numbers](#format-phone-numbers)
-  - [Format postal addresses](#format-postal-addresses)
-  - [Bringing hidden open-source treasures to light](#bringing-hidden-open-source-treasures-to-light)
-  - [Detect and convert encodings](#detect-and-convert-encodings)
-  - [Handling of distinguished names](#handling-of-distinguished-names)
-- [How to deploy a signature only once](#how-to-deploy-a-signature-only-once)
-- [How to add a calender link](#how-to-add-a-calender-link)
-- [Different default signatures for different mailboxes](#different-default-signatures-for-different-mailboxes)
-- [Assign templates based on Organizational Units (OUs)](#assign-templates-based-on-organizational-units-ous)
-  - [Easier and advanced handling of distinguished names](#easier-and-advanced-handling-of-distinguished-names)
+<div class="buttons">
+  <a href="/parameters" class="button is-link is-normal has-text-weight-bold">Parameters</a>
+  <a href="/support" class="button is-link is-normal has-text-weight-bold">Support</a>
+</div>
 
+| Category | Topics |
+| :--- | :--- |
+| General | [Changelog](#where-can-i-find-the-changelog) \| [Contributing](#how-can-i-contribute-propose-a-new-feature-or-file-a-bug) \| [OOF vs OOO](#why-is-out-of-office-abbreviated-oof-and-not-ooo) \| [Naming Convention](#isnt-a-plural-noun-in-the-software-name-against-powershell-best-practices) \| [Roadmap](#is-there-a-roadmap-for-future-versions) \| [Outlook Stationery](#can-i-centrally-manage-and-deploy-outook-stationery-with-this-script) \| [Roaming Sync Issues](#roaming-signatures-in-classic-outlook-for-windows-look-different) \| [OOF Activation Logic](#why-is-the-out-of-office-assistant-not-activated-automatically) \| [Disable Tagline](#how-to-disable-the-tagline-in-signatures) \| [Implementation Approach](#what-is-the-recommended-approach-for-implementing-the-software) \| [Not the right solution?](#not-sure-if-set-outlooksignatures-is-the-right-solution-for-your-company) |
+| Templates & Design | [DOCX vs HTML](#should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates) \| [Removing Blank Lines](#how-to-avoid-blank-lines-when-replacement-variables-return-an-empty-string) \| [Text Color Issues](#why-does-the-text-color-of-my-signature-change-sometimes) \| [Image Scaling/Black Background](#images-in-signatures-have-a-different-size-than-in-templates-or-a-black-background) \| [Rotating Banners](#how-do-i-alternate-banners-and-other-images-in-signatures) \| [Underlined Spaces](#empty-lines-contain-an-underlined-space-character) \| [Text Case](#can-i-change-the-case-uppercaselowercase-of-replacement-variables-in-templates) \| [Calendar Links](#how-to-add-a-calender-link) \| [Different signatures per mailbox](#different-default-signatures-for-different-mailboxes) \| [OU-based templates](#assign-templates-based-on-organizational-units-ous) |
+| Deployment & Infrastructure | [Why no GUI?](#why-is-no-admin-or-user-gui-available) \| [Folder Structure](#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files) \| [Custom Config Files](#what-is-the-recommended-approach-for-custom-configuration-files) \| [AD Connection Check](#how-can-i-start-the-software-only-when-there-is-a-connection-to-active-directory) \| [CLI & Scheduled Tasks](#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task) \| [Hidden/Invisible Mode](#start-set-outlooksignatures-in-hiddeninvisible-mode) \| [Shortcut with Parameters](#how-to-create-a-shortcut-to-the-software-with-parameters) \| [Intune Deployment](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune) \| [Roaming Signatures](#what-about-the-roaming-signatures-feature-in-exchange-online) \| [AD vs Entra Groups](#when-should-i-refer-on-prem-groups-and-when-entra-id-groups) \| [No Outlook Profile](#what-if-a-user-has-no-outlook-profile-or-is-prohibited-from-starting-outlook) \| [Outlook not installed](#what-if-outlook-is-not-installed-at-all) |
+| Advanced Logic & Automation | [Recreation Logic](#why-are-signatures-and-out-of-office-replies-recreated-even-when-their-content-has-not-changed) \| [Deploy Once](#how-to-deploy-a-signature-only-once) \| [Send As Permissions](#how-to-deploy-signatures-for-send-as-send-on-behalf-etc) \| [Dynamic Groups (On-prem)](#why-is-dynamic-group-membership-not-considered-on-premises) \| [Parallel Instances](#can-multiple-script-instances-run-in-parallel) |
+| Troubleshooting & Logs | [Logging](#how-can-i-log-the-software-output) \| [Verbose Output](#how-can-i-get-more-script-output-for-troubleshooting) \| [Word Security Warnings](#the-software-hangs-at-htmrtf-export-word-shows-a-security-warning) \| [Performance / Speed](#why-does-set-outlooksignatures-run-slower-sometimes) |
+| Security & Compliance | [Mailbox Identification](#how-is-the-account-of-a-mailbox-identified) \| [Personal Mailbox ID](#how-is-the-personal-mailbox-of-the-currently-logged-in-user-identified) \| [Network Ports](#which-ports-are-required) \| [Multi-tenant Access](#does-it-support-cross-tenant-access-and-multitenant-organizations) \| [Purview & Labels](#how-to-make-set-outlooksignatures-work-with-microsoft-purview-information-protection) \| [Locking Signatures](#keep-users-from-adding-editing-and-removing-signatures) \| [EWS Deprecation](#what-about-microsoft-turning-off-exchange-web-services-for-exchange-online) |
+| Learn from the code | [AD Group Enumeration](#active-directory-group-membership-enumeration-without-compromises) \| [Graph Auth Logic](#microsoft-graph-authentication-and-re-authentication) \| [Cross-Tenant Access](#graph-cross-tenant-and-multitenant-organization-access) \| [DSC Deployment](#deploy-and-run-software-using-desired-state-configuration-dsc) \| [Parallel Execution](#parallel-code-execution) \| [Desktop Icons](#create-desktop-icons-cross-platform) \| [Entra App Config](#create-and-configure-apps-in-entra-id-grant-admin-consent) \| [AD Trust Tests](#test-active-directory-trusts) \| [AD Connection Check](#start-only-if-working-active-directory-connection-is-available) \| [System Sleep](#prohibit-system-sleep) \| [Exit Signals](#detect-exit-signals) \| [Phone Formatting](#format-phone-numbers) \| [Postal Formatting](#format-postal-addresses) \| [Open Source Treasures](#bringing-hidden-open-source-treasures-to-light) \| [Encoding Conversion](#detect-and-convert-encodings) \| [DN Handling](#handling-of-distinguished-names) \| [Advanced DN/OU Handling](#easier-and-advanced-handling-of-distinguished-names) |
 
 ## Where can I find the changelog?
 The changelog is located in the `.\docs` folder, along with other documents related to Set-OutlookSignatures.
