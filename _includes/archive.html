@@ -15,9 +15,16 @@ layout: default
     <hr>
 
     <div class="post-list">
-        {% for post in page.posts %}
+        {% comment %}
+            Filter posts by the current active language from polyglot
+        {% endcomment %}
+        {% assign lang_posts = page.posts | where: "lang", site.active_lang %}
+        
+        {% for post in lang_posts %}
             <article class="mb-6">
-                <p class="has-text-grey mb-1">{{ post.date | date: '%Y-%m-%d' }}</p>
+                <p class="has-text-grey mb-1">
+                    {{ post.date | date: '%Y-%m-%d' }}
+                </p>
                 <h2 class="is-size-4 mt-0">
                     <a href="{{ post.url | relative_url }}" class="has-text-dark">
                         {{ post.title }}
@@ -28,12 +35,19 @@ layout: default
                     {{ post.excerpt | strip_html | truncatewords: 40 }}
                 </div>
 
-                <div class="tags mt-2">
-                    {% for tag in post.tags %}
-                        <span class="tag is-light">{{ tag }}</span>
-                    {% endfor %}
-                </div>
+                {% if post.tags.size > 0 %}
+                    <div class="tags mt-2">
+                        {% for tag in post.tags %}
+                            {% comment %} 
+                                Using your existing tag.html include for consistency 
+                            {% endcomment %}
+                            {% include tag.html tag=tag %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </article>
+        {% else %}
+            <p>No posts found in this language.</p>
         {% endfor %}
     </div>
 </div>
