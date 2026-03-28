@@ -1,37 +1,43 @@
 ---
 layout: default
 ---
+{%- comment -%}
+    1. Synchronize page.lang with site.active_lang to stop the 
+       "page not translated" warning in default.html.
+{%- endcomment -%}
+{% assign active_lang = site.active_lang | default: site.lang %}
+{% capture lang %}{{ active_lang }}{% endcapture %}
+{% assign page = page | combine: "lang", lang %}
+
 <div class="content">
     <h1 class="title is-2">
         {% if page.type == 'tag' %}
-            Posts tagged with "{{ page.title }}"
+            {% if active_lang == 'de' %}Beiträge mit dem Tag{% else %}Posts tagged with{% endif %} "{{ page.title }}"
         {% elsif page.type == 'category' %}
-            Category: {{ page.title }}
+            {% if active_lang == 'de' %}Kategorie{% else %}Category{% endif %}: {{ page.title }}
         {% elsif page.date %}
-            {% comment %} 
-                Splitting the URL to determine depth:
-                /blog/2026/          -> Year (2026)
-                /blog/2026/03/       -> Month (2026-03)
-                /blog/2026/03/18/    -> Day (2026-03-18)
-            {% endcomment %}
+            {%- comment -%} Determine URL depth to format ISO date correctly {%- endcomment -%}
             {% assign url_parts = page.url | split: '/' | compact %}
-            {% if url_parts.size == 2 %} 
-                Archive: {{ page.date | date: '%Y' }}
-            {% elsif url_parts.size == 3 %}
-                Archive: {{ page.date | date: '%Y-%m' }}
-            {% elsif url_parts.size == 4 %}
-                Archive: {{ page.date | date: '%Y-%m-%d' }}
+            {% assign first_part = url_parts | first %}
+            {% if site.languages contains first_part %}{% assign offset = 1 %}{% else %}{% assign offset = 0 %}{% endif %}
+            {% assign depth = url_parts.size | minus: offset %}
+
+            {% if active_lang == 'de' %}Archiv{% else %}Archive{% endif %}: 
+            {% if depth == 2 %} 
+                {{ page.date | date: '%Y' }}
+            {% elsif depth == 3 %}
+                {{ page.date | date: '%Y-%m' }}
             {% else %}
-                Archive: {{ page.title }}
+                {{ page.date | date: '%Y-%m-%d' }}
             {% endif %}
         {% else %}
-            Archive: {{ page.title }}
+            {% if active_lang == 'de' %}Archiv{% else %}Archive{% endif %}: {{ page.title }}
         {% endif %}
     </h1>
     <hr>
 
     <div class="columns is-multiline">
-        {% assign active_lang = site.active_lang | default: site.lang %}
+        {%- comment -%} Filter posts strictly by current language node {%- endcomment -%}
         {% assign filtered_posts = page.posts | where: "lang", active_lang %}
         
         {% for post in filtered_posts %}
@@ -41,7 +47,11 @@ layout: default
         {% else %}
             <div class="column is-12">
                 <div class="notification is-light">
-                    No posts found for this archive in {{ active_lang | upcase }}.
+                    {% if active_lang == 'de' %}
+                        Keine Beiträge für dieses Archiv gefunden.
+                    {% else %}
+                        No posts found for this archive.
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
