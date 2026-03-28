@@ -24,13 +24,13 @@ This FAQ highlights common topics and clarifies typical points of confusion.
 
 | Category | Topics |
 | :--- | :--- |
-| General | [Changelog](#where-can-i-find-the-changelog) \| [Contributing](#how-can-i-contribute-propose-a-new-feature-or-file-a-bug) \| [OOF vs OOO](#why-is-out-of-office-abbreviated-oof-and-not-ooo) \| [Naming Convention](#isnt-a-plural-noun-in-the-software-name-against-powershell-best-practices) \| [Roadmap](#is-there-a-roadmap-for-future-versions) \| [Outlook Stationery](#can-i-centrally-manage-and-deploy-outook-stationery-with-this-script) \| [Roaming Sync Issues](#roaming-signatures-in-classic-outlook-for-windows-look-different) \| [OOF Activation Logic](#why-is-the-out-of-office-assistant-not-activated-automatically) \| [Disable Tagline](#how-to-disable-the-tagline-in-signatures) \| [Implementation Approach](#what-is-the-recommended-approach-for-implementing-the-software) \| [Not the right solution?](#not-sure-if-set-outlooksignatures-is-the-right-solution-for-your-company) |
-| Templates & Design | [DOCX vs HTML](#should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates) \| [Removing Blank Lines](#how-to-avoid-blank-lines-when-replacement-variables-return-an-empty-string) \| [Text Color Issues](#why-does-the-text-color-of-my-signature-change-sometimes) \| [Image Scaling/Black Background](#images-in-signatures-have-a-different-size-than-in-templates-or-a-black-background) \| [Rotating Banners](#how-do-i-alternate-banners-and-other-images-in-signatures) \| [Underlined Spaces](#empty-lines-contain-an-underlined-space-character) \| [Text Case](#can-i-change-the-case-uppercaselowercase-of-replacement-variables-in-templates) \| [Calendar Links](#how-to-add-a-calender-link) \| [Different signatures per mailbox](#different-default-signatures-for-different-mailboxes) \| [OU-based templates](#assign-templates-based-on-organizational-units-ous) |
+| General | [Changelog](#where-can-i-find-the-changelog) | [Contributing](#how-can-i-contribute-propose-a-new-feature-or-file-a-bug) \| [OOF vs OOO](#why-is-out-of-office-abbreviated-oof-and-not-ooo) \| [Naming Convention](#isnt-a-plural-noun-in-the-software-name-against-powershell-best-practices) \| [Roadmap](#is-there-a-roadmap-for-future-versions) \| [Outlook Stationery](#can-i-centrally-manage-and-deploy-outook-stationery-with-this-script) \| [Roaming Sync Issues](#roaming-signatures-in-classic-outlook-for-windows-look-different) \| [OOF Activation Logic](#why-is-the-out-of-office-assistant-not-activated-automatically) \| [Disable Tagline](#how-to-disable-the-tagline-in-signatures) \| [Implementation Approach](#what-is-the-recommended-approach-for-implementing-the-software) |
+| Templates & Design | [DOCX vs HTML](#should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates) \| [Removing Blank Lines](#how-to-avoid-blank-lines-when-replacement-variables-return-an-empty-string) \| [Text Color Issues](#why-does-the-text-color-of-my-signature-change-sometimes) \| [Image Scaling/Black Background](#images-in-signatures-have-a-different-size-than-in-templates-or-a-black-background) \| [Rotating Banners](#how-do-i-alternate-banners-and-other-images-in-signatures) \| [Underlined Spaces](#empty-lines-contain-an-underlined-space-character) \| [Text Case](#can-i-change-the-case-uppercaselowercase-of-replacement-variables-in-templates) \| [Calendar/Booking Links](#how-to-add-a-calender-link) \| [Different signatures per mailbox](#different-default-signatures-for-different-mailboxes) \| [OU-based templates](#assign-templates-based-on-organizational-units-ous) |
 | Deployment & Infrastructure | [Why no GUI?](#why-is-no-admin-or-user-gui-available) \| [Folder Structure](#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files) \| [Custom Config Files](#what-is-the-recommended-approach-for-custom-configuration-files) \| [AD Connection Check](#how-can-i-start-the-software-only-when-there-is-a-connection-to-active-directory) \| [CLI & Scheduled Tasks](#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task) \| [Hidden/Invisible Mode](#start-set-outlooksignatures-in-hiddeninvisible-mode) \| [Shortcut with Parameters](#how-to-create-a-shortcut-to-the-software-with-parameters) \| [Intune Deployment](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune) \| [Roaming Signatures](#what-about-the-roaming-signatures-feature-in-exchange-online) \| [AD vs Entra Groups](#when-should-i-refer-on-prem-groups-and-when-entra-id-groups) \| [No Outlook Profile](#what-if-a-user-has-no-outlook-profile-or-is-prohibited-from-starting-outlook) \| [Outlook not installed](#what-if-outlook-is-not-installed-at-all) |
 | Advanced Logic & Automation | [Recreation Logic](#why-are-signatures-and-out-of-office-replies-recreated-even-when-their-content-has-not-changed) \| [Deploy Once](#how-to-deploy-a-signature-only-once) \| [Send As Permissions](#how-to-deploy-signatures-for-send-as-send-on-behalf-etc) \| [Dynamic Groups (On-prem)](#why-is-dynamic-group-membership-not-considered-on-premises) \| [Parallel Instances](#can-multiple-script-instances-run-in-parallel) |
-| Troubleshooting & Logs | [Logging](#how-can-i-log-the-software-output) \| [Verbose Output](#how-can-i-get-more-script-output-for-troubleshooting) \| [Word Security Warnings](#the-software-hangs-at-htmrtf-export-word-shows-a-security-warning) \| [Performance / Speed](#why-does-set-outlooksignatures-run-slower-sometimes) |
+| Troubleshooting & Logs | [Logging](#how-can-i-log-the-software-output) \| [Verbose Output](#how-can-i-get-more-script-output-for-troubleshooting) \| [Word Security Warnings](#the-software-hangs-at-htmrtf-export-word-shows-a-security-warning) \| [Performance/Speed](#why-does-set-outlooksignatures-run-slower-sometimes) |
 | Security & Compliance | [Mailbox Identification](#how-is-the-account-of-a-mailbox-identified) \| [Personal Mailbox ID](#how-is-the-personal-mailbox-of-the-currently-logged-in-user-identified) \| [Network Ports](#which-ports-are-required) \| [Multi-tenant Access](#does-it-support-cross-tenant-access-and-multitenant-organizations) \| [Purview & Labels](#how-to-make-set-outlooksignatures-work-with-microsoft-purview-information-protection) \| [Locking Signatures](#keep-users-from-adding-editing-and-removing-signatures) \| [EWS Deprecation](#what-about-microsoft-turning-off-exchange-web-services-for-exchange-online) |
-| Learn from the code | [AD Group Enumeration](#active-directory-group-membership-enumeration-without-compromises) \| [Graph Auth Logic](#microsoft-graph-authentication-and-re-authentication) \| [Cross-Tenant Access](#graph-cross-tenant-and-multitenant-organization-access) \| [DSC Deployment](#deploy-and-run-software-using-desired-state-configuration-dsc) \| [Parallel Execution](#parallel-code-execution) \| [Desktop Icons](#create-desktop-icons-cross-platform) \| [Entra App Config](#create-and-configure-apps-in-entra-id-grant-admin-consent) \| [AD Trust Tests](#test-active-directory-trusts) \| [AD Connection Check](#start-only-if-working-active-directory-connection-is-available) \| [System Sleep](#prohibit-system-sleep) \| [Exit Signals](#detect-exit-signals) \| [Phone Formatting](#format-phone-numbers) \| [Postal Formatting](#format-postal-addresses) \| [Open Source Treasures](#bringing-hidden-open-source-treasures-to-light) \| [Encoding Conversion](#detect-and-convert-encodings) \| [DN Handling](#handling-of-distinguished-names) \| [Advanced DN/OU Handling](#easier-and-advanced-handling-of-distinguished-names) |
+| Learn from the code | [AD Group Enumeration](#active-directory-group-membership-enumeration-without-compromises) \| [Graph Auth Logic](#microsoft-graph-authentication-and-re-authentication) \| [Cross-Tenant Access](#graph-cross-tenant-and-multitenant-organization-access) \| [DSC Deployment](#deploy-and-run-software-using-desired-state-configuration-dsc) \| [Parallel Execution](#parallel-code-execution) \| [Desktop Icons](#create-desktop-icons-cross-platform) \| [Entra App Config](#create-and-configure-apps-in-entra-id-grant-admin-consent) \| [AD Trust Tests](#test-active-directory-trusts) \| [AD Connection Check](#start-only-if-working-active-directory-connection-is-available) \| [System Sleep](#prohibit-system-sleep) \| [Exit Signals](#detect-exit-signals) \| [Phone Formatting](#format-phone-numbers) \| [Postal Formatting](#format-postal-addresses) \| [Open Source Treasures](#bringing-hidden-open-source-treasures-to-light) \| [Encoding Conversion](#detect-and-convert-encodings) \| [DN Handling](#handling-of-distinguished-names) |
 
 ## Where can I find the changelog?
 The changelog is located in the `.\docs` folder, along with other documents related to Set-OutlookSignatures.
@@ -233,13 +233,11 @@ See `.\sample code\CreateDesktopIcon.ps1` for a code example. Don't forget to ad
 ## What is the recommended approach for implementing the software?
 The [Quickstart guide](/quickstart) is a good overall starting point for beginners.
 
-For the organizational aspects around Set-OutlookSignatures, read the "Implementation Approach" document. The content is based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes.
+For the organizational aspects around Set-OutlookSignatures, read the "[Implementation Approach](/implementationsapproach)" document. The content is based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes.
 
 It contains proven procedures and recommendations for product managers, architects, operations managers, account managers and email and client administrators. It is suited for service providers as well as for clients.
 
 It covers several general overview topics, administration, support, training across the whole lifecycle from counselling to tests, pilot operation and rollout up to daily business.
-
-The document is available in English and German language.  
 
 
 ## What is the recommended approach for custom configuration files?
@@ -856,13 +854,9 @@ The root cause is unknown, but it seems to be related to the HTML parser of the 
 
 
 ## What about Microsoft turning off Exchange Web Services for Exchange Online?
-Microsoft will turn of Exchange Web Services (EWS) for Exchange Online. This is announced to happen in October 2026. This only affects Exchange in the cloud, not Exchange hosted on premises.
+Microsoft will turn of Exchange Web Services (EWS) for Exchange Online beginning in late 2026. This only affects Exchange in the cloud, not Exchange hosted on premises.
 
-Set-OutlookSignatures, the Benefactor Circle add-on and the Outlook add-in are prepared for this since the end of 2023, when Microsoft made their first announcement about this.
-
-Unfortunately, the Graph API does not yet offer the same feature set as EWS. This affects the following features for mailboxes hosted in Exchange Online (and only in Exchange Online):
-- Setting the classic Outlook for the web signature<br>The classic Outlook for the web signature can only be seen when using Outlook for the web on a browser in mobile view. This only affects a vanishingly small number of users, the trend is downwards, and it is not yet clear if Microsoft will ever bring this feature to the Graph API.<br>Roaming signatures are not affected. Exchange on-prem is not affected.
-- Getting additional mailboxes from Outlook for the web<br>This affects all editions of Outlook which are not the Classic Outlook for Windows - in other words: New Outlook for Windows, any Outlook for macOS, and running Set-OutlookSignatures on Linux.<br>It is very likely that Microsoft will update the Graph API to support this feature. The timeline is unknown.<br>Detecting automapped mailboxes is not affected. Exchange on-prem is not affected.
+Since 2024, Set-OutlookSignatures, the Benefactor Circle add-on and the Outlook add-in use Graph APIs in favor of EWS requests wherever possible. Microsoft added the last missing pieces of the puzzle in early 2026 - since v4.26.0, Set-OutlookSignatures no longer uses EWS for communication with Exchange Online.
 
 
 ## Roaming signatures in Classic Outlook for Windows look different
@@ -1139,8 +1133,10 @@ Files:
 
 ### Handling of distinguished names
 While distinguished names look like easy to handle strings, their format and some AD/LDAP specifics brings challenges.
+- Distinguished names are not as easy to handle as it might look at first sight: Escape characters ('Doe, Jane' <-> 'Doe\, Jane'), different component types (DC, CN, OU, and more), etc.
+- The canonical format ('example.com/OU A/OU B/Doe, Jane') lacks some information but is usually much easier to work with.
 
-To make working with distinguished names easier, we have created the [ConvertDnToCanonicalObject](#easier-and-advanced-handling-of-distinguished-names) helper function.
+To make working with distinguished names easier, we have created the `ConvertDnToCanonicalObject` helper function.
 
 It helps answer questions such as "Is an object directly in a specific OU?", "Is an object in or below a specific OU?", and more.
 
@@ -1148,6 +1144,75 @@ An example:
 ```
 # Example usage
 ConvertDnToCanonicalObject 'CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com'
+
+
+# Example output
+# DistinguishedName : CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com
+# CanonicalPath     : example.com/OU A/OU B/Doe, Jane
+# CanonicalParent   : example.com/OU A/OU B
+# CanonicalOUs      : OU A/OU B
+# DomainFQDN        : example.com
+# LeafValue         : Doe, Jane
+```
+
+Here is the functin code:
+```
+function ConvertDnToCanonicalObject {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory, ValueFromPipeline)]
+        [string]$DistinguishedName
+    )
+
+    process {
+        $rdns = [regex]::Split($DistinguishedName, '(?<!\\),')
+
+        $dcComponents = [System.Collections.Generic.List[string]]::new()
+        $pathSegments = [System.Collections.Generic.List[string]]::new()
+
+        foreach ($segment in $rdns) {
+            $rdn = $segment.Trim()
+            if (-not $rdn) { continue }
+
+            $eq = $rdn.IndexOf('=')
+            if ($eq -lt 1) { continue }
+
+            $attr = $rdn.Substring(0, $eq).Trim()
+            $val = ($rdn.Substring($eq + 1)).Trim() -replace '\\(.)', '$1' -replace '^"|"$', ''
+
+            if ($attr -match '^(?i)DC$') {
+                $dcComponents.Add($val)
+            } else {
+                $pathSegments.Add($val)
+            }
+        }
+
+        $domainFqdn = $dcComponents -join '.'
+        $pathSegments.Reverse() # Flip from Leaf->Root to Root->Leaf
+
+        # 1. Full Canonical Path (FQDN/Segments/Leaf)
+        $fullPathStr = $pathSegments -join '/'
+        $canonicalPath = if ($fullPathStr) { "$domainFqdn/$fullPathStr" } else { $domainFqdn }
+
+        # 2. Canonical Parent (FQDN/Segments)
+        $parentSegmentsArray = if ($pathSegments.Count -gt 1) { $pathSegments.GetRange(0, $pathSegments.Count - 1) } else { @() }
+        $parentPathOnly = $parentSegmentsArray -join '/'
+        $canonicalParent = if ($parentPathOnly) { "$domainFqdn/$parentPathOnly" } else { $domainFqdn }
+
+        [pscustomobject]@{
+            DistinguishedName = $DistinguishedName
+            CanonicalPath     = $canonicalPath
+            CanonicalParent   = $canonicalParent
+            CanonicalOUs      = $parentPathOnly   # <--- The "Clean" path without FQDN
+            DomainFQDN        = $domainFqdn
+            LeafValue         = if ($pathSegments.Count) { $pathSegments[-1] } else { $null }
+        }
+    }
+}
+
+
+# Example usage
+# ConvertDnToCanonicalObject 'CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com'
 
 
 # Example output
@@ -1251,78 +1316,3 @@ Let's assume we want all mailboxes in or below the OU 'example.com/OU A/OU B' to
    ```
 
 You now have a replacement variable specific template assignment. This has an impact on the priority of the template, see the '[Signature and OOF application order](/details#signature-and-oof-application-order)' chapter for details.
-
-### Easier and advanced handling of distinguished names
-Distinguished names are not as easy to handle as it might look at first sight: Escape characters ('Doe, Jane' <-> 'Doe\, Jane'), different component types (DC, CN, OU, and more), etc.
-
-The canonical format ('example.com/OU A/OU B/Doe, Jane') lacks some information but is usually much easier to work with.
-
-The following sample code shows how to convert a distinguished name string to a canonical object with same very useful additional helper properties:
-
-```
-function ConvertDnToCanonicalObject {
-    [CmdletBinding()]
-    param(
-        [Parameter(Mandatory, ValueFromPipeline)]
-        [string]$DistinguishedName
-    )
-
-    process {
-        $rdns = [regex]::Split($DistinguishedName, '(?<!\\),')
-
-        $dcComponents = [System.Collections.Generic.List[string]]::new()
-        $pathSegments = [System.Collections.Generic.List[string]]::new()
-
-        foreach ($segment in $rdns) {
-            $rdn = $segment.Trim()
-            if (-not $rdn) { continue }
-
-            $eq = $rdn.IndexOf('=')
-            if ($eq -lt 1) { continue }
-
-            $attr = $rdn.Substring(0, $eq).Trim()
-            $val = ($rdn.Substring($eq + 1)).Trim() -replace '\\(.)', '$1' -replace '^"|"$', ''
-
-            if ($attr -match '^(?i)DC$') {
-                $dcComponents.Add($val)
-            } else {
-                $pathSegments.Add($val)
-            }
-        }
-
-        $domainFqdn = $dcComponents -join '.'
-        $pathSegments.Reverse() # Flip from Leaf->Root to Root->Leaf
-
-        # 1. Full Canonical Path (FQDN/Segments/Leaf)
-        $fullPathStr = $pathSegments -join '/'
-        $canonicalPath = if ($fullPathStr) { "$domainFqdn/$fullPathStr" } else { $domainFqdn }
-
-        # 2. Canonical Parent (FQDN/Segments)
-        $parentSegmentsArray = if ($pathSegments.Count -gt 1) { $pathSegments.GetRange(0, $pathSegments.Count - 1) } else { @() }
-        $parentPathOnly = $parentSegmentsArray -join '/'
-        $canonicalParent = if ($parentPathOnly) { "$domainFqdn/$parentPathOnly" } else { $domainFqdn }
-
-        [pscustomobject]@{
-            DistinguishedName = $DistinguishedName
-            CanonicalPath     = $canonicalPath
-            CanonicalParent   = $canonicalParent
-            CanonicalOUs      = $parentPathOnly   # <--- The "Clean" path without FQDN
-            DomainFQDN        = $domainFqdn
-            LeafValue         = if ($pathSegments.Count) { $pathSegments[-1] } else { $null }
-        }
-    }
-}
-
-
-# Example usage
-# ConvertDnToCanonicalObject 'CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com'
-
-
-# Example output
-# DistinguishedName : CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com
-# CanonicalPath     : example.com/OU A/OU B/Doe, Jane
-# CanonicalParent   : example.com/OU A/OU B
-# CanonicalOUs      : OU A/OU B
-# DomainFQDN        : example.com
-# LeafValue         : Doe, Jane
-```

@@ -295,3 +295,55 @@ html::after {
   padding: 0.2em 0.4em;
   color: black;
 }
+
+// --- Terminal UI Code Blocks ---
+// Target Jekyll's default wrapper classes
+.highlighter-rouge, 
+figure.highlight {
+  background: #2d3436;
+  border-radius: 6px;
+  padding: 2.5rem 1.5rem 1.5rem; // Top padding makes room for the dots
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  margin: 1.5rem 0;
+
+  // The Terminal "Traffic Light" Dots
+  &::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    height: 10px;
+    width: 44px;
+    // Creates 3 dots using background gradients
+    background: radial-gradient(circle at 5px, #ff5f56 5px, transparent 5px),
+                radial-gradient(circle at 20px, #ffbd2e 5px, transparent 5px),
+                radial-gradient(circle at 35px, #27c93f 5px, transparent 5px);
+    background-repeat: no-repeat;
+  }
+
+  // Reset Bulma/Existing styles for the inner elements
+  pre.highlight {
+    background: transparent !important;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  code {
+    color: #ffffff !important; // Force white text for terminal contrast
+    background-color: transparent !important;
+    padding: 0;
+    border-radius: 0;
+    white-space: pre-wrap;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+}
+
+// Ensure your existing inline code style doesn't interfere with the terminal
+:not(pre) > code {
+  // Your existing styles...
+  background-color: lightgrey;
+  color: black;
+}
