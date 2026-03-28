@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <div class="content">
     <h1 class="title is-2">
         {% if page.type == 'tag' %}
@@ -9,14 +8,19 @@ layout: default
         {% elsif page.type == 'category' %}
             Category: {{ page.title }}
         {% elsif page.date %}
-            {% comment %} Check the URL path to determine if it's year, month, or day {% endcomment %}
-            {% assign url_parts = page.url | split: '/' %}
-            {% if url_parts.size == 4 %} 
+            {% comment %} 
+                Splitting the URL to determine depth:
+                /blog/2026/          -> Year (2026)
+                /blog/2026/03/       -> Month (2026-03)
+                /blog/2026/03/18/    -> Day (2026-03-18)
+            {% endcomment %}
+            {% assign url_parts = page.url | split: '/' | compact %}
+            {% if url_parts.size == 2 %} 
                 Archive: {{ page.date | date: '%Y' }}
-            {% elsif url_parts.size == 5 %}
-                Archive: {{ page.date | date: '%B %Y' }}
-            {% elsif url_parts.size == 6 %}
-                Archive: {{ page.date | date: '%B %d, %Y' }}
+            {% elsif url_parts.size == 3 %}
+                Archive: {{ page.date | date: '%Y-%m' }}
+            {% elsif url_parts.size == 4 %}
+                Archive: {{ page.date | date: '%Y-%m-%d' }}
             {% else %}
                 Archive: {{ page.title }}
             {% endif %}
