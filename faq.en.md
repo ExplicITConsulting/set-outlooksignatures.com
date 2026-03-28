@@ -33,13 +33,15 @@ This FAQ highlights common topics and clarifies typical points of confusion.
 | Learn from the code | [AD Group Enumeration](#active-directory-group-membership-enumeration-without-compromises) \| [Graph Auth Logic](#microsoft-graph-authentication-and-re-authentication) \| [Cross-Tenant Access](#graph-cross-tenant-and-multitenant-organization-access) \| [DSC Deployment](#deploy-and-run-software-using-desired-state-configuration-dsc) \| [Parallel Execution](#parallel-code-execution) \| [Desktop Icons](#create-desktop-icons-cross-platform) \| [Entra App Config](#create-and-configure-apps-in-entra-id-grant-admin-consent) \| [AD Trust Tests](#test-active-directory-trusts) \| [AD Connection Check](#start-only-if-working-active-directory-connection-is-available) \| [System Sleep](#prohibit-system-sleep) \| [Exit Signals](#detect-exit-signals) \| [Phone Formatting](#format-phone-numbers) \| [Postal Formatting](#format-postal-addresses) \| [Open Source Treasures](#bringing-hidden-open-source-treasures-to-light) \| [Encoding Conversion](#detect-and-convert-encodings) \| [DN Handling](#handling-of-distinguished-names) |
 
 ## Where can I find the changelog?
-The changelog is located in the `.\docs` folder, along with other documents related to Set-OutlookSignatures.
+The changelog is located in the [docs folder of the GitHub repo](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/tree/main/docs), along with other documents related to Set-OutlookSignatures.
+
+While the source code is available on GitHub, the full documentation is available on set-outlooksignatures.com.
 
 
 ## How can I contribute, propose a new feature or file a bug?
 If you have an idea for a new feature or have found a problem, please <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues">create an issue on GitHub</a>.
 
-If you want to contribute code, please have a look at `.\docs\CONTRIBUTING` for a rough overview of the proposed process.
+If you want to contribute code, please have a look at [CONTRIBUTING.md](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CONTRIBUTING.md) for an overview of the proposed process.
 
 
 ## How is the account of a mailbox identified?
@@ -331,7 +333,7 @@ The internal variable `$UseHtmTemplates` is used to automatically differentiate 
 
 
 ## Is there a roadmap for future versions?
-There is no binding roadmap for future versions, although we maintain a list of ideas in the 'Contribution opportunities' chapter of '.\docs\CONTRIBUTING'.
+There is no binding roadmap for future versions, although we maintain a list of ideas in the 'Contribution opportunities' chapter of [CONTRIBUTING.md](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CONTRIBUTING.md).
 
 Fixing issues has priority over new features, of course.
 
