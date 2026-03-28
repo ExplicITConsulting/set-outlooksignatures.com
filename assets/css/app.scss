@@ -288,13 +288,12 @@ html::after {
   --benefactor-circle-color: goldenrod;
 }
 
-
 // --- Unified Code Styling ---
 
 // 1. Terminal UI: Only for code blocks (Jekyll's highlighter-rouge)
-div.highlighter-rouge, 
+div.highlighter-rouge,
 figure.highlight {
-  background: #2d3436 !important; 
+  background: #2d3436 !important;
   border-radius: 6px;
   /* Reduced left padding to 0.75rem to pull code to the left */
   padding: 2.5rem 0.75rem 1rem !important;
@@ -309,18 +308,18 @@ figure.highlight {
     position: absolute;
     top: 14px;
     /* Aligned dots to 0.75rem so the red dot is directly above the first char */
-    left: 0.75rem; 
+    left: 0.75rem;
     height: 10px;
     width: 44px;
-    background: radial-gradient(circle at 5px, #ff5f56 5px, transparent 5px),
-                radial-gradient(circle at 20px, #ffbd2e 5px, transparent 5px),
-                radial-gradient(circle at 35px, #27c93f 5px, transparent 5px);
+    background: radial-gradient(circle at 5px, #ff5f56 5px, transparent 5px), radial-gradient(circle at 20px, #ffbd2e 5px, transparent 5px), radial-gradient(circle at 35px, #27c93f 5px, transparent 5px);
     background-repeat: no-repeat;
     z-index: 10;
   }
 
   // Strip all default padding/margins from Jekyll/Bulma internals
-  pre, .highlight, pre.highlight {
+  pre,
+  .highlight,
+  pre.highlight {
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
@@ -329,15 +328,16 @@ figure.highlight {
   }
 
   code {
-    color: #ffffff !important; 
+    color: #ffffff !important;
     background: transparent !important;
     padding: 0 !important;
     border-radius: 0 !important;
     display: block;
     margin: 0 !important; /* Remove any potential left margins */
     text-align: left !important;
-    white-space: pre-wrap;
-    word-break: break-all;
+    white-space: pre-wrap; /* Respects spaces/newlines, but allows wrapping */
+    word-break: keep-all; /* Prevents breaking in the middle of a word */
+    overflow-wrap: normal; /* Standard wrapping behavior */
     font-family: inherit;
   }
 }
