@@ -294,9 +294,10 @@ html::after {
 // 1. Terminal UI: Only for code blocks (Jekyll's highlighter-rouge)
 div.highlighter-rouge, 
 figure.highlight {
-  background: #2d3436 !important; /* Dark Grey Terminal Background */
+  background: #2d3436 !important; 
   border-radius: 6px;
-  padding: 2.5rem 1.25rem 1.25rem !important;
+  /* Reduced left padding to 0.75rem to pull code to the left */
+  padding: 2.5rem 0.75rem 1rem !important;
   position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   margin: 2rem 0;
@@ -307,7 +308,8 @@ figure.highlight {
     content: "";
     position: absolute;
     top: 14px;
-    left: 15px;
+    /* Aligned dots to 0.75rem so the red dot is directly above the first char */
+    left: 0.75rem; 
     height: 10px;
     width: 44px;
     background: radial-gradient(circle at 5px, #ff5f56 5px, transparent 5px),
@@ -317,20 +319,23 @@ figure.highlight {
     z-index: 10;
   }
 
-  // Force inner elements to be invisible/white text
+  // Strip all default padding/margins from Jekyll/Bulma internals
   pre, .highlight, pre.highlight {
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
     margin: 0 !important;
+    text-indent: 0 !important; /* Ensure no indentation */
   }
 
   code {
-    color: #ffffff !important; /* Force text to be WHITE in terminal */
+    color: #ffffff !important; 
     background: transparent !important;
     padding: 0 !important;
     border-radius: 0 !important;
     display: block;
+    margin: 0 !important; /* Remove any potential left margins */
+    text-align: left !important;
     white-space: pre-wrap;
     word-break: break-all;
     font-family: inherit;
@@ -342,7 +347,7 @@ figure.highlight {
   background-color: lightgrey !important;
   border-radius: 4px;
   padding: 0.2em 0.4em;
-  color: black !important; /* Force text to be BLACK for inline */
+  color: black !important;
   word-break: break-word;
   font-family: inherit;
 }
