@@ -76,7 +76,7 @@ With Set-OutlookSignatures and the optional <a href="/benefactorcircle"><span st
                     <p class="mb-2"><b>Data Sovereignty:</b> No telemetry, no "calling home," and no 3rd party data routing; your DNS records and mail flow remain untouched.</p>
                     <p class="mb-2"><b>Enterprise Scaling:</b> <a href="/faq#can-multiple-script-instances-run-in-parallel">Multi-instance capable</a> and optimized for complex environments with 5-digit mailbox counts.</p>
                     <p class="mb-2"><b>Security & Testing:</b> Includes <a href="/details#simulation-mode">simulation mode</a> for safe testing and <a href="/details#allowed-tags">write protection</a> for Outlook for Windows signatures.</p>
-                    <p class="mb-2"><b>Open Source (FOSS):</b> Set-OutlookSignatures is licenses under the European Union Public License (EUPL). The core engine is peer-reviewable, ensuring transparency and digital sovereignty.</p>
+                    <p class="mb-2"><b>Open Source (FOSS):</b> Set-OutlookSignatures is licensed under the European Union Public License (EUPL). The core engine is peer-reviewable, ensuring transparency and digital sovereignty.</p>
                     <p class="mb-0"><b>Drafts API Fallback:</b> Supports clients without a signature API by creating <a href="/parameters#signaturecollectionindrafts">centralized HTML/Plain Text drafts</a><a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.</p>
                 </div>
             </div>

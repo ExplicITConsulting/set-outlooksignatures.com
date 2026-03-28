@@ -30,7 +30,7 @@ sitemap_changefreq: weekly
 - [Template tags and INI files](#template-tags-and-ini-files)
 - [Signature and OOF application order](#signature-and-oof-application-order)
 - [Replacement variables](#replacement-variables)
-- [Outlook for the web](#outlook-on-the-web)
+- [Outlook for the web](#outlook-for-the-web)
 - [Hybrid and cloud-only support](#hybrid-and-cloud-only-support)
 - [Simulation mode](#simulation-mode)
 
