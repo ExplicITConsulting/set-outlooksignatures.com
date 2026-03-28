@@ -1,15 +1,6 @@
 ---
 layout: default
 ---
-<p>Active Language: {{ site.active_lang }}</p>
-<p>Total Posts in Archive: {{ page.posts | size }}</p>
-<pre>
-  {% for post in page.posts %}
-    Title: {{ post.title }} | Lang: {{ post.lang }}
-  {% endfor %}
-</pre>
-
-
 <div class="content">
     <h1 class="title is-2">
         {% if page.type == 'tag' %}
