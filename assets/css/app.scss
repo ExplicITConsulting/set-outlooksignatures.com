@@ -346,4 +346,62 @@ figure.highlight {
   // Your existing styles...
   background-color: lightgrey;
   color: black;
+}/* --- Terminal UI Code Blocks --- */
+/* Target only the Jekyll wrapper divs to avoid breaking inline code */
+div.highlighter-rouge, 
+figure.highlight {
+  background: #2d3436 !important; /* The dark terminal grey */
+  border-radius: 6px;
+  padding: 2.5rem 1.5rem 1.5rem !important; 
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  margin: 2rem 0;
+  border: none !important;
+}
+
+/* The Terminal "Traffic Light" Dots */
+div.highlighter-rouge::before,
+figure.highlight::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  height: 10px;
+  width: 44px;
+  /* Red, Yellow, Green dots */
+  background: radial-gradient(circle at 5px, #ff5f56 5px, transparent 5px),
+              radial-gradient(circle at 20px, #ffbd2e 5px, transparent 5px),
+              radial-gradient(circle at 35px, #27c93f 5px, transparent 5px);
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+/* Force the inner elements to be transparent with white text */
+div.highlighter-rouge pre.highlight,
+figure.highlight pre {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+div.highlighter-rouge code,
+figure.highlight code {
+  color: #ffffff !important; /* Force text to be white */
+  background: transparent !important; /* Force background to be transparent */
+  padding: 0 !important;
+  border-radius: 0 !important;
+  display: block; /* Ensures it takes up the terminal space */
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* --- Inline Code Styling (Restored & Protected) --- */
+/* This targets <code> NOT inside a <pre>, keeping your lightgrey look */
+:not(pre) > code {
+  background-color: lightgrey !important;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  color: black !important;
+  word-break: break-word;
 }
