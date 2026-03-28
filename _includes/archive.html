@@ -1,6 +1,14 @@
 ---
 layout: default
 ---
+<p>Active Language: {{ site.active_lang }}</p>
+<p>Total Posts in Archive: {{ page.posts | size }}</p>
+<pre>
+  {% for post in page.posts %}
+    Title: {{ post.title }} | Lang: {{ post.lang }}
+  {% endfor %}
+</pre>
+
 
 <div class="content">
     <h1 class="title is-2">
@@ -8,6 +16,8 @@ layout: default
             Posts tagged with "{{ page.title }}"
         {% elsif page.type == 'category' %}
             Category: {{ page.title }}
+        {% elsif page.type == 'year' %}
+            Archive for {{ page.date | date: '%Y' }}
         {% else %}
             Archive: {{ page.title }}
         {% endif %}
@@ -15,12 +25,14 @@ layout: default
     <hr>
 
     <div class="post-list">
-        {% comment %}
-            Filter posts by the current active language from polyglot
-        {% endcomment %}
-        {% assign lang_posts = page.posts | where: "lang", site.active_lang %}
+        {%- comment -%} 
+            Filter posts to match the current language node.
+            Your posts use 'lang: "en"', so we match against site.active_lang.
+        {%- endcomment -%}
+        {% assign active_lang = site.active_lang | default: site.lang %}
+        {% assign filtered_posts = page.posts | where: "lang", active_lang %}
         
-        {% for post in lang_posts %}
+        {% for post in filtered_posts %}
             <article class="mb-6">
                 <p class="has-text-grey mb-1">
                     {{ post.date | date: '%Y-%m-%d' }}
@@ -38,16 +50,15 @@ layout: default
                 {% if post.tags.size > 0 %}
                     <div class="tags mt-2">
                         {% for tag in post.tags %}
-                            {% comment %} 
-                                Using your existing tag.html include for consistency 
-                            {% endcomment %}
                             {% include tag.html tag=tag %}
                         {% endfor %}
                     </div>
                 {% endif %}
             </article>
         {% else %}
-            <p>No posts found in this language.</p>
+            <div class="notification is-light">
+                No posts found for the year {{ page.date | date: '%Y' }} in {{ active_lang | upcase }}.
+            </div>
         {% endfor %}
     </div>
 </div>
