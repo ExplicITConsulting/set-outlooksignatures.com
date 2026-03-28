@@ -288,14 +288,15 @@ html::after {
   --benefactor-circle-color: goldenrod;
 }
 
-// --- Unified Code Styling (Editor Style with Line Numbers) ---
+// --- Unified Code Styling ---
 
+// 1. Terminal UI: Only for code blocks (Jekyll's highlighter-rouge)
 div.highlighter-rouge,
 figure.highlight {
   background: #2d3436 !important;
   border-radius: 6px;
-  /* Top padding for dots; horizontal padding is 0 because the table handles it */
-  padding: 3rem 0 1rem 0 !important;
+  /* Reduced left padding to 0.75rem to pull code to the left */
+  padding: 2.5rem 0.75rem 1rem !important;
   position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   margin: 2rem 0;
@@ -306,6 +307,7 @@ figure.highlight {
     content: "";
     position: absolute;
     top: 14px;
+    /* Aligned dots to 0.75rem so the red dot is directly above the first char */
     left: 0.75rem;
     height: 10px;
     width: 44px;
@@ -314,61 +316,33 @@ figure.highlight {
     z-index: 10;
   }
 
-  // Handle Jekyll's line number table
-  table {
-    border-spacing: 0;
-    width: 100%;
+  // Strip all default padding/margins from Jekyll/Bulma internals
+  pre,
+  .highlight,
+  pre.highlight {
     background: transparent !important;
     border: none !important;
+    padding: 0 !important;
     margin: 0 !important;
+    text-indent: 0 !important; /* Ensure no indentation */
+  }
 
-    td {
-      padding: 0 !important;
-      border: none !important;
-      vertical-align: top;
-    }
-
-    // The Line Numbers Column (Gutter)
-    .gutter {
-      width: 45px; /* Fixed width for numbers */
-      text-align: right;
-      padding-right: 15px !important;
-      padding-left: 0.75rem !important; /* Aligns with the red dot above */
-      border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
-      user-select: none; /* Prevents numbers from being copied */
-
-      pre {
-        color: #636e72 !important; /* Dim grey numbers */
-        font-family: inherit;
-        font-size: 0.85rem;
-        background: transparent !important;
-        margin: 0 !important;
-      }
-    }
-
-    // The Code Column
-    .code {
-      padding-left: 15px !important;
-
-      pre {
-        background: transparent !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-
-      code {
-        color: #ffffff !important;
-        background: transparent !important;
-        white-space: pre-wrap;
-        word-break: keep-all;
-        font-family: inherit;
-        display: block;
-      }
-    }
+  code {
+    color: #ffffff !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    display: block;
+    margin: 0 !important; /* Remove any potential left margins */
+    text-align: left !important;
+    white-space: pre-wrap; /* Respects spaces/newlines, but allows wrapping */
+    word-break: keep-all; /* Prevents breaking in the middle of a word */
+    overflow-wrap: normal; /* Standard wrapping behavior */
+    font-family: inherit;
   }
 }
 
-// 2. Inline Code: Only for text inside paragraphs
+// 2. Inline Code: Only for text inside paragraphs (NOT in a pre/terminal)
 :not(pre) > code {
   background-color: lightgrey !important;
   border-radius: 4px;
