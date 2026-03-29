@@ -20,14 +20,11 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc; display: flex; flex-direction: column;">
       <h3 class="has-text-black">🌐 Community Support</h3>
       <p>Ideal for general questions regarding the free and open-source core engine.</p>
-      <hr>
-      <div class="content flex-grow-1">
-        <ul>
-          <li><b>Self-Service:</b> Check our <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues">Issues</a> and <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions">Discussions</a> first.</li>
-          <li><b>Scope:</b> GitHub is dedicated strictly to the open-source component.</li>
-          <li><b>Collaborate:</b> Share ideas or suggest features with the global community.</li>
-        </ul>
-      </div>
+      <ul>
+        <li><b>Self-Service:</b> Check our <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues">Issues</a> and <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions">Discussions</a> first.</li>
+        <li><b>Scope:</b> GitHub is dedicated strictly to the open-source component.</li>
+        <li><b>Collaborate:</b> Share ideas or suggest features with the global community.</li>
+      </ul>
       <div class="mt-auto">
         <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures" class="button is-link is-outlined is-fullwidth">Visit Set-OutlookSignatures on GitHub</a>
       </div>
@@ -38,15 +35,12 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid goldenrod; box-shadow: 0 4px 15px rgba(218, 165, 32, 0.2); display: flex; flex-direction: column;">
       <h3 class="has-text-black">💎 Professional Support</h3>
       <p>Direct access to the developers for mission-critical environments.</p>
-      <hr>
-      <div class="content flex-grow-1">
-        <ul>
-          <li><b>Expert Guidance:</b> Personalized workshops, hands-on implementation, and template creation.</li>
-          <li><b>Knowledge Transfer:</b> We teach you the "how" and "why" to empower your team.</li>
-          <li><b>Bug-Free Guarantee:</b> Support is 100% free if the issue is due to a bug in our software or docs.</li>
-          <li><b>Direct Contact:</b> Personal assistance via <a href="mailto:set-outlooksignatures@explicitconsulting.at">Email</a> or Microsoft Teams.</li>
-        </ul>
-      </div>
+      <ul>
+        <li><b>Expert Guidance:</b> Personalized workshops, hands-on implementation, and template creation.</li>
+        <li><b>Knowledge Transfer:</b> We teach you the "how" and "why" to empower your team.</li>
+        <li><b>Bug-Free Guarantee:</b> Support is 100% free if the issue is due to a bug in our software or docs.</li>
+        <li><b>Direct Contact:</b> Personal assistance via <a href="mailto:set-outlooksignatures@explicitconsulting.at">Email</a> or Microsoft Teams.</li>
+      </ul>
       <div class="mt-auto">
         <a href="/ordersupport" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">
             Order Professional Support
