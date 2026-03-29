@@ -143,7 +143,7 @@ sitemap_changefreq: weekly
 
 <h2 id="demo">Erleben Sie es <span style="font-weight: bolder;">in Aktion</span></h2>
 <p>Organisationen nutzen unser Ökosystem für 📣 dynamisches Branding, 🏛️ administrative Governance und 🧭 plattformübergreifende Datensouveränität – ohne die Arbeitsweise der Anwender zu ändern.</p>
-<div class="box pt-0" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid goldenrod; border-right: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
+<div class="box pt-0" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid var(--benefactor-circle-color); border-right: 5px solid var(--benefactor-circle-color); padding: 2rem; margin-top: 2rem;">
   <div class="columns">
     <div class="column is-half" style="display: flex; flex-direction: column;">
       <h3>Geführte Tour</h3>

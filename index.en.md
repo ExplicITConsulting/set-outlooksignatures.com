@@ -74,7 +74,7 @@ sitemap_changefreq: weekly
 
 <h2 id="demo">Experience it <span style="font-weight: bolder;">in action</span></h2>
 <p>Organizations use our ecosystem to enforce 📣 dynamic branding, 🏛️ administrative governance, and 🧭 cross-platform data sovereignty — all without changing how users work.</p>
-<div class="box pt-0" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid goldenrod; border-right: 5px solid goldenrod; padding: 2rem; margin-top: 2rem;">
+<div class="box pt-0" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid var(--benefactor-circle-color); border-right: 5px solid var(--benefactor-circle-color); padding: 2rem; margin-top: 2rem;">
   <div class="columns">
     <div class="column is-half" style="display: flex; flex-direction: column;">
       <h3>Guided Walkthrough</h3>

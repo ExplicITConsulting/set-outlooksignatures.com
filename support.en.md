@@ -32,7 +32,7 @@ sitemap_changefreq: weekly
   </div>
 
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid goldenrod; box-shadow: 0 4px 15px rgba(218, 165, 32, 0.2); display: flex; flex-direction: column;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid var(--benefactor-circle-color); box-shadow: 0 4px 15px rgba(218, 165, 32, 0.2); display: flex; flex-direction: column;">
       <h3 class="has-text-black">💎 Professional Support</h3>
       <p>Direct access to the developers for mission-critical environments.</p>
       <ul>
@@ -72,7 +72,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<div class="box" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid #3273dc;">
+<div class="box" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid var(--benefactor-circle-color); border-right: 5px solid var(--benefactor-circle-color);">
   <p><strong>Note on the Benefactor Circle:</strong> While the core remains free, sustaining a project of this scale requires resources. Revenue from the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and professional support ensures long-term development and quality for everyone.</p>
 </div>
 
@@ -82,13 +82,13 @@ sitemap_changefreq: weekly
 
 <div class="columns">
   <div class="column">
-    <div class="notification is-white has-text-black" style="border-left: 4px solid goldenrod;">
+    <div class="notification is-white has-text-black" style="border-left: 4px solid var(--benefactor-circle-color);">
       <p><b>Technical & Project Support:</b><br>
       <a href="mailto:set-outlooksignatures@explicitconsulting.at" class="has-text-weight-bold">set-outlooksignatures@explicitconsulting.at</a></p>
     </div>
   </div>
   <div class="column">
-    <div class="notification is-white has-text-black" style="border-left: 4px solid goldenrod;">
+    <div class="notification is-white has-text-black" style="border-left: 4px solid var(--benefactor-circle-color);">
       <p><b>General & Billing Inquiries:</b><br>
       <a href="mailto:welcome@explicitconsulting.at" class="has-text-weight-bold">welcome@explicitconsulting.at</a></p>
     </div>

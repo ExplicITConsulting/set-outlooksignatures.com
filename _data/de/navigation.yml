@@ -5,7 +5,7 @@
 - name: ""
 - name: ""
 - name: |
-    <span style="font-weight: bold; color: goldenrod;">Benefactor Circle Add-on</span>
+    <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span>
   link: /benefactorcircle
 - name: Demo & Free Trial
   link: /benefactorcircle#demo
