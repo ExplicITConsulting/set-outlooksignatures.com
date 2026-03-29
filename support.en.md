@@ -18,7 +18,7 @@ sitemap_changefreq: weekly
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc; display: flex; flex-direction: column;">
-      <h3 class="title is-4">🌐 Community Support</h3>
+      <h3>🌐 Community Support</h3>
       <p>Ideal for general questions regarding the free and open-source core engine.</p>
       <hr>
       <div class="content flex-grow-1">
@@ -36,7 +36,7 @@ sitemap_changefreq: weekly
 
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid goldenrod; box-shadow: 0 4px 15px rgba(218, 165, 32, 0.2); display: flex; flex-direction: column;">
-      <h3 class="title is-4">💎 Professional Support</h3>
+      <h3>💎 Professional Support</h3>
       <p>Direct access to the developers for mission-critical environments.</p>
       <hr>
       <div class="content flex-grow-1">
