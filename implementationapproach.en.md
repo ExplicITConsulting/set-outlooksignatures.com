@@ -11,11 +11,11 @@ redirect_from:
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
-<!-- omit in toc -->
-## What organizational approach do we recommend for implementing the software? {#recommended-approach}
-For most companies, the <a href="/quickstart">Quickstart guide</a> is the most efficient way to get started. With it, you deploy your first signatures within minutes and create a robust starting point for your own customizations.
+## Implementation Blueprint: Organizational Strategy for Complex Environments {#recommended-approach}
 
-You prefer to be guided through organizational topics, the setup and customization process instead of working through the documentation yourself? ExplicIT Consulting offers <a href="/support#professional-support">implementation support from A to Z</a>.
+This document serves as a **strategic blueprint** from a customer's perspective, specifically tailored for **highly regulated and high-security environments**. While small-scale deployments may benefit from the [Quickstart guide](/quickstart), large-scale organizations require a framework that prioritizes **formal processes, traceability, and strict governance** alongside deployment efficiency.
+
+For organizations seeking external expertise to facilitate this process, **ExplicIT Consulting** provides professional [implementation support](/support#professional-support) based on the principles outlined in this blueprint.
 
 <p>
   <div class="buttons">
@@ -24,15 +24,17 @@ You prefer to be guided through organizational topics, the setup and customizati
   </div>
 </p>
 
-This document is intended for organizations that need to ensure formal processes and traceability in addition to efficiency. It contains a structured example of how implementation can be approached in environments where traceability and compliance are essential, such as in high-security or highly regulated environments. It shows how rapid implementation can be combined with strict governance requirements.
+The strategies detailed here are derived from **actual corporate experience** in deploying solutions across multi-tenant environments containing tens of thousands of mailboxes. This document is intended for **internal IT teams, CISOs, and business departments** who must ensure that email signature management meets rigorous compliance standards.
 
-The content is based on practical experience with deploying the solution in multi-tenant environments with tens of thousands of mailboxes. The document is intended for IT service providers, internal IT teams, and business departments responsible for email and client systems.
+The blueprint covers the entire organizational lifecycle:
+* **Consultation & Planning**: Aligning technical capabilities with legal and marketing requirements.
+* **Testing & Pilot Phases**: Ensuring stability in complex, multi-forest AD and M365 landscapes.
+* **Rollout & Operations**: Integrating with existing security structures like AppLocker and signed script policies.
+* **Governance & Training**: Establishing clear ownership between IT and Corporate Communications.
 
-The topics covered span the entire lifecycle, from initial consultation and planning to testing, pilot phases, and rollout. This is followed by operation, administration, support, and training. The goal is to provide a practical reference that helps companies implement the solution effectively while meeting strict requirements.
+> **Note:** This is a high-level organizational overview focusing on governance and process. For technical configuration details and script parameters, please refer to the [detailed documentation](/details).
 
-This is not a detailed guide for technicians, but rather an organizational overview. Technical details can be found [here](/details).
-
-
+ 
 ## Task {#task}
 As a multinational corporation, we are required to find a flexible solution for the automatic management of signatures. The requirements for this come from several areas:
 - The marketing department wants to ensure that corporate identity and corporate design are also maintained in emails. Signatures should be able to be updated quickly by the marketing department itself so that campaigns can be started and ended at short notice. This should not require any technical knowledge.
@@ -579,7 +581,8 @@ Creating and maintaining templates is the responsibility of the client.
 - If AppLocker or similar solutions are used, the software is already digitally signed  
 - Network access requirements:  
   - Ports 389 (LDAP) and 3268 (Global Catalog), both TCP and UDP, must be open between the client and all domain controllers. If not, signature-related information and variables cannot be retrieved. The software checks access on each run  
-  - For access to the SMB file share containing software components, the following ports are required: 137 UDP, 138 UDP, 139 TCP, 445 TCP (see <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)">this MicrosoftrePoint document libraries, port 443 TCP is required. Firewalls and proxies must not block WebDAV HTTP extensions  
+  - For access to the SMB file share containing software components, the following ports are required: 137 UDP, 138 UDP, 139 TCP, 445 TCP (see <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)">this Microsoft article</a> for details).
+  - For access to Microsoft SharePoint document libraries, port 443 TCP is required. Firewalls and proxies must not block WebDAV HTTP extensions  
 
 **Server**
 - An SMB file share where the software and its components are stored. All users must have read access to this share and its contents  
