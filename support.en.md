@@ -1,10 +1,10 @@
 ---
 layout: "page"
-lang: "de"
-locale: "de"
-title: "Support und Kontakt"
-subtitle: "Expertise für Ihren Erfolg"
-description: "Set-OutlookSignatures Support: Kostenlose Hilfe über GitHub oder erstklassiger professioneller Support, Expertenberatung, Workshops und Unterstützung bei der Implementierung."
+lang: "en"
+locale: "en"
+title: "Get support and contact us"
+subtitle: "Expertise to help you succeed"
+description: "Get Set-OutlookSignatures support: Free GitHub help or premium professional support, plus expert guidance, workshops, and implementation assistance."
 permalink: "/support"
 redirect_from:
   - "/support/"
