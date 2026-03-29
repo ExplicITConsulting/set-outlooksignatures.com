@@ -5,7 +5,7 @@ locale: "de"
 title: "Support und Kontakt"
 subtitle: "Expertise für Ihren Erfolg"
 description: "Set-OutlookSignatures Support: Kostenlose Hilfe über GitHub oder erstklassiger professioneller Support, Expertenberatung, Workshops und Unterstützung bei der Implementierung."
-permalink: "/de/support"
+permalink: "/support"
 redirect_from:
   - "/de/support/"
   - "/de/contact"
