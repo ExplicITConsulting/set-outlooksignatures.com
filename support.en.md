@@ -26,7 +26,7 @@ sitemap_changefreq: weekly
         <li><b>Collaborate:</b> Share ideas or suggest features with the global community.</li>
       </ul>
       <div class="mt-auto">
-        <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures" class="button is-link is-outlined is-fullwidth">Visit Set-OutlookSignatures on GitHub</a>
+        <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures" class="button is-link is-fullwidth">Visit Set-OutlookSignatures on GitHub</a>
       </div>
     </div>
   </div>
