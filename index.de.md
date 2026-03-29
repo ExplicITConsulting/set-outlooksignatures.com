@@ -26,7 +26,7 @@ sitemap_changefreq: weekly
 
 <div class="columns is-multiline mb-6">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         📣
         <div style="hyphens: manual;">
@@ -37,7 +37,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         🛠️
         <div style="hyphens: manual;">
@@ -48,7 +48,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         🛡️
         <div style="hyphens: manual;">

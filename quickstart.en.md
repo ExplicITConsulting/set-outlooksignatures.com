@@ -19,7 +19,7 @@ Download and unzip the archive to a local folder:
 ## Step 2: One-time Preparations {#step-2}
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>💻</span>
         <div>
@@ -31,7 +31,7 @@ Download and unzip the archive to a local folder:
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🛡️</span>
         <div>
@@ -45,7 +45,7 @@ Download and unzip the archive to a local folder:
 </div>
 <div class="columns is-multiline">
   <div class="column is-full">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>☁️</span>
         <div>
@@ -65,7 +65,7 @@ Download and unzip the archive to a local folder:
 ## Step 3: Run Set-OutlookSignatures {#step-3}
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>☁️</span>
         <div>
@@ -80,7 +80,7 @@ Download and unzip the archive to a local folder:
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🏢</span>
         <div>
@@ -102,7 +102,7 @@ Download and unzip the archive to a local folder:
 </ul>
 <div class="columns is-multiline">
   <div class="column is-full">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>💡</span>
         <div>
@@ -119,7 +119,7 @@ Download and unzip the archive to a local folder:
 ## Customize {#customize}
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🎨</span>
         <div>
@@ -136,7 +136,7 @@ Download and unzip the archive to a local folder:
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🚀</span>
         <div>

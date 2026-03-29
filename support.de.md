@@ -17,7 +17,7 @@ sitemap_changefreq: weekly
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc; display: flex; flex-direction: column;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue; display: flex; flex-direction: column;">
       <h3 class="has-text-black">🌐 Community Support</h3>
       <p>Ideal für allgemeine Fragen rund um die kostenlose Open-Source-Engine.</p>
       <ul>

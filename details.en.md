@@ -128,7 +128,7 @@ SimulateAndDeploy mode has no access to end user devices and therefore treats Ou
 With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> active, both modes per default also make signatures available in Outlook for the web, as roaming signatures (cloud only), for use with the Outlook add-in, and in a draft email:
 <div class="columns is-multiline is-centered">
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>🌐</span>
                 <div>
@@ -140,7 +140,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
         </div>
     </div>
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>☁️</span>
                 <div>
@@ -152,7 +152,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
         </div>
     </div>
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>🧩</span>
                 <div>
@@ -164,7 +164,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
         </div>
     </div>
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>📝</span>
                 <div>
@@ -176,7 +176,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
         </div>
     </div>
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>📂</span>
                 <div>

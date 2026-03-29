@@ -32,7 +32,7 @@ Thanks to its forward-thinking architecture, designed not around a commercial bu
 With Set-OutlookSignatures and the optional <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, signatures and out-of-office replies can be:
 <div class="columns is-multiline">
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>📝</span>
                 <div>
@@ -48,7 +48,7 @@ With Set-OutlookSignatures and the optional <a href="/benefactorcircle"><span st
         </div>
     </div>
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>🚀</span>
                 <div>
@@ -63,7 +63,7 @@ With Set-OutlookSignatures and the optional <a href="/benefactorcircle"><span st
         </div>
     </div>
     <div class="column is-full">
-        <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #48c774;">
+        <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Green;">
             <div style="display: flex; align-items: flex-start; gap: 0.75em;">
                 <span>🛡️</span>
                 <div>

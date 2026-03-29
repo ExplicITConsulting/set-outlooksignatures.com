@@ -75,7 +75,7 @@ sitemap_changefreq: weekly
 <p>For advanced usage, a taskpane is available to manually choose signatures, preview items, or override settings for debug logging.</p>
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <div style="display: flex; gap: 0.75em;">
         🌐
         <div>
@@ -89,7 +89,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <div style="display: flex; gap: 0.75em;">
         💻
         <div>
@@ -103,7 +103,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <div style="display: flex; gap: 0.75em;">
         🏢
         <div>
@@ -118,7 +118,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <div style="display: flex; gap: 0.75em;">
         📱
         <div>
@@ -140,14 +140,14 @@ sitemap_changefreq: weekly
 <p>The add-in works for all Microsoft-supported Outlook clients. It runs in the security context of the user and supports delegate scenarios.</p>
 <div class="columns">
   <div class="column">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <p><b>Standard Mailboxes</b></p>
       <p>The add-in accesses signature information that the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> has written to the user's mailbox in <a href="/details#step-1-create-signatures-and-out-of-office-replies">client or SimulateAndDeploy mode</a>.</p>
       <p>Shared mailboxes added with the credential of the logged-on user are directly supported.</p>
     </div>
   </div>
   <div class="column">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <p><b>Shared Mailboxes</b></p>
       <p>For shared mailboxes added with separate credentials, the add-in must be installed for that specific identity to access its signature data.</p>
     </div>
@@ -173,19 +173,19 @@ sitemap_changefreq: weekly
 <p>For manual configuration, the following <b>Delegated Graph API</b> permissions must be granted with admin consent:</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green;">
       <p><b>Mail.Read</b></p>
       <p>Allows reading emails in the current user's mailbox. Required due to Microsoft restrictions accessing roaming signatures.</p>
     </div>
   </div>
   <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green;">
       <p><b>GroupMember.Read.All</b></p>
       <p>Allows the app to check group memberships to verify license groups for the signed-in user.</p>
     </div>
   </div>
   <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #48c774;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green;">
       <p><b>User.Read.All</b></p>
       <p>Required to retrieve the User Principal Name (UPN) for a given SMTP email address.</p>
     </div>
@@ -200,7 +200,7 @@ sitemap_changefreq: weekly
 <p>The add-in is configured via the <code>run_before_deployment.ps1</code> script:</p>
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <p><b>General Settings</b></p>
       <ul>
         <li><b>Versioning:</b> Sync the add-in version with Set-OutlookSignatures.</li>
@@ -211,7 +211,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <p><b>Automation Rules</b></p>
       <ul>
         <li><b>Platform Targeting:</b> Choose which hosts add signatures automatically.</li>
@@ -221,7 +221,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #ffdd57;">
+<div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Yellow;">
   <p><b>Custom Rules Logic</b></p>
   <p class="mb-0">Modify <code>CustomRulesCode.js</code> to influence signature selection at runtime based on:</p>
   <div class="columns mt-0">
@@ -249,7 +249,7 @@ sitemap_changefreq: weekly
 <p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. This is because Outlook caches the code of the add-in and reads the manifest file only once.</p>
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <p><b>Individual Installation (Sideloading)</b></p>
       <p>Ideal for test scenarios. Sideloading of add-ins may have been disabled by your administrators.</p>
       <ul>
@@ -260,7 +260,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #ffdd57;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <p><b>Enterprise Deployment (Production)</b></p>
       <p>Ideal for mass deployment. These methods are usually too slow (up to 72 hours) for test scenarios.</p>
       <ul>
@@ -270,7 +270,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<div class="box has-background-white-bis has-text-black mt-5" style="height: 100%; border-top: 4px solid #3273dc;">
+<div class="box has-background-white-bis has-text-black mt-5" style="height: 100%; border-top: 4px solid Blue;">
   <p><b>Clear the Outlook add-in cache</b></p>
   <p>When testing, Outlook sometimes takes too long updating its cache. Follow these official Microsoft instructions to manually clear it:</p>
   <div class="columns mt-0">
@@ -293,7 +293,7 @@ sitemap_changefreq: weekly
 
 
 <h2 id="remarks">Remarks</h2>
-<div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+<div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
   <p><b>General Platform Notes</b></p>
   <ul>
     <li><b>Roaming Signatures:</b> Microsoft currently limits add-in access to roaming signatures. The add-in uses data from the last run of Set-OutlookSignatures (v4.14.0+) as a workaround until this is resolved.</li>
@@ -305,7 +305,7 @@ sitemap_changefreq: weekly
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <p><b>Outlook for iOS & Android</b></p>
       <ul>
         <li>Only Exchange Online mailboxes are supported.</li>
@@ -315,7 +315,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <p><b>Outlook for Mac</b></p>
       <ul>
         <li><b>New Outlook for Mac:</b> Fully supported and recommended.</li>
@@ -324,7 +324,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <p><b>Outlook for the web (On-Prem)</b></p>
       <ul>
         <li>Launch events are not supported by the on-premises APIs; signature selection must be done via the taskpane.</li>
@@ -333,7 +333,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid #3273dc;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <p><b>Classic Outlook for Windows</b></p>
       <ul>
         <li>Launch events can be unstable for on-prem mailboxes; use the taskpane if signatures do not appear automatically.</li>
