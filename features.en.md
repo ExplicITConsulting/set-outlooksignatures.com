@@ -63,7 +63,7 @@ With Set-OutlookSignatures and the optional <a href="/benefactorcircle"><span st
         </div>
     </div>
     <div class="column is-full">
-        <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Green;">
+        <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid LimeGreen;">
             <div style="display: flex; align-items: flex-start; gap: 0.75em;">
                 <span>🛡️</span>
                 <div>

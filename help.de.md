@@ -15,7 +15,7 @@ sitemap_changefreq: weekly
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green; display: flex; flex-direction: column;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen; display: flex; flex-direction: column;">
       <h3 class="has-text-black">🚀 Strategie & Planung</h3>
       <p>Best Practices für große Rollouts.</p>
       <p>Erfahren Sie, wie Sie die Implementierung in komplexen Umgebungen mit zehntausenden Postfächern organisatorisch meistern.</p>
@@ -24,7 +24,7 @@ sitemap_changefreq: weekly
   </div>
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green; display: flex; flex-direction: column;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen; display: flex; flex-direction: column;">
       <h3 class="has-text-black">⚙️ Technik & Details</h3>
       <p>Anforderungen und Funktionsweise.</p>
       <p>Ein tiefer Einblick in die Voraussetzungen, die Sync-Engine und den täglichen Betrieb der Software.</p>

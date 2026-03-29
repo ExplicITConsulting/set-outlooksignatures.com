@@ -48,7 +48,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         🛡️
         <div style="hyphens: manual;">

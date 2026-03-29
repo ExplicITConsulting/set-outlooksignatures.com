@@ -173,19 +173,19 @@ sitemap_changefreq: weekly
 <p>For manual configuration, the following <b>Delegated Graph API</b> permissions must be granted with admin consent:</p>
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
       <p><b>Mail.Read</b></p>
       <p>Allows reading emails in the current user's mailbox. Required due to Microsoft restrictions accessing roaming signatures.</p>
     </div>
   </div>
   <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
       <p><b>GroupMember.Read.All</b></p>
       <p>Allows the app to check group memberships to verify license groups for the signed-in user.</p>
     </div>
   </div>
   <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
       <p><b>User.Read.All</b></p>
       <p>Required to retrieve the User Principal Name (UPN) for a given SMTP email address.</p>
     </div>

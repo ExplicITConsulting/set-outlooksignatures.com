@@ -15,7 +15,7 @@ sitemap_changefreq: weekly
 
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green; display: flex; flex-direction: column;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen; display: flex; flex-direction: column;">
       <h3 class="has-text-black">🚀 Strategy & Planning</h3>
       <p>Best practices for large-scale rollouts.</p>
       <p>Learn how to manage an organizational implementation in complex environments with tens of thousands of mailboxes.</p>
@@ -24,7 +24,7 @@ sitemap_changefreq: weekly
   </div>
 
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green; display: flex; flex-direction: column;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen; display: flex; flex-direction: column;">
       <h3 class="has-text-black">⚙️ Technical Specs</h3>
       <p>Requirements, usage, and inner workings.</p>
       <p>Deep dive into what the tool needs, how the sync engine works, and how to operate it daily.</p>

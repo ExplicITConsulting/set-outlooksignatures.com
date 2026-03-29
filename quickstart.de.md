@@ -31,7 +31,7 @@ Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner:
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🛡️</span>
         <div>
@@ -136,7 +136,7 @@ Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner:
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Green;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🚀</span>
         <div>
