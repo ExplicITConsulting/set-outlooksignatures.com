@@ -16,22 +16,20 @@ redirect-from:
   - "/schedule-demo/"
 ---
 <style>
-  /* 1. Page & Section Setup */
   html, body {
     overflow-y: auto !important;
     height: auto !important;
     margin: 0;
   }
 
-  #booking-section {
+  #form-section {
     position: relative;
     width: 100%;
-    min-height: 100vh; /* Keeps the footer from jumping up immediately */
+    min-height: 100vh;
     background-color: #ffffff;
   }
 
-  /* 2. The Oversized Iframe */
-  #booking-iframe {
+  #form-iframe {
     width: 100%;
     height: 400vh; /* 4 screen lengths */
     border: none;
@@ -41,7 +39,6 @@ redirect-from:
     transition: opacity 0.5s ease;
   }
 
-  /* 3. The Loading Spinner */
   #loading-overlay {
     position: absolute;
     top: 100px; /* Position it where the form usually starts */
@@ -55,7 +52,7 @@ redirect-from:
 
   .spinner {
     border: 4px solid #f3f3f3;
-    border-top: 4px solid #0078d4; /* Outlook Blue */
+    border-top: 4px solid #0078d4;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -70,18 +67,19 @@ redirect-from:
 
   /* Mobile Adjustment */
   @media (max-width: 768px) {
-    #booking-iframe { height: 600vh; }
+    #form-iframe { height: 600vh; }
   }
 </style>
 
-<section id="booking-section">
+<section id="form-section">
   <div id="loading-overlay">
     <div class="spinner"></div>
-    <p>Loading booking calendar...</p>
+    <p>Loading form…</p>
+    <p>Lade Formular…</p>
   </div>
 
   <iframe 
-    id="booking-iframe"
+    id="form-iframe"
     src="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at/" 
     scrolling="no"
     onload="hideLoader()">
@@ -93,8 +91,8 @@ redirect-from:
     // 1. Hide the spinner
     document.getElementById('loading-overlay').style.display = 'none';
     // 2. Fade in the iframe
-    document.getElementById('booking-iframe').style.opacity = '1';
+    document.getElementById('form-iframe').style.opacity = '1';
     // 3. Ensure user starts at the top of the form
-    window.scrollTo(0, document.getElementById('booking-section').offsetTop);
+    window.scrollTo(0, document.getElementById('form-section').offsetTop);
   }
 </script>
