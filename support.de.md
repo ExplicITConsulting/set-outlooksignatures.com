@@ -7,13 +7,13 @@ subtitle: "Expertise für Ihren Erfolg"
 description: "Set-OutlookSignatures Support: Kostenlose Hilfe über GitHub oder erstklassiger professioneller Support, Expertenberatung, Workshops und Unterstützung bei der Implementierung."
 permalink: "/support"
 redirect_from:
-  - "/de/support/"
-  - "/de/contact"
-  - "/de/contact/"
+  - "/support/"
+  - "/contact"
+  - "/contact/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
-<p>Egal, ob Sie unseren Open-Source-Kern erkunden oder mit dem <a href="/de/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> skalieren – wir bieten die passende Unterstützung, damit Ihr E-Mail-Branding nahtlos und sicher funktioniert.</p>
+<p>Egal, ob Sie unseren Open-Source-Kern erkunden oder mit dem <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> skalieren – wir bieten die passende Unterstützung, damit Ihr E-Mail-Branding nahtlos und sicher funktioniert.</p>
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
@@ -42,7 +42,7 @@ sitemap_changefreq: weekly
         <li><b>Direktkontakt:</b> Persönliche Unterstützung via <a href="mailto:set-outlooksignatures@explicitconsulting.at">E-Mail</a> oder Microsoft Teams.</li>
       </ul>
       <div class="mt-auto">
-        <a href="/de/ordersupport" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">
+        <a href="/ordersupport" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">
             Professionellen Support bestellen
         </a>
       </div>
@@ -73,7 +73,7 @@ sitemap_changefreq: weekly
 </div>
 
 <div class="box" style="background-color: rgba(255,255,255,0.05); border-left: 5px solid var(--benefactor-circle-color); border-right: 5px solid var(--benefactor-circle-color);">
-  <p><strong>Hinweis zum Benefactor Circle:</strong> Während der Kern kostenlos bleibt, erfordert ein Projekt dieser Größe Ressourcen. Einnahmen aus dem <a href="/de/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> und professionellem Support sichern die langfristige Entwicklung und Qualität für alle.</p>
+  <p><strong>Hinweis zum Benefactor Circle:</strong> Während der Kern kostenlos bleibt, erfordert ein Projekt dieser Größe Ressourcen. Einnahmen aus dem <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> und professionellem Support sichern die langfristige Entwicklung und Qualität für alle.</p>
 </div>
 
 
