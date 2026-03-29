@@ -13,7 +13,7 @@ redirect_from:
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
-<p class="has-text-centered mb-6">Whether you are exploring our open-source core or scaling with the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, we provide the right level of assistance to ensure your email branding is seamless and secure.</p>
+<p>Whether you are exploring our open-source core or scaling with the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, we provide the right level of assistance to ensure your email branding is seamless and secure.</p>
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
