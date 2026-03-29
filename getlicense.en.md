@@ -5,6 +5,10 @@ locale: "en"
 title: "Get a trial version or a license quote"
 subtitle: "You are ready for the next step"
 description: "Get a trial version or a license quote. You are ready for the next step."
+hero_link: "https://forms.cloud.microsoft/r/sgKrkkd0Eb?lang=en"
+hero_link_text: "<span><b>Open form in new tab</b></span>"
+hero_link_style: |
+   style="color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 permalink: "/getlicense"
 redirect-from:
   - "/getlicense/"
@@ -39,7 +43,7 @@ redirect-from:
   <div id="booking-container">
     <iframe 
       id="booking-iframe"
-      src="https://forms.cloud.microsoft/r/sgKrkkd0Eb?embed=true"
+      src="https://forms.cloud.microsoft/r/sgKrkkd0Eb?embed=true&lang=en"
       width="100%" 
       height="100%" 
       style="border:0; display: block;"
@@ -70,13 +74,3 @@ redirect-from:
   window.addEventListener('load', fitBookingToWindow);
   window.addEventListener('resize', fitBookingToWindow);
 </script>
-
-<noscript>
-  <a href="https://forms.cloud.microsoft/r/sgKrkkd0Eb" 
-      class="button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
-      style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
-      target="_blank">
-    <span>Get a trial version or a license quote</span>
-    <!-- <span><small>Ideal for Security, IT, and Marketing leadership</small></span> -->
-  </a>
-</noscript>
