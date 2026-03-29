@@ -31,7 +31,7 @@ redirect-from:
 
   #form-iframe {
     width: 100%;
-    height: 400vh; /* 4 screen lengths */
+    height: 500vh; /* 5 screen lengths */
     border: none;
     display: block;
     overflow: hidden;
