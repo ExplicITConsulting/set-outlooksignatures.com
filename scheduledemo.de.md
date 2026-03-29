@@ -5,6 +5,10 @@ locale: "de"
 title: "Interaktive Demo vereinbaren"
 subtitle: "Ideal für Führungskräfte in den Bereichen Security, IT und Marketing"
 description: "Geführte Tour. Vereinbaren Sie einen Termin mit unserem Team, um zu sehen, wie sich die Lösung an Ihre spezifische Organisationsstruktur, Ihr technisches Setup und Ihre Compliance-Anforderungen anpasst."
+hero_link: "https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at"
+hero_link_text: "<span><b>Fomular in eigenem Tab öffnen</b></span>"
+hero_link_style: |
+   style="color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 permalink: "/scheduledemo"
 redirect-from:
   - "/scheduledemo/"
@@ -66,13 +70,3 @@ redirect-from:
   window.addEventListener('load', fitBookingToWindow);
   window.addEventListener('resize', fitBookingToWindow);
 </script>
-
-<noscript>
-  <a href="https://outlook.office.com/book/demo.set-outlooksignatures@explicitconsulting.at" 
-      class="button is-link is-normal is-hovered has-text-black has-text-weight-bold is-flex-direction-column" 
-      style="height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;" 
-      target="_blank">
-    <span>Interaktive Demo vereinbaren</span>
-    <span><small>Ideal für Führungskräfte in den Bereichen Security, IT und Marketing</small></span>
-  </a>
-</noscript>
