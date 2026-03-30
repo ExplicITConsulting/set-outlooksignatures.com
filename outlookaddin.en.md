@@ -277,8 +277,8 @@ sitemap_changefreq: weekly
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <ul>
         <li><b>Web:</b> Hard Refresh the browser window.</li>
-        <li><b>Classic Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-for-windows">Official instructions from Microsoft</a>.</li>
-        <li><b>New Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-for-windows">Official instructions from Microsoft</a>.</li>
+        <li><b>Classic Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">Official instructions from Microsoft</a>.</li>
+        <li><b>New Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">Official instructions from Microsoft</a>.</li>
       </ul>
     </div>
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
