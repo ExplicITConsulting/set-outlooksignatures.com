@@ -164,7 +164,7 @@ sitemap_changefreq: weekly
 </ul>
 <p><a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website">Static website hosting in Azure Storage</a> is an uncomplicated, affordable and fast alternative. It includes a Microsoft-issued certificate, even in the free tier.</p>
 
-<h3>Entra ID app</h3>
+<h3 id="entra-id-app">Entra ID app</h3>
 <p>When mailboxes are hosted in Exchange Online, the add-in needs an Entra ID app to access the mailbox. Creating a separate app is strongly recommended.</p>
 <div class="highlighter-rouge">
   <pre><code>powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "OutlookAddIn" -AppName "Set-OutlookSignatures Outlook add-in" -OutlookAddInUrl "https://yourhost.yourdomain.com"</code></pre>
@@ -277,8 +277,8 @@ sitemap_changefreq: weekly
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <ul>
         <li><b>Web:</b> Hard Refresh the browser window.</li>
-        <li><b>Classic Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">Official instructions from Microsoft</a>.</li>
-        <li><b>New Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">Official instructions from Microsoft</a>.</li>
+        <li><b>Classic Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-for-windows">Official instructions from Microsoft</a>.</li>
+        <li><b>New Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-for-windows">Official instructions from Microsoft</a>.</li>
       </ul>
     </div>
     <div class="column is-half-desktop is-half-tablet is-full-mobile">

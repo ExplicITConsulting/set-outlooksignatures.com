@@ -235,7 +235,7 @@ See `.\sample code\CreateDesktopIcon.ps1` for a code example. Don't forget to ad
 ## What is the recommended approach for implementing the software?
 The [Quickstart guide](/quickstart) is a good overall starting point for beginners.
 
-For the organizational aspects around Set-OutlookSignatures, read the "[Implementation Approach](/implementationsapproach)" document. The content is based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes.
+For the organizational aspects around Set-OutlookSignatures, read the "[Implementation Approach](/implementationapproach)" document. The content is based on real life experiences implementing the software in multi-client environments with a five-digit number of mailboxes.
 
 It contains proven procedures and recommendations for product managers, architects, operations managers, account managers and email and client administrators. It is suited for service providers as well as for clients.
 

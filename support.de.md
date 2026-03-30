@@ -33,7 +33,7 @@ sitemap_changefreq: weekly
 
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid var(--benefactor-circle-color); box-shadow: 0 4px 15px rgba(218, 165, 32, 0.2); display: flex; flex-direction: column;">
-      <h3 class="has-text-black">💎 Professioneller Support</h3>
+      <h3 id="professional-support" class="has-text-black">💎 Professioneller Support</h3>
       <p>Direkter Zugang zu den Entwicklern für geschäftskritische Umgebungen.</p>
       <ul>
         <li><b>Expertenberatung:</b> Individuelle Workshops, Implementierung und Vorlagenerstellung.</li>
