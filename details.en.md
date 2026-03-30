@@ -6,13 +6,13 @@ title: "Technical details, requirements and usage"
 subtitle: "What it needs, how it works and how to use it"
 description: "Discover Set-OutlookSignatures technical details: system requirements, supported platforms, template formats, group logic, variables, and simulation mode."
 hero_link: /quickstart
-hero_link_text: "**Quickstart guide**"
+hero_link_text: "Quickstart guide"
 hero_link_style:
 hero_link2: /faq
-hero_link2_text: "**FAQ**"
+hero_link2_text: "FAQ"
 hero_link2_style:
 hero_link3: "/parameters"
-hero_link3_text: "**Parameters: **Full configuration reference"
+hero_link3_text: "Parameters: Full configuration reference"
 hero_link3_style:
 permalink: "/details"
 redirect_from:
