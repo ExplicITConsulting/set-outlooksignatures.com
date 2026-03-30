@@ -101,6 +101,8 @@ Set-OutlookSignatures comes with **client mode**, the <a href="/benefactorcircle
 | **Disadvantages** | End users must log on to a device (Linux, Windows, macOS), not just to Outlook. The primary device of each user must be managed and run Windows, Linux or macOS. Software or at least configuration must be deployed to many decentral systems. | Uses one or more central systems, which need appropriate resources. Runs within the security context of a service account requiring (temporary) full access to all user mailboxes. Is typically run less frequent, usually once a day or less often. Can only see and influence the configuration of Outlook for the web, reducing the feature set to what is possible without local Outlook state. |
 | **Recommended for** | Users logging on to a primary device that is managed and runs Linux, Windows or macOS. | Scenarios where you cannot or do not want to run Set-OutlookSignatures in the context of the logged-on user (shared devices, Outlook for the web only, mobile-only, unmanaged BYOD, etc.). |
 
+<p>&nbsp;</p>
+
 With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, both modes can set **out-of-office replies** for internal and external recipients and also deploy signatures for mailboxes (and other Exchange recipient objects) the user can act as, even if they are not added as full mailboxes in Outlook (see the [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile) parameter for details).
 
 ### Step 2: Make signatures available
@@ -108,11 +110,11 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
 - **SimulateAndDeploy** has no access to end user devices and therefore treats **Outlook for the web** as the “local Outlook”.
 
 With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> active, both modes can additionally make signatures available via multiple channels:
-- 🌐 **Outlook for the web**: On-prem supports one signature (new email preferred). Cloud combines with roaming signatures.
-- ☁️ **Roaming Signatures**: Exchange Online feature; stores multiple signatures in the mailbox.
-- 🧩 **Outlook Add-in**: For Android, iOS, and unmanaged BYOD devices; automatic signature selection based on sender and rules.
-- 📝 **Draft Email**: Universal compatibility via copy-paste; stores all signatures in HTML and plain text in Drafts.
-- 📂 **Documents Folder**: Exports signatures to a local path (e.g. OneDrive-synced) for easy access in non-Outlook clients.
+- **Outlook for the web:** On-prem supports one signature (new email preferred). Cloud combines with roaming signatures.
+- **Roaming Signatures;:** Exchange Online feature; stores multiple signatures in the mailbox.
+- **Outlook Add-in:** For Android, iOS, and unmanaged BYOD devices; automatic signature selection based on sender and rules.
+- **Draft Email:** Universal compatibility via copy-paste; stores all signatures in HTML and plain text in Drafts.
+- **Documents Folder:** Exports signatures to a local path (e.g. OneDrive-synced) for easy access in non-Outlook clients.
 
 
 ## Requirements and usage
