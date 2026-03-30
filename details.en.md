@@ -21,39 +21,54 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
-      <p class="has-text-weight-bold">IT</p>
-      <ul>
-        <li><a href="#architecture-considerations">Architecture considerations</a></li>
-        <li><a href="#requirements-and-usage">Requirements and usage</a></li>
-        <li><a href="#group-membership">Group membership</a></li>
-        <li><a href="#run-set-outlooksignatures-while-outlook-is-running">Run Set-OutlookSignatures while Outlook is running</a></li>
-        <li><a href="#hybrid-and-cloud-only-support">Hybrid and cloud-only support</a></li>
-      </ul>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
+            <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+                <span>⚙️</span>
+                <div>
+                    <p><b>IT</b></p>
+                    <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+                        <li class="mb-2"><a href="#architecture-considerations">Architecture considerations</a></li>
+                        <li class="mb-2"><a href="#requirements-and-usage">Requirements and usage</a></li>
+                        <li class="mb-2"><a href="#group-membership">Group membership</a></li>
+                        <li class="mb-2"><a href="#run-set-outlooksignatures-while-outlook-is-running">Run Set-OutlookSignatures while Outlook is running</a></li>
+                        <li class="mb-2"><a href="#hybrid-and-cloud-only-support">Hybrid and cloud-only support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
-      <p class="has-text-weight-bold">Security</p>
-      <ul>
-        <li><a href="#security-considerations">Security considerations</a></li>
-      </ul>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+        <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid LimeGreen;">
+            <div style="display: flex; align-items: flex-start; gap: 0.75em;">
+                <span>🛡️</span>
+                <div>
+                    <p><b>Security</b></p>
+                    <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+                        <li class="mb-0"><a href="#security-considerations">Security considerations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
-      <p class="has-text-weight-bold">Marketing & Usage</p>
-      <ul>
-        <li><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></li>
-        <li><a href="#template-tags-and-ini-files">Template tags and INI files</a></li>
-        <li><a href="#signature-and-oof-application-order">Signature and OOF application order</a></li>
-        <li><a href="#replacement-variables">Replacement variables</a></li>
-        <li><a href="#outlook-for-the-web">Outlook for the web</a></li>
-        <li><a href="#simulation-mode">Simulation mode</a></li>
-      </ul>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
+            <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+                <span>🚀</span>
+                <div>
+                    <p><b>Marketing & Usage</b></p>
+                    <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+                        <li class="mb-2"><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></li>
+                        <li class="mb-2"><a href="#template-tags-and-ini-files">Template tags and INI files</a></li>
+                        <li class="mb-2"><a href="#signature-and-oof-application-order">Signature and OOF application order</a></li>
+                        <li class="mb-2"><a href="#replacement-variables">Replacement variables</a></li>
+                        <li class="mb-2"><a href="#outlook-for-the-web">Outlook for the web</a></li>
+                        <li class="mb-2"><a href="#simulation-mode">Simulation mode</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 **Why parameters are in a separate document:** There are many parameters, default values are chosen wisely, and custom values usually do not change over the years. See [Parameters](/parameters) for details.
