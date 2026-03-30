@@ -3,43 +3,57 @@ layout: default
 ---
 <div class="content">
     <h1 class="title is-2">
-        {% if page.type == 'tag' %}
-            {% if active_lang == 'de' %}Beiträge mit dem Tag{% else %}Posts tagged with{% endif %} "{{ page.title }}"
-        {% elsif page.type == 'category' %}
-            {% if active_lang == 'de' %}Kategorie{% else %}Category{% endif %}: {{ page.title }}
-        {% elsif page.date %}
-            {%- comment -%} Determine URL depth to format ISO date correctly {%- endcomment -%}
-            {% assign url_parts = page.url | split: '/' | compact %}
-            {% assign first_part = url_parts | first %}
-            {% if site.languages contains first_part %}{% assign offset = 1 %}{% else %}{% assign offset = 0 %}{% endif %}
-            {% assign depth = url_parts.size | minus: offset %}
-
-            {% if active_lang == 'de' %}Archiv{% else %}Archive{% endif %}: 
-            {% if depth == 2 %} 
-                {{ page.date | date: '%Y' }}
-            {% elsif depth == 3 %}
-                {{ page.date | date: '%Y-%m' }}
-            {% else %}
-                {{ page.date | date: '%Y-%m-%d' }}
-            {% endif %}
-        {% else %}
-            {% if active_lang == 'de' %}Archiv{% else %}Archive{% endif %}: {{ page.title }}
-        {% endif %}
+        {%- if page.type == 'tag' -%}
+            {%- comment -%} Handles: /blog/tag/new-release/ {%- endcomment -%}
+            {% if site.active_lang == 'de' %}Beiträge mit dem Tag{% else %}Posts tagged with{% endif %} "{{ page.title }}"
+            
+        {%- elsif page.type == 'category' -%}
+            {% if site.active_lang == 'de' %}Kategorie{% else %}Category{% endif %}: {{ page.title }}
+            
+        {%- elsif page.date -%}
+            {%- comment -%} 
+                Handles Date Archives: Year, Month, and Day.
+                Uses page.type from jekyll-archives to solve the "-01" issue.
+            {%- endcomment -%}
+            {% if site.active_lang == 'de' %}Archiv{% else %}Archive{% endif %}: 
+            {%- case page.type -%}
+                {%- when 'year' -%}
+                    {{ page.date | date: '%Y' }}
+                {%- when 'month' -%}
+                    {{ page.date | date: '%Y-%m' }}
+                {%- when 'day' -%}
+                    {{ page.date | date: '%Y-%m-%d' }}
+                {%- else -%}
+                    {{ page.date | date: '%Y-%m-%d' }}
+            {%- endcase -%}
+            
+        {%- else -%}
+            {%- comment -%} Fallback for generic archive titles {%- endcomment -%}
+            {{ page.title }}
+        {%- endif -%}
     </h1>
     <hr>
 
     <div class="columns is-multiline">
-        {%- comment -%} Filter posts strictly by current language node {%- endcomment -%}
-        {% assign filtered_posts = page.posts | where: "lang", active_lang %}
+        {%- comment -%} 
+            1. jekyll-archives populates 'page.posts' for the specific archive.
+            2. Polyglot ensures 'site.posts' only contains current language posts.
+            3. Using 'default' ensures we have a fallback if one variable is nil.
+        {%- endcomment -%}
+        {% assign archive_posts = page.posts | default: site.posts %}
         
-        {% for post in filtered_posts %}
+        {% for post in archive_posts %}
             <div class="column is-12">
+                {%- comment -%} 
+                    Pass the post to your include. 
+                    Ensure post-card.html uses {{ post.url | relative_url }}
+                {%- endcomment -%}
                 {% include post-card.html post=post %}
             </div>
         {% else %}
             <div class="column is-12">
                 <div class="notification is-light">
-                    {% if active_lang == 'de' %}
+                    {% if site.active_lang == 'de' %}
                         Keine Beiträge für dieses Archiv gefunden.
                     {% else %}
                         No posts found for this archive.
