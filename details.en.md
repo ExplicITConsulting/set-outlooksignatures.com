@@ -30,9 +30,6 @@ sitemap_changefreq: weekly
                     <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
                         <li class="mb-2"><a href="#architecture-considerations">Architecture considerations</a></li>
                         <li class="mb-2"><a href="#requirements-and-usage">Requirements and usage</a></li>
-                        <li class="mb-2"><a href="#group-membership">Group membership</a></li>
-                        <li class="mb-2"><a href="#run-set-outlooksignatures-while-outlook-is-running">Run Set-OutlookSignatures while Outlook is running</a></li>
-                        <li class="mb-2"><a href="#hybrid-and-cloud-only-support">Hybrid and cloud-only support</a></li>
                     </ul>
                 </div>
             </div>
@@ -49,7 +46,6 @@ sitemap_changefreq: weekly
                         <li class="mb-2"><a href="#template-tags-and-ini-files">Template tags and INI files</a></li>
                         <li class="mb-2"><a href="#signature-and-oof-application-order">Signature and OOF application order</a></li>
                         <li class="mb-2"><a href="#replacement-variables">Replacement variables</a></li>
-                        <li class="mb-2"><a href="#outlook-for-the-web">Outlook for the web</a></li>
                         <li class="mb-2"><a href="#simulation-mode">Simulation mode</a></li>
                     </ul>
                 </div>

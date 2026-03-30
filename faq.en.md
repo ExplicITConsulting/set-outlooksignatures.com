@@ -1314,7 +1314,7 @@ Let's assume we want all mailboxes in or below the OU 'example.com/OU A/OU B' to
    $ReplaceHash['$CurrentMailboxManager-IsIn-OUA-OUB$'] = $ADPropsCurrentMailboxManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
    ```
 
-2. Now use the new replacement variable [in your INI file](/details#allowed-tags) to assign a template to mailboxes in a specific OU:
+2. Now use the new replacement variable [in your INI file](/details#allowed-tags-common-cases) to assign a template to mailboxes in a specific OU:
 
    ```
    [some template.docx]
