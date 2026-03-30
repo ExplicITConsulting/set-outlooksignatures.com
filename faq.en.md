@@ -27,8 +27,8 @@ This FAQ highlights common topics and clarifies typical points of confusion.
 | General | [Changelog](#where-can-i-find-the-changelog) \| [Contributing](#how-can-i-contribute-propose-a-new-feature-or-file-a-bug) \| [OOF vs OOO](#why-is-out-of-office-abbreviated-oof-and-not-ooo) \| [Naming Convention](#isnt-a-plural-noun-in-the-software-name-against-powershell-best-practices) \| [Roadmap](#is-there-a-roadmap-for-future-versions) \| [Outlook Stationery](#can-i-centrally-manage-and-deploy-outook-stationery-with-this-script) \| [Roaming Sync Issues](#roaming-signatures-in-classic-outlook-for-windows-look-different) \| [OOF Activation Logic](#why-is-the-out-of-office-assistant-not-activated-automatically) \| [Disable Tagline](#how-to-disable-the-tagline-in-signatures) \| [Implementation Approach](#what-is-the-recommended-approach-for-implementing-the-software) |
 | Templates & Design | [DOCX vs HTML](#should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates) \| [Removing Blank Lines](#how-to-avoid-blank-lines-when-replacement-variables-return-an-empty-string) \| [Text Color Issues](#why-does-the-text-color-of-my-signature-change-sometimes) \| [Image Scaling/Black Background](#images-in-signatures-have-a-different-size-than-in-templates-or-a-black-background) \| [Rotating Banners](#how-do-i-alternate-banners-and-other-images-in-signatures) \| [Underlined Spaces](#empty-lines-contain-an-underlined-space-character) \| [Text Case](#can-i-change-the-case-uppercaselowercase-of-replacement-variables-in-templates) \| [Calendar/Booking Links](#how-to-add-a-calender-link) \| [Different signatures per mailbox](#different-default-signatures-for-different-mailboxes) \| [OU-based templates](#assign-templates-based-on-organizational-units-ous) |
 | Deployment & Infrastructure | [Why no GUI?](#why-is-no-admin-or-user-gui-available) \| [Folder Structure](#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files) \| [Custom Config Files](#what-is-the-recommended-approach-for-custom-configuration-files) \| [AD Connection Check](#how-can-i-start-the-software-only-when-there-is-a-connection-to-active-directory) \| [CLI & Scheduled Tasks](#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task) \| [Hidden/Invisible Mode](#start-set-outlooksignatures-in-hiddeninvisible-mode) \| [Shortcut with Parameters](#how-to-create-a-shortcut-to-the-software-with-parameters) \| [Intune Deployment](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune) \| [Roaming Signatures](#what-about-the-roaming-signatures-feature-in-exchange-online) \| [AD vs Entra Groups](#when-should-i-refer-on-prem-groups-and-when-entra-id-groups) \| [No Outlook Profile](#what-if-a-user-has-no-outlook-profile-or-is-prohibited-from-starting-outlook) \| [Outlook not installed](#what-if-outlook-is-not-installed-at-all) |
-| Advanced Logic & Automation | [Recreation Logic](#why-are-signatures-and-out-of-office-replies-recreated-even-when-their-content-has-not-changed) \| [Deploy Once](#how-to-deploy-a-signature-only-once) \| [Send As Permissions](#how-to-deploy-signatures-for-send-as-send-on-behalf-etc) \| [Dynamic Groups (On-prem)](#why-is-dynamic-group-membership-not-considered-on-premises) \| [Parallel Instances](#can-multiple-script-instances-run-in-parallel) |
-| Troubleshooting & Logs | [Logging](#how-can-i-log-the-software-output) \| [Verbose Output](#how-can-i-get-more-script-output-for-troubleshooting) \| [Word Security Warnings](#the-software-hangs-at-htmrtf-export-word-shows-a-security-warning) \| [Performance/Speed](#why-does-set-outlooksignatures-run-slower-sometimes) |
+| Advanced Logic & Automation | [Recreation Logic](#why-are-signatures-and-out-of-office-replies-recreated-even-when-their-content-has-not-changed) \| [Deploy Once](#how-to-deploy-a-signature-only-once) \| [Send As Permissions](#how-to-deploy-signatures-for-send-as-send-on-behalf-etc) \| [Dynamic Groups (On-prem)](#why-is-dynamic-group-membership-not-considered-on-premises) \| [Parallel Instances](#can-multiple-script-instances-run-in-parallel) \| [Run while Outlook is running](#run-set-outlooksignatures-while-outlook-is-running) |
+| Troubleshooting & Logs | [Logging](#how-can-i-log-the-software-output) \| [Verbose Output](#how-can-i-get-more-script-output-for-troubleshooting) \| [Word Security Warnings](#the-software-hangs-at-htmrtf-export-word-shows-a-security-warning) \| [Performance/Speed](#why-does-set-outlooksignatures-run-slower-sometimes) \| Authentication Prompts(#why-am-i-prompted-to-authenticate-repeatedly) \| [Token Cache Location](#where-is-the-graph-token-cached-and-how-do-i-clear-it) \| [Auth Methods](#which-graph-authentication-methods-are-used) |
 | Security & Compliance | [Mailbox Identification](#how-is-the-account-of-a-mailbox-identified) \| [Personal Mailbox ID](#how-is-the-personal-mailbox-of-the-currently-logged-in-user-identified) \| [Network Ports](#which-ports-are-required) \| [Multi-tenant Access](#does-it-support-cross-tenant-access-and-multitenant-organizations) \| [Purview & Labels](#how-to-make-set-outlooksignatures-work-with-microsoft-purview-information-protection) \| [Locking Signatures](#keep-users-from-adding-editing-and-removing-signatures) \| [EWS Deprecation](#what-about-microsoft-turning-off-exchange-web-services-for-exchange-online) |
 | Learn from the code | [AD Group Enumeration](#active-directory-group-membership-enumeration-without-compromises) \| [Graph Auth Logic](#microsoft-graph-authentication-and-re-authentication) \| [Cross-Tenant Access](#graph-cross-tenant-and-multitenant-organization-access) \| [DSC Deployment](#deploy-and-run-software-using-desired-state-configuration-dsc) \| [Parallel Execution](#parallel-code-execution) \| [Desktop Icons](#create-desktop-icons-cross-platform) \| [Entra App Config](#create-and-configure-apps-in-entra-id-grant-admin-consent) \| [AD Trust Tests](#test-active-directory-trusts) \| [AD Connection Check](#start-only-if-working-active-directory-connection-is-available) \| [System Sleep](#prohibit-system-sleep) \| [Exit Signals](#detect-exit-signals) \| [Phone Formatting](#format-phone-numbers) \| [Postal Formatting](#format-postal-addresses) \| [Open Source Treasures](#bringing-hidden-open-source-treasures-to-light) \| [Encoding Conversion](#detect-and-convert-encodings) \| [DN Handling](#handling-of-distinguished-names) |
 
@@ -157,6 +157,8 @@ To use only Entra ID, you set the `GraphOnly` parameter to `true`.
 There is no direct way to disable the use of Entra ID. When you do not have Entra ID but run Set-OutlookSignatures when there is (yet) no connection to Active Directory, this can lead to users complaining about pop-up windows regarding authentication because no Entra ID app has been set-up yet. This can also be required when Set-OutlookSignatures is run every time a VPN connection is established, but the client firewall is too slow opening the required ports.
 
 With the code from `.\sample code\Start-IfADAvailable.ps1`, you can make sure that Set-OutlookSignatures is only run when a connection to Active Directory is available.
+
+If you see repeated sign-in prompts, see: [Why am I prompted to authenticate repeatedly?](#why-am-i-prompted-to-authenticate-repeatedly)
 
 
 ## Can multiple script instances run in parallel?
@@ -901,7 +903,9 @@ Yes, Set-OutlookSignatures and the Benefactor Circle add-on support cross-tenant
 
 Cross-tenant access is not limited to what Microsoft calls [Multitenant Organization](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/overview), it can be established between any two tenants allowing cross-tenant access for the other.
 
-See the description of the parameter `GraphClientID` for details.
+See the description of the parameter [GraphClientID](/parameters#graphclientid) for details.
+
+Token caching and clearing: [Where is the Graph token cached and how do I clear it?](#where-is-the-graph-token-cached-and-how-do-i-clear-it)
 
 
 ## Can I change the case (uppercase/lowercase) of replacement variables in templates?
@@ -1318,3 +1322,80 @@ Let's assume we want all mailboxes in or below the OU 'example.com/OU A/OU B' to
    ```
 
 You now have a replacement variable specific template assignment. This has an impact on the priority of the template, see the '[Signature and OOF application order](/details#signature-and-oof-application-order)' chapter for details.
+
+
+## Why am I prompted to authenticate repeatedly?
+Set-OutlookSignatures prefers silent authentication methods (no UI). If silent authentication fails, an interactive prompt is shown.
+
+If you are prompted repeatedly, typical causes are:
+1. Conditional Access / MFA policy requires interaction
+   Your Entra ID policies may require interactive authentication more often than expected for this scenario.
+2. The software is not running in the user context
+   A common configuration mistake is running Set-OutlookSignatures as SYSTEM (for example via some device management methods). Graph authentication and secure caching are intended for execution in the signed-in user context.
+3. Token cache is deleted between runs
+   If the token cache file (Windows fallback) or keyring/keychain entry (Linux/macOS) is removed between runs, the next execution must authenticate again.
+4. You are switching accounts/tenants frequently
+   Cross-tenant scenarios can require multiple tokens depending on configuration.
+
+How to troubleshoot quickly
+- Run Set-OutlookSignatures with `-verbose` and inspect the authentication output.
+- Review the sign-in logs and Conditional Access evaluation in Entra ID for the affected user.
+
+
+## Where is the Graph token cached and how do I clear it?
+Set-OutlookSignatures uses MSAL (Microsoft Authentication Library) for Graph authentication. After successful authentication, a refresh token is cached to enable silent re-authentication on later runs.
+
+Depending on OS and available secure storage, the token is stored as follows.
+> Note: The software output explicitly tells you which storage mechanism is used on the current machine and how to remove it.
+
+
+### Windows
+- Preferred: Encrypted cache file using DPAPI:
+  - %LOCALAPPDATA%\Set-OutlookSignatures\MSAL.PS\MSAL.PS.msalcache.bin3
+- Fallback: If DPAPI is not available, the cache file may be unencrypted.
+
+To clear: delete the cache file shown in the software output.
+
+### Linux
+- Preferred: Default keyring entry:
+  - Set-OutlookSignatures Microsoft Graph token via MSAL.Net
+- Fallback: Cache file:
+  - LocalApplicationData path shown in output (same filename as above)
+
+To clear: remove the keyring entry (or delete the cache file if used).
+
+### macOS
+- Preferred: Default keychain entry:
+  - Set-OutlookSignatures Microsoft Graph token via MSAL.Net
+- Fallback: Cache file:
+  - LocalApplicationData path shown in output (same filename as above)
+
+To clear: remove the keychain entry or use:
+```
+security delete-generic-password "Set-OutlookSignatures Microsoft Graph token via MSAL.Net"
+```
+
+
+## Which Graph authentication methods are used?
+Set-OutlookSignatures prefers silent authentication methods first and falls back to interactive methods only when required.
+
+The order is:
+1. Silent via Integrated Windows Authentication (without login hint)
+2. Silent via Integrated Windows Authentication (with login hint)
+3. Silent via Authentication Broker (without login hint)
+4. Silent via Authentication Broker (with login hint)
+5. Silent via refresh token
+6. Interactive via Authentication Broker
+7. Interactive via browser
+
+The exact path depends on OS, account type, Entra ID configuration, and policy requirements.
+
+
+## Run Set-OutlookSignatures while Outlook is running
+Outlook and Set-OutlookSignatures can run simultaneously:
+- On Windows, Outlook is never started or stopped by Set-OutlookSignatures.
+- On macOS, Outlook may be started in the background if required for script access.
+
+New and changed signatures can be used instantly.
+
+Changing which signature is configured as default for new mails or replies/forwards may require restarting Outlook.
