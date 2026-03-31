@@ -315,46 +315,47 @@ Replacement variables are case-insensitive placeholders in templates that are re
 > **Tip for template admins:** After running the [Quickstart](/quickstart), inspect the generated sample signature **“Test all default replacement variables”**. It provides an overview of what ships by default (placeholders, formatting behavior, typical examples) without having to read long lists.
 
 <style>
-  /* 1. HIGH-VISIBILITY SCROLLBARS (CHROME, EDGE, SAFARI) */
+  /* 1. CHROME, EDGE, SAFARI STYLING */
   #top-scroll-wrapper::-webkit-scrollbar,
   #bottom-mirror-wrapper::-webkit-scrollbar,
   #content-scroll-wrapper::-webkit-scrollbar {
-    height: 16px; /* Thick and easy to grab */
+    height: 16px; 
     display: block;
   }
-
   #top-scroll-wrapper::-webkit-scrollbar-track,
-  #bottom-mirror-wrapper::-webkit-scrollbar-track,
-  #content-scroll-wrapper::-webkit-scrollbar-track {
-    background: #eeeeee; /* Light grey track */
+  #bottom-mirror-wrapper::-webkit-scrollbar-track {
+    background: #eeeeee;
   }
-
   #top-scroll-wrapper::-webkit-scrollbar-thumb,
-  #bottom-mirror-wrapper::-webkit-scrollbar-thumb,
-  #content-scroll-wrapper::-webkit-scrollbar-thumb {
-    background: #3273dc; /* Bulma Blue - Very visible */
-    border: 3px solid #eeeeee; /* Gap effect */
+  #bottom-mirror-wrapper::-webkit-scrollbar-thumb {
+    background: #3273dc; 
+    border: 3px solid #eeeeee;
     border-radius: 10px;
   }
 
-  /* 2. FIREFOX SPECIFIC VISIBILITY */
-  @supports (-moz-appearance: none) {
-    #top-scroll-wrapper, 
-    #bottom-mirror-wrapper,
-    #content-scroll-wrapper {
-      scrollbar-width: auto !important; /* Thicker desktop style */
-      scrollbar-color: #3273dc #eeeeee !important; /* Blue thumb, grey track */
-    }
+  /* 2. FIREFOX ADVANCED STYLING (From your link) */
+  /* This allows Firefox to use the same pixel-perfect logic as Chrome */
+  #top-scroll-wrapper::-moz-scrollbar,
+  #bottom-mirror-wrapper::-moz-scrollbar,
+  #content-scroll-wrapper::-moz-scrollbar {
+    height: 16px;
+  }
+  #top-scroll-wrapper::-moz-scrollbar-track,
+  #bottom-mirror-wrapper::-moz-scrollbar-track {
+    background: #eeeeee;
+  }
+  #top-scroll-wrapper::-moz-scrollbar-thumb,
+  #bottom-mirror-wrapper::-moz-scrollbar-thumb {
+    background-color: #3273dc;
+    border-radius: 10px;
+    border: 3px solid #eeeeee;
   }
 
-  /* 3. LAYOUT OVERRIDES */
-  #top-scroll-wrapper, 
-  #bottom-mirror-wrapper {
-    overflow-x: scroll !important; /* Always show the track */
-    overflow-y: hidden;
-    width: 100%;
-    z-index: 20;
-    background: #ffffff;
+  /* Fallback for very old Firefox versions */
+  #top-scroll-wrapper, #bottom-mirror-wrapper {
+    scrollbar-width: auto;
+    scrollbar-color: #3273dc #eeeeee;
+    overflow-x: scroll !important;
   }
 </style>
 
@@ -363,7 +364,7 @@ Replacement variables are case-insensitive placeholders in templates that are re
     <strong>View a complete example of the default replacement variables</strong>
   </summary>
 
-  <div id="top-scroll-wrapper" style="position: sticky; top: 0; border-bottom: 1px solid #dbdbdb;">
+  <div id="top-scroll-wrapper" style="position: sticky; top: 0; border-bottom: 1px solid #dbdbdb; z-index: 20; background: white;">
     <div id="top-scroll-spacer" style="height: 1px;"></div>
   </div>
 
@@ -377,7 +378,7 @@ Replacement variables are case-insensitive placeholders in templates that are re
     </iframe>
   </div>
 
-  <div id="bottom-mirror-wrapper" style="position: sticky; bottom: 0; border-top: 1px solid #dbdbdb;">
+  <div id="bottom-mirror-wrapper" style="position: sticky; bottom: 0; border-top: 1px solid #dbdbdb; z-index: 20; background: white;">
     <div id="bottom-scroll-spacer" style="height: 1px;"></div>
   </div>
 </details>
@@ -389,8 +390,6 @@ function initIframe(iframe) {
   globalIframeRef = iframe;
   const doc = iframe.contentWindow.document;
   
-  // CRITICAL: Stop the content from wrapping inside the iframe
-  // This prevents the "multiple screens high" bug.
   const style = doc.createElement('style');
   style.textContent = `
     body { 
@@ -398,7 +397,6 @@ function initIframe(iframe) {
       padding: 20px; 
       width: max-content !important; 
       white-space: nowrap !important; 
-      overflow: hidden;
     }
   `;
   doc.head.appendChild(style);
@@ -407,12 +405,8 @@ function initIframe(iframe) {
   const mid = document.getElementById('content-scroll-wrapper');
   const bot = document.getElementById('bottom-mirror-wrapper');
 
-  // Multi-way Sync Logic
   const sync = (el) => {
-    const leftPos = el.scrollLeft;
-    top.scrollLeft = leftPos;
-    mid.scrollLeft = leftPos;
-    bot.scrollLeft = leftPos;
+    top.scrollLeft = mid.scrollLeft = bot.scrollLeft = el.scrollLeft;
   };
 
   top.onscroll = () => sync(top);
@@ -424,18 +418,11 @@ function syncOnOpen() {
   if (!globalIframeRef) return;
   const iframe = globalIframeRef;
   const doc = iframe.contentWindow.document;
-  
-  // Force a height reset to measure accurately
-  iframe.style.height = '0px';
-
-  // Measure internal dimensions
+  iframe.style.height = '0px'; 
   const w = doc.documentElement.scrollWidth;
   const h = doc.documentElement.scrollHeight;
-
-  // Apply fixed dimensions to force scrollbars to appear
   iframe.style.width = w + 'px';
   iframe.style.height = h + 'px';
-  
   document.getElementById('top-scroll-spacer').style.width = w + 'px';
   document.getElementById('bottom-scroll-spacer').style.width = w + 'px';
 }
