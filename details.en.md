@@ -314,51 +314,58 @@ Replacement variables are case-insensitive placeholders in templates that are re
 
 > **Tip for template admins:** After running the [Quickstart](/quickstart), inspect the generated sample signature **“Test all default replacement variables”**. It provides an overview of what ships by default (placeholders, formatting behavior, typical examples) without having to read long lists.
 
-<div id="top-scroll-wrapper" style="overflow-x: auto; overflow-y: hidden; width: 100%;">
-  <div id="top-scroll-spacer" style="height: 1px;"></div>
-</div>
+<details class="p-0" style="border: 1px solid #dbdbdb; border-radius: 4px;">
+  <summary class="has-text-weight-bold" style="cursor: pointer; padding: 1rem;" onclick="setTimeout(syncOnOpen, 10)">
+    <strong>View a complete example of the default replacement variables</strong>
+  </summary>
 
-<div id="content-scroll-wrapper" style="overflow-x: auto; width: 100%;">
-  <iframe
-    id="my-iframe"
-    src="/assets/html/test all default replacement variables.html"
-    style="border: none; display: block; max-width: none !important;" 
-    onload="syncIframe(this)"
-    scrolling="no">
-  </iframe>
-</div>
+  <div id="top-scroll-wrapper" style="overflow-x: auto; overflow-y: hidden; width: 100%; border-top: 1px solid #eee;">
+    <div id="top-scroll-spacer" style="height: 1px;"></div>
+  </div>
+
+  <div id="content-scroll-wrapper" style="overflow-x: auto; width: 100%;">
+    <iframe
+      id="my-iframe"
+      src="/assets/html/test all default replacement variables.html"
+      style="border: none; display: block; max-width: none !important; width: 100%;" 
+      onload="initIframe(this)"
+      scrolling="no">
+    </iframe>
+  </div>
+</details>
 
 <script>
-function syncIframe(iframe) {
+let globalIframeRef = null;
+
+function initIframe(iframe) {
+  globalIframeRef = iframe;
+  // Inject style into iframe to prevent text wrapping (the cause of the height issue)
   const doc = iframe.contentWindow.document;
-  
-  // 1. Internal CSS fix: Stop the content from wrapping
   const style = doc.createElement('style');
-  style.textContent = "body { margin: 0; padding: 0; width: max-content !important; white-space: nowrap; }";
+  style.textContent = "body { margin: 0; padding: 10px; width: max-content !important; white-space: nowrap; }";
   doc.head.appendChild(style);
-
-  const update = () => {
-    // 2. Measure internal content
-    const w = doc.documentElement.scrollWidth;
-    const h = doc.documentElement.scrollHeight;
-
-    // 3. Force the iframe to be the "real" size of its content
-    iframe.style.width = w + 'px';
-    iframe.style.height = h + 'px';
-    
-    // 4. Match the top scrollbar width
-    document.getElementById('top-scroll-spacer').style.width = w + 'px';
-  };
-
-  update();
-  setTimeout(update, 200); // Catch any late layout shifts
-
-  // 5. Link the two scrollbars
+  
+  // Link scrollbars
   const top = document.getElementById('top-scroll-wrapper');
   const bottom = document.getElementById('content-scroll-wrapper');
-
   top.onscroll = () => bottom.scrollLeft = top.scrollLeft;
   bottom.onscroll = () => top.scrollLeft = bottom.scrollLeft;
+}
+
+function syncOnOpen() {
+  if (!globalIframeRef) return;
+  
+  const iframe = globalIframeRef;
+  const doc = iframe.contentWindow.document;
+  
+  // Measure
+  const w = doc.documentElement.scrollWidth;
+  const h = doc.documentElement.scrollHeight;
+
+  // Apply dimensions
+  iframe.style.width = w + 'px';
+  iframe.style.height = h + 'px';
+  document.getElementById('top-scroll-spacer').style.width = w + 'px';
 }
 </script>
 
