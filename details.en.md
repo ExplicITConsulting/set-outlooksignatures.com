@@ -314,40 +314,62 @@ Replacement variables are case-insensitive placeholders in templates that are re
 
 > **Tip for template admins:** After running the [Quickstart](/quickstart), inspect the generated sample signature **“Test all default replacement variables”**. It provides an overview of what ships by default (placeholders, formatting behavior, typical examples) without having to read long lists.
 
-function adjustIframe(iframe) {
-  const doc = iframe.contentWindow.document;
-  
-  // Force the iframe body to not wrap and clear margins
-  doc.body.style.margin = '0';
-  doc.body.style.padding = '0';
-  doc.body.style.overflow = 'hidden'; // Prevents internal vertical scrollbars
+<details class="box p-0">
+  <summary class="has-text-weight-bold" style="cursor: pointer; padding: 10px;">
+    <strong>View a complete example of the default replacement variables</strong>
+  </summary>
 
-  const updateDimensions = () => {
-    // 1. Reset height to 0 briefly to get an accurate content measurement
-    // This prevents the iframe from staying "stretched" from a previous calc
-    iframe.style.height = '0px'; 
+  <div id="top-scroll-wrapper" style="overflow-x: auto; overflow-y: hidden; height: 18px; border-top: 1px solid #ddd;">
+    <div id="top-scroll-spacer" style="height: 1px;"></div>
+  </div>
+
+  <div id="content-scroll-wrapper" style="overflow-x: auto; width: 100%;">
+    <iframe
+      id="my-iframe"
+      src="/assets/html/test all default replacement variables.html"
+      style="width: 100%; border: none; display: block;" 
+      onload="adjustIframe(this)"
+      scrolling="no">
+    </iframe>
+  </div>
+</details>
+
+<script>
+  function adjustIframe(iframe) {
+    const doc = iframe.contentWindow.document;
     
-    // 2. Measure the internal document height
-    const fullHeight = doc.documentElement.offsetHeight; 
-    const fullWidth = doc.documentElement.scrollWidth;
+    // Force the iframe body to not wrap and clear margins
+    doc.body.style.margin = '0';
+    doc.body.style.padding = '0';
+    doc.body.style.overflow = 'hidden'; // Prevents internal vertical scrollbars
 
-    // 3. Apply the new dimensions
-    iframe.style.height = fullHeight + 'px';
-    iframe.style.width = fullWidth + 'px';
-    
-    // 4. Update the top dummy scrollbar
-    document.getElementById('top-scroll-spacer').style.width = fullWidth + 'px';
-  };
+    const updateDimensions = () => {
+      // 1. Reset height to 0 briefly to get an accurate content measurement
+      // This prevents the iframe from staying "stretched" from a previous calc
+      iframe.style.height = '0px'; 
+      
+      // 2. Measure the internal document height
+      const fullHeight = doc.documentElement.offsetHeight; 
+      const fullWidth = doc.documentElement.scrollWidth;
 
-  // Initial run
-  updateDimensions();
+      // 3. Apply the new dimensions
+      iframe.style.height = fullHeight + 'px';
+      iframe.style.width = fullWidth + 'px';
+      
+      // 4. Update the top dummy scrollbar
+      document.getElementById('top-scroll-spacer').style.width = fullWidth + 'px';
+    };
 
-  // Scroll Sync Logic
-  const topWrapper = document.getElementById('top-scroll-wrapper');
-  const bottomWrapper = document.getElementById('content-scroll-wrapper');
-  topWrapper.onscroll = () => bottomWrapper.scrollLeft = topWrapper.scrollLeft;
-  bottomWrapper.onscroll = () => topWrapper.scrollLeft = bottomWrapper.scrollLeft;
-}
+    // Initial run
+    updateDimensions();
+
+    // Scroll Sync Logic
+    const topWrapper = document.getElementById('top-scroll-wrapper');
+    const bottomWrapper = document.getElementById('content-scroll-wrapper');
+    topWrapper.onscroll = () => bottomWrapper.scrollLeft = topWrapper.scrollLeft;
+    bottomWrapper.onscroll = () => topWrapper.scrollLeft = bottomWrapper.scrollLeft;
+  }
+</script>
 
 
 ## Simulation mode
