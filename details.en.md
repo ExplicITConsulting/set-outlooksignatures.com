@@ -314,12 +314,20 @@ Replacement variables are case-insensitive placeholders in templates that are re
 
 > **Tip for template admins:** After running the [Quickstart](/quickstart), inspect the generated sample signature **“Test all default replacement variables”**. It provides an overview of what ships by default (placeholders, formatting behavior, typical examples) without having to read long lists.
 
-<details class="p-0" style="border: 1px solid #dbdbdb; border-radius: 4px;">
+<details class="p-0" style="border: 1px solid #dbdbdb; border-radius: 4px; position: relative;">
   <summary class="has-text-weight-bold" style="cursor: pointer; padding: 1rem;" onclick="setTimeout(syncOnOpen, 10)">
     <strong>View a complete example of the default replacement variables</strong>
   </summary>
 
-  <div id="top-scroll-wrapper" style="overflow-x: auto; overflow-y: hidden; width: 100%; border-top: 1px solid #eee;">
+  <div id="top-scroll-wrapper" style="
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    width: 100%; 
+    position: sticky; 
+    top: 0; 
+    z-index: 10; 
+    background: white; 
+    border-bottom: 1px solid #eee;">
     <div id="top-scroll-spacer" style="height: 1px;"></div>
   </div>
 
@@ -332,6 +340,18 @@ Replacement variables are case-insensitive placeholders in templates that are re
       scrolling="no">
     </iframe>
   </div>
+
+  <div id="bottom-mirror-wrapper" style="
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    width: 100%; 
+    position: sticky; 
+    bottom: 0; 
+    z-index: 10; 
+    background: white; 
+    border-top: 1px solid #eee;">
+    <div id="bottom-scroll-spacer" style="height: 1px;"></div>
+  </div>
 </details>
 
 <script>
@@ -339,33 +359,42 @@ let globalIframeRef = null;
 
 function initIframe(iframe) {
   globalIframeRef = iframe;
-  // Inject style into iframe to prevent text wrapping (the cause of the height issue)
   const doc = iframe.contentWindow.document;
+  
+  // Prevent wrapping inside iframe
   const style = doc.createElement('style');
-  style.textContent = "body { margin: 0; padding: 10px; width: max-content !important; white-space: nowrap; }";
+  style.textContent = "body { margin: 0; padding: 15px; width: max-content !important; white-space: nowrap; }";
   doc.head.appendChild(style);
   
-  // Link scrollbars
+  // Select all three scroll areas
   const top = document.getElementById('top-scroll-wrapper');
-  const bottom = document.getElementById('content-scroll-wrapper');
-  top.onscroll = () => bottom.scrollLeft = top.scrollLeft;
-  bottom.onscroll = () => top.scrollLeft = bottom.scrollLeft;
+  const mid = document.getElementById('content-scroll-wrapper');
+  const bot = document.getElementById('bottom-mirror-wrapper');
+
+  // Multi-way Sync
+  const sync = (el) => {
+    top.scrollLeft = mid.scrollLeft = bot.scrollLeft = el.scrollLeft;
+  };
+
+  top.onscroll = () => sync(top);
+  mid.onscroll = () => sync(mid);
+  bot.onscroll = () => sync(bot);
 }
 
 function syncOnOpen() {
   if (!globalIframeRef) return;
-  
   const iframe = globalIframeRef;
   const doc = iframe.contentWindow.document;
   
-  // Measure
   const w = doc.documentElement.scrollWidth;
   const h = doc.documentElement.scrollHeight;
 
-  // Apply dimensions
   iframe.style.width = w + 'px';
   iframe.style.height = h + 'px';
+  
+  // Update both top and bottom spacers
   document.getElementById('top-scroll-spacer').style.width = w + 'px';
+  document.getElementById('bottom-scroll-spacer').style.width = w + 'px';
 }
 </script>
 
