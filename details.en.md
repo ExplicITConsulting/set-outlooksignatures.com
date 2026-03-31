@@ -315,58 +315,59 @@ Replacement variables are case-insensitive placeholders in templates that are re
 > **Tip for template admins:** After running the [Quickstart](/quickstart), inspect the generated sample signature **“Test all default replacement variables”**. It provides an overview of what ships by default (placeholders, formatting behavior, typical examples) without having to read long lists.
 
 <style>
-  /* FORCE SCROLLBARS TO STAY VISIBLE */
-  /* This targets Chrome, Safari, and Edge */
+  /* 1. HIGH-VISIBILITY SCROLLBARS (CHROME, EDGE, SAFARI) */
   #top-scroll-wrapper::-webkit-scrollbar,
   #bottom-mirror-wrapper::-webkit-scrollbar,
   #content-scroll-wrapper::-webkit-scrollbar {
-    height: 14px; /* Thicker bar */
+    height: 16px; /* Thick and easy to grab */
     display: block;
   }
 
   #top-scroll-wrapper::-webkit-scrollbar-track,
-  #bottom-mirror-wrapper::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Light grey track */
-    border-radius: 10px;
+  #bottom-mirror-wrapper::-webkit-scrollbar-track,
+  #content-scroll-wrapper::-webkit-scrollbar-track {
+    background: #eeeeee; /* Light grey track */
   }
 
   #top-scroll-wrapper::-webkit-scrollbar-thumb,
-  #bottom-mirror-wrapper::-webkit-scrollbar-thumb {
-    background: #4a4a4a; /* Dark grey handle - very visible */
+  #bottom-mirror-wrapper::-webkit-scrollbar-thumb,
+  #content-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #3273dc; /* Bulma Blue - Very visible */
+    border: 3px solid #eeeeee; /* Gap effect */
     border-radius: 10px;
-    border: 2px solid #f1f1f1; /* Creates a gap effect */
   }
 
-  #top-scroll-wrapper::-webkit-scrollbar-thumb:hover,
-  #bottom-mirror-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #3273dc; /* Bulma Blue on hover */
+  /* 2. FIREFOX SPECIFIC VISIBILITY */
+  @supports (-moz-appearance: none) {
+    #top-scroll-wrapper, 
+    #bottom-mirror-wrapper,
+    #content-scroll-wrapper {
+      scrollbar-width: auto !important; /* Thicker desktop style */
+      scrollbar-color: #3273dc #eeeeee !important; /* Blue thumb, grey track */
+    }
   }
 
-  /* Firefox Specific (Limited styling but stays visible) */
-  #top-scroll-wrapper, #bottom-mirror-wrapper {
-    scrollbar-width: auto;
-    scrollbar-color: #4a4a4a #f1f1f1;
+  /* 3. LAYOUT OVERRIDES */
+  #top-scroll-wrapper, 
+  #bottom-mirror-wrapper {
+    overflow-x: scroll !important; /* Always show the track */
+    overflow-y: hidden;
+    width: 100%;
+    z-index: 20;
+    background: #ffffff;
   }
 </style>
 
-<details class="p-0" style="border: 2px solid #3273dc; border-radius: 6px; position: relative; overflow: visible;">
-  <summary class="has-text-weight-bold" style="cursor: pointer; padding: 1rem; background: #fafafa;" onclick="setTimeout(syncOnOpen, 10)">
+<details class="p-0" style="border: 2px solid #dbdbdb; border-radius: 6px; position: relative; overflow: visible;">
+  <summary class="has-text-weight-bold" style="cursor: pointer; padding: 1rem; background: #fafafa;" onclick="setTimeout(syncOnOpen, 50)">
     <strong>View a complete example of the default replacement variables</strong>
   </summary>
 
-  <div id="top-scroll-wrapper" style="
-    overflow-x: scroll; 
-    overflow-y: hidden; 
-    width: 100%; 
-    position: sticky; 
-    top: 0; 
-    z-index: 20; 
-    background: #f9f9f9; 
-    border-bottom: 2px solid #dbdbdb;">
+  <div id="top-scroll-wrapper" style="position: sticky; top: 0; border-bottom: 1px solid #dbdbdb;">
     <div id="top-scroll-spacer" style="height: 1px;"></div>
   </div>
 
-  <div id="content-scroll-wrapper" style="overflow-x: auto; width: 100%; overflow-y: hidden;">
+  <div id="content-scroll-wrapper" style="overflow-x: auto; width: 100%;">
     <iframe
       id="my-iframe"
       src="/assets/html/test all default replacement variables.html"
@@ -376,15 +377,7 @@ Replacement variables are case-insensitive placeholders in templates that are re
     </iframe>
   </div>
 
-  <div id="bottom-mirror-wrapper" style="
-    overflow-x: scroll; 
-    overflow-y: hidden; 
-    width: 100%; 
-    position: sticky; 
-    bottom: 0; 
-    z-index: 20; 
-    background: #f9f9f9; 
-    border-top: 2px solid #dbdbdb;">
+  <div id="bottom-mirror-wrapper" style="position: sticky; bottom: 0; border-top: 1px solid #dbdbdb;">
     <div id="bottom-scroll-spacer" style="height: 1px;"></div>
   </div>
 </details>
@@ -396,19 +389,30 @@ function initIframe(iframe) {
   globalIframeRef = iframe;
   const doc = iframe.contentWindow.document;
   
+  // CRITICAL: Stop the content from wrapping inside the iframe
+  // This prevents the "multiple screens high" bug.
   const style = doc.createElement('style');
-  style.textContent = "body { margin: 0; padding: 20px; width: max-content !important; white-space: nowrap; font-family: sans-serif; }";
+  style.textContent = `
+    body { 
+      margin: 0; 
+      padding: 20px; 
+      width: max-content !important; 
+      white-space: nowrap !important; 
+      overflow: hidden;
+    }
+  `;
   doc.head.appendChild(style);
   
   const top = document.getElementById('top-scroll-wrapper');
   const mid = document.getElementById('content-scroll-wrapper');
   const bot = document.getElementById('bottom-mirror-wrapper');
 
+  // Multi-way Sync Logic
   const sync = (el) => {
-    const left = el.scrollLeft;
-    top.scrollLeft = left;
-    mid.scrollLeft = left;
-    bot.scrollLeft = left;
+    const leftPos = el.scrollLeft;
+    top.scrollLeft = leftPos;
+    mid.scrollLeft = leftPos;
+    bot.scrollLeft = leftPos;
   };
 
   top.onscroll = () => sync(top);
@@ -421,9 +425,14 @@ function syncOnOpen() {
   const iframe = globalIframeRef;
   const doc = iframe.contentWindow.document;
   
+  // Force a height reset to measure accurately
+  iframe.style.height = '0px';
+
+  // Measure internal dimensions
   const w = doc.documentElement.scrollWidth;
   const h = doc.documentElement.scrollHeight;
 
+  // Apply fixed dimensions to force scrollbars to appear
   iframe.style.width = w + 'px';
   iframe.style.height = h + 'px';
   
