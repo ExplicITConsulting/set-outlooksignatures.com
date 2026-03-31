@@ -315,52 +315,60 @@ Replacement variables are case-insensitive placeholders in templates that are re
 > **Tip for template admins:** After running the [Quickstart](/quickstart), inspect the generated sample signature **“Test all default replacement variables”**. It provides an overview of what ships by default (placeholders, formatting behavior, typical examples) without having to read long lists.
 
 <style>
-  /* SCROLLBAR VISIBILITY (CHROME/EDGE/FIREFOX) */
-  #top-scroll-wrapper::-webkit-scrollbar, 
-  #bottom-mirror-wrapper::-webkit-scrollbar { height: 16px; }
-  #top-scroll-wrapper::-webkit-scrollbar-thumb, 
-  #bottom-mirror-wrapper::-webkit-scrollbar-thumb { background: #3273dc; border-radius: 10px; border: 3px solid #eee; }
-  #top-scroll-wrapper::-webkit-scrollbar-track, 
-  #bottom-mirror-wrapper::-webkit-scrollbar-track { background: #eee; }
+  /* 1. HIGH-VISIBILITY SCROLLBARS (UNIVERSAL) */
+  .scroll-sync-box::-webkit-scrollbar { height: 16px; display: block; }
+  .scroll-sync-box::-webkit-scrollbar-track { background: #eee; }
+  .scroll-sync-box::-webkit-scrollbar-thumb { background: #3273dc; border-radius: 10px; border: 3px solid #eee; }
 
-  @supports (-moz-appearance: none) {
-    #top-scroll-wrapper, #bottom-mirror-wrapper { 
-      scrollbar-width: auto !important; 
-      scrollbar-color: #3273dc #eeeeee !important; 
-    }
+  /* Firefox */
+  .scroll-sync-box { 
+    scrollbar-width: auto !important; 
+    scrollbar-color: #3273dc #eeeeee !important; 
+    overflow-x: scroll !important;
   }
 
-  #top-scroll-wrapper, #bottom-mirror-wrapper {
-    overflow-x: auto; 
-    overflow-y: hidden;
+  /* 2. LAYOUT STYLES */
+  .sticky-bar {
+    position: sticky;
     width: 100%;
     z-index: 20;
     background: white;
-    display: none; /* Hidden by default, shown via JS if overflow exists */
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .top-bar { top: 0; border-bottom: 1px solid #dbdbdb; }
+  .bottom-bar { bottom: 0; border-top: 1px solid #dbdbdb; }
+  
+  /* The container that actually holds the iframe */
+  #content-scroll-wrapper {
+    overflow-x: auto;
+    width: 100%;
   }
 </style>
 
 <details class="p-0" style="border: 2px solid #dbdbdb; border-radius: 6px; position: relative;">
-  <summary class="has-text-weight-bold" style="cursor: pointer; padding: 1rem; background: #fafafa;" onclick="setTimeout(syncOnOpen, 100)">
+  <summary class="has-text-weight-bold" style="cursor: pointer; padding: 1rem; background: #fafafa;" onclick="setTimeout(syncOnOpen, 50)">
     <strong>View a complete example of the default replacement variables</strong>
   </summary>
 
-  <div id="top-scroll-wrapper" style="position: sticky; top: 0; border-bottom: 1px solid #dbdbdb;">
-    <div id="top-scroll-spacer"></div>
+  <div id="top-scroll-wrapper" class="sticky-bar top-bar scroll-sync-box">
+    <div id="top-scroll-spacer" style="height: 1px;"></div>
   </div>
 
-  <div id="content-scroll-wrapper" style="overflow-x: auto; width: 100%;">
-    <iframe
-      id="my-iframe"
-      src="/assets/html/test all default replacement variables.html"
-      style="border: none; display: block; width: 100%; min-width: 100%;" 
-      onload="initIframe(this)"
-      scrolling="no">
-    </iframe>
+  <div id="content-scroll-wrapper" class="scroll-sync-box">
+    <div id="iframe-forcer" style="width: 100%;">
+      <iframe
+        id="my-iframe"
+        src="/assets/html/test all default replacement variables.html"
+        style="border: none; display: block; width: 100%;" 
+        onload="initIframe(this)"
+        scrolling="no">
+      </iframe>
+    </div>
   </div>
 
-  <div id="bottom-mirror-wrapper" style="position: sticky; bottom: 0; border-top: 1px solid #dbdbdb;">
-    <div id="bottom-scroll-spacer"></div>
+  <div id="bottom-mirror-wrapper" class="sticky-bar bottom-bar scroll-sync-box">
+    <div id="bottom-scroll-spacer" style="height: 1px;"></div>
   </div>
 </details>
 
@@ -371,12 +379,20 @@ function initIframe(iframe) {
   globalIframeRef = iframe;
   const doc = iframe.contentWindow.document;
   
-  // 1. ALLOW text to wrap naturally
+  // Inject CSS: Allow text wrapping but allow elements to overflow
   const style = doc.createElement('style');
-  style.textContent = "body { margin: 0; padding: 20px; overflow: hidden; }";
+  style.textContent = `
+    body { 
+      margin: 0; padding: 20px; 
+      word-wrap: break-word; 
+      overflow-x: visible; 
+      display: block;
+    }
+    table, pre, code { display: inline-block; min-width: min-content; }
+  `;
   doc.head.appendChild(style);
   
-  // Sync logic
+  // Link Scrollbars
   const top = document.getElementById('top-scroll-wrapper');
   const mid = document.getElementById('content-scroll-wrapper');
   const bot = document.getElementById('bottom-mirror-wrapper');
@@ -391,32 +407,26 @@ function syncOnOpen() {
   if (!globalIframeRef) return;
   const iframe = globalIframeRef;
   const doc = iframe.contentWindow.document;
-  const win = iframe.contentWindow;
+  const forcer = document.getElementById('iframe-forcer');
 
-  // Reset to measure
-  iframe.style.width = "100%";
+  // Step 1: Reset for measurement
+  forcer.style.width = "100%";
   iframe.style.height = "0px";
 
-  // 2. Measure the content width (the widest element)
-  // We use scrollWidth of the documentElement which accounts for overflowing tables/code
-  const contentWidth = doc.documentElement.scrollWidth;
-  const contentHeight = doc.documentElement.scrollHeight;
-  const containerWidth = iframe.parentElement.offsetWidth;
+  // Step 2: Find the widest element inside (like a table)
+  // We check the scrollWidth of the document body
+  const trueContentWidth = doc.body.scrollWidth;
+  const containerWidth = document.getElementById('content-scroll-wrapper').offsetWidth;
 
-  // 3. Only trigger the double scrollbars if there IS an overflow
-  if (contentWidth > containerWidth) {
-    iframe.style.width = contentWidth + 'px';
-    document.getElementById('top-scroll-wrapper').style.display = "block";
-    document.getElementById('bottom-mirror-wrapper').style.display = "block";
-    document.getElementById('top-scroll-spacer').style.width = contentWidth + 'px';
-    document.getElementById('bottom-scroll-spacer').style.width = contentWidth + 'px';
-  } else {
-    iframe.style.width = "100%";
-    document.getElementById('top-scroll-wrapper').style.display = "none";
-    document.getElementById('bottom-mirror-wrapper').style.display = "none";
+  // Step 3: If content is wider than screen, force the container to expand
+  if (trueContentWidth > containerWidth) {
+    forcer.style.width = trueContentWidth + "px";
+    document.getElementById('top-scroll-spacer').style.width = trueContentWidth + "px";
+    document.getElementById('bottom-scroll-spacer').style.width = trueContentWidth + "px";
   }
 
-  iframe.style.height = (contentHeight + 20) + "px";
+  // Step 4: Final Height Calc
+  iframe.style.height = (doc.documentElement.scrollHeight + 20) + "px";
 }
 </script>
 
