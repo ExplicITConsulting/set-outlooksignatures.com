@@ -314,6 +314,17 @@ Replacement variables are case-insensitive placeholders in templates that are re
 
 > **Tip for template admins:** After running the [Quickstart](/quickstart), inspect the generated sample signature **“Test all default replacement variables”**. It provides an overview of what ships by default (placeholders, formatting behavior, typical examples) without having to read long lists.
 
+<details class="box p-0">
+  <summary class="has-text-weight-bold" style="cursor: pointer;">
+    <strong>View a complete example of the default replacement variables</strong>
+  </summary>
+  <iframe 
+    src="/assets/html/test all default replacement variables.html" 
+    onload="this.style.height = this.contentWindow.document.body.scrollHeight + 'px';"
+    scrolling="no">
+  </iframe>
+</details>
+
 
 ## Simulation mode
 Simulation mode is enabled when the parameter `SimulateUser` is passed.
