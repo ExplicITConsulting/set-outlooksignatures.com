@@ -22,7 +22,7 @@ sitemap_changefreq: weekly
 ---
 <div class="columns is-multiline">
     <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid LimeGreen;">
+        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
             <div style="display: flex; align-items: flex-start; gap: 0.75em;">
                 <span>🛡️</span>
                 <div>
