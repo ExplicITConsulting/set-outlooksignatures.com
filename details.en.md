@@ -314,61 +314,52 @@ Replacement variables are case-insensitive placeholders in templates that are re
 
 > **Tip for template admins:** After running the [Quickstart](/quickstart), inspect the generated sample signature **“Test all default replacement variables”**. It provides an overview of what ships by default (placeholders, formatting behavior, typical examples) without having to read long lists.
 
-<details class="box p-0">
-  <summary class="has-text-weight-bold" style="cursor: pointer; padding: 10px;">
-    <strong>View a complete example of the default replacement variables</strong>
-  </summary>
+<div id="top-scroll-wrapper" style="overflow-x: auto; overflow-y: hidden; width: 100%;">
+  <div id="top-scroll-spacer" style="height: 1px;"></div>
+</div>
 
-  <div id="top-scroll-wrapper" style="overflow-x: auto; overflow-y: hidden; height: 18px; border-top: 1px solid #ddd;">
-    <div id="top-scroll-spacer" style="height: 1px;"></div>
-  </div>
-
-  <div id="content-scroll-wrapper" style="overflow-x: auto; width: 100%;">
-    <iframe
-      id="my-iframe"
-      src="/assets/html/test all default replacement variables.html"
-      style="width: 100%; border: none; display: block;" 
-      onload="adjustIframe(this)"
-      scrolling="no">
-    </iframe>
-  </div>
-</details>
+<div id="content-scroll-wrapper" style="overflow-x: auto; width: 100%;">
+  <iframe
+    id="my-iframe"
+    src="/assets/html/test all default replacement variables.html"
+    style="border: none; display: block; max-width: none !important;" 
+    onload="syncIframe(this)"
+    scrolling="no">
+  </iframe>
+</div>
 
 <script>
-  function adjustIframe(iframe) {
-    const doc = iframe.contentWindow.document;
+function syncIframe(iframe) {
+  const doc = iframe.contentWindow.document;
+  
+  // 1. Internal CSS fix: Stop the content from wrapping
+  const style = doc.createElement('style');
+  style.textContent = "body { margin: 0; padding: 0; width: max-content !important; white-space: nowrap; }";
+  doc.head.appendChild(style);
+
+  const update = () => {
+    // 2. Measure internal content
+    const w = doc.documentElement.scrollWidth;
+    const h = doc.documentElement.scrollHeight;
+
+    // 3. Force the iframe to be the "real" size of its content
+    iframe.style.width = w + 'px';
+    iframe.style.height = h + 'px';
     
-    // Force the iframe body to not wrap and clear margins
-    doc.body.style.margin = '0';
-    doc.body.style.padding = '0';
-    doc.body.style.overflow = 'hidden'; // Prevents internal vertical scrollbars
+    // 4. Match the top scrollbar width
+    document.getElementById('top-scroll-spacer').style.width = w + 'px';
+  };
 
-    const updateDimensions = () => {
-      // 1. Reset height to 0 briefly to get an accurate content measurement
-      // This prevents the iframe from staying "stretched" from a previous calc
-      iframe.style.height = '0px'; 
-      
-      // 2. Measure the internal document height
-      const fullHeight = doc.documentElement.offsetHeight; 
-      const fullWidth = doc.documentElement.scrollWidth;
+  update();
+  setTimeout(update, 200); // Catch any late layout shifts
 
-      // 3. Apply the new dimensions
-      iframe.style.height = fullHeight + 'px';
-      iframe.style.width = fullWidth + 'px';
-      
-      // 4. Update the top dummy scrollbar
-      document.getElementById('top-scroll-spacer').style.width = fullWidth + 'px';
-    };
+  // 5. Link the two scrollbars
+  const top = document.getElementById('top-scroll-wrapper');
+  const bottom = document.getElementById('content-scroll-wrapper');
 
-    // Initial run
-    updateDimensions();
-
-    // Scroll Sync Logic
-    const topWrapper = document.getElementById('top-scroll-wrapper');
-    const bottomWrapper = document.getElementById('content-scroll-wrapper');
-    topWrapper.onscroll = () => bottomWrapper.scrollLeft = topWrapper.scrollLeft;
-    bottomWrapper.onscroll = () => topWrapper.scrollLeft = bottomWrapper.scrollLeft;
-  }
+  top.onscroll = () => bottom.scrollLeft = top.scrollLeft;
+  bottom.onscroll = () => top.scrollLeft = bottom.scrollLeft;
+}
 </script>
 
 
