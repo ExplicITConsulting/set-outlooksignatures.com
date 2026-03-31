@@ -149,6 +149,7 @@ Not all features are yet available or possible on Linux and macOS. Every paramet
 * Outlook for the web support requires the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>.
 </div>
 
+---
 
 ## Architecture considerations
 Most companies choose the same default setup:
@@ -194,6 +195,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
 * **Documents Folder:** Exports signatures to a local path (e.g. OneDrive-synced) for easy access in non-Outlook clients.
 </div>
 
+---
 
 ## Security considerations
 The security model of Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> is built on the principles of **Digital Sovereignty**, **Least Privilege**, and **Need to Know**.
@@ -227,6 +229,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 | **Cloud Only:** Graph API, application, [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall) | | ● Required | | Get values for replacement variables. UPN lookup. |
 </div>
 
+---
 
 ## Signature and OOF template file format
 
@@ -261,6 +264,7 @@ A consistent naming convention helps both template maintainers and end users. On
 
 This is a recommendation; choose what fits your organization best.
 
+---
 
 ## Replacement variables
 
@@ -382,6 +386,7 @@ function syncOnOpen() {
 }
 </script>
 
+---
 
 ## Template tags and INI files
 Template tags define properties for templates, such as:
@@ -432,6 +437,7 @@ INI-style keeps common cases simple and reviewable, which is ideal for template 
 </div>
 </div>
 
+---
 
 ## Signature and OOF application order
 Signatures are applied mailbox by mailbox.
@@ -462,6 +468,7 @@ Signatures are applied mailbox by mailbox.
 
 OOF templates are applied only if the out-of-office assistant is currently disabled. If it is active or scheduled, OOF templates are not applied.
 
+---
 
 ## Simulation mode
 
