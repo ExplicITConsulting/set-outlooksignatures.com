@@ -373,22 +373,29 @@ Replacement variables are case-insensitive placeholders in templates that are re
 </details>
 
 <script>
-let globalIframeRef = null;
-
 function initIframe(iframe) {
   globalIframeRef = iframe;
   const doc = iframe.contentWindow.document;
   
-  // Inject CSS: Allow text wrapping but allow elements to overflow
   const style = doc.createElement('style');
+  // We target text elements specifically to force them to wrap
+  // while allowing tables/pre to be as wide as they need to be.
   style.textContent = `
-    body { 
-      margin: 0; padding: 20px; 
-      word-wrap: break-word; 
-      overflow-x: visible; 
-      display: block;
+    body { margin: 0; padding: 20px; overflow-x: visible; }
+    
+    /* Force text to wrap at the viewport width, not the iframe width */
+    p, li, h1, h2, h3, h4, h5, h6 { 
+      max-width: var(--visible-width, 100vw); 
+      white-space: normal !important;
+      word-wrap: break-word;
     }
-    table, pre, code { display: inline-block; min-width: min-content; }
+
+    /* Allow these to overflow and trigger the scrollbar */
+    table, pre, code, img { 
+      display: block; 
+      width: min-content; 
+      max-width: none !important; 
+    }
   `;
   doc.head.appendChild(style);
   
@@ -408,25 +415,29 @@ function syncOnOpen() {
   const iframe = globalIframeRef;
   const doc = iframe.contentWindow.document;
   const forcer = document.getElementById('iframe-forcer');
+  const container = document.getElementById('content-scroll-wrapper');
 
-  // Step 1: Reset for measurement
+  const visibleWidth = container.offsetWidth - 40; // Subtract padding
+
+  // 1. Tell the iframe's CSS how wide the "visible" area is
+  doc.documentElement.style.setProperty('--visible-width', visibleWidth + 'px');
+
+  // 2. Reset to measure the natural overflow
   forcer.style.width = "100%";
   iframe.style.height = "0px";
 
-  // Step 2: Find the widest element inside (like a table)
-  // We check the scrollWidth of the document body
+  // 3. Find the widest element (Table/Code)
   const trueContentWidth = doc.body.scrollWidth;
-  const containerWidth = document.getElementById('content-scroll-wrapper').offsetWidth;
 
-  // Step 3: If content is wider than screen, force the container to expand
-  if (trueContentWidth > containerWidth) {
+  // 4. If something overflows, expand the forcer to show scrollbars
+  if (trueContentWidth > (visibleWidth + 40)) {
     forcer.style.width = trueContentWidth + "px";
     document.getElementById('top-scroll-spacer').style.width = trueContentWidth + "px";
     document.getElementById('bottom-scroll-spacer').style.width = trueContentWidth + "px";
   }
 
-  // Step 4: Final Height Calc
-  iframe.style.height = (doc.documentElement.scrollHeight + 20) + "px";
+  // 5. Set final height
+  iframe.style.height = (doc.documentElement.scrollHeight + 40) + "px";
 }
 </script>
 
