@@ -314,50 +314,40 @@ Replacement variables are case-insensitive placeholders in templates that are re
 
 > **Tip for template admins:** After running the [Quickstart](/quickstart), inspect the generated sample signature **“Test all default replacement variables”**. It provides an overview of what ships by default (placeholders, formatting behavior, typical examples) without having to read long lists.
 
-<details class="box p-0">
-  <summary class="has-text-weight-bold" style="cursor: pointer; padding: 10px;">
-    <strong>View a complete example of the default replacement variables</strong>
-  </summary>
-
-  <div id="top-scroll-wrapper" style="overflow-x: auto; overflow-y: hidden; height: 20px; border-top: 1px solid #ddd;">
-    <div id="top-scroll-spacer" style="height: 20px;"></div>
-  </div>
-
-  <div id="content-scroll-wrapper" style="overflow-x: auto; width: 100%;">
-    <iframe
-      id="my-iframe"
-      src="/assets/html/test all default replacement variables.html"
-      style="width: 2000px; border: none;" 
-      onload="syncWidth(this)"
-      scrolling="no">
-    </iframe>
-  </div>
-</details>
-
-<script>
-function syncWidth(iframe) {
-  // Set iframe height based on content
-  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+function adjustIframe(iframe) {
+  const doc = iframe.contentWindow.document;
   
-  // Set the width of the dummy spacer to match the iframe's width
-  const iframeWidth = iframe.contentWindow.document.body.scrollWidth;
-  iframe.style.width = iframeWidth + 'px';
-  document.getElementById('top-scroll-spacer').style.width = iframeWidth + 'px';
-  
+  // Force the iframe body to not wrap and clear margins
+  doc.body.style.margin = '0';
+  doc.body.style.padding = '0';
+  doc.body.style.overflow = 'hidden'; // Prevents internal vertical scrollbars
+
+  const updateDimensions = () => {
+    // 1. Reset height to 0 briefly to get an accurate content measurement
+    // This prevents the iframe from staying "stretched" from a previous calc
+    iframe.style.height = '0px'; 
+    
+    // 2. Measure the internal document height
+    const fullHeight = doc.documentElement.offsetHeight; 
+    const fullWidth = doc.documentElement.scrollWidth;
+
+    // 3. Apply the new dimensions
+    iframe.style.height = fullHeight + 'px';
+    iframe.style.width = fullWidth + 'px';
+    
+    // 4. Update the top dummy scrollbar
+    document.getElementById('top-scroll-spacer').style.width = fullWidth + 'px';
+  };
+
+  // Initial run
+  updateDimensions();
+
+  // Scroll Sync Logic
   const topWrapper = document.getElementById('top-scroll-wrapper');
   const bottomWrapper = document.getElementById('content-scroll-wrapper');
-
-  // Sync Top to Bottom
-  topWrapper.onscroll = function() {
-    bottomWrapper.scrollLeft = topWrapper.scrollLeft;
-  };
-
-  // Sync Bottom to Top
-  bottomWrapper.onscroll = function() {
-    topWrapper.scrollLeft = bottomWrapper.scrollLeft;
-  };
+  topWrapper.onscroll = () => bottomWrapper.scrollLeft = topWrapper.scrollLeft;
+  bottomWrapper.onscroll = () => topWrapper.scrollLeft = bottomWrapper.scrollLeft;
 }
-</script>
 
 
 ## Simulation mode
