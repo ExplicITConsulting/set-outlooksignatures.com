@@ -21,7 +21,20 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <div class="columns is-multiline">
-    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+        <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid LimeGreen;">
+            <div style="display: flex; align-items: flex-start; gap: 0.75em;">
+                <span>🛡️</span>
+                <div>
+                    <p><b>Security</b></p>
+                    <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+                        <li class="mb-0"><a href="#security-considerations">Security considerations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
         <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>⚙️</span>
@@ -35,7 +48,7 @@ sitemap_changefreq: weekly
             </div>
         </div>
     </div>
-    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
         <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>🚀</span>
@@ -47,19 +60,6 @@ sitemap_changefreq: weekly
                         <li class="mb-2"><a href="#signature-and-oof-application-order">Signature and OOF application order</a></li>
                         <li class="mb-2"><a href="#replacement-variables">Replacement variables</a></li>
                         <li class="mb-2"><a href="#simulation-mode">Simulation mode</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="column is-full">
-        <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid LimeGreen;">
-            <div style="display: flex; align-items: flex-start; gap: 0.75em;">
-                <span>🛡️</span>
-                <div>
-                    <p><b>Security</b></p>
-                    <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
-                        <li class="mb-0"><a href="#security-considerations">Security considerations</a></li>
                     </ul>
                 </div>
             </div>
