@@ -70,7 +70,7 @@ sitemap_changefreq: weekly
 **Why parameters are in a separate document:** There are many parameters, default values are chosen wisely, and custom values usually do not change over the years. See [Parameters](/parameters) for details.
 
 
-## Architecture considerations
+## Architecture considerations {#architecture-considerations}
 Most companies choose the same default setup:
 - **Primary device** (managed): Where users do most daily email work.
 - **Secondary devices** (often managed, sometimes unmanaged): Phones, tablets, occasional laptops, VDI sessions, or private devices.
@@ -113,7 +113,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
 - **Documents Folder:** Exports signatures to a local path (e.g. OneDrive-synced) for easy access in non-Outlook clients.
 
 
-## Requirements and usage
+## Requirements and usage {#requirements-and-usage}
 ### Core requirements
 - **Exchange**: Exchange Online, Exchange on-premises, or Exchange hybrid
 - **PowerShell**
@@ -172,7 +172,7 @@ Not all features are yet available or possible on Linux and macOS. Every paramet
 - Outlook for the web support requires the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>.
 
 
-## Security considerations
+## Security considerations {#security-considerations}
 The security model of Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> is built on the principles of **Digital Sovereignty**, **Least Privilege**, and **Need to Know**.
 
 - In **client mode for on-premises mailboxes**, no additional permissions or Graph registrations are required.
@@ -202,7 +202,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 | **Cloud Only:** Graph API, application, [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall) | | ● Required | | Get values for replacement variables. UPN lookup. |
 
 
-## Signature and OOF template file format
+## Signature and OOF template file format {#signature-and-off-template-file-format}
 Only:
 - Word files with extension **.docx**
 - HTML files with extension **.htm**
@@ -232,7 +232,7 @@ A consistent naming convention helps both template maintainers and end users. On
 This is a recommendation; choose what fits your organization best.
 
 
-## Template tags and INI files
+## Template tags and INI files {#template-tags-and-ini-files}
 Template tags define properties for templates, such as:
 - Time ranges during which a template shall be applied or not applied
 - Groups whose direct or indirect members are allowed or denied application of a template
@@ -283,7 +283,7 @@ The following list focuses on the tags that are used most often.
    - [OOFIniFile](/parameters#oofinifile)
 
 
-## Signature and OOF application order
+## Signature and OOF application order {#signature-and-oof-application-order}
 Signatures are applied mailbox by mailbox.
 
 ### Mailbox priority (highest → lowest)
@@ -306,7 +306,7 @@ You can influence behavior with the [MailboxSpecificSignatureNames](/parameters#
 OOF templates are applied only if the out-of-office assistant is currently disabled. If it is active or scheduled, OOF templates are not applied.
 
 
-## Replacement variables
+## Replacement variables {#replacement-variables}
 Replacement variables are case-insensitive placeholders in templates that are replaced with user or mailbox values at runtime.
 - Replacement happens everywhere, including hyperlinks and image alternative text.
 - Variables can come from Active Directory, Entra ID (Graph), or any custom source via script logic.
@@ -317,7 +317,7 @@ Replacement variables are case-insensitive placeholders in templates that are re
 <p><a href="/assets/html/test all default replacement variables.html" class="button is-link is-normal is-hovered  has-text-weight-bold" target="_blank">View a complete example of the default replacement variables</a></p>
 
 
-## Simulation mode
+## Simulation mode {#simulation-mode}
 Simulation mode is enabled when the parameter `SimulateUser` is passed.
 It answers the question:
 > “What will the signatures look like for user A, when Outlook is configured for the mailboxes X, Y and Z?”
