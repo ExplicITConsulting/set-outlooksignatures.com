@@ -460,7 +460,7 @@ The GUI for administrators is therefore the tool they use every day to distribut
 ###### Template administrators
 For templates in DOCX format, template administrators typically choose Microsoft Word as their GUI. For templates in HTML format, every template administrator tends to have a slightly different preferred editor, ranging from plain text editors to syntax highlighters to graphical editors.
 
-Template administrators often also take care of INI files, defining [non-content properties](/details#template-tags-and-ini-files) such as which templates apply for which mailboxes. These definitions rarely change, and they are usually made in the same editor used to edit the templates.
+Template administrators often also take care of INI files, defining [non-content properties](/details#ini-files-and-template-tags) such as which templates apply for which mailboxes. These definitions rarely change, and they are usually made in the same editor used to edit the templates.
 
 For [simulation mode](/details#simulation-mode), template administrators need to switch from their preferred editor to the command line. To make this as easy as possible, Set-OutlookSignatures comes with sample code (‘`.\sample code\SimulationModeHelper.ps1`’) - place a shortcut on your desktop and get guided through just four questions to create the desired result.
 
@@ -1260,7 +1260,7 @@ Unfortunately, this approach is also the only one possible for Microsoft Booking
 
 
 ## Different default signatures for different mailboxes
-[INI files](/details#template-tags-and-ini-files) define which signature of OOF templates should be used for which mailboxes. Template are assigned to all mailboxes or based on groups, SMTP addresses or replacement variables. Among other options, you can define time ranges during which they are valid or invalid, and if the resulting signature should be set as the default signature for new emails or for replies and forwards.
+[INI files](/details#ini-files-and-template-tags) define which signature of OOF templates should be used for which mailboxes. Template are assigned to all mailboxes or based on groups, SMTP addresses or replacement variables. Among other options, you can define time ranges during which they are valid or invalid, and if the resulting signature should be set as the default signature for new emails or for replies and forwards.
 
 You can, of course, have different default signatures for different mailboxes. Let's assume you have templates "A" and "B". Both templates should be made available to all your mailboxes. "A" shall be the default signature for all, but some specific mailboxes must have set "B" as default signature.
 

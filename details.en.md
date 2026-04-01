@@ -56,7 +56,7 @@ sitemap_changefreq: weekly
                     <p><b>Marketing & Usage</b></p>
                     <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
                         <li class="mb-2"><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></li>
-                        <li class="mb-2"><a href="#template-tags-and-ini-files">Template tags and INI files</a></li>
+                        <li class="mb-2"><a href="#ini-files-and-template-tags">Template tags and INI files</a></li>
                         <li class="mb-2"><a href="#signature-and-oof-application-order">Signature and OOF application order</a></li>
                         <li class="mb-2"><a href="#replacement-variables">Replacement variables</a></li>
                         <li class="mb-2"><a href="#simulation-mode">Simulation mode</a></li>
@@ -207,21 +207,15 @@ Only:
 - Word files with extension **.docx**
 - HTML files with extension **.htm**
 
-### Relation between template file name and Outlook signature name
-The name of the signature template file without extension is the name of the signature in Outlook.
+The name of the signature template file without extension is the name of the signature in Outlook. Example: `Test signature.docx` → signature name `Test signature`
 
-Example: `Test signature.docx` → signature name `Test signature`
-
-This can be overridden in the INI file with `OutlookSignatureName`.
-
-Example:
+This can be overridden in the INI file with `OutlookSignatureName`. Example:
 ```
 [Test signature.htm]
 OutlookSignatureName = Test signature, do not use
 ```
 
 ### Proposed template and signature naming convention
-
 A consistent naming convention helps both template maintainers and end users. One popular approach:
 - Company
 - Internal/External (int/ext)
@@ -232,7 +226,29 @@ A consistent naming convention helps both template maintainers and end users. On
 This is a recommendation; choose what fits your organization best.
 
 
-## Template tags and INI files {#template-tags-and-ini-files}
+## Replacement variables {#replacement-variables}
+Replacement variables are case-insensitive placeholders in templates that are replaced with user or mailbox values at runtime.
+- Replacement happens everywhere, including hyperlinks and image alternative text.
+- Variables can come from Active Directory, Entra ID (Graph), or any custom source via script logic.
+- Custom variables are supported via a [custom replacement variable config file](/parameters#replacementvariableconfigfile).
+
+Replacement variables do not just provide static text values, they can deliver dynamic content based on freely definable conditions and even influence the design of your signature. Examples are [conditional banners](/faq#how-do-i-alternate-banners-and-other-images-in-signatures), conditional [texts](/faq#how-to-avoid-blank-lines-when-replacement-variables-return-an-empty-string), or account pictures.
+
+Each replacement variable is available in four namespaces: Values from the current user, from the current mailbox and from their managers - and they can all be used within the same template! This allows you to easily create sophisticated signatures and OOF replies:
+- A signature with a "How is my work? Let my manager know!" link pointing to the phone number of the user's manager.
+- An OOF message containing contact information of your manager, or information about your stand-in from a central absence database.
+- A signature for a shared mailbox, with the name of the clerk writing the email but the mail address, phone number and logo of the shared mailbox.
+- A dynamically created greeting based on the weather forecast retrieved from a web service.
+
+Set-OutlookSignatures comes with a big set of default replacement variables, covering more than most companies ever need for their signatures. Instead of providing a long list here, we provide the `Test all default replacement variables` signature, which not only shows all placeholders but also account pictures, conditional banners, QR codes and more. There are three ways to get there:
+- View the template in DOCX format or in HTML format on GitHub or in the `.\sample templates` folder of your download.
+- See the final result, i.e. your real values instead of the placeholders, after running the [Quickstart](/quickstart) guide. Just create a new email and select the generated sample signature **“Test all default replacement variables”**.
+- Click here to view the <a href="/assets/html/test all default replacement variables.html" target="_blank">"Test all default replacement variables" signature filled with data from our demo environment</a>.
+
+
+## INI files and template tags {#ini-files-and-template-tags}
+INI files are an easy way to define which templates are to be used for which mailboxes, groups or users.
+
 Template tags define properties for templates, such as:
 - Time ranges during which a template shall be applied or not applied
 - Groups whose direct or indirect members are allowed or denied application of a template
@@ -284,7 +300,7 @@ The following list focuses on the tags that are used most often.
 
 
 ## Signature and OOF application order {#signature-and-oof-application-order}
-Signatures are applied mailbox by mailbox.
+Set-OutlookSignatures knows which mailboxes a user added to Outlook, and in which order they are sorted. Signatures are applied mailbox by mailbox in this order.
 
 ### Mailbox priority (highest → lowest)
 1. Mailbox of the currently logged-in user
@@ -304,17 +320,6 @@ Within each group, templates are sorted by `SortOrder` and `SortCulture` (if def
 You can influence behavior with the [MailboxSpecificSignatureNames](/parameters#mailboxspecificsignaturenames) parameter and with the `OutlookSignatureName` tag in the INI file.
 
 OOF templates are applied only if the out-of-office assistant is currently disabled. If it is active or scheduled, OOF templates are not applied.
-
-
-## Replacement variables {#replacement-variables}
-Replacement variables are case-insensitive placeholders in templates that are replaced with user or mailbox values at runtime.
-- Replacement happens everywhere, including hyperlinks and image alternative text.
-- Variables can come from Active Directory, Entra ID (Graph), or any custom source via script logic.
-- Custom variables are supported via a [custom replacement variable config file](/parameters#replacementvariableconfigfile).
-
-> **Tip for template admins:** After running the [Quickstart](/quickstart), inspect the generated sample signature **“Test all default replacement variables”**. It provides an overview of what ships by default (placeholders, formatting behavior, typical examples) without having to read long lists.
-
-<p><a href="/assets/html/test all default replacement variables.html" class="button is-link is-normal is-hovered  has-text-weight-bold" target="_blank">View a complete example of the default replacement variables</a></p>
 
 
 ## Simulation mode {#simulation-mode}
