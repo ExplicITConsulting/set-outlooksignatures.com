@@ -77,7 +77,7 @@ Most companies choose the same default setup:
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>💡</span>
         <div>
@@ -133,7 +133,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>💻</span>
         <div>
-          <p><b>Core requirements</b></p>
+          <p class="mb-4"><b>Core requirements</b></p>
           <ul>
             <li><b>Exchange</b>: Exchange Online, Exchange on-premises, or Exchange hybrid</li>
             <li><b>PowerShell</b>
@@ -163,7 +163,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid RoyalBlue;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>📄</span>
         <div>
@@ -183,7 +183,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🚀</span>
         <div>
-          <p><b>Execution environment</b></p>
+          <p class="mb-4"><b>Execution environment</b></p>
           <ul>
             <li>The software must run in <b>PowerShell Full Language mode</b>.</li>
             <li>On Windows and macOS, unblock <code>Set-OutlookSignatures.ps1</code> if needed (<code>Unblock-File</code> or file properties → Unblock).</li>
@@ -210,7 +210,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>📂</span>
         <div>
-          <p><b>File access</b></p>
+          <p class="mb-4"><b>File access</b></p>
           <ul>
             <li>Paths to templates and config must be readable by the logged-in user.</li>
             <li>For SharePoint Online access, register an Entra ID app and grant admin consent (see <a href="/quickstart">Quickstart</a>).</li>
@@ -315,25 +315,25 @@ Replacement variables do not just provide static text values, they can deliver d
 Each replacement variable is available in four namespaces:
 <div class="columns is-multiline">
   <div class="column is-quarter-desktop is-half-tablet">
-    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid RoyalBlue;">
+    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid Blue;">
       <p><b>Current User</b></p>
       <p class="is-size-7">Attributes of the person currently logged into the device.</p>
     </div>
   </div>
   <div class="column is-quarter-desktop is-half-tablet">
-    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid RoyalBlue;">
+    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid Blue;">
       <p><b>User's Manager</b></p>
       <p class="is-size-7">Allows "Assistant to..." or "Escalate to..." dynamic links.</p>
     </div>
   </div>
   <div class="column is-quarter-desktop is-half-tablet">
-    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid RoyalBlue;">
+    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid Blue;">
       <p><b>Current Mailbox</b></p>
       <p class="is-size-7">Attributes of the mailbox (e.g. Shared Mailbox) being processed.</p>
     </div>
   </div>
   <div class="column is-quarter-desktop is-half-tablet">
-    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid RoyalBlue;">
+    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid Blue;">
       <p><b>Mailbox Manager</b></p>
       <p class="is-size-7">Attributes of the manager assigned to the specific mailbox.</p>
     </div>
