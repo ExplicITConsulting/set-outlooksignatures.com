@@ -54,14 +54,14 @@ sitemap_changefreq: weekly
           <p><b>Marketing</b></p>
           <div class="columns">
             <div class="column is-half">
-                <p><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a> x</p>
-                <p><a href="#replacement-variables">Replacement variables</a> x</p>
-                <p><a href="#ini-files-and-template-tags">Template tags and INI files</a> x</p>
+                <p><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></p>
+                <p><a href="#replacement-variables">Replacement variables</a></p>
+                <p><a href="#ini-files-and-template-tags">Template tags and INI files</a></p>
             </div>
             <div class="column is-half">
-                <p><a href="#ini-files-and-template-tags">Template tags and INI files</a> x</p>
-                <p><a href="#signature-and-oof-application-order">Signature and OOF application order</a> x</p>
-                <p><a href="#simulation-mode">Simulation mode</a> x</p>
+                <p><a href="#ini-files-and-template-tags">Template tags and INI files</a></p>
+                <p><a href="#signature-and-oof-application-order">Signature and OOF application order</a></p>
+                <p><a href="#simulation-mode">Simulation mode</a></p>
             </div>
           </div>
         </div>
