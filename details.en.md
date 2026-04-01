@@ -50,7 +50,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Blue;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🚀</span>
-        <div>
+        <div style="flex: 1;">
           <p><b>Marketing</b></p>
           <div class="columns">
             <div class="column is-half">
@@ -221,7 +221,7 @@ Not all features are yet available or possible on Linux and macOS. Every paramet
     <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Yellow;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>❗</span>
-        <div>
+        <div style="flex: 1;">
           <p><b>Common restrictions and notes for Linux and macOS</b></p>
           <div class="columns">
             <div class="column is-half">
