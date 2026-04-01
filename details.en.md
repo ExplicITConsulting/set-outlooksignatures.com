@@ -371,7 +371,7 @@ Template tags define properties for templates, such as:
 - OOF template target (internal/external)
 
 <div class="box has-background-dark has-text-white">
-  <p>Why INI (or TOML-style) configuration?</p>
+  <p><b>Why INI (or TOML-style) configuration?</b></p>
   <div class="columns">
     <div class="column">
       <p>We avoid modern formats like <b>XML, YAML, or JSON</b> because they rely on strict syntax (brackets, significant whitespace, commas) that is easily broken by non-IT staff.</p>
@@ -463,13 +463,9 @@ In simulation mode:
 - Nothing is changed in Outlook or Outlook for the web
 - Resulting signatures are written to the path defined by `AdditionalSignaturePath`
 
-### Minimal example
+Minimal example:
 ```
 & .\Set-OutlookSignatures.ps1 -SimulateUser "a@example.com" -SimulateMailboxes "a@example.com", "x@example.com" -AdditionalSignaturePath "c:\test"
 ```
 
-`SimulateMailboxes` is optional but highly recommended.
-
-`SimulateTime` can be used to test time-based templates.
-
-See `.\sample code\SimulationModeHelper.ps1` for helper logic.
+`SimulateMailboxes` is optional but highly recommended.<br>`SimulateTime` can be used to test time-based templates.<br>See `.\sample code\SimulationModeHelper.ps1` for helper logic.
