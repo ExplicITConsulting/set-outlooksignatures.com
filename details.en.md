@@ -271,7 +271,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 | [MailboxSettings.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite) | ● Required | ● Required | | Detect OOF state and set OOF replies. |
 | [offline_access](https://learn.microsoft.com/en-us/graph/permissions-reference#offline_access) | ● Required | ● Required | | Get a refresh token from Graph. |
 | [openid](https://learn.microsoft.com/en-us/graph/permissions-reference#openid) | ● Required | ● Required | | Log on the current user. |
-| https://learn.microsoft.com/en-us/graph/permissions-reference#profile | ● Required | ● Required | | Log on the current user and get basic properties. |
+| [profile](https://learn.microsoft.com/en-us/graph/permissions-reference#profile) | ● Required | ● Required | | Log on the current user and get basic properties. |
 | [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall) | ● Required | ● Required | ● Required | Get values for replacement variables. UPN lookup. |
 | _Graph API permissions, application_  | | | | |
 | [Files.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall) | | ○ Optional | | Access templates/config stored in SharePoint Online. Alternative: [Files.SelectedOperations.Selected](https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected). |
