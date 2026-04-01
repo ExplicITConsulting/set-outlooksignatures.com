@@ -26,11 +26,9 @@ sitemap_changefreq: weekly
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>⚙️</span>
                 <div>
-                    <p class="mb-4"><b>IT</b></p>
-                    <ul>
-                        <li class="mb-2"><a href="#architecture-considerations">Architecture considerations</a></li>
-                        <li class="mb-2"><a href="#requirements-and-usage">Requirements and usage</a></li>
-                    </ul>
+                    <p><b>IT</b></p>
+                    <p><a href="#architecture-considerations">Architecture considerations</a></p>
+                    <p><a href="#requirements-and-usage">Requirements and usage</a></p>
                 </div>
             </div>
         </div>
@@ -40,10 +38,8 @@ sitemap_changefreq: weekly
             <div style="display: flex; align-items: flex-start; gap: 0.75em;">
                 <span>🛡️</span>
                 <div>
-                    <p class="mb-4"><b>Security</b></p>
-                    <ul>
-                        <li class="mb-0"><a href="#security-considerations">Security considerations</a></li>
-                    </ul>
+                    <p><b>Security</b></p>
+                    <p><a href="#security-considerations">Security considerations</a></p>
                 </div>
             </div>
         </div>
@@ -53,14 +49,12 @@ sitemap_changefreq: weekly
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>🚀</span>
                 <div>
-                    <p class="mb-4"><b>Marketing & Usage</b></p>
-                    <ul>
-                        <li class="mb-2"><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></li>
-                        <li class="mb-2"><a href="#replacement-variables">Replacement variables</a></li>
-                        <li class="mb-2"><a href="#ini-files-and-template-tags">Template tags and INI files</a></li>
-                        <li class="mb-2"><a href="#signature-and-oof-application-order">Signature and OOF application order</a></li>
-                        <li class="mb-2"><a href="#simulation-mode">Simulation mode</a></li>
-                    </ul>
+                    <p><b>Marketing & Usage</b></p>
+                    <p><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></p>
+                    <p><a href="#replacement-variables">Replacement variables</a></p>
+                    <p><a href="#ini-files-and-template-tags">Template tags and INI files</a></p>
+                    <p><a href="#signature-and-oof-application-order">Signature and OOF application order</a></p>
+                    <p><a href="#simulation-mode">Simulation mode</a></p>
                 </div>
             </div>
         </div>
@@ -133,16 +127,9 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>💻</span>
         <div>
-          <p class="mb-4"><b>Core requirements</b></p>
-          <ul>
-            <li><b>Exchange</b>: Exchange Online, Exchange on-premises, or Exchange hybrid</li>
-            <li><b>PowerShell</b>
-              <ul>
-                <li>Windows: Windows PowerShell 5.1 (<code>powershell.exe</code>) or PowerShell 7+ (<code>pwsh.exe</code>)</li>
-                <li>Linux/macOS: PowerShell 7+ (<code>pwsh</code>)</li>
-              </ul>
-            </li>
-          </ul>
+          <p><b>Core requirements</b></p>
+          <p><b>Exchange</b>: Exchange Online, Exchange on-premises, or Exchange hybrid</p>
+          <p><b>PowerShell</b>: PowerShell 5.1 (<code>powershell.exe</code>) on Windows, or PowerShell 7+ (<code>pwsh.exe</code>)</li> cross-platform
         </div>
       </div>
     </div>
@@ -183,11 +170,9 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🚀</span>
         <div>
-          <p class="mb-4"><b>Execution environment</b></p>
-          <ul>
-            <li>The software must run in <b>PowerShell Full Language mode</b>.</li>
-            <li>On Windows and macOS, unblock <code>Set-OutlookSignatures.ps1</code> if needed (<code>Unblock-File</code> or file properties → Unblock).</li>
-          </ul>
+          <p><b>Execution environment</b></p>
+          <p>The software must run in <b>PowerShell Full Language mode</b>.</p>
+          <p>On Windows and macOS, unblock <code>Set-OutlookSignatures.ps1</code> if needed (<code>Unblock-File</code> or file properties → Unblock).</p>
         </div>
       </div>
     </div>
@@ -210,11 +195,9 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>📂</span>
         <div>
-          <p class="mb-4"><b>File access</b></p>
-          <ul>
-            <li>Paths to templates and config must be readable by the logged-in user.</li>
-            <li>For SharePoint Online access, register an Entra ID app and grant admin consent (see <a href="/quickstart">Quickstart</a>).</li>
-          </ul>
+          <p><b>File access</b></p>
+          <p>Paths to templates and config must be readable by the logged-in user.</p>
+          <p>For SharePoint Online access, register an Entra ID app and grant admin consent (see <a href="/quickstart">Quickstart</a>).</p>
         </div>
       </div>
     </div>
