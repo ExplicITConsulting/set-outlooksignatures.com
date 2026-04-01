@@ -21,7 +21,7 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <div class="columns is-multiline">
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
         <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>⚙️</span>
@@ -33,9 +33,9 @@ sitemap_changefreq: weekly
             </div>
         </div>
     </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
         <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
-            <div style="display: flex; align-items: flex-start; gap: 0.75em;">
+            <div style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>🛡️</span>
                 <div>
                     <p><b>Security</b></p>
@@ -44,24 +44,33 @@ sitemap_changefreq: weekly
             </div>
         </div>
     </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
-            <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-                <span>🚀</span>
-                <div>
-                    <p><b>Marketing & Usage</b></p>
-                    <p><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></p>
-                    <p><a href="#replacement-variables">Replacement variables</a></p>
-                    <p><a href="#ini-files-and-template-tags">Template tags and INI files</a></p>
-                    <p><a href="#signature-and-oof-application-order">Signature and OOF application order</a></p>
-                    <p><a href="#simulation-mode">Simulation mode</a></p>
-                </div>
+</div>
+<div class="columns is-multiline">
+  <div class="column is-full">
+    <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Blue;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>🚀</span>
+        <div>
+          <p><b>Marketing & Usage</b></p>
+          <div class="columns">
+            <div class="column is-half">
+                <p><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></p>
+                <p><a href="#replacement-variables">Replacement variables</a></p>
+                <p><a href="#ini-files-and-template-tags">Template tags and INI files</a></p>
             </div>
+            <div class="column is-half">
+                <p><a href="#ini-files-and-template-tags">Template tags and INI files</a></p>
+                <p><a href="#signature-and-oof-application-order">Signature and OOF application order</a></p>
+                <p><a href="#simulation-mode">Simulation mode</a></p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
-**Why parameters are in a separate document:** There are many parameters, default values are chosen wisely, and custom values usually do not change over the years. See [Parameters](/parameters) for details.
+**Why parameters are in a separate document:** There are many [available parameters](/parameters), default values are chosen wisely, and custom values usually do not change over the years.
 
 
 ## Architecture considerations {#architecture-considerations}
@@ -210,7 +219,7 @@ Not all features are yet available or possible on Linux and macOS. Every paramet
 <div class="columns is-multiline">
   <div class="column is-full">
     <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Yellow;">
-      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.75em;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 5em;">
         <span>❗</span>
         <div>
           <p><b>Common restrictions and notes for Linux and macOS</b></p>
