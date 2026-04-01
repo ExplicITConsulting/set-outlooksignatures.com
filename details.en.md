@@ -129,7 +129,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
         <div>
           <p><b>Core requirements</b></p>
           <p><b>Exchange</b>: Exchange Online, Exchange on-premises, or Exchange hybrid</p>
-          <p><b>PowerShell</b>: PowerShell 5.1 (<code>powershell.exe</code>) on Windows, or PowerShell 7+ (<code>pwsh.exe</code>)</li> cross-platform
+          <p><b>PowerShell</b>: PowerShell 5.1 (<code>powershell.exe</code>) on Windows, or PowerShell 7+ (<code>pwsh.exe</code>) cross-platform</p>
         </div>
       </div>
     </div>
@@ -211,7 +211,7 @@ Not all features are yet available or possible on Linux and macOS. Every paramet
   <div class="column is-full">
     <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Yellow;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.75em;">
-        <span style="font-size: 1.5rem;">❗</span>
+        <span>❗</span>
         <div>
           <p><b>Common restrictions and notes for Linux and macOS</b></p>
           <div class="columns">
@@ -298,27 +298,27 @@ Replacement variables do not just provide static text values, they can deliver d
 Each replacement variable is available in four namespaces:
 <div class="columns is-multiline">
   <div class="column is-quarter-desktop is-half-tablet">
-    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid Blue;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-left: 4px solid Blue;">
       <p><b>Current User</b></p>
-      <p class="is-size-7">Attributes of the person currently logged into the device.</p>
+      <p>Attributes of the person currently logged into the device.</p>
     </div>
   </div>
   <div class="column is-quarter-desktop is-half-tablet">
-    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid Blue;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-left: 4px solid Blue;">
       <p><b>User's Manager</b></p>
-      <p class="is-size-7">Allows "Assistant to..." or "Escalate to..." dynamic links.</p>
+      <p>Allows "Assistant to..." or "Escalate to..." dynamic links.</p>
     </div>
   </div>
   <div class="column is-quarter-desktop is-half-tablet">
-    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid Blue;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-left: 4px solid Blue;">
       <p><b>Current Mailbox</b></p>
-      <p class="is-size-7">Attributes of the mailbox (e.g. Shared Mailbox) being processed.</p>
+      <p>Attributes of the mailbox (e.g. Shared Mailbox) being processed.</p>
     </div>
   </div>
   <div class="column is-quarter-desktop is-half-tablet">
-    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid Blue;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-left: 4px solid Blue;">
       <p><b>Mailbox Manager</b></p>
-      <p class="is-size-7">Attributes of the manager assigned to the specific mailbox.</p>
+      <p>Attributes of the manager assigned to the specific mailbox.</p>
     </div>
   </div>
 </div>
@@ -422,9 +422,9 @@ Set-OutlookSignatures knows which mailboxes a user added to Outlook, and in whic
 
 <div class="columns is-multiline">
   <div class="column is-half">
-    <div class="box has-background-white-bis">
-      <p><b>Mailbox Priority</b></p>
-      <ol class="is-size-7">
+    <div class="box has-background-white-bis has-text-black">
+      <p class="mb-4"><b>Mailbox Priority</b></p>
+      <ol>
         <li>Primary logged-in user mailbox</li>
         <li>Default Outlook profile mailboxes</li>
         <li>Other Outlook profiles (alphabetical)</li>
@@ -432,9 +432,9 @@ Set-OutlookSignatures knows which mailboxes a user added to Outlook, and in whic
     </div>
   </div>
   <div class="column is-half">
-    <div class="box has-background-white-bis">
-      <p><b>Template Priority</b></p>
-      <ol class="is-size-7">
+    <div class="box has-background-white-bis has-text-black">
+      <p class="mb-4"><b>Template Priority</b></p>
+      <ol>
         <li>Common templates</li>
         <li>Group templates</li>
         <li>Email-address templates</li>
