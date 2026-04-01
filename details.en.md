@@ -108,12 +108,12 @@ Most companies choose the same default setup:
 Set-OutlookSignatures comes with **client mode**, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> adds **SimulateAndDeploy** mode.
 
 <div class="table-container">
-  <table class="table is-fullwidth">
+  <table class="table  is-hoverable is-fullwidth">
     <thead>
-      <tr class="has-background-link-light">
-        <th style="width: 20%;"></th>
-        <th style="width: 40%;">Client mode</th>
-        <th style="width: 40%;">SimulateAndDeploy</th>
+      <tr>
+        <th style="width: 15%;"></th>
+        <th style="width: 42.5%;">Client mode</th>
+        <th style="width: 42.5%;">SimulateAndDeploy</th>
       </tr>
     </thead>
     <tbody>
@@ -305,27 +305,27 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
         <td>Set signature.</td>
       </tr>
       <tr>
-        <td colspan="5"><strong>Cloud only Entra ID app</strong></td>
+        <td colspan="5" style="padding-top: 2em !important;"><strong>Cloud only Entra ID app</strong></td>
       </tr>
       <tr>
         <td colspan="5"><em>Setup</em></td>
       </tr>
       <tr>
         <td>Manual setup</td>
-        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/config/default%20graph%20config.ps1">default graph config.ps1</a></td>
-        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/SimulateAndDeploy.ps1">SimulateAndDeploy.ps1</a></td>
+        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/config/default%20graph%20config.ps1">Graph config file</a></td>
+        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/SimulateAndDeploy.ps1">SimulateAndDeploy</a></td>
         <td><a href="/outlookaddin#entra-id-app">Outlook add-in</a></td>
         <td></td>
       </tr>
       <tr>
         <td>Scripted setup</td>
-        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/Create-EntraApp.ps1">.\sample code\Create-EntraApp.ps1</a></td>
-        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/Create-EntraApp.ps1">.\sample code\Create-EntraApp.ps1</a></td>
-        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/Create-EntraApp.ps1">.\sample code\Create-EntraApp.ps1</a></td>
+        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/Create-EntraApp.ps1">Create-EntraApp.ps1</a></td>
+        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/Create-EntraApp.ps1">Create-EntraApp.ps1</a></td>
+        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/Create-EntraApp.ps1">Create-EntraApp.ps1</a></td>
         <td></td>
       </tr>
       <tr>
-        <td colspan="5"><em>Graph API permissions, delegated</em></td>
+        <td colspan="5" style="padding-top: 2em !important;"><em>Graph API permissions, delegated</em></td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#email">email</a></td>
@@ -405,7 +405,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
         <td>Get values for replacement variables. UPN lookup.</td>
       </tr>
       <tr>
-        <td colspan="5"><em>Graph API permissions, application</em></td>
+        <td colspan="5" style="padding-top: 2em !important;"><em>Graph API permissions, application</em></td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall">Files.Read.All</a></td>
