@@ -279,7 +279,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
   <table class="table is-hoverable is-fullwidth">
     <thead>
       <tr>
-        <th>Permission</th>
+        <th style="width: 25%;">Permission</th>
         <th style="width: 15%;">Client mode</th>
         <th style="width: 15%;">SimulateAndDeploy</th>
         <th style="width: 15%;">Outlook add‑in</th>
@@ -298,7 +298,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
         <td>Access to roaming signatures in Exchange Online. Direct-to-mailbox sync on-prem.</td>
       </tr>
       <tr>
-        <td>Outlook add-in manifest, <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/understanding-outlook-add-in-permissions">ReadWriteMailbox</a></td>
+        <td>Add-in manifest, <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/understanding-outlook-add-in-permissions">ReadWriteMailbox</a></td>
         <td></td>
         <td></td>
         <td>● Required</td>
