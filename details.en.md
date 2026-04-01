@@ -50,20 +50,18 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Blue;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🚀</span>
-        <div>
-          <p><b>Marketing</b></p>
-          <div class="columns">
-            <div class="column is-half">
-                <p><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></p>
-                <p><a href="#replacement-variables">Replacement variables</a></p>
-                <p><a href="#ini-files-and-template-tags">Template tags and INI files</a></p>
-            </div>
-            <div class="column is-half">
-                <p><a href="#ini-files-and-template-tags">Template tags and INI files</a></p>
-                <p><a href="#signature-and-oof-application-order">Signature and OOF application order</a></p>
-                <p><a href="#simulation-mode">Simulation mode</a></p>
-            </div>
-          </div>
+        <p><b>Marketing</b></p>
+      </div>
+      <div class="columns">
+        <div class="column is-half">
+          <p><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></p>
+          <p><a href="#replacement-variables">Replacement variables</a></p>
+          <p><a href="#ini-files-and-template-tags">Template tags and INI files</a></p>
+        </div>
+        <div class="column is-half">
+          <p><a href="#ini-files-and-template-tags">Template tags and INI files</a></p>
+          <p><a href="#signature-and-oof-application-order">Signature and OOF application order</a></p>
+          <p><a href="#simulation-mode">Simulation mode</a></p>
         </div>
       </div>
     </div>
