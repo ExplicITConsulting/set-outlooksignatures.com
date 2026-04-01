@@ -370,18 +370,9 @@ Template tags define properties for templates, such as:
 - Default signature selection for new mails and reply/forward
 - OOF template target (internal/external)
 
-<div class="box has-background-dark has-text-white">
-  <p><b>Why INI (or TOML-style) configuration?</b></p>
-  <div class="columns">
-    <div class="column">
-      <p>We avoid modern formats like <b>XML, YAML, or JSON</b> because they rely on strict syntax (brackets, significant whitespace, commas) that is easily broken by non-IT staff.</p>
-    </div>
-    <div class="column">
-      <p><b>INI-style</b> keeps common cases simple, human-readable, and easy to maintain without specialized database infrastructure.</p>
-    </div>
-  </div>
-</div>
-
+> *Why INI (or TOML-style) configuration?**
+> We avoid modern formats like <b>XML, YAML, or JSON</b> because they rely on strict syntax (brackets, significant whitespace, commas) that is easily broken by non-IT staff.
+> INI-style keeps common cases simple, human-readable, and easy to maintain without specialized database infrastructure.
 
 ### Allowed tags (common cases)
 The following list focuses on the tags that are used most often.
