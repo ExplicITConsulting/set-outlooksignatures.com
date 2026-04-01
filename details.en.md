@@ -278,7 +278,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 <div class="table-container">
   <table class="table is-hoverable is-fullwidth">
     <thead>
-      <tr">
+      <tr>
         <th>Permission</th>
         <th style="width: 15%;">Client mode</th>
         <th style="width: 15%;">SimulateAndDeploy</th>
