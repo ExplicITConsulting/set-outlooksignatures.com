@@ -370,7 +370,7 @@ Template tags define properties for templates, such as:
 - Default signature selection for new mails and reply/forward
 - OOF template target (internal/external)
 
-> *Why INI (or TOML-style) configuration?**
+> **Why INI (or TOML-style) configuration?**
 > We avoid modern formats like <b>XML, YAML, or JSON</b> because they rely on strict syntax (brackets, significant whitespace, commas) that is easily broken by non-IT staff.
 > INI-style keeps common cases simple, human-readable, and easy to maintain without specialized database infrastructure.
 
