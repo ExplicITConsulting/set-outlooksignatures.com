@@ -129,7 +129,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
 ## Requirements and usage {#requirements-and-usage}
 <div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid RoyalBlue;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>💻</span>
         <div>
@@ -230,7 +230,7 @@ Not all features are yet available or possible on Linux and macOS. Every paramet
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.75em;">
         <span style="font-size: 1.5rem;">❗</span>
         <div>
-          <p class="title is-4 has-text-black">Common restrictions and notes for Linux and macOS</p>
+          <p><b>Common restrictions and notes for Linux and macOS</b></p>
           <div class="columns">
             <div class="column is-half">
               <ul>
@@ -312,11 +312,33 @@ Replacement variables are case-insensitive placeholders in templates that are re
 
 Replacement variables do not just provide static text values, they can deliver dynamic content based on freely definable conditions and even influence the design of your signature. Examples are [conditional banners](/faq#how-do-i-alternate-banners-and-other-images-in-signatures), conditional [texts](/faq#how-to-avoid-blank-lines-when-replacement-variables-return-an-empty-string), or account pictures.
 
-Each replacement variable is available in four namespaces: Values from the current user, from the current mailbox and from their managers - and they can all be used within the same template! This allows you to easily create sophisticated signatures and OOF replies:
-- A signature with a "How is my work? Let my manager know!" link pointing to the phone number of the user's manager.
-- An OOF message containing contact information of your manager, or information about your stand-in from a central absence database.
-- A signature for a shared mailbox, with the name of the clerk writing the email but the mail address, phone number and logo of the shared mailbox.
-- A dynamically created greeting based on the weather forecast retrieved from a web service.
+Each replacement variable is available in four namespaces:
+<div class="columns is-multiline">
+  <div class="column is-quarter-desktop is-half-tablet">
+    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid RoyalBlue;">
+      <p><b>Current User</b></p>
+      <p class="is-size-7">Attributes of the person currently logged into the device.</p>
+    </div>
+  </div>
+  <div class="column is-quarter-desktop is-half-tablet">
+    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid RoyalBlue;">
+      <p><b>User's Manager</b></p>
+      <p class="is-size-7">Allows "Assistant to..." or "Escalate to..." dynamic links.</p>
+    </div>
+  </div>
+  <div class="column is-quarter-desktop is-half-tablet">
+    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid RoyalBlue;">
+      <p><b>Current Mailbox</b></p>
+      <p class="is-size-7">Attributes of the mailbox (e.g. Shared Mailbox) being processed.</p>
+    </div>
+  </div>
+  <div class="column is-quarter-desktop is-half-tablet">
+    <div class="box has-background-white-bis" style="height: 100%; border-left: 4px solid RoyalBlue;">
+      <p><b>Mailbox Manager</b></p>
+      <p class="is-size-7">Attributes of the manager assigned to the specific mailbox.</p>
+    </div>
+  </div>
+</div>
 
 Set-OutlookSignatures comes with a big set of default replacement variables, covering more than most companies ever need for their signatures. Instead of providing a long list here, we provide the `Test all default replacement variables` signature, which not only shows all placeholders but also account pictures, conditional banners, QR codes and more. There are three ways to get there:
 - View the template in DOCX format or in HTML format on GitHub or in the `.\sample templates` folder of your download.
@@ -365,16 +387,18 @@ Template tags define properties for templates, such as:
 - Default signature selection for new mails and reply/forward
 - OOF template target (internal/external)
 
-### Why INI (or TOML-style) configuration?
-We intentionally use an **old-fashioned INI-style** (and a TOML-like mindset) because it is easy to read and maintain, not only for IT people.
+<div class="box has-background-dark has-text-white">
+  <p>Why INI (or TOML-style) configuration?</p>
+  <div class="columns">
+    <div class="column">
+      <p>We avoid modern formats like <b>XML, YAML, or JSON</b> because they rely on strict syntax (brackets, significant whitespace, commas) that is easily broken by non-IT staff.</p>
+    </div>
+    <div class="column">
+      <p><b>INI-style</b> keeps common cases simple, human-readable, and easy to maintain without specialized database infrastructure.</p>
+    </div>
+  </div>
+</div>
 
-Of course, there are more modern formats but they all have disadvantages for this use case, too:
-- XML has too many brackets and structural noise.
-- YAML relies on significant whitespace (easy to break accidentally).
-- JSON is sensitive to commas/brackets.
-- A database would require additional infrastructure and maintenance know-how.
-
-INI-style keeps common cases simple and reviewable, which is ideal for template administration.
 
 ### Allowed tags (common cases)
 The following list focuses on the tags that are used most often.
@@ -413,16 +437,29 @@ The following list focuses on the tags that are used most often.
 ## Signature and OOF application order {#signature-and-oof-application-order}
 Set-OutlookSignatures knows which mailboxes a user added to Outlook, and in which order they are sorted. Signatures are applied mailbox by mailbox in this order.
 
-### Mailbox priority (highest → lowest)
-1. Mailbox of the currently logged-in user
-2. Mailboxes from the default Outlook profile (in Outlook’s visible order)
-3. Mailboxes from other Outlook profiles (profiles sorted alphabetically; mailboxes in visible order)
-
-### Template priority (applied per mailbox)
-1. Common templates
-2. Group templates
-3. Email-address templates
-4. Replacement-variable templates
+<div class="columns is-multiline">
+  <div class="column is-half">
+    <div class="box has-background-white-bis">
+      <p><b>Mailbox Priority</b></p>
+      <ol class="is-size-7">
+        <li>Primary logged-in user mailbox</li>
+        <li>Default Outlook profile mailboxes</li>
+        <li>Other Outlook profiles (alphabetical)</li>
+      </ol>
+    </div>
+  </div>
+  <div class="column is-half">
+    <div class="box has-background-white-bis">
+      <p><b>Template Priority</b></p>
+      <ol class="is-size-7">
+        <li>Common templates</li>
+        <li>Group templates</li>
+        <li>Email-address templates</li>
+        <li>Variable-condition templates</li>
+      </ol>
+    </div>
+  </div>
+</div>
 
 Within each group, templates are sorted by `SortOrder` and `SortCulture` (if defined in the INI file).
 
