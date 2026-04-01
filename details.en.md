@@ -75,18 +75,31 @@ Most companies choose the same default setup:
 - **Primary device** (managed): Where users do most daily email work.
 - **Secondary devices** (often managed, sometimes unmanaged): Phones, tablets, occasional laptops, VDI sessions, or private devices.
 
-### Recommended default pattern
-- **Client mode** on the primary device keeps signatures and OOF replies up to date without central compute.
-- Add the **[Outlook add-in](/outlookaddin)** to make signatures available on secondary devices and platforms where native signature automation is limited (mobile, BYOD, etc.).
-
-### When central creation is better
-Sometimes you cannot or do not want to run Set-OutlookSignatures in the security context of the logged-on user, for example:
-- BYOD environments without a managed primary device
-- Frontline workers using shared devices or only Outlook for the web
-- Users who only work on mobile clients
-- You prefer a central system (service account) instead of endpoint execution
-
-For these scenarios, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> provides **SimulateAndDeploy** mode.
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>💡</span>
+        <div>
+          <p><b>Recommended default pattern</b></p>
+          <p>Client mode on the primary device keeps signatures and OOF replies up to date without central compute.</p>
+          <p>Add the <a href="/outlookaddin">Outlook add-in</a> to make signatures available on secondary devices...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>🏢</span>
+        <div>
+          <p><b>When central creation is better</b></p>
+          <p>Sometimes you cannot or do not want to run Set-OutlookSignatures in the security context of the logged-on user...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ### Step 1: Create signatures and out-of-office replies
 Set-OutlookSignatures comes with **client mode**, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> adds **SimulateAndDeploy** mode.
@@ -114,62 +127,131 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
 
 
 ## Requirements and usage {#requirements-and-usage}
-### Core requirements
-- **Exchange**: Exchange Online, Exchange on-premises, or Exchange hybrid
-- **PowerShell**
-  - Windows: Windows PowerShell 5.1 (`powershell.exe`) or PowerShell 7+ (`pwsh.exe`)
-  - Linux/macOS: PowerShell 7+ (`pwsh`)
+<div class="columns is-multiline">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid RoyalBlue;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>💻</span>
+        <div>
+          <p><b>Core requirements</b></p>
+          <ul>
+            <li><b>Exchange</b>: Exchange Online, Exchange on-premises, or Exchange hybrid</li>
+            <li><b>PowerShell</b>
+              <ul>
+                <li>Windows: Windows PowerShell 5.1 (<code>powershell.exe</code>) or PowerShell 7+ (<code>pwsh.exe</code>)</li>
+                <li>Linux/macOS: PowerShell 7+ (<code>pwsh</code>)</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>📝</span>
+        <div>
+          <p><b>Outlook and Word (Windows)</b></p>
+          <p>On Windows, Outlook and Word are <i>usually</i> required:</p>
+          <ul>
+            <li>Outlook/New Outlook/OWA used as mailbox source.</li>
+            <li><b>Word 2010+</b> required for <b>DOCX</b> templates or <b>RTF</b> signatures.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid RoyalBlue;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>📄</span>
+        <div>
+          <p><b>Templates</b></p>
+          <p>Supported template formats:</p>
+          <ul>
+            <li><b>DOCX</b> (Windows)</li>
+            <li><b>HTM</b> (Windows, Linux, macOS)</li>
+          </ul>
+          <p>Set-OutlookSignatures ships with sample templates in both formats.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>🚀</span>
+        <div>
+          <p><b>Execution environment</b></p>
+          <ul>
+            <li>The software must run in <b>PowerShell Full Language mode</b>.</li>
+            <li>On Windows and macOS, unblock <code>Set-OutlookSignatures.ps1</code> if needed (<code>Unblock-File</code> or file properties → Unblock).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>🛡️</span>
+        <div>
+          <p><b>Endpoint security</b></p>
+          <p>If you use application control (AppLocker, Defender, CrowdStrike, …), you may need to trust the existing digital file signature or allow execution/library loading from TEMP locations.</p>
+          <p>Set-OutlookSignatures and its components are digitally signed with an <b>EV Code Signing Certificate</b>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-Set-OutlookSignatures can run in two modes (see [Architecture considerations](#architecture-considerations)):
-- **Client mode** (recommended for most environments)
-- **SimulateAndDeploy** (<a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>)
-
-### Outlook and Word requirements (Windows)
-On Windows, Outlook and Word are *usually* required, but not in all constellations:
-- If Outlook is installed and has profiles configured, Outlook is used as source for mailboxes.
-- If Outlook is not installed or configured, New Outlook is used if available.
-- If New Outlook is configured as default, New Outlook is used.
-- Otherwise, Outlook for the web is used as source for mailboxes.
-
-**Word 2010+** is required when:
-- templates in **DOCX** format are used, or
-- **RTF** signatures need to be created.
-
-### Templates
-Supported template formats:
-- **DOCX** (Windows)
-- **HTM** (Windows, Linux, macOS)
-
-Set-OutlookSignatures ships with sample templates in both formats.
-
-### Execution environment
-- The software must run in **PowerShell Full Language mode**.
-- On Windows and macOS, unblock `Set-OutlookSignatures.ps1` if needed (`Unblock-File` or file properties → Unblock).
-
-### Endpoint security (AppLocker, Defender, CrowdStrike, …)
-If you use application control, you may need to trust the existing digital file signature or allow execution/library loading from TEMP locations.
-
-Set-OutlookSignatures and its components are digitally signed with an Extended Validation (EV) Code Signing Certificate.
-
-### File access
-Paths to templates and configuration (SignatureTemplatePath, OOFTemplatePath, GraphConfigFile, etc.) must be readable by the currently logged-in user.
-
-For SharePoint Online access, you need to register an Entra ID app and grant admin consent (see [Quickstart](/quickstart)).
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>📂</span>
+        <div>
+          <p><b>File access</b></p>
+          <ul>
+            <li>Paths to templates and config must be readable by the logged-in user.</li>
+            <li>For SharePoint Online access, register an Entra ID app and grant admin consent (see <a href="/quickstart">Quickstart</a>).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ### Linux and macOS
 Not all features are yet available or possible on Linux and macOS. Every parameter contains appropriate information; the most important restrictions are summarized here.
 
-#### Common restrictions and notes for Linux and macOS
-- Only mailboxes hosted in **Exchange Online** are supported reliably.
-- Only **Graph** is supported, no local Active Directory.
-  - `GraphOnly` is effectively **true** on Linux/macOS and requires an Entra ID app.
-- Signature and OOF templates must be in **HTM** format.
-  - `UseHtmTemplates` is effectively **true** on Linux/macOS.
-- Only existing mount points and SharePoint Online paths can be accessed.
-  - Set-OutlookSignatures does not create mount points.
-  - This affects all parameters that point to paths (templates, INI files, config files, etc.).
-- For non-Outlook clients (Thunderbird, Evolution, …), signatures can still be used via [AdditionalSignaturePath](/parameters#additionalsignaturepath) and [SignatureCollectionInDrafts](/parameters#signaturecollectionindrafts).
-- Outlook for the web support requires the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>.
+<div class="columns is-multiline">
+  <div class="column is-full">
+    <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Yellow;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.75em;">
+        <span style="font-size: 1.5rem;">❗</span>
+        <div>
+          <p class="title is-4 has-text-black">Common restrictions and notes for Linux and macOS</p>
+          <div class="columns">
+            <div class="column is-half">
+              <ul>
+                <li>Only mailboxes hosted in <b>Exchange Online</b> supported reliably.</li>
+                <li>Only <b>Graph</b> is supported (<code>GraphOnly</code> is effectively <b>true</b>).</li>
+                <li>Templates must be in <b>HTM</b> format (<code>UseHtmTemplates</code> is <b>true</b>).</li>
+              </ul>
+            </div>
+            <div class="column is-half">
+              <ul>
+                <li>Only existing mount points and SharePoint paths can be accessed.</li>
+                <li>Non-Outlook clients supported via <code>AdditionalSignaturePath</code>.</li>
+                <li>OWA support requires the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 ## Security considerations {#security-considerations}
@@ -203,13 +285,9 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 
 
 ## Signature and OOF template file format {#signature-and-off-template-file-format}
-Only:
-- Word files with extension **.docx**
-- HTML files with extension **.htm**
+Word **DOCX** files or HTML files with extension **.htm**.
 
-The name of the signature template file without extension is the name of the signature in Outlook. Example: `Test signature.docx` → signature name `Test signature`
-
-This can be overridden in the INI file with `OutlookSignatureName`. Example:
+The name of the signature template file without extension is the name of the signature in Outlook: The template `Test signature.docx` becomes the signature with the name `Test signature`. This can be overridden in the INI file with `OutlookSignatureName`:
 ```
 [Test signature.htm]
 OutlookSignatureName = Test signature, do not use
@@ -275,60 +353,6 @@ Set-OutlookSignatures take care of replacing the placeholder image or filling th
 
 If you choose the "DeleteEmpty" option (e.g `$CurrentUserPhotoDeleteEmpty$`), the image or shape is deleted if there is no account picture available.
 
-### Delete images when attribute is empty, variable content based on group membership<!-- omit in toc -->
-You can avoid creating multiple templates which only differ by the images contained by only creating one template containing all images and marking this images to be deleted when a certain replacement variable is empty.
-
-Just add the text `$<name of the replacement variable>DELETEEMPTY$` (for example: `$CurrentMailboxExtAttr10DeleteEmpty$` ) to the description or alt text of the image. Taking the example, the image is deleted when extension attribute 10 of the current mailbox is empty.
-
-This can be combined with the `GroupsSIDs` attribute of the current mailbox or current user to only keep images when the mailbox is member of a certain group.
-
-Examples:
-- A signature should only show a social network icon with an associated link when there is data in the extension attribute 10 of the mailbox:
-  - Insert the icon of the social network in the template, set the hyperlink target to '$CurrentMailboxExtAttr10$' and add '$CurrentMailboxExtAttr10Deleteempty$' to the description of the picture.
-    - When using embedded and linked pictures, you can also set the file name to '$CurrentMailboxExtAttr10Deleteempty$'
-- A signature should only contain a certain image when the current mailbox is a member of the Marketing group:
-  - Create a new replacement variable. We use '$CurrentMailbox-ismemberof-marketing$' in the following example.
-    - Attention on-prem users: If Domain Local Active Directory groups are involved, you need to set the `IncludeMailboxForestDomainLocalGroups` parameter to `true` when running Set-OutlookSignatures, so that the SIDs of these groups are considered too.
-    - If the current mailbox is a member, give '$CurrentMailbox-ismemberof-marketing$' any value. If not, give '$CurrentMailbox-ismemberof-marketing$' no value (NULL or an empty string).
-    - You only have to modify three strings right at the beginning:
-
-      ```
-      # Check if current mailbox is member of group 'EXAMPLEDOMAIN\Marketing' and set $ReplaceHash['$CurrentMailbox-ismemberof-marketing$'] accordingly
-      #
-      # Replace 'EXAMPLEDOMAIN Marketing' with the domain and group you are searching for. Use 'EntraID' or 'AzureAD' instead of 'EXAMPLEDOMAIN' to only search Entra ID/Graph
-      # Replace '$CurrentMailbox-ismemberof-marketing$' with the replacement variable that should be used
-      # Replace 'CurrentMailbox' with 'CurrentUser' if you do not want to check the current mailbox group SIDs, but the group SIDs of the current user's mailbox
-      #
-      # The 'GroupsSIDs' attribute is available for the current mailbox and the current user, but not for the managers of these two
-      #   It contains the mailboxes' SID and SIDHistory, the SID and SIDHistory of all groups the mailbox belongs to (nested), and also considers group membership (nested) across trusts.
-      #   Attention on-prem users: If Active Directory groups of the Domain Local type are queried, you need to set the `IncludeMailboxForestDomainLocalGroups` parameter to `true` when running Set-OutlookSignatures, so that the SIDs of these groups are considered in GroupsSIDs, too.
-      @(
-        @('CurrentMailbox', '$CurrentMailbox-IsMemberOf-Marketing$', 'EXAMPLEDOMAIN Marketing'), 
-        @()
-      ) | Where-Object { $_ } | ForEach-Object {
-        if ((Get-Variable -Name "ADProps$($_[0])" -ValueOnly).GroupsSids -icontains ResolveToSid($_[2])) {
-          $ReplaceHash[$_[1]] = 'yes'
-        } else { 
-          $ReplaceHash[$_[1]] = $null 
-        } 
-      }
-      ```
-
-  - Insert the image in the template, and add '$CurrentMailbox-IsMemberOf-MarketingDeleteempty$' to the description of the picture.
-    - When using embedded and linked pictures, you can also set the file name to '$CurrentMailbox-IsMemberOf-MarketingDeleteempty$'
-
-
-### Custom image replacement variables<!-- omit in toc -->
-You can fill custom image replacement variables yourself with a byte array: `$CurrentUserCustomImage[1..10]$`, `$CurrentUserManagerCustomImage[1..10]$`, `$CurrentMailboxCustomImage[1..10]$`, `$CurrentMailboxManagerCustomImage[1..10]$`.
-
-Use cases: Account pictures from a share, QR code vCard/URL/text/Twitter/X/Facebook/App stores/geo location/email, etc.
-
-Per default, `$Current[..]CustomImage1$` is a QR code containing a vCard (in MeCard format) - see file `.\config\default replacement variables.ps1` for the code behind it.
-
-The behavior of custom image replacement variables and the possible configuration options are the same as with replacement variables for account pictures from Active Directory/Entra ID.
-
-As practical as QR codes may be, they should contain as little information as possible. The more information they contain, the larger the image needs to be, which often has a negative impact on the layout and always has a negative impact on the size of the email.<br>QR codes with too much information and too small an image size become visually blurred, making them impossible to scan - for DOCX templates, `DocxHighResImageConversion` can help. Consider bigger image size, less content, less error correction, MeCard instead of vCard, and pointing to an URL containing the actual information.
-
 
 ## INI files and template tags {#ini-files-and-template-tags}
 INI files are an easy way to define which templates are to be used for which mailboxes, groups or users.
@@ -342,10 +366,13 @@ Template tags define properties for templates, such as:
 - OOF template target (internal/external)
 
 ### Why INI (or TOML-style) configuration?
-We intentionally use an **old-fashioned INI-style** (and a TOML-like mindset) because it is easy to read and maintain:
+We intentionally use an **old-fashioned INI-style** (and a TOML-like mindset) because it is easy to read and maintain, not only for IT people.
+
+Of course, there are more modern formats but they all have disadvantages for this use case, too:
 - XML has too many brackets and structural noise.
 - YAML relies on significant whitespace (easy to break accidentally).
 - JSON is sensitive to commas/brackets.
+- A database would require additional infrastructure and maintenance know-how.
 
 INI-style keeps common cases simple and reviewable, which is ideal for template administration.
 

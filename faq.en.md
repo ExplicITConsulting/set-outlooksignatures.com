@@ -25,9 +25,9 @@ This FAQ highlights common topics and clarifies typical points of confusion.
 | Category | Topics |
 | :--- | :--- |
 | General | [Changelog](#where-can-i-find-the-changelog) \| [Contributing](#how-can-i-contribute-propose-a-new-feature-or-file-a-bug) \| [OOF vs OOO](#why-is-out-of-office-abbreviated-oof-and-not-ooo) \| [Naming Convention](#isnt-a-plural-noun-in-the-software-name-against-powershell-best-practices) \| [Roadmap](#is-there-a-roadmap-for-future-versions) \| [Outlook Stationery](#can-i-centrally-manage-and-deploy-outook-stationery-with-this-script) \| [Roaming Sync Issues](#roaming-signatures-in-classic-outlook-for-windows-look-different) \| [OOF Activation Logic](#why-is-the-out-of-office-assistant-not-activated-automatically) \| [Disable Tagline](#how-to-disable-the-tagline-in-signatures) \| [Implementation Approach](#what-is-the-recommended-approach-for-implementing-the-software) |
-| Templates & Design | [DOCX vs HTML](#should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates) \| [Removing Blank Lines](#how-to-avoid-blank-lines-when-replacement-variables-return-an-empty-string) \| [Text Color Issues](#why-does-the-text-color-of-my-signature-change-sometimes) \| [Image Scaling/Black Background](#images-in-signatures-have-a-different-size-than-in-templates-or-a-black-background) \| [Rotating Banners](#how-do-i-alternate-banners-and-other-images-in-signatures) \| [Underlined Spaces](#empty-lines-contain-an-underlined-space-character) \| [Text Case](#can-i-change-the-case-uppercaselowercase-of-replacement-variables-in-templates) \| [Calendar/Booking Links](#how-to-add-a-calender-link) \| [Different signatures per mailbox](#different-default-signatures-for-different-mailboxes) \| [OU-based templates](#assign-templates-based-on-organizational-units-ous) |
+| Templates & Design | [DOCX vs HTML](#should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates) \| [Removing Blank Lines](#how-to-avoid-blank-lines-when-replacement-variables-return-an-empty-string) \| [Text Color Issues](#why-does-the-text-color-of-my-signature-change-sometimes) \| [Image Scaling/Black Background](#images-in-signatures-have-a-different-size-than-in-templates-or-a-black-background) \| [Rotating Banners](#how-do-i-alternate-banners-and-other-images-in-signatures) \| [Underlined Spaces](#empty-lines-contain-an-underlined-space-character) \| [Text Case](#can-i-change-the-case-uppercaselowercase-of-replacement-variables-in-templates) \| [Calendar/Booking Links](#how-to-add-a-calender-link) \| [Different signatures per mailbox](#different-default-signatures-for-different-mailboxes) \| [OU-based templates](#assign-templates-based-on-organizational-units-ous) \| [Conditionally delete images](#delete-images-when-attribute-is-empty-variable-content-based-on-group-membership) \| [Variables based on group membership](#delete-images-when-attribute-is-empty-variable-content-based-on-group-membership) |
 | Deployment & Infrastructure | [Why no GUI?](#why-is-no-admin-or-user-gui-available) \| [Folder Structure](#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files) \| [Custom Config Files](#what-is-the-recommended-approach-for-custom-configuration-files) \| [AD Connection Check](#how-can-i-start-the-software-only-when-there-is-a-connection-to-active-directory) \| [CLI & Scheduled Tasks](#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task) \| [Hidden/Invisible Mode](#start-set-outlooksignatures-in-hiddeninvisible-mode) \| [Shortcut with Parameters](#how-to-create-a-shortcut-to-the-software-with-parameters) \| [Intune Deployment](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune) \| [Roaming Signatures](#what-about-the-roaming-signatures-feature-in-exchange-online) \| [AD vs Entra Groups](#when-should-i-refer-on-prem-groups-and-when-entra-id-groups) \| [No Outlook Profile](#what-if-a-user-has-no-outlook-profile-or-is-prohibited-from-starting-outlook) \| [Outlook not installed](#what-if-outlook-is-not-installed-at-all) |
-| Advanced Logic & Automation | [Recreation Logic](#why-are-signatures-and-out-of-office-replies-recreated-even-when-their-content-has-not-changed) \| [Deploy Once](#how-to-deploy-a-signature-only-once) \| [Send As Permissions](#how-to-deploy-signatures-for-send-as-send-on-behalf-etc) \| [Dynamic Groups (On-prem)](#why-is-dynamic-group-membership-not-considered-on-premises) \| [Parallel Instances](#can-multiple-script-instances-run-in-parallel) \| [Run while Outlook is running](#run-set-outlooksignatures-while-outlook-is-running) |
+| Advanced Logic & Automation | [Recreation Logic](#why-are-signatures-and-out-of-office-replies-recreated-even-when-their-content-has-not-changed) \| [Deploy Once](#how-to-deploy-a-signature-only-once) \| [Send As Permissions](#how-to-deploy-signatures-for-send-as-send-on-behalf-etc) \| [Dynamic Groups (On-prem)](#why-is-dynamic-group-membership-not-considered-on-premises) \| [Parallel Instances](#can-multiple-script-instances-run-in-parallel) \| [Run while Outlook is running](#run-set-outlooksignatures-while-outlook-is-running) \| [Custom image replacement variables](#custom-image-replacement-variables) |
 | Troubleshooting & Logs | [Logging](#how-can-i-log-the-software-output) \| [Verbose Output](#how-can-i-get-more-script-output-for-troubleshooting) \| [Word Security Warnings](#the-software-hangs-at-htmrtf-export-word-shows-a-security-warning) \| [Performance/Speed](#why-does-set-outlooksignatures-run-slower-sometimes) \| [Authentication Prompts](#why-am-i-prompted-to-authenticate-repeatedly) \| [Token Cache Location](#where-is-the-graph-token-cached-and-how-do-i-clear-it) \| [Auth Methods](#which-graph-authentication-methods-are-used) |
 | Security & Compliance | [Mailbox Identification](#how-is-the-account-of-a-mailbox-identified) \| [Personal Mailbox ID](#how-is-the-personal-mailbox-of-the-currently-logged-in-user-identified) \| [Network Ports](#which-ports-are-required) \| [Multi-tenant Access](#does-it-support-cross-tenant-access-and-multitenant-organizations) \| [Purview & Labels](#how-to-make-set-outlooksignatures-work-with-microsoft-purview-information-protection) \| [Locking Signatures](#keep-users-from-adding-editing-and-removing-signatures) \| [EWS Deprecation](#what-about-microsoft-turning-off-exchange-web-services-for-exchange-online) |
 | Learn from the code | [AD Group Enumeration](#active-directory-group-membership-enumeration-without-compromises) \| [Graph Auth Logic](#microsoft-graph-authentication-and-re-authentication) \| [Cross-Tenant Access](#graph-cross-tenant-and-multitenant-organization-access) \| [DSC Deployment](#deploy-and-run-software-using-desired-state-configuration-dsc) \| [Parallel Execution](#parallel-code-execution) \| [Desktop Icons](#create-desktop-icons-cross-platform) \| [Entra App Config](#create-and-configure-apps-in-entra-id-grant-admin-consent) \| [AD Trust Tests](#test-active-directory-trusts) \| [AD Connection Check](#start-only-if-working-active-directory-connection-is-available) \| [System Sleep](#prohibit-system-sleep) \| [Exit Signals](#detect-exit-signals) \| [Phone Formatting](#format-phone-numbers) \| [Postal Formatting](#format-postal-addresses) \| [Open Source Treasures](#bringing-hidden-open-source-treasures-to-light) \| [Encoding Conversion](#detect-and-convert-encodings) \| [DN Handling](#handling-of-distinguished-names) |
@@ -1399,3 +1399,56 @@ Outlook and Set-OutlookSignatures can run simultaneously:
 New and changed signatures can be used instantly.
 
 Changing which signature is configured as default for new mails or replies/forwards may require restarting Outlook.
+
+
+### Delete images when attribute is empty, variable content based on group membership
+You can avoid creating multiple templates which only differ by the images contained by only creating one template containing all images and marking this images to be deleted when a certain replacement variable is empty.
+
+Just add the text `$<name of the replacement variable>DELETEEMPTY$` (for example: `$CurrentMailboxExtAttr10DeleteEmpty$` ) to the description or alt text of the image. Taking the example, the image is deleted when extension attribute 10 of the current mailbox is empty.
+
+This can be combined with the `GroupsSIDs` attribute of the current mailbox or current user to only keep images when the mailbox is member of a certain group.
+
+Examples:
+A signature should only show a social network icon with an associated link when there is data in the extension attribute 10 of the mailbox:
+- Insert the icon of the social network in the template, set the hyperlink target to '$CurrentMailboxExtAttr10$' and add '$CurrentMailboxExtAttr10Deleteempty$' to the description of the picture.
+- When using embedded and linked pictures, you can also set the file name to '$CurrentMailboxExtAttr10Deleteempty$'
+
+A signature should only contain a certain image when the current mailbox is a member of the Marketing group:
+- Create a new replacement variable. We use `$CurrentMailbox-ismemberof-marketing$` in the following example.
+  - If the current mailbox is a member, we give the new replacement variable the value "yes". Else, we give it the value null.
+  - You only have to modify three strings right at the beginning:
+
+    ```
+    # Check if current mailbox is member of group 'EXAMPLEDOMAIN\Marketing' and set $ReplaceHash['$CurrentMailbox-ismemberof-marketing$'] accordingly
+    #
+    # Replace 'EXAMPLEDOMAIN Marketing' with the domain and group you are searching for. Use 'EntraID' or 'AzureAD' instead of 'EXAMPLEDOMAIN' to only search Entra ID/Graph
+    # Replace '$CurrentMailbox-ismemberof-marketing$' with the replacement variable that should be used
+    # Replace 'CurrentMailbox' with 'CurrentUser' if you do not want to check the current mailbox group SIDs, but the group SIDs of the current user's mailbox
+    #
+    # The 'GroupsSIDs' attribute is available for the current mailbox and the current user, but not for the managers of these two
+    #   It contains the mailboxes' SID and SIDHistory, the SID and SIDHistory of all groups the mailbox belongs to (nested), and also considers group membership (nested) across trusts.
+
+    @(
+      @('CurrentMailbox', '$CurrentMailbox-IsMemberOf-Marketing$', 'EXAMPLEDOMAIN Marketing'), 
+      @()
+    ) | Where-Object { $_ } | ForEach-Object {
+      if ((Get-Variable -Name "ADProps$($_[0])" -ValueOnly).GroupsSids -icontains ResolveToSid($_[2])) {
+        $ReplaceHash[$_[1]] = 'yes'
+      } else { 
+        $ReplaceHash[$_[1]] = $null 
+      } 
+    }
+    ```
+- Insert the image in the template, and add `$CurrentMailbox-IsMemberOf-MarketingDeleteempty$` to the description of the picture.
+
+
+### Custom image replacement variables
+You can fill custom image replacement variables yourself with a byte array: `$CurrentUserCustomImage[1..10]$`, `$CurrentUserManagerCustomImage[1..10]$`, `$CurrentMailboxCustomImage[1..10]$`, `$CurrentMailboxManagerCustomImage[1..10]$`.
+
+Use cases: Account pictures from a share, QR code vCard/URL/text/Twitter/X/Facebook/App stores/geo location/email, etc.
+
+Per default, `$Current[..]CustomImage1$` is a QR code containing a vCard (in MeCard format) - see file `.\config\default replacement variables.ps1` for the code behind it.
+
+The behavior of custom image replacement variables and the possible configuration options are the same as with replacement variables for account pictures from Active Directory/Entra ID.
+
+As practical as QR codes may be, they should contain as little information as possible. The more information they contain, the larger the image needs to be, which often has a negative impact on the layout and always has a negative impact on the size of the email.<br>QR codes with too much information and too small an image size become visually blurred, making them impossible to scan - for DOCX templates, [DocxHighResImageConversion](/parameters#docxhighresimageconversion) can help. Consider bigger image size, less content, less error correction, MeCard instead of vCard, and pointing to an URL containing the actual information.
