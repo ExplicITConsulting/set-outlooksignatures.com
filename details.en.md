@@ -26,8 +26,8 @@ sitemap_changefreq: weekly
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>⚙️</span>
                 <div>
-                    <p><b>IT</b></p>
-                    <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+                    <p class="mb-4"><b>IT</b></p>
+                    <ul>
                         <li class="mb-2"><a href="#architecture-considerations">Architecture considerations</a></li>
                         <li class="mb-2"><a href="#requirements-and-usage">Requirements and usage</a></li>
                     </ul>
@@ -40,8 +40,8 @@ sitemap_changefreq: weekly
             <div style="display: flex; align-items: flex-start; gap: 0.75em;">
                 <span>🛡️</span>
                 <div>
-                    <p><b>Security</b></p>
-                    <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+                    <p class="mb-4"><b>Security</b></p>
+                    <ul>
                         <li class="mb-0"><a href="#security-considerations">Security considerations</a></li>
                     </ul>
                 </div>
@@ -53,8 +53,8 @@ sitemap_changefreq: weekly
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>🚀</span>
                 <div>
-                    <p><b>Marketing & Usage</b></p>
-                    <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+                    <p class="mb-4"><b>Marketing & Usage</b></p>
+                    <ul>
                         <li class="mb-2"><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></li>
                         <li class="mb-2"><a href="#replacement-variables">Replacement variables</a></li>
                         <li class="mb-2"><a href="#ini-files-and-template-tags">Template tags and INI files</a></li>
