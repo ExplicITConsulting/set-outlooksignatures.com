@@ -51,7 +51,7 @@ sitemap_changefreq: weekly
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🚀</span>
         <div>
-          <p><b>Marketing & Usage</b></p>
+          <p><b>Marketing</b></p>
           <div class="columns">
             <div class="column is-half">
                 <p><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></p>
