@@ -26,11 +26,9 @@ sitemap_changefreq: weekly
             <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>⚙️</span>
                 <div>
-                    <p class="mb-4"><b>IT</b></p>
-                    <ul>
-                        <li><a href="#architecture-considerations">Architecture considerations</a></li>
-                        <li><a href="#requirements-and-usage">Requirements and usage</a></li>
-                    </ul>
+                    <p><b>IT</b></p>
+                    <p><a href="#architecture-considerations">Architecture considerations</a></p>
+                    <p><a href="#requirements-and-usage">Requirements and usage</a></p>
                 </div>
             </div>
         </div>
@@ -40,10 +38,8 @@ sitemap_changefreq: weekly
             <div style="display: flex; align-items: flex-start; gap: 0.5em;">
                 <span>🛡️</span>
                 <div>
-                    <p class="mb-4"><b>Security</b></p>
-                    <ul>
-                        <li><a href="#security-considerations">Security considerations</a></li>
-                    </ul>
+                    <p><b>Security</b></p>
+                    <p><a href="#security-considerations">Security considerations</a></p>
                 </div>
             </div>
         </div>
@@ -51,25 +47,21 @@ sitemap_changefreq: weekly
 </div>
 <div class="columns is-multiline">
   <div class="column is-full">
-    <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Yellow;">
+    <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Blue;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>🚀</span>
         <div>
           <p><b>Marketing</b></p>
           <div class="columns">
             <div class="column is-half">
-                <ul>
-                    <li><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></li>
-                    <li><a href="#replacement-variables">Replacement variables</a></li>
-                    <li><a href="#ini-files-and-template-tags">Template tags and INI files</a></li>
-                </ul>
+                <p><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a> x</p>
+                <p><a href="#replacement-variables">Replacement variables</a> x</p>
+                <p><a href="#ini-files-and-template-tags">Template tags and INI files</a> x</p>
             </div>
             <div class="column is-half">
-                <ul>
-                    <li><a href="#ini-files-and-template-tags">Template tags and INI files</a></li>
-                    <li><a href="#signature-and-oof-application-order">Signature and OOF application order</a></li>
-                    <li><a href="#simulation-mode">Simulation mode</a></li>
-                </ul>
+                <p><a href="#ini-files-and-template-tags">Template tags and INI files</a> x</p>
+                <p><a href="#signature-and-oof-application-order">Signature and OOF application order</a> x</p>
+                <p><a href="#simulation-mode">Simulation mode</a> x</p>
             </div>
           </div>
         </div>
