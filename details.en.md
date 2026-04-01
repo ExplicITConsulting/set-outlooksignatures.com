@@ -305,7 +305,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
         <td>Set signature.</td>
       </tr>
       <tr>
-        <td colspan="5" style="padding-top: 2em !important;"><strong>Cloud only Entra ID app</strong></td>
+        <td colspan="5" style="padding-top: 2em !important;"><strong>Cloud only Entra ID app</strong> (creating a separate app for each mode is strongly recommended)</td>
       </tr>
       <tr>
         <td colspan="5"><em>Setup</em></td>
