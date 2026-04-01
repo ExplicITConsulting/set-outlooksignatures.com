@@ -56,9 +56,9 @@ sitemap_changefreq: weekly
                     <p><b>Marketing & Usage</b></p>
                     <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
                         <li class="mb-2"><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></li>
+                        <li class="mb-2"><a href="#replacement-variables">Replacement variables</a></li>
                         <li class="mb-2"><a href="#ini-files-and-template-tags">Template tags and INI files</a></li>
                         <li class="mb-2"><a href="#signature-and-oof-application-order">Signature and OOF application order</a></li>
-                        <li class="mb-2"><a href="#replacement-variables">Replacement variables</a></li>
                         <li class="mb-2"><a href="#simulation-mode">Simulation mode</a></li>
                     </ul>
                 </div>
@@ -244,6 +244,90 @@ Set-OutlookSignatures comes with a big set of default replacement variables, cov
 - View the template in DOCX format or in HTML format on GitHub or in the `.\sample templates` folder of your download.
 - See the final result, i.e. your real values instead of the placeholders, after running the [Quickstart](/quickstart) guide. Just create a new email and select the generated sample signature **“Test all default replacement variables”**.
 - Click here to view the <a href="/assets/html/test all default replacement variables.html" target="_blank">"Test all default replacement variables" signature filled with data from our demo environment</a>.
+
+### Photos (account pictures, user image) from Active Directory or Entra ID
+The software supports replacing images in signature templates with actual user photos. These photos are per default taken from Entra ID and Active Directory, but you may also definitive alternative sources such as a file share, a SharePoint document library, a database, or a web service.
+
+As with other variables, photos can be obtained from the currently logged-in user, its manager, the currently processed mailbox and its manager.
+
+Set-Outlooksignatures comes with the following default replacement variables for handling account pictures:
+- `$CurrentUserPhoto$`  
+- `$CurrentUserPhotoDeleteEmpty$`  
+- `$CurrentUserManagerPhoto$`  
+- `$CurrentUserManagerPhotoDeleteEmpty$`  
+- `$CurrentMailboxPhoto$`  
+- `$CurrentMailboxPhotoDeleteEmpty$`  
+- `$CurrentMailboxManagerPhoto$`  
+- `$CurrentMailboxManagerPhotoDeleteEmpty$`  
+
+> Note: Exchange and Outlook do not yet support images in OOF messages.
+
+Adding account pictures is simple:
+- When using DOCX template files
+  1. Add a shape or a placeholder image.
+  2. Set its text wrapping to "inline with text".
+  3. Apply Word image features such as sizing, hadow, glow or reflection.
+  4. Add one of the account pictures replacement variables, such as `$CurrentUserPhoto$`, to the alternative text of the image or shape.
+- Whe using HTML template files
+  1. Just add an account picture replacement variable to the the `src` or `alt` property of a placeholder image.
+
+Set-OutlookSignatures take care of replacing the placeholder image or filling the shape with the desired account picture.
+
+If you choose the "DeleteEmpty" option (e.g `$CurrentUserPhotoDeleteEmpty$`), the image or shape is deleted if there is no account picture available.
+
+### Delete images when attribute is empty, variable content based on group membership<!-- omit in toc -->
+You can avoid creating multiple templates which only differ by the images contained by only creating one template containing all images and marking this images to be deleted when a certain replacement variable is empty.
+
+Just add the text `$<name of the replacement variable>DELETEEMPTY$` (for example: `$CurrentMailboxExtAttr10DeleteEmpty$` ) to the description or alt text of the image. Taking the example, the image is deleted when extension attribute 10 of the current mailbox is empty.
+
+This can be combined with the `GroupsSIDs` attribute of the current mailbox or current user to only keep images when the mailbox is member of a certain group.
+
+Examples:
+- A signature should only show a social network icon with an associated link when there is data in the extension attribute 10 of the mailbox:
+  - Insert the icon of the social network in the template, set the hyperlink target to '$CurrentMailboxExtAttr10$' and add '$CurrentMailboxExtAttr10Deleteempty$' to the description of the picture.
+    - When using embedded and linked pictures, you can also set the file name to '$CurrentMailboxExtAttr10Deleteempty$'
+- A signature should only contain a certain image when the current mailbox is a member of the Marketing group:
+  - Create a new replacement variable. We use '$CurrentMailbox-ismemberof-marketing$' in the following example.
+    - Attention on-prem users: If Domain Local Active Directory groups are involved, you need to set the `IncludeMailboxForestDomainLocalGroups` parameter to `true` when running Set-OutlookSignatures, so that the SIDs of these groups are considered too.
+    - If the current mailbox is a member, give '$CurrentMailbox-ismemberof-marketing$' any value. If not, give '$CurrentMailbox-ismemberof-marketing$' no value (NULL or an empty string).
+    - You only have to modify three strings right at the beginning:
+
+      ```
+      # Check if current mailbox is member of group 'EXAMPLEDOMAIN\Marketing' and set $ReplaceHash['$CurrentMailbox-ismemberof-marketing$'] accordingly
+      #
+      # Replace 'EXAMPLEDOMAIN Marketing' with the domain and group you are searching for. Use 'EntraID' or 'AzureAD' instead of 'EXAMPLEDOMAIN' to only search Entra ID/Graph
+      # Replace '$CurrentMailbox-ismemberof-marketing$' with the replacement variable that should be used
+      # Replace 'CurrentMailbox' with 'CurrentUser' if you do not want to check the current mailbox group SIDs, but the group SIDs of the current user's mailbox
+      #
+      # The 'GroupsSIDs' attribute is available for the current mailbox and the current user, but not for the managers of these two
+      #   It contains the mailboxes' SID and SIDHistory, the SID and SIDHistory of all groups the mailbox belongs to (nested), and also considers group membership (nested) across trusts.
+      #   Attention on-prem users: If Active Directory groups of the Domain Local type are queried, you need to set the `IncludeMailboxForestDomainLocalGroups` parameter to `true` when running Set-OutlookSignatures, so that the SIDs of these groups are considered in GroupsSIDs, too.
+      @(
+        @('CurrentMailbox', '$CurrentMailbox-IsMemberOf-Marketing$', 'EXAMPLEDOMAIN Marketing'), 
+        @()
+      ) | Where-Object { $_ } | ForEach-Object {
+        if ((Get-Variable -Name "ADProps$($_[0])" -ValueOnly).GroupsSids -icontains ResolveToSid($_[2])) {
+          $ReplaceHash[$_[1]] = 'yes'
+        } else { 
+          $ReplaceHash[$_[1]] = $null 
+        } 
+      }
+      ```
+
+  - Insert the image in the template, and add '$CurrentMailbox-IsMemberOf-MarketingDeleteempty$' to the description of the picture.
+    - When using embedded and linked pictures, you can also set the file name to '$CurrentMailbox-IsMemberOf-MarketingDeleteempty$'
+
+
+### Custom image replacement variables<!-- omit in toc -->
+You can fill custom image replacement variables yourself with a byte array: `$CurrentUserCustomImage[1..10]$`, `$CurrentUserManagerCustomImage[1..10]$`, `$CurrentMailboxCustomImage[1..10]$`, `$CurrentMailboxManagerCustomImage[1..10]$`.
+
+Use cases: Account pictures from a share, QR code vCard/URL/text/Twitter/X/Facebook/App stores/geo location/email, etc.
+
+Per default, `$Current[..]CustomImage1$` is a QR code containing a vCard (in MeCard format) - see file `.\config\default replacement variables.ps1` for the code behind it.
+
+The behavior of custom image replacement variables and the possible configuration options are the same as with replacement variables for account pictures from Active Directory/Entra ID.
+
+As practical as QR codes may be, they should contain as little information as possible. The more information they contain, the larger the image needs to be, which often has a negative impact on the layout and always has a negative impact on the size of the email.<br>QR codes with too much information and too small an image size become visually blurred, making them impossible to scan - for DOCX templates, `DocxHighResImageConversion` can help. Consider bigger image size, less content, less error correction, MeCard instead of vCard, and pointing to an URL containing the actual information.
 
 
 ## INI files and template tags {#ini-files-and-template-tags}
