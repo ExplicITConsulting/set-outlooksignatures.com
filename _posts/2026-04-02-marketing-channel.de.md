@@ -77,7 +77,7 @@ Dies ist insbesondere für Organisationen relevant, die folgende Anforderungen h
 
 So lässt sich Set-OutlookSignatures nahtlos in regulierte oder Enterprise-Umgebungen integrieren.
 
-Weitere Informationen finden Sie auf der Seite [/features](/features).
+Weitere Informationen finden Sie auf der [Features](/features)-Seite.
 
 
 ## Eine einfache Verbesserung mit nachhaltiger Wirkung

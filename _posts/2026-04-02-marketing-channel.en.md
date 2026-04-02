@@ -76,7 +76,7 @@ This is particularly relevant for organizations that require:
 
 It allows Set‑OutlookSignatures to be integrated cleanly into regulated or enterprise environments.
 
-Further details are available on the [/features](/features) page.
+Further details are available on the [Features](/features) page.
 
 
 ## A simple improvement with lasting effect
