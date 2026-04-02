@@ -36,7 +36,9 @@ function GetLinksAndContent {
                         $isThrottled = $true
                     } else {
                         # Real error (404, DNS, etc.) - we still throw here
-                        throw "Invoke-WebRequest real availability error: $_"
+                        # throw "Invoke-WebRequest real availability error: $_"
+                        
+                        ## Real error (404, DNS, etc.) - but we dont throw here, so Selenium can try to load the page
                     }
                 }
             }
@@ -208,7 +210,6 @@ try {
             Select-Object -ExpandProperty browser_download_url
 
         Write-Host "  Downloading: $GeckoUrl"
-        Invoke-WebRequest -Uri $GeckoUrl -OutFile "$SeleniumDir\driver.zip" -UseBasicParsing
         Invoke-WebRequest -Uri $GeckoUrl -OutFile "$SeleniumDir\driver.zip" -UseBasicParsing
         Expand-Archive -Path "$SeleniumDir\driver.zip" -DestinationPath $SeleniumDir -Force
 
