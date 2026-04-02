@@ -1401,7 +1401,7 @@ New and changed signatures can be used instantly.
 Changing which signature is configured as default for new mails or replies/forwards may require restarting Outlook.
 
 
-### Delete images when attribute is empty, variable content based on group membership
+## Delete images when attribute is empty, variable content based on group membership
 You can avoid creating multiple templates which only differ by the images contained by only creating one template containing all images and marking this images to be deleted when a certain replacement variable is empty.
 
 Just add the text `$<name of the replacement variable>DELETEEMPTY$` (for example: `$CurrentMailboxExtAttr10DeleteEmpty$` ) to the description or alt text of the image. Taking the example, the image is deleted when extension attribute 10 of the current mailbox is empty.
@@ -1442,7 +1442,7 @@ A signature should only contain a certain image when the current mailbox is a me
 - Insert the image in the template, and add `$CurrentMailbox-IsMemberOf-MarketingDeleteempty$` to the description of the picture.
 
 
-### Custom image replacement variables
+## Custom image replacement variables
 You can fill custom image replacement variables yourself with a byte array: `$CurrentUserCustomImage[1..10]$`, `$CurrentUserManagerCustomImage[1..10]$`, `$CurrentMailboxCustomImage[1..10]$`, `$CurrentMailboxManagerCustomImage[1..10]$`.
 
 Use cases: Account pictures from a share, QR code vCard/URL/text/Twitter/X/Facebook/App stores/geo location/email, etc.

@@ -582,11 +582,13 @@ The following list focuses on the tags that are used most often.
 - **Default signature:** `defaultNew`, `defaultReplyFwd`
 - **OOF scope:** `internal`, `external`
 
+For a complete reference and examples based on real-world use cases, see the INI files in the [`sample templates`](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/tree/main/src_Set-OutlookSignatures/sample%20templates) folder.
+
 > Note: Tags are case-insensitive.
 
 ### How to work with INI files
 1. **Comments:** lines starting with `#` or `;`
-2. Use the sample INI files shipped with Set-OutlookSignatures as a starting point (see `.\sample templates` folder)
+2. Use the sample INI files shipped with Set-OutlookSignatures as a starting point (see [`sample templates`](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/tree/main/src_Set-OutlookSignatures/sample%20templates) folder)
 3. Put file names (with extension) in square brackets:
     ```
     [Company external English formal.docx]
