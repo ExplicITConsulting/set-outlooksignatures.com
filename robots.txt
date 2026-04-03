@@ -19,5 +19,4 @@ Allow: /{{ lang }}/llms-full.txt
   {%- endif -%}
 {%- endfor %}
 
-# Traditional sitemap for Google/Bing
 Sitemap: {{ site.url }}/sitemap.xml
