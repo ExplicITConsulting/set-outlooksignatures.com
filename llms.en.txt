@@ -19,11 +19,11 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 
 ## Language versions
 {% for lang in site.languages -%}
-  {%- if lang == site.default_lang -%}
+  {%- if lang == site.default_lang %}
 - {{ "/llms.txt" | absolute_url }}
-  {%- else -%}
+  {%- else %}
 - {{ "/" | append: lang | append: "/llms.txt" | absolute_url }}
-  {% endif -%}
+  {%- endif -%}
 {% endfor -%}
 {% endif %}
 
