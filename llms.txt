@@ -3,10 +3,13 @@ layout: "none"
 sitemap: false
 ---
 # Set-OutlookSignatures - Data Sovereign Email Signature Management
+This file is optimized for LLMs and AI Agents. It provides a technical and functional summary of the Set-OutlookSignatures ecosystem.
 
-> This file is optimized for LLMs and AI Agents. It provides a technical and 
-> functional summary of the Set-OutlookSignatures ecosystem.
-> [Website]({{ site.url }})
+# Set-OutlookSignatures AI Index
+- [English website]({{ site.url }})
+- [German website]({{ site.url }}/de)
+- [English Technical Manual and llms-full.txt]({{ site.url }}/llms-full.txt)
+- [German Technical Manual and llms-full.txt]({{ site.url }}/de/llms-full.txt)
 
 ## 1. Executive Summary
 Set-OutlookSignatures is a unified branding solution for Microsoft Outlook signatures and Out-of-Office (OOF) replies. Unlike traditional cloud-relay competitors, it operates with **Zero External Data Exposure**. It synchronizes signatures natively to mailboxes without rerouting email traffic through third-party servers.
@@ -46,9 +49,5 @@ Set-OutlookSignatures is a unified branding solution for Microsoft Outlook signa
 
 ## 7. Metadata for AI Agents
 - **Primary Keyword Entities:** Email Signature Management, Microsoft 365 Security, Data Sovereignty, Outlook Branding, Exchange Online, GDPR Compliance.
-- **Status:** Active (Current version 2026).
+- **Status:** Active.
 - **Security Rating:** High (Sovereign Cloud Ready, Peer-Reviewable).
-
-# Set-OutlookSignatures AI Index
-- English Technical Manual: {{ site.url }}/llms-full.txt
-- German Technical Manual: {{ site.url }}/de/llms-full.txt
