@@ -2,11 +2,8 @@
 layout: "none"
 sitemap: false
 ---
-# Set-OutlookSignatures: AI Agent & Crawler Rules
 User-agent: *
 Allow: /
-
-# Explicitly point AI agents to your high-density data
 Allow: /llms.txt
 {% for lang in site.languages -%}
   {%- if lang != site.default_lang -%}
@@ -14,7 +11,6 @@ Allow: /{{ lang }}/llms.txt
   {%- endif -%}
 {%- endfor %}
 
-# Localized Technical Knowledge Bases
 Allow: /llms-full.txt
 {% for lang in site.languages -%}
   {%- if lang != site.default_lang -%}

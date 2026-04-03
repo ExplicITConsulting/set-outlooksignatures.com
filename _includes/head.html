@@ -8,10 +8,8 @@
 
     {%- if site.active_lang == site.default_lang -%}
         {%- assign canonicalUrl = page.url -%}
-    <link rel="help" href="{{ site.url }}/llms.txt">
-        {%- else -%}
+    {%- else -%}
         {%- assign canonicalUrl = '/' | append: site.active_lang | append: page.url -%}
-    <link rel="help" href="{{ site.url }}/{{ site.active_lang }}/llms.txt">
     {%- endif %}
     <link rel="canonical" {% static_href %}href="{{ canonicalUrl | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "/" }}"{% endstatic_href %}>
     <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ page.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "/" }}"{% endstatic_href %}>
