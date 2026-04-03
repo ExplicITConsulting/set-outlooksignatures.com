@@ -1,5 +1,6 @@
 ---
 layout: "none"
+sitemap: false
 ---
 # Set-OutlookSignatures - Data Sovereign Email Signature Management
 

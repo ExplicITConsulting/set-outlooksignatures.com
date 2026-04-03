@@ -1,42 +1,44 @@
 ---
 layout: "none"
+sitemap: false
 ---
-{%- comment -%} Create a prioritized language list {%- endcomment -%}
-{%- assign default_lang = site.default_lang | default: site.languages.first -%}
-{%- assign sorted_langs = site.languages -%}
-{%- if default_lang -%}
-  {%- assign sorted_langs = sorted_langs | unshift: default_lang | uniq -%}
-{%- endif -%}
+# Set-OutlookSignatures: Global Technical Knowledge Base (Full)
+# Includes: Pages, Documentation, and All Blog Posts
+# Generated on: {{ site.time | date_to_xmlschema }}
 
+{%- comment -%} 
+  1. Aggregate Pages and Documents (which includes _posts and _docs)
+{%- endcomment -%}
+{%- assign all_items = site.pages | concat: site.documents -%}
 
+{%- for node in all_items -%}
+  {%- comment -%} 
+    Filter out system files and nodes without titles/content
+  {%- endcomment -%}
+  {%- unless node.redirect_to or node.sitemap == false or node.url contains '/assets/' or node.url contains '/404' or node.title == nil -%}
 
-{%- assign unique_permalinks = "" | split: "" -%}
+    {%- assign node_lang = node.lang | default: site.default_lang -%}
 
-{% assign all_content = site.pages %}
-{%- for collection in site.collections -%}
-    {%- assign all_content = all_content | concat: site[collection.label] -%}
-{%- endfor -%}
+    {%- comment -%} Build the localized URL {%- endcomment -%}
+    {%- if node_lang == site.default_lang -%}
+      {%- assign final_url = node.url | absolute_url -%}
+    {%- else -%}
+      {%- assign final_url = '/' | append: node_lang | append: node.url | absolute_url -%}
+    {%- endif -%}
 
-{%- for node in all_content -%}
-  {%- unless node.redirect_to or node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
-    {%- assign canonicalUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "/" -%}
+    {%- assign final_url = final_url | replace: "//", "/" | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "/" -%}
 
-    {%- for languageCode in sorted_langs -%}
-      {%- if languageCode == default_lang -%}
-        {%- assign localizedUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "/" -%}
-      {%- else -%}
-        {%- assign localizedUrl = '/' | append: languageCode | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "/" -%}
-      {%- endif -%}
+## ENTITY: {{ node.title }}
+**Language:** {{ node_lang | upcase }}
+**URL:** {{ final_url }}
+**Type:** {{ node.collection | default: "Page" }}
+{% if node.subtitle %}**Subtitle:** {{ node.subtitle }}{% endif %}
+{% if node.description %}**Description:** {{ node.description }}{% endif %}
+{% if node.date %}**Published:** {{ node.date | date: "%Y-%m-%d" }}{% endif %}
 
-      {%- unless unique_permalinks contains localizedUrl -%}
-        {%- assign unique_permalinks = unique_permalinks | push: localizedUrl %}
-## SECTION: {{ node.title }}
-URL: {{ localizedUrl }}
+### CONTENT:
 {{ node.content | strip_html | normalize_whitespace }}
 
 ---
-
-      {%- endunless -%}
-    {%- endfor -%}
   {%- endunless -%}
 {%- endfor -%}
