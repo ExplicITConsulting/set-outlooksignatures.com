@@ -18,13 +18,13 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 {%- endcomment -%}
 {% if site.languages %}
 ## Language versions
-{%- for lang in site.languages -%}
+{% for lang in site.languages -%}
   {%- if lang == site.default_lang -%}
 - {{ "/llms.txt" | absolute_url }}
   {%- else -%}
 - {{ "/" | append: lang | append: "/llms.txt" | absolute_url }}
   {%- endif -%}
-{%- endfor -%}
+{% endfor -%}
 {% endif %}
 
 {%- assign all_items = site.pages | concat: site.documents -%}
@@ -101,7 +101,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 
 - [{{ node.title }}]({{ final_url }}): {{ sentence | strip }}
 
-  {%- endfor -%}
+  {% endfor -%}
 
 {%- endfor -%}
 
@@ -110,4 +110,4 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 - [llms-full.txt]({{ "/llms-full.txt" | absolute_url }}): Full text dump of pages/posts/docs
 {%- else -%}
 - [llms-full.txt]({{ "/" | append: active_lang | append: "/llms-full.txt" | absolute_url }}): Full text dump of pages/posts/docs
-{%- endif -%}
+{% endif -%}
