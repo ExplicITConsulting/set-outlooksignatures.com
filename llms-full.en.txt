@@ -1,5 +1,7 @@
 ---
 layout: "none"
+lang: "en"
+locale: "en"
 sitemap: false
 ---
 # Set-OutlookSignatures: Global Technical Knowledge Base (Full)
