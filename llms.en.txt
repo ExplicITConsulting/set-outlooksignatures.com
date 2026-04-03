@@ -48,7 +48,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 
 
 ## {{ section_name | capitalize }}
-  {% assign sorted = group.items | sort: "title" -%}
+  {%- assign sorted = group.items | sort: "title" -%}
   {%- for node in sorted -%}
     {%- if active_lang == site.default_lang -%}
       {%- assign final_url = node.url | absolute_url -%}
