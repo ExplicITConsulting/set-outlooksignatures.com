@@ -27,15 +27,25 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 {% if site.languages %}
 
 
-## Language versions
+## Language versions of llms.txt
 {%- for lang in site.languages -%}
   {%- if lang == site.default_lang %}
-- {{ "/llms.txt" | absolute_url }}
+- [{{ lang }} llms.txt]({{ "/llms.txt" | absolute_url }})
   {%- else %}
-- {{ "/" | append: lang | append: "/llms.txt" | absolute_url }}
+- [{{ lang }} llms.txt]({{ "/" | append: lang | append: "/llms.txt" | absolute_url }})
   {%- endif -%}
 {% endfor -%}
-{% endif %}
+
+
+## Language versions of llms-full.txt
+{%- for lang in site.languages -%}
+  {%- if lang == site.default_lang %}
+- [{{ lang }} llms-full.txt]({{ "/llms-full.txt" | absolute_url }})
+  {%- else %}
+- [{{ lang }} llms-full.txt]({{ "/" | append: lang | append: "/llms-full.txt" | absolute_url }})
+  {%- endif -%}
+{% endfor -%}
+
 
 {%- assign all_items = site.pages | concat: site.documents -%}
 
@@ -111,11 +121,3 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 - [{{ node.title | strip_html }}]({{ final_url }}): {{ sentence }}
   {%- endfor -%}
 {%- endfor %}
-
-
-## Optional
-{%- if active_lang == site.default_lang -%}
-- [llms-full.txt]({{ "/llms-full.txt" | absolute_url }}): Full text dump of pages/posts/docs
-{%- else %}
-- [llms-full.txt]({{ "/" | append: active_lang | append: "/llms-full.txt" | absolute_url }}): Full text dump of pages/posts/docs
-{% endif -%}
