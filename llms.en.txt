@@ -1,0 +1,113 @@
+---
+layout: "none"
+lang: "en"
+locale: "en"
+permalink: "/llms.txt"
+sitemap: false
+---
+
+# Set-OutlookSignatures
+> Data-sovereign Outlook signatures and out-of-office management that syncs to mailboxes without mail-flow rerouting.
+
+Generated on: {{ site.time | date_to_xmlschema }}
+
+{%- assign active_lang = site.active_lang | default: page.lang | default: site.default_lang -%}
+
+{%- comment -%}
+Optional: list other language llms.txt locations, but only if site.languages exists (Polyglot standard config).
+{%- endcomment -%}
+{% if site.languages %}
+## Language versions
+{%- for lang in site.languages -%}
+  {%- if lang == site.default_lang -%}
+- {{ "/llms.txt" | absolute_url }}
+  {%- else -%}
+- {{ "/" | append: lang | append: "/llms.txt" | absolute_url }}
+  {%- endif -%}
+{%- endfor -%}
+{% endif %}
+
+{%- assign all_items = site.pages | concat: site.documents -%}
+
+{%- assign items = "" | split: "" -%}
+{%- for node in all_items -%}
+  {%- unless node.redirect_to
+        or node.sitemap == false
+        or node.url contains "/assets/"
+        or node.url contains "/404"
+        or node.title == nil
+  -%}
+    {%- assign items = items | push: node -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+{%- assign grouped = items | group_by: "collection" -%}
+
+{%- for group in grouped -%}
+  {%- assign section_name = group.name | default: "Pages" -%}
+## {{ section_name | capitalize }}
+
+  {%- assign sorted = group.items | sort: "title" -%}
+  {%- for node in sorted -%}
+
+    {%- if active_lang == site.default_lang -%}
+      {%- assign final_url = node.url | absolute_url -%}
+    {%- else -%}
+      {%- assign final_url = "/" | append: active_lang | append: node.url | absolute_url -%}
+    {%- endif -%}
+
+    {%- assign final_url = final_url
+      | replace: "//", "/"
+      | replace: "http:/", "http://"
+      | replace: "https:/", "https://"
+      | replace: "/index.html", "/"
+    -%}
+
+    {%- comment -%}
+    Build ONE descriptive sentence:
+    Subtitle — Description. Summary...
+    - Subtitle/Description/Summary come from front matter if present (default Jekyll behavior).
+    - Summary preference: node.summary > node.excerpt > truncated node.content.
+    {%- endcomment -%}
+
+    {%- assign subtitle = node.subtitle | default: "" | strip_html | normalize_whitespace -%}
+    {%- assign description = node.description | default: "" | strip_html | normalize_whitespace -%}
+
+    {%- assign summary = "" -%}
+    {%- if node.summary -%}
+      {%- assign summary = node.summary -%}
+    {%- elsif node.excerpt -%}
+      {%- assign summary = node.excerpt -%}
+    {%- else -%}
+      {%- assign summary = node.content -%}
+    {%- endif -%}
+    {%- assign summary = summary | strip_html | normalize_whitespace | truncatewords: 40 -%}
+
+    {%- assign lead = "" -%}
+    {%- if subtitle != "" and description != "" -%}
+      {%- assign lead = subtitle | append: " — " | append: description -%}
+    {%- elsif subtitle != "" -%}
+      {%- assign lead = subtitle -%}
+    {%- elsif description != "" -%}
+      {%- assign lead = description -%}
+    {%- endif -%}
+
+    {%- assign sentence = "" -%}
+    {%- if lead != "" -%}
+      {%- assign sentence = lead | append: ". " | append: summary -%}
+    {%- else -%}
+      {%- assign sentence = summary -%}
+    {%- endif -%}
+
+- [{{ node.title }}]({{ final_url }}): {{ sentence | strip }}
+
+  {%- endfor -%}
+
+{%- endfor -%}
+
+## Optional
+{%- if active_lang == site.default_lang -%}
+- [llms-full.txt]({{ "/llms-full.txt" | absolute_url }}): Full text dump of pages/posts/docs
+{%- else -%}
+- [llms-full.txt]({{ "/" | append: active_lang | append: "/llms-full.txt" | absolute_url }}): Full text dump of pages/posts/docs
+{%- endif -%}
