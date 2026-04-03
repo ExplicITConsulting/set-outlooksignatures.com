@@ -43,5 +43,6 @@ sitemap: false
 {{ node.content | strip_html | normalize_whitespace }}
 
 ---
+
   {%- endunless -%}
 {%- endfor -%}
