@@ -97,7 +97,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
       {%- assign sentence = lead | append: ". " | append: summary -%}
     {%- else -%}
       {%- assign sentence = summary -%}
-    {%- endif -%}
+    {%- endif %}
 - [{{ node.title | strip_html }}]({{ final_url }}): {{ sentence }}
   {%- endfor -%}
 {%- endfor %}
