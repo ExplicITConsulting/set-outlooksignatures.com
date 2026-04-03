@@ -9,7 +9,7 @@ sitemap: false
 {%- assign active_lang = site.active_lang | default: page.lang | default: site.default_lang -%}
 {%- assign index_page = site.pages
   | where_exp: "p", "p.permalink == '/' or p.url == '/'"
-  | where_exp: "p", "(p.lang | default: site.default_lang) == active_lang"
+  | where: "lang", active_lang
   | first
 -%}
 {%- if index_page %}
