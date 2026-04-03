@@ -44,7 +44,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 {%- assign grouped = items | group_by: "collection" -%}
 
 {%- for group in grouped -%}
-  {%- assign section_name = group.name | default: "Pages" -%}
+  {%- assign section_name = group.name | default: "Pages" %}
 
 
 ## {{ section_name | capitalize }}
