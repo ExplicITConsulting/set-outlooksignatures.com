@@ -2,6 +2,7 @@
 layout: "none"
 lang: "en"
 locale: "en"
+permalink: "/llms-full.txt"
 sitemap: false
 ---
 # Set-OutlookSignatures: Global Technical Knowledge Base (Full)
