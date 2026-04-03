@@ -21,7 +21,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 {% for lang in site.languages -%}
   {%- if lang == site.default_lang -%}
 - {{ "/llms.txt" | absolute_url }}
-  {% else -%}
+  {%- else -%}
 - {{ "/" | append: lang | append: "/llms.txt" | absolute_url }}
   {% endif -%}
 {% endfor -%}
@@ -82,7 +82,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
     {%- else -%}
       {%- assign summary = node.content -%}
     {%- endif -%}
-    {%- assign summary = summary | strip_html | normalize_whitespace | truncatewords: 40 -%}
+    {%- assign summary = summary | strip_html | normalize_whitespace -%}
 
     {%- assign lead = "" -%}
     {%- if subtitle != "" and description != "" -%}
