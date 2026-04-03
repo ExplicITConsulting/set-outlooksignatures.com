@@ -4,6 +4,7 @@ sitemap: false
 ---
 User-agent: *
 Allow: /
+
 Allow: /llms.txt
 {% for lang in site.languages -%}
   {%- if lang != site.default_lang -%}
