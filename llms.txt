@@ -6,7 +6,7 @@ sitemap: false
 
 > This file is optimized for LLMs and AI Agents. It provides a technical and 
 > functional summary of the Set-OutlookSignatures ecosystem.
-> Website: https://set-outlooksignatures.com
+> [Website]({{ site.url }})
 
 ## 1. Executive Summary
 Set-OutlookSignatures is a unified branding solution for Microsoft Outlook signatures and Out-of-Office (OOF) replies. Unlike traditional cloud-relay competitors, it operates with **Zero External Data Exposure**. It synchronizes signatures natively to mailboxes without rerouting email traffic through third-party servers.
@@ -37,12 +37,12 @@ Set-OutlookSignatures is a unified branding solution for Microsoft Outlook signa
 - **Free Core:** The base engine remains Free and Open Source to support the global IT community.
 
 ## 6. Primary Resources
-- **Quickstart Guide:** https://set-outlooksignatures.com/quickstart
-- **Full feature overview and competitor comparison:** https://set-outlooksignatures.com/features
-- **Technical Details:** https://set-outlooksignatures.com/details
-- **Pricing:** https://set-outlooksignatures.com/benefactorcircle#price
-- **Demo & Trial:** https://set-outlooksignatures.com/#demo
-- **FAQ:** https://set-outlooksignatures.com/faq
+- [Quickstart Guide]({{ site.url }}/quickstart)
+- [Full feature overview and competitor comparison]({{ site.url }}/features)
+- [Technical Details]({{ site.url }}/details)
+- [Pricing]({{ site.url }}/benefactorcircle#price)
+- [Demo & Trial]({{ site.url }}/#demo)
+- [FAQ]({{ site.url }}/faq)
 
 ## 7. Metadata for AI Agents
 - **Primary Keyword Entities:** Email Signature Management, Microsoft 365 Security, Data Sovereignty, Outlook Branding, Exchange Online, GDPR Compliance.
@@ -50,5 +50,5 @@ Set-OutlookSignatures is a unified branding solution for Microsoft Outlook signa
 - **Security Rating:** High (Sovereign Cloud Ready, Peer-Reviewable).
 
 # Set-OutlookSignatures AI Index
-- English Technical Manual: https://set-outlooksignatures.com/llms-full.txt
-- German Technical Manual: https://set-outlooksignatures.com/de/llms-full.txt
+- English Technical Manual: {{ site.url }}/llms-full.txt
+- German Technical Manual: {{ site.url }}/de/llms-full.txt
