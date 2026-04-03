@@ -24,12 +24,3 @@ Allow: /{{ lang }}/llms-full.txt
 
 # Traditional sitemap for Google/Bing
 Sitemap: {{ site.url }}/sitemap.xml
-
-# Dedicated Sitemap for LLMs
-# This helps AI agents discover documentation faster
-Link: <{{ site.url }}/llms.txt>; rel="llms"
-{% for lang in site.languages -%}
-  {%- if lang != site.default_lang -%}
-Link: <{{ site.url }}/{{ lang }}/llms.txt>; rel="llms"
-  {%- endif -%}
-{%- endfor %}
