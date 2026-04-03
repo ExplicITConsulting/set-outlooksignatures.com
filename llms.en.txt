@@ -5,25 +5,25 @@ locale: "en"
 permalink: "/llms.txt"
 sitemap: false
 ---
-
 # Set-OutlookSignatures
 > Data-sovereign Outlook signatures and out-of-office management that syncs to mailboxes without mail-flow rerouting.
 
 Generated on: {{ site.time | date_to_xmlschema }}
-
 {%- assign active_lang = site.active_lang | default: page.lang | default: site.default_lang -%}
 
 {%- comment -%}
 Optional: list other language llms.txt locations, but only if site.languages exists (Polyglot standard config).
 {%- endcomment -%}
 {% if site.languages %}
+
+
 ## Language versions
 {% for lang in site.languages -%}
   {%- if lang == site.default_lang -%}
 - {{ "/llms.txt" | absolute_url }}
-  {%- else -%}
+  {% else -%}
 - {{ "/" | append: lang | append: "/llms.txt" | absolute_url }}
-  {%- endif -%}
+  {% endif -%}
 {% endfor -%}
 {% endif %}
 
@@ -45,9 +45,10 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 
 {%- for group in grouped -%}
   {%- assign section_name = group.name | default: "Pages" -%}
-## {{ section_name | capitalize }}
 
-  {%- assign sorted = group.items | sort: "title" -%}
+
+## {{ section_name | capitalize }}
+  {% assign sorted = group.items | sort: "title" -%}
   {%- for node in sorted -%}
 
     {%- if active_lang == site.default_lang -%}
@@ -98,15 +99,13 @@ Optional: list other language llms.txt locations, but only if site.languages exi
     {%- else -%}
       {%- assign sentence = summary -%}
     {%- endif -%}
-
-- [{{ node.title }}]({{ final_url }}): {{ sentence | strip }}
-
+- [{{ node.title | strip_html }}]({{ final_url }}): {{ sentence | strip | strip_html }}
   {% endfor -%}
-
 {%- endfor -%}
 
+
 ## Optional
-{%- if active_lang == site.default_lang -%}
+{% if active_lang == site.default_lang -%}
 - [llms-full.txt]({{ "/llms-full.txt" | absolute_url }}): Full text dump of pages/posts/docs
 {%- else -%}
 - [llms-full.txt]({{ "/" | append: active_lang | append: "/llms-full.txt" | absolute_url }}): Full text dump of pages/posts/docs
