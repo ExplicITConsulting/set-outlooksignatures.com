@@ -37,7 +37,7 @@ Generated on: {{ site.time | date_to_xmlschema }}
 - URL: {{ final_url }}
 - Type: {{ node.collection | default: "Page" }}
 {%- if node.title %}
-- Subtitle: {{ node.title | strip | strip_html | strip_newlines }}
+- Title: {{ node.title | strip | strip_html | strip_newlines }}
 {%- endif %}
 {%- if node.subtitle %}
 - Subtitle: {{ node.subtitle | strip | strip_html | strip_newlines }}
