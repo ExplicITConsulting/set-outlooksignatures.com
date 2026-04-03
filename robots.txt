@@ -8,13 +8,11 @@ Allow: /
 
 # Explicitly point AI agents to your high-density data
 Allow: /llms.txt
-Allow: /llms-full.txt
-
-# Traditional sitemap for Google/Bing
-Sitemap: {{ site.url }}/sitemap.xml
-
-# Standard AI Summary
-Allow: /llms.txt
+{% for lang in site.languages -%}
+  {%- if lang != site.default_lang -%}
+Allow: /{{ lang }}/llms.txt
+  {%- endif -%}
+{%- endfor %}
 
 # Localized Technical Knowledge Bases
 Allow: /llms-full.txt
@@ -24,9 +22,12 @@ Allow: /{{ lang }}/llms-full.txt
   {%- endif -%}
 {%- endfor %}
 
-# Standard Search Index
+# Traditional sitemap for Google/Bing
 Sitemap: {{ site.url }}/sitemap.xml
 
 # Dedicated Sitemap for LLMs
 # This helps AI agents discover documentation faster
 Link: <{{ site.url }}/llms.txt>; rel="llms"
+{% for lang in site.languages -%}
+  {%- if lang != site.default_lang -%}
+Link: <{{ site.url }}/{{ lang }}/llms.txt>; rel="llms"
