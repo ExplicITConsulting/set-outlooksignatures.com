@@ -18,7 +18,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 
 
 ## Language versions
-{% for lang in site.languages -%}
+{%- for lang in site.languages -%}
   {%- if lang == site.default_lang %}
 - {{ "/llms.txt" | absolute_url }}
   {%- else %}
@@ -50,7 +50,6 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 ## {{ section_name | capitalize }}
   {% assign sorted = group.items | sort: "title" -%}
   {%- for node in sorted -%}
-
     {%- if active_lang == site.default_lang -%}
       {%- assign final_url = node.url | absolute_url -%}
     {%- else -%}
@@ -71,16 +70,16 @@ Optional: list other language llms.txt locations, but only if site.languages exi
     - Summary preference: node.summary > node.excerpt > truncated node.content.
     {%- endcomment -%}
 
-    {%- assign subtitle = node.subtitle | default: "" | strip_html | normalize_whitespace -%}
-    {%- assign description = node.description | default: "" | strip_html | normalize_whitespace -%}
+    {%- assign subtitle = node.subtitle | default: "" | strip | strip_html | normalize_whitespace -%}
+    {%- assign description = node.description | default: "" | strip | strip_html | normalize_whitespace -%}
 
     {%- assign summary = "" -%}
     {%- if node.summary -%}
-      {%- assign summary = node.summary -%}
+      {%- assign summary = node.summary | strip | strip_html -%}
     {%- elsif node.excerpt -%}
-      {%- assign summary = node.excerpt -%}
+      {%- assign summary = node.excerpt| strip | strip_html -%}
     {%- else -%}
-      {%- assign summary = node.content -%}
+      {%- assign summary = node.content | strip | strip_html -%}
     {%- endif -%}
     {%- assign summary = summary | strip_html | normalize_whitespace -%}
 
@@ -99,14 +98,14 @@ Optional: list other language llms.txt locations, but only if site.languages exi
     {%- else -%}
       {%- assign sentence = summary -%}
     {%- endif -%}
-- [{{ node.title | strip_html }}]({{ final_url }}): {{ sentence | strip | strip_html }}
-  {% endfor -%}
-{%- endfor -%}
+- [{{ node.title | strip_html }}]({{ final_url }}): {{ sentence }}
+  {%- endfor -%}
+{%- endfor %}
 
 
 ## Optional
-{% if active_lang == site.default_lang -%}
+{%- if active_lang == site.default_lang -%}
 - [llms-full.txt]({{ "/llms-full.txt" | absolute_url }}): Full text dump of pages/posts/docs
-{%- else -%}
+{%- else %}
 - [llms-full.txt]({{ "/" | append: active_lang | append: "/llms-full.txt" | absolute_url }}): Full text dump of pages/posts/docs
 {% endif -%}
