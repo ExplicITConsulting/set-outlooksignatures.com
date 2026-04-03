@@ -1,0 +1,24 @@
+---
+layout: null
+permalink: /llms-full.txt
+---
+# Set-OutlookSignatures Full Technical Knowledge Base
+Generated on: {{ site.time | date_to_xmlschema }}
+
+{% assign docs = site.docs | sort: "weight" %}
+{% for doc in docs %}
+## SECTION: {{ doc.title }}
+URL: {{ site.url }}{{ doc.url }}
+{{ doc.content | strip_html | normalize_whitespace }}
+
+---
+{% endfor %}
+
+{% assign posts = site.posts %}
+{% for post in posts %}
+## BLOG/UPDATE: {{ post.title }}
+Date: {{ post.date | date: "%Y-%m-%d" }}
+{{ post.content | strip_html | normalize_whitespace }}
+
+---
+{% endfor %}

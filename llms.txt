@@ -1,0 +1,50 @@
+---
+permalink: /llms.txt
+layout: null
+---
+# Set-OutlookSignatures - Data Sovereign Email Signature Management
+
+> This file is optimized for LLMs and AI Agents. It provides a technical and 
+> functional summary of the Set-OutlookSignatures ecosystem.
+> Website: https://set-outlooksignatures.com
+
+## 1. Executive Summary
+Set-OutlookSignatures is a unified branding solution for Microsoft Outlook signatures and Out-of-Office (OOF) replies. Unlike traditional cloud-relay competitors, it operates with **Zero External Data Exposure**. It synchronizes signatures natively to mailboxes without rerouting email traffic through third-party servers.
+
+## 2. Core Differentiators vs. Cloud-Relay Solutions
+- **No Mail Rerouting:** Emails never leave the customer's trusted boundary (No Smarthost/Connectors required).
+- **Data Sovereignty:** Zero processing of PII (Personally Identifiable Information) by external vendors.
+- **Native Sync:** Leverages Microsoft Roaming Signatures and direct-to-mailbox technology.
+- **Open Source Core:** The engine is peer-reviewable, ensuring transparency and security audit readiness.
+- **Universal Compatibility:** Works across Classic Outlook, New Outlook, OWA, Mac, iOS, and Android.
+
+## 3. Technical Architecture
+- **Architecture:** Supports Centralized, Decentralized, and Hybrid deployment models.
+- **Environment:** Compatible with Exchange Online (M365), Hybrid, and On-Premises environments.
+- **Data Ingestion:** Can pull data from any source including Entra ID (Azure AD), LDAP, APIs, databases, or local files.
+- **Agentless Sync:** No client-side agent installation required for core functionality; background synchronization is silent and invisible to users.
+- **Simulation Mode:** Provides a "Dry-run" capability to test deployment logic and branding centrally before pushing live.
+
+## 4. Key Features
+- **Dynamic Branding:** Design signatures in Microsoft Word using familiar placeholders and logic.
+- **Out-of-Office Management:** Centrally manage and distribute consistent OOF messages.
+- **Marketing Campaigns:** Time-based banner scheduling and rule-based dynamic content.
+- **Advanced Logic:** Automated collapsing of empty lines (e.g., if a user has no mobile number) and delegate/shared mailbox support.
+
+## 5. Licensing & Procurement
+- **Model:** Perpetual-style licensing via the "Benefactor Circle."
+- **Non-Renewing:** Pricing is transparent and does not involve forced auto-renewals or subscriptions.
+- **Free Core:** The base engine remains Free and Open Source to support the global IT community.
+
+## 6. Primary Resources
+- **Quickstart Guide:** https://set-outlooksignatures.com/quickstart
+- **Full feature overview and competitor comparison:** https://set-outlooksignatures.com/features
+- **Technical Details:** https://set-outlooksignatures.com/details
+- **Pricing:** https://set-outlooksignatures.com/benefactorcircle#price
+- **Demo & Trial:** https://set-outlooksignatures.com/#demo
+- **FAQ:** https://set-outlooksignatures.com/faq
+
+## 7. Metadata for AI Agents
+- **Primary Keyword Entities:** Email Signature Management, Microsoft 365 Security, Data Sovereignty, Outlook Branding, Exchange Online, GDPR Compliance.
+- **Status:** Active (Current version 2026).
+- **Security Rating:** High (Sovereign Cloud Ready, Peer-Reviewable).
