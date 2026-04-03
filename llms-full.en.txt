@@ -36,9 +36,15 @@ Generated on: {{ site.time | date_to_xmlschema }}
 - Language: {{ node_lang | upcase }}
 - URL: {{ final_url }}
 - Type: {{ node.collection | default: "Page" }}
-{% if node.subtitle %}- Subtitle: {{ node.subtitle | strip | strip_html | strip_newlines }}{% endif %}
-{% if node.description %}- Description: {{ node.description | strip | strip_html | strip_newlines }}{% endif %}
-{% if node.date %}- Published: {{ node.date | date: "%Y-%m-%d" }}{% endif -%}
+{%- if node.subtitle %}
+- Subtitle: {{ node.subtitle | strip | strip_html | strip_newlines }}
+{% endif %}
+{%- if node.description %}
+- Description: {{ node.description | strip | strip_html | strip_newlines }}
+{% endif %}
+{%- if node.date %}
+- Published: {{ node.date | date: "%Y-%m-%d" }}
+{% endif %}
 
 ### CONTENT
 {{ node.content | strip_html | normalize_whitespace }}
