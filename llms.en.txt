@@ -118,6 +118,6 @@ Optional: list other language llms.txt locations, but only if site.languages exi
     {%- else -%}
       {%- assign sentence = summary -%}
     {%- endif %}
-- [{{ node.title | strip_html }}]({{ final_url }}): {{ sentence }}
+- [{{ node.title | strip_html | strip_newlines }}]({{ final_url }}): {{ sentence }}
   {%- endfor -%}
 {%- endfor %}
