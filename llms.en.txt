@@ -45,7 +45,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 - [{{ lang }} llms-full.txt]({{ "/" | append: lang | append: "/llms-full.txt" | absolute_url }})
   {%- endif -%}
 {% endfor -%}
-
+{%- endif -%}
 
 {%- assign all_items = site.pages | concat: site.documents -%}
 
