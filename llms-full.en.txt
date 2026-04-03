@@ -1,0 +1,44 @@
+---
+layout: "none"
+sitemap: false
+---
+# Set-OutlookSignatures: Global Technical Knowledge Base (Full)
+# Includes: Pages, Documentation, and All Blog Posts
+# Generated on: {{ site.time | date_to_xmlschema }}
+
+{%- comment -%} 
+  1. Aggregate Pages and Documents (which includes _posts and _docs)
+{%- endcomment -%}
+{%- assign all_items = site.pages | concat: site.documents -%}
+
+{%- for node in all_items -%}
+  {%- comment -%} 
+    Filter out system files and nodes without titles/content
+  {%- endcomment -%}
+  {%- unless node.redirect_to or node.sitemap == false or node.url contains '/assets/' or node.url contains '/404' or node.title == nil -%}
+
+    {%- assign node_lang = node.lang | default: site.default_lang -%}
+
+    {%- comment -%} Build the localized URL {%- endcomment -%}
+    {%- if node_lang == site.default_lang -%}
+      {%- assign final_url = node.url | absolute_url -%}
+    {%- else -%}
+      {%- assign final_url = '/' | append: node_lang | append: node.url | absolute_url -%}
+    {%- endif -%}
+
+    {%- assign final_url = final_url | replace: "//", "/" | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "/" -%}
+
+## ENTITY: {{ node.title }}
+**Language:** {{ node_lang | upcase }}
+**URL:** {{ final_url }}
+**Type:** {{ node.collection | default: "Page" }}
+{% if node.subtitle %}**Subtitle:** {{ node.subtitle }}{% endif %}
+{% if node.description %}**Description:** {{ node.description }}{% endif %}
+{% if node.date %}**Published:** {{ node.date | date: "%Y-%m-%d" }}{% endif %}
+
+### CONTENT:
+{{ node.content | strip_html | normalize_whitespace }}
+
+---
+  {%- endunless -%}
+{%- endfor -%}

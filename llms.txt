@@ -48,3 +48,7 @@ Set-OutlookSignatures is a unified branding solution for Microsoft Outlook signa
 - **Primary Keyword Entities:** Email Signature Management, Microsoft 365 Security, Data Sovereignty, Outlook Branding, Exchange Online, GDPR Compliance.
 - **Status:** Active (Current version 2026).
 - **Security Rating:** High (Sovereign Cloud Ready, Peer-Reviewable).
+
+# Set-OutlookSignatures AI Index
+- English Technical Manual: https://set-outlooksignatures.com/llms-full.txt
+- German Technical Manual: https://set-outlooksignatures.com/de/llms-full.txt
