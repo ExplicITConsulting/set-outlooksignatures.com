@@ -99,7 +99,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
     {%- elsif node.excerpt -%}
       {%- assign summary = node.excerpt| strip | strip_html -%}
     {%- else -%}
-      {%- assign summary = node.content | strip | strip_html -%}
+      {%- assign summary = node.content | strip | strip_html | truncatewords: 40 -%}
     {%- endif -%}
     {%- assign summary = summary | strip_html | normalize_whitespace -%}
 
