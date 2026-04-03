@@ -38,8 +38,7 @@ Generated on: {{ site.time | date_to_xmlschema }}
 - Type: {{ node.collection | default: "Page" }}
 {% if node.subtitle %}- Subtitle: {{ node.subtitle | strip | strip_html | strip_newlines }}{% endif %}
 {% if node.description %}- Description: {{ node.description | strip | strip_html | strip_newlines }}{% endif %}
-{% if node.date %}- Published: {{ node.date | date: "%Y-%m-%d" }}{% endif %}
-{%- %}
+{% if node.date %}- Published: {{ node.date | date: "%Y-%m-%d" }}{% endif -%}
 
 ### CONTENT
 {{ node.content | strip_html | normalize_whitespace }}
