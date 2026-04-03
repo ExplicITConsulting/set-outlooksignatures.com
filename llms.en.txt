@@ -6,7 +6,17 @@ permalink: "/llms.txt"
 sitemap: false
 ---
 # Set-OutlookSignatures
-> Data-sovereign Outlook signatures and out-of-office management that syncs to mailboxes without mail-flow rerouting.
+{%- assign active_lang = site.active_lang | default: page.lang | default: site.default_lang -%}
+{%- assign index_page = site.pages
+  | where_exp: "p", "p.permalink == '/' or p.url == '/'"
+  | where_exp: "p", "(p.lang | default: site.default_lang) == active_lang"
+  | first
+-%}
+{%- if index_page %}
+> {{ index_page.title | strip_html | normalize_whitespace }}
+> {{ index_page.subtitle | default: "" | strip_html | normalize_whitespace }}
+> {{ index_page.description | default: "" | strip_html | normalize_whitespace }}
+{%- endif -%}
 
 Generated on: {{ site.time | date_to_xmlschema }}
 {%- assign active_lang = site.active_lang | default: page.lang | default: site.default_lang -%}
