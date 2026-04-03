@@ -1,6 +1,5 @@
 ---
-permalink: /llms.txt
-layout: null
+layout: "none"
 ---
 # Set-OutlookSignatures - Data Sovereign Email Signature Management
 

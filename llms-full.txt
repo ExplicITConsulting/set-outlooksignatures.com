@@ -1,24 +1,42 @@
 ---
-layout: null
-permalink: /llms-full.txt
+layout: "none"
 ---
-# Set-OutlookSignatures Full Technical Knowledge Base
-Generated on: {{ site.time | date_to_xmlschema }}
+{%- comment -%} Create a prioritized language list {%- endcomment -%}
+{%- assign default_lang = site.default_lang | default: site.languages.first -%}
+{%- assign sorted_langs = site.languages -%}
+{%- if default_lang -%}
+  {%- assign sorted_langs = sorted_langs | unshift: default_lang | uniq -%}
+{%- endif -%}
 
-{% assign docs = site.docs | sort: "weight" %}
-{% for doc in docs %}
-## SECTION: {{ doc.title }}
-URL: {{ site.url }}{{ doc.url }}
-{{ doc.content | strip_html | normalize_whitespace }}
+
+
+{%- assign unique_permalinks = "" | split: "" -%}
+
+{% assign all_content = site.pages %}
+{%- for collection in site.collections -%}
+    {%- assign all_content = all_content | concat: site[collection.label] -%}
+{%- endfor -%}
+
+{%- for node in all_content -%}
+  {%- unless node.redirect_to or node.sitemap == false or node.url contains '/robots.txt' or node.url contains '/redirects.json' or node.url contains '/assets/' or node.url contains '/404' -%}
+    {%- assign canonicalUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "/" -%}
+
+    {%- for languageCode in sorted_langs -%}
+      {%- if languageCode == default_lang -%}
+        {%- assign localizedUrl = node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "/" -%}
+      {%- else -%}
+        {%- assign localizedUrl = '/' | append: languageCode | append: node.url | absolute_url | replace: "//", "/"  | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "/" -%}
+      {%- endif -%}
+
+      {%- unless unique_permalinks contains localizedUrl -%}
+        {%- assign unique_permalinks = unique_permalinks | push: localizedUrl %}
+## SECTION: {{ node.title }}
+URL: {{ localizedUrl }}
+{{ node.content | strip_html | normalize_whitespace }}
 
 ---
-{% endfor %}
 
-{% assign posts = site.posts %}
-{% for post in posts %}
-## BLOG/UPDATE: {{ post.title }}
-Date: {{ post.date | date: "%Y-%m-%d" }}
-{{ post.content | strip_html | normalize_whitespace }}
-
----
-{% endfor %}
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- endunless -%}
+{%- endfor -%}
