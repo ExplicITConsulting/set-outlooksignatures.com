@@ -24,12 +24,9 @@ Allow: /{{ lang }}/llms-full.txt
   {%- endif -%}
 {%- endfor %}
 
-# AI Discovery Hint
-Link: <{{ site.url }}/llms.txt>; rel="llms"
-
 # Standard Search Index
 Sitemap: {{ site.url }}/sitemap.xml
 
-# Dedicated Sitemap for LLMs (Emerging standard)
-# This helps AI agents discover your documentation faster
+# Dedicated Sitemap for LLMs
+# This helps AI agents discover documentation faster
 Link: <{{ site.url }}/llms.txt>; rel="llms"
