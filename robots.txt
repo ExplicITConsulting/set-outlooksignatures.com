@@ -4,5 +4,13 @@ sitemap: false
 ---
 User-agent: *
 Allow: /
-Disallow: 
+# Explicitly point AI agents to your high-density data
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# Traditional sitemap for Google/Bing
 Sitemap: {{ site.url }}/sitemap.xml
+
+# Dedicated Sitemap for LLMs (Emerging standard)
+# This helps AI agents discover your documentation faster
+Link: <{{ site.url }}/llms.txt>; rel="llms"
