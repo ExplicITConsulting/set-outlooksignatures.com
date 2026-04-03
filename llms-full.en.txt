@@ -50,7 +50,7 @@ sitemap: false
 {%- endif %}
 
 ### CONTENT
-{{ node.content | strip_html | normalize_whitespace }}
+{{ node.content | markdownify | strip_html | normalize_whitespace }}
 
 ---
 
