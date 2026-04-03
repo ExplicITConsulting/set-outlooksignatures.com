@@ -31,3 +31,5 @@ Link: <{{ site.url }}/llms.txt>; rel="llms"
 {% for lang in site.languages -%}
   {%- if lang != site.default_lang -%}
 Link: <{{ site.url }}/{{ lang }}/llms.txt>; rel="llms"
+  {%- endif -%}
+{%- endfor %}
