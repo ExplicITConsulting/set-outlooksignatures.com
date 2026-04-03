@@ -30,19 +30,19 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 ## Language versions of llms.txt
 {%- for lang in site.languages -%}
   {%- if lang == site.default_lang %}
-- [{{ lang }} llms.txt]({{ "/llms.txt" | absolute_url }})
+- [{{ lang | upcase }} llms.txt]({{ "/llms.txt" | absolute_url }})
   {%- else %}
-- [{{ lang }} llms.txt]({{ "/" | append: lang | append: "/llms.txt" | absolute_url }})
+- [{{ lang | upcase }} llms.txt]({{ "/" | append: lang | append: "/llms.txt" | absolute_url }})
   {%- endif -%}
-{% endfor -%}
+{% endfor %}
 
 
 ## Language versions of llms-full.txt
 {%- for lang in site.languages -%}
   {%- if lang == site.default_lang %}
-- [{{ lang }} llms-full.txt]({{ "/llms-full.txt" | absolute_url }})
+- [{{ lang | upcase }} llms-full.txt]({{ "/llms-full.txt" | absolute_url }})
   {%- else %}
-- [{{ lang }} llms-full.txt]({{ "/" | append: lang | append: "/llms-full.txt" | absolute_url }})
+- [{{ lang | upcase }} llms-full.txt]({{ "/" | append: lang | append: "/llms-full.txt" | absolute_url }})
   {%- endif -%}
 {% endfor -%}
 {%- endif -%}
