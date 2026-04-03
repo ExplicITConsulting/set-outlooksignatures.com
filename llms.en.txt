@@ -5,7 +5,7 @@ locale: "en"
 permalink: "/llms.txt"
 sitemap: false
 ---
-# Set-OutlookSignatures
+# Set-OutlookSignatures & Benefactor Circle add-on
 {%- assign active_lang = site.active_lang | default: page.lang | default: site.default_lang -%}
 {%- assign index_page = site.pages
   | where_exp: "p", "p.permalink == '/' or p.url == '/'"
@@ -99,7 +99,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
     {%- elsif node.excerpt -%}
       {%- assign summary = node.excerpt| strip | strip_html -%}
     {%- else -%}
-      {%- assign summary = node.content | strip | strip_html | truncatewords: 40 -%}
+      {%- assign summary = node.content | strip | strip_html | truncatewords: 50 -%}
     {%- endif -%}
     {%- assign summary = summary | strip_html | normalize_whitespace -%}
 
