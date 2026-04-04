@@ -54,6 +54,40 @@ jobs:
           add_suffix: false  # Required: prevents index.html -> index.min.html
           # Optional: Use regex to exclude specific folders if needed
           # exclusions: '.*vendor/.*'
+      - name: Inject Minified HTML into LLM files
+        run: |
+          find _site -name "llms-full*.txt" | while read txt_file; do
+            echo "Processing $txt_file..."
+            
+            # We use perl with a regex that handles the pathing logic
+            perl -i -pe 's|\[REPLACE_WITH_CONTENT:(.*?)\]|
+              my $url_path = $1;
+              
+              # 1. Clean up the path: remove domain if absolute_url was used, 
+              # and ensure it starts with a single slash
+              $url_path =~ s|^https?://[^/]+||; 
+              
+              # 2. Map URL to filesystem path
+              my $disk_path = "_site" . $url_path;
+              $disk_path =~ s|//+|/|g; # Remove double slashes
+              
+              # 3. If it ends in / or is a directory, look for index.html
+              if ($disk_path =~ m|/$| || -d $disk_path) {
+                $disk_path .= "index.html";
+                $disk_path =~ s|//+|/|g;
+              }
+
+              if (-e $disk_path) {
+                open my $fh, "<", $disk_path or return "!! Error reading $disk_path !!";
+                local $/;
+                my $content = <$fh>;
+                close $fh;
+                $content;
+              } else {
+                "!! HTML source not found at $disk_path !!";
+              }
+            |ge' "$txt_file"
+          done
       - name: Setup IndexNow 
         # Generate the verification file and place it inside the _site directory, 
         # which is the output directory Jekyll uses.
