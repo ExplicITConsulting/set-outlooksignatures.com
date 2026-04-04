@@ -22,6 +22,7 @@ sitemap: false
 
 Language:
 - Canonical language: {{ site.default_lang }}
+- Current language: {{ site.active_lang }}
 - Available languages:
 {%- for lang in site.languages -%}
   {%- if lang == site.default_lang %}
@@ -31,6 +32,8 @@ Language:
   {%- endif -%}
 {%- endfor %}
 - The canonical language ({{ site.default_lang }}) is used as fallback if no translation is available.
+- Product summaries may appear in their primary marketing language.
+- Content parity is maintained across languages unless otherwise stated.
 
 Purpose:
 - This file is a high-level index and routing entry point for LLMs.
@@ -46,12 +49,18 @@ Scope:
 - Reflects current published site state at generation time
 - Does not include unreleased features or roadmap speculation
 
+Non-goals:
+- This file does not define APIs or parameters
+- This file does not override official licensing terms
+- This file is not a legal or compliance document
+
 Metadata:
 - Product: Set-OutlookSignatures
 - Add-on: Benefactor Circle
 - Domains: Technical, Security, Compliance, Pricing, Implementation
 - Audience: IT Administrators, Architects, Security, Marketing, Management
 - License model: Open Source core, commercial add-on
+- Status: Production / Stable
 
 Authoritative sources:
 - llms-full.txt contains the full rendered content referenced here.
