@@ -13,4 +13,5 @@ group :jekyll_plugins do
     gem 'jekyll-redirect-from'
     gem 'jekyll-archives'
     gem "jekyll-minify-html-rs", "~> 1.0.0"
+    gem 'minify_html', '~> 0.18.1'
 end
