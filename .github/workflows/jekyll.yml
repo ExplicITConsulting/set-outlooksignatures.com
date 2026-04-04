@@ -65,7 +65,7 @@ jobs:
               {
                 param($m)
 
-                Write-Output "$($m.Value)"
+                Write-Host "  $($m.Value)"
 
                 $rel = $m.Groups[1].Value.Trim()
                 if ([string]::IsNullOrWhiteSpace($rel)) { return "" }
@@ -79,9 +79,9 @@ jobs:
                 }
 
                 if (-not (Test-Path $htmlPath -PathType Leaf)) {
-                  Write-Output "  File not found: '$($htmlPath)'"
+                  Write-Host "    File not found: '$($htmlPath)'"
                 } else {
-                  Write-Output "  Injecting from: '$($htmlPath)'"
+                  Write-Host "    Injecting from: '$($htmlPath)'"
                 }
 
                 Get-Content $htmlPath -Raw
