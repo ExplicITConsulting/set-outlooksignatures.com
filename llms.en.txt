@@ -71,7 +71,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 - [{{ lang | upcase }} llms-full.txt]({{ "/" | append: lang | append: "/llms-full.txt" | absolute_url }})
   {%- endif -%}
 {% endfor -%}
-{%- endif -%}
+{%- endif %}
 
 
 ## Routing hints for LLMs
@@ -104,7 +104,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
     {%- assign section_name = "Pages (Index)" -%}
   {%- else -%}
     {%- assign section_name = group.name | capitalize -%}
-  {%- endif -%}
+  {%- endif %}
 
 
 ## {{ section_name }}
