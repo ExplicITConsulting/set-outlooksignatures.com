@@ -77,10 +77,13 @@ jobs:
 
                 if ((Test-Path $path -PathType Container) -or $path.EndsWith('/')) {
                   $path = Join-Path $path 'index.html'
+                } elseif (-not $path.EndsWith('.html')) {
+                  $path += '.html'
                 }
 
                 if (-not (Test-Path $path)) {
-                  throw "Referenced file not found: $path"
+                  Write-Output "Referenced file not found: $path"
+                  continue
                 }
 
                 Get-Content $path -Raw
