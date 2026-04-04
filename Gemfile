@@ -12,6 +12,6 @@ group :jekyll_plugins do
     gem "jekyll-seo-tag"
     gem 'jekyll-redirect-from'
     gem 'jekyll-archives'
-    gem "jekyll-minify-html-rs", "~> 1.0.0"
-    gem 'minify_html', '~> 0.18.1'
+    gem "jekyll-minifier"
+    gem 'minify_html'
 end

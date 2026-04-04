@@ -8,20 +8,20 @@ module Jekyll
     def minify_html(input)
       return input if input.nil? || input.empty?
 
-      # Options based on the jekyll-minify-html-rs gem's expected hash structure
+      # Options based on the minify_html gem documentation.
+      # All Cfg fields are available; if omitted, they default to false.
       options = {
-        :keep_ssi_comments => false,
         :minify_css => true,
         :minify_js => true,
         :remove_comments => true,
-        :collapse_whitespace => true
+        :collapse_whitespace => true,
+        :keep_spaces_between_attributes => true
       }
       
       begin
-        # Call the global minify_html method provided by the gem directly.
-        # We remove the '::' prefix which was causing the SyntaxError.
-        # Ruby will find the global method if it's not defined in the current module.
-        send(:minify_html, input, options)
+        # According to rubydoc.info/gems/minify_html, the method is 
+        # MinifyHtml.minify(string, options_hash)
+        ::MinifyHtml.minify(input, options)
       rescue => e
         Jekyll.logger.error "MinifyHTML Error:", e.message
         input # Fallback to original input if minification fails

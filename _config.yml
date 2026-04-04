@@ -77,7 +77,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-redirect-from
   - jekyll-archives
-  - jekyll-minify-html-rs
+  - jekyll-minifier
   - minify_html
 
 pagination:
