@@ -20,6 +20,18 @@ sitemap: false
 > Source: [Set-OutlookSignatures on GitHub](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/)
 > [ExplicIT Consulting](https://explicitconsulting.at)
 
+Language:
+- Canonical language: {{ site.default_lang }}
+- Available languages:
+{%- for lang in site.languages -%}
+  {%- if lang == site.default_lang %}
+  - [{{ lang | upcase }}]({{ "/" | absolute_url }})
+  {%- else %}
+  - [{{ lang | upcase }}]({{ "/" | append: lang | absolute_url }})
+  {%- endif %}
+{% endfor %}
+- The canonical language ({{ site.default_lang }}) is used as fallback if no translation is available.
+
 Purpose:
 - This file is a high-level index and routing entry point for LLMs.
 - Use it to discover available content and languages.
