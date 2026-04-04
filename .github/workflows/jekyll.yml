@@ -49,44 +49,32 @@ jobs:
           add_suffix: false # Required: prevents index.html -> index.min.html
           # Optional: Use regex to exclude specific folders if needed
           # exclusions: '.*vendor/.*'
-      - name: Inject Minified HTML into LLM files (pwsh)
+      - name: Inject Minified HTML into LLM files (pwsh, final)
         shell: pwsh
         run: |
-          $ErrorActionPreference = 'Stop'
-          $siteRoot = '_site'
+          $ErrorActionPreference = "Stop"
+          $siteRoot = Resolve-Path "_site"
 
-          Get-ChildItem -Path $siteRoot -Recurse -Filter 'llms-full.txt' | ForEach-Object {
+          Get-ChildItem -Path $siteRoot -Recurse -Filter "llms-full.txt" | ForEach-Object {
             $txtFile = $_.FullName
             Write-Host "Processing $txtFile..."
 
-            $content = Get-Content $txtFile -Raw
+            $content = Get-Content -Path $txtFile -Raw
 
-            $content = [regex]::Replace(
+            $content = [System.Text.RegularExpressions.Regex]::Replace(
               $content,
               '\[REPLACE_WITH_CONTENT:(.*?)\]',
               {
                 param($match)
 
-                $url = $match.Groups[1].Value
+                $relativePath = $match.Groups[1].Value.TrimStart('/')
+                $htmlPath = Join-Path $siteRoot $relativePath
 
-                # Strip scheme + host if present
-                $url = $url -replace '^https?://[^/]+', ''
-
-                $path = Join-Path $siteRoot $url
-                $path = $path -replace '/{2,}', '/'
-
-                if ((Test-Path $path -PathType Container) -or $path.EndsWith('/')) {
-                  $path = Join-Path $path 'index.html'
-                } elseif (-not $path.EndsWith('.html')) {
-                  $path += '.html'
+                if (-not (Test-Path $htmlPath -PathType Leaf)) {
+                  throw "Referenced output file not found: $htmlPath"
                 }
 
-                if (-not (Test-Path $path)) {
-                  Write-Output "Referenced file not found: $path"
-                  continue
-                }
-
-                Get-Content $path -Raw
+                Get-Content -Path $htmlPath -Raw
               },
               [System.Text.RegularExpressions.RegexOptions]::Singleline
             )
