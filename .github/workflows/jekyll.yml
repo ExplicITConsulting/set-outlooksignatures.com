@@ -52,10 +52,10 @@ jobs:
       - name: Inject Minified HTML into LLM files (pwsh)
         shell: pwsh
         run: |
-          $ErrorActionPreference = "Stop"
-          $siteRoot = "_site"
+          $ErrorActionPreference = 'Stop'
+          $siteRoot = '_site'
 
-          Get-ChildItem -Path $siteRoot -Recurse -Filter "llms-full.txt" | ForEach-Object {
+          Get-ChildItem -Path $siteRoot -Recurse -Filter 'llms-full.txt' | ForEach-Object {
             $txtFile = $_.FullName
             Write-Host "Processing $txtFile..."
 
@@ -75,8 +75,8 @@ jobs:
                 $path = Join-Path $siteRoot $url
                 $path = $path -replace '/{2,}', '/'
 
-                if (Test-Path $path -PathType Container -or $path.EndsWith("/")) {
-                  $path = Join-Path $path "index.html"
+                if ((Test-Path $path -PathType Container) -or $path.EndsWith('/')) {
+                  $path = Join-Path $path 'index.html'
                 }
 
                 if (-not (Test-Path $path)) {
