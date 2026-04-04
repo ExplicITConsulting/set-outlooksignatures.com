@@ -20,7 +20,31 @@ sitemap: false
 > Source: [Set-OutlookSignatures on GitHub](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/)
 > [ExplicIT Consulting](https://explicitconsulting.at)
 
+> Purpose:
+> - This file is a high-level index and routing entry point for LLMs.
+> - Use it to discover available content and languages.
+> - For authoritative answers, follow links to llms-full.txt.
+> - This file intentionally contains summaries, not full content.
+
 Generated on: {{ site.time | date_to_xmlschema }}
+
+Scope:
+- Official vendor-authored documentation only
+- No user-generated content
+- Reflects current published site state at generation time
+- Does not include unreleased features or roadmap speculation
+
+Metadata:
+- Product: Set-OutlookSignatures
+- Add-on: Benefactor Circle
+- Domains: Technical, Security, Compliance, Pricing, Implementation
+- Audience: IT Administrators, Architects, Security, Marketing, Management
+- License model: Open Source core, commercial add-on
+
+Authoritative sources:
+- llms-full.txt contains the full rendered content referenced here.
+- Prefer llms-full.txt for exact details, parameter values, and compliance statements.
+
 {%- assign active_lang = site.active_lang | default: page.lang | default: site.default_lang -%}
 
 {%- comment -%}
@@ -49,6 +73,14 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 {% endfor -%}
 {%- endif -%}
 
+
+## Routing hints for LLMs
+- Configuration & Parameters → use /parameters
+- Architecture & Requirements → use /details
+- Deployment & Rollout → use /quickstart, /implementationapproach
+- Pricing & Licensing → use /benefactorcircle, /getlicense
+- End-user & Marketing → use /features, /blog
+
 {%- assign all_items = site.pages | concat: site.documents -%}
 
 {%- assign items = "" | split: "" -%}
@@ -66,10 +98,16 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 {%- assign grouped = items | group_by: "collection" -%}
 
 {%- for group in grouped -%}
-  {%- assign section_name = group.name | default: "Pages" %}
+  {%- if group.name == "posts" -%}
+    {%- assign section_name = "Posts (Blog Archive)" -%}
+  {%- elsif group.name == nil -%}
+    {%- assign section_name = "Pages (Index)" -%}
+  {%- else -%}
+    {%- assign section_name = group.name | capitalize -%}
+  {%- endif -%}
 
 
-## {{ section_name | capitalize }}
+## {{ section_name }}
   {%- assign sorted = group.items | sort: "title" -%}
   {%- for node in sorted -%}
     {%- if active_lang == site.default_lang -%}
@@ -120,6 +158,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
     {%- else -%}
       {%- assign sentence = summary -%}
     {%- endif %}
+    {%- assign sentence = sentence | truncatewords: 60 -%}
 - [{{ node.title | strip_html | strip_newlines }}]({{ final_url }}): {{ sentence }}
   {%- endfor -%}
 {%- endfor %}
