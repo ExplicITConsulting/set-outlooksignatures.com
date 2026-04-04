@@ -1,5 +1,3 @@
-require 'minify_html'
-
 module Jekyll
   module MinifyHtmlFilter
     # This filter minifies HTML strings using the logic from the 
@@ -8,8 +6,16 @@ module Jekyll
     def minify_html(input)
       return input if input.nil? || input.empty?
 
+      # We require the gem inside the method to ensure it's loaded 
+      # even if the plugin load order is wonky.
+      begin
+        require 'minify_html'
+      rescue LoadError
+        Jekyll.logger.error "MinifyHTML Error:", "Gem 'minify_html' not found in your environment."
+        return input
+      end
+
       # Options based on the minify_html gem documentation (v0.11.2).
-      # All Cfg fields are available; if omitted, they default to false.
       options = {
         minify_css: true,
         minify_js: true,
@@ -19,13 +25,14 @@ module Jekyll
       }
       
       begin
-        # Attempt to call the minify method on the MinifyHtml module.
-        # We use the global constant directly.
+        # Some versions/bindings use MinifyHtml, others use MinifyHTML.
+        # We check for both to be safe.
         if defined?(::MinifyHtml)
           ::MinifyHtml.minify(input, options)
+        elsif defined?(::MinifyHTML)
+          ::MinifyHTML.minify(input, options)
         else
-          # If the constant is still missing, log it and return input
-          Jekyll.logger.error "MinifyHTML Error:", "Constant MinifyHtml not found. Check if the gem is in your Gemfile."
+          Jekyll.logger.error "MinifyHTML Error:", "Constant MinifyHtml/MinifyHTML not found after require."
           input
         end
       rescue => e
