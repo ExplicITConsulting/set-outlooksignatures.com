@@ -6,8 +6,7 @@ module Jekyll
     def minify_html(input)
       return input if input.nil? || input.empty?
 
-      # We require the gem inside the method to ensure it's loaded 
-      # even if the plugin load order is wonky.
+      # Ensure the gem is required
       begin
         require 'minify_html'
       rescue LoadError
@@ -15,7 +14,7 @@ module Jekyll
         return input
       end
 
-      # Options based on the minify_html gem documentation (v0.11.2).
+      # Configuration options for v0.11.2
       options = {
         minify_css: true,
         minify_js: true,
@@ -25,19 +24,27 @@ module Jekyll
       }
       
       begin
-        # Some versions/bindings use MinifyHtml, others use MinifyHTML.
-        # We check for both to be safe.
-        if defined?(::MinifyHtml)
-          ::MinifyHtml.minify(input, options)
-        elsif defined?(::MinifyHTML)
-          ::MinifyHTML.minify(input, options)
+        # Use Object.const_get to bypass potential nesting issues in Jekyll's loader
+        # We try the standard documented naming first
+        klass = if Object.const_defined?(:MinifyHtml)
+                  Object.const_get(:MinifyHtml)
+                elsif Object.const_defined?(:MinifyHTML)
+                  Object.const_get(:MinifyHTML)
+                else
+                  nil
+                end
+
+        if klass && klass.respond_to?(:minify)
+          klass.minify(input, options)
         else
-          Jekyll.logger.error "MinifyHTML Error:", "Constant MinifyHtml/MinifyHTML not found after require."
+          # Debugging block: let's see what is actually there
+          available = Object.constants.select { |c| c.to_s.downcase.include?('minify') }
+          Jekyll.logger.error "MinifyHTML Error:", "Constant not found. Similar constants available: #{available.join(', ')}"
           input
         end
       rescue => e
         Jekyll.logger.error "MinifyHTML Error:", e.message
-        input # Fallback to original input if minification fails
+        input
       end
     end
   end
