@@ -1,8 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Jekyll site to Pages
 
@@ -54,51 +49,47 @@ jobs:
           add_suffix: false # Required: prevents index.html -> index.min.html
           # Optional: Use regex to exclude specific folders if needed
           # exclusions: '.*vendor/.*'
-      - name: Inject Minified HTML into LLM files
+      - name: Inject Minified HTML into LLM files (pwsh)
+        shell: pwsh
         run: |
-          # 1. Create a simplified perl script
-          cat << 'EOF' > inject_html.pl
-          my $txt_file = $ARGV[0];
-          undef $/; 
-          open my $f, '<', $txt_file or die $!;
-          my $data = <$f>;
-          close $f;
+          $ErrorActionPreference = "Stop"
+          $siteRoot = "_site"
 
-          # The replacement logic
-          $data =~ s|\[REPLACE_WITH_CONTENT:(.*?)\]|
-            $url = $1;
-            $url =~ s|^https?://[^/]+||; # Strip domain
-            
-            $path = "_site" . $url;
-            $path =~ s|//+|/|g; 
+          Get-ChildItem -Path $siteRoot -Recurse -Filter "llms-full.txt" | ForEach-Object {
+            $txtFile = $_.FullName
+            Write-Host "Processing $txtFile..."
 
-            if ($path =~ m|/$| || -d $path) {
-              $path .= "/index.html";
-              $path =~ s|//+|/|g;
-            }
+            $content = Get-Content $txtFile -Raw
 
-            if (-e $path) {
-              my $content = do {
-                local $/;
-                open my $fh, '<', $path or return "!! Error reading $path !!";
-                <$fh>;
-              };
-              $content;
-            }
-          |ge;
+            $content = [regex]::Replace(
+              $content,
+              '\[REPLACE_WITH_CONTENT:(.*?)\]',
+              {
+                param($match)
 
-          open my $wf, '>', $txt_file or die $!;
-          print $wf $data;
-          close $wf;
-          EOF
+                $url = $match.Groups[1].Value
 
-          # 2. Run it against all llms-full.txt files found
-          find _site -name "llms-full.txt" | while read file; do
-            echo "Processing $file..."
-            perl inject_html.pl "$file"
-          done
+                # Strip scheme + host if present
+                $url = $url -replace '^https?://[^/]+', ''
 
-          rm inject_html.pl
+                $path = Join-Path $siteRoot $url
+                $path = $path -replace '/{2,}', '/'
+
+                if (Test-Path $path -PathType Container -or $path.EndsWith("/")) {
+                  $path = Join-Path $path "index.html"
+                }
+
+                if (-not (Test-Path $path)) {
+                  throw "Referenced file not found: $path"
+                }
+
+                Get-Content $path -Raw
+              },
+              [System.Text.RegularExpressions.RegexOptions]::Singleline
+            )
+
+            Set-Content -Path $txtFile -Value $content -NoNewline
+          }
       - name: Setup IndexNow
         # Generate the verification file and place it inside the _site directory,
         # which is the output directory Jekyll uses.
