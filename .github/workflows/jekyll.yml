@@ -49,37 +49,38 @@ jobs:
           add_suffix: false # Required: prevents index.html -> index.min.html
           # Optional: Use regex to exclude specific folders if needed
           # exclusions: '.*vendor/.*'
-      - name: Inject Minified HTML into LLM files (pwsh, final)
+      - name: Inject Minified HTML into LLM files (pwsh, final-final)
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
           $siteRoot = Resolve-Path "_site"
 
           Get-ChildItem -Path $siteRoot -Recurse -Filter "llms-full.txt" | ForEach-Object {
-            $txtFile = $_.FullName
-            Write-Host "Processing $txtFile..."
+            Write-Host "Processing $($_.FullName)..."
 
-            $content = Get-Content -Path $txtFile -Raw
+            $content = Get-Content $_.FullName -Raw
 
-            $content = [System.Text.RegularExpressions.Regex]::Replace(
+            $content = :Replace(
               $content,
               '\[REPLACE_WITH_CONTENT:(.*?)\]',
               {
-                param($match)
+                param($m)
 
-                $relativePath = $match.Groups[1].Value.TrimStart('/')
-                $htmlPath = Join-Path $siteRoot $relativePath
+                $rel = $m.Groups[1].Value.Trim()
+                if (:IsNullOrWhiteSpace($rel)) { return "" }
+
+                $htmlPath = Join-Path $siteRoot $rel.TrimStart('/')
 
                 if (-not (Test-Path $htmlPath -PathType Leaf)) {
                   throw "Referenced output file not found: $htmlPath"
                 }
 
-                Get-Content -Path $htmlPath -Raw
+                Get-Content $htmlPath -Raw
               },
-              [System.Text.RegularExpressions.RegexOptions]::Singleline
+              'Singleline'
             )
 
-            Set-Content -Path $txtFile -Value $content -NoNewline
+            Set-Content $_.FullName $content -NoNewline
           }
       - name: Setup IndexNow
         # Generate the verification file and place it inside the _site directory,

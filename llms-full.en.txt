@@ -31,6 +31,22 @@ sitemap: false
 
     {%- assign final_url = final_url | replace: "//", "/" | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "/" -%}
 
+    {%- if node.permalink -%}
+      {%- assign resolved_output = node.permalink -%}
+    {%- else -%}
+      {%- assign resolved_output = node.url -%}
+    {%- endif -%}
+    {%- if resolved_output endswith "/" -%}
+      {%- assign resolved_output = resolved_output | append: "index.html" -%}
+    {%- elsif resolved_output contains ".html" -%}
+      {%- assign resolved_output = resolved_output -%}
+    {%- else -%}
+      {%- assign resolved_output = resolved_output | append: ".html" -%}
+    {%- endif -%}
+    {%- if node_lang != site.default_lang -%}
+      {%- assign resolved_output = '/' | append: node_lang | append: resolved_output -%}
+    {%- endif -%}
+
 
 ## ENTITY: {{ node.title | strip | strip_html | strip_newlines }}
 - Language: {{ node_lang | upcase }}
@@ -51,7 +67,7 @@ sitemap: false
 
 ### CONTENT (as HTML code block)
 ``````````html
-[REPLACE_WITH_CONTENT:{{ node.output_path | relative_url }}]
+[REPLACE_WITH_CONTENT:{{ resolved_output | relative_url }}]
 ``````````
 
 ---
