@@ -29,7 +29,7 @@ Language:
   {%- else %}
   - [{{ lang | upcase }}]({{ "/" | append: lang | absolute_url }})
   {%- endif -%}
-{% endfor %}
+{%- endfor -%}
 - The canonical language ({{ site.default_lang }}) is used as fallback if no translation is available.
 
 Purpose:
