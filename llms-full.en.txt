@@ -51,7 +51,7 @@ sitemap: false
 
 ### CONTENT (as HTML code block)
 ``````````html
-[REPLACE_WITH_CONTENT:{{ final_url | relative_url }}]
+[REPLACE_WITH_CONTENT:{{ final_url }}]
 ``````````
 
 ---

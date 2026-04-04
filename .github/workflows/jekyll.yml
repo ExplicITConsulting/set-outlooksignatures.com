@@ -66,6 +66,8 @@ jobs:
               {
                 param($m)
 
+                Write-Output "$($m.Value)"
+
                 $rel = $m.Groups[1].Value.Trim()
                 if ([string]::IsNullOrWhiteSpace($rel)) { return "" }
 
@@ -78,9 +80,9 @@ jobs:
                 }
 
                 if (-not (Test-Path $htmlPath -PathType Leaf -ErrorAction SilentlyContinue)) {
-                  Write-Output "Referenced output file not found: $($htmlPath)"
+                  Write-Output "  Referenced output file not found: $($htmlPath)"
                 } else {
-                  Write-Output "Injecting content from: $($htmlPath)"
+                  Write-Output "  Injecting content from: $($htmlPath)"
                 }
 
                 Get-Content $htmlPath -Raw
