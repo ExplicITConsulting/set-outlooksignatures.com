@@ -86,10 +86,15 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 {%- assign items = "" | split: "" -%}
 {%- for node in all_items -%}
   {%- unless node.redirect_to
-        or node.sitemap == false
-        or node.url contains "/assets/"
-        or node.url contains "/404"
-        or node.title == nil
+    or node.sitemap == false
+    or node.url contains "/assets/"
+    or node.url contains "/404"
+    or node.title == nil
+    or (
+      node.pagination.enabled == true
+      and node.pagination_info.page > 1
+    )
+    or node.autopages
   -%}
     {%- assign items = items | push: node -%}
   {%- endunless -%}
@@ -156,7 +161,12 @@ Optional: list other language llms.txt locations, but only if site.languages exi
     {%- else -%}
       {%- assign sentence = summary -%}
     {%- endif %}
-    {%- assign sentence = sentence | truncatewords: 60 %}
+    {%- assign sentence = sentence
+      | strip_html
+      | normalize_whitespace
+      | strip
+      | truncate: 300, "…"
+    %}
 - [{{ node.title | strip_html | strip_newlines }}]({{ final_url }}): {{ sentence }}
   {%- endfor -%}
 {%- endfor %}
