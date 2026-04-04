@@ -78,10 +78,10 @@ jobs:
                   $htmlPath += ".html"
                 }
 
-                if (-not (Test-Path $htmlPath -PathType Leaf -ErrorAction SilentlyContinue)) {
-                  Write-Output "  Referenced output file not found: $($htmlPath)"
+                if (-not (Test-Path $htmlPath -PathType Leaf)) {
+                  Write-Output "  File not found: '$($htmlPath)'"
                 } else {
-                  Write-Output "  Injecting content from: $($htmlPath)"
+                  Write-Output "  Injecting from: '$($htmlPath)'"
                 }
 
                 Get-Content $htmlPath -Raw
