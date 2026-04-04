@@ -18,9 +18,10 @@ module Jekyll
       }
       
       begin
-        # The gem provides a top-level minify_html method
-        # directly in the global namespace.
-        ::minify_html(input, options)
+        # Call the global minify_html method provided by the gem directly.
+        # We remove the '::' prefix which was causing the SyntaxError.
+        # Ruby will find the global method if it's not defined in the current module.
+        send(:minify_html, input, options)
       rescue => e
         Jekyll.logger.error "MinifyHTML Error:", e.message
         input # Fallback to original input if minification fails
