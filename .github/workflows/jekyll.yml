@@ -51,8 +51,10 @@ jobs:
         uses: emepetres/html-minifier-action@v1
         with:
           rootDir: '_site'
+          minifyCSS: true
+          minifyJS: true
           # Optional: add flags for more aggressive minification
-          flags: 'minifyJS, minifyCSS, removeComments, removeRedundantAttributes'
+          flags: 'removeComments, removeRedundantAttributes'
       - name: Setup IndexNow 
         # Generate the verification file and place it inside the _site directory, 
         # which is the output directory Jekyll uses.
