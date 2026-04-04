@@ -3,22 +3,24 @@ require 'minify_html'
 module Jekyll
   module MinifyHtmlFilter
     # This filter minifies HTML strings using the logic from the 
-    # jekyll-minify-html-rs project (using the minify-html engine).
+    # jekyll-minify-html-rs project.
     # Usage: {{ content | markdownify | minify_html }}
     def minify_html(input)
       return input if input.nil? || input.empty?
 
-      # Configuration for the minify-html-rs engine
-      # We use ::MinifyHtml to ensure we reference the global namespace
-      cfg = ::MinifyHtml::Config.new
-      cfg.minify_css = true
-      cfg.minify_js = true
-      cfg.remove_comments = true
-      cfg.collapse_whitespace = true
+      # Options based on the jekyll-minify-html-rs gem's expected hash structure
+      options = {
+        :keep_ssi_comments => false,
+        :minify_css => true,
+        :minify_js => true,
+        :remove_comments => true,
+        :collapse_whitespace => true
+      }
       
       begin
-        # Use the correct method signature for the minify-html-rs ruby gem
-        ::MinifyHtml.minify(input, cfg)
+        # The gem provides a top-level minify_html method
+        # directly in the global namespace.
+        ::minify_html(input, options)
       rescue => e
         Jekyll.logger.error "MinifyHTML Error:", e.message
         input # Fallback to original input if minification fails
