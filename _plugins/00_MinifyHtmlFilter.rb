@@ -9,8 +9,8 @@ module Jekyll
       return input if input.nil? || input.empty?
 
       # Configuration for the minify-html-rs engine
-      # These options correspond to the Rust library's configuration
-      cfg = MinifyHtml::Config.new
+      # We use ::MinifyHtml to ensure we reference the global namespace
+      cfg = ::MinifyHtml::Config.new
       cfg.minify_css = true
       cfg.minify_js = true
       cfg.remove_comments = true
@@ -18,7 +18,7 @@ module Jekyll
       
       begin
         # Use the correct method signature for the minify-html-rs ruby gem
-        MinifyHtml.minify(input, cfg)
+        ::MinifyHtml.minify(input, cfg)
       rescue => e
         Jekyll.logger.error "MinifyHTML Error:", e.message
         input # Fallback to original input if minification fails
