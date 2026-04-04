@@ -98,6 +98,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 {%- assign grouped = items | group_by: "collection" -%}
 
 {%- for group in grouped -%}
+  {%- assign section_name = "Pages (Index)" -%}
   {%- if group.name == "posts" -%}
     {%- assign section_name = "Posts (Blog Archive)" -%}
   {%- elsif group.name == nil -%}
@@ -158,7 +159,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
     {%- else -%}
       {%- assign sentence = summary -%}
     {%- endif %}
-    {%- assign sentence = sentence | truncatewords: 60 -%}
+    {%- assign sentence = sentence | truncatewords: 60 %}
 - [{{ node.title | strip_html | strip_newlines }}]({{ final_url }}): {{ sentence }}
   {%- endfor -%}
 {%- endfor %}
