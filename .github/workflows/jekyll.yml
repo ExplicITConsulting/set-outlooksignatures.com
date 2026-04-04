@@ -71,6 +71,12 @@ jobs:
 
                 $htmlPath = Join-Path $siteRoot $rel.TrimStart('/')
 
+                if ($htmlPath.EndsWith('/')) {
+                  $htmlPath = Join-Path $htmlPath "index.html"
+                } elseIf (-not $htmlPath.EndsWith('.html')) {
+                  $htmlPath += ".html"
+                }
+
                 if (-not (Test-Path $htmlPath -PathType Leaf -ErrorAction SilentlyContinue)) {
                   Write-Output "Referenced output file not found: $($htmlPath)"
                 } else {
