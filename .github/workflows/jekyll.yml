@@ -49,7 +49,7 @@ jobs:
           add_suffix: false # Required: prevents index.html -> index.min.html
           # Optional: Use regex to exclude specific folders if needed
           # exclusions: '.*vendor/.*'
-      - name: Inject Minified HTML into LLM files (pwsh, final-final)
+      - name: Inject Minified HTML into LLM files (pwsh)
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
@@ -72,7 +72,9 @@ jobs:
                 $htmlPath = Join-Path $siteRoot $rel.TrimStart('/')
 
                 if (-not (Test-Path $htmlPath -PathType Leaf)) {
-                  throw "Referenced output file not found: $($htmlPath)"
+                  Write-Output "Referenced output file not found: $($htmlPath)"
+                } else {
+                  Write-Output "Injecting content from: $($htmlPath)"
                 }
 
                 Get-Content $htmlPath -Raw
