@@ -49,8 +49,10 @@ sitemap: false
 - Published: {{ node.date | date: "%Y-%m-%d" }}
 {%- endif %}
 
-### CONTENT
-{{ node.content | markdownify | strip_html | normalize_whitespace }}
+### CONTENT (as HTML code block)
+``````````html
+{{ node.content | markdownify }}
+``````````
 
 ---
 
