@@ -20,11 +20,11 @@ sitemap: false
 > Source: [Set-OutlookSignatures on GitHub](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/)
 > [ExplicIT Consulting](https://explicitconsulting.at)
 
-> Purpose:
-> - This file is a high-level index and routing entry point for LLMs.
-> - Use it to discover available content and languages.
-> - For authoritative answers, follow links to llms-full.txt.
-> - This file intentionally contains summaries, not full content.
+Purpose:
+- This file is a high-level index and routing entry point for LLMs.
+- Use it to discover available content and languages.
+- For authoritative answers, follow links to llms-full.txt.
+- This file intentionally contains summaries, not full content.
 
 Generated on: {{ site.time | date_to_xmlschema }}
 
