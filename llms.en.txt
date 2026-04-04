@@ -98,13 +98,10 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 {%- assign grouped = items | group_by: "collection" -%}
 
 {%- for group in grouped -%}
-  {%- assign section_name = "Pages (Index)" -%}
   {%- if group.name == "posts" -%}
     {%- assign section_name = "Posts (Blog Archive)" -%}
-  {%- elsif group.name == nil -%}
-    {%- assign section_name = "Pages (Index)" -%}
   {%- else -%}
-    {%- assign section_name = group.name | capitalize -%}
+    {%- assign section_name = group.name | capitalize | default: "Pages (Index)" -%}
   {%- endif %}
 
 
