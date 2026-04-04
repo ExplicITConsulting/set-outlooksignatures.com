@@ -86,11 +86,7 @@ Optional: list other language llms.txt locations, but only if site.languages exi
 {%- assign items = "" | split: "" -%}
 {%- for node in all_items -%}
   {%- assign is_paginated_page_2plus = false -%}
-  {%- if node.pagination
-        and node.pagination.enabled
-        and node.pagination_info
-        and node.pagination_info.page > 1
-  -%}
+  {%- if node.paginator and node.paginator.page > 1 -%}
     {%- assign is_paginated_page_2plus = true -%}
   {%- endif -%}
   {%- unless node.redirect_to
