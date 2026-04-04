@@ -1,20 +1,19 @@
 module Jekyll
   module MinifyHtmlFilter
-    # This filter minifies HTML strings using the logic from the 
-    # jekyll-minify-html-rs project.
+    # This filter minifies HTML strings using the 'minify_html' gem (Rust-based).
     # Usage: {{ content | markdownify | minify_html }}
     def minify_html(input)
       return input if input.nil? || input.empty?
 
-      # Ensure the gem is required
+      # Lazy-load the gem to ensure it's available after Jekyll's plugin initialization
       begin
-        require 'minify_html'
+        require 'minify_html' unless defined?(::MinifyHtml)
       rescue LoadError
-        Jekyll.logger.error "MinifyHTML Error:", "Gem 'minify_html' not found in your environment."
+        Jekyll.logger.error "MinifyHTML Error:", "Gem 'minify_html' not found. Ensure it is in your Gemfile."
         return input
       end
 
-      # Configuration options for v0.11.2
+      # Options according to https://www.rubydoc.info/gems/minify_html/0.11.2
       options = {
         minify_css: true,
         minify_js: true,
@@ -22,26 +21,15 @@ module Jekyll
         collapse_whitespace: true,
         keep_spaces_between_attributes: true
       }
-      
-      begin
-        # Use Object.const_get to bypass potential nesting issues in Jekyll's loader
-        # We try the standard documented naming first
-        klass = if Object.const_defined?(:MinifyHtml)
-                  Object.const_get(:MinifyHtml)
-                elsif Object.const_defined?(:MinifyHTML)
-                  Object.const_get(:MinifyHTML)
-                else
-                  nil
-                end
 
-        if klass && klass.respond_to?(:minify)
-          klass.minify(input, options)
-        else
-          # Debugging block: let's see what is actually there
-          available = Object.constants.select { |c| c.to_s.downcase.include?('minify') }
-          Jekyll.logger.error "MinifyHTML Error:", "Constant not found. Similar constants available: #{available.join(', ')}"
-          input
-        end
+      begin
+        # Use Object.const_get to find the constant in the global scope
+        # This is more robust when the gem is loaded via the Jekyll 'plugins' config
+        klass = Object.const_get(:MinifyHtml)
+        klass.minify(input, options)
+      rescue NameError
+        Jekyll.logger.error "MinifyHTML Error:", "Constant MinifyHtml is uninitialized. Check gem loading."
+        input
       rescue => e
         Jekyll.logger.error "MinifyHTML Error:", e.message
         input
