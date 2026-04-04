@@ -47,14 +47,13 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-      - name: HTMLMinifier
-        uses: emepetres/html-minifier-action@v1
+      - name: Minify Assets
+        uses: devatherock/minify-js@v3.1.0
         with:
-          rootDir: '_site'
-          minifyCSS: true
-          minifyJS: true
-          # Optional: add flags for more aggressive minification
-          flags: 'removeComments, removeRedundantAttributes'
+          directory: '_site'
+          add_suffix: false  # Required: prevents index.html -> index.min.html
+          # Optional: Use regex to exclude specific folders if needed
+          # exclusions: '.*vendor/.*'
       - name: Setup IndexNow 
         # Generate the verification file and place it inside the _site directory, 
         # which is the output directory Jekyll uses.
