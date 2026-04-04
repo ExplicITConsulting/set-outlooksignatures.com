@@ -51,7 +51,7 @@ sitemap: false
 
 ### CONTENT (as HTML code block)
 ``````````html
-{{ node.content | markdownify | minify_html }}
+{{ node.content | markdownify }}
 ``````````
 
 ---
