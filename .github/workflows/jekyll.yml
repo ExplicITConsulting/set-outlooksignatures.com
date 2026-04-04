@@ -67,12 +67,12 @@ jobs:
                 param($m)
 
                 $rel = $m.Groups[1].Value.Trim()
-                if (:IsNullOrWhiteSpace($rel)) { return "" }
+                if ([string]::IsNullOrWhiteSpace($rel)) { return "" }
 
                 $htmlPath = Join-Path $siteRoot $rel.TrimStart('/')
 
                 if (-not (Test-Path $htmlPath -PathType Leaf)) {
-                  throw "Referenced output file not found: $htmlPath"
+                  throw "Referenced output file not found: $($htmlPath)"
                 }
 
                 Get-Content $htmlPath -Raw
