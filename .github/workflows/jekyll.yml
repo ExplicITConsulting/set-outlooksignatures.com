@@ -71,7 +71,7 @@ jobs:
 
                 $htmlPath = Join-Path $siteRoot $rel.TrimStart('/')
 
-                if (-not (Test-Path $htmlPath -PathType Leaf)) {
+                if (-not (Test-Path $htmlPath -PathType Leaf -ErrorAction SilentlyContinue)) {
                   Write-Output "Referenced output file not found: $($htmlPath)"
                 } else {
                   Write-Output "Injecting content from: $($htmlPath)"
