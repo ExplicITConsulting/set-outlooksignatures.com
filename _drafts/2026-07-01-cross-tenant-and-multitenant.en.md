@@ -6,6 +6,7 @@ title: "How to manage email signatures across multiple tenants"
 description: "In today's hybrid work environment and complex organizational structures, signature management isn't just a single-tenant challenge."
 published: true
 tags: 
+show_sidebar: true
 slug: "cross-tenant-and-multitenant"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

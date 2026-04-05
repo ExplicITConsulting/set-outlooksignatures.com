@@ -6,6 +6,7 @@ title: "Centralized signature management: Cost center or opportunity?"
 description: "Many assume that managing email signatures only makes sense for large enterprises"
 published: true
 tags: 
+show_sidebar: true
 slug: "financial-benefits"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

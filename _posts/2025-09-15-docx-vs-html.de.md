@@ -6,6 +6,7 @@ title: "DOCX oder HTML?"
 description: "Die Wahl der Signaturvorlage, auf die es wirklich ankommt"
 published: true
 tags: 
+show_sidebar: true
 slug: "docs-vs-html"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

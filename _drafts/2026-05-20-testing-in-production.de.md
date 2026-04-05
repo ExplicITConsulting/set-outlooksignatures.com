@@ -6,6 +6,7 @@ title: "Änderungen an Signaturen und Abwesenheitsnotizen ohne Risiken testen"
 description: "Die Einführung von Aktualisierungen an Signatur- oder Abwesenheitsvorlagen in einer Live-Umgebung kann nervenaufreibend sein."
 published: true
 tags: 
+show_sidebar: true
 slug: "testing-in-production"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

@@ -6,6 +6,7 @@ title: "Signaturen für Senden Als und Senden Im Auftrag Von"
 description: "Sie möchten Signaturen für Postfächer oder Verteilerlisten zuweisen, die Benutzer nicht zu Outlook hinzufügen?"
 published: true
 tags: 
+show_sidebar: true
 slug: "signatures-sendas-sendonbehalf"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

@@ -6,6 +6,7 @@ title: "How to deploy signatures for mailbox delegates but not the owner"
 description: "This is a common request in boss-secretary or assistant scenarios: Assign a signature to everyone with access to userA@example.com, but not to UserA."
 published: true
 tags: 
+show_sidebar: true
 slug: "signatures-for-delegates"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

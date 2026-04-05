@@ -6,6 +6,7 @@ title: "Nicht als Slug formatierter Titel, max. 70 Zeichen"
 description: "Beschreibung, zwischen 30 und 160 Zeichen"
 published: true
 tags:
+show_sidebar: true
 slug: "slugified-title"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

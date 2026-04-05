@@ -6,6 +6,7 @@ title: "Einzigartige Elemente für E-Mail-Signaturen und Abwesenheitsnotizen"
 description: "Das Erste, was uns in den Sinn kommt, ist das visuelle Design. Eine Signatur kann jedoch auch inhaltsspezifische Funktionen und Barrierefreiheitsoptionen enthalten."
 published: true
 tags: 
+show_sidebar: true
 slug: "unique-elements"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

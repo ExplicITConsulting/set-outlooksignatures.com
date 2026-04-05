@@ -6,6 +6,7 @@ title: "DOCX or HTML?"
 description: "The signature template choice that actually matters"
 published: true
 tags: 
+show_sidebar: true
 slug: "docs-vs-html"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

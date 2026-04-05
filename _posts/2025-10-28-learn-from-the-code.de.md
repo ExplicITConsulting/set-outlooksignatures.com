@@ -6,6 +6,7 @@ title: "Was kann ich aus dem Code von Set-OutlookSignatures lernen?"
 description: "Set-OutlookSignatures ist nicht nur ein Tool zum Verwalten von Outlook-Signaturen und Abwesenheitsnotizen."
 published: true
 tags:
+show_sidebar: true
 slug: "learn-from-the-code"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

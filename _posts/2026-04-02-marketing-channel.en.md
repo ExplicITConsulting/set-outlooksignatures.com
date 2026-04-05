@@ -6,6 +6,7 @@ title: "Are You Missing Out on the Most Overlooked Marketing Channel?"
 description: "Company email signatures are viewed thousands of times each day. Learn how they can be managed and used more effectively as a communication channel."
 published: true
 tags: 
+show_sidebar: true
 slug: "marketing-channel"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

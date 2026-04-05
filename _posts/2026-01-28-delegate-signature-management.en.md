@@ -6,6 +6,7 @@ title: "Delegate email signature management the smart way"
 description: "Who manages your email signatures and out-of-office replies? In many organizations, it's still the IT department instead of marketing or communications."
 published: true
 tags: 
+show_sidebar: true
 slug: "delegate-signature-management"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

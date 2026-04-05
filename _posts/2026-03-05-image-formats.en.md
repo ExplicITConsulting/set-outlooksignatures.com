@@ -6,6 +6,7 @@ title: "Best image formats for email signatures: Compatibility guide"
 description: "Choose the right image format for your email signature. Ensure universal compatibility and avoid caveats."
 published: true
 tags: 
+show_sidebar: true
 slug: "image-formats"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

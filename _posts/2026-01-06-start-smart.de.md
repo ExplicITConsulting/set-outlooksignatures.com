@@ -6,6 +6,7 @@ title: "Clever ins neue Jahr: Zahlen Sie nicht zu viel für E-Mail-Signaturen"
 description: "Zentralisierte E-Mail-Signaturlösungen sind oft überraschend teuer – aber nicht Set-OutlookSignatures und das Benefactor Circle Add-on."
 published: true
 tags: 
+show_sidebar: true
 slug: "start-smart"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

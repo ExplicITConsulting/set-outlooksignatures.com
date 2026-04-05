@@ -6,6 +6,7 @@ title: "Kodierungen erkennen und konvertieren"
 description: "ConvertEncoding ermöglicht die zuverlässige Erkennung und Konvertierung von Kodierungen"
 published: true
 tags:
+show_sidebar: true
 slug: "detect-and-convert-encodings"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

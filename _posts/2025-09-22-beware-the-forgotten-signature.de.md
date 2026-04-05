@@ -6,6 +6,7 @@ title: "Hütet euch vor der vergessenen Signatur 👻🎃"
 description: "Ihre E-Mail-Signatur mag harmlos erscheinen, aber wenn Sie sie unverändert lassen, kann sie zu einem Geist verpasster Gelegenheiten werden."
 published: true
 tags: 
+show_sidebar: true
 slug: "beware-the-forgotten-signature"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

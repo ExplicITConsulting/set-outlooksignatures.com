@@ -6,6 +6,7 @@ title: "Designing signatures for dark mode"
 description: "The shift to Dark Mode has dramatically improved screen comfort for millions, but it’s introduced a major headache for email signature designers."
 published: true
 tags: 
+show_sidebar: true
 slug: "dark-mode-emails"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

@@ -6,6 +6,7 @@ title: "Merry Christmas and a Happy New Year!"
 description: "Enjoy the quiet time"
 published: true
 tags: 
+show_sidebar: true
 slug: "merry-christmas-happy-new-year"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

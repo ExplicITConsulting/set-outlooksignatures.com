@@ -6,6 +6,7 @@ title: "Why is Out Of Office abbreviated as OOF and not OOO?"
 description: "Let's rewind to the 1980s. Back then, Microsoft Xenix was the leading Unix OS..."
 published: true
 tags: 
+show_sidebar: true
 slug: "why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

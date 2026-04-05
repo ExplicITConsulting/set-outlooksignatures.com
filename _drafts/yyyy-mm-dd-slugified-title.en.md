@@ -6,6 +6,7 @@ title: "Non-slugified title, 70 characters max"
 description: "Description, between 30 and 160 characters"
 published: true
 tags: 
+show_sidebar: true
 slug: "slugified-title"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

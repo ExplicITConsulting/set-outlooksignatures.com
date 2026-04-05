@@ -6,6 +6,7 @@ title: "Mail-Flow-Regeln funktionieren nicht für professionelle Signaturen"
 description: "Mail-Flow-Regeln in Exchange sind im Vergleich zu speziellen E-Mail-Signaturlösungen veraltet und unflexibel."
 published: true
 tags:
+show_sidebar: true
 slug: "mail-flow-rules"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

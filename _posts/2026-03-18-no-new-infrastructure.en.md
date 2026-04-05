@@ -6,6 +6,7 @@ title: "Why build new infrastructure just to manage signatures?"
 description: "Set-OutlookSignatures runs on your existing systems, does not bring new dependencies and does not transfer any data externally."
 published: true
 tags: 
+show_sidebar: true
 slug: "no-new-infrastructure"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

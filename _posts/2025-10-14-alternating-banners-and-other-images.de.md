@@ -6,6 +6,7 @@ title: "Banner und andere Bilder zufällig wechseln"
 description: "Führen Sie eine Marketingkampagne mit mehreren Bannern durch?"
 published: true
 tags: 
+show_sidebar: true
 slug: "alternating-banners-and-other-images"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

@@ -6,6 +6,7 @@ title: "Saisonale, zeitbasierte und kampagnenorientierte E-Mail-Signaturen"
 description: "Eine E-Mail-Signatur ist mehr als ein Abschluss. Sie ist ein dauerhafter, wertvoller Marketingplatz, der Ihre Marke stärkt und gezielt Aufmerksamkeit lenkt"
 published: true
 tags: 
+show_sidebar: true
 slug: "seasonal-signatures"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

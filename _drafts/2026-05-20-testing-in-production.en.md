@@ -6,6 +6,7 @@ title: "How do you test signature and OOF changes without risking mishaps?"
 description: "Rolling out updates to signature or OOF templates in a live environment can be nerve-wracking."
 published: true
 tags: 
+show_sidebar: true
 slug: "testing-in-production"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

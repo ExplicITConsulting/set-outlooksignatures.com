@@ -6,6 +6,7 @@ title: "So verwalten Sie E-Mail-Signaturen über mehrere Mandanten hinweg"
 description: "In der heutigen hybriden Arbeitsumgebung und komplexen Organisationsstrukturen ist die Verwaltung von Signaturen nicht nur eine Herausforderung für Einzelmandanten."
 published: true
 tags: 
+show_sidebar: true
 slug: "cross-tenant-and-multitenant"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

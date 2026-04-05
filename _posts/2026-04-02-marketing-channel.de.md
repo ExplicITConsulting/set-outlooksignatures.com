@@ -6,6 +6,7 @@ title: "Verpassen Sie einen der meistübersehenen Marketingkanäle?"
 description: "Unternehmens-E-Mail-Signaturen werden täglich tausendfach gesehen. Erfahren Sie, wie sie als Kommunikationskanal effektiver genutzt und verwaltet werden können."
 published: true
 tags: 
+show_sidebar: true
 slug: "marketing-channel"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5

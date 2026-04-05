@@ -6,6 +6,7 @@ title: "Barrier-free email signatures and out-of-office replies"
 description: "Accessibility isn’t just a trend, it’s a responsibility."
 published: true
 tags: 
+show_sidebar: true
 slug: "barrier-free-email-signatures-and-out-of-office-replies"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
