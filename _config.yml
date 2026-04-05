@@ -76,7 +76,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-redirect-from
-  - jekyll-archives
 
 pagination:
   # Site-wide kill switch, disabled here it doesn't run at all 
@@ -142,12 +141,44 @@ feed:
   logo: "/assets/images/set-outlooksignatures icon.ico"
 
 
-jekyll-archives:
-  enabled: all
-  layout: archive
-  permalinks:
-    year: '/blog/:year/'
-    month: '/blog/:year/:month/'
-    day: '/blog/:year/:month/:day/'
-    tag: '/blog/tag/:name/'
-    category: '/blog/category/:name/'
+autopages:
+  # Site-wide kill switch, disable here and it doesn't run at all 
+  enabled: true
+
+  # Category pages, omit entire config element to disable
+  categories: 
+    # Optional, the list of layouts that should be processed for every category found in the site
+    layouts: 
+      - 'blog.html'
+    # Optional, the title that each category paginate page should get (:cat is replaced by the Category name)
+    title: ':cat'
+    # Optional, the permalink for the  pagination page (:cat is replaced), 
+    # the pagination permalink path is then appended to this permalink structure
+    permalink: '/category/:cat'
+    # Optional, when true logging related to category pages will be supressed.
+    silent: false
+    slugify:
+      mode: 'default'   # :cat is slugified. Modes: default, raw, pretty, ascii, latin
+      case: false       # Whether to replace all uppercase letters with their lowercase counterparts
+
+  # Collection pages, omit to disable
+  collections:
+    layouts: 
+      - 'blog.html'
+    title: ':coll' # :coll is replaced by the collection name
+    permalink: '/collection/:coll'
+    silent: false
+    slugify:
+      mode: 'default'   # :coll is slugified.
+      case: false 
+  
+  # Tag pages, omit to disable
+  tags:
+    layouts: 
+      - 'blog.html'
+    title: ':tag' # :tag is replaced by the tag name
+    permalink: '/tag/:tag'
+    silent: false
+    slugify:
+      mode: 'default'   # :tag is slugified.
+      case: false
