@@ -65,6 +65,7 @@ Language:
 - Product summaries may appear in their primary marketing language.
 - Content parity is maintained across languages unless otherwise stated.
 
+
 ## Routing hints for LLMs
 - Configuration & Parameters → use /parameters
 - Architecture & Requirements → use /details
@@ -72,7 +73,9 @@ Language:
 - Pricing & Licensing → use /benefactorcircle, /getlicense
 - End-user & Marketing → use /features, /blog
 
-{% if site.languages %}
+{%- if site.languages -%}
+
+
 ## Language versions of llms.txt
 {%- for lang in site.languages -%}
   {%- if lang == site.default_lang %}
@@ -90,11 +93,11 @@ Language:
   {%- else %}
 - [{{ lang }} llms-full.txt]({{ "/" | append: lang | append: "/llms-full.txt" | absolute_url }})
   {%- endif -%}
-{% endfor %}
+{%- endfor -%}
 {%- endif %}
 
----
 
+---
 {%- assign all_items = site.pages | concat: site.documents -%}
 {%- assign items = "" | split: "" -%}
 {%- for node in all_items -%}
@@ -162,7 +165,7 @@ Language:
       {%- assign sentence = lead | append: ". " | append: summary -%}
     {%- else -%}
       {%- assign sentence = summary -%}
-    {%- endif %}
+    {%- endif -%}
     {%- assign sentence = sentence
       | strip_html
       | normalize_whitespace
