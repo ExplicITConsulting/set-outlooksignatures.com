@@ -94,10 +94,8 @@ Language:
 - [{{ lang }}]({{ "/llms-full.txt" | append: lang | absolute_url }})
   {%- endif -%}
 {%- endfor -%}
-{%- endif %}
+{%- endif -%}
 
-
----
 {%- assign all_items = site.pages | concat: site.documents -%}
 {%- assign items = "" | split: "" -%}
 {%- for node in all_items -%}
