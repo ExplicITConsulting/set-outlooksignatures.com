@@ -1,0 +1,7 @@
+<div class="columns is-multiline">
+    {% for post in site.posts limit: 3 %}
+        <div class="column is-12" style="font-size: 0.75rem;">
+            {% include post-card.html %}
+        </div>
+    {% endfor %}
+</div>
