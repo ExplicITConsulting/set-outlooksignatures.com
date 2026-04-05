@@ -144,7 +144,7 @@ feed:
 
 jekyll-archives:
   enabled: all
-  layout: archive
+  layout: blog
   permalinks:
     year: '/blog/:year/'
     month: '/blog/:year/:month/'
