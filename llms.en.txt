@@ -56,9 +56,9 @@ Language:
 - Available languages:
 {%- for lang in site.languages -%}
   {%- if lang == site.default_lang %}
-  - [{{ lang | upcase }}]({{ "/" | absolute_url }})
+  - [{{ lang }}]({{ "/" | absolute_url }})
   {%- else %}
-  - [{{ lang | upcase }}]({{ "/" | append: lang | absolute_url }})
+  - [{{ lang }}]({{ "/" | append: lang | absolute_url }})
   {%- endif -%}
 {%- endfor %}
 - The canonical language ({{ site.default_lang }}) is used as fallback if no translation is available.
@@ -77,9 +77,9 @@ Language:
 ## Language versions of llms.txt
 {%- for lang in site.languages -%}
   {%- if lang == site.default_lang %}
-- [{{ lang | upcase }} llms.txt]({{ "/llms.txt" | absolute_url }})
+- [{{ lang }} llms.txt]({{ "/llms.txt" | absolute_url }})
   {%- else %}
-- [{{ lang | upcase }} llms.txt]({{ "/" | append: lang | append: "/llms.txt" | absolute_url }})
+- [{{ lang }} llms.txt]({{ "/" | append: lang | append: "/llms.txt" | absolute_url }})
   {%- endif -%}
 {% endfor %}
 
@@ -87,9 +87,9 @@ Language:
 ## Language versions of llms-full.txt
 {%- for lang in site.languages -%}
   {%- if lang == site.default_lang %}
-- [{{ lang | upcase }} llms-full.txt]({{ "/llms-full.txt" | absolute_url }})
+- [{{ lang }} llms-full.txt]({{ "/llms-full.txt" | absolute_url }})
   {%- else %}
-- [{{ lang | upcase }} llms-full.txt]({{ "/" | append: lang | append: "/llms-full.txt" | absolute_url }})
+- [{{ lang }} llms-full.txt]({{ "/" | append: lang | append: "/llms-full.txt" | absolute_url }})
   {%- endif -%}
 {% endfor -%}
 {%- endif %}
