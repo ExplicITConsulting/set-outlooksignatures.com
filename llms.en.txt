@@ -16,7 +16,7 @@ sitemap: false
 > {{ index_page.title | strip_html | normalize_whitespace }}
 > {{ index_page.subtitle | default: "" | strip_html | normalize_whitespace }}
 > {{ index_page.description | default: "" | strip_html | normalize_whitespace }}
-{%- endif -%}
+{%- endif %}
 > Source: [Set-OutlookSignatures on GitHub](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/)
 > [ExplicIT Consulting](https://explicitconsulting.at)
 
@@ -73,28 +73,28 @@ Language:
 - Pricing & Licensing → use /benefactorcircle, /getlicense
 - End-user & Marketing → use /features, /blog
 
-{%- if site.languages -%}
+{%- if site.languages %}
 
 
 ## Language versions of llms.txt
 {%- for lang in site.languages -%}
-  {%- if lang == site.default_lang %}
-- [{{ lang }} llms.txt]({{ "/llms.txt" | absolute_url }})
-  {%- else %}
-- [{{ lang }} llms.txt]({{ "/" | append: lang | append: "/llms.txt" | absolute_url }})
-  {%- endif -%}
+  {%- if lang == site.default_lang %}
+  - [{{ lang }}]({{ "/llms.txt" | absolute_url }})
+  {%- else %}
+  - [{{ lang }}]({{ "/llms.txt" | append: lang | absolute_url }})
+  {%- endif -%}
 {%- endfor %}
 
 
 ## Language versions of llms-full.txt
 {%- for lang in site.languages -%}
-  {%- if lang == site.default_lang %}
-- [{{ lang }} llms-full.txt]({{ "/llms-full.txt" | absolute_url }})
-  {%- else %}
-- [{{ lang }} llms-full.txt]({{ "/" | append: lang | append: "/llms-full.txt" | absolute_url }})
-  {%- endif -%}
+  {%- if lang == site.default_lang %}
+  - [{{ lang }}]({{ "/llms-full.txt" | absolute_url }})
+  {%- else %}
+  - [{{ lang }}]({{ "/llms-full.txt" | append: lang | absolute_url }})
+  {%- endif -%}
 {%- endfor -%}
-{%- endif -%}
+{%- endif %}
 
 
 ---
