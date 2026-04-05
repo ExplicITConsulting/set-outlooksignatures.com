@@ -91,6 +91,9 @@ jobs:
 
             Set-Content $_.FullName $content -NoNewline
           }
+      - name: Prettify LLM Files
+        run: |
+          npx prettier --prose-wrap always --print-width 0 --write "_site/**/llms.txt" "_site/**/llms-full.txt"
       - name: Setup IndexNow
         # Generate the verification file and place it inside the _site directory,
         # which is the output directory Jekyll uses.
