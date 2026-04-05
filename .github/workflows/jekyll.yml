@@ -93,7 +93,7 @@ jobs:
           }
       - name: Prettify LLM Files
         run: |
-          npx prettier --parser markdown --prose-wrap always --print-width 0 --write "_site/**/llms.txt" "_site/**/llms-full.txt"
+          npx prettier --parser markdown --print-width 1000000 --write "_site/**/llms.txt" "_site/**/llms-full.txt"
       - name: Setup IndexNow
         # Generate the verification file and place it inside the _site directory,
         # which is the output directory Jekyll uses.
