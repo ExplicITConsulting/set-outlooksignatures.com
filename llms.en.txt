@@ -83,7 +83,7 @@ Language:
   {%- else %}
 - [{{ lang }} llms.txt]({{ "/" | append: lang | append: "/llms.txt" | absolute_url }})
   {%- endif -%}
-{% endfor %}
+{%- endfor %}
 
 
 ## Language versions of llms-full.txt
@@ -94,7 +94,7 @@ Language:
 - [{{ lang }} llms-full.txt]({{ "/" | append: lang | append: "/llms-full.txt" | absolute_url }})
   {%- endif -%}
 {%- endfor -%}
-{%- endif %}
+{%- endif -%}
 
 
 ---
