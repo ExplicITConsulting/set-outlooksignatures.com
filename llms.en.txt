@@ -13,9 +13,9 @@ sitemap: false
   | first
 -%}
 {%- if index_page %}
-> {{ index_page.title | strip_html | normalize_whitespace }}
-> {{ index_page.subtitle | default: "" | strip_html | normalize_whitespace }}
-> {{ index_page.description | default: "" | strip_html | normalize_whitespace }}
+> {{ index_page.title | markdownify | strip_html | normalize_whitespace }}
+> {{ index_page.subtitle | default: "" | markdownify | strip_html | normalize_whitespace }}
+> {{ index_page.description | default: "" | markdownify | strip_html | normalize_whitespace }}
 {%- endif %}
 > Source: [Set-OutlookSignatures on GitHub](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/)
 > [ExplicIT Consulting](https://explicitconsulting.at)
@@ -81,7 +81,7 @@ Language:
   {%- if lang == site.default_lang %}
 - [{{ lang }}]({{ "/llms.txt" | absolute_url }})
   {%- else %}
-- [{{ lang }}]({{ "/llms.txt" | append: lang | absolute_url }})
+- [{{ lang }}]({{ "/" | append: lang | append: "/llms.txt" | absolute_url }})
   {%- endif -%}
 {%- endfor %}
 
@@ -91,7 +91,7 @@ Language:
   {%- if lang == site.default_lang %}
 - [{{ lang }}]({{ "/llms-full.txt" | absolute_url }})
   {%- else %}
-- [{{ lang }}]({{ "/llms-full.txt" | append: lang | absolute_url }})
+- [{{ lang }}]({{ "/" | append: lang | append: "/llms-full.txt" | absolute_url }})
   {%- endif -%}
 {%- endfor -%}
 {%- endif -%}
@@ -120,7 +120,7 @@ Language:
   {%- endif %}
 
 
-## {{ section_name | strip_html | normalize_whitespace | strip | strip_newlines | strip }}
+## {{ section_name | markdownify | strip_html | normalize_whitespace | strip | strip_newlines | strip }}
   {%- assign sorted = group.items | sort: "title" -%}
   {%- for node in sorted -%}
     {%- if active_lang == site.default_lang -%}
@@ -134,17 +134,17 @@ Language:
       | replace: "https:/", "https://"
       | replace: "/index.html", "/"
     -%}
-    {%- assign subtitle = node.subtitle | default: "" | strip | strip_html | normalize_whitespace -%}
-    {%- assign description = node.description | default: "" | strip | strip_html | normalize_whitespace -%}
+    {%- assign subtitle = node.subtitle | default: "" | strip | markdownify | strip_html | normalize_whitespace -%}
+    {%- assign description = node.description | default: "" | strip | markdownify | strip_html | normalize_whitespace -%}
     {%- assign summary = "" -%}
     {%- if node.summary -%}
-      {%- assign summary = node.summary | strip | strip_html -%}
+      {%- assign summary = node.summary | strip | markdownify | strip_html -%}
     {%- elsif node.excerpt -%}
-      {%- assign summary = node.excerpt| strip | strip_html -%}
+      {%- assign summary = node.excerpt| strip | markdownify | strip_html -%}
     {%- else -%}
-      {%- assign summary = node.content | strip | strip_html | truncatewords: 50 -%}
+      {%- assign summary = node.content | strip | markdownify | strip_html | truncatewords: 50 -%}
     {%- endif -%}
-    {%- assign summary = summary | strip_html | normalize_whitespace -%}
+    {%- assign summary = summary | markdownify | strip_html | normalize_whitespace -%}
 
     {%- assign lead = "" -%}
     {%- if subtitle != "" and description != "" -%}
@@ -161,7 +161,10 @@ Language:
     {%- else -%}
       {%- assign sentence = summary -%}
     {%- endif -%}
-    {%- assign sentence = sentence | strip_html | normalize_whitespace | strip | strip_newlines | strip | truncate: 300, "…" -%}
-- [{{ node.title | strip_html | strip_newlines | strip }}]({{ final_url }}): {{ sentence }}
+    {%- assign sentence = sentence | markdownify | strip_html | normalize_whitespace | strip | strip_newlines | strip | truncate: 300, "…" -%}
+{% capture variable_name %}
+- [{{ node.title | markdownify | strip_html | strip_newlines | strip }}]({{ final_url }}): {{ sentence }}
+{% endcapture %}
+{{ variable_name | strip }}
   {%- endfor -%}
 {%- endfor -%}
