@@ -162,9 +162,9 @@ Language:
       {%- assign sentence = summary -%}
     {%- endif -%}
     {%- assign sentence = sentence | markdownify | strip_html | normalize_whitespace | strip | strip_newlines | strip | truncate: 300, "…" -%}
-{% capture variable_name %}
+{%- capture variable_name -%}
 - [{{ node.title | markdownify | strip_html | strip_newlines | strip }}]({{ final_url }}): {{ sentence }}
-{% endcapture %}
+{%- endcapture -%}
 {{ variable_name | strip | strip_newlines | strip }}
   {%- endfor -%}
 {%- endfor -%}
