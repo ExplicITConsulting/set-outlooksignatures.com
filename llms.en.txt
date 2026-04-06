@@ -120,7 +120,7 @@ Language:
   {%- endif %}
 
 
-## {{ section_name }}
+## {{ section_name | strip_html | normalize_whitespace | strip | strip_newlines | strip }}
   {%- assign sorted = group.items | sort: "title" -%}
   {%- for node in sorted -%}
     {%- if active_lang == site.default_lang -%}
@@ -161,7 +161,7 @@ Language:
     {%- else -%}
       {%- assign sentence = summary -%}
     {%- endif -%}
-    {%- assign sentence = sentence | strip_html | normalize_whitespace | strip_newlines | strip | truncate: 300, "…" -%}
+    {%- assign sentence = sentence | strip_html | normalize_whitespace | strip | strip_newlines | strip | truncate: 300, "…" -%}
 - [{{ node.title | strip_html | strip_newlines | strip }}]({{ final_url }}): {{ sentence }}
-  {% endfor -%}
+  {%- endfor -%}
 {%- endfor -%}
