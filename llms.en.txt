@@ -86,12 +86,6 @@ All paths are relative to the active language, e.g. /parameters in the canonical
 - The Outlook add-in: /outlookaddin
 - Support and contact: /support
 
-- Configuration & Parameters: /parameters
-- Architecture & Requirements: /details
-- Deployment & Rollout: /quickstart, /implementationapproach
-- Pricing & Licensing: use /benefactorcircle, /getlicense
-- End-user & Marketing: use /features, /blog
-
 {%- if site.languages %}
 
 
