@@ -162,6 +162,6 @@ Language:
       {%- assign sentence = summary -%}
     {%- endif -%}
     {%- assign sentence = sentence | strip_html | normalize_whitespace | strip_newlines | strip | truncate: 300, "…" %}
-- [{{ node.title | strip_html | strip_newlines }}]({{ final_url }}): {{ sentence }}
+- [{{ node.title | strip_html | strip_newlines }}]({{ final_url }}): {{ sentence }}xxx
   {%- endfor -%}
 {%- endfor -%}
