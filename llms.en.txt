@@ -26,7 +26,7 @@ Metadata:
 - Domains: Technical, Security, Compliance, Pricing, Implementation
 - Audience: IT Administrators, Architects, Security, Marketing, Management
 - License model: Open Source core, commercial add-on
-- Status: Production / Stable
+- Status: Production, stable
 - Generated on: {{ site.time | date_to_xmlschema }}
 
 Purpose:
@@ -64,12 +64,31 @@ Language:
 - The canonical language ({{ site.default_lang }}) is used as fallback if no translation is available.
 - Product summaries may appear in their primary marketing language.
 - Content parity is maintained across languages unless otherwise stated.
+- Prefer the site, llms.txt, and llms-full.txt links in the language of the user query.
+- If no language-specific page exists, fall back to the canonical language.
+- Keep topic routing within the selected language version.
+
 
 
 ## Routing hints for LLMs
-- Configuration & Parameters: use /parameters
-- Architecture & Requirements: use /details
-- Deployment & Rollout: use /quickstart, /implementationapproach
+All paths are relative to the active language, e.g. /parameters in the canonical language (English) and /de/parameters in German.
+- Features: /features
+- Quickstart: /quickstart
+- Benefactor Circle add-on: /benefactorcircle
+- Demo & Free Trial: /benefactorcircle#demo
+- Price: /benefactorcircle#price
+- Blog: /blog/
+- Help: /help
+- Organizational implementation approach: /implementationapproach
+- Architecture, requirements, usage: /details
+- Parameters: /parameters
+- Frequently asked questions (FAQ): /faq
+- The Outlook add-in: /outlookaddin
+- Support and contact: /support
+
+- Configuration & Parameters: /parameters
+- Architecture & Requirements: /details
+- Deployment & Rollout: /quickstart, /implementationapproach
 - Pricing & Licensing: use /benefactorcircle, /getlicense
 - End-user & Marketing: use /features, /blog
 

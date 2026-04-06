@@ -20,7 +20,7 @@
   dropdown:
   - name: Organisatorischer Implementierungs-Ansatz
     link: /implementationapproach
-  - name: Technische Details, Anforderungen, Nutzung
+  - name: Architektur, Anforderungen, Nutzung
     link: /details
   - name: Parameter
     link: /parameters
