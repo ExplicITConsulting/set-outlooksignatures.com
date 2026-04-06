@@ -8,9 +8,9 @@ sitemap: false
 # Set-OutlookSignatures & Benefactor Circle add-on
 {%- assign active_lang = site.active_lang | default: page.lang | default: site.default_lang -%}
 {%- assign index_page = site.pages
-  | where_exp: "p", "p.permalink == '/' or p.url == '/'"
-  | where: "lang", active_lang
-  | first
+ | where_exp: "p", "p.permalink == '/' or p.url == '/'"
+ | where: "lang", active_lang
+ | first
 -%}
 {%- if index_page %}
 > {{- index_page.title | markdownify | strip_html | normalize_whitespace -}}
@@ -67,11 +67,11 @@ Language:
 
 
 ## Routing hints for LLMs
-- Configuration & Parameters → use /parameters
-- Architecture & Requirements → use /details
-- Deployment & Rollout → use /quickstart, /implementationapproach
-- Pricing & Licensing → use /benefactorcircle, /getlicense
-- End-user & Marketing → use /features, /blog
+- Configuration & Parameters: use /parameters
+- Architecture & Requirements: use /details
+- Deployment & Rollout: use /quickstart, /implementationapproach
+- Pricing & Licensing: use /benefactorcircle, /getlicense
+- End-user & Marketing: use /features, /blog
 
 {%- if site.languages %}
 
@@ -99,70 +99,70 @@ Language:
 {%- assign all_items = site.pages | concat: site.documents -%}
 {%- assign items = "" | split: "" -%}
 {%- for node in all_items -%}
-  {%- unless node.redirect_to
-    or node.sitemap == false
-    or node.url contains "/assets/"
-    or node.url contains "/404"
-    or node.title == nil
-    or node.autopages
-    or node.autogen
-  -%}
-    {%- assign items = items | push: node -%}
-  {%- endunless -%}
+ {%- unless node.redirect_to
+  or node.sitemap == false
+  or node.url contains "/assets/"
+  or node.url contains "/404"
+  or node.title == nil
+  or node.autopages
+  or node.autogen
+ -%}
+  {%- assign items = items | push: node -%}
+ {%- endunless -%}
 {%- endfor -%}
 
 {%- assign grouped = items | group_by: "collection" -%}
 {%- for group in grouped -%}
-  {%- if group.name == "posts" -%}
-    {%- assign section_name = "Posts (Blog Archive)" -%}
-  {%- else -%}
-    {%- assign section_name = group.name | capitalize | default: "Pages (Index)" -%}
-  {%- endif %}
+ {%- if group.name == "posts" -%}
+  {%- assign section_name = "Posts (Blog Archive)" -%}
+ {%- else -%}
+  {%- assign section_name = group.name | capitalize | default: "Pages (Index)" -%}
+ {%- endif %}
 
 
 ## {{- section_name | markdownify | strip_html | normalize_whitespace | strip | strip_newlines | strip -}}
-  {%- assign sorted = group.items | sort: "title" -%}
-  {%- for node in sorted -%}
-    {%- if active_lang == site.default_lang -%}
-      {%- assign final_url = node.url | absolute_url -%}
-    {%- else -%}
-      {%- assign final_url = "/" | append: active_lang | append: node.url | absolute_url -%}
-    {%- endif -%}
-    {%- assign final_url = final_url
-      | replace: "//", "/"
-      | replace: "http:/", "http://"
-      | replace: "https:/", "https://"
-      | replace: "/index.html", "/"
-    -%}
-    {%- assign subtitle = node.subtitle | default: "" | strip | markdownify | strip_html | normalize_whitespace -%}
-    {%- assign description = node.description | default: "" | strip | markdownify | strip_html | normalize_whitespace -%}
-    {%- assign summary = "" -%}
-    {%- if node.summary -%}
-      {%- assign summary = node.summary | strip | markdownify | strip_html -%}
-    {%- elsif node.excerpt -%}
-      {%- assign summary = node.excerpt| strip | markdownify | strip_html -%}
-    {%- else -%}
-      {%- assign summary = node.content | strip | markdownify | strip_html | truncatewords: 50 -%}
-    {%- endif -%}
-    {%- assign summary = summary | markdownify | strip_html | normalize_whitespace -%}
+ {%- assign sorted = group.items | sort: "title" -%}
+ {%- for node in sorted -%}
+  {%- if active_lang == site.default_lang -%}
+   {%- assign final_url = node.url | absolute_url -%}
+  {%- else -%}
+   {%- assign final_url = "/" | append: active_lang | append: node.url | absolute_url -%}
+  {%- endif -%}
+  {%- assign final_url = final_url
+   | replace: "//", "/"
+   | replace: "http:/", "http://"
+   | replace: "https:/", "https://"
+   | replace: "/index.html", "/"
+  -%}
+  {%- assign subtitle = node.subtitle | default: "" | strip | markdownify | strip_html | normalize_whitespace -%}
+  {%- assign description = node.description | default: "" | strip | markdownify | strip_html | normalize_whitespace -%}
+  {%- assign summary = "" -%}
+  {%- if node.summary -%}
+   {%- assign summary = node.summary | strip | markdownify | strip_html -%}
+  {%- elsif node.excerpt -%}
+   {%- assign summary = node.excerpt| strip | markdownify | strip_html -%}
+  {%- else -%}
+   {%- assign summary = node.content | strip | markdownify | strip_html | truncatewords: 50 -%}
+  {%- endif -%}
+  {%- assign summary = summary | markdownify | strip_html | normalize_whitespace -%}
 
-    {%- assign lead = "" -%}
-    {%- if subtitle != "" and description != "" -%}
-      {%- assign lead = subtitle | append: " — " | append: description -%}
-    {%- elsif subtitle != "" -%}
-      {%- assign lead = subtitle -%}
-    {%- elsif description != "" -%}
-      {%- assign lead = description -%}
-    {%- endif -%}
+  {%- assign lead = "" -%}
+  {%- if subtitle != "" and description != "" -%}
+   {%- assign lead = subtitle | append: "  " | append: description -%}
+  {%- elsif subtitle != "" -%}
+   {%- assign lead = subtitle -%}
+  {%- elsif description != "" -%}
+   {%- assign lead = description -%}
+  {%- endif -%}
 
-    {%- assign sentence = "" -%}
-    {%- if lead != "" -%}
-      {%- assign sentence = lead | append: ". " | append: summary -%}
-    {%- else -%}
-      {%- assign sentence = summary -%}
-    {%- endif -%}
-    {%- assign sentence = sentence | markdownify | strip_html | normalize_whitespace | strip | strip_newlines | strip | truncate: 300, "…" -%}
+  {%- assign sentence = "" -%}
+  {%- if lead != "" -%}
+   {%- assign sentence = lead | append: ". " | append: summary -%}
+  {%- else -%}
+   {%- assign sentence = summary -%}
+  {%- endif -%}
+  {%- assign sentence = sentence | markdownify | strip_html | normalize_whitespace | strip | strip_newlines | strip | truncate: 300, "..." -%}
 {%- capture variable_name -%}- [{{- node.title | markdownify | strip_html | strip_newlines | strip -}}]({{- final_url -}}): {{- sentence -}}{%- endcapture -%}
 {{ variable_name | strip | strip_newlines | strip }}
-  {%- endfor -%}
+ {%- endfor -%}
 {%- endfor -%}
