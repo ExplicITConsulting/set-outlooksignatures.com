@@ -13,9 +13,9 @@ sitemap: false
   | first
 -%}
 {%- if index_page %}
-> {{ index_page.title | markdownify | strip_html | normalize_whitespace }}
-> {{ index_page.subtitle | default: "" | markdownify | strip_html | normalize_whitespace }}
-> {{ index_page.description | default: "" | markdownify | strip_html | normalize_whitespace }}
+> {{- index_page.title | markdownify | strip_html | normalize_whitespace -}}
+> {{- index_page.subtitle | default: "" | markdownify | strip_html | normalize_whitespace -}}
+> {{- index_page.description | default: "" | markdownify | strip_html | normalize_whitespace -}}
 {%- endif %}
 > Source: [Set-OutlookSignatures on GitHub](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/)
 > [ExplicIT Consulting](https://explicitconsulting.at)
@@ -27,7 +27,7 @@ Metadata:
 - Audience: IT Administrators, Architects, Security, Marketing, Management
 - License model: Open Source core, commercial add-on
 - Status: Production / Stable
-- Generated on: {{ site.time | date_to_xmlschema }}
+- Generated on: {{- site.time | date_to_xmlschema -}}
 
 Purpose:
 - This file is a high-level index and routing entry point for LLMs.
@@ -51,17 +51,17 @@ Non-goals:
 - This file is not a legal or compliance document
 
 Language:
-- Canonical language: {{ site.default_lang }}
-- Current language: {{ site.active_lang }}
+- Canonical language: {{- site.default_lang -}}
+- Current language: {{- site.active_lang -}}
 - Available languages:
 {%- for lang in site.languages -%}
   {%- if lang == site.default_lang %}
-  - [{{ lang }}]({{ "/" | absolute_url }})
+  - [{{- lang -}}]({{- "/" | absolute_url -}})
   {%- else %}
-  - [{{ lang }}]({{ "/" | append: lang | absolute_url }})
+  - [{{- lang -}}]({{- "/" | append: lang | absolute_url -}})
   {%- endif -%}
 {%- endfor %}
-- The canonical language ({{ site.default_lang }}) is used as fallback if no translation is available.
+- The canonical language ({{- site.default_lang -}}) is used as fallback if no translation is available.
 - Product summaries may appear in their primary marketing language.
 - Content parity is maintained across languages unless otherwise stated.
 
@@ -79,9 +79,9 @@ Language:
 ## Language versions of llms.txt
 {%- for lang in site.languages -%}
   {%- if lang == site.default_lang %}
-- [{{ lang }}]({{ "/llms.txt" | absolute_url }})
+- [{{- lang -}}]({{- "/llms.txt" | absolute_url -}})
   {%- else %}
-- [{{ lang }}]({{ "/" | append: lang | append: "/llms.txt" | absolute_url }})
+- [{{- lang -}}]({{- "/" | append: lang | append: "/llms.txt" | absolute_url -}})
   {%- endif -%}
 {%- endfor %}
 
@@ -89,9 +89,9 @@ Language:
 ## Language versions of llms-full.txt
 {%- for lang in site.languages -%}
   {%- if lang == site.default_lang %}
-- [{{ lang }}]({{ "/llms-full.txt" | absolute_url }})
+- [{{- lang -}}]({{- "/llms-full.txt" | absolute_url -}})
   {%- else %}
-- [{{ lang }}]({{ "/" | append: lang | append: "/llms-full.txt" | absolute_url }})
+- [{{- lang -}}]({{- "/" | append: lang | append: "/llms-full.txt" | absolute_url -}})
   {%- endif -%}
 {%- endfor -%}
 {%- endif -%}
@@ -120,7 +120,7 @@ Language:
   {%- endif %}
 
 
-## {{ section_name | markdownify | strip_html | normalize_whitespace | strip | strip_newlines | strip }}
+## {{- section_name | markdownify | strip_html | normalize_whitespace | strip | strip_newlines | strip -}}
   {%- assign sorted = group.items | sort: "title" -%}
   {%- for node in sorted -%}
     {%- if active_lang == site.default_lang -%}
@@ -162,9 +162,7 @@ Language:
       {%- assign sentence = summary -%}
     {%- endif -%}
     {%- assign sentence = sentence | markdownify | strip_html | normalize_whitespace | strip | strip_newlines | strip | truncate: 300, "…" -%}
-{%- capture variable_name -%}
-- [{{ node.title | markdownify | strip_html | strip_newlines | strip }}]({{ final_url }}): {{ sentence }}
-{%- endcapture -%}
-{{ variable_name | strip | strip_newlines | strip }}
+{%- capture variable_name -%}- [{{- node.title | markdownify | strip_html | strip_newlines | strip -}}]({{- final_url -}}): {{- sentence -}}{%- endcapture -%}
+{{- variable_name | strip | strip_newlines | strip -}}
   {%- endfor -%}
 {%- endfor -%}
