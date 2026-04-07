@@ -196,10 +196,10 @@ sitemap_changefreq: weekly
 
 <h2 id="configuration-and-deployment">Configuration and deployment</h2>
 <p>With every new release of Set-OutlookSignatures, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> comes with an updated Outlook add-in. You must update your deployment whenever the add-in version or your add-in configuration changes.</p>
-<p>It is recommended to use at least two separate dedicated hostnames: one for testing and one for production (e.g., <code>https://outlookaddin01test.example.com</code> and <code>https://outlookaddin01.example.com</code>).</p>
-<p>Deploying the add-in is a simple three-step process: Configuring the code, hosting the files on a web server, and rolling out the manifest to your users. Whenever you change a preconfiguration add-in script or receive a new version, you must repeat all three steps.</p>
+<p>It is recommended to use at least two separate dedicated hostnames: One for testing and one for production (e.g., <code>https://outlookaddin01test.example.com</code> and <code>https://outlookaddin01.example.com</code>).</p>
+<p>Deploying the add-in is a simple and fast three-step process: Configuring the code, uploading the files to a web server, and rolling out the manifest to your mailboxes.<br>You must update your deployment whenever the add-in version or your add-in configuration changes.</p>
 
-<h3 id="configuration-step">Step 1: Configuration (Prepare)</h3>
+<h3 id="configuration">Step 1: Configuration (Prepare)</h3>
 <p>The add-in is built using the <code>run_before_deployment.ps1</code> script. This script injects your technical details into the source code and generates a <code>publish</code> folder containing your customized add-in code, include the <code>manifest.xml</code> file used for deployment.</p>
 
 <div class="columns is-multiline">
@@ -207,7 +207,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <p><b>General Settings</b></p>
       <ul>
-        <li><b>Versioning:</b> Increment this every time you change a setting. This is the only way to force Outlook to clear its internal cache and download the new configuration.</li>
+        <li><b>Versioning:</b> Increment this every time you change a setting. This is the only way to force Outlook to clear its local cache and download the new files.</li>
         <li><b>Deployment URL:</b> Define your dedicated hosting domain (e.g., <code>https://outlookaddin01.example.com</code>).</li>
         <li><b>Cloud Environment:</b> Set your environment and Entra ID Client ID.</li>
         <li><b>Debug Logging:</b> Enable or disable detailed execution logs.</li>
@@ -282,10 +282,10 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<div class="box has-background-white-bis has-text-black mt-5" style="height: 100%; border-top: 4px solid Blue;">
+<div class="box has-background-white-bis has-text-black mt-5" style="height: 100%; border-top: 4px solid Yellow;">
   <p><b>Clear the Outlook add-in cache</b></p>
-  <p>When testing, Outlook sometimes takes too long updating its cache. Follow these official Microsoft instructions to manually clear it:</p>
-  <div class="columns mt-0">
+  <p class="mb-0">When testing, Outlook sometimes takes too long updating its cache. Follow these official Microsoft instructions to manually clear it:</p>
+  <div class="columns">
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <ul>
         <li><b>Web:</b> Hard Refresh the browser window.</li>
