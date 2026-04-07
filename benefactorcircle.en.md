@@ -320,7 +320,7 @@ Thanks to its unique features and exclusive manufacturer availability, direct pr
 <ul>
   <li>The <b>Active Directory DNS domain name or the Entra ID tenant</b> of the license group's home.<br>For cloud-only groups, use <code>EntraID_&lt;Tenant ID&gt;</code> or <code>EntraID_&lt;Tenant DNS Domain&gt;</code>.<br>Examples: <code>corp.example.com</code>, <code>EntraID_example.com</code></li>
   <li>The <b>Active Directory SID (security identifier) or the Entra ID object ID</b> of the license group, depending on the license group's home.<br>Examples: <code>S-1-5-21-2998092229-1459889137-3613942852-2617</code>, <code>f3f0611a-7bbe-4717-89c3-b967caf6922a</code></li>
-  <li>The maximum number of mailboxes licensed for the group.<br>Examples: <code>478</code>, <code>16000</code></li>
+  <li>The <b>maximum number of mailboxes licensed</b> for the group.<br>Examples: <code>478</code>, <code>16000</code></li>
 </ul>
 <p>The example values given above result in the following license groups:</p>
 <ul>
