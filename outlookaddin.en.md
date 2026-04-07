@@ -283,7 +283,7 @@ sitemap_changefreq: weekly
   </div>
 </div>
 <div class="box has-background-white-bis has-text-black mt-5" style="height: 100%; border-top: 4px solid Yellow;">
-  <p><b>Clear the Outlook add-in cache</b></p>
+  <p id="clear-the-outlook-add-in-cache"><b>Clear the Outlook add-in cache</b></p>
   <p class="mb-0">When testing, Outlook sometimes takes too long updating its cache. Follow these official Microsoft instructions to manually clear it:</p>
   <div class="columns">
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
