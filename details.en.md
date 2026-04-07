@@ -332,21 +332,21 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
         <td>● Required</td>
         <td>● Required</td>
         <td></td>
-        <td>Log on the current user.</td>
+        <td>Authenticate the signed-in user.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall">Files.Read.All</a></td>
         <td>○ Optional</td>
         <td>○ Optional</td>
         <td></td>
-        <td>Access templates/config stored in SharePoint Online. Alternative: <a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected">Files.SelectedOperations.Selected</a>.</td>
+        <td>Read template and configuration files hosted on SharePoint Online. <a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected">Files.SelectedOperations.Selected</a> is harder to implement but more secure.</a>.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall">GroupMember.Read.All</a></td>
         <td>● Required</td>
         <td>● Required</td>
         <td>● Required</td>
-        <td>Find groups, get SIDs, and check license groups.</td>
+        <td>Find groups by name, get their security identifier (SID) and transitive members.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailread">Mail.Read</a></td>
@@ -360,21 +360,21 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
         <td>● Required</td>
         <td>● Required</td>
         <td></td>
-        <td>Connect to Outlook for the web. Set Outlook signatures.</td>
+        <td>Create signature collection in drafts, provide signatures for Outlook add-in.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite">MailboxConfigItem.ReadWrite</a></td>
         <td>● Required</td>
         <td>● Required</td>
         <td></td>
-        <td>Connect to Outlook for the web. Set Outlook signatures.</td>
+        <td>Read data from Outlook Web, set Outlook web signatures.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite">MailboxSettings.ReadWrite</a></td>
         <td>● Required</td>
         <td>● Required</td>
         <td></td>
-        <td>Detect OOF state and set OOF replies.</td>
+        <td>Detect mailbox environment, get and set out-of-office data.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#offline_access">offline_access</a></td>
@@ -388,21 +388,21 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
         <td>● Required</td>
         <td>● Required</td>
         <td></td>
-        <td>Log on the current user.</td>
+        <td>Authenticate the signed-in user.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#profile">profile</a></td>
         <td>● Required</td>
         <td>● Required</td>
         <td></td>
-        <td>Log on the current user and get basic properties.</td>
+        <td>Authenticate the signed-in user, get basic properties.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall">User.Read.All</a></td>
         <td>● Required</td>
         <td>● Required</td>
         <td>● Required</td>
-        <td>Get values for replacement variables. UPN lookup.</td>
+        <td>Data for replacement variables, SMTP to UPN, group membership.</td>
       </tr>
       <tr>
         <td colspan="5" style="padding-top: 2em !important;"><em>Graph API permissions, application</em></td>
@@ -412,42 +412,42 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
         <td></td>
         <td>○ Optional</td>
         <td></td>
-        <td>Access templates/config stored in SharePoint Online. Alternative: <a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected">Files.SelectedOperations.Selected</a>.</td>
+        <td>Read template and configuration files hosted on SharePoint Online. <a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected">Files.SelectedOperations.Selected</a> is harder to implement but more secure.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall">GroupMember.Read.All</a></td>
         <td></td>
         <td>● Required</td>
         <td></td>
-        <td>Find groups, get SIDs, and check license groups.</td>
+        <td>Find groups by name, get their security identifier (SID) and transitive members.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite">Mail.ReadWrite</a></td>
         <td></td>
         <td>● Required</td>
         <td></td>
-        <td>Connect to Outlook for the web. Set Outlook signatures.</td>
+        <td>Create signature collection in drafts, provide signatures for Outlook add-in.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite">MailboxConfigItem.ReadWrite</a></td>
         <td></td>
         <td>● Required</td>
         <td></td>
-        <td>Connect to Outlook for the web. Set Outlook signatures.</td>
+        <td>Read data from Outlook Web, set Outlook web signatures.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite">MailboxSettings.ReadWrite</a></td>
         <td></td>
         <td>● Required</td>
         <td></td>
-        <td>Detect OOF state and set OOF replies.</td>
+        <td>Detect mailbox environment, get and set out-of-office data.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall">User.Read.All</a></td>
         <td></td>
         <td>● Required</td>
         <td></td>
-        <td>Get values for replacement variables. UPN lookup.</td>
+        <td>Data for replacement variables, SMTP to UPN, group membership.</td>
       </tr>
     </tbody>
   </table>
