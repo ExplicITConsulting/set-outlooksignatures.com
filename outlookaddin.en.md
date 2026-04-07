@@ -9,8 +9,8 @@ hero_link: "#overview"
 hero_link_text: "<span><b>Overview: </b>What the add-in does</span>"
 hero_link2: "#requirements"
 hero_link2_text: "<span><b>Requirements: </b>Technical prerequisites</span>"
-hero_link3: "#deployment-to-mailboxes"
-hero_link3_text: "<span><b>Deployment: </b>Rollout options</span>"
+hero_link3: "#configuration-and-deployment"
+hero_link3_text: "<span>Configuration and deployment options</span>"
 hide_gh_sponsor: true
 permalink: "/outlookaddin"
 redirect_from:
@@ -194,17 +194,21 @@ sitemap_changefreq: weekly
 <p><b>Authentication:</b> Use <code>Single-page application</code> with a redirect URI of <code>brk-multihub://yourhost.yourdomain.com</code>.</p>
 
 
-<h2 id="configuration-and-deployment-to-the-web-server">Configuration and deployment</h2>
-<p>With every new release of Set-OutlookSignatures, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> comes with an updated Outlook add-in. You must update your deployment whenever the add-in code or your configuration changes.</p>
+<h2 id="configuration-and-deployment">Configuration and deployment</h2>
+<p>With every new release of Set-OutlookSignatures, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> comes with an updated Outlook add-in. You must update your deployment whenever the add-in version or your add-in configuration changes.</p>
 <p>It is recommended to use at least two separate dedicated hostnames: one for testing and one for production (e.g., <code>https://outlookaddin01test.example.com</code> and <code>https://outlookaddin01.example.com</code>).</p>
-<p>The add-in is configured via the <code>run_before_deployment.ps1</code> script:</p>
+<p>Deploying the add-in is a simple three-step process: Configuring the code, hosting the files on a web server, and rolling out the manifest to your users. Whenever you change a preconfiguration add-in script or receive a new version, you must repeat all three steps.</p>
+
+<h3 id="configuration-step">Step 1: Configuration (Prepare)</h3>
+<p>The add-in is built using the <code>run_before_deployment.ps1</code> script. This script injects your technical details into the source code and generates a <code>publish</code> folder containing your customized add-in code, include the <code>manifest.xml</code> file used for deployment.</p>
+
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <p><b>General Settings</b></p>
       <ul>
-        <li><b>Versioning:</b> Sync the add-in version with Set-OutlookSignatures.</li>
-        <li><b>Deployment URL:</b> Define your dedicated hosting domain.</li>
+        <li><b>Versioning:</b> Increment this every time you change a setting. This is the only way to force Outlook to clear its internal cache and download the new configuration.</li>
+        <li><b>Deployment URL:</b> Define your dedicated hosting domain (e.g., <code>https://outlookaddin01.example.com</code>).</li>
         <li><b>Cloud Environment:</b> Set your environment and Entra ID Client ID.</li>
         <li><b>Debug Logging:</b> Enable or disable detailed execution logs.</li>
       </ul>
@@ -242,11 +246,19 @@ sitemap_changefreq: weekly
   </div>
   <p class="mt-2">You can even generate unique signatures at runtime without choosing a pre-deployed template. See <code>.\sample code\CustomRulesCode.js</code> for details.</p>
 </div>
+
+<h3 id="web-server-step">Step 2: Hosting (Publish)</h3>
 <p><b>Deployment:</b> Run <code>run_before_deployment.ps1</code> and upload the content of the <code>publish</code> folder to your web server.</p>
+<ul>
+  <li>The files must be hosted at the root of a dedicated host name (e.g., <code>https://outlookaddin01.example.com</code>). Subdirectories, such as <code>https://www.example.com/outlookaddin01</code>, are not supported.</li>
+  <li>Do not upload the <code>publish</code> folder itself, only its content, including subfolders.</li>
+  <li><a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website">Static website hosting in Azure Storage</a> is an uncomplicated, affordable and fast alternative. It includes a Microsoft-issued certificate, even in the free tier.</li>
+</ul>
 
-
-<h2 id="deployment-to-mailboxes">Deployment to mailboxes</h2>
-<p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded. This is because Outlook caches the code of the add-in and reads the manifest file only once.</p>
+<h3 id="deployment-to-mailboxes">Step 3: Rollout (Deploy)</h3>
+<p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded.</p>
+<p>The information from the manifest file is stored in the assigned mailboxes, but not the add-in itself - every Outlook client downloads a local copy of the add-in based on the one-time information transfer from the manifest file.</p>
+<p>These downloaded files are cached locally. The cache is only updated when a manifest file with a changed version number is added to the configuration of the mailbox, or when the cache gets cleared manually.</p>
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
