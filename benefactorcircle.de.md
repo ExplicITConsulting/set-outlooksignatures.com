@@ -317,8 +317,8 @@ Dank seiner einzigartigen Funktionen und der exklusiven Herstellerverfügbarkeit
 
 <p>Die Definition einer Lizenzgruppe besteht aus drei Komponenten:</p>
 <ul>
-  <li>Der <bold>Active‑Directory‑DNS‑Domänenname oder der Entra‑ID‑Tenant</bold> der Lizenzgruppe.<br>Für reine Cloud‑Gruppen verwenden Sie <code>EntraID_&lt;Tenant ID&gt;</code> oder <code>EntraID_&lt;Tenant DNS Domain&gt;</code>.<br>Beispiele: <code>corp.example.com</code>, <code>EntraID_example.com</code></li>
-  <li>Die <bold>Active‑Directory‑SID (Security Identifier) oder die Entra‑ID‑Objekt‑ID</bold> der Lizenzgruppe, abhängig davon, wo sich die Gruppe befindet.<br>Beispiele: <code>S-1-5-21-2998092229-1459889137-3613942852-2617</code>, <code>f3f0611a-7bbe-4717-89c3-b967caf6922a</code></li>
+  <li>Der <b>Active‑Directory‑DNS‑Domänenname oder der Entra‑ID‑Tenant</b> der Lizenzgruppe.<br>Für reine Cloud‑Gruppen verwenden Sie <code>EntraID_&lt;Tenant ID&gt;</code> oder <code>EntraID_&lt;Tenant DNS Domain&gt;</code>.<br>Beispiele: <code>corp.example.com</code>, <code>EntraID_example.com</code></li>
+  <li>Die <b>Active‑Directory‑SID (Security Identifier) oder die Entra‑ID‑Objekt‑ID</b> der Lizenzgruppe, abhängig davon, wo sich die Gruppe befindet.<br>Beispiele: <code>S-1-5-21-2998092229-1459889137-3613942852-2617</code>, <code>f3f0611a-7bbe-4717-89c3-b967caf6922a</code></li>
   <li>Die maximale Anzahl der für diese Gruppe lizenzierten Postfächer.<br>Beispiele: <code>478</code>, <code>16000</code></li>
 </ul>
 
