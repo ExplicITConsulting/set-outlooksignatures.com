@@ -339,7 +339,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
         <td>○ Optional</td>
         <td>○ Optional</td>
         <td></td>
-        <td>Read template and configuration files hosted on SharePoint Online. <a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected">Files.SelectedOperations.Selected</a> is harder to implement but more secure.</a>.</td>
+        <td>Read template and configuration files hosted on SharePoint Online. Alternative: <a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected">Files.SelectedOperations.Selected</a>.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall">GroupMember.Read.All</a></td>
@@ -412,7 +412,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
         <td></td>
         <td>○ Optional</td>
         <td></td>
-        <td>Read template and configuration files hosted on SharePoint Online. <a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected">Files.SelectedOperations.Selected</a> is harder to implement but more secure.</td>
+        <td>Read template and configuration files hosted on SharePoint Online. Alternative: <a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected">Files.SelectedOperations.Selected</a>.</td>
       </tr>
       <tr>
         <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall">GroupMember.Read.All</a></td>
