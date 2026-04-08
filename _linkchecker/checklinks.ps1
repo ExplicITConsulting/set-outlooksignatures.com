@@ -8,7 +8,7 @@ $SeleniumBrowserHeadless = $true
 $SeleniumBrowserMinimize = $false
 
 
-function GetLinksAndContent {
+function GetLinksAndContent {wa
     param ([Parameter(Mandatory = $true)][string]$Url)
 
     try {
