@@ -279,7 +279,7 @@ sitemap_changefreq: weekly
         <li><b><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide">Integrated Apps</a>:</b> The modern method for Microsoft 365 environments.</li>
         <li><b><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide">Centralized Deployment</a>:</b> Use this if Integrated Apps is not yet available in your cloud tenant.</li>
       </ul>
-      <p>Both methods share the same backend and are usually too slow for test scenarios: [Microsoft documents state](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-faq?view=o365-worldwide#how-long-does-it-take-for-add-ins-to-show-up-for-all-users-) that new add-in deployments can take up to 24 hours until being recognized by Outlook clients, and that deployment changes can take up to 72 hours. Consider [clearing the Outlook add-in cache](clear-the-outlook-add-in-cache) to speed up and test the deployment on select clients, with Outlook Web being .</p>
+      <p>Both methods share the same backend and are usually too slow for test scenarios: <a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-faq?view=o365-worldwide#how-long-does-it-take-for-add-ins-to-show-up-for-all-users-">Microsoft documents state</a>  up to 24 hours for new add-in deployments, and up to 72 hours for changes to existing deployments. Consider <a href="#clear-the-outlook-add-in-cache">clearing the Outlook add-in cache</a> to speed up and test the deployment on select clients.</p>
     </div>
   </div>
 </div>
