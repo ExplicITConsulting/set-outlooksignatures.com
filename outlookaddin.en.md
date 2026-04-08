@@ -274,11 +274,12 @@ sitemap_changefreq: weekly
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <p><b>Enterprise Deployment (Production)</b></p>
-      <p>Ideal for mass deployment. These methods are usually too slow (up to 72 hours) for test scenarios.</p>
+      <p>Ideal for mass deployment after the test phase.</p>
       <ul>
         <li><b><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps?view=o365-worldwide">Integrated Apps</a>:</b> The modern method for Microsoft 365 environments.</li>
         <li><b><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-of-add-ins?view=o365-worldwide">Centralized Deployment</a>:</b> Use this if Integrated Apps is not yet available in your cloud tenant.</li>
       </ul>
+      <p>Both methods share the same backend and are usually too slow for test scenarios: [Microsoft documents state](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-faq?view=o365-worldwide#how-long-does-it-take-for-add-ins-to-show-up-for-all-users-) that new add-in deployments can take up to 24 hours until being recognized by Outlook clients, and that deployment changes can take up to 72 hours. Consider [clearing the Outlook add-in cache](clear-the-outlook-add-in-cache) to speed up and test the deployment on select clients, with Outlook Web being .</p>
     </div>
   </div>
 </div>
@@ -288,19 +289,20 @@ sitemap_changefreq: weekly
   <div class="columns">
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <ul>
-        <li><b>Web:</b> Hard Refresh the browser window.</li>
-        <li><b>Classic Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">Official instructions from Microsoft</a>.</li>
-        <li><b>New Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">Official instructions from Microsoft</a>.</li>
+        <li><b>Outlook for the Web:</b> Hard Refresh the browser window.</li>
+        <li><b>Classic Outlook for Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">Official instructions from Microsoft</a>.</li>
+        <li><b>New Outlook for Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">Official instructions from Microsoft</a>.</li>
       </ul>
     </div>
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <ul>
-        <li><b>macOS:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">Official instructions from Microsoft</a>.</li>
-        <li><b>iOS:</b> Taskpane > Advanced options > <b>Reload add-in</b>.</li>
-        <li><b>Android:</b> App info > Force Stop > Clear Cache (do not tap Clear Data).</li>
+        <li><b>Outlook for Mac:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">Official instructions from Microsoft</a>.</li>
+        <li><b>Outlook for iOS:</b> Taskpane > Advanced options > <b>Reload add-in</b>.</li>
+        <li><b>Outlook for Android:</b> App info > Force Stop > Clear Cache (do not tap Clear Data).</li>
       </ul>
     </div>
   </div>
+  <p>Restart Outlook after clearing the cache, even if not explicitly prompted. Allow up to 10 minutes for add-ins to fully reload, especially in Classic Outlook for Windows. If launch events fail to trigger, a second restart usually resolves the issue.</p>
 </div>
 
 
