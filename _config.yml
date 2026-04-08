@@ -140,6 +140,7 @@ feed:
   path: /feed.xml
   icon: "/assets/images/set-outlooksignatures icon.ico"
   logo: "/assets/images/set-outlooksignatures icon.ico"
+  posts_limit: 100
 
 
 jekyll-archives:
