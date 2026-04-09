@@ -34,7 +34,7 @@ Firmengericht: Handelsgericht Wien, Austria
 <a href="https://www.gisa.gv.at/abfrage" target="_blank">Gewerbe­informations­system Austria (GISA)</a>: 36123599  
 <a href="https://ec.europa.eu/taxation_customs/vies" target="_blank">UID</a>: ATU79529869  
 
-<a href="https://www.dnb.com/duns-number/lookup.html" target="_blank">DUNS</a>: 300886290  
+<a href="https://dunsnumberlookup.dnb.com" target="_blank">DUNS</a>: 300886290  
 <a href="https://www.gs1.org/services/verified-by-gs1" target="_blank">GLN</a>: 9110033592241  
 
 <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register-search" target="_blank">EU Funding & Tenders Participant Identification Code (PIC)</a>: 873316415  

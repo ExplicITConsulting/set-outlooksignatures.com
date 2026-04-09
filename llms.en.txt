@@ -18,6 +18,7 @@ sitemap: false
 > {{ index_page.description | default: "" | markdownify | strip_html | normalize_whitespace }}
 {%- endif %}
 > Source: [Set-OutlookSignatures on GitHub](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/)
+> Source: [Export-RecipientPermissions on GitHub](https://github.com/GruberMarkus/Export-RecipientPermissions/)
 > [ExplicIT Consulting](https://explicitconsulting.at)
 
 Metadata:

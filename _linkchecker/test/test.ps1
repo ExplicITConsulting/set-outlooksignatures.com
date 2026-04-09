@@ -2,17 +2,21 @@
 
 $StartUrl = 'https://set-outlooksignatures.com'
 $SitemapUrl = 'https://set-outlooksignatures.com/sitemap.xml'
-$ParallelJobs = ([int]$env:NUMBER_OF_PROCESSORS) * 1
+$ParallelWorkers = ([int]$env:NUMBER_OF_PROCESSORS) * 1
 
-Clear-Host
+
+Write-Host 'Start script'
+Write-Host '  Initial checks and basic setup'
+
+$StartTime = Get-Date
 
 if ($psISE) {
-    Write-Host 'PowerShell ISE not supported.' -ForegroundColor Red
+    Write-Host '   PowerShell ISE not supported.' -ForegroundColor Red
     exit 1
 }
 
 if ($ExecutionContext.SessionState.LanguageMode -ne 'FullLanguage') {
-    Write-Host 'FullLanguage mode required.' -ForegroundColor Red
+    Write-Host '    FullLanguage mode required.' -ForegroundColor Red
     exit 1
 }
 
@@ -20,44 +24,80 @@ $OutputEncoding = [Console]::InputEncoding = [Console]::OutputEncoding = New-Obj
 
 Set-Location -Path ($PSScriptRoot ?? (Get-Location).ProviderPath)
 
-function LowerCaseUrl([string]$url, [bool]$includeFragment = $true) {
-    if ([uri]::IsWellFormedUriString($url, 'Absolute')) {
-        $uri = [uri]$url
-        $uri = [uri]([System.Web.HttpUtility]::UrlDecode($uri.AbsoluteUri))
-        $uri = [uri]('{0}://{1}{2}{3}' -f $uri.Scheme.ToLower(), $uri.Host.ToLower(), $uri.PathAndQuery, $(if ($includeFragment) { $uri.Fragment } else { '' }))
-        return $uri.AbsoluteUri.ToString()
-    } else {
-        Write-Host 'Not a wellformed uri string: $url'
-        return $url
+function StandardizeAbsoluteUrl([string]$InputString, [bool]$IncludeFragment = $true) {
+    try {
+        $uri = [uri]$InputString
+
+        if (
+            ($null -eq $uri) -or
+            ([string]::IsNullOrWhiteSpace($uri.AbsoluteUri)) -or
+            ($uri.IsAbsoluteUri -eq $false)
+        ) {
+            throw
+        }
+    } catch {
+        if ($WorkerID) {
+            Write-Verbose "  Worker $($WorkerId), '$($url)': Not an absolute URL: '$($url)'"
+        } else {
+            Write-Verbose "  Not an absolute URL: '$($url)'"
+        }
+
+        return $InputString
     }
+
+    $uri = [uri]('{0}://{1}{2}{3}' -f $uri.Scheme.ToLower(), $uri.Host.ToLower(), $uri.PathAndQuery, $(if ($IncludeFragment) { $uri.Fragment } else { '' }))
+
+    return $uri.AbsoluteUri.ToString()
 }
 
-$LowerCaseUrlSBString = (Get-Item Function:\LowerCaseUrl).ScriptBlock.ToString()
-
+$StandardizeAbsoluteUrlSBString = (Get-Item Function:\StandardizeAbsoluteUrl).ScriptBlock.ToString()
 
 $tempDir = (New-Item -ItemType Directory -Path (Join-Path -Path $env:temp -ChildPath (New-Guid).Guid)).FullName
 
+if ($StartUrl) {
+    $StartDomain = ([uri]$StartUrl).Host
+} elseif ($SitemapUrl) {
+    $StartDomain = ([uri]$SitemapUrl).Host
+} else {
+    Write-Host '    You must specify at least a SitemapUrl or a StartUrl.' -ForegroundColor Red
+    exit 1
+}
+
+Write-Host '  Install dependencies'
+Write-Host '    HTML Agility Pack'
 Invoke-WebRequest 'https://www.nuget.org/api/v2/package/HtmlAgilityPack' -OutFile (Join-Path $tempDir 'hap.zip') -UseBasicParsing
 Expand-Archive -Path (Join-Path $tempDir 'hap.zip') -DestinationPath (Join-Path $tempDir 'hap') -Force
 $HtmlAgilityPackDllPath = (Join-Path $tempDir 'hap\lib\netstandard2.0\HtmlAgilityPack.dll')
 
-
+Write-Host '    PSPlaywright'
 Invoke-WebRequest -Uri 'https://www.powershellgallery.com/api/v2/package/PSPlaywright' -OutFile (Join-Path $tempDir 'PSPlaywright.zip') -UseBasicParsing
 Expand-Archive -Path (Join-Path $tempDir 'PSPlaywright.zip') -DestinationPath (Join-Path $tempDir 'PlaywrightModule') -Force
 $PSPlaywrightModulePath = Join-Path (Join-Path $tempDir 'PlaywrightModule') 'PSPlaywright.psm1'
 Import-Module $PSPlaywrightModulePath
+Write-Host '    Playwright'
 Install-Playwright
 
-$ParallelJobsStatus = [System.Collections.Concurrent.ConcurrentDictionary[int, bool]]::new()
+
+Write-Host
+Write-Host 'Prepare worker threads'
+Write-Host '  Thread-safe variables'
+$ParallelWorkersStatus = [System.Collections.Concurrent.ConcurrentDictionary[int, bool]]::new()
 $Queue = [System.Collections.Concurrent.ConcurrentQueue[string]]::new()
 $Visited = [System.Collections.Concurrent.ConcurrentDictionary[string, byte]]::new([System.StringComparer]::Ordinal)
 $PageData = [System.Collections.Concurrent.ConcurrentDictionary[string, object]]::new()
 $ReferenceMap = [System.Collections.Concurrent.ConcurrentDictionary[string, [System.Collections.Generic.List[object]]]]::new()
 
-
-$Queue.Enqueue((LowerCaseUrl -url $StartUrl -includeFragment $false))
+if ($StartUrl) {
+    Write-Host '  Add standardized StartUrl to initial queue'
+    $StartUrlStandardized = $(StandardizeAbsoluteUrl -InputString $StartUrl -IncludeFragment $false)
+    $Queue.Enqueue($StartUrlStandardized)
+} else {
+    $StartUrlStandardized = $null
+}
 
 if ($SitemapUrl) {
+    Write-Host '  Analyze SitemapUrl and add standardized URL entries to initial queue'
+
     try {
         $response = Invoke-WebRequest -Uri $SitemapUrl -UseBasicParsing -Timeout 10
         [xml]$Sitemap = $response.Content
@@ -69,34 +109,35 @@ if ($SitemapUrl) {
         $locLinks = $Sitemap.SelectNodes('//ns:loc', $ns) | Select-Object -ExpandProperty '#text'
         $xhtmlLinks = $Sitemap.SelectNodes('//xhtml:link', $ns) | ForEach-Object { $_.getAttribute('href') }
 
-        (@($locLinks + $xhtmlLinks) | ForEach-Object { LowerCaseUrl -url $_ -includeFragment $false }) | Select-Object -Unique | ForEach-Object {
-            $Queue.Enqueue(([uri]$_).AbsoluteUri)
+        (@($locLinks + $xhtmlLinks) | ForEach-Object { StandardizeAbsoluteUrl -InputString $_ -IncludeFragment $false }) | Sort-Object -Culture 127 -Unique | ForEach-Object {
+            if (
+                ($StartUrlStandardized -and ($StartUrlStandardized -ne $_)) -or
+                (-not $StartUrlStandardized)
+            ) {
+                $Queue.Enqueue(([uri]$_).AbsoluteUri)
+            }
         }
     } catch {
-        Write-Host "Failed to download or parse sitemap: $($_.Exception.Message)" -ForegroundColor Yellow
+        Write-Host "    Failed to download or parse sitemap: $($_.Exception.Message)" -ForegroundColor Yellow
     }
 }
 
-if ($StartUrl) {
-    $StartDomain = ([uri]$StartUrl).Host
-} elseif ($SitemapUrl) {
-    $StartDomain = ([uri]$SitemapUrl).Host
-} else {
-    Write-Host 'You must specify at least a SitemapUrl or a StartUrl.' -ForegroundColor Red
-    exit 1
-}
+Write-Host "  Queue count: $($Queue.Count)"
 
-1..$ParallelJobs | ForEach-Object { $ParallelJobsStatus[$_] = $true }
 
-1..$ParallelJobs | ForEach-Object -Parallel {
+Write-Host
+Write-Host 'Start parallel workers'
+1..$ParallelWorkers | ForEach-Object { $ParallelWorkersStatus[$_] = $true }
+
+1..$ParallelWorkers | ForEach-Object -Parallel {
     try {
         $WorkerId = $_
 
-        ($using:ParallelJobsStatus)[$WorkerId] = $true
+        ($using:ParallelWorkersStatus)[$WorkerId] = $true
 
-        Write-Host "Worker $($WorkerId): Started."
+        Write-Host "  Worker $($WorkerId): Started."
 
-        Set-Item -Path 'function:LowerCaseUrl' -Value ($using:LowerCaseUrlSBString)
+        Set-Item -Path 'function:StandardizeAbsoluteUrl' -Value ($using:StandardizeAbsoluteUrlSBString)
 
         Add-Type -Path $using:HtmlAgilityPackDllPath
 
@@ -118,21 +159,21 @@ if ($StartUrl) {
 
 
                 if (($using:Queue).TryDequeue([ref]$url)) {
-                    ($using:ParallelJobsStatus)[$WorkerId] = $true
+                    ($using:ParallelWorkersStatus)[$WorkerId] = $true
 
-                    $urlAlreadyVisisted = -not $(($using:Visited).TryAdd(((LowerCaseUrl -url $url -includeFragment $false)), 0))
+                    $urlAlreadyVisisted = -not $(($using:Visited).TryAdd(((StandardizeAbsoluteUrl -InputString $url -IncludeFragment $false)), 0))
 
                     if ($urlAlreadyVisisted) {
                         continue
                     }
 
-                    Write-Host "Worker $($WorkerId), '$($url)': Start processing."
+                    Write-Host "  Worker $($WorkerId), '$($url)'"
 
                     $urlIsInternal = $((([uri]$url).Host -ieq $using:StartDomain) -or (([uri]$url).Host -ilike "*.$($using:StartDomain)"))
 
                     try {
                         if ((Invoke-WebRequest -Method Head -Uri $url -UseBasicParsing).Headers.'Content-Type' -notlike 'text/html*') {
-                            Write-Verbose "Worker $($WorkerId), '$($url)': Is not text/html."
+                            Write-Verbose "  Worker $($WorkerId), '$($url)': Is not text/html."
 
                             $null = ($using:PageData).TryAdd(
                                 $url,
@@ -156,7 +197,7 @@ if ($StartUrl) {
                     }
 
                     if ($StatusCode -ne 200) {
-                        Write-Host "Worker $($WorkerId): Failed '$url' - $StatusMessage" -ForegroundColor Yellow
+                        Write-Host "  Worker $($WorkerId): Failed '$url' - $(@($StatusMessage -split '\r?\n')[0])')" -ForegroundColor Yellow
 
                         $null = ($using:PageData).TryAdd(
                             $url,
@@ -170,7 +211,7 @@ if ($StartUrl) {
                         continue
                     }
 
-                    Write-Verbose "Worker $($WorkerId), '$($url)': Wait for DOM stability."
+                    Write-Verbose "  Worker $($WorkerId), '$($url)': Wait for DOM stability."
                     #$null = Wait-PlaywrightPageEvent -Page $PlaywrightBrowserPage -EventType 'LoadState' -State ([Microsoft.Playwright.LoadState]::Load)
                     $start = Get-Date
                     $last = 0
@@ -201,7 +242,7 @@ if ($StartUrl) {
                         Start-Sleep -Milliseconds 500
                     }
 
-                    Write-Verbose "Worker $($WorkerId), '$($url)': Get full HTML (incl. shadow DOM)."
+                    Write-Verbose "  Worker $($WorkerId), '$($url)': Get full HTML (incl. shadow DOM)."
                     #$html = Get-PlaywrightPageContent -Page $PlaywrightBrowserPage
                     $html = Invoke-PlaywrightPageJavascript -Page $PlaywrightBrowserPage -Expression @'
 (async () => {
@@ -255,7 +296,7 @@ if ($StartUrl) {
                                 $hrefs | ForEach-Object {
                                     $_.GetAttributeValue('href', '')
                                 }
-                            ) | Where-Object { $_ } | Select-Object -Unique
+                            ) | Where-Object { $_ } | Sort-Object -Culture 127 -Unique
                         )
                     } else {
                         $hrefs = @()
@@ -269,7 +310,7 @@ if ($StartUrl) {
                                 $IdsAndNames | ForEach-Object {
                                     @($_.GetAttributeValue('id', ''), $_.GetAttributeValue('name', ''))
                                 }
-                            ) | Where-Object { $_ } | Select-Object -Unique
+                            ) | Where-Object { $_ } | Sort-Object -Culture 127 -Unique
                         )
                     } else {
                         $IdsAndNames = @()
@@ -280,16 +321,16 @@ if ($StartUrl) {
 
                     if ($urlIsInternal) {
                         foreach ($href in $hrefs) {
-                            Write-Verbose "Worker $($WorkerId), '$($url)': Found href '$($href)'."
+                            Write-Verbose "  Worker $($WorkerId), '$($url)': Found href '$($href)'."
 
                             try {
                                 if ([uri]::IsWellFormedUriString($href, 'Absolute')) {
-                                    $hrefAbsolute = LowerCaseUrl -url $href -includeFragment $true
+                                    $hrefAbsolute = StandardizeAbsoluteUrl -InputString $href -IncludeFragment $true
                                 } else {
-                                    $hrefAbsolute = LowerCaseUrl -url ([System.Uri]::new($url, $href)).AbsoluteUri -includeFragment $true
+                                    $hrefAbsolute = StandardizeAbsoluteUrl -InputString ([System.Uri]::new($url, $href)).AbsoluteUri -IncludeFragment $true
                                 }
                             } catch {
-                                Write-Verbose "Worker $($WorkerId), '$($url)': href '$($href)' not convertible to AbsoluteUri: '$($_)'."
+                                Write-Verbose "  Worker $($WorkerId), '$($url)': href '$($href)' not convertible to AbsoluteUri: '$($_)'."
 
                                 $hrefAbsolute = $null
                             }
@@ -298,11 +339,11 @@ if ($StartUrl) {
                                 $hrefAbsolute -and
                                 (([uri]$hrefAbsolute).Scheme -iin @('http', 'https'))
                             ) {
-                                Write-Verbose "Worker $($WorkerId), '$($url)': Enqueue '$($href)' as '$(LowerCaseUrl -url $hrefAbsolute -includeFragment $false)'."
+                                Write-Verbose "  Worker $($WorkerId), '$($url)': Enqueue '$($href)' as '$(StandardizeAbsoluteUrl -InputString $hrefAbsolute -IncludeFragment $false)'."
 
-                                ($using:Queue).Enqueue((LowerCaseUrl -url $hrefAbsolute -includeFragment $false))
+                                ($using:Queue).Enqueue((StandardizeAbsoluteUrl -InputString $hrefAbsolute -IncludeFragment $false))
                             } else {
-                                Write-Verbose "Worker $($WorkerId), '$($url)': Do not enqueue '$($href)' ('$($hrefAbsolute)')."
+                                Write-Verbose "  Worker $($WorkerId), '$($url)': Do not enqueue '$($href)' ('$($hrefAbsolute)')."
                             }
 
 
@@ -321,12 +362,12 @@ if ($StartUrl) {
 
 
                     foreach ($IdOrName in $IdsAndNames) {
-                        Write-Verbose "Worker $($WorkerId), '$($url)': Found IdOrName '$($IdOrName)'."
+                        Write-Verbose "  Worker $($WorkerId), '$($url)': Found IdOrName '$($IdOrName)'."
 
                         try {
-                            $IdOrNameAbsolute = LowerCaseUrl -url $([System.UriBuilder]::new($url) | ForEach-Object { $_.Fragment = $IdOrName; $_.Uri.ToString() }) -includeFragment $true
+                            $IdOrNameAbsolute = StandardizeAbsoluteUrl -InputString $([System.UriBuilder]::new($url) | ForEach-Object { $_.Fragment = $IdOrName; $_.Uri.ToString() }) -IncludeFragment $true
                         } catch {
-                            Write-Verbose "Worker $($WorkerId), '$($url)': IdOrName '$($IdOrName)' not convertible to AbsoluteUri: '$($_)'."
+                            Write-Verbose "  Worker $($WorkerId), '$($url)': IdOrName '$($IdOrName)' not convertible to AbsoluteUri: '$($_)'."
 
                             $IdOrNameAbsolute = $null
                         }
@@ -337,7 +378,7 @@ if ($StartUrl) {
                         ) {
                             $CurrentPageIds.Add($IdOrNameAbsolute) | Out-Null
                         } else {
-                            Write-Verbose "Worker $($WorkerId), '$($url)': Do not enqueue '$($href)' ('$($hrefAbsolute)')."
+                            Write-Verbose "  Worker $($WorkerId), '$($url)': Do not enqueue '$($href)' ('$($hrefAbsolute)')."
                         }
                     }
 
@@ -351,17 +392,17 @@ if ($StartUrl) {
                         }
                     )
 
-                    Write-Verbose "Worker $($WorkerId), '$($url)': End processing."
+                    Write-Verbose "  Worker $($WorkerId), '$($url)': End processing."
                 } else {
                     # QUEUE IS EMPTY - WORKER IS IDLE
-                    ($using:ParallelJobsStatus)[$WorkerId] = $false
+                    ($using:ParallelWorkersStatus)[$WorkerId] = $false
 
                     # CHECK: Is everyone else idle too?
-                    $activeWorkers = ($using:ParallelJobsStatus).Values | Where-Object { $_ -eq $true }
+                    $activeWorkers = @(($using:ParallelWorkersStatus).Values | Where-Object { $_ -eq $true })
 
-                    if (-not $activeWorkers) {
+                    if ($activeWorkers.Count -eq 0) {
                         # Total silence. No items in queue and nobody is working.
-                        Write-Host "Worker $($WorkerId): System idle. Exiting."
+                        Write-Host "  Worker $($WorkerId): System idle. Exiting."
 
                         break
                     }
@@ -371,15 +412,17 @@ if ($StartUrl) {
                     Start-Sleep -Milliseconds 500
                 }
             } catch {
-                Write-Host "Worker $($WorkerId), '$($url)': Unexpected error within the loop: '$($_ | Format-List * | Out-String)'" -ForegroundColor Red
+                ($using:ParallelWorkersStatus)[$WorkerId] = $false
+
+                Write-Host "  Worker $($WorkerId), '$($url)': Unexpected error within the loop: '$($_ | Format-List * | Out-String)'" -ForegroundColor Red
             }
         }
     } catch {
-        ($using:ParallelJobsStatus)[$WorkerId] = $false
+        ($using:ParallelWorkersStatus)[$WorkerId] = $false
 
-        Write-Host "Worker $($WorkerId), '$($url)': Unexpected error affecting the whole worker: '$($_ | Format-List * | Out-String)'" -ForegroundColor Red
+        Write-Host "  Worker $($WorkerId), '$($url)': Unexpected error affecting the whole worker: '$($_ | Format-List * | Out-String)'" -ForegroundColor Red
     } finally {
-        ($using:ParallelJobsStatus)[$WorkerId] = $false
+        ($using:ParallelWorkersStatus)[$WorkerId] = $false
 
         if ($PlaywrightBrowserPage) {
             Close-PlaywrightPage -Page $PlaywrightBrowserPage
@@ -391,13 +434,21 @@ if ($StartUrl) {
 
         Stop-Playwright
     }
-} -ThrottleLimit $ParallelJobs
+} -ThrottleLimit $ParallelWorkers
 
 
+Write-Host
+Write-Host 'Elapsed time'
+$timespan = (Get-Date) - $StartTime
+Write-Host "  $('{0} hours, {1} minutes, {2} seconds' -f $timespan.Hours, $timespan.Minutes, $timespan.Seconds)"
+
+
+Write-Host
+Write-Host 'Report: Non-working links'
 $Report = foreach ($target in $ReferenceMap.Keys) {
     $uri = [uri]$target
 
-    $baseUrl = LowerCaseUrl -url $target -includeFragment $false
+    $baseUrl = StandardizeAbsoluteUrl -InputString $target -IncludeFragment $false
 
     $targetPageExists = $PageData.ContainsKey($baseUrl)
     $pageInfo = if ($targetPageExists) { $PageData[$baseUrl] } else { $null }
@@ -415,21 +466,45 @@ $Report = foreach ($target in $ReferenceMap.Keys) {
 
         if ($reason) {
             [PSCustomObject]@{
-                SourcePage   = $occurrence.SourcePage
-                OriginalHref = $occurrence.OriginalHref
                 TargetFull   = $target
                 Issue        = $reason
+                SourcePage   = $occurrence.SourcePage
+                OriginalHref = $occurrence.OriginalHref
             }
         }
     }
 }
 
-$Report = $Report | Sort-Object -Property TargetFull, OriginalHref, SourcePage, Issue -Unique
+$Report = $Report | Sort-Object -Property TargetFull, OriginalHref, SourcePage, Issue -Culture 127 -Unique
 
-foreach ($TargetFull in @($Report.TargetFull | Where-Object { try { [uri]$_.TargetFull -iin @('http', 'https') } catch { $false } } )) {
-    Write-Host $TargetFull -ForegroundColor Yellow
+# As gridview
+@(
+    foreach ($TargetFull in @(@($Report | Where-Object { try { ([uri]($_.TargetFull)).Scheme -iin @('http', 'https') } catch { $false } } ).TargetFull | Sort-Object -Culture 127 -Unique)) {
+        [PSCustomObject]@{
+            TargetFull    = $TargetFull
+            Issue         = (@(foreach ($entry in @(@($Report | Where-Object { $_.TargetFull -eq $TargetFull }) | Select-Object -First 1)) { $entry.Issue }) -join '')
+            SourcePages   = (@(foreach ($entry in @($Report | Where-Object { $_.TargetFull -eq $TargetFull })) { $entry.SourcePage }) -join [System.Environment]::NewLine)
+            OriginalHrefs = (@(foreach ($entry in @($Report | Where-Object { $_.TargetFull -eq $TargetFull })) { $entry.OriginalHref }) -join [System.Environment]::NewLine)
+        }
+    }
+) | Out-GridView
+
+# As Text
+foreach ($TargetFull in @(@($Report | Where-Object { try { ([uri]($_.TargetFull)).Scheme -iin @('http', 'https') } catch { $false } } ).TargetFull | Sort-Object -Culture 127 -Unique)) {
+    Write-Host "  $($TargetFull)" -ForegroundColor Yellow
+    foreach ($entry in @(@($Report | Where-Object { $_.TargetFull -eq $TargetFull }) | Select-Object -First 1)) {
+        $entry.Issue -split '\r?\n' | ForEach-Object {
+            Write-Host "    $($_)"
+        }
+    }
+
+    Write-Host
+
     foreach ($entry in @($Report | Where-Object { $_.TargetFull -eq $TargetFull })) {
-        Write-Host "  $($entry.SourcePage): '$($entry.OriginalHref)'"
-        Write-Host "    $($entry.Issue)"
+        Write-Host "    $($entry.SourcePage): Original href '$($entry.OriginalHref)'"
     }
 }
+
+
+Write-Host
+Write-Host 'End script'
