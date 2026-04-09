@@ -262,7 +262,7 @@ Write-Host 'Start parallel workers'
                     Write-Verbose "  Worker $($WorkerId), '$($url)': Get full HTML (incl. shadow DOM)."
                     #$html = Get-PlaywrightPageContent -Page $PlaywrightBrowserPage
                     $html = Invoke-PlaywrightPageJavascript -Page $PlaywrightBrowserPage -Expression @'
-(async () => {
+(() => {
   const serializer = new XMLSerializer();
   const visited = new WeakSet();
   let result = '';
@@ -273,25 +273,18 @@ Write-Host 'Start parallel workers'
   // Queue of nodes to scan for shadow roots
   const queue = Array.from(document.querySelectorAll('*'));
 
-  const YIELD_EVERY = 200; // prevent blocking
-  let i = 0;
-
   while (queue.length) {
     const el = queue.shift();
+    
     if (!el || visited.has(el)) continue;
     visited.add(el);
 
     if (el.shadowRoot) {
-      result += '\n<!-- shadow-root: ' + el.tagName + ' -->\n';
+      result += '\n\n';
       result += serializer.serializeToString(el.shadowRoot);
 
       // Add shadow DOM children to queue
       queue.push(...el.shadowRoot.querySelectorAll('*'));
-    }
-
-    // Yield back to the event loop
-    if (++i % YIELD_EVERY === 0) {
-      await new Promise(r => setTimeout(r, 0));
     }
   }
 
