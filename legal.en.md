@@ -32,7 +32,7 @@ Austria
 Registered at company court: Handelsgericht Wien, Austria  
 <a href="https://justizonline.gv.at/jop/web/firmenbuchabfrage"  target="_blank">Registration number</a>: FN 607013t  
 <a href="https://www.gisa.gv.at/abfrage" target="_blank">Business Licence Information System</a>: 36123599  
-<a href="https://ec.europa.eu/taxation_customs/vies/#/vat-validation" target="_blank">VAT ID</a>: ATU79529869  
+<a href="https://ec.europa.eu/taxation_customs/vies" target="_blank">VAT ID</a>: ATU79529869  
 
 <a href="https://www.dnb.com/duns-number/lookup.html" target="_blank">DUNS</a>: 300886290  
 <a href="https://www.gs1.org/services/verified-by-gs1" target="_blank">GLN</a>: 9110033592241  

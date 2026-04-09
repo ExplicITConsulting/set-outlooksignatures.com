@@ -32,7 +32,7 @@ Austria
 Firmengericht: Handelsgericht Wien, Austria  
 <a href="https://justizonline.gv.at/jop/web/firmenbuchabfrage"  target="_blank">Firmenbuchnummer</a>: FN 607013t  
 <a href="https://www.gisa.gv.at/abfrage" target="_blank">Gewerbe­informations­system Austria (GISA)</a>: 36123599  
-<a href="https://ec.europa.eu/taxation_customs/vies/#/vat-validation" target="_blank">UID</a>: ATU79529869  
+<a href="https://ec.europa.eu/taxation_customs/vies" target="_blank">UID</a>: ATU79529869  
 
 <a href="https://www.dnb.com/duns-number/lookup.html" target="_blank">DUNS</a>: 300886290  
 <a href="https://www.gs1.org/services/verified-by-gs1" target="_blank">GLN</a>: 9110033592241  
