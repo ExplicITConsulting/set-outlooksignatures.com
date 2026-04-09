@@ -1,12 +1,21 @@
-#Requires -Version 7.5
-
 $StartUrl = 'https://set-outlooksignatures.com'
 $SitemapUrl = 'https://set-outlooksignatures.com/sitemap.xml'
+
+$BrowserType = 'Chromium' # Chromium, Firefox, WebKit
+$BrowserHeadless = $true # $true, $false
+
 $ParallelWorkers = ([int]$env:NUMBER_OF_PROCESSORS) * 1
+
+
+#
+# Do not change anything from here on
+#
 
 
 Write-Host 'Start script'
 Write-Host '  Initial checks and basic setup'
+
+#Requires -Version 7.5
 
 $StartTime = Get-Date
 
@@ -23,6 +32,7 @@ if ($ExecutionContext.SessionState.LanguageMode -ne 'FullLanguage') {
 $OutputEncoding = [Console]::InputEncoding = [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
 Set-Location -Path ($PSScriptRoot ?? (Get-Location).ProviderPath)
+
 
 function StandardizeAbsoluteUrl([string]$InputString, [bool]$IncludeFragment = $true) {
     try {
@@ -144,10 +154,10 @@ Write-Host 'Start parallel workers'
         Import-Module $using:PSPlaywrightModulePath
         Start-Playwright
 
-        $PlaywrightBrowser = Start-PlaywrightBrowser -BrowserType Chromium -Headless
+        $PlaywrightBrowser = Start-PlaywrightBrowser -BrowserType $using:BrowserType -Headless:($using:BrowserHeadless)
         $PlaywrightBrowserPage = Open-PlaywrightPage -Browser $PlaywrightBrowser
 
-        Set-PlaywrightPageViewportSize -Page $PlaywrightBrowserPage -Width 1920 -Height 1080
+        Set-PlaywrightPageViewportSize -Page $PlaywrightBrowserPage -Width 1920 -Height 1200
 
         while ($true) {
             try {
@@ -192,12 +202,21 @@ Write-Host 'Start parallel workers'
                         Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url $url
                         $StatusCode = 200
                     } catch {
-                        $StatusCode = 0
-                        $StatusMessage = $_.Exception.Message
+                        Set-PlaywrightPageContent -Page $PlaywrightBrowserPage -Html '<html><body><h1>Hello World</h1></body></html>'
+
+                        Start-Sleep -Seconds 5
+
+                        try {
+                            Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url $url
+                            $StatusCode = 200
+                        } catch {
+                            $StatusCode = 0
+                            $StatusMessage = $_.Exception.Message
+                        }
                     }
 
                     if ($StatusCode -ne 200) {
-                        Write-Host "  Worker $($WorkerId): Failed '$url' - $(@($StatusMessage -split '\r?\n')[0])')" -ForegroundColor Yellow
+                        Write-Host "  Worker $($WorkerId), '$($url)': Error: $(@($StatusMessage -split '\r?\n')[0])" -ForegroundColor Yellow
 
                         $null = ($using:PageData).TryAdd(
                             $url,
@@ -284,7 +303,19 @@ Write-Host 'Start parallel workers'
 
                     # We no longer need the site, so we navigate to about:blank to free resources and be prepared for the next run
                     # Close-PlaywrightPage is not an option, as it would close the browser (we only use one tab)
-                    Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url 'about:blank'
+                    try {
+                        Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url 'about:blank'
+                    } catch {
+                        Start-Sleep -Seconds 5
+
+                        try {
+                            Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url 'about:blank'
+                        } catch {
+                            Start-Sleep -Seconds 5
+
+                            Set-PlaywrightPageContent -Page $PlaywrightBrowserPage -Html '<html><body><h1>Hello World</h1></body></html>'
+                        }
+                    }
 
                     $htmldoc = New-Object HtmlAgilityPack.HtmlDocument
                     $htmldoc.LoadHtml($html)
