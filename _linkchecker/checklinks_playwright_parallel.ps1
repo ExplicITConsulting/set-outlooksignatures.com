@@ -275,7 +275,7 @@ Write-Host 'Start parallel workers'
 
   while (queue.length) {
     const el = queue.shift();
-    
+
     if (!el || visited.has(el)) continue;
     visited.add(el);
 
@@ -294,7 +294,7 @@ Write-Host 'Start parallel workers'
 
                     # We no longer need the site, so we navigate to about:blank to free resources and be prepared for the next run
                     # Close-PlaywrightPage is not an option, as it would close the browser (we only use one tab)
-                    Set-PlaywrightPageContent -Page $PlaywrightBrowserPage -Html '<html><body><h1>Hello World</h1></body></html>'
+                    Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url 'about:blank'
 
                     $htmldoc = New-Object HtmlAgilityPack.HtmlDocument
                     $htmldoc.LoadHtml($html)
