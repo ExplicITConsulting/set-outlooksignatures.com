@@ -47,7 +47,7 @@ function StandardizeAbsoluteUrl([string]$InputString, [bool]$IncludeFragment = $
         }
     } catch {
         if ($WorkerID) {
-            Write-Verbose "  Worker $($WorkerId), '$($url)': Not an absolute URL: '$($url)'"
+            Write-Verbose "  W$($WorkerId) $($url) Not an absolute URL: '$($url)'"
         } else {
             Write-Verbose "  Not an absolute URL: '$($url)'"
         }
@@ -91,7 +91,7 @@ Install-Playwright
 Write-Host
 Write-Host 'Prepare worker threads'
 Write-Host '  Thread-safe variables'
-$ParallelWorkersStatus = [System.Collections.Concurrent.ConcurrentDictionary[int, bool]]::new()
+$ParallelWorkersStatus = [System.Collections.Concurrent.ConcurrentDictionary[string, bool]]::new()
 $Queue = [System.Collections.Concurrent.ConcurrentQueue[string]]::new()
 $Visited = [System.Collections.Concurrent.ConcurrentDictionary[string, byte]]::new([System.StringComparer]::Ordinal)
 $PageData = [System.Collections.Concurrent.ConcurrentDictionary[string, object]]::new()
@@ -137,15 +137,15 @@ Write-Host "  Queue count: $($Queue.Count)"
 
 Write-Host
 Write-Host 'Start parallel workers'
-1..$ParallelWorkers | ForEach-Object { $ParallelWorkersStatus[$_] = $true }
+1..$ParallelWorkers | ForEach-Object { $ParallelWorkersStatus[('{0:D2}' -f $_)] = $true }
 
 1..$ParallelWorkers | ForEach-Object -Parallel {
     try {
-        $WorkerId = $_
+        $WorkerId = '{0:D2}' -f $_
 
         ($using:ParallelWorkersStatus)[$WorkerId] = $true
 
-        Write-Host "  Worker $($WorkerId): Started."
+        Write-Host "  W$($WorkerId) Started"
 
         Set-Item -Path 'function:StandardizeAbsoluteUrl' -Value ($using:StandardizeAbsoluteUrlSBString)
 
@@ -177,13 +177,13 @@ Write-Host 'Start parallel workers'
                         continue
                     }
 
-                    Write-Host "  Worker $($WorkerId), '$($url)'"
+                    Write-Host "  W$($WorkerId) $($url)"
 
                     $urlIsInternal = $((([uri]$url).Host -ieq $using:StartDomain) -or (([uri]$url).Host -ilike "*.$($using:StartDomain)"))
 
                     try {
                         if ((Invoke-WebRequest -Method Head -Uri $url -UseBasicParsing).Headers.'Content-Type' -notlike 'text/html*') {
-                            Write-Verbose "  Worker $($WorkerId), '$($url)': Is not text/html."
+                            Write-Verbose "  W$($WorkerId) $($url) Is not text/html"
 
                             $null = ($using:PageData).TryAdd(
                                 $url,
@@ -214,7 +214,7 @@ Write-Host 'Start parallel workers'
                     }
 
                     if ($StatusCode -ne 200) {
-                        Write-Host "  Worker $($WorkerId), '$($url)': Error: $(@($StatusMessage -split '\r?\n')[0])" -ForegroundColor Yellow
+                        Write-Host "  W$($WorkerId) $($url) Error: $(@($StatusMessage -split '\r?\n')[0])" -ForegroundColor Yellow
 
                         $null = ($using:PageData).TryAdd(
                             $url,
@@ -228,7 +228,7 @@ Write-Host 'Start parallel workers'
                         continue
                     }
 
-                    Write-Verbose "  Worker $($WorkerId), '$($url)': Wait for DOM stability."
+                    Write-Verbose "  W$($WorkerId) $($url) Wait for DOM stability"
                     #$null = Wait-PlaywrightPageEvent -Page $PlaywrightBrowserPage -EventType 'LoadState' -State ([Microsoft.Playwright.LoadState]::Load)
                     $start = Get-Date
                     $last = 0
@@ -259,7 +259,7 @@ Write-Host 'Start parallel workers'
                         Start-Sleep -Milliseconds 500
                     }
 
-                    Write-Verbose "  Worker $($WorkerId), '$($url)': Get full HTML (incl. shadow DOM)."
+                    Write-Verbose "  W$($WorkerId) $($url) Get full HTML (incl. shadow DOM)"
                     #$html = Get-PlaywrightPageContent -Page $PlaywrightBrowserPage
                     $html = Invoke-PlaywrightPageJavascript -Page $PlaywrightBrowserPage -Expression @'
 (() => {
@@ -334,7 +334,7 @@ Write-Host 'Start parallel workers'
 
                     if ($urlIsInternal) {
                         foreach ($href in $hrefs) {
-                            Write-Verbose "  Worker $($WorkerId), '$($url)': Found href '$($href)'."
+                            Write-Verbose "  W$($WorkerId) $($url) Found href '$($href)'"
 
                             try {
                                 if ([uri]::IsWellFormedUriString($href, 'Absolute')) {
@@ -343,7 +343,7 @@ Write-Host 'Start parallel workers'
                                     $hrefAbsolute = StandardizeAbsoluteUrl -InputString ([System.Uri]::new($url, $href)).AbsoluteUri -IncludeFragment $true
                                 }
                             } catch {
-                                Write-Verbose "  Worker $($WorkerId), '$($url)': href '$($href)' not convertible to AbsoluteUri: '$($_)'."
+                                Write-Verbose "  W$($WorkerId) $($url) href '$($href)' not convertible to AbsoluteUri: $($_)"
 
                                 $hrefAbsolute = $null
                             }
@@ -352,11 +352,11 @@ Write-Host 'Start parallel workers'
                                 $hrefAbsolute -and
                                 (([uri]$hrefAbsolute).Scheme -iin @('http', 'https'))
                             ) {
-                                Write-Verbose "  Worker $($WorkerId), '$($url)': Enqueue '$($href)' as '$(StandardizeAbsoluteUrl -InputString $hrefAbsolute -IncludeFragment $false)'."
+                                Write-Verbose "  W$($WorkerId) $($url) Enqueue '$($href)' as '$(StandardizeAbsoluteUrl -InputString $hrefAbsolute -IncludeFragment $false)'"
 
                                 ($using:Queue).Enqueue((StandardizeAbsoluteUrl -InputString $hrefAbsolute -IncludeFragment $false))
                             } else {
-                                Write-Verbose "  Worker $($WorkerId), '$($url)': Do not enqueue '$($href)' ('$($hrefAbsolute)')."
+                                Write-Verbose "  W$($WorkerId) $($url) Do not enqueue '$($href)' as '$($hrefAbsolute)'"
                             }
 
 
@@ -375,12 +375,12 @@ Write-Host 'Start parallel workers'
 
 
                     foreach ($IdOrName in $IdsAndNames) {
-                        Write-Verbose "  Worker $($WorkerId), '$($url)': Found IdOrName '$($IdOrName)'."
+                        Write-Verbose "  W$($WorkerId) $($url) Found IdOrName '$($IdOrName)'"
 
                         try {
                             $IdOrNameAbsolute = StandardizeAbsoluteUrl -InputString $([System.UriBuilder]::new($url) | ForEach-Object { $_.Fragment = $IdOrName; $_.Uri.ToString() }) -IncludeFragment $true
                         } catch {
-                            Write-Verbose "  Worker $($WorkerId), '$($url)': IdOrName '$($IdOrName)' not convertible to AbsoluteUri: '$($_)'."
+                            Write-Verbose "  W$($WorkerId) $($url) IdOrName '$($IdOrName)' not convertible to AbsoluteUri: $($_)"
 
                             $IdOrNameAbsolute = $null
                         }
@@ -391,7 +391,7 @@ Write-Host 'Start parallel workers'
                         ) {
                             $CurrentPageIds.Add($IdOrNameAbsolute) | Out-Null
                         } else {
-                            Write-Verbose "  Worker $($WorkerId), '$($url)': Do not enqueue '$($href)' ('$($hrefAbsolute)')."
+                            Write-Verbose "  W$($WorkerId) $($url) Do not enqueue '$($href)' as '$($hrefAbsolute)'"
                         }
                     }
 
@@ -405,7 +405,7 @@ Write-Host 'Start parallel workers'
                         }
                     )
 
-                    Write-Verbose "  Worker $($WorkerId), '$($url)': End processing."
+                    Write-Verbose "  W$($WorkerId) $($url) End processing"
                 } else {
                     # QUEUE IS EMPTY - WORKER IS IDLE
                     ($using:ParallelWorkersStatus)[$WorkerId] = $false
@@ -415,7 +415,7 @@ Write-Host 'Start parallel workers'
 
                     if ($activeWorkers.Count -eq 0) {
                         # Total silence. No items in queue and nobody is working.
-                        Write-Host "  Worker $($WorkerId): System idle. Exiting."
+                        Write-Host "  W$($WorkerId): Exit because queue empty and all workers are idle"
 
                         break
                     }
@@ -427,13 +427,13 @@ Write-Host 'Start parallel workers'
             } catch {
                 ($using:ParallelWorkersStatus)[$WorkerId] = $false
 
-                Write-Host "  Worker $($WorkerId), '$($url)': Unexpected error within the loop: '$($_ | Format-List * | Out-String)'" -ForegroundColor Red
+                Write-Host "  W$($WorkerId) $($url) Unexpected error within the loop: $($_ | Format-List * | Out-String)" -ForegroundColor Red
             }
         }
     } catch {
         ($using:ParallelWorkersStatus)[$WorkerId] = $false
 
-        Write-Host "  Worker $($WorkerId), '$($url)': Unexpected error affecting the whole worker: '$($_ | Format-List * | Out-String)'" -ForegroundColor Red
+        Write-Host "  W$($WorkerId) $($url) Unexpected error affecting the whole worker: $($_ | Format-List * | Out-String)" -ForegroundColor Red
     } finally {
         ($using:ParallelWorkersStatus)[$WorkerId] = $false
 
