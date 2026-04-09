@@ -292,9 +292,12 @@ Write-Host 'Start parallel workers'
 })();
 '@
 
-                    # We no longer need the site, so we navigate to about:blank to free resources and be prepared for the next run
-                    # Close-PlaywrightPage is not an option, as it would close the browser (we only use one tab)
-                    Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url 'about:blank'
+
+                    $PlaywrightBrowserPageNew = Open-PlaywrightPage -Browser $PlaywrightBrowser
+                    Close-PlaywrightPage -Page $PlaywrightBrowserPage
+                    $PlaywrightBrowserPage = $PlaywrightBrowserPageNew
+                    $PlaywrightBrowserPageNew = $null
+
 
                     $htmldoc = New-Object HtmlAgilityPack.HtmlDocument
                     $htmldoc.LoadHtml($html)
