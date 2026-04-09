@@ -202,8 +202,6 @@ Write-Host 'Start parallel workers'
                         Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url $url
                         $StatusCode = 200
                     } catch {
-                        Set-PlaywrightPageContent -Page $PlaywrightBrowserPage -Html '<html><body><h1>Hello World</h1></body></html>'
-
                         Start-Sleep -Seconds 5
 
                         try {
@@ -303,19 +301,7 @@ Write-Host 'Start parallel workers'
 
                     # We no longer need the site, so we navigate to about:blank to free resources and be prepared for the next run
                     # Close-PlaywrightPage is not an option, as it would close the browser (we only use one tab)
-                    try {
-                        Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url 'about:blank'
-                    } catch {
-                        Start-Sleep -Seconds 5
-
-                        try {
-                            Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url 'about:blank'
-                        } catch {
-                            Start-Sleep -Seconds 5
-
-                            Set-PlaywrightPageContent -Page $PlaywrightBrowserPage -Html '<html><body><h1>Hello World</h1></body></html>'
-                        }
-                    }
+                    Set-PlaywrightPageContent -Page $PlaywrightBrowserPage -Html '<html><body><h1>Hello World</h1></body></html>'
 
                     $htmldoc = New-Object HtmlAgilityPack.HtmlDocument
                     $htmldoc.LoadHtml($html)
