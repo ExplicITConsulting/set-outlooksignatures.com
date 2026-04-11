@@ -32,7 +32,10 @@ param (
 
     # How many parallel works should analyze the pages?
     [ValidateRange(1, [int]::MaxValue)]
-    [int]$ParallelWorkers = ([int]$env:NUMBER_OF_PROCESSORS * 1)
+    [int]$ParallelWorkers = ([int]$env:NUMBER_OF_PROCESSORS * 1),
+
+    # Export the scan results as CliXml to this file for later use.
+    [string]$ExportFile = ''
 )
 
 
@@ -333,6 +336,10 @@ public static extern void SetThreadExecutionState(uint esFlags);
                 Args     = [string[]]@(
                     '--headless=new',
                     '--disable-blink-features=AutomationControlled', # Hides webdriver for Chromium
+                    '--disable-dev-shm-usage',
+                    '--disable-setuid-sandbox',
+                    '--disable-web-security',
+                    '--disable-features=IsolateOrigins,site-per-process',
                     '--no-sandbox',
                     '--disable-infobars',
                     '--window-size=1920,1080'
@@ -343,6 +350,9 @@ public static extern void SetThreadExecutionState(uint esFlags);
             $PlaywrightBrowser = $Playwright.($using:BrowserType).LaunchAsync($launchOptions).GetAwaiter().GetResult()
 
             $contextOptions = [Microsoft.Playwright.BrowserNewContextOptions]@{
+                acceptDownloads   = $true
+                javaScriptEnabled = $true
+                ignoreHTTPSErrors = $false
                 UserAgent         = $userAgent
                 Locale            = $Locale
                 TimezoneId        = $TimeZone
@@ -350,7 +360,6 @@ public static extern void SetThreadExecutionState(uint esFlags);
                 Permissions       = [string[]]@('geolocation')
                 ViewportSize      = @{ Width = 1920; Height = 1080 }
                 DeviceScaleFactor = 1
-                JavaScriptEnabled = $true
             }
 
             $context = $PlaywrightBrowser.NewContextAsync($contextOptions).GetAwaiter().GetResult()
@@ -359,42 +368,40 @@ public static extern void SetThreadExecutionState(uint esFlags);
 // --- 1. Basic Automation Hiding ---
 Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
 
-// --- 2. Hardware Fingerprint Patching (Spoofing 8-core CPU / 8GB RAM) ---
+// --- 2. Hardware Fingerprint Patching ---
 Object.defineProperty(navigator, 'hardwareConcurrency', { get: () => 8 });
 Object.defineProperty(navigator, 'deviceMemory', { get: () => 8 });
 
-// --- 3. Browser-Specific Environments ---
-window.chrome = {
-    runtime: { sendMessage: function(){}, connect: function(){}, getManifest: function(){}, getURL: function(){} },
-    loadTimes: function () { },
-    csi: function () { },
-    app: {}
-};
-
-// --- 4. Content & Language Consistency ---
+// --- 3. Plugins & Language Consistency ---
 Object.defineProperty(navigator, 'languages', { get: () => ['$($Locale)', 'de', 'en-US'] });
 Object.defineProperty(navigator, 'plugins', {
     get: () => [
-        { name: 'PDF Viewer', filename: 'internal-pdf-viewer', description: 'Portable Document Format' },
-        { name: 'Chrome PDF Viewer', filename: 'internal-pdf-viewer', description: 'Google Chrome PDF' }
+        { name: 'Chrome PDF Plugin', filename: 'internal-pdf-viewer', description: 'Portable Document Format' },
+        { name: 'Chrome PDF Viewer', filename: 'mhjfbmdgcfjbbpaeojofohoefgiehjai', description: '' }
     ]
 });
 
-// --- 5. WebGL Stealth (Avoids the 'Mesa' software rasterizer giveaway) ---
+// --- 4. WebGL Stealth ---
 const getParam = WebGLRenderingContext.prototype.getParameter;
 WebGLRenderingContext.prototype.getParameter = function(p) {
-    if (p === 37445) return 'Google Inc. (Intel)';
-    if (p === 37446) return 'Angle (Intel(R) UHD Graphics Direct3D11)';
+    if (p === 37445) return 'Intel Inc.';
+    if (p === 37446) return 'Intel Iris OpenGL Engine';
     return getParam.apply(this, arguments);
 };
 
-// --- 6. Notification Permission Spoof ---
-const originalQuery = window.navigator.permissions.query;
-window.navigator.permissions.query = (parameters) => (
-    parameters.name === 'notifications' ?
-    Promise.resolve({ state: Notification.permission }) :
-    originalQuery(parameters)
-);
+// --- 5. Canvas Fingerprinting Protection (Noise) ---
+const originalToDataURL = HTMLCanvasElement.prototype.toDataURL;
+HTMLCanvasElement.prototype.toDataURL = function(type) {
+    const ctx = this.getContext('2d');
+    if (ctx) {
+        const imageData = ctx.getImageData(0, 0, this.width, this.height);
+        for (let i = 0; i < imageData.data.length; i += 4) {
+            imageData.data[i] += Math.floor(Math.random() * 3) - 1;
+        }
+        ctx.putImageData(imageData, 0, 0);
+    }
+    return originalToDataURL.call(this, type);
+};
 "@
 
             $context.AddInitScriptAsync($stealthScript).GetAwaiter().GetResult()
@@ -425,7 +432,7 @@ window.navigator.permissions.query = (parameters) => (
 
                         try {
                             $response = Invoke-WebRequest -Method Head -Uri $url -UseBasicParsing -Timeout 10 -ErrorAction Stop
-                            $StatusCode = $response.StatusCode
+                            $StatusCode = [int]($response.StatusCode)
                             $StatusMessage = $response.StatusDescription
                         } catch {
                             # Check if this specific error is a Throttling (429) error
@@ -435,7 +442,7 @@ window.navigator.permissions.query = (parameters) => (
                                 # If not throttled, try the GET fallback
                                 try {
                                     $response = Invoke-WebRequest -Method Get -Uri $url -UseBasicParsing -Timeout 10 -ErrorAction Stop
-                                    $StatusCode = $response.StatusCode
+                                    $StatusCode = [int]($response.StatusCode)
                                     $StatusMessage = $response.StatusDescription
                                 } catch {
                                     # Final check: if GET is also throttled, we don't throw; we let the full browser handle it
@@ -459,7 +466,7 @@ window.navigator.permissions.query = (parameters) => (
                                     $url,
                                     @{
                                         IdsAndNames   = $CurrentPageIds
-                                        StatusCode    = $StatusCode
+                                        StatusCode    = [int]$StatusCode
                                         StatusMessage = 'Is not text/html.'
                                     }
                                 )
@@ -480,7 +487,7 @@ window.navigator.permissions.query = (parameters) => (
                                         $url,
                                         @{
                                             IdsAndNames   = $CurrentPageIds
-                                            StatusCode    = $StatusCode
+                                            StatusCode    = [int]$StatusCode
                                             StatusMessage = $StatusMessage
                                         }
                                     )
@@ -498,49 +505,55 @@ window.navigator.permissions.query = (parameters) => (
 
                         $PlaywrightBrowserPage = $context.NewPageAsync().GetAwaiter().GetResult()
 
-                        try {
+                        $NavigateAndHandleCF = {
+                            param($TargetUrl, $Page, $WorkerId)
+
                             $StartX = Get-Random -Minimum 100 -Maximum 800
                             $StartY = Get-Random -Minimum 100 -Maximum 600
-                            $null = $PlaywrightBrowserPage.Mouse.MoveAsync($StartX, $StartY).GetAwaiter().GetResult()
+                            $null = $Page.Mouse.MoveAsync($StartX, $StartY).GetAwaiter().GetResult()
 
-                            Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url $url
+                            Open-PlaywrightPageUrl -Page $Page -Url $TargetUrl
 
-                            $null = $PlaywrightBrowserPage.WaitForLoadStateAsync([Microsoft.Playwright.LoadState]::DOMContentLoaded).GetAwaiter().GetResult()
+                            # --- Cloudflare Detection & Handling ---
+                            $title = $Page.TitleAsync().GetAwaiter().GetResult()
+                            $content = $Page.ContentAsync().GetAwaiter().GetResult()
+                            $isCF = $title.Contains('Just a moment') -or $content.Contains('Checking your browser') -or $content.Contains('cloudflare')
+
+                            if ($isCF) {
+                                $turnstileFrame = $Page.FrameLocator('iframe[src*="challenges.cloudflare.com"]')
+                                try {
+                                    $turnstileFrame.Locator('#challenge-stage').WaitForAsync([Microsoft.Playwright.LocatorWaitForOptions]@{
+                                            State   = [Microsoft.Playwright.WaitForSelectorState]::Hidden;
+                                            Timeout = 30000
+                                        }).GetAwaiter().GetResult()
+                                    Write-Host "  $($WorkerId) Turnstile passed" Color Green
+                                } catch {
+                                }
+                                $Page.WaitForFunctionAsync("() => !document.title.includes('Just a moment')", @{ Timeout = 30000 }).GetAwaiter().GetResult()
+                                Start-Sleep -Seconds (Get-Random -Minimum 2 -Maximum 4)
+                            }
+
+                            $null = $Page.WaitForLoadStateAsync([Microsoft.Playwright.LoadState]::DOMContentLoaded).GetAwaiter().GetResult()
 
                             $MoveX = $StartX + (Get-Random -Minimum -50 -Maximum 50)
                             $MoveY = $StartY + (Get-Random -Minimum -50 -Maximum 50)
-                            $null = $PlaywrightBrowserPage.Mouse.MoveAsync($MoveX, $MoveY, @{ steps = 10 }).GetAwaiter().GetResult()
+                            $null = $Page.Mouse.MoveAsync($MoveX, $MoveY, @{ steps = 10 }).GetAwaiter().GetResult()
 
-                            $StatusCode = Invoke-PlaywrightPageJavascript -Page $PlaywrightBrowserPage -Expression "performance.getEntriesByType('navigation')[0].responseStatus"
+                            $SC = [int](Invoke-PlaywrightPageJavascript -Page $Page -Expression "(performance.getEntriesByType('navigation')[0]?.responseStatus || 0) | 0")
+                            return @{ StatusCode = $SC; StatusMessage = if ($SC -ne 0) { [System.Net.HttpStatusCode]$SC } else { 'Unknown' } }
+                        }
 
-                            try {
-                                $StatusMessage = [System.Net.HttpStatusCode]$StatusCode
-                            } catch {
-                                $StatusMessage = "Unknown HTTP status code: $($StatusCode)"
-                            }
+                        try {
+                            $Result = &$NavigateAndHandleCF -TargetUrl $url -Page $PlaywrightBrowserPage -WorkerId $WorkerIdString
+                            $StatusCode = $Result.StatusCode
+                            $StatusMessage = $Result.StatusMessage
                         } catch {
                             Start-Sleep -Seconds 5
 
                             try {
-                                $StartX = Get-Random -Minimum 100 -Maximum 800
-                                $StartY = Get-Random -Minimum 100 -Maximum 600
-                                $null = $PlaywrightBrowserPage.Mouse.MoveAsync($StartX, $StartY).GetAwaiter().GetResult()
-
-                                Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url $url
-
-                                $null = $PlaywrightBrowserPage.WaitForLoadStateAsync([Microsoft.Playwright.LoadState]::DOMContentLoaded).GetAwaiter().GetResult()
-
-                                $MoveX = $StartX + (Get-Random -Minimum -50 -Maximum 50)
-                                $MoveY = $StartY + (Get-Random -Minimum -50 -Maximum 50)
-                                $null = $PlaywrightBrowserPage.Mouse.MoveAsync($MoveX, $MoveY, @{ steps = 10 }).GetAwaiter().GetResult()
-
-                                $StatusCode = Invoke-PlaywrightPageJavascript -Page $PlaywrightBrowserPage -Expression "performance.getEntriesByType('navigation')[0].responseStatus"
-
-                                try {
-                                    $StatusMessage = [System.Net.HttpStatusCode]$StatusCode
-                                } catch {
-                                    $StatusMessage = "Unknown HTTP status code: $($StatusCode)"
-                                }
+                                $Result = &$NavigateAndHandleCF -TargetUrl $url -Page $PlaywrightBrowserPage -WorkerId $WorkerIdString
+                                $StatusCode = $Result.StatusCode
+                                $StatusMessage = $Result.StatusMessage
                             } catch {
                                 $StatusCode = 0
                                 $StatusMessage = $_.Exception.Message
@@ -554,7 +567,7 @@ window.navigator.permissions.query = (parameters) => (
                                 $url,
                                 @{
                                     IdsAndNames   = $CurrentPageIds
-                                    StatusCode    = $StatusCode
+                                    StatusCode    = [int]$StatusCode
                                     StatusMessage = $StatusMessage
                                 }
                             )
@@ -642,13 +655,13 @@ window.navigator.permissions.query = (parameters) => (
 
                         if ($null -ne $nodes) {
                             # HashSet ensures uniqueness at the point of insertion
-                            $allLinks = New-Object System.Collections.Generic.HashSet[string]
+                            $allLinks = New-Object System.Collections.Generic.HashSet[array]
 
                             foreach ($node in $nodes) {
                                 # 1. Process Single-URL Attributes
                                 $singleAttrs = @('href', 'src', 'data-href', 'data-src', 'action', 'poster', 'cite')
                                 foreach ($attr in $singleAttrs) {
-                                    [void]$allLinks.Add($node.GetAttributeValue($attr, ''))
+                                    [void]$allLinks.Add(@($attr, $node.GetAttributeValue($attr, '')))
                                 }
 
                                 # 2. Process Multi-URL Set Attributes (srcset and data-srcset)
@@ -659,13 +672,13 @@ window.navigator.permissions.query = (parameters) => (
                                         # Split entries by comma, then split by space to isolate the URL from descriptors
                                         $entries = $srcsetValue.Trim().Split(',')
                                         foreach ($entry in $entries) {
-                                            [void]$allLinks.Add($entry.Trim().Split(' ')[0])
+                                            [void]$allLinks.Add(@($setAttr, $entry.Trim().Split(' ')[0]))
                                         }
                                     }
                                 }
                             }
 
-                            $hrefs = @(@($allLinks) | Where-Object { $_ }) | Sort-Object -Culture 127 -Unique
+                            $hrefs = @(@($allLinks) | Where-Object { $_ })
                         } else {
                             $hrefs = @()
                         }
@@ -698,10 +711,10 @@ window.navigator.permissions.query = (parameters) => (
 
                         if ($urlIsInternal) {
                             foreach ($href in $hrefs) {
-                                Write-Verbose "  $($WorkerIdString) $($url) Found href '$($href)'"
+                                Write-Verbose "  $($WorkerIdString) $($url) Found '$($href[0])' '$($href[1])'"
 
                                 try {
-                                    $hrefAbsolute = StandardizeAbsoluteUrl -InputString ([System.Uri]::new([uri]$url, $href)).AbsoluteUri -IncludeFragment $true
+                                    $hrefAbsolute = StandardizeAbsoluteUrl -InputString ([System.Uri]::new([uri]$url, $href[1])).AbsoluteUri -IncludeFragment $true
                                 } catch {
                                     Write-Verbose "  $($WorkerIdString) $($url) href '$($href)' not convertible to AbsoluteUri: $($_)"
 
@@ -712,22 +725,23 @@ window.navigator.permissions.query = (parameters) => (
                                     $hrefAbsolute -and
                                     (([uri]$hrefAbsolute).Scheme -iin @('http', 'https'))
                                 ) {
-                                    Write-Verbose "  $($WorkerIdString) $($url) Enqueue '$($href)' as '$(StandardizeAbsoluteUrl -InputString $hrefAbsolute -IncludeFragment $false)'"
+                                    Write-Verbose "  $($WorkerIdString) $($url) Enqueue '$($href[1])' as '$(StandardizeAbsoluteUrl -InputString $hrefAbsolute -IncludeFragment $false)'"
 
                                     ($using:Queue).Enqueue((StandardizeAbsoluteUrl -InputString $hrefAbsolute -IncludeFragment $false))
                                 } else {
-                                    Write-Verbose "  $($WorkerIdString) $($url) Do not enqueue '$($href)' as '$($hrefAbsolute)'"
+                                    Write-Verbose "  $($WorkerIdString) $($url) Do not enqueue '$($href[1])' as '$($hrefAbsolute)'"
                                 }
 
 
                                 # Add to the global map: Key is the target, Value is a list of where it's used
                                 ($using:ReferenceMap).GetOrAdd(
-                                    $(if (-not [string]::IsNullOrWhiteSpace($hrefAbsolute)) { $hrefAbsolute } else { $href }),
+                                    $(if (-not [string]::IsNullOrWhiteSpace($hrefAbsolute)) { $hrefAbsolute } else { $href[1] }),
                                     [System.Collections.Concurrent.ConcurrentBag[object]]::new()
                                 ).Add(
                                     @{
                                         SourcePage   = $url
-                                        OriginalHref = $href
+                                        Attribute    = $href[0]
+                                        OriginalHref = $href[1]
                                     }
                                 )
                             }
@@ -761,7 +775,7 @@ window.navigator.permissions.query = (parameters) => (
                             $url,
                             @{
                                 IdsAndNames   = $CurrentPageIds
-                                StatusCode    = $StatusCode
+                                StatusCode    = [int]$StatusCode
                                 StatusMessage = $StatusMessage
                             }
                         )
@@ -815,13 +829,30 @@ window.navigator.permissions.query = (parameters) => (
     Write-Host
     Write-Host 'Statistics'
     $timespan = (Get-Date) - $StartTime
-    Write-Host "  Total execution time                   : $('{0} hours, {1} minutes, {2} seconds' -f $timespan.Hours, $timespan.Minutes, $timespan.Seconds)"
-    Write-Host "  Hosts visited                          : $(@(@(@($PageData.Keys) | ForEach-Object { $tempX = $_; try { ([uri]$tempX).Host } catch { $tempX } }) | Select-Object -Unique).Count)"
-    Write-Host "  Pages visited                          : $($PageData.Count)"
-    Write-Host "  IDs and Names found on pages           : $(@($PageData.Values | ForEach-Object { @($_.IdsAndNames) }).Count)"
-    Write-Host "  Hrefs found                            : $(@($ReferenceMap.Values.ForEach({ $_.OriginalHref })).Count)"
-    Write-Host "  Unique absolute href URLs              : $($ReferenceMap.Count)"
-    Write-Host "  Unique absolute href URLs w/o fragment : $(@(@($ReferenceMap.Keys | ForEach-Object { try { $tempX = $_; StandardizeAbsoluteUrl -InputString $tempX -IncludeFragment $false } catch { $tempX } }) | Select-Object -Unique).Count)"
+    Write-Host "  Total execution time                         : $('{0} hours, {1} minutes, {2} seconds' -f $timespan.Hours, $timespan.Minutes, $timespan.Seconds)"
+    Write-Host "  Hosts visited                                : $(@(@(@($PageData.Keys) | ForEach-Object { $tempX = $_; try { ([uri]$tempX).Host } catch { $tempX } }) | Select-Object -Unique).Count)"
+    Write-Host "  Pages visited                                : $($PageData.Count)"
+    Write-Host "  IDs and Names found on pages                 : $(@($PageData.Values | ForEach-Object { @($_.IdsAndNames) }).Count)"
+    Write-Host "  References found                             : $(@($ReferenceMap.Values.ForEach({ $_.OriginalHref })).Count)"
+    Write-Host "  Unique absolute URLs referenced              : $($ReferenceMap.Count)"
+    Write-Host "  Unique absolute URLs referenced w/o fragment : $(@(@($ReferenceMap.Keys | ForEach-Object { try { $tempX = $_; StandardizeAbsoluteUrl -InputString $tempX -IncludeFragment $false } catch { $tempX } }) | Select-Object -Unique).Count)"
+
+
+    Write-Host
+    Write-Host 'Export scan results for later use'
+    if (-not [String]::IsNullOrWhiteSpace($ExportFile)) {
+        Write-Host "  '$($ExportFile)'"
+
+        @{
+            StartUrl     = $StartUrl
+            SitemapUrl   = $Sitemapurl
+            StartDomain  = $StartDomain
+            PageData     = $PageData
+            ReferenceMap = $ReferenceMap
+        } | Export-Clixml -Path $ExportFile -Force
+    } else {
+        Write-Host '  No ExportFile defined'
+    }
 
 
     Write-Host
@@ -903,10 +934,6 @@ window.navigator.permissions.query = (parameters) => (
             Write-Host "    $($entry.SourcePage): Original href '$($entry.OriginalHref)'"
         }
     }
-
-
-    Remove-Variable -Name PageData
-    Remove-Variable -Name ReferenceMap
 
 
     # Allow sleep

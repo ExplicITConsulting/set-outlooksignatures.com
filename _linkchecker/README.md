@@ -1,52 +1,56 @@
 # CheckLinks.ps1
-This PowerShell script is a modular multi threaded web crawler designed to identify broken links and missing anchor fragments across a website. It uses Playwright to render pages, ensuring that links within modern JavaScript frameworks and Shadow DOM elements are correctly identified and validated.
+This PowerShell script is a modular multi-threaded web crawler designed to identify broken links, missing assets, and anchor fragment issues across a website. It uses Playwright to render pages, ensuring that elements within modern JavaScript frameworks and Shadow DOM components (like images, scripts, and links) are correctly identified and validated.
 
 
 ## Requirements and Prerequisites
-* PowerShell 7.5 or higher.  
-* FullLanguage mode (required for thread safe operations).  
-* Internet access (the script automatically downloads the HtmlAgilityPack and PSPlaywright dependencies to a temporary folder during execution).  
+* PowerShell 7.5 or higher.
+* FullLanguage mode (required for thread-safe operations).
+* Internet access (the script automatically downloads dependencies to a temporary folder).
 * Administrative privileges are recommended for the initial Playwright browser installation.
 
 
 ## Parameters
-* StartUrl: The initial URL where the crawl begins.  
-* SitemapUrl: A URL to a sitemap.xml file. All entries in the sitemap will be added to the crawl queue.  
-* BrowserType: Choose between Chromium, Firefox, or WebKit. Default is Chromium.  
-* BrowserHeadless: Boolean. Set to $true to run the browser in the background or $false to watch the process.  
-* CheckFragments: Boolean. If true, the script verifies that the specific ID or Name exists on the target page for links containing a \#fragment.  
-* CheckFragmentsInternalOnly: Boolean. If true, fragment validation is only performed for internal domain links.  
-* ParallelWorkers: Number of simultaneous browser instances. Defaults to the number of logical processors.
+* `StartUrl`: The initial URL where the crawl begins.
+* `SitemapUrl`: A URL to a sitemap.xml file. All entries in the sitemap will be added to the crawl queue.
+* `BrowserType`: Choose between Chromium, Firefox, or WebKit. Default is Chromium.
+* `BrowserHeadless`: Boolean. Set to `$true` to run in the background.
+* `CheckFragments`: Boolean. If true, verifies that the specific ID or Name exists on the target page for URLs containing a #fragment.
+* `CheckFragmentsInternalOnly`: Boolean. If true, fragment validation is only performed for internal domain links.
+* `ParallelWorkers`: Number of simultaneous browser instances.
+* `ExportFile`: Export the scan results as CliXml to this file for later use.
+
 
 ## Usage Example
-Run the script using the default parameters:  
-```
+Run the script using the default parameters:
+
+```powershell
 .\checklinks.ps1
 ```
 
-To run a deep check including fragments on an external sitemap:  
-```
-.\checklinks.ps1 -SitemapUrl "https://set-outlooksignatures.com/sitemap.xml" -CheckFragments $true -CheckFragmentsInternalOnly $false
+To run a deep check including fragments on an external sitemap:
+```powershell
+.\checklinks.ps1 -SitemapUrl "https://example.com/sitemap.xml" -CheckFragments $true -CheckFragmentsInternalOnly $false
 ```
 
 
 ## Internal Data Structures
-To create custom reports, you can access the two primary thread safe dictionaries populated during the crawl:
+The script populates two primary thread-safe dictionaries that capture all discovered resources (Links, Images, Scripts, etc.):
 
-### $PageData
-A thread safe dictionary used to store the results of each crawled page.
-* Key: The absolute URL of the page (lowercased host, includes path and query, but excludes fragments).  
-* Value: A Hashtable containing:  
-  * IdsAndNames: A hashset of all unique id and name attributes found on the page (used for fragment validation).  
-  * StatusCode: The numeric HTTP status code (e.g., 200, 404).  
-  * StatusMessage: A descriptive string containing error details or notes (e.g., 'Is not text/html.').
+### \$PageData
+Stores the validation results and metadata for every unique URL encountered.
+* Key: The absolute URL (normalized).
+* Value: A Hashtable containing:
+* `IdsAndNames`: A hashset of all unique id and name attributes found (used for fragment validation).
+* `StatusCode`: The numeric HTTP status code (e.g., 200, 404).
+* `StatusMessage`: Details on the result (e.g., 'OK', '404 Not Found', or 'Is not text/html').
 
-### $ReferenceMap
-A thread safe dictionary used for backlink analysis, mapping targets to their source occurrences.
-* Key: The absolute target URL ($hrefAbsolute). This follows the same normalization as $PageData keys (lowercased host, includes path and query) but includes the fragment.  
-* Value: A ConcurrentBag of Hashtable objects where each entry represents an occurrence of that specific link:  
-  * SourcePage: The absolute URL of the page where the link was found (lowercased host, includes path and query, no fragment).  
-  * OriginalHref: The raw string exactly as it appeared in the href attribute (e.g., relative paths like ../about or fragments like \#contact).
+### \$ReferenceMap
+Maps every target resource back to the pages that reference it.
+* Key: The absolute target URL (includes fragments).
+* Value: A ConcurrentBag of Hashtable objects representing each occurrence:
+  * `SourcePage`: The URL where the reference was found.
+  * `Attribute`: The specific HTML attribute that contained the URL (e.g., href, src, data-src).
+  * `OriginalHref`: The raw string from the HTML (could be an href, src, or other URI attribute).
 
 
 ## Integrated Sample Report
@@ -56,7 +60,7 @@ Upon completion, the script generates two types of output:
 
 
 ## Custom Report: Link Leaderboard
-The following unified reporting snippet utilizes the $ReferenceMap to identify the most heavily linked targets. It supports deep link analysis (fragments), domain specific scoping (internal vs. external), and "ex-aequo" ranking. This ensures that if multiple targets share a top tier, they are all included in the output.  
+The following unified reporting snippet utilizes `$ReferenceMap` to identify the most heavily linked targets. It supports deep link analysis (fragments), domain specific scoping (internal vs. external), and "ex-aequo" ranking. This ensures that if multiple targets share a top tier, they are all included in the output.  
 ```
 # Toggle this to switch between "Exact Href (w/ fragments)" or "Base Page (no fragments)"
 $IncludeFragments = $true
@@ -117,10 +121,43 @@ foreach ($entry in $ReportGroups) {
             Write-Host "    Used on: $($group.Name)"
 
             if ($ShowOriginalHrefs) {
-                $OriginalsString = ($group.Group.OriginalHref | Sort-Object -Unique) -join ', '
+                $OriginalsString = @($group.Group | ForEach-Object { "$($_.Attribute)='$($_.OriginalHref)'" } | Sort-Object -Culture 127 -Unique) -join ', '
                 Write-Host "      As: $OriginalsString"
             }
         }
     }
 }
+```
+
+
+## Post-Scan Data Analysis
+After the script completes, it leaves several variables in your session for manual inspection:
+- `$StartUrl`: The URL to begin the search on.
+- `$SitmapUrl`: The URL of the sitemap.xml file to use.
+- `$StartDomain`: The base domain of the search (`([uri]$StartUrl).Host` or `([uri]$SitemapUrl).Host)`).
+- `$PageData`: A thread-safe dictionary containing the status and fragment IDs for every crawled page.
+- `$ReferenceMap`: A dictionary mapping every target URL to a list of pages that link to it.
+
+If you want to save the state of a scan to a single file for later analysis, you can bundle the critical data structures into a CliXml file.
+
+To export to a single file, run this after a scan finishes to save the domain, page cache, and reference map:
+```
+@{
+    StartUrl     = $StartUrl
+    SitemapUrl   = $Sitemapurl
+    StartDomain  = $StartDomain
+    PageData     = $PageData
+    ReferenceMap = $ReferenceMap
+} | Export-CliXml -Path 'checklinks scan data.clixml' -Force
+```
+
+To load and restore the data, run this:
+```
+$ImportedData = Import-CliXml -Path "checklinks scan data.clixml"
+
+$StartUrl     = $ImportedData.StartUrl
+$SitemapUrl   = $ImportedData.SitemapUrl
+$StartDomain  = $ImportedData.StartDomain
+$PageData     = $ImportedData.PageData
+$ReferenceMap = $ImportedData.ReferenceMap
 ```
