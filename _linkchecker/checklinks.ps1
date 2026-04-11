@@ -413,15 +413,35 @@ $CurrentVerbose = $VerbosePreference
                     $htmldoc = New-Object HtmlAgilityPack.HtmlDocument
                     $htmldoc.LoadHtml($html)
 
-                    $hrefs = $htmldoc.DocumentNode.SelectNodes('//a[@href]')
-                    if ($null -ne $hrefs) {
-                        $hrefs = @(
-                            @(
-                                $hrefs | ForEach-Object {
-                                    $_.GetAttributeValue('href', '')
+
+                    $nodes = $htmldoc.DocumentNode.SelectNodes('//*[@href or @src or @data-href or @srcset or @data-src or @data-srcset or @action or @poster or @cite or @content]')
+
+                    if ($null -ne $nodes) {
+                        # HashSet ensures uniqueness at the point of insertion
+                        $allLinks = New-Object System.Collections.Generic.HashSet[string]
+
+                        foreach ($node in $nodes) {
+                            # 1. Process Single-URL Attributes
+                            $singleAttrs = @('href', 'src', 'data-href', 'data-src', 'action', 'poster', 'cite', 'content')
+                            foreach ($attr in $singleAttrs) {
+                                [void]$allLinks.Add($node.GetAttributeValue($attr, ''))
+                            }
+
+                            # 2. Process Multi-URL Set Attributes (srcset and data-srcset)
+                            $setAttrs = @('srcset', 'data-srcset')
+                            foreach ($setAttr in $setAttrs) {
+                                $srcsetValue = $node.GetAttributeValue($setAttr, '').Trim()
+                                if ($srcsetValue) {
+                                    # Split entries by comma, then split by space to isolate the URL from descriptors
+                                    $entries = $srcsetValue.Split(',')
+                                    foreach ($entry in $entries) {
+                                        [void]$allLinks.Add($entry.Trim().Split(' ')[0])
+                                    }
                                 }
-                            ) | Where-Object { $_ } | Sort-Object -Culture 127 -Unique
-                        )
+                            }
+                        }
+
+                        $hrefs = @(@($allLinks) | Where-Object { $_ }) | Sort-Object -Culture 127 -Unique
                     } else {
                         $hrefs = @()
                     }
@@ -434,16 +454,16 @@ $CurrentVerbose = $VerbosePreference
                             ($urlIsInternal -eq $false)
                         )
                     ) {
-                        $IdsAndNames = $null
+                        $nodes = $null
                     } else {
-                        $IdsAndNames = $htmldoc.DocumentNode.SelectNodes('//*[@id or @name]')
+                        $nodes = $htmldoc.DocumentNode.SelectNodes('//*[@id or @name]')
                     }
 
-                    if ($null -ne $IdsAndNames) {
+                    if ($null -ne $nodes) {
                         $IdsAndNames = @(
                             @(
-                                $IdsAndNames | ForEach-Object { $_.GetAttributeValue('id', '') }
-                                $IdsAndNames | ForEach-Object { $_.GetAttributeValue('name', '') }
+                                $nodes | ForEach-Object { $_.GetAttributeValue('id', '') }
+                                $nodes | ForEach-Object { $_.GetAttributeValue('name', '') }
                             ) | Where-Object { $_ } | Sort-Object -Culture 127 -Unique
                         )
                     } else {
