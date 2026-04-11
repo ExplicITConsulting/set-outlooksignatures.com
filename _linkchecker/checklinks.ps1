@@ -521,12 +521,12 @@ HTMLCanvasElement.prototype.toDataURL = function(type) {
 
                             if ($isCF) {
                                 $turnstileFrame = $Page.FrameLocator('iframe[src*="challenges.cloudflare.com"]')
+
                                 try {
                                     $turnstileFrame.Locator('#challenge-stage').WaitForAsync([Microsoft.Playwright.LocatorWaitForOptions]@{
                                             State   = [Microsoft.Playwright.WaitForSelectorState]::Hidden;
                                             Timeout = 30000
                                         }).GetAwaiter().GetResult()
-                                    Write-Host "  $($WorkerId) Turnstile passed" Color Green
                                 } catch {
                                 }
                                 $Page.WaitForFunctionAsync("() => !document.title.includes('Just a moment')", @{ Timeout = 30000 }).GetAwaiter().GetResult()
