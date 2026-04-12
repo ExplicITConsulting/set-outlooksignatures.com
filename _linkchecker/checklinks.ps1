@@ -19,16 +19,12 @@ param (
     [bool]$BrowserHeadless = $true,
 
     # Should href fragments be checked?
-    # If true, a link to https://example.com/test.html#fragment is valid only when https://example.com/test.html has an element with its id or name attribute matching the fragment
-    #   This slows down the process, as each site needs to be analyzed in detail
-    # If false, a link to https://example.com/test.html#fragment is valid when https://example.com/test.html is reachable, not matter of there is an element with a matching id or name attribute
-    [bool]$CheckFragments = $true,
-
-    # Should hrefs only be checked for fragments when they point to an internal page?
-    # If true and StartUrl = https://set-outlooksignatures.com:
-    #   All hrefs pointing to set-outlooksignatures or one of its subdomains are checked for fragments.
-    #   All hrefs pointing to other domains are deemed valied when the page is reached, no matter it the fragment exists or not.
-    [bool]$CheckFragmentsInternalOnly = $false,
+    # None: No fragments are checked
+    # InternalOnly: Only fragments of hrefs pointing to internal targets are checked
+    # ExternalOnly: Only fragments of hrefs pointing to external targets are checked
+    # Both: Fragment of all hrefs are checked
+    [ValidateSet('InternalAndExternal', 'InternalOnly', 'ExternalOnly', 'None')]
+    [string]$CheckFragments = 'InternalAndExternal',
 
     # How many parallel works should analyze the pages?
     [ValidateRange(1, [int]::MaxValue)]
@@ -114,14 +110,6 @@ try {
     } else {
         Write-Host '    You must specify at least a SitemapUrl or a StartUrl.' -ForegroundColor Red
         exit 1
-    }
-
-    if (
-        ($CheckFragments -eq $false) -and
-        ($CheckFragmentsInternalOnly -eq $true)
-    ) {
-        Write-Host '    CheckFragments is false. Setting CheckFragmentsInternalOnly to false, too.' -ForegroundColor Yellow
-        $CheckFragmentsInternalOnly = $false
     }
 
 
@@ -2699,15 +2687,16 @@ public static extern void SetThreadExecutionState(uint esFlags);
                                 )
 
                                 continue
-                            } elseif ($urlIsInternal -eq $false) {
-                                # External, not throttled, we got a response, the answer is HTML, fragements are not to check
-                                # We already know that the Url works and can stop here
+                            } else {
                                 if (
-                                    ($using:CheckFragments -eq $false) -or
+                                    ($using:CheckFragments -ieq 'None') -or
                                     (
-                                        ($using:CheckFragments -eq $true) -and
-                                        ($using:CheckFragmentsInternalOnly -eq $true) -and
+                                        ($using:CheckFragments -ieq 'InternalOnly') -and
                                         ($urlIsInternal -eq $false)
+                                    ) -or
+                                    (
+                                        ($using:CheckFragments -ieq 'ExternalOnly') -and
+                                        ($urlIsInternal -eq $true)
                                     )
                                 ) {
                                     $null = ($using:PageData).TryAdd(
@@ -2796,8 +2785,17 @@ public static extern void SetThreadExecutionState(uint esFlags);
                         Write-Verbose "  $($WorkerIdString) $($url) Extracting Links and IDs via JavaScript"
 
                         # Determine if we need fragments based on your variables
-                        $shouldFetchFragments = ($using:CheckFragments -eq $true) -and `
-                            !(($using:CheckFragmentsInternalOnly -eq $true) -and ($urlIsInternal -eq $false))
+                        $shouldFetchFragments = (
+                            ($using:CheckFragments -ieq 'Both') -or
+                            (
+                                ($using:CheckFragments -ieq 'InternalOnly') -and
+                                ($urlIsInternal -eq $true)
+                            ) -or
+                            (
+                                ($using:CheckFragments -ieq 'ExternalOnly') -and
+                                ($urlIsInternal -eq $false)
+                            )
+                        )
 
                         # Pass the fragment requirement to JS
                         $jsExpression = @"
@@ -3026,11 +3024,19 @@ public static extern void SetThreadExecutionState(uint esFlags);
         Write-Host "  '$($ExportFile)'"
 
         @{
-            StartUrl     = $StartUrl
-            SitemapUrl   = $Sitemapurl
-            StartDomain  = $StartDomain
-            PageData     = $PageData
-            ReferenceMap = $ReferenceMap
+            # Script parameters
+            StartUrl        = $StartUrl
+            SitemapUrl      = $Sitemapurl
+            BrowserType     = $BrowserType
+            BrowserHeadless = $BrowserHeadless
+            CheckFragments  = $CheckFragments
+            ParallelWorkers = $ParallelWorkers
+            ExportFile      = $ExportFile
+
+            # Other variables
+            StartDomain     = $StartDomain
+            PageData        = $PageData
+            ReferenceMap    = $ReferenceMap
         } | Export-Clixml -Path $ExportFile -Force
     } else {
         Write-Host '  No ExportFile defined'
@@ -3066,10 +3072,16 @@ public static extern void SetThreadExecutionState(uint esFlags);
                 $reason = "Target page error (Status: $($pageInfo.StatusCode) $($pageInfo.StatusMessage))"
             } elseif (
                 $uri.Fragment -and
-                $CheckFragments -and
                 (
-                    ($CheckFragmentsInternalOnly -and $baseUrlIsInternal) -or
-                    (-not $CheckFragmentsInternalOnly)
+                    ($CheckFragments -ieq 'Both') -or
+                    (
+                        ($CheckFragments -ieq 'InternalOnly') -and
+                        ($baseUrlIsInternal -eq $true)
+                    ) -or
+                    (
+                        ($CheckFragments -ieq 'ExternalOnly') -and
+                        ($baseUrlIsInternal -eq $false)
+                    )
                 ) -and
                 (-not $pageInfo.IdsAndNames.Contains($target))
             ) {

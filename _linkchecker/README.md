@@ -14,7 +14,7 @@ This PowerShell script is a modular multi-threaded web crawler designed to ident
 * `SitemapUrl`: A URL to a sitemap.xml file. All entries in the sitemap will be added to the crawl queue.
 * `BrowserType`: Choose between Chromium, Firefox, or WebKit. Default is Chromium.
 * `BrowserHeadless`: Boolean. Set to `$true` to run in the background.
-* `CheckFragments`: Boolean. If true, verifies that the specific ID or Name exists on the target page for URLs containing a #fragment.
+* `CheckFragments`: String: InternalAndExternal, InternalOnly, ExternalOnly, or None. If enabled, verifies that the specific ID or Name exists on the target page for URLs containing a #fragment.
 * `CheckFragmentsInternalOnly`: Boolean. If true, fragment validation is only performed for internal domain links.
 * `ParallelWorkers`: Number of simultaneous browser instances.
 * `ExportFile`: Export the scan results as CliXml to this file for later use.
@@ -143,11 +143,19 @@ If you want to save the state of a scan to a single file for later analysis, you
 To export to a single file, run this after a scan finishes to save the domain, page cache, and reference map:
 ```
 @{
-    StartUrl     = $StartUrl
-    SitemapUrl   = $Sitemapurl
-    StartDomain  = $StartDomain
-    PageData     = $PageData
-    ReferenceMap = $ReferenceMap
+    # Script parameters
+    StartUrl        = $StartUrl
+    SitemapUrl      = $Sitemapurl
+    BrowserType     = $BrowserType
+    BrowserHeadless = $BrowserHeadless
+    CheckFragments  = $CheckFragments
+    ParallelWorkers = $ParallelWorkers
+    ExportFile      = $ExportFile
+
+    # Other variables
+    StartDomain    = $StartDomain
+    PageData       = $PageData
+    ReferenceMap   = $ReferenceMap
 } | Export-CliXml -Path 'checklinks scan data.clixml' -Force
 ```
 
@@ -155,9 +163,17 @@ To load and restore the data, run this:
 ```
 $ImportedData = Import-CliXml -Path "checklinks scan data.clixml"
 
-$StartUrl     = $ImportedData.StartUrl
-$SitemapUrl   = $ImportedData.SitemapUrl
-$StartDomain  = $ImportedData.StartDomain
-$PageData     = $ImportedData.PageData
-$ReferenceMap = $ImportedData.ReferenceMap
+# Script parameters
+$StartUrl        = $ImportedData.StartUrl
+$SitemapUrl      = $ImportedData.Sitemapurl
+$BrowserType     = $ImportedData.BrowserType
+$BrowserHeadless = $ImportedData.BrowserHeadless
+$CheckFragments  = $ImportedData.CheckFragments
+$ParallelWorkers = $ImportedData.ParallelWorkers
+$ExportFile      = $ImportedData.ExportFile
+
+# Other variables
+$StartDomain    = $ImportedData.StartDomain
+$PageData       = $ImportedData.PageData
+$ReferenceMap   = $ImportedData.ReferenceMap
 ```
