@@ -2687,29 +2687,20 @@ public static extern void SetThreadExecutionState(uint esFlags);
                                 )
 
                                 continue
-                            } else {
-                                if (
-                                    ($using:CheckFragments -ieq 'None') -or
-                                    (
-                                        ($using:CheckFragments -ieq 'InternalOnly') -and
-                                        ($urlIsInternal -eq $false)
-                                    ) -or
-                                    (
-                                        ($using:CheckFragments -ieq 'ExternalOnly') -and
-                                        ($urlIsInternal -eq $true)
-                                    )
-                                ) {
-                                    $null = ($using:PageData).TryAdd(
-                                        $url,
-                                        @{
-                                            IdsAndNames   = $CurrentPageIds
-                                            StatusCode    = [int]$StatusCode
-                                            StatusMessage = $StatusMessage
-                                        }
-                                    )
+                            } elseif (
+                                ($urlIsInternal -eq $false) -and
+                                ($using:CheckFragments -iin @('None', 'InternalOnly'))
+                            ) {
+                                $null = ($using:PageData).TryAdd(
+                                    $url,
+                                    @{
+                                        IdsAndNames   = $CurrentPageIds
+                                        StatusCode    = [int]$StatusCode
+                                        StatusMessage = $StatusMessage
+                                    }
+                                )
 
-                                    continue
-                                }
+                                continue
                             }
                         }
 
@@ -2805,37 +2796,40 @@ public static extern void SetThreadExecutionState(uint esFlags);
         idsAndNames: []
     };
 
+    const urlIsInternal = $($urlIsInternal.ToString().ToLower());
     const fetchFragments = $($shouldFetchFragments.ToString().ToLower());
     const visited = new WeakSet();
 
     function processTree(root) {
         // 1. Extract Attributes (Links/Resources)
-        // CSS Selector uses [attr], NOT [@attr]
-        const selector = '[href], [src], [data-href], [srcset], [data-src], [data-srcset], [action], [poster], [cite]';
-        const nodes = root.querySelectorAll(selector);
+        if (urlIsInternal) {
+            // CSS Selector uses [attr], NOT [@attr]
+            const selector = '[href], [src], [data-href], [srcset], [data-src], [data-srcset], [action], [poster], [cite]';
+            const nodes = root.querySelectorAll(selector);
 
-        nodes.forEach(node => {
-            // Single URL attributes
-            ['href', 'src', 'data-href', 'data-src', 'action', 'poster', 'cite'].forEach(attr => {
-                const val = node.getAttribute(attr);
-                if (val) {
-                    results.links.push([attr, val]);
-                }
-            });
+            nodes.forEach(node => {
+                // Single URL attributes
+                ['href', 'src', 'data-href', 'data-src', 'action', 'poster', 'cite'].forEach(attr => {
+                    const val = node.getAttribute(attr);
+                    if (val) {
+                        results.links.push([attr, val]);
+                    }
+                });
 
-            // Set attributes (srcset)
-            ['srcset', 'data-srcset'].forEach(attr => {
-                const val = node.getAttribute(attr);
-                if (val) {
-                    val.split(',').forEach(entry => {
-                        const parts = entry.trim().split(/\s+/);
-                        if (parts[0]) {
-                            results.links.push([attr, parts[0]]);
-                        }
-                    });
-                }
+                // Set attributes (srcset)
+                ['srcset', 'data-srcset'].forEach(attr => {
+                    const val = node.getAttribute(attr);
+                    if (val) {
+                        val.split(',').forEach(entry => {
+                            const parts = entry.trim().split(/\s+/);
+                            if (parts[0]) {
+                                results.links.push([attr, parts[0]]);
+                            }
+                        });
+                    }
+                });
             });
-        });
+        };
 
         // 2. Extract IDs and Names for fragment checking
         if (fetchFragments) {
@@ -2848,13 +2842,15 @@ public static extern void SetThreadExecutionState(uint esFlags);
         }
 
         // 3. Recurse into Shadow DOM
-        const allElements = root.querySelectorAll('*');
-        allElements.forEach(el => {
-            if (el.shadowRoot && !visited.has(el.shadowRoot)) {
-                visited.add(el.shadowRoot);
-                processTree(el.shadowRoot);
-            }
-        });
+        if (urlIsInternal || fetchFragments) {
+            const allElements = root.querySelectorAll('*');
+            allElements.forEach(el => {
+                if (el.shadowRoot && !visited.has(el.shadowRoot)) {
+                    visited.add(el.shadowRoot);
+                    processTree(el.shadowRoot);
+                }
+            });
+        }
     }
 
     processTree(document);
@@ -3047,45 +3043,45 @@ public static extern void SetThreadExecutionState(uint esFlags);
     Write-Host 'Report: Non-working links'
     $Report = foreach ($target in $ReferenceMap.Keys) {
         try {
-            $uri = [uri]$target
+            $targetUri = [uri]$target
         } catch {
-            $uri = $target
+            $targetUri = $target
         }
 
-        $baseUrl = StandardizeAbsoluteUrl -InputString $target -IncludeFragment $false
+        $targetBaseUrl = StandardizeAbsoluteUrl -InputString $target -IncludeFragment $false
 
         try {
-            $baseUrlIsInternal = $((([uri]$baseUrl).Host -ieq $StartDomain) -or (([uri]$baseUrl).Host -ilike "*.$($StartDomain)"))
+            $targetBaseUrlIsInternal = $((([uri]$targetBaseUrl).Host -ieq $StartDomain) -or (([uri]$targetBaseUrl).Host -ilike "*.$($StartDomain)"))
         } catch {
-            $baseUrlIsInternal = $false
+            $targetBaseUrlIsInternal = $false
         }
 
-        $targetPageExists = $PageData.ContainsKey($baseUrl)
-        $pageInfo = if ($targetPageExists) { $PageData[$baseUrl] } else { $null }
+        $targetPageExists = $PageData.ContainsKey($targetBaseUrl)
+        $targetPageInfo = if ($targetPageExists) { $PageData[$targetBaseUrl] } else { $null }
 
         foreach ($occurrence in $ReferenceMap[$target]) {
             $reason = $null
 
             if (-not $targetPageExists) {
                 $reason = 'Page never crawled (External or Out of Scope)'
-            } elseif ($pageInfo.StatusCode -ne 200) {
-                $reason = "Target page error (Status: $($pageInfo.StatusCode) $($pageInfo.StatusMessage))"
+            } elseif ($targetPageInfo.StatusCode -ne 200) {
+                $reason = "Target page error (Status: $($targetPageInfo.StatusCode) $($targetPageInfo.StatusMessage))"
             } elseif (
-                $uri.Fragment -and
+                $targetUri.Fragment -and
                 (
                     ($CheckFragments -ieq 'Both') -or
                     (
                         ($CheckFragments -ieq 'InternalOnly') -and
-                        ($baseUrlIsInternal -eq $true)
+                        ($targetBaseUrlIsInternal -eq $true)
                     ) -or
                     (
                         ($CheckFragments -ieq 'ExternalOnly') -and
-                        ($baseUrlIsInternal -eq $false)
+                        ($targetBaseUrlIsInternal -eq $false)
                     )
                 ) -and
-                (-not $pageInfo.IdsAndNames.Contains($target))
+                (-not $targetPageInfo.IdsAndNames.Contains($target))
             ) {
-                $reason = "Missing Fragment: $($uri.Fragment)"
+                $reason = "Missing Fragment: $($targetUri.Fragment)"
             }
 
             if ($reason) {
