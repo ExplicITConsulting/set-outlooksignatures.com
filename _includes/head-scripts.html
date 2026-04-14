@@ -4,7 +4,6 @@
   _paq.push(["setRequestMethod", "POST"]); // Use POST to hide query params from ad-blockers
   _paq.push(["disableCookies"]); // Privacy-first/No-cookie tracking
   _paq.push(["disableAlwaysUseSendBeacon"]); // Avoid beacon-based ad-blocker rules
-  _paq.push(["setDocumentTitle", window.location.href]);
   _paq.push(["setDomains", ["*.set-outlooksignatures.com"]]);
   _paq.push(['enableHeartBeatTimer']); // Keeps the session alive for "time on page"
   _paq.push(['trackPageView']); // This ensures the "Visit" is created before "Content Impressions" are recorded.
@@ -30,7 +29,7 @@
 <noscript>
   <p>
     <img referrerpolicy="no-referrer-when-downgrade"
-      src='https://mtrcs.set-outlooksignatures.com/mtrcs.php?1337=1&rec=1&recMode=2&wannabe={{ page.url | absolute_url | url_encode }}&url={{ page.url | absolute_url | url_encode }}&rand={{ "now" | date: "%s" }}&apiv=1'
+      src='https://mtrcs.set-outlooksignatures.com/mtrcs.php?1337=1&rec=1&recMode=2&wannabe={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}&rand={{ "now" | date: "%s" }}&apiv=1'
       style="border:0; display:none;" alt="" />
   </p>
 </noscript>
