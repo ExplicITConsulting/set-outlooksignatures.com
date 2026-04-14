@@ -313,9 +313,9 @@ public static extern void SetThreadExecutionState(uint esFlags);
             }[($using:BrowserType)]]
 
             $launchOptions = [Microsoft.Playwright.BrowserTypeLaunchOptions]@{
-                Headless = $(if ($using:BrowserType -ieq 'chromium') { $false }else { $using:BrowserHeadless }) # We use --headless=new in Args for better stealth
+                Headless = $(if (($using:BrowserType -ieq 'chromium') -and ($using:BrowserHeadless -eq $true)) { $false } else { $using:BrowserHeadless }) # We use --headless=new in Args for better stealth
                 Args     = [string[]]@(
-                    $(if ($using:BrowserType -ieq 'chromium') { '--headless=new' } else { '' }),
+                    $(if (($using:BrowserType -ieq 'chromium') -and ($using:BrowserHeadless -eq $true)) { '--headless=new' } else { '' }),
                     '--disable-blink-features=AutomationControlled', # Hides webdriver for Chromium
                     '--disable-breakpad',
                     '--disable-client-side-phishing-detection',
