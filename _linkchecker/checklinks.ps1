@@ -22,7 +22,7 @@ param (
     # None: No fragments are checked
     # InternalOnly: Only fragments of hrefs pointing to internal targets are checked
     # ExternalOnly: Only fragments of hrefs pointing to external targets are checked
-    # Both: Fragment of all hrefs are checked
+    # InternalAndExternal: Fragment of all hrefs are checked
     [ValidateSet('InternalAndExternal', 'InternalOnly', 'ExternalOnly', 'None')]
     [string]$CheckFragments = 'InternalAndExternal',
 
@@ -306,16 +306,16 @@ public static extern void SetThreadExecutionState(uint esFlags);
             $TimeZone = 'Europe/Vienna'
             $Lat, $Lon = 48.2082, 16.3738
 
-            $userAgent = [Microsoft.Playwright.Playwright]::CreateAsync().GetAwaiter().GetResult().Devices[@{
+            $device = [Microsoft.Playwright.Playwright]::CreateAsync().GetAwaiter().GetResult().Devices[@{
                 chromium = 'Desktop Chrome'
                 firefox  = 'Desktop Firefox'
                 webkit   = 'Desktop Safari'
-            }[($using:BrowserType)]].UserAgent
+            }[($using:BrowserType)]]
 
             $launchOptions = [Microsoft.Playwright.BrowserTypeLaunchOptions]@{
                 Headless = $(if ($using:BrowserType -ieq 'chromium') { $false }else { $using:BrowserHeadless }) # We use --headless=new in Args for better stealth
                 Args     = [string[]]@(
-                    $(if ($using:BrowserType -ieq 'chromium') { '--headless=new' }else { '' }),
+                    $(if ($using:BrowserType -ieq 'chromium') { '--headless=new' } else { '' }),
                     '--disable-blink-features=AutomationControlled', # Hides webdriver for Chromium
                     '--disable-breakpad',
                     '--disable-client-side-phishing-detection',
@@ -330,24 +330,34 @@ public static extern void SetThreadExecutionState(uint esFlags);
                     '--metrics-recording-only',
                     '--no-default-browser-check',
                     '--no-first-run',
-                    '--no-sandbox'
+                    '--no-sandbox',
+                    '--ignore-certificate-errors',
+                    '--ignore-urlfetcher-cert-requests',
+                    '--ssl-version-min=tls1',
+                    '--ignore-ssl-errors',
+                    '--cipher-suite-blacklist=0x0000'
                 )
             }
 
             $Playwright = [Microsoft.Playwright.Playwright]::CreateAsync().GetAwaiter().GetResult()
+
             $PlaywrightBrowser = $Playwright.($using:BrowserType).LaunchAsync($launchOptions).GetAwaiter().GetResult()
 
             $contextOptions = [Microsoft.Playwright.BrowserNewContextOptions]@{
-                acceptDownloads   = $true
-                javaScriptEnabled = $true
-                ignoreHTTPSErrors = $false
-                UserAgent         = $userAgent
-                Locale            = $Locale
-                TimezoneId        = $TimeZone
+                AcceptDownloads   = $true
+                BypassCSP         = $true
+                DeviceScaleFactor = $device.DeviceScaleFactor
                 Geolocation       = @{ Latitude = $Lat; Longitude = $Lon }
-                Permissions       = [string[]]@('geolocation')
-                ViewportSize      = @{ Width = 1920; Height = 1080 }
-                DeviceScaleFactor = 1
+                HasTouch          = $device.HasTouch
+                IgnoreHTTPSErrors = $true
+                IsMobile          = $device.IsMobile
+                JavaScriptEnabled = $true
+                Locale            = $Locale
+                # Permissions       = [string[]]@('geolocation')
+                ScreenSize        = @{ Width = 1920; Height = 1200 }
+                TimezoneId        = $TimeZone
+                UserAgent         = $device.UserAgent
+                ViewportSize      = $device.ViewportSize
             }
 
             $context = $PlaywrightBrowser.NewContextAsync($contextOptions).GetAwaiter().GetResult()
@@ -2647,8 +2657,13 @@ public static extern void SetThreadExecutionState(uint esFlags);
 
                         try {
                             $response = Invoke-WebRequest -Method Head -Uri $url -UseBasicParsing -Timeout 10 -ErrorAction Stop
-                            $StatusCode = [int]($response.StatusCode)
+
+                            $StatusCode = $response.StatusCode
                             $StatusMessage = $response.StatusDescription
+
+                            if ([String]::IsNullOrWhiteSpace($StatusMessage)) {
+                                $StatusMessage = [System.Net.HttpStatusCode]$StatusCode
+                            }
                         } catch {
                             # Check if this specific error is a Throttling (429) error
                             if ($_.Exception.Response.StatusCode -eq 429 -or $_.ToString() -ilike '*Too many requests*') {
@@ -2657,8 +2672,13 @@ public static extern void SetThreadExecutionState(uint esFlags);
                                 # If not throttled, try the GET fallback
                                 try {
                                     $response = Invoke-WebRequest -Method Get -Uri $url -UseBasicParsing -Timeout 10 -ErrorAction Stop
-                                    $StatusCode = [int]($response.StatusCode)
+
+                                    $StatusCode = $response.StatusCode
                                     $StatusMessage = $response.StatusDescription
+
+                                    if ([String]::IsNullOrWhiteSpace($StatusMessage)) {
+                                        $StatusMessage = [System.Net.HttpStatusCode]$StatusCode
+                                    }
                                 } catch {
                                     # Final check: if GET is also throttled, we don't throw; we let the full browser handle it
                                     if ($_.Exception.Response.StatusCode -eq 429 -or $_.ToString() -ilike '*Too many requests*') {
@@ -2681,7 +2701,7 @@ public static extern void SetThreadExecutionState(uint esFlags);
                                     $url,
                                     @{
                                         IdsAndNames   = $CurrentPageIds
-                                        StatusCode    = [int]$StatusCode
+                                        StatusCode    = $StatusCode
                                         StatusMessage = "Content-Type '$($response.Headers['Content-Type'])' does not contain 'text/html'"
                                     }
                                 )
@@ -2695,7 +2715,7 @@ public static extern void SetThreadExecutionState(uint esFlags);
                                     $url,
                                     @{
                                         IdsAndNames   = $CurrentPageIds
-                                        StatusCode    = [int]$StatusCode
+                                        StatusCode    = $StatusCode
                                         StatusMessage = $StatusMessage
                                     }
                                 )
@@ -2713,21 +2733,45 @@ public static extern void SetThreadExecutionState(uint esFlags);
                         $PlaywrightBrowserPage = $context.NewPageAsync().GetAwaiter().GetResult()
 
                         try {
-                            Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url $url
+                            $PlaywrightBrowserPageResult = $PlaywrightBrowserPage.GotoAsync(
+                                $url,
+                                [Microsoft.Playwright.PageGotoOptions]@{
+                                    WaitUntil = [Microsoft.Playwright.WaitUntilState]::DomContentLoaded
+                                    Timeout   = 30000
+                                }
+                            ).GetAwaiter().GetResult()
 
-                            $StatusCode = [int](Invoke-PlaywrightPageJavascript -Page $PlaywrightBrowserPage -Expression "(performance.getEntriesByType('navigation')[0]?.responseStatus || 0) | 0")
-                            $StatusMessage = [System.Net.HttpStatusCode]$StatusCode
+                            $StatusCode = $PlaywrightBrowserPageResult.Status
+                            $StatusMessage = $PlaywrightBrowserPageResult.StatusText
+
+                            if ([String]::IsNullOrWhiteSpace($StatusMessage)) {
+                                $StatusMessage = [System.Net.HttpStatusCode]$StatusCode
+                            }
                         } catch {
                             Start-Sleep -Seconds 5
 
                             try {
-                                Open-PlaywrightPageUrl -Page $PlaywrightBrowserPage -Url $url
+                                $PlaywrightBrowserPageResult = $PlaywrightBrowserPage.GotoAsync(
+                                    $url,
+                                    [Microsoft.Playwright.PageGotoOptions]@{
+                                        WaitUntil = [Microsoft.Playwright.WaitUntilState]::DomContentLoaded
+                                        Timeout   = 30000
+                                    }
+                                ).GetAwaiter().GetResult()
 
-                                $StatusCode = [int](Invoke-PlaywrightPageJavascript -Page $PlaywrightBrowserPage -Expression "(performance.getEntriesByType('navigation')[0]?.responseStatus || 0) | 0")
-                                $StatusMessage = [System.Net.HttpStatusCode]$StatusCode
+                                $StatusCode = $PlaywrightBrowserPageResult.Status
+                                $StatusMessage = $PlaywrightBrowserPageResult.StatusText
+
+                                if ([String]::IsNullOrWhiteSpace($StatusMessage)) {
+                                    $StatusMessage = [System.Net.HttpStatusCode]$StatusCode
+                                }
                             } catch {
                                 $StatusCode = 0
                                 $StatusMessage = $_.Exception.Message
+
+                                if ([String]::IsNullOrWhiteSpace($StatusMessage)) {
+                                    $StatusMessage = [System.Net.HttpStatusCode]$StatusCode
+                                }
                             }
                         }
 
@@ -2738,7 +2782,7 @@ public static extern void SetThreadExecutionState(uint esFlags);
                                 $url,
                                 @{
                                     IdsAndNames   = $CurrentPageIds
-                                    StatusCode    = [int]$StatusCode
+                                    StatusCode    = $StatusCode
                                     StatusMessage = $StatusMessage
                                 }
                             )
@@ -2777,7 +2821,7 @@ public static extern void SetThreadExecutionState(uint esFlags);
 
                         # Determine if we need fragments based on your variables
                         $shouldFetchFragments = (
-                            ($using:CheckFragments -ieq 'Both') -or
+                            ($using:CheckFragments -ieq 'InternalAndExternal') -or
                             (
                                 ($using:CheckFragments -ieq 'InternalOnly') -and
                                 ($urlIsInternal -eq $true)
@@ -2867,16 +2911,19 @@ public static extern void SetThreadExecutionState(uint esFlags);
 
                         # Fill the PowerShell arrays
                         $hrefs = @()
+
                         if ($extractionResult.links) {
                             # Ensure nested arrays are treated correctly in PS
                             foreach ($linkPair in $extractionResult.links) {
                                 $hrefs += , @($linkPair[0], $linkPair[1])
                             }
+
+                            $hrefs = $hrefs | Select-Object -Unique | Sort-Object -Culture 127
                         }
 
                         $IdsAndNames = @()
                         if ($extractionResult.idsAndNames) {
-                            $IdsAndNames = $extractionResult.idsAndNames | Sort-Object -Culture 127 -Unique
+                            $IdsAndNames = $extractionResult.idsAndNames | Select-Object -Unique | Sort-Object -Culture 127
                         }
 
                         # Cleanup
@@ -2951,7 +2998,7 @@ public static extern void SetThreadExecutionState(uint esFlags);
                             $url,
                             @{
                                 IdsAndNames   = $CurrentPageIds
-                                StatusCode    = [int]$StatusCode
+                                StatusCode    = $StatusCode
                                 StatusMessage = $StatusMessage
                             }
                         )
@@ -3009,8 +3056,8 @@ public static extern void SetThreadExecutionState(uint esFlags);
     Write-Host "  Hosts visited                                : $(@(@(@($PageData.Keys) | ForEach-Object { $tempX = $_; try { ([uri]$tempX).Host } catch { $tempX } }) | Select-Object -Unique).Count)"
     Write-Host "  Pages visited                                : $($PageData.Count)"
     Write-Host "  IDs and Names found on pages                 : $(@($PageData.Values | ForEach-Object { @($_.IdsAndNames) }).Count)"
-    Write-Host "  References found                             : $(@($ReferenceMap.Values.ForEach({ $_.OriginalHref })).Count)"
-    Write-Host "  Unique absolute URLs referenced              : $($ReferenceMap.Count)"
+    Write-Host "  References found                             : $(@($ReferenceMap.Values.ForEach({ $_ | ForEach-Object { $_.OriginalHref } })).Count)"
+    Write-Host "  Unique absolute URLs referenced              : $($ReferenceMap.Keys.Count)"
     Write-Host "  Unique absolute URLs referenced w/o fragment : $(@(@($ReferenceMap.Keys | ForEach-Object { try { $tempX = $_; StandardizeAbsoluteUrl -InputString $tempX -IncludeFragment $false } catch { $tempX } }) | Select-Object -Unique).Count)"
 
 
@@ -3069,7 +3116,7 @@ public static extern void SetThreadExecutionState(uint esFlags);
             } elseif (
                 $targetUri.Fragment -and
                 (
-                    ($CheckFragments -ieq 'Both') -or
+                    ($CheckFragments -ieq 'InternalAndExternal') -or
                     (
                         ($CheckFragments -ieq 'InternalOnly') -and
                         ($targetBaseUrlIsInternal -eq $true)
