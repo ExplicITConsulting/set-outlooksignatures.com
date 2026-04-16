@@ -28,8 +28,9 @@
 <!-- mtrcs no js code -->
 <noscript>
   <p>
+    {%- capture rand_seed -%}{{ page.url | absolute_url }}{{ "now" | date: "%Y%m%d%H%M%S" }}{%- endcapture -%}
     <img referrerpolicy="no-referrer-when-downgrade"
-      src='https://mtrcs.set-outlooksignatures.com/mtrcs.php?1337=1&rec=1&recMode=2&wannabe={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}&rand={{ "now" | date: "%s" }}&apiv=1'
+      src='https://mtrcs.set-outlooksignatures.com/mtrcs.php?1337=1&rec=1&recMode=2&wannabe={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}&rand={{ rand_seed | sha1 }}&apiv=1'
       style="border:0; display:none;" alt="" />
   </p>
 </noscript>
