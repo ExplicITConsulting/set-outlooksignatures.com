@@ -54,7 +54,8 @@ Download and unzip the archive to a local folder:
           <div class="highlighter-rouge">
             <pre><code>powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
           </div>
-          <p><small><em>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> parameter.</em></small></p>
+          <p>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> parameter.</p>
+          <p>Check the required permissions in advance: You can find all the information you need about usage in the files themselves as well as in the chapter <a href="/details#security-considerations">Security considerations</a>.</p>
         </div>
       </div>
     </div>
