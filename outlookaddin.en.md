@@ -207,7 +207,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <p><b>General Settings</b></p>
       <ul>
-        <li><b>Versioning:</b> Increment this every time you change a setting. This is the only way to force Outlook to clear its local cache and download the new files.</li>
+        <li><b>Versioning:</b> Increment this every time you change a setting. This is the only way to force Outlook to <a href="#clear-the-outlook-add-in-cache">clear its local cache and download the new files</a>.</li>
         <li><b>Deployment URL:</b> Define your dedicated hosting domain (e.g., <code>https://outlookaddin01.example.com</code>).</li>
         <li><b>Cloud Environment:</b> Set your environment and Entra ID Client ID.</li>
         <li><b>Debug Logging:</b> Enable or disable detailed execution logs.</li>
@@ -244,7 +244,7 @@ sitemap_changefreq: weekly
       </ul>
     </div>
   </div>
-  <p class="mt-2">You can even generate unique signatures at runtime without choosing a pre-deployed template. See <code>.\sample code\CustomRulesCode.js</code> for details.</p>
+  <p>You can even generate unique signatures at runtime without choosing a pre-deployed template. See <code>.\sample code\CustomRulesCode.js</code> for details.</p>
 </div>
 
 <h3 id="web-server-step">Step 2: Hosting (Publish)</h3>
@@ -258,7 +258,7 @@ sitemap_changefreq: weekly
 <h3 id="deployment-to-mailboxes">Step 3: Rollout (Deploy)</h3>
 <p>When the <code>manifest.xml</code> file, the configuration or another part of the Outlook add-in changes, you need to tell your mailboxes that an updated version or configuration is available and must be downloaded.</p>
 <p>The information from the manifest file is stored in the assigned mailboxes, but not the add-in itself - every Outlook client downloads a local copy of the add-in based on the one-time information transfer from the manifest file.</p>
-<p>These downloaded files are cached locally. The cache is only updated when a manifest file with a changed version number is added to the configuration of the mailbox, or when the cache gets cleared manually.</p>
+<p>These downloaded files are cached locally. The cache is only updated when a manifest file with a changed version number is added to the configuration of the mailbox, or when the cache gets <a href="#clear-the-outlook-add-in-cache">cleared manually</a>.</p>
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
@@ -283,6 +283,90 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
+
+
+<h2 id="logging-and-troubleshooting">Logging and troubleshooting</h2>
+<p>Troubleshooting Outlook add-ins can be complicated because the software operates through both a visible taskpane (triggered manually) and invisible background processes (launch events triggered by Outlook). While the interface may appear functional, background tasks — such as signature injection — can sometimes fail due to environment-specific settings or local caching issues. Use the following procedures to capture diagnostic logs for targeted analysis and to speed up testing of new releases and configuration settings.</p>
+<div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Yellow;">
+  <p id="runtime-logging"><b>Runtime logging</b></p>
+  <p>The add-in outputs diagnostic data to the browser console and the internal logging box within the taskpane. However, certain environments lack console access, and launch event (which run in the background) cannot send data to the taskpane UI. This makes it difficult to determine if a failure is due to a code error, a compilation issue, or if Outlook simply failed to trigger the event.</p>
+  <p>While you can enable the <code>DEBUG</code> parameter via <code>run_before_deployment.ps1</code> to force event logging directly into the body of new emails, this is a heavy-handed approach. Most Outlook editions provide more elegant ways to capture runtime logs:</p>
+  <div class="columns">
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+      <details>
+        <summary class="has-text-weight-bold is-clickable">Outlook Web</summary>
+        <div>
+          <p>Since the web version runs in a browser, standard web debugging tools are sufficient.</p>
+          <ol>
+            <li>Press F12 (or right-click and select "Inspect") to open the browser’s developer tools.</li>
+            <li>Go to the Console tab to monitor all add-in activity.</li>
+          </ol>
+        </div>
+      </details>
+      <details>
+        <summary class="has-text-weight-bold is-clickable">Classic Outlook for Windows</summary>
+        <div>
+          <p>You can redirect add-in activity to a local text file by modifying the Windows Registry.</p>
+          <ol>
+            <li>
+              <p>Define your log file path by setting the default value of the following key: <code>HKCU\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging</code>. You can execute this quickly via PowerShell:</p>
+              <div class="highlighter-rouge">
+                <pre><code>$Logfile = "c:\test\outlook_add-in_runtimelogging.txt"
+
+if (-not (Test-Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging")) {
+  New-Item -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Force
+}
+
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Name "(Default)" -Value $Logfile</code></pre>
+              </div>
+            </li>
+            <li><p>Restart Outlook.</p></li>
+          </ol>
+          <p>The specified file will now record all add-in activity, including launch event details and Set-OutlookSignatures specific messages.</p>
+        </div>
+      </details>
+      <details>
+        <summary class="has-text-weight-bold is-clickable">New Outlook for Windows</summary>
+        <div>
+          <p>New Outlook allows you to attach developer tools directly to the application process.</p>
+          <ol>
+            <li>Close New Outlook.</li>
+            <li>Launch it from a command prompt or the Run dialog:
+              <div class="highlighter-rouge">
+                <pre><code>olk.exe --devtools</code></pre>
+              </div>
+            </li>
+          </ol>
+          <p>This opens a secondary window containing the Edge Developer Tools. Select the Console tab to view live logs from launch events and Outlook add-ins.</p>
+        </div>
+      </details>
+    </div>
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+      <details>
+        <summary class="has-text-weight-bold is-clickable">Classic and New Outlook for macOS</summary>
+        <div>
+          <p>On macOS, you can enable runtime logging through the terminal.</p>
+          <ol>
+            <li>Force quit Outlook.</li>
+            <li>Run the following command to set the log file destination:
+              <div class="highlighter-rouge">
+                <pre><code>defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-in_runtimelogging.txt"</code></pre>
+              </div>
+            </li>
+            <li>Open Outlook.</li>
+          </ol>
+          <p>Add-in activity is now logged to the file <code>~/library/Containers/com.microsoft.Outlook/Data/outlook_add-in_runtimelogging.txt</code>, including all messages from launch events and Outlook add-ins.</p>
+        </div>
+      </details>
+      <details>
+        <summary class="has-text-weight-bold is-clickable">Outlook for Android, Outlook for iOS</summary>
+        <div>
+          <p>Mobile versions of Outlook do not support native runtime logging. To troubleshoot these platforms, you must use the "last resort" method: Enable the <code>DEBUG</code> parameter in your configuration via <code>run_before_deployment.ps1</code> to see event logs within the email body.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
 <div class="box has-background-white-bis has-text-black mt-5" style="height: 100%; border-top: 4px solid Yellow;">
   <p id="clear-the-outlook-add-in-cache"><b>Clear the Outlook add-in cache</b></p>
   <p class="mb-0">When testing, Outlook sometimes takes too long updating its cache. Follow these official Microsoft instructions to manually clear it:</p>
@@ -303,87 +387,6 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <p>Restart Outlook after clearing the cache, even if not explicitly prompted. Allow up to 10 minutes for add-ins to fully reload, especially in Classic Outlook for Windows. If launch events fail to trigger, a second restart usually resolves the issue.</p>
-</div>
-<div class="box has-background-white-bis has-text-black mt-5" style="height: 100%; border-top: 4px solid Yellow;">
-  <p id="runtime-logging"><b>Runtime logging</b></p>
-  <p class="mb-0">The add-in outputs diagnostic data to the browser console and the internal logging box within the taskpane.</p>
-  <p>However, certain environments lack console access, and launch event (which run in the background) cannot send data to the taskpane UI. This makes it difficult to determine if a failure is due to a code error, a compilation issue, or if Outlook simply failed to trigger the event.</p>
-  <p>While you can enable the <code>DEBUG</code> parameter via <code>run_before_deployment.ps1</code> to force event logging directly into the body of new emails, this is a heavy-handed approach. Most Outlook editions provide more elegant ways to capture runtime logs:</p>
-  <div class="columns">
-    <div class="column is-half-desktop is-half-tablet is-full-mobile">
-      <details class="mb-4">
-        <summary class="has-text-weight-bold is-clickable">Outlook Web</summary>
-        <div class="mt-2">
-          <p>Since the web version runs in a browser, standard web debugging tools are sufficient.</p>
-          <ol>
-            <li>Press F12 (or right-click and select "Inspect") to open the browser’s developer tools.</li>
-            <li>Go to the Console tab to monitor all add-in activity.</li>
-          </ol>
-        </div>
-      </details>
-      <details class="mb-4">
-        <summary class="has-text-weight-bold is-clickable">Classic Outlook for Windows</summary>
-        <div class="mt-2">
-          <p>You can redirect add-in activity to a local text file by modifying the Windows Registry.</p>
-          <ol>
-            <li>
-              <p>Define your log file path by setting the default value of the following key: <code>HKCU\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging</code>. You can execute this quickly via PowerShell:</p>
-              <div class="highlighter-rouge">
-                <pre><code>$Logfile = "c:\test\outlook_add-in_runtimelogging.txt"
-
-if (-not (Test-Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging")) {
-  New-Item -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Force
-}
-
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Name "(Default)" -Value $Logfile</code></pre>
-              </div>
-            </li>
-            <li><p>Restart Outlook.</p></li>
-          </ol>
-          <p>The specified file will now record all add-in activity, including launch event details and Set-OutlookSignatures specific messages.</p>
-        </div>
-      </details>
-      <details class="mb-4">
-        <summary class="has-text-weight-bold is-clickable">New Outlook for Windows</summary>
-        <div class="mt-2">
-          <p>New Outlook allows you to attach developer tools directly to the application process.</p>
-          <ol>
-            <li>Close New Outlook.</li>
-            <li>Launch it from a command prompt or the Run dialog:
-              <div class="highlighter-rouge">
-                <pre><code>olk.exe --devtools</code></pre>
-              </div>
-            </li>
-          </ol>
-          <p>This opens a secondary window containing the Edge Developer Tools. Select the Console tab to view live logs from launch events and Outlook add-ins.</p>
-        </div>
-      </details>
-    </div>
-    <div class="column is-half-desktop is-half-tablet is-full-mobile">
-      <details class="mb-4">
-        <summary class="has-text-weight-bold is-clickable">Classic and New Outlook for macOS</summary>
-        <div class="mt-2">
-          <p>On macOS, you can enable runtime logging through the terminal.</p>
-          <ol>
-            <li>Force quit Outlook.</li>
-            <li>Run the following command to set the log file destination:
-              <div class="highlighter-rouge">
-                <pre><code>defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-in_runtimelogging.txt"</code></pre>
-              </div>
-            </li>
-            <li>Open Outlook.</li>
-          </ol>
-          <p>Add-in activity is now logged to the file <code>~/library/Containers/com.microsoft.Outlook/Data/outlook_add-in_runtimelogging.txt</code>, including all messages from launch events and Outlook add-ins.</p>
-        </div>
-      </details>
-      <details class="mb-4">
-        <summary class="has-text-weight-bold is-clickable">Outlook for Android, Outlook for iOS</summary>
-        <div class="mt-2">
-          <p>Mobile versions of Outlook do not support native runtime logging. To troubleshoot these platforms, you must use the "last resort" method: Enable the <code>DEBUG</code> parameter in your configuration via <code>run_before_deployment.ps1</code> to see event logs within the email body.</p>
-        </div>
-      </details>
-    </div>
-  </div>
 </div>
 
 
