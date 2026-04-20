@@ -352,7 +352,7 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer" -Nam
             <li>Launch it from a command prompt or the Run dialog:
               <div class="highlighter-rouge">
                 <pre><code>olk.exe --devtools</code></pre>
-              </div
+              </div>
             </li>
           </ol>
           <p>This opens a secondary window containing the Edge Developer Tools. Select the Console tab to view live logs from launch events and Outlook add-ins.</p>
