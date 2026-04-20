@@ -327,15 +327,15 @@ sitemap_changefreq: weekly
           <p>You can redirect add-in activity to a local text file by modifying the Windows Registry.</p>
           <ol>
             <li>
-              <p>Define your log file path by setting the default value of the following key: <code>HKCU\Software\Microsoft\Office\16.0\WEF\Developer</code>. You can execute this quickly via PowerShell:</p>
+              <p>Define your log file path by setting the default value of the following key: <code>HKCU\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging</code>. You can execute this quickly via PowerShell:</p>
               <div class="highlighter-rouge">
                 <pre><code>$Logfile = "c:\test\outlook_add-in_runtimelogging.txt"
 
-if (-not (Test-Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer")) {
-  New-Item -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer" -Force
+if (-not (Test-Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging")) {
+  New-Item -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Force
 }
 
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer" -Name "(default)" -Value $Logfile</code></pre>
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Name "(Default)" -Value $Logfile</code></pre>
               </div>
             </li>
             <li><p>Restart Outlook.</p></li>
