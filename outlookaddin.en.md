@@ -308,11 +308,11 @@ sitemap_changefreq: weekly
   <p id="runtime-logging"><b>Runtime logging</b></p>
   <p class="mb-0">The add-in outputs diagnostic data to the browser console and the internal logging box within the taskpane.</p>
   <p>However, certain environments lack console access, and launch event (which run in the background) cannot send data to the taskpane UI. This makes it difficult to determine if a failure is due to a code error, a compilation issue, or if Outlook simply failed to trigger the event.</p>
-  <p>While you can enable the <code>DEBUG</code> parameter via <code>run_before_deployment.ps1</code> to force event logging directly into the body of new emails, this is a heavy-handed approach. Most Outlook editions provide more elegant ways to capture runtime logs.</p>
+  <p>While you can enable the <code>DEBUG</code> parameter via <code>run_before_deployment.ps1</code> to force event logging directly into the body of new emails, this is a heavy-handed approach. Most Outlook editions provide more elegant ways to capture runtime logs:</p>
   <div class="columns">
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <details class="mb-4">
-        <summary class="is-size-5 has-text-weight-bold is-clickable">Outlook Web</summary>
+        <summary class="has-text-weight-bold is-clickable">Outlook Web</summary>
         <div class="mt-2">
           <p>Since the web version runs in a browser, standard web debugging tools are sufficient.</p>
           <ol>
@@ -322,7 +322,7 @@ sitemap_changefreq: weekly
         </div>
       </details>
       <details class="mb-4">
-        <summary class="is-size-5 has-text-weight-bold is-clickable">Classic Outlook for Windows</summary>
+        <summary class="has-text-weight-bold is-clickable">Classic Outlook for Windows</summary>
         <div class="mt-2">
           <p>You can redirect add-in activity to a local text file by modifying the Windows Registry.</p>
           <ol>
@@ -344,7 +344,7 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer" -Nam
         </div>
       </details>
       <details class="mb-4">
-        <summary class="is-size-5 has-text-weight-bold is-clickable">New Outlook for Windows</summary>
+        <summary class="has-text-weight-bold is-clickable">New Outlook for Windows</summary>
         <div class="mt-2">
           <p>New Outlook allows you to attach developer tools directly to the application process.</p>
           <ol>
@@ -361,7 +361,7 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer" -Nam
     </div>
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <details class="mb-4">
-        <summary class="is-size-5 has-text-weight-bold is-clickable">Classic and New Outlook for macOS</summary>
+        <summary class="has-text-weight-bold is-clickable">Classic and New Outlook for macOS</summary>
         <div class="mt-2">
           <p>On macOS, you can enable runtime logging through the terminal.</p>
           <ol>
@@ -377,7 +377,7 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer" -Nam
         </div>
       </details>
       <details class="mb-4">
-        <summary class="is-size-5 has-text-weight-bold is-clickable">Outlook for Android, Outlook for iOS</summary>
+        <summary class="has-text-weight-bold is-clickable">Outlook for Android, Outlook for iOS</summary>
         <div class="mt-2">
           <p>Mobile versions of Outlook do not support native runtime logging. To troubleshoot these platforms, you must use the "last resort" method: Enable the <code>DEBUG</code> parameter in your configuration via <code>run_before_deployment.ps1</code> to see event logs within the email body.</p>
         </div>
