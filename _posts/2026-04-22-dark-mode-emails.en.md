@@ -12,7 +12,7 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-The shift to Dark Mode has dramatically improved screen comfort for millions, but it’s introduced a major headache for email signature designers. While most of your email template might handle color swaps gracefully, the precision of a professional email signature is often ruined by inconsistent mail client rendering.
+The shift to Dark Mode has dramatically improved screen comfort for millions, but it’s introduced a major headache for email signature designers. While most of your email templates might handle color swaps gracefully, the precision of a professional email signature is often ruined by inconsistent mail client rendering.
 
 If you’re managing signatures for an organization, ensuring your design looks pristine in both light and dark settings is paramount. Here is your definitive guide to designing dark mode-friendly email signatures, navigating the treacherous waters of mail client support, and implementing ingenious failsafe solutions.
 
@@ -23,11 +23,11 @@ Unlike web design, which universally supports CSS media queries, email rendering
 - Color Inversion: The client automatically detects and inverts colors (e.g., pure black text becomes pure white, a white logo background becomes black). This is often unpredictable.
 - Dedicated Dark Style: The client supports specific CSS to apply a dedicated dark theme. This is the ideal but least consistent method.
 
-Basically, no mail client besides Apple Mail supports the essential `@media (prefers-color-scheme: dark)` CSS query.
+Basically, no mail client besides Apple Mail and some mobile apps supports the essential `@media (prefers-color-scheme: dark)` CSS query.
 
 This is no surprise, as CSS is generally poorly supported across email clients - with different sets of supported features, often not only depending on the email client, but on the platform it runs on.
 
-The reason for this? For historic reasons, nearly every email client comes with its own integrated parser and renderer for HTML and CSS. Keeping on-par is hard work, and switching to the system browser would mean that all the non-standard interpretations of the own renderer would be gone and old emails might look off.
+The root cause for this? For historic reasons, nearly every email client comes with its own integrated parser and renderer for HTML and CSS. Keeping on-par is hard work, and switching to the system browser would mean that all the non-standard interpretations of the own renderer would be gone and old emails might look off.
 
 
 ## Strategy 1: The ideal (but unreliable) CSS approach
