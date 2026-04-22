@@ -2,7 +2,7 @@ name: "search-engines-urls-push"
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 02 * * *"
+    - cron: "15 2 * * *"
 
 jobs:
   check-for-new-commits:
