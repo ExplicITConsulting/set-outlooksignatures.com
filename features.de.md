@@ -83,7 +83,7 @@ Mit Set-OutlookSignatures und dem optionalen <a href="/benefactorcircle"><span s
         </div>
     </div>
 </div>
-<p>Nach einer bestimmten Nutzungsdauer wird der <a href="/faq#how-to-disable-the-tagline-in-signatures">dezente Hinweis 'Free and open-source Set-OutlookSignatures' an Signaturen angefügt</a>. Dieser Slogan kann leicht entfernt werden<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.</p>
+<p>Nach einer bestimmten Nutzungsdauer wird der <a href="/faq#how-to-disable-the-tagline-in-signatures">dezente Hinweis "Free and open-source Set-OutlookSignatures" an Signaturen angefügt</a>. Dieser Slogan kann leicht entfernt werden<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.</p>
 
 
 ## Funktions-Vergleich {#feature-comparison}

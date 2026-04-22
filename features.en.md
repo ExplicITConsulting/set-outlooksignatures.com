@@ -83,7 +83,7 @@ With Set-OutlookSignatures and the optional <a href="/benefactorcircle"><span st
         </div>
     </div>
 </div>
-<p>After a certain period of use, the <a href="/faq#how-to-disable-the-tagline-in-signatures">subtle note 'Free and open-source Set-OutlookSignatures' is appended to signatures</a>. This tagline can be easily removed<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.</p>
+<p>After a certain period of use, the <a href="/faq#how-to-disable-the-tagline-in-signatures">subtle note "Free and open-source Set-OutlookSignatures" is appended to signatures</a>. This tagline can be easily removed<a href="#remark-1" style="color: var(--benefactor-circle-color);"><sup>(1)</sup></a>.</p>
 
 
 ## Feature comparison {#feature-comparison}
