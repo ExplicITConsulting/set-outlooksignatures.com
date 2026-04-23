@@ -150,7 +150,7 @@ Zusätzliche Anforderungen:
 ### Preis-Benchmark {#pricing}
 <div style="display: grid;">
     <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable mx-auto">
+        <table class="table is-bordered is-striped is-hoverable">
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Postfächer (1 Jahr)</th>
@@ -200,11 +200,12 @@ Zusätzliche Anforderungen:
         </table>
     </div>
 </div>
+<p>Berücksichtigen Sie auch die Gesamtbetriebskosten (TCO) über mehrere Jahre hinweg. Einige Mitbewerber sehen im Kleingedruckten automatische Preiserhöhungen von 8 % oder mehr vor.</p>
 
 ### Detaillierter Vergleichs-Benchmark {#detailed-benchmark}
 <div style="display: grid;">
     <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable mx-auto">
+        <table class="table is-bordered is-striped is-hoverable">
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;"></th>

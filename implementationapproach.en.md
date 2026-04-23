@@ -140,7 +140,7 @@ Based on the previously mentioned conditions and discussions with all involved p
 ### Pricing Benchmark {#pricing}
 <div style="display: grid;">
     <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable mx-auto">
+        <table class="table is-bordered is-striped is-hoverable">
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mailboxes (1 year)</th>
@@ -190,11 +190,12 @@ Based on the previously mentioned conditions and discussions with all involved p
         </table>
     </div>
 </div>
+<p>Also consider the total cost of ownership (TCO) over several years. Some competitors include automatic price increases of 8% or more in the fine print.</p>
 
 ### Detailed Comparison Benchmark {#detailed-benchmark}
 <div style="display: grid;">
     <div class="table-container">
-        <table class="table is-bordered is-striped is-hoverable mx-auto">
+        <table class="table is-bordered is-striped is-hoverable">
             <thead>
                 <tr>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;"></th>
