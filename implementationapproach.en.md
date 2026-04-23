@@ -190,7 +190,7 @@ Based on the previously mentioned conditions and discussions with all involved p
         </table>
     </div>
 </div>
-<p>Also consider the total cost of ownership (TCO) over several years. Some competitors include automatic price increases of 8% or more in the fine print.</p>
+<p>Also consider the total cost of ownership (TCO) over several years. Some competitors include automatic annual price increases of 8% or more in the fine print.</p>
 
 ### Detailed Comparison Benchmark {#detailed-benchmark}
 <div style="display: grid;">

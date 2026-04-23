@@ -198,8 +198,9 @@ sitemap_changefreq: weekly
 <h2 id="price">Price and business case</h2>
 <p><strong>Set-OutlookSignatures is and will always be free.</strong> What began as a technology demonstrator is now the most secure and versatile open-source tool for managing email signatures. Learn more about <a href="/faq#why-the-tagline">the story behind the code</a>.</p>
 <p>The <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span> unlocks advanced features — for <strong>just EUR 0.25 per mailbox/month</strong> (EUR 3.00 per year). Billed annually, no auto-renewal.</p>
-<p>The add-on is an investment that pays off from day one, certainly for you as well!<br><strong>Facts, not guesswork:</strong> Calculate your specific savings in just five minutes with our <a href="/benefactorcircle#financial-benefits">business case</a>.<br>
-Thanks to its unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
+<p>The add-on is an investment that pays off from day one, certainly for you as well!<br><strong>Facts, not guesswork:</strong> Calculate your specific savings in just five minutes with our <a href="/benefactorcircle#financial-benefits">business case</a>.</p>
+<p>Thanks to its unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
+<p>Also consider the total cost of ownership (TCO) over several years. Some competitors include automatic annual price increases of 8% or more in the fine print.</p>
 <div style="display: grid;">
     <div class="table-container">
         <table class="table is-bordered is-striped is-hoverable">
@@ -252,7 +253,7 @@ Thanks to its unique features and exclusive manufacturer availability, direct pr
         </table>
     </div>
 </div>
-<p>Also consider the total cost of ownership (TCO) over several years. Some competitors include automatic price increases of 8% or more in the fine print.</p>
+<p>&nbsp;</p>
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Licensing details – the fine print in plain language</strong>
