@@ -719,7 +719,7 @@ redirect_from:
     .analysis-row .col-type {
       color: var(--text-muted);
       /* Use the proper-noun labels exactly as written ("Comment", "Section",
-         "Assign template to mailboxes with this email address", …) — NO text-transform, so capitalisation is
+         "Use template for mailboxes with this email address", …) — NO text-transform, so capitalisation is
          preserved for screen-reader pronunciation and visual scanning. */
       font-size: 12px;
       font-family: sans-serif;
@@ -944,16 +944,19 @@ redirect_from:
     var VALID_CONFIG_KEYS = new Set(["sortculture", "sortorder"]);
 
     // The order in which buckets are written when sorting a section.
-    // OutlookSignatureName ("name") MUST come first so it sits right under the section header.
     var BUCKET_ORDER = [
-      "name", // OutlookSignatureName
-      "kv", // any other key=value
-      "time", // time ranges
-      "group", // groups
-      "email", // mailboxes
-      "variable", // replacement variables
-      "defaultNew", // defaultNew / internal
-      "defaultReply", // defaultReplyFwd / external
+      "name",          // OutlookSignatureName
+      "kv",            // any other key=value
+      "time-allow",    // time ranges (allow)
+      "group-allow",   // groups (allow)
+      "email-allow",   // mailboxes (allow)
+      "variable-allow",// replacement variables (allow)
+      "time-deny",     // time ranges (deny)
+      "group-deny",    // groups (deny)
+      "email-deny",    // mailboxes (deny)
+      "variable-deny", // replacement variables (deny)
+      "defaultNew",    // defaultNew / internal
+      "defaultReply",  // defaultReplyFwd / external
       "writeProtect",
       "other",
     ];
@@ -1320,7 +1323,7 @@ redirect_from:
                   : grp === "group"
                     ? "hierarchy level 2: group specific template"
                     : "hierarchy level 1: common template";
-            label = "Template section (" + qualifier + ")";
+            label = "Template '" + l.name + "' (" + qualifier + ")";
           }
         } else if (l.kind === "kv") {
           var keyL = (l.key || "").toLowerCase();
@@ -1342,7 +1345,7 @@ redirect_from:
           // template filename written in the section header.
           else if (keyL === "outlooksignaturename") {
             kind = "name";
-            label = "Signature name (different from template name)";
+            label = "Name signature '" + l.value + "' instead of '" + (sectionIdx != null && sections[sectionIdx] ? sections[sectionIdx].name.replace(/\.[^/.]+$/, "") : "") + "'";
           }
           // Any other key=value line is malformed — system tags should appear
           // on their own line without "= value" (see the validator for the
@@ -1395,6 +1398,7 @@ redirect_from:
     //                          (kind ends in "-deny-current")
     function classifyTag(rawValue) {
       var v = (rawValue || "").trim();
+
       if (
         v.length >= 2 &&
         v.charAt(0) === "[" &&
@@ -1402,98 +1406,180 @@ redirect_from:
       ) {
         v = v.slice(1, -1).trim();
       }
-      if (!v) return { kind: "unknown", label: "Unknown tag" };
 
-      if (v.toLowerCase() === "defaultnew")
-        return {
-          kind: "system",
-          label: "Set signature as default for new emails",
-        };
-      if (v.toLowerCase() === "defaultreplyfwd")
-        return {
-          kind: "system",
-          label: "Set signature as default for replies and forwards",
-        };
-      if (v.toLowerCase() === "writeprotect")
-        return { kind: "system", label: "Write protect the signature" };
-      if (v.toLowerCase() === "internal")
-        return {
-          kind: "system",
-          label: "Set as OOF reply for internal recipients",
-        };
-      if (v.toLowerCase() === "external")
-        return {
-          kind: "system",
-          label: "Set as OOF reply for external recipients",
-        };
+      if (!v) return {
+        kind: "unknown",
+        label: "Unknown tag"
+      };
 
-      if (/^(?!-:)\d{12}Z?-\d{12}Z?$/.test(v))
+
+      var formatTime = function (ts) {
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        var clean = ts.replace(/Z$/i, "");
+
+        var year = clean.substring(0, 4);
+        var monthIdx = parseInt(clean.substring(4, 6), 10) - 1;
+        var month = months[monthIdx];
+        var day = clean.substring(6, 8);
+        var hour = clean.substring(8, 10);
+        var min = clean.substring(10, 12);
+
+        // Format: 12-Jan-2026 14:00
+        var formatted = day + "-" + month + "-" + year + " " + hour + ":" + min;
+
+        // Using GMT instead of UTC for better user recognition
+        var tz = /Z$/i.test(ts) ? " GMT/UTC time" : " local time";
+        return formatted + tz;
+      };
+
+
+      if (/^(?!-:)\d{12}Z?-\d{12}Z?$/i.test(v)) {
+        var parts = v.split("-");
         return {
           kind: "time-allow",
-          label:
-            "Template is only valid during this time range (YYYYMMDDHHMM-YYYYMMDDHHMM)",
+          label: "Use this template only from " + formatTime(parts[0]) + " to " + formatTime(parts[1]),
         };
-      if (/^-:\d{12}Z?-\d{12}Z?$/.test(v))
+      }
+
+      if (/^-:\d{12}Z?-\d{12}Z?$/i.test(v)) {
+        var timePart = v.replace(/^-:/i, "");
+        var parts = timePart.split("-");
         return {
           kind: "time-deny",
-          label:
-            "Template is not valid during this time range (YYYYMMDDHHMM-YYYYMMDDHHMM)",
+          label: "Do not use this template from " + formatTime(parts[0]) + " to " + formatTime(parts[1]),
         };
+      }
+
+
+      if (/^(?!-:|-CURRENTUSER:)\S+?\s.+?$/i.test(v)) {
+        var spaceIndex = v.indexOf(" ");
+        var prefix = v.substring(0, spaceIndex);
+        var groupName = v.substring(spaceIndex + 1);
+        var isEntra = /^(?:EntraID|AzureAD)(?:_\S+)?$/i.test(prefix);
+
+        return {
+          kind: "group-allow",
+          label: isEntra
+            ? "Use template for mailboxes belonging to the Entra ID group '" + groupName + "'"
+            : "Use template for mailboxes belonging to the Active Directory group '" + groupName + "' from domain '" + prefix + "'",
+        };
+      }
+
+      if (/^-:\S+?\s.+?$/i.test(v)) {
+        var spaceIndex = v.indexOf(" ");
+        var fullPrefix = v.substring(0, spaceIndex);
+        var groupName = v.substring(spaceIndex + 1);
+        var provider = fullPrefix.replace(/^-:/i, "");
+        var isEntra = /^(?:EntraID|AzureAD)(?:_\S+)?$/i.test(provider);
+
+        return {
+          kind: "group-deny",
+          label: isEntra
+            ? "Do not use this template for mailboxes belonging to the Entra ID group '" + groupName + "'"
+            : "Do not use this template for mailboxes belonging to the Active Directory group '" + groupName + "' from domain '" + provider + "'",
+        };
+      }
+
+      if (/^-CURRENTUSER:\S+?\s.+?$/i.test(v)) {
+        var spaceIndex = v.indexOf(" ");
+        var fullPrefix = v.substring(0, spaceIndex);
+        var groupName = v.substring(spaceIndex + 1);
+        var provider = fullPrefix.replace(/^-CURRENTUSER:/i, "");
+        var isEntra = /^(?:EntraID|AzureAD)(?:_\S+)?$/i.test(provider);
+
+        return {
+          kind: "group-deny-current",
+          label: isEntra
+            ? "Do not use this template when the logged-on user belongs to the Entra ID group '" + groupName + "'"
+            : "Do not use this template when the logged-on user belongs to the Active Directory group '" + groupName + "' from domain '" + provider + "'",
+        };
+      }
+
+
+      if (/^(?!-:|-CURRENTUSER:)\S+?@\S+?\.\S+?$/i.test(v)) {
+        var email = v;
+        return {
+          kind: "email-allow",
+          label: "Use this template for mailboxes with the email address '" + email + "'",
+        };
+      }
+
+      if (/^-:\S+?@\S+?\.\S+?$/i.test(v)) {
+        var email = v.replace(/^-:/i, "");
+        return {
+          kind: "email-deny",
+          label: "Do not use this template for mailboxes with the email address '" + email + "'",
+        };
+      }
+
+      if (/^-CURRENTUSER:\S+?@\S+?\.\S+?$/i.test(v)) {
+        var email = v.replace(/^-CURRENTUSER:/i, "");
+        return {
+          kind: "email-deny-current",
+          label: "Do not use this template when the logged-on user has the email address '" + email + "'",
+        };
+      }
+
 
       if (/^(?!-:)\$.*\$$/i.test(v))
         return {
           kind: "var-allow",
-          label:
-            "Assign template to mailboxes with this replacement variable",
+          label: "Use this template for mailboxes with a value in the replacement variable '" + v + "'",
         };
+
       if (/^-:\$.*\$$/i.test(v))
         return {
           kind: "var-deny",
-          label:
-            "Do not assign template to mailboxes with this replacement variable",
+          label: "Do not use this template for mailboxes wit a value in the replacement variable '" + v + "'",
         };
 
-      if (/^(?!-:|-CURRENTUSER:)\S+?@\S+?\.\S+?$/i.test(v))
+
+      if (v.toLowerCase() === "defaultnew")
         return {
-          kind: "email-allow",
-          label: "Assign template to mailboxes with this email address",
-        };
-      if (/^-CURRENTUSER:\S+?@\S+?\.\S+?$/i.test(v))
-        return {
-          kind: "email-deny-current",
-          label:
-            "Do not assign template when the logged-on user has this email address",
-        };
-      if (/^-:\S+?@\S+?\.\S+?$/i.test(v))
-        return {
-          kind: "email-deny",
-          label:
-            "Do not assign template to mailboxes with this email address",
+          kind: "system",
+          label: "Set this signature as default for new emails",
         };
 
-      if (/^(?!-:|-CURRENTUSER:)\S+?\s.+?$/i.test(v))
+      if (v.toLowerCase() === "defaultreplyfwd")
         return {
-          kind: "group-allow",
-          label: "Assign template to mailboxes belonging to this group",
+          kind: "system",
+          label: "Set this signature as default for replies and forwards",
         };
-      if (/^-CURRENTUSER:\S+?\s.+?$/i.test(v))
+
+
+      if (v.toLowerCase() === "writeprotect")
         return {
-          kind: "group-deny-current",
-          label:
-            "Do not assign template when the logged-on user belongs to this group",
+          kind: "system",
+          label: "Write protect this signature where possible"
         };
-      if (/^-:\S+?\s.+?$/i.test(v))
+
+
+      if (v.toLowerCase() === "internal")
         return {
-          kind: "group-deny",
-          label:
-            "Do not assign template to mailboxes belonging to this group",
+          kind: "system",
+          label: "Set this template as OOF reply for internal recipients",
         };
+
+      if (v.toLowerCase() === "external")
+        return {
+          kind: "system",
+          label: "Set this template as OOF reply for external recipients",
+        };
+
 
       if (SYSTEM_TAGS.has(v.toLowerCase()))
-        return { kind: "system", label: "System tag" };
+        return {
+          kind: "system",
+          label: "System tag"
+        };
 
-      return { kind: "unknown", label: "Unknown tag" };
+
+      return {
+        kind: "unknown",
+        label: "Unknown tag"
+      };
     }
+
 
     /* ============================================================
      5. VALIDATION
@@ -1508,7 +1594,7 @@ redirect_from:
       var s = String(v).trim();
       if (s === "") return false;
       if (s.toLowerCase() === "invariant") return true;
-      if (/^\d+$/.test(s)) {
+      if (/^\d+$/i.test(s)) {
         return Object.prototype.hasOwnProperty.call(LCID_TO_LOCALE, s);
       }
       if (/^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$/i.test(s)) {
@@ -1664,15 +1750,15 @@ redirect_from:
           var cls = classifyTag(ln.value);
           if (cls.kind === "unknown") {
             var v = (ln.value || "").replace(/^(?:-:|-CURRENTUSER:)/i, "");
-            if (/^\d/.test(v) && /\d.*-.*\d/.test(v)) {
+            if (/^\d/i.test(v) && /\d.*-.*\d/i.test(v)) {
               set(
                 r.lineNo,
                 "error",
                 "Malformed time range (expected YYYYMMDDHHMM[Z]-YYYYMMDDHHMM[Z])",
               );
-            } else if (/^[\$].*[^$]$|^[^$].*[\$]$/.test(v)) {
+            } else if (/^[\$].*[^$]$|^[^$].*[\$]$/i.test(v)) {
               set(r.lineNo, "error", "Malformed variable (expected $name$)");
-            } else if (/@/.test(v)) {
+            } else if (/@/i.test(v)) {
               set(
                 r.lineNo,
                 "error",
@@ -2176,7 +2262,7 @@ redirect_from:
         };
       }
       var locale;
-      if (/^\d+$/.test(code)) locale = LCID_TO_LOCALE[code];
+      if (/^\d+$/i.test(code)) locale = LCID_TO_LOCALE[code];
       else locale = code;
       try {
         var c = new Intl.Collator(locale, {
@@ -2205,10 +2291,17 @@ redirect_from:
       }
       if (ln.kind === "tag") {
         var cls = classifyTag(ln.value);
-        if (cls.kind.indexOf("time") === 0) return "time";
-        if (cls.kind.indexOf("group") === 0) return "group";
-        if (cls.kind.indexOf("email") === 0) return "email";
-        if (cls.kind.indexOf("var") === 0) return "variable";
+
+        // Map specific classified kinds to our new bucket names
+        if (cls.kind === "time-allow") return "time-allow";
+        if (cls.kind === "time-deny") return "time-deny";
+        if (cls.kind === "group-allow") return "group-allow";
+        if (cls.kind === "group-deny" || cls.kind === "group-deny-current") return "group-deny";
+        if (cls.kind === "email-allow") return "email-allow";
+        if (cls.kind === "email-deny" || cls.kind === "email-deny-current") return "email-deny";
+        if (cls.kind === "var-allow") return "variable-allow";
+        if (cls.kind === "var-deny") return "variable-deny";
+
         if (cls.kind === "system") {
           var v = (ln.value || "").toLowerCase().trim();
           if (v.charAt(0) === "[" && v.charAt(v.length - 1) === "]")
@@ -2249,7 +2342,7 @@ redirect_from:
         if (/^-CURRENTUSER:/i.test(v)) {
           pri = "2";
           rest = v.replace(/^-CURRENTUSER:/i, "");
-        } else if (/^-:/.test(v)) {
+        } else if (/^-:/i.test(v)) {
           pri = "1";
           rest = v.replace(/^-:/, "");
         }
@@ -2270,10 +2363,14 @@ redirect_from:
         comments: [],
         name: [],
         kv: [],
-        time: [],
-        group: [],
-        email: [],
-        variable: [],
+        "time-allow": [],
+        "group-allow": [],
+        "email-allow": [],
+        "variable-allow": [],
+        "time-deny": [],
+        "group-deny": [],
+        "email-deny": [],
+        "variable-deny": [],
         defaultNew: [],
         defaultReply: [],
         writeProtect: [],
@@ -3249,10 +3346,10 @@ redirect_from:
         after = ta.value.slice(end);
       var prefix = "",
         suffix = "";
-      if (before && !/\n$/.test(before)) prefix = "\n";
-      if (after && !/^\n/.test(after)) suffix = "\n";
-      if (/^\[.+\]$/.test(snippet) && before && !/\n\n$/.test(before)) {
-        prefix = /\n$/.test(before) ? "\n" : "\n\n";
+      if (before && !/\n$/i.test(before)) prefix = "\n";
+      if (after && !/^\n/i.test(after)) suffix = "\n";
+      if (/^\[.+\]$/i.test(snippet) && before && !/\n\n$/i.test(before)) {
+        prefix = /\n$/i.test(before) ? "\n" : "\n\n";
       }
       var newText = before + prefix + snippet + suffix + after;
       ta.value = newText;
