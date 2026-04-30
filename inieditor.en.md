@@ -1,5 +1,8 @@
 ---
 layout: "none"
+lang: "en"
+locale: "en"
+permalink: "/inieditor"
 redirect-from:
   - "/ini/"
   - "/ini"
