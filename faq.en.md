@@ -30,7 +30,7 @@ This FAQ highlights common topics and clarifies typical points of confusion.
 | Advanced Logic & Automation | [Recreation Logic](#why-are-signatures-and-out-of-office-replies-recreated-even-when-their-content-has-not-changed) \| [Deploy Once](#how-to-deploy-a-signature-only-once) \| [Send As Permissions](#how-to-deploy-signatures-for-send-as-send-on-behalf-etc) \| [Dynamic Groups (On-prem)](#why-is-dynamic-group-membership-not-considered-on-premises) \| [Parallel Instances](#can-multiple-script-instances-run-in-parallel) \| [Run while Outlook is running](#run-set-outlooksignatures-while-outlook-is-running) \| [Custom image replacement variables](#custom-image-replacement-variables) |
 | Troubleshooting & Logs | [Logging](#how-can-i-log-the-software-output) \| [Verbose Output](#how-can-i-get-more-script-output-for-troubleshooting) \| [Word Security Warnings](#the-software-hangs-at-htmrtf-export-word-shows-a-security-warning) \| [Performance/Speed](#why-does-set-outlooksignatures-run-slower-sometimes) \| [Authentication Prompts](#why-am-i-prompted-to-authenticate-repeatedly) \| [Token Cache Location](#where-is-the-graph-token-cached-and-how-do-i-clear-it) \| [Auth Methods](#which-graph-authentication-methods-are-used) |
 | Security & Compliance | [Mailbox Identification](#how-is-the-account-of-a-mailbox-identified) \| [Personal Mailbox ID](#how-is-the-personal-mailbox-of-the-currently-logged-in-user-identified) \| [Network Ports](#which-ports-are-required) \| [Multi-tenant Access](#does-it-support-cross-tenant-access-and-multitenant-organizations) \| [Purview & Labels](#how-to-make-set-outlooksignatures-work-with-microsoft-purview-information-protection) \| [Locking Signatures](#keep-users-from-adding-editing-and-removing-signatures) \| [EWS Deprecation](#what-about-microsoft-turning-off-exchange-web-services-for-exchange-online) |
-| Learn from the code | [AD Group Enumeration](#active-directory-group-membership-enumeration-without-compromises) \| [Graph Auth Logic](#microsoft-graph-authentication-and-re-authentication) \| [Cross-Tenant Access](#graph-cross-tenant-and-multitenant-organization-access) \| [DSC Deployment](#deploy-and-run-software-using-desired-state-configuration-dsc) \| [Parallel Execution](#parallel-code-execution) \| [Desktop Icons](#create-desktop-icons-cross-platform) \| [Entra App Config](#create-and-configure-apps-in-entra-id-grant-admin-consent) \| [AD Trust Tests](#test-active-directory-trusts) \| [AD Connection Check](#start-only-if-working-active-directory-connection-is-available) \| [System Sleep](#prohibit-system-sleep) \| [Exit Signals](#detect-exit-signals) \| [Phone Formatting](#format-phone-numbers) \| [Postal Formatting](#format-postal-addresses) \| [Open Source Treasures](#bringing-hidden-open-source-treasures-to-light) \| [Encoding Conversion](#detect-and-convert-encodings) \| [DN Handling](#handling-of-distinguished-names) |
+| Learn from the code | [AD Group Enumeration](#active-directory-group-membership-enumeration-without-compromises) \| [Graph Auth Logic](#microsoft-graph-authentication-and-re-authentication) \| [Cross-Tenant Access](#graph-cross-tenant-and-multitenant-organization-access) \| [DSC Deployment](#deploy-and-run-software-using-desired-state-configuration-dsc) \| [Parallel Execution](#parallel-code-execution) \| [Desktop Icons](#create-desktop-icons-cross-platform) \| [Entra App Config](#create-and-configure-apps-in-entra-id-grant-admin-consent) \| [AD Trust Tests](#test-active-directory-trusts) \| [AD Connection Check](#start-only-if-working-active-directory-connection-is-available) \| [System Sleep](#prohibit-system-sleep) \| [Exit Signals](#detect-exit-signals) \| [Phone Formatting](#format-phone-numbers) \| [Postal Formatting](#format-postal-addresses) \| [Open Source Treasures](#bringing-hidden-open-source-treasures-to-light) \| [Encoding Conversion](#detect-and-convert-encodings) \| [DN Handling](#handling-of-distinguished-names) \| [HTML-based INI editor with advanced capabilities](#html-based-ini-editor-with-advanced-capabilities)|
 
 ## Where can I find the changelog?
 The changelog is located in the [docs folder of the GitHub repo](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/tree/main/docs), along with other documents related to Set-OutlookSignatures.
@@ -376,7 +376,7 @@ Caveat: The `$CurrentMailbox[…]$` replacement variables refer to the user's pe
 **Solution option B**  
 This option only works for mailboxes, not for distribution groups.
 
-Create signature templates for the mailbox m<area>@example.com and **assign them to m<area>@example.com**. Use the virtual mailbox feature of the Benefactor Circle add-on to make sure that m<area>@example.com is always treated as if it were added to Outlook, not matter if it has been added or not (see the parameter '[VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile)' for details).
+Create signature templates for the mailbox m<area>@example.com and **assign them to m<area>@example.com**. Use the virtual mailbox feature of the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> to make sure that m<area>@example.com is always treated as if it were added to Outlook, not matter if it has been added or not (see the parameter '[VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile)' for details).
 
 ```
 [External English formal SendAs m@example.com.docx]
@@ -440,15 +440,15 @@ A possible way around this restriction is replacing dynamic groups with regularl
 
 
 ## Why is no admin or user GUI available?
-The short answer is: There is no GUI (graphical user interface) because it is not needed.
-
-But let's take a closer look at this from the perspective of all groups of people who have anything to do with Set-OutlookSignatures:
+Let's take a closer look at the graphical user interface topic from the perspective of all groups of people who have anything to do with Set-OutlookSignatures.
 
 <!-- omit in toc -->
 ###### End users
 For end users, Set-OutlookSignatures is [invisible](/faq#start-set-outlooksignatures-in-hiddeninvisible-mode). They typically never see the software, interact with it, or even know that it exists.
 
 The only thing end users notice is that their signatures and out-of-office replies are always up-to-date.
+
+The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> comes with the [Outlook add-in](/outlookaddin). The add-in comes with a graphical user interface called "taskpane", which allows for user interaction in addition to non-interactive automated launch events.
 
 <!-- omit in toc -->
 ###### IT administrators
@@ -460,9 +460,15 @@ The GUI for administrators is therefore the tool they use every day to distribut
 ###### Template administrators
 For templates in DOCX format, template administrators typically choose Microsoft Word as their GUI. For templates in HTML format, every template administrator tends to have a slightly different preferred editor, ranging from plain text editors to syntax highlighters to graphical editors.
 
-Template administrators often also take care of INI files, defining [non-content properties](/details#ini-files-and-template-tags) such as which templates apply for which mailboxes. These definitions rarely change, and they are usually made in the same editor used to edit the templates.
+Template administrators often also take care of INI files, defining [non-content properties](/details#ini-files-and-template-tags) such as which templates apply for which mailboxes. These definitions don't change often and they are usually made in the same editor used to edit the templates.<br>Set-OutlookSignatures comes with an INI editor (`.\sample code\IniEditor.html` or [set-outlooksignatures.com/inieditor](https://set-outlooksignatures.com/inieditor)) offering a much more than just editing:
+- A single HTML file that runs locally, from a file share, or hosted on a web server.
+- Create or modify signature and out-of-office (OOF) configuration files with ease.
+- Integrated documentation provides a clear explanation for every line and setting in the INI file.
+- Detects errors based on technical syntax and years of real-world support experience from the support teams of Set-OutlookSignatures and the Benefactor Circle add-on.
+- Visualizes the exact processing order the engine will use for templates.
+- Includes undo/redo history, dark/light mode, mobile/touch support, and automatic input file encoding detection.
 
-For [simulation mode](/details#simulation-mode), template administrators need to switch from their preferred editor to the command line. To make this as easy as possible, Set-OutlookSignatures comes with sample code (‘`.\sample code\SimulationModeHelper.ps1`’) - place a shortcut on your desktop and get guided through just four questions to create the desired result.
+For [simulation mode](/details#simulation-mode), template administrators need to switch from their preferred editor to the command line. To make this as easy as possible, Set-OutlookSignatures comes with sample code (`.\sample code\SimulationModeHelper.ps1`) - place a shortcut on your desktop and get guided through just four questions to create the desired result.
 
 
 ## What if a user has no Outlook profile or is prohibited from starting Outlook?
@@ -731,7 +737,7 @@ The following structure is recommended, as it separates customized files from sc
   - **Config**  
     Contains your custom config files, such as: Graph config file, replacement variable config file, Outlook add-in configuration, and maybe also your template INI files.
   - **License**  
-    Contains the Benefactor Circle add-on
+    Contains the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>
   - **Outlook add-in**  
     Contains the Outlook add-in
   - **Set-OutlookSignatures**  
@@ -759,7 +765,7 @@ As described in the [feature list](/features#features), the subtle "Free and ope
 
 You may also call this unobtrusive text a hint, note, footer message, nag text, outreach snippet, upgrade nudge, or reminder blurb.
 
-This attribution is automatically removed for mailboxes with a [Benefactor Circle](/benefactorcircle) license.
+This attribution is automatically removed for mailboxes with a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> license.
 
 ### Why the tagline?
 In the words of Markus Gruber, the creator of Set-OutlookSignatures:
@@ -774,11 +780,11 @@ In the words of Markus Gruber, the creator of Set-OutlookSignatures:
 >
 > Sustaining long-term development for such a project requires significant financial resources. Currently, we do not have enough open-source sponsors to cover these costs fully.
 >
-> To bridge this gap, ExplicIT Consulting offers the [Benefactor Circle add-on](/benefactorcircle) and first-class [professional support](/support#professional-support). Revenue from these options ensures continued development and quality for both open-source and paid versions.
+> To bridge this gap, ExplicIT Consulting offers the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and first-class [professional support](/support#professional-support). Revenue from these options ensures continued development and quality for both open-source and paid versions.
 > 
 > Having a paid add-on and support option directly benefits the open-source community. The continuous development funded by the commercial options allows us to introduce new features and improvements to the open-source version as well.
 > 
-> By choosing Set-OutlookSignatures, your company reduces costs compared to commercial alternatives while benefiting from a powerful open-source solution. Upgrading to the Benefactor Circle add-on and professional support helps secure its future.
+> By choosing Set-OutlookSignatures, your company reduces costs compared to commercial alternatives while benefiting from a powerful open-source solution. Upgrading to the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and professional support helps secure its future.
 
 In this spirit: **Dear companies,**
 - **Invest** in the free and open-source software you depend on. Contributors work behind the scenes to make it better for everyone. Support them.
@@ -790,7 +796,7 @@ The core of Set-OutlookSignatures is available free of charge as open-source sof
 
 All documentation is publicly available. You can get free community support on GitHub, or opt for first-class professional support, training, workshops, and more from [ExplicIT Consulting](/support).
 
-For a small annual fee per mailbox, the [Benefactor Circle add-on](/benefactorcircle) offers additional enterprise-grade features. Companies can test all premium features at no cost during a free 14-day trial.
+For a small annual fee per mailbox, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> offers additional enterprise-grade features. Companies can test all premium features at no cost during a free 14-day trial.
 
 Unsure whether the add-on will deliver value for your company?  
 The chapter '[Financial Benefits](/benefactorcircle#financial-benefits)' shows how to calculate the value based on your company's specific needs.  
@@ -860,7 +866,7 @@ The root cause is unknown, but it seems to be related to the HTML parser of the 
 ## What about Microsoft turning off Exchange Web Services for Exchange Online?
 Microsoft will turn of Exchange Web Services (EWS) for Exchange Online beginning in late 2026. This only affects Exchange in the cloud, not Exchange hosted on premises.
 
-Since 2024, Set-OutlookSignatures, the Benefactor Circle add-on and the Outlook add-in use Graph APIs in favor of EWS requests wherever possible. Microsoft added the last missing pieces of the puzzle in early 2026 - since v4.26.0, Set-OutlookSignatures no longer uses EWS for communication with Exchange Online.
+Since 2024, Set-OutlookSignatures, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and the Outlook add-in use Graph APIs in favor of EWS requests wherever possible. Microsoft added the last missing pieces of the puzzle in early 2026 - since v4.26.0, Set-OutlookSignatures no longer uses EWS for communication with Exchange Online.
 
 
 ## Roaming signatures in Classic Outlook for Windows look different
@@ -893,13 +899,13 @@ This is because Classic Outlook for Windows performs a wrong codepage conversion
 
 Some other problems with the internal roaming signature sync mechanism of classic Outlook for Windows are that you cannot reliably trigger the sync and that it can take hours until a changed or new signature is downloaded.
 
-The sync mechanism included in the Benefactor Circle add-on does not have these problems.
+The sync mechanism included in the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> does not have these problems.
 
 This can be a problem, especially when using Set-OutlookSignatures in SimulateAndDeploy mode. If you really cannot switch to running Set-OutlookSignatures on the clients of your users, the Outlook add-in that comes with the Benefactor Circle license may be an alternative to the erronous internal roaming signature sync mechanism of Classic Outlook for Windows.
 
 
 ## Does it support cross-tenant access and Multitenant Organizations?
-Yes, Set-OutlookSignatures and the Benefactor Circle add-on support cross-tenant access. This allows to deploy signatures to mailboxes that are not hosted in the users home tenant, with all the properties and replacement variables being fully available.
+Yes, Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> support cross-tenant access. This allows to deploy signatures to mailboxes that are not hosted in the users home tenant, with all the properties and replacement variables being fully available.
 
 Cross-tenant access is not limited to what Microsoft calls [Multitenant Organization](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/overview), it can be established between any two tenants allowing cross-tenant access for the other.
 
@@ -1062,7 +1068,7 @@ The `WatchCatchableExitSignal` family of functions makes this much easier. They 
 - catchable POSIX signals (SIGINT, SIGTERM, SIGQUIT, SIGHUP) on Linux and macOS
 via a separate parallel thread and make them available to the whole PowerShell session.
 
-A long-running script can then check regularly for these signals, and react accordingly. Set-OutlookSignatures and the Benefactor Circle add-on perform these checks more than 500 times throughout their code.
+A long-running script can then check regularly for these signals, and react accordingly. Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> perform these checks more than 500 times throughout their code.
 
 Files:
 - `.\Set-OutlookSignatures.ps1`
@@ -1230,6 +1236,18 @@ function ConvertDnToCanonicalObject {
 # LeafValue         : Doe, Jane
 ```
 
+### HTML-based INI editor with advanced capabilities
+Template administrators often also take care of INI files, defining [non-content properties](/details#ini-files-and-template-tags) such as which templates apply for which mailboxes. These definitions don't change often and they are usually made in the same editor used to edit the templates.<br>Set-OutlookSignatures comes with an INI editor (`.\sample code\IniEditor.html` or [set-outlooksignatures.com/inieditor](https://set-outlooksignatures.com/inieditor)) offering a much more than just editing:
+- A single HTML file that runs locally, from a file share, or hosted on a web server.
+- Create or modify signature and out-of-office (OOF) configuration files with ease.
+- Integrated documentation provides a clear explanation for every line and setting in the INI file.
+- Detects errors based on technical syntax and years of real-world support experience from the support teams of Set-OutlookSignatures and the Benefactor Circle add-on.
+- Visualizes the exact processing order the engine will use for templates.
+- Includes undo/redo history, dark/light mode, mobile/touch support, and automatic input file encoding detection.
+
+Files:
+- `.\sample code\IniEditor.html`
+
 
 ## How to deploy a signature only once
 Signature management solutions like Set-OutlookSignatures are designed to reduce user errors, simplify updates, and empower IT and marketing teams to manage signatures efficiently.
@@ -1240,7 +1258,7 @@ There are three ways to achive this with Set-OutlookSignatures:
 1. **Tie a template to a custom replacement variable**  
     Define a signature template in your INI file and use a custom replacement variable to control deployment.  
     Your custom code checks if the signature already exists - if it does, it sets the custom variable to false and stops deployment.
-2. **Use the VirtualMailboxConfigFile parameter that comes with the Benefactor Circle add-on**  
+2. **Use the VirtualMailboxConfigFile parameter that comes with the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>**  
     This advanced method defines the signature configuration entirely in code, not in the INI file.  
     Your custom code can include conditional logic based on group membership, user attributes and more.
 3. **The clever alternative: Deploy a reference signature users can copy and modify**  

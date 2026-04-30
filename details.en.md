@@ -565,6 +565,14 @@ Template tags define properties for templates, such as:
 > We avoid modern formats like <b>XML, YAML, or JSON</b> because they rely on strict syntax (brackets, significant whitespace, commas) that is easily broken by non-IT staff.
 > INI-style keeps common cases simple, human-readable, and easy to maintain without specialized database infrastructure.
 
+Set-OutlookSignatures comes with an INI editor (`.\sample code\IniEditor.html` or [set-outlooksignatures.com/inieditor](https://set-outlooksignatures.com/inieditor)) offering a much more than just editing:
+- A single HTML file that runs locally, from a file share, or hosted on a web server.
+- Create or modify signature and out-of-office (OOF) configuration files with ease.
+- Integrated documentation provides a clear explanation for every line and setting in the INI file.
+- Detects errors based on technical syntax and years of real-world support experience from the support teams of Set-OutlookSignatures and the Benefactor Circle add-on.
+- Visualizes the exact processing order the engine will use for templates.
+- Includes undo/redo history, dark/light mode, mobile/touch support, and automatic input file encoding detection.
+
 ### Allowed tags (common cases)
 The following list focuses on the tags that are used most often.
 - **Time range:** `202401010000-202401312359`  
@@ -600,6 +608,13 @@ For a complete reference and examples based on real-world use cases, see the INI
    - [SignatureIniFile](/parameters#signatureinifile)
    - [OOFIniFile](/parameters#oofinifile)
 
+Set-OutlookSignatures comes with an INI editor (`.\sample code\IniEditor.html` or [set-outlooksignatures.com/inieditor](https://set-outlooksignatures.com/inieditor)) offering a much more than just editing:
+- A single HTML file that runs locally, from a file share, or hosted on a web server.
+- Create or modify signature and out-of-office (OOF) configuration files with ease.
+- Integrated documentation provides a clear explanation for every line and setting in the INI file.
+- Detects errors based on technical syntax and years of real-world support experience from the support teams of Set-OutlookSignatures and the Benefactor Circle add-on.
+- Visualizes the exact processing order the engine will use for templates.
+- Includes undo/redo history, dark/light mode, mobile/touch support, and automatic input file encoding detection.
 
 ## Signature and OOF application order {#signature-and-oof-application-order}
 Set-OutlookSignatures knows which mailboxes a user added to Outlook, and in which order they are sorted. Signatures are applied mailbox by mailbox in this order.

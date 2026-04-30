@@ -1005,8 +1005,8 @@ redirect_from:
           group: "Template section",
           items: [
             {
-              label: "Add template [NewTemplate." + ext + "]",
-              text: "[NewTemplate." + ext + "]",
+              label: "Add template section [NameOfTemplateFile." + ext + "]",
+              text: "[NameOfTemplateFile." + ext + "]",
             },
           ],
         },
@@ -1014,8 +1014,8 @@ redirect_from:
           group: "Signature naming",
           items: [
             {
-              label: "Make signature name differ from template name",
-              text: "OutlookSignatureName = MySignature",
+              label: "Name signature different than template",
+              text: "OutlookSignatureName = NameOfSignatureAsItAppearsInOutlook",
             },
           ],
         },
@@ -1038,32 +1038,32 @@ redirect_from:
             {
               label:
                 "Mark template valid for mailboxes belonging to a specific Entra ID group",
-              text: "EntraID GroupName@YourDomain.com",
+              text: "EntraID ExampleGroupName@ExampleDomain.com",
             },
             {
               label:
                 "Mark template valid for mailboxes belonging to a specific Active Directory group",
-              text: "NetBiosNameOfYourActiveDirectory NetBiosNameOfYourGroup",
+              text: "ExampleActiveDirectoryNetbiosName ExampleGroupSamAccountName",
             },
             {
               label:
                 "Mark template invalid for mailboxes belonging to a specific Entra ID group",
-              text: "-:EntraID GroupName@YourDomain.com",
+              text: "-:EntraID ExampleGroupName@ExampleDomain.com",
             },
             {
               label:
                 "Mark template invalid for mailboxes belonging to a specific Active Directory group",
-              text: "-:NetBiosNameOfYourActiveDirectory NetBiosNameOfYourGroup",
+              text: "-:ExampleActiveDirectoryNetbiosName ExampleGroupSamAccountName",
             },
             {
               label:
                 "Mark template invalid if the logged-on user belongs to a specific Entra ID group",
-              text: "-CURRENTUSER:EntraID GroupName@YourDomain.com",
+              text: "-CURRENTUSER:EntraID ExampleGroupName@ExampleDomain.com",
             },
             {
               label:
                 "Mark template invalid if the logged-on user belongs to a specific Active Directory group",
-              text: "-CURRENTUSER:NetBiosNameOfYourActiveDirectory NetBiosNameOfYourGroup",
+              text: "-CURRENTUSER:ExampleActiveDirectoryNetbiosName ExampleGroupSamAccountName",
             },
           ],
         },
@@ -1073,17 +1073,17 @@ redirect_from:
             {
               label:
                 "Mark template valid for mailboxes with a specific email address",
-              text: "user@YourDomain.com",
+              text: "ExampleUser@ExampleDomain.com",
             },
             {
               label:
                 "Mark template invalid for mailboxes with a specific email address",
-              text: "-:user@YourDomain.com",
+              text: "-:ExampleUser@ExampleDomain.com",
             },
             {
               label:
                 "Mark template invalid if the logged-on user has a specific email address",
-              text: "-CURRENTUSER:user@YourDomain.com",
+              text: "-CURRENTUSER:ExampleUser@ExampleDomain.com",
             },
           ],
         },
@@ -1093,12 +1093,12 @@ redirect_from:
             {
               label:
                 "Mark template valid for mailboxes with a specific replacement variable",
-              text: "$CurrentUserGivenName$",
+              text: "$ExampleReplacementVariable$",
             },
             {
               label:
                 "Mark template invalid for mailboxes with a specific replacement variable",
-              text: "-:$CurrentUserGivenName$",
+              text: "-:$ExampleReplacementVariable$",
             },
           ],
         },
