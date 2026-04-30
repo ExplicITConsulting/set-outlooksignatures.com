@@ -699,7 +699,7 @@ As mentioned before, Set-OutlookSignatures usually runs in the background, witho
 
 From this point of view, processing times do not really matter - slow execution may even be wanted, as it consumes less resources which in turn are available for interactive applications used in the foreground.
 
-You can define the process priority with the `ScriptProcessPriority` and `WordProcessPriority` priority.
+You can define the process priorities with the parameters [ScriptProcessPriority](/parameters#scriptprocesspriority) and [WordProcessPriority](/parameters#wordprocesspriority).
 
 
 ## Keep users from adding, editing and removing signatures
