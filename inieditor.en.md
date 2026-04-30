@@ -3,7 +3,7 @@ layout: "none"
 lang: "en"
 locale: "en"
 permalink: "/inieditor"
-redirect-from:
+redirect_from:
   - "/ini/"
   - "/ini"
   - "/iniedit/"

@@ -10,7 +10,7 @@ hero_link_text: "<span><b>Open form in new tab</b></span>"
 hero_link_style: |
    style="color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 permalink: "/getlicense"
-redirect-from:
+redirect_from:
   - "/getlicense/"
   - "/get-license"
   - "/get-license/"
