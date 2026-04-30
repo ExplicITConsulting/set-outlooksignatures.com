@@ -10,7 +10,6 @@ redirect-from:
   - "/edit/"
   - "/edit"
 ---
-<!doctype html>
 <html lang="en">
 
 <head>
