@@ -153,7 +153,7 @@ Zusätzliche Anforderungen:
         <table class="table is-bordered is-striped is-hoverable">
             <thead>
                 <tr>
-                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Postfächer (1 Jahr)</th>
+                    <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Postfächer (1 Jahr)<br><small>Beispiele. Menge frei wählbar.</small></th>
                     <th class="has-text-weight-bold" style="min-width: 10em; white-space: nowrap;">Set-OutlookSignatures mit<br><a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a></th>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber A</th>
                     <th class="has-text-weight-bold is-nowrap" style="min-width: 10em; white-space: nowrap;">Mitbewerber B</th>
