@@ -404,7 +404,13 @@ redirect_from:
       flex: 1;
       min-height: 0;
       display: grid;
-      grid-template-columns: 1fr 6px minmax(360px, 1fr);
+      /* Both panes have hard minimum widths so the analysis pane never
+         collapses or wraps below the editor. When the viewport is too
+         narrow to fit both, the .layout container itself becomes wider
+         than the viewport and the `overflow: auto` below adds a horizontal
+         scrollbar — the user can scroll sideways to see the analysis
+         pane instead of it being hidden or stacked. */
+      grid-template-columns: minmax(280px, 1fr) 6px minmax(360px, 1fr);
       overflow: auto;
     }
 
@@ -639,14 +645,24 @@ redirect_from:
       box-sizing: content-box;
     }
 
-    /* -------- RIGHT PANE: analysis grid (line | index | type) -------- */
-    /* Right-pane analysis grid — only INDEX + TYPE; the LINE column was
-       removed (the matching gutter on the left already shows line numbers,
-       so duplicating them here just wasted horizontal space). */
+    /* -------- RIGHT PANE: analysis grid (ini # | prio | type) -------- */
+    /* Right-pane analysis grid columns:
+         col-ini   = the section's index in the INI FILE (editor order, the
+                     order the user typed sections in)
+         col-prio  = the section's APPLICATION PRIORITY — the position it
+                     will have after the Sort button is clicked
+                     (configuration first, then Common → Group → Email →
+                     Variable, sorted by SortOrder/SortCulture inside).
+       The LINE column was removed (the matching gutter on the left already
+       shows line numbers, so duplicating them here just wasted horizontal
+       space). */
     .legend {
-      display: flex;
-      grid-template-columns: 50px minmax(0, 1fr);
-      gap: 12px;
+      display: grid;
+      /* MUST mirror .analysis-row exactly so the header text in each
+         column lines up vertically with the numbers in the rows below.
+         The 56-px tracks are wide enough for the uppercase "INI #" /
+         "PRIO" headers to stay on a single line. */
+      grid-template-columns: 56px 56px minmax(0, 1fr);
       padding: 6px 12px;
       position: sticky;
       top: 0;
@@ -662,13 +678,29 @@ redirect_from:
       text-align: left;
     }
 
-    .legend .col-index {
+    /* Same per-cell horizontal padding as `.analysis-row .col-ini/col-prio`
+       so the header text right-aligns to exactly the same x position as the
+       numbers in the rows below. `nowrap` keeps "INI #" on a single line. */
+    .legend .col-ini,
+    .legend .col-prio {
+      padding: 0 12px;
       text-align: right;
+      white-space: nowrap;
+    }
+
+    /* The legend's "explanation" cell needs the same left padding the rows'
+       col-type cell has (see below) so the header lines up with the labels
+       below it AND so the visual gap between PRIO and EXPLANATION matches
+       the gap between INI # and PRIO. */
+    .legend .col-type {
+      padding-left: 12px;
+      text-align: left;
     }
 
     .analysis-row {
       display: grid;
-      grid-template-columns: 50px minmax(0, 1fr);
+      /* MUST mirror .legend exactly — see the comment on .legend above. */
+      grid-template-columns: 56px 56px minmax(0, 1fr);
       /* gap: 12px; */
       padding: 0 12px;
       align-items: start;
@@ -708,10 +740,12 @@ redirect_from:
       box-shadow: inset 3px 0 0 var(--accent);
     }
 
-    .analysis-row .col-index {
+    .analysis-row .col-ini,
+    .analysis-row .col-prio {
       color: var(--text-faint);
       padding: 0 12px;
       text-align: right;
+      white-space: nowrap;
       -webkit-user-select: none;
       user-select: none;
     }
@@ -745,8 +779,11 @@ redirect_from:
       min-width: 0;
       max-width: 100%;
       /* allow the flex/grid cell to actually shrink */
-      padding: 0;
-      /* no vertical padding — would offset alignment */
+      /* Left padding matches the right padding of the preceding .col-prio
+         cell so the visual gap between PRIO and the explanation column is
+         the same as the gap between INI # and PRIO (12 px on each side =
+         24 px total). No vertical padding — that would offset alignment. */
+      padding: 0 0 0 12px;
     }
 
     .analysis-row.t-section .col-type {
@@ -800,45 +837,43 @@ redirect_from:
       box-shadow: inset 3px 0 0 var(--accent);
     }
 
-    /* Stack panes vertically on very narrow screens — editor on top, the
-       analysis pane below it. The right pane drops its `auto` width and
-       `max-width: 50%` constraint here so it can use the full screen width.
-       Mobile uses PER-PANE scrolling (each pane has its own ~50vh scroll
-       area) instead of the desktop's single-outer-scrollbar model: with
-       both panes stacked vertically, a single tall scroll would force the
-       user to scroll past the entire editor before seeing any analysis,
-       which is awful on a phone. Two independent scroll areas let the user
-       view editor and analysis at the same time. Mobile browsers hide
-       scrollbar gutters by default, so this is not visually noisy. The two
-       sticky headers each pin inside their own pane on mobile, so they
-       never visually collide. */
-    @media (max-width: 720px) {
-      .layout {
-        grid-template-columns: 1fr !important;
-        grid-template-rows: 50vh 1fr;
-        overflow: hidden;
-        /* the panes scroll on mobile, not the layout */
-      }
-
-      .pane {
-        overflow: auto;
-      }
-
-      /* restore per-pane scroll on mobile */
-      .pane.right {
-        max-width: none;
-        border-left: none;
-        border-top: 1px solid var(--border);
-      }
-
-      .layout .divider {
-        display: none;
-      }
-    }
+    /* Note: there is intentionally NO width-based responsive layout that
+       stacks the panes vertically. The analysis pane must always sit to
+       the right of the editor, never below it. On viewports too narrow
+       to fit both at their minimum widths, the .layout container
+       overflows horizontally and shows a scrollbar (see grid-template
+       above). */
   </style>
 </head>
 
 <body>
+  <!--
+    Shown only when JavaScript is disabled. The entire editor UI is built
+    dynamically by the script below, so without JS the page would be blank
+    and the user would have no idea why. Inline styles are used so the
+    warning is visible even if the rest of the page CSS fails to apply.
+  -->
+  <noscript>
+    <div style="
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px; background: #fff; color: #1f2430;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      text-align: center;
+    ">
+      <div style="max-width: 480px;">
+        <div style="font-size: 48px; line-height: 1; margin-bottom: 16px;">&#9888;</div>
+        <h2 style="margin: 0 0 12px; font-size: 20px;">JavaScript is required</h2>
+        <p style="margin: 0 0 8px; line-height: 1.5;">
+          This INI editor is built entirely in your browser using JavaScript.
+        </p>
+        <p style="margin: 0; line-height: 1.5;">
+          Please enable JavaScript for this page and reload to use the editor.
+        </p>
+      </div>
+    </div>
+  </noscript>
+
   <!--
     ===========================================================================
     PAGE LAYOUT (HTML)
@@ -2944,6 +2979,78 @@ redirect_from:
       return parts.join(" · ");
     }
 
+    // For each parsed section, compute the position it WOULD have if the
+    // user clicked the Sort button right now. Returns an array indexed by
+    // the section's original (editor-order) index; the value at that index
+    // is the section's 0-based position in the sorted output.
+    //
+    // The numbering shown in the analysis pane uses this so users see what
+    // their sections will be ordered as after sorting, not the (often
+    // arbitrary) order they happen to be typed in.
+    //
+    // This MUST stay in sync with the section-ordering portion of
+    // buildSortedText() above:
+    //   1. The configuration block is always pinned at position 0.
+    //   2. All other sections are sorted by SortOrder/SortCulture (unless
+    //      AsInThisFile / AsListed, in which case original order is kept).
+    //   3. Then they are bucketed into Common → Group → Email → Variable
+    //      groups, preserving the relative order from step 2 within each
+    //      group.
+    function computeSortedSectionOrder(sections) {
+      var result = new Array(sections.length);
+      if (sections.length === 0) return result;
+
+      var configIdx = -1;
+      var others = []; // { sec, origIdx }
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].isConfig) {
+          configIdx = i;
+        } else {
+          others.push({ sec: sections[i], origIdx: i });
+        }
+      }
+
+      var order = (
+        getConfigValue(sections, "SortOrder") || "AsInThisFile"
+      ).toLowerCase();
+      var culture = getConfigValue(sections, "SortCulture") || "127";
+      var baseCmp = makeComparator(culture);
+      var noSort = order === "asinthisfile" || order === "aslisted";
+      var desc =
+        order === "desc" || order === "down" || order === "descending";
+
+      if (!noSort) {
+        others.sort(function (a, b) {
+          var r = baseCmp(a.sec.name, b.sec.name);
+          return desc ? -r : r;
+        });
+      }
+
+      var groups = { common: [], group: [], email: [], variable: [] };
+      for (var oi = 0; oi < others.length; oi++) {
+        groups[templateGroupOf(others[oi].sec)].push(others[oi]);
+      }
+      var orderedOthers = []
+        .concat(groups.common)
+        .concat(groups.group)
+        .concat(groups.email)
+        .concat(groups.variable);
+
+      var pos = 0;
+      // The configuration block is always pinned at position 0 — even if
+      // the user hasn't actually written one yet, buildSortedText() will
+      // synthesise one at the top, so we reserve position 0 for it.
+      if (configIdx !== -1) {
+        result[configIdx] = pos++;
+      } else {
+        pos++;
+      }
+      for (var k = 0; k < orderedOthers.length; k++) {
+        result[orderedOthers[k].origIdx] = pos++;
+      }
+      return result;
+    }
+
     // Decide which CSS tint class belongs to each parsed section.
     function tintsFor(sections) {
       var tints = new Array(sections.length);
@@ -2967,11 +3074,15 @@ redirect_from:
       rightCt.innerHTML = "";
 
       var tints = tintsFor(result.sections);
+      // Post-sort positions for the displayed section number — see the long
+      // comment on computeSortedSectionOrder() above.
+      var sortedPos = computeSortedSectionOrder(result.sections);
 
       // Sticky column header in the analysis pane.
       rightCt.appendChild(
         el("div", { class: "legend" }, [
-          el("div", { class: "col-index", text: "index" }),
+          el("div", { class: "col-ini", text: "ini #" }),
+          el("div", { class: "col-prio", text: "prio" }),
           el("div", { class: "col-type", text: "explanation" }),
         ]),
       );
@@ -3085,8 +3196,21 @@ redirect_from:
             },
             [
               el("div", {
-                class: "col-index",
+                class: "col-ini",
+                // INI index #: the section's position in the order it
+                // appears in the editor (the order the user typed them).
                 text: r.sectionIdx != null ? String(r.sectionIdx) : "",
+              }),
+              el("div", {
+                class: "col-prio",
+                // Application priority #: the position the section WILL
+                // have after the Sort button is clicked — i.e. the order
+                // the application itself will see them in.
+                // See computeSortedSectionOrder().
+                text:
+                  r.sectionIdx != null && sortedPos[r.sectionIdx] != null
+                    ? String(sortedPos[r.sectionIdx])
+                    : "",
               }),
               el("div", { class: typeClass }, typeChildren),
             ],
@@ -3100,7 +3224,8 @@ redirect_from:
               style: "min-height:" + h + "px",
             },
             [
-              el("div", { class: "col-index" }),
+              el("div", { class: "col-ini" }),
+              el("div", { class: "col-prio" }),
               el("div", { class: "col-type" }),
             ],
           );
@@ -3414,7 +3539,14 @@ redirect_from:
           minRight = 250;
         if (leftW < minLeft) leftW = minLeft;
         if (leftW > w - minRight) leftW = w - minRight;
-        layout.style.gridTemplateColumns = leftW + "px 6px 1fr";
+        // Keep the right column's minimum width in sync with the CSS rule
+        // on `.layout` above. Without `minmax(360px, 1fr)` here the right
+        // pane could collapse below its readable minimum on narrow viewports
+        // — instead, the .layout container will overflow horizontally and
+        // its `overflow: auto` adds a scrollbar so the analysis pane stays
+        // beside the editor (never below it).
+        layout.style.gridTemplateColumns =
+          leftW + "px 6px minmax(360px, 1fr)";
         state.leftWidth = leftW;
         div.setAttribute("aria-valuenow", leftW);
         div.setAttribute("aria-valuemax", Math.max(w - minRight, minLeft));
@@ -3443,10 +3575,15 @@ redirect_from:
         document.addEventListener("mouseup", onUp);
       });
 
+      // Touch parity with mousedown above: same dragging visual state, same
+      // start/move/end lifecycle. We also listen for `touchcancel` (fired
+      // when the OS interrupts the gesture, e.g. a phone call or swipe-down
+      // notification) so the divider doesn't get stuck in the dragging state.
       div.addEventListener(
         "touchstart",
         function (e) {
           if (!e.touches[0]) return;
+          div.classList.add("dragging");
           var startX = e.touches[0].clientX;
           var startW = document.getElementById("left-pane").offsetWidth;
           function onMove(ev) {
@@ -3456,9 +3593,12 @@ redirect_from:
           function onEnd() {
             document.removeEventListener("touchmove", onMove);
             document.removeEventListener("touchend", onEnd);
+            document.removeEventListener("touchcancel", onEnd);
+            div.classList.remove("dragging");
           }
           document.addEventListener("touchmove", onMove, { passive: true });
           document.addEventListener("touchend", onEnd);
+          document.addEventListener("touchcancel", onEnd);
         },
         { passive: true },
       );
