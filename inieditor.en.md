@@ -178,7 +178,15 @@ redirect_from:
     }
 
     #app {
+      /* `100vh` on iOS Safari and (older) Chrome Android includes the
+         space behind the dynamic browser chrome (URL bar), so the layout
+         used to be slightly taller than the visible area and the
+         analysis pane's bottom rows ended up under the toolbar. `dvh`
+         (dynamic viewport height) tracks the actual visible area. We
+         keep `100vh` as a fallback for browsers that don't support
+         `dvh` yet (Safari < 15.4, older Firefox). */
       height: 100vh;
+      height: 100dvh;
       display: flex;
       flex-direction: column;
     }
@@ -404,14 +412,20 @@ redirect_from:
       flex: 1;
       min-height: 0;
       display: grid;
-      /* Both panes have hard minimum widths so the analysis pane never
-         collapses or wraps below the editor. When the viewport is too
-         narrow to fit both, the .layout container itself becomes wider
-         than the viewport and the `overflow: auto` below adds a horizontal
-         scrollbar — the user can scroll sideways to see the analysis
-         pane instead of it being hidden or stacked. */
-      grid-template-columns: minmax(280px, 1fr) 6px minmax(360px, 1fr);
+      /* The analysis pane must always sit to the right of the editor —
+         never below it. The right column drops down to 1fr (no minmax
+         minimum) so the user can drag the divider all the way to the
+         right and shrink the analysis pane as small as they like; when
+         it gets too narrow for the legend, the pane's own
+         `overflow-x: auto` (see .pane.right below) adds a horizontal
+         scrollbar inside it. */
+      grid-template-columns: minmax(160px, 1fr) 6px 1fr;
       overflow: auto;
+      /* Force scrollbars to take up actual space (Firefox / Chromium)
+         so the user can always see them rather than relying on overlay
+         scrollbars that hide on touch. */
+      scrollbar-gutter: stable;
+      scrollbar-width: thin;
     }
 
     .pane {
@@ -427,6 +441,37 @@ redirect_from:
       background: #e4e7ed;
       cursor: col-resize;
       transition: background 120ms ease;
+      /* Stop the browser from claiming touch gestures on the divider as
+         page scrolls / pinch-zooms — without this Firefox on Android
+         intercepts the touchstart and we never get touchmove events. */
+      touch-action: none;
+      /* Suppress the grey iOS/Android tap flash on the (now finger-sized)
+         hit area, and stop a long-press from starting a text selection
+         in the surrounding panes while the user is dragging. */
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      user-select: none;
+      /* Needed so the ::before hit-area below is positioned relative to
+         the divider, not the grid container. */
+      position: relative;
+      /* Don't clip the wider hit area below. */
+      overflow: visible;
+    }
+
+    /* Invisible, finger-friendly hit area. The visible stripe stays at 6 px
+       (so the layout doesn't shift), but touches anywhere within ±10 px
+       around it grab the divider. This is essential on phones — a 6-px
+       target is impossible to hit reliably with a fingertip. */
+    .divider::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -10px;
+      right: -10px;
+      /* Same gesture-claim as the parent so the browser doesn't pre-empt
+         the drag when the user lands on the extended area. */
+      touch-action: none;
     }
 
     .divider:hover,
@@ -437,10 +482,14 @@ redirect_from:
     .pane.right {
       border-left: none;
       /* The right pane is separated from the editor by the draggable divider
-         on desktop. A top border is preserved for mobile in the media query.
-         Allow the pane to shrink to fit and wrap TYPE content when needed. */
+         on desktop. Allow the pane to shrink to fit; when it gets narrower
+         than its content (e.g. user dragged the divider far to the right),
+         a horizontal scrollbar appears inside it so the legend and rows
+         stay reachable instead of being clipped. */
       min-width: 0;
       max-width: none;
+      overflow-x: auto;
+      scrollbar-width: thin;
     }
 
     /* -------- LEFT PANE: line numbers + editable text area -------- */
@@ -3535,18 +3584,19 @@ redirect_from:
 
       function applyLayout(leftW) {
         var w = layout.clientWidth;
-        var minLeft = 200,
-          minRight = 250;
+        // Very generous range — we only enforce enough room on each side
+        // to keep the divider grabbable. The user explicitly asked to be
+        // able to drag the analysis pane very narrow, with scrollbars
+        // appearing inside it (see `.pane.right { overflow-x: auto }` in
+        // the stylesheet) instead of being clamped to the legend's width.
+        var minLeft = 80,
+          minRight = 40;
         if (leftW < minLeft) leftW = minLeft;
         if (leftW > w - minRight) leftW = w - minRight;
-        // Keep the right column's minimum width in sync with the CSS rule
-        // on `.layout` above. Without `minmax(360px, 1fr)` here the right
-        // pane could collapse below its readable minimum on narrow viewports
-        // — instead, the .layout container will overflow horizontally and
-        // its `overflow: auto` adds a scrollbar so the analysis pane stays
-        // beside the editor (never below it).
-        layout.style.gridTemplateColumns =
-          leftW + "px 6px minmax(360px, 1fr)";
+        // Plain `1fr` (no minmax) lets the right column shrink to whatever
+        // the divider position leaves available; the right pane's own
+        // overflow then provides the horizontal scrollbar.
+        layout.style.gridTemplateColumns = leftW + "px 6px 1fr";
         state.leftWidth = leftW;
         div.setAttribute("aria-valuenow", leftW);
         div.setAttribute("aria-valuemax", Math.max(w - minRight, minLeft));
@@ -3579,28 +3629,39 @@ redirect_from:
       // start/move/end lifecycle. We also listen for `touchcancel` (fired
       // when the OS interrupts the gesture, e.g. a phone call or swipe-down
       // notification) so the divider doesn't get stuck in the dragging state.
+      //
+      // Both touchstart AND touchmove are registered as `{ passive: false }`
+      // and call preventDefault(): on Firefox / Chrome Android a passive
+      // listener cannot block the default scroll/zoom gesture, so without
+      // this the browser would steal the gesture as a vertical scroll and
+      // we'd never see touchmove events. The `touch-action: none` rule on
+      // .divider in the stylesheet is the second half of this fix.
       div.addEventListener(
         "touchstart",
         function (e) {
           if (!e.touches[0]) return;
+          e.preventDefault();
           div.classList.add("dragging");
           var startX = e.touches[0].clientX;
           var startW = document.getElementById("left-pane").offsetWidth;
           function onMove(ev) {
-            if (ev.touches[0])
-              applyLayout(startW + (ev.touches[0].clientX - startX));
+            if (!ev.touches[0]) return;
+            ev.preventDefault();
+            applyLayout(startW + (ev.touches[0].clientX - startX));
           }
           function onEnd() {
-            document.removeEventListener("touchmove", onMove);
+            document.removeEventListener("touchmove", onMove, {
+              passive: false,
+            });
             document.removeEventListener("touchend", onEnd);
             document.removeEventListener("touchcancel", onEnd);
             div.classList.remove("dragging");
           }
-          document.addEventListener("touchmove", onMove, { passive: true });
+          document.addEventListener("touchmove", onMove, { passive: false });
           document.addEventListener("touchend", onEnd);
           document.addEventListener("touchcancel", onEnd);
         },
-        { passive: true },
+        { passive: false },
       );
 
       window.addEventListener("resize", function () {
