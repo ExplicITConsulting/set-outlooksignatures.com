@@ -12,6 +12,11 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
+<!--
+In future updates of this post, include information about autoresponders realized with Power Automate workflows and SharePoint lists.
+Advantages: Configurable (example: auto respond to every new mail in a thread and then pause for this thread for 24 hours)
+Disadvantages: Effort for initial setup, workflow triggers fire with a few minutes delay
+-->
 Auf den ersten Blick scheint die Wahl offensichtlich: Wer nicht erreichbar ist, aktiviert eine Abwesenheitsnotiz. Wer automatisch antworten möchte, erstellt eine Regel. In der Praxis ist die Entscheidung aber weniger trivial - besonders in größeren Organisationen, bei gemeinsam genutzten Postfächern und überall dort, wo konsistente Kommunikation, Corporate Design und nachvollziehbare Prozesse wichtig sind.
 
 Beide Funktionen können automatisch auf eingehende E-Mails reagieren. Der entscheidende Unterschied liegt darin, **wie oft**, **wo**, **von wem** und **mit welchem Inhalt** diese Antworten versendet und verwaltet werden.

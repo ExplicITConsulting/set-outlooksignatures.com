@@ -12,6 +12,11 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
+<!--
+In future updates of this post, include information about autoresponders realized with Power Automate workflows and SharePoint lists.
+Advantages: Configurable (example: auto respond to every new mail in a thread and then pause for this thread for 24 hours)
+Disadvantages: Effort for initial setup, workflow triggers fire with a few minutes delay
+-->
 At first glance, the choice seems obvious: If someone is unavailable, they enable an out-of-office reply. If they want to respond automatically, they create a rule. In practice, however, the decision is less trivial — especially in larger organizations, with shared mailboxes, and wherever consistent communication, corporate design, and traceable processes matter.
 
 Both features can automatically respond to incoming emails. The key difference lies in **how often**, **where**, **by whom**, and **with what content** these replies are sent and managed.

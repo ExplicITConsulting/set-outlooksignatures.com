@@ -11,8 +11,6 @@ redirect_from:
 sitemap_priority: 0.3
 sitemap_changefreq: yearly
 ---
-
-<!-- omit in toc -->
 ## Themen
 - [Impressum](#impressum)
 - [Haftungsausschluss und Urheberrecht](#haftungsausschluss-und-urheberrecht)
@@ -197,7 +195,6 @@ Die Vermutung der Mangelhaftigkeit gem. § 924 ABGB gilt als ausgeschlossen.
 
 ## Datenschutzerklärung
 
-<!-- omit in toc -->
 ### Präambel
 Mit der folgenden Datenschutzerklärung möchten wir Sie darüber informieren, welche Arten Ihrer personenbezogenen Daten (nachfolgend auch als "Daten" bezeichnet) wir verarbeiten, zu welchen Zwecken und in welchem Umfang. Die Datenschutzerklärung gilt für alle Verarbeitungen personenbezogener Daten, die von uns durchgeführt werden, sowohl im Rahmen der Erbringung unserer Leistungen als auch insbesondere auf unseren Websites, in mobilen Anwendungen sowie innerhalb externer Online-Präsenzen, wie z. B. unserer Social-Media-Profile (nachfolgend zusammenfassend als "Online-Angebot" bezeichnet).
 
@@ -205,7 +202,6 @@ Die verwendeten Begriffe sind nicht geschlechtsspezifisch.
 
 Stand: 12. Juni 2023
 
-<!-- omit in toc -->
 ### Verantwortlicher
 ExplicIT Consulting GmbH
 Kaiser-Ebersdorfer Straße 206b/3/2
@@ -214,7 +210,6 @@ Austria
 
 E-Mail: welcome@explicitconsulting.at
 
-<!-- omit in toc -->
 ### Überblick über die Verarbeitung
 Die folgende Übersicht fasst die Arten der verarbeiteten Daten, die Zwecke ihrer Verarbeitung und die betroffenen Personen zusammen.
 
@@ -245,7 +240,6 @@ Zwecke der Verarbeitung
 - Bereitstellung unseres Online-Angebots und Nutzererfahrung.
 - Informationstechnische Infrastruktur.
 
-<!-- omit in toc -->
 ### Rechtsgrundlagen
 Nachfolgend erhalten Sie eine Übersicht der Rechtsgrundlagen der DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten. Bitte beachten Sie, dass zusätzlich zu den Regelungen der DSGVO nationale Datenschutzbestimmungen in Ihrem oder unserem Wohnsitz- oder Sitzland gelten können. Sollten im Einzelfall speziellere Rechtsgrundlagen maßgeblich sein, teilen wir Ihnen diese in der Datenschutzerklärung mit.
 - Einwilligung (Art. 6 Abs. 1 S. 1 lit. a) DSGVO) – Die betroffene Person hat ihre Einwilligung zu der Verarbeitung der sie betreffenden personenbezogenen Daten für einen oder mehrere bestimmte Zwecke gegeben.
@@ -255,7 +249,6 @@ Nachfolgend erhalten Sie eine Übersicht der Rechtsgrundlagen der DSGVO, auf der
 - Ergänzend zu den Datenschutzregelungen der DSGVO gelten nationale Datenschutzbestimmungen in Österreich. Hierzu gehört insbesondere das Bundesgesetz zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten (Datenschutzgesetz – DSG). Das Datenschutzgesetz enthält insbesondere spezielle Regelungen zum Auskunftsrecht, zum Recht auf Berichtigung oder Löschung, zur Verarbeitung besonderer Kategorien personenbezogener Daten, zur Verarbeitung für andere Zwecke und zur Übermittlung sowie zur automatisierten Entscheidungsfindung im Einzelfall.
 
 
-<!-- omit in toc -->
 ### Sicherheitsmaßnahmen
 Wir treffen geeignete technische und organisatorische Maßnahmen gemäß den gesetzlichen Vorgaben unter Berücksichtigung des Stands der Technik, der Implementierungskosten sowie der Art, des Umfangs, der Umstände und der Zwecke der Verarbeitung sowie der unterschiedlichen Eintrittswahrscheinlichkeiten und des Ausmaßes der Bedrohung der Rechte und Freiheiten natürlicher Personen, um ein dem Risiko angemessenes Schutzniveau zu gewährleisten.
 
@@ -265,21 +258,18 @@ Kürzung der IP-Adresse: Sofern IP-Adressen von uns oder von den eingesetzten Di
 
 TLS-Verschlüsselung (https): Um Ihre über unser Online-Angebot übermittelten Daten zu schützen, nutzen wir TLS-Verschlüsselung. Eine solche verschlüsselte Verbindung erkennen Sie an dem Präfix https:// in der Adresszeile Ihres Browsers.
 
-<!-- omit in toc -->
 ### Übermittlung personenbezogener Daten
 Im Rahmen unserer Verarbeitung personenbezogener Daten kann es vorkommen, dass die Daten an andere Stellen, Unternehmen, rechtlich selbstständige Organisationseinheiten oder Personen übermittelt oder ihnen offengelegt werden. Zu den Empfängern dieser Daten können beispielsweise mit IT-Aufgaben beauftragte Dienstleister oder Anbieter von Diensten und Inhalten gehören, die in eine Website eingebunden sind. In solchen Fällen beachten wir die gesetzlichen Vorgaben und schließen insbesondere entsprechende Verträge oder Vereinbarungen mit den Empfängern Ihrer Daten, die dem Schutz Ihrer Daten dienen.
 
 Datenübermittlung innerhalb der Organisation: Wir können personenbezogene Daten an andere Stellen innerhalb unserer Organisation übermitteln oder ihnen den Zugriff auf diese Daten gewähren. Sofern diese Übermittlung zu administrativen Zwecken erfolgt, basiert die Übermittlung der Daten auf unseren berechtigten geschäftlichen und betriebswirtschaftlichen Interessen oder erfolgt, wenn sie zur Erfüllung unserer vertragsbezogenen Pflichten erforderlich ist oder wenn eine Einwilligung der betroffenen Personen oder eine gesetzliche Erlaubnis vorliegt.
 
 
-<!-- omit in toc -->
 ### Löschung von Daten
 Die von uns verarbeiteten Daten werden gemäß den gesetzlichen Vorgaben gelöscht, sobald die für die Verarbeitung erteilte Einwilligung widerrufen wird oder sonstige Erlaubnisse entfallen (z. B. wenn der Zweck der Verarbeitung dieser Daten entfällt oder sie für den Zweck nicht mehr erforderlich sind). Sofern die Daten nicht gelöscht werden, weil sie für andere und gesetzlich zulässige Zwecke erforderlich sind, wird deren Verarbeitung auf diese Zwecke beschränkt. D. h., die Daten werden gesperrt und nicht für andere Zwecke verarbeitet. Dies gilt z. B. für Daten, die aus handels- oder steuerrechtlichen Gründen aufbewahrt werden müssen oder deren Speicherung zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person erforderlich ist.
 
 Unsere Datenschutzhinweise können ferner weitere Angaben zur Aufbewahrung und Löschung von Daten enthalten, die für die jeweiligen Verarbeitungen vorrangig gelten.
 
 
-<!-- omit in toc -->
 ### Geschäftliche Leistungen
 Wir verarbeiten Daten unserer Vertrags- und Geschäftspartner, z. B. Kunden und Interessenten (nachfolgend zusammenfassend als "Vertragspartner" bezeichnet), im Rahmen von vertraglichen und vergleichbaren Rechtsverhältnissen sowie damit verbundenen Maßnahmen und im Rahmen der Kommunikation mit den Vertragspartnern (oder vorvertraglich), z. B. zur Beantwortung von Anfragen.
 
@@ -299,7 +289,6 @@ Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:
 - Projekt- und Entwicklungsleistungen: Wir verarbeiten die Daten unserer Kunden und Auftraggeber (nachfolgend einheitlich als "Kunden" bezeichnet), um ihnen die Auswahl, den Erwerb oder die Beauftragung der gewählten Leistungen oder Werke sowie verbundener Tätigkeiten sowie deren Bezahlung und Bereitstellung bzw. Ausführung oder Erbringung zu ermöglichen. Die erforderlichen Angaben sind im Rahmen der Bestellung, des Bestellauftrags oder eines vergleichbaren Vertragsschlusses als solche gekennzeichnet und umfassen die für die Leistungserbringung und Abrechnung erforderlichen Angaben sowie Kontaktinformationen, um etwaige Rücksprachen halten zu können. Soweit wir Zugang zu Informationen der Endkunden, Mitarbeiter oder anderer Personen erhalten, verarbeiten wir diese im Einklang mit den gesetzlichen und vertraglichen Vorgaben; Rechtsgrundlage: Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO).
 
 
-<!-- omit in toc -->
 ### Anbieter und im Rahmen von Geschäftstätigkeiten eingesetzte Dienste
 Im Rahmen unserer Geschäftstätigkeit setzen wir unter Beachtung der gesetzlichen Vorgaben zusätzliche Dienste, Plattformen, Schnittstellen oder Plug-ins von Drittanbietern ("Dienste" genannt) ein. Deren Nutzung erfolgt auf Grundlage unserer Interessen an einer ordnungsgemäßen, rechtmäßigen und sicheren Bereitstellung unserer Leistungen.
 - Arten der verarbeiteten Daten: Bestandsdaten (z. B. Namen, Adressen); Zahlungsdaten (z. B. Bankverbindungen, Rechnungen, Zahlungshistorie); Kontaktdaten (z. B. E-Mail, Telefonnummern); Inhaltsdaten (z. B. Eingaben in Online-Formulare); Vertragsdaten (z. B. Vertragsgegenstand, Laufzeit, Kundenkategorie).
@@ -308,7 +297,6 @@ Im Rahmen unserer Geschäftstätigkeit setzen wir unter Beachtung der gesetzlich
 - Rechtsgrundlagen: Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO).
 
 
-<!-- omit in toc -->
 ### Bereitstellung des Online-Angebots und Webhosting
 Wir verarbeiten die Daten der Nutzer, um ihnen unsere Online-Dienste bereitzustellen. Hierzu verarbeiten wir die IP-Adresse des Nutzers, die erforderlich ist, um die Inhalte und Funktionen unserer Online-Dienste an den Browser oder das Endgerät des Nutzers zu übermitteln.
 - Arten der verarbeiteten Daten: Nutzungsdaten (z. B. besuchte Webseiten, Interesse an Inhalten, Zugriffszeiten); Meta-, Kommunikations- und Verfahrensdaten (z. B. IP-Adressen, Zeitangaben, Identifikationsnummern, Einwilligungsstatus); Inhaltsdaten (z. B. Eingaben in Online-Formulare).
@@ -323,7 +311,6 @@ Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:
 - Content-Delivery-Network: Wir setzen ein "Content-Delivery-Network" (CDN) ein. Ein CDN ist ein Dienst, mit dessen Hilfe Inhalte eines Online-Angebots, insbesondere große Mediendateien wie Grafiken oder Programmskripte, mithilfe regional verteilter und über das Internet verbundener Server schneller und sicherer ausgeliefert werden können; Rechtsgrundlage: Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO).
 
 
-<!-- omit in toc -->
 ### Kontakt- und Anfragenverwaltung
 Bei der Kontaktaufnahme mit uns (z. B. per Post, Kontaktformular, E-Mail, Telefon oder über soziale Medien) sowie im Rahmen bestehender Nutzer- und Geschäftsbeziehungen werden die Angaben der anfragenden Personen verarbeitet, soweit dies zur Beantwortung der Kontaktanfragen und etwaiger angefragter Maßnahmen erforderlich ist.
 - Arten der verarbeiteten Daten: Kontaktdaten (z. B. E-Mail, Telefonnummern); Inhaltsdaten (z. B. Eingaben in Online-Formulare); Nutzungsdaten (z. B. besuchte Webseiten, Interesse an Inhalten, Zugriffszeiten); Meta-, Kommunikations- und Verfahrensdaten (z. B. IP-Adressen, Zeitangaben, Identifikationsnummern, Einwilligungsstatus).
@@ -335,7 +322,6 @@ Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:
 - Kontaktformular: Wenn Nutzer uns über unser Kontaktformular, per E-Mail oder über andere Kommunikationswege kontaktieren, verarbeiten wir die in diesem Zusammenhang mitgeteilten Daten zur Bearbeitung der mitgeteilten Anfrage; Rechtsgrundlagen: Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO), Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO).
 
 
-<!-- omit in toc -->
 ### Kommunikation über Messenger
 Wir nutzen Messenger zu Kommunikationszwecken und bitten Sie daher, die nachfolgenden Hinweise zur Funktionsweise der Messenger, zur Verschlüsselung, zur Nutzung der Metadaten der Kommunikation sowie zu Ihren Widerspruchsmöglichkeiten zu beachten.
 
@@ -356,7 +342,6 @@ Arten der verarbeiteten Daten: Kontaktdaten (z. B. E-Mail, Telefonnummern); Nu
 - Rechtsgrundlagen: Einwilligung (Art. 6 Abs. 1 S. 1 lit. a) DSGVO); Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO).
 
 
-<!-- omit in toc -->
 ### Newsletter und elektronische Benachrichtigungen
 Wir versenden Newsletter, E-Mails und andere elektronische Benachrichtigungen (nachfolgend "Newsletter") nur mit der Einwilligung der Empfänger oder einer gesetzlichen Erlaubnis. Sofern die Inhalte eines Newsletters im Rahmen einer Anmeldung konkret umschrieben werden, sind sie für die Einwilligung der Nutzer maßgeblich. Im Übrigen enthalten unsere Newsletter Informationen über unsere Leistungen und uns.
 
@@ -376,7 +361,6 @@ Inhalte: Informationen über uns, unsere Leistungen, Aktionen und Angebote.
 - Widerspruchsmöglichkeit (Opt-Out): Sie können den Empfang unseres Newsletters jederzeit kündigen, d. h. Ihre Einwilligung widerrufen oder dem weiteren Empfang widersprechen. Einen Link zur Kündigung des Newsletters finden Sie entweder am Ende jedes Newsletters oder Sie können hierfür eine der oben angegebenen Kontaktmöglichkeiten, vorzugsweise E-Mail, nutzen.
 
 
-<!-- omit in toc -->
 ### Plugins und eingebettete Funktionen sowie Inhalte
 Wir binden in unser Online-Angebot Funktions- und Inhaltselemente ein, die von den Servern ihrer jeweiligen Anbieter (nachfolgend als "Drittanbieter" bezeichnet) bezogen werden. Dabei kann es sich z. B. um Grafiken, Videos oder Stadtpläne handeln (nachfolgend einheitlich als "Inhalte" bezeichnet).
 
@@ -392,13 +376,11 @@ Weitere Hinweise zu Verarbeitungen, Verfahren und Diensten:
 - Google Fonts (Abruf von Google-Servern): Abruf von Schriftarten (und Symbolen) zum Zweck einer technisch sicheren, wartungsfreien und effizienten Nutzung von Schriftarten und Symbolen im Hinblick auf Aktualität und Ladezeiten, deren einheitliche Darstellung sowie Berücksichtigung möglicher lizenzrechtlicher Beschränkungen. Der Anbieter der Schriftarten erhält die IP-Adresse der Nutzer, damit die Schriftarten im Browser der Nutzer bereitgestellt werden können. Zudem werden technische Daten (Spracheinstellungen, Bildschirmauflösung, Betriebssystem, verwendete Hardware) übermittelt, die für die Bereitstellung der Schriftarten abhängig von den eingesetzten Geräten und der technischen Umgebung erforderlich sind. Diese Daten können auf einem Server des Anbieters der Schriftarten in den USA verarbeitet werden – Beim Besuch unseres Online-Angebots senden die Browser der Nutzer ihre Browser-HTTP-Anfragen an die Google Fonts Web API (d. h. eine Software-Schnittstelle zum Abruf von Schriftarten). Die Google Fonts Web API stellt den Nutzern die Google Fonts Cascading Style Sheets (CSS) und anschließend die in der CSS angegebenen Schriftarten bereit. Diese HTTP-Anfragen umfassen (1) die IP-Adresse, die jeder Nutzer für den Internetzugang verwendet, (2) die angeforderte URL auf dem Google-Server und (3) die HTTP-Header, einschließlich des User-Agents, der die Browser- und Betriebssystemversionen der Website-Besucher beschreibt, sowie die Referrer-URL (d. h. die Webseite, auf der die Google-Schrift angezeigt werden soll). IP-Adressen werden weder protokolliert noch auf Google-Servern gespeichert und nicht analysiert. Die Google Fonts Web API protokolliert Details zu HTTP-Anfragen (angeforderte URL, User-Agent und Referrer-URL). Der Zugriff auf diese Daten ist eingeschränkt und streng kontrolliert. Die angeforderte URL identifiziert die Schriftfamilien, für die der Nutzer Schriftarten laden möchte. Diese Daten werden protokolliert, damit Google feststellen kann, wie oft eine bestimmte Schriftfamilie angefordert wird. Mit der Google Fonts Web API muss der User-Agent mit der Schriftart übereinstimmen, die für den jeweiligen Browsertyp generiert wird. Der User-Agent wird hauptsächlich zu Debugging-Zwecken protokolliert und zur Erstellung aggregierter Nutzungsstatistiken verwendet, die die Beliebtheit von Schriftfamilien messen. Diese aggregierten Nutzungsstatistiken werden auf der Analytics-Seite von Google Fonts veröffentlicht. Schließlich wird die Referrer-URL protokolliert, damit die Daten für die Produktionswartung und zur Erstellung eines aggregierten Berichts über die wichtigsten Integrationen basierend auf der Anzahl der Schriftanforderungen verwendet werden können. Google gibt an, keine der von Google Fonts erfassten Informationen zur Profilerstellung von Endnutzern oder für gezielte Werbung zu verwenden; Dienstanbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland; Rechtsgrundlage: Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO); Website: https://fonts.google.com/; Datenschutzerklärung: https://policies.google.com/privacy; Weitere Informationen: https://developers.google.com/fonts/faq/privacy?hl=de.
 - Wir nutzen Debitura (https://www.debitura.com) als spezialisierten Dienstleister für Inkassodienstleistungen. Debitura handelt in unserem Auftrag als Auftragsverarbeiter und verarbeitet personenbezogene Daten gemäß unseren Anweisungen und in Übereinstimmung mit der DSGVO. Weitere Informationen darüber, wie Debitura Daten verarbeitet, finden Sie unter: https://www.debitura.com/legal/data-protection
 
-<!-- omit in toc -->
 ### Änderung und Aktualisierung der Datenschutzerklärung
 Wir bitten Sie, sich regelmäßig über den Inhalt unserer Datenschutzerklärung zu informieren. Wir passen die Datenschutzerklärung an, sobald die Änderungen der von uns durchgeführten Datenverarbeitungen dies erforderlich machen. Wir informieren Sie, sobald die Änderungen eine Mitwirkungshandlung Ihrerseits (z. B. Einwilligung) oder eine sonstige individuelle Benachrichtigung erforderlich machen.
 
 Sofern wir in dieser Datenschutzerklärung Adressen und Kontaktinformationen von Unternehmen und Organisationen angeben, beachten Sie bitte, dass sich die Adressen im Laufe der Zeit ändern können und prüfen Sie die Angaben vor einer Kontaktaufnahme.
 
-<!-- omit in toc -->
 ### Rechte der betroffenen Personen
 Als betroffene Person stehen Ihnen nach der DSGVO verschiedene Rechte zu, die sich insbesondere aus den Art. 15 bis 21 DSGVO ergeben:
 
@@ -411,7 +393,6 @@ Als betroffene Person stehen Ihnen nach der DSGVO verschiedene Rechte zu, die si
 - **Beschwerde bei Aufsichtsbehörde:** Unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs haben Sie das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat Ihres gewöhnlichen Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die Vorgaben der DSGVO verstößt.
 
 
-<!-- omit in toc -->
 ### Begriffsbestimmungen
 Dieser Abschnitt gibt Ihnen einen Überblick über die in dieser Datenschutzerklärung verwendeten Begriffe. Viele der Begriffe stammen aus dem Gesetz und sind vor allem in Art. 4 der DSGVO definiert. Die gesetzlichen Definitionen sind verbindlich. Die nachfolgenden Erläuterungen sollen hingegen in erster Linie dem Verständnis dienen.
 - **Personenbezogene Daten:** "Personenbezogene Daten" sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person (im Folgenden "betroffene Person") beziehen; als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt, insbesondere mittels Zuordnung zu einer Kennung wie einem Namen, zu einer Kennnummer, zu Standortdaten, zu einer Online-Kennung (z. B. Cookie) oder zu einem oder mehreren besonderen Merkmalen identifiziert werden kann, die Ausdruck der physischen, physiologischen, genetischen, psychischen, wirtschaftlichen, kulturellen oder sozialen Identität dieser natürlichen Person sind.

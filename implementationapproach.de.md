@@ -71,7 +71,6 @@ Ohne Einsatz von Dritthersteller-Software sind die Signaturen zudem auch auf And
 
 Bei der automatischen Wartung von Signaturen fallen keine Tätigkeiten für den Endbenutzer an. Alle Vorgaben werden zentral definiert, Signaturen aktualisieren sich auf allen Geräten und Systemen automatisch.
 
-<!-- omit in toc -->
 #### Serverbasierte Lösungen {#server-based-signature-solutions}
 
 Der größte Vorteil einer serverbasierten Lösung ist, dass an Hand eines definierten Regelsatzes jedes E-Mail erfasst wird, ganz gleich, von welcher Applikation oder welchem Gerät es verschickt wurde.
@@ -90,7 +89,6 @@ Cloud-basierte Lösungen setzen voraus, dass alle internen und externen E-Mails 
 
 Wir raten daher von serverbasierten Lösungen ab.
 
-<!-- omit in toc -->
 #### Clientbasierte Signaturen {#client-based-signature-solutions}
 
 Bei clientbasierten Lösungen erfolgt die Definition der Vorlagen und optional auch deren Verteilung zentral, das Hinzufügen der Signaturen zu einer E-Mail erfolgt am Client.
@@ -497,7 +495,7 @@ Allen Gesellschaften im Konzern bieten wir Unterstützung in Form von Workshops 
 
 ### Beratungs- und Einführungsphase {#consulting-implementation-phase}
 
-#### Erstabstimmung zu textuellen Signaturen <!-- omit in toc -->
+#### Erstabstimmung zu textuellen Signaturen
 
 **Teilnehmer**  
 
@@ -516,7 +514,7 @@ Allen Gesellschaften im Konzern bieten wir Unterstützung in Form von Workshops 
 
 - 2 Stunden  
 
-#### Schulung der Vorlagen-Verwalter <!-- omit in toc -->
+#### Schulung der Vorlagen-Verwalter
 
 **Teilnehmer**  
 
@@ -552,7 +550,7 @@ Allen Gesellschaften im Konzern bieten wir Unterstützung in Form von Workshops 
   - über ein Mail-Postfach verfügen  
   - Vollzugriff auf diverse Testpostfächer (persönliche Postfächer oder Gruppenpostfächer) haben, die nach Möglichkeit direkt oder indirekt Mitglied in diversen Gruppen oder Verteilerlisten sind. Für den Vollzugriff kann der Benutzer auf die anderen Postfächer entsprechend berechtigt sein, oder Benutzername und Passwort der zusätzlichen Postfächer sind bekannt.  
 
-#### Schulung des Kunden-IT <!-- omit in toc -->
+#### Schulung des Kunden-IT
 
 **Teilnehmer**  
 
@@ -603,7 +601,7 @@ Bei prinzipiellen technischen Problemen unterstützt das Mail-Produktmanagement 
 
 Die Erstellung und Wartung von Vorlagen ist Aufgabe des Kunden.
 
-#### Systemanforderungen <!-- omit in toc -->
+#### Systemanforderungen
 
 **Client**  
 

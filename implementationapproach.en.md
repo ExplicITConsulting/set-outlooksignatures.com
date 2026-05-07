@@ -67,7 +67,6 @@ Without third-party software, signatures must also be manually maintained separa
 ### Automatic Signature Maintenance {#automatic-signature-maintenance}
 With automatic signature maintenance, no actions are required from the end user. All specifications are defined centrally, and signatures update automatically across all devices and systems.
 
-<!-- omit in toc -->
 #### Server-Based Solutions {#server-based-signature-solutions}
 The biggest advantage of a server-based solution is that every email is processed based on a defined set of rules, regardless of the application or device used to send it.
 
@@ -85,7 +84,6 @@ Cloud-based solutions require that all internal and external emails, as well as 
 
 We therefore advise against server-based solutions.
 
-<!-- omit in toc -->
 #### Client-Based Signatures {#client-based-signature-solutions}
 With client-based solutions, the definition of templates and optionally their distribution is done centrally, while the signature is added to the email on the client side.
 
@@ -483,7 +481,7 @@ For companies within the group that wish to implement the solution independently
 We offer support to all group companies in the form of workshops and training sessions. The following list represents the maximum scope, both in terms of content and time, within a full preparation and implementation project. **Complete <a href="/support#professional-support">implementation support</a> in a "train the trainer" format rarely takes more than half a day.**
 
 ### Consulting and Imp/lementation Phase {#consulting-implementation-phase}
-#### Initial Alignment on Textual Signatures <!-- omit in toc -->
+#### Initial Alignment on Textual Signatures
 **Participants**  
 - Client: Corporate Communications, Marketing, Client Management, Project Coordinator  
 - IT Service Provider: Mail Product Management, Mail Operations, or Mail Architecture  
@@ -498,7 +496,7 @@ We offer support to all group companies in the form of workshops and training se
 **Duration**  
 - 2 hours  
 
-#### Template Manager Training <!-- omit in toc -->
+#### Template Manager Training
 **Participants**  
 - Client: Template Managers (Corporate Communications, Marketing), optionally Client Management, Project Coordinator  
 - IT Service Provider: Mail Product Management, Mail Operations, or Mail Architecture  
@@ -529,7 +527,7 @@ We offer support to all group companies in the form of workshops and training se
   - Have a mail mailbox  
   - Have full access to various test mailboxes (personal or group mailboxes), ideally members of various groups or distribution lists. Access can be granted via permissions or by providing credentials.  
 
-#### IT Team Training <!-- omit in toc -->
+#### IT Team Training
 **Participants**  
 - Client: IT, optionally an Active Directory administrator, optionally a File Server and/or SharePoint administrator, optionally Corporate Communications and Marketing, Project Coordinator  
 - IT Service Provider: Mail Product Management, Mail Operations, or Mail Architecture, optionally a representative from the client team  
@@ -574,7 +572,7 @@ In case of fundamental technical issues, the mail product management team assist
 
 Creating and maintaining templates is the responsibility of the client.
 
-#### System Requirements <!-- omit in toc -->
+#### System Requirements
 **Client**
 - Outlook and Word (when using DOCX templates and/or RTF-format signatures), version 2010 or newer  
 - The software must run in the security context of the currently logged-in user  

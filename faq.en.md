@@ -11,7 +11,6 @@ redirect_from:
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-<!-- omit in toc -->
 ## Many roads lead to Rome
 Set-OutlookSignatures is designed to be highly flexible and extensively configurable. Its transparent documentation reflects this versatility: Many configuration goals can be achieved in multiple ways.
 
@@ -442,7 +441,6 @@ A possible way around this restriction is replacing dynamic groups with regularl
 ## Why is no admin or user GUI available?
 Let's take a closer look at the graphical user interface topic from the perspective of all groups of people who have anything to do with Set-OutlookSignatures.
 
-<!-- omit in toc -->
 ###### End users
 For end users, Set-OutlookSignatures is [invisible](/faq#start-set-outlooksignatures-in-hiddeninvisible-mode). They typically never see the software, interact with it, or even know that it exists.
 
@@ -450,13 +448,11 @@ The only thing end users notice is that their signatures and out-of-office repli
 
 The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> comes with the [Outlook add-in](/outlookaddin). The add-in comes with a graphical user interface called "taskpane", which allows for user interaction in addition to non-interactive automated launch events.
 
-<!-- omit in toc -->
 ###### IT administrators
 IT administrators are responsible for ensuring that Set-OutlookSignatures is running on end users' [clients](/details#architecture-considerations) or on a [central system](/details#architecture-considerations). Configuration is done using [parameters](/parameters) that are usually changed very rarely.
 
 The GUI for administrators is therefore the tool they use every day to distribute software and configure devices.
 
-<!-- omit in toc -->
 ###### Template administrators
 For templates in DOCX format, template administrators typically choose Microsoft Word as their GUI. For templates in HTML format, every template administrator tends to have a slightly different preferred editor, ranging from plain text editors to syntax highlighters to graphical editors.
 
