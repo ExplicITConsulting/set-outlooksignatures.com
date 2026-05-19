@@ -2,8 +2,8 @@
 layout: "post"
 lang: "de"
 locale: "de"
-title: "Änderungen an Signaturen und Abwesenheitsnotizen ohne Risiken testen"
-description: "Die Einführung von Aktualisierungen an Signatur- oder Abwesenheitsvorlagen in einer Live-Umgebung kann nervenaufreibend sein."
+title: "Schluss mit der Rollout-Panik: So testen Sie Outlook-Signaturen & Abwesenheitsnotizen ohne Zugriff auf Live-Postfächer"
+description: "Besorgt über fehlerhafte Vorlagen oder das Überschreiben von VIP-Antworten? Entdecken Sie, wie Sie mit dem Simulationsmodus Signatur- und OOF-Logik ohne Risiko für Endbenutzer gegen Echtdaten validieren."
 published: true
 tags: 
 show_sidebar: true

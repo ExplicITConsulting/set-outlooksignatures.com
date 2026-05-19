@@ -2,8 +2,8 @@
 layout: "post"
 lang: "en"
 locale: "en"
-title: "Schluss mit der Rollout-Panik: So testen Sie Outlook-Signaturen & Abwesenheitsnotizen ohne Zugriff auf Live-Postfächer"
-description: "Besorgt über fehlerhafte Vorlagen oder das Überschreiben von VIP-Antworten? Entdecken Sie, wie Sie mit dem Simulationsmodus Signatur- und OOF-Logik ohne Risiko für Endbenutzer gegen Echtdaten validieren."
+title: "Goodbye Rollout Panic: How to Test Outlook Signatures & Out-of-Office Notes Without Accessing Live Mailboxes"
+description: "Worried about broken templates or overwriting VIP replies? Discover how to use simulation mode to validate signature and OOF logic against real data with zero risk to end users."
 published: true
 tags: 
 show_sidebar: true
