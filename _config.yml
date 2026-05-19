@@ -140,7 +140,7 @@ pagination:
 feed:
   path: /feed.xml
   icon: "/assets/images/blog icon.jpg"
-  logo: "/assets/images/blog logo.jpg"
+  logo: "/assets/images/blog icon.jpg"
   posts_limit: 100
 
 
