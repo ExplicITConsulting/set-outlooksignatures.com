@@ -139,8 +139,8 @@ pagination:
 
 feed:
   path: /feed.xml
-  icon: "/assets/images/set-outlooksignatures icon.ico"
-  logo: "/assets/images/set-outlooksignatures icon.ico"
+  icon: "/assets/images/blog icon.jpg"
+  logo: "/assets/images/blog logo.jpg"
   posts_limit: 100
 
 

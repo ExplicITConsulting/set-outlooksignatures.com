@@ -7,7 +7,7 @@ description: "Besorgt über fehlerhafte Vorlagen oder das Überschreiben von VIP
 published: true
 tags: 
 show_sidebar: true
-slug: "testing-in-production"
+slug: "simulation-mode"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly

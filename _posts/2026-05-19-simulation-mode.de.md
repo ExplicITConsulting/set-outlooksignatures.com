@@ -7,7 +7,7 @@ description: "Die Einführung von Aktualisierungen an Signatur- oder Abwesenheit
 published: true
 tags: 
 show_sidebar: true
-slug: "testing-in-production"
+slug: "simulation-mode"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
