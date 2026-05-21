@@ -60,7 +60,7 @@ sitemap_changefreq: weekly
 </div>
 <p>&nbsp;</p>
 <p class="has-text-centered">
-  Used by security‑conscious and brand-aware organizations worldwide. See how we <a href="https://set-outlooksignatures.com/features#feature-comparison">compare to alternatives</a> and review our <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparent, non-renewing pricing</a>.
+  Used by security‑conscious and brand-aware organizations worldwide. See how we <a href="https://set-outlooksignatures.com/features#feature-comparison"><strong>compare to alternatives</strong></a> and review our <a href="https://set-outlooksignatures.com/benefactorcircle#price"><strong>transparent, non-renewing pricing</strong></a>.
 </p>
 <div class="columns is-multiline mb-6">
   <div class="column is-full">

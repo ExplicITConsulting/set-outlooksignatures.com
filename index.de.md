@@ -60,7 +60,7 @@ sitemap_changefreq: weekly
 </div>
 <p>&nbsp;</p>
 <p class="has-text-centered">
-  Genutzt von sicherheitsbewussten und markenorientierten Organisationen weltweit. Sehen Sie uns im <a href="https://set-outlooksignatures.com/features#feature-comparison">Vergleich zu Alternativen</a> und prüfen Sie unsere <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparenten Preise ohne automatische Verlängerung</a>.
+  Genutzt von sicherheitsbewussten und markenorientierten Organisationen weltweit. Sehen Sie uns im <a href="https://set-outlooksignatures.com/features#feature-comparison"><strong>Vergleich zu Alternativen</strong></a> und prüfen Sie unsere <a href="https://set-outlooksignatures.com/benefactorcircle#price"><strong>transparenten Preise ohne automatische Verlängerung</strong></a>.
 </p>
 <div class="columns is-multiline mb-6">
   <div class="column is-full">
