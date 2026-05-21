@@ -21,7 +21,7 @@ sitemap_changefreq: weekly
 
 
 <p cla><strong>Trusted worldwide and proven in high-security environments:</strong> The free and open-source Set-OutlookSignatures and the <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> turn email signatures and out-of-office replies into a centrally managed business asset — without external data transfer.</p>
-<p>By leveraging <strong>Microsoft Roaming Signatures</strong> and our own direct-to-mailbox technology, we provide the world’s only sovereign, native-sync experience that works across all Outlook editions and platforms — including <strong>Exchange Online, Hybrid, and On-Premises</strong> — silently in the background.</p>
+<p>By leveraging Microsoft Roaming Signatures and our own direct-to-mailbox technology, we provide the world’s only sovereign, native-sync experience that works across all Outlook editions and platforms — <strong>Windows, Mac, iOS, Android, Web, Classic and New Outlook, cloud and on-prem in perfect harmony.</strong></p>
 
 
 <div class="columns is-multiline mb-6">
@@ -142,7 +142,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       📱
-      <div><b>Signatures Everywhere</b><br>Windows, Mac, iOS, Android, OWA, New and Classic Outlook in perfect sync.</div>
+      <div><b>Signatures Everywhere</b><br>Windows, Mac, iOS, Android, Web, Classic and New Outlook, cloud and on-prem in perfect harmony.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
