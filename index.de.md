@@ -22,9 +22,8 @@ sitemap_changefreq: weekly
 
 <p><strong>Weltweit geschätzt und in Hochsicherheitsumgebungen bewährt:</strong> Das freie Open-Source-Tool Set-OutlookSignatures und das <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> machen E-Mail-Signaturen und Abwesenheitsnotizen zu einem zentral verwalteten Unternehmenswert – ganz ohne externen Datentransfer.</p>
 <p>Durch die Nutzung von Microsoft Roaming Signatures und unserer eigenen Direct-to-Mailbox-Technologie bieten wir die weltweit einzige souveräne Native-Sync-Lösung, die für alle Outlook-Editionen und Plattformen funktioniert – <strong>Windows, Mac, iOS, Android, Web, Classic und New Outlook, Cloud und On-Prem in perfekter Harmonie.</strong>.</p>
-
-
-<div class="columns is-multiline mb-6">
+<p>&nbsp;</p>
+<div class="columns is-multiline">
   <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
@@ -59,7 +58,8 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
-<p class="has-text-centered mb-5">
+<p>&nbsp;</p>
+<p class="has-text-centered">
   Genutzt von sicherheitsbewussten und markenorientierten Organisationen weltweit. Sehen Sie uns im <a href="https://set-outlooksignatures.com/features#feature-comparison">Vergleich zu Alternativen</a> und prüfen Sie unsere <a href="https://set-outlooksignatures.com/benefactorcircle#price">transparenten Preise ohne automatische Verlängerung</a>.
 </p>
 <div class="columns is-multiline mb-6">
