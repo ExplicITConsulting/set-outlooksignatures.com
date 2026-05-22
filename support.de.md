@@ -42,7 +42,7 @@ sitemap_changefreq: weekly
         <li><b>Direktkontakt:</b> Persönliche Unterstützung via <a href="mailto:set-outlooksignatures@explicitconsulting.at">E-Mail</a> oder Microsoft Teams.</li>
       </ul>
       <div class="mt-auto">
-        <a href="/ordersupport" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">
+        <a href="/ordersupport" class="button is-link is-normalhas-text-black has-text-weight-bold" style="width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">
             Professionellen Support bestellen
         </a>
       </div>

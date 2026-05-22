@@ -42,7 +42,7 @@ sitemap_changefreq: weekly
         <li><b>Direct Contact:</b> Personal assistance via <a href="mailto:set-outlooksignatures@explicitconsulting.at">Email</a> or Microsoft Teams.</li>
       </ul>
       <div class="mt-auto">
-        <a href="/ordersupport" class="button is-link is-normal is-hovered has-text-black has-text-weight-bold" style="width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">
+        <a href="/ordersupport" class="button is-link is-normalhas-text-black has-text-weight-bold" style="width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">
             Order Professional Support
         </a>
       </div>

@@ -19,8 +19,8 @@ Für Organisationen, die externe Expertise zur Begleitung dieses Prozesses suche
 
 <p>
   <div class="buttons">
-    <a href="/quickstart" class="button is-link is-normal is-hovered  has-text-weight-bold">Quickstart-Guide</a>
-    <a href="/support#professional-support" class="button is-link is-normal is-hovered  has-text-weight-bold">Support</a>
+    <a href="/quickstart" class="button is-link is-normal has-text-weight-bold">Quickstart-Guide</a>
+    <a href="/support#professional-support" class="button is-link is-normal has-text-weight-bold">Support</a>
   </div>
 </p>
 
