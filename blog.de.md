@@ -8,6 +8,10 @@ description: "Tipps, Tools und Trends rund um Outlook-Signaturen â€“ speziell fÃ
 hero_link: /feed.xml
 hero_link_text: "Abonnieren"
 hero_link_style:
+hero_link2: /
+hero_link2_text: "Erfahren Sie mehr"
+hero_link2_style: |
+   style="color: black; background-color: limegreen;"
 show_sidebar: false
 pagination: 
   enabled: true
