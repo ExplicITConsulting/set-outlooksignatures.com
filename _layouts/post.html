@@ -5,7 +5,7 @@ layout: "default"
     <p>{{ page.date | date: '%Y-%m-%d' }}</p>
 
     {% if page.series %}
-        {% include series.html %}
+    {% include series.html %}
     {% endif %}
 
     {{ content }}
@@ -13,22 +13,28 @@ layout: "default"
 
 <div class="tags my-4">
     {% for tag in page.tags %}
-        {% include tag.html tag=tag %}
+    {% include tag.html tag=tag %}
     {% endfor %}
 </div>
 
-<a href="{{ site.baseurl }}/feed.xml" type="application/rss+xml" class="button is-link">
-    <span>{{ site.data[site.active_lang].strings.blog_subscribe }}</span>
-</a>
+<div class="buttons">
+    <a href="{{ site.baseurl }}/feed.xml" type="application/rss+xml" class="button is-link">
+        <span>{{ site.data[site.active_lang].strings.blog_subscribe }}</span>
+    </a>
+    <a href="/" class="button is-link"
+        style="font-weight: bold; color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">
+        <span>{{ site.data[site.active_lang].strings.blog_learnmore }}</span>
+    </a>
+</div>
 
 {% unless site.hide_share_buttons %}
-    <div class="my-4">
-        {% include share-buttons.html %}
-    </div>
+<div class="my-4">
+    {% include share-buttons.html %}
+</div>
 {% endunless %}
 
 {% if site.disqus.shortname %}
-    <div class="my-4">
-        {% include disqus.html %}
-    </div>
+<div class="my-4">
+    {% include disqus.html %}
+</div>
 {% endif %}
