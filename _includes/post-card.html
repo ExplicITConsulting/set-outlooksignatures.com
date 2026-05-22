@@ -18,15 +18,19 @@
                 {% for line in description %}
                     <p><strong>{{ line }}</strong></p>
                 {% endfor %}
-                {% for line in lines %}
-                    <p>{{ line }}</p>
-                {% endfor %}
+                {% unless page.layout == "post" %}
+                    {% for line in lines %}
+                        <p>{{ line }}</p>
+                    {% endfor %}
+                {% endunless %}
             {% else %}
                 {% for line in lines %}
                     {% if forloop.first %}
                         <p><strong>{{ line }}</strong></p>
                     {% else %}
-                        <p>{{ line }}</p>
+                        {% unless page.layout == "post" %}
+                            <p>{{ line }}</p>
+                        {% endunless %}
                     {% endif %}
                 {% endfor %}
             {% endif %}
