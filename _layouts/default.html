@@ -63,6 +63,11 @@
                                 <a href="{{ site.baseurl }}/feed.xml" type="application/rss+xml" class="button is-link">
                                     <span>{{ site.data[site.active_lang].strings.blog_subscribe }}</span>
                                 </a>
+                                <a href="{{ site.baseurl }}/feed.xml" class="button is-link" style="color: black; background-color: limegreen;">
+                                    <span>{{ site.data[site.active_lang].strings.blog_learnmore }}</span>
+                                </a>
+
+                                <p>&nbsp;</p>
                                 {% include latest-posts.html %}
                             </div>
                         {% endif %}
