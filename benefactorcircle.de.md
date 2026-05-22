@@ -152,7 +152,7 @@ sitemap_changefreq: weekly
          class="button is-link is-normal has-text-black has-text-weight-bold is-flex-direction-column" 
          style="margin-top: auto; height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;">
         <span>Interaktive Demo vereinbaren</span>
-        <span><small>Ideal für Führungskräfte in den Bereichen Security, IT und Marketing</small></span>
+        <span><small>Ideal für Führungskräfte aus Security, IT und Marketing</small></span>
       </a>
     </div>
     <div class="column is-half" style="display: flex; flex-direction: column;">
