@@ -118,7 +118,7 @@ sitemap_changefreq: weekly
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
     <div style="display: flex; gap: 0.75em;">
       ✨
-      <div><b>Frictionless Adoption</b><br>Invisible to end users, silent background sync. Intuitive for Marketing and IT.</div>
+      <div><b>Frictionless Adoption</b><br>Invisible to end users, seamless background sync. Intuitive for Marketing and IT.</div>
     </div>
   </div>
   <div class="column is-one-third-desktop is-half-tablet ecosystem-cell">
