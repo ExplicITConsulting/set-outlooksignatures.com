@@ -11,7 +11,7 @@ hero_link_style:
 hero_link2: /
 hero_link2_text: "Erfahren Sie mehr"
 hero_link2_style: |
-   style="color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
+   style="font-weight: bold; color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 show_sidebar: false
 pagination: 
   enabled: true
