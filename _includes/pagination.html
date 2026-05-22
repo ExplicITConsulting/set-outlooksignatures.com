@@ -1,24 +1,49 @@
 <nav class="pagination is-centered">
     {% if paginator.previous_page %}
-    <a href="{{ site.baseurl }}{{ paginator.previous_page_path | replace: "/index.html", "/" }}" class="pagination-previous">&lt;</a>
+    <a href="{{ site.baseurl }}{{ paginator.previous_page_path | replace: '/index.html', '/' }}" class="pagination-previous">&lt;</a>
     {% else %}
-    <p class="pagination-previous" disabled>&lt;</p>
+    <a class="pagination-previous" disabled>&lt;</a>
     {% endif %}
+    
     {% if paginator.next_page %}
-    <a href="{{ site.baseurl }}{{ paginator.next_page_path | replace: "/index.html", "/" }}" class="pagination-next">&gt;</a>
+    <a href="{{ site.baseurl }}{{ paginator.next_page_path | replace: '/index.html', '/' }}" class="pagination-next">&gt;</a>
     {% else %}
-    <p class="pagination-next" disabled>&gt;</p>
+    <a class="pagination-next" disabled>&gt;</a>
     {% endif %}
 
     <ul class="pagination-list">
         {% if paginator.page_trail %}
-        {% for trail in paginator.page_trail %}
-        <li>
-            <a href="{{ trail.path | prepend: site.baseurl | replace: "/index.html", "/"}}"
-                class="pagination-link {% if page.url == trail.path %} is-current {% endif %}"
-                title="{{trail.title}}">{{ trail.num }}</a>
-        </li>
-        {% endfor %}
+            {% comment %} 1. Check if the FIRST page is missing from the current trail {% endcomment %}
+            {% assign first_trail = paginator.page_trail | first %}
+            {% if first_trail.num > 1 %}
+                <li>
+                    <a href="{{ '/' | prepend: site.baseurl }}" class="pagination-link" title="First Page">1</a>
+                </li>
+                {% if first_trail.num > 2 %}
+                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                {% endif %}
+            {% endif %}
+
+            {% comment %} 2. Render the visible page trail window {% endcomment %}
+            {% for trail in paginator.page_trail %}
+            <li>
+                <a href="{{ trail.path | prepend: site.baseurl | replace: '/index.html', '/'}}"
+                    class="pagination-link {% if paginator.page == trail.num %} is-current {% endif %}"
+                    title="{{ trail.title }}">{{ trail.num }}</a>
+            </li>
+            {% endfor %}
+
+            {% comment %} 3. Check if the LAST page is missing from the current trail {% endcomment %}
+            {% assign last_trail = paginator.page_trail | last %}
+            {% if last_trail.num < paginator.total_pages %}
+                {% if last_trail.num < paginator.total_pages | minus: 1 %}
+                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                {% endif %}
+                <li>
+                    {% comment %} Safely building the last page path assuming standard jekyll-paginate-v2 structures {% endcomment %}
+                    <a href="{{ '/page/' | append: paginator.total_pages | append: '/' | prepend: site.baseurl }}" class="pagination-link" title="Last Page">{{ paginator.total_pages }}</a>
+                </li>
+            {% endif %}
         {% endif %}
     </ul>
 </nav>
