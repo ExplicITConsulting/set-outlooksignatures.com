@@ -14,12 +14,11 @@
     <ul class="pagination-list">
         {% if paginator.page_trail %}
             
-            {% comment %} 1. Dynamic First Page Link {% endcomment %}
+            {% comment %} 1. Flawless First Page Link {% endcomment %}
             {% assign first_trail = paginator.page_trail | first %}
             {% if first_trail.num > 1 %}
                 <li>
-                    {% comment %} Dynamically compute page 1 path based on your existing home URL structure {% endcomment %}
-                    <a href="{{ first_trail.path | prepend: site.baseurl | replace: '/page/', '/' | replace: '/2/', '/' | replace: '/index.html', '/' | replace: '//', '/' }}" class="pagination-link" title="First Page">1</a>
+                    <a href="{{ paginator.first_page_path | prepend: site.baseurl | replace: '/index.html', '/' }}" class="pagination-link" title="First Page">1</a>
                 </li>
                 {% if first_trail.num > 2 %}
                 <li><span class="pagination-ellipsis">&hellip;</span></li>
@@ -35,17 +34,14 @@
             </li>
             {% endfor %}
 
-            {% comment %} 3. Dynamic Last Page Link {% endcomment %}
+            {% comment %} 3. Flawless Last Page Link {% endcomment %}
             {% assign last_trail = paginator.page_trail | last %}
             {% if last_trail.num < paginator.total_pages %}
                 {% if last_trail.num < paginator.total_pages | minus: 1 %}
                 <li><span class="pagination-ellipsis">&hellip;</span></li>
                 {% endif %}
                 <li>
-                    {% comment %} Dynamically swaps the current trail block number out for the absolute last page number {% endcomment %}
-                    {% assign last_page_string = '/' | append: last_trail.num | append: '/' %}
-                    {% assign target_page_string = '/' | append: paginator.total_pages | append: '/' %}
-                    <a href="{{ last_trail.path | prepend: site.baseurl | replace: last_page_string, target_page_string | replace: '/index.html', '/' }}" class="pagination-link" title="Last Page">{{ paginator.total_pages }}</a>
+                    <a href="{{ paginator.last_page_path | prepend: site.baseurl | replace: '/index.html', '/' }}" class="pagination-link" title="Last Page">{{ paginator.total_pages }}</a>
                 </li>
             {% endif %}
             
