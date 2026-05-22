@@ -17,6 +17,10 @@ layout: "default"
     {% endfor %}
 </div>
 
+<a href="{{ site.baseurl }}/feed.xml" type="application/rss+xml" class="button is-link">
+    <span>{{ site.data[site.active_lang].strings.blog_subscribe }}</span>
+</a>
+
 {% unless site.hide_share_buttons %}
     <div class="my-4">
         {% include share-buttons.html %}

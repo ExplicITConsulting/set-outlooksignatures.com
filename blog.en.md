@@ -5,6 +5,9 @@ locale: "en"
 title: "Master Outlook Signatures"
 subtitle: "Tips, tools, and trends for IT and marketing teams"
 description: "Tips, tools, and trends for mastering Outlook signatures—designed for IT administrators and marketing teams aiming to streamline email branding and compliance"
+hero_link: /feed.xml
+hero_link_text: "Subscribe"
+hero_link_style:
 show_sidebar: false
 pagination: 
   enabled: true
