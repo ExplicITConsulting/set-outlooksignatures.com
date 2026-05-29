@@ -254,7 +254,7 @@ sitemap_changefreq: weekly
     </div>
 </div>
 <p>&nbsp;</p>
-<details class="box p-0">
+<details id="licensing-details" class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Lizenzdetails – das Kleingedruckte in verständlicher Sprache</strong>
   </summary>
@@ -269,6 +269,17 @@ sitemap_changefreq: weekly
     </ul>
     <p>Aktive Lizenzen beinhalten kostenlose Versions‑Upgrades sowie eine priorisierte Bearbeitung Ihrer Support‑Anfragen. Support ist separat verfügbar – Details unter '<a href="/support">Unterstützung erhalten und uns kontaktieren</a>'.</p>
   </div>
+</details>
+<p>&nbsp;</p>
+<details id="procurement-outsourcer" class="box p-0">
+  <summary class="has-text-weight-bold" style="cursor: pointer;">
+    <strong>Abwicklung über externe Einkaufsdienstleister (Procurement-Outsourcer)</strong>
+  </summary>
+  <p>Unsere Preise für das Benefactor Circle Add-on basieren auf effizienten direkten Beschaffungsprozessen. Auch die Zusammenarbeit mit externen Einkaufsdienstleistern verläuft im Regelfall reibungslos.</p>
+  <p>Gleichzeitig zeigt sich auf Basis unserer langjährigen Projekterfahrungen, dass bestimmte Beschaffungsmodelle bzw. Konstellationen mit einzelnen externen Dienstleistern systematisch zu redundanten administrativen Aufwänden führen. Diese äußern sich typischerweise in einem bis zu 8-fach erhöhten Kommunikationsaufwand sowie einer bis zu 2,5-fach verlängerten Durchlaufzeit.</p>
+  <p>Da diese Effekte über Jahre hinweg konsistent und unabhängig von Projektinhalt oder Komplexität auftreten, bei gleichzeitig vollständig identischen fachlichen Ergebnissen und gelieferten Artefakten in allen Phasen, sind sie als rein strukturell prozessbedingt einzuordnen.</p>
+  <p>Zur Sicherstellung von Transparenz, Planbarkeit und verursachungsgerechter Kostenallokation wird in diesen Konstellationen pro Beschaffungsvorgang eine Bearbeitungspauschale in Höhe von einem Personentag gemäß unseren [Bedingungen für professionellen Support](https://explicitconsulting.at/support-terms) erhoben. Diese Regelung stellt eine standardisierte Behandlung entsprechender Beschaffungsszenarien dar und ist unabhängig vom tatsächlichen Einzelfallaufwand.</p>
+  <p>Alternative Beschaffungswege (wie der Direktbezug) sowie die Zusammenarbeit mit Einkaufsdienstleistern ohne diese Effekte bleiben von dieser Regelung unberührt.</p>
 </details>
 
 
