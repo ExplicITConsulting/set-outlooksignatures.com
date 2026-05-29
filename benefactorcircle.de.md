@@ -278,7 +278,7 @@ sitemap_changefreq: weekly
   <p>Gleichzeitig zeigt sich auf Basis unserer langjährigen Projekterfahrungen, dass bestimmte Beschaffungsmodelle bzw. Konstellationen mit einzelnen externen Dienstleistern systematisch zu redundanten administrativen Aufwänden führen. Diese äußern sich typischerweise in einem bis zu 8-fach erhöhten Kommunikationsaufwand sowie einer bis zu 2,5-fach verlängerten Durchlaufzeit.</p>
   <p>Da diese Effekte über Jahre hinweg konsistent und unabhängig von Projektinhalt oder Komplexität auftreten, bei gleichzeitig vollständig identischen fachlichen Ergebnissen und gelieferten Artefakten in allen Phasen, sind sie als rein strukturell prozessbedingt einzuordnen.</p>
   <p>Zur Sicherstellung von Transparenz, Planbarkeit und verursachungsgerechter Kostenallokation wird in diesen Konstellationen pro Beschaffungsvorgang eine Bearbeitungspauschale in Höhe von einem Personentag gemäß unseren <a href="https://explicitconsulting.at/de/support-terms">Bedingungen für professionellen Support</a> erhoben. Diese Regelung stellt eine standardisierte Behandlung entsprechender Beschaffungsszenarien dar und ist unabhängig vom tatsächlichen Einzelfallaufwand.</p>
-  <p>Alternative Beschaffungswege (wie der Direktbezug) sowie die Zusammenarbeit mit Einkaufsdienstleistern, die diese Effekte in der Vergangenheit nicht gezeigt haben, bleiben von dieser Regelung unberührt.</p>
+  <p>Alternative Beschaffungswege (wie der Direktbezug) sowie die Zusammenarbeit mit Einkaufsdienstleistern, die diese Effekte in der Vergangenheit nicht verursacht haben, bleiben von dieser Regelung unberührt.</p>
 </details>
 
 
