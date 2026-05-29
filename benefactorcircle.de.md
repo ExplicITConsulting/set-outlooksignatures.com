@@ -270,7 +270,6 @@ sitemap_changefreq: weekly
     <p>Aktive Lizenzen beinhalten kostenlose Versions‑Upgrades sowie eine priorisierte Bearbeitung Ihrer Support‑Anfragen. Support ist separat verfügbar – Details unter '<a href="/support">Unterstützung erhalten und uns kontaktieren</a>'.</p>
   </div>
 </details>
-<p>&nbsp;</p>
 <details id="procurement-outsourcer" class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Abwicklung über externe Einkaufsdienstleister (Procurement-Outsourcer)</strong>

@@ -270,10 +270,9 @@ sitemap_changefreq: weekly
     <p>Active licenses include free version upgrades and prioritizing your support requests. Support is available separately, see '<a href="/support">Get support and contact us</a>' for details.</p>
   </div>
 </details>
-<p>&nbsp;</p>
 <details id="procurement-outsourcer" class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
-    <strong>Handling via External Procurement Service Providers (Procurement Outsourcers)</strong>
+    <strong>Handling via external procurement service providers (procurement outsourcers)</strong>
   </summary>
   <p>Our pricing for the Benefactor Circle Add-on is based on efficient, direct procurement processes. As a general rule, collaboration with external procurement service providers also runs smoothly.</p>
   <p>At the same time, our long-standing project experience shows that certain procurement models or configurations with specific external service providers systematically lead to redundant administrative overhead. This typically manifests as up to an 8-fold increase in communication effort and up to a 2.5-fold increase in processing turnaround times.</p>
