@@ -26,53 +26,53 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 
-## Public Software Fallback and Stewardship Framework
+## Öffentliches Software-Fallback- und Projekt-Treuhand-Framework
 
-**Ensuring the operational continuity of the Set-OutlookSignatures Benefactor Circle add-on.**
+**Absicherung der operativen Fortführbarkeit des Set-OutlookSignatures Benefactor Circle Add-ons.**
 
-ExplicIT Consulting GmbH acknowledges the structural importance of the open source [Set-OutlookSignatures](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/, https://set-outlooksignatures.com) project. To guarantee the technical and organizational durability of the commercial Benefactor Circle add-on, we have established a public stewardship framework. This proposal details the mechanism used to maintain fallback safety for both project administrators and enterprise subscribers.
+Die ExplicIT Consulting GmbH anerkennt die strukturelle Bedeutung des Open-Source-Projekts [Set-OutlookSignatures](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/, https://set-outlooksignatures.com). Um die technische und organisatorische Beständigkeit des kommerziellen Benefactor Circle Add-ons zu garantieren, haben wir ein öffentliches Betreuungs-Framework vereinbart. Dieses Angebot detailliert den Mechanismus, der genutzt wird, um die Fallback-Sicherheit sowohl für Projektadministratoren als auch für Unternehmenskunden aufrechtzuerhalten.
 
-## Framework Overview
+## Framework-Überblick
 
-This initiative is structured as a public unilateral covenant. It provides direct protections that the project community and administrators can rely upon. Under this framework, the underlying source code, build configuration, and documentation will transition to the Open Source Project Administrators if specific trigger events occur.
+Diese Initiative ist als öffentliche einseitige Verpflichtungserklärung ausgestaltet Sie bietet direkte Schutzrechte, auf die sich die Projekt-Community und die Administratoren verlassen können. Unter diesem Framework werden der zugrundeliegende Quellcode, die Build-Konfiguration und die Dokumentation auf die Open-Source-Projektadministratoren übertragen, sofern bestimmte Auslöser-Ereignisse eintreffen.
 
-### Core Technical Pillars
+### Technische Kernsäulen
 
-- **Release Synchronized Deposits:** A complete Deposit Package is updated within ten business days after every production release of the add-on.
-- **Cryptographic Proofs:** Each deposit archive has its SHA-256 hash calculated. The hash, along with a manifest file and a hash verification file, is published directly to the [Public Proof Repository](https://github.com/Set-OutlookSignatures/benefactor-circle-add-on-proof-of-escrow).
-- **Quarterly Verification Rights:** Project Administrators maintain the right to view a technical demonstration every calendar quarter, or after any repository update, to verify that the secret repository exists, is accessible, and builds a fully operational product.
+- **Release-synchronisierte Hinterlegungen:** Ein vollständiges Deposit-Paket wird innerhalb von zehn Geschäftstagen nach jedem Produktions-Release des Add-ons aktualisiert.
+- **Kryptographische Nachweise:** Für jedes Deposit-Archiv wird sein SHA-256-Hashwert berechnet. Der Hash wird zusammen mit einer Manifest-Datei und einer Hash-Verifizierungsdatei direkt im [Nachweis-Repositorium](https://github.com/Set-OutlookSignatures/benefactor-circle-add-on-proof-of-escrow) veröffentlicht.
+- **Quartalsweise Einsichtsrechte:** Die Projektadministratoren behalten das Recht, in jedem Kalendervierteljahr oder nach jedem Repo-Update eine technische Vorführung zu verlangen, um zu überprüfen, ob das geheime Repository existiert, zugänglich ist und ein voll funktionsfähiges Produkt baut.
 
-### Scope of the Deposit Package
+### Umfang des Deposit-Pakets
 
-As specified in the technical architecture documentation, the escrow deposit is strictly categorized to balance proprietary security with operational continuity.
+Wie in der Dokumentation zur technischen Architektur festgelegt, ist die Treuhand-Hinterlegung strikt kategorisiert, um die proprietäre Sicherheit mit der operativen Fortführung in Einklang zu bringen.
 
-- **Included Materials:** This includes the full source code of the add-on, compilation instructions, dependency manifests (SBOM), configuration schema definitions, validation tests, and architecture notes.
-- **Excluded Materials:** This explicitly excludes user or customer databases, active credentials or passwords, private keys and certificates, and private corporate financial data.
+- **Inbegriffene Materialien:** Dies umfasst den vollständigen Quellcode des Add-ons, Build-Anweisungen, Abhängigkeitslisten (SBOM), Konfigurations- und Schemadefinitionen, Validierungstests und Architekturhinweise.
+- **Ausgeschlossene Materialien:** Dies schließt Nutzer- oder Kundendatenbanken, aktive Zugangsdaten oder Passwörter, private Schlüssel und Zertifikate sowie interne kaufmännische Finanzdaten ausdrücklich aus.
 
-## Trigger Conditions and Transition Process
+## Auslöser-Bedingungen und Übergangsprozess
 
-The code transition process is governed by strict verification protocols to prevent unauthorized exposure of intellectual property.
+Der Prozess zur Code-Übergabe wird durch strenge Verifizierungsprotokolle geregelt, um eine unbefugte Offenlegung von geistigem Eigentum zu verhindern.
 
-### Authorized Trigger Events
+### Autorisierte Auslöser-Ereignisse
 
-A transition can only be initiated under two conditions:
+Eine Übergabe kann nur unter zwei Bedingungen eingeleitet werden:
 
-1. Express written discontinuation or withdrawal of product maintenance by ExplicIT Consulting GmbH without an appointed successor.
-2. Definitive business continuity failures, such as corporate dissolution, removal from the commercial register, or a product transfer where the new entity fails to adopt these covenant obligations in writing.
+1. Ausdrückliche schriftliche Einstellung oder Einstellung der Produktpflege durch die ExplicIT Consulting GmbH ohne einen ernannten Nachfolger.
+2. Endgültiges Scheitern der Geschäftskontinuität, wie z. B. die Auflösung des Unternehmens, die Löschung im Firmenbuch oder eine Produktübertragung, bei der die neue Einheit diese Covenant-Verpflichtungen nicht schriftlich übernimmt.
 
-### Verification Timeline
+### Verifizierungs-Zeitplan
 
-Except for cases of immediate effect via express cancellation, a standard waiting period of 90 calendar days applies. Project Administrators must submit a formal trigger notice to the proof repository. If the notice is not disputed with substantiated reasons within 90 days, the trigger becomes legally effective.
+Außer in Fällen von sofortiger Wirkung durch eine ausdrückliche Stornierung gilt eine standardmäßige Wartezeit von 90 Kalendertagen. Die Projektadministratoren müssen eine formelle Auslöser-Mitteilung im Nachweis-Repositorium einreichen. Wenn der Mitteilung innerhalb von 90 Tagen nicht mit fundierten Gründen widersprochen wird, wird der Auslöser rechtlich wirksam.
 
-### Code Autonomy and Open Source Rights
+### Code-Autonomie und Open-Source-Rechte
 
-Upon an effective trigger, ExplicIT Consulting GmbH grants the project a worldwide, royalty-free, perpetual, irrevocable, and non-exclusive license to the code package. The Project Administrators hold the authority to maintain the product privately or to release it publicly under a recognized open source software license.
+Mit Wirksamwerden eines Auslösers gewährt die ExplicIT Consulting GmbH dem Projekt eine weltweite, unentgeltliche, unbefristete, unwiderrufliche und nicht-exklusive Lizenz am Code-Paket. Die Projektadministratoren besitzen die Befugnis, das Produkt privat weiterzuführen oder es unter einer anerkannten Open-Source-Softwarelizenz öffentlich freizugeben.
 
-## Governance Resource Index
+## Governance-Ressourcen-Index
 
-The framework relies on standardized documents maintained in the [Proof Repository](https://github.com/Set-OutlookSignatures/benefactor-circle-add-on-proof-of-escrow) to manage transparency and succession:
+Das Framework stützt sich auf standardisierte Dokumente, die im [Nachweis-Repositorium](https://github.com/Set-OutlookSignatures/benefactor-circle-add-on-proof-of-escrow) geführt werden, um Transparenz und Nachfolge zu regeln:
 
-- **Covenant:** The legal foundation defining rights, scopes, and liabilities.
-- **Technical Spec:** The engineering definitions outlining how deposits are built and how quarterly system demonstrations are conducted.
-- **Successor Assumption:** The documentation used by an acquiring entity to adopt these continuity commitments without initiating a trigger.
-- **Trigger Notice:** The formal assertion document utilized by Project Administrators to log an active continuity claim.
+- **Covenant:** Das rechtliche Fundament, das Rechte, Umfänge und Haftung definiert (siehe `covenant-de.md` und `covenant-en.md`).
+- **Technical Spec:** Die technischen Definitionen, die beschreiben, wie Deposits gebaut und wie die quartalsweisen Systemvorführungen durchgeführt werden (siehe `technical-spec-de.md` und `technical-spec-en.md`).
+- **Successor Assumption:** Die Dokumentation, die von einer übernehmenden Einheit genutzt wird, um diese Fortführungsverpflichtungen zu übernehmen, ohne einen Auslöser auszulösen (beschrieben in `README.md`).
+- **Trigger Notice:** Das formelle Feststellungsdokument, das von den Projektadministratoren verwendet wird, um einen aktiven Kontinuitätsanspruch zu protokollieren (beschrieben in `README.md`).
