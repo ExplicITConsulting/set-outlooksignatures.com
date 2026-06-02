@@ -68,7 +68,7 @@ Except for cases of immediate effect via express cancellation, a standard waitin
 
 Upon an effective trigger, ExplicIT Consulting GmbH grants the project a worldwide, royalty-free, perpetual, irrevocable, and non-exclusive license to the code package. The Project Administrators hold the authority to maintain the product privately or to release it publicly under a recognized open source software license.
 
-## Governance Resource Index
+## Governance Resource Index {#governance-resource-index}
 
 The framework relies on standardized documents maintained in the [Proof Repository](https://github.com/Set-OutlookSignatures/benefactor-circle-add-on-proof-of-escrow) to manage transparency and succession:
 

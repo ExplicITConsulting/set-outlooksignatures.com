@@ -68,7 +68,7 @@ Außer in Fällen von sofortiger Wirkung durch eine ausdrückliche Stornierung g
 
 Mit Wirksamwerden eines Auslösers gewährt die ExplicIT Consulting GmbH dem Projekt eine weltweite, unentgeltliche, unbefristete, unwiderrufliche und nicht-exklusive Lizenz am Code-Paket. Die Projektadministratoren besitzen die Befugnis, das Produkt privat weiterzuführen oder es unter einer anerkannten Open-Source-Softwarelizenz öffentlich freizugeben.
 
-## Governance-Ressourcen-Index
+## Governance-Ressourcen-Index {#governance-resource-index}
 
 Das Framework stützt sich auf standardisierte Dokumente, die im [Nachweis-Repositorium](https://github.com/Set-OutlookSignatures/benefactor-circle-add-on-proof-of-escrow) geführt werden, um Transparenz und Nachfolge zu regeln:
 
