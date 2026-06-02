@@ -287,6 +287,34 @@ sitemap_changefreq: weekly
 
 <h2 id="logging-and-troubleshooting">Logging and troubleshooting</h2>
 <p>Troubleshooting Outlook add-ins can be complicated because the software operates through both a visible taskpane (triggered manually) and invisible background processes (launch events triggered by Outlook). While the interface may appear functional, background tasks — such as signature injection — can sometimes fail due to environment-specific settings or local caching issues. Use the following procedures to capture diagnostic logs for targeted analysis and to speed up testing of new releases and configuration settings.</p>
+<p>The "Set selected signature" button in the add-in taskpane runs exactly the same code as a launch event does. If setting the signature interactively via the button works, the problem is very likely not to be found in the Outlook add-in itself but rather in the Outlook host application.</p>
+<p>If launch events do not seem to work, runtime logging is the only definitive way to confirm if Outlook is triggering these events at all. It is reocmmended to clear the Outlook add-in cache first, as described below.<p>
+<blockquote>
+   <p>For troubleshooting Outlook launch events, Outlook Web is the fastest and most reliable environment, followed closely by New Outlook.</p>
+   <p>While Outlook for iOS and Android pick up updated add-in code quickly, their debugging is limited since there is no native runtime logging, so you need to use the `DEBUG` parameter of the add-in.</p>
+   <p>Classic Outlook for Windows is by far the most challenging; It is often incredibly slow to enable launch events- especially with multipe mailboxes - and often requires multiple restarts, where you must wait after each restart until the "All folders are up to date" message remains stable for at least one full minute before testing.</p>
+</blockquote>
+<div class="box has-background-white-bis has-text-black mt-5" style="height: 100%; border-top: 4px solid Yellow;">
+  <p id="clear-the-outlook-add-in-cache"><b>Clear the Outlook add-in cache</b></p>
+  <p class="mb-0">When testing, Outlook sometimes takes too long updating its cache. Follow these official Microsoft instructions to manually clear it:</p>
+  <div class="columns">
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+      <ul>
+        <li><b>Outlook for the Web:</b> Hard Refresh the browser window.</li>
+        <li><b>Classic Outlook for Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">Official instructions from Microsoft</a>.</li>
+        <li><b>New Outlook for Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">Official instructions from Microsoft</a>.</li>
+      </ul>
+    </div>
+    <div class="column is-half-desktop is-half-tablet is-full-mobile">
+      <ul>
+        <li><b>Outlook for Mac:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">Official instructions from Microsoft</a>.</li>
+        <li><b>Outlook for iOS:</b> Taskpane > Advanced options > <b>Reload add-in</b>.</li>
+        <li><b>Outlook for Android:</b> App info > Force Stop > Clear Cache (do not tap Clear Data).</li>
+      </ul>
+    </div>
+  </div>
+  <p>Restart Outlook after clearing the cache, even if not explicitly prompted. Allow up to 10 minutes for add-ins to fully reload, especially in Classic Outlook for Windows. If launch events fail to trigger, a second restart usually resolves the issue.</p>
+</div>
 <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Yellow;">
   <p id="runtime-logging"><b>Runtime logging</b></p>
   <p>The add-in outputs diagnostic data to the browser console and the internal logging box within the taskpane. However, certain environments lack console access, and launch event (which run in the background) cannot send data to the taskpane UI. This makes it difficult to determine if a failure is due to a code error, a compilation issue, or if Outlook simply failed to trigger the event.</p>
@@ -367,27 +395,7 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\Runti
     </div>
   </div>
 </div>
-<div class="box has-background-white-bis has-text-black mt-5" style="height: 100%; border-top: 4px solid Yellow;">
-  <p id="clear-the-outlook-add-in-cache"><b>Clear the Outlook add-in cache</b></p>
-  <p class="mb-0">When testing, Outlook sometimes takes too long updating its cache. Follow these official Microsoft instructions to manually clear it:</p>
-  <div class="columns">
-    <div class="column is-half-desktop is-half-tablet is-full-mobile">
-      <ul>
-        <li><b>Outlook for the Web:</b> Hard Refresh the browser window.</li>
-        <li><b>Classic Outlook for Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#classic-outlook-on-windows">Official instructions from Microsoft</a>.</li>
-        <li><b>New Outlook for Windows:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#new-outlook-on-windows">Official instructions from Microsoft</a>.</li>
-      </ul>
-    </div>
-    <div class="column is-half-desktop is-half-tablet is-full-mobile">
-      <ul>
-        <li><b>Outlook for Mac:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">Official instructions from Microsoft</a>.</li>
-        <li><b>Outlook for iOS:</b> Taskpane > Advanced options > <b>Reload add-in</b>.</li>
-        <li><b>Outlook for Android:</b> App info > Force Stop > Clear Cache (do not tap Clear Data).</li>
-      </ul>
-    </div>
-  </div>
-  <p>Restart Outlook after clearing the cache, even if not explicitly prompted. Allow up to 10 minutes for add-ins to fully reload, especially in Classic Outlook for Windows. If launch events fail to trigger, a second restart usually resolves the issue.</p>
-</div>
+
 
 
 <h2 id="remarks">Remarks</h2>
