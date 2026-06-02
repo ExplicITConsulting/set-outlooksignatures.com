@@ -6,7 +6,7 @@ title: "Benefactor Circle Add-on Software-Treuhand und Projekt-Betreuung"
 subtitle: "Öffentliches Software-Fallback-Framework für das Benefactor Circle Add-on"
 description: "Offizielle Fortführungsgarantien, technische Hinterlegungsmodelle und Betreuungsverpflichtungen für das Set-OutlookSignatures Benefactor Circle Add-on."
 hero_link: "#governance-resource-index"
-hero_link_text: "<span><bFramework-Dokumente prüfen</b></span>"
+hero_link_text: "<span><b>Framework-Dokumente prüfen</b></span>"
 hero_link_style: |
   style="color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 hero_link2: "https://github.com/Set-OutlookSignatures/benefactor-circle-add-on-proof-of-escrow"
