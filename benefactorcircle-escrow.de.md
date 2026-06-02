@@ -39,7 +39,7 @@ Diese Initiative ist als öffentliche einseitige Verpflichtungserklärung ausges
 ### Technische Kernsäulen
 
 - **Release-synchronisierte Hinterlegungen:** Ein vollständiges Deposit-Paket wird innerhalb von zehn Geschäftstagen nach jedem Produktions-Release des Add-ons aktualisiert.
-- **Kryptographische Nachweise:** Für jedes Deposit-Archiv wird sein SHA-256-Hashwert berechnet. Der Hash wird zusammen mit einer Manifest-Datei und einer Hash-Verifizierungsdatei direkt im [Nachweis-Repositorium](https://github.com/Set-OutlookSignatures/benefactor-circle-add-on-proof-of-escrow) veröffentlicht.
+- **Kryptographische Nachweise:** Für jedes Deposit-Archiv wird sein SHA-256-Hashwert berechnet. Der Hash wird zusammen mit einer Manifest-Datei und einer Hash-Verifizierungsdatei direkt im [Nachweis-Repository](https://github.com/Set-OutlookSignatures/benefactor-circle-add-on-proof-of-escrow) veröffentlicht.
 - **Quartalsweise Einsichtsrechte:** Die Projektadministratoren behalten das Recht, in jedem Kalendervierteljahr oder nach jedem Repo-Update eine technische Vorführung zu verlangen, um zu überprüfen, ob das geheime Repository existiert, zugänglich ist und ein voll funktionsfähiges Produkt baut.
 
 ### Umfang des Deposit-Pakets
@@ -62,7 +62,7 @@ Eine Übergabe kann nur unter zwei Bedingungen eingeleitet werden:
 
 ### Verifizierungs-Zeitplan
 
-Außer in Fällen von sofortiger Wirkung durch eine ausdrückliche Stornierung gilt eine standardmäßige Wartezeit von 90 Kalendertagen. Die Projektadministratoren müssen eine formelle Auslöser-Mitteilung im Nachweis-Repositorium einreichen. Wenn der Mitteilung innerhalb von 90 Tagen nicht mit fundierten Gründen widersprochen wird, wird der Auslöser rechtlich wirksam.
+Außer in Fällen von sofortiger Wirkung durch eine ausdrückliche Stornierung gilt eine standardmäßige Wartezeit von 90 Kalendertagen. Die Projektadministratoren müssen eine formelle Auslöser-Mitteilung im Nachweis-Repository einreichen. Wenn der Mitteilung innerhalb von 90 Tagen nicht mit fundierten Gründen widersprochen wird, wird der Auslöser rechtlich wirksam.
 
 ### Code-Autonomie und Open-Source-Rechte
 
@@ -70,7 +70,7 @@ Mit Wirksamwerden eines Auslösers gewährt die ExplicIT Consulting GmbH dem Pro
 
 ## Governance-Ressourcen-Index {#governance-resource-index}
 
-Das Framework stützt sich auf standardisierte Dokumente, die im [Nachweis-Repositorium](https://github.com/Set-OutlookSignatures/benefactor-circle-add-on-proof-of-escrow) geführt werden, um Transparenz und Nachfolge zu regeln:
+Das Framework stützt sich auf standardisierte Dokumente, die im [Nachweis-Repository](https://github.com/Set-OutlookSignatures/benefactor-circle-add-on-proof-of-escrow) geführt werden, um Transparenz und Nachfolge zu regeln:
 
 - **Covenant:** Das rechtliche Fundament, das Rechte, Umfänge und Haftung definiert (siehe `covenant-de.md` und `covenant-en.md`).
 - **Technical Spec:** Die technischen Definitionen, die beschreiben, wie Deposits gebaut und wie die quartalsweisen Systemvorführungen durchgeführt werden (siehe `technical-spec-de.md` und `technical-spec-en.md`).
