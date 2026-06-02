@@ -32,9 +32,18 @@ h3,
 h4,
 h5,
 h6 {
-  scroll-margin-top: ($navbar-height * 2);
   position: relative;
   font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+[id] {
+  scroll-margin-top: ($navbar-height * 2);
 }
 
 .title,
