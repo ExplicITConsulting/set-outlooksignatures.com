@@ -291,8 +291,8 @@ sitemap_changefreq: weekly
 <p>If launch events do not seem to work, runtime logging is the only definitive way to confirm if Outlook is triggering these events at all. It is reocmmended to clear the Outlook add-in cache first, as described below.<p>
 <blockquote>
    <p>For troubleshooting Outlook launch events, Outlook Web is the fastest and most reliable environment, followed closely by New Outlook.</p>
-   <p>While Outlook for iOS and Android pick up updated add-in code quickly, their debugging is limited since there is no native runtime logging, so you need to use the `DEBUG` parameter of the add-in.</p>
-   <p>Classic Outlook for Windows is by far the most challenging; It is often incredibly slow to enable launch events- especially with multipe mailboxes - and often requires multiple restarts, where you must wait after each restart until the "All folders are up to date" message remains stable for at least one full minute before testing.</p>
+   <p>While Outlook for iOS and Android pick up updated add-in code quickly, their debugging is limited since there is no native runtime logging and you are limited to the DEBUG parameter of the add-in.</p>
+   <p>Classic Outlook for Windows is by far the most challenging; It is often incredibly slow to enable launch events, especially with multipe mailboxes. It often requires multiple restarts, where you must wait after each restart until the "All folders are up to date" message remains stable for at least one full minute.</p>
 </blockquote>
 <div class="box has-background-white-bis has-text-black mt-5" style="height: 100%; border-top: 4px solid Yellow;">
   <p id="clear-the-outlook-add-in-cache"><b>Clear the Outlook add-in cache</b></p>
