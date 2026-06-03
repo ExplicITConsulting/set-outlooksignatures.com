@@ -72,7 +72,7 @@ Download and unzip the archive to a local folder:
         <div>
           <p><b>Exchange Online / Hybrid</b></p>
           <div class="highlighter-rouge">
-            <pre><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "&lt;die Application (client) ID der Entra ID App aus Schritt 2&gt;"</code></pre>
+            <pre><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "&lt;Entra ID app application (client) ID&gt;"</code></pre>
           </div>
           <p><small><em><code>-GraphOnly true</code> ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> parameter if using a national or sovereign cloud.</em></small></p>
           <p><small><em>If the script fails to run, right-click Set-OutlookSignatures.ps1 > Properties > check Unblock.</em></small></p>
