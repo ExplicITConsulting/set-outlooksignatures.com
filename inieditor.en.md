@@ -488,7 +488,7 @@ redirect_from:
          stay reachable instead of being clipped. */
       min-width: 0;
       max-width: none;
-      overflow-x: auto;
+      overflow-x: visible;
       scrollbar-width: thin;
     }
 
@@ -1045,7 +1045,7 @@ redirect_from:
       "other",
     ];
 
-    // The sample INI loaded by "Load sample" or by visiting the page with ?demo=1.
+    // The sample INI loaded by "Load sample data" or by visiting the page with ?demo=1.
     var SAMPLE_INI =
       "# Sample Set-OutlookSignatures INI\n" +
       "\n" +
@@ -2902,7 +2902,7 @@ redirect_from:
         rd.readAsBinaryString(f);
       });
 
-      bar.appendChild(el("button", { onclick: loadSample }, ["Load sample"]));
+      bar.appendChild(el("button", { onclick: loadSample }, ["Load sample data"]));
       bar.appendChild(
         el(
           "button",
@@ -2911,7 +2911,7 @@ redirect_from:
               fileInput.click();
             },
           },
-          ["Open file…"],
+          ["Load INI file"],
         ),
       );
 
@@ -3008,7 +3008,7 @@ redirect_from:
         ),
       );
       bar.appendChild(
-        el("button", { onclick: downloadIni }, ["Download .ini"]),
+        el("button", { onclick: downloadIni }, ["Download INI file"]),
       );
 
       updateUndoRedoButtons();
