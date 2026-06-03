@@ -323,10 +323,8 @@ sitemap_changefreq: weekly
 
 
 <h2 id="license-groups">How license groups work</h2>
-<p>Each Benefactor Circle license is bound to an Active Directory or Entra ID groups, called a license group, with a defined maximum number of members. For data protection reasons and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
-
-<p>For most environments, only one license group is needed. If you want to define multiplge groups, one license group Active Directory DNS domain or Entra ID tenant is allowed.</p>
-
+<p>Each Benefactor Circle license is bound to an Active Directory or Entra ID group, called a license group, with a defined maximum number of members. For data protection reasons and ease of administration, licensing is not bound to specific mailboxes ("named users"), but only to a group with a maximum amount of members.</p>
+<p>For most environments, only one license group is needed. If you want to define multiple groups, one license group per Active Directory DNS domain or Entra ID tenant is allowed.</p>
 <p>A license group definition consists of three components:</p>
 <ul>
   <li>The <b>Active Directory DNS domain name or the Entra ID tenant</b> of the license group's home.<br>For cloud-only groups, use <code>EntraID_&lt;Tenant ID&gt;</code> or <code>EntraID_&lt;Tenant DNS Domain&gt;</code>.<br>Examples: <code>corp.example.com</code>, <code>EntraID_example.com</code></li>

@@ -322,17 +322,14 @@ sitemap_changefreq: weekly
 
 
 <h2 id="license-groups">So funktionieren Lizenzgruppen</h2>
-<p>Jede Benefactor‑Circle‑Lizenz ist an eine Active‑Directory‑ oder Entra‑ID‑Gruppe gebunden, die als Lizenzgruppe bezeichnet wird und eine definierte maximale  Anzahl von Mitgliedern hat. Aus Datenschutzgründen und zur Vereinfachung der Administration ist die Lizenzierung nicht an einzelne Postfächer ("Named User") gebunden, sondern ausschließlich an eine Gruppe mit einer festgelegten maximalen Mitgliederanzahl.</p>
-
+<p>Jede Benefactor‑Circle‑Lizenz ist an eine Active‑Directory‑ oder Entra‑ID‑Gruppe gebunden, die als Lizenzgruppe bezeichnet wird und eine definierte maximale Anzahl von Mitgliedern hat. Aus Datenschutzgründen und zur Vereinfachung der Administration ist die Lizenzierung nicht an einzelne Postfächer ("Named User") gebunden, sondern ausschließlich an eine Gruppe mit einer festgelegten maximalen Mitgliederanzahl.</p>
 <p>In den meisten Umgebungen wird nur eine Lizenzgruppe benötigt. Wenn Sie mehrere Lizenzgruppen definieren möchten, ist pro Active‑Directory‑DNS‑Domäne bzw. pro Entra‑ID‑Tenant jeweils eine Lizenzgruppe zulässig.</p>
-
 <p>Die Definition einer Lizenzgruppe besteht aus drei Komponenten:</p>
 <ul>
   <li>Der <b>Active‑Directory‑DNS‑Domänenname oder der Entra‑ID‑Tenant</b> der Lizenzgruppe.<br>Für reine Cloud‑Gruppen verwenden Sie <code>EntraID_&lt;Tenant ID&gt;</code> oder <code>EntraID_&lt;Tenant DNS Domain&gt;</code>.<br>Beispiele: <code>corp.example.com</code>, <code>EntraID_example.com</code></li>
   <li>Die <b>Active‑Directory‑SID (Security Identifier) oder die Entra‑ID‑Objekt‑ID</b> der Lizenzgruppe, abhängig davon, wo sich die Gruppe befindet.<br>Beispiele: <code>S-1-5-21-2998092229-1459889137-3613942852-2617</code>, <code>f3f0611a-7bbe-4717-89c3-b967caf6922a</code></li>
   <li>Die <b>maximale Anzahl der lizenzierten Postfächer</b> für diese Gruppe.<br>Beispiele: <code>478</code>, <code>16000</code></li>
 </ul>
-
 <p>Die oben genannten Beispielwerte ergeben folgende Lizenzgruppen:</p>
 <ul>
   <li>Die Active‑Directory‑Gruppe <code>corp.example.com, S-1-5-21-2998092229-1459889137-3613942852-2617, 478</code></li>
