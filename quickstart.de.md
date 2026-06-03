@@ -72,7 +72,7 @@ Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner:
         <div>
           <p><b>Exchange Online / Hybrid</b></p>
           <div class="highlighter-rouge">
-            <pre><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "&lt;GraphClientId from Step 2&gt;"</code></pre>
+            <pre><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "&lt;application (client) ID of the Entra ID app from step 2&gt;"</code></pre>
           </div>
           <p><small><em><code>-GraphOnly true</code> stellt sicher, dass das lokale AD ignoriert wird. Fügen Sie den Parameter <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> hinzu, wenn Sie eine nationale oder Sovereign Cloud nutzen.</em></small></p>
           <p><small><em>Falls das Skript nicht startet: Rechtsklick auf Set-OutlookSignatures.ps1 > Eigenschaften > "Zulassen" (Unblock) anhaken.</em></small></p>
