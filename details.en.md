@@ -282,190 +282,194 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 
 - In **client mode for on-premises mailboxes**, no additional permissions or Graph registrations are required.
 - In **Exchange Online**, permissions are limited to the required Graph endpoints.
-
-<div class="table-container">
-  <table class="table is-hoverable is-fullwidth">
-    <thead>
-      <tr>
-        <th style="width: 25%;">Permission</th>
-        <th style="width: 15%;">Client mode</th>
-        <th style="width: 15%;">SimulateAndDeploy</th>
-        <th style="width: 15%;">Outlook add‑in</th>
-        <th>Required for</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td colspan="5"><strong>All environments</strong></td>
-      </tr>
-      <tr>
-        <td>Temporary full access to mailboxes</td>
-        <td></td>
-        <td>● Required</td>
-        <td></td>
-        <td>Access to roaming signatures in Exchange Online. Direct-to-mailbox sync on-prem.</td>
-      </tr>
-      <tr>
-        <td>Add-in manifest, <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/understanding-outlook-add-in-permissions">ReadWriteMailbox</a></td>
-        <td></td>
-        <td></td>
-        <td>● Required</td>
-        <td>Set signature.</td>
-      </tr>
-      <tr>
-        <td colspan="5" style="padding-top: 2em !important;"><strong>Cloud only Entra ID app</strong> (creating a separate app for each mode is strongly recommended)</td>
-      </tr>
-      <tr>
-        <td colspan="5"><em>Setup</em></td>
-      </tr>
-      <tr>
-        <td>Manual setup</td>
-        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/config/default%20graph%20config.ps1">Graph config file</a></td>
-        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/SimulateAndDeploy.ps1">SimulateAndDeploy</a></td>
-        <td><a href="/outlookaddin#entra-id-app">Outlook add-in</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Scripted setup</td>
-        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/Create-EntraApp.ps1">Create-EntraApp.ps1</a></td>
-        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/Create-EntraApp.ps1">Create-EntraApp.ps1</a></td>
-        <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/Create-EntraApp.ps1">Create-EntraApp.ps1</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td colspan="5" style="padding-top: 2em !important;"><em>Graph API permissions, delegated</em></td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#email">email</a></td>
-        <td>● Required</td>
-        <td>● Required</td>
-        <td></td>
-        <td>Authenticate the signed-in user.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall">Files.Read.All</a></td>
-        <td>○ Optional</td>
-        <td>○ Optional</td>
-        <td></td>
-        <td>Read template and configuration files hosted on SharePoint Online. Alternative: <a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected">Files.SelectedOperations.Selected</a>.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall">GroupMember.Read.All</a></td>
-        <td>● Required</td>
-        <td>● Required</td>
-        <td>● Required</td>
-        <td>Find groups by name, get their security identifier (SID) and transitive members.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailread">Mail.Read</a></td>
-        <td></td>
-        <td></td>
-        <td>● Required</td>
-        <td>Required because of Microsoft restrictions accessing roaming signatures.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite">Mail.ReadWrite</a></td>
-        <td>● Required</td>
-        <td>● Required</td>
-        <td></td>
-        <td>Create signature collection in drafts, provide signatures for Outlook add-in.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite">MailboxConfigItem.ReadWrite</a></td>
-        <td>● Required</td>
-        <td>● Required</td>
-        <td></td>
-        <td>Read data from Outlook Web, set Outlook web signatures.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite">MailboxSettings.ReadWrite</a></td>
-        <td>● Required</td>
-        <td>● Required</td>
-        <td></td>
-        <td>Detect mailbox environment, get and set out-of-office data.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#offline_access">offline_access</a></td>
-        <td>● Required</td>
-        <td>● Required</td>
-        <td></td>
-        <td>Get a refresh token from Graph.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#openid">openid</a></td>
-        <td>● Required</td>
-        <td>● Required</td>
-        <td></td>
-        <td>Authenticate the signed-in user.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#profile">profile</a></td>
-        <td>● Required</td>
-        <td>● Required</td>
-        <td></td>
-        <td>Authenticate the signed-in user, get basic properties.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall">User.Read.All</a></td>
-        <td>● Required</td>
-        <td>● Required</td>
-        <td>● Required</td>
-        <td>Data for replacement variables, SMTP to UPN, group membership.</td>
-      </tr>
-      <tr>
-        <td colspan="5" style="padding-top: 2em !important;"><em>Graph API permissions, application</em></td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall">Files.Read.All</a></td>
-        <td></td>
-        <td>○ Optional</td>
-        <td></td>
-        <td>Read template and configuration files hosted on SharePoint Online. Alternative: <a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected">Files.SelectedOperations.Selected</a>.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall">GroupMember.Read.All</a></td>
-        <td></td>
-        <td>● Required</td>
-        <td></td>
-        <td>Find groups by name, get their security identifier (SID) and transitive members.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite">Mail.ReadWrite</a></td>
-        <td></td>
-        <td>● Required</td>
-        <td></td>
-        <td>Create signature collection in drafts, provide signatures for Outlook add-in.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite">MailboxConfigItem.ReadWrite</a></td>
-        <td></td>
-        <td>● Required</td>
-        <td></td>
-        <td>Read data from Outlook Web, set Outlook web signatures.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite">MailboxSettings.ReadWrite</a></td>
-        <td></td>
-        <td>● Required</td>
-        <td></td>
-        <td>Detect mailbox environment, get and set out-of-office data.</td>
-      </tr>
-      <tr>
-        <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall">User.Read.All</a></td>
-        <td></td>
-        <td>● Required</td>
-        <td></td>
-        <td>Data for replacement variables, SMTP to UPN, group membership.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<details class="box p-0">
+  <summary class="has-text-weight-bold" style="cursor: pointer;">
+    <strong>Detailed Entra ID app permissions</strong>
+  </summary>
+  <div class="table-container">
+    <table class="table is-hoverable is-fullwidth">
+      <thead>
+        <tr>
+          <th style="width: 25%;">Permission</th>
+          <th style="width: 15%;">Client mode</th>
+          <th style="width: 15%;">SimulateAndDeploy</th>
+          <th style="width: 15%;">Outlook add‑in</th>
+          <th>Required for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="5"><strong>All environments</strong></td>
+        </tr>
+        <tr>
+          <td>Temporary full access to mailboxes</td>
+          <td></td>
+          <td>● Required</td>
+          <td></td>
+          <td>Access to roaming signatures in Exchange Online. Direct-to-mailbox sync on-prem.</td>
+        </tr>
+        <tr>
+          <td>Add-in manifest, <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/understanding-outlook-add-in-permissions">ReadWriteMailbox</a></td>
+          <td></td>
+          <td></td>
+          <td>● Required</td>
+          <td>Set signature.</td>
+        </tr>
+        <tr>
+          <td colspan="5" style="padding-top: 2em !important;"><strong>Cloud only Entra ID app</strong> (creating a separate app for each mode is strongly recommended)</td>
+        </tr>
+        <tr>
+          <td colspan="5"><em>Setup</em></td>
+        </tr>
+        <tr>
+          <td>Manual setup</td>
+          <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/config/default%20graph%20config.ps1">Graph config file</a></td>
+          <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/SimulateAndDeploy.ps1">SimulateAndDeploy</a></td>
+          <td><a href="/outlookaddin#entra-id-app">Outlook add-in</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Scripted setup</td>
+          <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/Create-EntraApp.ps1">Create-EntraApp.ps1</a></td>
+          <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/Create-EntraApp.ps1">Create-EntraApp.ps1</a></td>
+          <td><a href="https://raw.githubusercontent.com/Set-OutlookSignatures/Set-OutlookSignatures/refs/heads/main/src_Set-OutlookSignatures/sample%20code/Create-EntraApp.ps1">Create-EntraApp.ps1</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="5" style="padding-top: 2em !important;"><em>Graph API permissions, delegated</em></td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#email">email</a></td>
+          <td>● Required</td>
+          <td>● Required</td>
+          <td></td>
+          <td>Authenticate the signed-in user.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall">Files.Read.All</a></td>
+          <td>○ Optional</td>
+          <td>○ Optional</td>
+          <td></td>
+          <td>Read template and configuration files hosted on SharePoint Online. Alternative: <a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected">Files.SelectedOperations.Selected</a>.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall">GroupMember.Read.All</a></td>
+          <td>● Required</td>
+          <td>● Required</td>
+          <td>● Required</td>
+          <td>Find groups by name, get their security identifier (SID) and transitive members.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailread">Mail.Read</a></td>
+          <td></td>
+          <td></td>
+          <td>● Required</td>
+          <td>Required because of Microsoft restrictions accessing roaming signatures.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite">Mail.ReadWrite</a></td>
+          <td>● Required</td>
+          <td>● Required</td>
+          <td></td>
+          <td>Create signature collection in drafts, provide signatures for Outlook add-in.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite">MailboxConfigItem.ReadWrite</a></td>
+          <td>● Required</td>
+          <td>● Required</td>
+          <td></td>
+          <td>Read data from Outlook Web, set Outlook web signatures.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite">MailboxSettings.ReadWrite</a></td>
+          <td>● Required</td>
+          <td>● Required</td>
+          <td></td>
+          <td>Detect mailbox environment, get and set out-of-office data.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#offline_access">offline_access</a></td>
+          <td>● Required</td>
+          <td>● Required</td>
+          <td></td>
+          <td>Get a refresh token from Graph.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#openid">openid</a></td>
+          <td>● Required</td>
+          <td>● Required</td>
+          <td></td>
+          <td>Authenticate the signed-in user.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#profile">profile</a></td>
+          <td>● Required</td>
+          <td>● Required</td>
+          <td></td>
+          <td>Authenticate the signed-in user, get basic properties.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall">User.Read.All</a></td>
+          <td>● Required</td>
+          <td>● Required</td>
+          <td>● Required</td>
+          <td>Data for replacement variables, SMTP to UPN, group membership.</td>
+        </tr>
+        <tr>
+          <td colspan="5" style="padding-top: 2em !important;"><em>Graph API permissions, application</em></td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall">Files.Read.All</a></td>
+          <td></td>
+          <td>○ Optional</td>
+          <td></td>
+          <td>Read template and configuration files hosted on SharePoint Online. Alternative: <a href="https://learn.microsoft.com/en-us/graph/permissions-reference#filesselectedoperationsselected">Files.SelectedOperations.Selected</a>.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#groupmemberreadall">GroupMember.Read.All</a></td>
+          <td></td>
+          <td>● Required</td>
+          <td></td>
+          <td>Find groups by name, get their security identifier (SID) and transitive members.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite">Mail.ReadWrite</a></td>
+          <td></td>
+          <td>● Required</td>
+          <td></td>
+          <td>Create signature collection in drafts, provide signatures for Outlook add-in.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxconfigitemreadwrite">MailboxConfigItem.ReadWrite</a></td>
+          <td></td>
+          <td>● Required</td>
+          <td></td>
+          <td>Read data from Outlook Web, set Outlook web signatures.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxsettingsreadwrite">MailboxSettings.ReadWrite</a></td>
+          <td></td>
+          <td>● Required</td>
+          <td></td>
+          <td>Detect mailbox environment, get and set out-of-office data.</td>
+        </tr>
+        <tr>
+          <td><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall">User.Read.All</a></td>
+          <td></td>
+          <td>● Required</td>
+          <td></td>
+          <td>Data for replacement variables, SMTP to UPN, group membership.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
 
 ### Typical security questionnaire answers and questions
 
 Security reviews often begin with the same recurring questions. The overview below provides concise, written answers for both the Set-OutlookSignatures community project and the commercial Benefactor Circle add-on, so security analysts, procurement teams, and technical reviewers can start from a consistent baseline and refine the content where environment-specific requirements apply.
 
-<details id="licensing-details" class="box p-0">
+<details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Typical security questionnaire answers and questions</strong>
   </summary>
