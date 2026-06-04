@@ -463,7 +463,7 @@ The name of the signature template file without extension is the name of the sig
 OutlookSignatureName = Test signature, do not use
 ```
 
-> `OutlookSignatureName` is a simple file rename without considerating mailbox priority order or anyting else – if there is an existing signature with that name, it is replaced without any checks or warnings. For a more sophisticated approach, consider [MailboxSpecificSignatureNames](/parameters#mailboxspecificsignaturenames), [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile), replacement variable specific template assignment, or combining mail address specific assignments with exclusions for certain currently logged-on users.
+> Although `OutlookSignatureName` protects signature names used by higher priority mailboxes, it is basically a simple file rename. You may want to consider more sophisticated approaches: [MailboxSpecificSignatureNames](/parameters#mailboxspecificsignaturenames), [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile), replacement variable specific template assignment, or combining mail address specific assignments with exclusions for certain currently logged-on users.
 
 ### Proposed template and signature naming convention
 A consistent naming convention helps both template maintainers and end users. One popular approach:
@@ -650,7 +650,7 @@ Within each group, templates are sorted by `SortOrder` and `SortCulture` (if def
 **Important consequence:** A template is applied only to the mailbox with the highest priority allowed to use it, so lower-priority mailboxes do not overwrite signatures intended for higher-priority ones.
 
 You can influence behavior with the [MailboxSpecificSignatureNames](/parameters#mailboxspecificsignaturenames) parameter and with the `OutlookSignatureName` tag in the INI file.
-> `OutlookSignatureName` is a simple file rename without considerating mailbox priority order or anyting else – if there is an existing signature with that name, it is replaced without any checks or warnings. For a more sophisticated approach, consider [MailboxSpecificSignatureNames](/parameters#mailboxspecificsignaturenames), [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile), replacement variable specific template assignment, or combining mail address specific assignments with exclusions for certain currently logged-on users.
+> Although `OutlookSignatureName` protects signature names used by higher priority mailboxes, it is basically a simple file rename. You may want to consider more sophisticated approaches: [MailboxSpecificSignatureNames](/parameters#mailboxspecificsignaturenames), [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile), replacement variable specific template assignment, or combining mail address specific assignments with exclusions for certain currently logged-on users.
 
 OOF templates are applied only if the out-of-office assistant is currently disabled. If it is active or scheduled, OOF templates are not applied.
 
