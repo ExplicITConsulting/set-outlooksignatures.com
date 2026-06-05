@@ -465,13 +465,13 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
   </div>
 </details>
 
-### Typical security questionnaire answers and questions
+### Security questionnaire
 
-Security reviews often begin with the same recurring questions. The overview below provides concise, written answers for both the Set-OutlookSignatures community project and the commercial Benefactor Circle add-on, so security analysts, procurement teams, and technical reviewers can start from a consistent baseline and refine the content where environment-specific requirements apply.
+Security reviews often share a basic set of questions. The overview below provides concise, written answers for both the Set-OutlookSignatures community project and the commercial Benefactor Circle add-on. Security analysts, procurement teams, and technical reviewers can start from a consistent baseline and refine the content where environment-specific requirements apply.
 
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
-    <strong>Typical security questionnaire answers and questions</strong>
+    <strong>Basic questions and answers</strong>
   </summary>
   <p><a href="https://set-outlooksignatures.com">Set-OutlookSignatures</a> is the free and open-source community project for centrally generating and deploying Outlook email signatures.</p>
   <p>The <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> is a commercial proprietary add-on that extends Set-OutlookSignatures with additional enterprise capabilities, offered by <a href="https://explicitconsulting.at">ExplicIT Consulting</a>.</p>
