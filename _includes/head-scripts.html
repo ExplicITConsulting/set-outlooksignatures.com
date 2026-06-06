@@ -368,3 +368,31 @@
     }
   })();
 </script>
+
+
+<!-- Open <details> tags when addressed directly via a URL fragment -->
+<script>
+  function openTargetedDetails() {
+    // Get the current hash from the URL (e.g., #procurement-outsourcer)
+    const hash = window.location.hash;
+
+    if (hash) {
+      // Find the element with that ID
+      const element = document.querySelector(hash);
+
+      // Check if it exists and is a <details> element
+      if (element && element.tagName.toLowerCase() === 'details') {
+        element.open = true; // Open it!
+
+        // Optional: Smoothly scroll to the element once opened
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+
+  // Run when the page initially loads
+  window.addEventListener('DOMContentLoaded', openTargetedDetails);
+
+  // Run if the user clicks a link to a different anchor while already on the page
+  window.addEventListener('hashchange', openTargetedDetails);
+</script>
