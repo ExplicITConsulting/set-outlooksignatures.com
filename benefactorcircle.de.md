@@ -197,7 +197,7 @@ sitemap_changefreq: weekly
 
 <h2 id="price">Preis und Business Case</h2>
 <p><strong>Set-OutlookSignatures ist und bleibt kostenlos.</strong> Was als Technologiedemonstrator begann, ist heute das sicherste und vielseitigste Open-Source-Tool für E-Mail-Signaturen. Erfahren Sie mehr über die <a href="/faq#why-the-tagline">Geschichte hinter dem Code</a>.</p>
-<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> schaltet erweiterte Funktionen frei — für <strong>nur 0.25  EUR pro Postfach/Monat</strong> (EUR 3.00 pro Jahr). Jährliche Abrechnung, keine automatische Verlängerung.</p>
+<p>Das <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span> schaltet erweiterte Funktionen frei — für <strong>nur 0,26  EUR pro Postfach/Monat</strong> (EUR 3,12 pro Jahr). Jährliche Abrechnung, keine automatische Verlängerung.</p>
 <p>Das Add-on ist eine Investition, die sich vom ersten Tag an rechnet, ganz sicher auch für Sie!<br><strong>Fakten statt Vermutungen:</strong> Ermitteln Sie in nur fünf Minuten Ihre konkrete Ersparnis mit unserem <a href="/benefactorcircle#financial-benefits">Business Case</a>.</p>
 <p>Dank seiner einzigartigen Funktionen und der exklusiven Herstellerverfügbarkeit ist eine rechtskonforme Direktbeschaffung in der Regel ohne öffentliche Ausschreibung möglich.</p>
 <p>Berücksichtigen Sie auch die Gesamtbetriebskosten (TCO) über mehrere Jahre hinweg. Einige Mitbewerber sehen im Kleingedruckten automatische Preiserhöhungen von 8 % oder mehr vor.</p>
@@ -216,38 +216,38 @@ sitemap_changefreq: weekly
             <tbody>
                 <tr>
                     <td class="has-text-weight-bold">100 Postfächer</td>
-                    <td>🟢 <b>300 EUR</b></td>
-                    <td>🔴 ca. 1.600 EUR</td>
+                    <td>🟢 <b>312 EUR</b></td>
+                    <td>🔴 ca. 1.900 EUR</td>
                     <td>🟡 ca. 1.300 EUR</td>
-                    <td>🔴 ca. 1.600 EUR</td>
+                    <td>🔴 ca. 1.700 EUR</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">250 Postfächer</td>
-                    <td>🟢 <b>750 EUR</b></td>
-                    <td>🔴 ca. 4.000 EUR</td>
+                    <td>🟢 <b>780 EUR</b></td>
+                    <td>🔴 ca. 4.800 EUR</td>
                     <td>🟡 ca. 2.700 EUR</td>
-                    <td>🔴 ca. 3.600 EUR</td>
+                    <td>🔴 ca. 3.900 EUR</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">500 Postfächer</td>
-                    <td>🟢 <b>1.500 EUR</b></td>
-                    <td>🔴 ca. 8.000 EUR</td>
+                    <td>🟢 <b>1.560 EUR</b></td>
+                    <td>🔴 ca. 7.600 EUR</td>
                     <td>🟡 ca. 4.400 EUR</td>
-                    <td>🟡 ca. 6.200 EUR</td>
+                    <td>🔴 ca. 6.700 EUR</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">1.000 Postfächer</td>
-                    <td>🟢 <b>3.000 EUR</b></td>
-                    <td>🔴 ca. 15.700 EUR</td>
-                    <td>🟡 ca. 8.700 EUR</td>
-                    <td>🟡 ca. 10.500 EUR</td>
+                    <td>🟢 <b>3.120 EUR</b></td>
+                    <td>🔴 ca. 12.100 EUR</td>
+                    <td>🟡 ca. 8.900 EUR</td>
+                    <td>🔴 ca. 11.300 EUR</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">10.000 Postfächer</td>
-                    <td>🟢 <b>30.000 EUR</b></td>
-                    <td>🔴 ca. 110.000 EUR</td>
-                    <td>🟡 ca. 65.000 EUR</td>
-                    <td>🟡 ca. 41.000 EUR</td>
+                    <td>🟢 <b>31.200 EUR</b></td>
+                    <td>🔴 ca. 56.300 EUR</td>
+                    <td>🔴 ca. 57.000 EUR</td>
+                    <td>🟡 ca. 43.500 EUR</td>
                 </tr>
             </tbody>
         </table>

@@ -89,7 +89,7 @@ With Set-OutlookSignatures and the optional <a href="/benefactorcircle"><span st
 ## Feature comparison {#feature-comparison}
 ### Pricing Benchmark {#pricing}
 <p><strong>Set-OutlookSignatures is and will always be free.</strong> What began as a technology demonstrator is now the most secure and versatile open-source tool for managing email signatures. Learn more about <a href="/faq#why-the-tagline">the story behind the code</a>.</p>
-<p>The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> unlocks advanced features — for <strong>just EUR 0.25 per mailbox/month</strong> (EUR 3.00 per year). Billed annually, no auto-renewal.</p>
+<p>The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> unlocks advanced features — for <strong>just EUR 0.26 per mailbox/month</strong> (EUR 3.12 per year). Billed annually, no auto-renewal.</p>
 <p>The add-on is an investment that pays off from day one, certainly for you as well!<br><strong>Facts, not guesswork:</strong> Calculate your specific savings in just five minutes with our <a href="/benefactorcircle#financial-benefits">business case</a>.</p>
 <p>Thanks to its unique features and exclusive manufacturer availability, direct procurement in compliance with legal requirements is generally possible without a public tender.</p>
 <p>Also consider the total cost of ownership (TCO) over several years. Some competitors include automatic annual price increases of 8% or more in the fine print.</p><div style="display: grid;">
@@ -107,38 +107,38 @@ With Set-OutlookSignatures and the optional <a href="/benefactorcircle"><span st
             <tbody>
                 <tr>
                     <td class="has-text-weight-bold">100 Mailboxes</td>
-                    <td>🟢 <b>EUR 300</b></td>
-                    <td>🔴 approx. EUR 1,600</td>
+                    <td>🟢 <b>EUR 312</b></td>
+                    <td>🔴 approx. EUR 1,900</td>
                     <td>🟡 approx. EUR 1,300</td>
-                    <td>🔴 approx. EUR 1,600</td>
+                    <td>🔴 approx. EUR 1,700</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">250 Mailboxes</td>
-                    <td>🟢 <b>EUR 750</b></td>
-                    <td>🔴 approx. EUR 4,000</td>
+                    <td>🟢 <b>EUR 780</b></td>
+                    <td>🔴 approx. EUR 4,800</td>
                     <td>🟡 approx. EUR 2,700</td>
-                    <td>🔴 approx. EUR 3,600</td>
+                    <td>🔴 approx. EUR 3,900</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">500 Mailboxes</td>
-                    <td>🟢 <b>EUR 1,500</b></td>
-                    <td>🔴 approx. EUR 8,000</td>
+                    <td>🟢 <b>EUR 1,560</b></td>
+                    <td>🔴 approx. EUR 7,600</td>
                     <td>🟡 approx. EUR 4,400</td>
-                    <td>🟡 approx. EUR 6,200</td>
+                    <td>🔴 approx. EUR 6,700</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">1,000 Mailboxes</td>
-                    <td>🟢 <b>EUR 3,000</b></td>
-                    <td>🔴 approx. EUR 15,700</td>
-                    <td>🟡 approx. EUR 8,700</td>
-                    <td>🟡 approx. EUR 10,500</td>
+                    <td>🟢 <b>EUR 3,120</b></td>
+                    <td>🔴 approx. EUR 12,100</td>
+                    <td>🟡 approx. EUR 8,900</td>
+                    <td>🔴 approx. EUR 11,300</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">10,000 Mailboxes</td>
-                    <td>🟢 <b>EUR 30,000</b></td>
-                    <td>🔴 approx. EUR 110,000</td>
-                    <td>🟡 approx. EUR 65,000</td>
-                    <td>🟡 approx. EUR 41,000</td>
+                    <td>🟢 <b>EUR 31,200</b></td>
+                    <td>🔴 approx. EUR 56,300</td>
+                    <td>🔴 approx. EUR 57,000</td>
+                    <td>🟡 approx. EUR 43,500</td>
                 </tr>
             </tbody>
         </table>
