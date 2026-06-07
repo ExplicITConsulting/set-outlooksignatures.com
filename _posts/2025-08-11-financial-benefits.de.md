@@ -24,7 +24,7 @@ Schauen wir uns das einmal genauer an:
 Das sind 8,04 EUR pro Benutzer und Jahr, die allein für manuelle Signatur-Updates aufgewendet werden.
 
 Vergleichen Sie das nun mit Set-OutlookSignatures:
-- Günstige 3,00 EUR pro Postfach und Jahr
+- Günstige 3,12 EUR pro Postfach und Jahr
 - Vollständig automatisiert
 - Immer konform mit CI/CD- und gesetzlichen Standards
 

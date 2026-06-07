@@ -307,7 +307,7 @@ sitemap_changefreq: weekly
   <p><strong>0.67 × 2 × 3 × 2 × 1 = EUR 8.04 per user and year</strong></p>
 </blockquote>
 
-<p><strong>That means: Manual signature management already costs EUR 8.04 per user and year — compared to just EUR 3.00 for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</strong></p>
+<p><strong>That means: Manual signature management already costs EUR 8.04 per user and year — compared to just EUR 3.12 for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</strong></p>
 
 <p>And this calculation still ignores the biggest cost drivers:</p>
 <ul>

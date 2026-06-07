@@ -24,7 +24,7 @@ Let's break it down:
 That's EUR 8.04 per user per year spent on manual signature updates alone.
 
 Now compare that to Set-OutlookSignatures:
-- Affordable EUR 3.00 per mailbox per year
+- Affordable EUR 3.12 per mailbox per year
 - Fully automated
 - Always compliant with CI/CD and legal standards
 
