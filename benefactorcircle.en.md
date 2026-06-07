@@ -292,7 +292,7 @@ sitemap_changefreq: weekly
 </ul>
 <p>The first two points depend heavily on your organization and are hard to quantify precisely. The third one, however, is very easy to calculate.</p>
 
-<p>Let’s assume a realistic average cost of <strong>EUR 60,000 per employee per year</strong> (including taxes, social security, and overhead) for about <strong>1,800 working hours</strong>. That equals roughly <strong>EUR 0.55 per minute</strong> of employee time.</p>
+<p>Let’s assume a realistic average cost of <strong>EUR 72,000 per employee per year</strong> (including taxes, social security, and overhead) for about <strong>1,800 working hours</strong>. That equals roughly <strong>EUR 0.67 per minute</strong> of employee time.</p>
 <p>Now consider the effort required to keep signatures up to date:</p>
 <ul>
   <li>How often do signature parameters change each year (job titles, logos, banners, legal text)?</li>
@@ -304,10 +304,10 @@ sitemap_changefreq: weekly
 <p><strong>Example calculation:</strong></p>
 <blockquote>
   <p>Cost per minute × changes per year × minutes per change × number of signatures × number of clients</p>
-  <p><strong>0.55 × 2 × 3 × 2 × 1 = EUR 6.60 per user and year</strong></p>
+  <p><strong>0.67 × 2 × 3 × 2 × 1 = EUR 8.04 per user and year</strong></p>
 </blockquote>
 
-<p><strong>That means: Manual signature management already costs EUR 6.60 per user and year — compared to just EUR 3.00 for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</strong></p>
+<p><strong>That means: Manual signature management already costs EUR 8.04 per user and year — compared to just EUR 3.00 for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</strong></p>
 
 <p>And this calculation still ignores the biggest cost drivers:</p>
 <ul>

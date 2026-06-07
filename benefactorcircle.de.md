@@ -292,7 +292,7 @@ sitemap_changefreq: weekly
 </ul>
 <p>Die ersten beiden Punkte hängen stark von Ihrer Organisation ab und lassen sich nur schwer exakt beziffern. Der dritte Punkt hingegen ist sehr einfach zu berechnen.</p>
 
-<p>Nehmen wir realistische durchschnittliche Kosten von <strong>60.000 EUR pro Mitarbeitendem und Jahr</strong> (inklusive Steuern, Sozialabgaben und Gemeinkosten) bei etwa <strong>1.800 Arbeitsstunden</strong>. Das entspricht rund <strong>0,55&nbsp;EUR pro Minute</strong> Arbeitszeit.</p>
+<p>Nehmen wir realistische durchschnittliche Kosten von <strong>72.000 EUR pro Mitarbeitendem und Jahr</strong> (inklusive Steuern, Sozialabgaben und Gemeinkosten) bei etwa <strong>1.800 Arbeitsstunden</strong>. Das entspricht rund <strong>0,67&nbsp;EUR pro Minute</strong> Arbeitszeit.</p>
 <p>Betrachten wir nun den Aufwand für die Pflege von Signaturen:</p>
 <ul>
   <li>Wie oft ändern sich Signaturparameter pro Jahr (Stellenbezeichnungen, Logos, Banner, Rechtstexte)?</li>
@@ -303,10 +303,10 @@ sitemap_changefreq: weekly
 
 <p><strong>Beispielrechnung:</strong></p>
 <blockquote><p>Kosten pro Minute × Änderungen pro Jahr × Minuten pro Änderung × Anzahl der Signaturen × Anzahl der Clients</p>
-  <p><strong>0,55 × 2 × 3 × 2 × 1 = 6,60 EUR pro Benutzer und Jahr</strong></p>
+  <p><strong>0,67 × 2 × 3 × 2 × 1 = 8,04 EUR pro Benutzer und Jahr</strong></p>
 </blockquote>
 
-<p><strong>Das bedeutet: Manuelle Signaturverwaltung kostet bereits 6,60 EUR pro Benutzer und Jahr – im Vergleich zu nur 3,00 EUR für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span>.</strong></p>
+<p><strong>Das bedeutet: Manuelle Signaturverwaltung kostet bereits 8,04 EUR pro Benutzer und Jahr – im Vergleich zu nur 3,00 EUR für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span>.</strong></p>
 
 <p>Und dabei sind die größten Kostentreiber noch gar nicht berücksichtigt:</p>
 <ul>

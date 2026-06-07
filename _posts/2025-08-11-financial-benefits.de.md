@@ -16,12 +16,12 @@ sitemap_changefreq: monthly
 Die Zahlen sprechen jedoch eine andere Sprache.
 
 Schauen wir uns das einmal genauer an:
-- Durchschnittliche Mitarbeiterkosten: 0,55 EUR pro Minute (basierend auf 60.000 EUR pro Jahr für 1.800 Stunden)
+- Durchschnittliche Mitarbeiterkosten: 0,67 EUR pro Minute (basierend auf 72.000 EUR pro Jahr für 1.800 Stunden)
 - 1 Gerät, 2 Signaturen
 - 2 Aktualisierungen pro Jahr
 - 3 Minuten pro Aktualisierung
 
-Das sind 6,60 EUR pro Benutzer und Jahr, die allein für manuelle Signatur-Updates aufgewendet werden.
+Das sind 8,04 EUR pro Benutzer und Jahr, die allein für manuelle Signatur-Updates aufgewendet werden.
 
 Vergleichen Sie das nun mit Set-OutlookSignatures:
 - Günstige 3,00 EUR pro Postfach und Jahr
