@@ -12,6 +12,7 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
+
 Set-OutlookSignatures ist nicht nur ein Tool zum Verwalten von Outlook-Signaturen und Abwesenheitsnotizen. Es ist kostenlos und Open Source, weil ich der Community, die mir über die Jahre so oft geholfen hat, etwas zurückgeben möchte.
 
 Der Code enthält natürlich viele Elemente, die damit zu tun haben, zuverlässige Informationen über den aktuellen Benutzer und seinen Vorgesetzten aus verschiedenen Quellen zu erhalten, die Outlook-Konfiguration aus der Registrierung zu lesen und zu interpretieren und Word für die Bearbeitung von Dokumenten zu automatisieren. Dank Open Source können Sie sich den Code ansehen und aktiv dazu beitragen, ihn zu verbessern.
@@ -19,6 +20,7 @@ Der Code enthält natürlich viele Elemente, die damit zu tun haben, zuverlässi
 Neben den großen Lernthemen, die in den [FAQ](/faq) erwähnt werden, finden sich in den Haupt- und Support-Dateien von Set-OutlookSignatures zahlreiche kleine Code-Schnipsel und Kommentare, die Ihnen nützlich sein könnten. Die Chancen stehen gut, dass Sie beim Durchstöbern des Codes auf einige kleine Juwelen stoßen.
 
 Im Folgenden finden Sie eine Übersicht über weitere Skripttechniken, die Sie [aus Set-OutlookSignatures lernen können](/faq#what-can-i-learn-from-the-code-of-set-outlooksignatures).
+
 - Auflisten der Active Directory-Gruppenmitgliedschaft ohne Kompromisse
 - Microsoft Graph-Authentifizierung und -Reauthentifizierung
 - Bereitstellen und Ausführen von Software mithilfe von Desired State Configuration (DSC)
@@ -35,5 +37,17 @@ Im Folgenden finden Sie eine Übersicht über weitere Skripttechniken, die Sie [
 
 Haben Sie einige Codezeilen gefunden, die Sie für sich selbst verwenden können? Großartig, genau so soll es sein. Gern geschehen!<br>Eine kleine Bitte: Wenn Sie einen Moment Zeit haben, lassen Sie mich bitte <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/discussions?discussions_q=">wissen</a>, welchen Teil des Codes Sie wiederverwenden konnten.
 
-## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, Sie kennenzulernen!
+## Machen Sie jeden kleinen E-Mail-Moment zu einem professionellen Vorteil
+
+E-Mail-Signaturen und Abwesenheitsnotizen mögen unbedeutend erscheinen, aber stellen Sie sich vor, wie oft sie gesehen werden.
+
+Wir helfen Unternehmen, diese Kontaktpunkte für alle Benutzer zentral zu verwalten und zu standardisieren — **einheitliches Outlook-Branding überall, ohne Datenabfluss nach außen.** Kein manueller Aufwand, keine Inkonsistenzen, keine Daten verlassen Ihr Unternehmen. Mit Set-OutlookSignatures wird jede E-Mail zu einem konsistenten, sicheren und vollständig kontrollierten Markenerlebnis.
+
+👉 Sehen Sie, was für Ihr E-Mail-Setup möglich ist  
+→ [So funktioniert es (2 Minuten)](/)
+
+👉 Möchten Sie es selbst ausprobieren?  
+→ [Schnellstart](/quickstart)
+
+_Nicht verantwortlich für die E-Mail-Konfiguration in Ihrem Unternehmen?_  
+Teilen Sie diese Seite mit Ihrer IT-Abteilung oder Ihrem Marketingteam, sie werden es Ihnen danken.

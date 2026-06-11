@@ -5,46 +5,63 @@ locale: "en"
 title: "Randomly alternate banners and other images"
 description: "Running a marketing campaign with multiple banners?"
 published: true
-tags: 
+tags:
 show_sidebar: true
 slug: "alternating-banners-and-other-images"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
+
 ## Running a marketing campaign with multiple banners?
+
 Rotating them manually across your team's signatures is nearly impossible and definitely not scalable.
 
 With Set-OutlookSignatures, you can automate banner rotation effortlessly, using flexible conditions tailored to your needs.
 
 Whether you want to:
+
 - Randomly rotate banners to avoid viewer fatigue
 - Show specific banners to certain departments or locations
 - Adjust banners based on season, date, or even external data like weather or stock prices
 
 It's all possible and easy to implement.
 
-1. Add all banners to your template and define an alternate text
-   - Use `$CurrentMailbox_Banner1DELETEEMPTY$` for banner 1, `$CurrentMailbox_Banner2DELETEEMPTY$` for banner 2, and so on.  
-   - The 'DELETEEMPTY' part deletes an image when the corresponding replacement variable does not contain a value.
-2. Create a custom replacement variable for each banner in your replacement variable config file, and randomly only assign one of these variables a value:
+1.  Add all banners to your template and define an alternate text
+    - Use `$CurrentMailbox_Banner1DELETEEMPTY$` for banner 1, `$CurrentMailbox_Banner2DELETEEMPTY$` for banner 2, and so on.
+    - The 'DELETEEMPTY' part deletes an image when the corresponding replacement variable does not contain a value.
+2.  Create a custom replacement variable for each banner in your replacement variable config file, and randomly only assign one of these variables a value:
     ```
     $tempBannerIdentifiers = @(1, 2, 3)
 
-    $tempBannerIdentifiers | Foreach-Object {
-        $ReplaceHash["CurrentMailbox_Banner$($_)"] = $null
-    }
+        $tempBannerIdentifiers | Foreach-Object {
+            $ReplaceHash["CurrentMailbox_Banner$($_)"] = $null
+        }
 
-    $ReplaceHash["CurrentMailbox_Banner$($tempBannerIdentifiers | Get-Random)"] = $true
-    ```
-Now, with every run of Set-OutlookSignatures, a different random banner from the template is chosen and the other banners are deleted.
- 
-You can enhance this even further:  
-- Use banner 1 twice as often as the others. Just add it to the code multiple times: `$tempBannerIdentifiers = @(1, 1, 2, 3)`  
-- Assign banners to specific users, departments, locations or any other attribute  
-- Restrict banner usage by date or season  
-- You could assign banners based on your share price or expected weather queried from a web service  
+        $ReplaceHash["CurrentMailbox_Banner$($tempBannerIdentifiers | Get-Random)"] = $true
+        ```
+
+    Now, with every run of Set-OutlookSignatures, a different random banner from the template is chosen and the other banners are deleted.
+
+You can enhance this even further:
+
+- Use banner 1 twice as often as the others. Just add it to the code multiple times: `$tempBannerIdentifiers = @(1, 1, 2, 3)`
+- Assign banners to specific users, departments, locations or any other attribute
+- Restrict banner usage by date or season
+- You could assign banners based on your share price or expected weather queried from a web service
 - And much more, including any combination of the above
 
-## Interested in learning more or seeing our solution in action?
-[Contact us](/support) or explore further on our [website](/). We look forward to getting to know you!
+## Turn every small email moment into a professional advantage
+
+Email signatures and out-of-office replies may seem minor, but think about how often people see them.
+
+We help organizations centrally manage and standardize these touchpoints across all users — **unified Outlook branding everywhere, with zero external data exposure.** No manual effort, no inconsistencies, no data leaving your environment. With Set-OutlookSignatures, every email becomes a consistent, secure, and fully controlled brand experience.
+
+👉 See what’s possible for your email setup  
+→ [See how it works (2 min)](/)
+
+👉 Want to try it yourself?  
+→ [Quickstart](/quickstart)
+
+_Not responsible for email setup in your company?_  
+Share this page with your IT department or marketing team, they’ll thank you for it.

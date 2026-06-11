@@ -5,13 +5,14 @@ locale: "en"
 title: "Flexible Permissions Management: Mastering Email Signatures for Delegates and Cover Configurations"
 description: "From executive assistants and holiday cover to team mailboxes: How to cleanly separate delegate signatures—and distribute them fully automatically based on real permissions without manual overhead."
 published: true
-tags: 
+tags:
 show_sidebar: true
 slug: "signatures-for-delegates"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
+
 In the modern workplace, shared email mailboxes and delegated access rights are part of daily business. The classic example is the executive assistant writing on behalf of a manager. But delegation goes way beyond that: think of holiday cover within a project team, sickness cover in sales, or colleagues temporarily taking over tasks for another mailbox.
 
 This introduces a common and tricky requirement for both IT and Marketing: "Assign a specific delegate signature to anyone who has access to the mailbox userA@example.com—but absolutely do not assign it to the actual owner of the mailbox themselves!" (Because the person on holiday or the manager normally uses their own personal signature).
@@ -34,6 +35,7 @@ userA@example.com
 ```
 
 ### Scaling for the Entire Enterprise
+
 You don't have to reinvent the wheel for every holiday replacement or team member. You can use a single, universal delegate template for the entire company, as long as you cleverly combine variables like `$CurrentUser[...]` and `$CurrentMailbox[...]` inside Word.
 
 In the configuration, you then simply map the template to the various mailboxes where coverage is active:
@@ -63,8 +65,8 @@ This is where the included Export-RecipientPermissions tool comes into play. Thi
 
 This delivers unbeatable advantages for both Marketing and IT:
 
-* Zero Administrative Effort: If a colleague is granted permission for holiday cover in Active Directory or Exchange, they automatically get the appropriate signature during the next sync. Once the permission is revoked, the signature disappears—without IT or Marketing ever touching a single line of code.
-* Independent of Outlook Mapping: The signature is assigned and prepared correctly even if the covering colleague hasn't manually added the secondary mailbox to their local Outlook profile yet (e.g., in purely mobile or web workflows). The trustee is ready to go instantly.
+- Zero Administrative Effort: If a colleague is granted permission for holiday cover in Active Directory or Exchange, they automatically get the appropriate signature during the next sync. Once the permission is revoked, the signature disappears—without IT or Marketing ever touching a single line of code.
+- Independent of Outlook Mapping: The signature is assigned and prepared correctly even if the covering colleague hasn't manually added the secondary mailbox to their local Outlook profile yet (e.g., in purely mobile or web workflows). The trustee is ready to go instantly.
 
 For details on this powerful feature, check out the documentation at https://set-outlooksignatures.com/parameters#virtualmailboxconfigfile.
 
@@ -74,12 +76,24 @@ When coverage assignments shift or summer campaigns need to be integrated into d
 
 Enter the Set-OutlookSignatures INI Editor (https://set-outlooksignatures.com/inieditor). It is a powerful, web-based interface (a single HTML file that runs locally, from a file share, or hosted on a web server) that makes complex configurations a breeze for both teams:
 
-* Integrated Documentation (No-Code Feel for Marketing): Not sure what a specific line or a parameter like -CURRENTUSER means? The editor instantly provides a clear, understandable explanation for every setting and line right on your screen.
-* Intelligent Error Detection: Built on years of real-world support experience from the support teams and the Benefactor Circle add-on, the editor catches technical syntax errors and logical permission pitfalls instantly as you type, before the configuration goes live.
-* Visual Processing Order: See at a glance the exact processing order the engine will use for templates. This prevents delegate and standard signatures from accidentally overwriting one another.
-* Modern Usability: With features like undo/redo history, automatic input file encoding detection, an eye-friendly dark/light mode, and mobile/touch support, you can work productively on any device—from the admin PC to the marketing tablet.
+- Integrated Documentation (No-Code Feel for Marketing): Not sure what a specific line or a parameter like -CURRENTUSER means? The editor instantly provides a clear, understandable explanation for every setting and line right on your screen.
+- Intelligent Error Detection: Built on years of real-world support experience from the support teams and the Benefactor Circle add-on, the editor catches technical syntax errors and logical permission pitfalls instantly as you type, before the configuration goes live.
+- Visual Processing Order: See at a glance the exact processing order the engine will use for templates. This prevents delegate and standard signatures from accidentally overwriting one another.
+- Modern Usability: With features like undo/redo history, automatic input file encoding detection, an eye-friendly dark/light mode, and mobile/touch support, you can work productively on any device—from the admin PC to the marketing tablet.
 
 The Result: Marketing can logically co-design or verify campaign deployments and mappings, while IT can rest assured that the technical syntax remains absolutely flawless.
 
-## Interested in learning more or seeing our solution in action?
-[Contact us](/support) or explore further on our [website](/). We look forward to getting to know you!
+## Turn every small email moment into a professional advantage
+
+Email signatures and out-of-office replies may seem minor, but think about how often people see them.
+
+We help organizations centrally manage and standardize these touchpoints across all users — **unified Outlook branding everywhere, with zero external data exposure.** No manual effort, no inconsistencies, no data leaving your environment. With Set-OutlookSignatures, every email becomes a consistent, secure, and fully controlled brand experience.
+
+👉 See what’s possible for your email setup  
+→ [See how it works (2 min)](/)
+
+👉 Want to try it yourself?  
+→ [Quickstart](/quickstart)
+
+_Not responsible for email setup in your company?_  
+Share this page with your IT department or marketing team, they’ll thank you for it.

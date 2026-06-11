@@ -5,13 +5,14 @@ locale: "de"
 title: "Einzigartige Elemente für E-Mail-Signaturen und Abwesenheitsnotizen"
 description: "Das Erste, was uns in den Sinn kommt, ist das visuelle Design. Eine Signatur kann jedoch auch inhaltsspezifische Funktionen und Barrierefreiheitsoptionen enthalten."
 published: true
-tags: 
+tags:
 show_sidebar: true
 slug: "unique-elements"
 permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
+
 Das erste, was einem in den Sinn kommt, ist das visuelle Design: Schriftarten, Farben, Logos, Banner und Symbole.
 
 Eine Signatur kann aber auch inhaltsspezifische Merkmale enthalten. Dies können Account-Bilder, mehrsprachige Grußformeln und Berufsbezeichnungen, Kontaktdaten des Vorgesetzten, Wegbeschreibungen zum Büro, Links zu persönlichen Social-Media-Profilen und Selbstbedienungs-Terminbuchungen sein.
@@ -22,6 +23,17 @@ Nicht zuletzt gibt es auch den Aspekt der barrierefreien Zugänglichkeit. Dies h
 
 All dies – [und noch mehr](/features)! – ist mit Set-OutlookSignatures und dem Benefactor Circle Add-on möglich.
 
+## Machen Sie jeden kleinen E-Mail-Moment zu einem professionellen Vorteil
 
-## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, Sie kennenzulernen!
+E-Mail-Signaturen und Abwesenheitsnotizen mögen unbedeutend erscheinen, aber stellen Sie sich vor, wie oft sie gesehen werden.
+
+Wir helfen Unternehmen, diese Kontaktpunkte für alle Benutzer zentral zu verwalten und zu standardisieren — **einheitliches Outlook-Branding überall, ohne Datenabfluss nach außen.** Kein manueller Aufwand, keine Inkonsistenzen, keine Daten verlassen Ihr Unternehmen. Mit Set-OutlookSignatures wird jede E-Mail zu einem konsistenten, sicheren und vollständig kontrollierten Markenerlebnis.
+
+👉 Sehen Sie, was für Ihr E-Mail-Setup möglich ist  
+→ [So funktioniert es (2 Minuten)](/)
+
+👉 Möchten Sie es selbst ausprobieren?  
+→ [Schnellstart](/quickstart)
+
+_Nicht verantwortlich für die E-Mail-Konfiguration in Ihrem Unternehmen?_  
+Teilen Sie diese Seite mit Ihrer IT-Abteilung oder Ihrem Marketingteam, sie werden es Ihnen danken.

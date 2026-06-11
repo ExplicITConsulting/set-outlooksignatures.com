@@ -12,7 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
-Die Geschichte der Kodierung begann lange vor der IT. Selbst die ersten Alphabete waren Versuche, gesprochene Sprache in visuelle Symbole zu übersetzen. Ob Keilschrift, Hieroglyphen oder das lateinische Alphabet: Jede Kultur entwickelte ihre eigenen Systeme, um Informationen zu kodieren und über Zeit und Raum hinweg zu bewahren. 
+
+Die Geschichte der Kodierung begann lange vor der IT. Selbst die ersten Alphabete waren Versuche, gesprochene Sprache in visuelle Symbole zu übersetzen. Ob Keilschrift, Hieroglyphen oder das lateinische Alphabet: Jede Kultur entwickelte ihre eigenen Systeme, um Informationen zu kodieren und über Zeit und Raum hinweg zu bewahren.
 
 Mit dem Aufkommen der Computer wurde die Kodierung zu einer technischen Herausforderung. Zeichen mussten in Bytes übersetzt werden, was zu über 140 verschiedenen Zeichenkodierungen führte, die moderne Betriebssysteme und Frameworks auch heute noch unterstützen. ASCII, ISO-8859, Windows-1252, Shift-JIS – jede Kodierung hat ihre eigenen Eigenschaften und Einschränkungen.
 
@@ -24,5 +25,17 @@ Die kostenlose und quelloffene PowerShell-Funktion ConvertEncoding, Teil von Set
 
 ConvertEncoding ermöglicht die zuverlässige Erkennung von Kodierungen über BOMs, HTML-Metadaten und heuristische Analysen und konvertiert Inhalte bei Bedarf in andere Formate. Selbst HTML-Dateien werden korrekt angepasst, einschließlich Meta-Tags. Dadurch lassen sich unterschiedliche Kodierungen leicht handhaben.
 
-## Möchten Sie mehr erfahren oder unsere Lösung in Aktion sehen?
-[Kontaktieren Sie uns](/support) oder erfahren Sie mehr auf unserer [Website](/). Wir freuen uns darauf, Sie kennenzulernen!
+## Machen Sie jeden kleinen E-Mail-Moment zu einem professionellen Vorteil
+
+E-Mail-Signaturen und Abwesenheitsnotizen mögen unbedeutend erscheinen, aber stellen Sie sich vor, wie oft sie gesehen werden.
+
+Wir helfen Unternehmen, diese Kontaktpunkte für alle Benutzer zentral zu verwalten und zu standardisieren — **einheitliches Outlook-Branding überall, ohne Datenabfluss nach außen.** Kein manueller Aufwand, keine Inkonsistenzen, keine Daten verlassen Ihr Unternehmen. Mit Set-OutlookSignatures wird jede E-Mail zu einem konsistenten, sicheren und vollständig kontrollierten Markenerlebnis.
+
+👉 Sehen Sie, was für Ihr E-Mail-Setup möglich ist  
+→ [So funktioniert es (2 Minuten)](/)
+
+👉 Möchten Sie es selbst ausprobieren?  
+→ [Schnellstart](/quickstart)
+
+_Nicht verantwortlich für die E-Mail-Konfiguration in Ihrem Unternehmen?_  
+Teilen Sie diese Seite mit Ihrer IT-Abteilung oder Ihrem Marketingteam, sie werden es Ihnen danken.
