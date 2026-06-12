@@ -27,7 +27,7 @@ sitemap_changefreq: weekly
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
       <div style="display: flex; gap: 0.75em;">
         ✨
-        <div><b>Automatic Selection</b><br>Applies correct signatures on item creation.</div>
+        <div><b>Automatic Selection</b><br>Applies correct signatures on item creation, on from change, on recipients change, and on send.</div>
       </div>
     </div>
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
@@ -63,7 +63,7 @@ sitemap_changefreq: weekly
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
       <div style="display: flex; gap: 0.75em;">
         🚀
-        <div><b>Enterprise Ready</b><br>Exchange Online and On-Premises support.</div>
+        <div><b>Enterprise Ready</b><br>Works in all Outlook editions: Classic and New, Android, iOS, macOS, Web, Windows.</div>
       </div>
     </div>
   </div>
