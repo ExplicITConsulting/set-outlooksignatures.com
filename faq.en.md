@@ -750,6 +750,10 @@ You can define the process priorities with the parameters [ScriptProcessPriority
 
 ## Keep users from adding, editing and removing signatures
 
+Maintaining a consistent corporate identity across an entire organization can be a challenge, especially when users frequently modify, outdated, or completely remove their email signatures. To enforce brand guidelines and ensure legal compliance, IT administrators often need to restrict users from changing their signature settings.
+
+However, the capability to lock down these settings varies significantly depending on which version of Outlook your organization uses. Below is a detailed technical overview of how to restrict signature modifications across different Outlook platforms, the limitations you will encounter, and the best alternative approaches.
+
 ### Classic Outlook for Windows
 
 You can disable GUI elements so that users cannot add, edit and remove signatures in Outlook by using the 'Do not allow signatures for email messages' Group Policy Object (GPO) setting.
