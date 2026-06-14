@@ -60,7 +60,7 @@
                         </main>
                         {% if site.posts and page.show_sidebar %}
                             <div class="column is-4-desktop is-4-tablet">
-                                <div class="buttons">
+                                <div class="buttons is-hidden-mobile">
                                     <a href="{{ site.baseurl }}/feed.xml" type="application/rss+xml" class="button is-link">
                                         <span>{{ site.data[site.active_lang].strings.blog_subscribe }}</span>
                                     </a>
@@ -68,8 +68,17 @@
                                         <span>{{ site.data[site.active_lang].strings.blog_learnmore }}</span>
                                     </a>
                                 </div>
-                                <p>&nbsp;</p>
+                                <p class="is-hidden-mobile">&nbsp;</p>
                                 {% include latest-posts.html %}
+                                <p class="is-hidden-desktop is-hidden-tablet">&nbsp;</p>
+                                <div class="buttons is-hidden-desktop is-hidden-tablet">
+                                    <a href="{{ site.baseurl }}/feed.xml" type="application/rss+xml" class="button is-link">
+                                        <span>{{ site.data[site.active_lang].strings.blog_subscribe }}</span>
+                                    </a>
+                                    <a href="/" class="button is-link" style="font-weight: bold; color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);">
+                                        <span>{{ site.data[site.active_lang].strings.blog_learnmore }}</span>
+                                    </a>
+                                </div>
                             </div>
                         {% endif %}
                     </div>
