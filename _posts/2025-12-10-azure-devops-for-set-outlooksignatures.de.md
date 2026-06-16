@@ -132,7 +132,7 @@ E-Mail-Signaturen und Abwesenheitsnotizen mögen unbedeutend erscheinen, aber st
 Wir helfen Unternehmen, diese Kontaktpunkte für alle Benutzer zentral zu verwalten und zu standardisieren — **einheitliches Outlook-Branding überall, ohne Datenabfluss nach außen.** Kein manueller Aufwand, keine Inkonsistenzen, keine Daten verlassen Ihr Unternehmen. Mit Set-OutlookSignatures wird jede E-Mail zu einem konsistenten, sicheren und vollständig kontrollierten Markenerlebnis.
 
 👉 Sehen Sie, was für Ihr E-Mail-Setup möglich ist  
-→ [So funktioniert es (2 Minuten)](https://set-outlooksignatures.com)
+→ [So funktioniert es (2 Minuten)](https://set-outlooksignatures.com/)
 
 👉 Möchten Sie es selbst ausprobieren?  
 → [Schnellstart](https://set-outlooksignatures.com/quickstart)
