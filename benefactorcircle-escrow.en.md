@@ -30,7 +30,7 @@ sitemap_changefreq: weekly
 
 **Ensuring the operational continuity of the Set-OutlookSignatures Benefactor Circle add-on.**
 
-ExplicIT Consulting GmbH acknowledges the structural importance of the open source [Set-OutlookSignatures](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/, https://set-outlooksignatures.com) project. To guarantee the technical and organizational durability of the commercial Benefactor Circle add-on, we have established a public stewardship framework. This proposal details the mechanism used to maintain fallback safety for both project administrators and enterprise subscribers.
+ExplicIT Consulting GmbH acknowledges the structural importance of the open source [Set-OutlookSignatures](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/) project. To guarantee the technical and organizational durability of the commercial Benefactor Circle add-on, we have established a public stewardship framework. This proposal details the mechanism used to maintain fallback safety for both project administrators and enterprise subscribers.
 
 ## Framework Overview
 
