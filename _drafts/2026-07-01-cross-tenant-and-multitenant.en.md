@@ -50,7 +50,7 @@ Email signatures and out-of-office replies may seem minor, but think about how o
 We help organizations centrally manage and standardize these touchpoints across all users — **unified Outlook branding everywhere, with zero external data exposure.** No manual effort, no inconsistencies, no data leaving your environment. With Set-OutlookSignatures, every email becomes a consistent, secure, and fully controlled brand experience.
 
 👉 See what’s possible for your email setup  
-→ [See how it works (2 min)](https://set-outlooksignatures.com)
+→ [See how it works (2 min)](https://set-outlooksignatures.com/)
 
 👉 Want to try it yourself?  
 → [Quickstart](https://set-outlooksignatures.com/quickstart)
