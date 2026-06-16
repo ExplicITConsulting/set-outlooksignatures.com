@@ -4,20 +4,20 @@
 
     {% for post in site.posts %}
         {% if post_count >= 3 %}
-            {% break %} <!-- Stop completely once we have rendered 3 posts -->
+            {% break %} {% endif %}
+
+        {% if post.url == page.url %}
+            {% continue %}
         {% endif %}
 
         {% if post.tags contains "new release" %}
-            <!-- If it's a new release, ONLY allow it if we haven't printed one yet -->
             {% if has_new_release == false %}
                 <div class="column is-12" style="font-size: 0.75rem;">
                     {% include post-card.html %}
                 </div>
                 {% assign post_count = post_count | plus: 1 %}
-                {% assign has_new_release = true %} <!-- Gate closed for future new releases -->
-            {% endif %}
+                {% assign has_new_release = true %} {% endif %}
         {% else %}
-            <!-- Standard posts are always allowed to print -->
             <div class="column is-12" style="font-size: 0.75rem;">
                 {% include post-card.html %}
             </div>
