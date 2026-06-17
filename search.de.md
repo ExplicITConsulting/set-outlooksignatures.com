@@ -171,7 +171,7 @@ sitemap_changefreq: weekly
             const allExactMatches = [];
             const normalizedQuery = query.toLowerCase()
                 .replace(/\W/g, '.?')
-                .replace(/(\w)/g, '$1.?')  
+                .replace(/(\w)/g, '$1.?')
                 .replace(/\.\?\.\?/g, '.?')
                 .replace(/(^\.\?|\.\?$)/g, '');
 
@@ -318,7 +318,26 @@ sitemap_changefreq: weekly
                 });
             });
 
-            allResults.sort((a, b) => a.score - b.score);
+            allResults.sort((a, b) => {
+                // Tier 1: Match Type Priority (Exact Match = 1, FlexSearch = 0)
+                const aExact = a.doc?.isExactMatch ? 1 : 0;
+                const bExact = b.doc?.isExactMatch ? 1 : 0;
+
+                if (aExact !== bExact) {
+                    return bExact - aExact; // Exact matches bubble to the absolute top of the entire list
+                }
+
+                // Tier 2: Language Priority within those match types (Current language = 1, Other = 0)
+                const aLangPriority = (a.lang === currentLang) ? 1 : 0;
+                const bLangPriority = (b.lang === currentLang) ? 1 : 0;
+
+                if (aLangPriority !== bLangPriority) {
+                    return bLangPriority - aLangPriority; // Current language wins ties within the same match group
+                }
+
+                // Tier 3: Score Fallback Tie-Breaker
+                return a.score - b.score;
+            });
             displayResults(allResults);
         }
 
