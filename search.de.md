@@ -330,57 +330,58 @@ sitemap_changefreq: weekly
             allResults.sort((a, b) => {
                 const queryLower = query.toLowerCase();
 
-                // 1. Strictness-Ebene ermitteln (Wo wurde das Wort gefunden?)
-                const getMatchStrictness = (resultObj) => {
-                    if (!resultObj.doc) return 0;
+                const get12StepRank = (resultObj) => {
+                    if (!resultObj.doc) return 13; // Ganz nach unten, falls Daten fehlen
 
+                    // 1. Variablen vorbereiten
                     const title = (resultObj.doc.document || '').toLowerCase();
                     const section = (resultObj.doc.section || '').toLowerCase();
-
-                    // Höchste Priorität: Das Wort steht direkt in der Haupt- oder Sektionsüberschrift
-                    if (title.includes(queryLower) || section.includes(queryLower)) {
-                        return 3;
-                    }
-
-                    // Mittlere Priorität: Es ist ein markierter Exakt-Match aus Ihrer Regex-Funktion
-                    if (resultObj.doc.isExactMatch) {
-                        return 2;
-                    }
-
-                    // Niedrige Priorität: Es kommt irgendwo im Inhalt, der URL oder den Tags vor
                     const content = (resultObj.doc.content || '').toLowerCase();
-                    const url = (resultObj.doc.url || '').toLowerCase();
-                    const category = (resultObj.doc.category || '').toLowerCase();
-                    const rawTags = resultObj.doc.tags;
-                    const inTags = Array.isArray(rawTags)
-                        ? rawTags.some(t => String(t).toLowerCase().includes(queryLower))
-                        : String(rawTags || '').toLowerCase().includes(queryLower);
 
-                    if (content.includes(queryLower) || url.includes(queryLower) || category.includes(queryLower) || inTags) {
-                        return 1;
+                    const isCurrentLang = (resultObj.lang === currentLang);
+                    const triggeredField = resultObj.doc.field; // Das Feld, das FlexSearch getroffen hat
+
+                    // 2. Flags für exakte Texttreffer setzen
+                    const isExactInTitle = title.includes(queryLower);
+                    const isExactInSection = section.includes(queryLower);
+                    const isExactInContent = content.includes(queryLower) ||
+                                            (resultObj.doc.isExactMatch && !isExactInTitle && !isExactInSection);
+
+                    // 3. Logische Einordnung in deine 6 Kern-Stufen
+                    let localRank = 6; // Fallback für undefinierte Fuzzy-Treffer
+
+                    if (isExactInTitle) {
+                        localRank = 1; // 1. Exakter Treffer im Title
+                    } else if (isExactInSection) {
+                        localRank = 2; // 2. Exakter Treffer in Section
+                    } else if (isExactInContent) {
+                        localRank = 3; // 3. Exakter Treffer im Content
+                    } else if (triggeredField === 'document') {
+                        localRank = 4; // 4. Fuzzy Treffer im Title
+                    } else if (triggeredField === 'section') {
+                        localRank = 5; // 5. Fuzzy Treffer in Section
+                    } else if (triggeredField === 'content' || triggeredField === 'url' || triggeredField === 'tags') {
+                        localRank = 6; // 6. Fuzzy Treffer im Content / Rest
                     }
-                    return 0;
+
+                    // 4. Aufsplittung nach Sprache (Stufen 1-6 vs. Stufen 7-12)
+                    if (isCurrentLang) {
+                        return localRank; // Gibt 1 bis 6 zurück
+                    } else {
+                        return localRank + 6; // Gibt 7 bis 12 zurück
+                    }
                 };
 
-                const aStrictness = getMatchStrictness(a);
-                const bStrictness = getMatchStrictness(b);
+                const rankA = get12StepRank(a);
+                const rankB = get12StepRank(b);
 
-                // Zuerst nach Strictness sortieren (3 kommt vor 2, 2 vor 1) -> Absteigend
-                if (aStrictness !== bStrictness) {
-                    return bStrictness - aStrictness;
+                // Da hier gilt: "Je niedriger die Stufe, desto besser" (Stufe 1 ist Top, Stufe 12 ist Bottom)
+                // sortieren wir aufsteigend nach dem Rang.
+                if (rankA !== rankB) {
+                    return rankA - rankB;
                 }
 
-                // Danach nach der aktuellen Sprache sortieren (Aktuelle Sprache nach oben) -> Absteigend
-                const aLangPriority = (a.lang === currentLang) ? 1 : 0;
-                const bLangPriority = (b.lang === currentLang) ? 1 : 0;
-                if (aLangPriority !== bLangPriority) {
-                    return bLangPriority - aLangPriority;
-                }
-
-                // Letzter Fallback: Der native FlexSearch-Score.
-                // FlexSearch verhält sich je nach Konfiguration unterschiedlich.
-                // Da Sie oben manuell `r.score - 1000` gerechnet haben, um die Relevanz zu ERHÖHEN,
-                // müssen wir hier umdrehen (b - a), damit die mathematisch "kleineren" (stärker negativen) Werte oben landen.
+                // Tie-Breaker innerhalb derselben Stufe: FlexSearch Score (kleiner/negativer ist besser)
                 return a.score - b.score;
             });
             displayResults(allResults);
