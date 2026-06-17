@@ -330,25 +330,33 @@ sitemap_changefreq: weekly
             allResults.sort((a, b) => {
                 const queryLower = query.toLowerCase();
 
+                // 1. Strictness-Ebene ermitteln (Wo wurde das Wort gefunden?)
                 const getMatchStrictness = (resultObj) => {
                     if (!resultObj.doc) return 0;
 
-                    const inTitle = (resultObj.doc.document || '').toLowerCase().includes(queryLower);
-                    const inSection = (resultObj.doc.section || '').toLowerCase().includes(queryLower);
-                    const inContent = (resultObj.doc.content || '').toLowerCase().includes(queryLower);
-                    const inUrl = (resultObj.doc.url || '').toLowerCase().includes(queryLower);
-                    const inDate = (resultObj.doc.date || '').toLowerCase().includes(queryLower);
-                    const inCategory = (resultObj.doc.category || '').toLowerCase().includes(queryLower);
-                    
+                    const title = (resultObj.doc.document || '').toLowerCase();
+                    const section = (resultObj.doc.section || '').toLowerCase();
+
+                    // Höchste Priorität: Das Wort steht direkt in der Haupt- oder Sektionsüberschrift
+                    if (title.includes(queryLower) || section.includes(queryLower)) {
+                        return 3;
+                    }
+
+                    // Mittlere Priorität: Es ist ein markierter Exakt-Match aus Ihrer Regex-Funktion
+                    if (resultObj.doc.isExactMatch) {
+                        return 2;
+                    }
+
+                    // Niedrige Priorität: Es kommt irgendwo im Inhalt, der URL oder den Tags vor
+                    const content = (resultObj.doc.content || '').toLowerCase();
+                    const url = (resultObj.doc.url || '').toLowerCase();
+                    const category = (resultObj.doc.category || '').toLowerCase();
                     const rawTags = resultObj.doc.tags;
-                    const inTags = Array.isArray(rawTags) 
+                    const inTags = Array.isArray(rawTags)
                         ? rawTags.some(t => String(t).toLowerCase().includes(queryLower))
                         : String(rawTags || '').toLowerCase().includes(queryLower);
 
-                    if (inTitle || inSection || inContent || inUrl || inDate || inCategory || inTags) {
-                        return 2;
-                    }
-                    if (resultObj.doc.isExactMatch) {
+                    if (content.includes(queryLower) || url.includes(queryLower) || category.includes(queryLower) || inTags) {
                         return 1;
                     }
                     return 0;
@@ -356,16 +364,23 @@ sitemap_changefreq: weekly
 
                 const aStrictness = getMatchStrictness(a);
                 const bStrictness = getMatchStrictness(b);
+
+                // Zuerst nach Strictness sortieren (3 kommt vor 2, 2 vor 1) -> Absteigend
                 if (aStrictness !== bStrictness) {
                     return bStrictness - aStrictness;
                 }
 
+                // Danach nach der aktuellen Sprache sortieren (Aktuelle Sprache nach oben) -> Absteigend
                 const aLangPriority = (a.lang === currentLang) ? 1 : 0;
                 const bLangPriority = (b.lang === currentLang) ? 1 : 0;
                 if (aLangPriority !== bLangPriority) {
                     return bLangPriority - aLangPriority;
                 }
 
+                // Letzter Fallback: Der native FlexSearch-Score.
+                // FlexSearch verhält sich je nach Konfiguration unterschiedlich.
+                // Da Sie oben manuell `r.score - 1000` gerechnet haben, um die Relevanz zu ERHÖHEN,
+                // müssen wir hier umdrehen (b - a), damit die mathematisch "kleineren" (stärker negativen) Werte oben landen.
                 return a.score - b.score;
             });
             displayResults(allResults);
