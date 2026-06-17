@@ -15,11 +15,11 @@ sitemap_changefreq: weekly
 {% if site.languages %}
   {% for lang in site.languages %}
     {% assign lang_clean = lang | strip | downcase %}
-    <link rel="preload" href="{{ languagePackBaseUrl }}{{ lang_clean }}.min.js" as="script">
+<link rel="preload" href="{{ languagePackBaseUrl }}{{ lang_clean }}.min.js" as="script">
     {% if lang_clean == 'en' %}
-      <link rel="preload" href="/search.json" as="fetch" crossorigin>
+<link rel="preload" href="/search.json" as="fetch" crossorigin>
     {% else %}
-      <link rel="preload" href="/{{ lang_clean }}/search.json" as="fetch" crossorigin>
+<link rel="preload" href="/{{ lang_clean }}/search.json" as="fetch" crossorigin>
     {% endif %}
   {% endfor %}
 {% endif %}
