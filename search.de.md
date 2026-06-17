@@ -15,7 +15,7 @@ sitemap_changefreq: weekly
 {% if site.languages %}
   {% for lang in site.languages %}
     {% assign lang_clean = lang | strip | downcase %}
-<link rel="preload" href="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/lang/{{ lang_clean }}.min.js" as="script">
+<link class="search-preload-pack" rel="preload" href="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/lang/{{ lang_clean }}.min.js" as="script">
     {% if lang_clean == 'en' %}
 <link rel="preload" href="/search.json" as="fetch" crossorigin>
     {% else %}
@@ -57,13 +57,12 @@ sitemap_changefreq: weekly
         {% endif %}
         };
 
-        const currentLang = document.documentElement.lang || Object.keys[languages](0) || 'en';
+        const currentLang = document.documentElement.lang || Object.keys(languages)[0] || 'en';
 
         function createIndex(lang, languagePack) {
             return new FlexSearch.Document({
                 document: {
                     id: "url",
-                    // All fields are explicitly indexed here while retaining relative priority weights
                     index: [
                         { field: "document", weight: 10 },
                         { field: "section", weight: 5 },
@@ -331,7 +330,6 @@ sitemap_changefreq: weekly
             allResults.sort((a, b) => {
                 const queryLower = query.toLowerCase();
 
-                // Multi-field scanning wrapper to determine exact sequence preservation hierarchy
                 const getMatchStrictness = (resultObj) => {
                     if (!resultObj.doc) return 0;
 
@@ -341,13 +339,16 @@ sitemap_changefreq: weekly
                     const inUrl = (resultObj.doc.url || '').toLowerCase().includes(queryLower);
                     const inDate = (resultObj.doc.date || '').toLowerCase().includes(queryLower);
                     const inCategory = (resultObj.doc.category || '').toLowerCase().includes(queryLower);
-                    const inTags = (resultObj.doc.tags || []).some(t => String(t).toLowerCase().includes(queryLower));
 
-                    // Tier 1: Sequence unbroken matching across any standard or extra metadata profile
+                    // Safe execution checking for both mixed array lists and string tags
+                    const rawTags = resultObj.doc.tags;
+                    const inTags = Array.isArray(rawTags)
+                        ? rawTags.some(t => String(t).toLowerCase().includes(queryLower))
+                        : String(rawTags || '').toLowerCase().includes(queryLower);
+
                     if (inTitle || inSection || inContent || inUrl || inDate || inCategory || inTags) {
                         return 2;
                     }
-                    // Tier 2: Typo-tolerant wildcard mapping structure catch-all match
                     if (resultObj.doc.isExactMatch) {
                         return 1;
                     }
