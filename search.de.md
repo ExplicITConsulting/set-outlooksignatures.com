@@ -339,10 +339,9 @@ sitemap_changefreq: weekly
                     const inUrl = (resultObj.doc.url || '').toLowerCase().includes(queryLower);
                     const inDate = (resultObj.doc.date || '').toLowerCase().includes(queryLower);
                     const inCategory = (resultObj.doc.category || '').toLowerCase().includes(queryLower);
-
-                    // Safe execution checking for both mixed array lists and string tags
+                    
                     const rawTags = resultObj.doc.tags;
-                    const inTags = Array.isArray(rawTags)
+                    const inTags = Array.isArray(rawTags) 
                         ? rawTags.some(t => String(t).toLowerCase().includes(queryLower))
                         : String(rawTags || '').toLowerCase().includes(queryLower);
 
@@ -427,12 +426,14 @@ sitemap_changefreq: weekly
             html += '</ul>';
             searchResultsContainer.innerHTML = html;
 
+            // Telemetry block with strict engine filters to prevent 400 bad request errors
             clearTimeout(window.searchTrackingTimer);
             window.searchTrackingTimer = setTimeout(() => {
-                if (typeof _paq !== 'undefined') {
-                    const query = searchInput.value.trim();
+                if (typeof _paq !== 'undefined' && isSearchReady) {
+                    const query = (searchInput.value || '').trim();
                     if (query.length > 0) {
-                        _paq.push(['trackSiteSearch', query, false, uniqueResults.length]);
+                        const countResults = (typeof uniqueResults !== 'undefined' && uniqueResults) ? uniqueResults.length : 0;
+                        _paq.push(['trackSiteSearch', query, "", countResults]);
                     }
                 }
             }, 1000);
