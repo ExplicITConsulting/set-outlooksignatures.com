@@ -55,9 +55,9 @@ Als Alternative: Führen Sie Set-OutlookSignatures regelmäßig aus (z. B. alle 
 
 Es gibt keine Möglichkeit, Benutzer während der Erstellung vollständig an der Bearbeitung von Signaturen zu hindern — moderne Ansätze ermöglichen jedoch die Durchsetzung der korrekten Signatur beim Senden.
 
-### Das Outlook-Add-in
+### Das Outlook Add-in
 
-Das [Outlook-Add-in](/outlookaddin), Teil des <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-ons</span></a>, bietet eine Funktion, um benutzerdefinierte Signaturen zu ignorieren oder zu entfernen.
+Das [Outlook Add-in](/outlookaddin), Teil des <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-ons</span></a>, bietet eine Funktion, um benutzerdefinierte Signaturen zu ignorieren oder zu entfernen.
 
 Wenn der Parameter `DISABLE_CLIENT_SIGNATURES` aktiviert ist:
 
@@ -76,7 +76,7 @@ Dies lässt eine zentrale Lücke erkennbar: die Durchsetzung genau in dem Moment
 Alle oben beschriebenen Ansätze haben eine grundlegende Einschränkung:  
 Sobald eine Signatur in eine E-Mail eingefügt wurde, kann der Benutzer sie vor dem Versand bearbeiten oder entfernen.
 
-Mit aktuellen Versionen des Outlook-Add-ins lässt sich diese Einschränkung nun effektiv aufheben.
+Mit aktuellen Versionen des Outlook Add-ins lässt sich diese Einschränkung nun effektiv aufheben.
 
 Durch Aktivierung der Launch Events:
 
@@ -93,8 +93,7 @@ Das bedeutet:
 - Fehlende Signaturen werden automatisch ergänzt
 - Jede gesendete Nachricht enthält die korrekte, compliant Signatur
 
-Dieser Ansatz verändert die Signatur-Governance grundlegend:
-
+Dieser Ansatz verändert die Signatur-Governance grundlegend:  
 👉 Statt zu versuchen, Benutzer an Änderungen zu hindern (was Outlook technisch nicht vollständig zulässt)  
 👉 wird das korrekte, regelkonforme Ergebnis exakt im Moment des Sendens erzwungen
 
