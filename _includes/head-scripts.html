@@ -5,12 +5,12 @@
   _paq.push(["disableCookies"]); // Privacy-first/No-cookie tracking
   _paq.push(["disableAlwaysUseSendBeacon"]); // Avoid beacon-based ad-blocker rules
   _paq.push(["setDomains", ["*.set-outlooksignatures.com"]]);
-  _paq.push(['enableHeartBeatTimer']); // Keeps the session alive for "time on page"
+  _paq.push(['enableHeartBeatTimer', 5]); // Keeps the session alive for "time on page"
   _paq.push(['trackPageView']); // This ensures the "Visit" is created before "Content Impressions" are recorded.
   _paq.push(['trackVisibleContentImpressions', true]); // Now that the Page View is queued, we scan for visible content
-  _paq.push(['enableLinkTracking']); // Track clicks
   _paq.push(['setLinkClasses', ["mtrcs-external-link"]]);
   _paq.push(['setDownloadClasses', ["mtrcs-download"]]);
+  _paq.push(['enableLinkTracking']); // Track clicks
 
   (function () {
     var u = "https://mtrcs.set-outlooksignatures.com/";
