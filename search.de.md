@@ -11,6 +11,7 @@ redirect_from:
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
+
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/nextapps-de/flexsearch@0.8/dist/flexsearch.bundle.min.js" as="script">
 {% if site.languages %}
   {% for lang in site.languages %}
@@ -384,6 +385,19 @@ sitemap_changefreq: weekly
                 // Tie-Breaker innerhalb derselben Stufe: FlexSearch Score (kleiner/negativer ist besser)
                 return a.score - b.score;
             });
+
+
+            const dedupeMap = new Map();
+            allResults.forEach(item => {
+                const key = `${item.doc.url}|${item.doc.section}`;
+                
+                if (!dedupeMap.has(key)) {
+                    dedupeMap.set(key, item);
+                }
+            });
+
+            allResults = Array.from(dedupeMap.values());
+
             displayResults(allResults);
         }
 
