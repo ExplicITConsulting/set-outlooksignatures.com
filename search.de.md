@@ -31,6 +31,15 @@ sitemap_changefreq: weekly
     </div>
 </div>
 
+<div id="search-language-filter" class="buttons are-small mb-4" aria-label="Languages">
+{% if site.languages %}
+  {% for lang in site.languages %}
+    {% assign lang_clean = lang | strip | downcase %}
+    <button type="button" class="button is-link search-language-toggle" data-lang="{{ lang_clean }}" aria-pressed="true">{{ lang_clean }}</button>
+  {% endfor %}
+{% endif %}
+</div>
+
 <div id="search-results" class="content">
 </div>
 
@@ -59,6 +68,8 @@ sitemap_changefreq: weekly
         };
 
         const currentLang = document.documentElement.lang || Object.keys(languages)[0] || 'en';
+        const languageButtons = Array.from(document.querySelectorAll('.search-language-toggle'));
+        const enabledLanguages = new Set(languageButtons.map(button => button.dataset.lang));
 
         function createIndex(lang, languagePack) {
             return new FlexSearch.Document({
@@ -160,6 +171,27 @@ sitemap_changefreq: weekly
         }
 
         const debouncedSearch = debounce(() => { performSearch(); }, 150);
+
+        languageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.dataset.lang;
+                const enabled = enabledLanguages.has(lang);
+
+                if (enabled) {
+                    enabledLanguages.delete(lang);
+                    button.setAttribute('aria-pressed', 'false');
+                    button.classList.remove('is-link');
+                    button.classList.add('is-light');
+                } else {
+                    enabledLanguages.add(lang);
+                    button.setAttribute('aria-pressed', 'true');
+                    button.classList.remove('is-light');
+                    button.classList.add('is-link');
+                }
+
+                if (searchInput.value.trim().length > 0) performSearch();
+            });
+        });
 
         searchInput.addEventListener('input', () => {
             const query = searchInput.value.trim();
@@ -281,13 +313,15 @@ sitemap_changefreq: weekly
                 }
             };
 
-            const availableLangs = Object.keys(indexes);
-            const otherLangs = availableLangs.filter(lang => lang !== currentLang);
-            const langsToSearch = [currentLang, ...otherLangs];
+            const availableLangs = Object.keys(indexes).filter(lang => enabledLanguages.has(lang));
+            const primaryLang = enabledLanguages.has(currentLang) ? currentLang : availableLangs[0];
+            const otherLangs = availableLangs.filter(lang => lang !== primaryLang);
+            const langsToSearch = primaryLang ? [primaryLang, ...otherLangs] : [];
 
             allResults.push(...performExactMatchSearch(query, langsToSearch));
 
-            const currentLangIndex = indexes[currentLang];
+            const currentLangIndex = primaryLang ? indexes[primaryLang] : null;
+
             if (currentLangIndex) {
                 const rawResults = currentLangIndex.search(query, searchOptions);
                 rawResults.forEach(fieldResult => {
@@ -299,7 +333,7 @@ sitemap_changefreq: weekly
                                     id: r.id,
                                     doc: { ...originalDoc, highlight: r.highlight, field: fieldResult.field },
                                     score: r.score - 1000,
-                                    lang: currentLang
+                                    lang: primaryLang
                                 });
                             }
                         });
@@ -339,7 +373,7 @@ sitemap_changefreq: weekly
                     const section = (resultObj.doc.section || '').toLowerCase();
                     const content = (resultObj.doc.content || '').toLowerCase();
 
-                    const isCurrentLang = (resultObj.lang === currentLang);
+                    const isCurrentLang = (resultObj.lang === primaryLang);
                     const triggeredField = resultObj.doc.field; // Das Feld, das FlexSearch getroffen hat
 
                     // 2. Flags für exakte Texttreffer setzen
@@ -401,6 +435,60 @@ sitemap_changefreq: weekly
             displayResults(allResults);
         }
 
+        function resultBaseUrl(result) {
+            const url = result?.doc?.url || '#';
+            const parsed = new URL(url, window.location.origin);
+            parsed.hash = '';
+            parsed.search = '';
+            return parsed.pathname;
+        }
+
+        function groupResultsByUrl(results) {
+            const groups = new Map();
+
+            results.forEach(result => {
+                if (!result.doc) return;
+
+                const key = resultBaseUrl(result);
+
+                if (!groups.has(key)) {
+                    groups.set(key, { top: result, others: [] });
+                } else {
+                    groups.get(key).others.push(result);
+                }
+            });
+
+            return Array.from(groups.values());
+        }
+
+        function renderResultItem(result) {
+            const item = result.doc;
+            let title = item.document || 'No Title';
+            const url = item.url || '#';
+            let sectionContent = item.section || '';
+            let mainContent = item.highlight || '';
+
+            if (item.isExactMatch) {
+                const queryToHighlight = item.exactQuery || mainContent;
+                const safeQuery = queryToHighlight.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                const regex = new RegExp('(' + safeQuery + ')', 'gi');
+
+                title = title.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
+                sectionContent = sectionContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
+                mainContent = mainContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
+            }
+
+            return `
+                <div class="search-result-entry">
+                    <p>
+                        <a href="${url}"><strong>${title}</strong></a>
+                        ${sectionContent ? ` | <a href="${url}"><strong>${sectionContent}</strong></a>` : ''}
+                    </p>
+                    <p>${mainContent}</p>
+                </div>
+            `;
+        }
+
         function displayResults(results) {
             let githubLinkHtml = "";
 
@@ -408,47 +496,27 @@ sitemap_changefreq: weekly
                 githubLinkHtml = `<div class="mb-4"><a href="${`https://github.com/search?q=repo%3ASet-OutlookSignatures%2FSet-OutlookSignatures+${encodeURIComponent(searchInput.value.trim())}&type=code`}" target="_blank">{{ site.data[site.active_lang].strings.search_resultsContainer_continueOnGitHub }}</a></div>`;
             }
 
-            const uniqueResults = [];
-            const seenUrls = new Set();
-            results.forEach(result => {
-                if (result.doc && !seenUrls.has(result.doc.url)) {
-                    uniqueResults.push(result);
-                    seenUrls.add(result.doc.url);
-                }
-            });
+            const groupedResults = groupResultsByUrl(results);
 
-            if (uniqueResults.length === 0) {
+            if (groupedResults.length === 0) {
                 searchResultsContainer.innerHTML = githubLinkHtml + '<p>{{ site.data[site.active_lang].strings.search_resultsContainer_placeholder_queryNoResults }}</p>';
                 return;
             }
 
             let html = githubLinkHtml + '<ul class="search-results-list">';
-            uniqueResults.forEach(result => {
-                const item = result.doc;
-                if (!item) return;
 
-                let title = item.document || 'No Title';
-                const url = item.url || '#';
-                let sectionContent = item.section || '';
-                let mainContent = item.highlight || '';
-
-                if (item.isExactMatch) {
-                    const queryToHighlight = item.exactQuery || mainContent;
-                    const safeQuery = queryToHighlight.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-                    const regex = new RegExp('(' + safeQuery + ')', 'gi');
-
-                    title = title.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
-                    sectionContent = sectionContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
-                    mainContent = mainContent.replace(regex, '<mark style="background-color: yellow;">$1</mark>');
-                }
-
+            groupedResults.forEach(group => {
                 html += `
                     <li class="box mb-4">
-                        <p>
-                            <a href="${url}"><strong>${title}</strong></a>
-                            ${sectionContent ? ` | <a href="${url}"><strong>${sectionContent}</strong></a>` : ''}
-                        </p>
-                        <p>${mainContent}</p>
+                        ${renderResultItem(group.top)}
+                        ${group.others.length > 0 ? `
+                            <details class="mt-3">
+                                <summary>+${group.others.length}</summary>
+                                <div class="mt-3">
+                                    ${group.others.map(result => `<div class="mb-6 ml-4">${renderResultItem(result)}</div>`).join('')}
+                                </div>
+                            </details>
+                        ` : ''}
                     </li>
                 `;
             });
@@ -462,7 +530,7 @@ sitemap_changefreq: weekly
                 if (typeof _paq !== 'undefined' && isSearchReady) {
                     const query = (searchInput.value || '').trim();
                     if (query.length > 0) {
-                        const countResults = (typeof uniqueResults !== 'undefined' && uniqueResults) ? uniqueResults.length : 0;
+                        const countResults = (typeof groupedResults !== 'undefined' && groupedResults) ? groupedResults.length : 0;
                         _paq.push(['trackSiteSearch', query, "", countResults]);
                     }
                 }
