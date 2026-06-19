@@ -67,9 +67,7 @@ sitemap_changefreq: weekly
         {% endif %}
         };
 
-        const currentLang = document.documentElement.lang || Object.keys(languages)[0] || 'en';
-        const languageButtons = Array.from(document.querySelectorAll('.search-language-toggle'));
-        const enabledLanguages = new Set(languageButtons.map(button => button.dataset.lang));
+        const languageButtons = Array.from(document.querySelectorAll('.search-language
 
         function createIndex(lang, languagePack) {
             return new FlexSearch.Document({
@@ -488,6 +486,7 @@ sitemap_changefreq: weekly
                 </div>
             `;
         }
+
 
         function displayResults(results) {
             let githubLinkHtml = "";
