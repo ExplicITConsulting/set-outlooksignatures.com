@@ -69,7 +69,9 @@
                                     </a>
                                 </div>
                                 <p class="is-hidden-mobile">&nbsp;</p>
-                                {% include latest-posts.html %}
+                                <div data-search-exclude="true">
+                                    {% include latest-posts.html %}
+                                </div>
                                 <p class="is-hidden-desktop is-hidden-tablet">&nbsp;</p>
                                 <div class="buttons is-hidden-desktop is-hidden-tablet">
                                     <a href="{{ site.baseurl }}/feed.xml" type="application/rss+xml" class="button is-link">

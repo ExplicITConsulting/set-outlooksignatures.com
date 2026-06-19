@@ -513,7 +513,7 @@ sitemap_changefreq: weekly
                             <details class="mt-3">
                                 <summary>+${group.others.length}</summary>
                                 <div class="mt-3">
-                                    ${group.others.map(result => `<div class="mb-3">${renderResultItem(result)}</div>`).join('')}
+                                    ${group.others.map(result => `<div class="mb-6">${renderResultItem(result)}</div>`).join('')}
                                 </div>
                             </details>
                         ` : ''}

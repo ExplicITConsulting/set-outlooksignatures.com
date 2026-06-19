@@ -26,6 +26,8 @@ module Jekyll
           base_url = "/#{doc.site.active_lang}#{doc.url}"
         end
 
+      doc_fragment.css('[data-search-exclude], .search-exclude').each(&:remove)
+
       all_headings = doc_fragment.css('h1, h2, h3, h4, h5, h6')
       Jekyll.logger.info "SearchDataCollector:", "  Found #{all_headings.size} headings in #{doc.url || doc.path}"
 
