@@ -31,9 +31,6 @@ sitemap_changefreq: weekly
     </div>
 </div>
 
-<div id="search-results" class="content">
-</div>
-
 <div id="search-language-filter" class="buttons are-small mb-4" aria-label="Languages">
 {% if site.languages %}
   {% for lang in site.languages %}
@@ -41,6 +38,9 @@ sitemap_changefreq: weekly
     <button type="button" class="button is-link search-language-toggle" data-lang="{{ lang_clean }}" aria-pressed="true">{{ lang_clean }}</button>
   {% endfor %}
 {% endif %}
+</div>
+
+<div id="search-results" class="content">
 </div>
 
 <script>
@@ -316,7 +316,7 @@ sitemap_changefreq: weekly
             const availableLangs = Object.keys(indexes).filter(lang => enabledLanguages.has(lang));
             const primaryLang = enabledLanguages.has(currentLang) ? currentLang : availableLangs[0];
             const otherLangs = availableLangs.filter(lang => lang !== primaryLang);
-            const langsToSearch = primaryLang ? [primaryLang, ...otherLang
+            const langsToSearch = primaryLang ? [primaryLang, ...otherLangs] : [];
 
             allResults.push(...performExactMatchSearch(query, langsToSearch));
 
