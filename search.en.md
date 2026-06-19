@@ -510,10 +510,10 @@ sitemap_changefreq: weekly
                     <li class="box mb-4">
                         ${renderResultItem(group.top)}
                         ${group.others.length > 0 ? `
-                            <details>
+                            <details class="mt-3">
                                 <summary>+${group.others.length}</summary>
                                 <div class="mt-3">
-                                    ${group.others.map(renderResultItem).join('')}
+                                    ${group.others.map(result => `<div class="mb-3">${renderResultItem(result)}</div>`).join('')}
                                 </div>
                             </details>
                         ` : ''}
