@@ -63,6 +63,8 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
+          PUPPETEER_EXECUTABLE_PATH: "/usr/bin/google-chrome"
       - name: Inject Minified HTML into LLM files (pwsh)
         shell: pwsh
         run: |
