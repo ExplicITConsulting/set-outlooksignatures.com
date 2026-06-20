@@ -155,6 +155,6 @@ jekyll-archives:
 
 mermaid_prebuild:
   enabled: true
-  output_dir: assets/svg
+  output_dir: assets/images/svg
   prefers-color-scheme:
     mode: auto
