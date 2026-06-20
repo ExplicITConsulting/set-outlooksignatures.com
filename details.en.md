@@ -106,6 +106,64 @@ Most companies choose the same default setup:
   </div>
 </div>
 
+```mermaid
+---
+title: Set-OutlookSignatures Architecture Considerations
+---
+flowchart TB
+    classDef invisible fill:none,stroke:none;
+
+    templatestore["Template store<br/>(local, network share, SharePoint)"]
+
+    subgraph gen ["<b>Step 1: Create signatures and out-of-office replies</b>"]
+        direction LR
+        clientmode["Client mode<br>(on user devices)"]
+        simulateanddeploy["SimulateAndDeploy<br>(on central system)"]
+        simulate["Simulation mode<br>(on user device)"]
+    end
+
+    subgraph mid [" "]
+        direction TB
+        mailbox["Mailboxes<br>(on-prem, cloud)"]
+        filesystem["File system"]
+    end
+
+    subgraph avail ["<b>Step 2: Make signatures available</b>"]
+        direction TB
+
+        roam["Native roaming<br>(cloud only)"]
+        addin["Outlook add-in<br>(on-prem, cloud)"]
+
+        subgraph outlookeditions [" "]
+            direction TB
+            WinOutlook["Outlook for Windows<br>(Classic and New)"]
+            WebOutlook["Outlook for the Web"]
+            Mac["Outlook for Mac<br>(Classic and New)"]
+            iOS["Outlook for iOS"]
+            Android["Outlook for Android"]
+        end
+    end
+
+    subgraph oofbox["Out of Office"]
+        oof["Native OOF handling<br>(on-prem, cloud)"]
+    end
+
+    class mid invisible;
+
+    templatestore --> gen
+
+    clientmode --> mailbox
+    simulateanddeploy --> mailbox
+    simulate -.-> filesystem
+    
+    mailbox --> roam
+    mailbox --> oof
+    mailbox -.-> addin
+
+    roam --> WinOutlook & WebOutlook
+    addin -.-> WinOutlook & WebOutlook & Mac & iOS & Android
+```
+
 ### Step 1: Create signatures and out-of-office replies
 
 Set-OutlookSignatures comes with **client mode**, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> adds **SimulateAndDeploy** mode.
