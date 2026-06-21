@@ -77,19 +77,13 @@ sitemap_changefreq: weekly
 
 The architecture of Set-OutlookSignatures is designed as a two-stage process: first, transforming raw templates into signatures and replies; second, ensuring these artifacts are delivered to the user's Outlook environment.  
 
-**Stage 1: Create signatures and out-of-office replies**
+**Stage 1: Create signatures and out-of-office replies**<br>Signatures are generated using either decentralized (client mode) or centralized (SimulateAndDeploy) methods. This stage pulls template files from a store, enriches them with properties from Entra ID, Active Directory, or other data sources, and saves the result as signatures or out-of-office replies.  
 
-Signatures are generated using either decentralized (client mode) or centralized (SimulateAndDeploy) methods. This stage pulls template files from a store, enriches them with properties from Entra ID, Active Directory, or other data sources, and saves the result as signatures or out-of-office replies.  
+**Stage 2: Make signatures available**<br>The finished signatures and replies are made available to the user's Outlook instance, whether via native Outlook features or the [Outlook add-in](/outlookaddin).
 
-**Stage 2: Make signatures available**
+**Flexibility in deployment**<br>You can mix these approaches based on your architectural requirements:
 
-The finished signatures and replies are made available to the user's Outlook instance, whether via native Outlook features or the [Outlook add-in](/outlookaddin).
-
-**Flexibility in deployment**
-
-You can mix these approaches based on your architectural requirements:
-
-- Mode Selection: Combine decentralized Client mode and centralized SimulateAndDeploy mode based on your architecture principles.  
+- Mode Selection: Combine decentralized client mode and centralized SimulateAndDeploy mode based on your architecture principles.
 
 - Delivery Channels: Use native Outlook features for signature roaming, or selectively configure and deploy the Outlook add-in.
 
