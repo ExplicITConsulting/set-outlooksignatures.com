@@ -75,36 +75,24 @@ sitemap_changefreq: weekly
 
 ## Architecture considerations {#architecture-considerations}
 
-Most companies choose the same default setup:
+The architecture of Set-OutlookSignatures is designed as a two-stage process: first, transforming raw templates into signatures and replies; second, ensuring these artifacts are delivered to the user's Outlook environment.  
 
-- **Primary device** (managed): Where users do most daily email work.
-- **Secondary devices** (often managed, sometimes unmanaged): Phones, tablets, occasional laptops, VDI sessions, or private devices.
+**Stage 1: Create signatures and out-of-office replies**
 
-<div class="columns is-multiline">
-  <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
-      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-        <span>💡</span>
-        <div>
-          <p><b>Recommended default pattern</b></p>
-          <p>Client mode on the primary device keeps signatures and OOF replies up to date without central compute.</p>
-          <p>Add the <a href="/outlookaddin">Outlook add-in</a> to make signatures available on secondary devices...</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
-      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-        <span>🏢</span>
-        <div>
-          <p><b>When central creation is better</b></p>
-          <p>Sometimes you cannot or do not want to run Set-OutlookSignatures in the security context of the logged-on user...</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+Signatures are generated using either decentralized (client mode) or centralized (SimulateAndDeploy) methods. This stage pulls template files from a store, enriches them with properties from Entra ID, Active Directory, or other data sources, and saves the result as signatures or out-of-office replies.  
+
+**Stage 2: Make signatures available**
+
+The finished signatures and replies are made available to the user's Outlook instance, whether via native Outlook features or the [Outlook add-in](/outlookaddin).
+
+**Flexibility in deployment**
+
+You can mix these approaches based on your architectural requirements:
+
+- Mode Selection: Combine decentralized Client mode and centralized SimulateAndDeploy mode based on your architecture principles.  
+
+- Delivery Channels: Use native Outlook features for signature roaming, or selectively configure and deploy the Outlook add-in.
+
 
 ```mermaid
 ---
@@ -115,7 +103,9 @@ flowchart TB
 
     templatestore["Template store<br/>(local, network share, SharePoint)"]
 
-    subgraph gen ["<b>Step 1: Create signatures and out-of-office replies</b>"]
+    datasource["Data source<br/>(Entra ID, AD, others)"]
+
+    subgraph gen ["<b>Stage 1: Create signatures and out-of-office replies</b>"]
         direction LR
         clientmode["Client mode<br>(on user devices)"]
         simulateanddeploy["SimulateAndDeploy<br>(on central system)"]
@@ -128,7 +118,7 @@ flowchart TB
         filesystem["File system"]
     end
 
-    subgraph avail ["<b>Step 2: Make signatures available</b>"]
+    subgraph avail ["<b>Stage 2: Make signatures available</b>"]
         direction TB
 
         roam["Native roaming<br>(cloud only)"]
@@ -151,6 +141,7 @@ flowchart TB
     class mid invisible;
 
     templatestore --> gen
+    datasource --> gen
 
     clientmode --> mailbox
     simulateanddeploy --> mailbox
@@ -164,7 +155,7 @@ flowchart TB
     addin -.-> WinOutlook & WebOutlook & Mac & iOS & Android
 ```
 
-### Step 1: Create signatures and out-of-office replies
+### Stage 1: Create signatures and out-of-office replies
 
 Set-OutlookSignatures comes with **client mode**, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> adds **SimulateAndDeploy** mode.
 
@@ -201,7 +192,7 @@ Set-OutlookSignatures comes with **client mode**, the <a href="/benefactorcircle
 
 With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, both modes can set **out-of-office replies** for internal and external recipients and also deploy signatures for mailboxes (and other Exchange recipient objects) the user can act as, even if they are not added as full mailboxes in Outlook (see the [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile) parameter for details).
 
-### Step 2: Make signatures available
+### Stage 2: Make signatures available
 
 - **Client mode** automatically updates the local Outlook signature store.
 - **SimulateAndDeploy** has no access to end user devices and therefore treats **Outlook for the web** as the “local Outlook”.
