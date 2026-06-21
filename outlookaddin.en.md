@@ -206,8 +206,16 @@ sitemap_changefreq: weekly
 </ul>
 <p>The following diagram visualizes both concepts:</p>
 
-<div style="max-height: 75vh; display: inline-block; width: 100%;">
-  <style> .mermaid-diagram img { max-height: 75vh; width: auto; object-fit: contain; } </style>
+<div class="outlookaddin-deployment-diagram-container is-flex is-justify-content-center">
+  <style> 
+    /* Limits the scope entirely to this specific section */
+    .outlookaddin-deployment-diagram-container .mermaid-diagram img { 
+      max-height: 50vh !important; 
+      width: auto !important;
+      max-width: 100% !important;
+      object-fit: contain; 
+    } 
+  </style>
 
 ```mermaid
 ---

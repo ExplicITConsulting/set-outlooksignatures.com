@@ -87,8 +87,16 @@ The architecture of Set-OutlookSignatures is designed as a two-stage process: fi
 
 - Delivery Channels: Use native Outlook features for signature roaming, or selectively configure and deploy the Outlook add-in.
 
-<div style="max-height: 75vh; display: inline-block; width: 100%;">
-  <style> .mermaid-diagram img { max-height: 75vh; width: auto; object-fit: contain; } </style>
+<div class="details-architecture-diagram-container is-flex is-justify-content-center">
+  <style> 
+    /* Limits the scope entirely to this specific section */
+    .details-architecture-diagram-container .mermaid-diagram img { 
+      max-height: 75vh !important; 
+      width: auto !important;
+      max-width: 100% !important;
+      object-fit: contain; 
+    } 
+  </style>
 
 ```mermaid
 ---
@@ -340,8 +348,16 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 - The **Outlook add-in** is contained within Outlook's restricted security model for the account accessing the mailbox.
 - In **all modes** as well as in the **Outlook add-in**, communication with **Exchange Online** is routed through dedicated Entra ID applications to restrict permissions even further.
 
-<div style="max-height: 75vh; display: inline-block; width: 100%;">
-  <style> .mermaid-diagram img { max-height: 75vh; width: auto; object-fit: contain; } </style>
+<div class="security-diagram-container is-flex is-justify-content-center">
+  <style> 
+    /* Limits the scope entirely to this specific section */
+    .security-diagram-container .mermaid-diagram img { 
+      max-height: 75vh !important; 
+      width: auto !important;
+      max-width: 100% !important;
+      object-fit: contain; 
+    } 
+  </style>
 
 ```mermaid
 ---
