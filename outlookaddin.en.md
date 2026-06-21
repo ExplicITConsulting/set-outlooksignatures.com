@@ -206,14 +206,13 @@ sitemap_changefreq: weekly
 </ul>
 <p>The following diagram visualizes both concepts:</p>
 
-<div class="outlookaddin-deployment-diagram-container is-flex is-justify-content-center">
+<div class="outlookaddin-deployment-diagram-container" style="max-height: 50vh;">
   <style> 
     /* Limits the scope entirely to this specific section */
-    .outlookaddin-deployment-diagram-container .mermaid-diagram img { 
-      max-height: 50vh !important; 
-      width: auto !important;
-      max-width: 100% !important;
-      object-fit: contain; 
+    .outlookaddin-deployment-diagram-container img { 
+      max-height: 50vh; 
+      width: auto;
+      max-width: 100%;
     } 
   </style>
 
