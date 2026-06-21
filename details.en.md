@@ -98,62 +98,62 @@ You can mix these approaches based on your architectural requirements:
 title: Set-OutlookSignatures Architecture Considerations
 ---
 flowchart TB
-    classDef invisible fill:none,stroke:none;
+  classDef invisible fill:none,stroke:none;
 
-    subgraph inputs [" "]
-        direction TB
-        templatestore["Template store<br/>(local, share, SharePoint)"]
-        datasource["Data source<br/>(Entra ID, AD, others)"]
-        config["Custom configuration,<br/>custom code"]
+  subgraph inputs [" "]
+    direction TB
+    templatestore["Template store<br/>(local, share, SharePoint)"]
+    datasource["Data source<br/>(Entra ID, AD, others)"]
+    config["Custom configuration,<br/>custom code"]
+  end
+
+  subgraph gen ["<b>Stage 1: Create signatures and out-of-office replies</b>"]
+    direction TB
+    clientmode["Client mode<br>(on user devices)"]
+    simulateanddeploy["SimulateAndDeploy<br>(on central system)"]
+    simulate["Simulation mode<br>(on user device)"]
+  end
+
+  subgraph mid [" "]
+    direction TB
+    mailbox["Mailboxes<br>(on-prem, cloud)"]
+    filesystem["File system"]
+  end
+
+  subgraph avail ["<b>Stage 2: Make signatures available</b>"]
+    direction TB
+
+    roam["Native roaming<br>(cloud only)"]
+    addin["Outlook add-in<br>(on-prem, cloud)"]
+
+    subgraph outlookeditions [" "]
+      direction TB
+      WinOutlook["Outlook for Windows<br>(Classic and New)"]
+      WebOutlook["Outlook for the Web"]
+      Mac["Outlook for Mac<br>(Classic and New)"]
+      iOS["Outlook for iOS"]
+      Android["Outlook for Android"]
     end
+  end
 
-    subgraph gen ["<b>Stage 1: Create signatures and out-of-office replies</b>"]
-        direction LR
-        clientmode["Client mode<br>(on user devices)"]
-        simulateanddeploy["SimulateAndDeploy<br>(on central system)"]
-        simulate["Simulation mode<br>(on user device)"]
-    end
+  subgraph oofbox["Out of Office"]
+    oof["Native OOF handling<br>(on-prem, cloud)"]
+  end
 
-    subgraph mid [" "]
-        direction TB
-        mailbox["Mailboxes<br>(on-prem, cloud)"]
-        filesystem["File system"]
-    end
+  class mid invisible;
 
-    subgraph avail ["<b>Stage 2: Make signatures available</b>"]
-        direction TB
+  inputs --> gen
 
-        roam["Native roaming<br>(cloud only)"]
-        addin["Outlook add-in<br>(on-prem, cloud)"]
+  clientmode --> mailbox
+  simulateanddeploy --> mailbox
+  simulate -.-> filesystem
+  
+  mailbox --> roam
+  mailbox --> oof
+  mailbox -.-> addin
 
-        subgraph outlookeditions [" "]
-            direction TB
-            WinOutlook["Outlook for Windows<br>(Classic and New)"]
-            WebOutlook["Outlook for the Web"]
-            Mac["Outlook for Mac<br>(Classic and New)"]
-            iOS["Outlook for iOS"]
-            Android["Outlook for Android"]
-        end
-    end
-
-    subgraph oofbox["Out of Office"]
-        oof["Native OOF handling<br>(on-prem, cloud)"]
-    end
-
-    class mid invisible;
-
-    inputs --> gen
-
-    clientmode --> mailbox
-    simulateanddeploy --> mailbox
-    simulate -.-> filesystem
-    
-    mailbox --> roam
-    mailbox --> oof
-    mailbox -.-> addin
-
-    roam --> WinOutlook & WebOutlook
-    addin -.-> WinOutlook & WebOutlook & Mac & iOS & Android
+  roam --> WinOutlook & WebOutlook
+  addin -.-> WinOutlook & WebOutlook & Mac & iOS & Android
 ```
 
 ### Stage 1: Create signatures and out-of-office replies
