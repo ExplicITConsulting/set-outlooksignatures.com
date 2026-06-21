@@ -100,11 +100,12 @@ title: Set-OutlookSignatures Architecture Considerations
 flowchart TB
     classDef invisible fill:none,stroke:none;
 
-    templatestore["Template store<br/>(local, share, SharePoint)"]
-
-    datasource["Data source<br/>(Entra ID, AD, others)"]
-
-    config["Custom configuration,<br/>custom code"]
+    subgraph inputs [" "]
+        direction TB
+        templatestore["Template store<br/>(local, share, SharePoint)"]
+        datasource["Data source<br/>(Entra ID, AD, others)"]
+        config["Custom configuration,<br/>custom code"]
+    end
 
     subgraph gen ["<b>Stage 1: Create signatures and out-of-office replies</b>"]
         direction LR
@@ -141,9 +142,7 @@ flowchart TB
 
     class mid invisible;
 
-    templatestore --> gen
-    datasource --> gen
-    config --> gen
+    inputs --> gen
 
     clientmode --> mailbox
     simulateanddeploy --> mailbox
