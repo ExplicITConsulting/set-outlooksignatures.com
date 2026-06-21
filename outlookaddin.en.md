@@ -206,6 +206,9 @@ sitemap_changefreq: weekly
 </ul>
 <p>The following diagram visualizes both concepts:</p>
 
+<div style="max-height: 75vh; display: inline-block; width: 100%;">
+  <style> .mermaid-diagram img { max-height: 75vh; width: auto; object-fit: contain; } </style>
+
 ```mermaid
 ---
 title: Set-OutlookSignatures Outlook Add-In Configuration and Deployment
@@ -254,6 +257,10 @@ flowchart LR
   class Lifecycle nofill;
   class methods nofill;
 ```
+
+</div>
+
+<p><small><i>Click diagram to open it in a new tab.</i></small></p>
 
 <h3 id="configuration">Step 1: Configuration (Prepare)</h3>
 <p>The add-in is built using the <code>run_before_deployment.ps1</code> script. This script injects your technical details into the source code and generates a <code>publish</code> folder containing your customized add-in code, include the <code>manifest.xml</code> file used for deployment.</p>

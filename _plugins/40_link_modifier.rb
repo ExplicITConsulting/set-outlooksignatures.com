@@ -84,8 +84,9 @@ module Jekyll
             class_added = true
         end
 
-        # 2. Add 'target' and 'rel' for external links if not present
-        if is_external
+        is_mermaid = href.include?('/assets/images/mermaid-svg/')
+
+        if is_external || is_mermaid
           unless full_tag.include?('target=')
             # Insert the attributes before the closing '>' of the opening tag
             full_tag = full_tag.sub(/>/i, ' target="_blank">')

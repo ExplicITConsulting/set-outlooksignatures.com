@@ -159,6 +159,8 @@ flowchart TB
 
 </div>
 
+<p><small><i>Click diagram to open it in a new tab.</i></small></p>
+
 ### Stage 1: Create signatures and out-of-office replies
 
 Set-OutlookSignatures comes with **client mode**, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> adds **SimulateAndDeploy** mode.
