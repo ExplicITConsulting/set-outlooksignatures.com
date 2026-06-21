@@ -335,8 +335,10 @@ Not all features are yet available or possible on Linux and macOS. Every paramet
 
 The security model of Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> is built on the principles of **Digital Sovereignty**, **Least Privilege**, and **Need to Know**.
 
-- In **client mode for on-premises mailboxes**, no additional permissions or Graph registrations are required.
-- In **Exchange Online**, permissions are limited to the required Graph endpoints.
+- In **client mode**, operations run entirely within the security context of the currently logged-on user.
+- In **SimulateAndDeploy mode**, operations run within the security context of the designated service account.
+- In **both modes**, communication with **Exchange Online** is routed through dedicated Entra ID applications, allowing permissions to be restricted even further.
+
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Detailed Entra ID app permissions</strong>
