@@ -100,7 +100,7 @@ title: Set-OutlookSignatures Architecture Considerations
 flowchart TB
     classDef invisible fill:none,stroke:none;
 
-    templatestore["Template store<br/>(local, network share, SharePoint)"]
+    templatestore["Template store<br/>(local, share, SharePoint)"]
 
     datasource["Data source<br/>(Entra ID, AD, others)"]
 
