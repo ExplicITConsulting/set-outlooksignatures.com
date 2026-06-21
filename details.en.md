@@ -335,9 +335,51 @@ Not all features are yet available or possible on Linux and macOS. Every paramet
 
 The security model of Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> is built on the principles of **Digital Sovereignty**, **Least Privilege**, and **Need to Know**.
 
-- In **client mode**, operations run entirely within the security context of the currently logged-on user.
-- In **SimulateAndDeploy mode**, operations run within the security context of the designated service account.
-- In **both modes**, communication with **Exchange Online** is routed through dedicated Entra ID applications, allowing permissions to be restricted even further.
+- In **client mode**, operations run entirely within the security context of the currently logged-on user, including access to Exchange on-prem mailboxes.
+- In **SimulateAndDeploy mode**, operations run within the security context of the designated service account, including access to Exchange on-prem mailboxes.
+- The **Outlook add-in** is contained within Outlook's restricted security model for the account accessing the mailbox.
+- In **all modes** as well as in the **Outlook add-in**, communication with **Exchange Online** is routed through dedicated Entra ID applications to restrict permissions even further.
+
+<div style="max-height: 75vh; display: inline-block; width: 100%;">
+  <style> .mermaid-diagram img { max-height: 75vh; width: auto; object-fit: contain; } </style>
+
+```mermaid
+---
+title: Set-OutlookSignatures Security Considerations
+---
+graph TD
+  subgraph Contexts [Security Contexts]
+    UserCtx[Client mode:<br>Logged-on user]
+    SvcCtx[SimulateAndDeploy mode:<br>Service account]
+    AddInCtx[Outlook add-in:<br>Outlook sandbox, manifest]
+  end
+
+  subgraph EntraApps [Entra ID Applications]
+    ClientApp[Client mode app:<br>Delegated permissions]
+    DeployApp[SimulateAndDeploy app:<br>Application permissions]
+    AddInApp[Outlook Add-in app:<br>Delegated permissions]
+  end
+
+  subgraph Targets [Target Environments]
+    OnPrem[Exchange on-premises,<br>Active Directory]
+    Exo[Exchange Online,<br>Graph API]
+  end
+
+  UserCtx --> OnPrem
+  UserCtx --> ClientApp
+  ClientApp --> Exo
+
+  SvcCtx --> OnPrem
+  SvcCtx --> DeployApp
+  DeployApp --> Exo
+
+  AddInCtx --> AddInApp
+  AddInApp --> Exo
+```
+
+</div>
+
+<p><small><i>Click diagram to open it in a new tab.</i></small></p>
 
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">

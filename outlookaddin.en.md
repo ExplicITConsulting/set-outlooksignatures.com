@@ -4,7 +4,7 @@ lang: "en"
 locale: "en"
 title: "The Outlook add-in"
 subtitle: "Signatures for Outlook for Android and iOS, advanced features for all platforms"
-description: "Extend Outlook with the Set-OutlookSignatures add-in. Automatic email signatures for iOS, Android, and all platforms. Self-hosted, secure, and enterprise-ready."
+description: "Extend Outlook with the Set-OutlookSignatures Outlook add-in. Automatic email signatures for iOS, Android, and all platforms. Self-hosted, secure, and enterprise-ready."
 hero_link: "#overview"
 hero_link_text: "<span><b>Overview: </b>What the add-in does</span>"
 hero_link2: "#requirements"
@@ -19,7 +19,7 @@ sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
 <h2 id="overview">Overview</h2>
-<p>With a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle </span></a>license, you gain access to the Set-OutlookSignatures add-in.</p>
+<p>With a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle </span></a>license, you gain access to the Outlook add-in.</p>
 <p>The add-in makes signatures available in <b>Outlook for iOS and Android</b>, while supporting all Outlook editions across platforms. It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD scenarios.</p>
 <p>It intelligently selects the appropriate signature based on the sender address, the type of item (new email, reply, or appointment), and any custom rules you define.</p>
 <div class="box has-background-white-bis has-text-black" style=" border-left: 5px solid var(--benefactor-circle-color); border-right: 5px solid var(--benefactor-circle-color); ">
