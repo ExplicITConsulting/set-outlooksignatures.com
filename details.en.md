@@ -86,6 +86,7 @@ The architecture of Set-OutlookSignatures is designed as a two-stage process: fi
 - Mode Selection: Combine decentralized client mode and centralized SimulateAndDeploy mode based on your architecture principles.
 
 - Delivery Channels: Use native Outlook features for signature roaming, or selectively configure and deploy the Outlook add-in.
+<div style="max-height:50vh;">
 
 ```mermaid
 ---
@@ -153,6 +154,8 @@ flowchart TB
   roam --> WinOutlook & WebOutlook
   addin -.-> WinOutlook & WebOutlook & Mac & iOS & Android
 ```
+
+</div>
 
 ### Stage 1: Create signatures and out-of-office replies
 
