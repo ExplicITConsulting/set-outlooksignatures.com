@@ -199,6 +199,62 @@ sitemap_changefreq: weekly
 <p>It is recommended to use at least two separate dedicated hostnames: One for testing and one for production (e.g., <code>https://outlookaddin01test.example.com</code> and <code>https://outlookaddin01.example.com</code>).</p>
 <p>Deploying the add-in is a simple and fast three-step process: Configuring the code, uploading the files to a web server, and rolling out the manifest to your mailboxes.<br>You must update your deployment whenever the add-in version or your add-in configuration changes.</p>
 
+<p>Most rollout issues with Outlook add-ins are caused by two common misunderstandings that are easy to make, but just as easy to resolve:</p>
+<ul>
+  <li>The add-in version must be incremented correctly — combining the fixed three-part add-in version, such as v4.30.0, with your own configuration version, such as 17.</li>
+  <li>Outlook never reads the manifest.xml file directly from the web server after deployment, but relies solely on the manifest snapshot stored during rollout</li>
+</ul>
+<p>The following diagram visualizes both concepts:</p>
+
+```mermaid
+---
+title: Set-OutlookSignatures Outlook Add-In Configuration and Deployment
+---
+flowchart LR
+  classDef nofill fill:none;
+
+  subgraph S1 ["<b>Step 1: Configuration (Prepare)</b>"]
+    direction LR
+
+    script["run_before_deployment.ps1"]
+    files["Customize config and code"]
+    manifest["Create manifest.xml"]
+
+    script --> files
+    script --> manifest
+  end
+
+  subgraph S2 ["<b>Step 2: Upload to web server</b>"]
+    direction LR
+
+    server["Web server"]
+  end
+
+  subgraph Lifecycle ["<b>Outlook client</b>"]
+    direction LR
+
+    cache["Download from web server<br/>on version change<br/>in manifest.xml snapshot"]
+  end
+
+  subgraph S3 ["<b>Step 3: Deployment to mailboxes</b>"]
+    direction LR
+
+    side["Sideloading"]
+    int["M365 Integrated Apps"]
+    cent["M365 Centralized Deployment"]
+    mbox["<b>Create<br/>manifest.xml snapshot</b><br/>in mailbox(es)"]:::snapshot
+
+    side & int & cent --> mbox
+  end
+
+  S1 --> S2
+  S2 --> S3
+  S3 --> Lifecycle
+
+  class Lifecycle nofill;
+  class methods nofill;
+```
+
 <h3 id="configuration">Step 1: Configuration (Prepare)</h3>
 <p>The add-in is built using the <code>run_before_deployment.ps1</code> script. This script injects your technical details into the source code and generates a <code>publish</code> folder containing your customized add-in code, include the <code>manifest.xml</code> file used for deployment.</p>
 
