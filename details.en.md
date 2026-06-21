@@ -93,7 +93,6 @@ You can mix these approaches based on your architectural requirements:
 
 - Delivery Channels: Use native Outlook features for signature roaming, or selectively configure and deploy the Outlook add-in.
 
-
 ```mermaid
 ---
 title: Set-OutlookSignatures Architecture Considerations
@@ -104,6 +103,8 @@ flowchart TB
     templatestore["Template store<br/>(local, network share, SharePoint)"]
 
     datasource["Data source<br/>(Entra ID, AD, others)"]
+
+    config["Custom configuration,<br/>custom code"]
 
     subgraph gen ["<b>Stage 1: Create signatures and out-of-office replies</b>"]
         direction LR
@@ -142,6 +143,7 @@ flowchart TB
 
     templatestore --> gen
     datasource --> gen
+    config --> gen
 
     clientmode --> mailbox
     simulateanddeploy --> mailbox
