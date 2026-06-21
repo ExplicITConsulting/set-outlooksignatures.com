@@ -136,13 +136,17 @@ flowchart TB
     end
   end
 
-  subgraph oofbox["Out of Office"]
+  subgraph oofbox[" "]
     oof["Native OOF handling<br>(on-prem, cloud)"]
   end
 
+  class oofbox invisible;
+  class inputs invisible;
   class mid invisible;
 
-  inputs --> gen
+  templatestore --> gen
+  datasource --> gen
+  config -.-> gen
 
   clientmode --> mailbox
   simulateanddeploy --> mailbox
