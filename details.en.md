@@ -87,8 +87,8 @@ The architecture of Set-OutlookSignatures is designed as a two-stage process: fi
 
 - Delivery Channels: Use native Outlook features for signature roaming, or selectively configure and deploy the Outlook add-in.
 
-<div style="max-height: 80vh; display: inline-block; width: 100%;">
-  <style> .mermaid-diagram img { max-height: 80vh; width: auto; object-fit: contain; } </style>
+<div style="max-height: 75vh; display: inline-block; width: 100%;">
+  <style> .mermaid-diagram img { max-height: 75vh; width: auto; object-fit: contain; } </style>
 
 ```mermaid
 ---
