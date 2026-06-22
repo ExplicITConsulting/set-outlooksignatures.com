@@ -13,6 +13,11 @@ hero_link2_text: "Erfahren Sie mehr"
 hero_link2_style: |
    style="font-weight: bold; color: black; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod);"
 show_sidebar: false
+image:
+  path: "/assets/images/set-outlooksignatures blog opengraph1200x630.png"
+  width: 1200
+  height: 630
+  alt: "Master Outlook Signatures - Blog"
 pagination: 
   enabled: true
 permalink: "/blog/"
