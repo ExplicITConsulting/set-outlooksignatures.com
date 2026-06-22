@@ -304,7 +304,7 @@ sitemap_changefreq: weekly
 <p><strong>Example calculation:</strong></p>
 <blockquote>
   <p>Cost per minute × changes per year × minutes per change × number of signatures × number of clients</p>
-  <p><strong>0.67 × 2 × 3 × 2 × 1 = EUR 8.04 per user and year</strong></p>
+  <p><strong>0.67 × 2 × 3 × 2 × 1 = EUR 8.04 per user and year for manual signature updates</strong></p>
 </blockquote>
 
 <p><strong>That means: Manual signature management already costs EUR 8.04 per user and year — compared to just EUR 3.12 for a centrally managed solution with Set-OutlookSignatures and the <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span>.</strong></p>

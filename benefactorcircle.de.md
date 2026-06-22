@@ -303,7 +303,7 @@ sitemap_changefreq: weekly
 
 <p><strong>Beispielrechnung:</strong></p>
 <blockquote><p>Kosten pro Minute × Änderungen pro Jahr × Minuten pro Änderung × Anzahl der Signaturen × Anzahl der Clients</p>
-  <p><strong>0,67 × 2 × 3 × 2 × 1 = 8,04 EUR pro Benutzer und Jahr</strong></p>
+  <p><strong>0,67 × 2 × 3 × 2 × 1 = 8,04 EUR pro Benutzer und Jahr für manuelle Signatur-Updates</strong></p>
 </blockquote>
 
 <p><strong>Das bedeutet: Manuelle Signaturverwaltung kostet bereits 8,04 EUR pro Benutzer und Jahr – im Vergleich zu nur 3,12 EUR für eine zentral verwaltete Lösung mit Set-OutlookSignatures und dem <span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span>.</strong></p>
