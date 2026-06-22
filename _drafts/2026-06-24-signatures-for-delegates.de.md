@@ -19,13 +19,13 @@ Dabei entsteht für IT und Marketing eine häufige und knifflige Anforderung: "W
 
 Was früher zu Kopfschmerzen bei der IT und Abstimmungschaos im Marketing führte, lässt sich mit Set-OutlookSignatures elegant, dynamisch und fehlerfrei für alle Vertretungsszenarien lösen.
 
-## Die technische Logik (für die IT)
+## Die Konfiguration
 
 Mit Set-OutlookSignatures steuern Sie diese Ausnahmen und Vertretungsregeln mit nur zwei Zeilen in der Konfigurationsdatei. Sie weisen die Vorlage dem Ziel-Postfach zu und schließen den eigentlichen Besitzer über den Parameter -CURRENTUSER einfach aus.
 
 Egal ob dauerhafte Assistenz oder temporäre Urlaubsvertretung – die Logik bleibt dieselbe:
 
-```
+```ini
 [delegierten_vorlage.docx]
 # Weist die Vorlage allen zu, die userA@example.com als Postfach in Outlook eingebunden haben
 userA@example.com
@@ -40,7 +40,7 @@ Sie müssen das Rad nicht für jede Urlaubsvertretung oder jedes Teammitglied ne
 
 In der Konfiguration weisen Sie die Vorlage dann einfach für die verschiedenen Postfächer zu, bei denen Vertretungen aktiv sind:
 
-```
+```ini
 [Company_Delegate_Template.docx]
 chef@example.com
 -CURRENTUSER:chef@example.com

@@ -19,13 +19,13 @@ This introduces a common and tricky requirement for both IT and Marketing: "Assi
 
 What used to cause headaches for IT and alignment chaos in Marketing can be solved elegantly, dynamically, and flawlessly for all coverage scenarios using Set-OutlookSignatures.
 
-## The Technical Logic (For IT)
+## The Configuration
 
 With Set-OutlookSignatures, you control these exceptions and coverage rules with just two lines in the configuration file. You assign the template to the target mailbox and simply exclude the actual owner using the -CURRENTUSER parameter.
 
 Whether it is a permanent assistant or temporary holiday cover—the logic remains exactly the same:
 
-```
+```ini
 [delegate_template.docx]
 # Assigns the template to everyone who has userA@example.com mapped as a mailbox in Outlook
 userA@example.com
@@ -40,7 +40,7 @@ You don't have to reinvent the wheel for every holiday replacement or team membe
 
 In the configuration, you then simply map the template to the various mailboxes where coverage is active:
 
-```
+```ini
 [Company_Delegate_Template.docx]
 manager@example.com
 -CURRENTUSER:manager@example.com
