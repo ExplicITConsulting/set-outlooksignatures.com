@@ -44,7 +44,7 @@ sass:
 # Defaults
 defaults:
   - scope:
-      path: ""
+      path: "" # This applies to everything by default
     values:
       layout: "page"
       image:
@@ -52,13 +52,20 @@ defaults:
         width: 1200
         height: 630
         alt: "Set-OutlookSignatures"
-      # "/assets/images/background, vietnam golden bridge.jpg"
       hero_height: is-small
-      # hero_darken: true
       lang: "en"
       locale: "en"
       sitemap_priority: 0.5
       sitemap_changefreq: weekly
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      image:
+        path: "/assets/images/set-outlooksignatures blog opengraph1200x630.png" 
+        width: 1200
+        height: 630
+        alt: "Master Outlook Signatures - Blog"
 
 include:
   - ".well-known"
