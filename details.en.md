@@ -406,14 +406,14 @@ flowchart TB
   AddInApp --> |"read only"| cloud
   
   style UserCtx stroke:blue,stroke-width:2.5px
-  style SimulateCtx stroke:black,stroke-width:2.5px
+  style SimulateCtx stroke:darkgrey,stroke-width:2.5px
   style SvcCtx stroke:violet,stroke-width:2.5px
   style AddInCtx stroke:green,stroke-width:2.5px
 
-  linkStyle 0,1,2 stroke: blue, stroke-width: 2.5px
-  linkStyle 3,4,5 stroke: black, stroke-width: 2.5px
-  linkStyle 6,7,8 stroke: violet, stroke-width: 2.5px
-  linkStyle 9,10,11 stroke: green, stroke-width: 2.5px
+  linkStyle 0,1,2 stroke:blue, stroke-width:2.5px
+  linkStyle 3,4,5 stroke:darkgrey, stroke-width:2.5px
+  linkStyle 6,7,8 stroke:violet, stroke-width:2.5px
+  linkStyle 9,10,11 stroke:green, stroke-width:2.5px
 ```
 
 </div>
