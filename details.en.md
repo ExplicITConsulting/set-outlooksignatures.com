@@ -347,11 +347,11 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 - The **Outlook add-in** is contained within Outlook's restricted security model for the account accessing the mailbox.
 - In **all modes** as well as in the **Outlook add-in**, communication with **Exchange Online** is routed through dedicated Entra ID applications to restrict permissions even further.
 
-<div class="details-security-diagram-container" style="max-height: 50vh;">
+<div class="details-security-diagram-container" style="max-height: 75vh;">
   <style> 
     /* Limits the scope entirely to this specific section */
     .details-security-diagram-container img { 
-      max-height: 50vh; 
+      max-height: 75vh; 
       width: auto;
       max-width: 100%;
     } 
@@ -361,34 +361,59 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 ---
 title: Set-OutlookSignatures Security Considerations
 ---
-graph TD
-  subgraph Contexts [Security Contexts]
-    UserCtx[Client mode:<br>Logged-on user]
-    SvcCtx[SimulateAndDeploy mode:<br>Service account]
-    AddInCtx[Outlook add-in:<br>Outlook sandbox, manifest]
+flowchart TB
+  subgraph Contexts ["<b>Security Contexts</b>"]
+    UserCtx["Client mode:<br>Logged-on user"]
+    SimulateCtx["Simulation mode:<br>Logged-on user"]
+    SvcCtx["SimulateAndDeploy mode:<br>Service account"]
+    AddInCtx["Outlook add-in:<br>Outlook sandbox, manifest"]
   end
 
-  subgraph EntraApps [Entra ID Applications]
-    ClientApp[Client mode app:<br>Delegated permissions]
-    DeployApp[SimulateAndDeploy app:<br>Application permissions]
-    AddInApp[Outlook Add-in app:<br>Delegated permissions]
+  subgraph EntraApps ["<b>Entra ID Applications</b>"]
+    ClientApp["Client mode app:<br>Delegated permissions"]
+    DeployApp["SimulateAndDeploy app:<br>Application permissions"]
+    AddInApp["Outlook Add-in app:<br>Delegated permissions"]
   end
 
-  subgraph Targets [Target Environments]
-    OnPrem[Exchange on-premises,<br>Active Directory]
-    Exo[Exchange Online,<br>Graph API]
+  subgraph Targets ["<b>Target Environments</b>"]
+    subgraph onprem ["<b>On-prem</b>"]
+      ActiveDirectory["Active Directory:<br>Read user and mailbox attributes"]
+      File["File system:<br>Read templates and configuration, write simulation output"]
+      SharePointOnprem["SharePoint on-prem:<br>Read templates, configuration"]
+      ExchangeOnprem["Exchange on-prem:<br>Read/write signatures and OOF replies"]
+    end
+
+    subgraph cloud ["<b>Cloud via Graph API</b>"]
+      EntraID["Entra ID:<br>Read user and mailbox attributes"]
+      SharePointOnline["SharePoint Online:<br>Read templates, configuration"]
+      ExchangeOnline["Exchange Online:<br>Read/write signatures and OOF replies"]
+    end
   end
 
-  UserCtx --> OnPrem
+  UserCtx --> onprem
   UserCtx --> ClientApp
-  ClientApp --> Exo
+  ClientApp --> cloud
 
-  SvcCtx --> OnPrem
+  SimulateCtx --> |"read only<br>(except file system)"| onprem
+  SimulateCtx --> |"read only"| ClientApp --> |"read only"| cloud
+
+  SvcCtx --> onprem
   SvcCtx --> DeployApp
-  DeployApp --> Exo
+  DeployApp --> cloud
 
-  AddInCtx --> AddInApp
-  AddInApp --> Exo
+  AddInCtx --> |"read only"| AddInApp
+  AddInCtx --> |"read only"| onprem
+  AddInApp --> |"read only"| cloud
+  
+  style UserCtx stroke:blue,stroke-width:2.5px
+  style SimulateCtx stroke:black,stroke-width:2.5px
+  style SvcCtx stroke:violet,stroke-width:2.5px
+  style AddInCtx stroke:green,stroke-width:2.5px
+
+  linkStyle 0,1,2 stroke: blue, stroke-width: 2.5px
+  linkStyle 3,4,5 stroke: black, stroke-width: 2.5px
+  linkStyle 6,7,8 stroke: violet, stroke-width: 2.5px
+  linkStyle 9,10,11 stroke: green, stroke-width: 2.5px
 ```
 
 </div>
