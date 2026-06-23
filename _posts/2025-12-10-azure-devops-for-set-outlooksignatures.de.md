@@ -37,14 +37,14 @@ Unsere Lösung basiert auf einer gut strukturierten Konfiguration mit drei Git-R
 
 Die Pipeline verarbeitet die Bereitstellung mithilfe von umgebungsspezifischen Variablen, die in der Variablengruppe "azure-static-aimoutlooksignatures" definiert sind:
 
-```yml
+```
 variables:
   - ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
-      - name: targetEnvironment
-        value: "Production"
+    - name: targetEnvironment
+      value: 'Production'
   - ${{ else }}:
-      - name: targetEnvironment
-        value: "Development"
+    - name: targetEnvironment
+      value: 'Development'
 ```
 
 ## Automatisierte Pipeline zur Signaturgenerierung
@@ -61,28 +61,29 @@ Wir verwenden das Erweiterungsattribut 1 als Auslöser: Wenn dieses Attribut von
 
 Die Pipeline des Vorlagengenerators verwendet einen parametrisierten Ansatz, um den Zielbenutzer (UPN) und die Version der Signaturvorlage zu definieren.
 
-```yml
-- name: UPN
-  type: object
-  default: ["xx@yy", "xx@yy"]
+```
+  - name: UPN
+    type: object
+    default: ['xx@yy', 'xx@yy']
 
-- name: version
-  type: string
-  default: "4.23.0"
+  - name: version
+    type: string
+    default: '4.23.0'
 ```
 
 Die wichtigsten Schritte innerhalb des Auftrags nutzen die leistungsstarke Funktion "SimulateAndDeploy":
 
 1. Temporäre Postfachberechtigungen erteilen  
    Das Skript stellt zunächst eine Verbindung zu Exchange Online her. Damit das Dienstkonto für die Signaturgenerierung (signature-service@example.com) die Signatur anwenden kann, gewährt das Skript vorübergehend die Berechtigung für den vollständigen Zugriff auf das Postfach.
-   
-   ```powershell
+
+   ```
    Add-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights "fullaccess" -Confirm:$false
    ```
+
 2. Set-OutlookSignatures ausführen  
    Die Pipeline führt das Skript "Generate-signatures-devops.ps1" aus, das dann "Set-OutlookSignatures.ps1" mit den erforderlichen Parametern aufruft, um die Signatur direkt in der Mailbox des Benutzers bereitzustellen.
 
-   ```powershell
+   ```
    $SimulateAndDeployParams = @{
      # Define parameters here
    }
@@ -93,7 +94,7 @@ Die wichtigsten Schritte innerhalb des Auftrags nutzen die leistungsstarke Funkt
 3. Temporäre Postfachberechtigungen entfernen  
    Unmittelbar nach der Bereitstellung wird die temporäre Vollzugriffsberechtigung aus Sicherheitsgründen widerrufen und das Erweiterungsattribut zurückgesetzt.
 
-   ```powershell
+   ```
    Remove-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights FullAccess -Confirm:$false
 
    Set-Mailbox -Identity $email -CustomAttribute1 $null
@@ -108,7 +109,7 @@ Die Entscheidung für das Outlook-Add-in, das auf einer statischen Azure-Web-App
 
 Das Add-in-Manifest wird über die Pipeline in der Azure Static Web App bereitgestellt, wobei die kostenlose Stufe genutzt wird.
 
-```yml
+```
 - task: AzureStaticWebApp@0
   inputs:
     azure_static_web_apps_api_token: $(deploy-token)
