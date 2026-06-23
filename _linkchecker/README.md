@@ -61,7 +61,7 @@ Upon completion, the script generates two types of output:
 
 ## Custom Report: Link Leaderboard
 The following unified reporting snippet utilizes `$ReferenceMap` to identify the most heavily linked targets. It supports deep link analysis (fragments), domain specific scoping (internal vs. external), and "ex-aequo" ranking. This ensures that if multiple targets share a top tier, they are all included in the output.  
-```
+```powershell
 # Toggle this to switch between "Exact Href (w/ fragments)" or "Base Page (no fragments)"
 $IncludeFragments = $true
 
@@ -141,7 +141,7 @@ After the script completes, it leaves several variables in your session for manu
 If you want to save the state of a scan to a single file for later analysis, you can bundle the critical data structures into a CliXml file.
 
 To export to a single file, run this after a scan finishes to save the domain, page cache, and reference map:
-```
+```powershell
 @{
     # Script parameters
     StartUrl        = $StartUrl
@@ -160,7 +160,7 @@ To export to a single file, run this after a scan finishes to save the domain, p
 ```
 
 To load and restore the data, run this:
-```
+```powershell
 $ImportedData = Import-CliXml -Path "checklinks scan data.clixml"
 
 # Script parameters
