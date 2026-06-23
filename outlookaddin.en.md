@@ -339,7 +339,7 @@ sequenceDiagram
     participant User
     participant Outlook
     participant AddIn as Outlook add-in
-    participant Exchange as Exchange<br>(on-prem, Online)
+    participant Exchange as Exchange<br>(on-prem, cloud)
     participant Item as Mail or appointment<br>in compose mode
 
     User->>Outlook: Compose email or appointment
@@ -385,7 +385,7 @@ sequenceDiagram
     participant User
     participant Outlook
     participant AddIn as Outlook add-in
-    participant Exchange as Exchange<br>(on-prem, Online)
+    participant Exchange as Exchange<br>(on-prem, cloud)
     participant Item as Mail or appointment<br>in compose mode
 
     User->>Outlook: Compose email or appointment
