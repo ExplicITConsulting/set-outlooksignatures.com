@@ -321,6 +321,15 @@ flowchart LR
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="outlookaddin-launchevent-workflow-diagram-container" style="max-height: 50vh;">
+      <style> 
+        /* Limits the scope entirely to this specific section */
+        .outlookaddin-launchevent-workflow-diagram-container img { 
+          max-height: 50vh; 
+          width: auto;
+          max-width: 100%;
+        } 
+      </style>
 
 ```mermaid
 ---
@@ -353,10 +362,20 @@ sequenceDiagram
         AddIn->>Item: Add logging output during processing<br>(DEBUG)
     end
 ```
-
+    </div>
     <p><small><i>Click diagram to open it in a new tab.</i></small></p>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="outlookaddin-taskpane-workflow-diagram-container" style="max-height: 50vh;">
+      <style> 
+        /* Limits the scope entirely to this specific section */
+        .outlookaddin-taskpane-workflow-diagram-container img { 
+          max-height: 50vh; 
+          width: auto;
+          max-width: 100%;
+        } 
+      </style>
+
 
 ```mermaid
 ---
@@ -387,6 +406,7 @@ sequenceDiagram
     end
 ```
 
+    </div>
     <p><small><i>Click diagram to open it in a new tab.</i></small></p>
   </div>
 </div>
