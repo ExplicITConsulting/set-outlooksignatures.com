@@ -13,9 +13,7 @@ sitemap_changefreq: weekly
 ---
 ## Implementation Blueprint: Organizational Strategy for Complex Environments {#recommended-approach}
 
-This document serves as a **strategic blueprint** from a customer's perspective, specifically tailored for **highly regulated and high-security environments**. While small-scale deployments may benefit from the [Quickstart guide](/quickstart), large-scale organizations require a framework that prioritizes **formal processes, traceability, and strict governance** alongside deployment efficiency.
-
-For organizations seeking external expertise to facilitate this process, **ExplicIT Consulting** provides professional [implementation support](/support#professional-support) based on the principles outlined in this blueprint.
+This document serves as a **strategic blueprint** from a customer's perspective, specifically designed to layer onto the foundational [Quickstart guide](/quickstart) **for highly regulated and high-security environments**. While the Quickstart guide provides the core deployment path, complex organizations require this additional framework to **layer on formal processes, absolute traceability, and strict governance** without sacrificing velocity.
 
 <p>
   <div class="buttons">
