@@ -51,11 +51,9 @@ Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner:
         <div>
           <p><b>Entra ID App für Exchange Online erstellen</b></p>
           <p>Folgen Sie den Anweisungen in <code>.\config\default graph config.ps1</code> für die manuelle Einrichtung oder lassen Sie einen "Globalen Administrator" oder "Anwendungsadministrator" den bereitgestellten PowerShell-Befehl ausführen.</p>
-
-```powershell
-powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
-```
-
+          {% highlight powershell %}{% raw %}
+          powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
+          {% endraw %}{% endhighlight %}
           <p>Für nationale oder Sovereign Clouds fügen Sie den Parameter <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> hinzu.</p>
           <p>Prüfen Sie die erforderlichen Berechtigungen vorab: Alle Informationen zur Nutzung finden Sie in den Dateien selbst sowie im Kapitel <a href="/details#security-considerations">Security considerations</a>.</p>
         </div>
