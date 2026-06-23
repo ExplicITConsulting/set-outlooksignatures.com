@@ -339,8 +339,8 @@ sequenceDiagram
     participant User
     participant Outlook
     participant AddIn as Outlook add-in
-    participant Exchange as Exchange (on-prem, Online)
-    participant Item as Mail or appointment in compose mode
+    participant Exchange as Exchange<br>(on-prem, Online)
+    participant Item as Mail or appointment<br>in compose mode
 
     User->>Outlook: Compose email or appointment
     Outlook->>AddIn: Trigger configured launch event<br>(LAUNCHEVENTS_HOSTS_AND_PLATFORMS)
@@ -385,8 +385,8 @@ sequenceDiagram
     participant User
     participant Outlook
     participant AddIn as Outlook add-in
-    participant Exchange as Exchange (on-prem, Online)
-    participant Item as Mail or appointment in compose mode
+    participant Exchange as Exchange<br>(on-prem, Online)
+    participant Item as Mail or appointment<br>in compose mode
 
     User->>Outlook: Compose email or appointment
     User->>Outlook: Open add-in taskpane manually
