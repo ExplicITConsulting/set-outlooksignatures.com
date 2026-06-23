@@ -317,6 +317,80 @@ flowchart LR
   <p>You can even generate unique signatures at runtime without choosing a pre-deployed template. See <code>.\sample code\CustomRulesCode.js</code> for details.</p>
 </div>
 
+<p>The following diagrams show the add-in runtime workflows. Configuration variables are shown in parentheses next to the steps they influence: the launch event workflow covers automatic processing, while the taskpane workflow covers the interactive manual path.</p>
+
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+
+```mermaid
+---
+title: "Set-OutlookSignatures Outlook add-in: Launch event workflow with configuration references"
+---
+sequenceDiagram
+    participant User
+    participant Outlook
+    participant AddIn as Outlook add-in
+    participant Exchange as Exchange (on-prem, Online)
+    participant Item as Mail or appointment in compose mode
+
+    User->>Outlook: Compose email or appointment
+    Outlook->>AddIn: Trigger configured launch event<br>(LAUNCHEVENTS_HOSTS_AND_PLATFORMS)
+
+    par Signature processing
+        AddIn->>Outlook: Apply client signature policy if enabled<br>(DISABLE_CLIENT_SIGNATURES)
+        AddIn->>AddIn: Check item type, host, platform, and launch event<br>(SIGNATURE_HOSTS_AND_PLATFORMS,<br>APPOINTMENT_HOSTS_AND_PLATFORMS,<br>LAUNCHEVENTS_HOSTS_AND_PLATFORMS)
+
+        opt Automatic processing is allowed
+            AddIn->>Exchange: Read mailbox, user, group, and signature data<br>(CLOUD_ENVIRONMENT, GRAPH_CLIENT_ID,<br>CustomCloudEnvironments)
+            Exchange-->>AddIn: Data for signature selection
+            AddIn->>AddIn: Apply powerful situation-aware custom logic<br>(CUSTOM_RULES_CODE)
+            Note over AddIn: Can override signature, signature body,<br>and notification based on item context.
+            AddIn->>Item: Insert selected signature
+            AddIn->>Outlook: Show notification banner<br>(NOTIFICATION_TEXT)
+        end
+
+    and Logging if DEBUG is true
+        AddIn->>Item: Add logging output during processing<br>(DEBUG)
+    end
+```
+
+    <p><small><i>Click diagram to open it in a new tab.</i></small></p>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+
+```mermaid
+---
+title: "Set-OutlookSignatures Outlook add-in: Taskpane workflow with configuration references"
+---
+sequenceDiagram
+    participant User
+    participant Outlook
+    participant AddIn as Outlook add-in
+    participant Exchange as Exchange (on-prem, Online)
+    participant Item as Mail or appointment in compose mode
+
+    User->>Outlook: Compose email or appointment
+    User->>Outlook: Open add-in taskpane manually
+    Outlook->>AddIn: Start add-in from taskpane<br>(ADDIN_ID, DEPLOYMENT_URL)
+
+    Note over AddIn: Manual taskpane processing is interactive.<br>It can override automatic host/platform limits.<br>It supports manual signature selection.
+
+    AddIn->>Exchange: Read mailbox, user, group, and signature data<br>(CLOUD_ENVIRONMENT, GRAPH_CLIENT_ID,<br>CustomCloudEnvironments)
+    Exchange-->>AddIn: Data for signature selection
+    AddIn->>AddIn: Apply powerful situation-aware custom logic<br>(CUSTOM_RULES_CODE)
+    Note over AddIn: Can override signature, signature body,<br>and notification based on item context.
+    AddIn->>Item: Insert selected or manually chosen signature
+    AddIn->>Outlook: Show notification banner<br>(NOTIFICATION_TEXT)
+
+    opt DEBUG is true
+        AddIn->>Item: Add logging output to body<br>(DEBUG)
+    end
+```
+
+    <p><small><i>Click diagram to open it in a new tab.</i></small></p>
+  </div>
+</div>
+
 <h3 id="web-server-step">Step 2: Hosting (Publish)</h3>
 <p><b>Deployment:</b> Run <code>run_before_deployment.ps1</code> and upload the content of the <code>publish</code> folder to your web server.</p>
 <ul>
