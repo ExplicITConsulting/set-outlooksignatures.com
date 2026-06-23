@@ -27,6 +27,7 @@ Für Organisationen, die externe Expertise zur Begleitung dieses Prozesses suche
 Die hier detaillierten Strategien basieren auf **praktischen Erfahrungen aus Konzernen** bei der Bereitstellung der Lösung in Mandantenumgebungen mit zehntausenden von Postfächern. Dieses Dokument richtet sich an **interne IT-Teams, CISOs und Fachabteilungen**, die sicherstellen müssen, dass das E-Mail-Signaturmanagement strengen Compliance-Standards entspricht.
 
 Der Blueprint deckt den gesamten organisatorischen Lebenszyklus ab:
+
 * **Beratung & Planung**: Abstimmung der technischen Möglichkeiten mit rechtlichen und marketingrelevanten Anforderungen.
 * **Test- & Pilotphasen**: Sicherstellung der Stabilität in komplexen Multi-Forest AD- und M365-Landschaften.
 * **Rollout & Betrieb**: Integration in bestehende Sicherheitsstrukturen wie AppLocker und Richtlinien für signierte Skripte.
@@ -34,22 +35,21 @@ Der Blueprint deckt den gesamten organisatorischen Lebenszyklus ab:
 
 > **Hinweis:** Dies ist ein organisatorischer Überblick mit Fokus auf Governance und Prozesse. Technische Konfigurationsdetails und Skriptparameter finden Sie in der [ausführlichen Dokumentation](/details).
 
-
 ## Auftrag {#task}
 
 Als multinationaler Konzern sind wir gefordert, eine flexible Lösung zur automatischen Verwaltung von Signaturen zu suchen. Die Anforderungen dazu stammen aus mehreren Bereichen:
 
-- Das Marketing möchte sicherstellen, dass die Corporate Identity und das Corporate Design auch in E-Mails eingehalten wird. Signaturen sollen dabei rasch vom Marketing selbst aktualisiert werden können, damit auch kurzfristig Kampagnen gestartet und beendet werden können. Technisches Wissen darf dafür nicht erforderlich sein.
-- Die Rechtsabteilung pocht darauf, die in vielen Ländern geltende Vorgabe eines Impressums für E-Mails in Form einer Signatur umzusetzen.
-- Das Management aller Ebenen unterstützt die Wünsche der anderen Abteilungen, solange dies nicht zu zusätzlichen Aufwänden für ihre Mitarbeiter führt, sondern diese nach Möglichkeit entlastet und mehr Zeit für ihre Aufgaben schafft..
-- Die CISOs wollen sichergestellt wissen, dass alle Vorschriften zu Datenschutz und Informationssicherheit eingehalten werden, und dass Daten ihre angestammten Systeme möglichst in den angestammten Systemen verbleiben..
-- Die IT-Verantwortlichen wollen sich nicht um die Inhalte von Signaturen und deren Aktualisierung kümmern müssen. Auch sollen keine neuen Abhängigkeiten zu unserem Mailsystem geschaffen werden, da diese unweigerlich die Komplexität des Gesamtsystems und die Betriebskosten steigern.
+* Das Marketing möchte sicherstellen, dass die Corporate Identity und das Corporate Design auch in E-Mails eingehalten wird. Signaturen sollen dabei rasch vom Marketing selbst aktualisiert werden können, damit auch kurzfristig Kampagnen gestartet und beendet werden können. Technisches Wissen darf dafür nicht erforderlich sein.
+* Die Rechtsabteilung pocht darauf, die in vielen Ländern geltende Vorgabe eines Impressums für E-Mails in Form einer Signatur umzusetzen.
+* Das Management aller Ebenen unterstützt die Wünsche der anderen Abteilungen, solange dies nicht zu zusätzlichen Aufwänden für ihre Mitarbeiter führt, sondern diese nach Möglichkeit entlastet und mehr Zeit für ihre Aufgaben schafft..
+* Die CISOs wollen sichergestellt wissen, dass alle Vorschriften zu Datenschutz und Informationssicherheit eingehalten werden, und dass Daten ihre angestammten Systeme möglichst in den angestammten Systemen verbleiben..
+* Die IT-Verantwortlichen wollen sich nicht um die Inhalte von Signaturen und deren Aktualisierung kümmern müssen. Auch sollen keine neuen Abhängigkeiten zu unserem Mailsystem geschaffen werden, da diese unweigerlich die Komplexität des Gesamtsystems und die Betriebskosten steigern.
 
 Dazu kommen diverse Rahmenbedingungen:
 
-- Die Lösung muss aus finanzieller Sicht einen klaren Mehrwert bieten. Eine Anschaffung kommt nur bei einer positiven Kosten-Nutzen-Rechnung in Frage.
-- Als Konzern sind wir einer gewissen Dynamik unterworfen. Manche Tochtergesellschaften sind organisatorisch und technisch sehr eng an den Konzern gebunden, andere sehr locker. In allen Konstellationen kann es intensive Zusammenarbeit geben. Im Rahmen von Fusionen und Übernahmen müssen einzelne Gesellschaften oder Gruppen von Gesellschaften rasch integriert bzw. aus dem Verbund entfernt werden können.
-- Dem entsprechend ist die technische Umsetzung sehr vielfältig: Mehrere voneinander unabhängige Exchange-Umgebungen in on-prem-, hybrid- und cloud-only-Konfigurationen, mehrere AD-Forests in unterschiedlichen Trust-Konfigurationen, mehrere M365/Entra-ID-Tenants mit und ohne Anbindung untereinander.
+* Die Lösung muss aus finanzieller Sicht einen klaren Mehrwert bieten. Eine Anschaffung kommt nur bei einer positiven Kosten-Nutzen-Rechnung in Frage.
+* Als Konzern sind wir einer gewissen Dynamik unterworfen. Manche Tochtergesellschaften sind organisatorisch und technisch sehr eng an den Konzern gebunden, andere sehr locker. In allen Konstellationen kann es intensive Zusammenarbeit geben. Im Rahmen von Fusionen und Übernahmen müssen einzelne Gesellschaften oder Gruppen von Gesellschaften rasch integriert bzw. aus dem Verbund entfernt werden können.
+* Dem entsprechend ist die technische Umsetzung sehr vielfältig: Mehrere voneinander unabhängige Exchange-Umgebungen in on-prem-, hybrid- und cloud-only-Konfigurationen, mehrere AD-Forests in unterschiedlichen Trust-Konfigurationen, mehrere M365/Entra-ID-Tenants mit und ohne Anbindung untereinander.
 
 Dieses Dokument soll klären, ob die gewünschten Anforderungen bezüglich Signaturen erfüllbar sind und wie eine praktische Umsetzung aussehen könnte.
 
@@ -107,45 +107,191 @@ Wir raten daher zur Nutzung einer clientbasierten Lösung.
 
 Aus den zuvor genannten Rahmenbedingungen und Gesprächen mit allen involvierten Parteien leitet sich folgender Katalog benötigter Funktionen ab:
 
-Signaturen und Abwesenheitsnotizen sollen:
+**Signaturen und Abwesenheitsnotizen sollen:**
 
-- Aus Vorlagen in gängigen Formaten wie DOCX oder HTML erstellt werden können.
-- Mit Variablen aus Verzeichnisdiensten (z. B. Active Directory, Entra ID) und anderen Datenquellen anpassbar sein, inklusive Fotos und Bildern.
-- Variablen für den aktuellen Benutzer, das Postfach und den Manager unterstützen.
-- Barrierefrei gestaltet werden können, z. B. mit Alternativtexten für Links und Bilder.
-- Flexibel zuweisbar sein: für alle Postfächer, Gruppen, Alias-Adressen, basierend auf Attributen.
-- Mehrfach nutzbar sein: eine Vorlage für viele Postfächer, mit individuellen Signatur-Namen.
-- Zeitgesteuert einsetzbar sein (gültig in bestimmten Zeiträumen).
-- Als Standardsignatur für neue E-Mails oder Antworten festgelegt werden können.
-- Als Standard-Abwesenheitsnotiz für interne und externe Empfänger nutzbar sein.
-- In Outlook for the web und als Roaming-Signaturen synchronisiert werden können.
-- Zentral verwaltet werden können, aber auch parallele Benutzersignaturen erlauben.
-- Automatisch in neue E-Mails, Antworten, Weiterleitungen und Termine eingefügt werden können.
-- Für andere E-Mail-Clients als Outlook wenn nicht automatisch, dann zumindest für manuelle Einbindung verfügbar gemacht werden (z. B. Apple Mail).
+* Aus Vorlagen in gängigen Formaten wie DOCX oder HTML erstellt werden können.
+* Mit Variablen aus Verzeichnisdiensten (z. B. Active Directory, Entra ID) und anderen Datenquellen anpassbar sein, inklusive Fotos und Bildern.
+* Variablen für den aktuellen Benutzer, das Postfach und den Manager unterstützen.
+* Barrierefrei gestaltet werden können, z. B. mit Alternativtexten für Links und Bilder.
+* Flexibel zuweisbar sein: für alle Postfächer, Gruppen, Alias-Adressen, basierend auf Attributen.
+* Mehrfach nutzbar sein: eine Vorlage für viele Postfächer, mit individuellen Signatur-Namen.
+* Zeitgesteuert einsetzbar sein (gültig in bestimmten Zeiträumen).
+* Als Standardsignatur für neue E-Mails oder Antworten festgelegt werden können.
+* Als Standard-Abwesenheitsnotiz für interne und externe Empfänger nutzbar sein.
+* In Outlook for the web und als Roaming-Signaturen synchronisiert werden können.
+* Zentral verwaltet werden können, aber auch parallele Benutzersignaturen erlauben.
+* Automatisch in neue E-Mails, Antworten, Weiterleitungen und Termine eingefügt werden können.
+* Für andere E-Mail-Clients als Outlook wenn nicht automatisch, dann zumindest für manuelle Einbindung verfügbar gemacht werden (z. B. Apple Mail).
 
-Bereitstellung und Ausführung sollen:
+**Bereitstellung und Ausführung sollen:**
 
-- Auf Windows-, Linux- und macOS-Clients möglich sein, auch auf Terminalservern oder gemeinsam genutzten Geräten.
-- Ohne Installation auf Servern oder Clients auskommen.
-- Über zentrale Freigaben und Standardmechanismen wie Anmeldeskripte, geplante Aufgaben oder manuelle Ausführung erfolgen.
-- Optional ohne Clientbereitstellung direkt für Webnutzer möglich sein.
-- In hybriden, Cloud- und On-Premises-Umgebungen funktionieren.
-- Für große und komplexe Umgebungen geeignet sein (z. B. mehrere AD-Domänen, Trusts, Multitenant).
-- Mehrere Instanzen durch getrennte Konfigurationen ermöglichen.
+* Auf Windows-, Linux- und macOS-Clients möglich sein, auch auf Terminalservern oder gemeinsam genutzten Geräten.
+* Ohne Installation auf Servern oder Clients auskommen.
+* Über zentrale Freigaben und Standardmechanismen wie Anmeldeskripte, geplante Aufgaben oder manuelle Ausführung erfolgen.
+* Optional ohne Clientbereitstellung direkt für Webnutzer möglich sein.
+* In hybriden, Cloud- und On-Premises-Umgebungen funktionieren.
+* Für große und komplexe Umgebungen geeignet sein (z. B. mehrere AD-Domänen, Trusts, Multitenant).
+* Mehrere Instanzen durch getrennte Konfigurationen ermöglichen.
 
-Sicherheit und Datenschutz:
+**Sicherheit und Datenschutz:**
 
-- Keine Telemetrie oder externe Datenübertragung.
-- Keine Änderungen an DNS oder E-Mail-Verkehr erforderlich.
-- Daten bleiben innerhalb der bereits bestehenden Infrastruktur.
+* Keine Telemetrie oder externe Datenübertragung.
+* Keine Änderungen an DNS oder E-Mail-Verkehr erforderlich.
+* Daten bleiben innerhalb der bereits bestehenden Infrastruktur.
 
-Zusätzliche Anforderungen:
+**Zusätzliche Anforderungen:**
 
-- Dokumentierte Best Practices für Implementierung und Betrieb.
-- Open-Source-Option oder transparente Lizenzbedingungen bevorzugt.
+* Dokumentierte Best Practices für Implementierung und Betrieb.
+* Open-Source-Option oder transparente Lizenzbedingungen bevorzugt.
+
+## Architektur- und Sicherheitsanforderungen {#architecture-security}
+
+Dieser Abschnitt definiert die **architektonischen und sicherheitsrelevanten Anforderungen** an eine Lösung zur zentralen Verwaltung von E-Mail-Signaturen und Abwesenheitsnachrichten in komplexen Unternehmensumgebungen.
+
+Er dient als Grundlage für Bewertung, Architekturentscheidungen und Sicherheitsprüfungen.  
+Die Anforderungen orientieren sich an den Prinzipien von **Datensouveränität**, **minimalen Abhängigkeiten** sowie **transparenter und auditierbarer Verarbeitung**.
+
+### Architekturanforderungen
+
+Eine geeignete Lösung muss eine klare **Trennung der Verantwortlichkeiten** umsetzen zwischen:
+
+1. **Erstellung von Signaturen und Nachrichten**
+2. **Bereitstellung und Nutzung in E-Mail-Clients**
+
+Diese Trennung ermöglicht flexible Betriebsmodelle, Skalierbarkeit und Unabhängigkeit von spezifischen Client- oder Serverkonfigurationen.
+
+#### Anforderungen an die Erstellung
+
+Die Lösung muss eine oder mehrere der folgenden Ausführungsvarianten unterstützen:
+
+* **Clientseitige Ausführung**
+  * Läuft im Kontext des angemeldeten Benutzers
+  * Nutzt lokale Rechenressourcen
+  * Ermöglicht häufige Ausführung (z. B. bei Anmeldung oder zeitgesteuert)
+
+* **Zentrale Ausführung**
+  * Läuft auf kontrollierten Systemen innerhalb der Organisation
+  * Nutzt klar definierte Service-Identitäten
+  * Unterstützt Benutzer ohne verwaltete Endgeräte
+
+Die Architektur muss die **Kombination dieser Modelle** je nach organisatorischen Anforderungen ermöglichen.
+
+#### Anforderungen an die Bereitstellung
+
+Die Lösung muss Signaturen über eine oder mehrere der folgenden Mechanismen zur Verfügung stellen:
+
+* Lokaler Signaturspeicher in E-Mail-Clients
+* Postfachbasierte Konfiguration (z. B. Outlook im Web oder Roaming-Funktionen)
+* Applikationsbasierte Integration (z. B. Add-ins)
+* Optionale Bereitstellung über Dateisysteme oder andere Speicherorte
+
+Die gewählte Lösung muss eine konsistente Nutzung über folgende Plattformen sicherstellen:
+
+* Desktop-Clients
+* Web-Clients
+* Mobile Endgeräte
+
+### Sicherheitsanforderungen
+
+Die Lösung muss ein Sicherheitsmodell umsetzen, das auf folgenden Prinzipien basiert:
+
+* **Least Privilege (Minimalprinzip)**
+* **Need to Know**
+* **Trennung von Verantwortlichkeiten**
+
+#### Ausführungskontexte
+
+Die Lösung muss klar definierte und getrennte Ausführungskontexte verwenden:
+
+* Ausführung im Kontext des **angemeldeten Benutzers**
+* Ausführung über **dedizierte Service-Identitäten**, sofern erforderlich
+* Ausführung innerhalb von **Applikations-Sandboxen** (z. B. Add-ins)
+
+Jeder Kontext darf ausschließlich die minimal erforderlichen Berechtigungen besitzen.
+
+#### Identitäts- und Zugriffsmanagement
+
+Die Lösung muss sich in bestehende Identitätssysteme (z. B. Active Directory, Entra ID) integrieren und:
+
+* **Delegierte Berechtigungen bevorzugen**
+* **Applikationsberechtigungen nur bei technischer Notwendigkeit verwenden**
+* **Feingranulare und minimale API-Berechtigungen einsetzen**
+* Administrative Berechtigungen nur für die initiale Einrichtung benötigen
+
+### Anforderungen an den Datenschutz
+
+Die Lösung muss sicherstellen, dass **sämtliche Datenverarbeitung innerhalb der kontrollierten Umgebung der Organisation** erfolgt:
+
+* Keine Umleitung von E-Mails über externe Systeme
+* Kein Transfer von Verzeichnis- oder Postfachdaten an Dritte
+* Keine Abhängigkeit von extern betriebenen Verarbeitungssystemen
+* Keine Telemetrie oder Nutzungsdatenerhebung außerhalb der Organisation
+
+Die Verarbeitung muss erfolgen innerhalb von:
+
+* Client-Geräten
+* Unternehmensseitiger Infrastruktur
+* Bestehenden Messaging- und Verzeichnisdiensten
+
+### Anforderungen an Risiko- und Bedrohungsminimierung
+
+Die Architektur muss typische Risiken minimieren durch:
+
+* Verzicht auf Manipulation des Mailflusses
+* Sicherstellung, dass Identitäts- und Postfachdaten in vertrauenswürdigen Bereichen verbleiben
+* Vermeidung zusätzlicher internetexponierter Komponenten
+* Vermeidung von Abhängigkeiten zu externen Laufzeitdiensten
+
+### Anforderungen an Softwareintegrität und Lieferkette
+
+Die Lösung muss Mechanismen zur Sicherstellung von Integrität und Transparenz bereitstellen:
+
+* Digitale Signierung aller ausführbaren Komponenten
+* Möglichkeit zur Integritätsprüfung von Releases (z. B. Hashwerte)
+* Offenlegung und Kontrolle von Abhängigkeiten
+  * nachvollziehbar
+  * versionsgebunden
+  * geprüft vor Veröffentlichung
+
+* Versionierte, dokumentierte und getestete Releases
+
+Die Organisation muss in der Lage sein, Updates eigenständig zu prüfen und freizugeben.
+
+### Anforderungen an Applikationsintegration
+
+Falls Erweiterungen wie Add-ins verwendet werden, muss die Lösung sicherstellen:
+
+* Ausführung innerhalb des Sicherheitsmodells der Host-Anwendung
+* Vom Kunden kontrollierte Bereitstellung und Versionierung
+* Möglichkeit zum **Self-Hosting ohne verpflichtende Middleware**
+* Direkten Zugriff auf unternehmensinterne Systeme (z. B. Postfächer)
+
+### Trennung von Zuständigkeiten und Vertrauensgrenzen
+
+Die Lösung muss klare Vertrauensbereiche einhalten zwischen:
+
+* Client-Systemen (Ausführung und Interaktion)
+* Verzeichnisdiensten (Identitätsdaten)
+* Messaging-Systemen (Postfächer und Konfiguration)
+* Vorlagenverwaltung (fachliche Inhalte)
+
+Es dürfen **keine neuen kritischen Abhängigkeiten oder Vertrauensgrenzen** entstehen.
+
+### Zusammenfassung der Anforderungen
+
+Eine geeignete Lösung muss:
+
+* Innerhalb bestehender vertrauenswürdiger Umgebungen betrieben werden
+* Externe Datenverarbeitung und Abhängigkeiten vermeiden
+* Striktes Least-Privilege-Prinzip umsetzen
+* Transparente und überprüfbare Softwarebereitstellung ermöglichen
+* Flexible Betriebsmodelle unterstützen
+* Sicherheits- und Compliance-Anforderungen erfüllen
 
 ## Vergleich unterschiedlicher Lösungen {#feature-comparison}
+
 ### Preis-Benchmark {#pricing}
+
 <div style="display: grid;">
     <div class="table-container">
         <table class="table is-bordered is-striped is-hoverable">
@@ -201,6 +347,7 @@ Zusätzliche Anforderungen:
 <p>Berücksichtigen Sie auch die Gesamtbetriebskosten (TCO) über mehrere Jahre hinweg. Einige Mitbewerber sehen im Kleingedruckten automatische Preiserhöhungen von 8 % oder mehr vor.</p>
 
 ### Detaillierter Vergleichs-Benchmark {#detailed-benchmark}
+
 <div style="display: grid;">
     <div class="table-container">
         <table class="table is-bordered is-striped is-hoverable">
@@ -450,10 +597,56 @@ Zusätzliche Anforderungen:
     </div>
 </div>
 
-
 ## Empfehlung: Set-OutlookSignatures {#recommendation}
 
 Nach einer Erhebung der Kundenanforderungen und Tests mehrerer server- und clientbasierter Produkte empfehlen wir den Einsatz der kostenlosen Open-Source-Software Set-OutlookSignatures mit der kostenpflichtigen "Benefactor Circle"-Erweiterung.
+
+### Abgleich mit Architektur- und Sicherheitsanforderungen
+
+Die im Abschnitt *Architektur- und Sicherheitsanforderungen* definierten Kriterien bilden eine neutrale Grundlage für die Bewertung geeigneter Lösungen.
+
+Set-OutlookSignatures erfüllt diese Anforderungen wie folgt:
+
+* **Trennung der architektonischen Zuständigkeiten**  
+  Klare Unterscheidung zwischen Erstellung und Bereitstellung von Signaturen ermöglicht flexible und skalierbare Betriebsmodelle.
+
+* **Flexible Ausführungsmodelle**  
+  Unterstützt sowohl clientseitige als auch zentrale Ausführung, die je nach Anforderungen kombiniert werden können.
+
+* **Standardbasierte Bereitstellungsmechanismen**  
+  Nutzt native Client-Funktionen, postfachbasierte Speicherung und optionale Add-in-Integration für plattformübergreifende Verfügbarkeit.
+
+* **Sicherheitsmodell nach dem Least-Privilege-Prinzip**  
+  Betrieb primär im Benutzerkontext, mit klar begrenztem Einsatz von Service-Identitäten.
+
+* **Kontrollierter Zugriff auf Identitäts- und Systemdienste**  
+  Nutzung delegierter Berechtigungen mit minimalen API-Rechten.
+
+* **Datensouveränität als Designprinzip**  
+  Keine Umleitung von E-Mails oder Verzeichnisdaten über externe Systeme.
+
+* **Reduzierte Angriffsfläche**  
+  Verzicht auf Mailflussmanipulation und externe Verarbeitungskomponenten.
+
+* **Transparente Softwarebereitstellung**  
+  Signierte Releases, überprüfbare Artefakte und kontrollierter Release-Prozess.
+
+* **Integration ohne zusätzliche Vertrauensgrenzen**  
+  Add-in arbeitet innerhalb des Sicherheitsmodells von Outlook ohne zusätzliche Vermittlungsschichten.
+
+* **Eignung für komplexe Unternehmensumgebungen**  
+  Unterstützt hybride, mandantenübergreifende und Multi-Forest-Umgebungen.
+
+Diese Umsetzung zeigt, dass Set-OutlookSignatures die definierten Anforderungen nicht nur erfüllt, sondern dies im Einklang mit etablierten Architektur- und Sicherheitsprinzipien tut.
+
+### Weiterführende technische Dokumentation
+
+Detaillierte Informationen zu Architektur und Sicherheit:
+
+* [Architecture considerations](https://set-outlooksignatures.com/details#architecture-considerations)
+* [Security considerations](https://set-outlooksignatures.com/details#security-considerations)
+* [Security questionnaire](https://set-outlooksignatures.com/details#security-questionnaire)
+* <https://set-outlooksignatures.com/outlookaddin#configuration-and-deployment>
 
 ### Allgemeine Beschreibung {#general-description}
 
@@ -465,9 +658,9 @@ Die Verwaltung der Signaturen erfolgt zentral und kann vollständig oder auf Ebe
 
 Die Berechnung und Verteilung der Signaturen kann auf drei Varianten erfolgen, die miteinander kombinierbar sind:
 
-- Lokal auf den Clients. Das ist die bevorzugte Variante, da auf den Clients (Windows, Linux, macOS) die meiste brachliegende Rechenleistung zur Verfügung steht.
-- Auf einem oder mehreren Servern. Signaturen werden zentral vorberechnet und in die Postfächer der Benutzer geschrieben. Diese Variante erfordert hohe zentrale Rechenleistung und kann auf dem Client gesetzte Einstellungen nicht berücksichtigen. Dies ist die bevorzugte Variante für Postfächer von Benutzern, die Outlook nur im Web, auf iOS oder Android nutzen oder nur andere E-Mail-Clients verwenden.
-- Über das Outlook Add-in. Damit ist nicht nur der Zugriff auf Signaturen möglich, die über eine der anderen Varianten erstellt wurden, sondern es können auch davon unabhängige Signaturen erstellt und angehängt werden. Dieser Modus erlaubt zudem die Erstellung granularer Regeln auf Basis vieler Eigenschaften des aktuell bearbeiteten Elements (z. B. abhängig von Empfängern, Absender, Betreff und vielen weiteren Eigenschaften).
+* Lokal auf den Clients. Das ist die bevorzugte Variante, da auf den Clients (Windows, Linux, macOS) die meiste brachliegende Rechenleistung zur Verfügung steht.
+* Auf einem oder mehreren Servern. Signaturen werden zentral vorberechnet und in die Postfächer der Benutzer geschrieben. Diese Variante erfordert hohe zentrale Rechenleistung und kann auf dem Client gesetzte Einstellungen nicht berücksichtigen. Dies ist die bevorzugte Variante für Postfächer von Benutzern, die Outlook nur im Web, auf iOS oder Android nutzen oder nur andere E-Mail-Clients verwenden.
+* Über das Outlook Add-in. Damit ist nicht nur der Zugriff auf Signaturen möglich, die über eine der anderen Varianten erstellt wurden, sondern es können auch davon unabhängige Signaturen erstellt und angehängt werden. Dieser Modus erlaubt zudem die Erstellung granularer Regeln auf Basis vieler Eigenschaften des aktuell bearbeiteten Elements (z. B. abhängig von Empfängern, Absender, Betreff und vielen weiteren Eigenschaften).
 
 Alle drei Varianten können mit allen Arten von E-Mail-Verschlüsselung umgehen, und die Einbindung in den mit Hilfe von AppLocker und anderen Mechanismen wie z. B. Microsoft Purview Information Protection abgesicherten Client ist durch etablierte Maßnahmen (wie z. B. dem digitalen Signieren von PowerShell-Scripts) technisch und organisatorisch einfach möglich.
 
@@ -499,97 +692,97 @@ Allen Gesellschaften im Konzern bieten wir Unterstützung in Form von Workshops 
 
 **Teilnehmer**  
 
-- Kunde: Unternehmenskommunikation, Marketing, Clientmanagement, Koordinator des Vorhabens  
-- IT-Dienstleister: Mail-Produktmanagement, Mail-Betriebsführung oder Mail-Architektur  
+* Kunde: Unternehmenskommunikation, Marketing, Clientmanagement, Koordinator des Vorhabens  
+* IT-Dienstleister: Mail-Produktmanagement, Mail-Betriebsführung oder Mail-Architektur  
 
 **Inhalt und Ziele**  
 
-- Kunde: Vorstellung der eigenen Wünsche zu textuellen Signaturen  
-- IT-Dienstleister: Kurze Beschreibung zu prinzipiellen Möglichkeiten rund um textuelle Signaturen, Vor- und Nachteile der unterschiedlichen Ansätze, Gründe für die Entscheidung zum empfohlenen Produkt  
-- Abgleich der Kundenwünsche mit den technisch-organisatorischen Möglichkeiten  
-- Live-Demonstration des Produkts unter Berücksichtigung der Kundenwünsche  
-- Festlegung der nächsten Schritte  
+* Kunde: Vorstellung der eigenen Wünsche zu textuellen Signaturen  
+* IT-Dienstleister: Kurze Beschreibung zu prinzipiellen Möglichkeiten rund um textuelle Signaturen, Vor- und Nachteile der unterschiedlichen Ansätze, Gründe für die Entscheidung zum empfohlenen Produkt  
+* Abgleich der Kundenwünsche mit den technisch-organisatorischen Möglichkeiten  
+* Live-Demonstration des Produkts unter Berücksichtigung der Kundenwünsche  
+* Festlegung der nächsten Schritte  
 
 **Dauer**  
 
-- 2 Stunden  
+* 2 Stunden  
 
 #### Schulung der Vorlagen-Verwalter
 
 **Teilnehmer**  
 
-- Kunde: Vorlagen-Verwalter (Unternehmenskommunikation, Marketing), optional Clientmanagement, Koordinator des Vorhabens  
-- IT-Dienstleister: Mail-Produktmanagement, Mail-Betriebsführung oder Mail-Architektur  
+* Kunde: Vorlagen-Verwalter (Unternehmenskommunikation, Marketing), optional Clientmanagement, Koordinator des Vorhabens  
+* IT-Dienstleister: Mail-Produktmanagement, Mail-Betriebsführung oder Mail-Architektur  
 
 **Inhalt und Ziele**  
 
-- Zusammenfassung des vorangegangenen Termins "Erstabstimmung zu textuellen Signaturen", mit Fokus auf gewünschte und realisierbare Funktionen  
-- Vorstellung des Aufbaus der Vorlagen-Verzeichnisse, mit Fokus auf  
-- Namenskonventionen  
-- Anwendungsreihenfolge (allgemein, gruppenspezifisch, postfachspezifisch, in jeder Gruppe alphabetisch)  
-- Festlegung von Standard-Signaturen für neue E-Mails und für Antworten und Weiterleitungen  
-- Festlegung von Abwesenheits-Texten für interne und externe Empfänger.  
-- Festlegung der zeitlichen Gültigkeit von Vorlagen  
-- Variablen und Benutzerfotos in Vorlagen  
-- Unterschiede DOCX- und HTML-Format  
-- Möglichkeiten zur Einbindung eines Disclaimers  
-- Gemeinsame Erarbeitung erster Vorlagen auf Basis bestehender Vorlagen und Kundenanforderungen  
-- Live-Demonstration auf einem Standard-Client mit einem Testbenutzer und Testpostfächern des Kunden (siehe Voraussetzungen)  
+* Zusammenfassung des vorangegangenen Termins "Erstabstimmung zu textuellen Signaturen", mit Fokus auf gewünschte und realisierbare Funktionen  
+* Vorstellung des Aufbaus der Vorlagen-Verzeichnisse, mit Fokus auf  
+* Namenskonventionen  
+* Anwendungsreihenfolge (allgemein, gruppenspezifisch, postfachspezifisch, in jeder Gruppe alphabetisch)  
+* Festlegung von Standard-Signaturen für neue E-Mails und für Antworten und Weiterleitungen  
+* Festlegung von Abwesenheits-Texten für interne und externe Empfänger.  
+* Festlegung der zeitlichen Gültigkeit von Vorlagen  
+* Variablen und Benutzerfotos in Vorlagen  
+* Unterschiede DOCX- und HTML-Format  
+* Möglichkeiten zur Einbindung eines Disclaimers  
+* Gemeinsame Erarbeitung erster Vorlagen auf Basis bestehender Vorlagen und Kundenanforderungen  
+* Live-Demonstration auf einem Standard-Client mit einem Testbenutzer und Testpostfächern des Kunden (siehe Voraussetzungen)  
 
 **Dauer**  
 
-- 2 Stunden  
+* 2 Stunden  
 
 **Voraussetzungen**  
 
-- Standard-Client mit Outlook und Word zur Verfügung.  
-- Der Bildschirminhalt des Clients muss zur gemeinsamen Arbeit per Beamer projiziert oder auf einem entsprechend großen Monitor dargestellt werden können.  
-- Der Kunde stellt einen Testbenutzer zur Verfügung. Dieser Testbenutzer muss auf dem Standard-Client  
-  - einmalig Dateien aus dem Internet (github.com) herunterladen dürfen (alternativ kann der Kunde einen BitLocker-verschlüsselten USB-Stick für die Datenübertragung stellen).  
-  - signierte PowerShell-Scripte im Full Language Mode ausführen dürfen  
-  - über ein Mail-Postfach verfügen  
-  - Vollzugriff auf diverse Testpostfächer (persönliche Postfächer oder Gruppenpostfächer) haben, die nach Möglichkeit direkt oder indirekt Mitglied in diversen Gruppen oder Verteilerlisten sind. Für den Vollzugriff kann der Benutzer auf die anderen Postfächer entsprechend berechtigt sein, oder Benutzername und Passwort der zusätzlichen Postfächer sind bekannt.  
+* Standard-Client mit Outlook und Word zur Verfügung.  
+* Der Bildschirminhalt des Clients muss zur gemeinsamen Arbeit per Beamer projiziert oder auf einem entsprechend großen Monitor dargestellt werden können.  
+* Der Kunde stellt einen Testbenutzer zur Verfügung. Dieser Testbenutzer muss auf dem Standard-Client  
+  * einmalig Dateien aus dem Internet (github.com) herunterladen dürfen (alternativ kann der Kunde einen BitLocker-verschlüsselten USB-Stick für die Datenübertragung stellen).  
+  * signierte PowerShell-Scripte im Full Language Mode ausführen dürfen  
+  * über ein Mail-Postfach verfügen  
+  * Vollzugriff auf diverse Testpostfächer (persönliche Postfächer oder Gruppenpostfächer) haben, die nach Möglichkeit direkt oder indirekt Mitglied in diversen Gruppen oder Verteilerlisten sind. Für den Vollzugriff kann der Benutzer auf die anderen Postfächer entsprechend berechtigt sein, oder Benutzername und Passwort der zusätzlichen Postfächer sind bekannt.  
 
 #### Schulung des Kunden-IT
 
 **Teilnehmer**  
 
-- Kunde: IT, optional ein Administrator des Active Directory, optional ein Administrator des File-Servers und/oder SharePoint-Server, optional Unternehmenskommunikation und Marketing, Koordinator des Vorhabens  
-- IT-Dienstleister: Mail-Produktmanagement, Mail-Betriebsführung oder Mail-Architektur, ein Vertreter des Client-Teams bei entsprechenden Kunden  
+* Kunde: IT, optional ein Administrator des Active Directory, optional ein Administrator des File-Servers und/oder SharePoint-Server, optional Unternehmenskommunikation und Marketing, Koordinator des Vorhabens  
+* IT-Dienstleister: Mail-Produktmanagement, Mail-Betriebsführung oder Mail-Architektur, ein Vertreter des Client-Teams bei entsprechenden Kunden  
 
 **Inhalt und Ziele**  
 
-- Zusammenfassung des vorangegangenen Termins "Erstabstimmung zu textuellen Signaturen", mit Fokus auf gewünschte und realisierbare Funktionen  
-- Prinzipieller Ablauf der Software  
-- Systemanforderungen Client (Office, PowerShell, AppLocker, digitale Signatur der Software, Netzwerk-Ports)  
-- Systemanforderungen Server (Ablage der Vorlagen)  
-- Möglichkeiten der Einbindung des Produkts (Logon-Script, geplante Aufgabe, Desktop-Verknüpfung)  
-- Parametrisierung der Software, unter anderem:  
-- Bekanntgabe der Vorlagen-Ordner  
-- Outlook im Web berücksichtigen?  
-- Abwesenheitsnachrichten berücksichtigen?  
-- Welche Trusts berücksichtigen?  
-- Wie zusätzliche Variablen definieren?  
-- Vom Benutzer erstellte Signaturen erlauben?  
-- Signaturen auf einem zusätzlichen Pfad ablegen?  
-- Gemeinsame Tests auf Basis zuvor vom Kunden erarbeiteter Vorlagen und Kundenanforderungen  
-- Festlegung nächster Schritte  
+* Zusammenfassung des vorangegangenen Termins "Erstabstimmung zu textuellen Signaturen", mit Fokus auf gewünschte und realisierbare Funktionen  
+* Prinzipieller Ablauf der Software  
+* Systemanforderungen Client (Office, PowerShell, AppLocker, digitale Signatur der Software, Netzwerk-Ports)  
+* Systemanforderungen Server (Ablage der Vorlagen)  
+* Möglichkeiten der Einbindung des Produkts (Logon-Script, geplante Aufgabe, Desktop-Verknüpfung)  
+* Parametrisierung der Software, unter anderem:  
+* Bekanntgabe der Vorlagen-Ordner  
+* Outlook im Web berücksichtigen?  
+* Abwesenheitsnachrichten berücksichtigen?  
+* Welche Trusts berücksichtigen?  
+* Wie zusätzliche Variablen definieren?  
+* Vom Benutzer erstellte Signaturen erlauben?  
+* Signaturen auf einem zusätzlichen Pfad ablegen?  
+* Gemeinsame Tests auf Basis zuvor vom Kunden erarbeiteter Vorlagen und Kundenanforderungen  
+* Festlegung nächster Schritte  
 
 **Dauer**  
 
-- 2 Stunden
+* 2 Stunden
 
 **Voraussetzungen**  
 
-- Der Kunde stellt einen Standard-Client mit Outlook und Word zu Verfügung.  
-- Der Bildschirminhalt des Clients muss zur gemeinsamen Arbeit per Beamer projiziert oder auf einem entsprechend großen Monitor dargestellt werden können.  
-- Der Kunde stellt einen Testbenutzer zur Verfügung. Dieser Testbenutzer muss auf dem Standard-Client  
-  - einmalig Dateien aus dem Internet (github.com) herunterladen dürfen (alternativ kann der Kunde einen BitLocker-verschlüsselten USB-Stick für die Datenübertragung stellen).  
-  - signierte PowerShell-Scripte im Full Language Mode ausführen dürfen
-  - über ein Mail-Postfach verfügen  
-  - Vollzugriff auf diverse Testpostfächer (persönliche Postfächer oder Gruppenpostfächer) haben, die nach Möglichkeit direkt oder indirekt Mitglied in diversen Gruppen oder Verteilerlisten sind. Für den Vollzugriff kann der Benutzer auf die anderen Postfächer entsprechend berechtigt sein, oder Benutzername und Passwort der zusätzlichen Postfächer sind bekannt.  
-- Der Kunde stellt mindestens einen zentralen SMB-Share oder eine SharePoint Dokumentbibliothek für die Ablage der Vorlagen zur Verfügung.  
-- Der Kunde stellt einen zentralen SMB-File-Share für die Ablage der Software und seiner Komponenten zur Verfügung.  
+* Der Kunde stellt einen Standard-Client mit Outlook und Word zu Verfügung.  
+* Der Bildschirminhalt des Clients muss zur gemeinsamen Arbeit per Beamer projiziert oder auf einem entsprechend großen Monitor dargestellt werden können.  
+* Der Kunde stellt einen Testbenutzer zur Verfügung. Dieser Testbenutzer muss auf dem Standard-Client  
+  * einmalig Dateien aus dem Internet (github.com) herunterladen dürfen (alternativ kann der Kunde einen BitLocker-verschlüsselten USB-Stick für die Datenübertragung stellen).  
+  * signierte PowerShell-Scripte im Full Language Mode ausführen dürfen
+  * über ein Mail-Postfach verfügen  
+  * Vollzugriff auf diverse Testpostfächer (persönliche Postfächer oder Gruppenpostfächer) haben, die nach Möglichkeit direkt oder indirekt Mitglied in diversen Gruppen oder Verteilerlisten sind. Für den Vollzugriff kann der Benutzer auf die anderen Postfächer entsprechend berechtigt sein, oder Benutzername und Passwort der zusätzlichen Postfächer sind bekannt.  
+* Der Kunde stellt mindestens einen zentralen SMB-Share oder eine SharePoint Dokumentbibliothek für die Ablage der Vorlagen zur Verfügung.  
+* Der Kunde stellt einen zentralen SMB-File-Share für die Ablage der Software und seiner Komponenten zur Verfügung.  
 
 ### Test, Pilotbetrieb, Rollout {#testing-pilot-rollout}
 
@@ -605,19 +798,19 @@ Die Erstellung und Wartung von Vorlagen ist Aufgabe des Kunden.
 
 **Client**  
 
-- Outlook und Word (bei Verwendung von DOCX-Vorlagen, und/oder Signaturen im RTF-Format), jeweils ab Version 2010  
-- Die Software muss im Sicherheitskontext des aktuell angemeldeten Benutzers laufen.  
-- Die Software muss im "Full Language Mode" ausgeführt werden, der "Constrained Language Mode" wird nicht unterstützt.
-- Falls AppLocker oder vergleichbare Lösungen zum Einsatz kommen, ist die Software bereits digital signiert.  
-- Netzwerkfreischaltungen:  
-  - Die Ports 389 (LDAP) and 3268 (Global Catalog), jeweils TCP and UDP, müssen zwischen Client und allen Domain Controllern freigeschaltet sein. Falls dies nicht der Fall ist, können signaturrelevante Informationen und Variablen nicht abgerufen werden. Die Software prüft bei jedem Lauf, ob der Zugriff möglich ist.  
-  - Für den Zugriff auf den SMB-File-Share mit den Software-Komponenten werden folgende Ports benötigt: 137 UDP, 138 UDP, 139 TCP, 445 TCP (Details <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)">in diesem Microsoft-Artikel</a>).  
-  - Für den Zugriff auf SharePoint Dokumentbibliotheken wird Port 443 TCP benötigt. Firewalls und Proxies dürfen WebDAV HTTP Extensions nicht blockieren.
+* Outlook und Word (bei Verwendung von DOCX-Vorlagen, und/oder Signaturen im RTF-Format), jeweils ab Version 2010  
+* Die Software muss im Sicherheitskontext des aktuell angemeldeten Benutzers laufen.  
+* Die Software muss im "Full Language Mode" ausgeführt werden, der "Constrained Language Mode" wird nicht unterstützt.
+* Falls AppLocker oder vergleichbare Lösungen zum Einsatz kommen, ist die Software bereits digital signiert.  
+* Netzwerkfreischaltungen:  
+  * Die Ports 389 (LDAP) and 3268 (Global Catalog), jeweils TCP and UDP, müssen zwischen Client und allen Domain Controllern freigeschaltet sein. Falls dies nicht der Fall ist, können signaturrelevante Informationen und Variablen nicht abgerufen werden. Die Software prüft bei jedem Lauf, ob der Zugriff möglich ist.  
+  * Für den Zugriff auf den SMB-File-Share mit den Software-Komponenten werden folgende Ports benötigt: 137 UDP, 138 UDP, 139 TCP, 445 TCP (Details <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)">in diesem Microsoft-Artikel</a>).  
+  * Für den Zugriff auf SharePoint Dokumentbibliotheken wird Port 443 TCP benötigt. Firewalls und Proxies dürfen WebDAV HTTP Extensions nicht blockieren.
 
 **Server**
 
-- Ein SMB-File-Share, in den die Software und ihre Komponenten abgelegt werden. Auf diesen File-Share und seine Inhalte müssen alle Benutzer lesend zugreifen können.  
-- Ein oder mehrere SMB-File-Shares oder SharePoint Dokumentbibliotheken, in den die Vorlagen für Signaturen und Abwesenheitsnachrichten gespeichert und verwaltet werden.
+* Ein SMB-File-Share, in den die Software und ihre Komponenten abgelegt werden. Auf diesen File-Share und seine Inhalte müssen alle Benutzer lesend zugreifen können.  
+* Ein oder mehrere SMB-File-Shares oder SharePoint Dokumentbibliotheken, in den die Vorlagen für Signaturen und Abwesenheitsnachrichten gespeichert und verwaltet werden.
 
 Falls in den Vorlagen Variablen (z. B. Vorname, Nachname, Telefonnummer) genutzt werden, müssen die entsprechenden Werte im Active Directory vorhanden sein. Im Fall von Linked Mailboxes kann dabei zwischen den Attributen des aktuellen Benutzers und den Attributen des Postfachs, die sich in unterschiedlichen AD-Forests befinden, unterschieden werden.  
 
@@ -627,10 +820,10 @@ Alle Benutzer benötigen Lesezugriff auf die Software und alle seine Komponenten
 
 Solange diese Anforderungen erfüllt sind, kann jeder beliebige SMB-File-Share genutzt werden, beispielsweise  
 
-- der NETLOGON-Share eines Active Directory  
-- ein Share auf einem Windows-Server in beliebiger Architektur (einzelner Server oder Cluster, klassischer Share oder DFS in allen Variationen)  
-- ein Share auf einem Windows-Client  
-- ein Share auf einem beliebigen Nicht-Windows-System, z. B. über SAMBA
+* der NETLOGON-Share eines Active Directory  
+* ein Share auf einem Windows-Server in beliebiger Architektur (einzelner Server oder Cluster, klassischer Share oder DFS in allen Variationen)  
+* ein Share auf einem Windows-Client  
+* ein Share auf einem beliebigen Nicht-Windows-System, z. B. über SAMBA
 
 Solange alle Kunden die gleiche Version der Software einsetzen und diese nur über Parameter konfigurieren, genügt eine zentrale Ablage für die Software-Komponenten.
 
@@ -660,10 +853,10 @@ Die Software kann Vorlagen im DOCX- oder im HTML-Format verarbeiten. Für den An
 
 Die [Online-Dokumentation der Software](/details) bietet eine Übersicht, wie Vorlagen zu administrieren sind, damit sie  
 
-- nur für bestimmte Gruppen oder Postfächer gelten  
-- als Standard-Signatur für neue Mails oder Antworten und Weiterleitungen gesetzt werden  
-- als interne oder externe Abwesenheits-Nachricht gesetzt werden
-- und vieles mehr
+* nur für bestimmte Gruppen oder Postfächer gelten  
+* als Standard-Signatur für neue Mails oder Antworten und Weiterleitungen gesetzt werden  
+* als interne oder externe Abwesenheits-Nachricht gesetzt werden
+* und vieles mehr
 
 In der [Online-Dokumentation](/details) und den Beispiel-Vorlagen werden zudem die ersetzbaren Variablen, die Erweiterung um benutzerdefinierte Variablen und der Umgang mit Fotos aus dem Active Directory beschrieben.
 
@@ -672,10 +865,10 @@ In der mitgelieferten Beispiel-Datei "Test all signature replacement variables.d
 **Ausführen der Software**
 Die Software kann über einen beliebigen Mechanismus ausgeführt werden, beispielsweise  
 
-- bei Anmeldung des Benutzers als Teil des Logon-Scripts oder als eigenes Script  
-- über die Aufgabenplanung zu fixen Zeiten oder bei bestimmten Ereignissen  
-- durch den Benutzer selbst, z. B. über eine Verknüpfung auf dem Desktop  
-- durch ein Werkzeug zur Client-Verwaltung
+* bei Anmeldung des Benutzers als Teil des Logon-Scripts oder als eigenes Script  
+* über die Aufgabenplanung zu fixen Zeiten oder bei bestimmten Ereignissen  
+* durch den Benutzer selbst, z. B. über eine Verknüpfung auf dem Desktop  
+* durch ein Werkzeug zur Client-Verwaltung
 
 Da es sich bei Set-OutlookSignatures hauptsächlich um ein PowerShell-Script handelt, erfolgt der Aufruf wie bei jedem anderen Script dieses Dateityps:
 
@@ -694,37 +887,37 @@ powershell.exe -file "\\example.com\netlogon\set-outlooksignatures\set-outlooksi
 
 Zum Zeitpunkt der Erstellung dieses Dokuments waren noch weitere Parameter verfügbar. Folgend eine kurze Übersicht der Möglichkeit, für Details sei auf die [Online-Dokumentation der Software](/parameters) verwiesen:  
 
-- SignatureTemplatePath: Pfad zu den Signatur-Vorlagen. Kann ein SMB-Share oder eine SharePoint Dokumentbibliothek sein.  
-- ReplacementVariableConfigFile: Pfad zur Datei, in der vom Standard abweichende Variablen definiert werden. Kann ein SMB-Share oder eine SharePoint Dokumentbibliothek sein.  
-- TrustsToCheckForGroups: Standardmäßig werden alle Trusts nach Postfachinformationen abgefragt. Über diesen Parameter können bestimmte Domains entfernt und nicht-getrustete Domains hinzugefügt werden.  
-- DeleteUserCreatedSignatures: Sollen vom Benutzer selbst erstelle Signaturen gelöscht werden? Standardmäßig erfolgt dies nicht.  
-- SetCurrentUserOutlookWebSignature: Standardmäßig wird für den angemeldeten Benutzer eine Signatur in Outlook im Web gesetzt. Über diesen Parameter kann das verhindert werden.  
-- SetCurrentUserOOFMessage: Standardmäßig wird der Text der Abwesenheits-Nachrichten gesetzt. Über diesen Parameter kann dieses Verhalten geändert werden.  
-- OOFTemplatePath: Pfad zu den Abwesenheits-Vorlagen. Kann ein SMB-Share oder eine SharePoint Dokumentbibliothek sein.  
-- AdditionalSignaturePath: Pfad zu einem zusätzlichen Share, in den alle Signaturen kopiert werden sollen, z. B. für den Zugriff von einem mobilen Gerät aus und zur vereinfachten Konfiguration nicht von der Software unterstützter Clients. Kann ein SMB-Share oder eine SharePoint Dokumentbibliothek sein.  
-- UseHtmTemplates: Standardmäßig werden Vorlagen im DOCX-Format verarbeitet. Über diesen Schalter kann auf HTML (.htm) umgeschaltet werden.  
+* SignatureTemplatePath: Pfad zu den Signatur-Vorlagen. Kann ein SMB-Share oder eine SharePoint Dokumentbibliothek sein.  
+* ReplacementVariableConfigFile: Pfad zur Datei, in der vom Standard abweichende Variablen definiert werden. Kann ein SMB-Share oder eine SharePoint Dokumentbibliothek sein.  
+* TrustsToCheckForGroups: Standardmäßig werden alle Trusts nach Postfachinformationen abgefragt. Über diesen Parameter können bestimmte Domains entfernt und nicht-getrustete Domains hinzugefügt werden.  
+* DeleteUserCreatedSignatures: Sollen vom Benutzer selbst erstelle Signaturen gelöscht werden? Standardmäßig erfolgt dies nicht.  
+* SetCurrentUserOutlookWebSignature: Standardmäßig wird für den angemeldeten Benutzer eine Signatur in Outlook im Web gesetzt. Über diesen Parameter kann das verhindert werden.  
+* SetCurrentUserOOFMessage: Standardmäßig wird der Text der Abwesenheits-Nachrichten gesetzt. Über diesen Parameter kann dieses Verhalten geändert werden.  
+* OOFTemplatePath: Pfad zu den Abwesenheits-Vorlagen. Kann ein SMB-Share oder eine SharePoint Dokumentbibliothek sein.  
+* AdditionalSignaturePath: Pfad zu einem zusätzlichen Share, in den alle Signaturen kopiert werden sollen, z. B. für den Zugriff von einem mobilen Gerät aus und zur vereinfachten Konfiguration nicht von der Software unterstützter Clients. Kann ein SMB-Share oder eine SharePoint Dokumentbibliothek sein.  
+* UseHtmTemplates: Standardmäßig werden Vorlagen im DOCX-Format verarbeitet. Über diesen Schalter kann auf HTML (.htm) umgeschaltet werden.  
 Die [Online-Dokumentation der Software](/parameters) enthält weitere Parameter.
 
 **Laufzeit und Sichtbarkeit der Software**  
 Die Software ist auf schnelle Durchlaufzeit und minimale Netzwerkbelastung ausgelegt, die Laufzeit der Software hängt dennoch von vielen Parametern ab:  
 
-- allgemeine Geschwindigkeit des Clients (CPU, RAM, HDD)  
-- Anzahl der in Outlook konfigurierten Postfächer  
-- Anzahl der Trusted Domains  
-- Reaktionszeit der Domain Controller und File Server  
-- Reaktionszeit der Exchange-Server (Setzen von Signaturen in Outlook for the web, Abwesenheits-Benachrichtigungen)  
-- Anzahl der Vorlagen und Komplexität der Variablen darin (z. B. Fotos)
+* allgemeine Geschwindigkeit des Clients (CPU, RAM, HDD)  
+* Anzahl der in Outlook konfigurierten Postfächer  
+* Anzahl der Trusted Domains  
+* Reaktionszeit der Domain Controller und File Server  
+* Reaktionszeit der Exchange-Server (Setzen von Signaturen in Outlook for the web, Abwesenheits-Benachrichtigungen)  
+* Anzahl der Vorlagen und Komplexität der Variablen darin (z. B. Fotos)
 
 Unter folgenden Rahmenbedingungen wurde eine reproduzierbare Laufzeit von ca. 30 Sekunden gemessen:  
 
-- Standard-Client  
-- Über VPN mit dem Firmennetzwerk verbunden  
-- 4 Postfächer  
-- Abfrage aller per Trust verbundenen AD-Domains  
-- 9 zu verarbeitende Signatur-Vorlagen, alle mit Variablen und Grafiken (aber ohne Benutzerfotos), teilweise auf Gruppen und Mail-Adressen eingeschränkt  
-- 8 zu verarbeitende Abwesenheits-Vorlagen, alle mit Variablen und Grafiken (aber ohne Benutzerfotos), teilweise auf Gruppen und Mail-Adressen eingeschränkt  
-- Setzen der Signatur in Outlook for the web on-prem
-- Kein Kopieren der Signaturen auf einen zusätzlichen Netzwerkpfad
+* Standard-Client  
+* Über VPN mit dem Firmennetzwerk verbunden  
+* 4 Postfächer  
+* Abfrage aller per Trust verbundenen AD-Domains  
+* 9 zu verarbeitende Signatur-Vorlagen, alle mit Variablen und Grafiken (aber ohne Benutzerfotos), teilweise auf Gruppen und Mail-Adressen eingeschränkt  
+* 8 zu verarbeitende Abwesenheits-Vorlagen, alle mit Variablen und Grafiken (aber ohne Benutzerfotos), teilweise auf Gruppen und Mail-Adressen eingeschränkt  
+* Setzen der Signatur in Outlook for the web on-prem
+* Kein Kopieren der Signaturen auf einen zusätzlichen Netzwerkpfad
   
 Da die Software keine Benutzerinteraktion erfordert, kann es über die üblichen Mechanismen minimiert oder versteckt ausgeführt werden. Die Laufzeit der Software wird dadurch nahezu irrelevant.  
 
@@ -743,8 +936,8 @@ Die Software nutzt Word zum Ersatz von Variablen in DOCX-Vorlagen und zum Konver
 
 Als IT-Dienstleister unterstützen wir unsere Konzerngesellschaften auch im laufenden Betrieb von Set-OutlookSignatures mit unserer gesamten Erfahrung. Darunter fallen beispielsweise Fragen zu:
 
-- Erstellen und Warten von Vorlagen
-- Erstellen und Warten von Ablage-Shares für Vorlagen und Software-Komponenten
-- Setzen und Warten von AD-Attributen oder Attributen in anderen Datenquellen
-- Konfigurationsanpassungen
-- Allgemeine Fragen zum laufenden Betrieb
+* Erstellen und Warten von Vorlagen
+* Erstellen und Warten von Ablage-Shares für Vorlagen und Software-Komponenten
+* Setzen und Warten von AD-Attributen oder Attributen in anderen Datenquellen
+* Konfigurationsanpassungen
+* Allgemeine Fragen zum laufenden Betrieb
