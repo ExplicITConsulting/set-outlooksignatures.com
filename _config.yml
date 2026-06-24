@@ -62,7 +62,7 @@ defaults:
       type: "posts"
     values:
       image:
-        path: "/assets/images/set-outlooksignatures blog opengraph1200x630.png" 
+        path: "/assets/images/set-outlooksignatures blog opengraph1200x630.png"
         width: 1200
         height: 630
         alt: "Master Outlook Signatures - Blog"
@@ -70,8 +70,15 @@ defaults:
 include:
   - ".well-known"
 
+markdown: kramdown
+highlighter: rouge
+
 kramdown:
   smart_quotes: ["apos", "apos", "quot", "quot"]
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
 
 collections:
   posts:
