@@ -406,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!gutterPre) return;
 
     const lineCount = gutterPre.textContent
-      .split("\r?\n")
+      .split(/\r?\n/)
       .map(line => line.trim())
       .filter(Boolean).length;
 
