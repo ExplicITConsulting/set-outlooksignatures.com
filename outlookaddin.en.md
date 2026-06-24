@@ -166,7 +166,7 @@ sitemap_changefreq: weekly
 
 <h3 id="entra-id-app">Entra ID app</h3>
 <p>When mailboxes are hosted in Exchange Online, the add-in needs an Entra ID app to access the mailbox. Creating a separate app is strongly recommended.</p>
-{% highlight batch %}{% raw %}
+{% highlight batch linenos %}{% raw %}
 powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType "OutlookAddIn" -AppName "Set-OutlookSignatures Outlook add-in" -OutlookAddInUrl "https://yourhost.yourdomain.com"
 {% endraw %}{% endhighlight %}
 
@@ -502,7 +502,7 @@ sequenceDiagram
           <ol>
             <li>
               <p>Define your log file path by setting the default value of the following key: <code>HKCU\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging</code>. You can execute this quickly via PowerShell:</p>
-{% highlight powershell %}{% raw %}
+{% highlight powershell linenos %}{% raw %}
 $Logfile = "c:\test\outlook_add-in_runtimelogging.txt"
 
 if (-not (Test-Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging")) {
@@ -524,7 +524,7 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\Runti
           <ol>
             <li>Close New Outlook.</li>
             <li>Launch it from a command prompt or the Run dialog:
-{% highlight batch %}{% raw %}
+{% highlight batch linenos %}{% raw %}
 olk.exe --devtools
 {% endraw %}{% endhighlight %}
             </li>
@@ -541,7 +541,7 @@ olk.exe --devtools
           <ol>
             <li>Force quit Outlook.</li>
             <li>Run the following command to set the log file destination:
-{% highlight bash %}{% raw %}
+{% highlight bash linenos %}{% raw %}
 defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-in_runtimelogging.txt"
 {% endraw %}{% endhighlight %}
             </li>
