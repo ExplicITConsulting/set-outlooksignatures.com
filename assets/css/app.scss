@@ -313,6 +313,369 @@ figure.highlight {
   margin: 2rem 0;
   border: none !important;
 
+  /* Text.Whitespace (w) - Specially highlighted whitespace */
+  .w {
+    color: #7c7c7c;
+  }
+
+  /* Error (err) - Lexer errors */
+  .err {
+    color: #f44747;
+    background-color: #000000;
+  }
+
+  /* Other (x) - Token for data not matched by a parser (e.g. HTML markup in PHP code) */
+  .x {
+    color: #ffffff;
+  }
+
+  /* Keyword (k) - Any keyword */
+  .k {
+    color: #569cd6;
+  }
+
+  /* Keyword.Constant (kc) - Keywords that are constants */
+  .kc {
+    color: #569cd6;
+  }
+
+  /* Keyword.Declaration (kd) - Keywords used for variable declaration (e.g. var in javascript) */
+  .kd {
+    color: #569cd6;
+  }
+
+  /* Keyword.Namespace (kn) - Keywords used for namespace declarations */
+  .kn {
+    color: #569cd6;
+  }
+
+  /* Keyword.Pseudo (kp) - Keywords that aren't really keywords */
+  .kp {
+    color: #569cd6;
+  }
+
+  /* Keyword.Reserved (kr) - Keywords which are reserved (such as end in Ruby) */
+  .kr {
+    color: #c586c0;
+  }
+
+  /* Keyword.Type (kt) - Keywords wich refer to a type id (such as int in C) */
+  .kt {
+    color: #4ec9b0;
+  }
+
+  /* Name (n) - Variable/function names */
+  .n {
+    color: #ffffff;
+  }
+
+  /* Name.Attribute (na) - Attributes (in HTML for instance) */
+  .na {
+    color: #9cdcfe;
+  }
+
+  /* Name.Builtin (nb) - Builtin names which are available in the global namespace */
+  .nb {
+    color: #569cd6;
+  }
+
+  /* Name.Builtin.Pseudo (bp) - Builtin names that are implicit (such as self in Ruby) */
+  .bp {
+    color: #569cd6;
+  }
+
+  /* Name.Class (nc) - For class declaration */
+  .nc {
+    color: #4ec9b0;
+  }
+
+  /* Name.Constant (no) - For constants */
+  .no {
+    color: #9cdcfe;
+  }
+
+  /* Name.Decorator (nd) - For decorators in languages such as Python or Java */
+  .nd {
+    color: #dcdcaa;
+  }
+
+  /* Name.Entity (ni) - Token for entitites such as &nbsp; in HTML */
+  .ni {
+    color: #9cdcfe;
+  }
+
+  /* Name.Exception (ne) - Exceptions and errors (e.g. ArgumentError in Ruby) */
+  .ne {
+    color: #f44747;
+  }
+
+  /* Name.Function (nf) - Function names */
+  .nf {
+    color: #dcdcaa;
+  }
+
+  /* Name.Property (py) - Token for properties */
+  .py {
+    color: #9cdcfe;
+  }
+
+  /* Name.Label (nl) - For label names */
+  .nl {
+    color: #ffffff;
+  }
+
+  /* Name.Namespace (nn) - Token for namespaces */
+  .nn {
+    color: #4ec9b0;
+  }
+
+  /* Name.Other (nx) - For other names */
+  .nx {
+    color: #ffffff;
+  }
+
+  /* Name.Tag (nt) - Tag mainly for markup such as XML or HTML */
+  .nt {
+    color: #569cd6;
+  }
+
+  /* Name.Variable (nv) - Token for variables */
+  .nv {
+    color: #9cdcfe;
+  }
+
+  /* Name.Variable.Class (vc) - Token for class variables (e.g. @@var in Ruby) */
+  .vc {
+    color: #9cdcfe;
+  }
+
+  /* Name.Variable.Global (vg) - For global variables (such as $LOAD_PATH in Ruby) */
+  .vg {
+    color: #9cdcfe;
+  }
+
+  /* Name.Variable.Instance (vi) - Token for instance variables (such as @var in Ruby) */
+  .vi {
+    color: #9cdcfe;
+  }
+
+  /* Literal (l) - Any literal (if not further defined) */
+  .l {
+    color: #ce9178;
+  }
+
+  /* Literal.Date (ld) - Date literals */
+  .ld {
+    color: #ce9178;
+  }
+
+  /* Literal.String (s) - String literals */
+  .s {
+    color: #ce9178;
+  }
+
+  /* Literal.String.Backtick (sb) - String enclosed in backticks */
+  .sb {
+    color: #ce9178;
+  }
+
+  /* Literal.String.Char (sc) - Token type for single characters */
+  .sc {
+    color: #569cd6;
+  }
+
+  /* Literal.String.Doc (sd) - Documentation strings (such as in Python) */
+  .sd {
+    color: #7ca668;
+    font-style: italic;
+  }
+
+  /* Literal.String.Double (s2) - Double quoted strings */
+  .s2 {
+    color: #ce9178;
+  }
+
+  /* Literal.String.Escape (se) - Escaped sequences in strings */
+  .se {
+    color: #ce9178;
+  }
+
+  /* Literal.String.Heredoc (sh) - For "heredoc" strings (e.g. in Ruby) */
+  .sh {
+    color: #ce9178;
+  }
+
+  /* Literal.String.Interpol (si) - For interpoled part in strings (e.g. in Ruby) */
+  .si {
+    color: #569cd6;
+  }
+
+  /* Literal.String.Other (sx) - Token type for any other strings (for example %q{foo} string constructs in Ruby) */
+  .sx {
+    color: #ce9178;
+  }
+
+  /* Literal.String.Regex (sr) - Regular expressions literals */
+  .sr {
+    color: #d16969;
+  }
+
+  /* Literal.String.Single (s1) - Single quoted strings */
+  .s1 {
+    color: #ce9178;
+  }
+
+  /* Literal.String.Symbol (ss) - Symbols (such as :foo in Ruby) */
+  .ss {
+    color: #ce9178;
+  }
+
+  /* Literal.Number (m) - Any number literal (if not further defined) */
+  .m {
+    color: #b5cea8;
+  }
+
+  /* Literal.Number.Float (mf) - Float numbers */
+  .mf {
+    color: #b5cea8;
+  }
+
+  /* Literal.Number.Hex (mh) - Hexadecimal numbers */
+  .mh {
+    color: #b5cea8;
+  }
+
+  /* Literal.Number.Integer (mi) - Integer literals */
+  .mi {
+    color: #b5cea8;
+  }
+
+  /* Literal.Number.Integer.Long (il) - Long interger literals */
+  .il {
+    color: #b5cea8;
+  }
+
+  /* Literal.Number.Oct (mo) - Octal literals */
+  .mo {
+    color: #b5cea8;
+  }
+
+  /* Literal.Number.Hex (mx) - Hexadecimal literals */
+  .mx {
+    color: #b5cea8;
+  }
+
+  /* Literal.Number.Bin (mb) - Binary literals */
+  .mb {
+    color: #b5cea8;
+  }
+
+  /* Operator (o) - Operators (commonly +, -, /, *) */
+  .o {
+    color: #d4d4d4;
+  }
+
+  /* Operator.Word (ow) - Word operators (e.g. and) */
+  .ow {
+    color: #569cd6;
+  }
+
+  /* Punctuation (p) - Punctuation which is not an operator */
+  .p {
+    color: #808080;
+  }
+
+  /* Comment (c) - Single ligne comments */
+  .c {
+    color: #7ca668;
+    font-style: italic;
+  }
+
+  /* Comment.Multiline (cm) - Mutliline comments */
+  .cm {
+    color: #7ca668;
+    font-style: italic;
+  }
+
+  /* Comment.Preproc (cp) - Preprocessor comments such as <% %> in ERb */
+  .cp {
+    color: #569cd6;
+  }
+
+  /* Comment.Single (c1) - Comments that end at the end of the line */
+  .c1 {
+    color: #7ca668;
+    font-style: italic;
+  }
+
+  /* Comment.Special (cs) - Special data in comments such as @license in Javadoc */
+  .cs {
+    color: #7ca668;
+    font-style: italic;
+  }
+
+  /* Generic (g) - Unstyled token */
+  .g {
+    color: #ffffff;
+  }
+
+  /* Generic.Deleted (gd) - Token value as deleted */
+  .gd {
+    color: #ce9178;
+  }
+
+  /* Generic.Emph (ge) - Token value as emphasized */
+  .ge {
+    font-style: italic;
+  }
+
+  /* Generic.Error (gr) - Token value as an error message */
+  .gr {
+    color: #f44747;
+  }
+
+  /* Generic.Heading (gh) - Token value as a headline */
+  .gh {
+    color: #6796e6;
+    font-weight: bold;
+  }
+
+  /* Generic.Inserted (gi) - Token value as inserted */
+  .gi {
+    color: #b5cea8;
+  }
+
+  /* Generic.Output (go) - Marked as a program output */
+  .go {
+    color: #ffffff;
+  }
+
+  /* Generic.Prompt (gp) - Marked as a command prompt */
+  .gp {
+    color: #ffffff;
+  }
+
+  /* Generic.Strong (gs) - Mark the token value as bold (for rst lexer) */
+  .gs {
+    font-weight: bold;
+  }
+
+  /* Generic.Subheading (gu) - Marked as a subheadline */
+  .gu {
+    color: #6796e6;
+    font-weight: bold;
+  }
+
+  /* Generic.Traceback (gt) - Mark the token as a part of an error traceback */
+  .gt {
+    color: #f44747;
+  }
+
+  /* Generic.Lineno (gl) - Line numbers */
+  .gl {
+    color: #7c7c7c;
+  }
+
   // The Traffic Light Dots
   &::before {
     content: "";
