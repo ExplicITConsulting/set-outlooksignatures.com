@@ -304,7 +304,7 @@ html::after {
 // 1. Terminal UI: Only for code blocks (Jekyll's highlighter-rouge)
 div.highlighter-rouge,
 figure.highlight {
-  background: #404040 !important;
+  background: black !important;
   border-radius: 6px;
   /* Reduced left padding to 0.75rem to pull code to the left */
   padding: 2.5rem 0.75rem 1rem !important;
@@ -322,7 +322,7 @@ figure.highlight {
     left: 0.75rem;
     height: 10px;
     width: 44px;
-    background: radial-gradient(circle at 5px, #ff5f56 5px, transparent 5px), radial-gradient(circle at 20px, #ffbd2e 5px, transparent 5px), radial-gradient(circle at 35px, #27c93f 5px, transparent 5px);
+    background: radial-gradient(circle at 5px, red 5px, transparent 5px), radial-gradient(circle at 20px, orange 5px, transparent 5px), radial-gradient(circle at 35px, limegreen 5px, transparent 5px);
     background-repeat: no-repeat;
     z-index: 10;
   }
