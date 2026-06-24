@@ -321,6 +321,7 @@ flowchart LR
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <p><b>Launch event workflow with configuration references</b></p>
     <div class="outlookaddin-launchevent-workflow-diagram-container" style="max-height: 50vh;">
       <style> 
         /* Limits the scope entirely to this specific section */
@@ -363,9 +364,9 @@ sequenceDiagram
     end
 ```
     </div>
-    <p><small><i>Click diagram to open it in a new tab.</i></small></p>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <p><b>Taskpane workflow with configuration references</b></p>
     <div class="outlookaddin-taskpane-workflow-diagram-container" style="max-height: 50vh;">
       <style> 
         /* Limits the scope entirely to this specific section */
@@ -406,7 +407,9 @@ sequenceDiagram
 ```
 
     </div>
-    <p><small><i>Click diagram to open it in a new tab.</i></small></p>
+  </div>
+  <div class="column is-full">
+    <p><small><i>Click any diagram to open it in a new tab.</i></small></p>
   </div>
 </div>
 
