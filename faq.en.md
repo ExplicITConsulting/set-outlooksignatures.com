@@ -211,18 +211,18 @@ Windows provides at least two built-in ways to start PowerShell absolutely hidde
 - Reasonably up-to-date versions of Windows come with the `conhost.exe` console host, which comes with the 'headless' parameter:
 
   {% highlight plaintext %}{% raw %}
-  conhost.exe --headless powershell.exe -File "\\server\share\directory\Set-OutlookSignatures.ps1" -SignatureTemplatePath "\\server\share\directory\templates\Signatures DOCX" -OOFTemplatePath "\\server\share\directory\templates\Out-of-Office DOCX" -ReplacementVariableConfigFile "\\server\share\directory\config\default replacement variables.ps1"
+conhost.exe --headless powershell.exe -File "\\server\share\directory\Set-OutlookSignatures.ps1" -SignatureTemplatePath "\\server\share\directory\templates\Signatures DOCX" -OOFTemplatePath "\\server\share\directory\templates\Out-of-Office DOCX" -ReplacementVariableConfigFile "\\server\share\directory\config\default replacement variables.ps1"
   {% endraw %}{% endhighlight %}
 
 - As Microsoft has marked Visual Basic Script (VBS) as deprecated and will remove it completely from future Windows releases, the use of Windows Script Host (WSH) is not recommended. If you want to try it anyway, here is a working example:
   - Create a .vbs (Visual Basic Script) file, paste and adapt the following code into it:
 
     {% highlight plaintext %}{% raw %}
-    command = "PowerShell.exe -Command ""& '\\server\share\directory\Set-OutlookSignatures.ps1' -SignatureTemplatePath '\\server\share\directory\templates\Signatures DOCX' -OOFTemplatePath '\\server\share\directory\templates\Out-of-Office DOCX' -ReplacementVariableConfigFile '\\server\share\directory\config\default replacement variables.ps1'"" "
+command = "PowerShell.exe -Command ""& '\\server\share\directory\Set-OutlookSignatures.ps1' -SignatureTemplatePath '\\server\share\directory\templates\Signatures DOCX' -OOFTemplatePath '\\server\share\directory\templates\Out-of-Office DOCX' -ReplacementVariableConfigFile '\\server\share\directory\config\default replacement variables.ps1'"" "
 
-    set shell = CreateObject("WScript.Shell")
+set shell = CreateObject("WScript.Shell")
 
-    shell.Run command, 0
+shell.Run command, 0
     {% endraw %}{% endhighlight %}
 
   - Then, run the .vbs file directly, without specifying cscript.exe as host (just execute `start.vbs` or `wscript.exe start.vbs`, but not `cscript.exe start.vbs`).
@@ -269,8 +269,8 @@ The following steps are recommended:
 2. The first step in the new custom configuration file should be to load the default configuration file, `.\config\default replacement variable.ps1` in this example:
 
    {% highlight plaintext %}{% raw %}
-   # Loading default replacement variables shipped with Set-OutlookSignatures
-   . ([System.Management.Automation.ScriptBlock]::Create((Get-Content -LiteralPath $(Join-Path -Path $(Get-Location).ProviderPath -ChildPath '\config\default replacement variables.ps1') -Raw)))
+# Loading default replacement variables shipped with Set-OutlookSignatures
+. ([System.Management.Automation.ScriptBlock]::Create((Get-Content -LiteralPath $(Join-Path -Path $(Get-Location).ProviderPath -ChildPath '\config\default replacement variables.ps1') -Raw)))
    {% endraw %}{% endhighlight %}
 
 3. After importing the default configuration file, existing replacement variables can be altered with custom definitions and new replacement variables can be added.
@@ -326,9 +326,9 @@ The internal variable `$UseHtmTemplates` is used to automatically differentiate 
 - Custom replacement variable config file
 
   {% highlight plaintext %}{% raw %}
-  $ReplaceHash['$CurrentUserTelephone-prefix-noempty$'] = $(if (-not $ReplaceHash['$CurrentUserTelephone$']) { '' } else { $(if ($UseHtmTemplates) { '<br>' } else { "`n" }) + 'Telephone: ' } )
+$ReplaceHash['$CurrentUserTelephone-prefix-noempty$'] = $(if (-not $ReplaceHash['$CurrentUserTelephone$']) { '' } else { $(if ($UseHtmTemplates) { '<br>' } else { "`n" }) + 'Telephone: ' } )
 
-  $ReplaceHash['$CurrentUserMobile-prefix-noempty$'] = $(if (-not $ReplaceHash['$CurrentUserMobile$']) { '' } else { $(if ($UseHtmTemplates) { '<br>' } else { "`n" }) + 'Mobile: ' } )
+$ReplaceHash['$CurrentUserMobile-prefix-noempty$'] = $(if (-not $ReplaceHash['$CurrentUserMobile$']) { '' } else { $(if ($UseHtmTemplates) { '<br>' } else { "`n" }) + 'Mobile: ' } )
   {% endraw %}{% endhighlight %}
 
 - Word template:
@@ -639,15 +639,15 @@ You can automate this with Set-OutlookSignatures in two simple steps:
 1. Create a customer replacement variable for each banner and randomly only assign one of these variables a value:
 
    {% highlight plaintext %}{% raw %}
-   $tempBannerIdentifiers = @(1, 2, 3)
+$tempBannerIdentifiers = @(1, 2, 3)
 
-   $tempBannerIdentifiers | Foreach-Object {
-     $ReplaceHash["CurrentMailbox_Banner$($_)"] = $null
-   }
+$tempBannerIdentifiers | Foreach-Object {
+  $ReplaceHash["CurrentMailbox_Banner$($_)"] = $null
+}
 
-   $ReplaceHash["CurrentMailbox_Banner$($tempBannerIdentifiers | Get-Random)"] = $true
+$ReplaceHash["CurrentMailbox_Banner$($tempBannerIdentifiers | Get-Random)"] = $true
 
-   Remove-Variable -Name 'tempBannerIdentifiers'
+Remove-Variable -Name 'tempBannerIdentifiers'
    {% endraw %}{% endhighlight %}
 
 2. Add all three banners to your template and define an alternate text  
@@ -661,7 +661,7 @@ You can enhance this even further:
 - Use banner 1 twice as often as the others. Just add it to the code multiple times:
 
   {% highlight plaintext %}{% raw %}
-  $tempBannerIdentifiers = @(1, 1, 2, 3)
+$tempBannerIdentifiers = @(1, 1, 2, 3)
   {% endraw %}{% endhighlight %}
 
 - Assign banners to specific users, departments, locations or any other attribute
@@ -957,15 +957,15 @@ Here is how you can test if the current patch level of Classic Outlook for Windo
 3. Create a new signature in Outlook for the web (not in any other Outlook) with the following content:
 
    {% highlight plaintext %}{% raw %}
-   Test signature with UTF-8 characters
-   ä (a with umlaut)
-   ö (o with umlaut)
-   ü (u with umlaut)
-   𝄞 (musical symbol G clef)
-   😃 (grinning face with big eyes)
-   😞 (disappointed face)
-   🧩 (puzzle piece)
-   ⭐ (star)
+Test signature with UTF-8 characters
+ä (a with umlaut)
+ö (o with umlaut)
+ü (u with umlaut)
+𝄞 (musical symbol G clef)
+😃 (grinning face with big eyes)
+😞 (disappointed face)
+🧩 (puzzle piece)
+⭐ (star)
    {% endraw %}{% endhighlight %}
 
 4. Wait until Classic Outlook for Windows has downloaded the signature locally.
@@ -1446,20 +1446,20 @@ Let's assume we want all mailboxes in or below the OU 'example.com/OU A/OU B' to
 1. Create a [custom replacement variable](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/src_Set-OutlookSignatures/config/default%20replacement%20variables.ps1) with a boolean (true or false) value, depending on the OU.
 
    {% highlight plaintext %}{% raw %}
-   $ReplaceHash['$CurrentUser-IsIn-OUA-OUB$'] = $ADPropsCurrentUser.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
+$ReplaceHash['$CurrentUser-IsIn-OUA-OUB$'] = $ADPropsCurrentUser.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
 
-   $ReplaceHash['$CurrentUserManager-IsIn-OUA-OUB$'] = $ADPropsCurrentUserManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
+$ReplaceHash['$CurrentUserManager-IsIn-OUA-OUB$'] = $ADPropsCurrentUserManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
 
-   $ReplaceHash['$CurrentMailbox-IsIn-OUA-OUB$'] = $ADPropsCurrentMailbox.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
+$ReplaceHash['$CurrentMailbox-IsIn-OUA-OUB$'] = $ADPropsCurrentMailbox.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
 
-   $ReplaceHash['$CurrentMailboxManager-IsIn-OUA-OUB$'] = $ADPropsCurrentMailboxManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
+$ReplaceHash['$CurrentMailboxManager-IsIn-OUA-OUB$'] = $ADPropsCurrentMailboxManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
    {% endraw %}{% endhighlight %}
 
 2. Now use the new replacement variable [in your INI file](/details#allowed-tags-common-cases) to assign a template to mailboxes in a specific OU:
 
    {% highlight plaintext %}{% raw %}
-   [some template.docx]
-   $CurrentUser-IsIn-OUA-OUB$
+[some template.docx]
+$CurrentUser-IsIn-OUA-OUB$
    {% endraw %}{% endhighlight %}
 
 You now have a replacement variable specific template assignment. This has an impact on the priority of the template, see the '[Signature and OOF application order](/details#signature-and-oof-application-order)' chapter for details.
@@ -1570,25 +1570,25 @@ A signature should only contain a certain image when the current mailbox is a me
   - You only have to modify three strings right at the beginning:
 
     {% highlight plaintext %}{% raw %}
-    # Check if current mailbox is member of group 'EXAMPLEDOMAIN\Marketing' and set $ReplaceHash['$CurrentMailbox-ismemberof-marketing$'] accordingly
-    #
-    # Replace 'EXAMPLEDOMAIN Marketing' with the domain and group you are searching for. Use 'EntraID' or 'AzureAD' instead of 'EXAMPLEDOMAIN' to only search Entra ID/Graph
-    # Replace '$CurrentMailbox-ismemberof-marketing$' with the replacement variable that should be used
-    # Replace 'CurrentMailbox' with 'CurrentUser' if you do not want to check the current mailbox group SIDs, but the group SIDs of the current user's mailbox
-    #
-    # The 'GroupsSIDs' attribute is available for the current mailbox and the current user, but not for the managers of these two
-    #   It contains the mailboxes' SID and SIDHistory, the SID and SIDHistory of all groups the mailbox belongs to (nested), and also considers group membership (nested) across trusts.
+# Check if current mailbox is member of group 'EXAMPLEDOMAIN\Marketing' and set $ReplaceHash['$CurrentMailbox-ismemberof-marketing$'] accordingly
+#
+# Replace 'EXAMPLEDOMAIN Marketing' with the domain and group you are searching for. Use 'EntraID' or 'AzureAD' instead of 'EXAMPLEDOMAIN' to only search Entra ID/Graph
+# Replace '$CurrentMailbox-ismemberof-marketing$' with the replacement variable that should be used
+# Replace 'CurrentMailbox' with 'CurrentUser' if you do not want to check the current mailbox group SIDs, but the group SIDs of the current user's mailbox
+#
+# The 'GroupsSIDs' attribute is available for the current mailbox and the current user, but not for the managers of these two
+#   It contains the mailboxes' SID and SIDHistory, the SID and SIDHistory of all groups the mailbox belongs to (nested), and also considers group membership (nested) across trusts.
 
-    @(
-      @('CurrentMailbox', '$CurrentMailbox-IsMemberOf-Marketing$', 'EXAMPLEDOMAIN Marketing'),
-      @()
-    ) | Where-Object { $_ } | ForEach-Object {
-      if ((Get-Variable -Name "ADProps$($_[0])" -ValueOnly).GroupsSids -icontains ResolveToSid($_[2])) {
-        $ReplaceHash[$_[1]] = 'yes'
-      } else {
-        $ReplaceHash[$_[1]] = $null
-      }
-    }
+@(
+  @('CurrentMailbox', '$CurrentMailbox-IsMemberOf-Marketing$', 'EXAMPLEDOMAIN Marketing'),
+  @()
+) | Where-Object { $_ } | ForEach-Object {
+  if ((Get-Variable -Name "ADProps$($_[0])" -ValueOnly).GroupsSids -icontains ResolveToSid($_[2])) {
+    $ReplaceHash[$_[1]] = 'yes'
+  } else {
+    $ReplaceHash[$_[1]] = $null
+  }
+}
     {% endraw %}{% endhighlight %}
 
 - Insert the image in the template, and add `$CurrentMailbox-IsMemberOf-MarketingDeleteempty$` to the description of the picture.

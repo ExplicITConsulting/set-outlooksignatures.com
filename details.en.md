@@ -973,8 +973,8 @@ For a complete reference and examples based on real-world use cases, see the INI
 2. Use the sample INI files shipped with Set-OutlookSignatures as a starting point (see [`sample templates`](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/tree/main/src_Set-OutlookSignatures/sample%20templates) folder)
 3. Put file names (with extension) in square brackets:
    {% highlight plaintext %}{% raw %}
-   [Company external English formal.docx]
-   defaultNew
+[Company external English formal.docx]
+defaultNew
    {% endraw %}{% endhighlight %}
 4. One tag per line below the file section header.
 5. When using INI files, tags in filenames are treated as part of the name, not as tags.

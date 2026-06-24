@@ -32,13 +32,13 @@ All das ist möglich und einfach zu implementieren.
     - Der Teil 'DELETEEMPTY' löscht ein Bild, wenn die entsprechende Ersatzvariable keinen Wert enthält.
 2.  Erstellen Sie eine benutzerdefinierte Ersatzvariable für jedes Banner in Ihrer Konfigurationsdatei für Ersatzvariablen und weisen Sie nur einer dieser Variablen zufällig einen Wert zu:
     {% highlight plaintext %}{% raw %}
-    $tempBannerIdentifiers = @(1, 2, 3)
+$tempBannerIdentifiers = @(1, 2, 3)
 
-    $tempBannerIdentifiers | Foreach-Object {
-        $ReplaceHash["CurrentMailbox_Banner$($_)"] = $null
-    }
+$tempBannerIdentifiers | Foreach-Object {
+    $ReplaceHash["CurrentMailbox_Banner$($_)"] = $null
+}
 
-    $ReplaceHash["CurrentMailbox_Banner$($tempBannerIdentifiers | Get-Random)"] = $true
+$ReplaceHash["CurrentMailbox_Banner$($tempBannerIdentifiers | Get-Random)"] = $true
     {% endraw %}{% endhighlight %}
 
     Jetzt wird bei jedem Ausführen von Set-OutlookSignatures ein anderes zufälliges Banner aus der Vorlage ausgewählt und die anderen Banner werden gelöscht.

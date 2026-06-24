@@ -75,27 +75,27 @@ The core steps within the job use the powerful SimulateAndDeploy feature:
    The script first connects to Exchange Online. To allow the signature generation service account (signature-service@example.com) to apply the signature, the script temporarily grants Full Access mailbox permission.
 
    {% highlight plaintext %}{% raw %}
-   Add-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights "fullaccess" -Confirm:$false
+Add-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights "fullaccess" -Confirm:$false
    {% endraw %}{% endhighlight %}
 
 2. Run Set-OutlookSignatures  
    The pipeline executes the Generate-signatures-devops.ps1 script, which then calls Set-OutlookSignatures.ps1 using the required parameters to deploy the signature directly to the user's mailbox.
 
    {% highlight plaintext %}{% raw %}
-   $SimulateAndDeployParams = @{
-     # Define parameters here
-   }
+$SimulateAndDeployParams = @{
+  # Define parameters here
+}
 
-   & ./Set-OutlookSignatures_v$version/sample code/SimulateAndDeploy.ps1 @SimulateAndDeployParams
+& ./Set-OutlookSignatures_v$version/sample code/SimulateAndDeploy.ps1 @SimulateAndDeployParams
    {% endraw %}{% endhighlight %}
 
 3. Remove temporary permissions  
    Immediately after deployment, the temporary Full Access permission is revoked for security, and the extension attribute is reset.
 
    {% highlight plaintext %}{% raw %}
-   Remove-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights FullAccess -Confirm:$false
+Remove-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights FullAccess -Confirm:$false
 
-   Set-Mailbox -Identity $email -CustomAttribute1 $null
+Set-Mailbox -Identity $email -CustomAttribute1 $null
    {% endraw %}{% endhighlight %}
 
 ## Technical Rationale for the Outlook Add-in

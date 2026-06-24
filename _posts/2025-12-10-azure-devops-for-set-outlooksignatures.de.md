@@ -77,27 +77,27 @@ Die wichtigsten Schritte innerhalb des Auftrags nutzen die leistungsstarke Funkt
    Das Skript stellt zunächst eine Verbindung zu Exchange Online her. Damit das Dienstkonto für die Signaturgenerierung (signature-service@example.com) die Signatur anwenden kann, gewährt das Skript vorübergehend die Berechtigung für den vollständigen Zugriff auf das Postfach.
 
    {% highlight plaintext %}{% raw %}
-   Add-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights "fullaccess" -Confirm:$false
+Add-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights "fullaccess" -Confirm:$false
    {% endraw %}{% endhighlight %}
 
 2. Set-OutlookSignatures ausführen  
    Die Pipeline führt das Skript "Generate-signatures-devops.ps1" aus, das dann "Set-OutlookSignatures.ps1" mit den erforderlichen Parametern aufruft, um die Signatur direkt in der Mailbox des Benutzers bereitzustellen.
 
    {% highlight plaintext %}{% raw %}
-   $SimulateAndDeployParams = @{
-     # Define parameters here
-   }
+$SimulateAndDeployParams = @{
+  # Define parameters here
+}
 
-   & ./Set-OutlookSignatures_v$version/sample code/SimulateAndDeploy.ps1 @SimulateAndDeployParams
+& ./Set-OutlookSignatures_v$version/sample code/SimulateAndDeploy.ps1 @SimulateAndDeployParams
    {% endraw %}{% endhighlight %}
 
 3. Temporäre Postfachberechtigungen entfernen  
    Unmittelbar nach der Bereitstellung wird die temporäre Vollzugriffsberechtigung aus Sicherheitsgründen widerrufen und das Erweiterungsattribut zurückgesetzt.
 
    {% highlight plaintext %}{% raw %}
-   Remove-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights FullAccess -Confirm:$false
+Remove-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights FullAccess -Confirm:$false
 
-   Set-Mailbox -Identity $email -CustomAttribute1 $null
+Set-Mailbox -Identity $email -CustomAttribute1 $null
    {% endraw %}{% endhighlight %}
 
 ## Technische Gründe für das Outlook-Add-in
