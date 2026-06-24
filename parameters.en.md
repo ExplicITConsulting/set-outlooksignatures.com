@@ -79,7 +79,7 @@ Allowed value: A path as a string, or an empty string (`""` or ``) to disable th
 Default value: `"$(try { $([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures')) } catch {})"`  
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -AdditionalSignaturePath "$(try { $([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures')) } catch {})"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -AdditionalSignaturePath ""$(try { $([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures')) } catch {})"""`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -AdditionalSignaturePath ""$(try { $([IO.Path]::Combine([environment]::GetFolderPath('MyDocuments'), 'Outlook Signatures')) } catch {})"""`
 
 
 ## BenefactorCircleID
@@ -90,7 +90,7 @@ Allowed value: The Benefactor Circle member ID as a string. Do not pass the para
 Default value: ''
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -BenefactorCircleID "00000000-0000-0000-0000-000000000000"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -BenefactorCircleID ""00000000-0000-0000-0000-000000000000"""`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -BenefactorCircleID ""00000000-0000-0000-0000-000000000000"""`
 
 
 ## BenefactorCircleLicenseFile
@@ -111,7 +111,7 @@ Allowed value: A file path as a string. Do not pass the parameter at all to use 
 Default value: ''
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -BenefactorCircleLicenseFile ".\license.dll"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -BenefactorCircleLicenseFile "".\license.dll"""`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -BenefactorCircleLicenseFile "".\license.dll"""`
 
 
 ## CloudEnvironment
@@ -131,7 +131,7 @@ Allowed value: One from:
 Default value: 'Public'
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -CloudEnvironment "Public"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -CloudEnvironment ""Public"""`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -CloudEnvironment ""Public"""`
 
 
 ## CreateRtfSignatures
@@ -143,8 +143,8 @@ Default value: $false
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -CreateRtfSignatures $false`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -CreateRtfSignatures false`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -CreateRtfSignatures $false"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -CreateRtfSignatures false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -CreateRtfSignatures $false"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -CreateRtfSignatures false"`
 
 
 ## CreateTxtSignatures
@@ -156,8 +156,8 @@ Default value: $true
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -CreateTxtSignatures $true`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -CreateTxtSignatures true`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -CreateTxtSignatures $true"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -CreateTxtSignatures true"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -CreateTxtSignatures $true"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -CreateTxtSignatures true"`
 
 
 ## DeleteScriptCreatedSignaturesWithoutTemplate
@@ -171,8 +171,8 @@ Default value: $true
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -DeleteScriptCreatedSignaturesWithoutTemplate $false`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -DeleteScriptCreatedSignaturesWithoutTemplate false`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -DeleteScriptCreatedSignaturesWithoutTemplate $false"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -DeleteScriptCreatedSignaturesWithoutTemplate false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -DeleteScriptCreatedSignaturesWithoutTemplate $false"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -DeleteScriptCreatedSignaturesWithoutTemplate false"`
 
 
 ## DeleteUserCreatedSignatures
@@ -186,8 +186,8 @@ Default value: $false
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -DeleteUserCreatedSignatures $false`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -DeleteUserCreatedSignatures false`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -DeleteUserCreatedSignatures $false"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -DeleteUserCreatedSignatures false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -DeleteUserCreatedSignatures $false"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -DeleteUserCreatedSignatures false"`
 
 
 ## DisableRoamingSignatures
@@ -207,8 +207,8 @@ Default value: $true
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -DisableRoamingSignatures $true`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -DisableRoamingSignatures true`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -DisableRoamingSignatures $true"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -DisableRoamingSignatures true"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -DisableRoamingSignatures $true"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -DisableRoamingSignatures true"`
 
 
 ## DocxHighResImageConversion
@@ -228,8 +228,8 @@ Default value: $true
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -DocxHighResImageConversion $true`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -DocxHighResImageConversion true`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -DocxHighResImageConversion $true"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -DocxHighResImageConversion true"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -DocxHighResImageConversion $true"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -DocxHighResImageConversion true"`
 
 
 ## EmbedImagesInHtml
@@ -249,8 +249,8 @@ Default value: $false
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtml $false`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtml false`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtml $false"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtml false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtml $false"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtml false"`
 
 
 ## EmbedImagesInHtmlAdditionalSignaturePath
@@ -262,8 +262,8 @@ Default value: $true
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtmlAdditionalSignaturePath $true`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtmlAdditionalSignaturePath true`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtmlAdditionalSignaturePath $true"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtmlAdditionalSignaturePath true"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtmlAdditionalSignaturePath $true"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -EmbedImagesInHtmlAdditionalSignaturePath true"`
 
 
 ## GraphClientID
@@ -297,7 +297,7 @@ Allowed value: The application (client) ID of the Entra ID app to use as a strin
 Default value: $null
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 GraphClientID '3dc5f201-6c36-4b94-98ca-c66156a686a8`
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 GraphClientID '3dc5f201-6c36-4b94-98ca-c66156a686a8'"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -GraphClientID '3dc5f201-6c36-4b94-98ca-c66156a686a8'"`
 
 
 ## GraphConfigFile
@@ -322,7 +322,7 @@ Allowed value: A file path as a string. Do not pass the parameter at all to use 
 Default value: `.\config\default graph config.ps1`  
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -GraphConfigFile '.\config\default graph config.ps1`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 GraphConfigFile '.\config\default graph config.ps1'"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -GraphConfigFile '.\config\default graph config.ps1'"`
 
 
 ## GraphOnly
@@ -336,8 +336,8 @@ Default value: $false on Windows, $true on Linux and macOS
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -GraphOnly $false`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -GraphOnly false`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -GraphOnly $false"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -GraphOnly false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -GraphOnly $false"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -GraphOnly false"`
 
 
 ## IncludeMailboxForestDomainLocalGroups
@@ -355,8 +355,8 @@ Default value: $false
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -IncludeMailboxForestDomainLocalGroups $false`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -IncludeMailboxForestDomainLocalGroups false`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -IncludeMailboxForestDomainLocalGroups $false"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -IncludeMailboxForestDomainLocalGroups false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -IncludeMailboxForestDomainLocalGroups $false"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -IncludeMailboxForestDomainLocalGroups false"`
 
 
 ## MailboxSpecificSignatureNames
@@ -380,8 +380,8 @@ Default value: $false
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -MailboxSpecificSignatureNames $false`
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -MailboxSpecificSignatureNames false`
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -MailboxSpecificSignatureNames $false"`
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -MailboxSpecificSignatureNames false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -MailboxSpecificSignatureNames $false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -MailboxSpecificSignatureNames false"`
 
 
 ## MirrorCloudSignatures
@@ -447,8 +447,8 @@ Default value: $true
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -MirrorCloudSignatures $false`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -MirrorCloudSignatures false`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -MirrorCloudSignatures $false"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -MirrorCloudSignatures false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -MirrorCloudSignatures $false"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -MirrorCloudSignatures false"`
 
 
 ## MoveCSSInline
@@ -462,8 +462,8 @@ Default value: $true
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -MoveCSSInline $true`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -MoveCSSInline true`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -MoveCSSInline $true"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -MoveCSSInline true"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -MoveCSSInline $true"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -MoveCSSInline true"`
 
 
 ## OOFIniFile
@@ -488,7 +488,7 @@ Allowed value: A file path as a string. Do not pass the parameter at all to use 
 Default value: `.\templates\Out-of-Office DOCX\_OOF.ini` on Windows, Default value: `.\templates\Out-of-Office HTML\_OOF.ini` on Linux and macOS
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -OOFIniFile '.\templates\Out-of-Office DOCX\_OOF.ini`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -OOFIniFile '.\templates\Out-of-Office DOCX\_OOF.ini'"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -OOFIniFile '.\templates\Out-of-Office DOCX\_OOF.ini'"`
 
 
 ## OOFTemplatePath
@@ -511,7 +511,7 @@ Allowed value: A folder path as a string. Do not pass the parameter at all to us
 Default value: `.\templates\Out-of-Office DOCX` on Windows, `.\templates\Out-of-Office DOCX` on Linux and macOS
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -OOFTemplatePath '.\templates\Out-of-Office DOCX`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -OOFTemplatePath '.\templates\Out-of-Office DOCX'"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -OOFTemplatePath '.\templates\Out-of-Office DOCX'"`
 
 
 ## ReplacementVariableConfigFile
@@ -534,7 +534,7 @@ Allowed value: A file path as a string. Do not pass the parameter at all to use 
 Default value: `.\config\default replacement variables.ps1`  
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -ReplacementVariableConfigFile '.\config\default replacement variables.ps1`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -ReplacementVariableConfigFile '.\config\default replacement variables.ps1'"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -ReplacementVariableConfigFile '.\config\default replacement variables.ps1'"`
 
 
 ## ScriptProcessPriority
@@ -546,8 +546,8 @@ Default value: 'Normal' ('32')
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -ScriptProcessPriority Normal`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -ScriptProcessPriority 32`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -ScriptProcessPriority Normal"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -ScriptProcessPriority 32"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -ScriptProcessPriority Normal"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -ScriptProcessPriority 32"`
 
 
 ## SetCurrentUserOOFMessage
@@ -563,8 +563,8 @@ Default value: $true
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SetCurrentUserOOFMessage $true`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SetCurrentUserOOFMessage true`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SetCurrentUserOOFMessage $true"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SetCurrentUserOOFMessage true"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SetCurrentUserOOFMessage $true"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SetCurrentUserOOFMessage true"`
 
 
 ## SetCurrentUserOutlookWebSignature
@@ -580,8 +580,8 @@ Default value: $true
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SetCurrentUserOutlookWebSignature $true`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SetCurrentUserOutlookWebSignature true`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SetCurrentUserOutlookWebSignature $true"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SetCurrentUserOutlookWebSignature true"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SetCurrentUserOutlookWebSignature $true"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SetCurrentUserOutlookWebSignature true"`
 
 
 ## SignatureCollectionInDrafts
@@ -595,8 +595,8 @@ Default value: $true
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignatureCollectionInDrafts $false`
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignatureCollectionInDrafts false`
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SignatureCollectionInDrafts $false"`
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SignatureCollectionInDrafts false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SignatureCollectionInDrafts $false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SignatureCollectionInDrafts false"`
 
 
 ## SignatureIniFile
@@ -621,7 +621,7 @@ Allowed value: A file path as a string. Do not pass the parameter at all to use 
 Default value: '.\templates\Signatures DOCX\_Signatures.ini' on Windows, '.\templates\Signatures HTML\_Signatures.ini' on Linux and macOS
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignatureIniFile '.\templates\Signatures DOCX\_Signatures.ini`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SignatureIniFile '.\templates\Signatures DOCX\_Signatures.ini'"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SignatureIniFile '.\templates\Signatures DOCX\_Signatures.ini'"`
 
 
 ## SignaturesForAutomappedAndAdditionalMailboxes
@@ -637,8 +637,8 @@ Default value: $true
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignaturesForAutomappedAndAdditionalMailboxes $true`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignaturesForAutomappedAndAdditionalMailboxes true`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SignaturesForAutomappedAndAdditionalMailboxes $true"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SignaturesForAutomappedAndAdditionalMailboxes true"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SignaturesForAutomappedAndAdditionalMailboxes $true"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SignaturesForAutomappedAndAdditionalMailboxes true"`
 
 
 ## SignatureTemplatePath
@@ -659,7 +659,7 @@ Allowed value: A folder path as a string. Do not pass the parameter at all to us
 Default value: '.\sample templates\Signatures DOCX' on Windows, '.\sample templates\Signatures HTML' on Linux and macOS
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SignatureTemplatePath '.\sample templates\Signatures DOCX`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SignatureTemplatePath '.\sample templates\Signatures DOCX'"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SignatureTemplatePath '.\sample templates\Signatures DOCX'"`
 
 
 ## SimulateAndDeploy
@@ -681,8 +681,8 @@ Default value: $false
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SimulateAndDeploy $false`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SimulateAndDeploy false`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateAndDeploy $false"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateAndDeploy false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SimulateAndDeploy $false"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SimulateAndDeploy false"`
 
 
 ## SimulateAndDeployGraphCredentialFile
@@ -707,7 +707,7 @@ Allowed value: A comma separated list of email addresses replacing the list of m
 Default value: $null
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SimulateMailboxes 'user.b@example.com', 'user.b@example.net`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateMailboxes 'user.a@example.com', 'user.b@example.net'"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SimulateMailboxes 'user.a@example.com', 'user.b@example.net'"`
 
 
 ## SimulateTime
@@ -720,7 +720,7 @@ Allowed value: A timestamp in the format yyyyMMddHHmm (yyyy = year, MM = two-dig
 Default value: $null (use current timestamp of the local system)
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SimulateTime "202312311859"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateTime ""202312311859"""`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SimulateTime ""202312311859"""`
 
 
 ## SimulateUser
@@ -732,8 +732,8 @@ Default value: $null
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SimulateUser "EXAMPLEDOMAIN\UserA"`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -SimulateUser "user.a@example.com"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateUser ""EXAMPLEDOMAIN\UserA"""`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -SimulateUser ""user.a@example.com"""`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SimulateUser ""EXAMPLEDOMAIN\UserA"""`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -SimulateUser ""user.a@example.com"""`
 
 
 ## TrustsToCheckForGroups
@@ -754,7 +754,7 @@ Allowed value: A comma separated list of strings containing the trusts to check 
 Default value: '*'
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -TrustsToCheckForGroups 'corp.example.com', 'corp.example.net`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -TrustsToCheckForGroups 'corp.example.com', 'corp.example.net'"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -TrustsToCheckForGroups 'corp.example.com', 'corp.example.net'"`
 
 
 ## UseHtmTemplates
@@ -774,8 +774,8 @@ Default value: $false on Windows, $true on Linux and macOS
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -UseHtmTemplates $false`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -UseHtmTemplates false`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -UseHtmTemplates $false"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -UseHtmTemplates false"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -UseHtmTemplates $false"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -UseHtmTemplates false"`
 
 
 ## VirtualMailboxConfigFile
@@ -806,7 +806,7 @@ Allowed value: A file path as a string. Do not pass the parameter at all to use 
 Default value: ''
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -VirtualMailboxConfigFile '.\sample code\VirtualMailboxConfigFile.ps1`
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -VirtualMailboxConfigFile '.\sample code\VirtualMailboxConfigFile.ps1'"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -VirtualMailboxConfigFile '.\sample code\VirtualMailboxConfigFile.ps1'"`
 
 
 ## WordProcessPriority
@@ -818,5 +818,5 @@ Default value: 'Normal' ('32')
 
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -WordProcessPriority Normal`  
 Usage example PowerShell: `& .\Set-OutlookSignatures.ps1 -WordProcessPriority 32`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -WordProcessPriority Normal"`  
-Usage example Non-PowerShell: `powershell.exe -command "& .\Set-OutlookSignatures.ps1 -WordProcessPriority 32"`
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -WordProcessPriority Normal"`  
+Usage example Non-PowerShell: `powershell.exe -Command "& .\Set-OutlookSignatures.ps1 -WordProcessPriority 32"`

@@ -228,7 +228,7 @@ With the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(
         <div>
           <p><b>Core requirements</b></p>
           <p><b>Exchange</b>: Exchange Online, Exchange on-premises, or Exchange hybrid</p>
-          <p><b>PowerShell</b>: PowerShell 5.1 (<code>powershell.exe</code>) on Windows, or PowerShell 7+ (<code>pwsh.exe</code>) cross-platform</p>
+          <p><b>PowerShell</b>: PowerShell 5.1 (<code>powershell.exe</code>) on Windows, or PowerShell 7+ (<code>pwsh.exe</code>, <code>pwsh</code>) cross-platform</p>
         </div>
       </div>
     </div>

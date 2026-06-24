@@ -196,7 +196,7 @@ You will find lots of information about this topic on the internet. The followin
 - <a href="https://stackoverflow.com/questions/28311191/how-do-i-pass-in-a-string-with-spaces-into-powershell">https://stackoverflow.com/questions/28311191/how-do-i-pass-in-a-string-with-spaces-into-powershell</a>
 - <a href="https://stackoverflow.com/questions/10542313/powershell-and-schtask-with-task-that-has-a-space">https://stackoverflow.com/questions/10542313/powershell-and-schtask-with-task-that-has-a-space</a>
 
-If you have to use the PowerShell.exe `-Command` or `-File` parameter depends on details of your configuration, for example AppLocker in combination with PowerShell. You may also want to consider the `-EncodedCommand` parameter to start Set-OutlookSignatures.ps1 and pass parameters to it.
+If you have to use the PowerShell `-Command` or `-File` parameter depends on details of your configuration, for example AppLocker in combination with PowerShell. You may also want to consider the `-EncodedCommand` parameter to start Set-OutlookSignatures.ps1 and pass parameters to it.
 
 If you provided your users a link so they can start Set-OutlookSignatures.ps1 with the correct parameters on their own, you may want to use the official icon: `.\logo\Set-OutlookSignatures Icon.ico`
 
@@ -204,7 +204,7 @@ Please see `.\sample code\Set-OutlookSignatures.cmd` for an example. Don't forge
 
 ### Start Set-OutlookSignatures in hidden/invisible mode
 
-Even when the `hidden` parameter is passed to PowerShell, a window is created and minimized. Although this only takes some tenths of a second, it is not only optically disturbing, but the new window may also steal the keyboard focus.
+Even when the `-WindowStyle Hidden` parameter is passed to PowerShell, a window is created and minimized. Although this only takes some tenths of a second, it is not only optically disturbing, but the new window may also steal the keyboard focus.
 
 Windows provides at least two built-in ways to start PowerShell absolutely hidden:
 
