@@ -70,15 +70,8 @@ defaults:
 include:
   - ".well-known"
 
-markdown: kramdown
-highlighter: rouge
-
 kramdown:
   smart_quotes: ["apos", "apos", "quot", "quot"]
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
 
 collections:
   posts:

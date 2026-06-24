@@ -396,23 +396,3 @@
   // Run if the user clicks a link to a different anchor while already on the page
   window.addEventListener('hashchange', openTargetedDetails);
 </script>
-
-
-<!-- Show line numbers for code blocks with multiple lines -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("div.highlighter-rouge, figure.highlight").forEach((block) => {
-    const gutterPre = block.querySelector(".rouge-gutter pre");
-    if (!gutterPre) return;
-
-    const lineCount = gutterPre.textContent
-      .split(/\r?\n/)
-      .map(line => line.trim())
-      .filter(Boolean).length;
-
-    if (lineCount <= 1) {
-      block.classList.add("is-single-line");
-    }
-  });
-});
-</script>

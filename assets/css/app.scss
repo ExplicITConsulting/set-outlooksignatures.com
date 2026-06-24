@@ -306,85 +306,12 @@ div.highlighter-rouge,
 figure.highlight {
   background: black !important;
   border-radius: 6px;
+  /* Reduced left padding to 0.75rem to pull code to the left */
   padding: 2.5rem 0.75rem 1rem !important;
   position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   margin: 2rem 0;
   border: none !important;
-  overflow-x: hidden;
-
-  // Keep code size stable
-  font-size: 1em;
-  line-height: 1.5;
-
-  // --- Rouge line-number layout ---
-  .rouge-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0;
-    table-layout: fixed;
-  }
-
-  .rouge-table td {
-    padding: 0 !important;
-    vertical-align: top !important;
-  }
-
-  .rouge-gutter {
-    user-select: none;
-    color: #7c7c7c;
-    padding-right: 0.75rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.12);
-    text-align: right;
-    vertical-align: top;
-    white-space: pre;
-    width: 3rem;
-  }
-
-  .rouge-code {
-    padding-left: 0.75rem;
-    vertical-align: top;
-    min-width: 0;
-  }
-
-  .rouge-gutter,
-  .rouge-code,
-  .rouge-gutter pre,
-  .rouge-code pre,
-  .rouge-gutter code,
-  .rouge-code code {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    text-indent: 0 !important;
-    font-size: inherit;
-    line-height: inherit;
-    font-family: "Courier New", Courier, monospace;
-  }
-
-  .rouge-gutter pre,
-  .rouge-gutter code {
-    color: #7c7c7c !important;
-    text-align: right;
-    white-space: pre !important;
-  }
-
-  .rouge-code pre,
-  .rouge-code code {
-    color: white !important;
-  }
-
-  // Hide line numbers when JS marks a single-line block
-  &.is-single-line {
-    .rouge-gutter {
-      display: none;
-    }
-
-    .rouge-code {
-      padding-left: 0;
-    }
-  }
 
   /* Text.Whitespace (w) - Specially highlighted whitespace */
   .w {
@@ -658,13 +585,13 @@ figure.highlight {
     color: #808080;
   }
 
-  /* Comment (c) - Single line comments */
+  /* Comment (c) - Single ligne comments */
   .c {
     color: #7ca668;
     font-style: italic;
   }
 
-  /* Comment.Multiline (cm) - Multiline comments */
+  /* Comment.Multiline (cm) - Mutliline comments */
   .cm {
     color: #7ca668;
     font-style: italic;
@@ -728,7 +655,7 @@ figure.highlight {
     color: #ffffff;
   }
 
-  /* Generic.Strong (gs) - Mark the token value as bold */
+  /* Generic.Strong (gs) - Mark the token value as bold (for rst lexer) */
   .gs {
     font-weight: bold;
   }
@@ -749,11 +676,12 @@ figure.highlight {
     color: #7c7c7c;
   }
 
-  // Traffic light dots
+  // The Traffic Light Dots
   &::before {
     content: "";
     position: absolute;
     top: 14px;
+    /* Aligned dots to 0.75rem so the red dot is directly above the first char */
     left: 0.75rem;
     height: 10px;
     width: 44px;
@@ -765,46 +693,26 @@ figure.highlight {
   // Strip all default padding/margins from Jekyll/Bulma internals
   pre,
   .highlight,
-  pre.highlight,
-  .rouge-table,
-  .rouge-gutter,
-  .rouge-code {
+  pre.highlight {
     background: transparent !important;
     border: none !important;
-    margin: 0 !important;
-    text-indent: 0 !important;
-  }
-
-  pre,
-  .highlight,
-  pre.highlight {
     padding: 0 !important;
+    margin: 0 !important;
+    text-indent: 0 !important; /* Ensure no indentation */
   }
 
-  // Numbered Rouge blocks: wrap code
-  .rouge-code pre,
-  .rouge-code code {
-    white-space: pre-wrap !important;
-    word-break: break-word;
-    overflow-wrap: anywhere;
-  }
-
-  // Plain non-numbered code blocks
-  > pre code,
-  pre.highlight code {
+  code {
     color: white !important;
     background: transparent !important;
     padding: 0 !important;
     border-radius: 0 !important;
     display: block;
-    margin: 0 !important;
+    margin: 0 !important; /* Remove any potential left margins */
     text-align: left !important;
-    white-space: pre-wrap !important;
-    word-break: break-word;
-    overflow-wrap: anywhere;
-    font-family: "Courier New", Courier, monospace;
-    font-size: inherit;
-    line-height: inherit;
+    white-space: pre-wrap; /* Respects spaces/newlines, but allows wrapping */
+    word-break: keep-all; /* Prevents breaking in the middle of a word */
+    overflow-wrap: normal; /* Standard wrapping behavior */
+    font-family: inherit;
   }
 }
 
@@ -815,5 +723,5 @@ figure.highlight {
   padding: 0.2em 0.4em;
   color: black !important;
   word-break: break-word;
-  font-family: "Courier New", Courier, monospace;
+  font-family: inherit;
 }
