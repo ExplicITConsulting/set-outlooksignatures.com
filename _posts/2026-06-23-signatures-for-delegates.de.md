@@ -25,7 +25,7 @@ Mit Set-OutlookSignatures steuern Sie diese Ausnahmen und Vertretungsregeln mit 
 
 Egal ob dauerhafte Assistenz oder temporäre Urlaubsvertretung – die Logik bleibt dieselbe:
 
-{% highlight linenos %}{% raw %}
+{% highlight %}{% raw %}
 [delegierten_vorlage.docx]
 # Weist die Vorlage allen zu, die userA@example.com als Postfach in Outlook eingebunden haben
 userA@example.com
@@ -40,7 +40,7 @@ Sie müssen das Rad nicht für jede Urlaubsvertretung oder jedes Teammitglied ne
 
 In der Konfiguration weisen Sie die Vorlage dann einfach für die verschiedenen Postfächer zu, bei denen Vertretungen aktiv sind:
 
-{% highlight linenos %}{% raw %}
+{% highlight %}{% raw %}
 [Company_Delegate_Template.docx]
 chef@example.com
 -CURRENTUSER:chef@example.com
