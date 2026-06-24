@@ -312,13 +312,14 @@ figure.highlight {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   margin: 2rem 0;
   border: none !important;
+  overflow-x: hidden;
 
   // Rouge line-number table layout
   .rouge-table {
     width: 100%;
     border-collapse: collapse;
     margin: 0;
-    table-layout: auto;
+    table-layout: fixed;
   }
 
   .rouge-gutter {
@@ -329,12 +330,13 @@ figure.highlight {
     text-align: right;
     vertical-align: top;
     white-space: pre;
-    width: 1%;
+    width: 3rem;
   }
 
   .rouge-code {
     padding-left: 0.75rem;
     vertical-align: top;
+    min-width: 0;
   }
 
   .rouge-gutter pre,
@@ -346,6 +348,9 @@ figure.highlight {
     padding: 0 !important;
     margin: 0 !important;
     text-indent: 0 !important;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: "Courier New", Courier, monospace;
   }
 
   .rouge-gutter pre,
@@ -768,6 +773,7 @@ figure.highlight {
   }
 
   .rouge-code code,
+  .rouge-code pre,
   > pre code,
   pre.highlight code {
     color: white !important;
@@ -777,10 +783,12 @@ figure.highlight {
     display: block;
     margin: 0 !important;
     text-align: left !important;
-    white-space: pre-wrap;
-    word-break: keep-all;
-    overflow-wrap: normal;
-    font-family: inherit;
+    white-space: pre-wrap !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    font-family: "Courier New", Courier, monospace;
+    font-size: inherit;
+    line-height: inherit;
   }
 }
 
@@ -791,5 +799,5 @@ figure.highlight {
   padding: 0.2em 0.4em;
   color: black !important;
   word-break: break-word;
-  font-family: inherit;
+  font-family: "Courier New", Courier, monospace;
 }
