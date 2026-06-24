@@ -167,7 +167,11 @@ sitemap_changefreq: weekly
 <h3 id="entra-id-app">Entra ID app</h3>
 <p>When mailboxes are hosted in Exchange Online, the add-in needs an Entra ID app to access the mailbox. Creating a separate app is strongly recommended.</p>
 <div class="highlighter-rouge">
-  <pre><code>powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "OutlookAddIn" -AppName "Set-OutlookSignatures Outlook add-in" -OutlookAddInUrl "https://yourhost.yourdomain.com"</code></pre>
+  <pre><code>
+{% highlight batch %}{% raw %}
+powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "OutlookAddIn" -AppName "Set-OutlookSignatures Outlook add-in" -OutlookAddInUrl "https://yourhost.yourdomain.com"
+{% endraw %}{% endhighlight %}
+  </code></pre>
 </div>
 
 <p>For manual configuration, the following <b>Delegated Graph API</b> permissions must be granted with admin consent:</p>
@@ -503,13 +507,17 @@ sequenceDiagram
             <li>
               <p>Define your log file path by setting the default value of the following key: <code>HKCU\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging</code>. You can execute this quickly via PowerShell:</p>
               <div class="highlighter-rouge">
-                <pre><code>$Logfile = "c:\test\outlook_add-in_runtimelogging.txt"
+                <pre><code>
+{% highlight powershell %}{% raw %}
+$Logfile = "c:\test\outlook_add-in_runtimelogging.txt"
 
 if (-not (Test-Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging")) {
   New-Item -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Force
 }
 
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Name "(Default)" -Value $Logfile</code></pre>
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Name "(Default)" -Value $Logfile
+{% endraw %}{% endhighlight %}
+                </code></pre>
               </div>
             </li>
             <li><p>Restart Outlook.</p></li>
@@ -525,7 +533,11 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\Runti
             <li>Close New Outlook.</li>
             <li>Launch it from a command prompt or the Run dialog:
               <div class="highlighter-rouge">
-                <pre><code>olk.exe --devtools</code></pre>
+                <pre><code>
+{% highlight batch %}{% raw %}
+olk.exe --devtools
+{% endraw %}{% endhighlight %}
+                </code></pre>
               </div>
             </li>
           </ol>
@@ -542,7 +554,11 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\Runti
             <li>Force quit Outlook.</li>
             <li>Run the following command to set the log file destination:
               <div class="highlighter-rouge">
-                <pre><code>defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-in_runtimelogging.txt"</code></pre>
+                <pre><code>
+{% highlight bash %}{% raw %}
+defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-in_runtimelogging.txt"
+{% endraw %}{% endhighlight %}
+                </code></pre>
               </div>
             </li>
             <li>Open Outlook.</li>

@@ -52,7 +52,11 @@ Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner:
           <p><b>Entra ID App für Exchange Online erstellen</b></p>
           <p>Folgen Sie den Anweisungen in <code>.\config\default graph config.ps1</code> für die manuelle Einrichtung oder lassen Sie einen "Globalen Administrator" oder "Anwendungsadministrator" den bereitgestellten PowerShell-Befehl ausführen.</p>
           <div class="highlighter-rouge">
-            <pre><code>powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"</code></pre>
+            <pre><code>
+{% highlight batch %}{% raw %}
+powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
+{% endraw %}{% endhighlight %}
+            </code></pre>
           </div>
           <p>Für nationale oder Sovereign Clouds fügen Sie den Parameter <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> hinzu.</p>
           <p>Prüfen Sie die erforderlichen Berechtigungen vorab: Alle Informationen zur Nutzung finden Sie in den Dateien selbst sowie im Kapitel <a href="/details#security-considerations">Security considerations</a>.</p>
@@ -72,7 +76,11 @@ Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner:
         <div>
           <p><b>Exchange Online / Hybrid</b></p>
           <div class="highlighter-rouge">
-            <pre><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "&lt;Entra ID app application (client) ID&gt;"</code></pre>
+            <pre><code>
+{% highlight batch %}{% raw %}
+powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "&lt;Entra ID app application (client) ID&gt;"
+{% endraw %}{% endhighlight %}
+            </code></pre>
           </div>
           <p><small><em><code>-GraphOnly true</code> stellt sicher, dass das lokale AD ignoriert wird. Fügen Sie den Parameter <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> hinzu, wenn Sie eine nationale oder Sovereign Cloud nutzen.</em></small></p>
           <p><small><em>Falls das Skript nicht startet: Rechtsklick auf Set-OutlookSignatures.ps1 > Eigenschaften > "Zulassen" (Unblock) anhaken.</em></small></p>
@@ -87,7 +95,11 @@ Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner:
         <div>
           <p><b>Exchange On-Prem</b></p>
           <div class="highlighter-rouge">
-            <pre><code>powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"</code></pre>
+            <pre><code>
+{% highlight batch %}{% raw %}
+powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"
+{% endraw %}{% endhighlight %}
+            </code></pre>
           </div>
           <p><small><em>Falls das Skript nicht startet: Rechtsklick auf Set-OutlookSignatures.ps1 > Eigenschaften > "Zulassen" (Unblock) anhaken.</em></small></p>
         </div>
