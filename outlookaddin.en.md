@@ -408,7 +408,7 @@ sequenceDiagram
 
     </div>
   </div>
-  <div class="column is-full">
+  <div class="column is-full has-text-centered">
     <p><small><i>Click any diagram to open it in a new tab.</i></small></p>
   </div>
 </div>
