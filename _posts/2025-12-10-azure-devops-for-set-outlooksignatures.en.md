@@ -35,7 +35,7 @@ Our solution relies on a well-structured setup involving three Git repositories 
 
 The pipeline handles deployment using environment-specific variables defined in the azure-static-aimoutlooksignatures variable group:
 
-```plaintext
+```yml
 variables:
   - ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
     - name: targetEnvironment
@@ -59,7 +59,7 @@ We use Extension attribute 1 as a trigger: If this attribute is updated from 0 t
 
 The template generator pipeline uses a parameterized approach to define the target user (UPN) and the signature template version.
 
-```plaintext
+```yml
   - name: UPN
     type: object
     default: ['xx@yy', 'xx@yy']
@@ -74,14 +74,14 @@ The core steps within the job use the powerful SimulateAndDeploy feature:
 1. Temporary mailbox permissions  
    The script first connects to Exchange Online. To allow the signature generation service account (signature-service@example.com) to apply the signature, the script temporarily grants Full Access mailbox permission.
 
-   ```plaintext
+   ```powershell
    Add-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights "fullaccess" -Confirm:$false
    ```
 
 2. Run Set-OutlookSignatures  
    The pipeline executes the Generate-signatures-devops.ps1 script, which then calls Set-OutlookSignatures.ps1 using the required parameters to deploy the signature directly to the user's mailbox.
 
-   ```plaintext
+   ```powershell
    $SimulateAndDeployParams = @{
    # Define parameters here
    }
@@ -92,7 +92,7 @@ The core steps within the job use the powerful SimulateAndDeploy feature:
 3. Remove temporary permissions  
    Immediately after deployment, the temporary Full Access permission is revoked for security, and the extension attribute is reset.
 
-   ```plaintext
+   ```powershell
    Remove-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights FullAccess -Confirm:$false
 
    Set-Mailbox -Identity $email -CustomAttribute1 $null
@@ -107,7 +107,7 @@ The decision to use the Outlook add-in, which is hosted on an Azure Static Web A
 
 The add-in manifest is deployed via the pipeline to the Azure Static Web App, using the free tier.
 
-```plaintext
+```yml
 - task: AzureStaticWebApp@0
   inputs:
     azure_static_web_apps_api_token: $(deploy-token)

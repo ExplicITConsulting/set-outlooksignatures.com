@@ -38,7 +38,7 @@ For the small percentage of clients that support it (primarily Apple Mail and so
 The golden standard is using the @media (prefers-color-scheme: dark) CSS query.
 CSS
 
-```plaintext
+```css
 /* In the <style> block of your signature HTML */
 @media (prefers-color-scheme: dark) {
   .darkmode-text {
