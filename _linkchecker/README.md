@@ -23,14 +23,14 @@ This PowerShell script is a modular multi-threaded web crawler designed to ident
 ## Usage Example
 Run the script using the default parameters:
 
-{% highlight plaintext %}{% raw %}
+```powershell
 .\checklinks.ps1
-{% endraw %}{% endhighlight %}
+```
 
 To run a deep check including fragments on an external sitemap:
-{% highlight plaintext %}{% raw %}
+```powershell
 .\checklinks.ps1 -SitemapUrl "https://example.com/sitemap.xml" -CheckFragments $true -CheckFragmentsInternalOnly $false
-{% endraw %}{% endhighlight %}
+```
 
 
 ## Internal Data Structures
@@ -61,7 +61,7 @@ Upon completion, the script generates two types of output:
 
 ## Custom Report: Link Leaderboard
 The following unified reporting snippet utilizes `$ReferenceMap` to identify the most heavily linked targets. It supports deep link analysis (fragments), domain specific scoping (internal vs. external), and "ex-aequo" ranking. This ensures that if multiple targets share a top tier, they are all included in the output.  
-{% highlight plaintext %}{% raw %}
+```powershell
 # Toggle this to switch between "Exact Href (w/ fragments)" or "Base Page (no fragments)"
 $IncludeFragments = $true
 
@@ -127,7 +127,7 @@ foreach ($entry in $ReportGroups) {
         }
     }
 }
-{% endraw %}{% endhighlight %}
+```
 
 
 ## Post-Scan Data Analysis
@@ -141,7 +141,7 @@ After the script completes, it leaves several variables in your session for manu
 If you want to save the state of a scan to a single file for later analysis, you can bundle the critical data structures into a CliXml file.
 
 To export to a single file, run this after a scan finishes to save the domain, page cache, and reference map:
-{% highlight plaintext %}{% raw %}
+```powershell
 @{
     # Script parameters
     StartUrl        = $StartUrl
@@ -157,10 +157,10 @@ To export to a single file, run this after a scan finishes to save the domain, p
     PageData       = $PageData
     ReferenceMap   = $ReferenceMap
 } | Export-CliXml -Path 'checklinks scan data.clixml' -Force
-{% endraw %}{% endhighlight %}
+```
 
 To load and restore the data, run this:
-{% highlight plaintext %}{% raw %}
+```powershell
 $ImportedData = Import-CliXml -Path "checklinks scan data.clixml"
 
 # Script parameters
@@ -176,4 +176,4 @@ $ExportFile      = $ImportedData.ExportFile
 $StartDomain    = $ImportedData.StartDomain
 $PageData       = $ImportedData.PageData
 $ReferenceMap   = $ImportedData.ReferenceMap
-{% endraw %}{% endhighlight %}
+```

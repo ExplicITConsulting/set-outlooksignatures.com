@@ -37,7 +37,7 @@ Für den kleinen Prozentsatz der Clients, die dies unterstützen (hauptsächlich
 
 Der Goldstandard ist die Verwendung der CSS-Abfrage `@media (prefers-color-scheme: dark)`.
 
-{% highlight plaintext %}{% raw %}
+```css
 /* Im <style>-Block Ihrer Signatur-HTML */
 @media (prefers-color-scheme: dark) {
   .darkmode-text {
@@ -47,7 +47,7 @@ Der Goldstandard ist die Verwendung der CSS-Abfrage `@media (prefers-color-schem
     color: #9999ff !important; /* Lesbare Linkfarbe erzwingen */
   }
 }
-{% endraw %}{% endhighlight %}
+```
 
 Das Problem: Dieser Code wird von den gängigsten Unternehmens-Clients (Outlook Desktop, Gmail Web) ignoriert. Sie benötigen einen robusteren, ausfallsicheren Plan.
 

@@ -817,10 +817,10 @@ Word **DOCX** files or HTML files with extension **.htm**.
 
 The name of the signature template file without extension is the name of the signature in Outlook: The template `Test signature.docx` becomes the signature with the name `Test signature`. This can be overridden in the INI file with `OutlookSignatureName` (or more sophiscated by using [MailboxSpecificSignatureNames](/parameters#mailboxspecificsignaturenames), ):
 
-{% highlight plaintext %}{% raw %}
+```ini
 [Test signature.htm]
 OutlookSignatureName = Test signature, do not use
-{% endraw %}{% endhighlight %}
+```
 
 > Although `OutlookSignatureName` protects signature names used by higher priority mailboxes, it is basically a simple file rename. You may want to consider more sophisticated approaches: [MailboxSpecificSignatureNames](/parameters#mailboxspecificsignaturenames), [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile), replacement variable specific template assignment, or combining mail address specific assignments with exclusions for certain currently logged-on users.
 
@@ -972,10 +972,10 @@ For a complete reference and examples based on real-world use cases, see the INI
 1. **Comments:** lines starting with `#` or `;`
 2. Use the sample INI files shipped with Set-OutlookSignatures as a starting point (see [`sample templates`](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/tree/main/src_Set-OutlookSignatures/sample%20templates) folder)
 3. Put file names (with extension) in square brackets:
-   {% highlight plaintext %}{% raw %}
-[Company external English formal.docx]
-defaultNew
-   {% endraw %}{% endhighlight %}
+   ```ini
+   [Company external English formal.docx]
+   defaultNew
+   ```
 4. One tag per line below the file section header.
 5. When using INI files, tags in filenames are treated as part of the name, not as tags.
 6. Use parameters to point to the INI file:
@@ -1044,8 +1044,8 @@ In simulation mode:
 
 Minimal example:
 
-{% highlight plaintext %}{% raw %}
+```powershell
 & .\Set-OutlookSignatures.ps1 -SimulateUser "a@example.com" -SimulateMailboxes "a@example.com", "x@example.com" -AdditionalSignaturePath "c:\test"
-{% endraw %}{% endhighlight %}
+```
 
 `SimulateMailboxes` is optional but highly recommended.<br>`SimulateTime` can be used to test time-based templates.<br>See `.\sample code\SimulationModeHelper.ps1` for helper logic.

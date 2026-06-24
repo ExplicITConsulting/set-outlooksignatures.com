@@ -35,7 +35,7 @@ Our solution relies on a well-structured setup involving three Git repositories 
 
 The pipeline handles deployment using environment-specific variables defined in the azure-static-aimoutlooksignatures variable group:
 
-{% highlight plaintext %}{% raw %}
+```yaml
 variables:
   - ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
     - name: targetEnvironment
@@ -43,7 +43,7 @@ variables:
   - ${{ else }}:
     - name: targetEnvironment
       value: 'Development'
-{% endraw %}{% endhighlight %}
+```
 
 ## Automated signature generation pipeline
 
@@ -59,7 +59,7 @@ We use Extension attribute 1 as a trigger: If this attribute is updated from 0 t
 
 The template generator pipeline uses a parameterized approach to define the target user (UPN) and the signature template version.
 
-{% highlight plaintext %}{% raw %}
+```yaml
   - name: UPN
     type: object
     default: ['xx@yy', 'xx@yy']
@@ -67,36 +67,36 @@ The template generator pipeline uses a parameterized approach to define the targ
   - name: version
     type: string
     default: '4.23.0'
-{% endraw %}{% endhighlight %}
+```
 
 The core steps within the job use the powerful SimulateAndDeploy feature:
 
 1. Temporary mailbox permissions  
    The script first connects to Exchange Online. To allow the signature generation service account (signature-service@example.com) to apply the signature, the script temporarily grants Full Access mailbox permission.
 
-   {% highlight plaintext %}{% raw %}
-Add-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights "fullaccess" -Confirm:$false
-   {% endraw %}{% endhighlight %}
+   ```powershell
+   Add-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights "fullaccess" -Confirm:$false
+   ```
 
 2. Run Set-OutlookSignatures  
    The pipeline executes the Generate-signatures-devops.ps1 script, which then calls Set-OutlookSignatures.ps1 using the required parameters to deploy the signature directly to the user's mailbox.
 
-   {% highlight plaintext %}{% raw %}
-$SimulateAndDeployParams = @{
-  # Define parameters here
-}
+   ```powershell
+   $SimulateAndDeployParams = @{
+   # Define parameters here
+   }
 
-& ./Set-OutlookSignatures_v$version/sample code/SimulateAndDeploy.ps1 @SimulateAndDeployParams
-   {% endraw %}{% endhighlight %}
+   & ./Set-OutlookSignatures_v$version/sample code/SimulateAndDeploy.ps1 @SimulateAndDeployParams
+   ```
 
 3. Remove temporary permissions  
    Immediately after deployment, the temporary Full Access permission is revoked for security, and the extension attribute is reset.
 
-   {% highlight plaintext %}{% raw %}
-Remove-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights FullAccess -Confirm:$false
+   ```powershell
+   Remove-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights FullAccess -Confirm:$false
 
-Set-Mailbox -Identity $email -CustomAttribute1 $null
-   {% endraw %}{% endhighlight %}
+   Set-Mailbox -Identity $email -CustomAttribute1 $null
+   ```
 
 ## Technical Rationale for the Outlook Add-in
 
@@ -107,7 +107,7 @@ The decision to use the Outlook add-in, which is hosted on an Azure Static Web A
 
 The add-in manifest is deployed via the pipeline to the Azure Static Web App, using the free tier.
 
-{% highlight plaintext %}{% raw %}
+```yaml
 - task: AzureStaticWebApp@0
   inputs:
     azure_static_web_apps_api_token: $(deploy-token)
@@ -118,7 +118,7 @@ The add-in manifest is deployed via the pipeline to the Azure Static Web App, us
     app_location: "/" # App source code path
     # ...
     deployment_environment: "$(targetEnvironment)"
-{% endraw %}{% endhighlight %}
+```
 
 ## Conclusion
 

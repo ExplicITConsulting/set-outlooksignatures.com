@@ -25,14 +25,14 @@ With Set-OutlookSignatures, you control these exceptions and coverage rules with
 
 Whether it is a permanent assistant or temporary holiday cover—the logic remains exactly the same:
 
-{% highlight plaintext %}{% raw %}
+```ini
 [delegate_template.docx]
 # Assigns the template to everyone who has userA@example.com mapped as a mailbox in Outlook
 userA@example.com
 
 # Excludes the actual owner of the mailbox (User A) from this template
 -CURRENTUSER:userA@example.com
-{% endraw %}{% endhighlight %}
+```
 
 ### Scaling for the Entire Enterprise
 
@@ -40,7 +40,7 @@ You don't have to reinvent the wheel for every holiday replacement or team membe
 
 In the configuration, you then simply map the template to the various mailboxes where coverage is active:
 
-{% highlight plaintext %}{% raw %}
+```ini
 [Company_Delegate_Template.docx]
 manager@example.com
 -CURRENTUSER:manager@example.com
@@ -55,7 +55,7 @@ OutlookSignatureName = Holiday_Cover_Sales_Director
 project.a@example.com
 -CURRENTUSER:project.a@example.com
 OutlookSignatureName = Temporary_Cover_Project_A
-{% endraw %}{% endhighlight %}
+```
 
 ### The Automation Turbo: Deployment Based on Actual Permissions
 
