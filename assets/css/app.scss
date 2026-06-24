@@ -305,6 +305,7 @@ html::after {
 // 1. Terminal UI: Only for code blocks (Jekyll's highlighter-rouge)
 div.highlighter-rouge,
 figure.highlight {
+  background: #404040 !important;
   border-radius: 6px;
   /* Reduced left padding to 0.75rem to pull code to the left */
   padding: 2.5rem 0.75rem 1rem !important;
