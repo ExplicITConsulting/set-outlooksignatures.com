@@ -313,42 +313,6 @@ figure.highlight {
   margin: 2rem 0;
   border: none !important;
 
-  /* Table Wrapping & Conditional Visibility Rules */
-  .rouge-table {
-    width: 100% !important;
-    table-layout: fixed !important; /* Crucial: Forces table columns to respect width bounds instead of expanding */
-    border-collapse: collapse;
-    margin: 0 !important;
-    padding: 0 !important;
-
-    td {
-      padding: 0 !important;
-      margin: 0 !important;
-      vertical-align: top;
-    }
-  }
-
-  // Set a explicit width for the line numbers gutter column
-  .rouge-gutter {
-    width: 2.25rem !important;
-    user-select: none; /* Prevents line numbers from getting copied */
-  }
-
-  // Dynamic classes controlled via the JavaScript snippet
-  &.hide-linenos {
-    .rouge-gutter {
-      display: none !important; /* Hides line column entirely if only 1 line */
-    }
-  }
-
-  &.show-linenos {
-    .rouge-gutter {
-      display: table-cell !important;
-    }
-  }
-
-  /* Theme tokens */
-
   /* Text.Whitespace (w) - Specially highlighted whitespace */
   .w {
     color: #7c7c7c;
@@ -691,7 +655,7 @@ figure.highlight {
     color: #ffffff;
   }
 
-  /* Social Formatting rules */
+  /* Generic.Strong (gs) - Mark the token value as bold (for rst lexer) */
   .gs {
     font-weight: bold;
   }
@@ -735,10 +699,8 @@ figure.highlight {
     padding: 0 !important;
     margin: 0 !important;
     text-indent: 0 !important; /* Ensure no indentation */
-    white-space: pre-wrap !important; /* Forces table structures to wrap text contents */
   }
 
-  /* Absolute Wrap Enforcement (Blocks Scrollbars Completely) */
   code {
     color: white !important;
     background: transparent !important;
@@ -747,10 +709,9 @@ figure.highlight {
     display: block;
     margin: 0 !important; /* Remove any potential left margins */
     text-align: left !important;
-
-    white-space: pre-wrap !important; /* Dynamic formatting wrap */
-    word-break: break-word !important; /* Breaks ultra-long strings/URLs to protect container boundary */
-    overflow-wrap: anywhere !important; /* Modern fail-safe wrap rule */
+    white-space: pre-wrap; /* Respects spaces/newlines, but allows wrapping */
+    word-break: keep-all; /* Prevents breaking in the middle of a word */
+    overflow-wrap: normal; /* Standard wrapping behavior */
     font-family: inherit;
   }
 }

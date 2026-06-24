@@ -396,16 +396,3 @@
   // Run if the user clicks a link to a different anchor while already on the page
   window.addEventListener('hashchange', openTargetedDetails);
 </script>
-
-
-<!-- Show line numbers for multi-line code blocks -->
-<script>
-  document.querySelectorAll('div.highlighter-rouge, figure.highlight').forEach(container => {
-    const codeElement = container.querySelector('code');
-    if (codeElement) {
-      // Check if the actual text contains line breaks
-      const isMultiLine = codeElement.textContent.trim().includes('\n');
-      container.classList.add(isMultiLine ? 'show-linenos' : 'hide-linenos');
-    }
-  });
-</script>
