@@ -48,7 +48,7 @@ CSS
     color: #9999ff !important; /* Force a legible link color */
   }
 }
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 The problem: This code is ignored by the most common corporate clients (Outlook Desktop, Gmail Web). You need a more robust, failsafe plan.
 

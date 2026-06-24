@@ -820,7 +820,7 @@ The name of the signature template file without extension is the name of the sig
 {% highlight ini linenos %}{% raw %}
 [Test signature.htm]
 OutlookSignatureName = Test signature, do not use
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 > Although `OutlookSignatureName` protects signature names used by higher priority mailboxes, it is basically a simple file rename. You may want to consider more sophisticated approaches: [MailboxSpecificSignatureNames](/parameters#mailboxspecificsignaturenames), [VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile), replacement variable specific template assignment, or combining mail address specific assignments with exclusions for certain currently logged-on users.
 
@@ -975,7 +975,7 @@ For a complete reference and examples based on real-world use cases, see the INI
    {% highlight ini linenos %}{% raw %}
    [Company external English formal.docx]
    defaultNew
-   {% endhighlight %}{% endraw %}
+   {% endraw %}{% endhighlight %}
 4. One tag per line below the file section header.
 5. When using INI files, tags in filenames are treated as part of the name, not as tags.
 6. Use parameters to point to the INI file:
@@ -1046,6 +1046,6 @@ Minimal example:
 
 {% highlight powershell linenos %}{% raw %}
 & .\Set-OutlookSignatures.ps1 -SimulateUser "a@example.com" -SimulateMailboxes "a@example.com", "x@example.com" -AdditionalSignaturePath "c:\test"
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 `SimulateMailboxes` is optional but highly recommended.<br>`SimulateTime` can be used to test time-based templates.<br>See `.\sample code\SimulationModeHelper.ps1` for helper logic.

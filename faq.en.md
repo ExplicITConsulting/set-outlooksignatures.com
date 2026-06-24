@@ -142,7 +142,7 @@ To centrally define for which users or computers verbose logging should be enabl
 
 {% highlight powershell linenos %}{% raw %}
 & '\\server\share\folder\Set-OutlookSignatures.ps1' -verbose:$(([Environment]::UserName -iin @('UserA', 'UserB')) -or ([Environment]::MachineName -iin @('ComputerA', 'ComputerB')))
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 If you want your own additional logging, you can, for example, use PowerShell's `Start-Transcript` and `Stop-Transcript` commands to create a logging wrapper around Set-OutlookSignatures.ps1:
 
@@ -152,7 +152,7 @@ Start-Transcript -LiteralPath 'c:\path\to\your\logfile.txt'
 & '\\server\share\folder\Set-OutlookSignatures.ps1' # Optionally add: -verbose:$(([Environment]::UserName -iin @('UserA', 'UserB')) -or ([Environment]::MachineName -iin @('ComputerA', 'ComputerB')))
 
 Stop-Transcript
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 ## How can I get more script output for troubleshooting?
 
@@ -188,7 +188,7 @@ A working example:
 
 {% highlight batch linenos %}{% raw %}
 PowerShell.exe -Command "& '\\server\share\directory\Set-OutlookSignatures.ps1' -SignatureTemplatePath '\\server\share\directory\templates\Signatures DOCX' -OOFTemplatePath '\\server\share\directory\templates\Out-of-Office DOCX' -ReplacementVariableConfigFile '\\server\share\directory\config\default replacement variables.ps1'
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 You will find lots of information about this topic on the internet. The following links provide a first starting point:
 
@@ -212,7 +212,7 @@ Windows provides at least two built-in ways to start PowerShell absolutely hidde
 
   {% highlight batch linenos %}{% raw %}
   conhost.exe --headless powershell.exe -File "\\server\share\directory\Set-OutlookSignatures.ps1" -SignatureTemplatePath "\\server\share\directory\templates\Signatures DOCX" -OOFTemplatePath "\\server\share\directory\templates\Out-of-Office DOCX" -ReplacementVariableConfigFile "\\server\share\directory\config\default replacement variables.ps1"
-  {% endhighlight %}{% endraw %}
+  {% endraw %}{% endhighlight %}
 
 - As Microsoft has marked Visual Basic Script (VBS) as deprecated and will remove it completely from future Windows releases, the use of Windows Script Host (WSH) is not recommended. If you want to try it anyway, here is a working example:
   - Create a .vbs (Visual Basic Script) file, paste and adapt the following code into it:
@@ -223,7 +223,7 @@ Windows provides at least two built-in ways to start PowerShell absolutely hidde
     set shell = CreateObject("WScript.Shell")
 
     shell.Run command, 0
-    {% endhighlight %}{% endraw %}
+    {% endraw %}{% endhighlight %}
 
   - Then, run the .vbs file directly, without specifying cscript.exe as host (just execute `start.vbs` or `wscript.exe start.vbs`, but not `cscript.exe start.vbs`).
 
@@ -271,7 +271,7 @@ The following steps are recommended:
    {% highlight powershell linenos %}{% raw %}
    # Loading default replacement variables shipped with Set-OutlookSignatures
    . ([System.Management.Automation.ScriptBlock]::Create((Get-Content -LiteralPath $(Join-Path -Path $(Get-Location).ProviderPath -ChildPath '\config\default replacement variables.ps1') -Raw)))
-   {% endhighlight %}{% endraw %}
+   {% endraw %}{% endhighlight %}
 
 3. After importing the default configuration file, existing replacement variables can be altered with custom definitions and new replacement variables can be added.
 4. Start Set-OutlookSignatures with the parameter `ReplacementVariableConfigFile` pointing to the new custom configuration file.
@@ -329,7 +329,7 @@ The internal variable `$UseHtmTemplates` is used to automatically differentiate 
   $ReplaceHash['$CurrentUserTelephone-prefix-noempty$'] = $(if (-not $ReplaceHash['$CurrentUserTelephone$']) { '' } else { $(if ($UseHtmTemplates) { '<br>' } else { "`n" }) + 'Telephone: ' } )
 
   $ReplaceHash['$CurrentUserMobile-prefix-noempty$'] = $(if (-not $ReplaceHash['$CurrentUserMobile$']) { '' } else { $(if ($UseHtmTemplates) { '<br>' } else { "`n" }) + 'Mobile: ' } )
-  {% endhighlight %}{% endraw %}
+  {% endraw %}{% endhighlight %}
 
 - Word template:
   <pre><code>email: <a href="mailto:$CurrentUserMail$">$CurrentUserMail$</a>$CurrentUserTelephone-prefix-noempty$<a href="tel:$CurrentUserTelephone$">$CurrentUserTelephone$</a>$CurrentUserMobile-prefix-noempty$<a href="tel:$CurrentUserMobile$">$CurrentUserMobile$</a></code></pre>
@@ -390,7 +390,7 @@ Example Group
 
 [External English formal dg@example.com.docx]
 Example Group
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 This works as long as the personal mailbox of a member of "Example\Group" is connected in Outlook as primary mailbox (which usually is the case). When this personal mailbox is processed by Set-OutlookSignatures, the software recognizes the group membership and the signature assigned to it.
 
@@ -406,7 +406,7 @@ Create signature templates for the mailbox m<area>@example.com and **assign them
 m@example.com
 ## Do not deploy the signature if m@example.com is the personal mailbox of the logged-on user
 -CURRENTUSER:m@example.com
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 You can now use replacement variables of both the `$CurrentUser[…]$` and the `$CurrentMailbox[…]$` namespace.
 
@@ -648,7 +648,7 @@ You can automate this with Set-OutlookSignatures in two simple steps:
    $ReplaceHash["CurrentMailbox_Banner$($tempBannerIdentifiers | Get-Random)"] = $true
 
    Remove-Variable -Name 'tempBannerIdentifiers'
-   {% endhighlight %}{% endraw %}
+   {% endraw %}{% endhighlight %}
 
 2. Add all three banners to your template and define an alternate text  
    Use `$CurrentMailbox_Banner1DELETEEMPTY$` for banner 1, `$CurrentMailbox_Banner2DELETEEMPTY$` for banner 2, and so on.  
@@ -662,7 +662,7 @@ You can enhance this even further:
 
   {% highlight powershell linenos %}{% raw %}
   $tempBannerIdentifiers = @(1, 1, 2, 3)
-  {% endhighlight %}{% endraw %}
+  {% endraw %}{% endhighlight %}
 
 - Assign banners to specific users, departments, locations or any other attribute
 - Restrict banner usage by date or season
@@ -907,7 +907,7 @@ Outlook, especially the Web version, sometimes does not show an empty line but a
 <a hyperlink>
 _
 <some text>
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 instead of
 
@@ -915,7 +915,7 @@ instead of
 <a hyperlink>
 
 <some text>
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 This usually happens when the text before the empty line ends with a hyperlink.
 
@@ -928,13 +928,13 @@ This trick also helps when text separating two hyperlinks is underlined:
 
 {% highlight plaintext linenos %}{% raw %}
 <a hyperlink>_<another hyperlink>
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 instead of
 
 {% highlight plaintext linenos %}{% raw %}
 <a hyperlink> <another hyperlink>
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 The root cause is unknown, but it seems to be related to the HTML parser of the office.js framework, which is used by Outlook for all platforms to perform specific tasks.
 
@@ -966,7 +966,7 @@ Here is how you can test if the current patch level of Classic Outlook for Windo
    😞 (disappointed face)
    🧩 (puzzle piece)
    ⭐ (star)
-   {% endhighlight %}{% endraw %}
+   {% endraw %}{% endhighlight %}
 
 4. Wait until Classic Outlook for Windows has downloaded the signature locally.
 5. Add the freshly downloaded signature to a new email in Classic Outlook for Windows or open the downloaded file directly in a browser.
@@ -1282,7 +1282,7 @@ ConvertDnToCanonicalObject 'CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com'
 # CanonicalOUs      : OU A/OU B
 # DomainFQDN        : example.com
 # LeafValue         : Doe, Jane
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 Here is the functin code:
 
@@ -1352,7 +1352,7 @@ function ConvertDnToCanonicalObject {
 # CanonicalOUs      : OU A/OU B
 # DomainFQDN        : example.com
 # LeafValue         : Doe, Jane
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 ### HTML-based INI editor with advanced capabilities
 
@@ -1423,7 +1423,7 @@ defaultNew
 # "B" is the default signature for new emails only for mailboxes in the Entra ID group b-default-signature@example.com
 EntraID b-default-signature@example.com
 defaultNew
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 Keep in mind that the INI options `SortOrder` and `SortCulture` influence the [signature and OOF application order](/details#signature-and-oof-application-order).
 
@@ -1453,14 +1453,14 @@ Let's assume we want all mailboxes in or below the OU 'example.com/OU A/OU B' to
    $ReplaceHash['$CurrentMailbox-IsIn-OUA-OUB$'] = $ADPropsCurrentMailbox.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
 
    $ReplaceHash['$CurrentMailboxManager-IsIn-OUA-OUB$'] = $ADPropsCurrentMailboxManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
-   {% endhighlight %}{% endraw %}
+   {% endraw %}{% endhighlight %}
 
 2. Now use the new replacement variable [in your INI file](/details#allowed-tags-common-cases) to assign a template to mailboxes in a specific OU:
 
    {% highlight ini linenos %}{% raw %}
    [some template.docx]
    $CurrentUser-IsIn-OUA-OUB$
-   {% endhighlight %}{% endraw %}
+   {% endraw %}{% endhighlight %}
 
 You now have a replacement variable specific template assignment. This has an impact on the priority of the template, see the '[Signature and OOF application order](/details#signature-and-oof-application-order)' chapter for details.
 
@@ -1520,7 +1520,7 @@ To clear: remove the keychain entry or use:
 
 {% highlight shell linenos %}{% raw %}
 security delete-generic-password "Set-OutlookSignatures Microsoft Graph token via MSAL.Net"
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 ## Which Graph authentication methods are used?
 
@@ -1589,7 +1589,7 @@ A signature should only contain a certain image when the current mailbox is a me
         $ReplaceHash[$_[1]] = $null
       }
     }
-    {% endhighlight %}{% endraw %}
+    {% endraw %}{% endhighlight %}
 
 - Insert the image in the template, and add `$CurrentMailbox-IsMemberOf-MarketingDeleteempty$` to the description of the picture.
 

@@ -32,7 +32,7 @@ userA@example.com
 
 # Excludes the actual owner of the mailbox (User A) from this template
 -CURRENTUSER:userA@example.com
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 ### Scaling for the Entire Enterprise
 
@@ -55,7 +55,7 @@ OutlookSignatureName = Holiday_Cover_Sales_Director
 project.a@example.com
 -CURRENTUSER:project.a@example.com
 OutlookSignatureName = Temporary_Cover_Project_A
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 ### The Automation Turbo: Deployment Based on Actual Permissions
 

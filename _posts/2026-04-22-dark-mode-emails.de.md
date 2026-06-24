@@ -47,7 +47,7 @@ Der Goldstandard ist die Verwendung der CSS-Abfrage `@media (prefers-color-schem
     color: #9999ff !important; /* Lesbare Linkfarbe erzwingen */
   }
 }
-{% endhighlight %}{% endraw %}
+{% endraw %}{% endhighlight %}
 
 Das Problem: Dieser Code wird von den gängigsten Unternehmens-Clients (Outlook Desktop, Gmail Web) ignoriert. Sie benötigen einen robusteren, ausfallsicheren Plan.
 

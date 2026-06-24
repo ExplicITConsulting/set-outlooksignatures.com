@@ -39,7 +39,7 @@ All das ist möglich und einfach zu implementieren.
     }
 
     $ReplaceHash["CurrentMailbox_Banner$($tempBannerIdentifiers | Get-Random)"] = $true
-    {% endhighlight %}{% endraw %}
+    {% endraw %}{% endhighlight %}
 
     Jetzt wird bei jedem Ausführen von Set-OutlookSignatures ein anderes zufälliges Banner aus der Vorlage ausgewählt und die anderen Banner werden gelöscht.
 
