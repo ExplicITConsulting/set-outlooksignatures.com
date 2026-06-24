@@ -8,6 +8,7 @@ $primary: black;
 $text: black;
 
 @import "main";
+@import "codeformatting-native";
 
 // --- Global Typography & Layout ---
 html {
@@ -304,7 +305,6 @@ html::after {
 // 1. Terminal UI: Only for code blocks (Jekyll's highlighter-rouge)
 div.highlighter-rouge,
 figure.highlight {
-  background: gainsboro !important;
   border-radius: 6px;
   /* Reduced left padding to 0.75rem to pull code to the left */
   padding: 2.5rem 0.75rem 1rem !important;
@@ -339,7 +339,6 @@ figure.highlight {
   }
 
   code {
-    color: #ffffff !important;
     background: transparent !important;
     padding: 0 !important;
     border-radius: 0 !important;
