@@ -212,7 +212,7 @@ Windows provides at least two built-in ways to start PowerShell absolutely hidde
 
   {% highlight batch linenos %}{% raw %}
   conhost.exe --headless powershell.exe -File "\\server\share\directory\Set-OutlookSignatures.ps1" -SignatureTemplatePath "\\server\share\directory\templates\Signatures DOCX" -OOFTemplatePath "\\server\share\directory\templates\Out-of-Office DOCX" -ReplacementVariableConfigFile "\\server\share\directory\config\default replacement variables.ps1"
-  ```
+  {% endhighlight %}{% endraw %}
 
 - As Microsoft has marked Visual Basic Script (VBS) as deprecated and will remove it completely from future Windows releases, the use of Windows Script Host (WSH) is not recommended. If you want to try it anyway, here is a working example:
   - Create a .vbs (Visual Basic Script) file, paste and adapt the following code into it:
@@ -223,7 +223,7 @@ Windows provides at least two built-in ways to start PowerShell absolutely hidde
     set shell = CreateObject("WScript.Shell")
 
     shell.Run command, 0
-    ```
+    {% endhighlight %}{% endraw %}
 
   - Then, run the .vbs file directly, without specifying cscript.exe as host (just execute `start.vbs` or `wscript.exe start.vbs`, but not `cscript.exe start.vbs`).
 
@@ -271,7 +271,7 @@ The following steps are recommended:
    {% highlight powershell linenos %}{% raw %}
    # Loading default replacement variables shipped with Set-OutlookSignatures
    . ([System.Management.Automation.ScriptBlock]::Create((Get-Content -LiteralPath $(Join-Path -Path $(Get-Location).ProviderPath -ChildPath '\config\default replacement variables.ps1') -Raw)))
-   ```
+   {% endhighlight %}{% endraw %}
 
 3. After importing the default configuration file, existing replacement variables can be altered with custom definitions and new replacement variables can be added.
 4. Start Set-OutlookSignatures with the parameter `ReplacementVariableConfigFile` pointing to the new custom configuration file.
@@ -329,7 +329,7 @@ The internal variable `$UseHtmTemplates` is used to automatically differentiate 
   $ReplaceHash['$CurrentUserTelephone-prefix-noempty$'] = $(if (-not $ReplaceHash['$CurrentUserTelephone$']) { '' } else { $(if ($UseHtmTemplates) { '<br>' } else { "`n" }) + 'Telephone: ' } )
 
   $ReplaceHash['$CurrentUserMobile-prefix-noempty$'] = $(if (-not $ReplaceHash['$CurrentUserMobile$']) { '' } else { $(if ($UseHtmTemplates) { '<br>' } else { "`n" }) + 'Mobile: ' } )
-  ```
+  {% endhighlight %}{% endraw %}
 
 - Word template:
   <pre><code>email: <a href="mailto:$CurrentUserMail$">$CurrentUserMail$</a>$CurrentUserTelephone-prefix-noempty$<a href="tel:$CurrentUserTelephone$">$CurrentUserTelephone$</a>$CurrentUserMobile-prefix-noempty$<a href="tel:$CurrentUserMobile$">$CurrentUserMobile$</a></code></pre>
@@ -648,7 +648,7 @@ You can automate this with Set-OutlookSignatures in two simple steps:
    $ReplaceHash["CurrentMailbox_Banner$($tempBannerIdentifiers | Get-Random)"] = $true
 
    Remove-Variable -Name 'tempBannerIdentifiers'
-   ```
+   {% endhighlight %}{% endraw %}
 
 2. Add all three banners to your template and define an alternate text  
    Use `$CurrentMailbox_Banner1DELETEEMPTY$` for banner 1, `$CurrentMailbox_Banner2DELETEEMPTY$` for banner 2, and so on.  
@@ -662,7 +662,7 @@ You can enhance this even further:
 
   {% highlight powershell linenos %}{% raw %}
   $tempBannerIdentifiers = @(1, 1, 2, 3)
-  ```
+  {% endhighlight %}{% endraw %}
 
 - Assign banners to specific users, departments, locations or any other attribute
 - Restrict banner usage by date or season
@@ -966,7 +966,7 @@ Here is how you can test if the current patch level of Classic Outlook for Windo
    😞 (disappointed face)
    🧩 (puzzle piece)
    ⭐ (star)
-   ```
+   {% endhighlight %}{% endraw %}
 
 4. Wait until Classic Outlook for Windows has downloaded the signature locally.
 5. Add the freshly downloaded signature to a new email in Classic Outlook for Windows or open the downloaded file directly in a browser.
@@ -1453,14 +1453,14 @@ Let's assume we want all mailboxes in or below the OU 'example.com/OU A/OU B' to
    $ReplaceHash['$CurrentMailbox-IsIn-OUA-OUB$'] = $ADPropsCurrentMailbox.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
 
    $ReplaceHash['$CurrentMailboxManager-IsIn-OUA-OUB$'] = $ADPropsCurrentMailboxManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
-   ```
+   {% endhighlight %}{% endraw %}
 
 2. Now use the new replacement variable [in your INI file](/details#allowed-tags-common-cases) to assign a template to mailboxes in a specific OU:
 
    {% highlight ini linenos %}{% raw %}
    [some template.docx]
    $CurrentUser-IsIn-OUA-OUB$
-   ```
+   {% endhighlight %}{% endraw %}
 
 You now have a replacement variable specific template assignment. This has an impact on the priority of the template, see the '[Signature and OOF application order](/details#signature-and-oof-application-order)' chapter for details.
 
@@ -1589,7 +1589,7 @@ A signature should only contain a certain image when the current mailbox is a me
         $ReplaceHash[$_[1]] = $null
       }
     }
-    ```
+    {% endhighlight %}{% endraw %}
 
 - Insert the image in the template, and add `$CurrentMailbox-IsMemberOf-MarketingDeleteempty$` to the description of the picture.
 

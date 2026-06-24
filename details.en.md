@@ -975,7 +975,7 @@ For a complete reference and examples based on real-world use cases, see the INI
    {% highlight ini linenos %}{% raw %}
    [Company external English formal.docx]
    defaultNew
-   ```
+   {% endhighlight %}{% endraw %}
 4. One tag per line below the file section header.
 5. When using INI files, tags in filenames are treated as part of the name, not as tags.
 6. Use parameters to point to the INI file:

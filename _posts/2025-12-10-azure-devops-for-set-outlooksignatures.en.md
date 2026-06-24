@@ -43,7 +43,7 @@ variables:
   - ${{ else }}:
     - name: targetEnvironment
       value: 'Development'
-```
+{% endhighlight %}{% endraw %}
 
 ## Automated signature generation pipeline
 
@@ -67,7 +67,7 @@ The template generator pipeline uses a parameterized approach to define the targ
   - name: version
     type: string
     default: '4.23.0'
-```
+{% endhighlight %}{% endraw %}
 
 The core steps within the job use the powerful SimulateAndDeploy feature:
 
@@ -76,7 +76,7 @@ The core steps within the job use the powerful SimulateAndDeploy feature:
 
    {% highlight powershell linenos %}{% raw %}
    Add-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights "fullaccess" -Confirm:$false
-   ```
+   {% endhighlight %}{% endraw %}
 
 2. Run Set-OutlookSignatures  
    The pipeline executes the Generate-signatures-devops.ps1 script, which then calls Set-OutlookSignatures.ps1 using the required parameters to deploy the signature directly to the user's mailbox.
@@ -87,7 +87,7 @@ The core steps within the job use the powerful SimulateAndDeploy feature:
    }
 
    & ./Set-OutlookSignatures_v$version/sample code/SimulateAndDeploy.ps1 @SimulateAndDeployParams
-   ```
+   {% endhighlight %}{% endraw %}
 
 3. Remove temporary permissions  
    Immediately after deployment, the temporary Full Access permission is revoked for security, and the extension attribute is reset.
@@ -96,7 +96,7 @@ The core steps within the job use the powerful SimulateAndDeploy feature:
    Remove-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights FullAccess -Confirm:$false
 
    Set-Mailbox -Identity $email -CustomAttribute1 $null
-   ```
+   {% endhighlight %}{% endraw %}
 
 ## Technical Rationale for the Outlook Add-in
 
@@ -118,7 +118,7 @@ The add-in manifest is deployed via the pipeline to the Azure Static Web App, us
     app_location: "/" # App source code path
     # ...
     deployment_environment: "$(targetEnvironment)"
-```
+{% endhighlight %}{% endraw %}
 
 ## Conclusion
 

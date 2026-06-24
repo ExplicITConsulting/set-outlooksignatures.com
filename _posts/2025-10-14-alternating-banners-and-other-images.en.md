@@ -34,12 +34,12 @@ It's all possible and easy to implement.
     {% highlight powershell linenos %}{% raw %}
     $tempBannerIdentifiers = @(1, 2, 3)
 
-        $tempBannerIdentifiers | Foreach-Object {
-            $ReplaceHash["CurrentMailbox_Banner$($_)"] = $null
-        }
+    $tempBannerIdentifiers | Foreach-Object {
+        $ReplaceHash["CurrentMailbox_Banner$($_)"] = $null
+    }
 
-        $ReplaceHash["CurrentMailbox_Banner$($tempBannerIdentifiers | Get-Random)"] = $true
-        ```
+    $ReplaceHash["CurrentMailbox_Banner$($tempBannerIdentifiers | Get-Random)"] = $true
+    {% endhighlight %}{% endraw %}
 
     Now, with every run of Set-OutlookSignatures, a different random banner from the template is chosen and the other banners are deleted.
 

@@ -32,7 +32,7 @@ userA@example.com
 
 # Schließt den eigentlichen Besitzer des Postfachs (User A) von dieser Vorlage aus
 -CURRENTUSER:userA@example.com
-```
+{% endhighlight %}{% endraw %}
 
 ### Skalierung für das gesamte Unternehmen
 
@@ -55,7 +55,7 @@ OutlookSignatureName = Urlaubsvertretung_Vertriebsleitung
 projekt.a@example.com
 -CURRENTUSER:projekt.a@example.com
 OutlookSignatureName = Stellvertretung_Projekt_A
-```
+{% endhighlight %}{% endraw %}
 
 ### Der Automatisierungs-Turbo: Zuweisung über echte Berechtigungen
 

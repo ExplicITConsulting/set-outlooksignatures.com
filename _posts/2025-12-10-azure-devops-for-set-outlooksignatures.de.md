@@ -45,7 +45,7 @@ variables:
   - ${{ else }}:
     - name: targetEnvironment
       value: 'Development'
-```
+{% endhighlight %}{% endraw %}
 
 ## Automatisierte Pipeline zur Signaturgenerierung
 
@@ -69,7 +69,7 @@ Die Pipeline des Vorlagengenerators verwendet einen parametrisierten Ansatz, um 
   - name: version
     type: string
     default: '4.23.0'
-```
+{% endhighlight %}{% endraw %}
 
 Die wichtigsten Schritte innerhalb des Auftrags nutzen die leistungsstarke Funktion "SimulateAndDeploy":
 
@@ -78,7 +78,7 @@ Die wichtigsten Schritte innerhalb des Auftrags nutzen die leistungsstarke Funkt
 
    {% highlight powershell linenos %}{% raw %}
    Add-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights "fullaccess" -Confirm:$false
-   ```
+   {% endhighlight %}{% endraw %}
 
 2. Set-OutlookSignatures ausführen  
    Die Pipeline führt das Skript "Generate-signatures-devops.ps1" aus, das dann "Set-OutlookSignatures.ps1" mit den erforderlichen Parametern aufruft, um die Signatur direkt in der Mailbox des Benutzers bereitzustellen.
@@ -89,7 +89,7 @@ Die wichtigsten Schritte innerhalb des Auftrags nutzen die leistungsstarke Funkt
    }
 
    & ./Set-OutlookSignatures_v$version/sample code/SimulateAndDeploy.ps1 @SimulateAndDeployParams
-   ```
+   {% endhighlight %}{% endraw %}
 
 3. Temporäre Postfachberechtigungen entfernen  
    Unmittelbar nach der Bereitstellung wird die temporäre Vollzugriffsberechtigung aus Sicherheitsgründen widerrufen und das Erweiterungsattribut zurückgesetzt.
@@ -98,7 +98,7 @@ Die wichtigsten Schritte innerhalb des Auftrags nutzen die leistungsstarke Funkt
    Remove-MailboxPermission -Identity $email -User "signature-service@example.com" -AccessRights FullAccess -Confirm:$false
 
    Set-Mailbox -Identity $email -CustomAttribute1 $null
-   ```
+   {% endhighlight %}{% endraw %}
 
 ## Technische Gründe für das Outlook-Add-in
 
@@ -120,7 +120,7 @@ Das Add-in-Manifest wird über die Pipeline in der Azure Static Web App bereitge
     app_location: "/" # App source code path
     # ...
     deployment_environment: "$(targetEnvironment)"
-```
+{% endhighlight %}{% endraw %}
 
 ## Fazit
 

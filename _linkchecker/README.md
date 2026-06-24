@@ -25,12 +25,12 @@ Run the script using the default parameters:
 
 {% highlight powershell linenos %}{% raw %}
 .\checklinks.ps1
-```
+{% endhighlight %}{% endraw %}
 
 To run a deep check including fragments on an external sitemap:
 {% highlight powershell linenos %}{% raw %}
 .\checklinks.ps1 -SitemapUrl "https://example.com/sitemap.xml" -CheckFragments $true -CheckFragmentsInternalOnly $false
-```
+{% endhighlight %}{% endraw %}
 
 
 ## Internal Data Structures
@@ -127,7 +127,7 @@ foreach ($entry in $ReportGroups) {
         }
     }
 }
-```
+{% endhighlight %}{% endraw %}
 
 
 ## Post-Scan Data Analysis
@@ -157,7 +157,7 @@ To export to a single file, run this after a scan finishes to save the domain, p
     PageData       = $PageData
     ReferenceMap   = $ReferenceMap
 } | Export-CliXml -Path 'checklinks scan data.clixml' -Force
-```
+{% endhighlight %}{% endraw %}
 
 To load and restore the data, run this:
 {% highlight powershell linenos %}{% raw %}
@@ -176,4 +176,4 @@ $ExportFile      = $ImportedData.ExportFile
 $StartDomain    = $ImportedData.StartDomain
 $PageData       = $ImportedData.PageData
 $ReferenceMap   = $ImportedData.ReferenceMap
-```
+{% endhighlight %}{% endraw %}
