@@ -25,7 +25,7 @@ With Set-OutlookSignatures, you control these exceptions and coverage rules with
 
 Whether it is a permanent assistant or temporary holiday cover—the logic remains exactly the same:
 
-```ini
+```plaintext
 [delegate_template.docx]
 # Assigns the template to everyone who has userA@example.com mapped as a mailbox in Outlook
 userA@example.com
@@ -40,7 +40,7 @@ You don't have to reinvent the wheel for every holiday replacement or team membe
 
 In the configuration, you then simply map the template to the various mailboxes where coverage is active:
 
-```ini
+```plaintext
 [Company_Delegate_Template.docx]
 manager@example.com
 -CURRENTUSER:manager@example.com

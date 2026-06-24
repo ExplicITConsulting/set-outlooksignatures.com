@@ -140,13 +140,13 @@ The software has a built-in logging option. Logs are saved in the folder `$(Join
 
 To centrally define for which users or computers verbose logging should be enabled, you can use the following simple approach:
 
-```powershell
+```plaintext
 & '\\server\share\folder\Set-OutlookSignatures.ps1' -verbose:$(([Environment]::UserName -iin @('UserA', 'UserB')) -or ([Environment]::MachineName -iin @('ComputerA', 'ComputerB')))
 ```
 
 If you want your own additional logging, you can, for example, use PowerShell's `Start-Transcript` and `Stop-Transcript` commands to create a logging wrapper around Set-OutlookSignatures.ps1:
 
-```powershell
+```plaintext
 Start-Transcript -LiteralPath 'c:\path\to\your\logfile.txt'
 
 & '\\server\share\folder\Set-OutlookSignatures.ps1' # Optionally add: -verbose:$(([Environment]::UserName -iin @('UserA', 'UserB')) -or ([Environment]::MachineName -iin @('ComputerA', 'ComputerB')))
@@ -186,7 +186,7 @@ Passing arguments to PowerShell.exe from the command line or task scheduler can 
 
 A working example:
 
-```batch
+```plaintext
 powershell.exe -Command "& '\\server\share\directory\Set-OutlookSignatures.ps1' -SignatureTemplatePath '\\server\share\directory\templates\Signatures DOCX' -OOFTemplatePath '\\server\share\directory\templates\Out-of-Office DOCX' -ReplacementVariableConfigFile '\\server\share\directory\config\default replacement variables.ps1'
 ```
 
@@ -210,14 +210,14 @@ Windows provides at least two built-in ways to start PowerShell absolutely hidde
 
 - Reasonably up-to-date versions of Windows come with the `conhost.exe` console host, which comes with the 'headless' parameter:
 
-  ```batch
+  ```plaintext
   conhost.exe --headless powershell.exe -File "\\server\share\directory\Set-OutlookSignatures.ps1" -SignatureTemplatePath "\\server\share\directory\templates\Signatures DOCX" -OOFTemplatePath "\\server\share\directory\templates\Out-of-Office DOCX" -ReplacementVariableConfigFile "\\server\share\directory\config\default replacement variables.ps1"
   ```
 
 - As Microsoft has marked Visual Basic Script (VBS) as deprecated and will remove it completely from future Windows releases, the use of Windows Script Host (WSH) is not recommended. If you want to try it anyway, here is a working example:
   - Create a .vbs (Visual Basic Script) file, paste and adapt the following code into it:
 
-    ```vb
+    ```plaintext
     command = "PowerShell.exe -Command ""& '\\server\share\directory\Set-OutlookSignatures.ps1' -SignatureTemplatePath '\\server\share\directory\templates\Signatures DOCX' -OOFTemplatePath '\\server\share\directory\templates\Out-of-Office DOCX' -ReplacementVariableConfigFile '\\server\share\directory\config\default replacement variables.ps1'"" "
 
     set shell = CreateObject("WScript.Shell")
@@ -268,7 +268,7 @@ The following steps are recommended:
 1. Create a new custom configuration file in a separate folder.
 2. The first step in the new custom configuration file should be to load the default configuration file, `.\config\default replacement variable.ps1` in this example:
 
-   ```powershell
+   ```plaintext
    # Loading default replacement variables shipped with Set-OutlookSignatures
    . ([System.Management.Automation.ScriptBlock]::Create((Get-Content -LiteralPath $(Join-Path -Path $(Get-Location).ProviderPath -ChildPath '\config\default replacement variables.ps1') -Raw)))
    ```
@@ -325,7 +325,7 @@ The internal variable `$UseHtmTemplates` is used to automatically differentiate 
 
 - Custom replacement variable config file
 
-  ```powershell
+  ```plaintext
   $ReplaceHash['$CurrentUserTelephone-prefix-noempty$'] = $(if (-not $ReplaceHash['$CurrentUserTelephone$']) { '' } else { $(if ($UseHtmTemplates) { '<br>' } else { "`n" }) + 'Telephone: ' } )
 
   $ReplaceHash['$CurrentUserMobile-prefix-noempty$'] = $(if (-not $ReplaceHash['$CurrentUserMobile$']) { '' } else { $(if ($UseHtmTemplates) { '<br>' } else { "`n" }) + 'Mobile: ' } )
@@ -384,7 +384,7 @@ You want to deploy signatures for the mailbox m<area>@example.com and the distri
 **Solution option A**  
 Create signature templates for the mailbox m<area>@example.com and the distribution group dg<area>@example.com and **assign them to the group that has been granted the "send as" permission**:
 
-```ini
+```plaintext
 [External English formal m@example.com.docx]
 Example Group
 
@@ -401,7 +401,7 @@ This option only works for mailboxes, not for distribution groups.
 
 Create signature templates for the mailbox m<area>@example.com and **assign them to m<area>@example.com**. Use the virtual mailbox feature of the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> to make sure that m<area>@example.com is always treated as if it were added to Outlook, not matter if it has been added or not (see the parameter '[VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile)' for details).
 
-```ini
+```plaintext
 [External English formal SendAs m@example.com.docx]
 m@example.com
 ## Do not deploy the signature if m@example.com is the personal mailbox of the logged-on user
@@ -638,7 +638,7 @@ You can automate this with Set-OutlookSignatures in two simple steps:
 
 1. Create a customer replacement variable for each banner and randomly only assign one of these variables a value:
 
-   ```powershell
+   ```plaintext
    $tempBannerIdentifiers = @(1, 2, 3)
 
    $tempBannerIdentifiers | Foreach-Object {
@@ -660,7 +660,7 @@ You can enhance this even further:
 
 - Use banner 1 twice as often as the others. Just add it to the code multiple times:
 
-  ```powershell
+  ```plaintext
   $tempBannerIdentifiers = @(1, 1, 2, 3)
   ```
 
@@ -1271,7 +1271,7 @@ It helps answer questions such as "Is an object directly in a specific OU?", "Is
 
 An example:
 
-```powershell
+```plaintext
 # Example usage
 ConvertDnToCanonicalObject 'CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com'
 
@@ -1287,7 +1287,7 @@ ConvertDnToCanonicalObject 'CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com'
 
 Here is the functin code:
 
-```powershell
+```plaintext
 function ConvertDnToCanonicalObject {
     [CmdletBinding()]
     param(
@@ -1408,7 +1408,7 @@ You can, of course, have different default signatures for different mailboxes. L
 
 The trick is to reference a template not only once, but multiple times:
 
-```ini
+```plaintext
 [A.docx]
 # "A" is the default signature for new emails for all users
 defaultNew
@@ -1446,7 +1446,7 @@ Let's assume we want all mailboxes in or below the OU 'example.com/OU A/OU B' to
 
 1. Create a [custom replacement variable](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/src_Set-OutlookSignatures/config/default%20replacement%20variables.ps1) with a boolean (true or false) value, depending on the OU.
 
-   ```powershell
+   ```plaintext
    $ReplaceHash['$CurrentUser-IsIn-OUA-OUB$'] = $ADPropsCurrentUser.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
 
    $ReplaceHash['$CurrentUserManager-IsIn-OUA-OUB$'] = $ADPropsCurrentUserManager.distinguishedName.EndsWith(',OU=OU B,OU=OU A,DC=example,DC=com')
@@ -1458,7 +1458,7 @@ Let's assume we want all mailboxes in or below the OU 'example.com/OU A/OU B' to
 
 2. Now use the new replacement variable [in your INI file](/details#allowed-tags-common-cases) to assign a template to mailboxes in a specific OU:
 
-   ```ini
+   ```plaintext
    [some template.docx]
    $CurrentUser-IsIn-OUA-OUB$
    ```
@@ -1519,7 +1519,7 @@ To clear: remove the keyring entry (or delete the cache file if used).
 
 To clear: remove the keychain entry or use:
 
-```bash
+```plaintext
 security delete-generic-password "Set-OutlookSignatures Microsoft Graph token via MSAL.Net"
 ```
 
@@ -1570,7 +1570,7 @@ A signature should only contain a certain image when the current mailbox is a me
   - If the current mailbox is a member, we give the new replacement variable the value "yes". Else, we give it the value null.
   - You only have to modify three strings right at the beginning:
 
-    ```powershell
+    ```plaintext
     # Check if current mailbox is member of group 'EXAMPLEDOMAIN\Marketing' and set $ReplaceHash['$CurrentMailbox-ismemberof-marketing$'] accordingly
     #
     # Replace 'EXAMPLEDOMAIN Marketing' with the domain and group you are searching for. Use 'EntraID' or 'AzureAD' instead of 'EXAMPLEDOMAIN' to only search Entra ID/Graph

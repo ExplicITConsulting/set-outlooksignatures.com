@@ -31,7 +31,7 @@ It's all possible and easy to implement.
     - Use `$CurrentMailbox_Banner1DELETEEMPTY$` for banner 1, `$CurrentMailbox_Banner2DELETEEMPTY$` for banner 2, and so on.
     - The 'DELETEEMPTY' part deletes an image when the corresponding replacement variable does not contain a value.
 2.  Create a custom replacement variable for each banner in your replacement variable config file, and randomly only assign one of these variables a value:
-    ```powershell
+    ```plaintext
     $tempBannerIdentifiers = @(1, 2, 3)
 
     $tempBannerIdentifiers | Foreach-Object {
