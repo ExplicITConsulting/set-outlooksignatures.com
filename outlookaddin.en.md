@@ -168,7 +168,7 @@ sitemap_changefreq: weekly
 <p>When mailboxes are hosted in Exchange Online, the add-in needs an Entra ID app to access the mailbox. Creating a separate app is strongly recommended.</p>
 {% highlight plaintext %}{% raw %}
 powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType "OutlookAddIn" -AppName "Set-OutlookSignatures Outlook add-in" -OutlookAddInUrl "https://yourhost.yourdomain.com"
-{% endraw %{% endhighlight %}}
+{% endraw %}{% endhighlight %}
 
 <p>For manual configuration, the following <b>Delegated Graph API</b> permissions must be granted with admin consent:</p>
 <div class="columns is-multiline">
