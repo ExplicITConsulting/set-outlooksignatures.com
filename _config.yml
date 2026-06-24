@@ -72,6 +72,9 @@ include:
 
 kramdown:
   smart_quotes: ["apos", "apos", "quot", "quot"]
+  syntax_highlighter_opts:
+    block:
+      linenos: true
 
 collections:
   posts:
