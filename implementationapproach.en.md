@@ -878,7 +878,7 @@ The software can be executed using any mechanism, for example:
 
 Since Set-OutlookSignatures is primarily a PowerShell script, it is executed like any other script of this type:
 
-{% highlight batch linenos %}{% raw %}
+{% highlight linenos %}{% raw %}
 powershell.exe <PowerShell-Parameter> -File "<Pfad zu Set-OutlookSignatures.ps1>" <Script-Parameter>  
 {% endraw %}{% endhighlight %}
 
@@ -887,7 +887,7 @@ The behavior of the software can be controlled via parameters. Particularly rele
 
 Below is an example where the signature templates are located on an SMB file share and the out-of-office templates in a SharePoint document library:
 
-{% highlight batch linenos %}{% raw %}
+{% highlight linenos %}{% raw %}
 powershell.exe -File "\\example.com\netlogon\set-outlooksignatures\set-outlooksignatures.ps1" -SignatureTemplatePath "\\example.com\DFS-Share\Common\Templates\Signatures Outlook" -OOFTemplatePath "https://sharepoint.example.com/CorporateCommunications/Templates/Out-of-office templates"
 {% endraw %}{% endhighlight %}
 
