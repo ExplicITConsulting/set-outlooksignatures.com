@@ -51,13 +51,9 @@ Download and unzip the archive to a local folder:
         <div>
           <p><b>Create Entra ID app for Exchange Online</b></p>
           <p>Follow the instructions in <code>.\config\default graph config.ps1</code> for manual setup or have a "Global Administrator" or "Application Administrator" run the provided PowerShell command.</p>
-          <div class="highlighter-rouge">
-            <pre><code>
 {% highlight batch %}{% raw %}
 powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
 {% endraw %}{% endhighlight %}
-            </code></pre>
-          </div>
           <p>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> parameter.</p>
           <p>Check the required permissions in advance: You can find all the information you need about usage in the files themselves as well as in the chapter <a href="/details#security-considerations">Security considerations</a>.</p>
         </div>
@@ -75,13 +71,9 @@ powershell.exe -noexit -file "c:\test\sample code\Create-EntraApp.ps1" -AppType 
         <span>☁️</span>
         <div>
           <p><b>Exchange Online / Hybrid</b></p>
-          <div class="highlighter-rouge">
-            <pre><code>
 {% highlight batch %}{% raw %}
 powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "&lt;Entra ID app application (client) ID&gt;"
 {% endraw %}{% endhighlight %}
-            </code></pre>
-          </div>
           <p><small><em><code>-GraphOnly true</code> ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> parameter if using a national or sovereign cloud.</em></small></p>
           <p><small><em>If the script fails to run, right-click Set-OutlookSignatures.ps1 > Properties > check Unblock.</em></small></p>
         </div>
@@ -94,13 +86,9 @@ powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true
         <span>🏢</span>
         <div>
           <p><b>Exchange On-Prem</b></p>
-          <div class="highlighter-rouge">
-            <pre><code>
 {% highlight batch %}{% raw %}
 powershell.exe -noexit -file "c:\test\Set-OutlookSignatures.ps1"
 {% endraw %}{% endhighlight %}
-            </code></pre>
-          </div>
           <p><small><em>If the script fails to run, right-click Set-OutlookSignatures.ps1 > Properties > check Unblock.</em></small></p>
         </div>
       </div>
