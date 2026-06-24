@@ -306,7 +306,6 @@ div.highlighter-rouge,
 figure.highlight {
   background: black !important;
   border-radius: 6px;
-  /* Reduced left padding to 0.75rem to pull code to the left */
   padding: 2.5rem 0.75rem 1rem !important;
   position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -314,12 +313,21 @@ figure.highlight {
   border: none !important;
   overflow-x: hidden;
 
-  // Rouge line-number table layout
+  // Keep code size stable
+  font-size: 1em;
+  line-height: 1.5;
+
+  // --- Rouge line-number layout ---
   .rouge-table {
     width: 100%;
     border-collapse: collapse;
     margin: 0;
     table-layout: fixed;
+  }
+
+  .rouge-table td {
+    padding: 0 !important;
+    vertical-align: top !important;
   }
 
   .rouge-gutter {
@@ -339,6 +347,8 @@ figure.highlight {
     min-width: 0;
   }
 
+  .rouge-gutter,
+  .rouge-code,
   .rouge-gutter pre,
   .rouge-code pre,
   .rouge-gutter code,
@@ -356,6 +366,8 @@ figure.highlight {
   .rouge-gutter pre,
   .rouge-gutter code {
     color: #7c7c7c !important;
+    text-align: right;
+    white-space: pre !important;
   }
 
   .rouge-code pre,
@@ -363,10 +375,7 @@ figure.highlight {
     color: white !important;
   }
 
-  .rouge-gutter pre {
-    text-align: right;
-  }
-
+  // Hide line numbers when JS marks a single-line block
   &.is-single-line {
     .rouge-gutter {
       display: none;
@@ -376,6 +385,7 @@ figure.highlight {
       padding-left: 0;
     }
   }
+
   /* Text.Whitespace (w) - Specially highlighted whitespace */
   .w {
     color: #7c7c7c;
@@ -648,13 +658,13 @@ figure.highlight {
     color: #808080;
   }
 
-  /* Comment (c) - Single ligne comments */
+  /* Comment (c) - Single line comments */
   .c {
     color: #7ca668;
     font-style: italic;
   }
 
-  /* Comment.Multiline (cm) - Mutliline comments */
+  /* Comment.Multiline (cm) - Multiline comments */
   .cm {
     color: #7ca668;
     font-style: italic;
@@ -718,7 +728,7 @@ figure.highlight {
     color: #ffffff;
   }
 
-  /* Generic.Strong (gs) - Mark the token value as bold (for rst lexer) */
+  /* Generic.Strong (gs) - Mark the token value as bold */
   .gs {
     font-weight: bold;
   }
@@ -739,12 +749,11 @@ figure.highlight {
     color: #7c7c7c;
   }
 
-  // The Traffic Light Dots
+  // Traffic light dots
   &::before {
     content: "";
     position: absolute;
     top: 14px;
-    /* Aligned dots to 0.75rem so the red dot is directly above the first char */
     left: 0.75rem;
     height: 10px;
     width: 44px;
@@ -772,8 +781,15 @@ figure.highlight {
     padding: 0 !important;
   }
 
-  .rouge-code code,
+  // Numbered Rouge blocks: wrap code
   .rouge-code pre,
+  .rouge-code code {
+    white-space: pre-wrap !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  // Plain non-numbered code blocks
   > pre code,
   pre.highlight code {
     color: white !important;
