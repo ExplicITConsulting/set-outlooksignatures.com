@@ -872,7 +872,7 @@ Die Software kann über einen beliebigen Mechanismus ausgeführt werden, beispie
 
 Da es sich bei Set-OutlookSignatures hauptsächlich um ein PowerShell-Script handelt, erfolgt der Aufruf wie bei jedem anderen Script dieses Dateityps:
 
-{% highlight %}{% raw %}
+{% highlight plaintext %}{% raw %}
 powershell.exe <PowerShell-Parameter> -File "<Pfad zu Set-OutlookSignatures.ps1>" <Script-Parameter>  
 {% endraw %}{% endhighlight %}
 
@@ -881,7 +881,7 @@ Das Verhalten der Software kann über Parameter gesteuert werden. Besonders rele
 
 Folgend ein Beispiel, bei dem die Signatur-Vorlagen auf einem SMB-File-Share und die Abwesenheits-Vorlagen in einer SharePoint Dokumentbibliothek liegen:
 
-{% highlight %}{% raw %}
+{% highlight plaintext %}{% raw %}
 powershell.exe -File "\\example.com\netlogon\set-outlooksignatures\set-outlooksignatures.ps1" -SignatureTemplatePath "\\example.com\DFS-Share\Common\Templates\Signatures Outlook" -OOFTemplatePath "https://sharepoint.example.com/CorporateCommunications/Templates/Out-of-office templates"  
 {% endraw %}{% endhighlight %}
 

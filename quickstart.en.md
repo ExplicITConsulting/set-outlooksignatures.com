@@ -51,7 +51,7 @@ Download and unzip the archive to a local folder:
         <div>
           <p><b>Create Entra ID app for Exchange Online</b></p>
           <p>Follow the instructions in <code>.\config\default graph config.ps1</code> for manual setup or have a "Global Administrator" or "Application Administrator" run the provided PowerShell command.</p>
-{% highlight %}{% raw %}
+{% highlight plaintext %}{% raw %}
 powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType "Set-OutlookSignatures" -AppName "Set-OutlookSignatures"
 {% endraw %}{% endhighlight %}
           <p>For national or sovereign clouds, add the <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> parameter.</p>
@@ -71,7 +71,7 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
         <span>☁️</span>
         <div>
           <p><b>Exchange Online / Hybrid</b></p>
-{% highlight %}{% raw %}
+{% highlight plaintext %}{% raw %}
 powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<Entra ID app application (client) ID>"
 {% endraw %}{% endhighlight %}
           <p><small><em><code>-GraphOnly true</code> ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> parameter if using a national or sovereign cloud.</em></small></p>
@@ -86,7 +86,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true
         <span>🏢</span>
         <div>
           <p><b>Exchange On-Prem</b></p>
-{% highlight %}{% raw %}
+{% highlight plaintext %}{% raw %}
 powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
 {% endraw %}{% endhighlight %}
           <p><small><em>If the script fails to run, right-click Set-OutlookSignatures.ps1 > Properties > check Unblock.</em></small></p>
