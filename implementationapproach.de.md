@@ -872,18 +872,18 @@ Die Software kann über einen beliebigen Mechanismus ausgeführt werden, beispie
 
 Da es sich bei Set-OutlookSignatures hauptsächlich um ein PowerShell-Script handelt, erfolgt der Aufruf wie bei jedem anderen Script dieses Dateityps:
 
-```batch
+{% highlight batch linenos %}{% raw %}
 powershell.exe <PowerShell-Parameter> -File "<Pfad zu Set-OutlookSignatures.ps1>" <Script-Parameter>  
-```
+{% endhighlight %}{% endraw %}
 
 **Parametisierung**  
 Das Verhalten der Software kann über Parameter gesteuert werden. Besonders relevant sind dabei SignatureTemplatePath und OOFTemplatePath, über die der Pfad zu den Signatur- und Abwesenheits-Vorlagen angegeben wird.
 
 Folgend ein Beispiel, bei dem die Signatur-Vorlagen auf einem SMB-File-Share und die Abwesenheits-Vorlagen in einer SharePoint Dokumentbibliothek liegen:
 
-```batch
+{% highlight batch linenos %}{% raw %}
 powershell.exe -File "\\example.com\netlogon\set-outlooksignatures\set-outlooksignatures.ps1" -SignatureTemplatePath "\\example.com\DFS-Share\Common\Templates\Signatures Outlook" -OOFTemplatePath "https://sharepoint.example.com/CorporateCommunications/Templates/Out-of-office templates"  
-```
+{% endhighlight %}{% endraw %}
 
 Zum Zeitpunkt der Erstellung dieses Dokuments waren noch weitere Parameter verfügbar. Folgend eine kurze Übersicht der Möglichkeit, für Details sei auf die [Online-Dokumentation der Software](/parameters) verwiesen:  
 

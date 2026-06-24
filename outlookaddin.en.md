@@ -376,7 +376,6 @@ sequenceDiagram
         } 
       </style>
 
-
 ```mermaid
 ---
 title: "Set-OutlookSignatures Outlook add-in: Taskpane workflow with configuration references"
