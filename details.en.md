@@ -102,60 +102,79 @@ The architecture of Set-OutlookSignatures is designed as a two-stage process: fi
 title: Set-OutlookSignatures Architecture Considerations
 ---
 flowchart TB
-  templatestore --> gen
-  datasource --> gen
-  config -.-> gen
-  clientmode --> mailbox
-  simulateanddeploy --> mailbox
-  simulate -.-> filesystem
-  mailbox --> roam
-  mailbox --> oof
-  mailbox -.-> addin
-  roam --> WinOutlook
-  roam --> WebOutlook
-  addin -.-> WinOutlook
-  addin -.-> WebOutlook
-  addin -.-> Mac
-  addin -.-> iOS
-  addin -.-> Android
-  subgraph inputs [" "]
-    direction LR
-    templatestore["Template store<br/>(local, share, SharePoint)"]
-    datasource["Data source<br/>(Entra ID, AD, others)"]
-    config["Custom configuration,<br/>custom code"]
-  end
-  subgraph gen ["<b>Stage 1: Create signatures and out-of-office replies</b>"]
-    direction LR
-    clientmode["Client mode<br>(on user devices)"]
-    simulateanddeploy["SimulateAndDeploy<br>(on central system)"]
-    simulate["Simulation mode<br>(on user device)"]
-  end
-  subgraph mid [" "]
-    direction LR
-    mailbox["Mailboxes<br>(on-prem, cloud)"]
-    filesystem["File system"]
-  end
-  subgraph avail ["<b>Stage 2: Make signatures available</b>"]
-    direction LR
-    roam["Native roaming<br>(cloud only)"]
-    addin["Outlook add-in<br>(on-prem, cloud)"]
-    subgraph outlookeditions [" "]
-      direction LR
-      WinOutlook["Outlook for Windows<br>(Classic and New)"]
-      WebOutlook["Outlook for the Web"]
-      Mac["Outlook for Mac<br>(Classic and New)"]
-      iOS["Outlook for iOS"]
-      Android["Outlook for Android"]
+    classDef invisible fill:none,stroke:none;
+
+    %% --- INPUTS STAGE ---
+    subgraph inputs [" "]
+        direction TB
+        templatestore["Template store<br/>(local, share, SharePoint)"]
+        datasource["Data source<br/>(Entra ID, AD, others)"]
+        config["Custom configuration,<br/>custom code"]
     end
-  end
-  subgraph oofbox[" "]
-    direction LR
-    oof["Native OOF handling<br>(on-prem, cloud)"]
-  end
-  classDef invisible fill:none,stroke:none;
-  class oofbox invisible;
-  class inputs invisible;
-  class mid invisible;
+
+    %% --- GENERATION STAGE ---
+    subgraph gen ["<b>Stage 1: Create signatures and out-of-office replies</b>"]
+        direction TB
+        clientmode["Client mode<br>(on user devices)"]
+        simulateanddeploy["SimulateAndDeploy<br>(on central system)"]
+        simulate["Simulation mode<br>(on user device)"]
+    end
+
+    %% --- MIDDLEWARE / STORAGE ---
+    subgraph mid [" "]
+        direction TB
+        mailbox["Mailboxes<br>(on-prem, cloud)"]
+        filesystem["File system"]
+    end
+
+    %% --- AVAILABILITY STAGE ---
+    subgraph avail ["<b>Stage 2: Make signatures available</b>"]
+        direction TB
+        roam["Native roaming<br>(cloud only)"]
+        addin["Outlook add-in<br>(on-prem, cloud)"]
+
+        subgraph outlookeditions [" "]
+            direction TB
+            WinOutlook["Outlook for Windows<br>(Classic and New)"]
+            WebOutlook["Outlook for the Web"]
+            Mac["Outlook for Mac<br>(Classic and New)"]
+            iOS["Outlook for iOS"]
+            Android["Outlook for Android"]
+        end
+    end
+
+    %% --- OUT OF OFFICE HANDLING ---
+    subgraph oofbox [" "]
+        direction TB
+        oof["Native OOF handling<br>(on-prem, cloud)"]
+    end
+
+    %% --- RELATIONSHIPS & FLOWS ---
+    templatestore --> gen
+    datasource --> gen
+    config -.-> gen
+
+    clientmode --> mailbox
+    simulateanddeploy --> mailbox
+    simulate -.-> filesystem
+
+    mailbox --> roam
+    mailbox --> oof
+    mailbox -.-> addin
+
+    roam --> WinOutlook
+    roam --> WebOutlook
+
+    addin -.-> WinOutlook
+    addin -.-> WebOutlook
+    addin -.-> Mac
+    addin -.-> iOS
+    addin -.-> Android
+
+    %% --- CLASS ASSIGNMENTS ---
+    class oofbox invisible;
+    class inputs invisible;
+    class mid invisible;
 ```
 
 </div>
