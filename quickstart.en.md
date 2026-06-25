@@ -72,7 +72,7 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
         <div>
           <p><b>Exchange Online / Hybrid</b></p>
 {% highlight batch %}{% raw %}
-powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<Entra ID app application (client) ID>"
+powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<Entra ID app client ID>"
 {% endraw %}{% endhighlight %}
           <p><small><em><code>-GraphOnly true</code> ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> parameter if using a national or sovereign cloud.</em></small></p>
           <p><small><em>If the script fails to run, right-click Set-OutlookSignatures.ps1 > Properties > check Unblock.</em></small></p>
