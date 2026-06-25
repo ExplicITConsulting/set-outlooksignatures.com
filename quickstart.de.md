@@ -131,7 +131,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
             <li><code>-SignatureTemplatePath "C:\Signatures\Templates"</code></li>
             <li><code>-SignatureIniFile "C:\Signatures\Templates\_Signatures.ini"</code></li>
           </ul>
-          <p><small><em>Bei Verwendung von HTML fügen Sie einfach <code>-UseHtmTemplates true</code> hinzu.</em></small></p>
+          <p><small><em>Bei Verwendung von HTML-Vorlagen fügen Sie einfach <code>-UseHtmTemplates true</code> hinzu.</em></small></p>
         </div>
       </div>
     </div>
@@ -139,10 +139,17 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-        <span>🚀</span>
+        <span>🎯</span>
         <div>
-          <p><b>Rollout skalieren</b></p>
-          <p>Sobald Ihre Vorlagen bereit sind, erkunden Sie die <a href="/features">vollständige Funktionsliste</a>, die <a href="/details">technischen Details</a> und die <a href="/parameters">Parameter-Dokumentation</a>, um die Bereitstellung zu automatisieren und an Ihre Organisation anzupassen.</p>
+          <p><b>Reichweite ausbauen</b></p>
+          <p>Sobald Ihre Vorlagen bereit sind, definieren Sie gezielt, wer welche Signatur erhält.</p>
+          <p>Steuern Sie dies zentral über Template-Zuweisung und INI-Konfiguration – z. B. durch gezielte Zuweisung zu Postfächern, Gruppen oder Attributen, mehrere Varianten aus einer Vorlage sowie unterschiedliche Standards für neue E-Mails und Antworten.</p>
+          <p>Details:</p>
+          <ul>
+            <li><a href="/details#ini-files-and-template-tags">INI-Dateien und Template-Tags</a></li>
+            <li><a href="/parameters">Parameter-Dokumentation</a></li>
+            <li><a href="/features">Funktionsübersicht</a></li>
+          </ul>
         </div>
       </div>
     </div>

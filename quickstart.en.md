@@ -132,7 +132,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
             <li><code>-SignatureTemplatePath "C:\Signatures\Templates"</code></li>
             <li><code>-SignatureIniFile "C:\Signatures\Templates\_Signatures.ini"</code></li>
           </ul>
-          <p><small><em>Using HTML? Just add <code>-UseHtmTemplates true</code>.</em></small></p>
+          <p><small><em>Using HTML templates? Just add <code>-UseHtmTemplates true</code>.</em></small></p>
         </div>
       </div>
     </div>
@@ -140,10 +140,17 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-        <span>🚀</span>
+        <span>🎯/span>
         <div>
-          <p><b>Scale Your Rollout</b></p>
-          <p>Once your templates are ready, explore the <a href="/features">Full Feature List</a>, the <a href="/details">Technical Details</a> and the <a href="/parameters">Parameter Docs</a> to automate the deployment and tailor it to your organization.</p>
+          <p><b>Expand Your Reach</b></p>
+          <p>Once your templates are ready, define who gets which signature.</p>
+          <p>Control this centrally using template assignment and INI configuration – for example by assigning templates to mailboxes, groups or attributes, generating multiple variants from one template, and defining defaults for new emails and replies.</p>
+          <p>Learn more:</p>
+          <ul>
+            <li><a href="/details#ini-files-and-template-tags">INI files and template tags</a></li>
+            <li><a href="/parameters">Parameters</a></li>
+            <li><a href="/features">Full Feature List</a></li>
+          </ul>
         </div>
       </div>
     </div>
