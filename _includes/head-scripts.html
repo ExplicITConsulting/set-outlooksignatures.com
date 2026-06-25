@@ -406,6 +406,53 @@
       .forEach((code) => {
         if (code.dataset.lineNumbersApplied === "true") return;
 
+        const block = code.closest("div.highlighter-rouge, figure.highlight");
+
+        // Keep original source before line wrapping changes the DOM
+        const rawSource = code.textContent.replace(/\r?\n$/, "");
+
+        if (block && !block.querySelector(".code-copy-button")) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "code-copy-button";
+          button.setAttribute("aria-label", "Copy code");
+          button.title = "Copy code";
+          button.textContent = "⧉";
+
+          button.addEventListener("click", async () => {
+            try {
+              await navigator.clipboard.writeText(rawSource);
+              button.classList.add("is-copied");
+              button.textContent = "✓";
+
+              window.setTimeout(() => {
+                button.classList.remove("is-copied");
+                button.textContent = "⧉";
+              }, 1200);
+            } catch {
+              const textarea = document.createElement("textarea");
+              textarea.value = rawSource;
+              textarea.setAttribute("readonly", "");
+              textarea.style.position = "fixed";
+              textarea.style.left = "-9999px";
+              document.body.appendChild(textarea);
+              textarea.select();
+              document.execCommand("copy");
+              document.body.removeChild(textarea);
+
+              button.classList.add("is-copied");
+              button.textContent = "✓";
+
+              window.setTimeout(() => {
+                button.classList.remove("is-copied");
+                button.textContent = "⧉";
+              }, 1200);
+            }
+          });
+
+          block.appendChild(button);
+        }
+
         const originalText = code.textContent;
         const hadTrailingNewline = /\r?\n$/.test(originalText);
 
@@ -477,7 +524,6 @@
           walk(child);
         });
 
-        // Remove the artificial empty line caused by the final newline
         if (
           hadTrailingNewline &&
           lines.length > 1 &&
@@ -486,14 +532,14 @@
           lines.pop();
         }
 
-        if (lines.length <= 0) {
+        code.style.setProperty(
+          "--line-number-digits",
+          String(String(lines.length).length)
+        );
+
+        if (lines.length <= 1) {
           code.classList.add("single-line-code");
           lines[0].classList.add("code-line-single");
-        } else {
-          code.style.setProperty(
-            "--line-number-digits",
-            String(String(lines.length).length)
-          );
         }
 
         lines.forEach((line) => {
