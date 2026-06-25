@@ -92,7 +92,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
       </div>
     </div>
   </div>
-  <div class="column is-full"
+  <div class="column is-full">
     <p><small><em>If the script fails to run, right-click Set-OutlookSignatures.ps1 > Properties > check Unblock.</em></small></p>
   </div>
 </div>
