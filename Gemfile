@@ -13,5 +13,4 @@ group :jekyll_plugins do
     gem 'jekyll-redirect-from'
     gem 'jekyll-archives'
     gem 'liquid-md5'
-    gem "jekyll-mermaid-prebuild"
 end
