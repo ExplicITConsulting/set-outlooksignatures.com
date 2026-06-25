@@ -398,6 +398,7 @@
 </script>
 
 <!-- Add line numbers to multi-line code blocks -->
+<!-- Add line numbers to multi-line Rouge code blocks -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     document
@@ -405,20 +406,85 @@
       .forEach((code) => {
         if (code.dataset.lineNumbersApplied === "true") return;
 
-        const html = code.innerHTML.replace(/\r?\n$/, "");
-        const lines = html.split(/\r?\n/);
+        const originalText = code.textContent;
+        const hadTrailingNewline = /\r?\n$/.test(originalText);
+
+        const lines = [createLine()];
+
+        function createLine() {
+          const span = document.createElement("span");
+          span.className = "code-line";
+          return span;
+        }
+
+        function currentLine() {
+          return lines[lines.length - 1];
+        }
+
+        function newLine() {
+          lines.push(createLine());
+        }
+
+        function appendTextWithWrappers(text, wrappers) {
+          if (text === "") return;
+
+          let parent = currentLine();
+
+          wrappers.forEach((wrapper) => {
+            const clone = wrapper.cloneNode(false);
+            parent.appendChild(clone);
+            parent = clone;
+          });
+
+          parent.appendChild(document.createTextNode(text));
+        }
+
+        function walk(node, wrappers = []) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const parts = node.nodeValue.split(/\r?\n/);
+
+            parts.forEach((part, index) => {
+              if (index > 0) newLine();
+              appendTextWithWrappers(part, wrappers);
+            });
+
+            return;
+          }
+
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const nextWrappers = wrappers.concat(node);
+
+            Array.from(node.childNodes).forEach((child) => {
+              walk(child, nextWrappers);
+            });
+          }
+        }
+
+        Array.from(code.childNodes).forEach((child) => {
+          walk(child);
+        });
+
+        // Remove the artificial empty line caused by the final newline
+        if (
+          hadTrailingNewline &&
+          lines.length > 1 &&
+          lines[lines.length - 1].textContent === ""
+        ) {
+          lines.pop();
+        }
 
         if (lines.length <= 1) {
           code.classList.add("single-line-code");
-          code.innerHTML = `<span class="code-line code-line-single">${html || "&nbsp;"}</span>`;
-          code.dataset.lineNumbersApplied = "true";
-          return;
+          lines[0].classList.add("code-line-single");
         }
 
-        code.innerHTML = lines
-          .map((line) => `<span class="code-line">${line || "&nbsp;"}</span>`)
-          .join("");
+        lines.forEach((line) => {
+          if (line.textContent === "") {
+            line.innerHTML = "&nbsp;";
+          }
+        });
 
+        code.replaceChildren(...lines);
         code.dataset.lineNumbersApplied = "true";
       });
   });
