@@ -396,3 +396,30 @@
   // Run if the user clicks a link to a different anchor while already on the page
   window.addEventListener('hashchange', openTargetedDetails);
 </script>
+
+<!-- Add line numbers to multi-line code blocks -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document
+      .querySelectorAll("div.highlighter-rouge code, figure.highlight code")
+      .forEach((code) => {
+        if (code.dataset.lineNumbersApplied === "true") return;
+
+        const html = code.innerHTML.replace(/\r?\n$/, "");
+        const lines = html.split(/\r?\n/);
+
+        if (lines.length <= 1) {
+          code.classList.add("single-line-code");
+          code.innerHTML = `<span class="code-line code-line-single">${html || "&nbsp;"}</span>`;
+          code.dataset.lineNumbersApplied = "true";
+          return;
+        }
+
+        code.innerHTML = lines
+          .map((line) => `<span class="code-line">${line || "&nbsp;"}</span>`)
+          .join("");
+
+        code.dataset.lineNumbersApplied = "true";
+      });
+  });
+</script>

@@ -698,7 +698,8 @@ figure.highlight {
     border: none !important;
     padding: 0 !important;
     margin: 0 !important;
-    text-indent: 0 !important; /* Ensure no indentation */
+    text-indent: 0 !important;
+    overflow: visible !important;
   }
 
   code {
@@ -707,12 +708,53 @@ figure.highlight {
     padding: 0 !important;
     border-radius: 0 !important;
     display: block;
-    margin: 0 !important; /* Remove any potential left margins */
+    margin: 0 !important;
     text-align: left !important;
-    white-space: pre-wrap; /* Respects spaces/newlines, but allows wrapping */
-    word-break: keep-all; /* Prevents breaking in the middle of a word */
-    overflow-wrap: normal; /* Standard wrapping behavior */
     font-family: inherit;
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+
+  counter-reset: code-line;
+
+  .code-line {
+    display: block;
+    counter-increment: code-line;
+
+    // Reserve space for line number
+    padding-left: 3rem;
+    text-indent: -3rem;
+
+    // Preserve code whitespace and allow wrapping
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .code-line::before {
+    content: counter(code-line);
+    display: inline-block;
+    width: 2rem;
+    margin-right: 1rem;
+    text-align: right;
+    color: #7c7c7c;
+    user-select: none;
+    text-indent: 0;
+  }
+
+  .single-line-code {
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .code-line-single {
+    padding-left: 0;
+    text-indent: 0;
+  }
+
+  .code-line-single::before {
+    content: none;
   }
 }
 
