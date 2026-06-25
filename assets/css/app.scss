@@ -718,14 +718,17 @@ figure.highlight {
   counter-reset: code-line;
 
   .code-line {
+    --line-number-digits: 1;
+    --line-number-gap: 0.5ch;
+    --line-number-width: calc(var(--line-number-digits) * 1ch);
+    --line-number-total-width: calc(var(--line-number-width) + var(--line-number-gap));
+
     display: block;
     counter-increment: code-line;
 
-    // Reserve space for line number
-    padding-left: 3rem;
-    text-indent: -3rem;
+    padding-left: var(--line-number-total-width);
+    text-indent: calc(-1 * var(--line-number-total-width));
 
-    // Preserve code whitespace and allow wrapping
     white-space: pre-wrap;
     overflow-wrap: anywhere;
     word-break: break-word;
@@ -734,12 +737,13 @@ figure.highlight {
   .code-line::before {
     content: counter(code-line);
     display: inline-block;
-    width: 2rem;
-    margin-right: 1rem;
+    width: var(--line-number-width);
+    margin-right: var(--line-number-gap);
     text-align: right;
     color: #7c7c7c;
     user-select: none;
     text-indent: 0;
+    font-variant-numeric: tabular-nums;
   }
 
   .single-line-code {

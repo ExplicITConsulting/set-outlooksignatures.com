@@ -473,9 +473,15 @@
           lines.pop();
         }
 
-        if (lines.length <= 1) {
+
+        if (lines.length <= 0) {
           code.classList.add("single-line-code");
           lines[0].classList.add("code-line-single");
+        } else {
+          code.style.setProperty(
+            "--line-number-digits",
+            String(String(lines.length).length)
+          );
         }
 
         lines.forEach((line) => {
@@ -486,6 +492,7 @@
 
         code.replaceChildren(...lines);
         code.dataset.lineNumbersApplied = "true";
+
       });
   });
 </script>
