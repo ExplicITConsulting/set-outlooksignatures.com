@@ -55,6 +55,9 @@ jobs:
             libpango-1.0-0 libcairo2 libnss3 libnspr4
       - name: Install Mermaid CLI
         run: npm install -g @mermaid-js/mermaid-cli
+      - name: Create Puppeteer Config for Mermaid
+        run: |
+          echo '{"args": ["--no-sandbox", "--disable-setuid-sandbox"]}' > puppeteer-config.json
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -65,6 +68,7 @@ jobs:
           JEKYLL_ENV: production
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "false"
           PUPPETEER_EXECUTABLE_PATH: "~/.cache/puppeteer"
+          MERMAID_CONFIG: "./puppeteer-config.json"
       - name: Inject Minified HTML into LLM files (pwsh)
         shell: pwsh
         run: |
