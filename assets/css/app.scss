@@ -676,7 +676,7 @@ figure.highlight {
     color: #7c7c7c;
   }
 
-  // The Traffic Light Dots
+  // The Dots
   &::before {
     content: "";
     position: absolute;
@@ -685,7 +685,7 @@ figure.highlight {
     left: 0.75rem;
     height: 10px;
     width: 44px;
-    background: radial-gradient(circle at 5px, red 5px, transparent 5px), radial-gradient(circle at 20px, orange 5px, transparent 5px), radial-gradient(circle at 35px, limegreen 5px, transparent 5px);
+    background: radial-gradient(circle at 5px, darkgreen 5px, transparent 5px), radial-gradient(circle at 20px, limegreen 5px, transparent 5px), radial-gradient(circle at 35px, chartreuse 5px, transparent 5px);
     background-repeat: no-repeat;
     z-index: 10;
   }
@@ -719,7 +719,7 @@ figure.highlight {
 
   .code-line {
     --line-number-digits: 1;
-    --line-number-gap: 0.5ch;
+    --line-number-gap: 1ch;
     --line-number-width: calc(var(--line-number-digits) * 1ch);
     --line-number-total-width: calc(var(--line-number-width) + var(--line-number-gap));
 
