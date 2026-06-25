@@ -163,7 +163,6 @@ flowchart TB
   roam --> WinOutlook & WebOutlook
   addin -.-> WinOutlook & WebOutlook & Mac & iOS & Android
 ```
-
 </div>
 
 <p><small><i>Click diagram to open it in a new tab.</i></small></p>
