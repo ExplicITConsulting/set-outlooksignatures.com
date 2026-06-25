@@ -87,7 +87,7 @@ The architecture of Set-OutlookSignatures is designed as a two-stage process: fi
 
 - Delivery Channels: Use native Outlook features for signature roaming, or selectively configure and deploy the Outlook add-in.
 
-<div class="details-architecture-diagram-container" style="max-height: 75vh;">
+<div class="details-architecture-diagram-container" style="max-height: 75vh;" markdown="1">
   <style> 
     /* Limits the scope entirely to this specific section */
     .details-architecture-diagram-container img { 
@@ -360,7 +360,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 - The **Outlook add-in** is contained within Outlook's restricted security model for the account accessing the mailbox.
 - In **all modes** as well as in the **Outlook add-in**, communication with **Exchange Online** is routed through dedicated Entra ID applications to restrict permissions even further.
 
-<div class="details-security-diagram-container" style="max-height: 75vh;">
+<div class="details-security-diagram-container" style="max-height: 75vh;" markdown="1">
   <style> 
     /* Limits the scope entirely to this specific section */
     .details-security-diagram-container img { 
