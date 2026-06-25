@@ -106,6 +106,7 @@ flowchart TB
 
   subgraph inputs [" "]
     direction TB
+
     templatestore["Template store<br/>(local, share, SharePoint)"]
     datasource["Data source<br/>(Entra ID, AD, others)"]
     config["Custom configuration,<br/>custom code"]
@@ -113,6 +114,7 @@ flowchart TB
 
   subgraph gen ["<b>Stage 1: Create signatures and out-of-office replies</b>"]
     direction TB
+
     clientmode["Client mode<br>(on user devices)"]
     simulateanddeploy["SimulateAndDeploy<br>(on central system)"]
     simulate["Simulation mode<br>(on user device)"]
@@ -120,6 +122,7 @@ flowchart TB
 
   subgraph mid [" "]
     direction TB
+
     mailbox["Mailboxes<br>(on-prem, cloud)"]
     filesystem["File system"]
   end
@@ -132,6 +135,7 @@ flowchart TB
 
     subgraph outlookeditions [" "]
       direction TB
+
       WinOutlook["Outlook for Windows<br>(Classic and New)"]
       WebOutlook["Outlook for the Web"]
       Mac["Outlook for Mac<br>(Classic and New)"]
@@ -155,7 +159,7 @@ flowchart TB
   clientmode --> mailbox
   simulateanddeploy --> mailbox
   simulate -.-> filesystem
-  
+
   mailbox --> roam
   mailbox --> oof
   mailbox -.-> addin
@@ -163,6 +167,7 @@ flowchart TB
   roam --> WinOutlook & WebOutlook
   addin -.-> WinOutlook & WebOutlook & Mac & iOS & Android
 ```
+
 </div>
 
 <p><small><i>Click diagram to open it in a new tab.</i></small></p>
