@@ -148,24 +148,30 @@ flowchart TB
     oof["Native OOF handling<br>(on-prem, cloud)"]
   end
 
-  class oofbox invisible;
-  class inputs invisible;
-  class mid invisible;
-
   templatestore --> gen
   datasource --> gen
   config -.-> gen
 
   clientmode --> mailbox
   simulateanddeploy --> mailbox
-  simulate -.-> filesystem
+  simulate .-> filesystem
 
   mailbox --> roam
   mailbox --> oof
-  mailbox -.-> addin
+  mailbox .-> addin
 
-  roam --> WinOutlook & WebOutlook
-  addin -.-> WinOutlook & WebOutlook & Mac & iOS & Android
+  roam --> WinOutlook
+  roam --> WebOutlook
+
+  addin .-> WinOutlook
+  addin .-> WebOutlook
+  addin .-> Mac
+  addin .-> iOS
+  addin .-> Android
+
+  class oofbox invisible;
+  class inputs invisible;
+  class mid invisible;
 ```
 
 </div>
