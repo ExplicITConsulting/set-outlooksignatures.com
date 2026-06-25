@@ -428,15 +428,28 @@
         function appendTextWithWrappers(text, wrappers) {
           if (text === "") return;
 
-          let parent = currentLine();
+          const parts = text.split(/(\s+)/).filter((part) => part.length > 0);
 
-          wrappers.forEach((wrapper) => {
-            const clone = wrapper.cloneNode(false);
-            parent.appendChild(clone);
-            parent = clone;
+          parts.forEach((part) => {
+            let parent = currentLine();
+
+            wrappers.forEach((wrapper) => {
+              const clone = wrapper.cloneNode(false);
+              parent.appendChild(clone);
+              parent = clone;
+            });
+
+            const span = document.createElement("span");
+
+            if (/^\s+$/.test(part)) {
+              span.className = "code-space";
+            } else {
+              span.className = "code-chunk";
+            }
+
+            span.textContent = part;
+            parent.appendChild(span);
           });
-
-          parent.appendChild(document.createTextNode(text));
         }
 
         function walk(node, wrappers = []) {
@@ -473,7 +486,6 @@
           lines.pop();
         }
 
-
         if (lines.length <= 0) {
           code.classList.add("single-line-code");
           lines[0].classList.add("code-line-single");
@@ -492,7 +504,6 @@
 
         code.replaceChildren(...lines);
         code.dataset.lineNumbersApplied = "true";
-
       });
   });
 </script>

@@ -681,7 +681,6 @@ figure.highlight {
     content: "";
     position: absolute;
     top: 14px;
-    /* Aligned dots to 0.75rem so the red dot is directly above the first char */
     left: 0.75rem;
     height: 10px;
     width: 44px;
@@ -703,6 +702,12 @@ figure.highlight {
   }
 
   code {
+    // fallback; JS overwrites this with 1, 2, 3, ...
+    --line-number-digits: 1;
+    --line-number-gap: 2ch;
+    --line-number-width: calc(var(--line-number-digits) * 1ch);
+    --line-number-total-width: calc(var(--line-number-width) + var(--line-number-gap));
+
     color: white !important;
     background: transparent !important;
     padding: 0 !important;
@@ -718,20 +723,16 @@ figure.highlight {
   counter-reset: code-line;
 
   .code-line {
-    --line-number-digits: 1;
-    --line-number-gap: 1ch;
-    --line-number-width: calc(var(--line-number-digits) * 1ch);
-    --line-number-total-width: calc(var(--line-number-width) + var(--line-number-gap));
-
     display: block;
     counter-increment: code-line;
 
     padding-left: var(--line-number-total-width);
-    text-indent: calc(-1 * var(--line-number-total-width));
+    text-indent: calc(0px - var(--line-number-total-width));
 
     white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    word-break: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
   }
 
   .code-line::before {
@@ -746,10 +747,29 @@ figure.highlight {
     font-variant-numeric: tabular-nums;
   }
 
+  // Do not break inside Rouge spans / chunks
+  .code-line *,
+  .code-chunk,
+  .code-space {
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+  }
+
+  .code-chunk {
+    white-space: nowrap;
+  }
+
+  .code-space {
+    white-space: pre-wrap;
+  }
+
+  // Single-line fenced blocks: no line number
   .single-line-code {
     white-space: pre-wrap !important;
-    overflow-wrap: anywhere;
-    word-break: break-word;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
   }
 
   .code-line-single {
