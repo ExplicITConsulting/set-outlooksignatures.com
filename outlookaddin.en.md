@@ -142,7 +142,7 @@ sitemap_changefreq: weekly
   <div class="column">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
       <p><b>Standard Mailboxes</b></p>
-      <p>The add-in accesses signature information that the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> has written to the user's mailbox in <a href="/details#step-1-create-signatures-and-out-of-office-replies">client or SimulateAndDeploy mode</a>.</p>
+      <p>The add-in accesses signature information that the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> has written to the user's mailbox in <a href="/details#stage-1-create-signatures-and-out-of-office-replies">client or SimulateAndDeploy mode</a>.</p>
       <p>Shared mailboxes added with the credential of the logged-on user are directly supported.</p>
     </div>
   </div>
