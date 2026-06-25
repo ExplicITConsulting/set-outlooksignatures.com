@@ -102,40 +102,45 @@ The architecture of Set-OutlookSignatures is designed as a two-stage process: fi
 title: Set-OutlookSignatures Architecture Considerations
 ---
 flowchart TB
-  classDef invisible fill:none,stroke:none;
-
+  templatestore --> gen
+  datasource --> gen
+  config -.-> gen
+  clientmode --> mailbox
+  simulateanddeploy --> mailbox
+  simulate -.-> filesystem
+  mailbox --> roam
+  mailbox --> oof
+  mailbox -.-> addin
+  roam --> WinOutlook
+  roam --> WebOutlook
+  addin -.-> WinOutlook
+  addin -.-> WebOutlook
+  addin -.-> Mac
+  addin -.-> iOS
+  addin -.-> Android
   subgraph inputs [" "]
-    direction TB
-
+    direction LR
     templatestore["Template store<br/>(local, share, SharePoint)"]
     datasource["Data source<br/>(Entra ID, AD, others)"]
     config["Custom configuration,<br/>custom code"]
   end
-
   subgraph gen ["<b>Stage 1: Create signatures and out-of-office replies</b>"]
-    direction TB
-
+    direction LR
     clientmode["Client mode<br>(on user devices)"]
     simulateanddeploy["SimulateAndDeploy<br>(on central system)"]
     simulate["Simulation mode<br>(on user device)"]
   end
-
   subgraph mid [" "]
-    direction TB
-
+    direction LR
     mailbox["Mailboxes<br>(on-prem, cloud)"]
     filesystem["File system"]
   end
-
   subgraph avail ["<b>Stage 2: Make signatures available</b>"]
-    direction TB
-
+    direction LR
     roam["Native roaming<br>(cloud only)"]
     addin["Outlook add-in<br>(on-prem, cloud)"]
-
     subgraph outlookeditions [" "]
-      direction TB
-
+      direction LR
       WinOutlook["Outlook for Windows<br>(Classic and New)"]
       WebOutlook["Outlook for the Web"]
       Mac["Outlook for Mac<br>(Classic and New)"]
@@ -143,35 +148,14 @@ flowchart TB
       Android["Outlook for Android"]
     end
   end
-
   subgraph oofbox[" "]
+    direction LR
     oof["Native OOF handling<br>(on-prem, cloud)"]
   end
-
-  templatestore --> gen
-  datasource --> gen
-  config -.-> gen
-
-  clientmode --> mailbox
-  simulateanddeploy --> mailbox
-  simulate -.-> filesystem
-
-  mailbox --> roam
-  mailbox --> oof
-  mailbox -.-> addin
-
-  roam --> WinOutlook
-  roam --> WebOutlook
-
-  addin -.-> WinOutlook
-  addin -.-> WebOutlook
-  addin -.-> Mac
-  addin -.-> iOS
-  addin -.-> Android
-
-  %% class oofbox invisible;
-  %% class inputs invisible;
-  %% class mid invisible;
+  classDef invisible fill:none,stroke:none;
+  class oofbox invisible;
+  class inputs invisible;
+  class mid invisible;
 ```
 
 </div>
