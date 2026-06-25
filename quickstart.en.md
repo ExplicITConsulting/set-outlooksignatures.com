@@ -140,7 +140,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid LimeGreen;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-        <span>🎯/span>
+        <span>🎯</span>
         <div>
           <p><b>Expand Your Reach</b></p>
           <p>Once your templates are ready, define who gets which signature.</p>
