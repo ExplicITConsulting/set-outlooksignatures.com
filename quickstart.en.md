@@ -75,7 +75,6 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
 powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true -GraphClientId "<Entra ID app client ID>"
 {% endraw %}{% endhighlight %}
           <p><small><em><code>-GraphOnly true</code> ensures on-prem AD is ignored. Add the <a href="/parameters#cloudenvironment"><code>-CloudEnvironment</code></a> parameter if using a national or sovereign cloud.</em></small></p>
-          <p><small><em>If the script fails to run, right-click Set-OutlookSignatures.ps1 > Properties > check Unblock.</em></small></p>
         </div>
       </div>
     </div>
@@ -89,10 +88,12 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1" -GraphOnly true
 {% highlight batch %}{% raw %}
 powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
 {% endraw %}{% endhighlight %}
-          <p><small><em>If the script fails to run, right-click Set-OutlookSignatures.ps1 > Properties > check Unblock.</em></small></p>
         </div>
       </div>
     </div>
+  </div>
+  <div class="column is-full"
+    <p><small><em>If the script fails to run, right-click Set-OutlookSignatures.ps1 > Properties > check Unblock.</em></small></p>
   </div>
 </div>
 <p><b>You now find three new signatures in Outlook, based on the integrated sample templates and the attributes of your own user:</b></p>
