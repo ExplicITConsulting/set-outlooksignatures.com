@@ -55,21 +55,24 @@ jobs:
           set -euo pipefail
 
           DIR="assets/images/mermaid-svg"
+          shopt -s nullglob
 
+          # 1. Create the Puppeteer config file on the host
+          echo '{ "args": ["--no-sandbox", "--disable-setuid-sandbox"] }' > puppeteer-config.json
+
+          # 2. Run a single Docker container to process all files at once
           docker run --rm \
-            --entrypoint bash \
+            -u "$(id -u):$(id -g)" \
             -v "${{ github.workspace }}:/data" \
-            -w /data \
+            --entrypoint /bin/bash \
             ghcr.io/mermaid-js/mermaid-cli/mermaid-cli \
             -c '
               set -euo pipefail
-
               DIR="assets/images/mermaid-svg"
               shopt -s nullglob
 
               for file in "$DIR"/*.mmd; do
                 base="${file%.mmd}"
-
                 light="${base}-light.svg"
                 dark="${base}-dark.svg"
 
@@ -78,18 +81,21 @@ jobs:
                   echo "Skipping existing $light"
                 else
                   echo "Rendering $file -> $light"
-                  mmdc -i "$file" -o "$light" -t default
-                fi
+                  mmdc -p /data/puppeteer-config.json -i "/data/$file" -o "/data/$light" -t default
+                </tr>
 
                 # --- DARK ---
                 if [[ -f "$dark" ]]; then
                   echo "Skipping existing $dark"
                 else
                   echo "Rendering $file -> $dark"
-                  mmdc -i "$file" -o "$dark" -t dark
+                  mmdc -p /data/puppeteer-config.json -i "/data/$file" -o "/data/$dark" -t dark
                 fi
               done
             '
+
+          # 3. Clean up the config file
+          rm puppeteer-config.json
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
