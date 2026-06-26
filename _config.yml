@@ -158,9 +158,3 @@ jekyll-archives:
     day: "/blog/:year/:month/:day/"
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
-
-mermaid_prebuild:
-  enabled: true
-  output_dir: assets/images/mermaid-svg
-  prefers-color-scheme:
-    mode: auto
