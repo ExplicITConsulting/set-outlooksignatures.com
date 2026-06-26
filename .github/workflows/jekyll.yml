@@ -57,10 +57,11 @@ jobs:
           DIR="assets/images/mermaid-svg"
 
           docker run --rm \
+            --entrypoint bash \
             -v "${{ github.workspace }}:/data" \
             -w /data \
             ghcr.io/mermaid-js/mermaid-cli/mermaid-cli \
-            bash -c '
+            -c '
               set -euo pipefail
 
               DIR="assets/images/mermaid-svg"
