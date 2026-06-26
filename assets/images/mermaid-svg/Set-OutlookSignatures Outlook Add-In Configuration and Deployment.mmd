@@ -23,12 +23,6 @@ flowchart LR
     server["Web server"]
   end
 
-  subgraph Lifecycle ["<b>Outlook client</b>"]
-    direction LR
-
-    cache["Download add-in from web server if the local cache version differs from the one in the manifest.xml snapshot (deployed in step 3)"]
-  end
-
   subgraph S3 ["<b>Step 3: Rollout (Deploy)</b>"]
     direction LR
 
@@ -38,6 +32,12 @@ flowchart LR
     mbox["<b>Create<br/>manifest.xml snapshot</b><br/>in mailbox(es)"]:::snapshot
 
     side & int & cent --> mbox
+  end
+
+  subgraph Lifecycle ["<b>Outlook clients</b>"]
+    direction LR
+
+    cache["Download add-in from web server if the local cache version differs from the one in the manifest.xml snapshot (deployed in step 3)"]
   end
 
   S1 --> S2
