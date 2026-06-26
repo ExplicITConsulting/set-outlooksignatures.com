@@ -55,18 +55,25 @@ jobs:
           set -euo pipefail
 
           DIR="assets/images/mermaid-svg"
-          export BUILDKIT_PROGRESS=plain
 
-          # 1. If the directory does not exist, exit gracefully immediately
+          # 1. Graceful exit if directory is missing
           if [ ! -d "$DIR" ]; then
             echo "Directory $DIR does not exist. Skipping rendering."
             exit 0
           fi
 
-          # 2. Create the Puppeteer config file on the host
-          echo '{"args":["--no-sandbox","--disable-setuid-sandbox"]}' > puppeteer-config.json
+          # 2. Install mermaid-cli using the runner's default Node environment
+          echo "Installing @mermaid-js/mermaid-cli..."
+          npm install @mermaid-js/mermaid-cli
 
-          # 3. Grab matching files using native bash expansion
+          # 3. Explicitly pull the specific browser binary tied to this installation
+          echo "Installing matching chrome-headless-shell browser..."
+          npx puppeteer browsers install chrome-headless-shell
+
+          # 4. Create the Puppeteer config file to bypass AppArmor/sandbox restrictions
+          echo '{"args":["--no-sandbox","--disable-setuid-sandbox","--disable-gpu"]}' > puppeteer-config.json
+
+          # 5. Locate files
           shopt -s nullglob
           files=("$DIR"/*.mmd)
           total_files=${#files[@]}
@@ -79,7 +86,7 @@ jobs:
 
           echo "Found $total_files files to process."
 
-          # 4. Main processing loop
+          # 6. Main processing loop
           current=0
           for file in "${files[@]}"; do
             current=$((current + 1))
@@ -95,13 +102,10 @@ jobs:
             if [ -f "$light" ]; then
               echo "  -> Skipping existing $light"
             else
-              docker run --rm \
-                -e PUPPETEER_CACHE_DIR=/tmp \
-                -v "${{ github.workspace }}:/data" \
-                ghcr.io/mermaid-js/mermaid-cli/mermaid-cli \
-                -p /data/puppeteer-config.json \
-                -i "/data/$file" \
-                -o "/data/$light" \
+              ./node_modules/.bin/mmdc \
+                -p puppeteer-config.json \
+                -i "$file" \
+                -o "$light" \
                 -t default
             fi
 
@@ -109,19 +113,15 @@ jobs:
             if [ -f "$dark" ]; then
               echo "  -> Skipping existing $dark"
             else
-              docker run --rm \
-                -e PUPPETEER_CACHE_DIR=/tmp \
-                -v "${{ github.workspace }}:/data" \
-                ghcr.io/mermaid-js/mermaid-cli/mermaid-cli \
-                -p /data/puppeteer-config.json \
-                -i "/data/$file" \
-                -o "/data/$dark" \
+              ./node_modules/.bin/mmdc \
+                -p puppeteer-config.json \
+                -i "$file" \
+                -o "$dark" \
                 -t dark
             fi
           done
 
-          # 5. Revert file permissions so Jekyll can compile them cleanly
-          sudo chown -R $(id -u):$(id -g) "$DIR"
+          # 7. Cleanup configuration
           rm -f puppeteer-config.json
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
