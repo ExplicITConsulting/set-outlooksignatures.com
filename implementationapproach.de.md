@@ -433,10 +433,10 @@ Eine geeignete Lösung muss:
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Signaturen an alle E-Mails anfügen</td>
-                    <td>🟡 Nur für Outlook-Clients</td>
-                    <td>🟢 Bei Umleitung aller E-Mails auf ein Drittsystem</td>
-                    <td>🟢 Bei Umleitung aller E-Mails auf ein Drittsystem</td>
-                    <td>🟢 Bei Umleitung aller E-Mails auf ein Drittsystem</td>
+                    <td>🟡 Outlook-Clients direkt, andere passiv</td>
+                    <td>🟢 Nur mittels E-Mail-Routing über ein Drittanbieter-Rechenzentrum</td>
+                    <td>🟢 Nur mittels E-Mail-Routing über ein Drittanbieter-Rechenzentrum</td>
+                    <td>🟢 Nur mittels E-Mail-Routing über ein Drittanbieter-Rechenzentrum</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Signaturen auf Basis der Empfänger</td>
