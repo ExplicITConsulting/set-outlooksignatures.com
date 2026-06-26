@@ -46,25 +46,53 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Setup Node
         uses: actions/setup-node@v4
-      - name: Install system dependencies for Mermaid
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgbm1 libasound2t64 libatk1.0-0 \
-            libatk-bridge2.0-0 libcups2 libdrm2 libxcomposite1 \
-            libxdamage1 libxfixes3 libxrandr2 libxkbcommon0 \
-            libpango-1.0-0 libcairo2 libnss3 libnspr4
-      - name: Install Mermaid CLI
-        run: npm install -g @mermaid-js/mermaid-cli
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Generate Mermaid SVG files (batch)
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          DIR="assets/images/mermaid-svg"
+
+          docker run --rm \
+            -v "${{ github.workspace }}:/data" \
+            -w /data \
+            ghcr.io/mermaid-js/mermaid-cli/mermaid-cli \
+            bash -c '
+              set -euo pipefail
+
+              DIR="assets/images/mermaid-svg"
+              shopt -s nullglob
+
+              for file in "$DIR"/*.mmd; do
+                base="${file%.mmd}"
+
+                light="${base}-light.svg"
+                dark="${base}-dark.svg"
+
+                # --- LIGHT ---
+                if [[ -f "$light" ]]; then
+                  echo "Skipping existing $light"
+                else
+                  echo "Rendering $file -> $light"
+                  mmdc -i "$file" -o "$light" -t default
+                fi
+
+                # --- DARK ---
+                if [[ -f "$dark" ]]; then
+                  echo "Skipping existing $dark"
+                else
+                  echo "Rendering $file -> $dark"
+                  mmdc -i "$file" -o "$dark" -t dark
+                fi
+              done
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
-          PUPPETEER_EXECUTABLE_PATH: "/usr/bin/google-chrome"
       - name: Inject Minified HTML into LLM files (pwsh)
         shell: pwsh
         run: |

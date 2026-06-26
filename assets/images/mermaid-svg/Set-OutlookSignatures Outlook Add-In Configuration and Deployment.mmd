@@ -1,0 +1,46 @@
+---
+title: Set-OutlookSignatures Outlook Add-In Configuration and Deployment
+---
+flowchart LR
+  classDef nofill fill:none;
+
+  subgraph S1 ["<b>Step 1: Configuration (Prepare)</b>"]
+    direction LR
+
+    script["run_before_deployment.ps1"]
+    files["Customize configuration"]
+    manifest["Create manifest.xml"]
+
+    script --> files
+    script --> manifest
+  end
+
+  subgraph S2 ["<b>Step 2: Upload to web server</b>"]
+    direction LR
+
+    server["Web server"]
+  end
+
+  subgraph Lifecycle ["<b>Outlook client</b>"]
+    direction LR
+
+    cache["Download add-in from web server if the local cache version differs from the one in the deployed manifest.xml snapshot"]
+  end
+
+  subgraph S3 ["<b>Step 3: Deployment to mailboxes</b>"]
+    direction LR
+
+    side["Sideloading"]
+    int["M365 Integrated Apps"]
+    cent["M365 Centralized Deployment"]
+    mbox["<b>Create<br/>manifest.xml snapshot</b><br/>in mailbox(es)"]:::snapshot
+
+    side & int & cent --> mbox
+  end
+
+  S1 --> S2
+  S2 --> S3
+  S3 --> Lifecycle
+
+  class Lifecycle nofill;
+  class methods nofill;

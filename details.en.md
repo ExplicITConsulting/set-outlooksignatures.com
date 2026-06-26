@@ -87,99 +87,12 @@ The architecture of Set-OutlookSignatures is designed as a two-stage process: fi
 
 - Delivery Channels: Use native Outlook features for signature roaming, or selectively configure and deploy the Outlook add-in.
 
-<div class="details-architecture-diagram-container" style="max-height: 75vh;" markdown="1">
-  <style> 
-    /* Limits the scope entirely to this specific section */
-    .details-architecture-diagram-container img { 
-      max-height: 75vh; 
-      width: auto;
-      max-width: 100%;
-    } 
-  </style>
+<picture>
+  <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures Architecture Considerations-dark.svg" media="(prefers-color-scheme: dark)">
+  <img src="/assets/images/mermaid-svg/Set-OutlookSignatures Architecture Considerations-light.svg" alt="Set-OutlookSignatures Architecture Considerations diagram" style="max-height: 75vh; width: auto;">
+</picture>
 
-```mermaid
----
-title: Set-OutlookSignatures Architecture Considerations
----
-flowchart TB
-    classDef invisible fill:none,stroke:none;
-
-    %% --- INPUTS STAGE ---
-    subgraph inputs [" "]
-        direction TB
-        templatestore["Template store<br/>(local, share, SharePoint)"]
-        datasource["Data source<br/>(Entra ID, AD, others)"]
-        config["Custom configuration,<br/>custom code"]
-    end
-
-    %% --- GENERATION STAGE ---
-    subgraph gen ["<b>Stage 1: Create signatures and out-of-office replies</b>"]
-        direction TB
-        clientmode["Client mode<br>(on user devices)"]
-        simulateanddeploy["SimulateAndDeploy<br>(on central system)"]
-        simulate["Simulation mode<br>(on user device)"]
-    end
-
-    %% --- MIDDLEWARE / STORAGE ---
-    subgraph mid [" "]
-        direction TB
-        mailbox["Mailboxes<br>(on-prem, cloud)"]
-        filesystem["File system"]
-    end
-
-    %% --- AVAILABILITY STAGE ---
-    subgraph avail ["<b>Stage 2: Make signatures available</b>"]
-        direction TB
-        roam["Native roaming<br>(cloud only)"]
-        addin["Outlook add-in<br>(on-prem, cloud)"]
-
-        subgraph outlookeditions [" "]
-            direction TB
-            WinOutlook["Outlook for Windows<br>(Classic and New)"]
-            WebOutlook["Outlook for the Web"]
-            Mac["Outlook for Mac<br>(Classic and New)"]
-            iOS["Outlook for iOS"]
-            Android["Outlook for Android"]
-        end
-    end
-
-    %% --- OUT OF OFFICE HANDLING ---
-    subgraph oofbox [" "]
-        direction TB
-        oof["Native OOF handling<br>(on-prem, cloud)"]
-    end
-
-    %% --- RELATIONSHIPS & FLOWS ---
-    templatestore --> gen
-    datasource --> gen
-    config -.-> gen
-
-    clientmode --> mailbox
-    simulateanddeploy --> mailbox
-    simulate -.-> filesystem
-
-    mailbox --> roam
-    mailbox --> oof
-    mailbox -.-> addin
-
-    roam --> WinOutlook
-    roam --> WebOutlook
-
-    addin -.-> WinOutlook
-    addin -.-> WebOutlook
-    addin -.-> Mac
-    addin -.-> iOS
-    addin -.-> Android
-
-    %% --- CLASS ASSIGNMENTS ---
-    class oofbox invisible;
-    class inputs invisible;
-    class mid invisible;
-```
-
-</div>
-
-<p><small><i>Click diagram to open it in a new tab.</i></small></p>
+<p><small><i>Right‑click or long‑press the diagram to open it in a new tab.</i></small></p>
 
 ### Stage 1: Create signatures and out-of-office replies
 
@@ -360,78 +273,12 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 - The **Outlook add-in** is contained within Outlook's restricted security model for the account accessing the mailbox.
 - In **all modes** as well as in the **Outlook add-in**, communication with **Exchange Online** is routed through dedicated Entra ID applications to restrict permissions even further.
 
-<div class="details-security-diagram-container" style="max-height: 75vh;" markdown="1">
-  <style> 
-    /* Limits the scope entirely to this specific section */
-    .details-security-diagram-container img { 
-      max-height: 75vh; 
-      width: auto;
-      max-width: 100%;
-    } 
-  </style>
+<picture>
+  <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures Security Considerations-dark.svg" media="(prefers-color-scheme: dark)">
+  <img src="/assets/images/mermaid-svg/Set-OutlookSignatures Security Considerations-light.svg" alt="Set-OutlookSignatures Security Considerations diagram" style="max-height: 75vh; width: auto;">
+</picture>
 
-```mermaid
----
-title: Set-OutlookSignatures Security Considerations
----
-flowchart TB
-  subgraph Contexts ["<b>Security Contexts</b>"]
-    UserCtx["Client mode:<br>Logged-on user"]
-    SimulateCtx["Simulation mode:<br>Logged-on user"]
-    SvcCtx["SimulateAndDeploy mode:<br>Service account"]
-    AddInCtx["Outlook add-in:<br>Outlook sandbox, manifest"]
-  end
-
-  subgraph EntraApps ["<b>Entra ID Applications</b>"]
-    ClientApp["Client mode app:<br>Delegated permissions"]
-    DeployApp["SimulateAndDeploy app:<br>Application permissions"]
-    AddInApp["Outlook Add-in app:<br>Delegated permissions"]
-  end
-
-  subgraph Targets ["<b>Target Environments</b>"]
-    subgraph onprem ["<b>On-prem</b>"]
-      ActiveDirectory["Active Directory:<br>Read user and mailbox attributes"]
-      File["File system:<br>Read templates and configuration, write simulation output"]
-      SharePointOnprem["SharePoint on-prem:<br>Read templates, configuration"]
-      ExchangeOnprem["Exchange on-prem:<br>Read/write signatures and OOF replies"]
-    end
-
-    subgraph cloud ["<b>Cloud via Graph API</b>"]
-      EntraID["Entra ID:<br>Read user and mailbox attributes"]
-      SharePointOnline["SharePoint Online:<br>Read templates, configuration"]
-      ExchangeOnline["Exchange Online:<br>Read/write signatures and OOF replies"]
-    end
-  end
-
-  UserCtx --> onprem
-  UserCtx --> ClientApp
-  ClientApp --> cloud
-
-  SimulateCtx --> |"read only<br>(except file system)"| onprem
-  SimulateCtx --> |"read only"| ClientApp --> |"read only"| cloud
-
-  SvcCtx --> onprem
-  SvcCtx --> DeployApp
-  DeployApp --> cloud
-
-  AddInCtx --> |"read only"| AddInApp
-  AddInCtx --> |"read only"| onprem
-  AddInApp --> |"read only"| cloud
-  
-  style UserCtx stroke:blue,stroke-width:2.5px
-  style SimulateCtx stroke:darkgrey,stroke-width:2.5px
-  style SvcCtx stroke:violet,stroke-width:2.5px
-  style AddInCtx stroke:green,stroke-width:2.5px
-
-  linkStyle 0,1,2 stroke:blue, stroke-width:2.5px
-  linkStyle 3,4,5 stroke:darkgrey, stroke-width:2.5px
-  linkStyle 6,7,8 stroke:violet, stroke-width:2.5px
-  linkStyle 9,10,11 stroke:green, stroke-width:2.5px
-```
-
-</div>
-
-<p><small><i>Click diagram to open it in a new tab.</i></small></p>
+<p><small><i>Right‑click or long‑press the diagram to open it in a new tab.</i></small></p>
 
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">

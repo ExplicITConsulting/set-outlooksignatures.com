@@ -206,68 +206,12 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
 </ul>
 <p>The following diagram visualizes both concepts:</p>
 
-<div class="outlookaddin-deployment-diagram-container" style="max-height: 50vh;" markdown="1">
-  <style> 
-    /* Limits the scope entirely to this specific section */
-    .outlookaddin-deployment-diagram-container img { 
-      max-height: 50vh; 
-      width: auto;
-      max-width: 100%;
-    } 
-  </style>
+<picture>
+  <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures Outlook Add-In Configuration and Deployment-dark.svg" media="(prefers-color-scheme: dark)">
+  <img src="/assets/images/mermaid-svg/Set-OutlookSignatures Outlook Add-In Configuration and Deployment-light.svg" alt="Set-OutlookSignatures Outlook Add-In Configuration and Deployment diagram" style="max-height: 50vh; width: auto;">
+</picture>
 
-```mermaid
----
-title: Set-OutlookSignatures Outlook Add-In Configuration and Deployment
----
-flowchart LR
-  classDef nofill fill:none;
-
-  subgraph S1 ["<b>Step 1: Configuration (Prepare)</b>"]
-    direction LR
-
-    script["run_before_deployment.ps1"]
-    files["Customize configuration"]
-    manifest["Create manifest.xml"]
-
-    script --> files
-    script --> manifest
-  end
-
-  subgraph S2 ["<b>Step 2: Upload to web server</b>"]
-    direction LR
-
-    server["Web server"]
-  end
-
-  subgraph Lifecycle ["<b>Outlook client</b>"]
-    direction LR
-
-    cache["Download add-in from web server if the local cache version differs from the one in the deployed manifest.xml snapshot"]
-  end
-
-  subgraph S3 ["<b>Step 3: Deployment to mailboxes</b>"]
-    direction LR
-
-    side["Sideloading"]
-    int["M365 Integrated Apps"]
-    cent["M365 Centralized Deployment"]
-    mbox["<b>Create<br/>manifest.xml snapshot</b><br/>in mailbox(es)"]:::snapshot
-
-    side & int & cent --> mbox
-  end
-
-  S1 --> S2
-  S2 --> S3
-  S3 --> Lifecycle
-
-  class Lifecycle nofill;
-  class methods nofill;
-```
-
-</div>
-
-<p><small><i>Click diagram to open it in a new tab.</i></small></p>
+<p><small><i>Right‑click or long‑press the diagram to open it in a new tab.</i></small></p>
 
 <h3 id="configuration">Step 1: Configuration (Prepare)</h3>
 <p>The add-in is built using the <code>run_before_deployment.ps1</code> script. This script injects your technical details into the source code and generates a <code>publish</code> folder containing your customized add-in code, include the <code>manifest.xml</code> file used for deployment.</p>
@@ -322,94 +266,20 @@ flowchart LR
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <p><b>Launch event workflow with configuration references</b></p>
-    <div class="outlookaddin-launchevent-workflow-diagram-container" style="max-height: 50vh;" markdown="1">
-      <style> 
-        /* Limits the scope entirely to this specific section */
-        .outlookaddin-launchevent-workflow-diagram-container img { 
-          max-height: 50vh; 
-          width: auto;
-          max-width: 100%;
-        } 
-      </style>
-
-```mermaid
----
-title: "Set-OutlookSignatures Outlook add-in: Launch event workflow with configuration references"
----
-sequenceDiagram
-    participant User
-    participant Outlook
-    participant AddIn as Outlook add-in
-    participant Exchange as Exchange<br>(on-prem, cloud)
-    participant Item as Mail or appointment<br>in compose mode
-
-    User->>Outlook: Compose email or appointment
-    Outlook->>AddIn: Trigger configured launch event<br>(LAUNCHEVENTS_HOSTS_AND_PLATFORMS)
-
-    par Signature processing
-        AddIn->>Outlook: Apply client signature policy if enabled<br>(DISABLE_CLIENT_SIGNATURES)
-        AddIn->>AddIn: Check item type, host, platform, and launch event<br>(SIGNATURE_HOSTS_AND_PLATFORMS,<br>APPOINTMENT_HOSTS_AND_PLATFORMS,<br>LAUNCHEVENTS_HOSTS_AND_PLATFORMS)
-
-        opt Automatic processing is allowed
-            AddIn->>Exchange: Read mailbox, user, group, and signature data<br>(CLOUD_ENVIRONMENT, GRAPH_CLIENT_ID,<br>CustomCloudEnvironments)
-            Exchange-->>AddIn: Data for signature selection
-            AddIn->>AddIn: Apply powerful situation-aware custom logic<br>(CUSTOM_RULES_CODE)
-            Note over AddIn: Can override signature, signature body,<br>and notification based on item context.
-            AddIn->>Item: Insert selected signature
-            AddIn->>Outlook: Show notification banner<br>(NOTIFICATION_TEXT)
-        end
-
-    and Logging if DEBUG is true
-        AddIn->>Item: Add logging output during processing<br>(DEBUG)
-    end
-```
-    </div>
+    <picture>
+      <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures Outlook add-in: Launch event workflow-dark.svg" media="(prefers-color-scheme: dark)">
+      <img src="/assets/images/mermaid-svg/Set-OutlookSignatures Outlook add-in: Launch event workflow-light.svg" alt="Set-OutlookSignatures Outlook add-in: Launch event workflow diagram" style="max-height: 50vh; width: auto;">
+    </picture>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <p><b>Taskpane workflow with configuration references</b></p>
-    <div class="outlookaddin-taskpane-workflow-diagram-container" style="max-height: 50vh;" markdown="1">
-      <style> 
-        /* Limits the scope entirely to this specific section */
-        .outlookaddin-taskpane-workflow-diagram-container img { 
-          max-height: 50vh; 
-          width: auto;
-          max-width: 100%;
-        } 
-      </style>
-
-```mermaid
----
-title: "Set-OutlookSignatures Outlook add-in: Taskpane workflow with configuration references"
----
-sequenceDiagram
-    participant User
-    participant Outlook
-    participant AddIn as Outlook add-in
-    participant Exchange as Exchange<br>(on-prem, cloud)
-    participant Item as Mail or appointment<br>in compose mode
-
-    User->>Outlook: Compose email or appointment
-    User->>Outlook: Open add-in taskpane manually
-    Outlook->>AddIn: Start add-in from taskpane<br>(ADDIN_ID, DEPLOYMENT_URL)
-
-    Note over AddIn: Manual taskpane processing is interactive.<br>It can override automatic host/platform limits.<br>It supports manual signature selection.
-
-    AddIn->>Exchange: Read mailbox, user, group, and signature data<br>(CLOUD_ENVIRONMENT, GRAPH_CLIENT_ID,<br>CustomCloudEnvironments)
-    Exchange-->>AddIn: Data for signature selection
-    AddIn->>AddIn: Apply powerful situation-aware custom logic<br>(CUSTOM_RULES_CODE)
-    Note over AddIn: Can override signature, signature body,<br>and notification based on item context.
-    AddIn->>Item: Insert selected or manually chosen signature
-    AddIn->>Outlook: Show notification banner<br>(NOTIFICATION_TEXT)
-
-    opt DEBUG is true
-        AddIn->>Item: Add logging output to body<br>(DEBUG)
-    end
-```
-
-    </div>
+    <picture>
+      <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures Outlook add-in: Taskpane workflow-dark.svg" media="(prefers-color-scheme: dark)">
+      <img src="/assets/images/mermaid-svg/Set-OutlookSignatures Outlook add-in: Taskpane workflow-light.svg" alt="Set-OutlookSignatures Outlook add-in: Taskpane workflow diagram" style="max-height: 50vh; width: auto;">
+    </picture>
   </div>
   <div class="column is-full">
-    <p><small><i>Click any diagram to open it in a new tab.</i></small></p>
+    <p><small><i>Right‑click or long‑press the diagram to open it in a new tab.</i></small></p>
   </div>
 </div>
 

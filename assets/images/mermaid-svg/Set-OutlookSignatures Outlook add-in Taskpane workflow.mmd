@@ -1,0 +1,26 @@
+---
+title: "Set-OutlookSignatures Outlook add-in: Taskpane workflow with configuration references"
+---
+sequenceDiagram
+    participant User
+    participant Outlook
+    participant AddIn as Outlook add-in
+    participant Exchange as Exchange<br>(on-prem, cloud)
+    participant Item as Mail or appointment<br>in compose mode
+
+    User->>Outlook: Compose email or appointment
+    User->>Outlook: Open add-in taskpane manually
+    Outlook->>AddIn: Start add-in from taskpane<br>(ADDIN_ID, DEPLOYMENT_URL)
+
+    Note over AddIn: Manual taskpane processing is interactive.<br>It can override automatic host/platform limits.<br>It supports manual signature selection.
+
+    AddIn->>Exchange: Read mailbox, user, group, and signature data<br>(CLOUD_ENVIRONMENT, GRAPH_CLIENT_ID,<br>CustomCloudEnvironments)
+    Exchange-->>AddIn: Data for signature selection
+    AddIn->>AddIn: Apply powerful situation-aware custom logic<br>(CUSTOM_RULES_CODE)
+    Note over AddIn: Can override signature, signature body,<br>and notification based on item context.
+    AddIn->>Item: Insert selected or manually chosen signature
+    AddIn->>Outlook: Show notification banner<br>(NOTIFICATION_TEXT)
+
+    opt DEBUG is true
+        AddIn->>Item: Add logging output to body<br>(DEBUG)
+    end
