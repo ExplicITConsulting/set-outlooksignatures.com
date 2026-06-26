@@ -63,69 +63,55 @@ jobs:
           # 2. Force plain text progress logging for Docker image pull info
           export BUILDKIT_PROGRESS=plain
 
-          # 3. Run Docker using /bin/sh and discover the node local binary path dynamically
-          docker run --rm \
-            -u "$(id -u):$(id -g)" \
-            -v "${{ github.workspace }}:/data" \
-            --entrypoint /bin/sh \
-            ghcr.io/mermaid-js/mermaid-cli/mermaid-cli \
-            -c '
-              set -eu
+          # 3. Find files on the host runner
+          files=("$DIR"/*.mmd)
+          total_files=${#files[@]}
 
-              DIR="assets/images/mermaid-svg"
-              
-              # Safely locate the local node binary path relative to the user'\''s home folder
-              MMDC_BIN="/home/mermaidcli/node_modules/.bin/mmdc"
-              if [ ! -f "$MMDC_BIN" ]; then
-                # Fallback check if it was installed in a different relative npm scope
-                MMDC_BIN=$(find /home/mermaidcli -name mmdc -type f -print -quit 2>/dev/null || true)
-              fi
+          if [ $total_files -eq 0 ]; then
+            echo "No .mmd files found to process."
+            exit 0
+          fi
 
-              if [ -z "$MMDC_BIN" ] || [ ! -f "$MMDC_BIN" ]; then
-                echo "Error: Could not dynamically locate mmdc within /home/mermaidcli." >&2
-                exit 1
-              fi
-              
-              total_files=0
-              for file in "$DIR"/*.mmd; do
-                [ -e "$file" ] || continue
-                total_files=$((total_files + 1))
-              done
+          current=0
+          for file in "${files[@]}"; do
+            ((current++))
+            percent=$(( current * 100 / total_files ))
+            
+            base="${file%.mmd}"
+            light="${base}-light.svg"
+            dark="${base}-dark.svg"
 
-              if [ "$total_files" -eq 0 ]; then
-                echo "No .mmd files found to process."
-                exit 0
-              fi
+            echo "[${current}/${total_files}] (${percent}%) Processing: ${file}"
 
-              current=0
-              for file in "$DIR"/*.mmd; do
-                [ -e "$file" ] || continue
-                current=$((current + 1))
-                percent=$(( current * 100 / total_files ))
-                
-                base=$(echo "$file" | sed "s/\.mmd$//")
-                light="${base}-light.svg"
-                dark="${base}-dark.svg"
+            # --- LIGHT PASS ---
+            if [[ -f "$light" ]]; then
+              echo "  -> Skipping existing $light"
+            else
+              docker run --rm \
+                -v "${{ github.workspace }}:/data" \
+                ghcr.io/mermaid-js/mermaid-cli/mermaid-cli \
+                -p /data/puppeteer-config.json \
+                -i "/data/$file" \
+                -o "/data/$light" \
+                -t default
+            fi
 
-                echo "[${current}/${total_files}] (${percent}%) Processing: ${file}"
+            # --- DARK PASS ---
+            if [[ -f "$dark" ]]; then
+              echo "  -> Skipping existing $dark"
+            else
+              docker run --rm \
+                -v "${{ github.workspace }}:/data" \
+                ghcr.io/mermaid-js/mermaid-cli/mermaid-cli \
+                -p /data/puppeteer-config.json \
+                -i "/data/$file" \
+                -o "/data/$dark" \
+                -t dark
+            fi
+          done
 
-                # --- LIGHT ---
-                if [ -f "$light" ]; then
-                  echo "  -> Skipping existing $light"
-                else
-                  "$MMDC_BIN" -p /data/puppeteer-config.json -i "/data/$file" -o "/data/$light" -t default
-                fi
-
-                # --- DARK ---
-                if [ -f "$dark" ]; then
-                  echo "  -> Skipping existing $dark"
-                else
-                  "$MMDC_BIN" -p /data/puppeteer-config.json -i "/data/$file" -o "/data/$dark" -t dark
-                fi
-              done
-            '
-
-          # 4. Clean up the config file
+          # 4. Fix permissions so Jekyll can read the files
+          sudo chown -R $(id -u):$(id -g) "$DIR"
           rm puppeteer-config.json
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
