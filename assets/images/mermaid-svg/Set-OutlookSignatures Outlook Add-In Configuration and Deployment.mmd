@@ -26,7 +26,7 @@ flowchart LR
   subgraph Lifecycle ["<b>Outlook client</b>"]
     direction LR
 
-    cache["Download add-in from web server if the local cache version differs from the one in the deployed manifest.xml snapshot"]
+    cache["Download add-in from web server if the local cache version differs from the one in the manifest.xml snapshot (deployed in step 3)"]
   end
 
   subgraph S3 ["<b>Step 3: Rollout (Deploy)</b>"]
