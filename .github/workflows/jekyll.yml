@@ -96,6 +96,7 @@ jobs:
               echo "  -> Skipping existing $light"
             else
               docker run --rm \
+                -e PUPPETEER_CACHE_DIR=/tmp \
                 -v "${{ github.workspace }}:/data" \
                 ghcr.io/mermaid-js/mermaid-cli/mermaid-cli \
                 -p /data/puppeteer-config.json \
@@ -109,6 +110,7 @@ jobs:
               echo "  -> Skipping existing $dark"
             else
               docker run --rm \
+                -e PUPPETEER_CACHE_DIR=/tmp \
                 -v "${{ github.workspace }}:/data" \
                 ghcr.io/mermaid-js/mermaid-cli/mermaid-cli \
                 -p /data/puppeteer-config.json \
