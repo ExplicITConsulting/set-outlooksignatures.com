@@ -4,15 +4,14 @@ config:
   layout: elk
 ---
 sequenceDiagram
-    participant User
     participant Outlook
+    participant Item as Mail or appointment<br>in compose mode
     participant AddIn as Outlook add-in
     participant Exchange as Exchange<br>(on-prem, cloud)
-    participant Item as Mail or appointment<br>in compose mode
 
-    User->>Outlook: Compose email or appointment
-    User->>Outlook: Open add-in taskpane manually
-    Outlook->>AddIn: Start add-in from taskpane<br>(ADDIN_ID, DEPLOYMENT_URL)
+    Outlook->>Item: User drafts new email or appointment
+    Item->>AddIn: User opens add-in taskpane
+    AddIn->>AddIn: User interacts with the add-in taskpane
 
     Note over AddIn: Manual taskpane processing is interactive.<br>It can override automatic host/platform limits.<br>It supports manual signature selection.
 
@@ -23,6 +22,6 @@ sequenceDiagram
     AddIn->>Item: Insert selected or manually chosen signature
     AddIn->>Outlook: Show notification banner<br>(NOTIFICATION_TEXT)
 
-    opt DEBUG is true
+    opt Logging<br>if DEBUG is true
         AddIn->>Item: Add logging output to body<br>(DEBUG)
     end

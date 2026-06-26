@@ -17,7 +17,7 @@ flowchart LR
     script --> manifest
   end
 
-  subgraph S2 ["<b>Step 2: Upload to web server</b>"]
+  subgraph S2 ["<b>Step 2: Hosting (Publish)</b>"]
     direction LR
 
     server["Web server"]
@@ -29,7 +29,7 @@ flowchart LR
     cache["Download add-in from web server if the local cache version differs from the one in the deployed manifest.xml snapshot"]
   end
 
-  subgraph S3 ["<b>Step 3: Deployment to mailboxes</b>"]
+  subgraph S3 ["<b>Step 3: Rollout (Deploy)</b>"]
     direction LR
 
     side["Sideloading"]
