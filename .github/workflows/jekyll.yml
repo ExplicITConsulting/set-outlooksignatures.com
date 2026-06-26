@@ -55,26 +55,24 @@ jobs:
           set -euo pipefail
 
           DIR="assets/images/mermaid-svg"
-
-          # Force plain text progress logging for Docker image pull info
           export BUILDKIT_PROGRESS=plain
 
           # 1. Create the Puppeteer config file on the host
           echo '{ "args": ["--no-sandbox", "--disable-setuid-sandbox"] }' > puppeteer-config.json
 
-          # 2. Check if the directory exists and has .mmd files without breaking set -e
-          if [ ! -d "$DIR" ] || [ -z "$(ls -A "$DIR"/*.mmd 2>/dev/null)" ]; then
-            echo "No .mmd files found in $DIR. Skipping rendering."
+          # 2. Safely find files using native Bash mechanisms (immune to set -e crashes)
+          shopt -s nullglob
+          files=("${DIR}"/*.mmd)
+          total_files=${#files[@]}
+
+          if [ "$total_files" -eq 0 ]; then
+            echo "No .mmd files found in ${DIR}. Skipping rendering."
             rm -f puppeteer-config.json
             exit 0
           fi
 
-          # 3. Now it is safe to expand the glob safely
-          shopt -s nullglob
-          files=("$DIR"/*.mmd)
-          total_files=${#files[@]}
+          # 3. Process the files
           current=0
-
           for file in "${files[@]}"; do
             ((current++))
             percent=$(( current * 100 / total_files ))
