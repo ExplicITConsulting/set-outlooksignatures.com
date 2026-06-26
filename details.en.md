@@ -87,12 +87,10 @@ The architecture of Set-OutlookSignatures is designed as a two-stage process: fi
 
 - Delivery Channels: Use native Outlook features for signature roaming, or selectively configure and deploy the Outlook add-in.
 
-<picture>
+<picture class="clickable-picture">
   <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Architecture%20Considerations-dark.svg" media="(prefers-color-scheme: dark)">
   <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Architecture%20Considerations-light.svg" alt="Set-OutlookSignatures Architecture Considerations diagram" style="max-height: 50vh; width: auto;">
 </picture>
-
-<p><small><i>Right‑click or long‑press the diagram to open it in a new tab.</i></small></p>
 
 ### Stage 1: Create signatures and out-of-office replies
 
@@ -273,12 +271,10 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 - The **Outlook add-in** is contained within Outlook's restricted security model for the account accessing the mailbox.
 - In **all modes** as well as in the **Outlook add-in**, communication with **Exchange Online** is routed through dedicated Entra ID applications to restrict permissions even further.
 
-<picture>
+<picture class="clickable-picture">
   <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Security%20Considerations-dark.svg" media="(prefers-color-scheme: dark)">
   <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Security%20Considerations-light.svg" alt="Set-OutlookSignatures Security Considerations diagram" style="max-height: 50vh; width: auto;">
 </picture>
-
-<p><small><i>Right‑click or long‑press the diagram to open it in a new tab.</i></small></p>
 
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">

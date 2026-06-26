@@ -206,12 +206,10 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
 </ul>
 <p>The following diagram visualizes both concepts:</p>
 
-<picture>
+<picture class="clickable-picture">
   <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20Configuration%20and%20Deployment-dark.svg" media="(prefers-color-scheme: dark)">
   <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20Configuration%20and%20Deployment-light.svg" alt="Set-OutlookSignatures Outlook Add-In Configuration and Deployment diagram" style="max-height: 50vh; width: auto;">
 </picture>
-
-<p><small><i>Right‑click or long‑press the diagram to open it in a new tab.</i></small></p>
 
 <h3 id="configuration">Step 1: Configuration (Prepare)</h3>
 <p>The add-in is built using the <code>run_before_deployment.ps1</code> script. This script injects your technical details into the source code and generates a <code>publish</code> folder containing your customized add-in code, include the <code>manifest.xml</code> file used for deployment.</p>
@@ -266,20 +264,17 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <p><b>Launch event workflow with configuration references</b></p>
-    <picture>
+    <picture  class="clickable-picture">
       <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Launch%20event%20workflow-dark.svg" media="(prefers-color-scheme: dark)">
       <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Launch%20event%20workflow-light.svg" alt="Set-OutlookSignatures Outlook add-in: Launch event workflow diagram" style="max-height: 50vh; width: auto;">
     </picture>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <p><b>Taskpane workflow with configuration references</b></p>
-    <picture>
+    <picture class="clickable-picture">
       <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Taskpane%20workflow-dark.svg" media="(prefers-color-scheme: dark)">
       <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Taskpane%20workflow-light.svg" alt="Set-OutlookSignatures Outlook add-in: Taskpane workflow diagram" style="max-height: 50vh; width: auto;">
     </picture>
-  </div>
-  <div class="column is-full">
-    <p><small><i>Right‑click or long‑press the diagram to open it in a new tab.</i></small></p>
   </div>
 </div>
 
