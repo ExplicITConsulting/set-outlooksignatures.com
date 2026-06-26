@@ -834,3 +834,79 @@ figure.highlight {
   word-break: break-word;
   font-family: inherit;
 }
+
+// --- Click-to-zoom images / lightbox ---
+// Default: make normal content images zoomable.
+// Exclusions avoid your scrolling banners and any image you explicitly mark with .no-image-zoom.
+.content img:not(.no-image-zoom),
+.content picture:not(.no-image-zoom) img:not(.no-image-zoom) {
+  cursor: zoom-in;
+}
+
+// Optional visual hint on hover, deliberately subtle.
+.content img:not(.no-image-zoom):hover,
+.content picture:not(.no-image-zoom) img:not(.no-image-zoom):hover {
+  filter: brightness(105%);
+}
+
+// Do not show zoom cursor in existing scrolling banners.
+.customer-scrolling-banner img,
+.signature-scrolling-banner img,
+.customer-scrolling-track img,
+.signature-scrolling-track img {
+  cursor: inherit;
+}
+
+// Overlay covering the browser viewport.
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.88);
+  cursor: zoom-out;
+}
+
+// Open state.
+.image-lightbox.is-active {
+  display: flex;
+}
+
+// The enlarged image.
+.image-lightbox img {
+  display: block;
+  max-width: 95vw;
+  max-height: 95vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: zoom-out;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.6);
+}
+
+// Prevent page scrolling while the image overlay is open.
+body.image-lightbox-open {
+  overflow: hidden;
+}
+
+// Small close hint. Purely decorative; clicking anywhere closes.
+.image-lightbox::after {
+  content: "×";
+  position: fixed;
+  top: 0.75rem;
+  right: 1rem;
+  color: white;
+  font-size: 2rem;
+  line-height: 1;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+// Dark mode does not need much extra handling because the overlay is already dark.
+[data-theme="dark"] .image-lightbox,
+.theme-dark .image-lightbox {
+  background: rgba(0, 0, 0, 0.92);
+}

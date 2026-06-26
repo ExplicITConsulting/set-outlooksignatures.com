@@ -552,3 +552,102 @@
       });
   });
 </script>
+
+
+<!-- Click/tap content images to show them in a full-viewport lightbox -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const zoomableImageSelector = [
+      '.content img:not(.no-image-zoom)',
+      '.content picture:not(.no-image-zoom) img:not(.no-image-zoom)'
+    ].join(',');
+
+    const excludedContainersSelector = [
+      '.customer-scrolling-banner',
+      '.signature-scrolling-banner',
+      '.customer-scrolling-track',
+      '.signature-scrolling-track'
+    ].join(',');
+
+    const lightbox = document.createElement('div');
+    lightbox.className = 'image-lightbox';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-label', 'Enlarged image');
+
+    const lightboxImage = document.createElement('img');
+    lightboxImage.alt = '';
+    lightbox.appendChild(lightboxImage);
+    document.body.appendChild(lightbox);
+
+    let previouslyFocusedElement = null;
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('is-active');
+      document.body.classList.remove('image-lightbox-open');
+      lightboxImage.removeAttribute('src');
+      lightboxImage.alt = '';
+
+      if (previouslyFocusedElement) {
+        previouslyFocusedElement.focus({ preventScroll: true });
+        previouslyFocusedElement = null;
+      }
+    };
+
+    const openLightbox = (img) => {
+      // currentSrc is important for <picture>, because it resolves to the
+      // currently active source, e.g. your light/dark SVG variant.
+      const imageSource = img.currentSrc || img.src;
+      if (!imageSource) return;
+
+      previouslyFocusedElement = document.activeElement;
+
+      lightboxImage.src = imageSource;
+      lightboxImage.alt = img.alt || '';
+      lightbox.classList.add('is-active');
+      document.body.classList.add('image-lightbox-open');
+      lightbox.focus({ preventScroll: true });
+    };
+
+    lightbox.tabIndex = -1;
+
+    lightbox.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (event) => {
+      if (!lightbox.classList.contains('is-active')) return;
+
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
+    document.querySelectorAll(zoomableImageSelector).forEach((img) => {
+      if (img.closest(excludedContainersSelector)) return;
+      if (img.classList.contains('no-image-zoom')) return;
+
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+
+      if (!img.getAttribute('aria-label')) {
+        img.setAttribute(
+          'aria-label',
+          img.alt ? `Open image: ${img.alt}` : 'Open image'
+        );
+      }
+
+      img.addEventListener('click', (event) => {
+        // If an image is inside a normal link, prefer zoom behavior.
+        // Add class="no-image-zoom" to that image if you want the link to win.
+        event.preventDefault();
+        openLightbox(img);
+      });
+
+      img.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openLightbox(img);
+        }
+      });
+    });
+  });
+</script>

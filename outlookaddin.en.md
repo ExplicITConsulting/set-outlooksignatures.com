@@ -206,7 +206,7 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
 </ul>
 <p>The following diagram visualizes both concepts:</p>
 
-<picture class="clickable-picture">
+<picture>
   <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20Configuration%20and%20Deployment-dark.svg" media="(prefers-color-scheme: dark)">
   <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20Configuration%20and%20Deployment-light.svg" alt="Set-OutlookSignatures Outlook Add-In Configuration and Deployment diagram" style="max-height: 50vh; width: auto;">
 </picture>
@@ -264,14 +264,14 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <p><b>Launch event workflow with configuration references</b></p>
-    <picture  class="clickable-picture">
+    <picture >
       <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Launch%20event%20workflow-dark.svg" media="(prefers-color-scheme: dark)">
       <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Launch%20event%20workflow-light.svg" alt="Set-OutlookSignatures Outlook add-in: Launch event workflow diagram" style="max-height: 50vh; width: auto;">
     </picture>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <p><b>Taskpane workflow with configuration references</b></p>
-    <picture class="clickable-picture">
+    <picture>
       <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Taskpane%20workflow-dark.svg" media="(prefers-color-scheme: dark)">
       <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Taskpane%20workflow-light.svg" alt="Set-OutlookSignatures Outlook add-in: Taskpane workflow diagram" style="max-height: 50vh; width: auto;">
     </picture>
