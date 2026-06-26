@@ -434,9 +434,9 @@ Eine geeignete Lösung muss:
                 <tr>
                     <td class="has-text-weight-bold">Signaturen an alle E-Mails anfügen</td>
                     <td>🟡 Outlook-Clients direkt, andere passiv</td>
-                    <td>🟢 Nur mittels E-Mail-Routing über ein Drittanbieter-Rechenzentrum</td>
-                    <td>🟢 Nur mittels E-Mail-Routing über ein Drittanbieter-Rechenzentrum</td>
-                    <td>🟢 Nur mittels E-Mail-Routing über ein Drittanbieter-Rechenzentrum</td>
+                    <td>🟡 Nur bei Umleitung aller E-Mails an ein Drittanbieter-Rechenzentrum</td>
+                    <td>🟡 Nur bei Umleitung aller E-Mails an ein Drittanbieter-Rechenzentrum</td>
+                    <td>🟡 Nur bei Umleitung aller E-Mails an ein Drittanbieter-Rechenzentrum</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Signaturen auf Basis der Empfänger</td>
