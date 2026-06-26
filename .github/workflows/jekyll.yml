@@ -57,25 +57,33 @@ jobs:
           DIR="assets/images/mermaid-svg"
           export BUILDKIT_PROGRESS=plain
 
-          # 1. Create the Puppeteer config file on the host
-          echo '{ "args": ["--no-sandbox", "--disable-setuid-sandbox"] }' > puppeteer-config.json
+          # 1. If the directory does not exist, exit gracefully immediately
+          if [ ! -d "$DIR" ]; then
+            echo "Directory $DIR does not exist. Skipping rendering."
+            exit 0
+          fi
 
-          # 2. Safely find files using native Bash mechanisms (immune to set -e crashes)
+          # 2. Create the Puppeteer config file on the host
+          echo '{"args":["--no-sandbox","--disable-setuid-sandbox"]}' > puppeteer-config.json
+
+          # 3. Grab matching files using native bash expansion
           shopt -s nullglob
-          files=("${DIR}"/*.mmd)
+          files=("$DIR"/*.mmd)
           total_files=${#files[@]}
 
           if [ "$total_files" -eq 0 ]; then
-            echo "No .mmd files found in ${DIR}. Skipping rendering."
+            echo "No .mmd files found in $DIR. Skipping rendering."
             rm -f puppeteer-config.json
             exit 0
           fi
 
-          # 3. Process the files
+          echo "Found $total_files files to process."
+
+          # 4. Main processing loop
           current=0
           for file in "${files[@]}"; do
-            ((current++))
-            percent=$(( current * 100 / total_files ))
+            current=$((current + 1))
+            percent=$((current * 100 / total_files))
             
             base="${file%.mmd}"
             light="${base}-light.svg"
@@ -84,7 +92,7 @@ jobs:
             echo "[${current}/${total_files}] (${percent}%) Processing: ${file}"
 
             # --- LIGHT PASS ---
-            if [[ -f "$light" ]]; then
+            if [ -f "$light" ]; then
               echo "  -> Skipping existing $light"
             else
               docker run --rm \
@@ -97,7 +105,7 @@ jobs:
             fi
 
             # --- DARK PASS ---
-            if [[ -f "$dark" ]]; then
+            if [ -f "$dark" ]; then
               echo "  -> Skipping existing $dark"
             else
               docker run --rm \
@@ -110,9 +118,9 @@ jobs:
             fi
           done
 
-          # 4. Fix permissions so Jekyll can read the files
+          # 5. Revert file permissions so Jekyll can compile them cleanly
           sudo chown -R $(id -u):$(id -g) "$DIR"
-          rm puppeteer-config.json
+          rm -f puppeteer-config.json
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
