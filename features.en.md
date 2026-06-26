@@ -232,9 +232,9 @@ With Set-OutlookSignatures and the optional <a href="/benefactorcircle"><span st
                 <tr>
                     <td class="has-text-weight-bold">Apply signatures to all emails</td>
                     <td>🟡 Outlook clients directly, others passively</td>
-                    <td>🟡 Only when re-routing all emails to a third-party data center</td>
-                    <td>🟡 Only when re-routing all emails to a third-party data center</td>
-                    <td>🟡 Only when re-routing all emails to a third-party data center</td>
+                    <td>🟡 Only when redirecting all emails to a third-party system</td>
+                    <td>🟡 Only when redirecting all emails to a third-party system</td>
+                    <td>🟡 Only when redirecting all emails to a third-party system</td>
                 </tr>
                 <tr>
                     <td class="has-text-weight-bold">Apply signature based on recipients</td>
