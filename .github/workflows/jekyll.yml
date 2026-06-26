@@ -60,41 +60,64 @@ jobs:
           # 1. Create the Puppeteer config file on the host
           echo '{ "args": ["--no-sandbox", "--disable-setuid-sandbox"] }' > puppeteer-config.json
 
-          # 2. Run a single Docker container to process all files at once
+          # 2. Force plain text progress logging for Docker image pull info
+          export BUILDKIT_PROGRESS=plain
+
+          # 3. Run Docker using /bin/sh instead of /bin/bash
           docker run --rm \
             -u "$(id -u):$(id -g)" \
             -v "${{ github.workspace }}:/data" \
-            --entrypoint /bin/bash \
+            --entrypoint /bin/sh \
             ghcr.io/mermaid-js/mermaid-cli/mermaid-cli \
             -c '
-              set -euo pipefail
-              DIR="assets/images/mermaid-svg"
-              shopt -s nullglob
+              set -eu
 
+              DIR="assets/images/mermaid-svg"
+              
+              # /bin/sh doesn'\''t support bash arrays or shopt nullglob naturally, 
+              # so we safely handle file loops using a standard POSIX for loop
+              
+              total_files=0
               for file in "$DIR"/*.mmd; do
-                base="${file%.mmd}"
+                [ -e "$file" ] || continue
+                total_files=$((total_files + 1))
+              done
+
+              if [ "$total_files" -eq 0 ]; then
+                echo "No .mmd files found to process."
+                exit 0
+              fi
+
+              current=0
+              for file in "$DIR"/*.mmd; do
+                [ -e "$file" ] || continue
+                current=$((current + 1))
+                percent=$(( current * 100 / total_files ))
+                
+                # POSIX alternative to string manipulation ${file%.mmd}
+                base=$(echo "$file" | sed "s/\.mmd$//")
                 light="${base}-light.svg"
                 dark="${base}-dark.svg"
 
+                echo "[${current}/${total_files}] (${percent}%) Processing: ${file}"
+
                 # --- LIGHT ---
-                if [[ -f "$light" ]]; then
-                  echo "Skipping existing $light"
+                if [ -f "$light" ]; then
+                  echo "  -> Skipping existing $light"
                 else
-                  echo "Rendering $file -> $light"
                   mmdc -p /data/puppeteer-config.json -i "/data/$file" -o "/data/$light" -t default
-                </tr>
+                fi
 
                 # --- DARK ---
-                if [[ -f "$dark" ]]; then
-                  echo "Skipping existing $dark"
+                if [ -f "$dark" ]; then
+                  echo "  -> Skipping existing $dark"
                 else
-                  echo "Rendering $file -> $dark"
                   mmdc -p /data/puppeteer-config.json -i "/data/$file" -o "/data/$dark" -t dark
                 fi
               done
             '
 
-          # 3. Clean up the config file
+          # 4. Clean up the config file
           rm puppeteer-config.json
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
