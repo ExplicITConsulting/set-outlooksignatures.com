@@ -62,16 +62,17 @@ jobs:
             exit 0
           fi
 
-          # 2. Install mermaid-cli using the runner's default Node environment
-          echo "Installing @mermaid-js/mermaid-cli..."
-          npm install @mermaid-js/mermaid-cli
+          # 2. Install mermaid-cli along with the ELK layout engine plugin
+          echo "Installing @mermaid-js/mermaid-cli and @mermaid-js/layout-elk..."
+          npm install @mermaid-js/mermaid-cli @mermaid-js/layout-elk
 
           # 3. Explicitly pull the specific browser binary tied to this installation
           echo "Installing matching chrome-headless-shell browser..."
           npx puppeteer browsers install chrome-headless-shell
 
-          # 4. Create the Puppeteer config file to bypass AppArmor/sandbox restrictions
+          # 4. Create the Puppeteer config and Mermaid ELK layout config files
           echo '{"args":["--no-sandbox","--disable-setuid-sandbox","--disable-gpu"]}' > puppeteer-config.json
+          echo '{"layout": "elk"}' > mermaid-config.json
 
           # 5. Locate files
           shopt -s nullglob
@@ -80,7 +81,7 @@ jobs:
 
           if [ "$total_files" -eq 0 ]; then
             echo "No .mmd files found in $DIR. Skipping rendering."
-            rm -f puppeteer-config.json
+            rm -f puppeteer-config.json mermaid-config.json
             exit 0
           fi
 
@@ -104,6 +105,7 @@ jobs:
             else
               ./node_modules/.bin/mmdc \
                 -p puppeteer-config.json \
+                -c mermaid-config.json \
                 -i "$file" \
                 -o "$light" \
                 -t default
@@ -115,6 +117,7 @@ jobs:
             else
               ./node_modules/.bin/mmdc \
                 -p puppeteer-config.json \
+                -c mermaid-config.json \
                 -i "$file" \
                 -o "$dark" \
                 -t dark \
@@ -122,8 +125,8 @@ jobs:
             fi
           done
 
-          # 7. Cleanup configuration
-          rm -f puppeteer-config.json
+          # 7. Cleanup configurations
+          rm -f puppeteer-config.json mermaid-config.json
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"

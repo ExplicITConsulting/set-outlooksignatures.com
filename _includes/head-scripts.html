@@ -570,6 +570,12 @@
         // Clone the entire picture element to preserve dark/light media queries
         const clone = pictureEl.cloneNode(true);
 
+        // FIX: Find the <img> inside the clone and strip its inline styling
+        const clonedImg = clone.querySelector('img');
+        if (clonedImg) {
+          clonedImg.removeAttribute('style');
+        }
+
         // Clear previous content and inject the new clone
         lightbox.innerHTML = '';
         lightbox.appendChild(clone);
