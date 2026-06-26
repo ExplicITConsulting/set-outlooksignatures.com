@@ -70,9 +70,8 @@ jobs:
           echo "Installing matching chrome-headless-shell browser..."
           npx puppeteer browsers install chrome-headless-shell
 
-          # 4. Create the Puppeteer config and Mermaid ELK layout config files
+          # 4. Create the Puppeteer config file
           echo '{"args":["--no-sandbox","--disable-setuid-sandbox","--disable-gpu"]}' > puppeteer-config.json
-          echo '{"layout": "elk"}' > mermaid-config.json
 
           # 5. Locate files
           shopt -s nullglob
@@ -81,7 +80,7 @@ jobs:
 
           if [ "$total_files" -eq 0 ]; then
             echo "No .mmd files found in $DIR. Skipping rendering."
-            rm -f puppeteer-config.json mermaid-config.json
+            rm -f puppeteer-config.json
             exit 0
           fi
 
@@ -105,7 +104,6 @@ jobs:
             else
               ./node_modules/.bin/mmdc \
                 -p puppeteer-config.json \
-                -c mermaid-config.json \
                 -i "$file" \
                 -o "$light" \
                 -t default
@@ -117,7 +115,6 @@ jobs:
             else
               ./node_modules/.bin/mmdc \
                 -p puppeteer-config.json \
-                -c mermaid-config.json \
                 -i "$file" \
                 -o "$dark" \
                 -t dark \
@@ -126,7 +123,7 @@ jobs:
           done
 
           # 7. Cleanup configurations
-          rm -f puppeteer-config.json mermaid-config.json
+          rm -f puppeteer-config.json
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
