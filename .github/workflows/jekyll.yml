@@ -63,7 +63,7 @@ jobs:
           # 2. Force plain text progress logging for Docker image pull info
           export BUILDKIT_PROGRESS=plain
 
-          # 3. Run Docker using /bin/sh and find mmdc dynamically
+          # 3. Run Docker using /bin/sh and discover the node local binary path dynamically
           docker run --rm \
             -u "$(id -u):$(id -g)" \
             -v "${{ github.workspace }}:/data" \
@@ -74,11 +74,15 @@ jobs:
 
               DIR="assets/images/mermaid-svg"
               
-              # Dynamically locate the mmdc binary inside the container environment
-              MMDC_BIN=$(find / -name mmdc -type f -print -quit 2>/dev/null || true)
-              
-              if [ -z "$MMDC_BIN" ]; then
-                echo "Error: Could not dynamically locate mmdc inside the container." >&2
+              # Safely locate the local node binary path relative to the user'\''s home folder
+              MMDC_BIN="/home/mermaidcli/node_modules/.bin/mmdc"
+              if [ ! -f "$MMDC_BIN" ]; then
+                # Fallback check if it was installed in a different relative npm scope
+                MMDC_BIN=$(find /home/mermaidcli -name mmdc -type f -print -quit 2>/dev/null || true)
+              fi
+
+              if [ -z "$MMDC_BIN" ] || [ ! -f "$MMDC_BIN" ]; then
+                echo "Error: Could not dynamically locate mmdc within /home/mermaidcli." >&2
                 exit 1
               fi
               
