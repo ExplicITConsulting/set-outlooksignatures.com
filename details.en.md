@@ -275,7 +275,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 
 <picture>
   <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Security%20Considerations-dark.svg" media="(prefers-color-scheme: dark)">
-  <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Security%20Considerations-light.svg" alt="Set-OutlookSignatures Security Considerations diagram" style="max-height: 75vh; width: auto;">
+  <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Security%20Considerations-light.svg" alt="Set-OutlookSignatures Security Considerations diagram" style="max-height: 50vh; width: auto;">
 </picture>
 
 <p><small><i>Right‑click or long‑press the diagram to open it in a new tab.</i></small></p>
