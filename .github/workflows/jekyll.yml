@@ -63,7 +63,7 @@ jobs:
           # 2. Force plain text progress logging for Docker image pull info
           export BUILDKIT_PROGRESS=plain
 
-          # 3. Run Docker using /bin/sh instead of /bin/bash
+          # 3. Run Docker using /bin/sh and find mmdc dynamically
           docker run --rm \
             -u "$(id -u):$(id -g)" \
             -v "${{ github.workspace }}:/data" \
@@ -74,8 +74,13 @@ jobs:
 
               DIR="assets/images/mermaid-svg"
               
-              # /bin/sh doesn'\''t support bash arrays or shopt nullglob naturally, 
-              # so we safely handle file loops using a standard POSIX for loop
+              # Dynamically locate the mmdc binary inside the container environment
+              MMDC_BIN=$(find / -name mmdc -type f -print -quit 2>/dev/null || true)
+              
+              if [ -z "$MMDC_BIN" ]; then
+                echo "Error: Could not dynamically locate mmdc inside the container." >&2
+                exit 1
+              fi
               
               total_files=0
               for file in "$DIR"/*.mmd; do
@@ -94,7 +99,6 @@ jobs:
                 current=$((current + 1))
                 percent=$(( current * 100 / total_files ))
                 
-                # POSIX alternative to string manipulation ${file%.mmd}
                 base=$(echo "$file" | sed "s/\.mmd$//")
                 light="${base}-light.svg"
                 dark="${base}-dark.svg"
@@ -105,14 +109,14 @@ jobs:
                 if [ -f "$light" ]; then
                   echo "  -> Skipping existing $light"
                 else
-                  mmdc -p /data/puppeteer-config.json -i "/data/$file" -o "/data/$light" -t default
+                  "$MMDC_BIN" -p /data/puppeteer-config.json -i "/data/$file" -o "/data/$light" -t default
                 fi
 
                 # --- DARK ---
                 if [ -f "$dark" ]; then
                   echo "  -> Skipping existing $dark"
                 else
-                  mmdc -p /data/puppeteer-config.json -i "/data/$file" -o "/data/$dark" -t dark
+                  "$MMDC_BIN" -p /data/puppeteer-config.json -i "/data/$file" -o "/data/$dark" -t dark
                 fi
               done
             '
