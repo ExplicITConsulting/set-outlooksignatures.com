@@ -53,16 +53,15 @@ sitemap_changefreq: weekly
         <span>🚀</span>
         <div style="flex: 1;">
           <p><b>Marketing</b></p>
-          <div class="columns">
+          <div class="columns is-gapless">
             <div class="column is-half">
                 <p class="mb-0"><a href="#signature-and-oof-template-file-format">Signature and OOF template file format</a></p>
                 <p class="mb-0"><a href="#replacement-variables">Replacement variables</a></p>
-                <p><a href="#ini-files-and-template-tags">Template tags and INI files</a></p>
+                <p class="mb-0"><a href="#template-tags-and-ini-files">Template tags and INI files</a></p>
             </div>
             <div class="column is-half">
-                <p class="mb-0"><a href="#ini-files-and-template-tags">Template tags and INI files</a></p>
                 <p class="mb-0"><a href="#signature-and-oof-application-order">Signature and OOF application order</a></p>
-                <p><a href="#simulation-mode">Simulation mode</a></p>
+                <p class="mb-0"><a href="#simulation-mode">Simulation mode</a></p>
             </div>
           </div>
         </div>
@@ -75,9 +74,9 @@ sitemap_changefreq: weekly
 
 ## Architecture considerations {#architecture-considerations}
 
-The architecture of Set-OutlookSignatures is designed as a two-stage process: first, transforming raw templates into signatures and replies; second, ensuring these artifacts are delivered to the user's Outlook environment.  
+The architecture of Set-OutlookSignatures is designed as a two-stage process: first, transforming raw templates into signatures and replies; second, ensuring these artifacts are delivered to the user's Outlook environment.
 
-**Stage 1: Create signatures and out-of-office replies**<br>Signatures are generated using either decentralized (client mode) or centralized (SimulateAndDeploy) methods. This stage pulls template files from a store, enriches them with properties from Entra ID, Active Directory, or other data sources, and saves the result as signatures or out-of-office replies.  
+**Stage 1: Create signatures and out-of-office replies**<br>Signatures are generated using either decentralized (client mode) or centralized (SimulateAndDeploy) methods. This stage pulls template files from a store, enriches them with properties from Entra ID, Active Directory, or other data sources, and saves the result as signatures or out-of-office replies.
 
 **Stage 2: Make signatures available**<br>The finished signatures and replies are made available to the user's Outlook instance, whether via native Outlook features or the [Outlook add-in](/outlookaddin).
 
@@ -774,24 +773,26 @@ Set-OutlookSignatures take care of replacing the placeholder image or filling th
 
 If you choose the "DeleteEmpty" option (e.g `$CurrentUserPhotoDeleteEmpty$`), the image or shape is deleted if there is no account picture available.
 
-## INI files and template tags {#ini-files-and-template-tags}
-
-INI files are an easy way to define which templates are to be used for which mailboxes, groups or users.
+## Template tags and INI files {#template-tags-and-ini-files}
 
 Template tags define properties for templates, such as:
 
-- Time ranges during which a template shall be applied or not applied
 - Groups whose direct or indirect members are allowed or denied application of a template
 - Mailbox email addresses which are allowed or denied application of a template
 - Replacement-variable conditions that allow or deny application of a template
+- Time ranges during which a template shall be applied or not applied
 - Default signature selection for new mails and reply/forward
-- OOF template target (internal/external)
+- Out-of-Office (OOF) template targets (distinguishing between internal and external recipients)
+
+INI files provide an easy and intuitive way to store and maintain this information.
 
 > **Why INI (or TOML-style) configuration?**
-> We avoid modern formats like <b>XML, YAML, or JSON</b> because they rely on strict syntax (brackets, significant whitespace, commas) that is easily broken by non-IT staff.
-> INI-style keeps common cases simple, human-readable, and easy to maintain without specialized database infrastructure.
+>
+> We know INI files come with a bit of a 1995 vibe. However, experience shows they are incredibly forgiving with formatting, flexible to deploy, and instantly intuitive for both Marketing and IT — even for those who haven't seen an INI file in years (or ever).
+>
+> We purposely avoid formats like XML, YAML, or JSON. Their strict syntax (brackets, commas, and significant whitespace) is too easily broken by non-IT staff. The INI format keeps common cases simple, human-readable, and easy to maintain without requiring a complex database.
 
-Set-OutlookSignatures comes with an INI editor (`.\sample code\IniEditor.html` or [set-outlooksignatures.com/inieditor](https://set-outlooksignatures.com/inieditor)) offering a much more than just editing:
+Set-OutlookSignatures comes with an INI editor (`.\sample code\IniEditor.html` or [set-outlooksignatures.com/inieditor](https://set-outlooksignatures.com/inieditor)) offering much more than just editing:
 
 - A single HTML file that runs locally, from a file share, or hosted on a web server.
 - Create or modify signature and out-of-office (OOF) configuration files with ease.
@@ -885,23 +886,54 @@ You can influence behavior with the [MailboxSpecificSignatureNames](/parameters#
 
 OOF templates are applied only if the out-of-office assistant is currently disabled. If it is active or scheduled, OOF templates are not applied.
 
-## Simulation mode {#simulation-mode}
+## Sandbox & Campaign Testing (Simulation Mode) {#simulation-mode}
 
-Simulation mode is enabled when the parameter `SimulateUser` is passed.
-It answers the question:
+Before pushing new email signatures or time-sensitive marketing banners to your entire organization, you want to be 100% confident they look exactly as intended. **Simulation Mode** acts as your brand safety net. It allows you to generate and preview precise signature variations for any specific user, mailbox configuration, or target date — completely localized to your computer without affecting live end-users.
 
-> “What will the signatures look like for user A, when Outlook is configured for the mailboxes X, Y and Z?”
+It solves critical marketing questions:
 
-In simulation mode:
+> _What will our email signature look like for a specific team member, across multiple shared company mailboxes, on a specific date?_
+>
+> _How will our branding adapt when sending out-of-office replies to internal colleagues versus external clients?_
 
-- Outlook registry entries are not considered
-- Nothing is changed in Outlook or Outlook for the web
-- Resulting signatures are written to the path defined by `AdditionalSignaturePath`
+### Why Use Simulation Mode?
 
-Minimal example:
+- **Zero Live Impact:** It bypasses existing system settings and makes absolutely no changes to real Outlook accounts or web interfaces.
+- **Instant Brand QA:** The generated signatures are quietly saved to a local folder of your choice, letting you visually review the layout, typography, and image rendering before going live.
+- **Time-Travel Diagnostics:** Easily test how dynamic, time-sensitive components (like temporary holiday banners or limited-time campaign promotions) will look on future dates.
+- **Mailbox Assignment Auditing:** See exactly which default signature will be automatically assigned **per mailbox** for completely new emails, and which variation will be used for replies and forwards. This ensures a clean, streamlined signature setup for complex team inboxes.
+- **Out-of-Office Validation:** Automatically generates and previews distinct variations for your **internal** (colleagues) and **external** (clients/partners) out-of-office automatic replies to ensure your messaging stays professional and on-brand even when teams are away.
+
+### The Easy Way: Interactive Simulation Wizard
+
+You don't need to be a coding expert or write complex scripts to test your designs. We have built an interactive wizard specifically for template creators and marketing managers.
+
+By running the helper script, you will be guided through a simple step-by-step questionnaire directly in your terminal:
+
+1. **Simulate User:** Type the email or login name of the employee you want to preview.
+2. **Simulate Mailboxes:** Enter one or more active email addresses (like your personal account or a shared `info@` inbox) to see how multi-mailbox layouts respond.
+3. **Simulate Time:** Type a specific future date and time to visually audit scheduled marketing banners, or leave it blank to test today's layout.
+4. **Output Folder:** Tell the wizard exactly which folder on your computer should receive the preview files.
+
+Once you answer the prompts, the wizard automatically builds the configuration behind the scenes and generates your visual previews.
+
+- **Where to find it:** Ask your IT administrator to grant you access to `.\sample code\SimulationModeHelper.ps1`.
+
+### Advanced: Testing via Command Line
+
+If your technical team is automating batch previews or if you prefer using the command line directly, you can initiate a simulation by passing the parameters manually:
 
 ```powershell
-& .\Set-OutlookSignatures.ps1 -SimulateUser "a@example.com" -SimulateMailboxes "a@example.com", "x@example.com" -AdditionalSignaturePath "c:\test"
+& .\Set-OutlookSignatures.ps1 -SimulateUser "marketing-test@example.com" -SimulateMailboxes "marketing-test@example.com", "info@example.com" -AdditionalSignaturePath "c:\signature-previews"
 ```
 
-`SimulateMailboxes` is optional but highly recommended.<br>`SimulateTime` can be used to test time-based templates.<br>See `.\sample code\SimulationModeHelper.ps1` for helper logic.
+Maximize your design QA by configuring these control parameters:
+
+- [SimulateUser](/parameters#simulateuser) (required)  
+  Defines the specific user identity you want to simulate (e.g., pulling their respective name, title, and contact details from the company directory into the template).
+- [SimulateMailboxes](/parameters#simulatemailboxes) (recommended)  
+  Simulates how the signature handles setups with multiple active mailboxes (such as a user who manages both their personal account and a shared corporate mailbox like `sales@` or `info@`).
+- [SimulateTime](/parameters#simulatetime) (optional)  
+  Allows you to fast-forward the clock using an international timestamp format (yyyyMMddHHmm). Use this to ensure your scheduled marketing banners automatically appear and disappear exactly when they are supposed to.
+- [AdditionalSignaturePath](/parameters#additionalsignaturepath) (recommended)  
+  Specifies the exact local folder path where the software will drop the finalized signature files (`.html`, `.rtf`, or `.txt`) for your visual sign-off.
