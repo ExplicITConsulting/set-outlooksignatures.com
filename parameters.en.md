@@ -669,9 +669,9 @@ This mode is ideal when users log on to clients where Set-OutlookSignatures can 
 
 SimulateAndDeploy considers additional mailboxes when the user added them in Outlook for the web, when they are passed via the '[SimulateMailboxes'](/parameters#virtualmailboxconfigfile)' parameter, or when being added dynamically via the '[VirtualMailboxConfigFile](/parameters#virtualmailboxconfigfile)' parameter.
 
-The SimulateAndDeploy parameter makes sense only when used in combination with '.\sample code\SimulateAndDeploy.ps1'. Do not use this parameter for other scenarios.
+The SimulateAndDeploy parameter makes sense only when used in combination with `.\sample code\SimulateAndDeploy.ps1`. Do not use this parameter for other scenarios.
 
-See '.\sample code\SimulateAndDeploy.ps1' for an example how to use this parameter
+See `.\sample code\SimulateAndDeploy.ps1` for an example how to use this parameter
 
 This feature requires a Benefactor Circle license.
 

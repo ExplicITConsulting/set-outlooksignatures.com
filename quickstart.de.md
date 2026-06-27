@@ -125,7 +125,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
         <span>🎨</span>
         <div>
           <p><b>Eigene Vorlagen verwenden</b></p>
-          <p>Bereit für mehr als nur Beispiele? Kopieren Sie <code>.\sample templates</code> in einen neuen Ordner und beginnen Sie mit der Bearbeitung. Wir empfehlen, unserer <a href="/faq#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files">Anleitung zur Ordnerstruktur</a> zu folgen, um zukünftige Updates zu erleichtern.</p>
+          <p>Bereit für mehr als nur Beispiele? Kopieren Sie <code>.\sample templates</code> in einen neuen Ordner und beginnen Sie mit der Bearbeitung. Wir empfehlen, unserer <a href="/faq#folder-structure-recommendation">Empfehlung zur Ordnerstruktur</a> zu folgen, um zukünftige Updates zu erleichtern.</p>
           <p>Verweisen Sie das Skript auf Ihre neuen Dateien mit:</p>
           <ul>
             <li><code>-SignatureTemplatePath "C:\Signatures\Templates"</code></li>

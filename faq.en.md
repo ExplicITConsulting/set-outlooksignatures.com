@@ -27,7 +27,7 @@ This FAQ highlights common topics and clarifies typical points of confusion.
 | :-------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | General                     | [Changelog](#where-can-i-find-the-changelog) \| [Contributing](#how-can-i-contribute-propose-a-new-feature-or-file-a-bug) \| [OOF vs OOO](#why-is-out-of-office-abbreviated-oof-and-not-ooo) \| [Naming Convention](#isnt-a-plural-noun-in-the-software-name-against-powershell-best-practices) \| [Roadmap](#is-there-a-roadmap-for-future-versions) \| [Outlook Stationery](#can-i-centrally-manage-and-deploy-outook-stationery-with-this-script) \| [Roaming Sync Issues](#roaming-signatures-in-classic-outlook-for-windows-look-different) \| [OOF Activation Logic](#why-is-the-out-of-office-assistant-not-activated-automatically) \| [Disable Tagline](#how-to-disable-the-tagline-in-signatures) \| [Implementation Approach](#what-is-the-recommended-approach-for-implementing-the-software)                                                                                                                                                                                                                                                                                                                                                                                                 |
 | Templates & Design          | [DOCX vs HTML](#should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates) \| [Removing Blank Lines](#how-to-avoid-blank-lines-when-replacement-variables-return-an-empty-string) \| [Text Color Issues](#why-does-the-text-color-of-my-signature-change-sometimes) \| [Image Scaling/Black Background](#images-in-signatures-have-a-different-size-than-in-templates-or-a-black-background) \| [Rotating Banners](#how-do-i-alternate-banners-and-other-images-in-signatures) \| [Underlined Spaces](#empty-lines-contain-an-underlined-space-character) \| [Text Case](#can-i-change-the-case-uppercaselowercase-of-replacement-variables-in-templates) \| [Calendar/Booking Links](#how-to-add-a-calender-link) \| [Different signatures per mailbox](#different-default-signatures-for-different-mailboxes) \| [OU-based templates](#assign-templates-based-on-organizational-units-ous) \| [Conditionally delete images](#delete-images-when-attribute-is-empty-variable-content-based-on-group-membership) \| [Variables based on group membership](#delete-images-when-attribute-is-empty-variable-content-based-on-group-membership) |
-| Deployment & Infrastructure | [Why no GUI?](#why-is-no-admin-or-user-gui-available) \| [Folder Structure](#what-is-the-recommended-folder-structure-for-script-license-template-and-config-files) \| [Custom Config Files](#what-is-the-recommended-approach-for-custom-configuration-files) \| [AD Connection Check](#how-can-i-start-the-software-only-when-there-is-a-connection-to-active-directory) \| [CLI & Scheduled Tasks](#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task) \| [Hidden/Invisible Mode](#start-set-outlooksignatures-in-hiddeninvisible-mode) \| [Shortcut with Parameters](#how-to-create-a-shortcut-to-the-software-with-parameters) \| [Intune Deployment](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune) \| [Roaming Signatures](#what-about-the-roaming-signatures-feature-in-exchange-online) \| [AD vs Entra Groups](#when-should-i-refer-on-prem-groups-and-when-entra-id-groups) \| [No Outlook Profile](#what-if-a-user-has-no-outlook-profile-or-is-prohibited-from-starting-outlook) \| [Outlook not installed](#what-if-outlook-is-not-installed-at-all)                                                                                           |
+| Deployment & Infrastructure | [Why no GUI?](#why-is-no-admin-or-user-gui-available) \| [Folder Structure](#folder-structure-recommendation) \| [Custom Config Files](#what-is-the-recommended-approach-for-custom-configuration-files) \| [AD Connection Check](#how-can-i-start-the-software-only-when-there-is-a-connection-to-active-directory) \| [CLI & Scheduled Tasks](#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task) \| [Hidden/Invisible Mode](#start-set-outlooksignatures-in-hiddeninvisible-mode) \| [Shortcut with Parameters](#how-to-create-a-shortcut-to-the-software-with-parameters) \| [Intune Deployment](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune) \| [Roaming Signatures](#what-about-the-roaming-signatures-feature-in-exchange-online) \| [AD vs Entra Groups](#when-should-i-refer-on-prem-groups-and-when-entra-id-groups) \| [No Outlook Profile](#what-if-a-user-has-no-outlook-profile-or-is-prohibited-from-starting-outlook) \| [Outlook not installed](#what-if-outlook-is-not-installed-at-all)                                                                                                                                                 |
 | Advanced Logic & Automation | [Recreation Logic](#why-are-signatures-and-out-of-office-replies-recreated-even-when-their-content-has-not-changed) \| [Deploy Once](#how-to-deploy-a-signature-only-once) \| [Send As Permissions](#how-to-deploy-signatures-for-send-as-send-on-behalf-etc) \| [Dynamic Groups (On-prem)](#why-is-dynamic-group-membership-not-considered-on-premises) \| [Parallel Instances](#can-multiple-script-instances-run-in-parallel) \| [Run while Outlook is running](#run-set-outlooksignatures-while-outlook-is-running) \| [Custom image replacement variables](#custom-image-replacement-variables)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | Troubleshooting & Logs      | [Logging](#how-can-i-log-the-software-output) \| [Verbose Output](#how-can-i-get-more-script-output-for-troubleshooting) \| [Word Security Warnings](#the-software-hangs-at-htmrtf-export-word-shows-a-security-warning) \| [Performance/Speed](#why-does-set-outlooksignatures-run-slower-sometimes) \| [Authentication Prompts](#why-am-i-prompted-to-authenticate-repeatedly) \| [Token Cache Location](#where-is-the-graph-token-cached-and-how-do-i-clear-it) \| [Auth Methods](#which-graph-authentication-methods-are-used)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Security & Compliance       | [Mailbox Identification](#how-is-the-account-of-a-mailbox-identified) \| [Personal Mailbox ID](#how-is-the-personal-mailbox-of-the-currently-logged-in-user-identified) \| [Network Ports](#which-ports-are-required) \| [Multi-tenant Access](#does-it-support-cross-tenant-access-and-multitenant-organizations) \| [Purview & Labels](#how-to-make-set-outlooksignatures-work-with-microsoft-purview-information-protection) \| [Locking Signatures](#keep-users-from-adding-editing-and-removing-signatures) \| [EWS Deprecation](#what-about-microsoft-turning-off-exchange-web-services-for-exchange-online)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -341,18 +341,18 @@ The internal variable `$UseHtmTemplates` is used to automatically differentiate 
 
 - Results
   - Telephone number and mobile number are set.  
-    The paragraph marks come from `$CurrentUserTelephone-prefix-noempty$` and `$CurrentUserMobile-prefix-noempty$`.
+     The paragraph marks come from `$CurrentUserTelephone-prefix-noempty$` and `$CurrentUserMobile-prefix-noempty$`.
     <div class="highlighter-rouge"><pre markdown="span"><code class="language-html">Email: <a href="mailto:first.last@example.com">first.last@example.com</a>
-Telephone: <a href="tel:+43xxx">+43xxx</a>
-Mobile: <a href="tel:+43yyy">+43yyy</a></code></pre></div>
+    Telephone: <a href="tel:+43xxx">+43xxx</a>
+    Mobile: <a href="tel:+43yyy">+43yyy</a></code></pre></div>
   - Telephone number is set, mobile number is empty.  
-    The paragraph mark comes from `$CurrentUserTelephone-prefix-noempty$`.
+     The paragraph mark comes from `$CurrentUserTelephone-prefix-noempty$`.
     <div class="highlighter-rouge"><pre markdown="span"><code class="language-html">Email: <a href="mailto:first.last@example.com">first.last@example.com</a>
-Telephone: <a href="tel:+43xxx">+43xxx</a></code></pre></div>
+    Telephone: <a href="tel:+43xxx">+43xxx</a></code></pre></div>
   - Telephone number is empty, mobile number is set.  
-    The paragraph mark comes from `$CurrentUserMobile-prefix-noempty$`.
+     The paragraph mark comes from `$CurrentUserMobile-prefix-noempty$`.
     <div class="highlighter-rouge"><pre markdown="span"><code class="language-html">Email: <a href="mailto:first.last@example.com">first.last@example.com</a>
-Mobile: <a href="tel:+43yyy">+43yyy</a></code></pre></div>
+    Mobile: <a href="tel:+43yyy">+43yyy</a></code></pre></div>
 
 ## Is there a roadmap for future versions?
 
@@ -691,12 +691,12 @@ Remediation scripts can easily be configured to run in the context of the curren
 
 For Set-OutlookSignatures, you could use the following scripts, which do not require the creation and deployment of an application package as an additional benefit.
 
-The detection script could look like the sample code '.\sample code\Intune-SetOutlookSignatures-Detect.ps1':
+The detection script could look like the sample code `.\sample code\Intune-SetOutlookSignatures-Detect.ps1`:
 
 - Check for existence of a log file
 - If the log file does not exist or is older than a defined number of hours, start the remediation script
 
-The remediation script could look like the sample code '.\sample code\Intune-SetOutlookSignatures-Remediate.ps1':
+The remediation script could look like the sample code `.\sample code\Intune-SetOutlookSignatures-Remediate.ps1`:
 
 - If Set-OutlookSignatures is not available locally in the defined version, download the defined version from GitHub
 - Start Set-OutlookSignatures with defined parameters
@@ -851,39 +851,40 @@ In other words, signature management evolves from a best-effort configuration ta
 >
 > This layered approach ensures both a controlled user experience and guaranteed compliance in every sent email.
 
-## What is the recommended folder structure for script, license, template and config files?
+## Folder Structure Recommendation
 
-Choosing an unsuitable folder structure for script, license, template and config files can make it hard to upgrade to new versions.
+An organized folder structure for your script, license, template, and config files ensures that upgrading to future versions is seamless and straightforward.
 
-The following structure is recommended, as it separates customized files from script and license files.
+The structure recommended below separates your customized files from the core script and license files, making future updates entirely hassle-free.
 
-- **Root share folder**  
-  For example, '\\\\server\share\folder'
-  - **Config**  
-    Contains your custom config files, such as: Graph config file, replacement variable config file, Outlook add-in configuration, and maybe also your template INI files.
-  - **License**  
-    Contains the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>
-  - **Outlook add-in**  
-    Contains the Outlook add-in
-  - **Set-OutlookSignatures**  
-    Contains Set-OutlookSignatures
-  - **Templates**
-    - **OOF**  
-      Contains out-of-office templates, and the corresponding INI file (if not placed in 'Config' folder)
-    - **Signatures**  
-      Contains signature templates, and the corresponding INI file (if not placed in 'Config' folder)
+### Recommended Directory Tree
 
-When you want to upgrade to a new release, you basically just have to delete the content of the 'Set-OutlookSignatures' and 'Set-OutlookSignatures license' folders and copy the new files to them.
+```plaintext
+\\server\share\folder          Root share folder
+├── Config                     Custom configurations and optional INI files
+├── License                    Benefactor Circle add-on license
+├── Outlook add-in             Outlook add-in deployment files
+├── Set-OutlookSignatures      Core Set-OutlookSignatures script files
+└── Templates
+    ├── OOF                    Out-of-office templates and optional OOF INI file
+    └── Signatures             Signature templates and optional signature INI file
+```
 
-Never add new files to or modify existing files in the 'Set-OutlookSignatures' and 'Config' folders.
+### How to Upgrade
 
-If you want to use a custom Graph config file or a custom replacement variable file, follow the instructions in the default files.
+When upgrading to a new release, the process is straightforward:
 
-Alternative options for storing files:
+1. **Clean old files:** Delete the existing contents of the `Set-OutlookSignatures`, `License`, and `Outlook add-in` folders.
+2. **Deploy new files:** Copy the new release files directly into those respective folders.  
+   ⚠️ **Important**: Never add new files to or modify existing files inside the `Set-OutlookSignatures` folder. If you want to use a custom Graph config or replacement variable file, copy them to the `Config` folder and follow the instruction notes inside the default files.
 
-- Set-OutlookSignatures files do not need to be centrally hosted on a file server. You can write a script that downloads a specific version and keeps it on your clients. Search this document for 'Intune' to find a sample script doing this.
-- License, config and template files do not need to be stored on a file server. They can also be made available in a SharePoint document library.
-- Some clients do not use on-prem file servers, but use SMB file shares in Azure Files, as they can be made available from on-prem as well via internet.
+### Alternative Storage Options
+
+You do not have to rely strictly on a traditional central on-premises file server. Consider these alternative deployment methods:
+
+- **Local Client Storage:** Set-OutlookSignatures' files do not need to be hosted on a central file server. You can use any existing software deployment method already in use in your environment to distribute files to clients. A more sophisticated approach, which takes care of both software distribution and ongoing execution at the same time, is to use Desired State Configuration (DSC). Set-OutlookSignatures comes with an [example script designed for Microsoft Intune](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune). which is easily adaptable for other management environments.
+- **SharePoint Document Libraries:** License, config, and template files can be hosted entirely within a SharePoint document library instead of a file server.
+- **Azure Files:** For environments without on-premises file servers, you can host these files in an Azure Files SMB share, making them securely accessible over the internet.
 
 ## How to disable the tagline in signatures?
 
@@ -1013,7 +1014,7 @@ Here is how you can test if the current patch level of Classic Outlook for Windo
 
    ```plaintext
    Test signature with UTF-8 characters
-   
+
    ä (a with umlaut)
    ö (o with umlaut)
    ü (u with umlaut)
