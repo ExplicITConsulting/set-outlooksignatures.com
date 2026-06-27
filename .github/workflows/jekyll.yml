@@ -129,48 +129,101 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-      - name: Inject Minified HTML into LLM files (pwsh)
-        shell: pwsh
+      - name: Install Node Processing Dependencies
+        run: npm install cheerio turndown
+
+      - name: Inject Clean Markdown into LLM files (Node.js)
+        shell: node {0}
         run: |
-          $siteRoot = Resolve-Path "_site"
+          const fs = require('fs');
+          const path = require('path');
+          const cheerio = require('cheerio');
+          const TurndownService = require('turndown');
 
-          Get-ChildItem -Path $siteRoot -Recurse -Filter "llms-full.txt" | ForEach-Object {
-            Write-Host "Processing $($_.FullName)..."
+          const siteRoot = path.resolve('_site');
+          const llmsFullFile = path.join(siteRoot, 'llms-full.txt');
 
-            $content = Get-Content $_.FullName -Raw
-
-            $content = [regex]::Replace(
-              $content,
-              '\[REPLACE_WITH_CONTENT:(.*?)\]',
-              {
-                param($m)
-
-                Write-Host "  $($m.Value)"
-
-                $rel = $m.Groups[1].Value.Trim()
-                if ([string]::IsNullOrWhiteSpace($rel)) { return "" }
-
-                $htmlPath = Join-Path $siteRoot (([uri]$rel).localPath).TrimStart('/')
-
-                if ($htmlPath.EndsWith('/')) {
-                  $htmlPath = Join-Path $htmlPath "index.html"
-                } elseIf (-not $htmlPath.EndsWith('.html')) {
-                  $htmlPath += ".html"
-                }
-
-                if (-not (Test-Path $htmlPath -PathType Leaf)) {
-                  Write-Host "    File not found: '$($htmlPath)'"
-                } else {
-                  Write-Host "    Injecting from: '$($htmlPath)'"
-                }
-
-                Get-Content $htmlPath -Raw
-              },
-              'Singleline'
-            )
-
-            Set-Content $_.FullName $content -NoNewline
+          if (!fs.existsSync(llmsFullFile)) {
+            console.error('❌ Error: llms-full.txt was not found in _site.');
+            process.exit(1);
           }
+
+          console.log(`Processing file: ${llmsFullFile}...`);
+          let content = fs.readFileSync(llmsFullFile, 'utf8');
+
+          // Initialize Turndown with ATX headers (# Style) and Fenced Code Blocks (``` Style)
+          const turndownService = new TurndownService({ 
+            headingStyle: 'atx', 
+            codeBlockStyle: 'fenced' 
+          });
+
+          // Match the URL inside [REPLACE_WITH_CONTENT:...]
+          const regex = /\[REPLACE_WITH_CONTENT:(.*?)\]/g;
+
+          content = content.replace(regex, (match, urlStr) => {
+            try {
+              const cleanUrl = urlStr.trim();
+              if (!cleanUrl) return '';
+
+              // 1. Safely parse the absolute URL string to extract the local pathname
+              const parsedUrl = new URL(cleanUrl);
+              let localPath = parsedUrl.pathname;
+
+              let htmlPath = path.join(siteRoot, localPath);
+
+              // 2. Dual-Path Fail-Safe Resolution for Jekyll Clean URLs vs File Outputs
+              if (htmlPath.endsWith('/')) {
+                htmlPath = path.join(htmlPath, 'index.html');
+              } else if (!htmlPath.endsWith('.html')) {
+                if (fs.existsSync(htmlPath + '.html')) {
+                  htmlPath += '.html';
+                } else if (fs.existsSync(path.join(htmlPath, 'index.html'))) {
+                  htmlPath = path.join(htmlPath, 'index.html');
+                } else {
+                  htmlPath += '.html'; // Final structural fallback
+                }
+              }
+
+              // Guard check for missing pages
+              if (!fs.existsSync(htmlPath)) {
+                console.warn(`⚠️ Warning: HTML file missing at physical destination: ${htmlPath}`);
+                return '';
+              }
+
+              console.log(` -> Injecting & Transpiling: ${localPath}`);
+              const htmlRaw = fs.readFileSync(htmlPath, 'utf8');
+              
+              // 3. Parse Document Object Model (DOM) using Cheerio
+              const $ = cheerio.load(htmlRaw);
+
+              // 4. Dom Sanitization: Strip out intra-page navigation noise before compiling Markdown
+              $('.anchor-link').remove();              // Drops the 🔗 emojis and local header anchor tags
+              $('script, style, noscript').remove();    // Safety sweep for accidental leakages
+
+              // 5. Container Targeting Strategy
+              const targetHtml = $('main').html() || $('.content').html() || $('body').html();
+              if (!targetHtml) return '';
+
+              // 6. Convert the HTML slice to clean Markdown
+              let cleanMarkdown = turndownService.turndown(targetHtml).trim();
+
+              // 7. Isolation Guard: Wrap in an explicit 10-backtick block to prevent inner-code collisions
+              return [
+                '### CONTENT (as clean Markdown)',
+                '``````````markdown',
+                cleanMarkdown,
+                '``````````'
+              ].join('\n');
+
+            } catch (err) {
+              console.error(`❌ Error parsing placeholder link [${urlStr}]:`, err.message);
+              return '';
+            }
+          });
+
+          // Write out unified UTF-8 payload back to output directory
+          fs.writeFileSync(llmsFullFile, content, 'utf8');
+          console.log('🎉 Successfully completed llms-full.txt Markdown conversion pipeline!');
       - name: Setup IndexNow
         # Generate the verification file and place it inside the _site directory,
         # which is the output directory Jekyll uses.
