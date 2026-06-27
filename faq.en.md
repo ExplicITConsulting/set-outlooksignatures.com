@@ -851,6 +851,7 @@ In other words, signature management evolves from a best-effort configuration ta
 >
 > This layered approach ensures both a controlled user experience and guaranteed compliance in every sent email.
 
+<a id="what-is-the-recommended-folder-structure-for-script-license-template-and-config-files">
 ## Folder Structure Recommendation
 
 An organized folder structure for your script, license, template, and config files ensures that upgrading to future versions is seamless and straightforward.
