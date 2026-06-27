@@ -821,7 +821,7 @@ The following list focuses on the tags that are used most often.
 - **Default signature:** `defaultNew`, `defaultReplyFwd`
 - **OOF scope:** `internal`, `external`
 
-For a complete reference and examples based on real-world use cases, see the INI files in the [`sample templates`](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/tree/main/src_Set-OutlookSignatures/sample%20templates) folder.
+For a complete reference and examples based on real-world use cases, see the INI files in the [`sample templates`](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/tree/main/src_Set-OutlookSignatures/sample%20templates) folder. You don't want to miss our [INI editor](/inieditor), which is also a validator, explainer, simulator and teacher.
 
 > Note: Tags are case-insensitive.
 
