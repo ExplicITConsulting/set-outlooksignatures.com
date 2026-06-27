@@ -134,6 +134,8 @@ jobs:
 
       - name: Inject Clean Markdown into LLM files (Node.js)
         shell: node {0}
+        env:
+          NODE_PATH: ${{ github.workspace }}/node_modules
         run: |
           const fs = require('fs');
           const path = require('path');
