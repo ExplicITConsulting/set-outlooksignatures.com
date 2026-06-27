@@ -5,8 +5,9 @@ locale: "en"
 permalink: "/llms-full.txt"
 sitemap: false
 ---
-> Data Sovereign Email Signatures and Out-of-Office Replies
-> Centrally manage Outlook email signatures and out-of-office replies with data sovereignty.
+# Set-OutlookSignatures & Benefactor Circle add-on: Global Technical Knowledge Base (Full)
+- Includes: Pages, Documentation, and All Blog Posts
+- Generated on: {{ site.time | date_to_xmlschema }}
 
 {% comment -%}
   1. Aggregate Pages and Documents (which includes _posts and _docs)
@@ -31,7 +32,7 @@ sitemap: false
     {%- assign final_url = final_url | replace: "//", "/" | replace: "http:/", "http://" | replace: "https:/", "https://" | replace: "/index.html", "/" -%}
 
 
-# ENTITY: {{ final_url }}
+## URL: {{ final_url }}
 - Language: {{ node_lang | upcase }}
 - Type: {{ node.collection | default: "Page" }}
 {%- if node.title %}
@@ -47,6 +48,7 @@ sitemap: false
 - Published: {{ node.date | date: "%Y-%m-%d" }}
 {%- endif %}
 
+### Content (as clean Markdown)
 [REPLACE_WITH_CONTENT:{{ final_url }}]
 
 ---
