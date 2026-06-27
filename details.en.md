@@ -773,6 +773,7 @@ Set-OutlookSignatures take care of replacing the placeholder image or filling th
 
 If you choose the "DeleteEmpty" option (e.g `$CurrentUserPhotoDeleteEmpty$`), the image or shape is deleted if there is no account picture available.
 
+<a id="ini-files-and-template-tags">
 ## Template tags and INI files {#template-tags-and-ini-files}
 
 Template tags define properties for templates, such as:

@@ -146,7 +146,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
           <p>Control this centrally using template assignment and INI configuration – for example by assigning templates to mailboxes, groups or attributes, generating multiple variants from one template, and defining defaults for new emails and replies.</p>
           <p>Learn more:</p>
           <ul>
-            <li><a href="/details#ini-files-and-template-tags">INI files and template tags</a></li>
+            <li><a href="/details#template-tags-and-ini-files">INI files and template tags</a></li>
             <li><a href="/parameters">Parameters</a></li>
             <li><a href="/features">Full Feature List</a></li>
           </ul>
