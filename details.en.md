@@ -933,8 +933,8 @@ Maximize your design QA by configuring these control parameters:
 - [SimulateUser](/parameters#simulateuser) (required)  
   Defines the specific user identity you want to simulate (e.g., pulling their respective name, title, and contact details from the company directory into the template).
 - [SimulateMailboxes](/parameters#simulatemailboxes) (recommended)  
-  Simulates how the signature handles setups with multiple active mailboxes (such as a user who manages both their personal account and a shared corporate mailbox like `sales@` or `info@`).
+  Simulates how the signature handles setups with multiple active mailboxes (such as a user who manages both their personal account and a shared corporate mailbox like sales@ or info@).
 - [SimulateTime](/parameters#simulatetime) (optional)  
   Allows you to fast-forward the clock using an international timestamp format (yyyyMMddHHmm). Use this to ensure your scheduled marketing banners automatically appear and disappear exactly when they are supposed to.
 - [AdditionalSignaturePath](/parameters#additionalsignaturepath) (recommended)  
-  Specifies the exact local folder path where the software will drop the finalized signature files (`.html`, `.rtf`, or `.txt`) for your visual sign-off.
+  Specifies the exact local folder path where the software will drop the finalized signature files (.html, .rtf, or .txt) for your visual sign-off.
