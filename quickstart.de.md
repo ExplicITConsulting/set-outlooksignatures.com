@@ -127,10 +127,9 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
           <p><b>Eigene Vorlagen verwenden</b></p>
           <p>Bereit für mehr als nur Beispiele? Kopieren Sie <code>.\sample templates</code> in einen neuen Ordner und beginnen Sie mit der Bearbeitung. Wir empfehlen, unserer <a href="/faq#folder-structure-recommendation">Empfehlung zur Ordnerstruktur</a> zu folgen, um zukünftige Updates zu erleichtern.</p>
           <p>Verweisen Sie das Skript auf Ihre neuen Dateien mit:</p>
-          <ul>
-            <li><code>-SignatureTemplatePath "C:\Signatures\Templates"</code></li>
-            <li><code>-SignatureIniFile "C:\Signatures\Templates\_Signatures.ini"</code></li>
-          </ul>
+{% highlight batch %}{% raw %}
+[…] -SignatureTemplatePath "C:\Signatures\Templates" -SignatureIniFile "C:\Signatures\Templates\_Signatures.ini"
+{% endraw %}{% endhighlight %}
           <p><small><em>Bei Verwendung von HTML-Vorlagen fügen Sie einfach <code>-UseHtmTemplates true</code> hinzu.</em></small></p>
         </div>
       </div>
