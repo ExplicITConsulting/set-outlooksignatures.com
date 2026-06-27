@@ -341,18 +341,18 @@ The internal variable `$UseHtmTemplates` is used to automatically differentiate 
 
 - Results
   - Telephone number and mobile number are set.  
-  The paragraph marks come from `$CurrentUserTelephone-prefix-noempty$` and `$CurrentUserMobile-prefix-noempty$`.
+    The paragraph marks come from `$CurrentUserTelephone-prefix-noempty$` and `$CurrentUserMobile-prefix-noempty$`.
     <div class="highlighter-rouge"><pre markdown="span"><code class="language-html">email: <a href="mailto:first.last@example.com">first.last@example.com</a>
 Telephone: <a href="tel:+43xxx">+43xxx</a>
 Mobile: <a href="tel:+43yyy">+43yyy</a></code></pre></div>
   - Telephone number is set, mobile number is empty.  
-  The paragraph mark comes from `$CurrentUserTelephone-prefix-noempty$`.
-    <<div class="highlighter-rouge"><pre markdown="span"><code class="language-html">email: <a href="mailto:first.last@example.com">first.last@example.com</a>
+    The paragraph mark comes from `$CurrentUserTelephone-prefix-noempty$`.
+    <div class="highlighter-rouge"><pre markdown="span"><code class="language-html">email: <a href="mailto:first.last@example.com">first.last@example.com</a>
 Telephone: <a href="tel:+43xxx">+43xxx</a></code></pre></div>
   - Telephone number is empty, mobile number is set.  
-  The paragraph mark comes from `$CurrentUserMobile-prefix-noempty$`.
-    <div class="highlighter-rouge"><pre markdown="span"><code class="language-html">email: <a href="mailto:first.last@example.com">first.last@example.com</a></div>
-Mobile: <a href="tel:+43yyy">+43yyy</a></code></pre>
+    The paragraph mark comes from `$CurrentUserMobile-prefix-noempty$`.
+    <div class="highlighter-rouge"><pre markdown="span"><code class="language-html">email: <a href="mailto:first.last@example.com">first.last@example.com</a>
+Mobile: <a href="tel:+43yyy">+43yyy</a></code></pre></div>
 
 ## Is there a roadmap for future versions?
 
