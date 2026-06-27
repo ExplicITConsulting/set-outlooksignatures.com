@@ -860,14 +860,14 @@ The structure recommended below separates your customized files from the core sc
 ### Recommended Directory Tree
 
 ```plaintext
-\\server\share\folder          Root share folder
-├── Config                     Custom configurations and optional INI files
-├── License                    Benefactor Circle add-on license
-├── Outlook add-in             Outlook add-in deployment files
-├── Set-OutlookSignatures      Core Set-OutlookSignatures script files
-└── Templates
-    ├── OOF                    Out-of-office templates and optional OOF INI file
-    └── Signatures             Signature templates and optional signature INI file
+\\server\share\folder
+    ├── Config                       Custom configurations and optional INI files
+    ├── License                      Benefactor Circle add-on license
+    ├── Outlook add-in               Outlook add-in deployment files
+    ├── Set-OutlookSignatures        Core Set-OutlookSignatures script files
+    └── Templates
+        ├── OOF                      Out-of-office templates and optional OOF INI file
+        └── Signatures               Signature templates and optional signature INI file
 ```
 
 ### How to Upgrade
@@ -882,54 +882,15 @@ When upgrading to a new release, the process is straightforward:
 
 You do not have to rely strictly on a traditional central on-premises file server. Consider these alternative deployment methods:
 
-- **Local Client Storage:** Set-OutlookSignatures' files do not need to be hosted on a central file server. You can use any existing software deployment method already in use in your environment to distribute files to clients. A more sophisticated approach, which takes care of both software distribution and ongoing execution at the same time, is to use Desired State Configuration (DSC). Set-OutlookSignatures comes with an [example script designed for Microsoft Intune](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune). which is easily adaptable for other management environments.
-- **SharePoint Document Libraries:** License, config, and template files can be hosted entirely within a SharePoint document library instead of a file server.
-- **Azure Files:** For environments without on-premises file servers, you can host these files in an Azure Files SMB share, making them securely accessible over the internet.
+- **Local Client Storage**  
+  Set-OutlookSignatures' files do not need to be hosted on a central file server. You can use any existing software deployment method already in use in your environment to distribute files to clients.
 
-## How to disable the tagline in signatures?
+  A more sophisticated approach, which takes care of both software distribution and ongoing execution at the same time, is to use Desired State Configuration (DSC). Set-OutlookSignatures comes with an [example script designed for Microsoft Intune](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune). which is easily adaptable for other management environments.
 
-As described in the [feature list](/features#features), the subtle "Free and open-source Set-OutlookSignatures" tagline is appended to signatures after a certain period of use.
-
-You may also call this unobtrusive text a hint, note, footer message, nag text, outreach snippet, upgrade nudge, or reminder blurb.
-
-This attribution is automatically removed for mailboxes with a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> license.
-
-### Why the tagline?
-
-In the words of Markus Gruber, the creator of Set-OutlookSignatures:
-
-> Set-OutlookSignatures is my way of giving back to the community. Since it was first released in 2021 as a demonstrator showcasing the practical use of efficient Active Directory queries, many reusable code snippets have been added: Read about them in the FAQ '[What can I learn from the code of Set-OutlookSignatures?](#what-can-i-learn-from-the-code-of-set-outlooksignatures)'.
->
-> Today, Set-OutlookSignatures is more than just a vehicle for demonstrating PowerShell techniques. It has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies.
->
-> If you're an Exchange or client administrator, you're part of the community I want to support. I don't expect thank-yous, as our community thrives on mutual help. Your feedback, bug reports, and shared use cases help improve the tool for everyone.
->
-> That said, it's important to ensure the relationship isn't one-sided when companies benefit significantly. The tagline added to each signature reminds organizations that they benefit from open-source software and that continued open-source availability depends on financial support, which also unlocks additional useful features.
->
-> Sustaining long-term development for such a project requires significant financial resources. Currently, we do not have enough open-source sponsors to cover these costs fully.
->
-> To bridge this gap, ExplicIT Consulting offers the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and first-class [professional support](/support#professional-support). Revenue from these options ensures continued development and quality for both open-source and paid versions.
->
-> Having a paid add-on and support option directly benefits the open-source community. The continuous development funded by the commercial options allows us to introduce new features and improvements to the open-source version as well.
->
-> By choosing Set-OutlookSignatures, your company reduces costs compared to commercial alternatives while benefiting from a powerful open-source solution. Upgrading to the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and professional support helps secure its future.
-
-In this spirit: **Dear companies,**
-
-- **Invest** in the free and open-source software you depend on. Contributors work behind the scenes to make it better for everyone. Support them.
-- **Sponsor** the tools your teams rely on. Funding these projects improves performance, reliability, and stability across your software supply chain.
-
-### Not sure if Set-OutlookSignatures is the right solution for your company?
-
-The core of Set-OutlookSignatures is available free of charge as open-source software and can be used indefinitely and for as many mailboxes as your company requires.
-
-All documentation is publicly available. You can get free community support on GitHub, or opt for first-class professional support, training, workshops, and more from [ExplicIT Consulting](/support).
-
-For a small annual fee per mailbox, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> offers additional enterprise-grade features. Companies can test all premium features at no cost during a free 14-day trial.
-
-Unsure whether the add-on will deliver value for your company?  
-The chapter '[Financial Benefits](/benefactorcircle#financial-benefits)' shows how to calculate the value based on your company's specific needs.  
-If your company concludes that the add-on does not provide sufficient value, it can still use the free and open-source version of Set-OutlookSignatures.
+- **SharePoint Document Libraries**  
+  License, config, and template files can be hosted entirely within a SharePoint document library instead of a file server.
+- **Azure Files**  
+  For environments without on-premises file servers, you can host these files in an Azure Files SMB share, making them securely accessible over the internet.
 
 ## Why is the out-of-office assistant not activated automatically?
 
@@ -1661,3 +1622,48 @@ Per default, `$Current[..]CustomImage1$` is a QR code containing a vCard (in MeC
 The behavior of custom image replacement variables and the possible configuration options are the same as with replacement variables for account pictures from Active Directory/Entra ID.
 
 As practical as QR codes may be, they should contain as little information as possible. The more information they contain, the larger the image needs to be, which often has a negative impact on the layout and always has a negative impact on the size of the email.<br>QR codes with too much information and too small an image size become visually blurred, making them impossible to scan - for DOCX templates, [DocxHighResImageConversion](/parameters#docxhighresimageconversion) can help. Consider bigger image size, less content, less error correction, MeCard instead of vCard, and pointing to an URL containing the actual information.
+
+## How to disable the tagline in signatures?
+
+As described in the [feature list](/features#features), the subtle "Free and open-source Set-OutlookSignatures" tagline is appended to signatures after a certain period of use.
+
+You may also call this unobtrusive text a hint, note, footer message, nag text, outreach snippet, upgrade nudge, or reminder blurb.
+
+This attribution is automatically removed for mailboxes with a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> license.
+
+### Why the tagline?
+
+In the words of Markus Gruber, the creator of Set-OutlookSignatures:
+
+> Set-OutlookSignatures is my way of giving back to the community. Since it was first released in 2021 as a demonstrator showcasing the practical use of efficient Active Directory queries, many reusable code snippets have been added: Read about them in the FAQ '[What can I learn from the code of Set-OutlookSignatures?](#what-can-i-learn-from-the-code-of-set-outlooksignatures)'.
+>
+> Today, Set-OutlookSignatures is more than just a vehicle for demonstrating PowerShell techniques. It has evolved into the most advanced, secure and versatile free and open-source tool for managing email signatures and out-of-office replies.
+>
+> If you're an Exchange or client administrator, you're part of the community I want to support. I don't expect thank-yous, as our community thrives on mutual help. Your feedback, bug reports, and shared use cases help improve the tool for everyone.
+>
+> That said, it's important to ensure the relationship isn't one-sided when companies benefit significantly. The tagline added to each signature reminds organizations that they benefit from open-source software and that continued open-source availability depends on financial support, which also unlocks additional useful features.
+>
+> Sustaining long-term development for such a project requires significant financial resources. Currently, we do not have enough open-source sponsors to cover these costs fully.
+>
+> To bridge this gap, ExplicIT Consulting offers the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and first-class [professional support](/support#professional-support). Revenue from these options ensures continued development and quality for both open-source and paid versions.
+>
+> Having a paid add-on and support option directly benefits the open-source community. The continuous development funded by the commercial options allows us to introduce new features and improvements to the open-source version as well.
+>
+> By choosing Set-OutlookSignatures, your company reduces costs compared to commercial alternatives while benefiting from a powerful open-source solution. Upgrading to the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> and professional support helps secure its future.
+
+In this spirit: **Dear companies,**
+
+- **Invest** in the free and open-source software you depend on. Contributors work behind the scenes to make it better for everyone. Support them.
+- **Sponsor** the tools your teams rely on. Funding these projects improves performance, reliability, and stability across your software supply chain.
+
+### Not sure if Set-OutlookSignatures is the right solution for your company?
+
+The core of Set-OutlookSignatures is available free of charge as open-source software and can be used indefinitely and for as many mailboxes as your company requires.
+
+All documentation is publicly available. You can get free community support on GitHub, or opt for first-class professional support, training, workshops, and more from [ExplicIT Consulting](/support).
+
+For a small annual fee per mailbox, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> offers additional enterprise-grade features. Companies can test all premium features at no cost during a free 14-day trial.
+
+Unsure whether the add-on will deliver value for your company?  
+The chapter '[Financial Benefits](/benefactorcircle#financial-benefits)' shows how to calculate the value based on your company's specific needs.  
+If your company concludes that the add-on does not provide sufficient value, it can still use the free and open-source version of Set-OutlookSignatures.
