@@ -332,7 +332,7 @@ The internal variable `$UseHtmTemplates` is used to automatically differentiate 
   ```
 
 - Word template:
-  <pre markdown="span"><code class="language-html">email: <a href="mailto:$CurrentUserMail$">$CurrentUserMail$</a>$CurrentUserTelephone-prefix-noempty$<a href="tel:$CurrentUserTelephone$">$CurrentUserTelephone$</a>$CurrentUserMobile-prefix-noempty$<a href="tel:$CurrentUserMobile$">$CurrentUserMobile$</a></code></pre>
+  <div class="highlighter-rouge"><pre markdown="span"><code class="language-html">email: <a href="mailto:$CurrentUserMail$">$CurrentUserMail$</a>$CurrentUserTelephone-prefix-noempty$<a href="tel:$CurrentUserTelephone$">$CurrentUserTelephone$</a>$CurrentUserMobile-prefix-noempty$<a href="tel:$CurrentUserMobile$">$CurrentUserMobile$</a></code></pre></div>
 
   Note that all variables are written on one line and that not only `$CurrentUserMail$` is configured with a hyperlink, but `$CurrentUserPhone$` and `$CurrentUserMobile$` too:
   - `mailto:$CurrentUserMail$`
@@ -342,16 +342,16 @@ The internal variable `$UseHtmTemplates` is used to automatically differentiate 
 - Results
   - Telephone number and mobile number are set.  
   The paragraph marks come from `$CurrentUserTelephone-prefix-noempty$` and `$CurrentUserMobile-prefix-noempty$`.
-    <pre markdown="span"><code class="language-html">email: <a href="mailto:first.last@example.com">first.last@example.com</a>
+    <div class="highlighter-rouge"><pre markdown="span"><code class="language-html">email: <a href="mailto:first.last@example.com">first.last@example.com</a>
 Telephone: <a href="tel:+43xxx">+43xxx</a>
-Mobile: <a href="tel:+43yyy">+43yyy</a></code></pre>
+Mobile: <a href="tel:+43yyy">+43yyy</a></code></pre></div>
   - Telephone number is set, mobile number is empty.  
   The paragraph mark comes from `$CurrentUserTelephone-prefix-noempty$`.
-    <pre markdown="span"><code class="language-html">email: <a href="mailto:first.last@example.com">first.last@example.com</a>
-Telephone: <a href="tel:+43xxx">+43xxx</a></code></pre>
+    <<div class="highlighter-rouge"><pre markdown="span"><code class="language-html">email: <a href="mailto:first.last@example.com">first.last@example.com</a>
+Telephone: <a href="tel:+43xxx">+43xxx</a></code></pre></div>
   - Telephone number is empty, mobile number is set.  
   The paragraph mark comes from `$CurrentUserMobile-prefix-noempty$`.
-    <pre markdown="span"><code class="language-html">email: <a href="mailto:first.last@example.com">first.last@example.com</a>
+    <div class="highlighter-rouge"><pre markdown="span"><code class="language-html">email: <a href="mailto:first.last@example.com">first.last@example.com</a></div>
 Mobile: <a href="tel:+43yyy">+43yyy</a></code></pre>
 
 ## Is there a roadmap for future versions?
