@@ -4,27 +4,27 @@ config:
   layout: elk
 ---
 sequenceDiagram
-    participant Outlook
-    participant Item as Mail or appointment<br>in compose mode
-    participant AddIn as Outlook add-in
-    participant Exchange as Exchange<br>(on-prem, cloud)
+    participant Outlook as #160;#160;Outlook#160;#160;
+    participant Item as #160;#160;Mail or appointment#160;#160;<br>#160;#160;in compose mode#160;#160;
+    participant AddIn as #160;#160;Outlook add-in#160;#160;
+    participant Exchange as #160;#160;Exchange#160;#160;<br>#160;#160;(on-prem, cloud)#160;#160;
 
-    Outlook->>Item: User drafts new email or appointment
-    Item->>AddIn: Trigger configured launch event(s)<br>(LAUNCHEVENTS_HOSTS_AND_PLATFORMS)
+    Outlook->>Item: #160;#160;User drafts new email or appointment#160;#160;
+    Item->>AddIn: #160;#160;Trigger configured launch event(s)#160;#160;<br>#160;#160;(LAUNCHEVENTS_HOSTS_AND_PLATFORMS)#160;#160;
 
-    par Signature processing<br>(non-interactive, fully automated)
-        AddIn->>Outlook: Apply client signature policy if enabled<br>(DISABLE_CLIENT_SIGNATURES)
-        AddIn->>AddIn: Check item type, host, platform, and launch event<br>(SIGNATURE_HOSTS_AND_PLATFORMS,<br>APPOINTMENT_HOSTS_AND_PLATFORMS,<br>LAUNCHEVENTS_HOSTS_AND_PLATFORMS)
+    par #160;#160;Signature processing#160;#160;<br>#160;#160;(non-interactive, fully automated)#160;#160;
+        AddIn->>Outlook: #160;#160;Apply client signature policy if enabled#160;#160;<br>#160;#160;(DISABLE_CLIENT_SIGNATURES)#160;#160;
+        AddIn->>AddIn: #160;#160;Check item type, host, platform, and launch event#160;#160;<br>#160;#160;(SIGNATURE_HOSTS_AND_PLATFORMS,#160;#160;<br>#160;#160;APPOINTMENT_HOSTS_AND_PLATFORMS,#160;#160;<br>#160;#160;LAUNCHEVENTS_HOSTS_AND_PLATFORMS)#160;#160;
 
-        opt Checks passed
-            AddIn->>Exchange: Read mailbox, user, group, and signature data<br>(CLOUD_ENVIRONMENT, GRAPH_CLIENT_ID,<br>CustomCloudEnvironments)
-            Exchange-->>AddIn: Data for signature selection
-            AddIn->>AddIn: Apply powerful situation-aware custom logic<br>(CUSTOM_RULES_CODE)
-            Note over AddIn: Can override signature, signature body,<br>and notification based on item context.
-            AddIn->>Item: Insert selected signature
-            AddIn->>Outlook: Show notification banner<br>(NOTIFICATION_TEXT)
+        opt #160;#160;Checks passed#160;#160;
+            AddIn->>Exchange: #160;#160;Read mailbox, user, group, and signature data#160;#160;<br>#160;#160;(CLOUD_ENVIRONMENT, GRAPH_CLIENT_ID,#160;#160;<br>#160;#160;CustomCloudEnvironments)#160;#160;
+            Exchange-->>AddIn: #160;#160;Data for signature selection#160;#160;
+            AddIn->>AddIn: #160;#160;Apply powerful situation-aware custom logic#160;#160;<br>#160;#160;(CUSTOM_RULES_CODE)#160;#160;
+            Note over AddIn: #160;#160;Can override signature, signature body,#160;#160;<br>#160;#160;and notification based on item context.#160;#160;
+            AddIn->>Item: #160;#160;Insert selected signature#160;#160;
+            AddIn->>Outlook: #160;#160;Show notification banner#160;#160;<br>#160;#160;(NOTIFICATION_TEXT)#160;#160;
         end
 
     and Logging if DEBUG is true
-        AddIn->>Item: Add logging output during processing<br>(DEBUG)
+        AddIn->>Item: #160;#160;Add logging output during processing#160;#160;<br>#160;#160;(DEBUG)#160;#160;
     end

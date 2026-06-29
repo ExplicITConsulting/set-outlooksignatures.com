@@ -5,30 +5,30 @@ config:
 ---
 flowchart TB
   subgraph Contexts ["&nbsp;&nbsp;<b>Security Contexts</b>&nbsp;&nbsp;"]
-    UserCtx["&nbsp;&nbsp;Client mode:<br>Logged-on user&nbsp;&nbsp;"]
-    SimulateCtx["&nbsp;&nbsp;Simulation mode:<br>Logged-on user&nbsp;&nbsp;"]
-    SvcCtx["&nbsp;&nbsp;SimulateAndDeploy mode:<br>Service account&nbsp;&nbsp;"]
-    AddInCtx["&nbsp;&nbsp;Outlook add-in:<br>Outlook sandbox, manifest&nbsp;&nbsp;"]
+    UserCtx["&nbsp;&nbsp;Client mode:&nbsp;&nbsp;<br>&nbsp;&nbsp;Logged-on user&nbsp;&nbsp;"]
+    SimulateCtx["&nbsp;&nbsp;Simulation mode:&nbsp;&nbsp;<br>&nbsp;&nbsp;Logged-on user&nbsp;&nbsp;"]
+    SvcCtx["&nbsp;&nbsp;SimulateAndDeploy mode:&nbsp;&nbsp;<br>&nbsp;&nbsp;Service account&nbsp;&nbsp;"]
+    AddInCtx["&nbsp;&nbsp;Outlook add-in:&nbsp;&nbsp;<br>&nbsp;&nbsp;Outlook sandbox, manifest&nbsp;&nbsp;"]
   end
 
   subgraph EntraApps ["&nbsp;&nbsp;<b>Entra ID Applications</b>&nbsp;&nbsp;"]
-    ClientApp["&nbsp;&nbsp;Client mode app:<br>Delegated permissions&nbsp;&nbsp;"]
-    DeployApp["&nbsp;&nbsp;SimulateAndDeploy app:<br>Application permissions&nbsp;&nbsp;"]
-    AddInApp["&nbsp;&nbsp;Outlook Add-in app:<br>Delegated permissions&nbsp;&nbsp;"]
+    ClientApp["&nbsp;&nbsp;Client mode app:&nbsp;&nbsp;<br>&nbsp;&nbsp;Delegated permissions&nbsp;&nbsp;"]
+    DeployApp["&nbsp;&nbsp;SimulateAndDeploy app:&nbsp;&nbsp;<br>&nbsp;&nbsp;Application permissions&nbsp;&nbsp;"]
+    AddInApp["&nbsp;&nbsp;Outlook Add-in app:&nbsp;&nbsp;<br>&nbsp;&nbsp;Delegated permissions&nbsp;&nbsp;"]
   end
 
   subgraph Targets ["&nbsp;&nbsp;<b>Target Environments</b>&nbsp;&nbsp;"]
     subgraph onprem ["&nbsp;&nbsp;<b>On-prem</b>&nbsp;&nbsp;"]
-      ActiveDirectory["&nbsp;&nbsp;Active Directory:<br>Read user and mailbox attributes&nbsp;&nbsp;"]
-      File["&nbsp;&nbsp;File system:<br>Read templates and configuration, write simulation output&nbsp;&nbsp;"]
-      SharePointOnprem["&nbsp;&nbsp;SharePoint on-prem:<br>Read templates, configuration&nbsp;&nbsp;"]
-      ExchangeOnprem["&nbsp;&nbsp;Exchange on-prem:<br>Read/write signatures and OOF replies&nbsp;&nbsp;"]
+      ActiveDirectory["&nbsp;&nbsp;Active Directory:&nbsp;&nbsp;<br>&nbsp;&nbsp;Read user and mailbox attributes&nbsp;&nbsp;"]
+      File["&nbsp;&nbsp;File system:&nbsp;&nbsp;<br>&nbsp;&nbsp;Read templates and configuration, write simulation output&nbsp;&nbsp;"]
+      SharePointOnprem["&nbsp;&nbsp;SharePoint on-prem:&nbsp;&nbsp;<br>&nbsp;&nbsp;Read templates, configuration&nbsp;&nbsp;"]
+      ExchangeOnprem["&nbsp;&nbsp;Exchange on-prem:&nbsp;&nbsp;<br>&nbsp;&nbsp;Read/write signatures and OOF replies&nbsp;&nbsp;"]
     end
 
     subgraph cloud ["&nbsp;&nbsp;<b>Cloud via Graph API</b>&nbsp;&nbsp;"]
-      EntraID["&nbsp;&nbsp;Entra ID:<br>Read user and mailbox attributes&nbsp;&nbsp;"]
-      SharePointOnline["&nbsp;&nbsp;SharePoint Online:<br>Read templates, configuration&nbsp;&nbsp;"]
-      ExchangeOnline["&nbsp;&nbsp;Exchange Online:<br>Read/write signatures and OOF replies&nbsp;&nbsp;"]
+      EntraID["&nbsp;&nbsp;Entra ID:&nbsp;&nbsp;<br>&nbsp;&nbsp;Read user and mailbox attributes&nbsp;&nbsp;"]
+      SharePointOnline["&nbsp;&nbsp;SharePoint Online:&nbsp;&nbsp;<br>&nbsp;&nbsp;Read templates, configuration&nbsp;&nbsp;"]
+      ExchangeOnline["&nbsp;&nbsp;Exchange Online:&nbsp;&nbsp;<br>&nbsp;&nbsp;Read/write signatures and OOF replies&nbsp;&nbsp;"]
     end
   end
 
@@ -36,16 +36,16 @@ flowchart TB
   UserCtx --> ClientApp
   ClientApp --> cloud
 
-  SimulateCtx --> |"read only<br>(except file system)"| onprem
-  SimulateCtx --> |"read only"| ClientApp --> |"read only"| cloud
+  SimulateCtx --> |"&nbsp;&nbsp;read only&nbsp;&nbsp;<br>&nbsp;&nbsp;(except file system)&nbsp;&nbsp;"| onprem
+  SimulateCtx --> |"&nbsp;&nbsp;read only&nbsp;&nbsp;"| ClientApp --> |"&nbsp;&nbsp;read only&nbsp;&nbsp;"| cloud
 
   SvcCtx --> onprem
   SvcCtx --> DeployApp
   DeployApp --> cloud
 
-  AddInCtx --> |"read only"| AddInApp
-  AddInCtx --> |"read only"| onprem
-  AddInApp --> |"read only"| cloud
+  AddInCtx --> |"&nbsp;&nbsp;read only&nbsp;&nbsp;"| AddInApp
+  AddInCtx --> |"&nbsp;&nbsp;read only&nbsp;&nbsp;"| onprem
+  AddInApp --> |"&nbsp;&nbsp;read only&nbsp;&nbsp;"| cloud
   
   style UserCtx stroke:blue,stroke-width:2.5px
   style SimulateCtx stroke:darkgrey,stroke-width:2.5px
