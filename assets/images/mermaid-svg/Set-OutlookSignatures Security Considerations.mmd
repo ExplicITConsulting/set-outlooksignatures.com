@@ -2,35 +2,33 @@
 title: Set-OutlookSignatures Security Considerations
 config:
   layout: elk
-  flowchart:
-    padding: 30
 ---
 flowchart TB
-  subgraph Contexts ["<b>Security Contexts</b>"]
-    UserCtx["Client mode:<br>Logged-on user"]
-    SimulateCtx["Simulation mode:<br>Logged-on user"]
-    SvcCtx["SimulateAndDeploy mode:<br>Service account"]
-    AddInCtx["Outlook add-in:<br>Outlook sandbox, manifest"]
+  subgraph Contexts ["&nbsp;&nbsp;<b>Security Contexts</b>&nbsp;&nbsp;"]
+    UserCtx["&nbsp;&nbsp;Client mode:<br>Logged-on user&nbsp;&nbsp;"]
+    SimulateCtx["&nbsp;&nbsp;Simulation mode:<br>Logged-on user&nbsp;&nbsp;"]
+    SvcCtx["&nbsp;&nbsp;SimulateAndDeploy mode:<br>Service account&nbsp;&nbsp;"]
+    AddInCtx["&nbsp;&nbsp;Outlook add-in:<br>Outlook sandbox, manifest&nbsp;&nbsp;"]
   end
 
-  subgraph EntraApps ["<b>Entra ID Applications</b>"]
-    ClientApp["Client mode app:<br>Delegated permissions"]
-    DeployApp["SimulateAndDeploy app:<br>Application permissions"]
-    AddInApp["Outlook Add-in app:<br>Delegated permissions"]
+  subgraph EntraApps ["&nbsp;&nbsp;<b>Entra ID Applications</b>&nbsp;&nbsp;"]
+    ClientApp["&nbsp;&nbsp;Client mode app:<br>Delegated permissions&nbsp;&nbsp;"]
+    DeployApp["&nbsp;&nbsp;SimulateAndDeploy app:<br>Application permissions&nbsp;&nbsp;"]
+    AddInApp["&nbsp;&nbsp;Outlook Add-in app:<br>Delegated permissions&nbsp;&nbsp;"]
   end
 
-  subgraph Targets ["<b>Target Environments</b>"]
-    subgraph onprem ["<b>On-prem</b>"]
-      ActiveDirectory["Active Directory:<br>Read user and mailbox attributes"]
-      File["File system:<br>Read templates and configuration, write simulation output"]
-      SharePointOnprem["SharePoint on-prem:<br>Read templates, configuration"]
-      ExchangeOnprem["Exchange on-prem:<br>Read/write signatures and OOF replies"]
+  subgraph Targets ["&nbsp;&nbsp;<b>Target Environments</b>&nbsp;&nbsp;"]
+    subgraph onprem ["&nbsp;&nbsp;<b>On-prem</b>&nbsp;&nbsp;"]
+      ActiveDirectory["&nbsp;&nbsp;Active Directory:<br>Read user and mailbox attributes&nbsp;&nbsp;"]
+      File["&nbsp;&nbsp;File system:<br>Read templates and configuration, write simulation output&nbsp;&nbsp;"]
+      SharePointOnprem["&nbsp;&nbsp;SharePoint on-prem:<br>Read templates, configuration&nbsp;&nbsp;"]
+      ExchangeOnprem["&nbsp;&nbsp;Exchange on-prem:<br>Read/write signatures and OOF replies&nbsp;&nbsp;"]
     end
 
-    subgraph cloud ["<b>Cloud via Graph API</b>"]
-      EntraID["Entra ID:<br>Read user and mailbox attributes"]
-      SharePointOnline["SharePoint Online:<br>Read templates, configuration"]
-      ExchangeOnline["Exchange Online:<br>Read/write signatures and OOF replies"]
+    subgraph cloud ["&nbsp;&nbsp;<b>Cloud via Graph API</b>&nbsp;&nbsp;"]
+      EntraID["&nbsp;&nbsp;Entra ID:<br>Read user and mailbox attributes&nbsp;&nbsp;"]
+      SharePointOnline["&nbsp;&nbsp;SharePoint Online:<br>Read templates, configuration&nbsp;&nbsp;"]
+      ExchangeOnline["&nbsp;&nbsp;Exchange Online:<br>Read/write signatures and OOF replies&nbsp;&nbsp;"]
     end
   end
 

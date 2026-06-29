@@ -2,56 +2,54 @@
 title: Set-OutlookSignatures Architecture Considerations
 config:
   layout: elk
-  flowchart:
-    padding: 30
 ---
 flowchart TB
     classDef invisible fill:none,stroke:none;
 
     %% --- INPUTS STAGE ---
-    subgraph inputs [" "]
+    subgraph inputs ["&nbsp;&nbsp;&nbsp;&nbsp;"]
         direction TB
-        templatestore["Template store<br/>(local, share, SharePoint)"]
-        datasource["Data source<br/>(Entra ID, AD, others)"]
-        config["Custom configuration,<br/>custom code"]
+        templatestore["&nbsp;&nbsp;Template store<br/>(local, share, SharePoint)&nbsp;&nbsp;"]
+        datasource["&nbsp;&nbsp;Data source<br/>(Entra ID, AD, others)&nbsp;&nbsp;"]
+        config["&nbsp;&nbsp;Custom configuration,<br/>custom code&nbsp;&nbsp;"]
     end
 
     %% --- GENERATION STAGE ---
-    subgraph gen ["<b>Stage 1: Create signatures and out-of-office replies</b>"]
+    subgraph gen ["&nbsp;&nbsp;<b>Stage 1: Create signatures and out-of-office replies</b>&nbsp;&nbsp;"]
         direction TB
-        clientmode["Client mode<br>(on user devices)"]
-        simulateanddeploy["SimulateAndDeploy<br>(on central system)"]
-        simulate["Simulation mode<br>(on user device)"]
+        clientmode["&nbsp;&nbsp;Client mode<br>(on user devices)&nbsp;&nbsp;"]
+        simulateanddeploy["&nbsp;&nbsp;SimulateAndDeploy<br>(on central system)&nbsp;&nbsp;"]
+        simulate["&nbsp;&nbsp;Simulation mode<br>(on user device)&nbsp;&nbsp;"]
     end
 
     %% --- MIDDLEWARE / STORAGE ---
-    subgraph mid [" "]
+    subgraph mid ["&nbsp;&nbsp;&nbsp;&nbsp;"]
         direction TB
-        mailbox["Mailboxes<br>(on-prem, cloud)"]
-        filesystem["File system"]
+        mailbox["&nbsp;&nbsp;Mailboxes<br>(on-prem, cloud)&nbsp;&nbsp;"]
+        filesystem["&nbsp;&nbsp;File system&nbsp;&nbsp;"]
     end
 
     %% --- AVAILABILITY STAGE ---
-    subgraph avail ["<b>Stage 2: Make signatures available</b>"]
+    subgraph avail ["&nbsp;&nbsp;<b>Stage 2: Make signatures available</b>&nbsp;&nbsp;"]
         direction TB
-        roam["Native roaming<br>(cloud only)"]
-        addin["Outlook add-in<br>(on-prem, cloud)"]
+        roam["&nbsp;&nbsp;Native roaming<br>(cloud only)&nbsp;&nbsp;"]
+        addin["&nbsp;&nbsp;Outlook add-in<br>(on-prem, cloud)&nbsp;&nbsp;"]
 
-        subgraph outlookeditions [" "]
+        subgraph outlookeditions ["&nbsp;&nbsp;&nbsp;&nbsp;"]
             direction TB
-            WinOutlook["Outlook for Windows<br>(Classic and New)"]
-            WebOutlook["Outlook for the Web"]
-            Mac["Outlook for Mac<br>(Classic and New)"]
-            iOS["Outlook for iOS"]
-            Android["Outlook for Android"]
-            NonOutlook["Other mail clients<br>(signatures consolidated in draft email or file folder)"]
+            WinOutlook["&nbsp;&nbsp;Outlook for Windows<br>(Classic and New)&nbsp;&nbsp;"]
+            WebOutlook["&nbsp;&nbsp;Outlook for the Web&nbsp;&nbsp;"]
+            Mac["&nbsp;&nbsp;Outlook for Mac<br>(Classic and New)&nbsp;&nbsp;"]
+            iOS["&nbsp;&nbsp;Outlook for iOS&nbsp;&nbsp;"]
+            Android["&nbsp;&nbsp;Outlook for Android&nbsp;&nbsp;"]
+            NonOutlook["&nbsp;&nbsp;Other mail clients<br>(signatures consolidated in draft email or file folder)&nbsp;&nbsp;"]
         end
     end
 
     %% --- OUT OF OFFICE HANDLING ---
-    subgraph oofbox [" "]
+    subgraph oofbox ["&nbsp;&nbsp;&nbsp;&nbsp;"]
         direction TB
-        oof["Native OOF handling<br>(on-prem, cloud)"]
+        oof["&nbsp;&nbsp;Native OOF handling<br>(on-prem, cloud)&nbsp;&nbsp;"]
     end
 
     %% --- RELATIONSHIPS & FLOWS ---

@@ -2,44 +2,42 @@
 title: Set-OutlookSignatures Outlook Add-In Configuration and Deployment
 config:
   layout: dagre
-  flowchart:
-    padding: 30
 ---
 flowchart LR
   classDef nofill fill:none;
 
-  subgraph S1 ["<b>Step 1: Configuration (Prepare)</b>"]
+  subgraph S1 ["&nbsp;&nbsp;<b>Step 1: Configuration (Prepare)</b>&nbsp;&nbsp;"]
     direction LR
 
-    script["run_before_deployment.ps1"]
-    files["Customize configuration"]
-    manifest["Create manifest.xml"]
+    script["&nbsp;&nbsp;run_before_deployment.ps1&nbsp;&nbsp;"]
+    files["&nbsp;&nbsp;Customize configuration&nbsp;&nbsp;"]
+    manifest["&nbsp;&nbsp;Create manifest.xml&nbsp;&nbsp;"]
 
     script --> files
     script --> manifest
   end
 
-  subgraph S2 ["<b>Step 2: Hosting (Publish)</b>"]
+  subgraph S2 ["&nbsp;&nbsp;<b>Step 2: Hosting (Publish)</b>&nbsp;&nbsp;"]
     direction LR
 
-    server["Web server"]
+    server["&nbsp;&nbsp;Web server&nbsp;&nbsp;"]
   end
 
-  subgraph S3 ["<b>Step 3: Rollout (Deploy)</b>"]
+  subgraph S3 ["&nbsp;&nbsp;<b>Step 3: Rollout (Deploy)</b>&nbsp;&nbsp;"]
     direction LR
 
-    side["Sideloading"]
-    int["M365 Integrated Apps"]
-    cent["M365 Centralized Deployment"]
-    mbox["<b>Create<br/>manifest.xml snapshot</b><br/>in mailbox(es)"]:::snapshot
+    side["&nbsp;&nbsp;Sideloading&nbsp;&nbsp;"]
+    int["&nbsp;&nbsp;M365 Integrated Apps&nbsp;&nbsp;"]
+    cent["&nbsp;&nbsp;M365 Centralized Deployment&nbsp;&nbsp;"]
+    mbox["&nbsp;&nbsp;<b>Create<br/>manifest.xml snapshot</b><br/>in mailbox(es)&nbsp;&nbsp;"]:::snapshot
 
     side & int & cent --> mbox
   end
 
-  subgraph Lifecycle ["<b>Outlook clients</b>"]
+  subgraph Lifecycle ["&nbsp;&nbsp;<b>Outlook clients</b>&nbsp;&nbsp;"]
     direction LR
 
-    cache["Download add-in from web server if the local cache version differs from the one in the manifest.xml snapshot (deployed in step 3)"]
+    cache["&nbsp;&nbsp;Download add-in from web server if the local cache version differs from the one in the manifest.xml snapshot (deployed in step 3)&nbsp;&nbsp;"]
   end
 
   S1 --> S2
