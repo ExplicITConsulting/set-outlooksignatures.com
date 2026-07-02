@@ -10,10 +10,11 @@ show_sidebar: true
 slug: "merry-christmas-happy-new-year"
 permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
-  - "/blog/:slug"
-  - "/blog/:slug/"
+  - "/blog/merry-christmas-happy-new-year"
+  - "/blog/merry-christmas-happy-new-year/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
 
 <img src="/assets/images/posts/merry christmas.jpg" alt="Merry Christmas and a Happy New Year!">
+

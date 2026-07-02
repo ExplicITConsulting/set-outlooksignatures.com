@@ -10,8 +10,8 @@ show_sidebar: true
 slug: "azure-devops-for-set-outlooksignatures"
 permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
-  - "/blog/:slug"
-  - "/blog/:slug/"
+  - "/blog/azure-devops-for-set-outlooksignatures"
+  - "/blog/azure-devops-for-set-outlooksignatures/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -143,3 +143,4 @@ We help organizations centrally manage and standardize these touchpoints across 
 
 _Not responsible for email setup in your company?_  
 Share this page with your IT department or marketing team, they’ll thank you for it.
+

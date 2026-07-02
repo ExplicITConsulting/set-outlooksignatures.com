@@ -10,8 +10,8 @@ show_sidebar: true
 slug: "why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
 permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
-  - "/blog/:slug"
-  - "/blog/:slug/"
+  - "/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
+  - "/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -125,3 +125,4 @@ Wir helfen Unternehmen, diese Kontaktpunkte für alle Benutzer zentral zu verwal
 
 _Nicht verantwortlich für die E-Mail-Konfiguration in Ihrem Unternehmen?_  
 Teilen Sie diese Seite mit Ihrer IT-Abteilung oder Ihrem Marketingteam, sie werden es Ihnen danken.
+

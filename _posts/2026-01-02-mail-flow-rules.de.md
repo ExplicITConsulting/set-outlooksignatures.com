@@ -10,8 +10,8 @@ show_sidebar: true
 slug: "mail-flow-rules"
 permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
-  - "/blog/:slug"
-  - "/blog/:slug/"
+  - "/blog/mail-flow-rules"
+  - "/blog/mail-flow-rules/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -53,3 +53,4 @@ Wir helfen Unternehmen, diese Kontaktpunkte für alle Benutzer zentral zu verwal
 
 _Nicht verantwortlich für die E-Mail-Konfiguration in Ihrem Unternehmen?_  
 Teilen Sie diese Seite mit Ihrer IT-Abteilung oder Ihrem Marketingteam, sie werden es Ihnen danken.
+

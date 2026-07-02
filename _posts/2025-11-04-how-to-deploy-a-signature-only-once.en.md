@@ -10,8 +10,8 @@ show_sidebar: true
 slug: "how-to-deploy-a-signature-only-once"
 permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
-  - "/blog/:slug"
-  - "/blog/:slug/"
+  - "/blog/how-to-deploy-a-signature-only-once"
+  - "/blog/how-to-deploy-a-signature-only-once/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -51,3 +51,4 @@ We help organizations centrally manage and standardize these touchpoints across 
 
 _Not responsible for email setup in your company?_  
 Share this page with your IT department or marketing team, they’ll thank you for it.
+

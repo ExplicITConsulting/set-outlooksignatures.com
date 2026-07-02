@@ -10,8 +10,8 @@ show_sidebar: true
 slug: "barrier-free-email-signatures-and-out-of-office-replies"
 permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
-  - "/blog/:slug"
-  - "/blog/:slug/"
+  - "/blog/barrier-free-email-signatures-and-out-of-office-replies"
+  - "/blog/barrier-free-email-signatures-and-out-of-office-replies/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -65,3 +65,4 @@ Share this page with your IT department or marketing team, they’ll thank you f
 ## Data sources
 
 Data sources used for this post: [beaccessible.com](https://beaccessible.com), [allaccessible.org](https://allaccessible.org)
+

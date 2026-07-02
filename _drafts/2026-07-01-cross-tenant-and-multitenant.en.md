@@ -10,8 +10,8 @@ show_sidebar: true
 slug: "cross-tenant-and-multitenant"
 permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
-  - "/blog/:slug"
-  - "/blog/:slug/"
+  - "/blog/cross-tenant-and-multitenant"
+  - "/blog/cross-tenant-and-multitenant/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
