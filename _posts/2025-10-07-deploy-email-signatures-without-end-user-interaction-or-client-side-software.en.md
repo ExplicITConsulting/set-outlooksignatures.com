@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/deploy-email-signatures-without-end-user-interaction-or-client-side-software"
   - "/blog/deploy-email-signatures-without-end-user-interaction-or-client-side-software/"
+  - "/de/blog/deploy-email-signatures-without-end-user-interaction-or-client-side-software"
+  - "/de/blog/deploy-email-signatures-without-end-user-interaction-or-client-side-software/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

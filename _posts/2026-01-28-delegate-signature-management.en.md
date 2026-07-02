@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/delegate-signature-management"
   - "/blog/delegate-signature-management/"
+  - "/de/blog/delegate-signature-management"
+  - "/de/blog/delegate-signature-management/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

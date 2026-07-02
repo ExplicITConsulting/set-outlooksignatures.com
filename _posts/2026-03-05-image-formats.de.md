@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/image-formats"
   - "/blog/image-formats/"
+  - "/de/blog/image-formats"
+  - "/de/blog/image-formats/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

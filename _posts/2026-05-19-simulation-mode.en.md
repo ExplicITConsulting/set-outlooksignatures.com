@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/simulation-mode"
   - "/blog/simulation-mode/"
+  - "/de/blog/simulation-mode"
+  - "/de/blog/simulation-mode/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

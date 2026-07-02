@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/custom-attributes"
   - "/blog/custom-attributes/"
+  - "/de/blog/custom-attributes"
+  - "/de/blog/custom-attributes/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

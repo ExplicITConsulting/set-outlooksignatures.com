@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/which-signatures-you-need"
   - "/blog/which-signatures-you-need/"
+  - "/de/blog/which-signatures-you-need"
+  - "/de/blog/which-signatures-you-need/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

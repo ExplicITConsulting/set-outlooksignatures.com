@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/sendas-sendonbehalf"
   - "/blog/sendas-sendonbehalf/"
+  - "/de/blog/sendas-sendonbehalf"
+  - "/de/blog/sendas-sendonbehalf/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/start-smart"
   - "/blog/start-smart/"
+  - "/de/blog/start-smart"
+  - "/de/blog/start-smart/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

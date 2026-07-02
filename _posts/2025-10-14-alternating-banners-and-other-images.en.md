@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/alternating-banners-and-other-images"
   - "/blog/alternating-banners-and-other-images/"
+  - "/de/blog/alternating-banners-and-other-images"
+  - "/de/blog/alternating-banners-and-other-images/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

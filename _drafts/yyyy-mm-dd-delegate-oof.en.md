@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/delegate-oof"
   - "/blog/delegate-oof/"
+  - "/de/blog/delegate-oof"
+  - "/de/blog/delegate-oof/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/merry-christmas-happy-new-year"
   - "/blog/merry-christmas-happy-new-year/"
+  - "/de/blog/merry-christmas-happy-new-year"
+  - "/de/blog/merry-christmas-happy-new-year/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

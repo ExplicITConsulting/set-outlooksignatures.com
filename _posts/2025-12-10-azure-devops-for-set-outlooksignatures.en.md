@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/azure-devops-for-set-outlooksignatures"
   - "/blog/azure-devops-for-set-outlooksignatures/"
+  - "/de/blog/azure-devops-for-set-outlooksignatures"
+  - "/de/blog/azure-devops-for-set-outlooksignatures/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

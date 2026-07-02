@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/what-a-signature-must-contain"
   - "/blog/what-a-signature-must-contain/"
+  - "/de/blog/what-a-signature-must-contain"
+  - "/de/blog/what-a-signature-must-contain/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

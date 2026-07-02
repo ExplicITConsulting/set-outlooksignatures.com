@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/mail-flow-rules"
   - "/blog/mail-flow-rules/"
+  - "/de/blog/mail-flow-rules"
+  - "/de/blog/mail-flow-rules/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/roaming-signatures-macos"
   - "/blog/roaming-signatures-macos/"
+  - "/de/blog/roaming-signatures-macos"
+  - "/de/blog/roaming-signatures-macos/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

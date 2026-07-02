@@ -12,6 +12,8 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
   - "/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo/"
+  - "/de/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
+  - "/de/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -60,19 +62,19 @@ Here are a few simple templates you can use:
 >
 > **Reason for Absence:**
 >
-> - [ ] I am on annual leave.
-> - [ ] I am away on official business / attending a conference.
-> - [ ] I am out of the office with limited access to email.
-> - [ ] I am currently unavailable due to personal/medical reasons.
+> - \[ \] I am on annual leave.
+> - \[ \] I am away on official business / attending a conference.
+> - \[ \] I am out of the office with limited access to email.
+> - \[ \] I am currently unavailable due to personal/medical reasons.
 >
 > <br>
 >
 > **Email Policy During My Absence:**
 >
-> - [ ] **No Access:** I will not be checking my emails until I return.
-> - [ ] **Limited Access:** I will be checking emails intermittently, but responses will be delayed.
-> - [ ] **No Forwarding:** Your email has _not_ been forwarded. I will respond when I get back.
-> - [ ] **Auto-Forwarded:** Your email has been automatically forwarded to my team for review.
+> - \[ \] **No Access:** I will not be checking my emails until I return.
+> - \[ \] **Limited Access:** I will be checking emails intermittently, but responses will be delayed.
+> - \[ \] **No Forwarding:** Your email has _not_ been forwarded. I will respond when I get back.
+> - \[ \] **Auto-Forwarded:** Your email has been automatically forwarded to my team for review.
 >
 > <br>
 >
