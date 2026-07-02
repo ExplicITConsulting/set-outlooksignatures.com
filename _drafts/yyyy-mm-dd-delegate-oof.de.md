@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "delegate-oof"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/delegate-oof"
-  - "/blog/delegate-oof/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

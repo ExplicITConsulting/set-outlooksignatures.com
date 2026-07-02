@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "signature-text-blue"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/signature-text-blue"
-  - "/blog/signature-text-blue/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

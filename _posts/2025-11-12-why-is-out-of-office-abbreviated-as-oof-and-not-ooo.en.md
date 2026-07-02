@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
-  - "/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -99,7 +96,7 @@ When setting up your automatic replies, keep a few technical behaviors of Micros
 - **Internal vs. External Split:** Exchange allows you to define separate out-of-office replies for internal and external recipients. This is great for sharing more specific details with colleagues while keeping external replies formal.
 - **Rich Formatting with Caveats:** Exchange allows full formatting in OOF messages, just as with signatures. However, watch out for two caveats:
   - **Tables:** Classic Outlook for Windows tends to mess up table layouts in OOF replies (though Outlook for the web and New Outlook for Windows render them perfectly fine).
-  - **Images:** Images are only possible when linking them via a web-hosted URL. Read our guide for [image formats](/blog/image-formats) to learn more about image format compatibility and the potential issues linked image files can create.
+  - **Images:** Images are only possible when linking them via a web-hosted URL. Read our guide for [image formats](/blog/2026/03/05/image-formats) to learn more about image format compatibility and the potential issues linked image files can create.
 - **Automated Deployment:** Set-OutlookSignatures with the <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> allows you to deploy internal and external out-of-office reply texts easily, based on Word or HTML templates.
 
 ## Bonus trivia: Ever heard someone say "Little 'r' me"?

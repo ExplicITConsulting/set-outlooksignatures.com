@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "docs-vs-html"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/docs-vs-html"
-  - "/blog/docs-vs-html/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

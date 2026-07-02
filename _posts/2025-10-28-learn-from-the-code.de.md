@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "learn-from-the-code"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/learn-from-the-code"
-  - "/blog/learn-from-the-code/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

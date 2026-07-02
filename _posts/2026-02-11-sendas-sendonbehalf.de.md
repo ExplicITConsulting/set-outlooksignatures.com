@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "sendas-sendonbehalf"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/sendas-sendonbehalf"
-  - "/blog/sendas-sendonbehalf/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

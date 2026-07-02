@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "no-new-infrastructure"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/no-new-infrastructure"
-  - "/blog/no-new-infrastructure/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

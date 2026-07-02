@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "oof-vs-autoresponder"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/oof-vs-autoresponder"
-  - "/blog/oof-vs-autoresponder/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

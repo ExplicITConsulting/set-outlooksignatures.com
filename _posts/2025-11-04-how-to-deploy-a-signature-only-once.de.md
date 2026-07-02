@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "how-to-deploy-a-signature-only-once"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/how-to-deploy-a-signature-only-once"
-  - "/blog/how-to-deploy-a-signature-only-once/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

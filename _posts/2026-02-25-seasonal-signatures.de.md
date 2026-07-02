@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "seasonal-signatures"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/seasonal-signatures"
-  - "/blog/seasonal-signatures/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

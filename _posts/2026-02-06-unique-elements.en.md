@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "unique-elements"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/unique-elements"
-  - "/blog/unique-elements/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

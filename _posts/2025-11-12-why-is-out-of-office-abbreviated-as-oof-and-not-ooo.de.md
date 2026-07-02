@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
-  - "/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -101,7 +98,7 @@ Wenn Sie Ihre Abwesenheitsnotiz einrichten, sollten Sie ein paar technische Beso
 - **Interne vs. externe Empfänger:** Exchange ermöglicht es Ihnen, unterschiedliche Abwesenheitsnotizen für interne Kollegen und externe Absender zu definieren. Nutzen Sie dies, um intern spezifischere Details zu teilen und extern formeller zu bleiben.
 - **Volle Formatierung mit Einschränkungen:** Sie können Abwesenheitsnotizen genau wie Ihre E-Mail-Signaturen frei formatieren. Beachten Sie dabei jedoch zwei Fallstricke:
   - **Tabellen:** Das klassische Outlook für Windows neigt dazu, Tabellenlayouts in Abwesenheitsnotizen zu zerschießen. In Outlook im Web und im neuen Outlook für Windows werden sie hingegen korrekt dargestellt.
-  - **Bilder:** Bilder können nur verwendet werden, wenn sie über eine im Web gehostete URL verlinkt sind. Lesen Sie unseren Beitrag zu [Bildformaten](/blog/image-formats) für mehr Details zur Bildformatkompatibilität und den potenziellen Problemen, die verlinkte Bilddateien verursachen können.
+  - **Bilder:** Bilder können nur verwendet werden, wenn sie über eine im Web gehostete URL verlinkt sind. Lesen Sie unseren Beitrag zu [Bildformaten](/blog/2026/03/05/image-formats) für mehr Details zur Bildformatkompatibilität und den potenziellen Problemen, die verlinkte Bilddateien verursachen können.
 - **Automatisierte Bereitstellung:** Mit Set-OutlookSignatures und dem <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> können Sie interne und externe Abwesenheitstexte ganz einfach auf Basis von Word- oder HTML-Vorlagen unternehmensweit verteilen.
 
 ## Bonus-Trivia: Haben Sie jemals jemanden "Little 'r' me" sagen hören?

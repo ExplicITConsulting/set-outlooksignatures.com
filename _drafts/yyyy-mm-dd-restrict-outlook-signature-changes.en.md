@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "restrict-outlook-signature-changes"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/restrict-outlook-signature-changes"
-  - "/blog/restrict-outlook-signature-changes/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

@@ -9,9 +9,6 @@ tags:
 show_sidebar: true
 slug: "simulation-mode"
 permalink: "/blog/:year/:month/:day/:slug"
-redirect_from:
-  - "/blog/simulation-mode"
-  - "/blog/simulation-mode/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
