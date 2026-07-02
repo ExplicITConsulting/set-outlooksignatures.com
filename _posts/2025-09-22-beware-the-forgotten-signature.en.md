@@ -12,8 +12,6 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/beware-the-forgotten-signature"
   - "/blog/beware-the-forgotten-signature/"
-  - "/de/blog/beware-the-forgotten-signature"
-  - "/de/blog/beware-the-forgotten-signature/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

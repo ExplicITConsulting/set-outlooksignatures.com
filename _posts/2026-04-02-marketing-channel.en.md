@@ -12,8 +12,6 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/marketing-channel"
   - "/blog/marketing-channel/"
-  - "/de/blog/marketing-channel"
-  - "/de/blog/marketing-channel/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

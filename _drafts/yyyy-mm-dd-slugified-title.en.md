@@ -12,8 +12,6 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/slugified-title"
   - "/blog/slugified-title/"
-  - "/de/blog/slugified-title"
-  - "/de/blog/slugified-title/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

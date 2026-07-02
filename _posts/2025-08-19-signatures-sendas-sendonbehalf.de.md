@@ -12,8 +12,6 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/signatures-sendas-sendonbehalf"
   - "/blog/signatures-sendas-sendonbehalf/"
-  - "/de/blog/signatures-sendas-sendonbehalf"
-  - "/de/blog/signatures-sendas-sendonbehalf/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

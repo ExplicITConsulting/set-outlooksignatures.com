@@ -12,8 +12,6 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/current-state-and-future-of-roaming-signatures"
   - "/blog/current-state-and-future-of-roaming-signatures/"
-  - "/de/blog/current-state-and-future-of-roaming-signatures"
-  - "/de/blog/current-state-and-future-of-roaming-signatures/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

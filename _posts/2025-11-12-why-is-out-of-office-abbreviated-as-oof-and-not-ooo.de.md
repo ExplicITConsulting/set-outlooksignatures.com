@@ -12,8 +12,6 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
   - "/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo/"
-  - "/de/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
-  - "/de/blog/why-is-out-of-office-abbreviated-as-oof-and-not-ooo/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -64,19 +62,19 @@ Hier sind ein paar einfache Vorlagen, die Sie verwenden können:
 >
 > **Grund der Abwesenheit:**
 >
-> - \[ \] Ich befinde mich im Jahresurlaub.
-> - \[ \] Ich bin geschäftlich unterwegs / nehme an einer Konferenz teil.
-> - \[ \] Ich bin außerhalb des Büros und habe nur eingeschränkten Zugriff auf meine E-Mails.
-> - \[ \] Ich bin derzeit aus persönlichen/medizinischen Gründen nicht erreichbar.
+> - [ ] Ich befinde mich im Jahresurlaub.
+> - [ ] Ich bin geschäftlich unterwegs / nehme an einer Konferenz teil.
+> - [ ] Ich bin außerhalb des Büros und habe nur eingeschränkten Zugriff auf meine E-Mails.
+> - [ ] Ich bin derzeit aus persönlichen/medizinischen Gründen nicht erreichbar.
 >
 > <br>
 >
 > **E-Mail-Umgang während meiner Abwesenheit:**
 >
-> - \[ \] **Kein Zugriff:** Ich werde meine E-Mails bis zu meiner Rückkehr nicht lesen.
-> - \[ \] **Eingeschränkter Zugriff:** Ich lese meine E-Mails nur unregelmäßig, Antworten werden sich daher verzögern.
-> - \[ \] **Keine Weiterleitung:** Ihre E-Mail wurde _nicht_ weitergeleitet. Ich antworte Ihnen, sobald ich zurück bin.
-> - \[ \] **Automatisch weitergeleitet:** Ihre E-Mail wurde zur Bearbeitung automatisch an mein Team weitergeleitet.
+> - [ ] **Kein Zugriff:** Ich werde meine E-Mails bis zu meiner Rückkehr nicht lesen.
+> - [ ] **Eingeschränkter Zugriff:** Ich lese meine E-Mails nur unregelmäßig, Antworten werden sich daher verzögern.
+> - [ ] **Keine Weiterleitung:** Ihre E-Mail wurde _nicht_ weitergeleitet. Ich antworte Ihnen, sobald ich zurück bin.
+> - [ ] **Automatisch weitergeleitet:** Ihre E-Mail wurde zur Bearbeitung automatisch an mein Team weitergeleitet.
 >
 > <br>
 >

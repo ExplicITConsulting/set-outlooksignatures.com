@@ -12,8 +12,6 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/detect-and-convert-encodings"
   - "/blog/detect-and-convert-encodings/"
-  - "/de/blog/detect-and-convert-encodings"
-  - "/de/blog/detect-and-convert-encodings/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

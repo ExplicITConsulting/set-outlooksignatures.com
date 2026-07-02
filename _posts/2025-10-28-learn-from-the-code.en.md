@@ -12,8 +12,6 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/learn-from-the-code"
   - "/blog/learn-from-the-code/"
-  - "/de/blog/learn-from-the-code"
-  - "/de/blog/learn-from-the-code/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

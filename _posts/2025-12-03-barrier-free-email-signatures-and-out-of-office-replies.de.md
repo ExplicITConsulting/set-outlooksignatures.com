@@ -12,8 +12,6 @@ permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
   - "/blog/barrier-free-email-signatures-and-out-of-office-replies"
   - "/blog/barrier-free-email-signatures-and-out-of-office-replies/"
-  - "/de/blog/barrier-free-email-signatures-and-out-of-office-replies"
-  - "/de/blog/barrier-free-email-signatures-and-out-of-office-replies/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
