@@ -9,6 +9,9 @@ tags:
 show_sidebar: true
 slug: "why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
 permalink: "/blog/:year/:month/:day/:slug"
+redirect_from:
+  - "/blog/:slug"
+  - "/blog/:slug/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -46,6 +49,58 @@ Here are a few simple templates you can use:
 **More personal tone**
 
 > I'm currently out of the office taking a short break and will be back on [date]. Thanks for your patience!
+
+**All-in-one flexible template (with selectable checkboxes)**
+
+> Thank you for your email. I am currently out of the office.
+>
+> I expect to be back in the office from **[MMMM DD]** and will then reply as soon as possible.
+>
+> <br>
+>
+> **Reason for Absence:**
+>
+> - [ ] I am on annual leave.
+> - [ ] I am away on official business / attending a conference.
+> - [ ] I am out of the office with limited access to email.
+> - [ ] I am currently unavailable due to personal/medical reasons.
+>
+> <br>
+>
+> **Email Policy During My Absence:**
+>
+> - [ ] **No Access:** I will not be checking my emails until I return.
+> - [ ] **Limited Access:** I will be checking emails intermittently, but responses will be delayed.
+> - [ ] **No Forwarding:** Your email has _not_ been forwarded. I will respond when I get back.
+> - [ ] **Auto-Forwarded:** Your email has been automatically forwarded to my team for review.
+>
+> <br>
+>
+> **Coverage & Urgent Matters**
+>
+> If your request cannot be postponed at all, please contact the secretariat (**[Secretariat Email]**) or my line manager **[Manager Name]** (**[Manager Email]**, **[Manager Phone]**).
+>
+> For specific project or topic-related inquiries, please reach out to the appropriate contact below:
+>
+> - **For [Topic A / Project X]:** Please contact **[Name]** at **[Email/Phone]**
+> - **For [Topic B / Project Y]:** Please contact **[Name]** at **[Email/Phone]**
+>
+> <br>
+>
+> Best regards,
+>
+> **[Your Name]**  
+> **[Your Title]**
+
+## Technical Best Practices for Your OOF Message in Exchange & Outlook
+
+When setting up your automatic replies, keep a few technical behaviors of Microsoft Exchange and Outlook in mind:
+
+- **Internal vs. External Split:** Exchange allows you to define separate out-of-office replies for internal and external recipients. This is great for sharing more specific details with colleagues while keeping external replies formal.
+- **Rich Formatting with Caveats:** Exchange allows full formatting in OOF messages, just as with signatures. However, watch out for two caveats:
+  - **Tables:** Classic Outlook for Windows tends to mess up table layouts in OOF replies (though Outlook for the web and New Outlook for Windows render them perfectly fine).
+  - **Images:** Images are only possible when linking them via a web-hosted URL. Read our guide for [image formats](/blog/image-formats) to learn more about image format compatibility and the potential issues linked image files can create.
+- **Automated Deployment:** Set-OutlookSignatures with the <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> allows you to deploy internal and external out-of-office reply texts easily, based on Word or HTML templates.
 
 ## Bonus trivia: Ever heard someone say "Little 'r' me"?
 

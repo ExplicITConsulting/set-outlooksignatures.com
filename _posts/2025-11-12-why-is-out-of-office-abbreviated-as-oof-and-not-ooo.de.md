@@ -9,6 +9,9 @@ tags:
 show_sidebar: true
 slug: "why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
 permalink: "/blog/:year/:month/:day/:slug"
+redirect_from:
+  - "/blog/:slug"
+  - "/blog/:slug/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
@@ -48,6 +51,58 @@ Hier sind ein paar einfache Vorlagen, die Sie verwenden können:
 **Persönlicherer Ton**
 
 > Ich bin derzeit nicht im Büro und mache eine kurze Pause. Ich bin am [Datum] wieder zurück. Vielen Dank für Ihre Geduld!
+
+**Flexible All-in-One-Vorlage (mit auswählbaren Kontrollkästchen)**
+
+> Vielen Dank für Ihre E-Mail. Ich bin derzeit nicht im Büro.
+>
+> Ich werde voraussichtlich ab dem **[TT. MMMM]** wieder im Büro sein und Ihnen dann so schnell wie möglich antworten.
+>
+> <br>
+>
+> **Grund der Abwesenheit:**
+>
+> - [ ] Ich befinde mich im Jahresurlaub.
+> - [ ] Ich bin geschäftlich unterwegs / nehme an einer Konferenz teil.
+> - [ ] Ich bin außerhalb des Büros und habe nur eingeschränkten Zugriff auf meine E-Mails.
+> - [ ] Ich bin derzeit aus persönlichen/medizinischen Gründen nicht erreichbar.
+>
+> <br>
+>
+> **E-Mail-Umgang während meiner Abwesenheit:**
+>
+> - [ ] **Kein Zugriff:** Ich werde meine E-Mails bis zu meiner Rückkehr nicht lesen.
+> - [ ] **Eingeschränkter Zugriff:** Ich lese meine E-Mails nur unregelmäßig, Antworten werden sich daher verzögern.
+> - [ ] **Keine Weiterleitung:** Ihre E-Mail wurde _nicht_ weitergeleitet. Ich antworte Ihnen, sobald ich zurück bin.
+> - [ ] **Automatisch weitergeleitet:** Ihre E-Mail wurde zur Bearbeitung automatisch an mein Team weitergeleitet.
+>
+> <br>
+>
+> **Vertretung & dringende Angelegenheiten**
+>
+> Falls Ihr Anliegen absolut keinen Aufschub duldet, wenden Sie sich bitte an das Sekretariat (**[E-Mail Sekretariat]**) oder an meine Führungskraft **[Name Führungskraft]** (**[E-Mail Führungskraft]**, **[Telefonnummer Führungskraft]**).
+>
+> Für spezifische projekt- oder themenbezogene Anfragen wenden Sie sich bitte an die entsprechende Kontaktperson unten:
+>
+> - **Für [Thema A / Projekt X]:** Bitte kontaktieren Sie **[Name]** unter **[E-Mail/Telefon]**
+> - **Für [Thema B / Projekt Y]:** Bitte kontaktieren Sie **[Name]** unter **[E-Mail/Telefon]**
+>
+> <br>
+>
+> Mit freundlichen Grüßen
+>
+> **[Ihr Name]**  
+> **[Ihr Titel]**
+
+## Technische Best Practices für Ihre Abwesenheitsnotiz in Exchange & Outlook
+
+Wenn Sie Ihre Abwesenheitsnotiz einrichten, sollten Sie ein paar technische Besonderheiten von Microsoft Exchange und Outlook beachten:
+
+- **Interne vs. externe Empfänger:** Exchange ermöglicht es Ihnen, unterschiedliche Abwesenheitsnotizen für interne Kollegen und externe Absender zu definieren. Nutzen Sie dies, um intern spezifischere Details zu teilen und extern formeller zu bleiben.
+- **Volle Formatierung mit Einschränkungen:** Sie können Abwesenheitsnotizen genau wie Ihre E-Mail-Signaturen frei formatieren. Beachten Sie dabei jedoch zwei Fallstricke:
+  - **Tabellen:** Das klassische Outlook für Windows neigt dazu, Tabellenlayouts in Abwesenheitsnotizen zu zerschießen. In Outlook im Web und im neuen Outlook für Windows werden sie hingegen korrekt dargestellt.
+  - **Bilder:** Bilder können nur verwendet werden, wenn sie über eine im Web gehostete URL verlinkt sind. Lesen Sie unseren Beitrag zu [Bildformaten](/blog/image-formats) für mehr Details zur Bildformatkompatibilität und den potenziellen Problemen, die verlinkte Bilddateien verursachen können.
+- **Automatisierte Bereitstellung:** Mit Set-OutlookSignatures und dem <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> können Sie interne und externe Abwesenheitstexte ganz einfach auf Basis von Word- oder HTML-Vorlagen unternehmensweit verteilen.
 
 ## Bonus-Trivia: Haben Sie jemals jemanden "Little 'r' me" sagen hören?
 

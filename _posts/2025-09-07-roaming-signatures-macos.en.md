@@ -9,6 +9,9 @@ tags:
 show_sidebar: true
 slug: "roaming-signatures-macos"
 permalink: "/blog/:year/:month/:day/:slug"
+redirect_from:
+  - "/blog/:slug"
+  - "/blog/:slug/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
