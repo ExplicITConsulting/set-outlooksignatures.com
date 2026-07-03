@@ -10,8 +10,8 @@ show_sidebar: true
 slug: "financial-benefits"
 permalink: "/blog/:year/:month/:day/:slug"
 redirect_from:
-  - "/de/blog/2025/08/11/financial-benefits"
-  - "/de/blog/2025/08/11/financial-benefits/"
+  - "/blog/2025/08/11/financial-benefits"
+  - "/blog/2025/08/11/financial-benefits/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
