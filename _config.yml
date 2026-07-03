@@ -78,10 +78,10 @@ collections:
     output: true
 
 plugins:
-  - jekyll-redirect-from
   - jekyll-polyglot
   - jekyll-archives
   - jekyll-paginate-v2
+  - jekyll-redirect-from
   - liquid-md5
   - jekyll-feed
   - jekyll-seo-tag
