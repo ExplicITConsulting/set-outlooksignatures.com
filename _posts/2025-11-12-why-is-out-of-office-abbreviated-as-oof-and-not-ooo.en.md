@@ -8,7 +8,6 @@ published: true
 tags:
 show_sidebar: true
 slug: "why-is-out-of-office-abbreviated-as-oof-and-not-ooo"
-permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

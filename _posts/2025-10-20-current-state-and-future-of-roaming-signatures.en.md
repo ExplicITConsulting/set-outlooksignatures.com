@@ -8,7 +8,6 @@ published: true
 tags:
 show_sidebar: true
 slug: "current-state-and-future-of-roaming-signatures"
-permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

@@ -61,6 +61,7 @@ defaults:
       path: ""
       type: "posts"
     values:
+      permalink: "/blog/:year/:month/:day/:slug"
       image:
         path: "/assets/images/set-outlooksignatures blog opengraph1200x630.png"
         width: 1200

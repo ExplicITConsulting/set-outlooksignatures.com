@@ -8,7 +8,6 @@ published: true
 tags:
 show_sidebar: true
 slug: "learn-from-the-code"
-permalink: "/blog/:year/:month/:day/:slug"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
