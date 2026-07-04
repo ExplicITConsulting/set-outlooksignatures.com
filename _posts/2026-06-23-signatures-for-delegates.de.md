@@ -93,5 +93,5 @@ Wir helfen Unternehmen, diese Kontaktpunkte für alle Benutzer zentral zu verwal
 → [Schnellstart](https://set-outlooksignatures.com/quickstart)
 
 _Nicht verantwortlich für die E-Mail-Konfiguration in Ihrem Unternehmen?_  
-Teilen Sie diese Seite mit Ihrer IT-Abteilung oder Ihrem Marketingteam, sie werden es Ihnen danken.
+Teilen Sie diesen Artikel mit Ihrer IT-Abteilung oder Ihrem Marketingteam, sie werden es Ihnen danken.
 
