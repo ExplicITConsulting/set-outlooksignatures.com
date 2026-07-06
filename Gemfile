@@ -11,6 +11,5 @@ group :jekyll_plugins do
     gem "jekyll-feed", github: "jekyll/jekyll-feed"
     gem "jekyll-seo-tag"
     gem "jekyll-redirect-from"
-    gem "jekyll-archives"
     gem "liquid-md5"
 end
