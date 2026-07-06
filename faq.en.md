@@ -27,7 +27,7 @@ This FAQ highlights common topics and clarifies typical points of confusion.
 | :-------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | General                     | [Changelog](#where-can-i-find-the-changelog) \| [Contributing](#how-can-i-contribute-propose-a-new-feature-or-file-a-bug) \| [OOF vs OOO](#why-is-out-of-office-abbreviated-oof-and-not-ooo) \| [Naming Convention](#isnt-a-plural-noun-in-the-software-name-against-powershell-best-practices) \| [Roadmap](#is-there-a-roadmap-for-future-versions) \| [Outlook Stationery](#can-i-centrally-manage-and-deploy-outook-stationery-with-this-script) \| [Roaming Sync Issues](#roaming-signatures-in-classic-outlook-for-windows-look-different) \| [OOF Activation Logic](#why-is-the-out-of-office-assistant-not-activated-automatically) \| [Disable Tagline](#how-to-disable-the-tagline-in-signatures) \| [Implementation Approach](#what-is-the-recommended-approach-for-implementing-the-software)                                                                                                                                                                                                                                                                                                                                                                                                 |
 | Templates & Design          | [DOCX vs HTML](#should-i-use-docx-or-htm-as-file-format-for-templates-signatures-in-outlook-sometimes-look-different-than-my-templates) \| [Removing Blank Lines](#how-to-avoid-blank-lines-when-replacement-variables-return-an-empty-string) \| [Text Color Issues](#why-does-the-text-color-of-my-signature-change-sometimes) \| [Image Scaling/Black Background](#images-in-signatures-have-a-different-size-than-in-templates-or-a-black-background) \| [Rotating Banners](#how-do-i-alternate-banners-and-other-images-in-signatures) \| [Underlined Spaces](#empty-lines-contain-an-underlined-space-character) \| [Text Case](#can-i-change-the-case-uppercaselowercase-of-replacement-variables-in-templates) \| [Calendar/Booking Links](#how-to-add-a-calender-link) \| [Different signatures per mailbox](#different-default-signatures-for-different-mailboxes) \| [OU-based templates](#assign-templates-based-on-organizational-units-ous) \| [Conditionally delete images](#delete-images-when-attribute-is-empty-variable-content-based-on-group-membership) \| [Variables based on group membership](#delete-images-when-attribute-is-empty-variable-content-based-on-group-membership) |
-| Deployment & Infrastructure | [Why no GUI?](#why-is-no-admin-or-user-gui-available) \| [Folder Structure](#folder-structure-recommendation) \| [Custom Config Files](#what-is-the-recommended-approach-for-custom-configuration-files) \| [AD Connection Check](#how-can-i-start-the-software-only-when-there-is-a-connection-to-active-directory) \| [CLI & Scheduled Tasks](#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task) \| [Hidden/Invisible Mode](#start-set-outlooksignatures-in-hiddeninvisible-mode) \| [Shortcut with Parameters](#how-to-create-a-shortcut-to-the-software-with-parameters) \| [Intune Deployment](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune) \| [Roaming Signatures](#what-about-the-roaming-signatures-feature-in-exchange-online) \| [AD vs Entra Groups](#when-should-i-refer-on-prem-groups-and-when-entra-id-groups) \| [No Outlook Profile](#what-if-a-user-has-no-outlook-profile-or-is-prohibited-from-starting-outlook) \| [Outlook not installed](#what-if-outlook-is-not-installed-at-all)                                                                                                                                                 |
+| Deployment & Infrastructure | [Why no GUI?](#why-is-no-admin-or-user-gui-available) \| [Folder Structure](#folder-structure-recommendation) \| [Custom Config Files](#what-is-the-recommended-approach-for-custom-configuration-files) \| [AD Connection Check](#how-can-i-start-the-software-only-when-there-is-a-connection-to-active-directory) \| [CLI & Scheduled Tasks](#how-do-i-start-the-software-from-the-command-line-or-a-scheduled-task) \| [Hidden/Invisible Mode](#start-set-outlooksignatures-in-hiddeninvisible-mode) \| [Shortcut with Parameters](#how-to-create-a-shortcut-to-the-software-with-parameters) \| [Intune Deployment](#how-can-i-deploy-and-run-set-outlooksignatures-using-microsoft-intune) \| [Roaming Signatures](#what-about-the-roaming-signatures-feature-in-exchange-online) \| [AD vs Entra Groups](#when-should-i-refer-on-prem-groups-and-when-entra-id-groups) \| [No Outlook Profile](#what-if-a-user-has-no-outlook-profile-or-is-prohibited-from-starting-outlook) \| [Outlook not installed](#what-if-outlook-is-not-installed-at-all) \| [Signatures for alias/secondary SMTP addresses](#how-to-apply-signatures-for-alias-or-secondary-smtp-addresses)                              |
 | Advanced Logic & Automation | [Recreation Logic](#why-are-signatures-and-out-of-office-replies-recreated-even-when-their-content-has-not-changed) \| [Deploy Once](#how-to-deploy-a-signature-only-once) \| [Send As Permissions](#how-to-deploy-signatures-for-send-as-send-on-behalf-etc) \| [Dynamic Groups (On-prem)](#why-is-dynamic-group-membership-not-considered-on-premises) \| [Parallel Instances](#can-multiple-script-instances-run-in-parallel) \| [Run while Outlook is running](#run-set-outlooksignatures-while-outlook-is-running) \| [Custom image replacement variables](#custom-image-replacement-variables)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | Troubleshooting & Logs      | [Logging](#how-can-i-log-the-software-output) \| [Verbose Output](#how-can-i-get-more-script-output-for-troubleshooting) \| [Word Security Warnings](#the-software-hangs-at-htmrtf-export-word-shows-a-security-warning) \| [Performance/Speed](#why-does-set-outlooksignatures-run-slower-sometimes) \| [Authentication Prompts](#why-am-i-prompted-to-authenticate-repeatedly) \| [Token Cache Location](#where-is-the-graph-token-cached-and-how-do-i-clear-it) \| [Auth Methods](#which-graph-authentication-methods-are-used)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Security & Compliance       | [Mailbox Identification](#how-is-the-account-of-a-mailbox-identified) \| [Personal Mailbox ID](#how-is-the-personal-mailbox-of-the-currently-logged-in-user-identified) \| [Network Ports](#which-ports-are-required) \| [Multi-tenant Access](#does-it-support-cross-tenant-access-and-multitenant-organizations) \| [Purview & Labels](#how-to-make-set-outlooksignatures-work-with-microsoft-purview-information-protection) \| [Locking Signatures](#keep-users-from-adding-editing-and-removing-signatures) \| [EWS Deprecation](#what-about-microsoft-turning-off-exchange-web-services-for-exchange-online)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -1668,3 +1668,87 @@ For a small annual fee per mailbox, the <a href="/benefactorcircle"><span style=
 Unsure whether the add-on will deliver value for your company?  
 The chapter '[Financial Benefits](/benefactorcircle#financial-benefits)' shows how to calculate the value based on your company's specific needs.  
 If your company concludes that the add-on does not provide sufficient value, it can still use the free and open-source version of Set-OutlookSignatures.
+
+## How to apply signatures for alias or secondary SMTP addresses?
+
+Outlook can only assign default signatures at mailbox level. It cannot natively use different default signatures based on the sender address selected within the same mailbox.
+
+To automatically use different signatures for alias or secondary SMTP addresses:
+
+1. Create and deploy the required signatures with Set-OutlookSignatures.
+2. Configure signatures for the primary and alias addresses in the Set-OutlookSignatures INI file.
+3. Use the Outlook add-in with `CUSTOM_RULES_CODE` to detect the selected sender address and apply the correct signature.
+
+### Example
+
+Mailbox addresses:
+
+- Primary SMTP address: `first.last@example.com`
+- Alias / secondary SMTP address: `first.last@contoso.com`
+
+Required behavior:
+
+- Emails sent from `first.last@example.com` use the standard signature.
+- Emails sent from `first.last@contoso.com` use a Contoso-specific signature.
+
+### Configure Set-OutlookSignatures
+
+Create the default signature for the primary address:
+
+```ini
+[formal.docx]
+first.last@example.com
+defaultNew
+```
+
+Create additional signatures for the alias address:
+
+```ini
+[formal Contoso.docx]
+first.last@contoso.com
+
+[informal Contoso.docx]
+first.last@contoso.com
+```
+
+This deploys the signatures and makes them available to Outlook.
+
+### Configure the Outlook add-in
+
+Use `CUSTOM_RULES_CODE` to detect the sender address and select the appropriate signature:
+
+```javascript
+var targetEmail = "first.last@contoso.com";
+var sigNew = "formal Contoso";
+var sigReply = "informal Contoso";
+
+var targetSignature = customRulesProperties.itemIsNew ? sigNew : sigReply;
+var notificationText = "Applied " + targetSignature + " automatically.";
+
+if (customRulesProperties.itemFrom.emailAddress.toLowerCase() === targetEmail.toLowerCase()) {
+  if (customRulesProperties.availableSignatures.indexOf(targetSignature) !== -1) {
+    customRulesResultSignatureName = targetSignature;
+    customRulesResultNotification = notificationText;
+  } else {
+    await logMessage("Signature '" + targetSignature + "' not found in available signatures.");
+  }
+}
+```
+
+The code:
+
+- Checks the sender address selected in Outlook.
+- Uses `sigNew` for new emails.
+- Uses `sigReply` for replies and forwards.
+- Applies the matching signature only when the configured alias address is used.
+
+### When does the rule run?
+
+`CUSTOM_RULES_CODE` runs when:
+
+- An Outlook add-in launch event is triggered.
+- The user selects **Set selected signature** in the add-in task pane.
+
+### Result
+
+Users simply select the sender address in Outlook. The Outlook add-in automatically applies the matching signature for that address, ensuring consistent branding and sender identity.
