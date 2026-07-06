@@ -129,6 +129,18 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Fix double language prefix
+        run: |
+          if [ -d "_site/de/de" ]; then
+            echo "Fixing double language prefix /de/de/..."
+            # Move contents from /de/de to /de/
+            cp -r _site/de/de/* _site/de/
+            # Remove the redundant folder
+            rm -rf _site/de/de
+            echo "Successfully moved files and removed _site/de/de/"
+          else
+            echo "No double language prefix found, skipping."
+          fi
       - name: Install Node Processing Dependencies
         run: npm install cheerio turndown
       - name: Inject Clean Markdown into LLM files (Node.js)
