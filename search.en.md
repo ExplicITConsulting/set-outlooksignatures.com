@@ -38,6 +38,8 @@ sitemap_changefreq: weekly
     <button type="button" class="button is-link search-language-toggle" data-lang="{{ lang_clean }}" aria-pressed="true">{{ lang_clean }}</button>
   {% endfor %}
 {% endif %}
+    <button type="button" class="button is-link search-type-toggle" data-type="blog" aria-pressed="true">Blog</button>
+    <button type="button" class="button is-link search-type-toggle" data-type="page" aria-pressed="true">Documentation</button>
 </div>
 
 <div id="search-results" class="content">
@@ -70,6 +72,9 @@ sitemap_changefreq: weekly
         const currentLang = document.documentElement.lang || Object.keys(languages)[0] || 'en';
         const languageButtons = Array.from(document.querySelectorAll('.search-language-toggle'));
         const enabledLanguages = new Set(languageButtons.map(button => button.dataset.lang));
+
+        const typeButtons = Array.from(document.querySelectorAll('.search-type-toggle'));
+        let enabledTypes = new Set(['blog', 'page']); // Both enabled by default
 
         function createIndex(lang, languagePack) {
             return new FlexSearch.Document({
@@ -189,6 +194,27 @@ sitemap_changefreq: weekly
                     button.classList.add('is-link');
                 }
 
+                if (searchInput.value.trim().length > 0) performSearch();
+            });
+        });
+
+        typeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const type = button.dataset.type;
+                const isEnabled = enabledTypes.has(type);
+
+                if (isEnabled) {
+                    enabledTypes.delete(type);
+                    button.setAttribute('aria-pressed', 'false');
+                    button.classList.remove('is-link');
+                    button.classList.add('is-light');
+                } else {
+                    enabledTypes.add(type);
+                    button.setAttribute('aria-pressed', 'true');
+                    button.classList.remove('is-light');
+                    button.classList.add('is-link');
+                }
+                
                 if (searchInput.value.trim().length > 0) performSearch();
             });
         });
@@ -360,6 +386,22 @@ sitemap_changefreq: weekly
                         });
                     }
                 });
+            });
+
+            allResults = allResults.filter(result => {
+                // Regex explanation:
+                // \/         : Literal slash
+                // (?:[a-z]{2}\/)? : Optional language code (e.g., 'en/')
+                // blog       : The literal 'blog' segment
+                // \/         : Closing slash for the path segment
+                // /i         : Case-insensitive flag
+                const isBlog = /\/(?:[a-z]{2}\/)?blog\//i.test(result.doc.url);
+                
+                if (isBlog) {
+                    return enabledTypes.has('blog');
+                } else {
+                    return enabledTypes.has('page');
+                }
             });
 
             allResults.sort((a, b) => {
