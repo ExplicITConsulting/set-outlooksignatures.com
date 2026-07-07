@@ -12,6 +12,7 @@ redirect_from:
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
+
 <div class="tags are-medium is-justify-content-center mb-5">
   <span class="tag is-dark">Peer-Review-fähiger Kern</span>
   <span class="tag is-dark">Agentenlose Synchronisation</span>
