@@ -81,7 +81,7 @@ sitemap_changefreq: weekly
       <p>Follow our 3-step process to deploy your first signatures in minutes. Peer-reviewable and production-ready.</p>
       <a href="https://set-outlooksignatures.com/quickstart" 
          class="button is-link is-normal has-text-weight-bold is-flex-direction-column" 
-         style="margin-top: auto; height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
+         style="margin-top: auto; min-height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
         <span>Try it Yourself</span>
         <span><small>Ideal for IT administrators and evaluators. No signup required.</small></span>
       </a>
@@ -91,7 +91,7 @@ sitemap_changefreq: weekly
       <p>Schedule a session with our team to see how the solution adapts to your specific organizational structure, technical setup, and compliance requirements.</p>
       <a href="https://set-outlooksignatures.com/scheduledemo" 
          class="button is-link is-normal has-text-black has-text-weight-bold is-flex-direction-column" 
-         style="margin-top: auto; height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;">
+         style="margin-top: auto; min-height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;">
         <span>Schedule Interactive Demo</span>
         <span><small>Ideal for executives and decision-makers from security, IT, and marketing.</small></span>
       </a>
