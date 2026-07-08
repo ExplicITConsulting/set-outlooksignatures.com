@@ -2,8 +2,9 @@
 layout: "post"
 lang: "en"
 locale: "en"
-title: Sender-Based Outlook Signatures for SMTP Aliases
-description: Apply the correct Outlook signature automatically when users send from alias or secondary SMTP addresses.
+title: SMTP Alias Signatures in Outlook
+description: Apply the right Outlook signature when users send from alias or secondary SMTP addresses in Microsoft 365.
+slug: smtp-alias-signatures
 published: true
 tags:
 show_sidebar: true
@@ -124,7 +125,11 @@ For organisations using multiple brands, subsidiaries, business units, or commun
 <!--
 LinkedIn Post:
 
-An Outlook alias is selected, but the wrong signature appears. The user sends from first.last@contoso.com, yet the email leaves with branding and contact details intended for first.last@example.com. What looks like a simple signature issue is actually a mismatch between sender identity and mailbox-level defaults, because Outlook only assigns default signatures per mailbox rather than per sender address. The result is that the visible sender identity changes while the signature remains tied to a different communication context: https://set-outlooksignatures.com/blog/2026/07/08/smtp-alias-signatures
+The wrong signature appears the moment a user switches to an SMTP alias in Outlook. The sender address shows first.last@contoso.com, but the message still carries branding, legal details, and contact information from first.last@example.com, creating confusion before the email even leaves the mailbox.
+
+Most organisations discover the issue gradually. Additional aliases are introduced for brands, subsidiaries, campaigns, or acquired businesses, while Outlook continues applying mailbox-level defaults that were never designed to follow multiple communication identities.
+
+The sender identity visible to recipients changes, but the signature often does not. That leaves organisations presenting one business through the address line and another through the signature block, a mismatch explored here: https://set-outlooksignatures.com/blog/2026/07/08/smtp-alias-signatures
 -->
 
 ## Turn every small email moment into a professional advantage
