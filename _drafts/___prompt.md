@@ -168,7 +168,9 @@ Max 2 sentences.
 ---
 
 ## 2. SEO Meta Block
+
 As markdown code block for use in frontmatter:
+
 - title: max 9 words, max 70 characters
 - description: 30–160 characters, max 22 words
 - slug: 1–3 hyphenated words
