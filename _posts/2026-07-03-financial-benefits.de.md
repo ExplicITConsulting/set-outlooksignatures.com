@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Manuelle E-Mail-Signaturen kosten mehr als gedacht"
 description: "Ein einfacher Business Case zeigt, warum sich Set-OutlookSignatures mit Benefactor Circle Add-on sofort rechnet."
+slug: "financial-benefits"
 published: true
 tags:
 show_sidebar: true
-slug: "financial-benefits"
 redirect_from:
   - "/blog/2025/08/11/financial-benefits"
   - "/blog/2025/08/11/financial-benefits/"

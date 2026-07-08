@@ -2,86 +2,77 @@
 layout: "post"
 lang: "en"
 locale: "en"
-title: "Outlook Signatures for Alias and Secondary SMTP Addresses"
-description: "How to apply the right Outlook signature when users send from an alias or secondary SMTP address."
+title: Sender-Based Outlook Signatures for SMTP Aliases
+description: Apply the correct Outlook signature automatically when users send from alias or secondary SMTP addresses.
 published: true
 tags:
 show_sidebar: true
-slug: "smtp-alias-signatures"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
 
-Many mailboxes have more than one sender address. For example, a user may have the primary SMTP address `first.last@example.com` and an additional sender address such as `first.last@contoso.com`.
+A user sends a message from a shared brand identity using first.last@contoso.com. The email reaches the customer with a signature belonging to first.last@example.com, displaying the wrong company details, branding elements, and legal information. Nobody notices until the recipient replies to the wrong organisation.
 
-IT usually knows this as a secondary SMTP address. Marketing may think of it more simply as an alias address: another email address that represents a brand, company, region, business unit, campaign, or communication identity.
+# Outlook Cannot Set Default Signatures per Sender Address
 
-Both views are correct.
+Many Microsoft 365 mailboxes have more than one sender identity. A user may work primarily from first.last@example.com while also sending from addresses associated with a subsidiary, acquired company, regional business, campaign mailbox, or separate brand.
 
-The technical term matters because it describes how the address exists on the mailbox. The marketing perspective matters because the address is visible to the recipient. If the sender address changes, the signature often needs to change as well.
+The challenge is straightforward: the selected sender address often needs a matching signature.
 
-That is where Outlook has an important limitation.
+Outlook can assign default signatures at mailbox level, but it cannot natively assign different default signatures to different sender addresses belonging to the same mailbox. The mailbox receives a default signature, regardless of which alias or secondary SMTP address is selected during message composition.
 
-Outlook can define default signatures for mailboxes, but not for individual sender addresses on the same mailbox. In other words, Outlook can assign a default signature to the mailbox, but it cannot natively assign one default signature to `first.last@example.com` and another one to `first.last@contoso.com`.
+That limitation creates an operational gap.
 
-For organizations with multiple brands, business units, regions, acquired companies, or dedicated communication identities, this matters. The selected sender address and the applied email signature should tell the same story.
+Marketing expects each sender identity to present the correct brand. Compliance expects the correct legal wording and contact information. IT can add alias addresses easily enough, but Outlook provides no native mechanism to automatically switch signatures according to the sender address selected by the user.
 
-## The scenario
+A mailbox with multiple communication identities therefore risks producing inconsistent outbound email.
 
-Consider this mailbox:
+# The Real Issue Is Identity Consistency
+
+Consider the following mailbox configuration:
 
 - Primary SMTP address: `first.last@example.com`
-- Alias address / secondary SMTP address: `first.last@contoso.com`
+- Secondary SMTP address: `first.last@contoso.com`
 
-The requirement is clear:
+The requirement is usually non-negotiable:
 
-- Emails sent from `first.last@example.com` should use the regular signature.
-- Emails sent from `first.last@contoso.com` should use a signature matching the Contoso identity.
+- Messages sent from `first.last@example.com` should use the standard corporate signature.
+- Messages sent from `first.last@contoso.com` should use a Contoso-specific signature.
 
-From a branding and compliance perspective, this is exactly what users expect. From a native Outlook configuration perspective, however, it is not available as a standard default-signature setting.
+The sender address visible to recipients influences how the message is interpreted. Recipients use it to determine which organisation is communicating with them, which brand they are engaging with, and which legal entity may be responsible for the communication.
 
-## Why this matters for Marketing and IT
+A mismatch between sender identity and signature is more than a cosmetic problem. It introduces confusion, weakens brand governance, and can create unnecessary compliance questions.
 
-For Marketing, the sender address is part of the visible brand experience. It influences how recipients understand the message: which company is speaking, which brand is represented, and which legal or campaign context applies.
+> 💡 **Best Practice:** Treat sender addresses as communication identities rather than technical mailbox attributes. If an address represents a different brand, entity, region, or business unit, create a dedicated signature strategy for that identity.
 
-For IT, the same address is a mailbox attribute and a sender identity. It may be technically straightforward to add an alias address / secondary SMTP address to a mailbox, but Outlook does not provide a separate default-signature setting for each address.
+# Applying Signatures Based on the Selected Sender Address
 
-That creates a gap between technical mailbox configuration and brand-compliant communication.
+Set-OutlookSignatures centrally creates and deploys the required signatures across Microsoft 365 environments. The <a href="https://set-outlooksignatures.com/outlookaddin">Outlook add-in</a>, available through the <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, can then apply the to the sender address selected in Outlook.
 
-The user can select the correct sender address, but the matching signature still needs to follow automatically.
+This creates a practical division of responsibilities.
 
-## The solution: use Set-OutlookSignatures and the Outlook add-in
+Marketing defines the signature content for each communication identity. IT manages deployment through Set-OutlookSignatures. The Outlook add-in evaluates the sender address at compose time and selects the appropriate signature through `CUSTOM_RULES_CODE`.
 
-Set-OutlookSignatures creates and deploys the required signatures centrally. The [Outlook add-in](https://set-outlooksignatures.com/outlookaddin), available with the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, can then apply the right signature based on the sender address selected in Outlook.
+Users continue working normally. They select the required sender address and the matching signature follows automatically.
 
-This creates a clean split of responsibilities:
+# Configuration Example
 
-- Marketing defines the correct signature content for each visible sender identity.
-- IT deploys the signatures centrally with Set-OutlookSignatures.
-- The Outlook add-in detects the sender address used in the current email, and `CUSTOM_RULES_CODE` selects the matching signature based on its configuration.
+Start by creating the standard mailbox signature.
 
-The result is simple for users: they choose the sender address, and Outlook applies the matching signature.
-
-### Configure the Set-OutlookSignatures INI file
-
-First, create the regular signature for the mailbox. The following example uses a mail-address-specific assignment, but the assignment could also be based on a group.
+The following configuration assigns a signature to the primary address and sets it as the default signature for new messages.
 
 ```ini
 # Create signature for mailbox
 # Example uses a mail address specific assignment, it could also be a group
-
 [formal.docx]
 first.last@example.com
 defaultNew
 ```
 
-This creates the standard signature for the mailbox and configures it as the default signature for new emails.
-
-Next, create separate new and reply signatures for the alias address / secondary SMTP address:
+Next, create signatures for the secondary SMTP address.
 
 ```ini
 # Create signature for secondary SMTP address (alias address)
-
 [formal Contoso.docx]
 first.last@contoso.com
 
@@ -89,15 +80,11 @@ first.last@contoso.com
 first.last@contoso.com
 ```
 
-This makes the address-specific signature available to the user. The automatic selection for the alias address / secondary SMTP address is handled by the Outlook add-in.
+After deployment, the signatures become available to the user. The remaining task is selecting the correct one automatically when the sender address changes.
 
-### Configure the Outlook add-in
+The Outlook add-in can accomplish this with `CUSTOM_RULES_CODE`.
 
-The Outlook add-in supports the `CUSTOM_RULES_CODE` option. This JavaScript code runs every time a launch event triggers the add-in, or when a user clicks `Set selected signature` in the add-in task pane.
-
-The code can inspect the current Outlook item and decide which signature should be applied.
-
-In this example, the add-in checks whether the message is being sent from `first.last@contoso.com`. If it is, it applies a signature for new emails and another signature for replies or forwards.
+The code below checks the sender address selected in Outlook. If the message originates from `first.last@contoso.com`, a dedicated signature is applied. New messages and replies can use different signatures.
 
 ```javascript
 var targetEmail = "first.last@contoso.com";
@@ -117,36 +104,28 @@ if (customRulesProperties.itemFrom.emailAddress.toLowerCase() === targetEmail.to
 }
 ```
 
-The logic is intentionally easy to understand:
+The logic follows the actual communication identity being used:
 
-- `targetEmail` is the alias address / secondary SMTP address that should trigger the special signature.
-- `sigNew` is the signature for new emails.
-- `sigReply` is the signature for replies and forwards.
-- `customRulesProperties.itemIsNew` detects whether the current item is a new email.
-- `customRulesProperties.itemFrom.emailAddress` contains the sender address selected in Outlook.
-- `customRulesProperties.availableSignatures` checks whether the target signature is available.
-- `customRulesResultSignatureName` tells the add-in which deployed signature to apply.
-- `customRulesResultNotification` shows a short confirmation in Outlook.
+- `targetEmail` defines the sender address that triggers the specialised signature.
+- `sigNew` defines the signature for new messages.
+- `sigReply` defines the signature for replies and forwards.
+- `customRulesProperties.itemIsNew` determines whether the current message is new or existing.
+- `customRulesProperties.itemFrom.emailAddress` contains the sender address currently selected in Outlook.
+- `customRulesProperties.availableSignatures` confirms the signature exists.
+- `customRulesResultSignatureName` instructs the add-in which deployed signature to apply.
+- `customRulesResultNotification` displays confirmation to the user.
 
-If new emails and replies should use different signatures, simply set different values for `sigNew` and `sigReply`.
+The code executes whenever the add-in is triggered through a launch event and when a user selects **Set selected signature** within the add-in pane.
 
-### When `CUSTOM_RULES_CODE` runs
+That behaviour matters because the decision is based on the current Outlook item rather than on mailbox defaults alone. The add-in can evaluate the active sender identity and apply the corresponding signature at the moment it is needed.
 
-`CUSTOM_RULES_CODE` runs every time a launch event triggers the Outlook add-in. It also runs when the user clicks `Set selected signature` in the add-in task pane.
+For organisations using multiple brands, subsidiaries, business units, or communication identities from a single mailbox, that closes a limitation Outlook cannot address by itself.
 
-That makes the rule context-aware. The add-in can look at the current email, detect the selected sender address, and apply the matching signature.
+<!--
+LinkedIn Post:
 
-For alias address / secondary SMTP address scenarios, this is exactly the missing piece: Outlook alone only knows default signatures per mailbox, while the add-in can react to the actual sender address used in the email.
-
-## Final thoughts
-
-Alias addresses / secondary SMTP addresses are often used for good business reasons: brands, companies, regions, business units, campaigns, and special communication contexts. But when the sender address changes, the email signature often needs to change as well.
-
-Outlook alone cannot define separate default signatures per sender address on the same mailbox. It can only define defaults for the mailbox.
-
-By combining Set-OutlookSignatures with the [Outlook add-in](https://set-outlooksignatures.com/outlookaddin) from the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, organizations can close this gap. Signatures are still centrally created and deployed, while the add-in applies the right signature based on the sender address selected in Outlook.
-
-Marketing gets consistent branding. IT gets a manageable and automated configuration. Users get the right signature without having to think about it.
+An Outlook alias is selected, but the wrong signature appears. The user sends from first.last@contoso.com, yet the email leaves with branding and contact details intended for first.last@example.com. What looks like a simple signature issue is actually a mismatch between sender identity and mailbox-level defaults, because Outlook only assigns default signatures per mailbox rather than per sender address. The result is that the visible sender identity changes while the signature remains tied to a different communication context: https://set-outlooksignatures.com/blog/2026/07/08/smtp-alias-signatures
+-->
 
 ## Turn every small email moment into a professional advantage
 

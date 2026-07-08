@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Beware the Forgotten Signature 👻🎃"
 description: "Your email signature might seem harmless, but when left unchanged, it can become a ghost of missed opportunities."
+slug: "beware-the-forgotten-signature"
 published: true
 tags:
 show_sidebar: true
-slug: "beware-the-forgotten-signature"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

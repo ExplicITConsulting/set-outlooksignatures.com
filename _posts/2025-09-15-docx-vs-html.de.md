@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "DOCX oder HTML?"
 description: "Die Wahl der Signaturvorlage, auf die es wirklich ankommt"
+slug: "docs-vs-html"
 published: true
 tags:
 show_sidebar: true
-slug: "docs-vs-html"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

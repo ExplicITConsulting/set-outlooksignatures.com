@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Delegating Out-of-Office Management with Exchange RBAC"
 description: "How to let selected users manage automatic replies for department mailboxes without granting broad Exchange admin rights"
+slug: "delegate-oof"
 published: true
 tags:
 show_sidebar: true
-slug: "delegate-oof"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

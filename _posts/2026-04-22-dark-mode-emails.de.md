@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Signaturen für den dunklen Modus entwerfen"
 description: "Die Umstellung auf den Dark Mode hat den Komfort für Millionen Menschen erheblich verbessert, aber für Designer von E-Mail-Signaturen bedeutet sie ein großes Problem."
+slug: "dark-mode-emails"
 published: true
 tags:
 show_sidebar: true
-slug: "dark-mode-emails"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

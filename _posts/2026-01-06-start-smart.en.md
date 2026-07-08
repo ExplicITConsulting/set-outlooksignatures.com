@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Start the New Year smart: Stop overpaying for email signatures"
 description: "Centralized email signature solutions are often surprisingly expensive - but not Set-OutlookSignatures and the Benefactor Circle add-on."
+slug: "start-smart"
 published: true
 tags:
 show_sidebar: true
-slug: "start-smart"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

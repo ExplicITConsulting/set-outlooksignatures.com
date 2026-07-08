@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Email signatures without end user interaction or client-side software"
 description: "In some environments, running client-based tools just isn't an option"
+slug: "deploy-email-signatures-without-end-user-interaction-or-client-side-software"
 published: true
 tags:
 show_sidebar: true
-slug: "deploy-email-signatures-without-end-user-interaction-or-client-side-software"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

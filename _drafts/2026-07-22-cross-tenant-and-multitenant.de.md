@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Zentrales E-Mail-Signaturmanagement in Multi-Tenant-Umgebungen"
 description: "Warum Unternehmen mehrere Microsoft 365-Mandanten nutzen und wie Sie mit Set-OutlookSignatures Signaturen nahtlos und mandantenübergreifend 
+slug: "cross-tenant-and-multitenant"
 published: true
 tags: 
 show_sidebar: true
-slug: "cross-tenant-and-multitenant"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "How do you deploy signatures for Send As and Send On Behalf?"
 description: "In static environments, this is usually straightforward. But in dynamic organizations, it can quickly become a challenge."
+slug: "sendas-sendonbehalf"
 published: true
 tags:
 show_sidebar: true
-slug: "sendas-sendonbehalf"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

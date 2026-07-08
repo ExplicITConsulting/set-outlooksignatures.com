@@ -184,7 +184,29 @@ jobs:
           // Initialize Turndown configuration
           const turndownService = new TurndownService({ 
             headingStyle: 'atx', 
+            hr: '---',
+            bulletListMarker: '-',
             codeBlockStyle: 'fenced' 
+          });
+
+          turndownService.addRule('universal-id-and-name-preserver', {
+            filter: function (node) {
+              // Intercept ANY element that has either an ID or a NAME attribute
+              return node.hasAttribute && (node.getAttribute('id') || node.getAttribute('name'));
+            },
+            replacement: function (content, node) {
+              // Fallback to name if id isn't present
+              const anchorValue = node.getAttribute('id') || node.getAttribute('name');
+              
+              // Condition A: It's a heading -> Use standard markdown anchor format
+              if (['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(node.nodeName)) {
+                const hashes = '#'.repeat(parseInt(node.nodeName.charAt(1)));
+                return `${hashes} ${content} {#${anchorValue}}\n\n`;
+              }
+
+              // Condition B: Anything else -> Prepend a clean HTML anchor tag
+              return `<a id="${anchorValue}"></a>\n\n${content}`;
+            }
           });
 
           const regex = /\[REPLACE_WITH_CONTENT:(.*?)\]/g;

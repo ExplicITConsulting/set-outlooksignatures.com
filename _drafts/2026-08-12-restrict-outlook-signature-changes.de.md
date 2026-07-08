@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "So verhindern Sie, dass Benutzer Signaturen ändern oder löschen"
 description: "Erfahren Sie, wie Sie Signaturänderungen in Outlook (Classic, New, Web & Mobile) einschränken und welche Alternativen es gibt."
+slug: "restrict-outlook-signature-changes"
 published: true
 tags:
 show_sidebar: true
-slug: "restrict-outlook-signature-changes"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

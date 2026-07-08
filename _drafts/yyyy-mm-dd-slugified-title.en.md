@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Non-slugified title, 70 characters max"
 description: "Description, between 30 and 160 characters"
+slug: "slugified-title"
 published: true
 tags:
 show_sidebar: true
-slug: "slugified-title"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

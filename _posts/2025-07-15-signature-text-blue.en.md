@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Why does text sometimes turn blue instead of staying black?"
 description: "Ever noticed your email signature text mysteriously changing color, especially in replies or forwards?"
+slug: "signature-text-blue"
 published: true
 tags:
 show_sidebar: true
-slug: "signature-text-blue"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

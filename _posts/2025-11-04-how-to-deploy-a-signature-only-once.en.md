@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "How to deploy a signature only once – and a clever alternative"
 description: "Sometimes, you want to deploy a signature only once, allow the user to personalize it, and never overwrite it again."
+slug: "how-to-deploy-a-signature-only-once"
 published: true
 tags:
 show_sidebar: true
-slug: "how-to-deploy-a-signature-only-once"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

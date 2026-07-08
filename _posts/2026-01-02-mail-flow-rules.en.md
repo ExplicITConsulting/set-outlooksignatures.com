@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Mail flow rules fail for professional email signatures"
 description: "Mail flow rules in Exchange are outdated and inflexible compared to specialized email signature solutions."
+slug: "mail-flow-rules"
 published: true
 tags:
 show_sidebar: true
-slug: "mail-flow-rules"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

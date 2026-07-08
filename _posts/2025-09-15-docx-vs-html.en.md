@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "DOCX or HTML?"
 description: "The signature template choice that actually matters"
+slug: "docs-vs-html"
 published: true
 tags:
 show_sidebar: true
-slug: "docs-vs-html"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

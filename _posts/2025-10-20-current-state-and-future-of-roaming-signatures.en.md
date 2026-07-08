@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Current state and future of roaming signatures"
 description: "When Microsoft announced roaming signatures back in 2020, it sounded like a game-changer."
+slug: "current-state-and-future-of-roaming-signatures"
 published: true
 tags:
 show_sidebar: true
-slug: "current-state-and-future-of-roaming-signatures"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

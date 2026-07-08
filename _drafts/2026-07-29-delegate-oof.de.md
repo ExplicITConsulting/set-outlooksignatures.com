@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Delegieren der Abwesenheitsverwaltung mit Exchange RBAC"
 description: "Wie ausgewählte Benutzer automatische Antworten für Abteilungspostfächer verwalten können, ohne umfassende Exchange-Administratorrechte zu erhalten"
+slug: "delegate-oof"
 published: true
 tags:
 show_sidebar: true
-slug: "delegate-oof"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

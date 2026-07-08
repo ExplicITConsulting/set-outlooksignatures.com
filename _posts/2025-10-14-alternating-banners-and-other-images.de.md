@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Banner und andere Bilder zufällig wechseln"
 description: "Führen Sie eine Marketingkampagne mit mehreren Bannern durch?"
+slug: "alternating-banners-and-other-images"
 published: true
 tags:
 show_sidebar: true
-slug: "alternating-banners-and-other-images"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

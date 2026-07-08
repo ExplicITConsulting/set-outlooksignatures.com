@@ -2,86 +2,77 @@
 layout: "post"
 lang: "de"
 locale: "de"
-title: "Outlook-Signaturen für Alias- und sekundäre SMTP-Adressen"
-description: "So wenden Sie die richtige Outlook-Signatur an, wenn Benutzer über eine Alias- oder sekundäre SMTP-Adresse senden."
+title: Outlook-Signaturen für SMTP-Aliase steuern
+description: Die passende Outlook-Signatur automatisch anwenden, wenn Benutzer über Alias- oder sekundäre SMTP-Adressen senden.
 published: true
 tags:
 show_sidebar: true
-slug: "smtp-alias-signatures"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
 
-Viele Postfächer haben mehr als eine Absenderadresse. Ein Benutzer kann beispielsweise die primäre SMTP-Adresse `first.last@example.com` und eine zusätzliche Absenderadresse wie `first.last@contoso.com` haben.
+Ein Mitarbeiter verfasst eine E-Mail über die Adresse first.last@contoso.com. Beim Versand wird jedoch die Standardsignatur von first.last@example.com eingefügt – inklusive falscher Unternehmensangaben, falscher Kontaktdaten und einer Markenidentität, die nicht zur gewählten Absenderadresse passt. Der Fehler fällt häufig erst dann auf, wenn Kunden verwirrt reagieren oder Antworten an die falsche Organisation richten.
 
-Die IT kennt dies üblicherweise als sekundäre SMTP-Adresse. Marketing betrachtet sie oft einfacher als Alias-Adresse: eine weitere E-Mail-Adresse, die eine Marke, ein Unternehmen, eine Region, einen Geschäftsbereich, eine Kampagne oder eine Kommunikationsidentität repräsentiert.
+# Outlook kann keine Standardsignaturen pro Absenderadresse festlegen
 
-Beide Sichtweisen sind richtig.
+Viele Microsoft-365-Postfächer verfügen über mehrere Absenderidentitäten. Neben der primären SMTP-Adresse kommen oft Alias-Adressen für Tochtergesellschaften, Marken, Regionen, Geschäftsbereiche oder spezielle Kommunikationszwecke zum Einsatz.
 
-Der technische Begriff ist wichtig, weil er beschreibt, wie die Adresse am Postfach existiert. Die Marketing-Perspektive ist wichtig, weil die Adresse für den Empfänger sichtbar ist. Wenn sich die Absenderadresse ändert, muss sich häufig auch die Signatur ändern.
+Sobald mehrere sichtbare Absenderidentitäten verwendet werden, entsteht eine einfache Anforderung: Zur gewählten Absenderadresse soll automatisch die passende Signatur erscheinen.
 
-Genau hier hat Outlook eine wichtige Einschränkung.
+Genau hier stößt Outlook an eine Grenze. Standardmäßig können Signaturen auf Postfachebene zugewiesen werden, nicht jedoch pro Absenderadresse innerhalb desselben Postfachs. Outlook kennt also eine Standardsignatur für das Postfach, unabhängig davon, welche Alias- oder sekundäre SMTP-Adresse der Benutzer beim Verfassen der E-Mail auswählt.
 
-Outlook kann Standardsignaturen für Postfächer definieren, aber nicht für einzelne Absenderadressen desselben Postfachs. Mit anderen Worten: Outlook kann einem Postfach eine Standardsignatur zuweisen, aber nicht nativ eine Standardsignatur für `first.last@example.com` und eine andere für `first.last@contoso.com`.
+Damit entsteht eine Lücke zwischen technischer Konfiguration und professioneller Unternehmenskommunikation.
 
-Für Organisationen mit mehreren Marken, Geschäftsbereichen, Regionen, übernommenen Unternehmen oder dedizierten Kommunikationsidentitäten ist das relevant. Die ausgewählte Absenderadresse und die angewendete E-Mail-Signatur sollten dieselbe Geschichte erzählen.
+Marketing erwartet einen konsistenten Markenauftritt. Compliance erwartet die korrekten rechtlichen Angaben. Die IT kann zusätzliche SMTP-Adressen problemlos bereitstellen, erhält in Outlook jedoch keine separate Standardsignatur pro Absenderidentität.
 
-### Das Szenario
+Wer mehrere Kommunikationsidentitäten über ein einziges Postfach verwendet, riskiert daher inkonsistente ausgehende E-Mails.
 
-Betrachten Sie dieses Postfach:
+# Das eigentliche Problem ist die Kommunikationsidentität
+
+Betrachten wir folgendes Postfach:
 
 - Primäre SMTP-Adresse: `first.last@example.com`
-- Alias-Adresse / sekundäre SMTP-Adresse: `first.last@contoso.com`
+- Sekundäre SMTP-Adresse: `first.last@contoso.com`
 
-Die Anforderung ist klar:
+Die gewünschte Logik ist eindeutig:
 
-- E-Mails, die von `first.last@example.com` gesendet werden, sollen die reguläre Signatur verwenden.
-- E-Mails, die von `first.last@contoso.com` gesendet werden, sollen eine Signatur verwenden, die zur Contoso-Identität passt.
+- E-Mails von `first.last@example.com` sollen die reguläre Unternehmenssignatur verwenden.
+- E-Mails von `first.last@contoso.com` sollen automatisch eine Signatur der Marke Contoso erhalten.
 
-Aus Branding- und Compliance-Sicht ist das genau das, was Benutzer erwarten. Aus Sicht der nativen Outlook-Konfiguration ist es jedoch nicht als normale Standardsignatur-Einstellung verfügbar.
+Für Empfänger ist die Absenderadresse ein sichtbarer Teil der Nachricht. Sie vermittelt, welches Unternehmen kommuniziert, welche Marke vertreten wird und welchem geschäftlichen oder rechtlichen Kontext die Nachricht zuzuordnen ist.
 
-### Warum das für Marketing und IT wichtig ist
+Wenn Absenderadresse und Signatur nicht zusammenpassen, entsteht mehr als nur ein optischer Fehler. Unternehmen verlieren Konsistenz in ihrer Außenwirkung, Kommunikationsprozesse werden unnötig fehleranfällig, und Compliance-Anforderungen lassen sich schwerer durchsetzen.
 
-Für Marketing ist die Absenderadresse Teil des sichtbaren Markenerlebnisses. Sie beeinflusst, wie Empfänger die Nachricht einordnen: welches Unternehmen spricht, welche Marke repräsentiert wird und welcher rechtliche oder kampagnenbezogene Kontext gilt.
+> 💡 **Best Practice:** Behandeln Sie Alias- und sekundäre SMTP-Adressen als eigene Kommunikationsidentitäten. Sobald eine Adresse eine andere Marke, Gesellschaft, Region oder Geschäftseinheit repräsentiert, sollte dafür auch eine eigene Signatur definiert werden.
 
-Für IT ist dieselbe Adresse ein Postfachattribut und eine Absenderidentität. Es kann technisch unkompliziert sein, einem Postfach eine Alias-Adresse / sekundäre SMTP-Adresse hinzuzufügen, aber Outlook stellt keine separate Standardsignatur-Einstellung für jede Adresse bereit.
+# Signaturen anhand der gewählten Absenderadresse anwenden
 
-Dadurch entsteht eine Lücke zwischen technischer Postfachkonfiguration und markenkonformer Kommunikation.
+Set-OutlookSignatures erstellt und verteilt Signaturen zentral innerhalb der Microsoft-365-Umgebung. Das <a href="https://set-outlooksignatures.com/outlookaddin">Outlook Add-in</a>, verfügbar über das <a href="https://set-outlooksignatures.com/de/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a>, kann anschließend automatisch ignatur anhand der in Outlook ausgewählten Absenderadresse anwenden.
 
-Der Benutzer kann die richtige Absenderadresse auswählen, aber die passende Signatur muss trotzdem automatisch folgen.
+Dadurch ergibt sich eine klare Rollenverteilung.
 
-### Die Lösung: Set-OutlookSignatures und das Outlook Add-in verwenden
+Das Marketing definiert die Inhalte für jede Kommunikationsidentität. Die IT übernimmt die zentrale Bereitstellung über Set-OutlookSignatures. Das Outlook Add-in bewertet beim Verfassen der Nachricht die gewählte Absenderadresse und bestimmt über `CUSTOM_RULES_CODE`, welche Signatur eingefügt werden soll.
 
-Set-OutlookSignatures erstellt und verteilt die erforderlichen Signaturen zentral. Das [Outlook Add-in](https://set-outlooksignatures.com/outlookaddin), verfügbar mit dem <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a>, kann anschließend die richtige Signatur basierend auf der in Outlook ausgewählten Absenderadresse anwenden.
+Für Benutzer bleibt der Ablauf einfach. Sie wählen die gewünschte Absenderadresse aus, und die passende Signatur wird automatisch angewendet.
 
-Dadurch entsteht eine klare Aufgabenteilung:
+# Konfigurationsbeispiel
 
-- Marketing definiert den richtigen Signaturinhalt für jede sichtbare Absenderidentität.
-- IT verteilt die Signaturen zentral mit Set-OutlookSignatures.
-- Das Outlook Add-in erkennt die Absenderadresse der aktuellen E-Mail, und `CUSTOM_RULES_CODE` wählt basierend auf seiner Konfiguration die passende Signatur aus.
+Zunächst wird die reguläre Signatur für das Postfach erstellt.
 
-Das Ergebnis ist für Benutzer einfach: Sie wählen die Absenderadresse aus, und Outlook wendet die passende Signatur an.
-
-#### Die Set-OutlookSignatures-INI-Datei konfigurieren
-
-Erstellen Sie zuerst die reguläre Signatur für das Postfach. Das folgende Beispiel verwendet eine mailadressenspezifische Zuweisung, die Zuweisung könnte aber auch auf einer Gruppe basieren.
+Die folgende Konfiguration weist die Signatur der primären SMTP-Adresse zu und definiert sie als Standardsignatur für neue Nachrichten.
 
 ```ini
 # Create signature for mailbox
 # Example uses a mail address specific assignment, it could also be a group
-
 [formal.docx]
 first.last@example.com
 defaultNew
 ```
 
-Dadurch wird die Standardsignatur für das Postfach erstellt und als Standardsignatur für neue E-Mails konfiguriert.
-
-Erstellen Sie anschließend separate Signaturen für neue E-Mails und Antworten für die Alias-Adresse / sekundäre SMTP-Adresse:
+Anschließend werden die Signaturen für die sekundäre SMTP-Adresse angelegt.
 
 ```ini
 # Create signature for secondary SMTP address (alias address)
-
 [formal Contoso.docx]
 first.last@contoso.com
 
@@ -89,15 +80,11 @@ first.last@contoso.com
 first.last@contoso.com
 ```
 
-Dadurch werden die adressspezifischen Signaturen für den Benutzer verfügbar. Die automatische Auswahl für die Alias-Adresse / sekundäre SMTP-Adresse übernimmt das Outlook Add-in.
+Nach der Bereitstellung stehen die Signaturen dem Benutzer zur Verfügung. Die automatische Auswahl übernimmt anschließend das Outlook Add-in.
 
-#### Das Outlook Add-in konfigurieren
+Hierzu kann `CUSTOM_RULES_CODE` verwendet werden.
 
-Das Outlook Add-in unterstützt die Option `CUSTOM_RULES_CODE`. Dieser JavaScript-Code wird jedes Mal ausgeführt, wenn ein Launch Event das Add-in auslöst oder wenn ein Benutzer im Aufgabenbereich des Add-ins auf `Set selected signature` klickt.
-
-Der Code kann das aktuelle Outlook-Element auswerten und entscheiden, welche Signatur angewendet werden soll.
-
-In diesem Beispiel prüft das Add-in, ob die Nachricht von `first.last@contoso.com` gesendet wird. Wenn ja, wendet es eine Signatur für neue E-Mails und eine andere Signatur für Antworten oder Weiterleitungen an.
+Der folgende Code prüft die aktuell ausgewählte Absenderadresse. Wird die Nachricht über `first.last@contoso.com` versendet, wendet das Add-in automatisch die entsprechende Signatur an. Für neue Nachrichten und Antworten können unterschiedliche Signaturen verwendet werden.
 
 ```javascript
 var targetEmail = "first.last@contoso.com";
@@ -117,36 +104,28 @@ if (customRulesProperties.itemFrom.emailAddress.toLowerCase() === targetEmail.to
 }
 ```
 
-Die Logik ist bewusst leicht verständlich gehalten:
+Die Logik orientiert sich direkt an der tatsächlich verwendeten Absenderidentität:
 
-- `targetEmail` ist die Alias-Adresse / sekundäre SMTP-Adresse, die die spezielle Signatur auslösen soll.
-- `sigNew` ist die Signatur für neue E-Mails.
-- `sigReply` ist die Signatur für Antworten und Weiterleitungen.
-- `customRulesProperties.itemIsNew` erkennt, ob das aktuelle Element eine neue E-Mail ist.
+- `targetEmail` definiert die Alias- bzw. sekundäre SMTP-Adresse.
+- `sigNew` definiert die Signatur für neue E-Mails.
+- `sigReply` definiert die Signatur für Antworten und Weiterleitungen.
+- `customRulesProperties.itemIsNew` erkennt, ob eine neue Nachricht erstellt wird.
 - `customRulesProperties.itemFrom.emailAddress` enthält die in Outlook ausgewählte Absenderadresse.
-- `customRulesProperties.availableSignatures` prüft, ob die Zielsignatur verfügbar ist.
-- `customRulesResultSignatureName` teilt dem Add-in mit, welche bereitgestellte Signatur angewendet werden soll.
-- `customRulesResultNotification` zeigt eine kurze Bestätigung in Outlook an.
+- `customRulesProperties.availableSignatures` prüft, ob die gewünschte Signatur verfügbar ist.
+- `customRulesResultSignatureName` legt fest, welche bereitgestellte Signatur angewendet wird.
+- `customRulesResultNotification` informiert den Benutzer über die automatische Auswahl.
 
-Wenn neue E-Mails und Antworten unterschiedliche Signaturen verwenden sollen, setzen Sie einfach unterschiedliche Werte für `sigNew` und `sigReply`.
+Der Code wird bei jedem Launch Event des Add-ins ausgeführt und zusätzlich dann, wenn ein Benutzer im Aufgabenbereich **Set selected signature** auswählt.
 
-#### Wann `CUSTOM_RULES_CODE` ausgeführt wird
+Genau dadurch wird die Entscheidung kontextabhängig. Das Add-in betrachtet die aktuell geöffnete Nachricht, erkennt die verwendete Absenderadresse und wendet unmittelbar die dazugehörige Signatur an.
 
-`CUSTOM_RULES_CODE` wird jedes Mal ausgeführt, wenn ein Launch Event das Outlook Add-in auslöst. Er wird außerdem ausgeführt, wenn der Benutzer im Aufgabenbereich des Add-ins auf `Set selected signature` klickt.
+Für Organisationen mit mehreren Marken, Unternehmen, Regionen oder Kommunikationsidentitäten innerhalb desselben Postfachs schließt das eine Lücke, die Outlook selbst nicht abdecken kann.
 
-Dadurch wird die Regel kontextabhängig. Das Add-in kann die aktuelle E-Mail betrachten, die ausgewählte Absenderadresse erkennen und die passende Signatur anwenden.
+<!--
+LinkedIn Post:
 
-Für Szenarien mit Alias-Adressen / sekundären SMTP-Adressen ist genau das der fehlende Baustein: Outlook allein kennt Standardsignaturen nur pro Postfach, während das Add-in auf die tatsächlich in der E-Mail verwendete Absenderadresse reagieren kann.
-
-### Abschließende Gedanken
-
-Alias-Adressen / sekundäre SMTP-Adressen werden häufig aus guten geschäftlichen Gründen verwendet: Marken, Unternehmen, Regionen, Geschäftsbereiche, Kampagnen und besondere Kommunikationskontexte. Wenn sich die Absenderadresse ändert, muss sich jedoch häufig auch die E-Mail-Signatur ändern.
-
-Outlook allein kann keine separaten Standardsignaturen pro Absenderadresse desselben Postfachs definieren. Outlook kann Standardsignaturen nur für das Postfach definieren.
-
-Durch die Kombination von Set-OutlookSignatures mit dem [Outlook Add-in](https://set-outlooksignatures.com/outlookaddin) aus dem <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> können Organisationen diese Lücke schließen. Signaturen werden weiterhin zentral erstellt und verteilt, während das Add-in die richtige Signatur basierend auf der in Outlook ausgewählten Absenderadresse anwendet.
-
-Marketing erhält konsistentes Branding. IT erhält eine verwaltbare und automatisierte Konfiguration. Benutzer erhalten die richtige Signatur, ohne darüber nachdenken zu müssen.
+Die Alias-Adresse ist ausgewählt, aber Outlook verwendet die falsche Signatur. Eine E-Mail wird über first.last@contoso.com versendet, während weiterhin die Kontaktdaten und Markeninformationen von first.last@example.com eingefügt werden. Die Ursache liegt nicht in der Signatur selbst, sondern darin, dass Outlook Standardsignaturen auf Postfachebene und nicht pro Absenderadresse verwaltet. Dadurch ändert sich die sichtbare Absenderidentität, während die Signatur weiterhin zu einem anderen Kommunikationskontext gehört: https://set-outlooksignatures.com/de/blog/2026/07/08/smtp-alias-signatures
+-->
 
 ## Machen Sie jeden kleinen E-Mail-Moment zu einem professionellen Vorteil
 

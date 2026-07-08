@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Out-of-office replies or autoresponder rules: Which is the better choice?"
 description: "At first glance, the choice seems obvious. But on closer inspection, important differences emerge that may change your perspective."
+slug: "oof-vs-autoresponder"
 published: true
 tags:
 show_sidebar: true
-slug: "oof-vs-autoresponder"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

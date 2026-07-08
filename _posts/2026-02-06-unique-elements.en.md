@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "What unique elements do you add to email signatures and OOF replies?"
 description: "The first thing that comes to mind is the visual design. But a signature can also include content-specific features and accessibility options."
+slug: "unique-elements"
 published: true
 tags:
 show_sidebar: true
-slug: "unique-elements"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Nicht als Slug formatierter Titel, max. 70 Zeichen"
 description: "Beschreibung, zwischen 30 und 160 Zeichen"
+slug: "slugified-title"
 published: true
 tags:
 show_sidebar: true
-slug: "slugified-title"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

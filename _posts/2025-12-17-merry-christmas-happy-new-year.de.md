@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Frohe Weihnachten und ein Gutes Neues Jahr!"
 description: "Genießen Sie die stille Zeit"
+slug: "merry-christmas-happy-new-year"
 published: true
 tags:
 show_sidebar: true
-slug: "merry-christmas-happy-new-year"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

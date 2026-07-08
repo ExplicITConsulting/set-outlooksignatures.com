@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Signatures for every scenario: Which signatures your company needs"
 description: "Signatures are more than just a business card; they are a vital tool for brand consistency, professionalism, and legal compliance in digital communication."
+slug: "which-signatures-you-need"
 published: true
 tags:
 show_sidebar: true
-slug: "which-signatures-you-need"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

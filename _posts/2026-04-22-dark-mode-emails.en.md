@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Designing signatures for dark mode"
 description: "The shift to Dark Mode has dramatically improved screen comfort for millions, but it’s introduced a major headache for email signature designers."
+slug: "dark-mode-emails"
 published: true
 tags:
 show_sidebar: true
-slug: "dark-mode-emails"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

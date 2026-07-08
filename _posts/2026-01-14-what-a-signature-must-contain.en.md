@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "What an email signature must contain"
 description: "A professional email signature is much more than just a digital business card or a marketing banner. It is a legally relevant document."
+slug: "what-a-signature-must-contain"
 published: true
 tags:
 show_sidebar: true
-slug: "what-a-signature-must-contain"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

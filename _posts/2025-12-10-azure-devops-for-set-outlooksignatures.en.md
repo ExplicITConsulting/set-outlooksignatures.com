@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Azure DevOps for Set-OutlookSignatures"
 description: "How AIMTEC has implemented a robust, automated, and dynamic signature management solution using Azure DevOps to work seamlessly with Set-OutlookSignatures."
+slug: "azure-devops-for-set-outlooksignatures"
 published: true
 tags:
 show_sidebar: true
-slug: "azure-devops-for-set-outlooksignatures"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

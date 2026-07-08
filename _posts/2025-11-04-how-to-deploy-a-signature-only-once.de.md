@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Eine Signatur nur einmal verteilen – und eine clevere Alternative"
 description: "Manchmal möchten Sie eine Signatur nur einmal bereitstellen zbd dem Benutzer die Möglichkeit geben, sie zu personalisieren."
+slug: "how-to-deploy-a-signature-only-once"
 published: true
 tags:
 show_sidebar: true
-slug: "how-to-deploy-a-signature-only-once"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

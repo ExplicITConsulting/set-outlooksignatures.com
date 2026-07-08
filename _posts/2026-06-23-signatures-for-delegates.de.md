@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Chef-Assistenzen im Fokus: E-Mail-Signaturen für Delegierte perfekt im Griff"
 description: "Wie Sie Signaturen für geteilte Postfächer und Delegierte (z.B. Sekretariate) sauber trennen – und warum der INI-Editor das neue Lieblingstool von IT und Marketing ist."
+slug: "signatures-for-delegates"
 published: true
 tags:
 show_sidebar: true
-slug: "signatures-for-delegates"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

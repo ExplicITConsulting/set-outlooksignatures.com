@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Signaturen für alle Fälle: Welche Signaturen Ihr Unternehmen braucht"
 description: "Signaturen sind nicht nur Visitenkarten; sie sind ein wichtiges Tool für Markenkonsistenz, Professionalität und Rechtssicherheit in der digitalen Kommunikation."
+slug: "which-signatures-you-need"
 published: true
 tags:
 show_sidebar: true
-slug: "which-signatures-you-need"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

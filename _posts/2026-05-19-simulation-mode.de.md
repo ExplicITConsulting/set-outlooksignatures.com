@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Schluss mit der Rollout-Panik: So testen Sie Outlook-Signaturen & Abwesenheitsnotizen ohne Zugriff auf Live-Postfächer"
 description: "Besorgt über fehlerhafte Vorlagen oder das Überschreiben von VIP-Antworten? Entdecken Sie, wie Sie mit dem Simulationsmodus Signatur- und OOF-Logik ohne Risiko für Endbenutzer gegen Echtdaten validieren."
+slug: "simulation-mode"
 published: true
 tags:
 show_sidebar: true
-slug: "simulation-mode"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

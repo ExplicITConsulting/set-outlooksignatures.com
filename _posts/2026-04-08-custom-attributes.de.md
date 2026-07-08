@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Benutzerdefinierte Attribute und berechnete Daten in E-Mail-Signaturen"
 description: "Die meisten Informationen, die in E-Mail-Signaturen verwendet werden, stammen direkt aus Ihrem Verzeichnisdienst. Aber was ist mit den Daten, für die es kein vordefiniertes Feld gibt?"
+slug: "custom-attributes"
 published: true
 tags:
 show_sidebar: true
-slug: "custom-attributes"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Flexible Permissions Management: Mastering Email Signatures for Delegates and Cover Configurations"
 description: "From executive assistants and holiday cover to team mailboxes: How to cleanly separate delegate signatures—and distribute them fully automatically based on real permissions without manual overhead."
+slug: "signatures-for-delegates"
 published: true
 tags:
 show_sidebar: true
-slug: "signatures-for-delegates"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

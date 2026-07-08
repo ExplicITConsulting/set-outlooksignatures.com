@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Warum neue Infrastruktur aufbauen, nur um Signaturen zu verwalten?"
 description: "Set-OutlookSignatures läuft auf Ihren bestehenden Systemen, verursacht keine neuen Abhängigkeiten und überträgt keine Daten nach außen."
+slug: "no-new-infrastructure"
 published: true
 tags:
 show_sidebar: true
-slug: "no-new-infrastructure"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

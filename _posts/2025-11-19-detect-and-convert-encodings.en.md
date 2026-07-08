@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Detect and convert encodings"
 description: "ConvertEncoding enables reliable detection and conversion of encodings."
+slug: "detect-and-convert-encodings"
 published: true
 tags:
 show_sidebar: true
-slug: "detect-and-convert-encodings"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

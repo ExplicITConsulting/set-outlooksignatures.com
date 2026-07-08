@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Die besten Bildformate für E-Mail-Signaturen: Kompatibilitätsleitfaden"
 description: "Wählen Sie das richtige Bildformat für Ihre E-Mail-Signatur. Stellen Sie universelle Kompatibilität sicher und vermeiden Sie Stolperfallen."
+slug: "image-formats"
 published: true
 tags:
 show_sidebar: true
-slug: "image-formats"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

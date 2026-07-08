@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Barrier-free email signatures and out-of-office replies"
 description: "Accessibility isn’t just a trend, it’s a responsibility."
+slug: "barrier-free-email-signatures-and-out-of-office-replies"
 published: true
 tags:
 show_sidebar: true
-slug: "barrier-free-email-signatures-and-out-of-office-replies"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

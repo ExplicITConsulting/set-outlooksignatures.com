@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Roaming Signatures für Outlook am Mac?"
 description: "Haben Sie Benutzer, die mit Outlook für Mac auf Exchange Online-Postfächer zugreifen?"
+slug: "roaming-signatures-macos"
 published: true
 tags:
 show_sidebar: true
-slug: "roaming-signatures-macos"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

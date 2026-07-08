@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Kodierungen erkennen und konvertieren"
 description: "ConvertEncoding ermöglicht die zuverlässige Erkennung und Konvertierung von Kodierungen"
+slug: "detect-and-convert-encodings"
 published: true
 tags:
 show_sidebar: true
-slug: "detect-and-convert-encodings"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

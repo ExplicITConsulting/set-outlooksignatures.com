@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: 'Signaturen für "Senden als" und "Senden im Auftrag von"'
 description: "In statischen Umgebungen ist dies in der Regel unkompliziert. In dynamischen Organisationen kann es jedoch schnell zu einer Herausforderung werden."
+slug: "sendas-sendonbehalf"
 published: true
 tags:
 show_sidebar: true
-slug: "sendas-sendonbehalf"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

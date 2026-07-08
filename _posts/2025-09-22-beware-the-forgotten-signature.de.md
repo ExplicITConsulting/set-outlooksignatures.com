@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Hütet euch vor der vergessenen Signatur 👻🎃"
 description: "Ihre E-Mail-Signatur mag harmlos erscheinen, aber wenn Sie sie unverändert lassen, kann sie zu einem Geist verpasster Gelegenheiten werden."
+slug: "beware-the-forgotten-signature"
 published: true
 tags:
 show_sidebar: true
-slug: "beware-the-forgotten-signature"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

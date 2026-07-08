@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Custom attributes and calculated data in email signatures"
 description: "Most of the information used in email signatures comes directly from your directory service. But what about the data that doesn’t have a predefined field?"
+slug: "custom-attributes"
 published: true
 tags: 
 show_sidebar: true
-slug: "custom-attributes"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Was eine E-Mail-Signatur enthalten muss"
 description: "Eine professionelle E-Mail-Signatur ist weit mehr als nur eine digitale Visitenkarte oder ein Marketing-Banner. Sie ist ein rechtlich relevantes Dokument."
+slug: "what-a-signature-must-contain"
 published: true
 tags:
 show_sidebar: true
-slug: "what-a-signature-must-contain"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Warum wird Text manchmal blau statt schwarz angezeigt?"
 description: "Ist Ihnen schon einmal aufgefallen, dass sich die Farbe Ihres E-Mail-Textes ändert, insbesondere in Antworten oder Weiterleitungen?"
+slug: "signature-text-blue"
 published: true
 tags:
 show_sidebar: true
-slug: "signature-text-blue"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

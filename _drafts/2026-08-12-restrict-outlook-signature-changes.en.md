@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "How to Keep Users from Adding, Editing, or Removing Signatures"
 description: "Learn how to restrict signature changes in Classic Outlook, New Outlook, Web, and Mobile, and discover better alternatives."
+slug: "restrict-outlook-signature-changes"
 published: true
 tags:
 show_sidebar: true
-slug: "restrict-outlook-signature-changes"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Seasonal, time-based, and campaign-driven email signatures"
 description: "An email signature is more than a sign‑off. It's a constant, high‑value marketing spot that reinforces your brand and drives attention where it matters."
+slug: "seasonal-signatures"
 published: true
 tags:
 show_sidebar: true
-slug: "seasonal-signatures"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Centralized Email Signature Management in Multi-Tenant Environments"
 description: "Why companies use multiple Microsoft 365 tenants and how to deploy email signatures seamlessly and cross-tenant using Set-OutlookSignatures."
+slug: "cross-tenant-and-multitenant"
 published: true
 tags:
 show_sidebar: true
-slug: "cross-tenant-and-multitenant"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

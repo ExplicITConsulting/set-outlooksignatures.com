@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Abwesenheitsnotizen oder Autoresponder-Regeln: Was ist die bessere Wahl?"
 description: "Auf den ersten Blick scheint die Wahl offensichtlich. Bei genauerer Betrachtung zeigen sich jedoch wichtige Unterschiede, die Ihre Sichtweise ändern könnten."
+slug: "oof-vs-autoresponder"
 published: true
 tags:
 show_sidebar: true
-slug: "oof-vs-autoresponder"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

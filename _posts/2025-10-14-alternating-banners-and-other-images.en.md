@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Randomly alternate banners and other images"
 description: "Running a marketing campaign with multiple banners?"
+slug: "alternating-banners-and-other-images"
 published: true
 tags:
 show_sidebar: true
-slug: "alternating-banners-and-other-images"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

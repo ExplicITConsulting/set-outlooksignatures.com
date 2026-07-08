@@ -4,10 +4,10 @@ lang: "en"
 locale: "en"
 title: "Goodbye Rollout Panic: How to Test Outlook Signatures & Out-of-Office Notes Without Accessing Live Mailboxes"
 description: "Worried about broken templates or overwriting VIP replies? Discover how to use simulation mode to validate signature and OOF logic against real data with zero risk to end users."
+slug: "simulation-mode"
 published: true
 tags:
 show_sidebar: true
-slug: "simulation-mode"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---

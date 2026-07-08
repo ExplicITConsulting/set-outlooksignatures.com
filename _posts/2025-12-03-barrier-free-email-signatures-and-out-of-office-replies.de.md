@@ -4,10 +4,10 @@ lang: "de"
 locale: "de"
 title: "Barrierefreie E-Mail-Signaturen und Abwesenheitstexte"
 description: "Barrierefreiheit ist nicht nur ein Trend, sondern eine Verantwortung."
+slug: "barrier-free-email-signatures-and-out-of-office-replies"
 published: true
 tags:
 show_sidebar: true
-slug: "barrier-free-email-signatures-and-out-of-office-replies"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
