@@ -180,7 +180,7 @@ As markdown code block for use in frontmatter:
 
 ## 3. Rewritten Blog Post
 
-Render inside a Markdown code block.
+Render inside a Markdown code block. Take care to correctly escape inside code blocks.
 
 ### Writing Requirements:
 

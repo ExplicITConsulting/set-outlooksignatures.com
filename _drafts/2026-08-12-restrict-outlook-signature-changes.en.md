@@ -12,8 +12,6 @@ sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
 
-## Keep users from adding, editing and removing signatures
-
 Maintaining a consistent corporate identity across an entire organization can be a challenge, especially when users frequently modify, use outdated, or completely remove their email signatures. To enforce brand guidelines and ensure legal compliance, IT administrators often need to restrict users from changing their signature settings.
 
 However, the capability to lock down these settings varies significantly depending on which version of Outlook your organization uses. Below is a detailed technical overview of how to restrict signature modifications across different Outlook platforms, the limitations you will encounter, and the best alternative approaches.
@@ -129,4 +127,3 @@ We help organizations centrally manage and standardize these touchpoints across 
 
 _Not responsible for email setup in your company?_  
 Share this article with your IT department or marketing team, they’ll thank you for it.
-

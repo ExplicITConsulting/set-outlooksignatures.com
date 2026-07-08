@@ -12,8 +12,6 @@ sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
 
-## Verhindern, dass Benutzer Signaturen hinzufügen, bearbeiten und entfernen
-
 Die Wahrung einer einheitlichen Corporate Identity im gesamten Unternehmen ist eine Herausforderung – insbesondere dann, wenn Benutzer E-Mail-Signaturen häufig ändern, veraltete Versionen verwenden oder diese vollständig entfernen. Um Markenrichtlinien durchzusetzen und rechtliche Anforderungen sicherzustellen, müssen IT-Administratoren die Möglichkeit einschränken, dass Benutzer ihre Signaturen eigenständig verändern.
 
 Die technischen Möglichkeiten hierfür unterscheiden sich jedoch je nach verwendeter Outlook-Version erheblich. Im Folgenden finden Sie einen detaillierten Überblick darüber, wie Sie Signaturänderungen auf verschiedenen Outlook-Plattformen einschränken, welche Einschränkungen bestehen und welche besseren Alternativen verfügbar sind.
@@ -134,4 +132,3 @@ Wir helfen Unternehmen, diese Kontaktpunkte für alle Benutzer zentral zu verwal
 
 _Nicht verantwortlich für die E-Mail-Konfiguration in Ihrem Unternehmen?_  
 Teilen Sie diesen Artikel mit Ihrer IT-Abteilung oder Ihrem Marketingteam, sie werden es Ihnen danken.
-
