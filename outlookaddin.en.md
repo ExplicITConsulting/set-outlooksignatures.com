@@ -34,7 +34,7 @@ sitemap_changefreq: weekly
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
       <div style="display: flex; gap: 0.75em;">
         ⚡
-        <div><b>Situation-Aware Logic</b><br>Beyond auto-select — use real-time context and custom rules to dynamically apply the perfect signature.</div>
+        <div><b>Situation-Aware Logic</b><br>Use custom rules and real-time context to dynamically apply the perfect signature.</div>
       </div>
     </div>
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
@@ -58,7 +58,7 @@ sitemap_changefreq: weekly
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
       <div style="display: flex; gap: 0.75em;">
         ⚙️
-        <div><b>Full Control</b><br>You control the version and configuration.</div>
+        <div><b>Full Control</b><br>You control the version, hosting, and deployment of independent configurations.</div>
       </div>
     </div>
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
