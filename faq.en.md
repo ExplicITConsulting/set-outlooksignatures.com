@@ -475,7 +475,7 @@ For end users, Set-OutlookSignatures is [invisible](/faq#start-set-outlooksignat
 
 The only thing end users notice is that their signatures and out-of-office replies are always up-to-date.
 
-The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> comes with the [Outlook add-in](/outlookaddin). The add-in comes with a graphical user interface called "taskpane", which allows for user interaction in addition to non-interactive automated launch events.
+The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> comes with the [Outlook add-in](/outlookaddin). The add-in comes with a graphical user interface called "task pane", which allows for user interaction in addition to non-interactive automated launch events.
 
 ###### IT administrators
 

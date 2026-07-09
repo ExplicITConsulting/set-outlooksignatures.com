@@ -33,7 +33,7 @@ sitemap_changefreq: weekly
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
       <div style="display: flex; gap: 0.75em;">
         👁️
-        <div><b>Taskpane Preview</b><br>Users can manually select or preview signatures.</div>
+        <div><b>Task pane Preview</b><br>Users can manually select or preview signatures.</div>
       </div>
     </div>
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
@@ -72,7 +72,7 @@ sitemap_changefreq: weekly
 
 <h2 id="usage">Usage</h2>
 <p>From an end user perspective, basically nothing needs to be done: When writing a new email, answering an email, or creating a new appointment, the add-in automatically adds the corresponding default signature.</p>
-<p>For advanced usage, a taskpane is available to manually choose signatures, preview items, or override settings for debug logging.</p>
+<p>For advanced usage, a task pane is available to manually choose signatures, preview items, or override settings for debug logging.</p>
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
@@ -126,7 +126,7 @@ sitemap_changefreq: weekly
           <ul>
             <li><b>Read mode:</b> Three dots ("…" or "⋮") in the header</li>
             <li><b>Compose:</b> Signatures are added automatically</li>
-            <li><b>Note:</b> Taskpanes are only supported in Read mode on mobile</li>
+            <li><b>Note:</b> Task panes are only supported in Read mode on mobile</li>
           </ul>
         </div>
       </div>
@@ -259,7 +259,7 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
   <p>You can even generate unique signatures at runtime without choosing a pre-deployed template. See <code>.\sample code\CustomRulesCode.js</code> for details.</p>
 </div>
 
-<p>The following diagrams show the add-in runtime workflows. Configuration variables are shown in parentheses next to the steps they influence: the launch event workflow covers automatic processing, while the taskpane workflow covers the interactive manual path.</p>
+<p>The following diagrams show the add-in runtime workflows. Configuration variables are shown in parentheses next to the steps they influence: the launch event workflow covers automatic processing, while the task pane workflow covers the interactive manual path.</p>
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
@@ -270,7 +270,7 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
     </picture>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <p><b>Taskpane workflow with configuration references</b></p>
+    <p><b>Task pane workflow with configuration references</b></p>
     <picture>
       <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Taskpane%20workflow-dark.svg" media="(prefers-color-scheme: dark)">
       <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Taskpane%20workflow-light.svg" alt="Set-OutlookSignatures Outlook add-in: Taskpane workflow diagram" style="max-height: 50vh; width: auto;">
@@ -317,8 +317,8 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
 
 
 <h2 id="logging-and-troubleshooting">Logging and troubleshooting</h2>
-<p>Troubleshooting Outlook add-ins can be complicated because the software operates through both a visible taskpane (triggered manually) and invisible background processes (launch events triggered by Outlook). While the interface may appear functional, background tasks — such as signature injection — can sometimes fail due to environment-specific settings or local caching issues. Use the following procedures to capture diagnostic logs for targeted analysis and to speed up testing of new releases and configuration settings.</p>
-<p>The "Set selected signature" button in the add-in taskpane runs exactly the same code as a launch event does. If setting the signature interactively via the button works, the problem is very likely not to be found in the Outlook add-in itself but rather in the Outlook host application.</p>
+<p>Troubleshooting Outlook add-ins can be complicated because the software operates through both a visible task pane (triggered manually) and invisible background processes (launch events triggered by Outlook). While the interface may appear functional, background tasks — such as signature injection — can sometimes fail due to environment-specific settings or local caching issues. Use the following procedures to capture diagnostic logs for targeted analysis and to speed up testing of new releases and configuration settings.</p>
+<p>The "Set selected signature" button in the add-in task pane runs exactly the same code as a launch event does. If setting the signature interactively via the button works, the problem is very likely not to be found in the Outlook add-in itself but rather in the Outlook host application.</p>
 <p>If launch events do not seem to work, runtime logging is the only definitive way to confirm if Outlook is triggering these events at all. It is reocmmended to clear the Outlook add-in cache first, as described below.<p>
 <blockquote>
    <p>For troubleshooting Outlook launch events, Outlook Web is the fastest and most reliable environment, followed closely by New Outlook.</p>
@@ -339,7 +339,7 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
       <ul>
         <li><b>Outlook for Mac:</b> <a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-mac">Official instructions from Microsoft</a>.</li>
-        <li><b>Outlook for iOS:</b> Taskpane > Advanced options > <b>Reload add-in</b>.</li>
+        <li><b>Outlook for iOS:</b> Task pane > Advanced options > <b>Reload add-in</b>.</li>
         <li><b>Outlook for Android:</b> App info > Force Stop > Clear Cache (do not tap Clear Data).</li>
       </ul>
     </div>
@@ -348,7 +348,7 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
 </div>
 <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Yellow;">
   <p id="runtime-logging"><b>Runtime logging</b></p>
-  <p>The add-in outputs diagnostic data to the browser console and the internal logging box within the taskpane. However, certain environments lack console access, and launch event (which run in the background) cannot send data to the taskpane UI. This makes it difficult to determine if a failure is due to a code error, a compilation issue, or if Outlook simply failed to trigger the event.</p>
+  <p>The add-in outputs diagnostic data to the browser console and the internal logging box within the task pane. However, certain environments lack console access, and launch event (which run in the background) cannot send data to the task pane UI. This makes it difficult to determine if a failure is due to a code error, a compilation issue, or if Outlook simply failed to trigger the event.</p>
   <p>While you can enable the <code>DEBUG</code> parameter via <code>run_before_deployment.ps1</code> to force event logging directly into the body of new emails, this is a heavy-handed approach. Most Outlook editions provide more elegant ways to capture runtime logs:</p>
   <div class="columns">
     <div class="column is-half-desktop is-half-tablet is-full-mobile">
@@ -436,7 +436,7 @@ defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-
     <li><b>Roaming Signatures:</b> Microsoft currently limits add-in access to roaming signatures. The add-in uses data from the last run of Set-OutlookSignatures (v4.14.0+) as a workaround until this is resolved.</li>
     <li><b>Online Connection:</b> Microsoft APIs only allow access to online content. The add-in requires an active connection to the mailbox and cannot access offline cache or the local file system.</li>
     <li><b>Event Support:</b> Automation relies on Outlook "Launch Events" (e.g., OnNewMessageCompose). Note that Microsoft does not currently support add-ins for calendar invite responses.</li>
-    <li><b>Office.js:</b> Microsoft dynamically updates the underlying framework. If automation behaves unexpectedly, the taskpane remains the reliable manual fallback.</li>
+    <li><b>Office.js:</b> Microsoft dynamically updates the underlying framework. If automation behaves unexpectedly, the task pane remains the reliable manual fallback.</li>
   </ul>
 </div>
 
@@ -446,7 +446,7 @@ defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-
       <p><b>Outlook for iOS & Android</b></p>
       <ul>
         <li>Only Exchange Online mailboxes are supported.</li>
-        <li>Taskpanes are not permitted by Microsoft during compose mode; signatures are applied automatically via events.</li>
+        <li>Task panes are not permitted by Microsoft during compose mode; signatures are applied automatically via events.</li>
         <li>Automated signatures for new appointments are not yet supported by the mobile APIs.</li>
       </ul>
     </div>
@@ -464,7 +464,7 @@ defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <p><b>Outlook for the web (On-Prem)</b></p>
       <ul>
-        <li>Launch events are not supported by the on-premises APIs; signature selection must be done via the taskpane.</li>
+        <li>Launch events are not supported by the on-premises APIs; signature selection must be done via the task pane.</li>
         <li>Images may be replaced with alternate descriptions due to a known bug in the Microsoft office.js framework for on-prem hosts.</li>
       </ul>
     </div>
@@ -473,7 +473,7 @@ defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <p><b>Classic Outlook for Windows</b></p>
       <ul>
-        <li>Launch events can be unstable for on-prem mailboxes; use the taskpane if signatures do not appear automatically.</li>
+        <li>Launch events can be unstable for on-prem mailboxes; use the task pane if signatures do not appear automatically.</li>
         <li>Exchange Online mailboxes must use a version supporting Nested App Authentication, as legacy EWS tokens are deprecated.</li>
       </ul>
     </div>

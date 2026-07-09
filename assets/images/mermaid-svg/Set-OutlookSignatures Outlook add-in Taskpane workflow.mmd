@@ -1,5 +1,5 @@
 ---
-title: "Set-OutlookSignatures Outlook add-in: Taskpane workflow with configuration references"
+title: "Set-OutlookSignatures Outlook add-in: Task pane workflow with configuration references"
 config:
   layout: elk
 ---
@@ -10,10 +10,10 @@ sequenceDiagram
     participant Exchange as #160;#160;Exchange#160;#160;<br>#160;#160;(on-prem, cloud)#160;#160;
 
     Outlook->>Item: #160;#160;User drafts new email or appointment#160;#160;
-    Item->>AddIn: #160;#160;User opens add-in taskpane#160;#160;
-    AddIn->>AddIn: #160;#160;User interacts with the add-in taskpane#160;#160;
+    Item->>AddIn: #160;#160;User opens add-in task pane#160;#160;
+    AddIn->>AddIn: #160;#160;User interacts with the add-in task pane#160;#160;
 
-    Note over AddIn: #160;#160;Manual taskpane processing is interactive.#160;#160;<br>#160;#160;It can override automatic host/platform limits.#160;#160;<br>#160;#160;It supports manual signature selection.#160;#160;
+    Note over AddIn: #160;#160;Manual task pane processing is interactive.#160;#160;<br>#160;#160;It can override automatic host/platform limits.#160;#160;<br>#160;#160;It supports manual signature selection.#160;#160;
 
     AddIn->>Exchange: #160;#160;Read mailbox, user, group, and signature data#160;#160;<br>#160;#160;(CLOUD_ENVIRONMENT, GRAPH_CLIENT_ID,#160;#160;<br>#160;#160;CustomCloudEnvironments)#160;#160;
     Exchange-->>AddIn: #160;#160;Data for signature selection#160;#160;
