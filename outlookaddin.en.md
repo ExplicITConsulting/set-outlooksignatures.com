@@ -454,7 +454,7 @@ defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-
       <p><b>Outlook for iOS & Android</b></p>
       <ul>
         <li>Only Exchange Online mailboxes are supported.</li>
-        <li>Task panes are not permitted by Microsoft during compose mode; signatures are applied automatically via events.</li>
+        <li>Task panes are not permitted by Microsoft during compose mode; signatures are applied automatically via events, including custom rules.</li>
         <li>Automated signatures for new appointments are not yet supported by the mobile APIs.</li>
       </ul>
     </div>
@@ -472,7 +472,7 @@ defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <p><b>Outlook for the web (On-Prem)</b></p>
       <ul>
-        <li>Launch events are not supported by the on-premises APIs; signature selection must be done via the task pane.</li>
+        <li>Launch events are not supported by the on-premises APIs; the process must be triggered via the task pane.</li>
         <li>Images may be replaced with alternate descriptions due to a known bug in the Microsoft office.js framework for on-prem hosts.</li>
       </ul>
     </div>
@@ -482,7 +482,7 @@ defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-
       <p><b>Classic Outlook for Windows</b></p>
       <ul>
         <li>Launch events can be unstable for on-prem mailboxes; use the task pane if signatures do not appear automatically.</li>
-        <li>Exchange Online mailboxes must use a version supporting Nested App Authentication, as legacy EWS tokens are deprecated.</li>
+        <li>For Exchange Online mailboxes, an Outlook version supporting Nested App Authentication (NAA) must be used.</li>
       </ul>
     </div>
   </div>
