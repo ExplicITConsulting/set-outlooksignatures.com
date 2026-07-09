@@ -67,9 +67,11 @@ sitemap_changefreq: weekly
         <div><b>Enterprise Ready</b><br>Works in all Outlook editions: Classic and New, Android, iOS, macOS, Web, Windows.</div>
       </div>
     </div>
-    <div style="display: flex; gap: 0.75em;">
-        🌐
-        <div><b>Global Coverage</b><br>Supports 370+ locales, spanning more than 100 regional variations across over 80 base languages.</div>
+    <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
+      <div style="display: flex; gap: 0.75em;">
+          🌐
+          <div><b>Global Coverage</b><br>Supports 370+ locales, spanning more than 100 regional variations across over 80 base languages.</div>
+      </div>
     </div>
   </div>
 </div>
