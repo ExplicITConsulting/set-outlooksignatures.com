@@ -18,6 +18,7 @@ redirect_from:
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
+
 <h2 id="overview">Overview</h2>
 <p>With a <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle </span></a>license, you gain access to the Outlook add-in.</p>
 <p>The add-in makes signatures available in <b>Outlook for iOS and Android</b>, while supporting all Outlook editions across platforms. It's an ideal solution for Outlook editions that don't yet support roaming signatures and is particularly helpful in unmanaged BYOD scenarios.</p>
@@ -27,7 +28,7 @@ sitemap_changefreq: weekly
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
       <div style="display: flex; gap: 0.75em;">
         ✨
-        <div><b>Automatic Selection</b><br>Applies correct signatures on item creation, on from change, on recipients change, and on send.</div>
+        <div><b>Automatic Selection</b><br>Applies correct signature on item creation, on from change, on recipients change, and on send.</div>
       </div>
     </div>
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
@@ -66,9 +67,12 @@ sitemap_changefreq: weekly
         <div><b>Enterprise Ready</b><br>Works in all Outlook editions: Classic and New, Android, iOS, macOS, Web, Windows.</div>
       </div>
     </div>
+    <div style="display: flex; gap: 0.75em;">
+        🌐
+        <div><b>Global Coverage</b><br>Supports 370+ locales, spanning more than 100 regional variations across over 80 base languages.</div>
+    </div>
   </div>
 </div>
-
 
 <h2 id="usage">Usage</h2>
 <p>From an end user perspective, basically nothing needs to be done: When writing a new email, answering an email, or creating a new appointment, the add-in automatically adds the corresponding default signature.</p>
@@ -134,7 +138,6 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-
 <h2 id="requirements">Requirements</h2>
 <h3>Outlook clients</h3>
 <p>The add-in works for all Microsoft-supported Outlook clients. It runs in the security context of the user and supports delegate scenarios.</p>
@@ -192,7 +195,6 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
   </div>
 </div>
 <p><b>Authentication:</b> Use <code>Single-page application</code> with a redirect URI of <code>brk-multihub://yourhost.yourdomain.com</code>.</p>
-
 
 <h2 id="configuration-and-deployment">Configuration and deployment</h2>
 <p>With every new release of Set-OutlookSignatures, the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> comes with an updated Outlook add-in. You must update your deployment whenever the add-in version or your add-in configuration changes.</p>
@@ -315,7 +317,6 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
   </div>
 </div>
 
-
 <h2 id="logging-and-troubleshooting">Logging and troubleshooting</h2>
 <p>Troubleshooting Outlook add-ins can be complicated because the software operates through both a visible task pane (triggered manually) and invisible background processes (launch events triggered by Outlook). While the interface may appear functional, background tasks — such as signature injection — can sometimes fail due to environment-specific settings or local caching issues. Use the following procedures to capture diagnostic logs for targeted analysis and to speed up testing of new releases and configuration settings.</p>
 <p>The "Set selected signature" button in the add-in task pane runs exactly the same code as a launch event does. If setting the signature interactively via the button works, the problem is very likely not to be found in the Outlook add-in itself but rather in the Outlook host application.</p>
@@ -373,61 +374,60 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
 $Logfile = "c:\test\outlook_add-in_runtimelogging.txt"
 
 if (-not (Test-Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging")) {
-  New-Item -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Force
+New-Item -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Force
 }
 
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Name "(Default)" -Value $Logfile
 {% endraw %}{% endhighlight %}
-            </li>
-            <li><p>Restart Outlook.</p></li>
-          </ol>
-          <p>The specified file will now record all add-in activity, including launch event details and Set-OutlookSignatures specific messages.</p>
-        </div>
-      </details>
-      <details>
-        <summary class="has-text-weight-bold is-clickable">New Outlook for Windows</summary>
-        <div>
-          <p>New Outlook allows you to attach developer tools directly to the application process.</p>
-          <ol>
-            <li>Close New Outlook.</li>
-            <li>Launch it from a command prompt or the Run dialog:
+</li>
+<li><p>Restart Outlook.</p></li>
+</ol>
+<p>The specified file will now record all add-in activity, including launch event details and Set-OutlookSignatures specific messages.</p>
+</div>
+</details>
+<details>
+<summary class="has-text-weight-bold is-clickable">New Outlook for Windows</summary>
+<div>
+<p>New Outlook allows you to attach developer tools directly to the application process.</p>
+<ol>
+<li>Close New Outlook.</li>
+<li>Launch it from a command prompt or the Run dialog:
 {% highlight batch %}{% raw %}
 olk.exe --devtools
 {% endraw %}{% endhighlight %}
-            </li>
-          </ol>
-          <p>This opens a secondary window containing the Edge Developer Tools. Select the Console tab to view live logs from launch events and Outlook add-ins.</p>
-        </div>
-      </details>
-    </div>
-    <div class="column is-half-desktop is-half-tablet is-full-mobile">
-      <details>
-        <summary class="has-text-weight-bold is-clickable">Classic and New Outlook for macOS</summary>
-        <div>
-          <p>On macOS, you can enable runtime logging through the terminal.</p>
-          <ol>
-            <li>Force quit Outlook.</li>
-            <li>Run the following command to set the log file destination:
+</li>
+</ol>
+<p>This opens a secondary window containing the Edge Developer Tools. Select the Console tab to view live logs from launch events and Outlook add-ins.</p>
+</div>
+</details>
+</div>
+<div class="column is-half-desktop is-half-tablet is-full-mobile">
+<details>
+<summary class="has-text-weight-bold is-clickable">Classic and New Outlook for macOS</summary>
+<div>
+<p>On macOS, you can enable runtime logging through the terminal.</p>
+<ol>
+<li>Force quit Outlook.</li>
+<li>Run the following command to set the log file destination:
 {% highlight sh %}{% raw %}
 defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-in_runtimelogging.txt"
 {% endraw %}{% endhighlight %}
-            </li>
-            <li>Open Outlook.</li>
-          </ol>
-          <p>Add-in activity is now logged to the file <code>~/library/Containers/com.microsoft.Outlook/Data/outlook_add-in_runtimelogging.txt</code>, including all messages from launch events and Outlook add-ins.</p>
-        </div>
-      </details>
-      <details>
-        <summary class="has-text-weight-bold is-clickable">Outlook for Android, Outlook for iOS</summary>
-        <div>
-          <p>Mobile versions of Outlook do not support native runtime logging. To troubleshoot these platforms, you must use the "last resort" method: Enable the <code>DEBUG</code> parameter in your configuration via <code>run_before_deployment.ps1</code> to see event logs within the email body.</p>
-        </div>
-      </details>
-    </div>
-  </div>
+</li>
+<li>Open Outlook.</li>
+</ol>
+<p>Add-in activity is now logged to the file <code>~/library/Containers/com.microsoft.Outlook/Data/outlook_add-in_runtimelogging.txt</code>, including all messages from launch events and Outlook add-ins.</p>
+</div>
+</details>
+<details>
+<summary class="has-text-weight-bold is-clickable">Outlook for Android, Outlook for iOS</summary>
+<div>
+<p>Mobile versions of Outlook do not support native runtime logging. To troubleshoot these platforms, you must use the "last resort" method: Enable the <code>DEBUG</code> parameter in your configuration via <code>run_before_deployment.ps1</code> to see event logs within the email body.</p>
+</div>
+</details>
 </div>
 
-
+  </div>
+</div>
 
 <h2 id="remarks">Remarks</h2>
 <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
@@ -479,7 +479,6 @@ defaults write com.microsoft.Outlook CEFRuntimeLoggingFile -string "outlook_add-
     </div>
   </div>
 </div>
-
 
 <p class="is-italic has-text-centered">
   The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> license funds the open-source mission, ensuring the core engine remains free and peer-reviewable for the global community.
