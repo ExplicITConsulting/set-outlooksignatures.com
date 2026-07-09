@@ -87,7 +87,7 @@ sitemap_changefreq: weekly
 <p>For advanced usage, a task pane is available to manually choose signatures, preview items, or override settings for debug logging.</p>
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <div style="display: flex; gap: 0.75em;">
         🌐
         <div>
@@ -101,7 +101,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <div style="display: flex; gap: 0.75em;">
         💻
         <div>
@@ -115,7 +115,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <div style="display: flex; gap: 0.75em;">
         🏢
         <div>
@@ -130,7 +130,7 @@ sitemap_changefreq: weekly
     </div>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
-    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Yellow;">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <div style="display: flex; gap: 0.75em;">
         📱
         <div>
