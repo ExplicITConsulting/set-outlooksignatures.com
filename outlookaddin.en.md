@@ -40,7 +40,7 @@ sitemap_changefreq: weekly
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
       <div style="display: flex; gap: 0.75em;">
         👁️
-        <div><b>Task pane Preview</b><br>Users can manually select or preview signatures.</div>
+        <div><b>Task Pane Preview</b><br>Users can manually select or preview signatures.</div>
       </div>
     </div>
     <div class="column is-one-third-desktop is-one-third-tablet is-full-mobile">
