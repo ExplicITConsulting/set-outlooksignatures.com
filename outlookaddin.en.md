@@ -145,6 +145,8 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
+<p>As the only component exposed to everyday employees, the Outlook add-in task pane is designed to feel completely native. It automatically syncs with Outlook's display language (falling back to English if unsupported), while still allowing users to easily choose a manual language override from a wide variety of <a href="/languages">supported languages</a>.</p>
+<p>Furthermore, this active display language — whether automatically detected or manually overridden — is integrated with the custom rules engine. This allows you to effortlessly define language-specific signatures, disclaimers, and notification messages based on the exact language the user sees.</p>
 
 <h2 id="requirements">Requirements</h2>
 <h3>Outlook clients</h3>
