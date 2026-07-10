@@ -275,7 +275,7 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
   </div>
   <p>… and many more. You can even generate unique signatures at runtime without choosing a pre-deployed template.</p>
   <details>
-    <summary class="has-text-weight-bold is-clickable">See <code>.\sample code\CustomRulesCode.js</code> for details, or click here to see available attributes and exampe code.</summary>
+    <summary class="has-text-weight-bold is-clickable">See <code>.\sample code\CustomRulesCode.js</code> for details, or click here to see available attributes and example code.</summary>
     <div>
 {% highlight javascript %}{% raw %}
 /*
