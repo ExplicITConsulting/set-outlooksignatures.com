@@ -6,7 +6,10 @@ sitemap: false
   {%- assign expected_dir_path = "/assets/images/customers/" -%}
   {%- assign file_directory_calculated = file.path | remove: file.name -%}
 
-  {%- unless file_directory_calculated | last == "/" -%}
+  {%- comment -%} Capture the last character first {%- endcomment -%}
+  {%- assign last_char = file_directory_calculated | split: '' | last -%}
+
+  {%- unless last_char == "/" -%}
     {%- assign file_directory_calculated = file_directory_calculated | append: "/" -%}
   {%- endunless -%}
 

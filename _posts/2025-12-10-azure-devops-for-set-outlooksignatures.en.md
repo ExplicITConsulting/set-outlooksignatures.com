@@ -34,15 +34,19 @@ Our solution relies on a well-structured setup involving three Git repositories 
 
 The pipeline handles deployment using environment-specific variables defined in the azure-static-aimoutlooksignatures variable group:
 
+{% raw %}
+
 ```yml
 variables:
   - ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
-    - name: targetEnvironment
-      value: 'Production'
+      - name: targetEnvironment
+        value: "Production"
   - ${{ else }}:
-    - name: targetEnvironment
-      value: 'Development'
+      - name: targetEnvironment
+        value: "Development"
 ```
+
+{% endraw %}
 
 ## Automated signature generation pipeline
 
@@ -59,13 +63,13 @@ We use Extension attribute 1 as a trigger: If this attribute is updated from 0 t
 The template generator pipeline uses a parameterized approach to define the target user (UPN) and the signature template version.
 
 ```yml
-  - name: UPN
-    type: object
-    default: ['xx@yy', 'xx@yy']
+- name: UPN
+  type: object
+  default: ["xx@yy", "xx@yy"]
 
-  - name: version
-    type: string
-    default: '4.23.0'
+- name: version
+  type: string
+  default: "4.23.0"
 ```
 
 The core steps within the job use the powerful SimulateAndDeploy feature:
@@ -139,4 +143,3 @@ We help organizations centrally manage and standardize these touchpoints across 
 
 _Not responsible for email setup in your company?_  
 Share this article with your IT department or marketing team, they’ll thank you for it.
-

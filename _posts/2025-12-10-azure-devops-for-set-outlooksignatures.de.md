@@ -36,15 +36,19 @@ Unsere Lösung basiert auf einer gut strukturierten Konfiguration mit drei Git-R
 
 Die Pipeline verarbeitet die Bereitstellung mithilfe von umgebungsspezifischen Variablen, die in der Variablengruppe "azure-static-aimoutlooksignatures" definiert sind:
 
+{% raw %}
+
 ```yml
 variables:
   - ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
-    - name: targetEnvironment
-      value: 'Production'
+      - name: targetEnvironment
+        value: "Production"
   - ${{ else }}:
-    - name: targetEnvironment
-      value: 'Development'
+      - name: targetEnvironment
+        value: "Development"
 ```
+
+{% endraw %}
 
 ## Automatisierte Pipeline zur Signaturgenerierung
 
@@ -61,13 +65,13 @@ Wir verwenden das Erweiterungsattribut 1 als Auslöser: Wenn dieses Attribut von
 Die Pipeline des Vorlagengenerators verwendet einen parametrisierten Ansatz, um den Zielbenutzer (UPN) und die Version der Signaturvorlage zu definieren.
 
 ```yml
-  - name: UPN
-    type: object
-    default: ['xx@yy', 'xx@yy']
+- name: UPN
+  type: object
+  default: ["xx@yy", "xx@yy"]
 
-  - name: version
-    type: string
-    default: '4.23.0'
+- name: version
+  type: string
+  default: "4.23.0"
 ```
 
 Die wichtigsten Schritte innerhalb des Auftrags nutzen die leistungsstarke Funktion "SimulateAndDeploy":
@@ -141,4 +145,3 @@ Wir helfen Unternehmen, diese Kontaktpunkte für alle Benutzer zentral zu verwal
 
 _Nicht verantwortlich für die E-Mail-Konfiguration in Ihrem Unternehmen?_  
 Teilen Sie diesen Artikel mit Ihrer IT-Abteilung oder Ihrem Marketingteam, sie werden es Ihnen danken.
-
