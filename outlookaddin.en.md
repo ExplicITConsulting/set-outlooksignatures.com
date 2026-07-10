@@ -85,9 +85,7 @@ sitemap_changefreq: weekly
 <h2 id="usage">Usage</h2>
 <p>From an end-user perspective, basically nothing needs to be done: When writing a new email, answering an email, or creating a new appointment, the add-in automatically adds the corresponding default signature.</p>
 <p>This <strong>automatic application is fundamentally powered by Outlook launch events</strong> (such as <code>OnNewMessageCompose</code>, <code>OnNewAppointmentOrganizer</code>, <code>OnMessageCompose</code>, <code>OnMessageSend</code>, and others). These launch events are <strong>fully configurable and can be tailored by host application and platform</strong> (allowing different behaviors depending on whether users are on Outlook for Windows, Mac, or the web). The add-in listens for these specific configured triggers in the background, allowing it to seamlessly evaluate the context and inject the correct signature the exact moment an action is initiated, without requiring any manual user intervention.</p>
-<p>A task pane is available to manually choose signatures, preview items, or override settings for debug logging.</p>
-
-<p>Beyond standard default signatures, advanced routing can be implemented via <strong><code>CUSTOM_RULES_CODE</code></strong>. This feature allows organizations to execute custom JavaScript logic. It runs when when triggered by background launch events and when being executed manually — for instance, when a user opens the task pane to explicitly choose a signature or override settings. This flexibility allows the code to dynamically evaluate properties of the current Outlook item—such as checking the selected sender identity to swap in a brand-matched signature for secondary SMTP/alias addresses, or reading sensitivity labels — regardless of whether the action happens on creation or during a manual review.</p>
+<p>A task pane is available to manually choose signatures, preview items, or override settings for debug logging:</p>
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
@@ -149,8 +147,11 @@ sitemap_changefreq: weekly
     </div>
   </div>
 </div>
+
 <p>As the only component exposed to everyday employees, the Outlook add-in task pane is designed to feel completely native. It automatically syncs with Outlook's display language (falling back to English if unsupported), while still allowing users to easily choose a manual language override from a wide variety of <a href="/languages">supported languages</a>.</p>
 <p>Furthermore, this active display language — whether automatically detected or manually overridden — is integrated with the custom rules engine. This allows you to effortlessly define language-specific signatures, disclaimers, and notification messages based on the exact language the user sees.</p>
+
+<p>Beyond standard default signatures, advanced routing can be implemented via <a href="#custom-rules-code"><code>CUSTOM_RULES_CODE</code></a>. This feature allows organizations to execute custom JavaScript logic. It runs when when triggered by background launch events and when being executed manually — for instance, when a user opens the task pane to explicitly choose a signature or override settings. This flexibility allows the code to dynamically evaluate properties of the current Outlook item—such as checking the selected sender identity to swap in a brand-matched signature for secondary SMTP/alias addresses, or reading sensitivity labels — regardless of whether the action happens on creation or during a manual review.</p>
 
 <h2 id="requirements">Requirements</h2>
 <h3>Outlook clients</h3>
@@ -254,7 +255,7 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
   </div>
 </div>
 <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Yellow;">
-  <p><b>Custom Rules Logic</b></p>
+  <p id="custom-rules-code"><b>Custom Rules Code</b></p>
   <p class="mb-0">Modify <code>CustomRulesCode.js</code> to dynamically influence signature selection at runtime based on an a huge variety of conditions, including:</p>
   <div class="columns mt-0">
     <div class="column is-half-desktop is-half-tablet is-full-mobile pt-0">
@@ -444,240 +445,7 @@ The following sample codes show how to realize multiple common use cases:
   - Example C: How to query Microsoft Graph
   - Example D: Set signature for an alias or secondary SMTP address
 
-You have to adapt the code to fit your environment.
-The sample code is written in a generic way, which allows for easy adaption.
-
-Would you like support? ExplicIT Consulting (https://explicitconsulting.at) offers professional support for this and other open source code.
-
-
-Example A: Set signature based on recipient type (internal vs external)
-  // Log the customRulesProperties for debugging purposes (the access token is truncated for security reasons)
-  var tempProps = {};
-  for (var key in customRulesProperties) {
-    if (customRulesProperties.hasOwnProperty(key)) {
-      tempProps[key] = customRulesProperties[key];
-    }
-  }
-  tempProps.graphAccessToken = tempProps.graphAccessToken ? tempProps.graphAccessToken.substring(0, 4) + '…' : tempProps.graphAccessToken;
-
-  await logMessage(("customRulesProperties: " + JSON.stringify(tempProps)));
-
-  var hasExternalRecipient = false;
-
-  if (customRulesProperties.itemTo) {
-    for (var i = 0; i < customRulesProperties.itemTo.length; i++) {
-      if (customRulesProperties.itemTo[i].recipientType === "externalUser") {
-        hasExternalRecipient = true;
-        break;
-      }
-    }
-  }
-
-  if (!hasExternalRecipient && customRulesProperties.availableSignatures.indexOf("Signature informal") !== -1) {
-    await logMessage("Using informal signature because there are no external recipients");
-
-    customRulesResultSignatureName = "Signature informal"; // informal signature
-    customRulesResultNotification = "Using informal signature because of no external recipients";
-  } else if (hasExternalRecipient && customRulesProperties.availableSignatures.indexOf("Signature formal") !== -1) {
-    await logMessage("Using formal signature because there are external recipients");
-
-    customRulesResultSignatureName = "Signature formal"; // Formal signature
-    customRulesResultNotification = "Using formal signature because of external recipients";
-  } else {
-    customRulesResultNotification = customRulesProperties.notificationOriginal;
-  }
-
-
-Example B: Set signature based on mail type (new vs reply/forward)
-  // Log the customRulesProperties for debugging purposes (the access token is truncated for security reasons)
-  var tempProps = {};
-  for (var key in customRulesProperties) {
-    if (customRulesProperties.hasOwnProperty(key)) {
-      tempProps[key] = customRulesProperties[key];
-    }
-  }
-  tempProps.graphAccessToken = tempProps.graphAccessToken ? tempProps.graphAccessToken.substring(0, 4) + '…' : tempProps.graphAccessToken;
-
-  await logMessage(("customRulesProperties: " + JSON.stringify(tempProps)));
-
-  if (customRulesProperties.itemIsNew && customRulesProperties.availableSignatures.indexOf("Signature formal") !== -1) {
-    await logMessage("Using formal signature because this is a new mail");
-
-    customRulesResultSignatureName = "Signature formal";
-    customRulesResultNotification = "Using formal signature because this is a new mail";
-  } else if (customRulesProperties.itemIsReplyForward && customRulesProperties.availableSignatures.indexOf("Signature informal") !== -1) {
-    await logMessage("Using informal signature because this is a reply");
-
-    customRulesResultSignatureName = "Signature informal";
-    customRulesResultNotification = "Using informal signature because this is a reply";
-  } else {
-    customRulesResultNotification = customRulesProperties.notificationOriginal;
-  }
-
-
-Example C: How to query Microsoft Graph
-  // Log the customRulesProperties for debugging purposes (the access token is truncated for security reasons)
-  var tempProps = {};
-  for (var key in customRulesProperties) {
-    if (customRulesProperties.hasOwnProperty(key)) {
-      tempProps[key] = customRulesProperties[key];
-    }
-  }
-  tempProps.graphAccessToken = tempProps.graphAccessToken ? tempProps.graphAccessToken.substring(0, 4) + '…' : tempProps.graphAccessToken;
-
-  await logMessage(("customRulesProperties: " + JSON.stringify(tempProps)));
-
-  // Function customGraphQuery
-  // Executes a paginated query against the Microsoft Graph API using the Fetch API.
-  // @param {string} url
-  //   The initial URL for the Microsoft Graph API query.
-  //   The endpoint defined in the configuration of the Outlook add-in is available as customRulesProperties.graphApiEndpoint.
-  //   Defaults to (customRulesProperties.graphApiEndpoint + "/v1.0/me").
-  // @param {string} providedAccessToken
-  //   The access token required for authentication.
-  //   The access token used by the Outlook add-in is available as customRulesProperties.graphAccessToken.
-  //   Defaults to customRulesProperties.graphAccessToken.
-  // @param {string} consistencyLevel
-  //   The consistencyLevel header value to use in the Graph query.
-  //   Defaults to null.
-  // @returns {Promise<{error: false | string, result: null | any[]}>}
-  //   An object containing the combined results or an error message.
-  //   Preserves all meta information returned by Graph, as well as the value attribute
-  //   If a Graph query only returns text, it is returned in result.value
-  async function customGraphQuery(url, providedAccessToken, consistencyLevel) {
-    url = url || customRulesProperties.graphApiEndpoint + "/v1.0/me";
-    providedAccessToken = providedAccessToken || "Bearer " + customRulesProperties.graphAccessToken;
-    consistencyLevel = consistencyLevel || null;
-
-    var allResults = [];
-    var error = false;
-    var nextLink = url;
-
-    var allContent = {};
-
-    try {
-      while (nextLink) {
-        var headers = {
-          Authorization: providedAccessToken,
-          "Content-Type": "Application/Json; charset=utf-8",
-        };
-
-        if (consistencyLevel) {
-          headers["ConsistencyLevel"] = consistencyLevel;
-        }
-
-        var response = await fetch(nextLink, {
-          method: "GET",
-          headers: headers,
-        });
-
-        if (!response.ok) {
-          const errorBody = await response.text();
-          const errorMessage = "HTTP error: " + response.status + " " + response.statusText + ". Body: " + errorBody;
-          throw new Error(errorMessage);
-        }
-
-        var data = await response.json();
-
-        if (data.value) {
-          allResults = allResults.concat(data.value);
-          nextLink = data["@odata.nextLink"] || null;
-        } else {
-          allResults = allResults.concat(data);
-          nextLink = null;
-        }
-
-        var metadata = {};
-        for (var key in data) {
-          if (data.hasOwnProperty(key) && key !== "value") {
-            metadata[key] = data[key];
-          }
-        }
-        Object.assign(allContent, metadata);
-      }
-
-      allContent.value = allResults;
-
-    } catch (err) {
-      error = err;
-      allContent = null;
-    }
-
-    return {
-      error: error,
-      result: allContent,
-    };
-  }
-
-  if (customRulesProperties.graphAccessToken) {
-    await logMessage("Graph access token is available, proceeding with Graph queries");
-
-    await logMessage(("customGraphQuery test: " + JSON.stringify(await customGraphQuery())));
-
-    // Step 1: Get UPN from SMTP address
-    // Required permission(s):
-    //   Delegated: User.Read.All
-    var getUpnQuery = await customGraphQuery((customRulesProperties.graphApiEndpoint + "/v1.0/users?$filter=proxyAddresses/any(x:x eq 'smtp:" + customRulesProperties.itemFrom.emailAddress + "')"));
-
-    if (getUpnQuery.error) {
-      await logMessage("UPN query failed: " + getUpnQuery.error);
-    } else {
-      await logMessage("UPN query successful: " + JSON.stringify(getUpnQuery.result));
-
-      var FromUpn = null;
-
-      if (getUpnQuery.result && getUpnQuery.result.value.length === 1 && getUpnQuery.result.value[0].userPrincipalName) {
-        FromUpn = getUpnQuery.result.value[0].userPrincipalName;
-
-        // Step 2: Get the default user properties of the sender via its UPN
-        // Required permission(s):
-        //   Delegated: User.Read.All
-        var getUserPropertiesQuery = await customGraphQuery((customRulesProperties.graphApiEndpoint + "/v1.0/users/" + FromUpn));
-
-        if (getUserPropertiesQuery.error) {
-          await logMessage("UserProperties query failed: " + getUserPropertiesQuery.error);
-        } else {
-          await logMessage("UserProperties query successful: " + JSON.stringify(getUserPropertiesQuery.result));
-
-          // Step 3: Get transitive group membership (ID, displayName and mail of each group)
-          // Required permission(s):
-          //   Delegated: User.Read.All
-          var getTransitiveGroupMembershipQuery = await customGraphQuery((customRulesProperties.graphApiEndpoint + "/v1.0/users/" + FromUpn + "/transitiveMemberOf?$select=id,displayName,mail"));
-
-          if (getTransitiveGroupMembershipQuery.error) {
-            await logMessage("TransitiveGroupMembership query failed: " + getTransitiveGroupMembershipQuery.error);
-          } else {
-            await logMessage("TransitiveGroupMembership query successful: " + JSON.stringify(getTransitiveGroupMembershipQuery.result));
-          }
-        }
-      } else {
-        await logMessage("UPN query returned no user, or multiple users for the same email address, or no UPN.");
-      }
-    }
-  } else {
-    await logMessage("Graph access token is not available, cannot proceed with Graph queries.");
-  }
-
-
-Example D: Set signature for an alias or secondary SMTP address
-  var targetEmail = "first.last@contoso.com";
-  var sigNew = "formal Contoso";
-  var sigReply = "informal Contoso";
-
-  var targetSignature = customRulesProperties.itemIsNew ? sigNew : sigReply;
-  var notificationText = "Applied " + targetSignature + " automatically.";
-
-  if (customRulesProperties.itemFrom.emailAddress.toLowerCase() === targetEmail.toLowerCase()) {
-    if (customRulesProperties.availableSignatures.indexOf(targetSignature) !== -1) {
-      customRulesResultSignatureName = targetSignature;
-      customRulesResultNotification = notificationText;
-    } else {
-      await logMessage("Signature '" + targetSignature + "' not found in available signatures.");
-    }
-  }
-*/
-
-// Add your custom code below
+[…]
 {% endraw %}{% endhighlight %}
     </div>
   </details>
