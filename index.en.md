@@ -3,10 +3,10 @@ layout: "page"
 lang: "en"
 locale: "en"
 title: |
-  <p class="title is-2 has-text-centered">Data Sovereign Email Signatures and Out-of-Office Replies</p>
+  <p class="title is-2 has-text-centered">{{ site.data[site.active_lang].strings.title }}</p>
 subtitle: |
-  <p class="subtitle is-4 has-text-centered mb-0">Unified Outlook branding everywhere – with zero external data exposure</p>
-description: "Data Sovereign Email Signatures and Out-of-Office Replies. Centrally manage Outlook branding across all platforms without your data ever leaving your trusted systems."
+  <p class="subtitle is-4 has-text-centered mb-0">{{ site.data[site.active_lang].strings.subtitle }}</p>
+description: "{{ site.data[site.active_lang].strings.description }}"
 permalink: "/"
 redirect_from:
 sitemap_priority: 1.0
