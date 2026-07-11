@@ -88,7 +88,7 @@ The architecture of Set-OutlookSignatures is designed as a two-stage process: fi
 
 <picture>
   <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Architecture%20Considerations-dark.svg" media="(prefers-color-scheme: dark)">
-  <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Architecture%20Considerations-light.svg" alt="Set-OutlookSignatures Architecture Considerations diagram" style="max-height: 50vh; width: auto;">
+  <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Architecture%20Considerations-light.svg" alt="Set-OutlookSignatures Architecture Considerations Diagram" style="max-height: 50vh; width: auto;">
 </picture>
 
 ### Stage 1: Create signatures and out-of-office replies
@@ -272,7 +272,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 
 <picture>
   <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Security%20Considerations-dark.svg" media="(prefers-color-scheme: dark)">
-  <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Security%20Considerations-light.svg" alt="Set-OutlookSignatures Security Considerations diagram" style="max-height: 50vh; width: auto;">
+  <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Security%20Considerations-light.svg" alt="Set-OutlookSignatures Security Considerations Diagram" style="max-height: 50vh; width: auto;">
 </picture>
 
 <details class="box p-0">

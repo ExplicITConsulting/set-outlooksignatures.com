@@ -225,7 +225,7 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
 
 <picture>
   <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20Configuration%20and%20Deployment-dark.svg" media="(prefers-color-scheme: dark)">
-  <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20Configuration%20and%20Deployment-light.svg" alt="Set-OutlookSignatures Outlook Add-In Configuration and Deployment diagram" style="max-height: 50vh; width: auto;">
+  <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20Configuration%20and%20Deployment-light.svg" alt="Set-OutlookSignatures Outlook Add-In Configuration and Deployment Diagram" style="max-height: 50vh; width: auto;">
 </picture>
 
 <h3 id="configuration">Step 1: Configuration (Prepare)</h3>
@@ -276,180 +276,11 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
   <p>… and many more. You can even generate unique signatures at runtime without choosing a pre-deployed template.</p>
   <details>
     <summary class="has-text-weight-bold is-clickable">See <code>.\sample code\CustomRulesCode.js</code> for details, or click here to see available attributes and example code.</summary>
-    <div>
-{% highlight javascript %}{% raw %}
-/*
-You can directly influence which signature the Outlook add-in will set by adding JavaScript code to this file.
-
-Evaluate the information given in the customRulesProperties object to override the default signature setting with a situation aware one.
-
-For example, you can set a specific signature…
-- …when there are only internal recipients, or another signature when there are external recipients
-- …depending on the from email address
-- …when a specific customer is in the To field
-- …when the current item is a mail or an appointment
-- …when the current item is a new mail, or another signature when it is a reply or a forward
-- …depending on the subject
-- …based on any other condition derived from the information available in the customRulesProperties object
-- …based on information queried from the Microsoft Graph API (for example, based on group membership of the sender)
-
-You can choose a signature that has formerly been deployed using Set-OutlookSignatures, or define a completely custom signature body.
-
-
-The customRulesProperties object gives you the following information:
-- outlookContext
-  - Information about Outlook (host, version, platform)
-  - host: https://learn.microsoft.com/en-us/javascript/api/office/office.hosttype
-  - platform: https://learn.microsoft.com/en-us/javascript/api/office/office.platformtype
-- outlookDisplayLanguage
-  - Display language as returned by Office.context.displayLanguage
-  - Usually in the format "en-GB" or "de-AT"
-- userProfile
-  - Information about the account running the Outlook add-in (displayName, emailAddress, timeZone, accountType)
-  - accountType: https://learn.microsoft.com/en-us/javascript/api/outlook/office.userprofile#outlook-office-userprofile-accounttype-member
-- itemIsMail, itemIsAppointment
-  - Boolean values indicating if the current item is a mail item or an appointment item
-- itemIsComposeMode, itemIsReadMode
-  - Boolean values indicating if the current item is in compose mode or in read mode.
-- itemIsNew, itemIsReplyForward, itemIsReply, itemIsForward
-  - Boolean values indicating if the current item is a new mail, a reply, or a forward. Appointment items are always new.
-- itemIsHtml, itemIsText
-  - Boolean values indicating if the current item is formatted in HTML (Outlook treats RTF as HTML), or as plain text.
-- itemFrom
-  - Information about the recipient that the item will be sent from (displayName, emailAddress)
-- itemTo, itemCc, itemBcc
-  - Information about the recipients in the To, CC, and BCC fields (emailAddress, displayName, recipientType)
-  - When itemIsAppointment is true, itemTo contains the required attendees
-  - When itemIsAppointment is true, itemCc contains the optional attendees
-  - When itemIsAppointment is true, itemBcc is null
-- itemSubject
-  - The subject of the item
-- availableSignatures
-  - Array with the names of the available signatures
-- notificationOriginal
-  - The original notification text defined to be shown in the Outlook info bar after setting the signature
-- notificationCurrent
-  - The current notification text that is shown in the Outlook info bar after setting the signature
-- graphAccessToken
-  - The access token that can be used to call the Microsoft Graph API
-- graphApiEndpoint
-  - The Microsoft Graph API endpoint to be used (for example, https://graph.microsoft.com or https://graph.microsoft.us)
-- sensitivityLabelGuid, sensitivityLabelName
-  - GUID and name of the sensitivity label of the current item.
-  - Empty string if no sensitivity label is set; null on error or if the query fails (reading the sensitivity label requires the mailbox to have an E5 license at least).
-- triggeredByLaunchEventName
-  - The name of the launch event that triggered the custom rules code to run. Empty string if the code was not triggered by a launch event.
-
-
-Common remarks
-- Do not rely on displayName but on emailAddress
-- If you want to log something, use: await logMessage("your text here")
-- For maximum compatibility, especially with Classic Outlook for Windows:
-  - Imports and external dependencies will not work
-  - Keep your code as simple as possible and make sure it finishes within a few seconds
-  - Only write code that is compatible with ECMAScript 5 (ES5)
-    - You can use async, await and fetch
-- To define the signature to be used, set the customRulesResultSignatureName variable to the name of signature
-  - If customRulesResultSignatureName does not contain a value from availableSignatures, the Outlook add-in will ignore it,
-    meaning the add-in will continue as if no custom rules code was present.
-  - If you want to remove an existing signature or set no signature at all, you need to deploy an empty signature
-    using Set-OutlookSignatures first and then set customRulesResultSignatureName to the name of this signature,
-    or use customRulesResultSignatureBody.
-- To set a completely custom signature which cannot be found in availableSignatures, set customRulesResultSignatureBody
-  - This only works when customRulesProperties.itemFrom.emailAddress is a member of a license group in Entra ID.
-    Make sure the Entra ID app used for the Outlook add-in has the delegated Graph API permissions User.Read.All and
-    GroupMember.Read.All, and that you granted admin consent for these permissions.
-  - If customRulesResultSignatureBody is not empty, it has precedence over customRulesResultSignatureName
-  - It must contain valid HTML code for HTML messages.
-- To define the notification text to be used, set the customRulesResultNotification to the string you want to show
-  - If customRulesResultNotification is not a string, the original value (notificationOriginal) is used
-  - If customRulesResultNotification is an empty string, no notification will be shown
-- When querying the Microsoft Graph API, make sure that the required permissions are granted to the Entra ID app used by the Outlook add-in
-
-
-Here is a sample customRulesProperties object:
-  {
-    "outlookContext": {
-      "host": "Outlook",
-      "version": "16.0.19029.20184",
-      "platform": "PC"
-    },
-    "outlookDisplayLanguage": "en-GB",
-    "userProfile": {
-      "displayName": "Bobby Busy",
-      "emailAddress": "bobby.busy@example.com",
-      "timeZone": "W. Europe Standard Time",
-      "accountType": "office365"
-    },
-    "itemIsMail": true,
-    "itemIsAppointment": false,
-    "itemIsNew": true,
-    "itemIsReplyForward": false,
-    "itemIsReply": false,
-    "itemIsForward": false,
-    "itemIsComposeMode": true,
-    "itemIsReadMode": false,
-    "itemFrom": {
-      "emailAddress": "bobby.busy@example.com",
-      "displayName": "Bobby Busy"
-    },
-    "itemTo": [
-      {
-        "emailAddress": "fenix.fish@example.com",
-        "displayName": "Fenix Fish",
-        "recipientType": "user"
-      },
-      {
-        "emailAddress": "nat.nuts@example.com",
-        "displayName": "Nat Nuts",
-        "recipientType": "user"
-      }
-    ],
-    "itemCc": [
-      {
-        "emailAddress": "alex.alien@example.com",
-        "displayName": "Alex Alien",
-        "recipientType": "user"
-      },
-      {
-        "emailAddress": "someone@example.net",
-        "displayName": "someone@example.net",
-        "recipientType": "externalUser"
-      }
-    ],
-    "itemBcc": [
-      {
-        "emailAddress": "bobby.busy@example.com",
-        "displayName": "bobby.busy@example.com",
-        "recipientType": "user"
-      }
-    ],
-    "itemSubject": "This is a sample subject",
-    "availableSignatures": [
-        "Signature formal",
-        "Signature informal"
-      ],
-    "notificationCurrent": "Signature added by Set-OutlookSignatures",
-    "notificationOriginal": "Signature added by Set-OutlookSignatures",
-    "graphAccessToken": "abc123…",
-    "graphApiEndpoint": "https://graph.microsoft.com",
-    "sensitivityLabelGuid": "00000000-0000-0000-0000-a01234567890",
-    "sensitivityLabelName": "Highly Confidential",
-    "triggeredByLaunchEventName": "OnNewMessageCompose"
-  }
-
-
-The following sample codes show how to realize multiple common use cases:
-  - Example A: Set signature based on recipient type (internal vs external)
-  - Example B: Set signature based on mail type (new vs reply/forward)
-  - Example C: How to query Microsoft Graph
-  - Example D: Set signature for an alias or secondary SMTP address
-
-[…]
-{% endraw %}{% endhighlight %}
-    </div>
+    <picture>
+      <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20CUSTOM_RULES_CODE%20Overview-dark.svg" media="(prefers-color-scheme: dark)">
+      <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20CUSTOM_RULES_CODE%20Overview-light.svg" alt="Set-OutlookSignatures Outlook Add-In CUSTOM_RULES_CODE Overview Diagram" style="max-height: 50vh; width: auto;">
+    </picture>
   </details>
-
 </div>
 
 <p>The following diagrams show the add-in runtime workflows. Configuration variables are shown in parentheses next to the steps they influence: the launch event workflow covers automatic processing, while the task pane workflow covers the interactive manual path.</p>
@@ -458,15 +289,15 @@ The following sample codes show how to realize multiple common use cases:
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <p><b>Launch event workflow with configuration references</b></p>
     <picture >
-      <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Launch%20event%20workflow-dark.svg" media="(prefers-color-scheme: dark)">
-      <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Launch%20event%20workflow-light.svg" alt="Set-OutlookSignatures Outlook add-in: Launch event workflow diagram" style="max-height: 50vh; width: auto;">
+      <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20Launch%20Event%20Workflow-dark.svg" media="(prefers-color-scheme: dark)">
+      <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20Launch%20Event%20Workflow-light.svg" alt="Set-OutlookSignatures Outlook Add-In: Launch Event Workflow Diagram" style="max-height: 50vh; width: auto;">
     </picture>
   </div>
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <p><b>Task pane workflow with configuration references</b></p>
     <picture>
-      <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Taskpane%20workflow-dark.svg" media="(prefers-color-scheme: dark)">
-      <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20add-in%20Taskpane%20workflow-light.svg" alt="Set-OutlookSignatures Outlook add-in: Taskpane workflow diagram" style="max-height: 50vh; width: auto;">
+      <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20Task%20Pane%20Workflow-dark.svg" media="(prefers-color-scheme: dark)">
+      <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20Task%20Pane%20Workflow-light.svg" alt="Set-OutlookSignatures Outlook Add-In: Task Pane Workflow Diagram" style="max-height: 50vh; width: auto;">
     </picture>
   </div>
 </div>

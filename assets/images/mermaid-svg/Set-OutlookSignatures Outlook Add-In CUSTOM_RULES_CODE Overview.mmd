@@ -1,0 +1,80 @@
+---
+title: "Set-OutlookSignatures Outlook Add-In: CUSTOM_RULES_CODE Overview"
+config:
+  layout: elk
+---
+flowchart LR
+    %% STAGE 1: INPUT CONTEXT DATA
+    subgraph STAGE1 ["&nbsp;&nbsp;1. INPUT DATA (customRulesProperties)&nbsp;&nbsp;"]
+        direction TB
+        
+        subgraph Group1 ["&nbsp;&nbsp;Sender & Profile Info&nbsp;&nbsp;"]
+            direction TB
+            D1["&nbsp;&nbsp;<b>userProfile</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;displayName, emailAddress, timeZone, accountType&nbsp;&nbsp;"]
+            D2["&nbsp;&nbsp;<b>itemFrom</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;displayName, emailAddress&nbsp;&nbsp;"]
+        end
+        
+        subgraph Group2 ["&nbsp;&nbsp;Message State & Metadata&nbsp;&nbsp;"]
+            direction TB
+            M1["&nbsp;&nbsp;<b>Mode</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;itemIsComposeMode, itemIsReadMode&nbsp;&nbsp;"]
+            M2["&nbsp;&nbsp;<b>Action</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;itemIsNew, itemIsReply, itemIsForward, itemIsReplyForward&nbsp;&nbsp;"]
+            M3["&nbsp;&nbsp;<b>Media</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;itemIsMail, itemIsAppointment, itemIsHtml, itemIsText&nbsp;&nbsp;"]
+            M4["&nbsp;&nbsp;<b>Content</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;itemSubject, sensitivityLabelGuid, sensitivityLabelName&nbsp;&nbsp;"]
+        end
+        
+        subgraph Group3 ["&nbsp;&nbsp;Recipients&nbsp;&nbsp;"]
+            direction TB
+            E1["&nbsp;&nbsp;<b>Recipients</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;itemTo, itemCc, itemBcc (displayName, emailAddress, recipientType)&nbsp;&nbsp;"]
+        end
+
+        subgraph Group4 ["&nbsp;&nbsp;Environment & Identity Context&nbsp;&nbsp;"]
+            direction TB
+            E2["&nbsp;&nbsp;<b>Languages</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;outlookDisplayLanguage, taskpaneDisplayLanguage&nbsp;&nbsp;"]
+            E3["&nbsp;&nbsp;<b>Trigger</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;triggeredByLaunchEventName&nbsp;&nbsp;"]
+            E4["&nbsp;&nbsp;<b>Signatures</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;availableSignatures (Array of names)&nbsp;&nbsp;"]
+            E5["&nbsp;&nbsp;<b>Notifications</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;notificationOriginal, notificationCurrent&nbsp;&nbsp;"]
+            E6["&nbsp;&nbsp;<b>Tokens</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;graphAccessToken, graphApiEndpoint&nbsp;&nbsp;"]
+        end
+    end
+
+    %% STAGE 2: PROCESSING ENGINE
+    subgraph STAGE2 ["&nbsp;&nbsp;2. POLICY ENGINE (Your Custom Script)&nbsp;&nbsp;"]
+        direction TB
+        Engine{"custom_rules_code&nbsp;&nbsp;<br>&nbsp;&nbsp;(JavaScript Engine)"}
+        
+        subgraph UseCases ["&nbsp;&nbsp;Deployment Goals & Logic (Examples)&nbsp;&nbsp;"]
+            direction TB
+            UC1["&nbsp;&nbsp;<b>Recipient Auditing</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Differentiate Internal vs. External audience layouts&nbsp;&nbsp;"]
+            UC2["&nbsp;&nbsp;<b>Thread Management</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Compact layouts on Replies vs. full templates on New mail&nbsp;&nbsp;"]
+            UC3["&nbsp;&nbsp;<b>Alias Branding</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Target layouts based on secondary SMTP addresses&nbsp;&nbsp;"]
+            UC4["&nbsp;&nbsp;<b>Compliance Rules</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Change signatures dynamically based on Sensitivity Labels&nbsp;&nbsp;"]
+            UC5["&nbsp;&nbsp;<b>Graph API Enrichment</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Pull Entra ID department, role, or group memberships&nbsp;&nbsp;"]
+            UC6["&nbsp;&nbsp;<b>Language Localization (Explicit vs. Inferred)</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Match user UI language like de-AT for localized UI notifications, or derive region from recipients like all .fr domains to apply a French template&nbsp;&nbsp;"]
+        end
+        
+        Engine --> UseCases
+    end
+
+    %% STAGE 3: OUTPUT ACTIONS
+    subgraph STAGE3 ["&nbsp;&nbsp;3. APPLIED OUTCOMES (Global Variables Set)&nbsp;&nbsp;"]
+        direction TB
+        
+        subgraph OutSig ["&nbsp;&nbsp;Signature Injection&nbsp;&nbsp;"]
+            O1["&nbsp;&nbsp;<b>customRulesResultSignatureName</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Selects an existing deployed template by name&nbsp;&nbsp;"]
+            O2["&nbsp;&nbsp;<b>customRulesResultSignatureBody</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Injects a dynamic, raw HTML layout on-the-fly&nbsp;&nbsp;"]
+        end
+        
+        subgraph OutNotif ["&nbsp;&nbsp;User Communication&nbsp;&nbsp;"]
+            O3["&nbsp;&nbsp;<b>customRulesResultNotification</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Custom text string updates Outlook info bar text, empty string '' hides it entirely&nbsp;&nbsp;"]
+        end
+    end
+
+    %% STAGE-TO-STAGE PIPELINE LINKS ONLY
+    STAGE1 ===> STAGE2
+    STAGE2 ===> STAGE3
+
+    %% Global Node & Container Styling
+    style Engine fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,color:#000
+    style STAGE1 fill:#fafafa,stroke:#ccc,stroke-width:1px
+    style STAGE2 fill:#f5f7fa,stroke:#0288d1,stroke-width:1px
+    style STAGE3 fill:#f9fbe7,stroke:#9e9d24,stroke-width:1px
