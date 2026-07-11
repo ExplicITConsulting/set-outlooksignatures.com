@@ -275,7 +275,7 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
   </div>
   <p>… and many more. You can even generate unique signatures at runtime without choosing a pre-deployed template.</p>
   <details>
-    <summary class="has-text-weight-bold is-clickable">See <code>.\sample code\CustomRulesCode.js</code> for details, or click here to see available attributes and example code.</summary>
+    <summary class="has-text-weight-bold is-clickable">See <code>.\sample code\CustomRulesCode.js</code> for details, or click here to see an overview diagram.</summary>
     <picture>
       <source srcset="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20CUSTOM_RULES_CODE%20Overview-dark.svg" media="(prefers-color-scheme: dark)">
       <img src="/assets/images/mermaid-svg/Set-OutlookSignatures%20Outlook%20Add-In%20CUSTOM_RULES_CODE%20Overview-light.svg" alt="Set-OutlookSignatures Outlook Add-In CUSTOM_RULES_CODE Overview Diagram" style="max-height: 50vh; width: auto;">
