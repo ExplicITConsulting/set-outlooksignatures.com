@@ -3298,9 +3298,9 @@ sitemap_changefreq: weekly
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="ltr">
           <h2 class="has-text-black" id="hi-latn-in"><span>hi-Latn-IN</span> &bull; <bdi>Hindi (Latin, India&nbsp;🇮🇳)</bdi></h2>
-          <h3 class="has-text-black">डेटा-सॉवरेन ईमेल हस्ताक्षर और कार्यालय से बाहर उत्तर</h3>
-          <h4 class="has-text-black">हर जगह एकीकृत Outlook ब्रांडिंग – बिना बाहरी डेटा प्रदर्शन के</h4>
-          <p>Data sovereign email signatures aur out-of-office replies. Sabhi platforms par Outlook branding ko centrally manage karein, bina aapka data kabhi bhi aapke trusted systems se bahar jaye.</p>
+          <h3 class="has-text-black">Data-sovren email hastakshar aur office se bahar ke jawab</h3>
+          <h4 class="has-text-black">Har jagah ek jaisi Outlook branding – bina baahari data exposure ke</h4>
+          <p>Data-sovren email hastakshar aur office se bahar ke jawab. Sabhi platforms par Outlook branding ko centrally manage karein, bina aapka data kabhi bhi aapke trusted systems se bahar jaaye.</p>
           <p class="mt-auto pt-4"><a href='/' class='button is-link has-text-weight-bold'>set-outlooksignatures.com</a></p>
         </div>
       </div>
@@ -4715,9 +4715,9 @@ sitemap_changefreq: weekly
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
           <h2 class="has-text-black" id="uz-arab-af"><span>uz-Arab-AF</span> &bull; <bdi>اوزبیک (عربی, افغانستان&nbsp;🇦🇫)</bdi></h2>
-          <h3 class="has-text-black">داده حاکم برېښنالیک لاسلیکونه او له دفتره بهر ځوابونه</h3>
-          <h4 class="has-text-black">په هر ځای کې یو شان Outlook نښه کول – پرته له بهرني ډاټا څرګندونې</h4>
-          <p>داده‌ حاکمیتیگە ئىگە ئېلخەت ئىمزالىرى ۋە ئىشخانىدىن سىرتقى جاۋابلار. Outlook ماركا كۆرۈنۈشىنى بارلىق سۇپىلاردا مەركەزلىك باشقۇرۇڭ، سانلىق مەلۇماتلىرىڭىز ھېچقاچان ئىشەنچلىك سىستېمىلىرىڭىزدىن چىقىپ كەتمەيدۇ.</p>
+          <h3 class="has-text-black">معلومات سوۋېرېن ئېلېكترون پوچتا ئىمزالىرى ۋە ئىشخانىدىن تاشقى جاۋابلار</h3>
+          <h4 class="has-text-black">ھەممە جايدا يگانا Outlook برېندىڭى – تاشقى معلومات ئاشكارا ئېتىلمەسدىن</h4>
+          <p>معلوماتلار سوۋېرېنېتېگە ئىگە ئېلېكترون پوچتا ئىمزالىرى ۋە ئىشخانىدىن تاشقى جاۋابلار. Outlook برېندىڭىنى بارچە پلاتفورمالاردا مەركەزلەشكەن تەرزدە باشقۇرىڭ، معلوماتلىرىڭىز ھېچ قاچان ئىشەنچلىك تىزىملەرىڭىزدىن تاشقىرىغا چىقمايدى.</p>
           <p class="mt-auto pt-4"><a href='/' class='button is-link has-text-weight-bold'>set-outlooksignatures.com</a></p>
         </div>
       </div>
