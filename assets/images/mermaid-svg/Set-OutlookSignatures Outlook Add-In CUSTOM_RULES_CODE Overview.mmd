@@ -38,6 +38,8 @@ subgraph STAGE1["&nbsp;&nbsp;1. INPUT DATA (customRulesProperties)&nbsp;&nbsp;"]
     C3["&nbsp;&nbsp;<b>Available Signatures</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;availableSignatures&nbsp;&nbsp;"]
     C4["&nbsp;&nbsp;<b>Notification State</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;notificationOriginal, notificationCurrent&nbsp;&nbsp;"]
     C5["&nbsp;&nbsp;<b>Microsoft Graph</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;graphAccessToken, graphApiEndpoint&nbsp;&nbsp;"]
+    C6["&nbsp;&nbsp;<b>Task Pane Selection</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;taskpaneSelectedSignatureName&nbsp;&nbsp;"]
+    C7["&nbsp;&nbsp;<b>Signature Before Rules</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;signatureBodyBeforeCustomRules&nbsp;&nbsp;"]
   end
 end
 
@@ -61,6 +63,7 @@ subgraph STAGE2["&nbsp;&nbsp;2. POLICY ENGINE (Your Custom Script)&nbsp;&nbsp;"]
     UC4["&nbsp;&nbsp;<b>Sensitivity-Based Rules</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Select or modify signatures based on sensitivity labels&nbsp;&nbsp;"]
     UC5["&nbsp;&nbsp;<b>Language-Aware Rules</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Use Outlook or task pane language for signatures and notifications&nbsp;&nbsp;"]
     UC6["&nbsp;&nbsp;<b>Signature Modification</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Retrieve and modify a deployed signature body&nbsp;&nbsp;"]
+    UC7["&nbsp;&nbsp;<b>Task Pane Aware Rules</b>&nbsp;&nbsp;<br>&nbsp;&nbsp;Inspect, retain, replace or modify a user-selected signature&nbsp;&nbsp;"]
   end
 end
 
