@@ -12,6 +12,8 @@ redirect_from:
   - "/languages/"
   - "/international"
   - "/international/"
+  - "/language"
+  - "/language/"
 sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
