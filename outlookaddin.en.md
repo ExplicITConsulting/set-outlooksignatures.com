@@ -148,9 +148,15 @@ sitemap_changefreq: weekly
   </div>
 </div>
 
-<p>As the only component exposed to everyday employees, the Outlook add-in task pane is designed to feel completely native. It automatically syncs with Outlook's display language (falling back to English if unsupported), while still allowing users to easily choose a manual language override from a wide variety of <a href="/languages">supported languages</a>.</p>
-<p>Furthermore, this active display language — whether automatically detected or manually overridden — is integrated with the custom rules engine. This allows you to effortlessly define language-specific signatures, disclaimers, and notification messages based on the exact language the user sees.</p>
+<p>As the only component exposed to everyday employees, the Outlook add-in task pane is designed to feel completely native. It automatically follows Outlook's display language—with English as a fallback—while still allowing users to choose a language manually. More than 370 locales across over 80 base languages are supported.</p>
 
+<blockquote>
+  <p>Examples range from languages used in major Microsoft 365 markets — such as English, German, French, Spanish, Portuguese, Chinese, and Japanese — to languages including Polish, Turkish, Hindi, Indonesian, Māori, Sinhala, Wolof, and Scottish Gaelic. For the complete list, see the <a href="/languages">supported languages</a>.</p>
+
+  <p>Right-to-left (RTL) layouts are fully supported for languages such as Arabic, Hebrew, Persian, and Urdu, ensuring a native experience beyond Latin scripts and left-to-right interfaces.</p>
+</blockquote>
+
+<p>Furthermore, this active display language—whether automatically detected or manually overridden—is integrated with the custom rules engine. This allows you to effortlessly define language-specific signatures, disclaimers, and notification messages based on the exact language the user sees.</p>
 <p>Beyond standard default signatures, advanced routing can be implemented via <a href="#custom-rules-code">CUSTOM_RULES_CODE</a>. This feature allows organizations to execute custom JavaScript logic. It runs when when triggered by background launch events and when being executed manually — for instance, when a user opens the task pane to explicitly choose a signature or override settings. This flexibility allows the code to dynamically evaluate properties of the current Outlook item—such as checking the selected sender identity to swap in a brand-matched signature for secondary SMTP/alias addresses, or reading sensitivity labels — regardless of whether the action happens on creation or during a manual review.</p>
 
 <h2 id="requirements">Requirements</h2>
@@ -401,6 +407,7 @@ New-Item -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLoggin
 
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\WEF\Developer\RuntimeLogging" -Name "(Default)" -Value $Logfile
 {% endraw %}{% endhighlight %}
+
 </li>
 <li><p>Restart Outlook.</p></li>
 </ol>
