@@ -47,7 +47,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-001"><span>ar-001&nbsp;🌐</span><br><bdi>Arabic (world)</bdi><br><bdi>العربية (العالم)</bdi></h2>
+          <h2 class="has-text-black" id="ar-001"><span>🌐&nbsp;ar-001</span><br><bdi>Arabic (world)</bdi><br><bdi>العربية (العالم)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -60,7 +60,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-ae"><span>ar-AE&nbsp;🇦🇪</span><br><bdi>Arabic (United Arab Emirates)</bdi><br><bdi>العربية (الإمارات العربية المتحدة)</bdi></h2>
+          <h2 class="has-text-black" id="ar-ae"><span>🇦🇪&nbsp;ar-AE</span><br><bdi>Arabic (United Arab Emirates)</bdi><br><bdi>العربية (الإمارات العربية المتحدة)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -73,7 +73,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-bh"><span>ar-BH&nbsp;🇧🇭</span><br><bdi>Arabic (Bahrain)</bdi><br><bdi>العربية (البحرين)</bdi></h2>
+          <h2 class="has-text-black" id="ar-bh"><span>🇧🇭&nbsp;ar-BH</span><br><bdi>Arabic (Bahrain)</bdi><br><bdi>العربية (البحرين)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -86,7 +86,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-dj"><span>ar-DJ&nbsp;🇩🇯</span><br><bdi>Arabic (Djibouti)</bdi><br><bdi>العربية (جيبوتي)</bdi></h2>
+          <h2 class="has-text-black" id="ar-dj"><span>🇩🇯&nbsp;ar-DJ</span><br><bdi>Arabic (Djibouti)</bdi><br><bdi>العربية (جيبوتي)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -99,7 +99,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-dz"><span>ar-DZ&nbsp;🇩🇿</span><br><bdi>Arabic (Algeria)</bdi><br><bdi>العربية (الجزائر)</bdi></h2>
+          <h2 class="has-text-black" id="ar-dz"><span>🇩🇿&nbsp;ar-DZ</span><br><bdi>Arabic (Algeria)</bdi><br><bdi>العربية (الجزائر)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -112,7 +112,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-eg"><span>ar-EG&nbsp;🇪🇬</span><br><bdi>Arabic (Egypt)</bdi><br><bdi>العربية (مصر)</bdi></h2>
+          <h2 class="has-text-black" id="ar-eg"><span>🇪🇬&nbsp;ar-EG</span><br><bdi>Arabic (Egypt)</bdi><br><bdi>العربية (مصر)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -125,7 +125,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-er"><span>ar-ER&nbsp;🇪🇷</span><br><bdi>Arabic (Eritrea)</bdi><br><bdi>العربية (إريتريا)</bdi></h2>
+          <h2 class="has-text-black" id="ar-er"><span>🇪🇷&nbsp;ar-ER</span><br><bdi>Arabic (Eritrea)</bdi><br><bdi>العربية (إريتريا)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -138,7 +138,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-il"><span>ar-IL&nbsp;🇮🇱</span><br><bdi>Arabic (Israel)</bdi><br><bdi>العربية (إسرائيل)</bdi></h2>
+          <h2 class="has-text-black" id="ar-il"><span>🇮🇱&nbsp;ar-IL</span><br><bdi>Arabic (Israel)</bdi><br><bdi>العربية (إسرائيل)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -151,7 +151,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-iq"><span>ar-IQ&nbsp;🇮🇶</span><br><bdi>Arabic (Iraq)</bdi><br><bdi>العربية (العراق)</bdi></h2>
+          <h2 class="has-text-black" id="ar-iq"><span>🇮🇶&nbsp;ar-IQ</span><br><bdi>Arabic (Iraq)</bdi><br><bdi>العربية (العراق)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -164,7 +164,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-jo"><span>ar-JO&nbsp;🇯🇴</span><br><bdi>Arabic (Jordan)</bdi><br><bdi>العربية (الأردن)</bdi></h2>
+          <h2 class="has-text-black" id="ar-jo"><span>🇯🇴&nbsp;ar-JO</span><br><bdi>Arabic (Jordan)</bdi><br><bdi>العربية (الأردن)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -177,7 +177,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-km"><span>ar-KM&nbsp;🇰🇲</span><br><bdi>Arabic (Comoros)</bdi><br><bdi>العربية (جزر القمر)</bdi></h2>
+          <h2 class="has-text-black" id="ar-km"><span>🇰🇲&nbsp;ar-KM</span><br><bdi>Arabic (Comoros)</bdi><br><bdi>العربية (جزر القمر)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -190,7 +190,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-kw"><span>ar-KW&nbsp;🇰🇼</span><br><bdi>Arabic (Kuwait)</bdi><br><bdi>العربية (الكويت)</bdi></h2>
+          <h2 class="has-text-black" id="ar-kw"><span>🇰🇼&nbsp;ar-KW</span><br><bdi>Arabic (Kuwait)</bdi><br><bdi>العربية (الكويت)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -203,7 +203,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-lb"><span>ar-LB&nbsp;🇱🇧</span><br><bdi>Arabic (Lebanon)</bdi><br><bdi>العربية (لبنان)</bdi></h2>
+          <h2 class="has-text-black" id="ar-lb"><span>🇱🇧&nbsp;ar-LB</span><br><bdi>Arabic (Lebanon)</bdi><br><bdi>العربية (لبنان)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -216,7 +216,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-ly"><span>ar-LY&nbsp;🇱🇾</span><br><bdi>Arabic (Libya)</bdi><br><bdi>العربية (ليبيا)</bdi></h2>
+          <h2 class="has-text-black" id="ar-ly"><span>🇱🇾&nbsp;ar-LY</span><br><bdi>Arabic (Libya)</bdi><br><bdi>العربية (ليبيا)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -229,7 +229,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-ma"><span>ar-MA&nbsp;🇲🇦</span><br><bdi>Arabic (Morocco)</bdi><br><bdi>العربية (المغرب)</bdi></h2>
+          <h2 class="has-text-black" id="ar-ma"><span>🇲🇦&nbsp;ar-MA</span><br><bdi>Arabic (Morocco)</bdi><br><bdi>العربية (المغرب)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -242,7 +242,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-mr"><span>ar-MR&nbsp;🇲🇷</span><br><bdi>Arabic (Mauritania)</bdi><br><bdi>العربية (موريتانيا)</bdi></h2>
+          <h2 class="has-text-black" id="ar-mr"><span>🇲🇷&nbsp;ar-MR</span><br><bdi>Arabic (Mauritania)</bdi><br><bdi>العربية (موريتانيا)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -255,7 +255,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-om"><span>ar-OM&nbsp;🇴🇲</span><br><bdi>Arabic (Oman)</bdi><br><bdi>العربية (عُمان)</bdi></h2>
+          <h2 class="has-text-black" id="ar-om"><span>🇴🇲&nbsp;ar-OM</span><br><bdi>Arabic (Oman)</bdi><br><bdi>العربية (عُمان)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -268,7 +268,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-ps"><span>ar-PS&nbsp;🇵🇸</span><br><bdi>Arabic (Palestinian Authority)</bdi><br><bdi>العربية (السلطة الفلسطينية)</bdi></h2>
+          <h2 class="has-text-black" id="ar-ps"><span>🇵🇸&nbsp;ar-PS</span><br><bdi>Arabic (Palestinian Authority)</bdi><br><bdi>العربية (السلطة الفلسطينية)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -281,7 +281,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-qa"><span>ar-QA&nbsp;🇶🇦</span><br><bdi>Arabic (Qatar)</bdi><br><bdi>العربية (قطر)</bdi></h2>
+          <h2 class="has-text-black" id="ar-qa"><span>🇶🇦&nbsp;ar-QA</span><br><bdi>Arabic (Qatar)</bdi><br><bdi>العربية (قطر)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -294,7 +294,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-sa"><span>ar-SA&nbsp;🇸🇦</span><br><bdi>Arabic (Saudi Arabia)</bdi><br><bdi>العربية (المملكة العربية السعودية)</bdi></h2>
+          <h2 class="has-text-black" id="ar-sa"><span>🇸🇦&nbsp;ar-SA</span><br><bdi>Arabic (Saudi Arabia)</bdi><br><bdi>العربية (المملكة العربية السعودية)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -307,7 +307,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-sd"><span>ar-SD&nbsp;🇸🇩</span><br><bdi>Arabic (Sudan)</bdi><br><bdi>العربية (السودان)</bdi></h2>
+          <h2 class="has-text-black" id="ar-sd"><span>🇸🇩&nbsp;ar-SD</span><br><bdi>Arabic (Sudan)</bdi><br><bdi>العربية (السودان)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -320,7 +320,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-so"><span>ar-SO&nbsp;🇸🇴</span><br><bdi>Arabic (Somalia)</bdi><br><bdi>العربية (الصومال)</bdi></h2>
+          <h2 class="has-text-black" id="ar-so"><span>🇸🇴&nbsp;ar-SO</span><br><bdi>Arabic (Somalia)</bdi><br><bdi>العربية (الصومال)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -333,7 +333,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-ss"><span>ar-SS&nbsp;🇸🇸</span><br><bdi>Arabic (South Sudan)</bdi><br><bdi>العربية (جنوب السودان)</bdi></h2>
+          <h2 class="has-text-black" id="ar-ss"><span>🇸🇸&nbsp;ar-SS</span><br><bdi>Arabic (South Sudan)</bdi><br><bdi>العربية (جنوب السودان)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -346,7 +346,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-sy"><span>ar-SY&nbsp;🇸🇾</span><br><bdi>Arabic (Syria)</bdi><br><bdi>العربية (سوريا)</bdi></h2>
+          <h2 class="has-text-black" id="ar-sy"><span>🇸🇾&nbsp;ar-SY</span><br><bdi>Arabic (Syria)</bdi><br><bdi>العربية (سوريا)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -359,7 +359,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-td"><span>ar-TD&nbsp;🇹🇩</span><br><bdi>Arabic (Chad)</bdi><br><bdi>العربية (تشاد)</bdi></h2>
+          <h2 class="has-text-black" id="ar-td"><span>🇹🇩&nbsp;ar-TD</span><br><bdi>Arabic (Chad)</bdi><br><bdi>العربية (تشاد)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -372,7 +372,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-tn"><span>ar-TN&nbsp;🇹🇳</span><br><bdi>Arabic (Tunisia)</bdi><br><bdi>العربية (تونس)</bdi></h2>
+          <h2 class="has-text-black" id="ar-tn"><span>🇹🇳&nbsp;ar-TN</span><br><bdi>Arabic (Tunisia)</bdi><br><bdi>العربية (تونس)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -385,7 +385,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ar-ye"><span>ar-YE&nbsp;🇾🇪</span><br><bdi>Arabic (Yemen)</bdi><br><bdi>العربية (اليمن)</bdi></h2>
+          <h2 class="has-text-black" id="ar-ye"><span>🇾🇪&nbsp;ar-YE</span><br><bdi>Arabic (Yemen)</bdi><br><bdi>العربية (اليمن)</bdi></h2>
           <h3 class="has-text-black">توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات</h3>
           <h4 class="has-text-black">علامة Outlook موحّدة في كل مكان – بدون أي تعرض خارجي للبيانات</h4>
           <p>توقيعات بريد إلكتروني وردود خارج المكتب بسيادة البيانات. أدر علامة Outlook التجارية مركزيًا عبر جميع الأنظمة الأساسية دون أن تغادر بياناتك أنظمتك الموثوقة مطلقًا.</p>
@@ -2504,7 +2504,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid LimeGreen;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="fa-af"><span>fa-AF&nbsp;🇦🇫</span><br><bdi>Persian (Afghanistan)</bdi><br><bdi>فارسی (افغانستان)</bdi></h2>
+          <h2 class="has-text-black" id="fa-af"><span>🇦🇫&nbsp;fa-AF</span><br><bdi>Persian (Afghanistan)</bdi><br><bdi>فارسی (افغانستان)</bdi></h2>
           <h3 class="has-text-black">امضاهای ایمیل و پاسخ‌های خارج از دفتر با حاکمیت داده</h3>
           <h4 class="has-text-black">برندسازی یکپارچه Outlook در همه‌جا – بدون نمایش بیرونی داده‌ها</h4>
           <p>امضاهای ایمیل و پاسخ‌های خارج از دفتر با حاکمیت داده. برندسازی Outlook را به‌صورت متمرکز در همه پلتفرم‌ها مدیریت کنید، بدون اینکه داده‌های شما هرگز از سیستم‌های مورد اعتماد شما خارج شوند.</p>
@@ -2517,7 +2517,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid LimeGreen;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="fa-ir"><span>fa-IR&nbsp;🇮🇷</span><br><bdi>Persian (Iran)</bdi><br><bdi>فارسی (ایران)</bdi></h2>
+          <h2 class="has-text-black" id="fa-ir"><span>🇮🇷&nbsp;fa-IR</span><br><bdi>Persian (Iran)</bdi><br><bdi>فارسی (ایران)</bdi></h2>
           <h3 class="has-text-black">امضاهای ایمیل و پاسخ‌های خارج از دفتر با حاکمیت داده</h3>
           <h4 class="has-text-black">برندسازی یکپارچه Outlook در همه‌جا – بدون نمایش بیرونی داده‌ها</h4>
           <p>امضاهای ایمیل و پاسخ‌های خارج از دفتر با حاکمیت داده. برندسازی Outlook را به‌صورت متمرکز در همه پلتفرم‌ها مدیریت کنید، بدون اینکه داده‌های شما هرگز از سیستم‌های مورد اعتماد شما خارج شوند.</p>
@@ -3271,7 +3271,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="he-il"><span>he-IL&nbsp;🇮🇱</span><br><bdi>Hebrew (Israel)</bdi><br><bdi>עברית (ישראל)</bdi></h2>
+          <h2 class="has-text-black" id="he-il"><span>🇮🇱&nbsp;he-IL</span><br><bdi>Hebrew (Israel)</bdi><br><bdi>עברית (ישראל)</bdi></h2>
           <h3 class="has-text-black">חתימות דואר אלקטרוני ותשובות מחוץ למשרד בריבונות נתונים</h3>
           <h4 class="has-text-black">מיתוג Outlook אחיד בכל מקום – ללא חשיפת נתונים חיצונית</h4>
           <p>חתימות דואר אלקטרוני ותשובות מחוץ למשרד בריבונות נתונים. נהל באופן מרכזי את המיתוג של Outlook בכל הפלטפורמות, מבלי שהנתונים שלך יעזבו אי פעם את המערכות המהימנות שלך.</p>
@@ -3895,7 +3895,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid LimeGreen;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="pa-arab-pk"><span>pa-Arab-PK&nbsp;🇵🇰</span><br><bdi>Punjabi (Arabic, Pakistan)</bdi><br><bdi>پنجابی (عربی, پاکستان)</bdi></h2>
+          <h2 class="has-text-black" id="pa-arab-pk"><span>🇵🇰&nbsp;pa-Arab-PK</span><br><bdi>Punjabi (Arabic, Pakistan)</bdi><br><bdi>پنجابی (عربی, پاکستان)</bdi></h2>
           <h3 class="has-text-black">ڈیٹا خودمختار ای میل دستخط تے دفتر توں باہر جواب</h3>
           <h4 class="has-text-black">ہر تھاں یکساں Outlook برانڈنگ – بیرونی ڈیٹا نمائش توں بغیر</h4>
           <p>ڈیٹا خودمختار ای میل دستخط تے دفتر توں باہر جواب۔ سارے پلیٹ فارمز تے Outlook برانڈنگ نوں مرکزی طور تے منظم کرو، تہاڈا ڈیٹا کدی وی تہاڈے بھروسے مند سسٹماں توں باہر نہیں جاندا۔</p>
@@ -3947,7 +3947,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ps-af"><span>ps-AF&nbsp;🇦🇫</span><br><bdi>Pashto (Afghanistan)</bdi><br><bdi>پښتو (افغانستان)</bdi></h2>
+          <h2 class="has-text-black" id="ps-af"><span>🇦🇫&nbsp;ps-AF</span><br><bdi>Pashto (Afghanistan)</bdi><br><bdi>پښتو (افغانستان)</bdi></h2>
           <h3 class="has-text-black">د معلوماتو حاکم برېښنالیک لاسلیکونه او له دفتره بهر ځوابونه</h3>
           <h4 class="has-text-black">هر ځای یو شان Outlook نښه کول – پرته له بهرني معلوماتي څرګندونې</h4>
           <p>د معلوماتو حاکم برېښنالیک لاسلیکونه او له دفتره بهر ځوابونه. د ټولو پلیټفارمونو په اوږدو کې د Outlook نښه کول په مرکزي ډول اداره کړئ، بې له دې چې ستاسو معلومات کله هم ستاسو له باوري سیسټمونو څخه ووځي.</p>
@@ -3960,7 +3960,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ps-pk"><span>ps-PK&nbsp;🇵🇰</span><br><bdi>Pashto (Pakistan)</bdi><br><bdi>پښتو (پاکستان)</bdi></h2>
+          <h2 class="has-text-black" id="ps-pk"><span>🇵🇰&nbsp;ps-PK</span><br><bdi>Pashto (Pakistan)</bdi><br><bdi>پښتو (پاکستان)</bdi></h2>
           <h3 class="has-text-black">د معلوماتو حاکم برېښنالیک لاسلیکونه او له دفتره بهر ځوابونه</h3>
           <h4 class="has-text-black">هر ځای یو شان Outlook نښه کول – پرته له بهرني معلوماتي څرګندونې</h4>
           <p>د معلوماتو حاکم برېښنالیک لاسلیکونه او له دفتره بهر ځوابونه. د ټولو پلیټفارمونو په اوږدو کې د Outlook نښه کول په مرکزي ډول اداره کړئ، بې له دې چې ستاسو معلومات کله هم ستاسو له باوري سیسټمونو څخه ووځي.</p>
@@ -4688,7 +4688,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ur-in"><span>ur-IN&nbsp;🇮🇳</span><br><bdi>Urdu (India)</bdi><br><bdi>اردو (بھارت)</bdi></h2>
+          <h2 class="has-text-black" id="ur-in"><span>🇮🇳&nbsp;ur-IN</span><br><bdi>Urdu (India)</bdi><br><bdi>اردو (بھارت)</bdi></h2>
           <h3 class="has-text-black">ڈیٹا خودمختار ای میل دستخط اور دفتر سے باہر جوابات</h3>
           <h4 class="has-text-black">ہر جگہ یکساں Outlook برانڈنگ – بیرونی ڈیٹا نمائش کے بغیر</h4>
           <p>ڈیٹا کی خودمختاری کے ساتھ ای میل دستخط اور دفتر سے باہر جوابات۔ تمام پلیٹ فارمز پر Outlook برانڈنگ کو مرکزی طور پر منظم کریں، اس کے بغیر کہ آپ کا ڈیٹا کبھی آپ کے قابل اعتماد نظاموں سے باہر جائے۔</p>
@@ -4701,7 +4701,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="ur-pk"><span>ur-PK&nbsp;🇵🇰</span><br><bdi>Urdu (Pakistan)</bdi><br><bdi>اردو (پاکستان)</bdi></h2>
+          <h2 class="has-text-black" id="ur-pk"><span>🇵🇰&nbsp;ur-PK</span><br><bdi>Urdu (Pakistan)</bdi><br><bdi>اردو (پاکستان)</bdi></h2>
           <h3 class="has-text-black">ڈیٹا خودمختار ای میل دستخط اور دفتر سے باہر جوابات</h3>
           <h4 class="has-text-black">ہر جگہ یکساں Outlook برانڈنگ – بیرونی ڈیٹا نمائش کے بغیر</h4>
           <p>ڈیٹا کی خودمختاری کے ساتھ ای میل دستخط اور دفتر سے باہر جوابات۔ تمام پلیٹ فارمز پر Outlook برانڈنگ کو مرکزی طور پر منظم کریں، اس کے بغیر کہ آپ کا ڈیٹا کبھی آپ کے قابل اعتماد نظاموں سے باہر جائے۔</p>
@@ -4714,7 +4714,7 @@ sitemap_changefreq: weekly
     <div class="box has-background-white-bis has-text-black is-flex is-flex-direction-column" style="height: 100%; border-top: 4px solid Yellow;">
       <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
         <div class="is-flex is-flex-direction-column is-flex-grow-1" style="hyphens: manual;" dir="rtl">
-          <h2 class="has-text-black" id="uz-arab-af"><span>uz-Arab-AF&nbsp;🇦🇫</span><br><bdi>Uzbek (Arabic, Afghanistan)</bdi><br><bdi>اوزبیک (عربی, افغانستان)</bdi></h2>
+          <h2 class="has-text-black" id="uz-arab-af"><span>🇦🇫&nbsp;uz-Arab-AF</span><br><bdi>Uzbek (Arabic, Afghanistan)</bdi><br><bdi>اوزبیک (عربی, افغانستان)</bdi></h2>
           <h3 class="has-text-black">معلومات سوۋېرېن ئېلېكترون پوچتا ئىمزالىرى ۋە ئىشخانىدىن تاشقى جاۋابلار</h3>
           <h4 class="has-text-black">ھەممە جايدا يگانا Outlook برېندىڭى – تاشقى معلومات ئاشكارا ئېتىلمەسدىن</h4>
           <p>معلوماتلار سوۋېرېنېتېگە ئىگە ئېلېكترون پوچتا ئىمزالىرى ۋە ئىشخانىدىن تاشقى جاۋابلار. Outlook برېندىڭىنى بارچە پلاتفورمالاردا مەركەزلەشكەن تەرزدە باشقۇرىڭ، معلوماتلىرىڭىز ھېچ قاچان ئىشەنچلىك تىزىملەرىڭىزدىن تاشقىرىغا چىقمايدى.</p>
