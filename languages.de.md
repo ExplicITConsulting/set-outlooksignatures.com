@@ -1,10 +1,10 @@
 ---
 layout: "page"
-lang: "en"
-locale: "en"
-title: "Outlook Add-in Languages and Localization"
-subtitle: "A localized signature experience for users around the world"
-description: "Explore the languages and locales supported by the Set-OutlookSignatures Outlook add-in, including automatic language selection, regional variants, and right-to-left layouts."
+lang: "de"
+locale: "de"
+title: "Sprachen und Lokalisierung des Outlook-Add-ins"
+subtitle: "Ein lokalisiertes Signaturerlebnis für Benutzer weltweit"
+description: "Entdecken Sie die vom Outlook-Add-in von Set-OutlookSignatures unterstützten Sprachen und Gebietsschemas – einschließlich automatischer Sprachauswahl, regionaler Varianten und Rechts-nach-links-Layouts."
 permalink: "/languages"
 redirect_from:
   - "/languages/"
@@ -16,15 +16,15 @@ sitemap_priority: 1.0
 sitemap_changefreq: weekly
 ---
 
-<p>Set-OutlookSignatures and the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> work invisibly in the background. Employees simply find their signatures and out-of-office replies always up to date — without having to configure, maintain, or update them manually.</p>
+<p>Set-OutlookSignatures und das <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-on</span></a> arbeiten unsichtbar im Hintergrund. Die Signaturen und Abwesenheitsnotizen der Mitarbeiter sind stets auf dem neuesten Stand – ohne dass sie diese selbst konfigurieren, pflegen oder aktualisieren müssen.</p>
 
-<p>The <a href="/outlookaddin">Outlook add-in</a> is the only component employees interact with directly, and its interface is localized for users around the world. It automatically follows each user's Outlook display language, with English as a fallback, while still allowing users to select a different language manually. More than 370 locales across over 80 base languages are supported.</p>
+<p>Das <a href="/outlookaddin">Outlook-Add-in</a> ist die einzige Komponente, mit der Mitarbeiter direkt interagieren, und seine Benutzeroberfläche ist für Benutzer weltweit lokalisiert. Es übernimmt automatisch die Outlook-Anzeigesprache des jeweiligen Benutzers und verwendet Englisch als Ausweichsprache. Benutzer können jedoch auch manuell eine andere Sprache auswählen. Unterstützt werden mehr als 370 Gebietsschemas in über 80 Basissprachen.</p>
 
-<p>The selected display language is more than an interface preference: it can be used by the custom rules engine to apply language-specific signatures, disclaimers, and notification messages. This helps organizations provide a consistent, locally appropriate Outlook experience across regions, platforms and devices.</p>
+<p>Die ausgewählte Anzeigesprache ist mehr als nur eine Einstellung der Benutzeroberfläche: Die benutzerdefinierte Regel-Engine kann sie verwenden, um sprachspezifische Signaturen, rechtliche Hinweise und Benachrichtigungen anzuwenden. So können Organisationen über Regionen, Plattformen und Geräte hinweg ein einheitliches, lokal angepasstes Outlook-Erlebnis bereitstellen.</p>
 
-<p>Language support extends across regional variants and multiple writing systems. Full right-to-left (RTL) layouts are available for languages such as Arabic, Hebrew, Persian, and Urdu.</p>
+<p>Die Sprachunterstützung umfasst regionale Varianten und verschiedene Schriftsysteme. Für Sprachen wie Arabisch, Hebräisch, Persisch und Urdu stehen vollständige Rechts-nach-links-Layouts (RTL) zur Verfügung.</p>
 
-<p>The catalogue below shows every supported locale together with its language and region, native name, and localized versions of the product's title, subtitle, and description.</p>
+<p>Der nachstehende Katalog zeigt jedes unterstützte Gebietsschema zusammen mit der zugehörigen Sprache und Region, der Eigenbezeichnung sowie lokalisierten Versionen des Produkttitels, des Untertitels und der Beschreibung.</p>
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
