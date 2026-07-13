@@ -471,11 +471,9 @@ Let's take a closer look at the graphical user interface topic from the perspect
 
 ###### End users
 
-For end users, Set-OutlookSignatures is [invisible](/faq#start-set-outlooksignatures-in-hiddeninvisible-mode). They typically never see the software, interact with it, or even know that it exists.
+End users typically never see Set-OutlookSignatures, interact with it, or even know that it exists. The only thing they notice is that their signatures and out-of-office replies are always up to date.
 
-The only thing end users notice is that their signatures and out-of-office replies are always up-to-date.
-
-The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> comes with the [Outlook add-in](/outlookaddin). The add-in comes with a graphical user interface called "task pane", which allows for user interaction in addition to non-interactive automated launch events.
+The exception is the [Outlook add-in](/outlookaddin) included with the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>. It is the only component employees interact with directly and provides a graphical user interface ("task pane") for user interaction in addition to automated launch events. The add-in automatically follows the user's Outlook display language and supports [hundreds of localized language and regional variants](/languages).
 
 ###### IT administrators
 
