@@ -174,13 +174,13 @@ As markdown code block for use in frontmatter:
 
 - title: max 9 words, max 70 characters
 - description: 30–160 characters, max 22 words
-- slug: 1–3 hyphenated words
+- slug: 1–3 hyphenated words, same for all languages
 
 ---
 
 ## 3. Rewritten Blog Post
 
-Render inside a Markdown code block. Take care to correctly escape inside code blocks.
+Render inside exactly one single Markdown code block. Take care to correctly escape inside code blocks.
 
 ### Writing Requirements:
 
