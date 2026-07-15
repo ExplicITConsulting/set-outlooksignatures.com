@@ -762,7 +762,8 @@ Set-Outlooksignatures comes with the following default replacement variables for
 Adding account pictures is simple:
 
 - When using DOCX template files
-  1. Add a shape or a placeholder image.
+  1. Add a shape, optionally fill it with a placeholder image.
+     - Alternatively, you can use a placeholder image directly - but it needs to be inserted using "link and embed".
   2. Set its text wrapping to "inline with text".
   3. Apply Word image features such as sizing, hadow, glow or reflection.
   4. Add one of the account pictures replacement variables, such as `$CurrentUserPhoto$`, to the alternative text of the image or shape.
