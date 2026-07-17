@@ -257,12 +257,12 @@ sitemap_changefreq: weekly
 <h6 id="license-details">Lizenzierung</h6>
 <ul>
   <li><strong>Lizenzpflicht:</strong> Jedes Postfach, das die Funktionen von Benefactor Circle nutzt, benötigt eine Lizenz – unabhängig davon, ob es sich um ein Benutzer-, freigegebenes oder Ressourcen-Postfach handelt.</li>
-  <li><strong>Unbegrenzt:</strong> Alles andere. Es gibt keine Limits für die Anzahl der Benutzer, die auf ein lizenziertes Postfach zugreifen, Vorlagen, bereitgestellte Signaturen, Instanzen, oder Konfigurationen.</li>
-  <li><strong>So funktioniert es:</strong> Sie müssen Postfächer nicht einzeln benennen. Definieren Sie einfach eine Active Directory- oder Entra ID-Gruppe, die die entsprechenden Postfächer enthält, und legen Sie die maximale Anzahl rekursiver Mitglieder fest. Details finden Sie unter „<a href="#license-groups">Wie Lizenzgruppen funktionieren</a>“.</li>
+  <li><strong>Unbegrenzt:</strong> Alles andere. Es gibt keine Limits für die Anzahl der Benutzer, die auf ein lizenziertes Postfach zugreifen, Vorlagen, bereitgestellte Signaturen, Instanzen oder Konfigurationen.</li>
+  <li><strong>So funktioniert es:</strong> Sie geben keine einzelnen Postfächer bei uns bekannt. Stattdessen geben Sie einfach eine Active Directory- oder Entra ID-Gruppe an, die Ihre Zielpostfächer enthält, und legen die maximale Anzahl rekursiver Mitglieder fest. Die eigentliche Lizenzzuweisung verwalten Sie vollständig in Ihrem eigenen Verzeichnis. Details finden Sie unter „<a href="#license-groups">So funktionieren Lizenzgruppen</a>“.</li>
   <li><strong>Zahlungsbedingungen:</strong> Lizenzen werden jährlich im Voraus abgerechnet. Es gibt keine Mindestanzahl an Postfächern, jedoch muss jede Rechnung einen Mindestnettobetrag von EUR 210,00 erreichen.</li>
-  <li><strong>Keine Abo-Falle:</strong> Keine automatische Verlängerung. Wir senden Ihnen sechs Wochen vor Ablauf ein Angebot zu.</li>
+  <li><strong>Keine automatische Verlängerung:</strong> Wir senden Ihnen sechs Wochen vor Ablauf ein Angebot zu.</li>
   <li><strong>Skalierung:</strong> Das Hinzufügen von Postfächern während der Laufzeit wird anteilig für die verbleibenden Monate berechnet (es gilt der Mindestrechnungsbetrag).</li>
-  <li><strong>Upgrades und Support:</strong> Aktive Lizenzen beinhalten kostenlose Versions-Upgrades und bevorzugten Support. Support ist separat verfügbar; Details finden Sie unter „<a href="/support">Support erhalten und Kontakt aufnehmen</a>“.</li>
+  <li><strong>Upgrades und Support:</strong> Aktive Lizenzen beinhalten kostenlose Versions-Upgrades. Technischer Support ist nicht enthalten und muss separat erworben werden. Support ist jedoch zu 100 % kostenlos, wenn das Problem auf einen Fehler in unserer Software oder Dokumentation zurückzuführen ist. Zudem werden Support-Anfragen von Benefactor Circle-Kunden bevorzugt behandelt. Details finden Sie unter „<a href="/support">Support erhalten und Kontakt aufnehmen</a>“.</li>
 </ul>
 <details id="procurement-outsourcer" class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">

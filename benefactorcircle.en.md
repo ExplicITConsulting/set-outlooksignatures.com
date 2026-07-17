@@ -258,11 +258,11 @@ sitemap_changefreq: weekly
 <ul>
   <li><strong>What to license:</strong> Any mailbox using Benefactor Circle features requires a license, whether it's a user, shared, or resource mailbox.</li>
   <li><strong>What’s unlimited:</strong> Everything else. There are no limits on the number of users accessing a licensed mailbox, templates, deployed signatures, instances, or configurations.</li>
-  <li><strong>How it works:</strong> You don't need to name mailboxes individually. Simply define an Active Directory or Entra ID group containing the target mailboxes and specify the maximum number of recursive members. See '<a href="#license-groups">How license groups work</a>' for details.</li>
+  <li><strong>How it works:</strong> You do not register individual mailboxes with us. Instead, simply provide an Active Directory or Entra ID group containing your target mailboxes, and set the maximum number of recursive members. You manage the actual license assignment entirely within your own directory. See '<a href="#license-groups">How license groups work</a>' for details.</li>
   <li><strong>Terms:</strong> Licenses are billed annually in advance. There is no minimum mailbox count, though each invoice must meet a minimum net amount of EUR 210.00.</li>
-  <li><strong>No Traps:</strong> No auto-renewal. We will send you a quote six weeks before your license expires.</li>
+  <li><strong>No auto-renewal:</strong> We will send you a quote six weeks before your license expires.</li>
   <li><strong>Scaling:</strong> Adding mailboxes mid-term is prorated for the remaining months of your current term (subject to the minimum invoice amount).</li>
-  <li><strong>Upgrades and support:</strong> Active licenses include free version upgrades and priority support. Support is available separately; see '<a href="/support">Get support and contact us</a>' for details.</li>
+  <li><strong>Upgrades and support:</strong> Active licenses include free version upgrades. Technical support is not included and must be purchased separately. However, support is 100% free if the issue is due to a bug in our software or documentation, and support cases for Benefactor Circle customers are always prioritized. See '<a href="/support">Get support and contact us</a>' for details.</li>
 </ul>
 <details id="procurement-outsourcer" class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
