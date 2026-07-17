@@ -257,7 +257,7 @@ sitemap_changefreq: weekly
 <h6 id="license-details">Lizenzierung</h6>
 <ul>
   <li><strong>Lizenzpflicht:</strong> Jedes Postfach, das die Funktionen von Benefactor Circle nutzt, benötigt eine Lizenz – unabhängig davon, ob es sich um ein Benutzer-, freigegebenes oder Ressourcen-Postfach handelt.</li>
-  <li><strong>Unbegrenzt:</strong> Alles andere. Es gibt keine Limits für Vorlagen, bereitgestellte Signaturen, Instanzen, Konfigurationen, die Häufigkeit von Updates oder die Anzahl der Benutzer, die auf ein lizenziertes Postfach zugreifen.</li>
+  <li><strong>Unbegrenzt:</strong> Alles andere. Es gibt keine Limits für die Anzahl der Benutzer, die auf ein lizenziertes Postfach zugreifen, Vorlagen, bereitgestellte Signaturen, Instanzen, oder Konfigurationen.</li>
   <li><strong>So funktioniert es:</strong> Sie müssen Postfächer nicht einzeln benennen. Definieren Sie einfach eine Active Directory- oder Entra ID-Gruppe, die die entsprechenden Postfächer enthält, und legen Sie die maximale Anzahl rekursiver Mitglieder fest. Details finden Sie unter „<a href="#license-groups">Wie Lizenzgruppen funktionieren</a>“.</li>
   <li><strong>Zahlungsbedingungen:</strong> Lizenzen werden jährlich im Voraus abgerechnet. Es gibt keine Mindestanzahl an Postfächern, jedoch muss jede Rechnung einen Mindestnettobetrag von EUR 210,00 erreichen.</li>
   <li><strong>Keine Abo-Falle:</strong> Keine automatische Verlängerung. Wir senden Ihnen sechs Wochen vor Ablauf ein Angebot zu.</li>
