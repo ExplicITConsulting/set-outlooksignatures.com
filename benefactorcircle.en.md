@@ -254,16 +254,16 @@ sitemap_changefreq: weekly
     </div>
 </div>
 <p>&nbsp;</p>
-<h6 id="license-details">Licensing details – the fine print in plain language</h6>
-<p>Each mailbox using Benefactor Circle features requires a license, regardless of the mailbox type (user, shared, etc.).</p>
+<h6 id="license-details">License details</h6>
 <ul>
-  <li><strong>What’s unlimited: </strong>Number of users per mailbox, templates used, signatures deployed, and frequency of updates.</li>
-  <li><strong>How it works: </strong>You don't name mailboxes individually. Just define an Active Directory or Entra ID group containing the relevant mailboxes and specify the maximum number of recursive members. See '<a href="#license-groups">How license groups work</a>' for details.</li>
-  <li><strong>Terms: </strong>Licenses are billed annually in advance. There is no minimum mailbox count, though each invoice must meet a minimum net amount of EUR 210.00.</li>
-  <li><strong>No Traps: </strong>No auto-renewals. We’ll send a quote six weeks before expiry.</li>
-  <li><strong>Scaling: </strong>Adding mailboxes mid-term is pro-rated for the remaining months (minimum invoice amount applies).</li>
+  <li><strong>What to license:</strong> Any mailbox using Benefactor Circle features requires a license, whether it's a user, shared, or resource mailbox.</li>
+  <li><strong>What’s unlimited:</strong> Everything else. There are no limits on templates, deployed signatures, instances, configurations, update frequency, or the number of users accessing a licensed mailbox.</li>
+  <li><strong>How it works:</strong> You don't need to name mailboxes individually. Simply define an Active Directory or Entra ID group containing the target mailboxes and specify the maximum number of recursive members. See '<a href="#license-groups">How license groups work</a>' for details.</li>
+  <li><strong>Terms:</strong> Licenses are billed annually in advance. There is no minimum mailbox count, though each invoice must meet a minimum net amount of EUR 210.00.</li>
+  <li><strong>No Traps:</strong> No auto-renewal. We will send you a quote six weeks before your license expires.</li>
+  <li><strong>Scaling:</strong> Adding mailboxes mid-term is prorated for the remaining months of your current term (subject to the minimum invoice amount).</li>
+  <li><strong>Upgrades and support:</strong> Active licenses include free version upgrades and priority support. Support is available separately; see '<a href="/support">Get support and contact us</a>' for details.</li>
 </ul>
-<p>Active licenses include free version upgrades and prioritizing your support requests. Support is available separately, see '<a href="/support">Get support and contact us</a>' for details.</p>
 <details id="procurement-outsourcer" class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Handling via external procurement service providers (procurement outsourcers)</strong>

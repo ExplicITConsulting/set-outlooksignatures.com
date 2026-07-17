@@ -254,16 +254,16 @@ sitemap_changefreq: weekly
     </div>
 </div>
 <p>&nbsp;</p>
-<h3 id="license-details">Lizenzdetails – das Kleingedruckte in verständlicher Sprache</h3>
-<p>Jedes Postfach, das Benefactor‑Circle‑Funktionen nutzt, benötigt eine Lizenz - unabhängig vom Typ des Postfachs (Benutzer, freigegebenes Postfach usw.).</p>
+<h6 id="license-details">Lizenzierung</h6>
 <ul>
-  <li><strong>Unbegrenzt: </strong>Anzahl der Benutzer pro Postfach, verwendeter Vorlagen, ausgerollter Signaturen und Häufigkeit von Updates.</li>
-  <li><strong>Funktionsweise: </strong>Postfächer werden nicht einzeln benannt. Stattdessen definieren Sie eine Active‑Directory‑ oder Entra‑ID‑Gruppe mit den relevanten Postfächern und einer maximalen Anzahl rekursiver Mitglieder. Details finden Sie unter '<a href="#license-groups">So funktionieren Lizenzgruppen</a>'.</li>
-  <li><strong>Konditionen: </strong>Lizenzen werden jährlich im Voraus verrechnet. Es gibt keine Mindestanzahl an Postfächern, jedoch muss jede Rechnung einen Mindestnettobetrag von 210,00 EUR erreichen.</li>
-  <li><strong>Keine Fallen: </strong>Keine automatische Verlängerung. Sechs Wochen vor Ablauf erhalten Sie ein Angebot.</li>
-  <li><strong>Skalierung: </strong>Das Hinzufügen von Postfächern während der Laufzeit wird aliquot für die verbleibenden Monate verrechnet (Mindestbetrag pro Rechnung gilt).</li>
+  <li><strong>Lizenzpflicht:</strong> Jedes Postfach, das die Funktionen von Benefactor Circle nutzt, benötigt eine Lizenz – unabhängig davon, ob es sich um ein Benutzer-, freigegebenes oder Ressourcen-Postfach handelt.</li>
+  <li><strong>Unbegrenzt:</strong> Alles andere. Es gibt keine Limits für Vorlagen, bereitgestellte Signaturen, Instanzen, Konfigurationen, die Häufigkeit von Updates oder die Anzahl der Benutzer, die auf ein lizenziertes Postfach zugreifen.</li>
+  <li><strong>So funktioniert es:</strong> Sie müssen Postfächer nicht einzeln benennen. Definieren Sie einfach eine Active Directory- oder Entra ID-Gruppe, die die entsprechenden Postfächer enthält, und legen Sie die maximale Anzahl rekursiver Mitglieder fest. Details finden Sie unter „<a href="#license-groups">Wie Lizenzgruppen funktionieren</a>“.</li>
+  <li><strong>Zahlungsbedingungen:</strong> Lizenzen werden jährlich im Voraus abgerechnet. Es gibt keine Mindestanzahl an Postfächern, jedoch muss jede Rechnung einen Mindestnettobetrag von EUR 210,00 erreichen.</li>
+  <li><strong>Keine Abo-Falle:</strong> Keine automatische Verlängerung. Wir senden Ihnen sechs Wochen vor Ablauf ein Angebot zu.</li>
+  <li><strong>Skalierung:</strong> Das Hinzufügen von Postfächern während der Laufzeit wird anteilig für die verbleibenden Monate berechnet (es gilt der Mindestrechnungsbetrag).</li>
+  <li><strong>Upgrades und Support:</strong> Aktive Lizenzen beinhalten kostenlose Versions-Upgrades und bevorzugten Support. Support ist separat verfügbar; Details finden Sie unter „<a href="/support">Support erhalten und Kontakt aufnehmen</a>“.</li>
 </ul>
-<p>Aktive Lizenzen beinhalten kostenlose Versions‑Upgrades sowie eine priorisierte Bearbeitung Ihrer Support‑Anfragen. Support ist separat verfügbar – Details unter '<a href="/support">Unterstützung erhalten und uns kontaktieren</a>'.</p>
 <details id="procurement-outsourcer" class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Abwicklung über externe Einkaufsdienstleister (Procurement-Outsourcer)</strong>
