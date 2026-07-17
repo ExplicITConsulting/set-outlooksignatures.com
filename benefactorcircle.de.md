@@ -254,22 +254,16 @@ sitemap_changefreq: weekly
     </div>
 </div>
 <p>&nbsp;</p>
-<details id="licensing-details" class="box p-0">
-  <summary class="has-text-weight-bold" style="cursor: pointer;">
-    <strong>Lizenzdetails – das Kleingedruckte in verständlicher Sprache</strong>
-  </summary>
-  <div style="padding-left: 1.25rem; margin-top: 0.5rem;">
-    <p>Jedes Postfach, das Benefactor‑Circle‑Funktionen nutzt, benötigt eine Lizenz - unabhängig vom Typ des Postfachs (Benutzer, freigegebenes Postfach usw.).</p>
-    <ul>
-      <li><strong>Unbegrenzt: </strong>Anzahl der Benutzer pro Postfach, verwendeter Vorlagen, ausgerollter Signaturen und Häufigkeit von Updates.</li>
-      <li><strong>Funktionsweise: </strong>Postfächer werden nicht einzeln benannt. Stattdessen definieren Sie eine Active‑Directory‑ oder Entra‑ID‑Gruppe mit den relevanten Postfächern und einer maximalen Anzahl rekursiver Mitglieder. Details finden Sie unter '<a href="#license-groups">So funktionieren Lizenzgruppen</a>'.</li>
-      <li><strong>Konditionen: </strong>Lizenzen werden jährlich im Voraus verrechnet. Es gibt keine Mindestanzahl an Postfächern, jedoch muss jede Rechnung einen Mindestnettobetrag von 210,00 EUR erreichen.</li>
-      <li><strong>Keine Fallen: </strong>Keine automatische Verlängerung. Sechs Wochen vor Ablauf erhalten Sie ein Angebot.</li>
-      <li><strong>Skalierung: </strong>Das Hinzufügen von Postfächern während der Laufzeit wird aliquot für die verbleibenden Monate verrechnet (Mindestbetrag pro Rechnung gilt).</li>
-    </ul>
-    <p>Aktive Lizenzen beinhalten kostenlose Versions‑Upgrades sowie eine priorisierte Bearbeitung Ihrer Support‑Anfragen. Support ist separat verfügbar – Details unter '<a href="/support">Unterstützung erhalten und uns kontaktieren</a>'.</p>
-  </div>
-</details>
+<h3 id="license-details">Lizenzdetails – das Kleingedruckte in verständlicher Sprache</h3>
+<p>Jedes Postfach, das Benefactor‑Circle‑Funktionen nutzt, benötigt eine Lizenz - unabhängig vom Typ des Postfachs (Benutzer, freigegebenes Postfach usw.).</p>
+<ul>
+  <li><strong>Unbegrenzt: </strong>Anzahl der Benutzer pro Postfach, verwendeter Vorlagen, ausgerollter Signaturen und Häufigkeit von Updates.</li>
+  <li><strong>Funktionsweise: </strong>Postfächer werden nicht einzeln benannt. Stattdessen definieren Sie eine Active‑Directory‑ oder Entra‑ID‑Gruppe mit den relevanten Postfächern und einer maximalen Anzahl rekursiver Mitglieder. Details finden Sie unter '<a href="#license-groups">So funktionieren Lizenzgruppen</a>'.</li>
+  <li><strong>Konditionen: </strong>Lizenzen werden jährlich im Voraus verrechnet. Es gibt keine Mindestanzahl an Postfächern, jedoch muss jede Rechnung einen Mindestnettobetrag von 210,00 EUR erreichen.</li>
+  <li><strong>Keine Fallen: </strong>Keine automatische Verlängerung. Sechs Wochen vor Ablauf erhalten Sie ein Angebot.</li>
+  <li><strong>Skalierung: </strong>Das Hinzufügen von Postfächern während der Laufzeit wird aliquot für die verbleibenden Monate verrechnet (Mindestbetrag pro Rechnung gilt).</li>
+</ul>
+<p>Aktive Lizenzen beinhalten kostenlose Versions‑Upgrades sowie eine priorisierte Bearbeitung Ihrer Support‑Anfragen. Support ist separat verfügbar – Details unter '<a href="/support">Unterstützung erhalten und uns kontaktieren</a>'.</p>
 <details id="procurement-outsourcer" class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Abwicklung über externe Einkaufsdienstleister (Procurement-Outsourcer)</strong>

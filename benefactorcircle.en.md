@@ -254,22 +254,16 @@ sitemap_changefreq: weekly
     </div>
 </div>
 <p>&nbsp;</p>
-<details id="licensing-details" class="box p-0">
-  <summary class="has-text-weight-bold" style="cursor: pointer;">
-    <strong>Licensing details – the fine print in plain language</strong>
-  </summary>
-  <div style="padding-left: 1.25rem; margin-top: 0.5rem;">
-    <p>Each mailbox using Benefactor Circle features requires a license, regardless of the mailbox type (user, shared, etc.).</p>
-    <ul>
-      <li><strong>What’s unlimited: </strong>Number of users per mailbox, templates used, signatures deployed, and frequency of updates.</li>
-      <li><strong>How it works: </strong>You don't name mailboxes individually. Just define an Active Directory or Entra ID group containing the relevant mailboxes and specify the maximum number of recursive members. See '<a href="#license-groups">How license groups work</a>' for details.</li>
-      <li><strong>Terms: </strong>Licenses are billed annually in advance. There is no minimum mailbox count, though each invoice must meet a minimum net amount of EUR 210.00.</li>
-      <li><strong>No Traps: </strong>No auto-renewals. We’ll send a quote six weeks before expiry.</li>
-      <li><strong>Scaling: </strong>Adding mailboxes mid-term is pro-rated for the remaining months (minimum invoice amount applies).</li>
-    </ul>
-    <p>Active licenses include free version upgrades and prioritizing your support requests. Support is available separately, see '<a href="/support">Get support and contact us</a>' for details.</p>
-  </div>
-</details>
+<h6 id="license-details">Licensing details – the fine print in plain language</h6>
+<p>Each mailbox using Benefactor Circle features requires a license, regardless of the mailbox type (user, shared, etc.).</p>
+<ul>
+  <li><strong>What’s unlimited: </strong>Number of users per mailbox, templates used, signatures deployed, and frequency of updates.</li>
+  <li><strong>How it works: </strong>You don't name mailboxes individually. Just define an Active Directory or Entra ID group containing the relevant mailboxes and specify the maximum number of recursive members. See '<a href="#license-groups">How license groups work</a>' for details.</li>
+  <li><strong>Terms: </strong>Licenses are billed annually in advance. There is no minimum mailbox count, though each invoice must meet a minimum net amount of EUR 210.00.</li>
+  <li><strong>No Traps: </strong>No auto-renewals. We’ll send a quote six weeks before expiry.</li>
+  <li><strong>Scaling: </strong>Adding mailboxes mid-term is pro-rated for the remaining months (minimum invoice amount applies).</li>
+</ul>
+<p>Active licenses include free version upgrades and prioritizing your support requests. Support is available separately, see '<a href="/support">Get support and contact us</a>' for details.</p>
 <details id="procurement-outsourcer" class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
     <strong>Handling via external procurement service providers (procurement outsourcers)</strong>
