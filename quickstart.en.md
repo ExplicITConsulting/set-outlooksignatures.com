@@ -100,7 +100,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
 </div>
 <details>
   <summary style="cursor: pointer;">
-    Click to see the output of a sample run
+    Click to see the output of a sample run (usually <a href="/faq#start-set-outlooksignatures-in-hiddeninvisible-mode">run in hidden/invisible mode</a> for end users)
   </summary>
 {% highlight plaintext %}{% raw %}
 Start Set-OutlookSignatures
