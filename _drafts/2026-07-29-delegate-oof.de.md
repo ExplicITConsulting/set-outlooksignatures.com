@@ -12,9 +12,9 @@ sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
 
-Abwesenheitsantworten sind eine kleine Einstellung mit überraschend großer operativer Wirkung. Wenn ein Postfachbesitzer abwesend ist, wenn ein freigegebenes Postfach eine temporäre Nachricht benötigt oder wenn ein Abteilungspostfach außerhalb der Geschäftszeiten aktualisiert werden muss, landet diese Aufgabe häufig beim lokalen Supportteam, im Sekretariat oder bei einer Abteilungskoordination.
+Die Verwaltung automatischer Antworten für Abteilungspostfächer sollte keine umfassenden Exchange-Administratorrechte erfordern. Mit Exchange RBAC kann diese spezifische Aufgabe zur Konfiguration von Postfachoptionen an ausgewählte Benutzer delegiert werden, während deren Zugriff auf Postfächer innerhalb eines definierten Abteilungsbereichs beschränkt bleibt.
 
-Die falsche Lösung besteht darin, diesen Benutzern umfassende Exchange-Administrationsrechte zu geben. Die bessere Lösung ist eine fokussierte Exchange-RBAC-Rolle, die nur jene Postfachoptionen verfügbar macht, die für automatische Antworten erforderlich sind, und diese Rolle anschließend nur für Postfächer in der jeweiligen Abteilung zuweist.
+Dies ist besonders hilfreich, wenn ein freigegebenes Postfach eine temporäre automatische Antwort benötigt, ein Postfachbesitzer unerwartet abwesend ist oder ein Abteilungskoordinator eine Abwesenheitsmeldung außerhalb der regulären Supportzeiten aktualisieren muss. Der delegierte Benutzer benötigt dabei lediglich Zugriff auf die Konfiguration der automatischen Antworten, jedoch nicht auf andere Exchange-Einstellungen oder auf Postfächer anderer Abteilungen.
 
 Dieser Artikel zeigt ein praxisnahes Modell, mit dem die Abwesenheitsverwaltung an ausgewählte reguläre Endbenutzer delegiert werden kann. Diese Benutzer werden nicht zu Exchange-Administratoren gemacht. Sie erhalten lediglich die konkreten RBAC-Rolleneinträge, die erforderlich sind, um automatische Antworten für Postfächer innerhalb ihres Abteilungsbereichs zu verwalten.
 
@@ -378,6 +378,16 @@ Ein sauberes Delegierungsmodell für Abwesenheitsantworten benötigt keine umfas
 
 Dadurch erhalten ausgewählte Endbenutzer genau die Fähigkeit, die sie benötigen: automatische Antworten für Abteilungspostfächer verwalten, ohne allgemeine Exchange-Administratoren zu werd
 
+<!--
+Die Verwaltung automatischer Antworten für Abteilungspostfächer sollte keine umfassenden Exchange-Administratorrechte erfordern. Mit Exchange RBAC kann diese spezifische Aufgabe zur Konfiguration von Postfachoptionen an ausgewählte Benutzer delegiert werden, während deren Zugriff auf Postfächer innerhalb eines definierten Abteilungsbereichs beschränkt bleibt.
+
+Dies ist besonders hilfreich, wenn ein freigegebenes Postfach eine temporäre automatische Antwort benötigt, ein Postfachbesitzer unerwartet abwesend ist oder ein Abteilungskoordinator eine Abwesenheitsmeldung außerhalb der regulären Supportzeiten aktualisieren muss. Der delegierte Benutzer benötigt dabei lediglich Zugriff auf die Konfiguration der automatischen Antworten, jedoch nicht auf andere Exchange-Einstellungen oder auf Postfächer anderer Abteilungen.
+
+Dieser Artikel zeigt ein praxisnahes Modell, mit dem die Abwesenheitsverwaltung an ausgewählte reguläre Endbenutzer delegiert werden kann. Diese Benutzer werden nicht zu Exchange-Administratoren gemacht. Sie erhalten lediglich die konkreten RBAC-Rolleneinträge, die erforderlich sind, um automatische Antworten für Postfächer innerhalb ihres Abteilungsbereichs zu verwalten.
+
+https://set-outlooksignatures.com/blog/2026/07/29/delegate-oof
+-->
+
 ## Machen Sie jeden kleinen E-Mail-Moment zu einem professionellen Vorteil
 
 E-Mail-Signaturen und Abwesenheitsnotizen mögen unbedeutend erscheinen, aber stellen Sie sich vor, wie oft sie gesehen werden.
@@ -392,4 +402,3 @@ Wir helfen Unternehmen, diese Kontaktpunkte für alle Benutzer zentral zu verwal
 
 _Nicht verantwortlich für die E-Mail-Konfiguration in Ihrem Unternehmen?_  
 Teilen Sie diesen Artikel mit Ihrer IT-Abteilung oder Ihrem Marketingteam, sie werden es Ihnen danken.
-

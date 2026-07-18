@@ -2,8 +2,8 @@
 layout: "post"
 lang: "en"
 locale: "en"
-title: "Delegating Out-of-Office Management with Exchange RBAC"
-description: "How to let selected users manage automatic replies for department mailboxes without granting broad Exchange admin rights"
+title: "Delegate Out-of-Office Management with Exchange RBAC"
+description: "Delegate mailbox automatic-reply management through scoped Exchange RBAC roles without granting broad administrative access."
 slug: "delegate-oof"
 published: true
 tags:
@@ -12,9 +12,9 @@ sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
 
-Out-of-office replies are a small setting with a surprisingly large operational impact. When a mailbox owner is absent, when a shared mailbox needs a temporary message, or when a department mailbox must be updated outside business hours, the task often lands with a local support team, secretariat, or department coordinator.
+Managing automatic replies for department mailboxes should not require broad Exchange administrator rights. Exchange RBAC can delegate this specific mailbox-options task to selected users while limiting their access to mailboxes within a defined department scope.
 
-The wrong solution is to give those users broad Exchange administration rights. The better solution is a focused Exchange RBAC role that exposes only the mailbox options required for automatic replies, and then assigns that role only for mailboxes in the relevant department.
+This is useful when a shared mailbox needs a temporary response, a mailbox owner is unexpectedly absent, or a department coordinator must update an out-of-office message outside normal support hours. The delegated user needs access to the automatic-reply configuration, but not to unrelated Exchange settings or mailboxes belonging to other departments.
 
 This article shows a practical model for delegating out-of-office management to selected common end users. They are not made Exchange administrators. They only receive the specific RBAC role entries required to manage automatic replies for mailboxes in their department scope.
 
@@ -379,6 +379,16 @@ A clean out-of-office delegation model does not require broad Exchange admin per
 
 That gives selected end users the exact capability they need: manage automatic replies for departmental mailboxes, without becoming general Exchange administrators.
 
+<!--
+Managing automatic replies for department mailboxes should not require broad Exchange administrator rights. Exchange RBAC can delegate this specific mailbox-options task to selected users while limiting their access to mailboxes within a defined department scope.
+
+This is useful when a shared mailbox needs a temporary response, a mailbox owner is unexpectedly absent, or a department coordinator must update an out-of-office message outside normal support hours. The delegated user needs access to the automatic-reply configuration, but not to unrelated Exchange settings or mailboxes belonging to other departments.
+
+This article shows a practical model for delegating out-of-office management to selected common end users. They are not made Exchange administrators. They only receive the specific RBAC role entries required to manage automatic replies for mailboxes in their department scope.
+
+https://set-outlooksignatures.com/blog/2026/07/29/delegate-oof
+-->
+
 ## Turn every small email moment into a professional advantage
 
 Email signatures and out-of-office replies may seem minor, but think about how often people see them.
@@ -393,4 +403,3 @@ We help organizations centrally manage and standardize these touchpoints across 
 
 _Not responsible for email setup in your company?_  
 Share this article with your IT department or marketing team, they’ll thank you for it.
-
