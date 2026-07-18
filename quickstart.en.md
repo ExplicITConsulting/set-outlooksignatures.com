@@ -125,16 +125,14 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
           <p><b>Examples: Multi-mailbox variations out of the box</b></p>
           <p>Let's assume <b>Mr. Bobby Busy</b> works as a secretary in the <i>Office of the Executive Board</i> of <i>Galactic Experiences</i>. He has his own personal mailbox, sends mail on behalf of the CEO, <b>Ms. Alex Alien</b>, and can send as the <b>Exec Board Office</b> shared mailbox.</p>
           <p>Company rules define that signatures must not only contain information about the mailbox sent from, but also about the real sender. With the default sample templates and configuration, this yields the following variants automatically:</p>
-          <div class="tabs is-boxed is-toggle">
-            <ul style="flex-wrap: wrap;">
-              <li class="is-active" data-target="sig-formal"><a>Formal</a></li>
-              <li data-target="sig-formal-alex"><a>Formal Delegate alex.alien</a></li>
-              <li data-target="sig-formal-exec"><a>Formal executiveboard.office</a></li>
-              <li data-target="sig-informal"><a>Informal</a></li>
-              <li data-target="sig-informal-alex"><a>Informal Delegate alex.alien</a></li>
-              <li data-target="sig-informal-exec"><a>Informal executiveboard.office</a></li>
-              <li data-target="sig-test-all"><a>Test all default replacement variables</a></li>
-            </ul>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <div class="tabs is-toggle mb-0"><li class="is-active" data-target="sig-formal"><a>Formal</a></li></div>
+            <div class="tabs is-toggle mb-0"><li data-target="sig-formal-alex"><a>Formal Delegate alex.alien</a></li></div>
+            <div class="tabs is-toggle mb-0"><li data-target="sig-formal-exec"><a>Formal executiveboard.office</a></li></div>
+            <div class="tabs is-toggle mb-0"><li data-target="sig-informal"><a>Informal</a></li></div>
+            <div class="tabs is-toggle mb-0"><li data-target="sig-informal-alex"><a>Informal Delegate alex.alien</a></li></div>
+            <div class="tabs is-toggle mb-0"><li data-target="sig-informal-exec"><a>Informal executiveboard.office</a></li></div>
+            <div class="tabs is-toggle mb-0"><li data-target="sig-test-all"><a>Test all default replacement variables</a></li></div>
           </div>
           <div id="signature-gallery-content" class="p-4 has-background-white" style="border: 1px solid #dbdbdb; border-radius: 4px;">
             <div id="sig-formal" class="tab-content-panel">
@@ -172,7 +170,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   </div>
 </div>
 
-<!-- JavaScript to handle tabs and dynamic iframe resizing -->
+<!-- JavaScript to handle the new wrapped button layout -->
 <script>
   function resizeIframe(iframe) {
     if (iframe && iframe.contentWindow && iframe.contentWindow.document.body) {
@@ -180,10 +178,13 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
     }
   }
 
-  document.querySelectorAll('.tabs li').forEach(tab => {
+  // Look for any list item with a data-target attribute, regardless of its parent container
+  const tabElements = document.querySelectorAll('[data-target]');
+
+  tabElements.forEach(tab => {
     tab.addEventListener('click', () => {
-      // 1. Toggle Active Tab Class
-      document.querySelectorAll('.tabs li').forEach(t => t.classList.remove('is-active'));
+      // 1. Toggle Active Class on the clicked element and remove from others
+      tabElements.forEach(t => t.classList.remove('is-active'));
       tab.classList.add('is-active');
 
       // 2. Toggle Active Panel Visibility
