@@ -7,7 +7,9 @@ subtitle: "Signatures in minutes"
 description: "Quickstart guide. Deploy signatures within minutes."
 permalink: "/quickstart"
 ---
+
 ## Step 1: Download {#step-1}
+
 <div class="buttons">
 Download and unzip the archive to a local folder: 
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal has-text-weight-bold  mtrcs-download">Download software</a>
@@ -15,8 +17,8 @@ Download and unzip the archive to a local folder:
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Open issues" loading="lazy"></a>
 </div>
 
-
 ## Step 2: One-time Preparations {#step-2}
+
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
@@ -62,8 +64,8 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
   </div>
 </div>
 
-
 ## Step 3: Run Set-OutlookSignatures {#step-3}
+
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
@@ -210,6 +212,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
 </script>
 
 ## Customize {#customize}
+
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
@@ -270,7 +273,6 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
     </div>
   </div>
 </div>
-
 
 <p id="remark-1" class="mt-6 is-italic has-text-centered">
   The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> license funds the open-source mission, ensuring the core engine remains free and peer-reviewable for the global community.
