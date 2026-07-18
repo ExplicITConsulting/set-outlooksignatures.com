@@ -115,7 +115,98 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
     </div>
   </div>
 </div>
+<div class="columns is-multiline">
+  <div class="column is-full">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
+      <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
+        <span>👀</span>
+        <div style="width: 100%;">
+          <p><b>Beispiele: Multi-Postfach-Varianten im Standardumfang</b></p>
+          <p>Nehmen wir an, <b>Herr Bobby Busy</b> arbeitet als Sekretär im <i>Vorstandsbüro</i> von <i>Galactic Experiences</i>. Er besitzt ein eigenes persönliches Postfach, sendet E-Mails im Namen der CEO, <b>Frau Alex Alien</b>, und kann vom freigegeben Postfach des <b>Vorstandsbüros (Exec Board Office)</b> schicken.</p>
+          <p>Die Unternehmensrichtlinien schreiben vor, dass Signaturen nicht nur Informationen über das sendende Postfach enthalten müssen, sondern auch über den tatsächlichen Absender. Mit den standardmäßigen Mustervorlagen und der Konfiguration entstehen daraus automatisch folgende Varianten:</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <div class="tabs is-toggle mb-0"><li class="is-active" data-target="sig-formal"><a>Formal</a></li></div>
+            <div class="tabs is-toggle mb-0"><li data-target="sig-formal-alex"><a>Formal Delegate alex.alien</a></li></div>
+            <div class="tabs is-toggle mb-0"><li data-target="sig-formal-exec"><a>Formal executiveboard.office</a></li></div>
+            <div class="tabs is-toggle mb-0"><li data-target="sig-informal"><a>Informal</a></li></div>
+            <div class="tabs is-toggle mb-0"><li data-target="sig-informal-alex"><a>Informal Delegate alex.alien</a></li></div>
+            <div class="tabs is-toggle mb-0"><li data-target="sig-informal-exec"><a>Informal executiveboard.office</a></li></div>
+            <div class="tabs is-toggle mb-0"><li data-target="sig-test-all"><a>Test all default replacement variables</a></li></div>
+          </div>
+          <div id="signature-gallery-content" class="p-4 has-background-white" style="border: 1px solid #dbdbdb; border-radius: 4px;">
+            <div id="sig-formal" class="tab-content-panel">
+              <p><i>Formal: Vollständige Signatur für das persönliche Postfach von Bobby Busy</i></p>
+              <iframe src="/assets/signatures from demo/Formal.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+            </div>
+            <div id="sig-formal-alex" class="tab-content-panel is-hidden">
+              <p><i>Formal Delegate alex.alien: Vollständige Signatur für den Fall, dass Bobby im Namen der CEO, Frau Alex Alien, sendet</i></p>
+              <iframe src="/assets/signatures from demo/Formal Delegate alex.alien.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+            </div>
+            <div id="sig-formal-exec" class="tab-content-panel is-hidden">
+              <p><i>Formal executiveboard.office: Vollständige Signatur für den Fall, dass Bobby als geteiltes Postfach des Vorstandsbüros sendet</i></p>
+              <iframe src="/assets/signatures from demo/Formal executiveboard.office.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+            </div>
+            <div id="sig-informal" class="tab-content-panel is-hidden">
+              <p><i>Informal: Kurzsignatur für das persönliche Postfach (interne Kommunikation, Antworten/Weiterleitungen bei externem E-Mail-Verlauf)</i></p>
+              <iframe src="/assets/signatures from demo/Informal.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+            </div>
+            <div id="sig-informal-alex" class="tab-content-panel is-hidden">
+              <p><i>Informal Delegate alex.alien: Kurzsignatur für den Fall, dass Bobby im Namen der CEO, Frau Alex Alien, sendet (interne Kommunikation, Antworten/Weiterleitungen bei externem E-Mail-Verlauf)</i></p>
+              <iframe src="/assets/signatures from demo/Informal Delegate alex.alien.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+            </div>
+            <div id="sig-informal-exec" class="tab-content-panel is-hidden">
+              <p><i>Informal executiveboard.office: Kurzsignatur für den Fall, dass Bobby als geteiltes Postfach des Vorstandsbüros sendet (interne Kommunikation, Antworten/Weiterleitungen bei externem E-Mail-Verlauf)</i></p>
+              <iframe src="/assets/signatures from demo/Informal executiveboard.office.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+            </div>
+            <div id="sig-test-all" class="tab-content-panel is-hidden">
+              <p><i>Test all default replacement variables: Zeigt alle Platzhalter, aber auch Profilbilder, bedingte Banner, QR-Codes und mehr</i></p>
+              <iframe src="/assets/signatures from demo/Test all default replacement variables.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- JavaScript to handle the new wrapped button layout -->
+<script>
+  function resizeIframe(iframe) {
+    if (iframe && iframe.contentWindow && iframe.contentWindow.document.body) {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+  }
+
+  // Look for any list item with a data-target attribute, regardless of its parent container
+  const tabElements = document.querySelectorAll('[data-target]');
+
+  tabElements.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // 1. Toggle Active Class on the clicked element and remove from others
+      tabElements.forEach(t => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+
+      // 2. Toggle Active Panel Visibility
+      document.querySelectorAll('.tab-content-panel').forEach(panel => panel.classList.add('is-hidden'));
+      const targetId = tab.dataset.target;
+      const targetPanel = document.getElementById(targetId);
+      targetPanel.classList.remove('is-hidden');
+
+      // 3. Force Resize on the newly visible iframe
+      const iframe = targetPanel.querySelector('iframe');
+      resizeIframe(iframe);
+    });
+  });
+
+  // Automatically adjust heights once the HTML files finish loading completely
+  document.querySelectorAll('.tab-content-panel iframe').forEach(iframe => {
+    iframe.addEventListener('load', () => {
+      if (!iframe.closest('.tab-content-panel').classList.contains('is-hidden')) {
+        resizeIframe(iframe);
+      }
+    });
+  });
+</script>
 
 ## Anpassen {#customize}
 <div class="columns is-multiline">
@@ -158,7 +249,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   <div class="column is-full">
     <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #ff3860;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.75em;">
-        <span style="font-size: 1.5rem;">⭐</span>
+        <span style="font-size: 1.5rem;">✨</span>
         <div>
           <p class="title is-4 has-text-black">Teilen Sie Ihren Erfolg!</p>
           <p>Haben Sie etwas Großartiges erstellt? Ob es eine optisch beeindruckende E-Mail-Signatur, clevere Abwesenheitsnotizen, benutzerdefinierte Ersetzungsvariablen oder eine einzigartige Drittanbieter-Integration ist — <b>wir wollen es sehen.</b></p>

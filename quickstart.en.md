@@ -110,7 +110,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
         <span>💡</span>
         <div>
-          <p><b>Pro-tip: Start risk-free with Simulation Mode</b></p>
+          <p><b>Pro-Tip: Start Risk-Free with Simulation Mode</b></p>
           <p>If you lack Classic Outlook or want a zero-impact trial of the software, use <a href="/details#simulation-mode">Simulation Mode</a>: This mode creates the exact signatures for the simulated user as files on your disk, without modifying Outlook — the perfect way to verify your configuration without changing any system settings.</p>
           <p>Just add the parameter <code>-SimulateUser a@example.com -SimulateMailboxes a@example.com</code> and see the results in your <code>Documents\Outlook Signatures</code> folder.</p>
         </div>
@@ -122,9 +122,9 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   <div class="column is-full">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.5em;">
-        <span>📂</span>
+        <span>👀</span>
         <div style="width: 100%;">
-          <p><b>Examples: Multi-mailbox variations out of the box</b></p>
+          <p><b>Examples: Multi-Mailbox Variations Out of the Box</b></p>
           <p>Let's assume <b>Mr. Bobby Busy</b> works as a secretary in the <i>Office of the Executive Board</i> of <i>Galactic Experiences</i>. He has his own personal mailbox, sends mail on behalf of the CEO, <b>Ms. Alex Alien</b>, and can send as the <b>Exec Board Office</b> shared mailbox.</p>
           <p>Company rules define that signatures must not only contain information about the mailbox sent from, but also about the real sender. With the default sample templates and configuration, this yields the following variants automatically:</p>
           <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
@@ -253,7 +253,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   <div class="column is-full">
     <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid #ff3860;">
       <div class="cell" style="display: flex; align-items: flex-start; gap: 0.75em;">
-        <span style="font-size: 1.5rem;">⭐</span>
+        <span style="font-size: 1.5rem;">✨</span>
         <div>
           <p class="title is-4 has-text-black">Share your Success!</p>
           <p>Did you build something great? Whether it's a visually stunning email signature, clever out-of-office replies, custom replacement variables, or a unique third-party integration — <b>we want to see it.</b></p>
