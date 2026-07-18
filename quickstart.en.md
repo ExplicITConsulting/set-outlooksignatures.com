@@ -99,10 +99,10 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   </div>
 </div>
 <details>
-  <summary class="has-text-weight-bold" style="cursor: pointer;">
+  <summary style="cursor: pointer;">
     Click to see the output of a sample run
   </summary>
-{% highlight batch %}{% raw %}
+{% highlight plaintext %}{% raw %}
 Start Set-OutlookSignatures
   Log file: 'C:\Users\bobbybusy\AppData\Local\Set-OutlookSignatures\Logs\Set-OutlookSignatures_Log.txt'
     Ignore log lines starting with 'PS>TerminatingError' or '>> TerminatingError' unless instructed otherwise.
@@ -1063,6 +1063,7 @@ Exit code
 End Set-OutlookSignatures
 {% endraw %}{% endhighlight %}
 </details>
+<p>&nbsp;</p>
 <p><b>You now find three new signatures in Outlook, based on the integrated sample templates and the attributes of your own user:</b></p>
 <ul>
   <li><b><code>Formal</code></b> is ideal for new emails to external recipients.</li>
