@@ -116,7 +116,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   </div>
 </div>
 
-###  Beispiele: Multi-Postfach-Varianten im Standardumfang
+###  Beispiele: Multi-Postfach-Varianten im Standardumfang {#examples}
 <p>Nehmen wir an, <b>Herr Bobby Busy</b> arbeitet als Sekretär im <i>Vorstandsbüro</i> von <i>Galactic Experiences</i>. Er besitzt ein eigenes persönliches Postfach, sendet E-Mails im Namen der CEO, <b>Frau Alex Alien</b>, und kann vom freigegeben Postfach des <b>Vorstandsbüros (Exec Board Office)</b> schicken.</p>
 <p>Die Unternehmensrichtlinien schreiben vor, dass Signaturen nicht nur Informationen über das sendende Postfach enthalten müssen, sondern auch über den tatsächlichen Absender. Mit den standardmäßigen Mustervorlagen und der Konfiguration entstehen daraus automatisch folgende Varianten:</p>
 <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
@@ -129,33 +129,33 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   <div class="tabs is-toggle mb-0"><li data-target="sig-test-all"><a>Test all default replacement variables</a></li></div>
 </div>
 <div id="signature-gallery-content" class="p-4 has-background-white" style="border: 1px solid #dbdbdb; border-radius: 4px;">
-  <div id="sig-formal" class="tab-content-panel">
+  <div id="sig-formal" class="tab-content-panel has-text-black">
     <p><i>Formal: Vollständige Signatur für das persönliche Postfach von Bobby Busy</i></p>
-    <iframe src="/assets/signatures from demo/Formal.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+    <iframe src="/assets/signatures from demo/Formal.htm" width="100%" style="border:none; overflow:hidden;"></iframe>
   </div>
-  <div id="sig-formal-alex" class="tab-content-panel is-hidden">
+  <div id="sig-formal-alex" class="tab-content-panel has-text-black is-hidden">
     <p><i>Formal Delegate alex.alien: Vollständige Signatur für den Fall, dass Bobby im Namen der CEO, Frau Alex Alien, sendet</i></p>
-    <iframe src="/assets/signatures from demo/Formal Delegate alex.alien.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+    <iframe src="/assets/signatures from demo/Formal Delegate alex.alien.htm" width="100%" style="border:none; overflow:hidden;"></iframe>
   </div>
-  <div id="sig-formal-exec" class="tab-content-panel is-hidden">
+  <div id="sig-formal-exec" class="tab-content-panel has-text-black is-hidden">
     <p><i>Formal executiveboard.office: Vollständige Signatur für den Fall, dass Bobby als geteiltes Postfach des Vorstandsbüros sendet</i></p>
-    <iframe src="/assets/signatures from demo/Formal executiveboard.office.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+    <iframe src="/assets/signatures from demo/Formal executiveboard.office.htm" width="100%" style="border:none; overflow:hidden;"></iframe>
   </div>
-  <div id="sig-informal" class="tab-content-panel is-hidden">
+  <div id="sig-informal" class="tab-content-panel has-text-black is-hidden">
     <p><i>Informal: Kurzsignatur für das persönliche Postfach (interne Kommunikation, Antworten/Weiterleitungen bei externem E-Mail-Verlauf)</i></p>
-    <iframe src="/assets/signatures from demo/Informal.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+    <iframe src="/assets/signatures from demo/Informal.htm" width="100%" style="border:none; overflow:hidden;"></iframe>
   </div>
-  <div id="sig-informal-alex" class="tab-content-panel is-hidden">
+  <div id="sig-informal-alex" class="tab-content-panel has-text-black is-hidden">
     <p><i>Informal Delegate alex.alien: Kurzsignatur für den Fall, dass Bobby im Namen der CEO, Frau Alex Alien, sendet (interne Kommunikation, Antworten/Weiterleitungen bei externem E-Mail-Verlauf)</i></p>
-    <iframe src="/assets/signatures from demo/Informal Delegate alex.alien.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+    <iframe src="/assets/signatures from demo/Informal Delegate alex.alien.htm" width="100%" style="border:none; overflow:hidden;"></iframe>
   </div>
-  <div id="sig-informal-exec" class="tab-content-panel is-hidden">
+  <div id="sig-informal-exec" class="tab-content-panel has-text-black is-hidden">
     <p><i>Informal executiveboard.office: Kurzsignatur für den Fall, dass Bobby als geteiltes Postfach des Vorstandsbüros sendet (interne Kommunikation, Antworten/Weiterleitungen bei externem E-Mail-Verlauf)</i></p>
-    <iframe src="/assets/signatures from demo/Informal executiveboard.office.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+    <iframe src="/assets/signatures from demo/Informal executiveboard.office.htm" width="100%" style="border:none; overflow:hidden;"></iframe>
   </div>
-  <div id="sig-test-all" class="tab-content-panel is-hidden">
+  <div id="sig-test-all" class="tab-content-panel has-text-black is-hidden">
     <p><i>Test all default replacement variables: Zeigt alle Platzhalter, aber auch Profilbilder, bedingte Banner, QR-Codes und mehr</i></p>
-    <iframe src="/assets/signatures from demo/Test all default replacement variables.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+    <iframe src="/assets/signatures from demo/Test all default replacement variables.htm" width="100%" style="border:none; overflow:hidden;"></iframe>
   </div>
 </div>
 
