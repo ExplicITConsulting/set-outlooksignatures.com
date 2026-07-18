@@ -119,7 +119,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   </div>
 </div>
 
-### Examples: Multi-Mailbox Variations Out of the Box {#examples}
+## Signatures From Included Sample Templates {#examples}
 <p>Let's assume <b>Mr. Bobby Busy</b> works as a secretary in the <i>Office of the Executive Board</i> of <i>Galactic Experiences</i>. He has his own personal mailbox, sends mail on behalf of the CEO, <b>Ms. Alex Alien</b>, and can send as the <b>Exec Board Office</b> shared mailbox.</p>
 <p>Company rules define that signatures must not only contain information about the mailbox sent from, but also about the real sender. With the default sample templates and configuration, this yields the following variants automatically:</p>
 <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">

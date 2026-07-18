@@ -116,7 +116,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   </div>
 </div>
 
-###  Beispiele: Multi-Postfach-Varianten im Standardumfang {#examples}
+## Signaturen aus den enthaltenen Mustervorlagen {#examples}
 <p>Nehmen wir an, <b>Herr Bobby Busy</b> arbeitet als Sekretär im <i>Vorstandsbüro</i> von <i>Galactic Experiences</i>. Er besitzt ein eigenes persönliches Postfach, sendet E-Mails im Namen der CEO, <b>Frau Alex Alien</b>, und kann vom freigegeben Postfach des <b>Vorstandsbüros (Exec Board Office)</b> schicken.</p>
 <p>Die Unternehmensrichtlinien schreiben vor, dass Signaturen nicht nur Informationen über das sendende Postfach enthalten müssen, sondern auch über den tatsächlichen Absender. Mit den standardmäßigen Mustervorlagen und der Konfiguration entstehen daraus automatisch folgende Varianten:</p>
 <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
