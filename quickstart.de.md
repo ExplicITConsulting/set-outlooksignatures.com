@@ -95,9 +95,9 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
     </div>
   </div>
 </div>
-<details class="box">
+<details>
   <summary class="has-text-weight-bold" style="cursor: pointer;">
-    <strong>Click to see the output of a sample run</strong>
+    Hier klicken für die Ausgabe eines Beispieldurchlaufs
   </summary>
 {% highlight batch %}{% raw %}
 Start Set-OutlookSignatures

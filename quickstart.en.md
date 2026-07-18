@@ -98,9 +98,9 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
     <p><small><em>If the script fails to run, right-click Set-OutlookSignatures.ps1 > Properties > check Unblock.</em></small></p>
   </div>
 </div>
-<details class="box">
+<details>
   <summary class="has-text-weight-bold" style="cursor: pointer;">
-    <strong>Click to see the output of a sample run</strong>
+    Click to see the output of a sample run
   </summary>
 {% highlight batch %}{% raw %}
 Start Set-OutlookSignatures
