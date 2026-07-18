@@ -738,7 +738,7 @@ Set-OutlookSignatures comes with a big set of default replacement variables, cov
 
 - View the template in DOCX format or in HTML format on GitHub or in the `.\sample templates` folder of your download.
 - See the final result, i.e. your real values instead of the placeholders, after running the [Quickstart](/quickstart) guide. Just create a new email and select the generated sample signature **“Test all default replacement variables”**.
-- Click here to view the <a href="/assets/html/test all default replacement variables.html" target="_blank">"Test all default replacement variables" signature filled with data from our demo environment</a>.
+- Click here to view the <a href="/assets/signatures from demo/Test all default replacement variables.htm" target="_blank">"Test all default replacement variables" signature filled with data from our demo environment</a>.
 
 ### Photos (account pictures, user image) from Active Directory or Entra ID
 

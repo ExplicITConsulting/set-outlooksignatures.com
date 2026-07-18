@@ -125,14 +125,15 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
           <p><b>Examples: Multi-mailbox variations out of the box</b></p>
           <p>Let's assume <b>Mr. Bobby Busy</b> works as a secretary in the <i>Office of the Executive Board</i> of <i>Galactic Experiences</i>. He has his own personal mailbox, sends mail on behalf of the CEO, <b>Ms. Alex Alien</b>, and can send as the <b>Exec Board Office</b> shared mailbox.</p>
           <p>Company rules define that signatures must not only contain information about the mailbox sent from, but also about the real sender. With the default sample templates and configuration, this yields the following variants automatically:</p>
-          <div class="tabs is-boxed is-toggle is-full">
-            <ul>
+          <div class="tabs is-boxed is-toggle">
+            <ul style="flex-wrap: wrap;">
               <li class="is-active" data-target="sig-formal"><a>Formal</a></li>
               <li data-target="sig-formal-alex"><a>Formal Delegate alex.alien</a></li>
               <li data-target="sig-formal-exec"><a>Formal executiveboard.office</a></li>
               <li data-target="sig-informal"><a>Informal</a></li>
               <li data-target="sig-informal-alex"><a>Informal Delegate alex.alien</a></li>
               <li data-target="sig-informal-exec"><a>Informal executiveboard.office</a></li>
+              <li data-target="sig-test-all"><a>Test all default replacement variables</a></li>
             </ul>
           </div>
           <div id="signature-gallery-content" class="p-4 has-background-white" style="border: 1px solid #dbdbdb; border-radius: 4px;">
@@ -160,12 +161,52 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
               <p><i>Informal executiveboard.office: Short signature for when Bobby sends as the Executive Board Office shared mailbox (internal communication, external thread follow-ups)</i></p>
               <iframe src="/assets/signatures from demo/Informal executiveboard.office.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
             </div>
+            <div id="sig-test-all" class="tab-content-panel is-hidden">
+              <p><i>Test all default replacement variables: Shows all placeholders but also account pictures, conditional banners, QR codes and more</i></p>
+              <iframe src="/assets/signatures from demo/Test all default replacement variables.htm" width="100%" scrolling="no" style="border:none; overflow:hidden;"></iframe>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- JavaScript to handle tabs and dynamic iframe resizing -->
+<script>
+  function resizeIframe(iframe) {
+    if (iframe && iframe.contentWindow && iframe.contentWindow.document.body) {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+  }
+
+  document.querySelectorAll('.tabs li').forEach(tab => {
+    tab.addEventListener('click', () => {
+      // 1. Toggle Active Tab Class
+      document.querySelectorAll('.tabs li').forEach(t => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+
+      // 2. Toggle Active Panel Visibility
+      document.querySelectorAll('.tab-content-panel').forEach(panel => panel.classList.add('is-hidden'));
+      const targetId = tab.dataset.target;
+      const targetPanel = document.getElementById(targetId);
+      targetPanel.classList.remove('is-hidden');
+
+      // 3. Force Resize on the newly visible iframe
+      const iframe = targetPanel.querySelector('iframe');
+      resizeIframe(iframe);
+    });
+  });
+
+  // Automatically adjust heights once the HTML files finish loading completely
+  document.querySelectorAll('.tab-content-panel iframe').forEach(iframe => {
+    iframe.addEventListener('load', () => {
+      if (!iframe.closest('.tab-content-panel').classList.contains('is-hidden')) {
+        resizeIframe(iframe);
+      }
+    });
+  });
+</script>
 
 ## Customize {#customize}
 <div class="columns is-multiline">
@@ -233,59 +274,3 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
 <p id="remark-1" class="mt-6 is-italic has-text-centered">
   The <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> license funds the open-source mission, ensuring the core engine remains free and peer-reviewable for the global community.
 </p>
-
-
-<script>
-  function resizeIframe(iframe) {
-    if (iframe && iframe.contentWindow && iframe.contentWindow.document.body) {
-      // Set the iframe height exactly to its content's scroll height
-      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-    }
-  }
-
-  document.querySelectorAll('.tabs li').forEach(tab => {
-    tab.addEventListener('click', () => {
-      // 1. Toggle Active Tab Class
-      document.querySelectorAll('.tabs li').forEach(t => t.classList.remove('is-active'));
-      tab.classList.add('is-active');
-
-      // 2. Toggle Active Panel Visibility
-      document.querySelectorAll('.tab-content-panel').forEach(panel => panel.classList.add('is-hidden'));
-      const targetId = tab.dataset.target;
-      const targetPanel = document.getElementById(targetId);
-      targetPanel.classList.remove('is-hidden');
-
-      // 3. Force Resize on the newly visible iframe
-      const iframe = targetPanel.querySelector('iframe');
-      resizeIframe(iframe);
-    });
-  });
-
-  // Automatically adjust heights once the HTML files finish loading completely
-  document.querySelectorAll('.tab-content-panel iframe').forEach(iframe => {
-    iframe.addEventListener('load', () => {
-      // Resize the initially active tab immediately
-      if (!iframe.closest('.tab-content-panel').classList.contains('is-hidden')) {
-        resizeIframe(iframe);
-      }
-    });
-  });
-</script>
-
-<!-- Simple JavaScript to toggle tabs -->
-<script>
-  document.querySelectorAll('.tabs li').forEach(tab => {
-    tab.addEventListener('click', () => {
-      // Remove active class from all tabs
-      document.querySelectorAll('.tabs li').forEach(t => t.classList.remove('is-active'));
-      // Add active class to clicked tab
-      tab.classList.add('is-active');
-
-      // Hide all panels
-      document.querySelectorAll('.tab-content-panel').forEach(panel => panel.classList.add('is-hidden'));
-      // Show target panel
-      const target = tab.dataset.target;
-      document.getElementById(target).classList.remove('is-hidden');
-    });
-  });
-</script>
