@@ -1060,7 +1060,6 @@ Exit code
 End Set-OutlookSignatures
 {% endraw %}{% endhighlight %}
 </details>
-<p>&nbsp;</p>
 <p><b>Sie finden nun drei neue Signaturen in Outlook, die auf den integrierten Beispielvorlagen und den Attributen Ihres eigenen Benutzers basieren:</b></p>
 <ul>
   <li><b><code>Formal</code></b> ist ideal für neue E-Mails an externe Empfänger.</li>

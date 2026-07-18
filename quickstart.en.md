@@ -1063,7 +1063,6 @@ Exit code
 End Set-OutlookSignatures
 {% endraw %}{% endhighlight %}
 </details>
-<p>&nbsp;</p>
 <p><b>You now find three new signatures in Outlook, based on the integrated sample templates and the attributes of your own user:</b></p>
 <ul>
   <li><b><code>Formal</code></b> is ideal for new emails to external recipients.</li>
