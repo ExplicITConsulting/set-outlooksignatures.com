@@ -148,10 +148,17 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-  <div class="column is-half-desktop is-full-tablet" style="display: flex; align-items: stretch;">
+  <div class="column is-half-desktop is-full-tablet" style="position: relative;">
+    <!-- DESKTOP ONLY: Your original working absolute positioning -->
     <img src="/assets/gif/outlookaddin usage/outlookaddin usage.gif" 
-         alt="Outlook Add-in Usage Demo" 
-         style="width: 100%; object-fit: contain; max-height: 100%; padding: 0.75rem; margin: auto;">
+        alt="Outlook Add-in Usage Demo" 
+        class="is-hidden-touch"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; padding: 0.75rem;">
+    <!-- MOBILE/TABLET ONLY: Normal flowing image that won't collapse -->
+    <img src="/assets/gif/outlookaddin usage/outlookaddin usage.gif" 
+        alt="Outlook Add-in Usage Demo" 
+        class="is-hidden-desktop"
+        style="width: 100%; height: auto; display: block; padding: 0.75rem;">
   </div>
 </div>
 
