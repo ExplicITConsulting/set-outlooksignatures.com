@@ -99,9 +99,9 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   <summary style="cursor: pointer;">
     Hier klicken für die Ausgabe eines Beispieldurchlaufs (für Endbenutzer normalerweise <a href="/faq#start-set-outlooksignatures-in-hiddeninvisible-mode">versteckt/unsichtbar ausgeführt</a>).
   </summary>
-{% highlight plaintext %}{% raw %}
+{% highlight plaintext %}
 {% include_relative "/assets/signatures from demo/log.txt" | escape_once %}
-{% endraw %}{% endhighlight %}
+{% endhighlight %}
 </details>
 <p>&nbsp;</p>
 <p><b>Sie finden nun drei neue Signaturen in Outlook, die auf den integrierten Beispielvorlagen und den Attributen Ihres eigenen Benutzers basieren:</b></p>
