@@ -103,7 +103,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
     Click to see the output of a sample run (usually <a href="/faq#start-set-outlooksignatures-in-hiddeninvisible-mode">run in hidden/invisible mode</a> for end users)
   </summary>
 {% highlight plaintext %}
-{% include_relative "/assets/signatures from demo/log.txt" | escape_once %}
+{% include_absolute "/assets/signatures from demo/log.txt" | raw %}
 {% endhighlight %}
 </details>
 <p>&nbsp;</p>
