@@ -13,8 +13,10 @@ Check parameters and script environment
   PowerShell bitness: 64-bit process on a 64-bit operating system
   Script path: 'C:\Demo\Set-OutlookSignatures\Set-OutlookSignatures.ps1'
   Invocation line: '& $ScriptToUse @params'
-  Bound parameters: '{"OOFTemplatePath":"..\\Templates\\Out-of-Office DOCX","SignatureIniFile":"..\\Templates\\Signatures DOCX\\_Signatures.ini","ScriptProcessPriority":"High","UseHtmTemplates":false,"SignatureTemplatePath":"..\\Templates\\Signatures DOCX","OOFIniFile":"..\\Templates\\Out-of-Office DOCX\\_OOF.ini","WordProcessPriority":"High","BenefactorCircleID":"e8911c17-de30-0000-0000-000000000001","ReplacementVariableConfigFile":"..\\Config\\custom replacement variables.ps1","BenefactorCircleLicenseFile":"..\\License\\license.dll","GraphClientID":"2bee9349-d720-420a-853f-a93c8bbc2179","GraphOnly":true}'
+  Bound parameters: '{"OOFTemplatePath":"..\\Templates\\Out-of-Office DOCX","ReplacementVariableConfigFile":"..\\Config\\custom replacement variables.ps1","UseHtmTemplates":false,"BenefactorCircleID":"e8911c17-de30-0000-0000-000000000001","SignatureIniFile":"..\\Templates\\Signatures DOCX\\_Signatures.ini","SignatureTemplatePath":"..\\Templates\\Signatures DOCX","OOFIniFile":"..\\Templates\\Out-of-Office DOCX\\_OOF.ini","GraphClientID":"2bee9349-d720-420a-853f-a93c8bbc2179","BenefactorCircleLicenseFile":"..\\License\\license.dll","WordProcessPriority":"High","ScriptProcessPriority":"High","MirrorCloudSignatures":"CurrentUserOnly","GraphOnly":true}'
   Unbound arguments: ''
+  Set-OutlookSignatures.ps1 hash: BF6D8E18A695AA43633621C10AF77E6273EA41B074E3405FA76F2120BD63D28B
+  SetOutlookSignatures.Common.dll hash: 2FA8133B61D6A7A61FB371BD083AFF7A3901E39C72E936F4CA27518AFF635661
   TrustsToCheckForGroups: '*'
   IncludeMailboxForestDomainLocalGroups: 'False'
   CloudEnvironment: 'Public'
@@ -46,7 +48,7 @@ Check parameters and script environment
   SimulateMailboxes: ''
   SimulateTime: ''
   DisableRoamingSignatures: 'True'
-  MirrorCloudSignatures: 'True'
+  MirrorCloudSignatures: 'CurrentUserOnly'
   SignatureCollectionInDrafts: 'True'
   MailboxSpecificSignatureNames: 'False'
   WordProcessPriority: 'High' ('128')
@@ -56,11 +58,7 @@ Check parameters and script environment
 
 Benefactor Circle license information
   Licensed to Benefactor Circle member
-    Set-OutlookSignatures demo tenant
-  License groups
-    Domain EntraID, SID/Object ID 00000000-0000-0000-0000-000000000000, 100 recursive members
-  License expiration date
-    2099-12-31T23:59:59Z
+    Set-OutlookSignatures demo tenant by ExplicIT Consulting GmbH
   License version
     License version and script version match: v4.31.0
   License validity check
@@ -76,20 +74,20 @@ Get basic Outlook and Word information
     Set 'Send Pictures With Document' registry value to '1'
     Set 'DisableRoamingSignatures' registry value to '1'
     Registry version: 16.0
-    File version: 16.0.20131.20126
+    File version: 16.0.20131.20154
     Bitness: x64
     Default profile: Outlook
     Is C2R Beta: False
     DisableRoamingSignatures: 1
     UseNewOutlook: False
   New Outlook
-    Version: 1.2026.630.300
+    Version: 1.2026.707.300
     Status: Ok
     UseNewOutlook: False
   Word
     Set 'DontUseScreenDpiOnOpen' registry value to '1'
     Registry version: 16.0
-    File version: 16.0.20131.20126
+    File version: 16.0.20131.20154
     Bitness: x64
 
 Get Outlook signature file path(s)
@@ -111,77 +109,80 @@ Get properties of currently logged-in user and assigned manager
       Load MSAL.PS
       Authentication against Graph
         Silent via Integrated Windows Authentication without login hint
+PS>TerminatingError(): "Failed to get user name. "
           Failed: Failed to get user name.
         Silent via Integrated Windows Authentication with login hint
           Login hint: ''
           Failed: No login hint found before
         Silent via Authentication Broker without login hint
-          Success: 'bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com'
+          Success: 'bobby.busy@galactic.test'
       Authentication against Exchange Online
         Silent via Integrated Windows Authentication without login hint
           Failed: Ignoring because login hint is available.
         Silent via Integrated Windows Authentication with login hint
-          Login hint: 'bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com'
+          Login hint: 'bobby.busy@galactic.test'
+PS>TerminatingError(): "Integrated Windows Auth is not supported for managed users. See https://aka.ms/msal-net-iwa for details. "
           Failed: Integrated Windows Auth is not supported for managed users. See https://aka.ms/msal-net-iwa for details.
         Silent via Authentication Broker without login hint
           Failed: Ignoring because login hint is available.
         Silent via Authentication Broker with login hint
-          Login hint: 'bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com'
-          Success: 'bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com'
+          Login hint: 'bobby.busy@galactic.test'
+          Success: 'bobby.busy@galactic.test'
       The permissions of the Entra ID app are not configured ideally.
         Details: https://set-outlooksignatures.com/details#security-considerations
         Info: App does not use the preferred delegated permission Files.SelectedOperations.Selected from the optional set 'Files.SelectedOperations.Selected OR Files.Read.All'.
           Files.SelectedOperations.Selected is harder to implement but more secure.
       Graph token cache: Encrypted file 'C:\Users\bobbybusy\AppData\Local\Set-OutlookSignatures\MSAL.PS\MSAL.PS.msalcache.bin3'
     DistinguishedName:
-    UserPrincipalName: bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
-    Mail: bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
+    UserPrincipalName: bobby.busy@galactic.test
+    Mail: bobby.busy@galactic.test
   Manager of currently logged-in user
     DistinguishedName:
-    UserPrincipalName: alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
-    Mail: alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
+    UserPrincipalName: alex.alien@galactic.test
+    Mail: alex.alien@galactic.test
 
 Get email addresses
   Get email addresses from Outlook
     Profile 'Outlook'
-      bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
-      alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
-      executiveboard.office@setoutlooksignaturesdemo.onmicrosoft.com (automapped or additional mailbox)
+      bobby.busy@galactic.test
+      alex.alien@galactic.test
+      executiveboard.office@galactic.test (automapped or additional mailbox)
 
 Get properties of each mailbox and its manager
-  bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
+  bobby.busy@galactic.test
     Search for mailbox user object in Graph
       DistinguishedName:
-      UserPrincipalName: bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
-      Mail: bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
-      Manager: alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
+      UserPrincipalName: bobby.busy@galactic.test
+      Mail: bobby.busy@galactic.test
+      Manager: alex.alien@galactic.test
         DistinguishedName:
-        UserPrincipalName: alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
-        Mail: alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
+        UserPrincipalName: alex.alien@galactic.test
+        Mail: alex.alien@galactic.test
       Get group membership of mailbox
-  alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
+  alex.alien@galactic.test
     Search for mailbox user object in Graph
       DistinguishedName:
-      UserPrincipalName: alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
-      Mail: alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
+      UserPrincipalName: alex.alien@galactic.test
+      Mail: alex.alien@galactic.test
       Manager:
       Get group membership of mailbox
-  executiveboard.office@setoutlooksignaturesdemo.onmicrosoft.com
+  executiveboard.office@galactic.test
     Search for mailbox user object in Graph
+PS>TerminatingError(Invoke-RestMethod): "The remote server returned an error: (404) Not Found."
       DistinguishedName:
-      UserPrincipalName: executiveboard.office@setoutlooksignaturesdemo.onmicrosoft.com
-      Mail: execboard.office@setoutlooksignaturesdemo.onmicrosoft.com
+      UserPrincipalName: executiveboard.office@galactic.test
+      Mail: execboard.office@galactic.test
       Manager:
       Get group membership of mailbox
   Parameter 'VirtualMailboxConfigFile' is not enabled, skipping task.
 
 Sort mailbox list: User's primary mailbox, mailboxes in default Outlook profile, others
-  Mail attribute of currently logged-in or simulated user: 'bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com'
+  Mail attribute of currently logged-in or simulated user: 'bobby.busy@galactic.test'
     Matching mailbox found
   Mailbox priority (highest to lowest)
-    bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
-    alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
-    execboard.office@setoutlooksignaturesdemo.onmicrosoft.com
+    bobby.busy@galactic.test
+    alex.alien@galactic.test
+    execboard.office@galactic.test
 
 Get all signature template files and categorize them
   Compare signature INI entries and file system
@@ -196,34 +197,7 @@ Get all signature template files and categorize them
         defaultNew
     'Test all default replacement variables.docx' (signature INI index #3)
       Common template (no group, email address or replacement variable allow tags specified)
-      Mailbox specific exclusions
-        -:alex.alien@galactic.test
-    'Formal HR.docx' (signature INI index #4)
-      Outlook signature name: 'Formal'
-      Group specific template
-        Example-AD-Domain Name-of-HR-Group
-          Not found
-      Default signature for new emails
-        defaultNew
-    'Formal HR Christmas.docx' (signature INI index #5)
-      Outlook signature name: 'Formal'
-      Time based template
-        202412100000-202501062359:
-          Current DateTime is not in allowed range
-        202512100000-202601062359:
-          Current DateTime is not in allowed range
-        202612100000-202701062359:
-          Current DateTime is not in allowed range
-        202712100000-202801062359:
-          Current DateTime is not in allowed range
-        202812100000-202901062359:
-          Current DateTime is not in allowed range
-        202912100000-203001062359:
-          Current DateTime is not in allowed range
-        203012100000-203101062359:
-          Current DateTime is not in allowed range
-        Current DateTime is not in allowed time ranges, ignore signature template
-    'Informal Delegate.docx' (signature INI index #6)
+    'Informal Delegate.docx' (signature INI index #4)
       Outlook signature name: 'Informal Delegate alex.alien'
       Mailbox specific template
         alex.alien@galactic.test
@@ -231,23 +205,7 @@ Get all signature template files and categorize them
         -CURRENTUSER:alex.alien@galactic.test
       Default signature for replies and forwards
         defaultReplyFwd
-    'Informal Delegate.docx' (signature INI index #7)
-      Outlook signature name: 'Informal Delegate fenix.fish'
-      Mailbox specific template
-        fenix.fish@galactic.test
-      Mailbox specific exclusions
-        -CURRENTUSER:fenix.fish@galactic.test
-      Default signature for replies and forwards
-        defaultReplyFwd
-    'Informal Delegate.docx' (signature INI index #8)
-      Outlook signature name: 'Informal Delegate nat.nuts'
-      Mailbox specific template
-        nat.nuts@galactic.test
-      Mailbox specific exclusions
-        -CURRENTUSER:nat.nuts@galactic.test
-      Default signature for replies and forwards
-        defaultReplyFwd
-    'Informal Shared.docx' (signature INI index #9)
+    'Informal Shared.docx' (signature INI index #5)
       Outlook signature name: 'Informal executiveboard.office'
       Mailbox specific template
         executiveboard.office@galactic.test
@@ -255,7 +213,7 @@ Get all signature template files and categorize them
         -CurrentUser:executiveboard.office@galactic.test
       Default signature for replies and forwards
         defaultReplyFwd
-    'Formal Shared.docx' (signature INI index #10)
+    'Formal Shared.docx' (signature INI index #6)
       Outlook signature name: 'Formal executiveboard.office'
       Mailbox specific template
         executiveboard.office@galactic.test
@@ -263,28 +221,12 @@ Get all signature template files and categorize them
         -CurrentUser:executiveboard.office@galactic.test
       Default signature for new emails
         defaultNew
-    'Formal Delegate.docx' (signature INI index #11)
+    'Formal Delegate.docx' (signature INI index #7)
       Outlook signature name: 'Formal Delegate alex.alien'
       Mailbox specific template
         alex.alien@galactic.test
       Mailbox specific exclusions
         -CURRENTUSER:alex.alien@galactic.test
-      Default signature for new emails
-        defaultNew
-    'Formal Delegate.docx' (signature INI index #12)
-      Outlook signature name: 'Formal Delegate fenix.fish'
-      Mailbox specific template
-        fenix.fish@galactic.test
-      Mailbox specific exclusions
-        -CURRENTUSER:fenix.fish@galactic.test
-      Default signature for new emails
-        defaultNew
-    'Formal Delegate.docx' (signature INI index #13)
-      Outlook signature name: 'Formal Delegate nat.nuts'
-      Mailbox specific template
-        nat.nuts@galactic.test
-      Mailbox specific exclusions
-        -CURRENTUSER:nat.nuts@galactic.test
       Default signature for new emails
         defaultNew
 
@@ -295,38 +237,14 @@ Get all OOF template files and categorize them
       Common template (no group, email address or replacement variable allow tags specified)
       Default internal OOF message
         Internal
-    'Internal no manager.docx' (OOF INI index #2)
+    'External.docx' (OOF INI index #2)
       Common template (no group, email address or replacement variable allow tags specified)
-      Replacement variable exclusions
-        -:$CurrentUserManagerMail$
-      Default internal OOF message
-        Internal
-    'External.docx' (OOF INI index #3)
-      Common template (no group, email address or replacement variable allow tags specified)
-      Default external OOF message
-        External
-    'External no manager.docx' (OOF INI index #4)
-      Common template (no group, email address or replacement variable allow tags specified)
-      Replacement variable exclusions
-        -:$CurrentUserManagerMail$
-      Default external OOF message
-        External
-    'Internal Executive Office Board members.docx' (OOF INI index #5)
-      Group specific template
-        EntraID example-group@galactic.test
-          Not found
-      Default internal OOF message
-        Internal
-    'External Executive Office Board members.docx' (OOF INI index #6)
-      Group specific template
-        Example-AD-Domain Example-Group-Name
-          Not found
       Default external OOF message
         External
 
 Start Word background process
 
-Mailbox bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
+Mailbox bobby.busy@galactic.test
   Mailbox is member of license group: True
   Extract SMTP addresses
   Calculate replacement variables
@@ -367,7 +285,7 @@ Mailbox bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
       Export to TXT format
       Upload signature to Exchange Online as roaming signature
         May take longer if images are not already embedded
-        'd64551cd-116e-49de-a18b-fc9a9aa7d7bc' -> 'Informal'
+        '8e7e184f-ae90-46b1-bab0-ed7220b9a4ef' -> 'Informal'
       Copy signature files to 'C:\Users\bobbybusy\AppData\Roaming\Microsoft\Signatures'
       Remove temporary files
       Set signature as default for reply/forward messages (Outlook profile 'Outlook')
@@ -396,7 +314,7 @@ Mailbox bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
       Export to TXT format
       Upload signature to Exchange Online as roaming signature
         May take longer if images are not already embedded
-        'cee4a7b9-3420-423c-af50-820c9cb93653' -> 'Formal'
+        '90f3a1da-e179-45b8-bb18-5b440c104c19' -> 'Formal'
       Copy signature files to 'C:\Users\bobbybusy\AppData\Roaming\Microsoft\Signatures'
       Remove temporary files
       Set signature as default for new messages (Outlook profile 'Outlook')
@@ -429,66 +347,30 @@ Mailbox bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
       Export to TXT format
       Upload signature to Exchange Online as roaming signature
         May take longer if images are not already embedded
-        '0117c845-abd4-46ef-8200-33637a8c7d99' -> 'Test all default replacement variables'
+        'f2ae5363-1460-4998-bceb-628bc5907f7a' -> 'Test all default replacement variables'
       Copy signature files to 'C:\Users\bobbybusy\AppData\Roaming\Microsoft\Signatures'
       Remove temporary files
   Process group specific templates
-    'Formal HR.docx' (Signature INI index #4)
-      Check permissions
-        Allows
-          No group match for current mailbox, checking current user specific allows
-          Group: Mailbox and current user are not member of any allowed group
-        Do not use template as there is no allow or at least one deny
   Process mailbox specific templates
-    'Test all default replacement variables.docx' (Signature INI index #3)
+    'Informal Delegate.docx' (Signature INI index #4)
       Check permissions
         Allows
           No email address match for current mailbox, checking current user specific allows
           Email address: Mailbox and current user do not have any allowed email address
         Do not use template as there is no allow or at least one deny
-    'Informal Delegate.docx' (Signature INI index #6)
+    'Informal Shared.docx' (Signature INI index #5)
       Check permissions
         Allows
           No email address match for current mailbox, checking current user specific allows
           Email address: Mailbox and current user do not have any allowed email address
         Do not use template as there is no allow or at least one deny
-    'Informal Delegate.docx' (Signature INI index #7)
+    'Formal Shared.docx' (Signature INI index #6)
       Check permissions
         Allows
           No email address match for current mailbox, checking current user specific allows
           Email address: Mailbox and current user do not have any allowed email address
         Do not use template as there is no allow or at least one deny
-    'Informal Delegate.docx' (Signature INI index #8)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Informal Shared.docx' (Signature INI index #9)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Formal Shared.docx' (Signature INI index #10)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Formal Delegate.docx' (Signature INI index #11)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Formal Delegate.docx' (Signature INI index #12)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Formal Delegate.docx' (Signature INI index #13)
+    'Formal Delegate.docx' (Signature INI index #7)
       Check permissions
         Allows
           No email address match for current mailbox, checking current user specific allows
@@ -500,6 +382,8 @@ Mailbox bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
     Default signature for new emails: 'Formal'
     Default signature for replies and forwards: 'Informal'
     Using 'Formal' for classic Outlook for the web (only one signature possible).
+PS>TerminatingError(Invoke-RestMethod): "The remote server returned an error: (400) Bad Request."
+PS>TerminatingError(Invoke-RestMethod): "The remote server returned an error: (400) Bad Request."
     Set default roaming Outlook for the web signature(s)
       Default signature for new emails: 'Formal'
       Default signature for replies and forwarded emails: 'Informal'
@@ -516,18 +400,7 @@ Mailbox bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
             Email address: Mailbox and current user do not have any denied email address
             Replacement variable: No deny replacement variable evaluates to true
           Use template as there is at least one allow and no deny
-      'Internal no manager.docx' (OOF INI index #2)
-        Check permissions
-          Allows
-            Common: Template is classified as common template valid for all mailboxes
-          Denies
-            No group match for current mailbox, checking current user specific denies
-            Group: Mailbox and current user are not member of any denied group
-            No email address match for current mailbox, checking current user specific denies
-            Email address: Mailbox and current user do not have any denied email address
-            First replacement variable match: $CurrentUserManagerMail$ evaluates to true
-          Do not use template as there is no allow or at least one deny
-      'External.docx' (OOF INI index #3)
+      'External.docx' (OOF INI index #2)
         Check permissions
           Allows
             Common: Template is classified as common template valid for all mailboxes
@@ -538,42 +411,9 @@ Mailbox bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
             Email address: Mailbox and current user do not have any denied email address
             Replacement variable: No deny replacement variable evaluates to true
           Use template as there is at least one allow and no deny
-      'External no manager.docx' (OOF INI index #4)
-        Check permissions
-          Allows
-            Common: Template is classified as common template valid for all mailboxes
-          Denies
-            No group match for current mailbox, checking current user specific denies
-            Group: Mailbox and current user are not member of any denied group
-            No email address match for current mailbox, checking current user specific denies
-            Email address: Mailbox and current user do not have any denied email address
-            First replacement variable match: $CurrentUserManagerMail$ evaluates to true
-          Do not use template as there is no allow or at least one deny
     Process group specific templates
-      'Internal Executive Office Board members.docx' (OOF INI index #5)
-        Check permissions
-          Allows
-            No group match for current mailbox, checking current user specific allows
-            Group: Mailbox and current user are not member of any allowed group
-          Do not use template as there is no allow or at least one deny
-      'External Executive Office Board members.docx' (OOF INI index #6)
-        Check permissions
-          Allows
-            No group match for current mailbox, checking current user specific allows
-            Group: Mailbox and current user are not member of any allowed group
-          Do not use template as there is no allow or at least one deny
     Process mailbox specific templates
     Process replacementvariable specific templates
-      'Internal no manager.docx' (OOF INI index #2)
-        Check permissions
-          Allows
-            Replacement variable: No allowed replacement variable evaluates to true
-          Do not use template as there is no allow or at least one deny
-      'External no manager.docx' (OOF INI index #4)
-        Check permissions
-          Allows
-            Replacement variable: No allowed replacement variable evaluates to true
-          Do not use template as there is no allow or at least one deny
     Convert final OOF templates to HTM format
       Internal OOF message: 'Internal.docx'
         Create temporary file copy
@@ -601,16 +441,14 @@ Mailbox bobby.busy@setoutlooksignaturesdemo.onmicrosoft.com
         Remove temporary files
     Set out-of-office (OOF) auto replies
 
-Mailbox alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
+Mailbox alex.alien@galactic.test
   Mailbox is member of license group: True
   Extract SMTP addresses
   Calculate replacement variables
     'C:\Demo\Config\custom replacement variables.ps1'
     Export available images
   Download roaming signatures from Exchange Online
-    Download possible, Upload/set defaults possible, enable verbose output for details
-    'Formal' -> 'Formal (alex.alien@setoutlooksignaturesdemo.onmicrosoft.com)'
-    'Informal' -> 'Informal (alex.alien@setoutlooksignaturesdemo.onmicrosoft.com)'
+    Download not possible, Upload/set defaults possible, enable verbose output for details
   Process common templates
     'Informal.docx' (Signature INI index #1)
       Check permissions
@@ -649,24 +487,16 @@ Mailbox alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
         Denies
           No group match for current mailbox, checking current user specific denies
           Group: Mailbox and current user are not member of any denied group
-          First email address match: alex.alien@galactic.test (current mailbox)
+          No email address match for current mailbox, checking current user specific denies
+          Email address: Mailbox and current user do not have any denied email address
           Replacement variable: No deny replacement variable evaluates to true
-        Do not use template as there is no allow or at least one deny
+        Use template as there is at least one allow and no deny
+      Outlook signature name: 'Test all default replacement variables'
+      Signature INI index #3 already processed before with higher priority mailbox
+        Not overwriting signature. Consider using parameter MailboxSpecificSignatureNames.
   Process group specific templates
-    'Formal HR.docx' (Signature INI index #4)
-      Check permissions
-        Allows
-          No group match for current mailbox, checking current user specific allows
-          Group: Mailbox and current user are not member of any allowed group
-        Do not use template as there is no allow or at least one deny
   Process mailbox specific templates
-    'Test all default replacement variables.docx' (Signature INI index #3)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Informal Delegate.docx' (Signature INI index #6)
+    'Informal Delegate.docx' (Signature INI index #4)
       Check permissions
         Allows
           First email address match: alex.alien@galactic.test (current mailbox)
@@ -694,31 +524,19 @@ Mailbox alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
       Copy signature files to 'C:\Users\bobbybusy\AppData\Roaming\Microsoft\Signatures'
       Remove temporary files
       Set signature as default for reply/forward messages (Outlook profile 'Outlook')
-    'Informal Delegate.docx' (Signature INI index #7)
+    'Informal Shared.docx' (Signature INI index #5)
       Check permissions
         Allows
           No email address match for current mailbox, checking current user specific allows
           Email address: Mailbox and current user do not have any allowed email address
         Do not use template as there is no allow or at least one deny
-    'Informal Delegate.docx' (Signature INI index #8)
+    'Formal Shared.docx' (Signature INI index #6)
       Check permissions
         Allows
           No email address match for current mailbox, checking current user specific allows
           Email address: Mailbox and current user do not have any allowed email address
         Do not use template as there is no allow or at least one deny
-    'Informal Shared.docx' (Signature INI index #9)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Formal Shared.docx' (Signature INI index #10)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Formal Delegate.docx' (Signature INI index #11)
+    'Formal Delegate.docx' (Signature INI index #7)
       Check permissions
         Allows
           First email address match: alex.alien@galactic.test (current mailbox)
@@ -746,28 +564,16 @@ Mailbox alex.alien@setoutlooksignaturesdemo.onmicrosoft.com
       Copy signature files to 'C:\Users\bobbybusy\AppData\Roaming\Microsoft\Signatures'
       Remove temporary files
       Set signature as default for new messages (Outlook profile 'Outlook')
-    'Formal Delegate.docx' (Signature INI index #12)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Formal Delegate.docx' (Signature INI index #13)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
   Process replacementvariable specific templates
 
-Mailbox execboard.office@setoutlooksignaturesdemo.onmicrosoft.com
+Mailbox execboard.office@galactic.test
   Mailbox is member of license group: True
   Extract SMTP addresses
   Calculate replacement variables
     'C:\Demo\Config\custom replacement variables.ps1'
     Export available images
   Download roaming signatures from Exchange Online
-    Download possible, Upload/set defaults possible, enable verbose output for details
+    Download not possible, Upload/set defaults possible, enable verbose output for details
   Process common templates
     'Informal.docx' (Signature INI index #1)
       Check permissions
@@ -812,38 +618,14 @@ Mailbox execboard.office@setoutlooksignaturesdemo.onmicrosoft.com
       Signature INI index #3 already processed before with higher priority mailbox
         Not overwriting signature. Consider using parameter MailboxSpecificSignatureNames.
   Process group specific templates
-    'Formal HR.docx' (Signature INI index #4)
-      Check permissions
-        Allows
-          No group match for current mailbox, checking current user specific allows
-          Group: Mailbox and current user are not member of any allowed group
-        Do not use template as there is no allow or at least one deny
   Process mailbox specific templates
-    'Test all default replacement variables.docx' (Signature INI index #3)
+    'Informal Delegate.docx' (Signature INI index #4)
       Check permissions
         Allows
           No email address match for current mailbox, checking current user specific allows
           Email address: Mailbox and current user do not have any allowed email address
         Do not use template as there is no allow or at least one deny
-    'Informal Delegate.docx' (Signature INI index #6)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Informal Delegate.docx' (Signature INI index #7)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Informal Delegate.docx' (Signature INI index #8)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Informal Shared.docx' (Signature INI index #9)
+    'Informal Shared.docx' (Signature INI index #5)
       Check permissions
         Allows
           First email address match: executiveboard.office@galactic.test (current mailbox)
@@ -870,7 +652,7 @@ Mailbox execboard.office@setoutlooksignaturesdemo.onmicrosoft.com
         Requirements are not met, see prior mailbox specific messages for details.
       Copy signature files to 'C:\Users\bobbybusy\AppData\Roaming\Microsoft\Signatures'
       Remove temporary files
-    'Formal Shared.docx' (Signature INI index #10)
+    'Formal Shared.docx' (Signature INI index #6)
       Check permissions
         Allows
           First email address match: executiveboard.office@galactic.test (current mailbox)
@@ -897,19 +679,7 @@ Mailbox execboard.office@setoutlooksignaturesdemo.onmicrosoft.com
         Requirements are not met, see prior mailbox specific messages for details.
       Copy signature files to 'C:\Users\bobbybusy\AppData\Roaming\Microsoft\Signatures'
       Remove temporary files
-    'Formal Delegate.docx' (Signature INI index #11)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Formal Delegate.docx' (Signature INI index #12)
-      Check permissions
-        Allows
-          No email address match for current mailbox, checking current user specific allows
-          Email address: Mailbox and current user do not have any allowed email address
-        Do not use template as there is no allow or at least one deny
-    'Formal Delegate.docx' (Signature INI index #13)
+    'Formal Delegate.docx' (Signature INI index #7)
       Check permissions
         Allows
           No email address match for current mailbox, checking current user specific allows
