@@ -322,4 +322,3 @@ As markdown code block for use in frontmatter:
 If input is unclear, ask one question.
 
 After English version, stop before German version.
-``

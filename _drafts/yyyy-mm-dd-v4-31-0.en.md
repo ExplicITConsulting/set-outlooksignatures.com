@@ -1,0 +1,187 @@
+---
+layout: "post"
+lang: "en"
+locale: "en"
+title: "Set-OutlookSignatures v4.31.0: Better Global Add-in Support"
+description: "v4.31.0 improves localisation, task pane usability, deployment checks, and custom Outlook signature handling."
+slug: "v4-31-0"
+published: true
+tags: ["new release"]
+show_sidebar: true
+sitemap_priority: 0.5
+sitemap_changefreq: monthly
+---
+
+Set-OutlookSignatures v4.31.0 strengthens the Outlook add-in for multinational Microsoft 365 environments by improving localisation, task pane usability, deployment validation, and custom signature handling. The release is especially relevant for organisations where Outlook is used across different languages, regions, sender addresses, and signature decision paths.
+
+The most visible change is localisation support in the Outlook add-in task pane. The task pane can now automatically adapt to the display language of Outlook, supports 379 locales across 101 regional and script variations and 86 base languages, and adds bidirectional layout support for left-to-right and right-to-left languages.
+
+This matters because enterprise signature management is rarely limited to one language or one mailbox pattern. A single tenant may include users in different countries, shared mailboxes, delegated sending scenarios, secondary SMTP addresses, and different regional legal or branding requirements. v4.31.0 brings the add-in experience closer to that reality.
+
+## A better task pane for multilingual Outlook environments
+
+In international Microsoft 365 tenants, Outlook display language is not a cosmetic detail. It affects user confidence, support effort, and how reliably people interact with add-ins.
+
+Before v4.31.0, the task pane experience was less adaptable to multilingual environments. Users could still work with signatures, but the add-in interface did not reflect the full range of language and direction requirements often found in global organisations.
+
+After v4.31.0, the Outlook add-in task pane can adapt to the Outlook display language and supports bidirectional layouts. This gives users a more natural interface whether they work in English, German, Arabic, Hebrew, or another supported language and region combination.
+
+For administrators, this reduces the need to explain a single-language add-in experience to a multilingual user base. For users, it makes manual signature selection and previewing more understandable in the context of their Outlook environment.
+
+## Language-aware custom behaviour
+
+The localisation improvements are not only visual. v4.31.0 also adds language-related properties for use with `CUSTOM_RULES_CODE`.
+
+New values in `customRulesProperties` include:
+
+- `outlookDisplayLanguage`: the display language returned by `Office.context.displayLanguage`, usually in a format such as `en-GB` or `de-AT`
+- `taskpaneDisplayLanguage`: the display language selected in the task pane, or an empty string when the task pane did not trigger the logic
+- `taskpaneSelectedSignatureName`: the name of the signature manually selected by the user in the task pane, or an empty string when “Choose automatically” is selected
+- `signatureBodyBeforeCustomRules`: the signature body before `CUSTOM_RULES_CODE` runs, allowing the code to modify the actual HTML or plain text signature content
+- `getSignautureBody`: a function to retrieve the actual content of a specific signature
+
+The distinction between Outlook display language and task pane display language is useful in real deployments. Outlook may provide one language, while the user may deliberately select another language in the task pane. Making both values available allows signature logic to respond more precisely instead of assuming that one language setting explains the whole user context.
+
+Sample code has also been added to `.\sample code\CustomRulesCode.js`, including examples for:
+
+- setting a signature for an alias or secondary SMTP address
+- prepending a notice to a signature for sensitive messages
+- making the task pane automatically adapt to the display language of Outlook
+
+> 💡 **Best Practice:** Test the Outlook add-in task pane with representative Outlook display languages and at least one right-to-left language before broad deployment, especially if signatures contain regional legal text, language-specific banners, or custom rule logic.
+
+## Task pane selection is now easier to understand
+
+v4.31.0 improves the signature selection experience in the task pane.
+
+The task pane now includes a signature gallery with overlay buttons. Users can visually select the signature to apply instead of relying only on name-based selection. This is useful where several signatures have similar names but different layouts, campaign banners, disclaimers, or regional variants.
+
+The task pane preview has also been enhanced:
+
+- when “Choose automatically” is selected, the automatically selected signature is shown
+- `CUSTOM_RULES_CODE` runs before the preview is rendered
+- the preview shows the final signature resulting from `customRulesResultSignatureName` or `customRulesResultSignatureBody`
+
+Before this improvement, a user could see or select something in the task pane that did not fully represent the final signature logic. After v4.31.0, the preview is closer to the signature that will actually be inserted into the message.
+
+That is a practical improvement for support teams as well. When users ask why a certain signature appears, the preview now reflects more of the real decision path instead of showing only an intermediate result.
+
+## Consistent handling for automatic and manual signature paths
+
+v4.31.0 also changes when `CUSTOM_RULES_CODE` runs.
+
+Previously, this code was associated with launch-event-driven behaviour. It could adjust signature selection or content when Outlook automatically applied a signature, but manual task pane selection was a different path.
+
+With v4.31.0, `CUSTOM_RULES_CODE` also runs when a user manually selects a signature in the task pane.
+
+This allows scenarios such as:
+
+- prepending a notice to a signature for sensitive messages
+- appending content based on message properties
+- modifying the signature body before insertion
+- applying alias-specific or secondary SMTP address logic
+- using task pane language information in the final signature decision
+
+The change is important because manual selection no longer has to bypass organisational rules. If an enterprise uses custom logic to make signatures align with sender context, language, sensitivity, or message properties, that logic can now apply more consistently.
+
+Existing custom rule code should be reviewed before deployment. Code that previously assumed it only ran during launch events may now also run during manual task pane operations.
+
+An advanced task pane option allows users to disable `CUSTOM_RULES_CODE` for manual operations. This can be deactivated centrally through `CUSTOM_RULES_CODE_DEACTIVATABLE` in `run_before_deployment.ps1`.
+
+## Stronger deployment checks for the Outlook add-in
+
+The deployment helper `run_before_deployment.ps1` has been enhanced.
+
+It no longer only displays `manifest.xml` configuration differences. It now checks all configuration values, including `CUSTOM_RULES_CODE`.
+
+This requires a `set-outlooksignatures.config.json` file on the web server. The file is created automatically during the first add-in deployment with this release.
+
+This change helps administrators detect configuration drift before deployment. That is especially useful when add-in behaviour depends on configuration values that are not visible by only comparing the manifest.
+
+The add-in log output now also includes timestamps. This makes it easier to identify long-running operations, which is particularly helpful when `CUSTOM_RULES_CODE` is used.
+
+## Documentation now better supports architecture and security reviews
+
+v4.31.0 expands the documentation around architecture, security, implementation, and deployment.
+
+Set-OutlookSignatures now includes:
+
+- an architecture diagram in the architecture considerations documentation
+- a security diagram in the security considerations documentation
+- an architecture and security requirements section in the implementation approach document
+- a refactored implementation approach that separates neutral requirements from product-specific recommendations
+
+The Outlook add-in documentation now includes:
+
+- troubleshooting tips and a deployment diagram for configuration and deployment
+- workflow diagrams with configuration references for launch event and task pane usage
+- a workflow diagram describing `CUSTOM_RULES_CODE` possibilities
+
+This is useful in enterprise rollout work. Technical reviewers usually need more than a feature list. They need to understand where the components run, what is configured where, how deployment works, and which controls exist for security and operations.
+
+## Set-OutlookSignatures engine and template updates
+
+The core Set-OutlookSignatures solution also receives compatibility and maintenance improvements.
+
+The Word Interop assembly now uses late binding. Instead of the script loading the DLL directly, the Windows COM interface loads it through Office registry entries. This allows Windows to automatically select the correct DLL version when multiple Office versions are installed in parallel.
+
+Several dependencies and data sources have been updated:
+
+- `address-formatter` updated to commit `7eb7a5b`
+- address-formatting database updated to commit `836de3e`
+- `libphonenumber-csharp` updated to `v9.0.35`
+- `MSAL.Net` updated to `v4.86.1`
+- `PreMailer.Net` updated to `v2.7.3`
+- `@azure/msal-browser` updated to `v5.17.1`
+
+Sample templates have also been updated to a new layout and now use `$MPostalAddressCompany$` instead of a fixed fictitious address.
+
+These are not headline features, but they matter in real deployments. Address formatting, phone number handling, authentication libraries, HTML preparation, and Office integration all affect whether signatures render correctly and run reliably across different endpoints.
+
+## New articles and FAQ guidance
+
+The release adds new content around common enterprise signature scenarios:
+
+- Flexible permissions management for delegates and cover configurations
+- Manual email signatures cost more than you think
+- SMTP alias signatures in Outlook
+- FAQ guidance on applying signatures for alias or secondary SMTP addresses
+
+These additions reflect the same direction as the release itself. Signature management needs to account for how people actually send mail in Microsoft 365, including delegated access, cover configurations, aliases, secondary SMTP addresses, and manual Outlook add-in usage.
+
+## What changes in practice
+
+Before v4.31.0, global Outlook add-in deployments had more separate paths to consider: language behaviour, manual task pane selection, automatic launch-event handling, preview behaviour, and deployment configuration checks.
+
+After v4.31.0, those paths are more closely aligned. The task pane is better suited to multilingual environments, users can select signatures visually, previews better reflect the final applied signature, custom rules can run for both automatic and manual operations, and deployment checks cover more than the manifest.
+
+Set-OutlookSignatures, the Benefactor Circle add-on, and the Outlook add-in are now available in v4.31.0. For organisations using the add-in across countries, business units, shared mailboxes, aliases, or language-specific signature variants, this release is a practical update to review and test.
+
+For the complete list of changes, including dependency updates, documentation additions, configuration improvements, and Outlook add-in changes, see the [full changelog](https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/blob/main/docs/CHANGELOG.md).
+
+<!--
+LinkedIn Post:
+
+Set-OutlookSignatures v4.31.0 is now available for the core solution, the Benefactor Circle add-on, and the Outlook add-in. This release improves multilingual Outlook add-in usage with broader localisation support, bidirectional task pane handling, a visual signature gallery, better previews, stronger deployment checks, and expanded architecture and security documentation.
+
+It also makes manual task pane selection more consistent with automatic signature handling, including scenarios where signature logic depends on aliases, sensitivity-related notices, language settings, or signature body changes. These are the kinds of details that matter when Outlook signatures are deployed across countries, departments, shared mailboxes, and different sender contexts.
+
+The release is less about one isolated feature and more about reducing operational gaps between configuration, user experience, and the final signature applied in Outlook.
+
+https://set-outlooksignatures.com/blog/2026/07/19/v4-31-0
+-->
+
+## Turn every small email moment into a professional advantage
+
+Email signatures and out-of-office replies may seem minor, but think about how often people see them.
+
+We help organizations centrally manage and standardize these touchpoints across all users — **unified Outlook branding everywhere, with zero external data exposure.** No manual effort, no inconsistencies, no data leaving your environment. With Set-OutlookSignatures, every email becomes a consistent, secure, and fully controlled brand experience.
+
+👉 See what’s possible for your email setup  
+→ [See how it works (2 min)](https://set-outlooksignatures.com/)
+
+👉 Want to try it yourself?  
+→ [Quickstart](https://set-outlooksignatures.com/quickstart)
+
+_Not responsible for email setup in your company?_  
+Share this article with your IT department or marketing team, they’ll thank you for it.
