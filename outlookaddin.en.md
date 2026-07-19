@@ -89,71 +89,68 @@ sitemap_changefreq: weekly
 
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-full-tablet">
-    <div class="columns is-multiline">
-      <div class="column is-half-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
-          <div style="display: flex; gap: 0.75em;">
-            🌐
-            <div>
-              <p><b>Web (Exchange Online), New Outlook for Windows/Mac</b></p>
-              <ul>
-                <li><b>Emails:</b> "Message" tab > "Apps" icon</li>
-                <li><b>Appointments:</b> Ribbon > "…" menu</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-half-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
-          <div style="display: flex; gap: 0.75em;">
-            💻
-            <div>
-              <p><b>Classic Outlook for Windows and Mac</b></p>
-              <ul>
-                <li><b>Emails:</b> "Message" tab > "All apps" icon</li>
-                <li><b>Appointments:</b> "Meeting" tab > "All apps" icon</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-half-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
-          <div style="display: flex; gap: 0.75em;">
-            🏢
-            <div>
-              <p><b>Outlook for the web (on-prem)</b></p>
-              <ul>
-                <li><b>Compose:</b> Lower right corner of the window</li>
-                <li><b>Appointments:</b> Right side of the top menu bar</li>
-                <li><b>Read mode:</b> Left of the reply button</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-half-desktop is-half-tablet is-full-mobile">
-        <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
-          <div style="display: flex; gap: 0.75em;">
-            📱
-            <div>
-              <p><b>Mobile (iOS & Android)</b></p>
-              <ul>
-                <li><b>Read mode:</b> Three dots ("…" or "⋮") in the header</li>
-                <li><b>Compose:</b> Signatures are added automatically</li>
-                <li><b>Note:</b> Task panes are only supported in Read mode on mobile</li>
-              </ul>
-            </div>
+    <div class="column is-full pb-3">
+      <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Blue;">
+        <div style="display: flex; gap: 0.75em;">
+          🌐
+          <div>
+            <p><b>Web (Exchange Online), New Outlook for Windows/Mac</b></p>
+            <ul>
+              <li><b>Emails:</b> "Message" tab > "Apps" icon</li>
+              <li><b>Appointments:</b> Ribbon > "…" menu</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
+    <div class="column is-full pb-3">
+      <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Blue;">
+        <div style="display: flex; gap: 0.75em;">
+          💻
+          <div>
+            <p><b>Classic Outlook for Windows and Mac</b></p>
+            <ul>
+              <li><b>Emails:</b> "Message" tab > "All apps" icon</li>
+              <li><b>Appointments:</b> "Meeting" tab > "All apps" icon</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-full pb-3">
+      <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Blue;">
+        <div style="display: flex; gap: 0.75em;">
+          🏢
+          <div>
+            <p><b>Outlook for the web (on-prem)</b></p>
+            <ul>
+              <li><b>Compose:</b> Lower right corner of the window</li>
+              <li><b>Appointments:</b> Right side of the top menu bar</li>
+              <li><b>Read mode:</b> Left of the reply button</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-full">
+      <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Blue;">
+        <div style="display: flex; gap: 0.75em;">
+          📱
+          <div>
+            <p><b>Mobile (iOS & Android)</b></p>
+            <ul>
+              <li><b>Read mode:</b> Three dots ("…" or "⋮") in the header</li>
+              <li><b>Compose:</b> Signatures are added automatically</li>
+              <li><b>Note:</b> Task panes are only supported in Read mode on mobile</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </div>
-  <div class="column is-half-desktop is-full-tablet">
-    <div class="box has-background-white-bis" style="height: 100%; display: flex; align-items: center; justify-content: center;">
-      <img src="/assets/gif/outlookaddin usage/outlookaddin usage.gif" alt="Outlook Add-in Usage Demo" style="max-height: 100%; width: auto;">
-    </div>
+  <div class="column is-half-desktop is-full-tablet" style="display: flex; align-items: flex-start; justify-content: center;">
+    <img src="{{ '/assets/gif/outlookaddin usage/outlookaddin usage.gif' | relative_url }}" alt="Outlook Add-in Usage Demo" style="max-width: 100%; height: auto;">
   </div>
 </div>
 
