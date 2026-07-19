@@ -148,10 +148,10 @@ sitemap_changefreq: weekly
       </div>
     </div>
   </div>
-  <div class="column is-half-desktop is-full-tablet" style="position: relative;">
+  <div class="column is-half-desktop is-full-tablet" style="display: flex; align-items: stretch;">
     <img src="/assets/gif/outlookaddin usage/outlookaddin usage.gif" 
          alt="Outlook Add-in Usage Demo" 
-         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; padding: 0.75rem;">
+         style="width: 100%; object-fit: contain; max-height: 100%; padding: 0.75rem; margin: auto;">
   </div>
 </div>
 
