@@ -83,8 +83,8 @@ sitemap_changefreq: weekly
       <a href="https://set-outlooksignatures.com/quickstart" 
          class="button is-link is-normal has-text-weight-bold is-flex-direction-column" 
          style="margin-top: auto; min-height: 4.5rem; width: 100%; display: flex; align-items: center; justify-content: center;">
-        <span>Try it Yourself</span>
-        <span><small>Ideal for IT administrators and evaluators. No signup required.</small></span>
+        <span>Try It Yourself</span>
+        <span><small>Ideal for IT Administrators and Evaluators. No Signup Required.</small></span>
       </a>
     </div>
     <div class="column is-half" style="display: flex; flex-direction: column;">
@@ -94,7 +94,7 @@ sitemap_changefreq: weekly
          class="button is-link is-normal has-text-black has-text-weight-bold is-flex-direction-column" 
          style="margin-top: auto; min-height: 4.5rem; width: 100%; background-image: linear-gradient(160deg, darkgoldenrod, goldenrod, palegoldenrod, goldenrod, darkgoldenrod); border: none; display: flex; align-items: center; justify-content: center;">
         <span>Schedule Interactive Demo</span>
-        <span><small>Ideal for executives and decision-makers from security, IT, and marketing.</small></span>
+        <span><small>Ideal for Executives and Decision-Makers from Security, IT, and Marketing.</small></span>
       </a>
     </div>
   </div>
