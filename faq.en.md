@@ -1301,7 +1301,7 @@ ConvertDnToCanonicalObject 'CN=Doe\, Jane,OU=OU B,OU=OU A,DC=example,DC=com'
 # LeafValue         : Doe, Jane
 ```
 
-Here is the functin code:
+Here is the function code:
 
 ```powershell
 function ConvertDnToCanonicalObject {
