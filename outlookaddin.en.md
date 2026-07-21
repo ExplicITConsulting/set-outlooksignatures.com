@@ -86,7 +86,7 @@ sitemap_changefreq: weekly
 
 <h2 id="usage">Usage</h2>
 <div class="columns is-multiline">
-  <div class="column is-third-desktop is-full-tablet" style="position: relative;">
+  <div class="column is-one-third-desktop is-full-tablet" style="position: relative;">
     <!-- DESKTOP ONLY: Your original working absolute positioning -->
     <img src="/assets/gif/outlookaddin usage/outlookaddin usage.gif" 
         alt="Outlook Add-in Usage Demo" 
