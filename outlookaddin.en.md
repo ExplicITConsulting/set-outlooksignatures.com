@@ -110,7 +110,7 @@ sitemap_changefreq: weekly
   <p>Beyond standard default signatures, advanced routing can be implemented via <a href="#custom-rules-code">CUSTOM_RULES_CODE</a>. This feature allows organizations to execute custom JavaScript logic. It runs when when triggered by background launch events and when being executed manually — for instance, when a user opens the task pane to explicitly choose a signature or override settings. This flexibility allows the code to dynamically evaluate properties of the current Outlook item—such as checking the selected sender identity to swap in a brand-matched signature for secondary SMTP/alias addresses, or reading sensitivity labels — regardless of whether the action happens on creation or during a manual review.</p>
   </div>
 </div>
-
+<p>&nbsp;</p>
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
