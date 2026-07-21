@@ -266,7 +266,7 @@ sitemap_changefreq: weekly
 </ul>
 <details id="procurement-outsourcer" class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
-    <strong>Abwicklung über externe Einkaufsdienstleister (Procurement-Outsourcer)</strong>
+    <strong>Klicken für Details zur Abwicklung über externe Einkaufsdienstleister (Procurement-Outsourcer)</strong>
   </summary>
   <p>Unsere Preise für das Benefactor Circle Add-on basieren auf effizienten direkten Beschaffungsprozessen. Auch die Zusammenarbeit mit externen Einkaufsdienstleistern verläuft im Regelfall reibungslos.</p>
   <p>Gleichzeitig zeigt sich auf Basis unserer langjährigen Projekterfahrungen, dass bestimmte Beschaffungsmodelle bzw. Konstellationen mit einzelnen externen Dienstleistern systematisch zu redundanten administrativen Aufwänden führen. Diese äußern sich typischerweise in einem bis zu 8-fach erhöhten Kommunikationsaufwand sowie einer bis zu 2,5-fach verlängerten Durchlaufzeit.</p>

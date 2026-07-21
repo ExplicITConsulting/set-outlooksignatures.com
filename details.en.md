@@ -277,7 +277,7 @@ The security model of Set-OutlookSignatures and the <a href="/benefactorcircle">
 
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
-    <strong>Detailed Entra ID app permissions</strong>
+    <strong>Click for detailed Entra ID app permissions</strong>
   </summary>
   <div class="table-container">
     <table class="table is-hoverable is-fullwidth">
@@ -464,7 +464,7 @@ Security reviews often share a basic set of questions. The overview below provid
 
 <details class="box p-0">
   <summary class="has-text-weight-bold" style="cursor: pointer;">
-    <strong>Basic questions and answers</strong>
+    <strong>Click for basic questions and answers</strong>
   </summary>
   <p><a href="https://set-outlooksignatures.com">Set-OutlookSignatures</a> is the free and open-source community project for centrally generating and deploying Outlook email signatures.</p>
   <p>The <a href="https://set-outlooksignatures.com/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a> is a commercial proprietary add-on that extends Set-OutlookSignatures with additional enterprise capabilities, offered by <a href="https://explicitconsulting.at">ExplicIT Consulting</a>.</p>
