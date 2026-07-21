@@ -15,6 +15,8 @@ hide_gh_sponsor: true
 permalink: "/outlookaddin"
 redirect_from:
   - "/outlookaddin/"
+  - "/addin"
+  - "/addin/"
 sitemap_priority: 0.8
 sitemap_changefreq: weekly
 ---
@@ -83,71 +85,7 @@ sitemap_changefreq: weekly
 </div>
 
 <h2 id="usage">Usage</h2>
-<p>From an end-user perspective, basically nothing needs to be done: When writing a new email, answering an email, or creating a new appointment, the add-in automatically adds the corresponding default signature.</p>
-<p>This <strong>automatic application is fundamentally powered by Outlook launch events</strong> (such as <code>OnNewMessageCompose</code>, <code>OnNewAppointmentOrganizer</code>, <code>OnMessageCompose</code>, <code>OnMessageSend</code>, and others). These launch events are <strong>fully configurable and can be tailored by host application and platform</strong> (allowing different behaviors depending on whether users are on Outlook for Windows, Mac, or the web). The add-in listens for these specific configured triggers in the background, allowing it to seamlessly evaluate the context and inject the correct signature the exact moment an action is initiated, without requiring any manual user intervention.</p>
-<p>A task pane is available to manually choose signatures, preview items, or override settings for debug logging:</p>
-
 <div class="columns is-multiline">
-  <div class="column is-half-desktop is-full-tablet">
-    <div class="column is-full pb-3">
-      <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Blue;">
-        <div style="display: flex; gap: 0.75em;">
-          🌐
-          <div>
-            <p><b>Web (Exchange Online), New Outlook for Windows/Mac</b></p>
-            <ul>
-              <li><b>Emails:</b> "Message" tab > "Apps" icon</li>
-              <li><b>Appointments:</b> Ribbon > "…" menu</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column is-full pb-3">
-      <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Blue;">
-        <div style="display: flex; gap: 0.75em;">
-          💻
-          <div>
-            <p><b>Classic Outlook for Windows and Mac</b></p>
-            <ul>
-              <li><b>Emails:</b> "Message" tab > "All apps" icon</li>
-              <li><b>Appointments:</b> "Meeting" tab > "All apps" icon</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column is-full pb-3">
-      <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Blue;">
-        <div style="display: flex; gap: 0.75em;">
-          🏢
-          <div>
-            <p><b>Outlook for the web (on-prem)</b></p>
-            <ul>
-              <li><b>Compose:</b> Lower right corner of the window</li>
-              <li><b>Appointments:</b> Right side of the top menu bar</li>
-              <li><b>Read mode:</b> Left of the reply button</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column is-full">
-      <div class="box has-background-white-bis has-text-black" style="border-top: 4px solid Blue;">
-        <div style="display: flex; gap: 0.75em;">
-          📱
-          <div>
-            <p><b>Mobile (iOS & Android)</b></p>
-            <ul>
-              <li><b>Read mode:</b> Three dots ("…" or "⋮") in the header</li>
-              <li><b>Compose:</b> Signatures are added automatically</li>
-              <li><b>Note:</b> Task panes are only supported in Read mode on mobile</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="column is-half-desktop is-full-tablet" style="position: relative;">
     <!-- DESKTOP ONLY: Your original working absolute positioning -->
     <img src="/assets/gif/outlookaddin usage/outlookaddin usage.gif" 
@@ -159,6 +97,72 @@ sitemap_changefreq: weekly
         alt="Outlook Add-in Usage Demo" 
         class="is-hidden-desktop"
         style="width: 100%; height: auto; display: block; padding: 0.75rem;">
+  </div>
+  <div class="column is-half-desktop is-full-tablet">
+    <p>From an end-user perspective, basically nothing needs to be done: When writing a new email, answering an email, or creating a new appointment, the add-in automatically adds the corresponding default signature.</p>
+    <p>This <strong>automatic application is fundamentally powered by Outlook launch events</strong> (such as <code>OnNewMessageCompose</code>, <code>OnNewAppointmentOrganizer</code>, <code>OnMessageCompose</code>, <code>OnMessageSend</code>, and others). These launch events are <strong>fully configurable and can be tailored by host application and platform</strong> (allowing different behaviors depending on whether users are on Outlook for Windows, Mac, or the web). The add-in listens for these specific configured triggers in the background, allowing it to seamlessly evaluate the context and inject the correct signature the exact moment an action is initiated, without requiring any manual user intervention.</p>
+    <p>A task pane is available to manually choose signatures, preview items, or override settings for debug logging:</p>
+  </div>
+</div>
+
+<div class="columns is-multiline">
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
+      <div style="display: flex; gap: 0.75em;">
+        🌐
+        <div>
+          <p><b>Web (Exchange Online), New Outlook for Windows/Mac</b></p>
+          <ul>
+            <li><b>Emails:</b> "Message" tab > "Apps" icon</li>
+            <li><b>Appointments:</b> Ribbon > "…" menu</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
+      <div style="display: flex; gap: 0.75em;">
+        💻
+        <div>
+          <p><b>Classic Outlook for Windows and Mac</b></p>
+          <ul>
+            <li><b>Emails:</b> "Message" tab > "All apps" icon</li>
+            <li><b>Appointments:</b> "Meeting" tab > "All apps" icon</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
+      <div style="display: flex; gap: 0.75em;">
+        🏢
+        <div>
+          <p><b>Outlook for the web (on-prem)</b></p>
+          <ul>
+            <li><b>Compose:</b> Lower right corner of the window</li>
+            <li><b>Appointments:</b> Right side of the top menu bar</li>
+            <li><b>Read mode:</b> Left of the reply button</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column is-half-desktop is-half-tablet is-full-mobile">
+    <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
+      <div style="display: flex; gap: 0.75em;">
+        📱
+        <div>
+          <p><b>Mobile (iOS & Android)</b></p>
+          <ul>
+            <li><b>Read mode:</b> Three dots ("…" or "⋮") in the header</li>
+            <li><b>Compose:</b> Signatures are added automatically</li>
+            <li><b>Note:</b> Task panes are only supported in Read mode on mobile</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
