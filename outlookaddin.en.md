@@ -86,7 +86,7 @@ sitemap_changefreq: weekly
 
 <h2 id="usage">Usage</h2>
 <div class="columns is-multiline">
-  <div class="column is-one-third-desktop is-full-tablet" style="position: relative;">
+  <div class="column is-two-fifths-desktop is-full-tablet" style="position: relative;">
     <!-- DESKTOP ONLY: Your original working absolute positioning -->
     <img src="/assets/gif/outlookaddin usage/outlookaddin usage.gif" 
         alt="Outlook Add-in Usage Demo" 
@@ -98,7 +98,7 @@ sitemap_changefreq: weekly
         class="is-hidden-desktop"
         style="width: 100%; height: auto; display: block; padding: 0.75rem;">
   </div>
-  <div class="column is-two-thirds-desktop is-full-tablet">
+  <div class="column is-three-fifths-desktop is-full-tablet">
     <p>From an end-user perspective, basically nothing needs to be done: When writing a new email, answering an email, or creating a new appointment, the add-in automatically adds the corresponding default signature.</p>
     <p>This <strong>automatic application</strong> is fundamentally powered by Outlook launch events (such as <code>OnNewMessageCompose</code>, <code>OnNewAppointmentOrganizer</code>, <code>OnMessageCompose</code>, <code>OnMessageSend</code>, and others). These launch events are <strong>fully configurable and can be tailored by host application and platform</strong> (allowing different behaviors depending on whether users are on Outlook for Windows, Mac, or the web).<br>The add-in listens for these specific configured triggers in the background, allowing it to seamlessly evaluate the context and inject the correct signature the exact moment an action is initiated, without requiring any manual user intervention.</p>
     <p>A task pane is available to manually choose signatures, preview items, or override settings for debug logging. As the only component exposed to everyday employees, the Outlook add-in task pane is designed to feel completely native. It automatically follows Outlook's display language, while still allowing users to choose a language manually. The add-in <a href="/languages">supports more than 370 locales across over 80 base languages</a>, various scripts, and both text directions.</p>
