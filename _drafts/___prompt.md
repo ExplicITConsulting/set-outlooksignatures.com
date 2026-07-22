@@ -268,8 +268,7 @@ Rules:
 
 End with an unresolved mismatch or implication.
 
-Include:
-https://set-outlooksignatures.com/blog/year/month/day/slug
+Include the full link to the blog article (template EN: https://set-outlooksignatures.com/blog/<year>/<month>/<day>/<slug>; template DE https://set-outlooksignatures.com/de/<blog>/<year>/<month>/<day>/<slug>)
 
 No hashtags.
 -->

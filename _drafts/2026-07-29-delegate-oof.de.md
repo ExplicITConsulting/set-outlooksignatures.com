@@ -385,7 +385,7 @@ Dies ist besonders hilfreich, wenn ein freigegebenes Postfach eine temporäre au
 
 Dieser Artikel zeigt ein praxisnahes Modell, mit dem die Abwesenheitsverwaltung an ausgewählte reguläre Endbenutzer delegiert werden kann. Diese Benutzer werden nicht zu Exchange-Administratoren gemacht. Sie erhalten lediglich die konkreten RBAC-Rolleneinträge, die erforderlich sind, um automatische Antworten für Postfächer innerhalb ihres Abteilungsbereichs zu verwalten.
 
-https://set-outlooksignatures.com/blog/2026/07/29/delegate-oof
+https://set-outlooksignatures.com/de/blog/2026/07/29/delegate-oof
 -->
 
 ## Machen Sie jeden kleinen E-Mail-Moment zu einem professionellen Vorteil
