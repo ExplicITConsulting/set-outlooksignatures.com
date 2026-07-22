@@ -2,9 +2,9 @@
 layout: "post"
 lang: "en"
 locale: "en"
-title: "How to Keep Users from Adding, Editing, or Removing Signatures"
-description: "Learn how to restrict signature changes in Classic Outlook, New Outlook, Web, and Mobile, and discover better alternatives."
-slug: "restrict-outlook-signature-changes"
+title: "How to Prevent Outlook Signature Changes"
+description: "Understand Outlook’s signature controls and enforce the correct signature across desktop, web, Mac and mobile clients at send time."
+slug: "restrict-signature-changes"
 published: true
 tags:
 show_sidebar: true
@@ -12,106 +12,112 @@ sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
 
-Maintaining a consistent corporate identity across an entire organization can be a challenge, especially when users frequently modify, use outdated, or completely remove their email signatures. To enforce brand guidelines and ensure legal compliance, IT administrators often need to restrict users from changing their signature settings.
+Outlook does not provide one administrative control that prevents users from changing signatures across Classic Outlook, New Outlook, Outlook on the web, Mac and mobile clients. More importantly, even where signature settings can be restricted, users can still alter or remove an inserted signature while composing a message.
 
-However, the capability to lock down these settings varies significantly depending on which version of Outlook your organization uses. Below is a detailed technical overview of how to restrict signature modifications across different Outlook platforms, the limitations you will encounter, and the best alternative approaches.
+This distinction matters in enterprise environments. Disabling a signature editor controls part of the user interface; it does not necessarily control the message that leaves the organisation. A dependable implementation therefore has to address two separate requirements:
 
-### Classic Outlook for Windows
+1. Reduce or remove user-managed signature options in each Outlook client.
+2. Apply the correct signature after the user has finished composing the message.
 
-You can disable GUI elements so that users cannot add, edit and remove signatures in Outlook by using the 'Do not allow signatures for email messages' Group Policy Object (GPO) setting.
+The available controls differ considerably between Outlook platforms.
 
-Caveats are:
+#### Classic Outlook for Windows
 
-- Users can still add, edit and remove signatures in the file system
-- Default signatures are no longer automatically added when a new email is created, or you forward/reply an email. Users have to choose the correct signature manually.
-- The GPO setting seems not to work with some newer versions of Outlook. In this case, set the registry key directly.
+Classic Outlook offers the most extensive administrative controls, but each option has operational consequences.
 
-As an alternative, you may consider one or both of the following options:
+The **Do not allow signatures for email messages** Group Policy setting disables the Outlook interface used to add, edit and remove signatures. It does not protect the underlying signature files, however. Users may still change or delete those files directly in the file system.
 
-- Run Set-OutlookSignatures regularly (every two hours, for example) and use the 'WriteProtect' option in the INI file
-- Use the 'Disable Items in User Interface' Group Policy Object (GPO) setting, and consider the following values to disable specific signature-related parts of the user interface:
-  - 5608: 'SignatureInsertMenu', the dropdown list/button allowing you to select an existing signature to add to an email, and to open the 'SignatureGallery'.
-  - 22965: 'SignatureGallery', the list of signatures in the 'SignatureInsertMenu'. Prohibits selecting another signature than the default one to add to an email, but still allows access to 'SignaturesStationeryDialog'.
-  - 3766: 'SignaturesStationeryDialog', the GUI allowing users to add, edit and remove signatures. Also disables access to 'Personal Stationary' and 'Stationary and Fonts' - these settings should be controlled centrally anyway in order to comply with the corporate identity/corporate design guidelines.
+The policy also stops Outlook from automatically adding default signatures to new messages, replies and forwards. Users must select the appropriate signature manually, which can undermine the consistency the policy was intended to provide. The Group Policy setting may also fail with some newer Outlook versions; in those cases, the corresponding registry value has to be applied directly.
 
-There is one thing you cannot disable: Outlook always allows users to edit the copy of the signature after it was added to an email.
+A less disruptive alternative is to run Set-OutlookSignatures regularly — every two hours, for example — and use the `WriteProtect` option in the INI file. This restores centrally generated signatures when the solution runs, although it does not prevent every change made between executions.
 
-### Outlook for the web, New Outlook for Windows
+Administrators can also use the **Disable Items in User Interface** Group Policy setting to remove specific signature-related controls:
 
-Unfortunately, Outlook for the web cannot be configured as granularly as Outlook. In Exchange Online as well as in Exchange on-prem, the `Set-OwaMailboxPolicy` cmdlet does not allow you to configure signature settings in detail, but only to disable or enable signature features via the `SignaturesEnabled` parameter for specific groups of mailboxes.
+- `5608` — `SignatureInsertMenu`: disables the drop-down button used to insert an existing signature or open the signature gallery.
+- `22965` — `SignatureGallery`: prevents users from selecting a signature other than the default, while retaining access to `SignaturesStationeryDialog`.
+- `3766` — `SignaturesStationeryDialog`: disables the interface for adding, editing and removing signatures. It also removes access to Personal Stationery and Stationery and Fonts, which should normally be managed centrally when corporate design rules apply.
 
-There is no option to write protect signatures, or to keep users from adding, editing and removing signatures without disabling all signature-related features.
+These controls can limit how users manage stored signatures, but they do not protect a signature after Outlook has inserted it into a message. The inserted content remains editable in the message body.
 
-As an alternative, run Set-OutlookSignatures regularly (every two hours, for example).
+#### New Outlook for Windows and Outlook on the web
 
-### Outlook for Android, Outlook for iOS, Outlook for Mac
+New Outlook and Outlook on the web provide much less granular control.
 
-There is no way to fully prevent users from editing signatures during composition — however, modern approaches allow enforcing the correct signature at send time.
+In Exchange Online and Exchange Server, `Set-OwaMailboxPolicy` exposes the `SignaturesEnabled` parameter. This enables or disables signature functionality for the mailboxes governed by the policy, but it does not provide a write-protection mode.
 
-### The Outlook add-in
+Administrators therefore cannot allow centrally managed signatures while separately preventing users from adding, editing or deleting their own signatures. The available native choice is effectively between enabling signature functionality and disabling it as a whole.
 
-The [Outlook add-in](/outlookaddin), part of the <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle add-on</span></a>, includes a feature that allows to ignore or delete user defined signature options.
+Running Set-OutlookSignatures regularly can restore the centrally defined configuration, but scheduled regeneration alone does not control edits made while a message is being composed.
 
-When the parameter `DISABLE_CLIENT_SIGNATURES` is enabled:
+#### Outlook for Mac, Android and iOS
 
-- In Outlook for the web and New Outlook for Windows, the signature option for new mails, replies, and forwards is disabled. A signature that's selected is also disabled.
-- In Classic Outlook for Windows and in Outlook for Mac, the signature under the New messages and Replies/forwards sections of the sending account is set to (none).
-- In Outlook for Android and Outlook for iOS, the signature saved on the mobile device is deleted.
+Outlook for Mac and the Outlook mobile clients do not provide a way to prevent every signature edit during composition. Local signature settings and editable message content leave the user with some control until the message is sent.
 
-While disabling client-side signatures removes user-defined options, it still does not guarantee what the final email will look like at the moment it is sent.
+For these clients, attempting to lock every editing surface is not a complete governance model. The enforceable point is the send action, after composition is complete.
 
-For full control, combine this setting with send-time enforcement using `OnMessageSend`. This ensures that even if users attempt to modify or remove content while composing, the correct signature is always applied before delivery.
+#### Removing client-managed signature choices
 
-This leaves one critical gap: ensuring enforcement at the point where it actually matters — when the email is sent.
+The Outlook Add-in, included with the Benefactor Circle add-on, can ignore or remove user-defined signature options through `DISABLE_CLIENT_SIGNATURES`.
 
-#### The missing piece: Enforcing signatures at send time
+The resulting behaviour depends on the Outlook client:
 
-Even with all approaches described above, there has always been one fundamental limitation: Once a signature is inserted into an email, Outlook allows users to modify or remove it before sending.
+- In New Outlook for Windows and Outlook on the web, signature selection for new messages, replies and forwards is disabled. A previously selected signature is disabled as well.
+- In Classic Outlook for Windows and Outlook for Mac, the sending account’s default signature for **New messages** and **Replies/forwards** is set to **(none)**.
+- In Outlook for Android and Outlook for iOS, the signature stored on the mobile device is deleted.
 
-With the latest versions of the Outlook add-in, this limitation can now be effectively eliminated.
+This removes competing client-side signature choices and gives centrally generated signatures a cleaner operating environment. It still does not guarantee the final message, because any content already present in the message body can be changed before the user selects Send.
 
-By enabling the launch events:
+#### Before and after send-time enforcement
+
+**Before send-time enforcement**, administrators can disable signature dialogs, remove default client signatures and regenerate centrally managed signatures. These measures reduce inconsistency, but a user can still modify or delete the inserted signature before sending. The content in Sent Items may therefore differ from the centrally assigned template.
+
+**After send-time enforcement**, the Outlook Add-in applies the defined signature immediately after the user selects Send. Manual changes are overwritten, a missing signature is added, and the resulting message in Sent Items contains the signature selected by the central rules.
+
+This is the point at which signature management changes from controlling configuration to controlling the sent result.
+
+#### Applying the signature when the message is sent
+
+The Outlook Add-in supports the following launch events:
 
 - `OnMessageSend`
 - `OnAppointmentSend`
 
-a defined signature is applied **immediately after the user clicks Send**.
+When these events are enabled, the add-in applies the defined signature immediately after the user selects Send. Enforcement takes place client-side in Outlook, so the final signature is visible in Sent Items.
 
-The enforcement happens client-side within Outlook, ensuring that users can see the final applied signature in their Sent Items.
+`OnMessageSend` addresses email messages. `OnAppointmentSend` extends the same principle to appointment-related content. In each case, the signature is applied after the user has completed normal editing but before the item is delivered.
 
-This means:
+Set-OutlookSignatures supplies the centrally generated signatures and assignment logic. The Outlook Add-in then uses that prepared signature data at the point of composition and, with the send launch events enabled, reapplies the defined result at send time.
 
-- Any manual modifications are overridden
-- A missing signature is automatically added
-- The final message in the Sent Items folder always contains the correct, compliant signature
+This directly addresses the limitation shared by the Outlook clients: administrators do not have to rely on every client providing an effective write lock. The assigned signature is enforced at the point where the message becomes an outbound communication.
 
-This approach fundamentally changes how signature governance works:  
-👉 Instead of trying to prevent users from editing signatures (which Outlook does not fully allow)  
-👉 you enforce the correct, compliant result at the exact moment of sending
+> 💡 **Best Practice:** Enable `DISABLE_CLIENT_SIGNATURES`, generate and assign signatures centrally with Set-OutlookSignatures, and activate `OnMessageSend` and `OnAppointmentSend` so that client-managed signatures are removed and the centrally defined result is reapplied when the item is sent.
 
-This makes `OnMessageSend` and `OnAppointmentSend` the only approach that guarantees a correct signature in every sent email — and therefore the most reliable and future-proof solution available today.
+#### The resulting Outlook behaviour
 
-From a governance and compliance perspective, this closes a long-standing gap:
+A layered implementation produces observable changes for both users and administrators:
 
-- Legal disclaimers can no longer be removed
-- Corporate branding is consistently enforced
-- Regulatory requirements are guaranteed at the point of outbound communication
+- Users no longer have competing client-defined default signatures.
+- Centrally generated signatures remain based on the organisation’s templates and assignment rules.
+- Changes made to an inserted signature during composition do not determine the final sent result.
+- Missing signature content is restored when the message is sent.
+- The final applied signature is visible in Sent Items.
+- The same enforcement principle can be used across Classic Outlook, New Outlook, Outlook on the web, Outlook for Mac, Outlook for Android and Outlook for iOS.
 
-This is especially relevant for organizations operating under strict regulatory or compliance requirements.
+Native Outlook and Exchange controls remain useful for reducing access to signature settings, particularly in Classic Outlook. They should not be treated as proof that every outbound message contains the required signature.
 
-In practice, this means that signature compliance no longer depends on user behavior at all.
+For organisations that need a predictable result, the practical control is not an editor lock. It is the combination of centrally generated signature data, removal of client-managed defaults and enforcement through the Outlook send events.
 
-In other words, signature management evolves from a best-effort configuration task into a fully enforceable control mechanism.
+<!--
+LinkedIn Post:
 
-> 💡 **Best practice**
->
-> The most effective setup today combines:
->
-> - Disabling client-side signature settings (`DISABLE_CLIENT_SIGNATURES`)
-> - Central signature generation
-> - Send-time enforcement via `OnMessageSend`
->
-> This layered approach ensures both a controlled user experience and guaranteed compliance in every sent email.
+Outlook does not provide one control that prevents signature changes across Classic Outlook, New Outlook, web, Mac and mobile clients. Even where signature settings can be disabled, users may still alter content already inserted into a message.
+
+Native policies can reduce access to signature editors, while client-managed defaults can be removed separately. Neither measure alone determines what is present after the user has finished composing the message.
+
+The remaining question is whether signature governance should control the available settings or the actual content at the point of sending.
+
+https://set-outlooksignatures.com/blog/2026/08/12/restrict-signature-changes
+-->
 
 ## Turn every small email moment into a professional advantage
 

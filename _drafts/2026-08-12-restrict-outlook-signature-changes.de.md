@@ -2,9 +2,9 @@
 layout: "post"
 lang: "de"
 locale: "de"
-title: "So verhindern Sie, dass Benutzer Signaturen ändern oder löschen"
-description: "Erfahren Sie, wie Sie Signaturänderungen in Outlook (Classic, New, Web & Mobile) einschränken und welche Alternativen es gibt."
-slug: "restrict-outlook-signature-changes"
+title: "Änderungen an Outlook-Signaturen verhindern"
+description: "Outlook-Signaturfunktionen einschränken und die korrekte Signatur auf Desktop-, Web-, Mac- und mobilen Clients beim Senden durchsetzen."
+slug: "restrict-signature-changes"
 published: true
 tags:
 show_sidebar: true
@@ -12,111 +12,112 @@ sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
 
-Die Wahrung einer einheitlichen Corporate Identity im gesamten Unternehmen ist eine Herausforderung – insbesondere dann, wenn Benutzer E-Mail-Signaturen häufig ändern, veraltete Versionen verwenden oder diese vollständig entfernen. Um Markenrichtlinien durchzusetzen und rechtliche Anforderungen sicherzustellen, müssen IT-Administratoren die Möglichkeit einschränken, dass Benutzer ihre Signaturen eigenständig verändern.
+Outlook bietet keine zentrale administrative Einstellung, die Änderungen an Signaturen gleichzeitig in Classic Outlook, New Outlook, Outlook im Web, Outlook für Mac und den mobilen Clients verhindert. Selbst wenn sich die Signaturverwaltung in einem Client einschränken lässt, können Benutzer eine bereits eingefügte Signatur während der Nachrichtenerstellung weiterhin verändern oder vollständig entfernen.
 
-Die technischen Möglichkeiten hierfür unterscheiden sich jedoch je nach verwendeter Outlook-Version erheblich. Im Folgenden finden Sie einen detaillierten Überblick darüber, wie Sie Signaturänderungen auf verschiedenen Outlook-Plattformen einschränken, welche Einschränkungen bestehen und welche besseren Alternativen verfügbar sind.
+Diese Unterscheidung ist in Unternehmensumgebungen wesentlich. Das Deaktivieren eines Signatur-Editors beschränkt einen Teil der Benutzeroberfläche, bestimmt aber nicht zwangsläufig den Inhalt der Nachricht, die das Unternehmen tatsächlich verlässt. Eine verlässliche Implementierung muss daher zwei getrennte Anforderungen erfüllen:
 
-### Klassisches Outlook für Windows
+1. Benutzerverwaltete Signaturoptionen in den jeweiligen Outlook-Clients reduzieren oder entfernen.
+2. Die korrekte Signatur anwenden, nachdem der Benutzer die Bearbeitung der Nachricht abgeschlossen hat.
 
-Sie können GUI-Elemente deaktivieren, sodass Benutzer in Outlook keine Signaturen hinzufügen, bearbeiten oder entfernen können, indem Sie die Gruppenrichtlinieneinstellung „Signaturen für E-Mail-Nachrichten nicht zulassen“ verwenden.
+Die verfügbaren Steuerungsmöglichkeiten unterscheiden sich erheblich zwischen den Outlook-Plattformen.
 
-Einschränkungen:
+#### Classic Outlook für Windows
 
-- Benutzer können weiterhin Signaturen im Dateisystem hinzufügen, bearbeiten und entfernen
-- Standardsignaturen werden nicht mehr automatisch hinzugefügt, wenn eine neue E-Mail erstellt oder eine E-Mail weitergeleitet bzw. beantwortet wird
-- Benutzer müssen die richtige Signatur manuell auswählen
-- Die GPO-Einstellung scheint bei einigen neueren Outlook-Versionen nicht zuverlässig zu funktionieren; in diesem Fall setzen Sie den entsprechenden Registrierungsschlüssel direkt
+Classic Outlook bietet die umfangreichsten administrativen Steuerungsmöglichkeiten. Jede davon hat jedoch betriebliche Auswirkungen.
 
-Als Alternative können Sie eine oder mehrere der folgenden Optionen in Betracht ziehen:
+Die Gruppenrichtlinie **Do not allow signatures for email messages** deaktiviert die Outlook-Oberfläche zum Hinzufügen, Bearbeiten und Entfernen von Signaturen. Die zugrunde liegenden Signaturdateien werden dadurch jedoch nicht geschützt. Benutzer können diese Dateien weiterhin direkt im Dateisystem ändern oder löschen.
 
-- Führen Sie Set-OutlookSignatures regelmäßig aus (z. B. alle zwei Stunden) und verwenden Sie die Option `WriteProtect` in der INI-Datei
-- Verwenden Sie die GPO-Einstellung „Elemente in der Benutzeroberfläche deaktivieren“ und nutzen Sie folgende Werte:
-  - 5608: `SignatureInsertMenu` – Auswahl einer Signatur und Zugriff auf die Signaturgalerie
-  - 22965: `SignatureGallery` – verhindert die Auswahl alternativer Signaturen, erlaubt aber weiterhin Zugriff auf den Einstellungsdialog
-  - 3766: `SignaturesStationeryDialog` – verhindert das Erstellen, Bearbeiten und Löschen von Signaturen sowie den Zugriff auf Briefpapier-Einstellungen
+Die Richtlinie verhindert außerdem, dass Outlook Standardsignaturen automatisch zu neuen Nachrichten, Antworten und Weiterleitungen hinzufügt. Benutzer müssen die gewünschte Signatur dann manuell auswählen, was die angestrebte Einheitlichkeit wiederum beeinträchtigen kann. Bei einigen neueren Outlook-Versionen greift die Gruppenrichtlinie möglicherweise nicht; in diesen Fällen muss der entsprechende Registrierungswert direkt gesetzt werden.
 
-Eine Einschränkung bleibt bestehen: Outlook erlaubt es immer, die eingefügte Signatur innerhalb der E-Mail vor dem Versand zu bearbeiten.
+Eine weniger einschneidende Alternative besteht darin, Set-OutlookSignatures regelmäßig auszuführen, beispielsweise alle zwei Stunden, und in der INI-Datei die Option `WriteProtect` zu verwenden. Dadurch werden zentral erzeugte Signaturen bei jedem Lauf wiederhergestellt. Änderungen, die Benutzer zwischen zwei Ausführungen vornehmen, werden damit jedoch nicht unmittelbar verhindert.
 
-### Outlook im Web, neues Outlook für Windows
+Administratoren können außerdem über die Gruppenrichtlinie **Disable Items in User Interface** bestimmte Funktionen der Signaturverwaltung ausblenden:
 
-Outlook im Web bietet deutlich weniger Steuerungsmöglichkeiten. In Exchange Online und Exchange On-Premises erlaubt das Cmdlet `Set-OwaMailboxPolicy` lediglich das generelle Aktivieren oder Deaktivieren von Signaturfunktionen über den Parameter `SignaturesEnabled`.
+- `5608` — `SignatureInsertMenu`: Deaktiviert die Dropdown-Schaltfläche zum Einfügen einer vorhandenen Signatur oder zum Öffnen des Signaturkatalogs.
+- `22965` — `SignatureGallery`: Verhindert die Auswahl einer anderen als der vorgegebenen Standardsignatur, lässt den Zugriff auf `SignaturesStationeryDialog` jedoch bestehen.
+- `3766` — `SignaturesStationeryDialog`: Deaktiviert die Oberfläche zum Hinzufügen, Bearbeiten und Entfernen von Signaturen. Dadurch entfällt zugleich der Zugriff auf persönliches Briefpapier sowie auf Briefpapier- und Schriftarteinstellungen. Diese Funktionen sollten üblicherweise zentral verwaltet werden, wenn verbindliche Corporate-Design-Vorgaben gelten.
 
-Eine granulare Steuerung ist nicht möglich:
+Mit diesen Einstellungen lässt sich einschränken, wie Benutzer gespeicherte Signaturen verwalten. Eine in den Nachrichtentext eingefügte Signatur wird dadurch jedoch nicht geschützt. Ihr Inhalt bleibt während der Nachrichtenerstellung editierbar.
 
-- Kein Schreibschutz für Signaturen
-- Keine Möglichkeit, Bearbeitung oder Entfernung zu verhindern, ohne Signaturen vollständig zu deaktivieren
+#### New Outlook für Windows und Outlook im Web
 
-Als Alternative: Führen Sie Set-OutlookSignatures regelmäßig aus (z. B. alle zwei Stunden).
+New Outlook und Outlook im Web bieten deutlich weniger granulare Steuerungsmöglichkeiten.
 
-### Outlook für Android, Outlook für iOS, Outlook für Mac
+In Exchange Online und Exchange Server stellt `Set-OwaMailboxPolicy` den Parameter `SignaturesEnabled` bereit. Damit lässt sich die Signaturfunktion für die von der Richtlinie erfassten Postfächer aktivieren oder deaktivieren. Ein Schreibschutzmodus ist jedoch nicht vorhanden.
 
-Es gibt keine Möglichkeit, Benutzer während der Erstellung vollständig an der Bearbeitung von Signaturen zu hindern — moderne Ansätze ermöglichen jedoch die Durchsetzung der korrekten Signatur beim Senden.
+Administratoren können daher nicht gleichzeitig zentral verwaltete Signaturen zulassen und Benutzer separat daran hindern, eigene Signaturen hinzuzufügen, zu bearbeiten oder zu löschen. Die native Auswahl beschränkt sich im Wesentlichen darauf, die Signaturfunktion insgesamt zu aktivieren oder zu deaktivieren.
 
-### Das Outlook Add-in
+Eine regelmäßige Ausführung von Set-OutlookSignatures kann die zentral definierte Konfiguration wiederherstellen. Eine zeitgesteuerte Neuerstellung kontrolliert jedoch keine Änderungen, die während des Verfassens einer Nachricht vorgenommen werden.
 
-Das [Outlook Add-in](/outlookaddin), Teil des <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle Add-ons</span></a>, bietet eine Funktion, um benutzerdefinierte Signaturen zu ignorieren oder zu entfernen.
+#### Outlook für Mac, Android und iOS
 
-Wenn der Parameter `DISABLE_CLIENT_SIGNATURES` aktiviert ist:
+Outlook für Mac sowie die mobilen Outlook-Clients bieten keine Möglichkeit, sämtliche Änderungen an einer Signatur während der Nachrichtenerstellung zu verhindern. Lokale Signaturkonfigurationen und der editierbare Nachrichteninhalt geben Benutzern bis zum Senden weiterhin einen gewissen Handlungsspielraum.
 
-- In Outlook im Web und im neuen Outlook für Windows werden Signaturoptionen für neue E-Mails, Antworten und Weiterleitungen deaktiviert
-- Im klassischen Outlook für Windows und in Outlook für Mac wird die Signatur für neue Nachrichten sowie Antworten/Weiterleitungen auf „(keine)“ gesetzt
-- In Outlook für Android und iOS wird die lokal gespeicherte Signatur gelöscht
+Der Versuch, jede einzelne Bearbeitungsoberfläche zu sperren, stellt für diese Clients deshalb kein vollständiges Governance-Modell dar. Der verlässlich kontrollierbare Zeitpunkt ist der Sendevorgang, nachdem die Bearbeitung abgeschlossen wurde.
 
-Das Deaktivieren clientseitiger Signaturen entfernt zwar benutzerdefinierte Optionen, garantiert jedoch nicht, wie die endgültige E-Mail zum Zeitpunkt des Versands aussieht.
+#### Benutzerverwaltete Signaturoptionen entfernen
 
-Für vollständige Kontrolle kombinieren Sie diese Einstellung mit einer Durchsetzung beim Senden (`OnMessageSend`). Dadurch wird sichergestellt, dass die korrekte Signatur vor dem Versand immer angewendet wird – selbst wenn Benutzer während der Erstellung Änderungen vornehmen.
+Das Outlook Add-in, das im Benefactor Circle Add-on enthalten ist, kann benutzerdefinierte Signaturoptionen über `DISABLE_CLIENT_SIGNATURES` ignorieren oder entfernen.
 
-Dies lässt eine zentrale Lücke erkennbar: die Durchsetzung genau in dem Moment, in dem sie entscheidend ist – beim Senden der E-Mail.
+Das sichtbare Verhalten hängt vom verwendeten Outlook-Client ab:
 
-#### Der fehlende Baustein: Signaturen beim Senden erzwingen
+- In New Outlook für Windows und Outlook im Web wird die Signaturauswahl für neue Nachrichten, Antworten und Weiterleitungen deaktiviert. Eine zuvor ausgewählte Signatur wird ebenfalls deaktiviert.
+- In Classic Outlook für Windows und Outlook für Mac wird die Standardsignatur des sendenden Kontos sowohl für **Neue Nachrichten** als auch für **Antworten/Weiterleitungen** auf **(keine)** gesetzt.
+- In Outlook für Android und Outlook für iOS wird die auf dem mobilen Gerät gespeicherte Signatur gelöscht.
 
-Alle oben beschriebenen Ansätze haben eine grundlegende Einschränkung:  
-Sobald eine Signatur in eine E-Mail eingefügt wurde, kann der Benutzer sie vor dem Versand bearbeiten oder entfernen.
+Dadurch werden konkurrierende clientseitige Signaturvorgaben entfernt und zentral erzeugte Signaturen erhalten eine kontrolliertere Ausgangssituation. Der endgültige Nachrichteninhalt ist damit noch nicht garantiert, da Benutzer den bereits eingefügten Inhalt weiterhin ändern können, bevor sie **Senden** auswählen.
 
-Mit aktuellen Versionen des Outlook Add-ins lässt sich diese Einschränkung nun effektiv aufheben.
+#### Verhalten vor und nach der Durchsetzung beim Senden
 
-Durch Aktivierung der Launch Events:
+**Vor der Durchsetzung beim Senden** können Administratoren Signaturdialoge deaktivieren, clientseitige Standardsignaturen entfernen und zentral verwaltete Signaturen regelmäßig neu erzeugen. Diese Maßnahmen verringern Abweichungen, verhindern aber nicht, dass ein Benutzer die eingefügte Signatur vor dem Senden verändert oder löscht. Die Nachricht in den gesendeten Elementen kann daher von der zentral zugewiesenen Vorlage abweichen.
+
+**Nach der Durchsetzung beim Senden** wendet das Outlook Add-in die definierte Signatur unmittelbar nach Auswahl von **Senden** an. Manuelle Änderungen werden überschrieben, eine fehlende Signatur wird hinzugefügt und die Nachricht in den gesendeten Elementen enthält die anhand der zentralen Regeln ausgewählte Signatur.
+
+An diesem Punkt verlagert sich die Signaturverwaltung von der Kontrolle einer Client-Konfiguration auf die Kontrolle des tatsächlich versendeten Ergebnisses.
+
+#### Signatur beim Senden anwenden
+
+Das Outlook Add-in unterstützt die folgenden Launch Events:
 
 - `OnMessageSend`
 - `OnAppointmentSend`
 
-wird eine definierte Signatur **unmittelbar nach dem Klick auf „Senden“ angewendet**.
+Wenn diese Ereignisse aktiviert sind, wendet das Add-in die definierte Signatur unmittelbar nach Auswahl von **Senden** an. Die Durchsetzung erfolgt clientseitig in Outlook. Die endgültig angewendete Signatur ist deshalb auch in den gesendeten Elementen sichtbar.
 
-Die Durchsetzung erfolgt clientseitig in Outlook, sodass Benutzer die endgültige Signatur direkt in ihren gesendeten Elementen sehen.
+`OnMessageSend` gilt für E-Mail-Nachrichten. `OnAppointmentSend` überträgt dasselbe Prinzip auf terminbezogene Inhalte. In beiden Fällen wird die Signatur angewendet, nachdem der Benutzer die reguläre Bearbeitung abgeschlossen hat, aber bevor das jeweilige Element zugestellt wird.
 
-Das bedeutet:
+Set-OutlookSignatures erzeugt die zentral verwalteten Signaturen und stellt die Zuweisungslogik bereit. Das Outlook Add-in verwendet die vorbereiteten Signaturdaten anschließend während der Nachrichtenerstellung und wendet mit aktivierten Send Launch Events das definierte Ergebnis beim Senden erneut an.
 
-- Manuelle Änderungen werden überschrieben
-- Fehlende Signaturen werden automatisch ergänzt
-- Jede gesendete Nachricht enthält die korrekte, compliant Signatur
+Damit wird eine Einschränkung adressiert, die alle Outlook-Clients betrifft: Die Organisation muss sich nicht darauf verlassen, dass jeder Client einen wirksamen Schreibschutz für Signaturen bereitstellt. Stattdessen wird die zugewiesene Signatur zu dem Zeitpunkt durchgesetzt, an dem die Nachricht zur ausgehenden Unternehmenskommunikation wird.
 
-Dieser Ansatz verändert die Signatur-Governance grundlegend:  
-👉 Statt zu versuchen, Benutzer an Änderungen zu hindern (was Outlook technisch nicht vollständig zulässt)  
-👉 wird das korrekte, regelkonforme Ergebnis exakt im Moment des Sendens erzwungen
+> 💡 **Best Practice:** Aktivieren Sie `DISABLE_CLIENT_SIGNATURES`, erzeugen undzuweisen Sie die Signaturen zentral mit Set-OutlookSignatures und aktivieren Sie `OnMessageSend` sowie `OnAppointmentSend`. So werden clientseitig verwaltete Signaturen entfernt und das zentral definierte Ergebnis beim Senden erneut angewendet.
 
-Damit sind `OnMessageSend` und `OnAppointmentSend` der einzige Ansatz, der eine korrekte Signatur in jeder gesendeten E-Mail garantiert — unabhängig vom Benutzerverhalten — und somit die zuverlässigste und zukunftssicherste Lösung.
+#### Das resultierende Outlook-Verhalten
 
-Aus Sicht von Governance und Compliance schließt dies eine lange bestehende Lücke:
+Eine mehrstufige Implementierung führt für Benutzer und Administratoren zu klar erkennbaren Änderungen:
 
-- Rechtliche Hinweise können nicht mehr entfernt werden
-- Corporate Branding wird konsequent durchgesetzt
-- Regulatorische Anforderungen sind beim Versand jeder Nachricht sichergestellt
+- Benutzer verfügen nicht mehr über konkurrierende, clientseitig definierte Standardsignaturen.
+- Zentral erzeugte Signaturen basieren weiterhin auf den Vorlagen und Zuweisungsregeln der Organisation.
+- Änderungen an einer eingefügten Signatur während der Bearbeitung bestimmen nicht mehr das endgültige versendete Ergebnis.
+- Fehlende Signaturinhalte werden beim Senden wiederhergestellt.
+- Die endgültig angewendete Signatur ist in den gesendeten Elementen sichtbar.
+- Dasselbe Durchsetzungsprinzip lässt sich in Classic Outlook, New Outlook, Outlook im Web, Outlook für Mac, Outlook für Android und Outlook für iOS verwenden.
 
-Dies ist besonders relevant für Unternehmen mit strengen regulatorischen oder Compliance-Vorgaben.
+Native Outlook- und Exchange-Einstellungen bleiben nützlich, um den Zugriff auf Signaturfunktionen einzuschränken, insbesondere in Classic Outlook. Sie sollten jedoch nicht als Nachweis dafür betrachtet werden, dass jede ausgehende Nachricht tatsächlich die vorgeschriebene Signatur enthält.
 
-In der Praxis bedeutet das: Die Einhaltung von Signaturrichtlinien hängt nicht mehr vom Verhalten der Benutzer ab.
+Für Organisationen, die ein vorhersehbares Ergebnis benötigen, liegt die wirksame Kontrolle daher nicht in einer Sperre des Signatur-Editors. Entscheidend ist die Kombination aus zentral erzeugten Signaturdaten, der Entfernung clientseitig verwalteter Standardsignaturen und der Durchsetzung über die Outlook-Sendeereignisse.
 
-Mit anderen Worten: Signaturmanagement entwickelt sich von einer Best-Effort-Konfiguration zu einem vollständig durchsetzbaren Kontrollmechanismus.
+<!--
+LinkedIn Post:
 
-> 💡 **Best Practice**
->
-> Die effektivste Konfiguration kombiniert:
->
-> - Deaktivierung clientseitiger Signaturen (`DISABLE_CLIENT_SIGNATURES`)
-> - Zentrale Signaturerstellung
-> - Durchsetzung beim Senden über `OnMessageSend`
->
-> Dieser mehrschichtige Ansatz stellt eine kontrollierte Benutzererfahrung und gleichzeitig vollständige Compliance bei jeder gesendeten E-Mail sicher.
+Outlook bietet keine einzelne Einstellung, die Signaturänderungen gleichzeitig in Classic Outlook, New Outlook, Outlook im Web, Outlook für Mac und den mobilen Clients verhindert. Selbst wenn die Signaturverwaltung deaktiviert ist, kann bereits in eine Nachricht eingefügter Inhalt weiterhin verändert werden.
+
+Native Richtlinien können den Zugriff auf Signatur-Editoren reduzieren. Clientseitig verwaltete Standardsignaturen lassen sich separat entfernen, doch keine dieser Maßnahmen bestimmt allein, welcher Inhalt nach Abschluss der Bearbeitung tatsächlich versendet wird.
+
+Damit bleibt die Frage, ob Signatur-Governance lediglich die verfügbaren Einstellungen kontrollieren soll oder den tatsächlichen Nachrichteninhalt zum Zeitpunkt des Sendens.
+
+https://set-outlooksignatures.com/de/blog/2026/08/12/restrict-signature-changes
+-->
 
 ## Machen Sie jeden kleinen E-Mail-Moment zu einem professionellen Vorteil
 
