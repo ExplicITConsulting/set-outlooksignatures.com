@@ -143,31 +143,31 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
 <div id="signature-gallery-content" class="p-4 has-background-white" style="border: 1px solid #dbdbdb; border-radius: 4px;">
   <div id="sig-formal" class="tab-content-panel has-text-black">
     <p><i>Formal: Full signature for personal mailbox of Bobby Busy</i></p>
-    <iframe src="/assets/signatures from demo/Formal.htm" width="100%" style="border:none; overflow:hidden" sandbox="allow-scripts allow-same-origin"></iframe>
+    <iframe src="/assets/signatures from demo/Formal.htm" width="100%" style="border:none; overflow:hidden"></iframe>
   </div>
   <div id="sig-formal-alex" class="tab-content-panel has-text-black is-hidden">
     <p><i>Formal Delegate alex.alien: Full signature for when Bobby sends on behalf of the CEO, Ms. Alex Alien</i></p>
-    <iframe src="/assets/signatures from demo/Formal Delegate alex.alien.htm" width="100%" style="border:none; overflow:hidden" sandbox="allow-scripts allow-same-origin"></iframe>
+    <iframe src="/assets/signatures from demo/Formal Delegate alex.alien.htm" width="100%" style="border:none; overflow:hidden"></iframe>
   </div>
   <div id="sig-formal-exec" class="tab-content-panel has-text-black is-hidden">
     <p><i>Formal executiveboard.office: Full signature for when Bobby sends as the Executive Board Office shared mailbox</i></p>
-    <iframe src="/assets/signatures from demo/Formal executiveboard.office.htm" width="100%" style="border:none; overflow:hidden" sandbox="allow-scripts allow-same-origin"></iframe>
+    <iframe src="/assets/signatures from demo/Formal executiveboard.office.htm" width="100%" style="border:none; overflow:hidden"></iframe>
   </div>
   <div id="sig-informal" class="tab-content-panel has-text-black is-hidden">
     <p><i>Informal: Short signature for personal mailbox (internal communication, external thread follow-ups)</i></p>
-    <iframe src="/assets/signatures from demo/Informal.htm" width="100%" style="border:none; overflow:hidden" sandbox="allow-scripts allow-same-origin"></iframe>
+    <iframe src="/assets/signatures from demo/Informal.htm" width="100%" style="border:none; overflow:hidden"></iframe>
   </div>
   <div id="sig-informal-alex" class="tab-content-panel has-text-black is-hidden">
     <p><i>Informal Delegate alex.alien: Short signature for when Bobby sends on behalf of the CEO, Ms. Alex Alien (internal communication, external thread follow-ups)</i></p>
-    <iframe src="/assets/signatures from demo/Informal Delegate alex.alien.htm" width="100%" style="border:none; overflow:hidden" sandbox="allow-scripts allow-same-origin"></iframe>
+    <iframe src="/assets/signatures from demo/Informal Delegate alex.alien.htm" width="100%" style="border:none; overflow:hidden"></iframe>
   </div>
   <div id="sig-informal-exec" class="tab-content-panel has-text-black is-hidden">
     <p><i>Informal executiveboard.office: Short signature for when Bobby sends as the Executive Board Office shared mailbox (internal communication, external thread follow-ups)</i></p>
-    <iframe src="/assets/signatures from demo/Informal executiveboard.office.htm" width="100%" style="border:none; overflow:hidden" sandbox="allow-scripts allow-same-origin"></iframe>
+    <iframe src="/assets/signatures from demo/Informal executiveboard.office.htm" width="100%" style="border:none; overflow:hidden"></iframe>
   </div>
   <div id="sig-test-all" class="tab-content-panel has-text-black is-hidden">
     <p><i>Test all default replacement variables: Shows all placeholders but also account pictures, conditional banners, QR codes and more</i></p>
-    <iframe src="/assets/signatures from demo/Test all default replacement variables.htm" width="100%" style="border:none; overflow:hidden" sandbox="allow-scripts allow-same-origin"></iframe>
+    <iframe src="/assets/signatures from demo/Test all default replacement variables.htm" width="100%" style="border:none; overflow:hidden"></iframe>
   </div>
 </div>
 
@@ -176,6 +176,20 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   function resizeIframe(iframe) {
     if (iframe && iframe.contentWindow && iframe.contentWindow.document.body) {
       iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+  }
+
+  function disableIframeLinks(iframe) {
+    try {
+      const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+      if (iframeDoc) {
+        iframeDoc.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', (e) => e.preventDefault());
+          link.style.cursor = 'default';
+        });
+      }
+    } catch (err) {
+      console.warn("Could not disable links in iframe:", err);
     }
   }
 
@@ -203,6 +217,8 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
   // Automatically adjust heights once the HTML files finish loading completely
   document.querySelectorAll('.tab-content-panel iframe').forEach(iframe => {
     iframe.addEventListener('load', () => {
+      disableIframeLinks(iframe); // <-- Added this line
+
       if (!iframe.closest('.tab-content-panel').classList.contains('is-hidden')) {
         resizeIframe(iframe);
       }

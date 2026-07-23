@@ -8,6 +8,9 @@ slug: "signatures-sendas-sendonbehalf"
 published: true
 tags:
 show_sidebar: true
+redirect_from:
+    - "/blog/2025/08/19/signatures-sendas-sendonbehalf"
+    - "/blog/2025/08/19/signatures-sendas-sendonbehalf/"
 sitemap_priority: 0.5
 sitemap_changefreq: monthly
 ---
