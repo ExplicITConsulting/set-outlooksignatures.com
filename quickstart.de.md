@@ -7,7 +7,9 @@ subtitle: "Signaturen in wenigen Minuten"
 description: "Schnellstart-Anleitung. Signaturen innerhalb von Minuten bereitstellen."
 permalink: "/quickstart"
 ---
+
 ## Schritt 1: Herunterladen {#step-1}
+
 <div class="buttons">
 Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner: 
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/releases" class="button sos-download-link is-link is-normal has-text-weight-bold  mtrcs-download">Software herunterladen</a>
@@ -15,8 +17,8 @@ Laden Sie das Archiv herunter und entpacken Sie es in einen lokalen Ordner:
   <a href="https://github.com/Set-OutlookSignatures/Set-OutlookSignatures/issues?q=" class="no-external-link-icon"><img src="https://img.shields.io/github/issues/Set-OutlookSignatures/Set-OutlookSignatures?style=flat" alt="Open issues" loading="lazy"></a>
 </div>
 
-
 ## Schritt 2: Einmalige Vorbereitungen {#step-2}
+
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
@@ -62,8 +64,8 @@ powershell.exe -NoExit -File "c:\test\sample code\Create-EntraApp.ps1" -AppType 
   </div>
 </div>
 
-
 ## Schritt 3: Set-OutlookSignatures ausführen {#step-3}
+
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
@@ -126,6 +128,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
 </div>
 
 ## Signaturen aus den enthaltenen Mustervorlagen {#examples}
+
 <p>Nehmen wir an, <b>Herr Bobby Busy</b> arbeitet als Sekretär im <i>Vorstandsbüro</i> von <i>Galactic Experiences</i>. Er besitzt ein eigenes persönliches Postfach, sendet E-Mails im Namen der CEO, <b>Frau Alex Alien</b>, und kann vom freigegeben Postfach des <b>Vorstandsbüros (Exec Board Office)</b> schicken.</p>
 <p>Die Unternehmensrichtlinien schreiben vor, dass Signaturen nicht nur Informationen über das sendende Postfach enthalten müssen, sondern auch über den tatsächlichen Absender. Mit den standardmäßigen Mustervorlagen und der Konfiguration entstehen daraus automatisch folgende Varianten:</p>
 <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
@@ -224,6 +227,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
 </script>
 
 ## Anpassen {#customize}
+
 <div class="columns is-multiline">
   <div class="column is-half-desktop is-half-tablet is-full-mobile">
     <div class="box has-background-white-bis has-text-black" style="height: 100%; border-top: 4px solid Blue;">
@@ -236,7 +240,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
 {% highlight batch %}{% raw %}
 […] -SignatureTemplatePath "C:\Signatures\Templates" -SignatureIniFile "C:\Signatures\Templates\_Signatures.ini"
 {% endraw %}{% endhighlight %}
-          <p><small><em>Bei Verwendung von HTML-Vorlagen fügen Sie einfach <code>-UseHtmTemplates true</code> hinzu.</em></small></p>
+          <p><small><em>Bei Verwendung von HTML-Vorlagen fügen Sie einfach den Parameter <a href="/parameters#usehtmtemplates">UseHtmTemplates</a> hinzu: <code>-UseHtmTemplates true</code></em></small></p>
         </div>
       </div>
     </div>
@@ -284,7 +288,6 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
     </div>
   </div>
 </div>
-
 
 <p id="remark-1" class="mt-6 is-italic has-text-centered">
   Die <a href="/benefactorcircle"><span style="font-weight: bold; color: var(--benefactor-circle-color);">Benefactor Circle</span></a> Lizenz finanziert die Open-Source-Mission und stellt sicher, dass die Core-Engine für die weltweite Community kostenlos und Peer-Review-fähig bleibt.

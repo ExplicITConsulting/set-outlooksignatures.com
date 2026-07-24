@@ -240,7 +240,7 @@ powershell.exe -NoExit -File "c:\test\Set-OutlookSignatures.ps1"
 {% highlight batch %}{% raw %}
 […] -SignatureTemplatePath "C:\Signatures\Templates" -SignatureIniFile "C:\Signatures\Templates\_Signatures.ini"
 {% endraw %}{% endhighlight %}
-          <p><small><em>Using HTML templates? Just add <code>-UseHtmTemplates true</code>.</em></small></p>
+          <p><small><em>Using HTML templates? Just add the <a href="/parameters#usehtmtemplates">UseHtmTemplates</a> parameter: <code>-UseHtmTemplates true</code></em></small></p>
         </div>
       </div>
     </div>
